@@ -59,6 +59,8 @@ INCLUDE_EXTENSIONS=(
     "*.description"
     "*.srt"
     "*.diarized.srt"
+    "*.canary.srt"
+    "*.canary.csv"
     "*.txt"
     "*.json"
     "*.vtt"
