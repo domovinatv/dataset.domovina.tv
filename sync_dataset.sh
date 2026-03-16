@@ -149,14 +149,21 @@ fi
 declare -A VIDEO_GROUPS
 
 while IFS= read -r file; do
-    # Get the basename without extensions
-    basename=$(basename "$file")
-    # Strip all extensions (handles .wav.srt, .wav.diarized.srt, .info.json, etc.)
-    # Also handle _whisper_prompt.txt suffix
-    video_base=$(echo "$basename" | sed -E 's/_whisper_prompt\..+$//' | sed -E 's/\..+$//')
-
     # Get the show directory (first path component under data/)
     show_dir=$(echo "$file" | sed -E 's|^data/([^/]+)/.*|\1|')
+
+    # Get the path relative to data/show_dir/
+    rel_path=$(echo "$file" | sed -E "s|^data/[^/]+/||")
+
+    if [[ "$rel_path" == */* ]]; then
+        # File is inside a subdirectory (e.g. _raw/) — derive video_base from subdir name
+        subdir_name=$(echo "$rel_path" | cut -d'/' -f1)
+        video_base=$(echo "$subdir_name" | sed -E 's/_whisper_prompt\..+$//' | sed -E 's/\..+$//')
+    else
+        # File is directly under show_dir — derive video_base from filename
+        basename=$(basename "$file")
+        video_base=$(echo "$basename" | sed -E 's/_whisper_prompt\..+$//' | sed -E 's/\..+$//')
+    fi
 
     # Group key: show/video_base
     group_key="${show_dir}/${video_base}"
@@ -198,7 +205,7 @@ for group_key in $(echo "${!VIDEO_GROUPS[@]}" | tr ' ' '\n' | sort); do
     video_title=$(echo "$video_base" | sed -E 's/^[0-9]{8}_//' | sed -E 's/_yt_[^_]+$//' | tr '_' ' ')
 
     # Extract YouTube ID
-    yt_id=$(echo "$video_base" | grep -oE 'yt_[A-Za-z0-9_-]+$' | sed 's/^yt_//')
+    yt_id=$(echo "$video_base" | grep -oE 'yt_[A-Za-z0-9_-]+$' | sed 's/^yt_//' || true)
 
     # Build commit message
     commit_msg="data(${show_dir}): ${formatted_date} ${video_title}"
