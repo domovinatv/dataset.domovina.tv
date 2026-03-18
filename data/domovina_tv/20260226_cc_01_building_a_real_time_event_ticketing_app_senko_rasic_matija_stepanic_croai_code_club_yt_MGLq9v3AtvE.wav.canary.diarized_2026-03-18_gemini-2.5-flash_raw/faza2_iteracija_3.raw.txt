@@ -1,0 +1,74 @@
+[
+  {
+    "subtitle": "AI kod: Brzina vs. Kvaliteta i Izazovi Produkcijske Spremnosti",
+    "screenshot_timestamp": "01:30:13",
+    "screenshot_description": "Senko objašnjava izazove revidiranja AI generiranog koda.",
+    "content": "Senko otvara raspravu o revidiranju AI generiranog koda, ističući da je to jedno od ključnih otvorenih pitanja u industriji. Naglašava da, iako AI može izbaciti tisuće linija koda dnevno, ljudsko revidiranje takve količine dovodi do „zamora materijala“ i postaje neizvedivo. Postavlja pitanje što učiniti s produkcijskim kodom koji nije samo prototip.\n\nKonsenzus je da kritični dijelovi koda i dalje zahtijevaju ljudsku provjeru, ali definicija „kritičnog“ ostaje nejasna. Sudionik iz publike dodaje da provjeravanje svake linije AI generiranog koda često košta više nego pisanje koda od nule, što je validan argument protiv prekomjernog oslanjanja na AI za generiranje koda bez adekvatnog nadzora.\n\nMatija ističe da AI alati poput Greptile-a ili GitHub Copilota mogu pomoći u pronalaženju mehaničkih grešaka, poput nekonzistentnog imenovanja ili mogućnosti refaktoriranja, ali ne mogu donositi „judgment callove“ specifične za projekt ili arhitekturu. Predlaže kombinaciju ljudskog planiranja i automatskog revidiranja koda.\n\nRasprava se dotiče i posljedica puštanja koda u produkciju. Sudionik iz publike naglašava važnost brzine popravka i potencijalne štete, posebno u kritičnoj infrastrukturi. Spominje europsku regulativu koja često zahtijeva ljudski nadzor, dok američki pristup može biti agresivniji u prihvaćanju rizika radi brzine. Matija se nadovezuje na širu perspektivu AI-ja, opisujući ga kao „fenomenalni akcelerator“ koji cjelokupno znanje čovječanstva čini dostupnim svima, čak i u područjima bez interneta putem lokalnih LLM-ova. Smatra da se vrijednost pomiče s pukog kodiranja na sposobnost okupljanja ljudi i suradnje."
+  },
+  {
+    "subtitle": "Lokalni AI u Praksi: Transkripcija Podcasta i Optimizacija Procesa",
+    "screenshot_timestamp": "01:38:40",
+    "screenshot_description": "Matija pokazuje LM Studio i objašnjava kako koristi lokalne LLM modele.",
+    "content": "Matija dijeli svoje iskustvo s korištenjem lokalnih AI alata za transkripciju i obradu podataka. Objašnjava kako koristi **LM Studio** na svom Mac Mini računalu za pokretanje lokalnih LLM-ova. Iako su tokeni sporiji nego na cloud servisima, to mu omogućuje obradu podataka bez oslanjanja na vanjske API-je.\n\nDetaljno opisuje proces transkripcije podcasta:\n- Koristi **YouTube DLP** za preuzimanje video i audio zapisa.\n- **FFMPEG** za pretvaranje audio datoteka u WAV format.\n- **Whisper** model za transkripciju.\n- Ključni korak je korištenje malog lokalnog LLM-a (poput Kwen 7.5B) za ekstrakciju ključnih riječi iz YouTube opisa ili kratkog sažetka. Te ključne riječi se zatim predaju Whisperu kao prompt kako bi se smanjile halucinacije i poboljšala točnost transkripcije na hrvatskom jeziku.\n\nMatija navodi impresivan primjer: transkripcija podcasta od tri sata i četrnaest minuta trajala je manje od jedanaest minuta na njegovom Mac Miniu. Spominje i izazove, poput pregrijavanja Mac Minija i problema s očuvanjem povijesti naredbi u terminalu, što ga je prisililo na ručno gašenje računala. Ističe da se ovakva lokalna infrastruktura može složiti da radi autonomno nekoliko dana, što je idealno za repetitivne zadatke obrade podataka."
+  },
+  {
+    "subtitle": "Neočekivani Zastoj: Problemi s Pokretanjem Aplikacije i LLM Kapacitetom",
+    "screenshot_timestamp": "01:42:50",
+    "screenshot_description": "Prikazana je poruka o pogrešci 'no capacity available for model dvapet flash on server'.",
+    "content": "Unatoč ranijim pokušajima, Flutter aplikacija i dalje odbija pokrenuti se. Matija primjećuje da je aplikacija pokrenula „mail“ proces, ali se zatim zaustavila na „installing profile“.\n\nKljučna pogreška koja se pojavljuje je „no capacity available for model dvapet flash on server“, što ukazuje na problem s dostupnošću ili kapacitetom Anthropicovog LLM modela (Claude Flash). To sugerira da čak i uz plaćene planove, korisnici mogu naići na ograničenja u korištenju AI servisa, posebno u vrijeme povećane potražnje.\n\nMatija, suočen s ovim zastojem, pokušava semantički komitati promjene, nadajući se da će AI sam riješiti problem."
+  },
+  {
+    "subtitle": "Optimizacija Terminala: Upravljanje Poviješću Naredbi i Semantički Commitovi",
+    "screenshot_timestamp": "01:43:30",
+    "screenshot_description": "Sudionik iz publike predlaže Atuin za upravljanje poviješću naredbi.",
+    "content": "Tijekom zastoja s aplikacijom, sudionik iz publike predlaže Matiji alat **Atuin.org** kao rješenje za probleme s pronalaženjem shell povijesti. Atuin je alat koji sprema cijelu povijest naredbi u SQLite bazu podataka i omogućuje sinkronizaciju na više servera, osiguravajući da korisnik uvijek može pronaći željenu komandu.\n\nMatija priznaje da je isprobao Atuin, ali njegovo iskustvo nije bilo pozitivno; alat se „zavrtio“ i nije ništa napravio, pa ga je deinstalirao.\n\nRasprava se zatim prebacuje na semantičke commitove. Matija objašnjava da, kada AI-ju kaže „semantički komitaj“, on automatski analizira `git log` i `git diff` te generira smislene commit poruke. To je značajno poboljšanje u odnosu na ručno pisanje commit poruka, a Matija primjećuje da je ova funkcionalnost postala automatska u posljednja dva mjeseca, vjerojatno zahvaljujući nekom internom „skillu“ ili konfiguraciji u AI alatu."
+  },
+  {
+    "subtitle": "Napredna Automatizacija: MCP Serveri i Desktop Commander",
+    "screenshot_timestamp": "01:51:30",
+    "screenshot_description": "Matija objašnjava mogućnosti Desktop Commandera za automatizaciju.",
+    "content": "Matija pokreće raspravu o korištenju **MCP (Multi-Cloud Platform) servera** unutar AI alata poput Cloud Desktopa ili Cursora. Dijeli svoje iskustvo s pokušajem automatizacije promjena DNS zapisa putem Cloudflare CLI-ja, što se na kraju pokazalo neučinkovitim jer CLI nije podržavao sve potrebne funkcije, pa je morao ručno intervenirati. Ističe da se očekuje sve veća automatizacija takvih zadataka.\n\nPredstavlja alat **Desktop Commander**, koji je razvio latvijski inženjer. Matija ga opisuje kao iznimno koristan alat koji omogućuje MCP-u da radi asinkrone zadatke, poput transkodiranja videa pomoću FFMPEG-a. Desktop Commander kombinira mogućnosti AI-ja s niskorazinskim CLI automatizacijama, omogućujući korisnicima da putem Cloud Desktopa upravljaju složenim procesima i prate njihov status. Matija je bio toliko impresioniran ovim alatom da je podržao njegovog kreatora financijski."
+  },
+  {
+    "subtitle": "Firebase Autentifikacija: Prepreke u Pokretanju Flutter Aplikacije",
+    "screenshot_timestamp": "01:57:20",
+    "screenshot_description": "Senko pokušava riješiti probleme s Firebase prijavom na mobilnom uređaju.",
+    "content": "Senko se suočava s problemima pri Firebase autorizaciji, što sprječava pokretanje aplikacije. Matija objašnjava da je za Firebase potrebno konfigurirati API ključeve i SH fingerprintove, što je proces koji može biti složen. Senko, kao „Gini Pig“ bez prethodnog iskustva s Firebaseom i Flutterom, pokušava riješiti problem, ali nailazi na višefaktorsku autentifikaciju koja ga prisiljava na složene korake.\n\nMatija spominje **Firefoo**, macOS aplikaciju koju smatra iznimno korisnom za upravljanje Firebase podacima. Firefoo omogućuje uređivanje Firestore kolekcija, upravljanje autentifikacijom korisnika i dodjeljivanje prilagođenih uloga putem JWT tokena, što pojednostavljuje procese koji bi inače zahtijevali pisanje Firebase funkcija ili ručne intervencije.\n\nUnatoč pokušajima, aplikacija i dalje ne radi zbog problema s Firebase konfiguracijom. Matija ističe da je Flutter tehnologija, posebno na webu, moćna zbog svoje sposobnosti renderiranja složene grafike putem WebAssemblyja i Canvasa, što omogućuje fluidne animacije i interakcije."
+  },
+  {
+    "subtitle": "Završetak Događaja i Uvod u Flutterflow Designer",
+    "screenshot_timestamp": "02:00:30",
+    "screenshot_description": "Matija se zahvaljuje publici i organizatorima na uspješnom događaju.",
+    "content": "Matija zaključuje službeni dio događaja, zahvaljujući Valentini i Hermanu na inicijativi za pokretanje „Cold Cluba“ i pozivajući sve prisutne da organiziraju slične događaje kako bi podijelili svoja iskustva s AI alatima. Izražava nadu da je događaj bio koristan i kreativan.\n\nNa pitanje iz publike o Flutterflowu, Matija prelazi na demonstraciju **Flutterflow Designer-a**, novog alata koji je nedavno objavila tvrtka Flutterflow. Objašnjava da je Designer brza kopija Googleovog „Stitcha“ i omogućuje generiranje UI ekrana za aplikacije na temelju tekstualnih promptova."
+  },
+  {
+    "subtitle": "Flutterflow i Dreamflow: AI za Vizualno Razvijanje Flutter Aplikacija",
+    "screenshot_timestamp": "02:02:15",
+    "screenshot_description": "Matija objašnjava kako Flutterflow funkcionira kao editor i predstavlja Dreamflow.",
+    "content": "Matija detaljnije objašnjava **Flutterflow** kao editor za Flutter aplikacije, izgrađen na samom Flutteru i koristeći Firebase kao backend. Ističe da Flutterflow nudi cijelu infrastrukturu za CodeGen u Flutteru, integraciju s GitHubom i buildanje aplikacija putem CodeMagica. Spominje da su Googleovi inženjeri, bivši zaposlenici Google Mapsa, osnivači Flutterflowa, a Google je jedan od većih investitora.\n\nPredstavlja **Dreamflow**, Flutterflowov AI alat za generiranje Flutter aplikacija, uspoređujući ga s alatima poput Pitagore ili Replit-a za Flutter. Matija navodi da je njegov brat imao pozitivna iskustva s Dreamflowom na nedavnom hackathonu, što ukazuje na njegovu učinkovitost u brzom razvoju."
+  },
+  {
+    "subtitle": "Dreamflow vs. Cloud Code: Prednosti Lokalnog CLI-ja za Developere",
+    "screenshot_timestamp": "02:03:25",
+    "screenshot_description": "Matija objašnjava zašto preferira Cloud Code u odnosu na Dreamflow.",
+    "content": "Matija uspoređuje **Dreamflow** s **Cloud Code-om**, ističući da, iako Dreamflow koristi optimizirani model nazvan „Drift“ za brže generiranje Flutter koda, on osobno preferira Cloud Code. Razlog leži u prednostima lokalnog CLI-ja Cloud Code-a, koji omogućuje brži rad, paralelizaciju zadataka i veću kontrolu za developere.\n\nNaglašava da Flutterflow Designer generira JSON strukturu koja je kompatibilna s Flutterflowom, a zatim se ta struktura može pretvoriti u Dart kod. To omogućuje dizajnerima da brzo kreiraju vizualne elemente, dok developeri mogu preuzeti generirani kod i nastaviti raditi u svom preferiranom okruženju."
+  },
+  {
+    "subtitle": "Vizualna Magija: Generiranje UI-ja s Flutterflow Designerom",
+    "screenshot_timestamp": "02:06:30",
+    "screenshot_description": "Flutterflow Designer generira ekran s QR kodom na temelju prompta.",
+    "content": "Matija demonstrira rad **Flutterflow Designer-a**. Unosi promptove poput „napravi neki ludi ekran na kojem mogu skenirati QR ulaznicu“ i „daj mi neki ekran koji koristi Google mape“.\n\nDesigner brzo generira vizualne prikaze ekrana, poput ekrana s QR kodom i ekrana s Google mapom. Matija objašnjava da Designer generira internu JSON strukturu koja je kompatibilna s Flutterflowom.\n\nPokazuje kako se generirani dizajn može „kopirati u Flutterflow“ i zalijepiti u postojeći projekt, gdje se zatim pretvara u Dart kod. Iako je primijetio da je slika QR koda referencirana, a ne direktno prebačena, ističe da je mogućnost brzog generiranja UI-ja i pretvaranja u kod značajna."
+  },
+  {
+    "subtitle": "Prvi Koraci: Aplikacija Pokrenuta, Ali Autentifikacija Zatajila",
+    "screenshot_timestamp": "02:09:15",
+    "screenshot_description": "Flutter aplikacija se konačno pokreće na Android uređaju.",
+    "content": "Nakon brojnih pokušaja i tehničkih izazova, Flutter aplikacija se konačno uspješno pokreće na Android uređaju. Matija s olakšanjem pokazuje da aplikacija radi.\n\nMeđutim, odmah se pojavljuju novi problemi vezani uz autentifikaciju. Aplikacija prikazuje poruku „Email login coming soon“, a pokušaj prijave putem „Login with Google“ rezultira pogreškom „failed platform exception“. Matija objašnjava da je to zbog toga što nisu konfigurirani potrebni „signing“ podaci (SH fingerprint) za Firebase, što je ključno za Google autentifikaciju. Unatoč pokretanju, funkcionalnost prijave ostaje neispravna."
+  },
+  {
+    "subtitle": "Posljednji Commit: AI i Semantičke Poruke",
+    "screenshot_timestamp": "02:10:20",
+    "screenshot_description": "Matija pokušava izvršiti semantički commit i push.",
+    "content": "U posljednjem pokušaju, Matija nalaže AI-ju da „sve unstaged, semantički komita i puša“. Primjećuje da AI, kada mu se kaže „semantički“, koristi `git log` i `git diff` kako bi generirao vrlo precizne i smislene commit poruke.\n\nMatija se šali na račun AI-ja koji često započinje commit poruke s „Super“, ali ističe da je to dokaz učinkovitosti AI-ja u razumijevanju konteksta i generiranju relevantnih informacija, bez obzira na jezik ili specifične fraze. Zaključuje da, unatoč svim izazovima, AI alati dobro rade svoj posao u automatizaciji i razumijevanju zadataka."
+  }
+]
