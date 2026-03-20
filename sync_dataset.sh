@@ -63,6 +63,7 @@ INCLUDE_EXTENSIONS=(
     "*.canary.csv"
     "*.txt"
     "*.json"
+    "*.jsonl"
     "*.vtt"
 )
 
