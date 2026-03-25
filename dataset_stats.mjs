@@ -14,6 +14,7 @@
 import { readdir, stat } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { existsSync, readdirSync, statSync } from "node:fs";
+import { execSync } from "node:child_process";
 
 const DATA_DIR = new URL("./data/", import.meta.url).pathname;
 const DEFAULT_SOURCE = "/Volumes/DOMOVINA1TB/fetch_domovina_tv_output";
@@ -107,6 +108,28 @@ function rpad(s, n) {
   return String(s).padStart(n);
 }
 
+function git(cmd) {
+  return execSync(cmd, { encoding: "utf8", cwd: DATA_DIR }).trim();
+}
+
+function getGitStats() {
+  try {
+    const commitCount = parseInt(git("git rev-list --count HEAD"), 10);
+    const firstDate = git("git log --reverse --format=%ai -1").slice(0, 10);
+    const lastDate = git("git log -1 --format=%ai").slice(0, 10);
+
+    // count-objects -v gives sizes in KiB
+    const countObj = git("git count-objects -v");
+    const sizeKiB = parseInt(countObj.match(/^size:\s*(\d+)/m)?.[1] || "0", 10);
+    const sizePackKiB = parseInt(countObj.match(/^size-pack:\s*(\d+)/m)?.[1] || "0", 10);
+    const totalBytes = (sizeKiB + sizePackKiB) * 1024;
+
+    return { commitCount, firstDate, lastDate, totalBytes };
+  } catch {
+    return null;
+  }
+}
+
 // --- Scan ---
 
 async function scanDir(dirPath) {
@@ -136,9 +159,12 @@ async function main() {
     await readdir(DATA_DIR, { withFileTypes: true })
   ).filter((d) => d.isDirectory() && !d.name.startsWith("."));
 
+  const gitStats = getGitStats();
+
   const result = {
     channels: [],
     totals: { channels: 0, videos: 0, files: 0, bytes: 0, extCounts: {}, videosWithOutline: 0, videosWithArticle: 0 },
+    git: gitStats,
   };
 
   for (const chDir of channelDirs.sort((a, b) =>
@@ -216,6 +242,15 @@ async function main() {
   console.log(
     `\n  DATASET STATISTICS\n  ${"=".repeat(60)}\n`
   );
+
+  // Git statistics
+  if (gitStats) {
+    console.log(`  Git repository:`);
+    console.log(`    Commitova:    ${gitStats.commitCount.toLocaleString()}`);
+    console.log(`    Raspon:       ${gitStats.firstDate} — ${gitStats.lastDate}`);
+    console.log(`    Repo velicina: ${formatBytes(gitStats.totalBytes)}`);
+    console.log();
+  }
 
   // Per-channel table
   console.log(
