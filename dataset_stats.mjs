@@ -7,12 +7,16 @@
  *   node dataset_stats.mjs --videos         # detailed per-video breakdown
  *   node dataset_stats.mjs --channel NAME   # stats for one channel only
  *   node dataset_stats.mjs --json           # JSON output
+ *   node dataset_stats.mjs --source DIR     # source dir for total count (mp3s)
+ *   node dataset_stats.mjs --total N        # override total video count manually
  */
 
 import { readdir, stat } from "node:fs/promises";
 import { join, relative } from "node:path";
+import { existsSync, readdirSync, statSync } from "node:fs";
 
 const DATA_DIR = new URL("./data/", import.meta.url).pathname;
+const DEFAULT_SOURCE = "/Volumes/DOMOVINA1TB/fetch_domovina_tv_output";
 
 // --- Args ---
 const args = process.argv.slice(2);
@@ -20,6 +24,12 @@ const showVideos = args.includes("--videos");
 const jsonOutput = args.includes("--json");
 const channelFilter = args.includes("--channel")
   ? args[args.indexOf("--channel") + 1]
+  : null;
+const sourceDir = args.includes("--source")
+  ? args[args.indexOf("--source") + 1]
+  : DEFAULT_SOURCE;
+const manualTotal = args.includes("--total")
+  ? parseInt(args[args.indexOf("--total") + 1], 10)
   : null;
 
 // --- Helpers ---
