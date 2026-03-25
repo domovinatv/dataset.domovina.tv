@@ -77,28 +77,7 @@ if [ ! -d "$SOURCE" ]; then
     exit 1
 fi
 
-# --- Helper: extract video base name (pure bash, no subprocesses) ---
-# Strips _whisper_prompt suffix first, then file extension(s).
-# Example: "20231210_title_yt_ABC123.wav.canary.srt" → "20231210_title_yt_ABC123"
-extract_video_base() {
-    local temp="${1%_whisper_prompt.*}"   # strip _whisper_prompt.ext if present
-    echo "${temp%%.*}"                    # strip from first dot onward
-}
-
-# --- Build find -name patterns from INCLUDE_EXTENSIONS ---
-FIND_NAME_ARGS=()
-first=true
-for ext in "${INCLUDE_EXTENSIONS[@]}"; do
-    if [ "$first" = true ]; then
-        FIND_NAME_ARGS+=("(" -name "$ext")
-        first=false
-    else
-        FIND_NAME_ARGS+=(-o -name "$ext")
-    fi
-done
-FIND_NAME_ARGS+=(")")
-
-# --- Build rsync include/exclude rules (for subdirectory sync) ---
+# --- Build rsync include/exclude rules ---
 RSYNC_FILTERS=()
 RSYNC_FILTERS+=(--exclude='._*')
 RSYNC_FILTERS+=(--include='*/')
@@ -108,44 +87,76 @@ done
 RSYNC_FILTERS+=(--exclude='*')
 
 # --- Sync ---
+# Strategy: rsync bulk-syncs from source to a local staging cache (flat structure,
+# matching the source layout). The staging cache persists between runs so rsync
+# stays incremental — only new/changed files get transferred from the external drive.
+# On first run, the cache is seeded from existing organized data via hardlinks
+# (instant, no extra disk space). Only newly transferred files are then organized
+# into per-video folders.
+
+STAGING="$SCRIPT_DIR/.sync_staging"
+
 echo "📂 Source:      $SOURCE"
 echo "📁 Destination: $DEST"
 echo ""
-echo "🔄 Syncing text files into per-video folders..."
-echo ""
+echo "🔄 Syncing text files..."
 
-mkdir -p "$DEST"
+mkdir -p "$DEST" "$STAGING"
 
+# Seed staging cache from existing organized data (one-time, uses hardlinks = no extra space)
+if [ ! -f "$STAGING/.seeded" ] && [ -d "$DEST" ]; then
+    echo "   Initializing sync cache (one-time)..."
+    find "$DEST" -type f -not -name '._*' -not -name '.DS_Store' | while IFS= read -r f; do
+        rel="${f#$DEST/}"           # channel/video_base/filename or channel/video_base/subdir/filename
+        channel="${rel%%/*}"
+        rest="${rel#*/}"            # video_base/filename or video_base/subdir/filename
+        flat_rest="${rest#*/}"      # filename or subdir/filename (strip video_base/)
+        target="$STAGING/$channel/$flat_rest"
+        mkdir -p "$(dirname "$target")"
+        ln -f "$f" "$target" 2>/dev/null || true
+    done
+    touch "$STAGING/.seeded"
+    echo "   Cache ready."
+fi
+
+# Step 1: Fast bulk rsync from source → staging cache
+# --out-format='%n' outputs only the relative paths of actually transferred files
+echo "   rsync: scanning source..."
+TRANSFERRED=$(rsync -a --prune-empty-dirs --out-format='%n' \
+    "${RSYNC_FILTERS[@]}" "$SOURCE/" "$STAGING/")
+
+# Step 2: Organize only newly transferred files into per-video folders
 SYNC_COUNT=0
 
-for channel_dir in "$SOURCE"/*/; do
-    [ -d "$channel_dir" ] || continue
-    channel=$(basename "$channel_dir")
+while IFS= read -r rel_path; do
+    [ -z "$rel_path" ] && continue
+    src="$STAGING/$rel_path"
+    [ -f "$src" ] || continue  # skip directory entries
 
-    # Sync flat files → organized per-video structure
-    while IFS= read -r -d '' src_file; do
-        filename=$(basename "$src_file")
-        video_base=$(extract_video_base "$filename")
+    # Split: channel/rest (flat file) or channel/subdir/file (nested)
+    channel="${rel_path%%/*}"
+    rest="${rel_path#*/}"
+
+    if [[ "$rest" == */* ]]; then
+        # File inside a subdirectory (e.g. _raw/): preserve subdir structure
+        subdir="${rest%%/*}"
+        filename="${rest#*/}"
+        temp="${subdir%_whisper_prompt.*}"
+        video_base="${temp%%.*}"
+        dest_dir="$DEST/$channel/$video_base/$subdir"
+    else
+        # Flat file
+        filename="$rest"
+        temp="${filename%_whisper_prompt.*}"
+        video_base="${temp%%.*}"
         dest_dir="$DEST/$channel/$video_base"
-        dest_file="$dest_dir/$filename"
+    fi
 
-        if [ ! -f "$dest_file" ] || [ "$src_file" -nt "$dest_file" ]; then
-            mkdir -p "$dest_dir"
-            cp -p "$src_file" "$dest_file"
-            echo "   $channel/$video_base/$filename"
-            SYNC_COUNT=$((SYNC_COUNT + 1))
-        fi
-    done < <(find "$channel_dir" -maxdepth 1 -type f "${FIND_NAME_ARGS[@]}" -not -name '._*' -print0)
-
-    # Sync subdirectories (e.g. _raw processing dirs) → organized structure
-    while IFS= read -r -d '' src_subdir; do
-        dirname=$(basename "$src_subdir")
-        video_base=$(extract_video_base "$dirname")
-        dest_parent="$DEST/$channel/$video_base"
-        mkdir -p "$dest_parent"
-        rsync -a --prune-empty-dirs "${RSYNC_FILTERS[@]}" "$src_subdir" "$dest_parent/"
-    done < <(find "$channel_dir" -maxdepth 1 -mindepth 1 -type d -not -name '._*' -print0)
-done
+    mkdir -p "$dest_dir"
+    ln -f "$src" "$dest_dir/$filename" 2>/dev/null || cp -p "$src" "$dest_dir/$filename"
+    echo "   $channel/$video_base/$filename"
+    SYNC_COUNT=$((SYNC_COUNT + 1))
+done <<< "$TRANSFERRED"
 
 # --- Summary ---
 echo ""
