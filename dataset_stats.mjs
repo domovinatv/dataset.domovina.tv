@@ -138,7 +138,7 @@ async function main() {
 
   const result = {
     channels: [],
-    totals: { channels: 0, videos: 0, files: 0, bytes: 0, extCounts: {} },
+    totals: { channels: 0, videos: 0, files: 0, bytes: 0, extCounts: {}, videosWithOutline: 0, videosWithArticle: 0 },
   };
 
   for (const chDir of channelDirs.sort((a, b) =>
@@ -191,6 +191,12 @@ async function main() {
           extCounts: data.extCounts,
         });
       }
+    }
+
+    // Count unique videos with outline/article
+    for (const [, data] of videoMap) {
+      if (data.extCounts[".outline.json"]) result.totals.videosWithOutline++;
+      if (data.extCounts[".article.json"]) result.totals.videosWithArticle++;
     }
 
     result.channels.push(chData);
@@ -251,6 +257,87 @@ async function main() {
   );
   for (const [ext, count] of sortedExts) {
     console.log(`    ${rpad(count, 6)}  ${ext}`);
+  }
+
+  // --- Pipeline progress ---
+  const ec = result.totals.extCounts;
+
+  // Resolve total: --total flag > source dir mp3 count > .info.json in dataset
+  let total = ec[".info.json"] || result.totals.videos;
+  let totalSource = "dataset .info.json";
+  if (manualTotal) {
+    total = manualTotal;
+    totalSource = "--total flag";
+  } else {
+    // Try to count mp3s from source dir
+    const srcDir = sourceDir;
+    if (existsSync(srcDir)) {
+      let mp3Count = 0;
+      try {
+        const dirs = readdirSync(srcDir).filter(f => {
+          try { return statSync(join(srcDir, f)).isDirectory() && !f.startsWith('.'); }
+          catch { return false; }
+        });
+        for (const d of dirs) {
+          try {
+            const files = readdirSync(join(srcDir, d));
+            for (const f of files) {
+              if (!f.startsWith('._') && f.endsWith('.mp3')) mp3Count++;
+            }
+          } catch {}
+        }
+      } catch {}
+      if (mp3Count > 0) {
+        total = mp3Count;
+        totalSource = `${srcDir} (.mp3)`;
+      }
+    }
+  }
+
+  if (total > 0) {
+    // For outline/article, count unique videos (multiple model versions exist)
+    const outlineVideos = result.totals.videosWithOutline || 0;
+    const articleVideos = result.totals.videosWithArticle || 0;
+
+    const pipeline = [
+      { section: "Download & konverzija" },
+      { label: "Metadata (.info.json)",            count: ec[".info.json"] || 0,           base: total },
+      { label: "Opisi (.description)",             count: ec[".description"] || 0,         base: total },
+      { section: "Whisper (OpenAI)" },
+      { label: "Whisper prompt (.txt)",            count: ec["_whisper_prompt.txt"] || 0,  base: total },
+      { label: "Whisper transkripcija (.srt)",     count: ec[".srt"] || 0,                 base: total },
+      { label: "Whisper diarizacija",              count: ec[".diarized.srt"] || 0,        base: total },
+      { section: "Canary (NVIDIA)" },
+      { label: "Canary transkripcija",             count: ec[".canary.srt"] || 0,          base: total },
+      { label: "Canary CSV",                       count: ec[".canary.csv"] || 0,          base: total },
+      { label: "Canary diarizacija",               count: ec[".canary.diarized.srt"] || 0, base: total },
+      { section: "Gemini (Google)" },
+      { label: "Gemini sazeci",                    count: ec[".canary.summary.json"] || 0, blocked: ec[".canary.summary.blocked.json"] || 0, base: total },
+      { label: "Gemini outlinei",                  count: outlineVideos, extra: ec[".outline.json"] || 0, base: total },
+      { label: "Gemini clanci",                    count: articleVideos, extra: ec[".article.json"] || 0, blocked: ec[".canary.diarized.blocked.json"] || 0, base: total },
+      { section: "RAG priprema" },
+      { label: "RAG chunks",                       count: ec[".rag_chunks.jsonl"] || 0,    base: total },
+      { label: "RAG import",                       count: ec[".rag_import.jsonl"] || 0,    base: total },
+      { label: "RAG combined",                     count: ec[".rag_combined.jsonl"] || 0,  base: total },
+    ];
+
+    const BAR_WIDTH = 20;
+    console.log(`\n  Pipeline progress (${total} videa, izvor: ${totalSource}):\n`);
+    for (const s of pipeline) {
+      if (s.section) {
+        console.log(`\n    -- ${s.section} --`);
+        continue;
+      }
+      const ratio = Math.min(s.count / s.base, 1);
+      const pct = (ratio * 100).toFixed(3);
+      const filled = Math.round(ratio * BAR_WIDTH);
+      const bar = "\u2588".repeat(filled) + "\u2591".repeat(BAR_WIDTH - filled);
+      const blocked = s.blocked ? ` (+${s.blocked} blocked)` : "";
+      const extra = s.extra ? ` (${s.extra} files)` : "";
+      console.log(
+        `    ${pad(s.label, 30)} ${bar} ${rpad(pct + "%", 9)} ${rpad(s.count, 5)}/${s.base}${blocked}${extra}`
+      );
+    }
   }
   console.log();
 }
