@@ -53,6 +53,8 @@ function parseVideoBase(base) {
 function extCategory(filename) {
   // Order matters — check compound extensions first
   const compound = [
+    // Whisper prompt uses _ not . as separator
+    "_whisper_prompt.txt",
     // Blocked markers (must come before non-blocked variants)
     ".canary.summary.blocked.json",
     ".canary.diarized.blocked.json",
@@ -69,7 +71,6 @@ function extCategory(filename) {
     ".rag_chunks.jsonl",
     ".rag_combined.jsonl",
     ".rag_import.jsonl",
-    ".whisper_prompt.txt",
     ".en.vtt",
     ".hr.vtt",
   ];
