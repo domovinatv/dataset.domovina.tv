@@ -115,7 +115,8 @@ function git(cmd) {
 function getGitStats() {
   try {
     const commitCount = parseInt(git("git rev-list --count HEAD"), 10);
-    const firstDate = git("git log --reverse --format=%ai -1").slice(0, 10);
+    const firstCommit = git("git rev-list --max-parents=0 HEAD");
+    const firstDate = git(`git log --format=%ai ${firstCommit}`).slice(0, 10);
     const lastDate = git("git log -1 --format=%ai").slice(0, 10);
 
     // count-objects -v gives sizes in KiB
