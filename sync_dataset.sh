@@ -6,12 +6,15 @@
 # and excludes all binary/media files (.wav, .mp3, .mp4, .webm, .mkv, .png, .webp, .jpg, .m4a, .part)
 # as well as macOS resource fork (._*) files.
 #
+# Files are organized into per-video subdirectories:
+#   data/channel/YYYYMMDD_title_yt_VIDEOID/YYYYMMDD_title_yt_VIDEOID.ext
+#
 # Usage:
 #   ./sync_dataset.sh                          # sync only (no commits)
 #   ./sync_dataset.sh --commit                 # sync + commit each video separately
 #   ./sync_dataset.sh --commit --dry-run       # show what would be committed
 #
-# Safe to run repeatedly — rsync only copies new or changed files.
+# Safe to run repeatedly — only copies new or changed files.
 
 set -euo pipefail
 
@@ -74,41 +77,79 @@ if [ ! -d "$SOURCE" ]; then
     exit 1
 fi
 
-# --- Build rsync include/exclude rules ---
-# Strategy: exclude ._* first, include directories, include whitelisted extensions, exclude everything else.
+# --- Helper: extract video base name (pure bash, no subprocesses) ---
+# Strips _whisper_prompt suffix first, then file extension(s).
+# Example: "20231210_title_yt_ABC123.wav.canary.srt" → "20231210_title_yt_ABC123"
+extract_video_base() {
+    local temp="${1%_whisper_prompt.*}"   # strip _whisper_prompt.ext if present
+    echo "${temp%%.*}"                    # strip from first dot onward
+}
+
+# --- Build find -name patterns from INCLUDE_EXTENSIONS ---
+FIND_NAME_ARGS=()
+first=true
+for ext in "${INCLUDE_EXTENSIONS[@]}"; do
+    if [ "$first" = true ]; then
+        FIND_NAME_ARGS+=("(" -name "$ext")
+        first=false
+    else
+        FIND_NAME_ARGS+=(-o -name "$ext")
+    fi
+done
+FIND_NAME_ARGS+=(")")
+
+# --- Build rsync include/exclude rules (for subdirectory sync) ---
 RSYNC_FILTERS=()
-
-# Exclude macOS resource fork files FIRST (before any includes can match them)
 RSYNC_FILTERS+=(--exclude='._*')
-
-# Include all directories so rsync can recurse
 RSYNC_FILTERS+=(--include='*/')
-
-# Include each whitelisted text extension
 for ext in "${INCLUDE_EXTENSIONS[@]}"; do
     RSYNC_FILTERS+=(--include="$ext")
 done
-
-# Exclude everything else
 RSYNC_FILTERS+=(--exclude='*')
 
 # --- Sync ---
 echo "📂 Source:      $SOURCE"
 echo "📁 Destination: $DEST"
 echo ""
-echo "🔄 Syncing text files..."
+echo "🔄 Syncing text files into per-video folders..."
 echo ""
 
 mkdir -p "$DEST"
 
-rsync -av --prune-empty-dirs \
-    "${RSYNC_FILTERS[@]}" \
-    "$SOURCE/" \
-    "$DEST/"
+SYNC_COUNT=0
+
+for channel_dir in "$SOURCE"/*/; do
+    [ -d "$channel_dir" ] || continue
+    channel=$(basename "$channel_dir")
+
+    # Sync flat files → organized per-video structure
+    while IFS= read -r -d '' src_file; do
+        filename=$(basename "$src_file")
+        video_base=$(extract_video_base "$filename")
+        dest_dir="$DEST/$channel/$video_base"
+        dest_file="$dest_dir/$filename"
+
+        if [ ! -f "$dest_file" ] || [ "$src_file" -nt "$dest_file" ]; then
+            mkdir -p "$dest_dir"
+            cp -p "$src_file" "$dest_file"
+            echo "   $channel/$video_base/$filename"
+            SYNC_COUNT=$((SYNC_COUNT + 1))
+        fi
+    done < <(find "$channel_dir" -maxdepth 1 -type f "${FIND_NAME_ARGS[@]}" -not -name '._*' -print0)
+
+    # Sync subdirectories (e.g. _raw processing dirs) → organized structure
+    while IFS= read -r -d '' src_subdir; do
+        dirname=$(basename "$src_subdir")
+        video_base=$(extract_video_base "$dirname")
+        dest_parent="$DEST/$channel/$video_base"
+        mkdir -p "$dest_parent"
+        rsync -a --prune-empty-dirs "${RSYNC_FILTERS[@]}" "$src_subdir" "$dest_parent/"
+    done < <(find "$channel_dir" -maxdepth 1 -mindepth 1 -type d -not -name '._*' -print0)
+done
 
 # --- Summary ---
 echo ""
-echo "✅ Sync complete!"
+echo "✅ Sync complete! ($SYNC_COUNT new/updated files)"
 echo ""
 
 # Count files by extension
@@ -118,9 +159,10 @@ find "$DEST" -type f -not -name '._*' | sed 's/.*\.//' | sort | uniq -c | sort -
 done
 
 TOTAL=$(find "$DEST" -type f -not -name '._*' | wc -l | tr -d ' ')
-DIRS=$(find "$DEST" -type d | wc -l | tr -d ' ')
+VIDEOS=$(find "$DEST" -mindepth 2 -maxdepth 2 -type d | wc -l | tr -d ' ')
+CHANNELS=$(find "$DEST" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')
 echo ""
-echo "   Total: $TOTAL files across $DIRS directories"
+echo "   Total: $TOTAL files across $VIDEOS videos in $CHANNELS channels"
 
 # --- Per-video git commits ---
 if [ "$DO_COMMIT" = false ]; then
@@ -144,32 +186,13 @@ if [ -z "$CHANGED_FILES" ]; then
     exit 0
 fi
 
-# Extract unique video base names from changed files.
-# Pattern: {show}/{date}_{title}_yt_{videoId}  (everything before first . or _whisper_prompt)
-# We extract: show/date_title_yt_videoId as the grouping key
+# Group changed files by video directory (data/channel/video_base/)
 declare -A VIDEO_GROUPS
 
 while IFS= read -r file; do
-    # Get the show directory (first path component under data/)
-    show_dir=$(echo "$file" | sed -E 's|^data/([^/]+)/.*|\1|')
+    # Extract channel/video_base from path: data/channel/video_base/...
+    group_key=$(echo "$file" | awk -F'/' '{print $2"/"$3}')
 
-    # Get the path relative to data/show_dir/
-    rel_path=$(echo "$file" | sed -E "s|^data/[^/]+/||")
-
-    if [[ "$rel_path" == */* ]]; then
-        # File is inside a subdirectory (e.g. _raw/) — derive video_base from subdir name
-        subdir_name=$(echo "$rel_path" | cut -d'/' -f1)
-        video_base=$(echo "$subdir_name" | sed -E 's/_whisper_prompt\..+$//' | sed -E 's/\..+$//')
-    else
-        # File is directly under show_dir — derive video_base from filename
-        basename=$(basename "$file")
-        video_base=$(echo "$basename" | sed -E 's/_whisper_prompt\..+$//' | sed -E 's/\..+$//')
-    fi
-
-    # Group key: show/video_base
-    group_key="${show_dir}/${video_base}"
-
-    # Append file to this group
     if [ -n "${VIDEO_GROUPS[$group_key]+x}" ]; then
         VIDEO_GROUPS[$group_key]="${VIDEO_GROUPS[$group_key]}"$'\n'"$file"
     else
@@ -203,7 +226,7 @@ for group_key in $(echo "${!VIDEO_GROUPS[@]}" | tr ' ' '\n' | sort); do
     fi
 
     # Extract a human-readable title (between date_ and _yt_)
-    video_title=$(echo "$video_base" | sed -E 's/^[0-9]{8}_//' | sed -E 's/_yt_[^_]+$//' | tr '_' ' ')
+    video_title=$(echo "$video_base" | sed -E 's/^[0-9]{8}_//' | sed -E 's/_yt_[^/]+$//' | tr '_' ' ')
 
     # Extract YouTube ID
     yt_id=$(echo "$video_base" | grep -oE 'yt_[A-Za-z0-9_-]+$' | sed 's/^yt_//' || true)
