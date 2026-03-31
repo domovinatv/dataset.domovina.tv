@@ -12,6 +12,7 @@
 # Usage:
 #   ./sync_dataset.sh                          # sync only (no commits)
 #   ./sync_dataset.sh --commit                 # sync + commit each video separately
+#   ./sync_dataset.sh --commit --push          # sync + commit + push to GitHub
 #   ./sync_dataset.sh --commit --dry-run       # show what would be committed
 #
 # Safe to run repeatedly — only copies new or changed files.
@@ -26,6 +27,7 @@ DEFAULT_DEST="$SCRIPT_DIR/data"
 
 # --- Parse arguments ---
 DO_COMMIT=false
+DO_PUSH=false
 DRY_RUN=false
 SOURCE="$DEFAULT_SOURCE"
 DEST="$DEFAULT_DEST"
@@ -33,12 +35,14 @@ DEST="$DEFAULT_DEST"
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --commit)  DO_COMMIT=true; shift ;;
+        --push)    DO_PUSH=true; shift ;;
         --dry-run) DRY_RUN=true; shift ;;
         --help|-h)
             echo "Usage: $0 [--commit] [--dry-run] [SOURCE] [DEST]"
             echo ""
             echo "Options:"
             echo "  --commit   Create a separate git commit for each YouTube video"
+            echo "  --push     Push commits to GitHub after committing (requires --commit)"
             echo "  --dry-run  Show what would be committed without actually committing"
             echo ""
             echo "Defaults:"
@@ -270,4 +274,12 @@ if [ "$DRY_RUN" = true ]; then
     echo "🔍 Dry run complete — $TOTAL_VIDEOS video(s) would be committed"
 else
     echo "✅ Committed $COMMIT_COUNT video(s)"
+fi
+
+# --- Push to GitHub ---
+if [ "$DO_PUSH" = true ] && [ "$DRY_RUN" = false ] && [ "$COMMIT_COUNT" -gt 0 ]; then
+    echo ""
+    echo "🚀 Pushing to GitHub..."
+    git push
+    echo "✅ Pushed to GitHub"
 fi
