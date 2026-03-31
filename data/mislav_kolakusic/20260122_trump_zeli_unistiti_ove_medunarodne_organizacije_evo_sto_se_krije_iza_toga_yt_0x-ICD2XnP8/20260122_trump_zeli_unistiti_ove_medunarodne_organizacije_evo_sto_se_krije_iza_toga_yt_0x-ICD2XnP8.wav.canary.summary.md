@@ -1,0 +1,97 @@
+# TRUMP ŽELI UNIŠTITI OVE Međunarodne organizacije. Evo što se krije iza toga
+
+**Kanal:** mislav_kolakusic  
+**Datum:** 2026-01-22  
+**Trajanje:** 49 min  
+**YouTube:** https://youtu.be/0x-ICD2XnP8  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+U ovoj epizodi, Mislav Kolakušić analizira poteze Donalda Trumpa, uključujući izlazak SAD-a iz Svjetske zdravstvene organizacije i osnivanje "Odbora za mir", kao odgovor na, po njemu, otuđene međunarodne organizacije. Kolakušić oštro kritizira SZO zbog navodnog preuzimanja ovlasti, manipulacije definicijama pandemije i protokola liječenja tijekom COVID-19 krize, nazivajući je "mafijaškom organizacijom". Razgovor se proširuje na ulogu UN-a, NATO-a i EU-a, sugerirajući da su te organizacije postale centri moći koji služe korporativnim interesima i neizabranim elitama, te zagovara povratak direktnoj suradnji suverenih država.
+
+## Ključne teme
+
+- trumpova politika prema međunarodnim organizacijama
+- kritika svjetske zdravstvene organizacije
+- pandemija covid-19 i protokoli liječenja
+- uloga ujedinjenih naroda i nato-a
+- utjecaj korporacija i elita na globalnu politiku
+- suverenitet država i direktna suradnja
+- rodna ideologija i klimatske promjene
+- odbor za mir
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Voditelj | voditelj |
+| SPEAKER_01 | Mislav Kolakušić | gost |
+
+## Ključni zaključci
+
+1. Donald Trump mijenja globalnu paradigmu povlačenjem SAD-a iz međunarodnih organizacija poput SZO-a, UNHCR-a i UNESCO-a, smatrajući da one ne donose korist SAD-u i promiču ideologije suprotne nacionalnim interesima.
+2. Mislav Kolakušić oštro kritizira Svjetsku zdravstvenu organizaciju, nazivajući je "najvećom mafijaškom organizacijom na svijetu" zbog manipulacije definicijama pandemije i uvođenja PCR testova s visokim postotkom lažno pozitivnih rezultata.
+3. Protokoli liječenja COVID-19, koje je SZO navodno propisala, uključivali su držanje pacijenata na hladnoći, davanje velikih količina kisika i sedativa bez protuupalnih lijekova, te upotrebu respiratora na oštećenim plućima, što je, prema Kolakušiću, dovelo do tragičnih posljedica.
+4. Kroz "pakt o pandemijama", SZO nastoji preuzeti ovlasti nad vladama država članica, postajući "nova svjetska vlada" ili "Drak kartel" koji diktira globalne mjere i protokole, što Trump prepoznaje kao veliku opasnost.
+5. Međunarodne organizacije su se otuđile od država članica, nisu izabrane od građana i surađuju s korporacijama i fondovima, provodeći agende koje služe interesima neizabranih elita umjesto suverenih država.
+6. Trumpov "Odbor za mir" zamišljen je kao alternativa Ujedinjenim narodima, koje Kolakušić smatra zastarjelima i zagađenima ideologijama, s ciljem uspostave direktne suradnje između velikih sila poput SAD-a, Rusije i Kine radi sprječavanja ratova.
+7. Kritizira se i uloga NATO-a u ratu u Ukrajini te međunarodnih agencija u ratu u Iraku, ističući da su te organizacije često imale zlokoban utjecaj i donijele kaos umjesto mira.
+
+## Spomenute osobe
+
+- Donald Trump
+- Mislav Kolakušić
+- Zelenski
+- Putin
+- Plenković
+- Hajdaš Dončić
+- Dalija
+- Vučić
+- Ursula
+- Tony Blair
+- Saddam Hussein
+- Soros
+
+## Spomenuta mjesta
+
+- SAD
+- Europa
+- Hrvatska
+- Njemačka
+- Srbija
+- Hvar
+- Slavonija
+- Jadran
+- Rusija
+- Kina
+- Latinska Amerika
+- Francuska
+- Belgija
+- Italija
+- Ukrajina
+- Irak
+- Venezuela
+- Grenland
+- Afrika
+- Davos
+
+## Spomenute organizacije
+
+- Svjetska zdravstvena organizacija
+- UNHCR
+- UNESCO
+- Europski parlament
+- EU
+- NATO
+- Ujedinjeni narodi
+- Odbor za mir
+- Svjetski ekonomski forum
+- Blackrock
+- Netflix
+- UNICEF
+- HDZ
+- Mercosur
+
+---
+*Sentiment: negative | Generirano: 2026-03-19T07:53:23.165Z*
