@@ -1,0 +1,78 @@
+# Socijalni nauk Crkve i Franjina ekonomija
+
+**Kanal:** franjina_ekonomija  
+**Datum:** 2024-02-18  
+**Trajanje:** 55 min  
+**YouTube:** https://youtu.be/jFj_MxSNCk4  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Ova epizoda, prva u novom ciklusu, istražuje poveznice između socijalnog nauka Crkve i Franjine ekonomije. Gošća Marijana Kompes objašnjava socijalni nauk Crkve kao granu teologije koja se bavi društvenom dimenzijom kršćanske vjere, naglašavajući načela poput dostojanstva ljudske osobe, općeg dobra, solidarnosti i subsidijarnosti. Razgovor ističe važnost integracije vjere i djelovanja u svakodnevnom životu i ekonomskim praksama, suprotstavljajući se isključivo profitno orijentiranim modelima i zalažući se za ekonomiju usmjerenu na ljudsko blagostanje i ljubav. Cilj je potaknuti vjernike da aktivno primjenjuju kršćanske vrijednosti u društvu i ekonomiji.
+
+## Ključne teme
+
+- socijalni nauk Crkve
+- Franjina ekonomija
+- ekonomija i vjera
+- dostojanstvo ljudske osobe
+- solidarnost i subsidijarnost
+- strukture grijeha
+- ljubav prema bližnjemu
+- pravednost
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Katarina Bukša | voditeljica |
+| SPEAKER_00 | Marijana Kompes | gost |
+
+## Ključni zaključci
+
+1. Socijalni nauk Crkve je grana teologije koja proučava kršćansku vjeru u njezinoj društvenoj dimenziji, nudeći smjernice za suočavanje s društvenim izazovima kroz načela poput dostojanstva ljudske osobe, općeg dobra, solidarnosti i subsidijarnosti.
+2. Kršćanska vjera neraskidivo povezuje ljubav prema Bogu (molitva, post) i ljubav prema bližnjemu (milostinja, konkretna djela), pri čemu socijalni nauk Crkve naglašava važnost djelovanja i autentične društvene prakse, kao što su to činili prvi kršćani.
+3. Grijeh može biti individualan, ali i društveni, stvarajući 'strukture grijeha' koje zahvaćaju cijelo društvo kroz nefunkcioniranje sustava i institucija, što dovodi do nepravdi poput neisplaćenih plaća ili korupcije.
+4. Pravednost, definirana kao davanje svakome onoga što mu pripada, minimum je ljubavi u socijalnom nauku Crkve, a krajnji cilj je ostvarenje ljubavi u društvenom kontekstu, što je najprirodnije mjesto za ljudski rast i razvoj.
+5. Franjina ekonomija predstavlja snažan lijek za ekonomske krize i antropološke krize liberalnog kapitalizma, s ciljem vraćanja 'duše ekonomiji' i doprinosa globalnom općem dobru, osiguravajući dostojanstven život za sve ljude.
+6. Najograničeniji resursi su vrijeme i novac, a vjernici su pozvani vladati materijalnim, a ne dopustiti da materijalno vlada njima, pri čemu vrijednost čovjeka nije u onome što ima, već u onome što jest.
+7. Dostojanstvo ljudske osobe je neotuđivo, dano od Boga, i ne može se umanjiti materijalnim posjedima ili društvenim statusom, te je temelj za obnovu i u najtežim trenucima, jer je to sveto mjesto u čovjeku netaknuto zlom.
+
+## Spomenute osobe
+
+- Josip Dondić
+- Julijan Apostata
+- Majka Terezija
+- Papa Franjo
+- Sveti Pavao
+- Isus Krist
+- Thomas Merton
+- Papa Benedikt XVI.
+- Papa Lav XIII.
+- Ivan Pavao II.
+- Adam
+
+## Spomenuta mjesta
+
+- Radio Marija
+- Hrvatsko katoličko sveučilište
+- Katolički bogoslovni fakultet Sveučilišta u Zagrebu
+- Katolički teološki fakultet Sveučilišta u Beču
+- Beč
+- Austrija
+- Sveta zemlja
+- Wall Street
+- Asiz
+- Galileja
+- Afrika
+
+## Spomenute organizacije
+
+- Radio Marija
+- Hrvatsko katoličko sveučilište
+- Katolički bogoslovni fakultet Sveučilišta u Zagrebu
+- Katolički teološki fakultet Sveučilišta u Beču
+- Europska unija
+
+---
+*Sentiment: positive | Generirano: 2026-03-19T03:11:43.386Z*
