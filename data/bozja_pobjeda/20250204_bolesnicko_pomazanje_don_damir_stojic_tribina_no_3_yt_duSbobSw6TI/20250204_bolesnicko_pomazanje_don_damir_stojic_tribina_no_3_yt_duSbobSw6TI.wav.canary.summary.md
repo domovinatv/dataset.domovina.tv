@@ -1,0 +1,89 @@
+# Bolesničko pomazanje / don Damir Stojić / tribina no.3
+
+**Kanal:** bozja_pobjeda  
+**Datum:** 2025-02-04  
+**Trajanje:** 68 min  
+**YouTube:** https://youtu.be/duSbobSw6TI  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Don Damir Stojić u ovoj tribini detaljno objašnjava sakrament bolesničkog pomazanja, naglašavajući njegovu važnost i biblijske temelje u Starom i Novom zavjetu. Govori o uvjetima za primanje sakramenta, obredu i njegovim dubokim učincima, uključujući duhovno i fizičko ozdravljenje, mir, ohrabrenje i jačanje protiv zla. Kroz osobna svjedočanstva i primjere, potiče vjernike da ne odgađaju pozivanje svećenika, ističući da sakrament nije samo za umiruće, već je izvor života i priprema za vječnost. Također, odgovara na pitanja o primanju sakramenta u specifičnim situacijama poput trudnoće ili psihičkih bolesti.
+
+## Ključne teme
+
+- bolesničko pomazanje
+- sakramenti
+- biblijski temelji
+- učinci sakramenta
+- bolest i patnja
+- smrt i vječnost
+- ulje za pomazanje
+- svjedočanstva ozdravljenja
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Don Damir Stojić | gost |
+| SPEAKER_00 | Voditelj | voditelj |
+
+## Ključni zaključci
+
+1. Sakramenti su opisani kao "Božje remek-djelo" i "sile koje izlaze iz uvijek živog i oživljujućeg Kristovog tijela", donoseći ozdravljenje i obnovu.
+2. Bolesničko pomazanje ima biblijske korijene, najavljeno u Starom zavjetu (dah života, drvo u Mari, Naman) i potpuno objavljeno u Novom zavjetu (Isusova ozdravljenja, apostoli mažu uljem, Jakovljeva poslanica).
+3. Glavni učinci sakramenta uključuju milost potpore, mira i ohrabrenja u teškoj bolesti ili staračkoj nemoći, obnavljanje pouzdanja i vjere u Boga, te jačanje protiv napasti zloga.
+4. Sakrament omogućuje sjedinjenje s Kristovom mukom, čime patnja bolesnika postaje otkupiteljska i obogaćuje Crkvu, čineći je svetijom.
+5. Ulje za pomazanje je maslinovo ulje koje nadbiskup posvećuje na Veliki četvrtak, a simbolizira "prvo što izađe" i posvećenje za sakramente.
+6. Sakrament bolesničkog pomazanja mogu primiti osobe s teškom bolešću, starije osobe s rastućom nemoći, te prije kirurških zahvata, a može se i ponoviti.
+7. Crkva potiče vjernike da ne odgađaju primanje ovog sakramenta, naglašavajući da on nije "nagovjestitelj smrti" već sredstvo milosti, oproštenja grijeha i pripreme za posljednji prijelaz u vječnost.
+
+## Spomenute osobe
+
+- Isus
+- Adam
+- Eva
+- Mojsije
+- Jahve
+- Naman
+- Elizej
+- Lazar
+- Petar
+- Pater Sebastijan
+- Jakov
+- Majka Terezija
+- Ivan Pavao II.
+
+## Spomenuta mjesta
+
+- Edenski vrt
+- Egipat
+- Pustinja
+- Jeruzalem
+- Galileja
+- Judeja
+- Jordan
+- Asiz
+- Torino
+- Washington
+- Dubrovnik
+- Split
+- Stobreč
+- Toroženac
+- Kanada
+- Misisaga
+- Franjo Mihaljević
+- Rim
+- Europa
+- Slovenija
+- Brač
+
+## Spomenute organizacije
+
+- Božja pobjeda
+- Katolička Crkva
+- KBF
+- Hrvatska katolička misija u Washingtonu
+
+---
+*Sentiment: positive | Generirano: 2026-03-18T23:05:14.608Z*
