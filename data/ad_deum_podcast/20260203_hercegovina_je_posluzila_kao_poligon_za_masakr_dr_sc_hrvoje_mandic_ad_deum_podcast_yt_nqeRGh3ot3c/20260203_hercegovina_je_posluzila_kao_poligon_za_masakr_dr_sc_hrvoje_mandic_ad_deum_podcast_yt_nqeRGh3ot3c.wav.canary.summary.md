@@ -1,0 +1,161 @@
+# Hercegovina je poslužila kao poligon za masakr - dr. sc. Hrvoje Mandić | Ad Deum Podcast
+
+**Kanal:** ad_deum_podcast  
+**Datum:** 2026-02-03  
+**Trajanje:** 102 min  
+**YouTube:** https://youtu.be/nqeRGh3ot3c  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+U ovoj epizodi Ad Deum podcasta, povjesničar dr. sc. Hrvoje Mandić detaljno govori o ulozi hercegovačkih franjevaca u Drugom svjetskom ratu i poraću, te o njihovom stradanju od strane komunističkih vlasti. Razgovor obuhvaća vizionarsku ulogu fratara u očuvanju hrvatskog i katoličkog identiteta, njihovo spašavanje Srba i Židova, te brutalne metode komunističke propagande i egzekucija. Mandić naglašava da su fratri ubijeni jer su bili ideološki neprijatelji i čuvari nacionalne svijesti, a ne legitimni vojni ciljevi, te ističe važnost istraživanja komunističkih zločina i njegovanje kulture sjećanja. Kroz osobno iskustvo i povijesne činjenice, podcast pruža dubok uvid u bolnu prošlost Hercegovine i trajnu borbu za istinu.
+
+## Ključne teme
+
+- stradanje hercegovačkih franjevaca
+- komunistički zločini
+- jugoslavenska propaganda
+- uloga fratara u narodu
+- povijesni kontekst drugog svjetskog rata
+- istraživanje povijesnih arhiva
+- nacionalni i vjerski identitet
+- kauza beatifikacije
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Voditelj | voditelj |
+| SPEAKER_00 | Dr. sc. Hrvoje Mandić | gost |
+
+## Ključni zaključci
+
+1. Hercegovački franjevci bili su stožer opstanka i prosperiteta naroda, vizionari u gospodarstvu i nacionalnoj ideji, jačajući katolički i hrvatski identitet kroz obrazovanje.
+2. Fratri su ubijeni jer su smetali komunističkom režimu, bili su označeni kao ideološki neprijatelji i znali su previše o stvarnoj naravi partizanskog pokreta.
+3. Komunistička propaganda lažno je optuživala fratre za suradnju s ustašama i Nijemcima, pucanje iz samostana i držanje oružja, dok su oni zapravo spašavali Srbe, Židove i ilegalne partizane.
+4. Naredba za pokolj fratara donesena je u vrhu komunističke partije Jugoslavije, a Tito je osobno izrazio namjeru da se 'pozabavi' širokobriješkim franjevcima, što je potvrdio i britanski izaslanik Fitzroy Maclean.
+5. Gimnazija na Širokom Brijegu, simbol hrvatskog identiteta i obrazovanja, spaljena je i uništena od strane komunista, koji su na zidu napisali 'Kultura i prosveta, to je naša osveta'.
+6. Kauza beatifikacije fra Andrije Topića i 49 subraće, proglašenih slugama Božjim, predstavlja veliki događaj za hrvatski narod i potvrdu njihove žrtve 'in odium fidei'.
+7. Unatoč rezolucijama Europskog parlamenta, komunistički zločini u Hrvatskoj i BiH ostaju nedovoljno istraženi i priznati, a Hrvatima se i dalje nameće kolektivna krivnja.
+
+## Spomenute osobe
+
+- Hrvoje Mandić
+- Janko Mandić
+- Hajao Mijazaki
+- Tonomura Masaru
+- Fratomislav Jelić
+- Draga Ofradarja Galić
+- Francis William Deakin
+- Winston Churchill
+- Josip Broz Tito
+- Aleksandar Ranković
+- Draža Mihajlović
+- Fitzroy McLean
+- Fra Dominik Mandić
+- Olga Humo
+- Ninčić
+- Momčilo Ninčić
+- Avdo Humo
+- Fra Bonicjerupčić
+- Miskin Crni
+- Adolf Hitler
+- Adolf Sabljak
+- Slobodan Šakota
+- Đilas
+- Donilović
+- Rafael Radović
+- Fra Marko Barbarić
+- Petar Dravšić
+- Branko Popadić
+- Peterson
+- Veljko Kadijević
+- Bruno Voletić
+- Milka Planinc
+- Miko Tripalo
+- Fra Radoslav Vukšić
+- Daniel Opecelj
+- Ivo Josipović
+- Vjera Andrić
+- Marko Zovko
+- Tujo Ramnjak
+- Aleksandar Olujić
+- Petar Olujić
+- Stjepan Radić
+- Vladimir Šoljić
+- Gojko Šušak
+- Stana Šušak
+- Fra Andrija Topić
+- Kralj Tomislav
+- Kralj Zvonimir
+
+## Spomenuta mjesta
+
+- Hercegovina
+- Široki Brijeg
+- Zagreb
+- Mostar
+- Bosna i Hercegovina
+- Hrvatska
+- Japan
+- Okinawa
+- Tokio
+- Washington DC
+- Beograd
+- Crna Gora
+- Sutjeska
+- Srbija
+- Turska
+- Bliski Istok
+- Istočna Europa
+- Ukrajina
+- Sicilija
+- Apenini
+- Belgija
+- Njemačka
+- Konjic
+- Sarajevo
+- Dolina Neretve
+- Brod na Savi
+- Srijemsko bojište
+- Nevesinje
+- Trebinje
+- Rim
+- El Šat
+- Egipat
+- Bari
+- Vis
+- Kočarin
+- Grabovica
+
+## Spomenute organizacije
+
+- Ad Deum Podcast
+- Književnica Mladost
+- Hrvatski studiji
+- Filozofski fakultet u Zagrebu
+- Sveučilište u Tokiju
+- Japanska ambasada
+- HVO
+- Franjevačka provincija
+- Ozna
+- KNOJ (Korpus narodne obrane Jugoslavije)
+- NKVD
+- Komunistička partija Jugoslavije
+- Vrhovni štab Narodnooslobodilačke vojske Jugoslavije
+- NDH (Nezavisna Država Hrvatska)
+- Hrvatski državni arhiv
+- NARA (National Archives and Records Administration)
+- UDBA
+- Hrvatska seljačka stranka
+- Jugoslavenska vojska
+- SAS (Special Air Service)
+- Crvena armija
+- Socijalistička internacionala
+- Europski parlament
+- Hrvatski sabor
+- JNA (Jugoslavenska narodna armija)
+- Armija BiH
+
+---
+*Sentiment: mixed | Generirano: 2026-03-18T22:27:20.057Z*
