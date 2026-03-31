@@ -1,0 +1,57 @@
+# [SVJEDOČANSTVO] Kako me ljubav Božja promijenila i postavila pitanje života?
+
+**Kanal:** budi_frajer  
+**Datum:** 2024-04-16  
+**Trajanje:** 22 min  
+**YouTube:** https://youtu.be/_15tP4xlSbs  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Mihaela Kozarec dijeli svoje svjedočanstvo o životnom putu obilježenom teškim djetinjstvom, rastavom roditelja, osjećajem napuštenosti od oca, depresijom i problemima s prehranom. Unatoč tradicionalnom katoličkom odgoju, udaljila se od vjere, smatrajući Boga tiraninom zbog patnje koju je proživljavala. Prekretnica se dogodila na ljetnom kampu Kursiljo 2019. godine, gdje je kroz molitvu i čitanje Biblije doživjela osobni susret s Bogom. Nakon razdoblja lutanja i neuspjelih veza, potpuno se predala Božjoj volji, što ju je dovelo do razmatranja poziva u samostan, pronalazeći u tome duboki mir i smisao života. Njezino svjedočanstvo kulminira odlukom da se odazove duhovnom pozivu i uđe u samostan.
+
+## Ključne teme
+
+- djetinjstvo i obitelj
+- depresija i patnja
+- odvajanje od vjere
+- osobno obraćenje
+- božja ljubav
+- duhovni poziv
+- vjera i povjerenje u boga
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Mihaela Kozarec | gost |
+
+## Ključni zaključci
+
+1. Mihaela je proživjela teško djetinjstvo obilježeno rastavom roditelja u ranoj dobi, osjećajem napuštenosti od oca i borbom s depresijom te problemima s prehranom, što ju je izoliralo od vršnjaka.
+2. Zbog proživljene patnje i nerazumijevanja, udaljila se od vjere i počela smatrati Boga tiraninom koji uživa u ljudskoj patnji, mrzila je sam pojam Boga.
+3. Prekretnicu je doživjela na ljetnom kampu Kursiljo 2019. godine, gdje je kroz dan šutnje, molitvu i nasumično otvaranje Biblije (Evanđelje po Luki 12) osjetila da joj Bog osobno progovara i daje nadu.
+4. Unatoč obraćenju, uslijedilo je razdoblje 'brodoloma' u vezama i ponovnog zanemarivanja vjere, što ju je dovelo do dubokog očaja, fizičkog slabljenja i ponovnog preispitivanja života.
+5. U trenutku potpune predaje Bogu, zavapila je da joj pokaže svoju volju, čak i ako je to nešto što je plaši, tražeći milost da to zavoli i prihvati.
+6. Kroz katehezu o svetoj Maloj Tereziji i predstavu o njoj, Mihaela je počela razmatrati poziv u samostan, unatoč svojoj dugogodišnjoj želji za obitelji i početnom odbijanju te ideje.
+7. Nakon razgovora s časnom sestrom i duboke molitve, osjetila je neopisiv mir i odlučila se odazvati pozivu u samostan, videći to kao jedini način da uzvrati Božju ljubav i potpuno mu se preda.
+
+## Spomenute osobe
+
+- Salomon
+- Isus
+- Sveta Mala Terezija od Djeteta Isusa
+
+## Spomenuta mjesta
+
+- Krapanj
+- Zagreb
+- Krk
+- Sveti Duh
+
+## Spomenute organizacije
+
+- Kursiljo
+
+---
+*Sentiment: positive | Generirano: 2026-03-19T00:31:58.679Z*
