@@ -1,0 +1,99 @@
+# BOJALI SE PUTINA, a TRUMP im uzima Grenland velik kao 4 Ukrajine i veći od 23 države EU ZAJEDNO
+
+**Kanal:** mislav_kolakusic  
+**Datum:** 2026-01-06  
+**Trajanje:** 38 min  
+**YouTube:** https://youtu.be/D6DCHYMi7Q8  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Epizoda analizira vanjsku politiku SAD-a pod vodstvom Donalda Trumpa, fokusirajući se na njegove prijetnje državama poput Venezuele, Kube i Danske (zbog Grenlanda). Gost kritizira Europsku uniju kao "koloniju SAD-a", ističući njezinu slabost i pogrešan put federalizacije. Raspravlja se o strateškoj važnosti Grenlanda za SAD i Rusiju, te o posljedicama ekonomske blokade Venezuele. Zaključuje se da EU mora napustiti ideju federalizacije i vratiti se modelu suverenih država kako bi izbjegla buduće sukobe.
+
+## Ključne teme
+
+- Trumpova vanjska politika
+- Geopolitički odnosi SAD-a i EU
+- Kriza u Venezueli i na Kubi
+- Strateška važnost Grenlanda
+- Budućnost i federalizacija EU
+- Suverenitet europskih država
+- Ekonomske posljedice EU politike
+- Uloga Europskog parlamenta
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Voditelj | voditelj |
+| SPEAKER_00 | Mislav Kolakušić | gost |
+
+## Ključni zaključci
+
+1. EU je postala "kolonija SAD-a i drugih centara moći" zbog svoje reakcije na Trumpove poteze i gašenja jeftinih energenata iz Rusije, što ju je učinilo nebitnim igračem na strateškim područjima.
+2. Trumpova politika prema Latinskoj Americi, uključujući Venezuelu i Kubu, ima za cilj potpunu kontrolu nad resursima i uklanjanje socijalističkih režima, što se provodi ekonomskim pritiskom i blokadama.
+3. Pomorska blokada Venezuele će dovesti do socijalnih nemira i prevrata jer država neće moći financirati temeljne potrebe, što je dio obrasca "uspostave demokracije" od strane SAD-a.
+4. SAD će vjerojatno "preuzeti" Grenland mirnim putem, poticanjem njegove neovisnosti od Danske i sklapanjem sporazuma o iskorištavanju rudnog bogatstva i izgradnji vojnih baza, zbog njegove strateške važnosti kao najsjevernijeg kopnenog područja.
+5. Federalizacija EU je "potpuno krivi put" koji vodi u zaduživanje i potencijalne "krvave ratove", dok jaka Europa mora biti zajednica suverenih država s ekonomskom politikom sličnom onoj prije dvadesetak godina.
+6. Europski parlament bi trebao funkcionirati kao forum za raspravu i iznošenje ideja, a ne kao tijelo koje donosi propise i direktive kojima se državama pod prijetnjom sankcija nešto nalaže.
+7. Europa slabi zbog napuštanja kršćanskih vrijednosti i uvoza radne snage s drugačijim mentalitetom, što vodi u nemire i ratove, te je potrebno da građani izaberu suverenističke političare kako bi se promijenio smjer EU.
+
+## Spomenute osobe
+
+- Nikolas Maduro
+- Trump
+- Orban
+- Machado
+- Hugo Chavez
+- Zelenski
+- Ursula von der Leyen
+- Merc
+- Melonija
+
+## Spomenuta mjesta
+
+- Kolumbija
+- Kuba
+- Meksiko
+- Iran
+- Danska
+- EU
+- SAD
+- Venezuela
+- Panama
+- Mađarska
+- Rusija
+- Kina
+- Sjeverna Amerika
+- Južna Amerika
+- Guantanamo
+- Hrvatska
+- Sjeverna Koreja
+- Grenland
+- Sjeverni pol
+- Ukrajina
+- Bruxelles
+- Jugoslavija
+- Sovjetski Savez
+- Njemačka
+- Francuska
+- Italija
+- Srbija
+- Poljska
+- Nizozemska
+- Australija
+- Engleska
+- Makedonija
+- San Marino
+
+## Spomenute organizacije
+
+- EU
+- NATO
+- AfD
+- Europska komisija
+- Europski parlament
+- Europsko vijeće
+
+---
+*Sentiment: negative | Generirano: 2026-03-19T07:51:28.044Z*
