@@ -1,0 +1,105 @@
+# Što nas rat uči o životu, žrtvi i istini? - Borna Marinić
+
+**Kanal:** budi_frajer  
+**Datum:** 2025-11-23  
+**Trajanje:** 29 min  
+**YouTube:** https://youtu.be/awZJboJGVTs  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Borna Marinić, povjesničar i autor podcasta "Gdje si bio '91?", u ovoj katehezi dijeli svoja saznanja o Domovinskom ratu, fokusirajući se na ljudske vrijednosti, žrtvu i istinu. Kroz potresna svjedočanstva branitelja i civila, ističe kako rat ogoljuje materijalno, a uzdiže vrijednost života, obitelji i prijateljstva. Govori o snazi oprosta, prisutnosti vjere i Boga u najtežim trenucima te složenosti ratnih sukoba gdje istina nije crno-bijela. Marinić naglašava važnost učenja iz povijesti kako bi se izbjegli budući sukobi i potiče na otvorenost Božjoj ljubavi.
+
+## Ključne teme
+
+- domovinski rat
+- ljudske vrijednosti
+- žrtva
+- oprost
+- istina
+- vjera
+- hrvatski branitelji
+- život
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Borna Marinić | gost |
+
+## Ključni zaključci
+
+1. U ratu materijalne stvari gube vrijednost, dok život, obitelj i prijateljstvo postaju najvažnije vrijednosti, što su potvrdila iskustva branitelja poput Miroslava Josića.
+2. Mnogi su branitelji bili spremni žrtvovati vlastiti život za druge, što je primjer najveće ljubavi i sebedarja, kao što je to učinio Ante Baković za prijatelja Martina ili Zdravko Vladislavljević za brata.
+3. Oprost je ključan za duhovno zdravlje pojedinca, omogućujući mu da se oslobodi mržnje i krene naprijed, čak i prema onima koji su mu nanijeli zlo, što je potvrdio Ante Vukadin.
+4. Vjera i prisutnost Boga često su se očitovale na prvoj crti bojišnice, pružajući utjehu i preobraćenje u najtežim trenucima, što su svjedočili svećenici i branitelji.
+5. Rat nije crno-bijel; ljudi različitih nacionalnosti i pozadina borili su se na svim stranama, a ljudski život ima jednaku vrijednost bez obzira na stranu, što se vidi kroz sudbine Hrvata u JNA.
+6. Istina je duboka i vrijedna traganja, a prema kršćanskom učenju, ona se nalazi u Kristu, što je poruka Don Tome Baričevića.
+7. Unatoč strahotama rata, pojedinci poput Mladena Pavlovića i Darka Kralja pokazuju iznimnu volju za životom i snagu duha, inspirirajući druge svojim primjerom.
+
+## Spomenute osobe
+
+- Fra Stjepan Brčina
+- Borna Marinić
+- Arkan
+- Ratko Mladić
+- Miroslav Josić
+- Ante Baković
+- Martin
+- Zdravko Vladislavljević
+- Vilim Karlović
+- Dušica
+- Antonija
+- Nika
+- Mladen Pavlović
+- Darko Kralj
+- Ante Vukadin
+- Don Miljenko Babajić
+- Srećko Karić
+- Juraj Kovačić
+- Fra Bonaventura Duda
+- Stjepan Zeba
+- Don Toma Baričević
+- Dario Radan
+- Mile Žilić
+- Namir Pintar
+- Darko Halužan
+
+## Spomenuta mjesta
+
+- Zagreb
+- Borovo naselje
+- Vukovar
+- Lipno
+- Ljubuški
+- Široki
+- Tomislav Grad
+- Dubrovačko bojište
+- Velepromet
+- Ovčara
+- Vinkovci
+- Vitez
+- Srednja Bosna
+- Zadar
+- Ugljan
+- Preko
+- Peking
+- Dalj
+- Manjača
+- Kretomislav
+- Pridraga
+- Hrvatska
+- Jugoslavija
+- Srbija
+
+## Spomenute organizacije
+
+- Hrvatski katolički radio
+- HRT
+- Tigrovi
+- 135. brigada
+- 3. gardijska brigada
+- JNA
+
+---
+*Sentiment: positive | Generirano: 2026-03-19T01:18:19.329Z*
