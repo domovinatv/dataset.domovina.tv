@@ -1,0 +1,89 @@
+# BK podcast #9 - Katoličke škole: staklena zvona ili dobar odgovor na probleme u školstvu?
+
+**Kanal:** bozanstvena_komedija  
+**Datum:** 2025-04-03  
+**Trajanje:** 94 min  
+**YouTube:** https://youtu.be/WoX1U7YyLB8  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Podcast istražuje ulogu katoličkih škola u Hrvatskoj, raspravljajući jesu li one "staklena zvona" ili rješenje za probleme u obrazovanju. Sudionici, uključujući roditelje i vjeroučitelja, ističu prednosti katoličkih škola u pružanju cjelovitog odgoja usklađenog s obiteljskim vrijednostima, nasuprot državnim školama koje se percipiraju kao previše usmjerene na vještine i podložne ideološkim utjecajima. Razgovor obuhvaća i izazove učiteljskog poziva, ograničen broj katoličkih škola, te dilemu "staklenog zvona" i koncept školovanja kod kuće, naglašavajući važnost roditeljske prisutnosti i inicijative u odgoju djece.
+
+## Ključne teme
+
+- katoličke škole
+- državne škole
+- cjeloviti odgoj
+- uloga učitelja
+- problemi u školstvu
+- vrijednosti u obrazovanju
+- homeschooling
+- indoktrinacija
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Marin Periš | voditelj |
+| SPEAKER_03 | Ante Vlašić (Cash) | sugovornik |
+| SPEAKER_00 | Ivan Lovrić | sugovornik |
+| SPEAKER_02 | Stanko Stojić | sugovornik |
+
+## Ključni zaključci
+
+1. Katoličke škole nude kontrolirano okruženje koje djeci omogućuje odgođeni susret s negativnim utjecajima i promiče vrijednosti usklađene s obiteljskim, što je posebno važno u osnovnoškolskom uzrastu.
+2. Kritika državnih škola usmjerena je na njihovu sklonost promicanju ideologija suprotnih kršćanskom nauku, zanemarivanje vrlina u korist vještina te općenito manjak cjelovitog pristupa odgoju.
+3. Unatoč poticajima Vatikana i državnoj podršci za plaće, u Hrvatskoj postoji mali broj katoličkih škola, iako za postojeće postoji velika potražnja i liste čekanja.
+4. Učiteljski poziv je prepoznat kao plemenit, ali i ugrožen zbog nedostatka društvenog poštovanja, loših uvjeta i pritisaka, što dovodi do rezignacije i odlaska motiviranih pojedinaca.
+5. Katoličke škole teže osobnom pristupu svakom učeniku, stvaranju zajedničke atmosfere i usmjeravanju na smislen život, s naglaskom na duhovni i emotivni razvoj kao odgovor na probleme poput usamljenosti i besmisla kod mladih.
+6. Dilema "staklenog zvona" rješava se argumentom da je nemoguće potpuno izolirati djecu od društvenih problema, ali katoličke škole mogu smanjiti izloženost i pružiti alate za suočavanje s njima.
+7. Homeschooling se razmatra kao opcija, ali se ističu izazovi socijalizacije i potrebe za širokim spektrom znanja koje roditelji možda ne mogu sami pružiti, te se naglašava važnost aktivne roditeljske uloge bez obzira na vrstu škole.
+
+## Spomenute osobe
+
+- Igor Vuk
+- Stanko Stojić
+- Ante Vlašić
+- Marin Periš
+- Ivan Lovrić
+- Napoleon
+- Mozart
+- Chesterton
+- Karla Konjica
+- Joe Rogan
+- Peterson
+- Mask
+
+## Spomenuta mjesta
+
+- Hrvatska
+- Italija
+- Amerika
+- Belgija
+- Nizozemska
+- Rusija
+- Zagreb
+- Prečko
+- Split
+- Indija
+- Australija
+
+## Spomenute organizacije
+
+- Wolf Media
+- Cristero Pub
+- Sofascore
+- Kedo
+- Inovapro
+- Shoetique
+- Verbum
+- Angellum
+- Prima namještaj
+- Laudato TV
+- Božanstvena Komedija
+- Vatikan
+- EU
+
+---
+*Sentiment: mixed | Generirano: 2026-03-18T22:39:28.864Z*
