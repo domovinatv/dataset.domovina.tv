@@ -1,0 +1,282 @@
+Ti si stručni teološki analitičar Katoličke Crkve. Tvoj je zadatak objektivno evaluirati priloženi tekst (sažetak podcasta) isključivo temeljem katoličkog nauka, socijalnog nauka Crkve i Svetog pisma.
+
+VAŽNO PRAVILO: Analiziraj isključivo informacije koje su eksplicitno navedene u tekstu. Ne izmišljaj izjave gostiju i ne pretpostavljaj kontekst koji nije napisan. Tvoj izlaz mora biti strogo strukturiran u točno 6 numeriranih točaka. ZABRANJENO je korištenje tablica u odgovoru, koristi isključivo tekst i obične liste (bullet points).
+
+Za cijeli tekst daj JEDNU sveobuhvatnu evaluaciju točno ovim redoslijedom:
+
+1. **Ukupni score (0-100)** usklađenosti s katoličkim naukom i Svetim pismom. (Koristi skalu: 90-100 = aktivno promiče; 70-89 = uglavnom usklađeno; 50-69 = djelomično usklađeno/nejasnoće; 30-49 = značajno odstupanje; 0-29 = proturječi nauku).
+2. **Teološka procjena** (3 do 5 rečenica) — Sažeta sinteza onoga što je u tekstu teološki relevantno, a što neutralno.
+3. **Pozitivni elementi** — Konkretni primjeri iz teksta gdje se aktivno promiču kršćanske vrijednosti i dostojanstvo osobe.
+4. **Zabrinutosti** — Eventualna teološka odstupanja, rizici ili nejasnoće u iznesenim stavovima.
+5. **Teološki kontekst** — Relevantni crkveni dokumenti koji se izravno tiču tema.
+   *UPOZORENJE:* Navodi isključivo temeljne enciklike, Katekizam Katoličke Crkve (KKC) i opće poznate dokumente (npr. Laudato Si', Gaudium et Spes, dokumenti ekumenskih sabora). STROGO ZABRANJENO: Ne navodi lokalne govore, obraćanja pojedinim političarima ili opskurne dokumente. Ako nisi 100% siguran u izravnu teološku poveznicu dokumenta i teme, izostavi ga!
+6. **Score po tematskim blokovima** — Za svaki dostavljeni blok navedi njegov naziv, pripadajući score (0-100) i jednu rečenicu teološke procjene. (Ponavljam: koristi tekstualnu listu, NE tablicu).
+
+---
+
+# 20251118_povratak_australskih_hrvata_moguce_je_podcast_78_jozo_kolakusic_yt_2g7ALhZT1HE.wav.canary.diarized.srt
+
+
+## Blok 1: Croatian Diaspora in Australia: History, Identity, and Challenges
+
+*Vremenski raspon: 00:00:00 – 00:31:11*
+
+**Poglavlja:**
+- [00:00:00] Podcast Introduction and Guest Welcome
+- [00:01:02] Guest Introduction: Jozo, a Returnee from Australia
+- [00:02:22] Historical Waves of Croatian Migration to Australia
+- [00:03:33] Geographic Origins of Croatian Migrants in Australia
+- [00:05:24] Croatian Settlement Patterns and the Role of Priests
+- [00:07:12] Factors Maintaining Croatian National Identity in Australia
+- [00:09:01] "Forever Croatia" Project and Global Croatian Sports Clubs
+- [00:11:39] Political Diversity and Unity within the Australian Croatian Community
+- [00:14:49] Reasons for the Success of Croats in Australia
+- [00:15:51] Jozo's Decision to Return to Croatia (Initial Context)
+- [00:16:11] Jozo's Public Debate with PM Milanović in 2014
+- [00:21:25] Advice to Complete Education Before Returning to Croatia
+- [00:22:11] Family Background and Reactions to Jozo's Return
+- [00:23:24] Developing a Croatian Identity While Growing Up in Australia
+- [00:25:53] Initial Reactions and Skepticism from Friends in Croatia
+- [00:27:03] Personal Challenges of Adapting to Life in Croatia
+- [00:28:30] Debunking Stereotypes About the Croatian Diaspora
+
+### Povratak Podcasta i Dobrodošlica Jozi: Inspirativne Priče iz Dijaspore
+*Ključni pojmovi: podcast, nova sezona, povratnik, dijaspora, inspiracija*
+*Osobe/organizacije: Marin, Jozo, Australija, Hrvatska*
+
+Nakon duže pauze, voditelj Marin otvara novu sezonu podcasta, ističući pozitivne promjene i događanja koja su se dogodila. Najavljuje snimanja s dragim ljudima, obećavajući konkretne priče iz kojih će slušatelji moći mnogo naučiti. Posebno ističe da se više neće događati tako duge pauze između epizoda. Marin s ponosom predstavlja svog današnjeg gosta, Jozu, povratnika iz Australije, koji se vratio u Hrvatsku prije devet godina, u vrijeme kada to nije bilo uobičajeno. Jozo će podijeliti svoja iskustva, a razgovarat će se i o Hrvatima u Australiji općenito, njihovim izazovima, povijesti dolaska te potencijalu za povratak u domovinu.
+
+### Jozo: Povratnik iz Australije s Misijom i Ljubavlju prema Domovini
+*Ključni pojmovi: povratnik, Australija, Forever Croatia, životna priča, hrvatski korijeni*
+*Osobe/organizacije: Jozo, Marin, Australija, Hrvatska, Forever Croatia*
+
+Marin detaljnije predstavlja Jozu, naglašavajući njegovu zanimljivu životnu priču. Jozo je rođen u Australiji, a u Hrvatsku se vratio prije devet godina, u razdoblju kada takav potez nije bio popularan. Voditelj ističe da se Jozo potpuno ukorijenio u Hrvatskoj, spominjući njegovo skoro vjenčanje s Hrvaticom. Također, Marin spominje Jozinu aktivnost na društvenim mrežama, gdje vodi zanimljivu stranicu pod nazivom 'Forever Croatia', koja će biti tema kasnijeg razgovora. Uvodni dio razgovora fokusirat će se na općenitu situaciju australskih Hrvata, o čemu Jozo, zbog svog iskustva i poznavanja zajednice, ima mnogo toga za reći.
+
+### Valovi Iseljavanja: Od Dalmatinskih Mornara do Ekonomske Migracije
+*Ključni pojmovi: migracija, iseljavanje, povijest, Dalmacija, ekonomija, rat*
+*Osobe/organizacije: Australija, Dalmacija, Europa, Hrvatska, Jugoslavija, Prvi svjetski rat, Drugi svjetski rat, Domovinski rat*
+
+Jozo započinje pregled povijesti hrvatskog iseljavanja u Australiju, ističući da je migracija počela prije otprilike dvjesto godina, početkom 19. stoljeća. Prvi doseljenici bili su mornari i ribari s dalmatinskih otoka. Sredinom 19. stoljeća uslijedio je val rudara, privučenih 'zlatnom groznicom'. Migracija je postepeno rasla, a početkom Prvog svjetskog rata intenzivirala se zbog bolesti vinove loze (peronospore) u Dalmaciji i španjolske gripe koja je harala Europom. 
+
+Masovno iseljavanje dogodilo se nakon Drugog svjetskog rata, kada su Europljani iz cijelog kontinenta, uključujući Hrvate, Mađare, Talijane i Nizozemce, tražili bolji život u razrušenoj Europi. Hrvati su tada bježali i od strogog režima. Najveći iseljenički val zabilježen je 60-ih i 70-ih godina, kada su se otvorile granice Jugoslavije, a mnogi nezaposleni ljudi odlazili su 'trbuhom za kruhom'. Devedesetih godina, tijekom Domovinskog rata, bilo je i izbjeglica, uglavnom iz ratom pogođenih područja i miješanih brakova, koji su imali prioritet pri dobivanju viza za Australiju, no taj val nije bio toliko masovan kao onaj iz 60-ih i 70-ih.
+
+### Geografski Mozaik: Odakle su Hrvati dolazili u Australiju?
+*Ključni pojmovi: geografija, porijeklo, Dalmacija, Slavonija, Bosna i Hercegovina, Vojvodina*
+*Osobe/organizacije: Dalmacija, Slavonija, Zagorje, Hercegovina, Bosna, Vojvodina, Boka Kotorska, Međimurje, Australija*
+
+Marin postavlja pitanje o geografskom porijeklu hrvatskih iseljenika. Jozo objašnjava da su u početku, prije Prvog svjetskog rata, prevladavali Dalmatinci i otočani. Međutim, nakon Drugog svjetskog rata, 50-ih i 60-ih godina, kada su ljudi bježali preko granica, migrirali su Hrvati iz svih krajeva Hrvatske – Slavonije, Zagorja, Dalmacije, te iz Bosne i Hercegovine. 
+
+Na Marinovo pitanje o današnjoj prevlasti, Jozo odgovara da je teško izdvojiti jednu regiju, jer ima mnogo Dalmatinaca, Slavonaca, Hrvata iz Bosne i Hercegovine, ali i iz Vojvodine te Boke Kotorske. Marin dodaje da je čuo da ima i mnogo ljudi iz Međimurja, što potvrđuje široku geografsku rasprostranjenost hrvatskih iseljenika diljem Australije.
+
+### Od Bonegille do Melbournea: Uloga Svećenika u Očuvanju Zajednice
+*Ključni pojmovi: naseljavanje, Bonegilla, svećenici, zajednica, Melbourne, Sydney*
+*Osobe/organizacije: Perth, Novi Zeland, Sydney, Melbourne, Bonegilla, Fra Josip Kasić, Salzburg, Viktorija*
+
+Jozo objašnjava da su mnoge ulice i zgrade diljem Australije, pa čak i Novog Zelanda, nazvane po hrvatskim gradovima. Dalmatinci su se u početku naseljavali u gradovima poput Pertha na zapadu Australije, a značajan broj ih je otišao i na Novi Zeland. Danas su najveća hrvatska središta Sydney i Melbourne. 
+
+Za migrante koji su dolazili 60-ih i 70-ih godina, prva točka dolaska bio je migrantski kamp Bonegilla, smješten između Melbournea i Sydneya. Tamo su dolazili migranti iz cijele Europe, a hrvatski svećenici su imali ključnu ulogu u njihovoj integraciji. Oni su dolazili po Hrvate, pronalazili im smještaj i poslove, te su bili 'očevi zajednice'. Jozo ističe **Fra Josipa Kasića**, koji je došao iz Salzburga, kao jednog od glavnih očeva hrvatske zajednice, čiji se rad i danas spominje. Njegov doprinos bio je toliko značajan da je, prema Jozinim riječima, obavljao posao koji danas radi pet svećenika u državi Viktoriji.
+
+### Mala Hrvatska u Australiji: Kako se Čuva Nacionalni Identitet?
+*Ključni pojmovi: nacionalni identitet, dijaspora, kohezivnost, hrvatski klubovi, udaljenost, kultura*
+*Osobe/organizacije: Australija, Hrvatska, Amerika, Kanada*
+
+Marin primjećuje da se za australske Hrvate često govori kako su iznimno kohezivni i homogeni u očuvanju nacionalnog identiteta. Pita Jozu što je najviše pridonijelo tom snažnom nacionalnom naboju. Jozo se slaže s tom ocjenom i objašnjava da je **velika udaljenost od domovine** bila ključan faktor. Za razliku od Hrvata u Europi, koji su mogli lako posjetiti Hrvatsku, oni u Australiji nisu imali tu mogućnost, pogotovo u prošlim vremenima kada povratak nije bio jednostavan. 
+
+Zbog toga su se Hrvati u Australiji odlučili stvoriti 'svoju malu Hrvatsku' tamo. Osnivali su brojne sportske, vjerske i kulturne klubove, koje su gradili vlastitim novcem i ulaganjem. Ti klubovi i danas služe zajednici i predstavljaju žarišta hrvatskog identiteta. Jozo dodaje da je slična priča i s hrvatskim iseljeništvom u Americi i Kanadi, gdje su se prekooceanske migracije morale bolje organizirati kako bi očuvale svoju kulturu i identitet.
+
+### Forever Croatia: Globalna Mreža Hrvatskih Sportskih Klubova
+*Ključni pojmovi: Forever Croatia, sportski klubovi, dijaspora, digitalizacija, povijest, integracija*
+*Osobe/organizacije: Forever Croatia, Sydney, Melbourne, Toronto, Europa, Sjeverna Amerika, Južna Amerika, Venezuela, Južna Afrika, David Jake*
+
+Marin ističe da su sportski uspjesi hrvatskih klubova u Australiji često poznati, što je Jozu djelomično potaknulo na pokretanje stranice 'Forever Croatia'. Jozo objašnjava da je povijest hrvatskih sportskih uspjeha diljem svijeta nedovoljno istražena u Hrvatskoj, iako su u iseljeništvu dobro poznati. Iako su veći klubovi poput Sydney, Melbourne i Toronto Croatia poznati, detalji su često nepoznati, pogotovo mlađim generacijama. 
+
+Jozo je osjetio potrebu da digitalizira stare slike i snimke, zajedno s prijateljem Davidom Jakeom iz Australije, kako bi educirao mlađe generacije. Projekt se sam održava jer ljudi iz Kanade, Amerike i Australije, kao i sami pratitelji, šalju materijale iz svojih privatnih arhiva. Jozo navodi da postoji preko **130 klubova s nazivom 'Croatia'** diljem svijeta – u Europi, Sjevernoj Americi, Južnoj Americi (npr. Venezuela) pa čak i u Južnoj Africi, što je i njega iznenadilo. Ističe da, iako su u tim klubovima većinom igrali Hrvati, lijepo su prihvaćeni i ljudi drugih nacionalnosti koji se osjećaju dobrodošlima i integriraju se u hrvatsku zajednicu.
+
+### Politička Šarolikost i Jedinstvo: Iza Homogenosti Australskih Hrvata
+*Ključni pojmovi: politička raznolikost, jedinstvo, dijaspora, pravaši, HSS, Jugoslaveni*
+*Osobe/organizacije: Australija, Hrvatska, Hrvatska seljačka stranka, Dalmatinski klubovi*
+
+Marin pita Jozu o političkoj homogenosti australskih Hrvata, s obzirom na dojam izvana. Jozo potvrđuje da je uvijek bilo nijansi, iako su se svi uglavnom zalagali za slobodnu, neovisnu i demokratsku Hrvatsku. Prije devedesetih postojale su različite frakcije, poput pravaša ili Hrvatske seljačke stranke, što je zajednici davalo bogatstvo i šarolikost mišljenja, slično kao i u današnjoj Hrvatskoj. 
+
+Međutim, postojali su i oni koji se uopće nisu smatrali Hrvatima, iako su bili iz Hrvatske, te su se deklarirali kao Jugoslaveni, često kroz 'Dalmatinske klubove'. To se posebno odnosilo na starije generacije, od kojih su neki na papiru bili 'Austro-Ugari' i nisu poznavali drugi identitet. Marin ističe da se dijaspora često podcjenjuje, ali da je jedinstvo oko temeljnih stvari snažno. Dodaje da su se oni koji nisu bili za Hrvatsku često integrirali među Australce, pa se za njih ni ne zna da su Hrvati. Jozo potvrđuje da su se mnogi, čak i oni koji su došli 1991., preokrenuli i stali na hrvatsku stranu, jer je u tim trenucima bio jasan viši cilj – stvaranje Hrvatske.
+
+### Tajna Uspjeha: Zašto Hrvati Procvjetaju u Australiji?
+*Ključni pojmovi: uspjeh, funkcionalna država, pravni sustav, motivacija, plaće, radna etika*
+*Osobe/organizacije: Australija, Hrvatska*
+
+Marin iznosi dojam da su Hrvati u Australiji iznimno uspješni, kako profesionalno tako i obiteljski, te pita Jozu što je uzrok tome. Jozo smatra da je ključno to što Hrvati, kada dođu u **funkcionirajuća pravna društva** gdje se zakoni primjenjuju i država funkcionira na visokoj razini, jednostavno 'procvjetaju'. U takvom okruženju, gdje nema prepreka za uspjeh, ljudi su bolje plaćeni i radišniji. 
+
+Uspoređujući to s Hrvatskom, Jozo navodi da u domovini, ako ljudi nisu dovoljno plaćeni, nemaju ni motivaciju za dodatni rad. Međutim, primjećuje da se situacija u Hrvatskoj mijenja, te da ljudi sada puno više rade. Istovremeno, Marin dodaje da se i u Australiji neke stvari mijenjaju negativno, što Jozo potvrđuje, naglašavajući da ni tamo nije sve idealno.
+
+### Jozo se Vraća Kući: Nepopularna Odluka 2016. Godine
+*Ključni pojmovi: povratak, Hrvatska, Australija, odluka, nepopularno, 2016*
+*Osobe/organizacije: Jozo, Hrvatska, Australija*
+
+Marin podsjeća Jozu na njegov povratak u Hrvatsku 2016. godine, točnije u studenom, što znači da je to bilo prije gotovo devet godina. Naglašava da u to vrijeme povratak u Hrvatsku nije bio popularan, za razliku od današnjih trendova. Unatoč tome, Jozo je i prije svog povratka aktivno pratio događanja u Hrvatskoj, što je pokazao i njegov poznati javni istup iz 2014. godine.
+
+### Sučeljavanje s Premijerom: Jozo i Milanović o Hrvatskoj Ekonomiji
+*Ključni pojmovi: Zoran Milanović, ekonomija, fiskalizacija, državna imovina, dijaspora, javna rasprava*
+*Osobe/organizacije: Zoran Milanović, Monash University, Hrvatska, Linić, Brazil, Svjetsko prvenstvo, Sao Paulo, Croatia Toronto, Croatia Airlines, HŽ Cargo, Hrvatske šume i vode*
+
+Jozo prepričava svoj poznati javni istup iz 2014. godine, kada je tadašnji premijer Zoran Milanović posjetio Sveučilište Monash u Australiji. Jozo, koji je već tada planirao život u Hrvatskoj, iskoristio je priliku da postavi pitanja o ekonomskoj situaciji u zemlji. Njegovo pitanje, koje se odnosilo na predizborne plakate 'dug život, a ne život na dug', brzo se pretvorilo u pola sata dugu raspravu o ekonomiji. 
+
+Jozo je kritizirao zaduženost države, masovno iseljavanje mladih, fiskalizaciju koja je pogađala male poduzetnike te rasprodaju državne imovine. Iako je Milanović pokušao odgovoriti, Jozo smatra da nije dobio konkretne odgovore na ključna pitanja. Premijer je bio iznenađen Jozinim poznavanjem situacije, misleći da je ogorčeni student iz Hrvatske, a ne dijete hrvatskih iseljenika. Jozo je Milanoviću nabrojao konkretne tvrtke poput Croatia Airlinesa, HŽ Carga, Hrvatskih šuma i voda, čime je dokazao svoju upućenost. Zanimljivo je da je dva tjedna nakon tog razgovora ministar Linić podnio ostavku. Tri mjeseca kasnije, Jozo i Milanović ponovno su se sreli u Brazilu tijekom Svjetskog prvenstva, gdje su razgovarali u opuštenijoj atmosferi.
+
+### Obrazovanje Prije Povratka: Savjet Rođaka i Jozina Odlučnost
+*Ključni pojmovi: obrazovanje, povratak, fakultet, savjet, vrijednost diplome, Hrvatska*
+*Osobe/organizacije: Hrvatska, Australija, Jozo*
+
+Marin primjećuje da se Jozo vratio u Hrvatsku tek nakon što je Milanovićev mandat završio, no Jozo objašnjava da je želio doći i ranije. Međutim, na savjet rođaka koji žive u Hrvatskoj, odlučio je završiti fakultet u Australiji. Rođaci su mu rekli da će mu diploma iz inozemstva biti više cijenjena u Hrvatskoj. Jozo je poslušao savjet i, kako sam kaže, čim je položio zadnji ispit, odmah je bukirao let za Hrvatsku, pokazujući svoju odlučnost i predanost cilju povratka.
+
+### Obiteljski Korijeni i Reakcije na Povratak: Od Rame do Metkovića
+*Ključni pojmovi: obitelj, povratak, Rama, Metković, nekretnine, IT, posao*
+*Osobe/organizacije: Rama, Metković, Hrvatska, Australija, Jozo*
+
+Marin pita Jozu o njegovoj obitelji i njihovim korijenima. Jozo objašnjava da mu je otac iz Rame, a majka iz Metkovića. Njegov otac bio je prvi u obitelji koji je iselio u Australiju. Jozo ističe da su njegovi roditelji, kao i mnogi Hrvati diljem svijeta, uvijek sanjali o povratku u domovinu. Dok je odrastao, stalno su pregledavali oglase za nekretnine, prvo u novinama, a kasnije na internetu, no nikada nisu poduzeli konkretne korake. 
+
+Kada je Jozo donio odluku o povratku, roditelji su bili sretni, unatoč tome što u to vrijeme povratak u Hrvatsku nije bio popularan. Jozo je imao jasan plan: završiti fakultet i doći. Čim je položio zadnji ispit, bukirao je let. Prije dolaska, već je aplicirao za poslove, a prijatelji u Hrvatskoj su mu pomogli. U tjednu kada je sletio, imao je pet razgovora za posao u IT sektoru, što je bilo iznimno uspješno s obzirom na tadašnju situaciju na tržištu rada u Hrvatskoj.
+
+### Odgoj u 'Maloj Hrvatskoj': Kako se Kalio Identitet u Australiji
+*Ključni pojmovi: hrvatski identitet, odgoj, dijaspora, kultura, ime, osjećaj pripadnosti*
+*Osobe/organizacije: Australija, Hrvatska, Jozo, Melbourne*
+
+Marin pita Jozu o razvoju njegovog hrvatskog identiteta dok je odrastao u Australiji, okružen Australcima, te je li ikada sumnjao u svoju pripadnost. Jozo objašnjava da je imao lijep život u Australiji, ali da se tek na fakultetu, kao odrasla osoba, počeo osjećati ugodno u kozmopolitskom okruženju Melbournea. Međutim, dok je bio mali, sve se vrtjelo oko Hrvatske. 
+
+Bio je odgojen na 'hrvatski način', u 'maloj Hrvatskoj', unatoč tome što je živio u kvartu punom Talijana, Grka i Maltežana. Išao je u hrvatsku crkvu, hrvatski nogometni klub, na folklor – sve je bilo povezano s Hrvatskom. Nije bilo dana da se riječ 'Hrvatska' nije spomenula. To je u njemu stvorilo idealiziranu sliku i želju za povratkom. Dodatno ga je motiviralo to što su mu roditelji dali hrvatsko ime 'Jozo', koje je bilo teško izgovoriti Anglosaksoncima, zbog čega se uvijek osjećao kao stranac, iako je rođen i odrastao tamo. To iskustvo, kako kaže, 'jačalo mu je karakter' i učvrstilo njegov hrvatski identitet.
+
+### Skepticizam i Tvrdoglavost: Prve Reakcije Prijatelja u Hrvatskoj
+*Ključni pojmovi: skepticizam, povratak, Hrvatska, emigracija, mediji, tvrdoglavost*
+*Osobe/organizacije: Hrvatska, Irska, Kanada, Zagreb*
+
+Kada je Jozo došao u Hrvatsku, suočio se s velikim skepticizmom. Prijatelji su ga pitali je li lud što dolazi, dok svi drugi odlaze. Prvih pet godina, a posebno prve dvije, morao se boriti s predrasudama i sumnjama. Mnogi su govorili da će odustati i da neće izdržati ni pola godine. Međutim, Jozo ističe svoju tvrdoglavost i odlučnost: kada si postavi cilj, ide prema njemu bez obzira na uvjete. 
+
+U to vrijeme, mediji su aktivno promovirali iseljavanje u Irsku i Kanadu, uspoređujući plaće, ali ne spominjući visoke troškove života. Jozo to opisuje kao 'propagandu' za odlazak, dok su novinari koji su pisali te članke ostajali u Zagrebu. On je, pak, bio odlučan dokazati suprotno i ostati u domovini.
+
+### Kulturni Šok i Prilagodba: Zima u Zagrebu i Stvarnost Života
+*Ključni pojmovi: kulturni šok, prilagodba, Zagreb, zima, stereotipi, način života*
+*Osobe/organizacije: Zagreb, Australija, Hrvatska*
+
+Jozo opisuje svoj prvi veliki šok nakon dolaska u Hrvatsku: dolazak u studenom, usred zime u Zagrebu, bio je potpuna suprotnost ljetu i proljeću u Australiji. Opalo lišće, smog i općenito 'zimski mod' ljudi djelovali su depresivno. To je bio velik kontrast u odnosu na njegove prijašnje posjete Hrvatskoj, kada je dolazio na odmor i svi su imali vremena za njega. 
+
+Sada, nakon devet godina, Jozo razumije da ljudi imaju svoje živote i egzistencije koje moraju održavati, te da je to razlog njihove zauzetosti. Stereotip da su Hrvati lijeni i da 'ne rade ništa' tijekom ljeta razbijen je stvarnošću svakodnevnog života i rada. On shvaća da se percepcija mijenja kada se iz turističkog posjetitelja postane stalni stanovnik.
+
+### Razbijanje Stereotipa: Dijaspora Nije Monolitna i Ne Odlučuje Izbore
+*Ključni pojmovi: stereotipi, dijaspora, glasanje, HDZ, financijski doprinos, izbori*
+*Osobe/organizacije: Hrvatska, Australija, HDZ, Viktorija, Kolinda Grabar-Kitarović, Italija*
+
+Jozo aktivno radi na razbijanju stereotipa o hrvatskoj dijaspori. Ističe da nije istina da svi iseljenici loše govore hrvatski, da su svi neupućeni ili da svi glasaju za HDZ. Iako mnogi glasaju za pro-hrvatske stranke, postoji raznolikost političkih opredjeljenja. 
+
+Posebno se osvrće na famu da dijaspora odlučuje o vlasti u Hrvatskoj, demistificirajući je kao 'sitne postotke od sitnih postotaka'. Navodi primjer Viktorije u Australiji, gdje od 40.000 Hrvata, samo 5.000 ima pravo glasa, a od toga bi možda 100 izašlo na izbore. Ti glasovi se odnose na tri mjesta za hrvatsko iseljeništvo, a ne na opći sabor. Čak i na predsjedničkim izborima, poput onih 2015. kada je Kolinda Grabar-Kitarović pobijedila, iz cijele Viktorije izašlo je samo 300 ljudi. Jozo naglašava da dijaspora ne kroji budućnost Hrvatske. 
+
+S druge strane, ističe da se često previđa ogroman financijski doprinos dijaspore, koja šalje milijarde eura u Hrvatsku, što je daleko više od poreza koje bi platili. Uspoređuje to s Italijom, koja ima 12 saborskih mjesta za svoju dijasporu, dok Hrvatska ima samo tri. Smatra da bi dijaspora trebala imati svoje zastupništvo, s obzirom na doprinos stvaranju države, čak i ako ne odlučuje o svim temama, već o onima koje se tiču njih samih.
+
+
+## Blok 2: The Return to Croatia: Personal Journey, Challenges, and Future Prospects
+
+*Vremenski raspon: 00:31:11 – 01:00:19*
+
+**Poglavlja:**
+- [00:31:11] Jozo's Reflection on His Return and Inspiring Others
+- [00:33:07] Post-COVID Return Trends and Rising Living Costs in Australia
+- [00:35:54] Government Incentives vs. Personal Motivation for Returning
+- [00:39:59] The Importance of Croats in Croatia and Recruitment Strategies
+- [00:42:26] Individual Contribution to Society vs. State Dependence
+- [00:45:25] Dual Identity and Croatia's Global Recognition Through Sport
+- [00:50:26] The Legacy and Impact of "Forever Croatia" and Diaspora Football Clubs
+- [00:53:41] Perception of Croats in Australian Society and Political Influence
+- [00:55:44] Encouraging Young Diaspora Croats to Return: "Try It!"
+- [00:56:52] Humanitarian Work of "Vitezovi Predragocjene Krvi Kristove"
+- [00:59:12] Concluding Remarks, Gift Exchange, and Final Thoughts
+
+### Povratak u Domovinu: Osobna Odluka i Inspiracija za Druge
+*Ključni pojmovi: povratak u Hrvatsku, dijaspora, inspiracija, životna odluka, iskustvo*
+*Osobe/organizacije: Hrvatska, Australija, Jozo*
+
+Jozo započinje razgovor osvrćući se na svoju odluku da se vrati u Hrvatsku prije devet godina. Ističe kako je njegov povratak bio motiviran željom da pokuša živjeti u domovini, s mentalitetom 'ako uspijem, super, ako ne, barem je iskustvo'. Naglašava da bi ga, da je ostao u Australiji, uvijek mučila žalost što nije pokušao. Njegovo iskustvo povratka i uspješnog života u Hrvatskoj poslužilo je kao inspiracija mnogim njegovim prijateljima, koji su, vidjevši 'živi primjer' čovjeka koji tu živi i radi, također odlučili vratiti se. Jozo smatra da ga je ovo iskustvo obogatilo i pomoglo mu da realnije sagledava stvari.
+
+### Post-COVID Trendovi i Rastući Troškovi Života u Australiji
+*Ključni pojmovi: COVID-19, povratak Hrvata, migracija, troškovi života, Australija*
+*Osobe/organizacije: Australija, Hrvatska, Domovinski rat, Melbourne, Hong Kong*
+
+Marin postavlja pitanje o trendovima povratka Hrvata nakon pandemije COVID-19, spominjući utjecaj laburističke vlasti i migracijske krize u Australiji. Jozo potvrđuje da je pandemija imala značajan utjecaj, navodeći da je 'više korona vratila Hrvate u Hrvatsku nego Domovinski rat'. Objašnjava da je tijekom pandemije došlo do masovnog povratka, slično kao što su se mladi iseljenici vraćali tijekom Domovinskog rata kako bi se borili, pomagali u diplomaciji ili lobiranju.  
+
+Marin ističe da je nakon otvaranja granica 2022. i 2023. u Australiju došlo preko milijun i pol ljudi, što je, prema njegovom mišljenju, život tamo učinilo težim i nesigurnijim. Jozo se slaže, navodeći da su vlasti u Australiji, kako bi popunile rupe nastale zbog gubitka poslova tijekom COVID restrikcija, uvele radnike iz trećih zemalja. Posebno naglašava drastičan rast troškova stanovanja u Australiji, gdje su gradovi poput Melbournea postali jedni od najskupljih na svijetu. Marin dodaje da se često spominju visoke plaće u inozemstvu, ali se zanemaruju iznimno visoki troškovi života, što ostavlja malo stvarnog viška novca na kraju mjeseca.
+
+### Državni Poticaji vs. Osobna Motivacija za Povratak
+*Ključni pojmovi: državni poticaji, motivacija, povratak, digitalni nomadi, Hrvatska*
+*Osobe/organizacije: Hrvatska, Amerika, Britanija, Irska, Zagreb, Split, Dubrovnik*
+
+Marin pita je li dovoljno učinjeno kako bi se potaknuo povratak mladih Hrvata iz dijaspore, sugerirajući da jednokratni financijski poticaji možda nisu dovoljni za tako veliku životnu promjenu. Jozo se slaže da poticaji, poput 27.000 eura za otvaranje obrta, predstavljaju pozitivan korak, ali naglašava da odluka o povratku mora doći iz srca pojedinca.  
+
+'Tih 27 tisuća eura će brzo otići, a što onda?', pita Jozo, ističući da je stvarna volja i želja ključna. Dodaje da je internet znatno olakšao informiranje o stanju u Hrvatskoj, a primjećuje i sve veći broj digitalnih nomada – Amerikanaca, Britanaca, Iraca – koji biraju Hrvatsku kao mjesto za život zbog 'lijepog života' i kulture. Ako oni mogu doći, smatra Jozo, onda se mogu vratiti i hrvatski iseljenici, pogotovo jer 'više nije takva glad i neimaština kao što je bila kad su naši djedovi i pradjedovi iseljavali'.
+
+### Važnost Hrvata u Hrvatskoj i Strategije Regrutacije
+*Ključni pojmovi: demografija, povratak, deficitarna zanimanja, konzularne misije, radna etika*
+*Osobe/organizacije: Hrvatska, Strmota*
+
+Jozo naglašava temeljnu važnost prisutnosti Hrvata u Hrvatskoj, postavljajući retoričko pitanje: 'Ako nema Hrvata u Hrvatskoj, čemu sve to?' Smatra da je najbitnije imati Hrvate u domovini kako bi se mogli uživati u svim odnosima i kulturnim vezama.  
+
+Kritizira nedostatak konkretnih planova za povratnike u prošlosti, spominjući demografske rasprave i ostavku Strmote, što je, prema njegovom mišljenju, potaknulo konkretnije korake. Iako se situacija poboljšava, Jozo vjeruje da se može učiniti puno više. Predlaže da konzularne misije aktivno regrutiraju ljude za deficitarna zanimanja, poput građevinskih majstora, ističući da su mnogi Hrvati u dijaspori vješti majstori.  
+
+'Dođi ovdje, bit će plaćen jako dobro, puno iznad standarda', poručuje Jozo, naglašavajući da je majstore u Hrvatskoj teško pronaći i da su dobro plaćeni. Vjeruje da bi širenje takvih priča riješilo demografsko pitanje i ohrabrilo ljude na povratak. Marin se slaže da ne treba čekati državu da sve riješi, već da 'ako je žar dovoljno velik', ljudi će se snaći.
+
+### Doprinos Društvu i Očuvanje Nacionalnog Identiteta
+*Ključni pojmovi: nacionalni identitet, doprinos društvu, dijaspora, globalizacija, Abraham Lincoln*
+*Osobe/organizacije: Hrvatska, Australija, Abraham Lincoln, Vatreni*
+
+Marin primjećuje da je osjećaj pripadnosti Hrvatskoj često jači u dijaspori nego u samoj Hrvatskoj, gdje se identiteti miješaju. Jozo se nadovezuje citatom Abrahama Lincolna, naglašavajući važnost individualnog doprinosa državi. Smatra da se nacionalni identitet mora živjeti kroz svakodnevna djela, a ne samo kroz 'mahanje zastavama i odlascima na koncerte'.  
+
+Kao primjer navodi doček 'Vatrenih' 2018. godine, koji mu je vratio nadu u Hrvatsku nakon početnih godina prilagodbe. Marin ističe da je nacija produžena obitelj i da je u globaliziranim društvima, poput Australije, potraga za identitetom izraženija. Jozo objašnjava da je u Australiji bio Hrvat, a u Hrvatskoj Australac, ponosan na oba identiteta. Smatra da se ponosom na vlastiti identitet stječe poštovanje drugih.
+
+### Sport kao Globalni Ambasador Hrvatske
+*Ključni pojmovi: sport, promocija Hrvatske, Luka Modrić, Davor Šuker, turizam*
+*Osobe/organizacije: Hrvatska, Luka Modrić, Davor Šuker, Afrika, Južna Amerika, Australija*
+
+Jozo ističe nevjerojatnu moć sporta u globalnoj promociji Hrvatske. Gdje god je putovao svijetom, prateći reprezentaciju ili privatno, ljudi su prepoznavali Hrvatsku kroz imena poput **Luke Modrića** i **Davora Šukera**.  
+
+'Ne nema veze, Afrika, Južna Amerika, znači svi ti ljudi znaju za Hrvatsku kroz sport i uspjehe', objašnjava Jozo. To je dovelo do toga da je 'popularno biti sad Hrvat', što je drastična promjena u odnosu na prošlost, kada su Hrvati u emigraciji bili stigmatizirani. Sjeća se kako je, odlazeći iz Australije, vidio plakate na stadionima s natpisom 'Letite do Hrvatske', što svjedoči o transformaciji Hrvatske u poželjnu turističku destinaciju. Marin se slaže da nijedan političar ili ambasador ne može imati takav globalni utjecaj kao sportaši.
+
+### Naslijeđe 'Forever Croatia' i Hrvatskih Nogometnih Klubova u Dijaspori
+*Ključni pojmovi: Forever Croatia, nogometni klubovi, dijaspora, hrvatski identitet, sportsko naslijeđe*
+*Osobe/organizacije: Forever Croatia, Facebook, Instagram, Eusebio, Toronto Croatia, Christian Vieri, Sydney Croatia, Green Gully Croatia, Australija*
+
+Marin pita Joza o njegovom projektu 'Forever Croatia', stranici na Facebooku i Instagramu koja prikuplja povijesne podatke, slike i snimke hrvatskih nogometnih klubova u dijaspori. Jozo objašnjava da je ideja nastala jer su takve 'retro stranice' postojale za velike svjetske klubove, ali ne i za hrvatske klubove u iseljeništvu, unatoč njihovoj bogatoj povijesti.  
+
+Ističe da su ti klubovi, kojih je bilo preko 130 diljem svijeta, služili kao 'reprezentacija prije reprezentacije' i širili ime Hrvatske. Spominje poznate igrače poput **Eusebija** (koji je igrao za Toronto Croatiju) i oca **Christiana Vierija**, koji su igrali za ove klubove. Iako su australske vlasti 2004. godine izbacile etničke klubove iz prve lige, hrvatski klubovi i dalje postižu uspjehe, poput finala Australskog kupa 2022. između Sydney Croatije i Green Gully Croatije. Jozo naglašava da su ti klubovi, uz folklor i crkvu, imali ključnu ulogu u osvješćivanju svijeta o postojanju hrvatskog naroda, posebno uoči stvaranja države.
+
+### Hrvati u Australskom Društvu: Poštovanje i Politički Utjecaj
+*Ključni pojmovi: Hrvati u Australiji, društvena percepcija, politički utjecaj, lobiranje, anglosaksonsko društvo*
+*Osobe/organizacije: Australija, Hrvatska, Latinska Amerika, obitelj Lukšić*
+
+Marin pita Joza o percepciji Hrvata u australskom društvu. Jozo odgovara da su Hrvati u većini društva 'ravnopravni' i 'jako poštivani kao cijenjeni radnici i ljudi koji su izgradili Australiju u zadnjih 50-60 godina'. Međutim, naglašava da je Australija primarno anglosaksonsko društvo i da 'establishment' i dalje drže Anglosaksonci.  
+
+Unatoč tome, Hrvati su postali puno utjecajniji, što se posebno vidjelo 90-ih godina kroz uspješno lobiranje. Kao dokaz navodi da je Australija bila prva prekooceanska zemlja koja je priznala Hrvatsku. Ipak, Jozo izražava skepticizam da bi Hrvat mogao postati premijer Australije ili direktor neke velike banke, sugerirajući da u anglosaksonskim državama postoji institucionalni rasizam koji je manje prisutan u Latinskoj Americi, gdje su Hrvati poput obitelji Lukšić iznimno uspješni i utjecajni.
+
+### Poruka Mladim Hrvatima iz Dijaspore: 'Dođite, Probajte!'
+*Ključni pojmovi: povratak, dijaspora, mladi Hrvati, hrvatski san, motivacija*
+*Osobe/organizacije: Hrvatska, Australija, Jozo*
+
+Marin traži od Joza završnu poruku mladim Hrvatima u dijaspori, poticaj da se vrate u domovinu. Jozo im poručuje: '**Dođite, probajte!**' Objašnjava da nikada ne znaš što te čeka dok ne pokušaš, baš kao što je on sam razmišljao o povratku na pola godine, s opcijom povratka u Australiju ako ne uspije.  
+
+'Realno, Hrvatska nikad u povijesti nije bila u boljoj situaciji nego što je sad', ističe Jozo, dodajući da nikada nije bio bolji trenutak za povratak. Dijeli svoje osobno zadovoljstvo odlukom, opisujući svoj život u Hrvatskoj kao 'život koji sam mogao sanjati kod djeteta'. Njegova nadolazeća ženidba s Hrvaticom predstavlja 'ostvarenje hrvatskog sna', što je, prema njemu, želja mnoge djece hrvatskih iseljenika – pronaći supružnika iz domovine i tako 'seliti jedno, je svijeta korijenina'.
+
+### Humanitarni Rad Bratovštine 'Vitezovi Predragocjene Krvi Kristove'
+*Ključni pojmovi: humanitarni rad, bratovština, dijaspora, pomoć, branitelji*
+*Osobe/organizacije: Vitezovi Predragocjene Krvi Kristove, Melbourne, Kapi Dobrote, Bistra, Vrhovec, časne sestre karmelićanke, Zlatko Dalić, Ivica Kovač, Hrvatska*
+
+Marin koristi priliku da pohvali humanitarni rad bratovštine 'Vitezovi Predragocjene Krvi Kristove' iz Melbournea, s kojom je upoznat kroz njihove aktivnosti. Ističe da bratovština već 15 godina surađuje s udrugom 'Kapi Dobrote' i pomaže potrebitima u Hrvatskoj.  
+
+Njihov rad uključuje pomoć:  
+- Specijalnoj bolnici u Bistri  
+- Domu za nezbrinutu djecu na Vrhovcu (kod časnih sestara karmelićanki)  
+- Brojnim braniteljskim obiteljima u teškim situacijama  
+
+Ove godine posebno pomažu dvjema obiteljima hrvatskih branitelja s puno djece koje žive u teškim uvjetima. Bratovština organizira donatorske večere, na kojima često sudjeluje **Zlatko Dalić** donirajući potpisane dresove, a umjetnici daruju slike. Marin poziva sve Hrvate u Australiji da se pridruže njihovom božićnom susretu i donatorskoj večeri krajem studenog. Jozo potvrđuje poznavanje bratovštine i spominje **Ivicu Kovača**, jednog od osnivača, koji se s obitelji od sedmero djece vratio u Hrvatsku, što je još jedan primjer povratka motiviranog djelima i ljubavlju prema domovini.
+
+### Završne Misli i Razmjena Darova
+*Ključni pojmovi: zaključak, darovi, inspiracija, pozitivan primjer, hrabrost*
+*Osobe/organizacije: Forever Croatia, Chicago, Hrvatska, Marin, Jozo*
+
+Na samom kraju razgovora, Jozo iznenađuje Marina poklonom – retro majicom s logom 'Forever Croatia'. Objašnjava da je majica inspirirana slikom iz Chicaga s početka 90-ih, kada su se održavale demonstracije za priznanje Hrvatske. Jedan od čitatelja stranice poslao je tu sliku, što je inspiriralo izradu majice.  
+
+Marin se od srca zahvaljuje Jozi na daru i na gostovanju, ističući da je užitak razgovarati s ljudima koji su 'puno toga znali, puno toga proživjeli', ali što je najvažnije, imaju 'toliku tu pozitivnu crtu'. Naglašava da je za takve životne odluke potrebna hrabrost i da 'čovjek ništa ne može pričati dok ne proba i dok ne stisne zube i dođe'. Marin zaključuje emisiju zahvaljujući Jozi i svim povratnicima, potičući i ostale da se ohrabre i slijede njihov pozitivan primjer.
