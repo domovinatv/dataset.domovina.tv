@@ -1,0 +1,221 @@
+Ti si stručni teološki analitičar Katoličke Crkve. Tvoj je zadatak objektivno evaluirati priloženi tekst (sažetak podcasta) isključivo temeljem katoličkog nauka, socijalnog nauka Crkve i Svetog pisma.
+
+VAŽNO PRAVILO: Analiziraj isključivo informacije koje su eksplicitno navedene u tekstu. Ne izmišljaj izjave gostiju i ne pretpostavljaj kontekst koji nije napisan. Tvoj izlaz mora biti strogo strukturiran u točno 6 numeriranih točaka. ZABRANJENO je korištenje tablica u odgovoru, koristi isključivo tekst i obične liste (bullet points).
+
+Za cijeli tekst daj JEDNU sveobuhvatnu evaluaciju točno ovim redoslijedom:
+
+1. **Ukupni score (0-100)** usklađenosti s katoličkim naukom i Svetim pismom. (Koristi skalu: 90-100 = aktivno promiče; 70-89 = uglavnom usklađeno; 50-69 = djelomično usklađeno/nejasnoće; 30-49 = značajno odstupanje; 0-29 = proturječi nauku).
+2. **Teološka procjena** (3 do 5 rečenica) — Sažeta sinteza onoga što je u tekstu teološki relevantno, a što neutralno.
+3. **Pozitivni elementi** — Konkretni primjeri iz teksta gdje se aktivno promiču kršćanske vrijednosti i dostojanstvo osobe.
+4. **Zabrinutosti** — Eventualna teološka odstupanja, rizici ili nejasnoće u iznesenim stavovima.
+5. **Teološki kontekst** — Relevantni crkveni dokumenti koji se izravno tiču tema.
+   *UPOZORENJE:* Navodi isključivo temeljne enciklike, Katekizam Katoličke Crkve (KKC) i opće poznate dokumente (npr. Laudato Si', Gaudium et Spes, dokumenti ekumenskih sabora). STROGO ZABRANJENO: Ne navodi lokalne govore, obraćanja pojedinim političarima ili opskurne dokumente. Ako nisi 100% siguran u izravnu teološku poveznicu dokumenta i teme, izostavi ga!
+6. **Score po tematskim blokovima** — Za svaki dostavljeni blok navedi njegov naziv, pripadajući score (0-100) i jednu rečenicu teološke procjene. (Ponavljam: koristi tekstualnu listu, NE tablicu).
+
+---
+
+# 20241031_predsjednicki_podcast_1_tomislav_jonjic_bit_cu_predsjednik_i_mladih_i_starih_yt_DxCWz816HYE.wav.canary.diarized.srt
+
+
+## Blok 1: Predstavljanje kandidata, osobna i politička biografija, te pogled na ovlasti predsjednika i vanjsku politiku
+
+*Vremenski raspon: 00:00:00 – 00:37:47*
+
+**Poglavlja:**
+- [00:00:00] Uvod i predstavljanje podcast serijala
+- [00:02:06] Predstavljanje Tomislava Jonjića i njegova biografija
+- [00:08:36] Motivacija za kandidaturu i rani politički angažman
+- [00:13:25] Uključenje u HSP, Domovinski rat i diplomatska služba
+- [00:16:40] Ustavni položaj i uloga predsjednika RH
+- [00:18:06] Prijedlog za pravo veta i ustavne promjene
+- [00:20:15] Proširenje ovlasti predsjednika (referendum, zakoni) i razgraničenje s Vladom
+- [00:24:45] Vanjska politika i slika RH u svijetu
+- [00:27:01] Jačanje Hrvatske unutar EU i NATO-a
+- [00:31:45] Uloga predsjednika u promicanju gospodarstva i privlačenju investicija dijaspore
+
+### Uvod u serijal: Predstavljanje predsjedničkih kandidata
+*Ključni pojmovi: podcast, predsjednički kandidati, Udruga Mladi za domovinu, izbori, politički put*
+*Osobe/organizacije: Udruga Mladi za domovinu*
+
+Voditelj podcasta Udruge Mladi za domovinu započeo je serijal razgovora s predsjedničkim kandidatima, s ciljem pružanja detaljnog uvida u njihove programe i stavove. Koncept serijala podijeljen je u tri dijela: u prvom se kandidati predstavljaju i govore o svom političkom putu, u drugom odgovaraju na sedamnaest identičnih pitanja o ovlastima predsjednika, vanjskoj politici i nacionalnoj sigurnosti, dok treći dio donosi jedinstvena pitanja vezana uz specifičnosti svakog kandidata. Cilj je gledateljima pružiti objektivne informacije koje će im pomoći u donošenju odluke na izborima.
+
+### Tomislav Jonjić: Od Imotskog do diplomatske službe – životna priča kandidata
+*Ključni pojmovi: Tomislav Jonjić, biografija, politički zatvorenici, Hrvatska revolucionarna mladež, Imotski*
+*Osobe/organizacije: Tomislav Jonjić, Imotski, Klobuk, Hercegovina, Jugoslavija, Split, Zagreb, Goli otok*
+
+U prvoj epizodi serijala, voditelj je ugostio odvjetnika, doktora povijesti i publicista Tomislava Jonjića. Jonjić je započeo svoje predstavljanje ističući svoje imotsko porijeklo, rođen 1965. godine u hrvatskoj i katoličkoj obitelji. Njegovi roditelji bili su politički zatvorenici, otac Imoćanin, a majka iz Klobuka u Hercegovini. Oboje su 1958. godine, kao srednjoškolci, utemeljili ilegalnu organizaciju 'Hrvatska revolucionarna mladež' koja je zagovarala oružanu borbu protiv Jugoslavije i komunizma. Zbog toga su uhićeni 1959. godine i osuđeni na višegodišnje robije. Majka je amnestirana 1962., a otac je pušten 1964. godine, nakon čega su se vjenčali. Jonjić je opisao teške uvjete studiranja svojih roditelja u Splitu, gdje su živjeli u nedovršenoj kući, skidajući betonske blokove s prozora kako bi imali svjetlo za učenje. Majka je kasnije radila kao nastavnica, a otac kao odvjetnik. Tomislav Jonjić je najstariji od petero djece, studirao je pravo u Zagrebu, oženio se kao student i danas je otac trojice sinova i djed petero unučadi.
+
+### Od srednjoškolskog 'prijestupnika' do predsjedničkog kandidata: Jonjićeva motivacija
+*Ključni pojmovi: politička motivacija, srednjoškolski angažman, putovnica, Jugoslavija, hrvatski identitet*
+*Osobe/organizacije: Šenoa, Matoš, Kranjčević, Njemačka, Austrija, Švicarska, Padova, Rim*
+
+Na pitanje o motivaciji za kandidaturu, Tomislav Jonjić je istaknuo svoje rano političko buđenje još u srednjoj školi. Prisjetio se incidenta iz 1979./1980. godine kada je na zidu školske klupe ispisao stihove hrvatskih pjesnika poput Šenoe, Matoša i Kranjčevića, što je izazvalo veliki problem u tadašnjoj Jugoslaviji. Iako je školsko vodstvo ublažilo situaciju, incident je ostavio traga. Kasnije mu je, u dobi od 20 godina, uskraćena putovnica s obrazloženjem da bi predstavljala 'ugrožavanje sigurnosti i interesa obrane zemlje', što ga je spriječilo u putovanjima i učenju njemačkog jezika u inozemstvu. Ove rane epizode, prožete borbom za hrvatski identitet i slobodu, oblikovale su njegov politički put i motivirale ga da se kandidira za predsjednika Republike Hrvatske.
+
+### Domovinski rat i diplomatska služba: Jonjićev doprinos Hrvatskoj
+*Ključni pojmovi: HSP, Domovinski rat, diplomatska služba, Imotski, Hrvatska vojska*
+*Osobe/organizacije: Hrvatska stranka prava, Dobroslav Paraga, Krizni stožer, Imotski, 115. brigada Hrvatske vojske, Vedran Ujević, Damir Krstičević, Bern, Ministarstvo unutarnjih poslova, Zagreb*
+
+Tomislav Jonjić se 1990. godine, prije prvih izbora, pridružio Hrvatskoj stranci prava (HSP), smatrajući je jedinom strankom koja nije spominjala AVNOJ i ZAVNOH. Ipak, ubrzo je isključen iz stranke zajedno s brojnim drugim članovima. Unatoč tome, nastavio je politički djelovati. U kolovozu 1990. godine, s početkom srpske pobune, uključio se u Krizni stožer za općinu Imotski, gdje su postavljeni temelji obrane. Bio je pripadnik 115. brigade Hrvatske vojske, poznate kao Treća imotska bojna, te pomoćnik za pravne poslove zapovjednicima Vedranu Ujeviću i Damiru Krstičeviću. Nakon demobilizacije u studenom 1992. godine, Jonjić je tri godine proveo u diplomatskoj službi u hrvatskom veleposlanstvu u Bernu. Po povratku u Hrvatsku, radio je kao savjetnik za međunarodne odnose u Ministarstvu unutarnjih poslova, baveći se međunarodnim ugovorima. Zbog niskih plaća u državnoj upravi i potrebe za uzdržavanjem obitelji, 1997. godine vratio se odvjetništvu u Zagrebu, gdje radi i danas.
+
+### Ustavni položaj predsjednika: Jonjićeva vizija ovlasti i veta
+*Ključni pojmovi: predsjedničke ovlasti, Ustav, pravo veta, Franjo Tuđman, Ustavni sud*
+*Osobe/organizacije: Franjo Tuđman, Ustavni sud*
+
+Tomislav Jonjić smatra da većina Hrvata, posebno njegove generacije, ulogu predsjednika promatra kroz prizmu ustavnih rješenja iz doba predsjednika Tuđmana, kada su ovlasti bile iznimno velike. Međutim, nakon 3. siječnja 2000. godine, došlo je do drastičnog slabljenja uloge predsjednika, što Jonjić naziva 'rashrvaćivanjem' i 'ustavnim rastakanjem' Hrvatske. Unatoč tome, on ističe da predsjedničke ovlasti još uvijek nisu za podcjenjivanje. Voditelj ga je upitao bi li podržao izmjene Ustava koje bi predsjedniku dale pravo veta na zakone, koje bi Sabor mogao srušiti samo dvotrećinskom većinom. Jonjić je objasnio da predsjednik Republike već sada ima pravo veta, koje se očituje u dva oblika: potpisivanju zakona za stupanje na snagu i mogućnosti upućivanja zakona na ocjenu Ustavnom sudu ako smatra da nisu u skladu s Ustavom. Stoga, prijedlog za pravo veta, prema Jonjiću, nije ništa novo i već postoji u sadašnjem Ustavu.
+
+### Proširenje ovlasti predsjednika: Referendum i razgraničenje s Vladom
+*Ključni pojmovi: predsjedničke ovlasti, referendum, Ustav, Vlada, zakonodavstvo*
+*Osobe/organizacije: Hrvatski državni sabor, Pantovčak*
+
+Tomislav Jonjić je u svom programu, koncipiranom u trideset točaka, predvidio razjašnjenje uloge predsjednika, prvenstveno kroz donošenje novog Ustava koji bi precizirao odnose između predsjednika i Vlade, kako bi se izbjegao kaos kojem svjedočimo. Zalagao bi se za šire pravo predsjednika na raspisivanje referenduma, koje on već sada ima, ali bi se to proširilo u paketu s promjenom referendumskog zakonodavstva. Cilj je olakšati raspisivanje referenduma i spriječiti manipulacije oko broja potrebnih potpisa. Također, predložio bi predsjedniku pravo neposrednog predlaganja zakona. Jonjić naglašava da ne bi dao predsjedniku 'diktatorske ovlasti', jer bi uvijek postojao osigurač u Hrvatskom državnom saboru i biračima koji odlučuju na referendumu. Njegov je cilj izbjeći nejasnoće u ustavnom rješenju koje sadašnjem predsjedniku i Vladi služe kao alibi za svojatanje ovlasti i stvaranje kaosa. Jonjić kritizira 'uvredljiv kočijaški rječnik' koji dominira političkom scenom, posebno od strane predsjednika Republike, te se zalaže za jasno razgraničenje ovlasti i pravdu.
+
+### Vanjska politika i slika Hrvatske: Između proeuropske orijentacije i 'proruskih' tendencija
+*Ključni pojmovi: vanjska politika, EU, NATO, Andrej Plenković, predsjednik Republike*
+*Osobe/organizacije: Europska unija, Andrej Plenković, Washington, SAD, Francuska*
+
+Tomislav Jonjić izražava nezadovoljstvo trenutnom slikom koju svijet, a posebice Europska unija, ima o Hrvatskoj. Smatra da ni jedan 'normalan Hrvat' ne može biti zadovoljan dojmom koji Hrvatska ostavlja, kako na vlastite sunarodnjake u dijaspori, tako i na međunarodnu zajednicu. Jonjić ističe postojanje dviju vanjskih politika: jedne koju zastupa Vlada, a druge, često suprotne, koju zastupa predsjednik države, što smatra nedopustivim. Iako ne simpatizira predsjednika Vlade, Jonjić priznaje da mu je 'proeuropska, prozapadna orijentacija Vlade neusporedivo bliža od proruske, proistočne politike predsjednika Republike'. Kritizira činjenicu da Andrej Plenković, unatoč dugogodišnjem mandatu, nikada nije službeno posjetio Washington, što ukazuje na nedostatak podrške SAD-a. Kao primjer navodi i kupnju francuskih zrakoplova umjesto, po mišljenju stručnjaka, boljih i jeftinijih opcija, što pripisuje vezama predsjednika Vlade s francuskim predsjednikom.
+
+### Jačanje Hrvatske unutar EU i NATO-a: Nacionalni ciljevi i savezništva
+*Ključni pojmovi: EU, NATO, nacionalni ciljevi, vanjska politika, Haag*
+*Osobe/organizacije: Europska unija, NATO, Hrvatski nacionalizam i europske integracije, Bosna i Hercegovina, Ivo Sanader, Haški tribunal, Carla del Ponte*
+
+Kao predsjednik, Tomislav Jonjić bi se fokusirao na formuliranje jasne nacionalne politike i ciljeva, bez 'kalkulacija i laviranja'. Naglašava potrebu za izgradnjom suradnje sa saveznicima unutar EU i NATO-a. Prisjetio se svoje knjige 'Hrvatski nacionalizam i europske integracije' iz 2008. godine, u kojoj se protivio prebrzom ulasku Hrvatske u EU. Njegovi ključni argumenti bili su da Hrvatska ulazi previše slaba gospodarski, riskirajući da postane poligon za 'prljave industrije', te da će ulazak u EU podići zid između Hrvata u Hrvatskoj i Hrvata u Bosni i Hercegovini, što bi dovelo do demografskog pustošenja. Jonjić je kritizirao i 'servilan odnos' tadašnje hrvatske političke elite prema Haagu i EU, posebno izjavu Ive Sanadera da je Hrvatska spremna platiti 'svaku cijenu' za ulazak u EU, što je rezultiralo poniženjima, uhićenjima generala i neselektivnim predavanjem dokumentacije Haškom tribunalu. Smatra da je Hrvatska time 'sama sebe uškopila', a cijenu toga plaća i danas. Kao predsjednik, Jonjić bi težio uređenju odnosa između predsjednika i Vlade, s jedinstvenim nastupom prema vani, te bi definirao hrvatske nacionalne ciljeve, gledajući EU i NATO kao instrumente hrvatske sigurnosti, uz poštivanje savezništva i traženje dostojanstva i vlastitih zahtjeva.
+
+### Predsjednik kao promotor gospodarstva: Privlačenje investicija dijaspore
+*Ključni pojmovi: gospodarstvo, dijaspora, investicije, pravosuđe, korupcija*
+*Osobe/organizacije: Hrvatski državni sabor, Bosna i Hercegovina, Srbija, Crna Gora, Franjo Tuđman, Izrael, Mađarska, Kalifornija, Čile, Kanada*
+
+Tomislav Jonjić ističe važnu ulogu predsjednika u promicanju gospodarstva i privlačenju investicija, posebno kroz diplomatske kanale. Međutim, prije privlačenja stranih investicija, naglašava potrebu za uređenjem pravnog poretka, iskorjenjivanjem korupcije i stvaranjem efikasnog pravosuđa. Ključnim smatra privlačenje investicija Hrvata iz iseljeništva. U svom programu predlaže reformu pravno-političkog sustava i uvođenje dvodomnog Hrvatskog državnog sabora, gdje bi Hrvati iz Bosne i Hercegovine, Srbije, Crne Gore te europskih i prekomorskih zemalja imali značajno veći broj zastupnika (npr. 16 za Hrvate iz BiH). Smatra da bi time Hrvati iz dijaspore mogli štititi svoje investicije u Hrvatskoj, koje su, prema njegovom mišljenju, od druge faze bolesti predsjednika Tuđmana, sustavno onemogućavane birokratskim i korupcijskim preprekama. Jonjić kritizira hrvatske političke elite koje su spremne biti 'sluge tuđega kapitala' i zastupnici 'tuđinskih interesa', dok istodobno odbijaju investicije vlastite dijaspore, unatoč njihovim emocionalnim i nacionalnim vezama s Hrvatskom. Kao primjere uspješnog privlačenja dijaspore navodi Izrael i Mađarsku.
+
+
+## Blok 2: Nacionalna sigurnost, položaj Hrvata u BiH, međunarodni sukobi i razjašnjenje političke prošlosti
+
+*Vremenski raspon: 00:37:47 – 01:25:28*
+
+**Poglavlja:**
+- [00:37:47] Očuvanje suverenosti Hrvata u BiH
+- [00:42:11] Analiza anti-hrvatskih politika i vanjskih utjecaja u BiH
+- [00:45:13] Stav o visokom predstavniku Christianu Schmidtu
+- [00:47:29] Važnost cjelovitosti BiH i spremnost na rasplete
+- [00:48:50] Rusko-ukrajinski rat i stav RH
+- [00:51:44] Slanje hrvatskih vojnika na strana ratišta
+- [00:53:38] Sukob na Bliskom istoku i priznanje Palestine
+- [00:57:04] Nacionalna sigurnost i uloga vrhovnog zapovjednika
+- [01:00:00] Ovlasti predsjednika u imenovanju načelnika Glavnog stožera
+- [01:02:22] Obvezni vojni rok i kapaciteti Oružanih snaga
+- [01:06:44] Razjašnjenje političke prošlosti i odnosa s HSP-om i HDZ-om
+- [01:19:22] Javna podrška, kritike i nadstranački pristup
+- [01:24:03] Apel svim Hrvatima i završne riječi
+
+### Očuvanje suverenosti Hrvata u BiH: Povratak izvornom Daytonu
+*Ključni pojmovi: Bosna i Hercegovina, Daytonski sporazum, Hrvati u BiH, vanjski utjecaj, jednakopravnost*
+*Osobe/organizacije: Bosna i Hercegovina, EU, NATO, Sjedinjene Američke Države, Milanović, Dayton*
+
+Tomislav Jonjić ističe da je prostor Bosne i Hercegovine stoljećima bio uređen izvana, od Hrvatsko-ugarskog Kraljevstva do Daytonskog sporazuma pod okriljem Sjedinjenih Američkih Država. Smatra da u dogledno vrijeme nije realno očekivati konsenzus među konstitutivnim narodima BiH bez asistencije velikih sila poput EU, NATO-a i SAD-a. Hrvatska, kao potpisnica i jamac Daytonskog sporazuma, mora zaštitu Hrvata u BiH i njihovu jednakopravnost tražiti oslanjajući se na savezništva s EU i NATO-om.
+
+Jonjić kritizira pristup predsjednika Milanovića, opisujući ga kao 'galama' koja ne donosi rezultate. Umjesto toga, zagovara konzistentnu politiku usmjerenu na povratak izvornom Daytonskom sporazumu, koji je, kako navodi, u bezbroj navrata mijenjan, uvijek na štetu Hrvata. Naglašava da je nedopustivo da Hrvatima u BiH netko drugi bira predstavnike u najvišim državnim tijelima, što je u demokratskom svijetu nezamislivo.
+
+### Zašto su Hrvati u BiH meta anti-hrvatskih politika?
+*Ključni pojmovi: anti-hrvatska politika, geopolitika, prozapadna orijentacija, ruski utjecaj, bošnjački narod*
+*Osobe/organizacije: Bosna i Hercegovina, Hrvati, Srbi, Bošnjaci, Zapad, Srbija, Moskva, Putin, Republika Srpska, Crna Gora, NATO*
+
+Voditelj postavlja pitanje zašto se Hrvate u BiH pokušava zatirati, na što Tomislav Jonjić spekulira o geopolitičkim razlozima. Ističe da su Hrvati jedini od tri konstitutivna naroda u BiH koji su po svojoj tradiciji i povijesti nedvosmisleno prozapadno orijentirani. Bosanskohercegovački Srbi, s druge strane, imaju tendenciju orijentacije prema Srbiji i istoku, dok bošnjački muslimanski narod uživa potporu određenih zapadnih krugova. Jonjić sugerira da se favoriziranjem Bošnjaka želi pokazati da Zapad nije protuislamski orijentiran.
+
+Dodatno, Jonjić smatra da u kontekstu 'trećeg svjetskog rata koji se odvija drugim sredstvima', zapadni krugovi dopuštaju Srbima da 'podkapaju' Bosnu i Hercegovinu, pa čak i Crnu Goru (članicu NATO-a), kako bi ih spriječili da se bezrezervno priklone Moskvi i Putinu. To objašnjava, prema njegovom mišljenju, nedostatak burnih reakcija NATO-a na ruske obavještajne aktivnosti u Crnoj Gori, što se tumači kao pokušaj djelomičnog zadovoljenja Srba.
+
+### Kritika djelovanja visokog predstavnika Christiana Schmidta
+*Ključni pojmovi: Christian Schmidt, visoki predstavnik, obespravljivanje Hrvata, destabilizacija, EU integracije*
+*Osobe/organizacije: Christian Schmidt, Bosna i Hercegovina, Hrvati, Hrvatska, Europska unija, NATO*
+
+Na pitanje voditelja o visokom predstavniku Christianu Schmidtu, Tomislav Jonjić izražava negativnu ocjenu njegovog djelovanja, temeljenu na javno dostupnim informacijama. Smatra da se Schmidtovom politikom nastavlja obespravljivanje Hrvata u BiH, što je kontinuitet koji traje dugi niz godina. Iako ne tvrdi da postoji organizirana urota protiv Hrvata, Jonjić ističe da je previše slučajnosti da bi bile slučajne.
+
+Naglašava da ponižavanje bilo kojeg naroda dovodi do destabilizacije prostora, što nije u interesu ni Hrvatske ni Europske unije. Cilj bi trebao biti stabilizacija BiH, njezin ulazak u EU i NATO, te osiguravanje da se Hrvati u BiH nađu u istom državnopravnom okviru kao i većina hrvatskog naroda u Republici Hrvatskoj.
+
+### Cjelovitost BiH i spremnost na sve rasplete
+*Ključni pojmovi: cjelovitost BiH, nacionalni interes, geopolitički raspleti, EU i NATO integracije, stabilnost regije*
+*Osobe/organizacije: Bosna i Hercegovina, Hrvatska, EU, NATO*
+
+Tomislav Jonjić u svom programu podržava očuvanje cjelovitosti Bosne i Hercegovine, smatrajući to u interesu Hrvatske, hrvatskog naroda i Europske unije. Međutim, ističe da Hrvati u BiH i u Hrvatskoj moraju biti spremni na svaki mogući rasplet. Podsjeća da taj prostor nikada nije bio uređen isključivo od strane lokalnih aktera, čak ni u povijesnim razdobljima kada je Hrvatska imala snažnu vanjsku potporu.
+
+Budući da nije izvjesno da će se to moći činiti u budućnosti, Jonjić naglašava potrebu za spremnošću na sve scenarije. Ipak, primarni cilj ostaje mir, demokratski poredak u BiH, očuvanje njezine cjelovitosti te ulazak BiH u EU i NATO.
+
+### Rusko-ukrajinski rat: Hrvatski stav mora biti nedvosmislen
+*Ključni pojmovi: rusko-ukrajinski rat, međunarodno pravo, teritorijalna cjelovitost, ruska agresija, Hrvatska politika*
+*Osobe/organizacije: Rusija, Ukrajina, Hrvatska, Zemun, Boka Kotorska, Poljska*
+
+Govoreći o rusko-ukrajinskom ratu, Tomislav Jonjić naglašava da hrvatski stav mora biti nedvosmislen i utemeljen na međunarodnom pravu. Osuđuje rusku agresiju na međunarodno priznatu državu, Ukrajinu, čije su granice definirane. Ističe da nezadovoljstvo granicama ne daje pravo na vojnu intervenciju i prisvajanje tuđeg teritorija. Upozorava da bi otvaranje 'Pandorine kutije' povijesnih reminiscencija i oružano mijenjanje granica dovelo do kataklizme i sloma svjetskog poretka.
+
+Jonjić se zalaže za poštivanje međunarodnog prava i teritorijalne cjelovitosti Ukrajine te njezinu obranu od ruske agresije. Podsjeća na hrvatsko iskustvo prije tridesetak godina, kada je Hrvatska bila izložena sličnim zahtjevima i metodama. Ne vjeruje u brzo okončanje rata, ali ističe da Hrvatska mora podržavati Ukrajinu.
+
+### Slanje hrvatskih vojnika na strana ratišta: Protiv slanja u Ukrajinu
+*Ključni pojmovi: hrvatski vojnici, Ukrajina, NATO obveze, obrana Hrvata u BiH, Daytonski sporazum*
+*Osobe/organizacije: Hrvatska, Ukrajina, NATO, Afganistan, Bosna i Hercegovina, EU*
+
+Na pitanje o slanju hrvatskih vojnika na strana ratišta, Tomislav Jonjić izričito se protivi slanju hrvatskih vojnika u Ukrajinu. Objašnjava da Hrvatska ima obveze unutar NATO-a, što je uključivalo i misije izvan NATO područja, poput Afganistana, ali naglašava da je to bilo u vrijeme kada formalno nije bilo rata. U aktualnoj situaciji u Ukrajini, on bi bio apsolutno protiv slanja vojnika, ali ne i protiv potpore ukrajinskoj obrani na terenu.
+
+Jonjić podsjeća na ustavnu obvezu Hrvatske i obveze proizašle iz Daytonskog sporazuma da štiti svoje sunarodnjake u Bosni i Hercegovini. Izražava nadu da neće biti potrebe za razmišljanjem o vojnim načinima zaštite, već da će razum prevladati i da će EU i NATO, zajedno s Hrvatskom, dovesti do rješenja koje će zaštititi prava Hrvata u BiH.
+
+### Bliski istok i priznanje Palestine: Tri uvjeta za mir
+*Ključni pojmovi: Bliski istok, Palestina, Izrael, Hamas, međunarodno pravo, mirovni proces*
+*Osobe/organizacije: Bliski istok, Palestina, Izrael, Hamas*
+
+Komentirajući sukob na Bliskom istoku, Tomislav Jonjić opisuje tragičan splet događanja koji je započeo Hamasovim napadom na Izrael. Smatra da je priznanje palestinske države moguće u perspektivi, ali uz ispunjenje tri ključna uvjeta:
+
+1.  **Priznanje države Izrael:** Izrael mora biti priznat kao država, s obzirom na to da je od svog osnutka 1948. godine bio žrtva agresije, a u arapskom svijetu su marginalni faktori spremni na njegovo priznanje.
+2.  **Definiran teritorij i granice:** Moraju biti jasno definirani teritorij i granice buduće palestinske države.
+3.  **Međusobno priznanje:** Mora uslijediti međusobno priznanje između Izraela i Palestine.
+
+Jonjić naglašava da je pretpostavka svega toga uspostava mira. Iako Izrael krši međunarodno pravo, što je za osudu, jednako je za osudu i poricanje prava izraelskom narodu na vlastitu državu. Ne očekuje daljnju eskalaciju ili širenje sukoba izvan postojećih okvira.
+
+### Nacionalna sigurnost: Nužna suradnja Predsjednika i Vlade
+*Ključni pojmovi: nacionalna sigurnost, obrambene sposobnosti, predsjednik, Vlada, suradnja, migrantska kriza*
+*Osobe/organizacije: Hrvatska, Europa, Pantovčak, Banski dvori, Milanović*
+
+U kontekstu nacionalne sigurnosti, Tomislav Jonjić ističe da je suradnja između predsjednika Vlade i predsjednika države nužna za jačanje obrambenih sposobnosti Hrvatske. S obzirom na dramatičnost prilika u Europi, migrantsku krizu i razne ugroze nacionalne sigurnosti, smatra da je bezuvjetno potrebno što brže i energičnije smirivanje prijepora između 'dva zagrebačka brda' (Pantovčaka i Banskih dvora).
+
+Zalaže se za sjedanje za isti stol, definiranje nacionalnih ciljeva i njihovu provedbu. Jonjić vjeruje da bi, ako postane predsjednik, nesuglasice s Vladom ostale unutar zatvorenih vrata i ne bi izlazile u javnost. Važno je, kaže, pokazati jedinstven nastup i dojam ozbiljne države, a ne 'slučajne države' s podijeljenom vanjskom politikom, što trenutno šteti ugledu Hrvatske.
+
+### Ovlasti Predsjednika: Imenovanje načelnika Glavnog stožera ostaje u ingerenciji
+*Ključni pojmovi: načelnik Glavnog stožera, predsjedničke ovlasti, depolitizacija vojske, nadstranački pristup, Hrvatska stranka prava*
+*Osobe/organizacije: Sabor, Hrvatska stranka prava, Pantovčak*
+
+Tomislav Jonjić smatra da ovlast imenovanja i razrješenja načelnika Glavnog stožera Oružanih snaga treba ostati u ingerenciji predsjednika Republike, a ne prebacivati je na Sabor. Objašnjava da bi široko tijelo poput Sabora, zbog svog višestranačkog sastava, oteglo raspravu u nedogled i onemogućilo postizanje konsenzusa, što bi dovelo do politizacije vojske. Vojni krugovi i pojedinci bi se, prema njegovom mišljenju, nužno vezali uz političke strukture, a vojska mora ostati depolitizirana.
+
+Predsjednik Republike, kao izvanstranačka osoba, može nastupati nadstranački i u nacionalnom interesu. Jonjić ističe da je njegova vlastita neovisnost od političkih stranaka jedna od njegovih važnih komparativnih prednosti, jer mu nijedna stranka ne bi mogla nametnuti prijedloge ili rješenja. Iako je formalno član Hrvatske stranke prava, naglašava da nema potporu stranke niti ju je tražio, želeći biti nadstranački kandidat i predsjednik svih Hrvata.
+
+### Obvezni vojni rok i kapaciteti Oružanih snaga: Potreba za jačanjem
+*Ključni pojmovi: obvezni vojni rok, Oružane snage, nacionalna obrana, vojni kapaciteti, stručna mišljenja*
+*Osobe/organizacije: Oružane snage RH, Hrvatska vojska*
+
+Tomislav Jonjić podržava uvođenje obveznog vojnog roka, ističući da svrha vojske nije samo ratovanje, već i jačanje države kako bi postala respektabilna sila, čime se diplomatski argumenti shvaćaju ozbiljnije. Uloga vojske je i u odvraćanju moguće agresije. Ipak, o načinu uvođenja vojnog roka, Jonjić bi se konzultirao sa stručnjacima, jer ne smatra da ima gotova rješenja za sva pitanja.
+
+Navodi da njegova lista javnih podupiratelja uključuje stotinjak doktora znanosti, desetke umirovljenih generala, admirala, brigadira, akademika i književnika, kao i ljude koji su obavljali najviše dužnosti u hrvatskim oružanim i obavještajnim službama. Njihove savjete bi slušao i uvažavao, ali bi odluke donosio samostalno. Na pitanje o kapacitetima Oružanih snaga za zaštitu granica, Jonjić ne može dati precizan odgovor, ali sugerira da rasprava o uvođenju vojnog roka ukazuje na to da postojeće snage nisu sasvim dostatne. Kao predsjednik, inzistirao bi na jačanju Oružanih snaga, ali bi se prethodno upoznao s činjenicama.
+
+### Razjašnjenje političke prošlosti: Odnos s HSP-om i HDZ-om
+*Ključni pojmovi: politička prošlost, HSP, HDZ, diplomacija, Domovinski rat, Tuđman*
+*Osobe/organizacije: HSP, HDZ, Dobroslav Paraga, Hrvatsko državno pravo, Bern, Tuđman, Hrvatska republikanska zajednica, Zagreb, Neovisnost za Hrvatsku*
+
+Voditelj postavlja pitanje o političkoj prošlosti Tomislava Jonjića, posebno o njegovom izbacivanju iz HSP-a i kasnijem diplomatskom angažmanu. Jonjić detaljno pojašnjava kronologiju:
+
+*   **Prosinac 1990.:** Izbačen je iz Hrvatske stranke prava (HSP) od strane tadašnjeg vodstva na čelu s Dobroslavom Paragom, zajedno s desecima drugih članova, zbog neslaganja s politikom stranke.
+*   **Travanj 1991.:** Utemeljio je stranku Hrvatskoga državnog prava u Zagrebu i ušao u njezino predsjedništvo.
+*   **Kolovoz 1992.:** Napustio je tu stranku i njezino predsjedništvo jer je vodstvo donijelo odluku o ulasku u koaliciju s HDZ-om bez njegove konzultacije, dok je on bio vojnik u Domovinskom ratu. Naglašava da mu politika nikada nije bila karijera, već ostvarenje nacionalno-političkih ciljeva.
+*   **Studeni 1992.:** Odlazi u diplomatsku službu kao ataše u hrvatskom veleposlanstvu u Bernu, nakon sudjelovanja u Domovinskom ratu i položenog pravosudnog ispita. Ističe da je to bio najniži diplomatski rang i da njegov odlazak u diplomaciju nije imao veze s isključenjem iz HSP-a.
+
+Jonjić naglašava da nikada nije bio član HDZ-a, iako su njegovi rođaci bili među osnivačima stranke i on im je pomagao u osnivanju ogranaka. Njegovo poštovanje prema predsjedniku Tuđmanu proizlazi iz Tuđmanovog postignuća uspostave i priznanja hrvatske države, što, kako kaže, 'potire sve ili veliku većinu nedostataka i njegove mladosti i njegove starosti'. Potvrđuje da nije u kontaktu s Dobroslavom Paragom od 1992. godine. Nakon gašenja stranke Hrvatskoga državnog prava, pristupio je Hrvatskoj republikanskoj zajednici, u kojoj je ostao više od dvadeset godina, a kasnije je bio nezavisni zastupnik u zagrebačkoj Gradskoj skupštini i član stranke 'Neovisnost za Hrvatsku'.
+
+### Javna podrška i nadstranački pristup: Predsjednik svih Hrvata
+*Ključni pojmovi: javna podrška, nadstranački kandidat, predsjednik svih Hrvata, politička neovisnost, intelektualci*
+*Osobe/organizacije: Tomislav Sunić, Milanović*
+
+Na pitanje voditelja o komentarima dr. Tomislava Sunića, koji ga je podržao, ali i pohvalio Milanovića, Tomislav Jonjić izjavljuje da nije upoznat s tim specifičnim komentarom. Naglašava da ga podržava preko 330 ljudi, uključujući javne intelektualce, profesore, umirovljene generale i književnike, koji su ga dragovoljno izabrali poduprijeti. Ističe da nikoga nije prisilio niti kupio, jer nema sredstava za takvo nešto. Smatra da eventualna promjena stajališta pojedinih podupiratelja ne spada na njegovu savjest, već na njihovu, iako bi bilo pristojno da ga o tome obavijeste.
+
+Jonjić ponavlja da želi biti nadstranački kandidat i predsjednik svih Hrvata i Hrvatica, a ne eksponent jedne stranke. Njegov cilj je služiti cijelom hrvatskom narodu, bez obzira na stranačke pripadnosti ili političke interese.
+
+### Apel svim Hrvatima: Izbor po savjesti za interes Hrvatske
+*Ključni pojmovi: apel Hrvatima, izbor po savjesti, nacionalni interes, politička neovisnost, demokracija*
+*Osobe/organizacije: Hrvatska*
+
+U završnim riječima, Tomislav Jonjić upućuje apel svim Hrvatima, bez obzira na dob, spol ili regiju. Smatra da je hrvatski narod sazreo dovoljno da više ne mora misliti da su najviše državne dužnosti namijenjene isključivo 'sinovima i unucima bivših Jugoslavena i komunista'. Izaziva uvjerenje da samo određeni krugovi imaju stručnost za upravljanje državom ili obavještajnim službama.
+
+Jonjić poziva građane da imaju hrabrosti izabrati po vlastitoj savjesti, neovisno o stranačkim stegama, naručenim anketama ili utrošenom novcu. Naglašava da je ključno birati u interesu Hrvatske, čime zaključuje svoj dio razgovora.
