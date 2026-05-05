@@ -1,0 +1,160 @@
+Ti si stručni teološki analitičar Katoličke Crkve. Tvoj je zadatak objektivno evaluirati priloženi tekst (sažetak podcasta) kao instrument evangelizacije i ljudske promidžbe, temeljeći se isključivo na katoličkom nauku, socijalnom nauku Crkve i Svetom pismu.
+
+VAŽNO PRAVILO: Analiziraj isključivo informacije koje su eksplicitno navedene u tekstu. Ne izmišljaj izjave gostiju i ne pretpostavljaj kontekst koji nije napisan. Tvoj izlaz mora biti strogo strukturiran u točno 6 numeriranih točaka. ZABRANJENO je korištenje tablica u odgovoru, koristi isključivo tekst i obične liste (bullet points).
+
+Za cijeli tekst daj JEDNU sveobuhvatnu evaluaciju točno ovim redoslijedom:
+
+1. **Ukupni score (0-100)** usklađenosti s katoličkim naukom, Svetim pismom i potencijala za navještaj kršćanskih vrijednosti. Koristi skalu:
+   - 90-100 = aktivno promiče Evanđelje i kulturu susreta
+   - 70-89 = uglavnom usklađeno; potiče na dobro i poštuje dostojanstvo osobe
+   - 50-69 = djelomično usklađeno, nejasnoće ili redukcionistički pristup
+   - 30-49 = značajno odstupanje od kršćanske antropologije
+   - 0-29 = proturječi nauku; promiče relativizam, redukcionizam ili kulturu odbacivanja
+2. **Teološka i antropološka procjena** (3 do 5 rečenica) — Sažeta sinteza onoga što je u tekstu teološki relevantno, a što neutralno. Ako tekst tematizira tehnologiju, AI ili digitalnu kulturu, dodatno procijeni tretira li se tehnologija kao alat u službi čovjeka ili kao zamjena za ljudsku inteligenciju i moralnu odgovornost.
+3. **Sjeme Logosa (pozitivni elementi)** — Konkretni primjeri iz teksta gdje se aktivno promiču kršćanske vrijednosti, dostojanstvo osobe, kultura susreta, pravda ili odgovorno upravljanje stvorenim.
+4. **Zabrinutosti i rizici** — Eventualna teološka odstupanja, rizici ili nejasnoće u iznesenim stavovima (npr. redukcionizam, moralni relativizam, odstupanja od kršćanske antropologije). Ako je tema digitalna ili tehnološka, uključi i rizike tipa algoritamsko uvjetovanje, gubitak ljudske agencije ili tehnokratski pristup.
+5. **Teološki kontekst** — Relevantni crkveni dokumenti koji se izravno tiču tema.
+   *DOPUŠTENO:* Katekizam Katoličke Crkve (KKC), temeljne enciklike (npr. Laudato Si', Fratelli Tutti, Gaudium et Spes), dokumenti ekumenskih sabora. Za teme o tehnologiji i AI dopušteno je referirati na Antiqua et Nova i Rome Call for AI Ethics.
+   *STROGO ZABRANJENO:* Ne navodi lokalne govore, obraćanja pojedinim političarima ili opskurne dokumente. Ako nisi 100% siguran u izravnu teološku poveznicu dokumenta i teme, izostavi ga!
+6. **Score po tematskim blokovima** — Za svaki dostavljeni blok navedi njegov naziv, pripadajući score (0-100) i jednu rečenicu teološke procjene, uključujući kako taj blok doprinosi ili odmaže evangelizacijskom poslanju. (Ponavljam: koristi tekstualnu listu, NE tablicu).
+
+---
+
+# 20240731_podcast_zivot_5_tomislav_belavic_za_ljubav_je_potrebna_zrelost_yt_W869S5xB0jo.wav.canary.diarized.srt
+
+
+## Blok 1: Osobno svjedočanstvo, duhovni put i nastanak udruge Prilika za susret
+
+*Vremenski raspon: 00:00:11 – 00:40:34*
+
+**Poglavlja:**
+- [00:00:11] Uvod i predstavljanje gosta Tomislava Belavića
+- [00:01:59] Djetinjstvo i prvi susreti s vjerom (utjecaj tete)
+- [00:04:06] Duhovni put kroz Teze i životne krize
+- [00:06:28] Osobni krah i dublje obraćenje kroz Ignacijske vježbe
+- [00:10:23] Nastanak udruge 'Prilika za susret' i prvi koraci
+- [00:14:23] Osobno svjedočanstvo: Pronalazak supruge Nikoline
+- [00:20:43] Plodovi udruge i paradoks života (želja za životom vs. odbacivanje)
+- [00:23:42] Prednosti zrelijih veza i brak kao savez
+- [00:33:04] Razlozi odgađanja braka i važnost prepoznavanja Božjih prilika
+
+### Tomislav Belavić: Od ekonomista do predsjednika katoličke udruge 'Prilika za susret'
+
+U uvodu podcasta 'Život', **Voditeljica** Udruge Hrvatska za život srdačno je pozdravila **Tomislava Belavića**, predstavljajući ga kao današnjeg gosta. **Tomislav** se, na upit **Voditeljice**, predstavio kao suprug, što je već gotovo tri godine, te kao predsjednik katoličke udruge 'Prilika za susret'. Rođen u Đakovu, s godinama života u Osijeku, trenutno prebiva u Vukovaru sa suprugom, uživajući u skladnom braku. Po struci ekonomist, **Tomislav** je godinama radio u komercijalnim poslovima, vodio vlastiti obrt, pa čak i radio u državnoj upravi. Danas, s četrdeset devet godina, posvećen je radu unutar udruge, gdje pokreće značajne projekte.
+
+### Djetinjstvo u Đakovu i duhovni temelji koje je postavila teta
+
+**Tomislav** je svoje djetinjstvo proveo u Đakovu, u klasičnoj radničkoj obitelji. Poseban i dubok utjecaj na njegov život, a posebno na duhovni razvoj, imala je njegova teta. Ona je, kao sestra njegove bake, živjela sa stricem svećenikom i preuzela brigu o njegovoj majci u djetinjstvu. **Tomislav** ističe da je teta imala snažan duhovni utjecaj, ostavljajući mu čvrste temelje vjere. Prisjetio se primjera iz osamdesetih godina, kada je teta, s mudrošću, djeci objasnila da će s vremenom shvatiti tko je bio kardinal Stepinac, ne ulazeći u detalje u politički osjetljivom razdoblju. Njezina prisutnost bila je ključna u oblikovanju njegove duhovnosti.
+
+### Od Teze zajednice do životnih krahova: Božji zahvat u potrazi za smislom
+
+U mladosti, u vremenu kada nije bilo mnogo molitvenih zajednica i duhovnih obnova, **Tomislav** je pronašao utočište u Teze zajednici u Đakovu. Putovanja na novogodišnja okupljanja u Tezeu donijela su mu osjećaj Božje prisutnosti i mira. Međutim, nakon završetka fakulteta, život ga je odveo u smjeru karijere i materijalnog uspjeha. Imao je jasnu viziju: zaraditi novac, izgraditi karijeru, oženiti se i imati djecu. No, stvarnost je bila drugačija. Radio je poslove koje nije volio, dok je ono što ga je ispunjavalo radio u slobodno vrijeme. Ovaj period obilježili su i osobni krahovi i bankroti, što je dovelo do sloma. Upravo u tim trenucima slabosti, **Tomislav** prepoznaje Božji zahvat, shvaćajući da ga je Gospodin privukao sebi tamo gdje je bio najranjiviji.
+
+### Preobražaj kroz Ignacijske vježbe: Liječenje rana i učenje razlučivanja
+
+Nakon osobnog kraha i zatvaranja obrta uslijed krize 2008. godine, **Tomislavov** duhovni put doživio je preokret. Pedeset dana nakon smrti svoje tete, na Veliku Gospu, posjetio je Aljmaš s prijateljicom **Blaženkom**. Po povratku kući, osjetio je duboku promjenu – glad za duhovnim štivom i proučavanjem. Kroz nekoliko godina, to ga je dovelo do Ignacijskih vježbi kod Isusovaca. Iako se suočavao s financijskim poteškoćama, moravši iznajmiti stan u Osijeku i vratiti se u Đakovo, osjećao je neobičan mir. U molitvenoj zajednici 'Stado malo' u Đakovu, potaknut je da nastavi s vježbama u Inigu, gdje je postao i pratitelj. Kroz šest godina u vježbama, naučio je razlučivati i promatrati životne situacije, shvaćajući da Božji glas ne dolazi izravno, već suptilno, kroz ideje i razmatranja. Kontemplativne vježbe pomogle su mu zaliječiti duboke rane iz djetinjstva, komplekse i probleme s težinom, donoseći mu unutarnje iscjeljenje.
+
+### Rađanje 'Prilike za susret': Od ideje do tjednih okupljanja samaca
+
+Ideja o susretima samaca rodila se u **Tomislavovom** srcu tijekom Ignacijskih vježbi. Razgovarajući s **Katom**, koja je već imala slične inicijative, odlučili su zajedno pokrenuti nešto. **Kate**, danas udana žena u Sinju, zajedno sa svojim suprugom **Stipom**, i dalje je aktivno uključena u rad udruge. Počeli su s prvom zajedničkom molitvom, a zatim su uslijedili tjedni susreti petkom u Osijeku. Ovi susreti uključivali su predavanja, svjedočenja, radionice, druženja i društvene igre. Kroz interaktivne rasprave o temama poput teologije tijela i muško-ženskih odnosa, sudionici su učili jedni od drugih, razbijajući predrasude i shvaćajući različite perspektive. Iako su tjedni susreti privremeno prekinuti zbog pandemije koronavirusa, potreba za ovakvim okupljanjima za samce starije od 35-40 godina postala je sve očitija. Udruga 'Prilika za susret' nastoji privući ljude, educirati ih i omogućiti im upoznavanje u ugodnom okruženju, naglašavajući da 'kava nije brak', već prilika za nova poznanstva i potencijalna prijateljstva.
+
+### Božji plan: Kako je Laudato TV spojio Tomislava i Nikolinu
+
+**Tomislav** je podijelio dirljivo svjedočanstvo o pronalasku svoje supruge **Nikoline**, ističući Božju čudesnost i svoju nepokolebljivu vjeru. Uvijek je vjerovao da Bog ima nekoga za njega i da će riješiti sve njegove potrebe, osjećajući Božju prisutnost u molitvi. Nakon što je prekinuo zaruke jer veza nije vodila braku, a on je već imao dosta godina, suočio se s turbulentnim razdobljem. Unatoč tome što nije želio, preuzeo je obvezu gostovanja na Laudato TV-u s **Slavenom**, dopredsjednikom udruge, kako bi predstavili rad 'Prilike za susret'. Tri mjeseca kasnije, primio je poruku od **Nikoline**, koja ga je prepoznala s televizije, prisjećajući se susreta s Mladifesta u Međugorju. Njezina čežnja i upornost dovele su do poziva na kavu. Brzo su ušli u vezu, koja je preživjela i razdvojenost tijekom lockdowna. Nažalost, **Tomislavova** majka preminula je u drugom valu pandemije, ne doživjevši njegovo vjenčanje u 46. godini. Danas **Tomislav** i **Nikolina** žive u Vukovaru, svakodnevno se upoznaju i uče, a njihova je najveća želja novi život u obitelji.
+
+### Plodovi udruge i paradoks života: Želja za životom nasuprot odbacivanju
+
+Djelovanje udruge 'Prilika za susret' donijelo je iznimne plodove: osamnaest sklopljenih brakova, dva zaručnička para na putu i osmero rođene djece, s još nekoliko na putu. **Tomislav** s dubokom zabrinutošću ističe paradoks suvremenog društva. S jedne strane, svjedoči o ljudima koji odbacuju život i Božji plan, ne shvaćajući koliko je svaki život ogroman i s ljubavlju stvoren. S druge strane, postoje oni koji su toliko željni života da bi učinili sve da ga dobiju. Ovaj kontrast naglašava potrebu za više molitve i pouzdanja u Boga, kako bi društvo u cjelini prihvatilo i cijenilo dar života.
+
+### Brak kao savez: Prednosti zrelih veza i važnost komunikacije
+
+**Voditeljica** je postavila pitanje o prednostima upoznavanja u zrelijoj dobi, na što je **Tomislav** odgovorio da nikada nije kasno za brak. Ključnim smatra 'famozni trokut' – odnos između dvoje ljudi i Boga. Zrele osobe, za razliku od mlađih, mnogo su svjesnije što žele i što ne žele, spremnije su na kompromise, razgovore i imaju više empatije. **Tomislav** naglašava da društvo često brak pogrešno percipira kao partnerstvo, dok je on zapravo **savez**. Mnogi mladi ulaze u brak iz pogrešnih razloga, fokusirajući se na vjenčanje, a ne na pripremu za zajednički život, što rezultira visokom stopom razvoda i problemima s plodnošću. Ističe važnost komunikacije, navodeći primjere loših brakova iz svoje okoline, uključujući i roditelje koji su znali ne razgovarati mjesecima. To ga je potaknulo da sa **Nikolinom** gradi odnos temeljen na otvorenoj komunikaciji i rješavanju problema. Upozorava na važnost traženja stručne pomoći (bračno-obiteljska savjetovališta, psiholozi, duhovnici) kada par ne može sam riješiti probleme, jer je to područje gdje su ljudi često najtanji i srame se potražiti pomoć. Udruga 'Prilika za susret' upravo kroz svoje susrete priprema ljude, učeći ih alatima za kvalitetan bračni život.
+
+### Zašto odgađamo brak? Izlazak iz zone komfora i prepoznavanje Božjih prilika
+
+**Tomislav** je detaljno objasnio ključne razloge odgađanja braka u današnjem društvu. Prvi je fokus na **fakultet i obrazovanje**, što odgađa ulazak u brak za nekoliko godina. Zatim slijedi **svjetovni život** – statistike pokazuju da se brakovi sklopljeni nakon dugogodišnjeg 'svjetovnog' hodanja često brzo raspadaju. Mnogi se probude s četrdeset i više godina u panici, shvaćajući da su propustili prilike. **Prioritet na egzistenciju i materijalno** također je čest razlog, gdje se čeka da se sve financijski posloži, unatoč tome što u Hrvatskoj postoje načini za osiguravanje egzistencije. **Fertilni život** muškarca i žene ima svoj početak i kraj, što je aspekt o kojem se premalo razmišlja. Velik problem je i **zona komfora**, gdje su ljudi zadovoljni svojim samostalnim životom, pitajući se je li to zaista smisao. **Tomislav** naglašava da 'nevidljivi neprijatelj' stvara laži i neistine u glavi, sprječavajući ljude da prepoznaju Božje prilike. Ljudi se često Bogu obraćaju tek u krizi, umjesto da su s Njim cijelo vrijeme i zahvaljuju Mu. Ističe da je sramota ne činiti ništa da se promijeni status samca, pozivajući na hrabrost i iskorak. Kroz udrugu 'Prilika za susret' uče ljude da zastanu, rade na sebi i prepoznaju Božje vodstvo, jer je važno boriti se za budućeg supružnika i prije nego što ga upoznaš, te ne ulaziti u brak bez duboke potvrde u srcu, bez obzira na godine.
+
+
+## Blok 2: Djelovanje udruge Prilika za susret, izazovi samaca i važnost pripreme za brak
+
+*Vremenski raspon: 00:40:35 – 01:16:52*
+
+**Poglavlja:**
+- [00:40:35] Predbračna čistoća i fokus na komunikaciju u vezi
+- [00:46:01] Izazovi i iskorištavanje samaca u društvu
+- [00:51:53] Razvoj 'Prilike za susret' od zajednice do katoličke udruge
+- [00:56:30] Planovi i vizija udruge: regionalni, nacionalni i međunarodni susreti
+- [00:59:02] Potreba za psihosocijalnom podrškom i neformalnim druženjima
+- [01:01:57] Važnost hrabrosti i iskoraka u traženju partnera
+- [01:07:17] Borba za budućeg supružnika i Božji poziv
+- [01:11:16] Osobno iskustvo: Neočekivani susret i učenje komunikacije
+- [01:13:12] Zaključak: Brak kao put rasta i borba za nove živote
+- [01:15:52] Zahvala i pozdrav
+
+### Predbračna čistoća: Ključ za duboku komunikaciju i pripremu za brak
+
+Tomislav Belavić ističe kako predbračna čistoća, unatoč klasičnim stereotipima, zapravo stavlja snažan fokus na **komunikaciju** unutar veze. Kada par ne može imati fizički odnos, prisiljen je razgovarati, družiti se, provoditi vrijeme u prirodi i upoznavati druge ljude. Poanta nije u zabrani, već u dubokoj pripremi za sakrament braka, shvaćanju da je to savez, nešto neraskidivo i iznimno važno. Belavić naglašava da bit braka nije u slikanju, torti, vjenčanici ili cipelama, već u zajedništvu 'ti i ja, nas dvoje, mi'.
+
+Kao primjer, Tomislav navodi svoj odnos sa suprugom Nikolinom i njezinom majkom, ističući potrebu za postavljanjem zdravih granica unutar obiteljskih odnosa. Odluke, naglašava, trebaju donositi isključivo supružnici zajedno. Prisjeća se situacije kada je razmišljao o davanju otkaza, ali nije to učinio dok Nikolina u srcu nije prihvatila tu odluku, vođena vjerom da će Bog sve posložiti. Belavić zaključuje da Bog priprema osobu i cijeli splet okolnosti za susret, no ljudi često propuštaju prilike govoreći 'neću' na pozive koje im život nudi.
+
+### Samci u društvu: Izazovi, iskorištavanje i potreba za iskorakom
+
+Tomislav Belavić upozorava na značajan problem s kojim se samci suočavaju u društvu – često su prisutni u brojnim udrugama i zajednicama, gdje se iznimno puno daju, no istovremeno su licemjerno iskorištavani. Društvo od njih očekuje da budu dostupni za čuvanje djece, prekovremeni rad, terenski posao ili druge obveze, pod izlikom da su 'sami'. To, međutim, dovodi do toga da samci ostaju sami, jer im se ne stvaraju stvarne mogućnosti za upoznavanje i pronalazak partnera, niti ih itko potiče na razmišljanje o braku i obitelji.
+
+Belavić kritizira i praksu nekih samaca koji, iako imaju četrdeset godina, i dalje posjećuju susrete za mlade, umjesto da traže sadržaje prilagođene njihovoj dobi i životnoj fazi. Udruga 'Prilika za susret' upravo stoga kreira ciljane sadržaje za zrelije samce. Voditeljica podcasta nadopunjuje kako mlađi ljudi često vjeruju da će partnera pronaći u kafiću, dok zreliji traže dublje interakcije – razgovore, društvene igre, razmjenu mišljenja – što je nemoguće u bučnom okruženju. Suvremeni način života, s radom od kuće ili dugim radnim vremenom u uredu, dodatno otežava upoznavanje.
+
+Belavić poručuje da ako se netko vrti u istom krugu pet do deset godina bez rezultata, mora nešto promijeniti. Često ljudi ne razmišljaju o razlozima odgađanja braka, a neprijatelj u glavi stvara laž da je dobro biti sam. Ljudi se Bogu obraćaju samo u nevolji, zaboravljajući zahvaljivati na blagoslovima. Belavić naglašava važnost zahvalnosti, čak i za sitnice, te učenja 'jezika ljubavi'. Također, upozorava na 'delay generaciju' koja odgađa brak zbog društvenih nametnutih ideala o tome što sve moraju imati prije ulaska u zajednicu. Kada se ti uvjeti 'poslože', često je prekasno, a propuštene su brojne prilike koje je Bog slao. Udruga 'Prilika za susret' stoga uči ljude da zastanu, pročitaju, odu na tečaj i rade na sebi, umjesto da ih etiketiraju kao 'spajalice', što je, nažalost, praksa čak i u nekim crkvenim krugovima.
+
+### Od zajednice do katoličke udruge: 'Prilika za susret' pod okriljem Crkve
+
+Udruga 'Prilika za susret' relativno je brzo dobila podršku i blagoslov nadbiskupa Hranića, što je bio ključan korak u njezinom razvoju. Tomislav Belavić i Slaven su se sastali s pomoćnim biskupom Ćurićem, a duhovni asistent Alojz Skovaček iz Župe sv. Ćirila i Metoda u Osijeku pomogao im je u organizaciji tog sastanka. Od samog početka, želja je bila da udruga djeluje pod okriljem Crkve, s jasnim fokusom na sakrament ženidbe, te da Crkva bude upoznata s njihovim radom.
+
+Iako je Tomislav u srcu osjećao da bi prefiks 'katolička' mogao predstavljati prepreku i izazvati drugačiji pogled na udrugu, odlučio je prihvatiti taj izazov. Manje od godinu dana nakon te odluke, dobili su suglasnost nadbiskupije da postanu katolička udruga. Belavić ističe da su se blagoslovi odmah počeli pokazivati, opisujući to kao 'Božji vjetar u leđa'. Glavni cilj bio je širenje informacija o sakramentu ženidbe kao nečemu dobrom, svetom i pozitivnom, posebno u Hrvatskoj gdje je preko osamdeset posto stanovništva katoličke vjeroispovijesti i gdje se većina ljudi želi vjenčati. Ovaj korak bio je, kako kaže, u skladu s osobnim poticajem koji je Tomislav osjećao cijelo vrijeme.
+
+### Vizija i planovi: Širenje 'Prilike za susret' kroz regionalne, nacionalne i međunarodne susrete
+
+Udruga 'Prilika za susret' aktivno radi na ostvarenju svoje vizije širenja djelovanja. Do sada su organizirali sedam regionalnih susreta, koji okupljaju između osamdeset i sto osoba. Nacionalni susret u Karlovcu, organiziran u suradnji s platformom Kadsus, pokazao je pozitivnu sinergiju između online upoznavanja i susreta uživo. Kadsus služi kao prvi kontakt, dok 'Prilika za susret' omogućuje susrete licem u lice.
+
+Budući planovi udruge uključuju organizaciju četiri regionalna susreta, jednog nacionalnog susreta te širenje na međunarodnu razinu, uključujući Bosnu i Hercegovinu, druge zemlje Europske unije, pa čak i preko oceana. Ključni cilj je uspostaviti sustav s više manjih susreta diljem Hrvatske, jer je, kako Tomislav Belavić ističe, velika pogreška očekivati pronalazak partnera na velikim nacionalnim susretima s četiristo ljudi. Puno je veća vjerojatnost upoznati nekoga na radionici s desetak ili dvadesetak sudionika, gdje postoji prilika za dublje upoznavanje i razgovor. Udruga stoga planira promovirati upravo te manje susrete i proširiti se na više gradova.
+
+U planu su i vikend seminari s prenoćištem, koji bi omogućili više vremena za upoznavanje. Međutim, Tomislav naglašava da udruga to fizički ne može postići sama. Potrebna im je pomoć s raznih strana, uključujući Vijeće Hrvatske biskupske konferencije (HBK) i potencijalnu podršku države kroz demografske mjere i novu Vladu. Cilj je pronaći mehanizme za pružanje pomoći ljudima u organizaciji susreta i osigurati održivost ovih inicijativa.
+
+### Više od susreta: Psihosocijalna podrška i neformalna druženja za samce
+
+Osim organizacije susreta, udruga 'Prilika za susret' prepoznaje i veliku potrebu za psihosocijalnom podrškom samcima. Tomislav Belavić ističe da bi se ljudi trebali savjetovati sa stručnjacima, naglašavajući da traženje savjeta nije znak bolesti, već prilika za dobivanje objektivnog mišljenja i usmjerenja. Udruga želi osigurati više logoterapije i psihoterapije, idealno sufinancirane ili drugačije formirane, kako bi ljudi sustavno mogli odlaziti na razgovore i rješavati svoje izazove.
+
+Paralelno s tim, planiraju se i brojna mini druženja izvan crkvenog okruženja, poput bowlinga, odlazaka u kino, društvenih večeri i izleta, s ciljem stvaranja opuštene atmosfere i novih 'prilika za susret'. Primjer takvog druženja je susret na Ovčari kod Đakova, gdje je cijela priča udruge i započela. Tomislav priznaje da je udruga ograničena resursima – sjedište je u Osijeku, on živi u Vukovaru, a volontera je malo. Stoga su im potrebni ljudi koji se žele uključiti, volonteri, te značajna financijska sredstva i podrška, ne samo kroz molitvu, već i kroz projekte i donacije.
+
+Belavić izražava optimizam, vjerujući da će Bog otvarati nova vrata za ostvarenje vizije udruge. Ovaj podcast vidi kao još jednu priliku za svjedočenje o radu udruge, njezinim planovima i važnosti. Naglašava da udruga nikoga ne gleda s prijekorom ili osudom, već se trudi djelovati isključivo u ljubavi. Kroz duhovne vježbe, Tomislav je naučio princip 'jedan prst prema Bogu, tri prema sebi', potičući samorefleksiju o vlastitim propustima. Vjeruje da će ljudi, kada se uključe u rad udruge i vide s kakvim se izazovima susreću, dobiti odgovore na pitanja koja ih muče.
+
+### Hrabrost za iskorak: Prekidanje srama i aktivno traženje partnera
+
+Jedan od ključnih problema s kojima se udruga 'Prilika za susret' susreće jest sram koji ljudi osjećaju zbog toga što su samci. Tomislav Belavić otvoreno govori o tome kako se mnogi srame biti sami, no on to preokreće: 'Sram te je što sjediš kod kuće i ne radiš ništa, očekuješ da će Bog nešto napraviti.' Poručuje da je potrebno napraviti **iskorak** i aktivno tražiti partnera, jer nitko neće osuditi nekoga tko se pojavi na susretu, već će ga, naprotiv, hrabriti.
+
+Prisjeća se početaka udruge prije sedam i više godina, kada su ljudi spuštali glave i izbjegavali temu susreta. No, nacionalni susret u Karlovcu, uz veliku medijsku pokrivenost i milijunske objave, pomogao je u podizanju svijesti i razbijanju tabua. Iako su mediji tražili 'vijest dana', udruga je bila fokusirana na 'srca i ljude'. Kako bi došli do što više ljudi, moraju govoriti i pokazivati što rade. Udruga je dostupna putem web stranice, Facebooka, Instagrama, YouTubea i e-maila, a Tomislav je otvoren za prijedloge, iako naglašava da je za njihovu realizaciju potrebna pomoć volontera.
+
+Zanimljivo je da na susretima udruge ponekad ima više muškaraca nego žena, što Tomislav vidi kao pozitivan znak buđenja i djelovanja. Kroz evaluacije susreta, udruga uočava da mnogi ljudi dolaze s dubljim problemima i nerealnim očekivanjima, misleći da će partnera pronaći već nakon prvog susreta. Belavić naglašava da udruga pruža ruku pomoći i bori se za svoje članove, unatoč povremenim osudama. Zaključuje da je u konačnici potrebno biti **hrabar, odlučan i boriti se** za svog budućeg supružnika, čak i prije nego što ga upoznaš.
+
+### Božji poziv i borba za supružnika: Prepoznavanje prave ljubavi
+
+Tomislav Belavić ističe da borba za budućeg supružnika počinje i prije nego što ga upoznaš. Upozorava na opasnost ulaska u vezu s prvom osobom koja se pojavi, samo zato što 'je vrijeme'. Naglašava da se u brak ne ulazi dok u srcu nema potvrde da je ta osoba za tebe, bez obzira na godine. Voditeljica je izrazila divljenje što je Tomislav, unatoč pronalasku svoje supruge Nikoline, ostao aktivan u udruzi, što je jasan znak Božjeg poziva.
+
+Tomislav objašnjava da u rad udruge nije ušao s namjerom traženja supruge, već zbog osjećaja Božjeg poziva. Priznaje da mu je bilo teško biti 'ispred' i ne gledati svaku ženu kao potencijalnu suprugu. Iako je razmišljao o tome kako će njegova buduća supruga izgledati, nije postavljao stroge okvire. Zanimljivo je da su ga uvijek više privlačile ekstrovertirane žene, dok je Nikolina povučena i introvertirana, te ju u masi ljudi ne bi lako primijetio. Njezinu je ljepotu i dubinu morao spoznati kroz vrijeme hodanja, a ne odmah.
+
+Belavić primjećuje da se ljudi koji služe u zajednici, a još nisu pronašli partnera, često razočaraju i povuku, što pripisuje nestrpljivosti i pokušaju 'petljanja u Božji plan'. Bog, kaže, stavlja osobu na put, ali ljudi često žele 'baš to', umjesto da se prepuste Božjoj volji. Tomislavovo osobno iskustvo to potvrđuje – Nikolina mu je prva poslala poruku, što je za njega bilo čudo, jer se nikada nije smatrao 'zgodnim, isklesanim' tipom. Vjerovao je da će neka osoba prepoznati nešto drugo u njemu i nije želio ulaziti u veze iz osjećaja obaveze.
+
+### Učenje komunikacije: Ključ za razumijevanje muško-ženskih razlika
+
+Tomislav Belavić ističe da je u njegovom braku s Nikolinom ključna **dobra komunikacija**, koja im omogućuje da jedno drugome kažu sve. Naglašava da nema očekivanja da će druga strana 'shvatiti' nešto bez riječi, već je potrebno aktivno učiti komunicirati i razumjeti da muškarci i žene razmišljaju drugačije. Dok žene često očekuju 'sto tisuća stvari' i da se 'poklopi hrpa toga', muškarci su, kako šaljivo kaže, 'jednostavni'.
+
+Smijući se, Tomislav citira Vlatku, koja je jednom prilikom izjavila da se muškarca u braku 'tretira maltene kao kućnog ljubimca: daj mu jesti, piti, pusti ga van'. Iako brutalno, ova izjava, kaže, ilustrira potrebu za učenjem kako tko reagira, na što reagira, te kada što reći, a kada ne. U suživotu je ključno prepoznati i poštovati te razlike, jer one su, kako dodaje voditeljica, bitne i čine život zanimljivijim.
+
+### Brak kao put rasta: Borba za nove živote i Božje Kraljevstvo
+
+Voditeljica naglašava važnost poštovanja, voljenja i cijenjenja razlika u braku, videći u njima bit i zanimljivost zajedničkog života. Izražava zahvalnost za udrugu 'Prilika za susret' i poziva ljude da dođu, predlažu, sudjeluju, volontiraju i podrže rad udruge, s ciljem širenja želje i čežnje prema sakramentu braka, otvaranju novom životu i rastu Božjeg Kraljevstva.
+
+Tomislav Belavić nadovezuje se na temu demografije i novih života, ističući da unatoč stalnim raspravama, nitko nema kvalitetno rješenje. Udruga 'Prilika za susret' ne nudi 'ultimativno rješenje', već želi na normalan i prirodan način vratiti ono što je bilo prije ere mobitela i interneta – jednostavan način upoznavanja, često uz pomoć prijatelja. Cilj je, uz dodatne programe, stvoriti kvalitetnije brakove i smanjiti stopu razvoda. Poanta je, naglašava, stvarati nove živote i nove prilike, učeći ljude da je život križ i trpljenje, baš kao što je Isus na križu pokazao najveću ljubav. Belavić zaključuje da, iako neće biti sve lijepo i sjajno, život u braku je definitivno puno bolji nego biti sam.
+
+### Zahvala i pozdrav: Nastavak misije 'Prilike za susret'
+
+Voditeljica je zahvalila Tomislavu Belaviću na gostovanju, uputivši pozdrave njegovoj supruzi Nikolini, te izrazila čast i radost što su ga ugostili. Tomislav je uzvratio zahvalom na pozivu, poželjevši obilje blagoslova u pastoralu i djelovanju Udruge Hrvatska za život. Izrazio je želju za nastavkom suradnje i zajedničkim djelovanjem na istom putu, naglašavajući važnost prilike da predstave ono što žele prenijeti drugima. Voditeljica je zaključila s porukom: 'I da stvaramo nove prilike za susret', na što je Tomislav dodao: 'Iz života.' Na kraju, voditeljica je pozdravila gledatelje, podsjetivši ih da u opisu videa mogu pronaći informacije o tome kako podržati rad udruge 'Prilika za susret' i Udruge Hrvatska za život.
