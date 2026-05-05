@@ -1,0 +1,219 @@
+Ti si stručni teološki analitičar Katoličke Crkve. Tvoj je zadatak objektivno evaluirati priloženi tekst (sažetak podcasta) isključivo temeljem katoličkog nauka, socijalnog nauka Crkve i Svetog pisma.
+
+VAŽNO PRAVILO: Analiziraj isključivo informacije koje su eksplicitno navedene u tekstu. Ne izmišljaj izjave gostiju i ne pretpostavljaj kontekst koji nije napisan. Tvoj izlaz mora biti strogo strukturiran u točno 6 numeriranih točaka. ZABRANJENO je korištenje tablica u odgovoru, koristi isključivo tekst i obične liste (bullet points).
+
+Za cijeli tekst daj JEDNU sveobuhvatnu evaluaciju točno ovim redoslijedom:
+
+1. **Ukupni score (0-100)** usklađenosti s katoličkim naukom i Svetim pismom. (Koristi skalu: 90-100 = aktivno promiče; 70-89 = uglavnom usklađeno; 50-69 = djelomično usklađeno/nejasnoće; 30-49 = značajno odstupanje; 0-29 = proturječi nauku).
+2. **Teološka procjena** (3 do 5 rečenica) — Sažeta sinteza onoga što je u tekstu teološki relevantno, a što neutralno.
+3. **Pozitivni elementi** — Konkretni primjeri iz teksta gdje se aktivno promiču kršćanske vrijednosti i dostojanstvo osobe.
+4. **Zabrinutosti** — Eventualna teološka odstupanja, rizici ili nejasnoće u iznesenim stavovima.
+5. **Teološki kontekst** — Relevantni crkveni dokumenti koji se izravno tiču tema.
+   *UPOZORENJE:* Navodi isključivo temeljne enciklike, Katekizam Katoličke Crkve (KKC) i opće poznate dokumente (npr. Laudato Si', Gaudium et Spes, dokumenti ekumenskih sabora). STROGO ZABRANJENO: Ne navodi lokalne govore, obraćanja pojedinim političarima ili opskurne dokumente. Ako nisi 100% siguran u izravnu teološku poveznicu dokumenta i teme, izostavi ga!
+6. **Score po tematskim blokovima** — Za svaki dostavljeni blok navedi njegov naziv, pripadajući score (0-100) i jednu rečenicu teološke procjene. (Ponavljam: koristi tekstualnu listu, NE tablicu).
+
+---
+
+# 20251120_don_damir_stojic_woke_ideologija_je_stetna_podcast_79_yt_YpHnvIcwXDE.wav.canary.diarized.srt
+
+
+## Blok 1: Od Vukovara do Charlieja Kirka: Borba za istinu i filozofski korijeni Woke ideologije
+
+*Vremenski raspon: 00:00:38 – 00:36:04*
+
+**Poglavlja:**
+- [00:00:38] Uvod u podcast i predstavljanje gosta
+- [00:01:20] Značaj Vukovara i kultura sjećanja
+- [00:07:10] Charlie Kirk: Mučenik istine i slobode govora
+- [00:12:00] Lekcije od Charlieja Kirka: Vjera, odvažnost i obitelj
+- [00:15:47] Izazovi slobode govora u Hrvatskoj i podrška pojedincima
+- [00:17:24] Cijena istine i vjere: Stepinac i rani kršćani
+- [00:20:10] Mirotvorstvo vs. miroljubivost: Biblijsko shvaćanje mira
+- [00:23:31] Uvod u Woke ideologiju: Povijesni korijeni i evolucija
+- [00:28:20] Filozofski temelji Woke ideologije: Descartes i Kant
+- [00:31:48] Hegel, Marx, Derrida, Foucault i Marcuse: Razvoj Woke misli
+
+### Uvod u podcast: Don Damir Stojić kao poseban gost
+*Ključni pojmovi: podcast, Mladi za domovinu, Don Damir Stojić, uvod*
+*Osobe/organizacije: Mladi za domovinu, Don Damir Stojić*
+
+Podcast udruge 'Mladi za domovinu' započeo je uvodnim riječima voditelja, koji je s posebnim zadovoljstvom najavio svog gosta, salezijanca Don Damira Stojića. Voditelj je istaknuo da je Don Damir poznata javna osoba te mu je poželio dobrodošlicu u podcast. Don Damir je izrazio svoju radost što je konačno gost u emisiji, naglašavajući da je dugo čekao na ovu priliku.
+
+### Vukovar: Kultura sjećanja, žrtva i oproštenje
+*Ključni pojmovi: Vukovar, kultura sjećanja, branitelji, oproštenje, povijest, Domovinski rat*
+*Osobe/organizacije: Vukovar, Škabrnja, Dubrovnik, Kanada, George Washington, Abraham Lincoln, 260 dana, Marijan Gubina, Crkva Svetom Mati Slobode*
+
+U kontekstu nadolazeće obljetnice pada Vukovara, voditelj je upitao Don Damira o značaju tog grada. Don Damir je objasnio da Vukovar za njega sažima sva stratišta Domovinskog rata, uključujući Škabrnju i Dubrovnik. Prisjećajući se svog boravka u Kanadi tijekom rata, istaknuo je kultni status Vukovara i ogromnu žrtvu koju je podnio. Usporedio je Vukovar s Jeruzalemom i pojmom hrama u židovskoj tradiciji, naglašavajući da je to mjesto gdje su ljudi branili domovinu i bili okrutno ubijeni. Spomenuo je film '260 dana' i važnost poruke oproštenja, ali uz neizostavno traženje pravde.
+
+Don Damir je kritizirao zanemarivanje kulture sjećanja u Hrvatskoj, uspoređujući je s američkim pristupom gdje se kroz filmove veličaju povijesne ličnosti poput Georgea Washingtona i Abrahama Lincolna. Istaknuo je da Hrvatska ima brojne herojske priče koje zaslužuju filmsku obradu. Posebno ga je dirnula inicijativa mladih koji u Vukovaru nose majice s imenima poginulih branitelja, personalizirajući tako veliku brojku žrtava. Naglasio je važnost edukacije mladih o povijesti Vukovara, ističući da je to herojsko mjesto. Zaključio je da je Vukovar početak razotkrivanja potisnute hrvatske povijesti, koja je dugo bila zabranjena ili iskrivljena.
+
+### Charlie Kirk: Mučenik istine i slobode govora
+*Ključni pojmovi: Charlie Kirk, sloboda govora, mučenik, istina, kršćanske vrednote, dijalog*
+*Osobe/organizacije: Charlie Kirk, Berlin, WhatsApp, Isus Krist, Michael Knowles, Matt Walsh, Taylor Marshall*
+
+Voditelj je pokrenuo temu Charlieja Kirka, američkog konzervativnog komentatora, i pokušaja atentata na njega. Don Damir Stojić je izrazio dubok šok i osobnu povezanost s događajem, s obzirom na to da je svakodnevno pratio Kirkove debate i videozapise. Opisao je Kirka kao elokventnog, ljubaznog i jasnog govornika, koji je uvijek promicao dijalog i poštovanje sugovornika, čak i onih s kojima se nije slagao. Istaknuo je da Kirk nikada nije bio vođen emocijama niti je vrijeđao ad hominem, već je bio siguran u istinu koju je promicao.
+
+Don Damir je naglasio da je Charlie Kirk bio veliki pobornik slobode govora i kršćanskih vrednota. Smatra da je Kirk mogao biti ušutkan samo pištoljem, jer njegovi argumenti i hrabrost nisu mogli biti poraženi u dijalogu. Nazvao ga je 'mučenikom istine', čija je smrt, paradoksalno, potaknula mnoge mlade ljude da progovore i aktiviraju se. Spomenuo je i Kirkovu duboku vjeru u Isusa Krista te navodne naznake koketiranja s katoličanstvom prije smrti, poput intervjua s Taylor Marshallom, traženja molitve katoličkog svećenika i posjeta misama, što je Don Damir protumačio kao prirodan put inteligentne i poštene osobe koja proučava katoličku teologiju.
+
+### Lekcije iz života Charlieja Kirka: Vjera, odvažnost i obitelj
+*Ključni pojmovi: vjera, odvažnost, obitelj, sloboda govora, autocenzura, Charlie Kirk*
+*Osobe/organizacije: Charlie Kirk, Isus Krist*
+
+Na pitanje voditelja o lekcijama koje mladi mogu naučiti od Charlieja Kirka, Don Damir Stojić je izdvojio tri ključne točke. Prvo, istaknuo je Kirkovu **vjeru u Isusa Krista**, koja nije bila samo privatna stvar, već ju je javno naviještao i živio. Drugo, naglasio je njegovu **odvažnost** (eng. 'boldness') – Kirk se nije bojao dići glas i govoriti istinu, unatoč medijskim napadima i prijetnjama, što je i sam Don Damir iskusio. Don Damir je priznao da se i sam suočavao s autocenzurom zbog straha od medijskog linča, ali je uvijek nastojao progovoriti, posebno tijekom referenduma za brak 2013. i kateheza o pornografiji. Treće, Don Damir je istaknuo Kirka kao **obiteljskog čovjeka**, posvećenog supruga i oca dvoje djece, koji je obitelj stavljao na prvo mjesto, što smatra iznimno uzornim.
+
+### Izazovi slobode govora u Hrvatskoj i potreba za podrškom
+*Ključni pojmovi: sloboda govora, autocenzura, mediji, podrška, referendum za brak, Hrvatska*
+*Osobe/organizacije: Luka Popov, Charlie Kirk, Hrvatska*
+
+Don Damir Stojić je progovorio o izazovima slobode govora u Hrvatskoj, ističući problem autocenzure koja proizlazi iz straha od medijskih napada i 'personality assassination' od strane lijevo nastrojenih medija. Podijelio je vlastita iskustva s prijetnjama koje je primao tijekom referenduma za brak 2013. godine i kateheza o pornografiji, naglašavajući da nije svatko spreman podnijeti takav pritisak. Kritizirao je izostanak podrške pojedincima koji se usude javno istupiti, navodeći primjer Luke Popova, kojeg su mnoge katoličke udruge poticale na društveni angažman, ali su ga ostavile samog kada su krenuli medijski napadi. Don Damir je istaknuo da je Charlie Kirk platio najvišu cijenu svoje odvažnosti, ali je zaključio da je ta žrtva bila vrijedna, jer postoje stvari važnije od vlastitog života.
+
+### Cijena istine i vjere: Stepinac i rani kršćani kao uzori
+*Ključni pojmovi: mučenici, Alojzije Stepinac, rani kršćani, istina, vjera, Rimsko Carstvo, kompromis*
+*Osobe/organizacije: Alojzije Stepinac, Vatikan, Rimsko Carstvo, Isus*
+
+Don Damir Stojić je povukao paralelu između Charlieja Kirka i povijesnih mučenika istine i vjere, poput blaženog Alojzija Stepinca i ranih kršćana. Objasnio je da Stepinac nije bio zatvoren i ubijen samo zato što je vjerovao u Boga, već zato što je odbio kompromis s komunističkim režimom, koji je od njega tražio da se odrekne Vatikana i stvori nacionalnu crkvu. Stepinac je, unatoč obećanjima o povlasticama, ostao nepokolebljiv u svojoj vjeri i odanosti. Slično tome, Rimsko Carstvo nije progonilo rane kršćane zbog njihove vjere u Boga, jer je bilo pluralističko društvo. Problem je nastao kada su kršćani tvrdili da je Isus jedini Bog, Gospodin i Spasitelj, što je ljutilo relativistički i sekularni svijet. Don Damir je zaključio da će kršćani uvijek biti 'trn u oku' svijetu upravo zato što propovijedaju jednu istinu i jednog Spasitelja, što je u suprotnosti s relativističkim shvaćanjem.
+
+### Mirotvorstvo vs. miroljubivost: Biblijsko shvaćanje mira
+*Ključni pojmovi: mirotvorstvo, miroljubivost, šalom, pravednost, istina, Jordan Peterson, Biblija*
+*Osobe/organizacije: Isus, Jordan Peterson, Matejevo evanđelje*
+
+Don Damir Stojić je pojasnio biblijsko shvaćanje mira, razlikujući ga od pasivne miroljubivosti. Pozivajući se na Isusove riječi iz Matejeva evanđelja: 'Blago mirotvorcima', naglasio je da Isus nije rekao 'blago miroljubivima'. Hebrejska riječ 'šalom', koju je Isus koristio, ne znači samo odsutnost rata, već uspostavu ispravnih odnosa. Kritizirao je ljevičarski pacifizam i 'mirovne studije' koje često ne donose pravi mir, već samo odsutnost sukoba. Pravi, biblijski mir, prema Don Damiru, uključuje pravednost, pravdu i istinu. Kao ilustraciju aktivnog mirotvorstva, spomenuo je citat Jordana Petersona: 'Bolje biti ratnik u vrtu nego vrtlar u ratu', ističući da mirotvorac mora biti sposoban za 'nemir' kako bi svjesno odabrao i borio se za mir. Zaključio je da kršćanski mir nije zemaljski mir bez progona, već unutarnji mir i radost u srcu, unatoč vanjskim kaosima.
+
+### Uvod u Woke ideologiju: Od borbe protiv rasizma do sekularne religije
+*Ključni pojmovi: woke, ideologija, rasizam, progresivna, sekularna, ljevičarska, Jim Crow, Ferguson*
+*Osobe/organizacije: SAD, Jim Crow, Scottsboro Boys, Ferguson, Hrvatska*
+
+Voditelj je postavio pitanje o 'woke' ideologiji, a Don Damir Stojić je objasnio da ga kao salezijanca zanima sve što utječe na mlade, posebno ono što je štetno. Objasnio je da riječ 'woke' na engleskom znači 'budan' i da njezini povijesni korijeni nisu bili negativni. Prvi put se izraz 'stay woke' spominje 1938. godine u SAD-u, u kontekstu borbe protiv rasizma i Jim Crow zakona, kada su Afroamerikanci bili ugroženi. Izraz je tada pozivao na budnost protiv nepravde i rasizma, a slično pozitivno značenje imao je i 60-ih godina.
+
+Međutim, Don Damir je istaknuo da je nakon 2000-ih, a posebno nakon nereda u Fergusonu 2014. godine, izraz doživio semantičku transformaciju. Od zdrave budnosti prema nepravdi, 'woke' je postao progresivna, sekularna, ljevičarska ideologija koja promiče različite ideje o nepravdi u svim slojevima društva, uključujući spolnost i klimatske promjene. Don Damir je naglasio da, iako je izraz 'woke' nov, ideje koje se kriju pod tim 'kišobranom' su stare. Primijetio je da u Hrvatskoj taj izraz još uvijek nije široko poznat, ali upozorava na njegovu rastuću prisutnost.
+
+### Filozofski temelji Woke ideologije: Od Descartesa do Kanta
+*Ključni pojmovi: Descartes, Kant, Cogito ergo sum, subjektivnost istine, filozofija, woke ideologija, relativizam*
+*Osobe/organizacije: René Descartes, Immanuel Kant, Eva, Adam, Ulm*
+
+Don Damir Stojić je dublje zaronio u filozofske korijene woke ideologije, počevši od biblijskog obećanja 'bit ćete kao bogovi', koje je zmija dala Evi. Smatra da je to temeljni 'logo' woke ideologije – čovjek koji želi biti mjera svega. Kao 'suvremenog oca' woke ideologije identificirao je Renéa Descartesa i njegovu poznatu sintagmu 'Cogito ergo sum' (Mislim, dakle jesam). Don Damir kritizira Descartesovo postavljanje ljudske misli kao početka istine i stvarnosti, umjesto da je postojanje preduvjet mišljenja. Upozorava na opasnost takvih ideja koje, iako apstraktne u filozofskim krugovima, mogu imati razorne posljedice kada se prenesu u društvo.
+
+Nakon Descartesa, Don Damir je spomenuo Immanuela Kanta, koji je tvrdio da ljudski um ne može spoznati 'stvar po sebi', već samo kako mu se ona pojavljuje. To je dovelo do ideje da ne postoji objektivna istina, već samo individualna percepcija istine. Don Damir je objasnio da takvo shvaćanje, gdje svatko ima svoju 'istinu', otvara vrata relativizmu i subjektivnosti, što je ključno za razvoj woke ideologije. Naglasio je da, iako Descartes i Kant vjerojatno nisu bili svjesni dugoročnih posljedica svojih ideja, loše ideje uvijek donose loše plodove.
+
+### Od Hegela do Marcusea: Razvoj i opasnosti Woke misli
+*Ključni pojmovi: Hegel, Marx, Derrida, Foucault, Marcuse, dekonstrukcija, klasna borba, cenzura, woke ideologija, filozofija*
+*Osobe/organizacije: Friedrich Hegel, Karl Marx, Jacques Derrida, Michel Foucault, Herbert Marcuse, Filozofski fakultet, Rijeka*
+
+Don Damir Stojić je nastavio s objašnjenjem razvoja woke misli kroz djela drugih utjecajnih filozofa. Spomenuo je **Friedricha Hegela** i njegovu dijalektiku, gdje je sukob motor napretka, a povijest sudac istine. Tu ideju je preuzeo **Karl Marx**, koji ju je pretvorio u klasnu borbu između buržoazije i proletarijata, pokretanu ekonomskim sukobom, što je Don Damir nazvao 'opakom idejom'.
+
+Zatim je prešao na manje poznata, ali ne manje opasna imena. **Jacques Derrida** je zagovarao dekonstrukciju svih društvenih struktura – obitelji, države, vjere – tvrdeći da su one stvorene za održavanje moći. Prema Derridi, riječi gube svoje objektivno značenje, što dovodi do potpunog relativizma. **Michel Foucault** je tvrdio da je istina odraz moći, pa je i on pozivao na dekonstrukciju svega. Don Damir je spomenuo i kontroverze oko Foucaultovog života, uključujući optužbe za silovanje djece. Konačno, **Herbert Marcuse** je, prema Don Damiru, najopasniji jer je zagovarao netoleranciju prema 'lažima i netolerantnima', što je dovelo do ušutkavanja neistomišljenika. Don Damir je povezao Marcuseove ideje s ponašanjem današnjih studenata aktivista koji prekidaju predavanja i nameću svoje stavove.
+
+Zaključio je da su ovi filozofi postavili temelje za današnju woke ideologiju: Descartes s idejom da je čovjek mjera istine, Kant s objektivnom istinom kao subjektivnom percepcijom, Hegel i Marx s idejom sukoba i revolucije, Derrida i Foucault s dekonstrukcijom značenja i sumnjom u sve, te Marcuse s cenzurom. Sve to, prema Don Damiru, vodi do situacije gdje se gubi objektivno značenje temeljnih pojmova poput 'žene', 'života' ili 'braka', a pojedinac postaje 'bog' koji određuje vlastitu istinu.
+
+
+## Blok 2: Woke ideologija kao sekularna religija i vizija Hrvatske temeljene na obitelji i vjeri
+
+*Vremenski raspon: 00:36:04 – 01:12:47*
+
+**Poglavlja:**
+- [00:36:04] Praktične implikacije Woke ideologije: Relativizam i pobačaj
+- [00:37:55] Woke ideologija kao sekularna religija: Inverzija sakramenata
+- [00:41:56] Woke ideologija: Slogani, 'virtue signaling' i profesionalni aktivisti
+- [00:44:54] Indoktrinacija mladih: Škole kao primarni teren Woke ideologije
+- [00:47:06] Borba za duše: Zašto se svećenik bavi Woke ideologijom
+- [00:49:42] 'Seksalice' i spolni odgoj: Roditelji kao primarni odgojitelji
+- [00:53:52] Teologija tijela vs. Woke shvaćanje spolnosti i identiteta
+- [00:56:30] Obitelj kao zadnja brana: Značaj bračnog referenduma 2013.
+- [00:58:21] Savjeti za mlade obitelji: Krist u središtu, prioriteti i neovisnost
+- [01:01:20] Uloga katolika u politici: Vjera u javnom životu i 'Bogu Božje, caru carevo'
+- [01:07:23] Vizija Hrvatske: Poštivanje života, obitelj, mala država i sloboda govora
+- [01:10:50] Obitelj kao temelj opstanka: Poziv na brak i rađanje djece
+
+### Praktične implikacije Woke ideologije: Relativizam i pobačaj
+*Ključni pojmovi: woke ideologija, relativizam, pobačaj, dekonstrukcija, značenje riječi*
+*Osobe/organizacije: Descartes, Kant, Derrida, Foucault, Marcuse*
+
+Don Damir Stojić započinje analizu woke ideologije ističući njezine praktične implikacije, posebno u kontekstu relativizma i pitanja pobačaja. Objašnjava kako filozofski korijeni, od **Descartesa** s njegovim 'Cogito ergo sum' (Mislim, dakle jesam), preko **Kanta** i njegove ideje da ne možemo spoznati 'stvar po sebi' već samo njezinu percepciju, pa sve do **Derride** i **Foucaulta** koji zagovaraju dekonstrukciju svih društvenih struktura i značenja riječi, dovode do situacije u kojoj se gubi objektivna istina. Don Damir naglašava da je u woke ideologiji riječ lišena svog inherentnog značenja, pa tako pitanja poput 'Što je žena?' ili 'Što je život?' ostaju bez jasnog odgovora, jer svatko stvara svoju istinu. Kao primjer apsurda navodi situaciju u kojoj iste novine slave trudnoću neke poznate osobe, dok istovremeno podržavaju pobačaj, što ukazuje na relativizaciju samog pojma života. Prema njegovim riječima, to je direktna posljedica ideje da 'riječ ne objašnjava ništa, nego stvara nešto', što omogućuje pojedincu da samostalno definira stvarnost.
+
+### Woke ideologija kao sekularna religija: Inverzija sakramenata
+*Ključni pojmovi: sekularna religija, inverzija sakramenata, kontracepcija, pobačaj, eutanazija, coming out, profesionalni aktivisti*
+*Osobe/organizacije: Petar Krišto, Toronto Blue Jays, Toronto Maple Leafs*
+
+Don Damir Stojić iznosi provokativnu tezu da se woke ideologija može promatrati kao **sekularna religija** s vlastitim 'sakramentima', koji su zapravo inverzija kršćanskih. On uspoređuje sedam katoličkih sakramenata s njihovim 'woke' pandanima:
+
+*   **Krštenje** (davanje nadnaravnog života) nasuprot **kontracepciji i sterilizaciji** ('ne želim život').
+*   **Krizma** (sakrament punoljetnosti i potvrde vjere) nasuprot **'coming outu' i odabiru zamjenica** (pronouns), gdje pojedinac sam definira svoj spol i identitet.
+*   **Euharistija** (Isusovo tijelo dano za život svijeta) nasuprot sloganu **'ovo je moje tijelo'** u kontekstu pobačaja, gdje se život oduzima. Don Damir ističe da je Isus ušao u svijet preko žene koja je nosila trudnoću, a upravo se tu, kroz pobačaj, život uništava.
+*   **Ispovijed** (tajno pokajanje i oprost) nasuprot **javnim ispričnicama bez oprosta**, gdje se pojedinci, poput sportaša koji je izrazio tradicionalan stav o braku, suočavaju s pritiskom i gubitkom posla, bez mogućnosti istinskog oprosta.
+*   **Brak** (zajednica muškarca i žene) nasuprot **'gej braku'**.
+*   **Svećenički red** (posvećeni službenici) nasuprot **profesionalnim aktivistima i nevladinim udrugama (NGO)**, koje Don Damir naziva 'svećenicima' woke ideologije.
+*   **Bolesničko pomazanje** (sjedinjenje patnje s Kristom) nasuprot **eutanaziji** ('ubij patnika').
+
+Ova inverzija sakramenata, kako objašnjava Don Damir, pokazuje duboku suprotnost između kršćanskih vrijednosti i woke ideologije, koja umjesto davanja života i ljubavi, promiče oduzimanje i samovolju. Ideju o inverziji sakramenata pripisuje filozofu **Petru Krišti**.
+
+### Woke ideologija: Slogani, 'virtue signaling' i profesionalni aktivisti
+*Ključni pojmovi: virtue signaling, profesionalni aktivisti, NGO, slogani, perverzija značenja, regrutacija*
+*Osobe/organizacije: Amazon, Gaza, Nigerija, Trg sv. Marka*
+
+Don Damir Stojić upozorava na perfidnost woke ideologije koja koristi naizgled hvalevrijedne slogane i ideje, poput borbe protiv rasizma ili za ljudska prava, kako bi prikrila dublje, destruktivne ciljeve. Ističe da se iza tih parola često krije **'virtue signaling'**, odnosno javno pokazivanje moralne superiornosti bez stvarne promjene. Kao primjere navodi kampanje za zaštitu **Amazone** ili pozive za povratak otetih djevojaka u **Nigeriji**, gdje se poznate osobe javno angažiraju, ali bez konkretnog utjecaja na problem. Don Damir smatra da su takvi 'performansi' na javnim trgovima, poput **Trga sv. Marka**, zapravo samo 'virtue signaling' koji služi za samopromociju i stvaranje dojma borbe, dok se stvarne ideje i ciljevi kriju. Voditelj dodaje kako se često kaže da 'because they cannot reproduce, they recruit' (budući da se ne mogu razmnožavati, regrutiraju), što Don Damir potvrđuje, naglašavajući ulogu **profesionalnih aktivista** i **nevladinih udruga (NGO)** kao ključnih aktera u širenju ove ideologije.
+
+### Indoktrinacija mladih: Škole kao primarni teren Woke ideologije
+*Ključni pojmovi: indoktrinacija, škole, mladi, regrutacija, obitelj, crkva, stručnjaci*
+*Osobe/organizacije: Alistair McIntyre, Saperalde, Luka Golež Babić*
+
+Škole su, prema Don Damiru Stojiću, primarni teren za **indoktrinaciju mladih** woke ideologijom. On ističe da je cilj te ideologije 'regrutirati' djecu i pretvoriti ih u 'male vojnike', koristeći ih kao 'eksperimente'. Kritizira se oslanjanje na 'stručnjake' i 'znamenita sveučilišta' koji promiču ove ideje, a Don Damir je postao alergičan na takve izraze, smatrajući ih 'semaforom' za opasne utjecaje. Naglašava da su **obitelj i Crkva** dvije institucije koje su trn u oku ljevičarskim ideologijama, jer predstavljaju prepreku njihovom utjecaju na djecu. Don Damir primjećuje da ljevičari često koriste **cenzuru i prisilu** te floskule poput 'djeca imaju pravo na znanje' kako bi nametnuli svoje 'znanje', bez obzira na stavove roditelja. Citira filozofa **Alistaira MacIntyrea** ('čije činjenice, tvoje ili moje?'), ističući da se radi o križarskom ratu za prenošenje specifičnog 'znanja' na djecu, čime se zaobilazi uloga obitelji i Crkve u odgoju. Voditelj dodaje da je **Luka Golež Babić** na portalu Saperalde spominjao 'dogmatski relativizam', gdje se relativne stvari pretvaraju u dogme, što je, prema Don Damiru, 'ludilo'.
+
+### Borba za duše: Zašto se svećenik bavi Woke ideologijom
+*Ključni pojmovi: spasenje duše, borba za duše, svećenik, salzijanac, evanđeoske vrijednosti, vukovi u ovčjem runu*
+*Osobe/organizacije: Isus Krist*
+
+Na pitanje voditelja zašto se kao svećenik bavi temom woke ideologije, Don Damir Stojić jasno odgovara da je njegova primarna motivacija **spasenje duše**. Smatra da woke ideologija promiče ideje koje mogu čovjeka odvesti u propast, jer su dijametralno suprotne svetom pismu i nauku Crkve. Iako priznaje Božje milosrđe i ne sudi pojedincima, ističe da je opasnost u tome što woke ideologija nudi 'evanđeoske vrijednosti' poput pravednosti i slobode, ali pod tom krinkom podvaljuje laži. Kao **salzijanac i pastir**, Don Damir osjeća dužnost upozoravati na 'vukove u ovčjem ruhu' koji zavode ljude. Naglašava da se ovom temom bavi još od studentskih dana, uvijek obavještavajući i progovarajući o kulturološkim pojavama koje smatra štetnima za mlade, unatoč napadima koje je zbog toga doživio. Za njega je to **'borba za duše'** i dobrobit svakog čovjeka.
+
+### 'Seksalice' i spolni odgoj: Roditelji kao primarni odgojitelji
+*Ključni pojmovi: seksalice, spolni odgoj, roditelji, primarni odgojitelji, Jovanović, društveni eksperimenti, sloboda izbora*
+*Osobe/organizacije: Jovanović, Judith Reisman, Dubrovnik, Zagreb*
+
+Don Damir Stojić se osvrće na aktualnu kontroverzu oko 'seksalica' (edukativnih materijala za spolni odgoj), smatrajući da su se promotori tih materijala 'malo zaletjeli'. Koristi analogiju s **'kuhanjem žabe'** – ako se žaba stavi u vrelu vodu, odmah će iskočiti, ali ako se stavi u mlaku i postupno zagrijava, neće primijetiti da se kuha. Smatra da su 'seksalice' bile previše 'vrela voda'. Podsjeća na žestoku borbu oko **spolnog odgoja** za vrijeme ministra **Jovanovića**, u kojoj je i sam bio aktivno uključen i koja je tada rezultirala pobjedom. Ističe da su tada, uz pomoć **Judith Reisman**, razotkrivene veze autora spornog četvrtog modula s pedofilskim krugovima. Don Damir naglašava da su **roditelji primarni odgojitelji** svoje djece i da se vrijednosne teme, poput spolnosti, ne smiju nametati djeci bez pristanka roditelja. Predlaže da se različitim skupinama roditelja (ateističkim, sekularnim, progresivnim) omogući odgoj djece prema vlastitim uvjerenjima, kako bi se kroz 15-20 godina vidjeli rezultati tih 'društvenih eksperimenata'. Izražava čuđenje zbog 'prezira prema slobodi' i želje za nametanjem ideja, posebno od strane aktualne zagrebačke vlasti, koja bi spolni odgoj mogla uvesti kao izborni predmet, što je, po njemu, početak infiltracije u sustav.
+
+### Teologija tijela vs. Woke shvaćanje spolnosti i identiteta
+*Ključni pojmovi: teologija tijela, spolnost, identitet, antropologija, semantički rat, Descartes, Kant, Foucault, Derrida*
+*Osobe/organizacije: Ivan Pavao II.*
+
+Don Damir Stojić kritizira woke shvaćanje spolnosti i identiteta, ističući da ono spolnost pretvara u puku tehniku, lišenu svih vrednota i značenja. Objašnjava da se u ovom 'semantičkom ratu' stvaraju nove riječi poput 'homoseksualac', 'heteroseksualac', 'aseksualac' ili 'transseksualac', koje su, prema njegovom mišljenju, lišene dubljeg smisla. Don Damir naglašava da je riječ 'homoseksualac' relativno nova i da se ne spominje u Bibliji, a čak i pojam 'heteroseksualac' smatra nepotrebnim, jer je on jednostavno 'muškarac'. Smatra da se time gubi značenje riječi 'muškarac' i 'žena', što dovodi do **antropološke krize**. U tom kontekstu, **Teologija tijela** svetog **Ivana Pavla II.** predstavlja fantastičan alat za borbu protiv ovih ideja, jer nudi snažnu **antropologiju** – znanost o čovjeku, koja daje odgovor na temeljna pitanja 'tko sam ja?' i 'što je čovjek?'. Za razliku od woke ideologije, koja dopušta svakome da odlučuje o svojoj istini, Teologija tijela pruža objektivnu istinu o ljudskoj osobi, suprotstavljajući se ideji 'bit ćete kao bogovi' koja je, prema Don Damiru, korijen svih ovih zabluda.
+
+### Obitelj kao zadnja brana: Značaj bračnog referenduma 2013.
+*Ključni pojmovi: obitelj, brak, referendum o braku, hrvatska katolička obitelj, otpor, Robert Podolnjak*
+*Osobe/organizacije: Hrvatski sabor, Robert Podolnjak, Zagreb, Karl Marx, Turci, komunizam*
+
+Voditelj i Don Damir Stojić razgovaraju o značaju **referenduma o braku iz 2013. godine** u Hrvatskoj, ističući ga kao **proročko djelovanje** koje je osiguralo definiciju braka kao zajednice muškarca i žene u Ustavu. Don Damir naglašava da je **obitelj zadnja brana** protiv 'suludih ideja' koje se nameću. Spominje da je **Karl Marx** mrzio dvije institucije: Crkvu i obitelj, jer su one bile prepreka njegovim idejama. Voditelj navodi primjer profesora **Roberta Podolnjaka** s Pravnog fakulteta u **Zagrebu**, koji je u sklopu kolegija Ustavnog prava rekreirao referendum o braku i dobio slične rezultate kao 2013. godine (oko 67-68% za tradicionalnu definiciju braka). To pokazuje da, unatoč svim pritiscima, srca ljudi i dalje prepoznaju važnost tradicionalne obitelji. Don Damir zaključuje da je snaga hrvatske katoličke obitelji povijesno dokazana, jer je opstala i za vrijeme **Turaka** i za vrijeme **komunizma**, što je čini neuništivom.
+
+### Savjeti za mlade obitelji: Krist u središtu, prioriteti i neovisnost
+*Ključni pojmovi: mlade obitelji, Krist u središtu, prioriteti, neovisnost, zemlja, poduzetništvo, globalisti*
+*Osobe/organizacije: Aristotel, Kanada, Jarun, Horvaćanska, Zagreb*
+
+Don Damir Stojić nudi konkretne savjete mladim muškarcima koji ulaze u brak i osnivaju obitelj, s ciljem izgradnje snažnog i otpornog obiteljskog života:
+
+1.  **Krist u središtu:** Pozivajući se na **Aristotelovu** ideju o 'transcendentnom trećem', Don Damir naglašava da **Isus Krist** mora biti u središtu braka kao najjača poveznica između supružnika.
+2.  **Prioritet supružniku:** Supružnik mora biti na prvom mjestu. Koristi analogiju s uputama u avionu – prvo staviti masku sebi, pa djetetu. Slično, supružnici moraju prvo brinuti jedno o drugome kako bi mogli brinuti o djeci.
+3.  **Vrijeme s djecom:** Važno je provoditi kvalitetno vrijeme s djecom, navodeći primjer kršćanskog oca koji posvećuje pola sata svakom djetetu dnevno.
+4.  **Neovisnost i zemlja:** Don Damir savjetuje kupnju zemlje i težnju ka neovisnosti, odnosno radu za sebe, umjesto oslanjanja na državnu 'pipu'. Prisjeća se savjeta svog oca iz **Kanade** da se kupuje zemlja, što je shvatio kao mudrost nakon potresa u **Zagrebu** (na **Jarunu**, Horvaćanskoj), kada su ljudi s imanjem izvan grada imali kamo otići. Kritizira globalističke ideje koje promiču rentanje umjesto posjedovanja, dok sami globalisti kupuju ogromne posjede. Poručuje: 'Budi svoj na svome, po mogućnosti na zemlji.'
+
+### Uloga katolika u politici: Vjera u javnom životu i 'Bogu Božje, caru carevo'
+*Ključni pojmovi: katolici u politici, vjera u javnom životu, John F. Kennedy, sloboda vjeroispovijesti, sloboda klanjanja, Bogu Božje caru carevo, komunizam, socijalizam*
+*Osobe/organizacije: John F. Kennedy, SAD, Vatikan, Joe Biden, Nancy Pelosi, Thomas More, Barack Obama, Matej Evanđelje, Tiberije*
+
+Don Damir Stojić se osvrće na negativnu konotaciju politike u Hrvatskoj, pripisujući je pedesetogodišnjem 'otrovu' socijalizma i komunizma. Unatoč tome, poziva katolike da se aktivnije uključe u politiku i da svoju vjeru ne ostavljaju 'na vratima' javnog života. Kritizira **Johna F. Kennedyja**, prvog katoličkog predsjednika **SAD-a**, koji je u svom govoru izjavio da svoju vjeru ostavlja kod kuće kada ide na posao. Don Damir to smatra pogubnim i sramotnim za katolike, navodeći primjere poput **Joea Bidena** i **Nancy Pelosi**, koji su, iako katolici, ugrožavali vjerska prava. Ističe da je vjera ta koja treba oblikovati savjest i prožimati sve aspekte života, uključujući politiku. Upozorava na semantičku promjenu u ljevičarskom žargonu, gdje se 'sloboda vjeroispovijesti' (freedom of faith) zamjenjuje s 'slobodom klanjanja' (freedom to worship), čime se vjera svodi na privatnu aktivnost unutar crkvenih zidova. Don Damir reinterpretira Isusove riječi **'Bogu Božje, caru carevo'** iz **Matejeva evanđelja**, objašnjavajući da je Isus time odvojio svjetovno od duhovnog, ali i prožeo sve Božjim. Kroz retoričko pitanje 'čija je ova slika?' na poreznom novčiću, Isus je podsjetio da je i car, i sve stvoreno, Božje, te da je čovjek stvoren na Božju sliku i priliku. Stoga, kada katolik glasa ili radi, mora biti 'Božji', odnosno prožet vjerom.
+
+### Vizija Hrvatske: Poštivanje života, obitelj, mala država i sloboda govora
+*Ključni pojmovi: vizija Hrvatske, poštivanje života, obitelj, brak, mala država, birokracija, porezi, privatizacija, sloboda govora, sloboda savjesti*
+*Osobe/organizacije: Marx, Hitler, Europa, Hrvatska*
+
+Don Damir Stojić iznosi svoju viziju Hrvatske, naglašavajući da je konačna 'domovina' na nebesima, ali da se teži 'komadiću neba na zemlji'. Kritizira utopijska društva koja su stvorila 'pakao na Zemlji', poput onih pod **Marxom** ili **Hitlerom**. Njegova vizija Hrvatske temelji se na nekoliko ključnih točaka:
+
+*   **Tri 'non-negotiables'**: Poštivanje ljudskog života od začeća do prirodne smrti, definicija braka kao zajednice muškarca i žene, te primarnost uloge roditelja u odgoju djece.
+*   **Mala država i smanjena birokracija**: Zalaže se za 'small government', smanjenje broja ministarstava i državne birokracije, te minimalne poreze. Vjeruje da država ne zna odgajati, školovati niti liječiti, te podržava veću privatizaciju u tim sektorima.
+*   **Fiskalni liberalizam**: Želi da novac ostane u džepu svakog čovjeka, kako bi on sam odlučivao o njegovoj potrošnji.
+*   **Sloboda govora i savjesti**: Posebno naglašava važnost slobode govora i vjerskih prava, primjećujući da je sloboda govora, osobito u **Europi**, sve više ugrožena.
+
+Don Damir ističe da je Katolička crkva, gdje god se usidrila, uljepšavala svijet kroz arhitekturu, umjetnost i vrtove, za razliku od 'rugla' komunističke arhitekture. Njegova vizija je **Hrvatska** koja poštuje život, obitelj, ima malu i učinkovitu državu te jamči slobodu govora i savjesti.
+
+### Obitelj kao temelj opstanka: Poziv na brak i rađanje djece
+*Ključni pojmovi: obitelj, brak, rađanje djece, opstanak, hrvatska katolička obitelj, komunizam, Turci, studentski pelan*
+*Osobe/organizacije: Turci, komunizam, Isus*
+
+Don Damir Stojić zaključuje podcast snažnim pozivom mladima da se **žene i rađaju djecu**, ističući **obitelj kao najmoćniju stvar i temelj opstanka**. Podsjeća da je hrvatska katolička obitelj opstala i za vrijeme **Turaka** i za vrijeme **komunizma**, što dokazuje njezinu snagu. Njegov savjet mladima je jasan: 'Ženite se i nek se djeca rađaju i odgajajte svoju djecu.' Osobno je promovirao filozofiju 'prvo se ženi, onda diplomiraj', što je, kako kaže, rezultiralo uspješnim brakovima među njegovim bivšim studentima. Kritizira trend pretvaranja fakulteta u 'zlatno tele' i dugotrajne akademske puteve (postdiplomski, Erasmus) koji odgađaju brak i obitelj do tridesetih godina. Za Don Damira, brak je najveća vrijednost, a obitelj je ključna za 'malu domovinu'. Ponovno naglašava važnost stavljanja **Isusa u središte života** i kupnje zemlje, kao temelja neovisnosti i stabilnosti. Ističe da je najgore kada mlada osoba ne može riješiti temeljna životna pitanja, a brak i obitelj su upravo ta temeljna pitanja.
