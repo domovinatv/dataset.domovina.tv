@@ -72,6 +72,7 @@ INCLUDE_EXTENSIONS=(
     "*.json"
     "*.jsonl"
     "*.vtt"
+    "*.md"
 )
 
 # --- Validation ---
