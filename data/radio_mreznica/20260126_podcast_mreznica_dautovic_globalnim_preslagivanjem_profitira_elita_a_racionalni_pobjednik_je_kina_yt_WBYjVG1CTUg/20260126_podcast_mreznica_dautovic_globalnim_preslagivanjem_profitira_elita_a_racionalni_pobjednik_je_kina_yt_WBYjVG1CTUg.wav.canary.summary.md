@@ -1,0 +1,151 @@
+# PODCAST MREŽNICA-Dautović: Globalnim preslagivanjem profitira elita, a racionalni pobjednik je Kina
+
+**Kanal:** radio_mreznica  
+**Datum:** 2026-01-26  
+**Trajanje:** 59 min  
+**YouTube:** https://youtu.be/WBYjVG1CTUg  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Profesor Mirko Dautović, stručnjak za međunarodne odnose, analizira globalno preslagivanje moći, ističući da od njega profitira uska elita oko Donalda Trumpa i tehnološki magnati, dok SAD gubi povjerenje. Raspravlja se o Trumpovom "odboru za mir" i utjecaju privatnog kapitala na međunarodne odnose, uspoređujući ga s povijesnim razdobljima. Dautović predviđa da Kina neće sudjelovati u podjeli svijeta na interesne sfere, dok Rusija nema kapaciteta za to. Također, kritizira europske greške u nedostatku suvereniteta i vizije te dijeli uvide o životu u Uzbekistanu i iranskoj geopolitici, zaključujući da je svijet ušao u eru kaosa i uništenih vrijednosti.
+
+## Ključne teme
+
+- globalno preslagivanje moći
+- utjecaj Donalda Trumpa
+- uloga privatnog kapitala
+- geopolitika Ukrajine i Rusije
+- europske greške i suverenitet
+- situacija u Iranu i Kubi
+- život u Uzbekistanu
+- budućnost međunarodnih odnosa
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Voditeljica | voditelj |
+| SPEAKER_00 | Mirko Dautović | gost |
+
+## Ključni zaključci
+
+1. Globalnim preslagivanjem moći profitira uska elita oko Donalda Trumpa i tehnološki magnati, dok Sjedinjene Američke Države gube povjerenje kao dobronamjerna sila.
+2. Trumpov mentalitet nekretninskog magnata potiče ideju podjele svijeta na interesne sfere, ali Kina nije zainteresirana za takav pristup zbog vlastite povijesti, a Rusija nema kapaciteta.
+3. Europa čini veliku grešku u nedostatku suvereniteta i vizije, previše se oslanjajući na SAD i ne gradeći zajednički obrambeni i diplomatski sustav.
+4. Mir u Ukrajini je teško ostvariv jer ni Kijev ni Moskva ne pokazuju stvaran interes za kompromis, a eventualni dogovor bi mogao uključivati američke sigurnosne garancije u zamjenu za teritorijalne ustupke.
+5. Invazija na Iran je upitna jer je teško identificirati ciljeve s jasnim političkim ishodom, a iranski režim je navikao na pritiske i ima razvijene obrambene kapacitete.
+6. Život u Uzbekistanu, izvan glavnog grada, obilježen je siromaštvom i korupcijom, a država je u panici od islamizacije, što se očituje i u kontroli izgleda muškaraca.
+7. Današnje vrijeme karakterizira slom starih pravila multilateralizma i normi zbog sabotaže velikih sila i utjecaja tehnoloških kompanija, što vodi u eru kaosa i uništenih vrijednosti.
+
+## Spomenute osobe
+
+- Mirko Dautović
+- Wilhelm II.
+- Donald Trump
+- Elon Musk
+- Mark Zuckerberg
+- Sam (vlasnik kriptoburze)
+- Bill Clinton
+- Tony Blair
+- António Guterres
+- Joseph Schumpeter
+- Otto von Bismarck
+- Volodymyr Zelenskyy
+- Vladimir Putin
+- Lovro (hrvatski učenjak)
+- Karl Max von Lichnowsky
+- Gavrilo Princip
+- Benjamin Netanyahu
+- Charles de Gaulle
+- Valéry Giscard d'Estaing
+- Angela Merkel
+- Emmanuel Macron
+- Islam Karimov
+- Shavkat Mirziyoyev
+- Akbar
+- Džahangir
+- Shah Jahan
+- Aurangzeb
+- David Murray
+- Timur (Tamerlan)
+- Bajazit I.
+- Ajatolah Hamnei
+
+## Spomenuta mjesta
+
+- Taškent
+- Uzbekistan
+- Sjedinjene Američke Države (Amerika)
+- Hrvatska
+- Srbija
+- Bliski istok
+- Indija
+- Kina
+- Europa
+- Manhattan
+- Queens
+- Brooklyn
+- Bjelorusija
+- Venecija
+- Genova
+- Pisa
+- Firenca
+- Nigerija
+- Kongo
+- Angola
+- Tanzanija
+- Rusija
+- Ukrajina
+- Lugansk
+- Donetsk
+- Zaporožje
+- Herson
+- Izrael
+- Iran
+- Turska
+- Katar
+- Saudijska Arabija
+- Ujedinjeni Arapski Emirati (Emirati / Abu Dhabi)
+- Egipat
+- Irak
+- Sirija
+- Libanon
+- Libija
+- Alžir
+- Maroko
+- Kuba
+- Venezuela
+- Grenland
+- Davos
+- Moskva
+- Petrograd
+- Leningrad
+- Samarkand
+- Afganistan
+- Perzija
+- Buhara
+- Delhi
+- Balkan
+- Mađarska
+- Beč
+- Njemačka
+- Francuska
+- Španjolska
+- Bugarska
+
+## Spomenute organizacije
+
+- Američko sveučilište u Taškentu
+- Meta
+- Google
+- X
+- East India Company
+- NATO
+- Europska unija (EU)
+- Komunistička partija
+- Iranska revolucionarna garda
+- Ujedinjeni narodi
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T16:28:11.842Z*
