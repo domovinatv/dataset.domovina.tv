@@ -4,8 +4,9 @@ Tekstualni dataset hrvatskih YouTube podcasta i emisija — transkripti, dijariz
 sažetci, generirani članci i RAG artefakti. Sadrži **samo tekst/metapodatke**;
 audio/video se ne pohranjuje u ovaj repo.
 
-Trenutno: **~2.600 epizoda** u **39 kanala** (npr. `budi_frajer`, `mreze_rijeci`,
-`mladi_za_domovinu`, `40_dana_za_zivot`, `zeljka_markic_i_narod_hr`, …).
+Trenutno: **2.695 epizoda** u **42 kanala** (npr. `nanovoroeni`, `budi_frajer`,
+`lood_podcast`, `radio_mreznica`, `mreze_rijeci`, `zeljka_markic_i_narod_hr`, …).
+Posljednji snapshot brojki: [`stats/snapshot-2026-06-01.md`](stats/snapshot-2026-06-01.md).
 
 ## Struktura
 
@@ -122,6 +123,15 @@ macOS `._*` resource forkovi i generički `.csv` (prolazi samo `.canary.csv`).
 Sync je inkrementalan: rsync sinkronizira u `.sync_staging/` cache (hardlinkovi,
 bez dodatnog prostora), pa se samo nove/promijenjene datoteke organiziraju u
 per-epizoda direktorije.
+
+### Više diskova (storage.conf)
+
+Fetch pipeline raspoređuje kanale na više diskova (`DOMOVINA1TB`, `DOMOVINA2TB`).
+Mapiranje `kanal=putanja` čita se iz `storage.conf` fetch repoa (zadano
+`~/git/domovinatv/fetch.domovina.tv/storage.conf`, override preko `STORAGE_CONF`).
+Sync povlači zadani disk **plus** svaki per-channel override čiji je disk montiran;
+nedostupni se preskaču uz `⏭️` log. **Montiraj oba diska prije syncа**, inače
+kanali s drugog diska neće biti ažurirani.
 
 ## Ostale skripte
 
