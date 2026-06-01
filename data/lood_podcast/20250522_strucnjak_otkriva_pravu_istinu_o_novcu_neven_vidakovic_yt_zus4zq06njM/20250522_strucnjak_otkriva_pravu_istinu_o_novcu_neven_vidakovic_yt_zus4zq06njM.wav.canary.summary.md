@@ -1,0 +1,112 @@
+# Stručnjak otkriva pravu istinu o novcu: Neven Vidaković
+
+**Kanal:** lood_podcast  
+**Datum:** 2025-05-22  
+**Trajanje:** 95 min  
+**YouTube:** https://youtu.be/zus4zq06njM  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+U ovoj epizodi podcasta, ekonomist Neven Vidaković detaljno objašnjava proces stvaranja novca, ulogu centralnih i komercijalnih banaka te utjecaj kamatnih stopa na ekonomiju. Razgovor se dotiče i povijesnih prekretnica poput Nixonovog napuštanja zlatnog standarda 1971. godine, analizira globalnu dominaciju dolara i izazove de-dolarizacije. Vidaković kritički ocjenjuje europsko ekonomsko vodstvo i američki dug, ističući rastuću moć Kine i potrebu za financijskom edukacijom građana.
+
+## Ključne teme
+
+- stvaranje novca
+- uloga centralnih banaka
+- kamatne stope
+- financijska pismenost
+- de-dolarizacija
+- američki dug
+- ekonomija Kine
+- europsko ekonomsko vodstvo
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Voditelj | voditelj |
+| SPEAKER_01 | Neven Vidaković | gost |
+
+## Ključni zaključci
+
+1. Centralna banka je jedina institucija koja smije proizvesti novac, temeljen na imovini poput državnih obveznica, dok komercijalne banke multipliciraju novac kroz kreditiranje.
+2. Kamatne stope centralne banke, iako kontroliraju samo jednu stopu, strukturno mijenjaju sve ostale kamatne stope u ekonomiji, utječući na kredite za građane i poduzeća.
+3. Nixonovo napuštanje zlatnog standarda 1971. godine bilo je nužno za prilagodbu količine novca potrebama globalizirane ekonomije, a ne proizvoljno tiskanje novca kako to teoretičari zavjera često tumače.
+4. Zamrzavanje imovine Ruske centralne banke od strane SAD-a potaknulo je proces de-dolarizacije, jer druge zemlje traže alternative dolaru kako bi smanjile rizik od sličnih sankcija.
+5. Američki dug, deficit i nemogućnost financiranja izvana predstavljaju globalni problem, a Trumpove politike, uključujući carine, dio su šireg plana za rješavanje tih problema i redefiniranje globalne moći.
+6. Europsko ekonomsko vodstvo kritizira se zbog nedostatka vizije i sposobnosti, što dovodi do strukturne inflacije i političke nestabilnosti, dok Kina pokazuje drugačiji pristup monetarnoj politici usmjeren na realnu ekonomiju.
+7. Uvođenje 'narodnih obveznica' u Hrvatskoj značajno je educiralo građane o tržištu kapitala, omogućujući im da alociraju sredstva izvan bankarskog sustava i smanje ovisnost o bankama.
+
+## Spomenute osobe
+
+- Neven Vidaković
+- Boris Vujčić
+- Željko Rohatinski
+- Jadranka Kosor
+- Sandra Švaljek
+- Donald Trump
+- Joe Biden
+- Christine Lagarde
+- Ursula von der Leyen
+- Emmanuel Macron
+- Olaf Scholz
+- Milton Friedman
+- Warren Buffett
+- Charlie Munger
+- Richard Nixon
+- Slavko Linić
+- Fedoroko
+- François Mitterrand
+- Helmut Kohl
+- Margaret Thatcher
+- Akira Kurosawa
+- Ray Dalio
+- Bill Clinton
+- Barack Obama
+- Franklin D. Roosevelt
+- Ronald Reagan
+
+## Spomenuta mjesta
+
+- Amerika
+- Hrvatska
+- Europa
+- Japan
+- Kina
+- Rusija
+- Indija
+- Brazil
+- Afrika
+- Njemačka
+- Britanija
+- Francuska
+- Belgija
+- Saudijska Arabija
+- Italija
+- Australija
+- Tajvan
+- Latinska Amerika
+- Brisel
+- Jugoslavija
+
+## Spomenute organizacije
+
+- Fed
+- ECB
+- HNB
+- PBZ
+- Zagrebačka banka
+- Intesa San Paolo
+- Goldman Sachs
+- Konzum
+- BRICS
+- G7
+- UN
+- SKDD
+- Volkswagen
+- Digitron
+- Nacional
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T06:58:50.684Z*
