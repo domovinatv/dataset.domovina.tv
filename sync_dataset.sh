@@ -222,7 +222,7 @@ TOTAL_VIDEOS=${#VIDEO_GROUPS[@]}
 echo "   Found $TOTAL_VIDEOS video(s) with changes"
 echo ""
 
-for group_key in $(echo "${!VIDEO_GROUPS[@]}" | tr ' ' '\n' | sort); do
+while IFS= read -r group_key; do
     files="${VIDEO_GROUPS[$group_key]}"
     file_count=$(echo "$files" | wc -l | tr -d ' ')
 
@@ -259,8 +259,8 @@ Files: ${file_count}"
     if [ "$DRY_RUN" = true ]; then
         echo "   [DRY RUN] Would commit $file_count file(s): $commit_msg"
     else
-        # Stage files for this video
-        echo "$files" | xargs git add
+        # Stage files for this video (newline-delimited; handles paths with spaces)
+        printf '%s\n' "$files" | git add --pathspec-from-file=-
 
         # Commit
         git commit -m "$commit_msg" --quiet
@@ -268,7 +268,7 @@ Files: ${file_count}"
 
         printf "   [%d/%d] ✅ %s (%d files)\n" "$COMMIT_COUNT" "$TOTAL_VIDEOS" "${show_dir}/${formatted_date}" "$file_count"
     fi
-done
+done < <(printf '%s\n' "${!VIDEO_GROUPS[@]}" | sort)
 
 echo ""
 if [ "$DRY_RUN" = true ]; then
