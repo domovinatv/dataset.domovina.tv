@@ -1,0 +1,152 @@
+# Polović:Trump preuzeo tajni plan: Novi veliki Bliski istok pod kontrolom SAD-a
+
+**Kanal:** radio_mreznica  
+**Datum:** 2026-03-17  
+**Trajanje:** 85 min  
+**YouTube:** https://youtu.be/TYdhRwhxlwA  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Jadranka Polović, geopolitička stručnjakinja, analizira aktualnu situaciju na Bliskom istoku, ističući da se ostvaruje "proročanska" izjava o stvaranju Velikog Izraela i napadu na Iran. Raspravlja o ulozi Sjedinjenih Američkih Država i njihovom "Projektu za novo američko stoljeće" koji teži kontroli ključnih svjetskih regija, uključujući Euroaziju i Bliski istok. Polović upozorava na eskalaciju sukoba, humanitarnu krizu, ekonomske posljedice te propast međunarodnog poretka, naglašavajući da ratovi postaju trajni izvor zarade za vojno-industrijski kompleks. Također se osvrće na regionalne odnose na Balkanu i mogućnost širenja sukoba.
+
+## Ključne teme
+
+- geopolitika bliskog istoka
+- američka vanjska politika
+- projekt za novo američko stoljeće
+- rat u iranu i njegove posljedice
+- međunarodni poredak i diplomacija
+- nuklearno oružje
+- odnosi hrvatske i srbije
+- globalne ekonomske i energetske krize
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Voditelj | voditelj |
+| SPEAKER_00 | Jadranka Polović | gost |
+
+## Ključni zaključci
+
+1. Situacija na Bliskom istoku, posebno u Libanonu, Iraku, Gazi i Zapadnoj obali, iznimno je teška i humanitarno kritična, s etničkim čišćenjem i destabilizacijom regije.
+2. "Projekt za novo američko stoljeće" (Project for the New American Century) iz 90-ih godina, koji zagovara američku hegemoniju i kontrolu ključnih svjetskih regija, temelj je aktualne američke politike na Bliskom istoku.
+3. Sjedinjene Američke Države i Izrael preklapaju se u cilju razbijanja Irana na manje entitete, slično kao što se dogodilo s Irakom, Libijom i Sirijom, kako bi se uspostavila kontrola nad energetskim izvorima i pomorskim prolazima.
+4. Aktualni sukobi na Bliskom istoku već uzrokuju veliku energetsku i ekonomsku krizu, s uništenom infrastrukturom i posljedicama na globalni turizam i cijene.
+5. Međunarodni poredak utemeljen na pravilima je propao, a moć oblikuje pravo, što rezultira hipermilitarizacijom vanjske politike i nedostatkom diplomatskih rješenja.
+6. Postoji realna opasnost od uporabe taktičkog nuklearnog oružja, posebno od strane Izraela ako počne gubiti rat, što bi imalo katastrofalne globalne posljedice.
+7. Odnosi između Hrvatske i Srbije su napeti, s "rafalima" verbalnih sukoba, što ukazuje na mogućnost aktiviranja "rezervnog bojišta" na Balkanu, uz prisutnost vanjskih aktera poput Izraela.
+
+## Spomenute osobe
+
+- Jadranka Polović
+- Donald Trump
+- Naftali Bennet
+- William Kristol
+- Robert Kegan
+- Donald Rumsfeld
+- Paul Wolfowitz
+- George W. Bush
+- Wesley Clark
+- Muammar Gaddafi
+- Saddam Hussein
+- Nicolás Maduro
+- Jared Kushner
+- Josep Borrell
+- Vedran Obućina
+- Joe Biden
+- Giorgia Meloni
+- Ursula von der Leyen
+- Vladimir Putin
+- Volodimir Zelenski
+- Zoran Milanović
+- Aleksandar Vučić
+- Ivan Anušić
+- Andrej Plenković
+- Benjamin Netanyahu
+- Albin Kurti
+
+## Spomenuta mjesta
+
+- Bliski istok
+- Izrael
+- Iran
+- Libanon
+- Mediteran
+- Levant
+- Beirut
+- Dolina Beka
+- Irak
+- Gaza
+- Zapadna obala
+- Turska
+- Ekvador
+- Latinska Amerika
+- Karibi
+- Kuba
+- Crno more
+- Bospor
+- Dardanele
+- Sinaj
+- Jordan
+- Golanska visoravan
+- Sirija
+- Azerbajdžan
+- Kavkaz
+- Centralna Azija
+- Perzijski zaljev
+- Hormuški tjesnac
+- Babel Mandeb
+- Sueski kanal
+- Venecuela
+- Afganistan
+- Ukrajina
+- Rusija
+- Kina
+- Indija
+- Japan
+- Južna Koreja
+- Moskva
+- Hirošima
+- Nagasaki
+- Europa
+- Hrvatska
+- Srbija
+- Bosna i Hercegovina
+- Kosovo
+- Sjeverna Makedonija
+- Crna Gora
+- Albanija
+- Dubaj
+- Doha
+- Jeruzalem
+- Tel Aviv
+- Singapur
+- Australija
+- Grenland
+- Brisel
+- Ford
+- Natanz
+- SHM
+- Bondsteel
+- Rumunjska
+
+## Spomenute organizacije
+
+- Sveučilište Liberta
+- NATO
+- Europska unija
+- Hezbollah
+- Hamas
+- Huti
+- BRICS
+- Ujedinjeni narodi
+- Vijeće sigurnosti UN-a
+- Međunarodna agencija za atomsku energiju
+- Project for the New American Century
+- Iranska revolucionarna garda
+- Mujahedin Halk
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T16:33:29.510Z*
