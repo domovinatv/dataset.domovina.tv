@@ -1,0 +1,142 @@
+# Željka Markić & Narod.hr #153 - Milan Kovač
+
+**Kanal:** zeljka_markic_i_narod_hr  
+**Datum:** 2026-05-21  
+**Trajanje:** 51 min  
+**YouTube:** https://youtu.be/T-julmgzwnE  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+U ovoj epizodi podcasta, Milan Kovač, potpredsjednik Počasnog bleiburškog voda, raspravlja o tragediji Bleiburga i poslijeratnim komunističkim zločinima nad Hrvatima. Ističe dugogodišnju borbu udruge za očuvanje sjećanja na žrtve, uključujući nedavnu pravnu pobjedu oko vlasništva nad zemljištem u Bleiburgu. Kovač kritizira povijesni revizionizam i nedovoljnu podršku države u rasvjetljavanju istine, naglašavajući važnost edukacije i pristupa arhivima za buduće generacije.
+
+## Ključne teme
+
+- bleiburg
+- komunistički zločini
+- poslijeratne žrtve
+- povijesni revizionizam
+- počasni bleiburški vod
+- borba za istinu
+- austrijska politika
+- hrvatska politika
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Željka Markić | voditelj |
+| SPEAKER_01 | Milan Kovač | gost |
+
+## Ključni zaključci
+
+1. Počasni Bleiburški vod osnovan je 1951. godine kako bi evocirao uspomene na Bleiburg i osigurao da se ne zaboravi istina o stradanjima Hrvata.
+2. Udruga je nakon višegodišnje sudske borbe pravomoćno upisala oko 30.000 m² zemljišta na Bleiburškom polju u svoje vlasništvo, što je ključno za buduće komemoracije.
+3. Austrijska ljevica i zeleni, pod utjecajem lažnih narativa, proglasili su komemoraciju na Bleiburgu 'najvećim neonacističkim skupom u Europi', što je apsurdno s obzirom na pokroviteljstvo Hrvatskog sabora i biskupskih konferencija.
+4. Milan Kovač naglašava da je potrebno veće angažiranje hrvatske vlade i sabora kako bi se osporila austrijska rezolucija i osiguralo slobodno komemoriranje.
+5. Postoji velika potreba za promjenom udžbenika povijesti u Hrvatskoj i otvaranjem arhiva, posebno onih u Beogradu, kako bi se rasvijetlila puna istina o komunističkim zločinima.
+6. Osobna svjedočanstva i priče, poput onih o stradanju žena i djece na križnim putevima, te Kovačevo osobno iskustvo o ujaku ubijenom kao 18-godišnjaku, pokazuju dubinu tragedije i nametnutu šutnju.
+7. Kovač kritizira nedostatak lustracije u Hrvatskoj, što je omogućilo bivšim suradnicima totalitarnog režima da i dalje djeluju u javnom prostoru i medijima.
+
+## Spomenute osobe
+
+- Milan Kovač
+- Željka Markić
+- Martinović
+- Tito
+- Andrej Plenković
+- Mesić
+- Milanović
+- Vučić
+- Dodik
+- Simon Dubajč
+- Krivokapić
+- Kosa Nać
+- Pekar Dabčević
+- Milo Martić
+- Ratko Mladić
+- Širačani
+- Draganović
+- Vukelić
+- Ferenc
+- Šimunović
+- Wolfi Krašća
+- Bogdan
+- Stazić
+- Stanković
+- Trbović
+- Rakić
+- Tuđman
+- Gojko Šušak
+- Josip Manolić
+- Josip Boljkovac
+- Vladimir Šeks
+- Ivan Bobetko
+- Vice Vuković
+- Vera Stanić
+- Vlado Ranogajec
+- Jovica Kunić
+- Parović
+- Tomislav Bralić
+- Medved
+- Jandroković
+- Zvonko Milas
+
+## Spomenuta mjesta
+
+- Hrvatska
+- Bleiburg
+- Bosna i Hercegovina
+- Koruška
+- Zagreb
+- Goli otok
+- Beograd
+- Sarajevo
+- Austrija
+- Beč
+- Vukovar
+- Maribor
+- Jasenovac
+- Gradina
+- Drniš
+- Ploče
+- Gorka Slatina
+- Podravina
+- Požega
+- Slovenija
+- Italija
+- Kaptol
+- Macelj
+- Katyn
+- Novi Sad
+- Petrova Gora
+- Posušje
+- Nevesinje
+- Bileća
+- Dubrovnik
+- Široki Brijeg
+- Poljska
+- Slovačka
+- Hipodrom
+
+## Spomenute organizacije
+
+- Počasni bleiburški vod
+- Hrvatska matica iseljenika
+- HDZ
+- Udba
+- Antifa
+- Hrvatski sabor
+- Hrvatska biskupska konferencija
+- Biskupska konferencija Bosne i Hercegovine
+- SDP
+- Možemo
+- Ustavni sud Austrije
+- Vlada RH
+- Grad Zagreb
+- HRT
+- KOS
+- Ured za Hrvate izvan Hrvatske
+
+---
+*Sentiment: mixed | Generirano: 2026-06-01T18:58:03.202Z*
