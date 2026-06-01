@@ -1,0 +1,80 @@
+# Nisam osjetio NIŠTA kad mi se dijete rodilo. Sad znam zašto.
+
+**Kanal:** lood_podcast  
+**Datum:** 2025-06-19  
+**Trajanje:** 105 min  
+**YouTube:** https://youtu.be/klp6lcC3PM0  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Podcast donosi razgovor s Ivanom Poslonom, kreatorom podcasta "TATA PRIČA", o izazovima modernog očinstva. Ivan iskreno dijeli svoja iskustva, uključujući početni nedostatak povezanosti s djetetom, borbu s balansom između posla i obitelji, te utjecaj vlastitog odgoja na roditeljske metode. Razgovor se dotiče i širih društvenih tema poput promjene obiteljskih dinamika, uloge muškarca i žene, te važnosti rada na sebi i svjesnog roditeljstva.
+
+## Ključne teme
+
+- moderno roditeljstvo
+- uloga oca
+- odgoj djece
+- društvena očekivanja
+- rad na sebi
+- balans posao-obitelj
+- traume iz djetinjstva
+- komunikacija u obitelji
+- utjecaj društvenih mreža
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Voditelj | voditelj |
+| SPEAKER_01 | Ivan Poslon | gost |
+
+## Ključni zaključci
+
+1. Ivan Poslon je počeo stvarati sadržaj o očinstvu zbog vlastitih unutarnjih pitanja i spoznaje da se mnogi muškarci, poput njega, nisu odmah povezali sa svojim djetetom, osjećajući se usamljeno u tom iskustvu.
+2. Gost je priznao da je jednom udario svoje dijete iz frustracije, što je potaknulo razmišljanje o vlastitom djetinjstvu obilježenom batinama i potrebi za radom na sebi kako bi se prekinuo taj ciklus.
+3. Razgovor je istaknuo promjene u obiteljskim dinamikama, od tradicionalnih uloga do modernih gdje oba roditelja rade, što stvara zbrku oko pravila i očekivanja u odgoju i partnerskim odnosima.
+4. Rad na sebi, koji uključuje čitanje, psihoterapiju i tjelesnu aktivnost, ključan je za osobni razvoj i pozitivno utječe na roditeljske vještine i obiteljske odnose.
+5. Ivan naglašava važnost učenja djece da se zauzmu za sebe i izraze svoje emocije, suprotstavljajući se vlastitom odgoju gdje je to bilo potiskivano.
+6. Smatra da dijete nije vlasništvo roditelja, već zasebna jedinka koju treba podržavati u razvoju autonomije i samopouzdanja, umjesto nametanja vlastitih ambicija.
+7. Dosljednost u roditeljstvu i pružanje sigurnog okruženja ključni su za djetetov razvoj, a Ivan se trudi biti uzor koji cijeni ljubav, razumijevanje i ravnopravnost u obitelji.
+
+## Spomenute osobe
+
+- Ivan Poslon
+- Tanja Hrvatin
+- Ivan Parađik
+- Silvija
+- Tomislav Kulić
+- Rebeka
+- Damjan
+- Barack Obama
+- Donald Trump
+- Vladimir Putin
+- Andrew Tate
+- Vinković
+- Čević
+- Kjara
+
+## Spomenuta mjesta
+
+- Hrvatska
+- Srbija
+- Bosna
+- Crna Gora
+- Vukovar
+- Osijek
+- Zagreb
+- Amerika
+- Los Angeles
+- Jarun
+
+## Spomenute organizacije
+
+- LOOD
+- TATA PRIČA
+- Index
+- HRT
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T07:00:15.145Z*
