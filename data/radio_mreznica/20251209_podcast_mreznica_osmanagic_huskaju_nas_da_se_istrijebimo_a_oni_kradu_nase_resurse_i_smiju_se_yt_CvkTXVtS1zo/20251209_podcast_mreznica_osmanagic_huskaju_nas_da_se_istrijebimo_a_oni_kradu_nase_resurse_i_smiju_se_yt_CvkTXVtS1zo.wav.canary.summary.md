@@ -1,0 +1,139 @@
+# PODCAST MREŽNICA - Osmanagić: Huškaju nas da se istrijebimo, a oni kradu naše resurse i smiju se
+
+**Kanal:** radio_mreznica  
+**Datum:** 2025-12-09  
+**Trajanje:** 91 min  
+**YouTube:** https://youtu.be/CvkTXVtS1zo  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Semir Osmanagić, poznat po istraživanju bosanskih piramida, u ovom podcastu detaljno objašnjava primjenu sakralne geometrije i Fibonačijeve spirale u rasporedu piramida, te otkriva jedinstvenu arheoastronomsku vezu s Plejadama. Razgovor se proširuje na važnost drevnih znanja o energiji prostora i prirode za zdravlje i kvalitetu života, kritizirajući pritom moderne elite koje manipuliraju društvom kroz strah i sukobe. Osmanagić naglašava potrebu za individualnom slobodom, pozitivnim razmišljanjem i povratkom suradnji među narodima, suprotstavljajući se povijesnoj i suvremenoj krađi resursa i identiteta.
+
+## Ključne teme
+
+- bosanske piramide
+- sakralna geometrija
+- Fibonačijeva spirala
+- Plejade
+- energija prostora i zdravlje
+- utjecaj elita i medija
+- povijest Balkana
+- sloboda izbora i strah
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Voditelj | voditelj |
+| SPEAKER_02 | Semir Osmanagić | gost |
+
+## Ključni zaključci
+
+1. Semir Osmanagić predstavlja dokaze o primjeni sakralne geometrije, uključujući Fibonačijevu spiralu i istostranične trokute, u rasporedu bosanskih piramida, što je potvrđeno naprednim metodama poput lidar skeniranja i Monte Carlo simulacije.
+2. Istraživanje otkriva jedinstvenu i matematički preciznu vezu između tri Fibonačijeve spirale u Bosanskoj dolini piramida i zvjezdane konstelacije Plejada, što se smatra najvećim arheoastronomskim otkrićem ikada.
+3. Govornik naglašava važnost drevnih znanja o energijama prostora (podzemne vode, Hartmanove linije) i njihovom utjecaju na zdravlje, ističući kako su ta znanja danas zanemarena u modernoj gradnji i načinu života.
+4. Kvaliteta vode (izvorska vs. tretirana), hrane (prirodna vs. kemijski obrađena) i misli (pozitivne vs. negativne) ključna je za osobno zdravlje i vibraciju, a boravak u prirodi doprinosi oporavku i vitalnosti.
+5. Elitne skupine, koje kontroliraju medije i financije, namjerno izazivaju podjele i sukobe (npr. ratovi, "cijepljen/necijepljen") kako bi manipulirale društvom, kradile resurse i održavale svoju moć.
+6. Kroz povijest, od antičkog Rima do modernog "odljeva mozgova", narodi Balkana su bili žrtve krađe resursa i identiteta, huškani jedni protiv drugih, dok su vanjske sile profitirale.
+7. Osmanagić poziva na oslobađanje od straha, preuzimanje kontrole nad vlastitim životom i njegovanje suradnje, prijateljstva i poštovanja među ljudima i narodima, kao protutežu manipulacijama elita.
+
+## Spomenute osobe
+
+- Robert Bouval
+- Graham Henkel
+- Šok
+- Kleopatra VI. Makedonska
+- Elizabeth Taylor
+- Richard Burton
+- Masaru Emoto
+- Novak Đoković
+- Demetrius of Pharos
+- Rothschild
+
+## Spomenuta mjesta
+
+- Bosanska dolina piramida
+- Egipat
+- Plato Gize
+- Meksiko
+- Teotihuacan
+- Meksiko City
+- Italija
+- Monte Vecchia
+- Španjolska
+- Palencija
+- SAD
+- Novi Meksiko
+- Utah
+- Kolorado
+- Arizona
+- Nevada
+- Australija
+- Novi Zeland
+- Japan
+- Kina
+- Afrika
+- Europa
+- Fojnica
+- Bosna
+- Vratnica
+- Orion
+- Plejade
+- Sigmusa
+- Svon
+- Labud
+- Pegasus
+- Fox
+- Aleksandrija
+- Sarajevo
+- Marin Dvor
+- Hvar
+- Pula
+- Zagreb
+- Šibenik
+- Ljubljana
+- Hercegovina
+- Dawson
+- Podgorica
+- Meteon
+- Makedonija
+- Kokino
+- Cociv
+- Kamen
+- Dunav
+- Pljanski vir
+- Slavonija
+- Vukovar
+- Vinkovci
+- Mađarska
+- Srbija
+- Crna Gora
+- Bugarska
+- Rumunjska
+- Njemačka
+- Finska
+- Francuska
+- Austrija
+- Slovenija
+- Moldavija
+- Bruxelles
+- Strasbourg
+- Frankfurt
+- Tanzanija
+
+## Spomenute organizacije
+
+- Google
+- Bank of America
+- Turner
+- Walt Disney
+- AP
+- Reuters
+- BBC
+- Europska centralna banka
+- Inteza
+- EU
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T16:21:53.215Z*
