@@ -1,0 +1,109 @@
+# PODCAST MREŽNICA - Vidaković: Amerika danas pokazuje silu jer je Biden rekao: Dolar kao oružje!
+
+**Kanal:** radio_mreznica  
+**Datum:** 2026-01-10  
+**Trajanje:** 64 min  
+**YouTube:** https://youtu.be/vcepbQYvoSE  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Neven Vidaković, ekonomski analitičar, raspravlja o trenutnoj geopolitičkoj situaciji, naglašavajući da ekonomija više nije primarni problem, već su to politički problemi koji hrane ekonomsku krizu. Kritizira hrvatski ekonomski model, HNB i europske političare zbog nedostatka vizije i oslabljene pozicije Europe. Posebno se osvrće na američku politiku korištenja dolara kao oružja, što potiče dedolarizaciju, te iznosi skeptičan stav prema digitalnom euru, smatrajući ga "rješenjem u potrazi za problemom". Razgovor također dotiče polikrizu i izazove s kojima se suočava Europa.
+
+## Ključne teme
+
+- geopolitika
+- ekonomska kriza
+- politička kriza
+- hrvatski ekonomski model
+- HNB i inflacija
+- dedolarizacija i dolar kao oružje
+- digitalni euro
+- uloga europe u svijetu
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Voditelj | voditelj |
+| SPEAKER_01 | Neven Vidaković | gost |
+
+## Ključni zaključci
+
+1. Ekonomija više nije relevantna jer su temeljni problemi postali politički, stvarajući refleksivni proces gdje politika hrani ekonomsku krizu i obrnuto, što je dovelo do ozbiljne političke krize u EU.
+2. Hrvatski ekonomski model karakterizira smanjenje poljoprivredne i industrijske proizvodnje, rast građevine i turizma financiran EU sredstvima, uz uvoz strane radne snage i nekontrolirano dizanje cijena, što rezultira povišenom inflacijom.
+3. HNB, prema Vidakoviću, ne bori se protiv inflacije jer bi to destabiliziralo postojeći ekonomski sustav, a njegova kritika se temelji na ponavljanju izjava i objavljenih podataka HNB-a.
+4. Amerika danas pokazuje silu jer je Joe Biden izjavio da će koristiti dolar kao oružje, što je pokrenulo lavinu dedolarizacije i smanjenje korištenja dolara u globalnoj trgovini od strane država koje se boje da će se to oružje okrenuti protiv njih.
+5. Digitalni euro je "rješenje u potrazi za problemom" jer ne nudi jasnu korist u odnosu na postojeće načine plaćanja i ne može riješiti stvarne probleme Europske centralne banke, koja se bori s kontrolom monetarne politike u kontekstu paralelnih valuta i stablecoinova.
+6. Europa je beznačajna u globalnoj politici, što se vidi u pregovorima o Ukrajini i nedostatku utjecaja na svjetskoj sceni, a europski političari nemaju znanje, kapacitet niti kalibar nositi se s tim izazovima.
+7. Polikriza je stanje s više nepovezanih šokova (ekonomskih, političkih, migracijskih) koji udaraju Europu, a za koje Europa nema obrambene mehanizme niti ljude sposobne kreirati ih.
+
+## Spomenute osobe
+
+- Neven Vidaković
+- Kaja Kallas
+- Ursula von der Leyen
+- Boris Vujčić
+- Sandra Švaljik
+- Željko Rohatinski
+- Jadranka Kosor
+- Bill Clinton
+- Hillary Clinton
+- Bush
+- Donald Trump
+- Joe Biden
+- Jared Kushner
+- Vladimir Putin
+- Dubravko Radošević
+- Nicolas Maduro
+- Milan Kučan
+- Ante Marković
+- Andrej Plenković
+- Harald Uhlig
+- Christine Lagarde
+- Dimitar Dimitrijević
+- Milton Friedman
+
+## Spomenuta mjesta
+
+- Jugoslavija
+- Francuska
+- Njemačka
+- Hrvatska
+- Venezuela
+- Iran
+- Brazil
+- Amerika
+- Afrika
+- Kina
+- Rusija
+- Ukrajina
+- Panamski kanal
+- Grenland
+- Indija
+- Tajvan
+- Pula
+- Kanada
+- Italija
+- Mađarska
+- Češka
+- Irak
+- Afganistan
+- Libija
+- Bruxelles
+- Slovenija
+- Japan
+- Chicago
+
+## Spomenute organizacije
+
+- NATO
+- Hrvatsko društvo ekonomista
+- HNB
+- BRICS
+- Europska komisija
+- Europski parlament
+- ECB
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T16:26:01.771Z*
