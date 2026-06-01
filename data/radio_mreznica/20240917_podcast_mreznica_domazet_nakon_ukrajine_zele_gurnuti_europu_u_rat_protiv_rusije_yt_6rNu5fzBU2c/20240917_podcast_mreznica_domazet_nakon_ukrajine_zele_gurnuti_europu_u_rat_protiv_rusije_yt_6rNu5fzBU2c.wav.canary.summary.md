@@ -1,0 +1,175 @@
+# PODCAST MREŽNICA - Domazet: Nakon Ukrajine žele gurnuti Europu u rat protiv Rusije
+
+**Kanal:** radio_mreznica  
+**Datum:** 2024-09-17  
+**Trajanje:** 110 min  
+**YouTube:** https://youtu.be/6rNu5fzBU2c  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Admiral Davor Domazet Lošo analizira turbulentne geopolitičke događaje, uključujući pokušaje atentata na Donalda Trumpa i eskalaciju rata u Ukrajini, ističući da "okultna oligarhija" želi veliki rat i uporabu nuklearnog oružja. Detaljno objašnjava nove doktrine ratovanja primijenjene u Kursku, ulogu hipersoničnog oružja i medijsku propagandu Zapada. Upozorava na opasnost uvlačenja istočne Europe, uključujući Hrvatsku, u sukob s Rusijom te poziva na otrežnjenje, povratak duhovnosti i razvoj multipolarnog svijeta.
+
+## Ključne teme
+
+- geopolitička analiza
+- rat u Ukrajini
+- američki izbori i Donald Trump
+- nuklearno i hipersonično oružje
+- nove vojne doktrine
+- uloga "okultne oligarhije"
+- medijska propaganda
+- budućnost Europe i Hrvatske
+- duhovnost i kršćanski identitet
+- multipolarni svjetski poredak
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Voditelj | voditelj |
+| SPEAKER_02 | Davor Domazet Lošo | gost |
+
+## Ključni zaključci
+
+1. Pokušaji atentata na Donalda Trumpa odraz su straha "okultne oligarhije" od njegovog remećenja planova za eskalaciju rata i prisiljavanje Rusije na uporabu nuklearnog oružja.
+2. Zapad, predvođen "okultnom oligarhijom", nastoji gurnuti istočnu Europu u rat protiv Rusije, koristeći Ukrajinu kao posrednika i šireći propagandu o ruskoj agresiji.
+3. Napad na Kursku oblast demonstrirao je primjenu novih doktrinarnih načela ratovanja, uključujući hipermodularne strukture, umjetnu inteligenciju i "fenomen hobotnice", što je rezultiralo značajnim gubicima za ukrajinsku stranu.
+4. Rusija posjeduje napredno hipersonično oružje, što je demonstrirano lansiranjem rakete Huta na Tel Aviv, šaljući poruku o mogućem posredničkom nuklearnom ratu i superiornosti Rusije u određenim vojnim tehnologijama.
+5. Hrvatska politika, kroz davanje pomoći Ukrajini i uvođenje obveznog vojnog roka, služi interesima "okultne oligarhije", riskirajući uvlačenje Hrvatske u sukob i zanemarujući vlastite nacionalne interese.
+6. Olimpijske igre u Parizu, s njihovim otvaranjem i zatvaranjem, interpretirane su kao prediktivno programiranje i otvoren napad na kršćanstvo, simbolizirajući dolazak antikrista i poziv migrantima u Europu.
+7. Svijet se kreće prema multipolarnosti, s BRICS-om kao važnim igračem, a Hrvatska bi trebala voditi mudru geopolitiku, razgovarajući sa svima umjesto da se opredjeljuje za jednu stranu, slijedeći primjer Dubrovačke Republike.
+
+## Spomenute osobe
+
+- Donald Trump
+- Vladimir Putin
+- Vladimir Zelenski
+- John F. Kennedy
+- Abraham Lincoln
+- Fabije Maksim
+- Hanibal
+- Damir Krstičević
+- Milivoj Huceljuk
+- Andrej Plenković
+- Blinken
+- Kim Jong-un
+- Sveti Jeronim
+- Sveti Pavao
+- Sveti Luka
+- Katarina II.
+- Franjo Tuđman
+- Budimir Lončar
+- James Baker
+- Angela Merkel
+- Recep Tayyip Erdoğan
+- Aleksandar Vučić
+- Josip Broz Tito
+- George H.W. Bush
+- Boris Jeljcin
+- Henry Kissinger
+- Viktor Orbán
+- Isus Krist
+- Leonardo da Vinci
+- Marko Perković Thompson
+- Miro Bulj
+
+## Spomenuta mjesta
+
+- Ukrajina
+- Europa
+- Rusija
+- SAD
+- Kursk
+- Hirošima
+- Nagasaki
+- Krim
+- Moskva
+- Sankt Peterburg
+- Jemen
+- Tel Aviv
+- Izrael
+- Bliski istok
+- Srednji istok
+- Jugoistok
+- Sjeverna Koreja
+- Iran
+- Kina
+- Sjeverni pol
+- Kijev
+- Francuska
+- Velika Britanija
+- Švedska
+- Finska
+- Baltik
+- Njemačka
+- Italija
+- Kanada
+- Poljska
+- Češka
+- Slovačka
+- Mađarska
+- Rumunjska
+- Bugarska
+- Hrvatska
+- Dalmacija
+- Otok Krk
+- Jurandvor
+- Novgorod
+- Split
+- Sirija
+- Beč
+- Kazahstan
+- Afrika
+- Latinska Amerika
+- London
+- Pariz
+- Jarun
+- Udbina
+- Slavonski Brod
+- Beograd
+- Sarajevo
+- Bosna i Hercegovina
+- Crna Gora
+- Slovenija
+- Rijeka
+- Savudrijska vala
+- Gibraltar
+- La Manche
+- Bospor
+- Jadran
+- Dagestan
+- Čečenija
+- Južna Osetija
+
+## Spomenute organizacije
+
+- NATO
+- BRICS
+- Radio Mrežnica
+- Demokratska stranka
+- Federalne rezerve
+- Haški sud
+- EU
+- CIA
+- INA
+- Katolička crkva
+- Pravoslavna crkva
+- Kopti
+- Etiopska crkva
+- Armenske crkve
+- Holivud
+- Eurovizija
+- Olimpijske igre
+- Bijelo dugme
+- Huti
+- Vlada RH
+- Sabor RH
+- Ministarstvo obrane RH
+- Hrvatske oružane snage
+- Ruska pravoslavna crkva
+- Otomansko carstvo
+- Varšavski ugovor
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T15:41:30.470Z*
