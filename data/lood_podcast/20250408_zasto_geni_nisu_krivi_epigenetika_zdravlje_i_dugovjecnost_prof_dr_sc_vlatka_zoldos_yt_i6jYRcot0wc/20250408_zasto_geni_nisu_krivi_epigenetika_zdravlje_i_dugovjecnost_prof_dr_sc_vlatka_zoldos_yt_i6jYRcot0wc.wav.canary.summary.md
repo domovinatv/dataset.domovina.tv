@@ -1,0 +1,76 @@
+# Zašto Geni Nisu Krivi? Epigenetika, Zdravlje i Dugovječnost: Prof. dr. sc. Vlatka Zoldoš
+
+**Kanal:** lood_podcast  
+**Datum:** 2025-04-08  
+**Trajanje:** 93 min  
+**YouTube:** https://youtu.be/i6jYRcot0wc  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Prof. dr. sc. Vlatka Zoldoš, profesorica genetike i epigenetike, detaljno objašnjava kako životni stil i okolišni faktori, a ne samo geni, oblikuju naše zdravlje i dugovječnost. Ističe da epigenetika omogućuje promjenu rada gena kroz ponašanje, nudeći put ka prevenciji multifaktorijalnih bolesti. Razgovor naglašava štetnost modernog sjedilačkog načina života, prekomjerne prehrane i kroničnog stresa, dok ističe ključnu ulogu fizičke aktivnosti, sunca i kvalitetnog sna. Zaključuje se da je za zdravu dugovječnost presudan personalizirani pristup i aktivno upravljanje vlastitim zdravljem.
+
+## Ključne teme
+
+- genetika i epigenetika
+- starenje i dugovječnost
+- utjecaj životnog stila na zdravlje
+- stres i njegovi učinci
+- važnost fizičke aktivnosti i sunca
+- moderna medicina i prevencija
+- CRISPR tehnologija
+- razlike između genotipa i fenotipa
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Vlatka Zoldoš | gost |
+| SPEAKER_00 | Voditelj | voditelj |
+
+## Ključni zaključci
+
+1. Moderna medicina često se fokusira na uklanjanje simptoma umjesto na liječenje uzroka bolesti, pri čemu lijekovi mogu imati ozbiljne nuspojave, poput kortikosteroida koji uništavaju imunološki sustav.
+2. Epigenetika, za razliku od genetike, proučava reverzibilne promjene u ekspresiji gena uzrokovane okolišem i životnim stilom, što znači da naše ponašanje može utjecati na rad gena.
+3. Primjeri poput pušenja pokazuju da loše navike mijenjaju epigenetičke oznake na tisućama gena, ali prestanak tih navika može vratiti većinu gena u zdravo stanje.
+4. Šećer je identificiran kao "najveći ubojica u modernom društvu" zbog svoje dostupnosti i prekomjerne konzumacije, što doprinosi metaboličkim disfunkcijama.
+5. Sjedilački način života, prekomjerna hrana, poremećeni cirkadijalni ritam i kronični stres ključni su faktori koji negativno utječu na zdravlje u modernom društvu.
+6. Naše misli i uvjerenja utječu na rad gena putem lučenja hormona i neurotransmitera (poput dopamina i serotonina), koji djeluju kao epigenetičke oznake, direktno mijenjajući ekspresiju gena u mozgu.
+7. Fizička aktivnost i izlaganje suncu iznimno su važni za dugovječnost i prevenciju bolesti, čak i ublažavajući negativne učinke pušenja.
+8. Samo 10-20% kroničnih bolesti pripisuje se genetici, dok je preko 80% pod utjecajem životnog stila, što naglašava moć pojedinca da "hakira" svoje gene i poboljša zdravlje.
+9. CRISPR tehnologija omogućuje precizno modificiranje genoma i epigenoma, otvarajući nove mogućnosti za gensku terapiju, iako još uvijek postoje izazovi u primjeni.
+
+## Spomenute osobe
+
+- Pita Hatija
+- Tim Spector
+- Bruce Lipton
+- Donald Trump
+- Elon Musk
+- Margaret Thatcher
+- Andrew Huberman
+
+## Spomenuta mjesta
+
+- Pariz
+- Hrvatska
+- Zagreb
+- Amerika
+- London
+- Afrika
+- Švedska
+- Tennessee
+- Harvard
+- Johns Hopkins
+- Stanford
+- Balkan
+
+## Spomenute organizacije
+
+- NASA
+- PMF
+- UK Biobank
+- Kaufland
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T06:55:20.477Z*
