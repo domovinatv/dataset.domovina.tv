@@ -1,0 +1,124 @@
+# Najveća bitka koju vodiš je u glavi! (Nenad Bjelica)
+
+**Kanal:** lood_podcast  
+**Datum:** 2026-03-22  
+**Trajanje:** 116 min  
+**YouTube:** https://youtu.be/-LopMoqjzTA  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+U ovoj epizodi LOOD podcasta, Nenad Bjelica dijeli svoje duboke uvide o psihologiji liderstva, upravljanju ljudima i postavljanju čvrstih granica, nadilazeći uobičajene nogometne taktike. Naglašava važnost osobnog razvoja, otpornosti i utjecaja odgoja na oblikovanje pojedinca. Bjelica govori o održavanju autoriteta, suočavanju s nepravdom i ključnoj ulozi emocionalne inteligencije te mentalne snage u profesionalnom sportu, ističući da pravi uspjeh obuhvaća mnogo više od samih profesionalnih postignuća.
+
+## Ključne teme
+
+- liderstvo i upravljanje ljudima
+- psihologija uspjeha i mentalna snaga
+- odgoj djece i samostalnost
+- postavljanje granica i autoritet
+- nogometni menadžment i klupske strukture
+- nošenje s nepravdom i neuspjehom
+- važnost emocija u sportu
+- životna ravnoteža i osobni razvoj
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Voditelj | voditelj |
+| SPEAKER_01 | Nenad Bjelica | gost |
+
+## Ključni zaključci
+
+1. Nenad Bjelica ističe da je najveća bitka u glavi, a ne u nogama, naglašavajući važnost mentalne spremnosti i da sve "ide iz glave".
+2. Kritizira današnji zaštitnički odgoj djece, uspoređujući ga s pričom o leptiru kojem se prereže ličinka, sprječavajući ga da ojača i poleti, čime se djeci radi "medvjeđa usluga".
+3. Smatra da trener mora biti autoritativan i imati kontrolu nad sobom kako bi mogao voditi druge, te da je ekipa ogledalo trenera, prenoseći na nju svoju energiju i emocije.
+4. Naglašava važnost postavljanja jasnih pravila i uklanjanja "trule jabuke" iz tima, bez obzira na status pojedinca, jer toleriranje loše energije dugoročno ruši sustav.
+5. Priznaje da je griješio, ali ističe važnost isprike i poniznosti, vjerujući da to jača autoritet i povjerenje, umjesto da ga slabi.
+6. Vjeruje da je ljubav prema poslu i preuzimanje odgovornosti ključno, te da novac nikada nije bio primarni motiv, već želja za dokazivanjem i ostvarivanjem ciljeva.
+7. Smatra da nogometu nedostaju mentalni treneri, jer je mentalna priprema jednako važna, ako ne i važnija, od fizičke, te da je prevelik naglasak na algoritmima i statistikama nauštrb emocija.
+8. Definira uspjeh šire od poslovnog, uključujući obitelj, prijateljstva i osobnu ravnotežu, te naglašava važnost uživanja u malim, besplatnim stvarima u životu.
+
+## Spomenute osobe
+
+- Nenad Bjelica
+- Ranko Rajović
+- Damir Mišković
+- Vedran Jugović
+- Zinedine Zidane
+- Pep Guardiola
+- Jürgen Klopp
+- Diego Simeone
+- Luka Modrić
+- Vinicius
+- Rodrigo
+- Kenan Crnkić
+- Brian Tracy
+- Robin Sharma
+- Zulić
+- Bilbesik
+- Cristiano Ronaldo
+- Erling Haaland
+- Ivan Burazin
+- Ferdo
+- Livaković
+- Zagorac
+- Dilover
+- ADM
+- Novalić Anton
+
+## Spomenuta mjesta
+
+- Dinamo
+- Osijek
+- Trabzonspor
+- Union Berlin
+- Real Madrid
+- Barcelona
+- Istanbul
+- Klagenfurt
+- Kutmannsdorf
+- Las Palmas
+- Meksiko
+- Austrija
+- Hrvatska
+- Njemačka
+- Španjolska
+- Poljska
+- Bugarska
+- Cipar
+- Zagreb
+- Vukovar
+- Rusija
+- Varaždin
+- Betis
+- Kaiserslautern
+- Albasete
+- Hajduk
+
+## Spomenute organizacije
+
+- LOOD
+- Frank
+- HNK Rijeka
+- Dinamo
+- Osijek
+- Trabzonspor
+- Union Berlin
+- Real Madrid
+- Bayern München
+- Manchester United
+- Manchester City
+- Paris Saint Germain
+- Olympique Lyon
+- Tottenham
+- Borussia Dortmund
+- Betis
+- Kaiserslautern
+- Albasete
+- Las Palmas
+- Hajduk
+- HNS
+
+---
+*Sentiment: mixed | Generirano: 2026-03-27T11:23:18.410Z*
