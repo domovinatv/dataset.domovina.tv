@@ -1,0 +1,163 @@
+# Trumpu se ne može parirati, on i Putin dogovaraju i više od Ukrajine
+
+**Kanal:** radio_mreznica  
+**Datum:** 2025-04-29  
+**Trajanje:** 100 min  
+**YouTube:** https://youtu.be/pk4zXdyvtik  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Geopolitički analitičar Karino Hromin Sturm analizira aktualna svjetska previranja, fokusirajući se na rat u Ukrajini, ulogu Donalda Trumpa i Vladimira Putina u diplomatskim pregovorima te utjecaj "duboke države" i financijske oligarhije. Raspravlja se o Trumpovoj strategiji borbe protiv globalističkih sila, ekonomskim posljedicama tarifa te ulozi Vatikana i hrane kao geopolitičkog oružja. Gost iznosi kritički pogled na EU i zapadne politike, ističući rastuću moć BRICS-a i predviđajući značajne globalne promjene.
+
+## Ključne teme
+
+- geopolitika
+- rat u ukrajini
+- donald trump
+- vladimir putin
+- financijska oligarhija
+- duboka država
+- vatikan
+- hrana kao oružje
+- ekonomske tarife
+- brics
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Najavna špica | najavna špica |
+| SPEAKER_02 | Voditelj | voditelj |
+| SPEAKER_01 | Karino Hromin Sturm | gost |
+
+## Ključni zaključci
+
+1. Ishod rata u Ukrajini bit će povoljan za Rusiju, a nepovoljan za Ukrajinu, jer su EU i SAD poticali sukob isporukom oružja.
+2. Donald Trump je pokrenuo diplomatske pregovore s Vladimirom Putinom, prihvativši Putinov dnevni red koji uključuje obnovu diplomatskih odnosa, stratešku situaciju u svijetu, nuklearno naoružanje, cyber sigurnost i tek na šestom mjestu Ukrajinu.
+3. Krim, Donjeck, Lugansk, Harkov i Zaporožje smatraju se ruskim teritorijima zbog referenduma i ruskojezičnog stanovništva, o čemu nema pregovora.
+4. Trump se bori protiv 'duboke države' i međunarodne financijske oligarhije, koristeći carine kako bi vratio kapital u Ameriku i potaknuo domaću proizvodnju.
+5. Vatikanska diplomacija je moćna i stara, ali je financijska oligarhija jača, što se pokazalo kada je kraljica Elizabeta II spriječila papu Franju u zatvaranju Vatikanske banke.
+6. Hrana je postala novo geopolitičko oružje, s ciljem smanjenja proizvodnje, povećanja cijena i depopulacije, što je dio šire strategije financijske oligarhije.
+7. BRICS savez (Brazil, Rusija, Indija, Kina, Južna Afrika) snažno napreduje, privlači nove članice i predstavlja rastuću snagu koja izaziva dominaciju Zapada.
+
+## Spomenute osobe
+
+- Donald Trump
+- Vladimir Putin
+- Zbigniew Brzezinski
+- Henry Kissinger
+- Volodimir Zelenski
+- Emmanuel Macron
+- Ursula von der Leyen
+- Joe Biden
+- Hunter Biden
+- Rothschild
+- Rockefeller
+- Morgan
+- Carnegie
+- Ford
+- Warburg
+- Orban
+- Fico
+- Marija Zaharova
+- Sergej Lavrov
+- Jeljcin
+- Ivan Pavao I
+- Ivan Pavao II (Papa Vojtila)
+- Papa Franjo
+- Kardinal Bozanić
+- Kardinal Pulić
+- Klaus Schwab
+- Bill Clinton
+- Hillary Clinton
+- Andrew Marshall
+- George Soros
+- Woodrow Wilson
+- Mandel House
+- Carroll Quigley
+- Richard Nixon
+- Margaret Sanger
+- Jozef Mengele
+- Miller
+- Grant
+- Feršuer
+- Adam Smith
+- Ante Lauc
+- Ivo Sanader
+- Marić
+- Winston Churchill
+- Scholz
+- Merkel
+- Elizabeta II
+
+## Spomenuta mjesta
+
+- Ukrajina
+- Krim
+- Rusija
+- Sjedinjene Američke Države (SAD)
+- Europska Unija (EU)
+- Kijev
+- Donjeck
+- Lugansk
+- Harkov
+- Zaporožje
+- New York
+- Azija
+- Vijetnam
+- Kina
+- Južna Amerika
+- London
+- Pariz
+- Britanija
+- Vatikan
+- Rim
+- Francuska
+- Mađarska
+- Slovačka
+- Češka
+- Rumunjska
+- Moldavija
+- Gruzija
+- Berlin
+- Južna Koreja
+- Sjeverna Koreja
+- Hrvatska
+- Beograd
+- Magdalena
+- Švicarska
+- Argentina
+- Brazil
+- Južna Afrička Republika
+- Ujedinjeni Arapski Emirati
+- Saudijska Arabija
+- Iran
+- Indija
+- Pakistan
+- Kašmir
+- Aušvic
+- Latinska Amerika
+- Osijek
+- Brisel
+
+## Spomenute organizacije
+
+- Radio Mrežnica
+- EU
+- NATO
+- Swift
+- Standard Oil Company
+- Komitet Tristo
+- Svjetski ekonomski forum (WEF)
+- Međunarodni monetarni fond (MMF)
+- Svjetska banka
+- FAO (Organizacija za hranu i poljoprivredu)
+- Rimski klub
+- BRICS
+- Londonski City
+- Fed
+- Pfizer
+
+---
+*Sentiment: mixed | Generirano: 2026-03-19T16:06:15.325Z*
