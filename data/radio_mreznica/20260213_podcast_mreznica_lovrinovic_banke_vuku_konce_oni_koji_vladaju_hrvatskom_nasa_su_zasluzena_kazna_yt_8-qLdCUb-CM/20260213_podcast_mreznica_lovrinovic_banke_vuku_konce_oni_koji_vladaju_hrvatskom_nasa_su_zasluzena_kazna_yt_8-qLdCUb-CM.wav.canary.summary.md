@@ -1,0 +1,103 @@
+# PODCAST MREŽNICA - Lovrinović:Banke vuku konce! Oni koji vladaju Hrvatskom naša su zaslužena kazna
+
+**Kanal:** radio_mreznica  
+**Datum:** 2026-02-13  
+**Trajanje:** 98 min  
+**YouTube:** https://youtu.be/8-qLdCUb-CM  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Podcast analizira geoekonomska preslagivanja u svijetu, prelazeći s unipolarne dominacije SAD-a na multipolarni sustav s Kinom, Rusijom i Indijom kao ključnim igračima, dok Europa ekonomski stagnira. Gost, Ivan Lovrinović, objašnjava kako bankarska elita koristi digitalne valute poput stablecoina za financiranje američkog duga i kako digitalni euro služi za očuvanje moći komercijalnih banaka. Kritizira hrvatsku ekonomsku politiku, posebno uvođenje eura i stanje poljoprivrede, smatrajući da je trenutna vlast zaslužena kazna za inertnost građana, te naglašava važnost gotovog novca i građanskog neposluha u borbi protiv kontrole i nadolazeće krize.
+
+## Ključne teme
+
+- geoekonomija i geopolitika
+- multipolarni svijet
+- ekonomski pad Europske unije
+- digitalne valute
+- utjecaj bankarske elite
+- hrvatska ekonomska politika
+- inflacija i euro
+- kontrola putem novca
+- nadolazeća ekonomska kriza
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_01 | Voditelj | voditelj |
+| SPEAKER_00 | Ivan Lovrinović | gost |
+
+## Ključni zaključci
+
+1. Svijet prelazi iz unipolarne dominacije SAD-a u multipolarni sustav s 'kvadrigom' sila: SAD, Kina, Rusija i Indija, dok je Europska unija ekonomski marginalizirana.
+2. Europska unija je ekonomski stagnirajuće područje, nije država i ne može riješiti svoje unutarnje probleme, što je čini marginalnom u globalnoj raspodjeli moći.
+3. Dolar je i dalje najmoćnije oružje SAD-a, ali njegov utjecaj opada, što potiče razvoj digitalnih valuta poput stablecoina za financiranje američkog javnog duga.
+4. Digitalni euro, kao i stablecoini, hibridni su oblici novca koje su osmislile komercijalne banke kako bi zadržale svoju moć i kontrolu nad emisijom novca.
+5. Uvođenje eura u Hrvatskoj bila je politička odluka s predumišljajem koja je dovela do visoke inflacije i pogoršanja ekonomske situacije.
+6. Vlast u Hrvatskoj je 'zaslužena kazna' za inertnost građana, a ekonomske politike uništavaju poljoprivredu i potiču iseljavanje.
+7. Gotov novac je ključan za slobodu i anonimnost plaćanja, te je važno očuvati ga od potpunog ukidanja koje banke potiču.
+8. Predstoji velika ekonomska kriza, čiji korijeni nisu uklonjeni od 2008. godine, a signaliziraju je precijenjena financijska tržišta i visoki javni dugovi.
+9. Euro neće preživjeti jer je jedina valuta bez države, a njegov kolaps je neizbježan, što bi moglo dovesti do povratka kune.
+
+## Spomenute osobe
+
+- Donald Trump
+- Warren Buffett
+- Papa Ivan Pavao II.
+- Gandhi
+- Andrej Plenković
+- Lukač (proizvođač jaja)
+- Emmanuel Macron
+- Ursula von der Leyen
+- Elon Musk
+- Papa Franjo
+
+## Spomenuta mjesta
+
+- Hrvatska
+- Europa
+- Europska unija
+- Sjedinjene Američke Države
+- Kina
+- Rusija
+- Indija
+- Afrika
+- Latinska Amerika
+- Ukrajina
+- Njemačka
+- Japan
+- Nizozemska
+- Francuska
+- Švedska
+- Venezuela
+- Kuba
+- Iran
+- Azija
+- Wall Street
+- Brisel
+- Dalmacija
+- Slavonija
+- Kanada
+- Indonezija
+- Davos
+
+## Spomenute organizacije
+
+- Black Rock
+- Circle
+- Tether
+- J.P. Morgan
+- Hrvatska narodna banka
+- Europska središnja banka
+- NATO
+- BRICS
+- Međunarodni monetarni fond
+- FINA
+- DORH
+- USKOK
+- Istočno-indijska kompanija
+
+---
+*Sentiment: negative | Generirano: 2026-03-19T16:30:07.182Z*
