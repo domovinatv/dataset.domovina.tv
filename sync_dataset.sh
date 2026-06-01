@@ -48,6 +48,10 @@ while [[ $# -gt 0 ]]; do
             echo "Defaults:"
             echo "  SOURCE: $DEFAULT_SOURCE"
             echo "  DEST:   $DEFAULT_DEST"
+            echo ""
+            echo "Per-channel sources on other disks are read from storage.conf"
+            echo "  (override path via STORAGE_CONF env var):"
+            echo "  ${STORAGE_CONF:-\$HOME/git/domovinatv/fetch.domovina.tv/storage.conf}"
             exit 0
             ;;
         *)
@@ -124,11 +128,38 @@ if [ ! -f "$STAGING/.seeded" ] && [ -d "$DEST" ]; then
     echo "   Cache ready."
 fi
 
-# Step 1: Fast bulk rsync from source → staging cache
+# Step 1: Fast bulk rsync from source(s) → staging cache
 # --out-format='%n' outputs only the relative paths of actually transferred files
 echo "   rsync: scanning source..."
 TRANSFERRED=$(rsync -a --prune-empty-dirs --out-format='%n' \
     "${RSYNC_FILTERS[@]}" "$SOURCE/" "$STAGING/")
+
+# Step 1b: Per-channel source overrides from the fetch pipeline's storage.conf.
+# Channels are spread across multiple disks; storage.conf maps "channel=path"
+# (path points at the channel's directory). We rsync each override whose disk is
+# currently mounted, so channels living off the default disk still get synced.
+STORAGE_CONF="${STORAGE_CONF:-$HOME/git/domovinatv/fetch.domovina.tv/storage.conf}"
+if [ -f "$STORAGE_CONF" ]; then
+    echo "   storage.conf: $STORAGE_CONF"
+    while IFS='=' read -r channel cpath; do
+        # Skip comments, blanks, and DEFAULT (already covered by the main rsync above)
+        case "$channel" in ''|\#*|DEFAULT) continue ;; esac
+        cpath="${cpath%$'\r'}"            # strip any trailing CR
+        if [ ! -d "$cpath" ]; then
+            echo "   ⏭️  $channel: source not available (disk unmounted or not fetched)"
+            continue
+        fi
+        echo "   rsync: $channel (override: $cpath)"
+        extra=$(rsync -a --prune-empty-dirs --out-format='%n' \
+            "${RSYNC_FILTERS[@]}" "$cpath/" "$STAGING/$channel/")
+        # rsync prints paths relative to the channel dest; prepend "channel/" so
+        # the organizer parses them the same as the main rsync's output.
+        while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            TRANSFERRED+=$'\n'"$channel/$line"
+        done <<< "$extra"
+    done < "$STORAGE_CONF"
+fi
 
 # Step 2: Organize only newly transferred files into per-video folders
 SYNC_COUNT=0
