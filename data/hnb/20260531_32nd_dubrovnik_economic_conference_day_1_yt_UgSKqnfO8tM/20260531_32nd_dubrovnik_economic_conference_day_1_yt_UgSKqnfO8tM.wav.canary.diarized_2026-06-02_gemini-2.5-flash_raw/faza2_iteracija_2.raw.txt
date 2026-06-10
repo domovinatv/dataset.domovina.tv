@@ -1,0 +1,219 @@
+[
+  {
+    "subtitle": "Analiza prolaza valutnog tečaja: Novi pristup Hrvatske narodne banke",
+    "screenshot_timestamp": "00:46:12",
+    "screenshot_description": "Ivo (SPEAKER_21) započinje prezentaciju rada.",
+    "content": "Ivo, predstavnik Hrvatske narodne banke, započeo je prezentaciju rada pod naslovom \"Prolaz valutnog tečaja: Kontrafaktualna SVAR metoda\", čiji su autori Davor i Domagoj. Naglasio je da izneseni stavovi predstavljaju isključivo mišljenje autora i ne odražavaju nužno službeni stav banke. Rad se fokusira na ključno pitanje: kako kretanje valutnog tečaja utječe na cijene i inflaciju.",
+    "keywords": [
+      "valutni tečaj",
+      "inflacija",
+      "Hrvatska narodna banka",
+      "ekonomska analiza"
+    ],
+    "entities": [
+      "Hrvatska narodna banka",
+      "Davor",
+      "Domagoj"
+    ]
+  },
+  {
+    "subtitle": "Zagonetka nepotpunog prolaza: Zašto promjene tečaja ne prate cijene?",
+    "screenshot_timestamp": "00:47:07",
+    "screenshot_description": "Ivo (SPEAKER_21) objašnjava primjer fluktuacija EUR/USD i njihov utjecaj na cijene.",
+    "content": "Ivo je detaljno objasnio koncept prolaza valutnog tečaja, ističući da je on često \"nepotpun\", što znači da se cijene ne kreću u potpunosti u skladu s promjenama tečaja. Kao ilustraciju, naveo je značajne fluktuacije između američkog dolara i eura 2015. godine, koje se, unatoč svojoj veličini i brzini, nisu u potpunosti odrazile na uvozne cijene.\n\nNekoliko je ključnih razloga za ovu nepotpunost:\n\n- **Tržišna snaga i \"pricing-to-market\":** Tvrtke mogu prilagoditi svoje marže kako bi ublažile utjecaj tečajnih promjena.\n- **Troškovi transporta:** Fiksni troškovi transporta mogu smanjiti osjetljivost cijena na tečajne promjene.\n- **Udio domaćih proizvoda:** Ako domaći proizvodi čine značajan dio potrošačkih cijena, utjecaj uvoznih cijena je manji.\n- **Invoicing u stabilnim valutama:** Mnogi se proizvodi fakturiraju u globalno stabilnim valutama poput eura ili američkog dolara, što ih čini \"ljepljivima\" u toj valuti.\n\nIvo je naglasio da je mjerenje prolaza valutnog tečaja izuzetno izazovno. Idealno bi bilo imati egzogene promjene tečaja, ali u stvarnosti, tečaj reagira na standardne makroekonomske šokove (ponude, potražnje, monetarne politike). Prikazao je grafikon korelacije između tečaja EUR/USD i inflacije u eurozoni, pokazujući da se korelacija kreće od negativne do pozitivne, što ukazuje na složenost i endogenost odnosa. Jednostavna OLS regresija stoga ne može riješiti problem endogenosti.",
+    "keywords": [
+      "prolaz valutnog tečaja",
+      "inflacija",
+      "endogenost",
+      "makroekonomski šokovi",
+      "eurozona",
+      "USD",
+      "EUR"
+    ],
+    "entities": [
+      "Eurozona",
+      "SAD"
+    ]
+  },
+  {
+    "subtitle": "Prevladavanje endogenosti: Od Choleskyja do strukturnog VAR-a",
+    "screenshot_timestamp": "00:51:57",
+    "screenshot_description": "Ivo (SPEAKER_21) objašnjava evoluciju metodologije u literaturi.",
+    "content": "Ivo je objasnio kako se ekonomska literatura razvijala u pokušaju rješavanja problema endogenosti pri mjerenju prolaza valutnog tečaja. Kao primjer je naveo šok potražnje: domaći šok potražnje može istovremeno povećati tečaj (što bi imalo deflacijski učinak) i izravno povećati inflaciju (zbog pritiska na cijene). U takvom scenariju, prevladavajući učinak je često povećanje inflacije uz jači tečaj, što rezultira perverznom pozitivnom korelacijom.\n\nTradicionalni pristup, poput rekurzivne identifikacije Choleskyja, često je pripisivao čak 90% kretanja tečaja samim šokovima tečaja, što je, kako Ivo ističe, \"teško povjerovati\". Stoga se literatura prebacila na strukturne VAR (Vector Autoregression) modele, koristeći nulta i znakovna ograničenja za identifikaciju šokova. Ovi modeli pripisuju samo oko 10% kretanja tečaja egzogenim šokovima tečaja, dok ostatak objašnjavaju šokovi potražnje, ponude, monetarne politike (domaći i globalni).\n\nMeđutim, Ivo je naglasio da čak i u ovoj \"najmodernijoj literaturi\", prolaz valutnog tečaja se često mjeri omjerom odgovora inflacije na tečaj (PAR), što i dalje može dovesti do pogrešnih, pozitivnih znakova, sugerirajući da jača valuta može implicirati višu inflaciju.",
+    "keywords": [
+      "strukturni VAR",
+      "endogenost",
+      "Cholesky identifikacija",
+      "šok potražnje",
+      "monetarna politika"
+    ],
+    "entities": []
+  },
+  {
+    "subtitle": "Inovativni kontrafaktualni pristup za precizno mjerenje utjecaja tečaja",
+    "screenshot_timestamp": "00:56:04",
+    "screenshot_description": "Ivo (SPEAKER_21) objašnjava kako njihov kontrafaktualni pristup funkcionira.",
+    "content": "Kako bi riješili problem endogenosti i pogrešnih znakova u mjerenju prolaza valutnog tečaja, Ivo i njegov tim razvili su inovativan kontrafaktualni pristup. Njihova metodologija koristi relativni strukturni VAR model za eurozonu i SAD, s pažljivo definiranim identifikacijskim ograničenjima.\n\nKljučna inovacija leži u sposobnosti da se \"isključi\" kanal tečaja za svaki pojedini šok. To se postiže konstruiranjem \"kompenzacijskih šokova\" – hipotetičkih šokova koji poništavaju učinak izvornog šoka (npr. šoka potražnje) na tečaj. Uspoređujući svijet s aktivnim kanalom tečaja i svijet u kojem je taj kanal isključen, autori mogu izolirati čisti, \"uzročni\" učinak tečaja na inflaciju.\n\nIvo je naglasio da njihov model koristi četiri ključne varijable: BDP, indeks potrošačkih cijena (ili uvoznih cijena), kamatne stope i tečaj. Model je \"relativan\", što znači da se vrijednosti za eurozonu uspoređuju s onima za SAD. Posebno je zanimljiv \"šok sentimenta\", koji obuhvaća epizode rizika kada investitori prebacuju imovinu između zemalja zbog promjena u percepciji rizika, a koji se u njihovom okviru ponaša kao najbliži čisti egzogeni šok tečaja.",
+    "keywords": [
+      "kontrafaktualni pristup",
+      "strukturni VAR",
+      "kanal tečaja",
+      "kompenzacijski šokovi",
+      "uzročni prolaz",
+      "šok sentimenta"
+    ],
+    "entities": [
+      "Eurozona",
+      "SAD"
+    ]
+  },
+  {
+    "subtitle": "Novi uvidi: Prolaz valutnog tečaja manji, ali precizniji",
+    "screenshot_timestamp": "00:58:07",
+    "screenshot_description": "Ivo (SPEAKER_21) prikazuje grafikon impulzivnih odgovora za inflaciju i tečaj.",
+    "content": "Predstavljajući ključne rezultate, Ivo je prikazao impulse-response funkcije iz njihovog strukturnog VAR modela. Za pozitivan šok potražnje, bazni scenarij (plava linija) pokazuje višu inflaciju i jači tečaj. Međutim, u kontrafaktualnom scenariju, gdje je kanal tečaja isključen (crvena linija), inflacija bi bila još viša. To implicira da je aprecijacija valute imala dezinflacijski učinak, smanjujući inflaciju. Razlika između ova dva scenarija predstavlja uzročni prolaz valutnog tečaja, koji je u ovom slučaju negativan i statistički značajan. Za šokove ponude, uzročni prolaz nije značajan, jer ti šokovi ne utječu značajno na tečaj.\n\nNjihove procjene pokazuju da je prolaz valutnog tečaja na potrošačke cijene između **5 i 10 posto**, dok je na uvozne cijene između **35 i 45 posto**.\n\nUspoređujući svoj pristup s postojećom literaturom (mjera PAR), Ivo je istaknuo nekoliko prednosti:\n\n- **Ispravan znak:** Za šokove potražnje dobivaju ispravan, negativan znak prolaza.\n- **Smanjena heterogenost:** Procjene prolaza su znatno stabilnije i manje heterogene među različitim šokovima.\n- **Uži intervali pouzdanosti:** Zbog izolacije specifičnog mehanizma, intervali pouzdanosti su uži, što ukazuje na veću preciznost.\n- **Konvergencija za šok sentimenta:** Njihova mjera uzročnog prolaza najbliža je standardnoj PAR mjeri za šok sentimenta, koji je najbliži čistom egzogenom šoku tečaja. To potvrđuje valjanost njihovog pristupa.",
+    "keywords": [
+      "uzročni prolaz",
+      "inflacija",
+      "potrošačke cijene",
+      "uvozne cijene",
+      "šok potražnje",
+      "impulsni odgovor",
+      "kontrafaktualna analiza"
+    ],
+    "entities": []
+  },
+  {
+    "subtitle": "Tečaj kao dezinflacijski faktor: Povijesni uvid u eurozoni",
+    "screenshot_timestamp": "01:02:32",
+    "screenshot_description": "Ivo (SPEAKER_21) objašnjava povijesnu dekompoziciju utjecaja tečaja na inflaciju.",
+    "content": "Ivo je predstavio povijesnu analizu koja pokazuje kako su kretanja tečaja, kroz uzročni kanal, utjecala na inflaciju. Posebno je istaknuo 2015. godinu, kada su šokovi sentimenta značajno utjecali na inflaciju u eurozoni. Prema njihovim procjenama, inflacija u eurozoni bila je gotovo **0,4 posto niža** zbog promjena tečaja.\n\nVažno je napomenuti da se njihov grafikon povijesne dekompozicije razlikuje od standardnih. On ne prikazuje ukupan utjecaj šokova na inflaciju, već isključivo utjecaj koji se prenio *kroz kanal tečaja*. To objašnjava zašto veliki šokovi ponude nakon 2020. godine, koji su imali značajan utjecaj na inflaciju, na njihovom grafikonu izgledaju minorno. Šokovi ponude, naime, ne pomiču tečaj značajno, već utječu na inflaciju izravnije ili putem drugih kanala. Ova distinkcija je ključna za razumijevanje specifičnog doprinosa tečaja inflacijskim dinamikama.",
+    "keywords": [
+      "povijesna analiza",
+      "inflacija",
+      "eurozona",
+      "šok sentimenta",
+      "dezinflacijski učinak",
+      "kanal tečaja"
+    ],
+    "entities": [
+      "Eurozona"
+    ]
+  },
+  {
+    "subtitle": "Potvrda preciznosti: Novi standard za mjerenje prolaza valutnog tečaja",
+    "screenshot_timestamp": "01:04:03",
+    "screenshot_description": "Ivo (SPEAKER_21) iznosi ključne zaključke rada.",
+    "content": "Zaključujući prezentaciju, Ivo je ponovio da je njihov rad uspješno preispitao postojeću literaturu o prolazu valutnog tečaja koristeći inovativan kontrafaktualni pristup. Ovaj pristup omogućio je rješavanje ključnih problema s kojima se literatura suočavala, poput pogrešnih znakova u procjenama prolaza kod šokova potražnje i visoke heterogenosti procjena.\n\nNjihove procjene su preciznije i stabilnije: prolaz valutnog tečaja na potrošačke cijene iznosi **5 do 10 posto**, dok je na uvozne cijene znatno viši, **35 do 45 posto**. Rad pruža robustniju metodologiju za razumijevanje složenih interakcija između tečaja i inflacije, nudeći donositeljima politika jasnije uvide u mehanizme prijenosa.",
+    "keywords": [
+      "zaključci",
+      "prolaz valutnog tečaja",
+      "kontrafaktualni pristup",
+      "potrošačke cijene",
+      "uvozne cijene",
+      "donositelji politika"
+    ],
+    "entities": []
+  },
+  {
+    "subtitle": "Kritički osvrt: Tehnički izazovi i Lucasova kritika",
+    "screenshot_timestamp": "01:04:58",
+    "screenshot_description": "Discussant (SPEAKER_19) započinje raspravu o radu.",
+    "content": "Discussant je započeo raspravu o radu, ističući njegovu tehničku složenost. Primijetio je da, gledajući inflaciju (isključujući energiju) i tečaj, na prvi pogled nema jake korelacije, ali je priznao da se šokovi ne mogu jednostavno zaključiti iz toga.\n\nGlavni izazov rada, prema Discussantu, leži u povezivanju vrlo teorijskog koncepta ukupnog prolaza tečaja s empirijskim, smanjenim elastičnostima na mikro razini. Također je spomenuo da rad priznaje potencijalnu podložnost Lucasovoj kritici, sugerirajući da bi autori trebali jasnije definirati uvjete pod kojima je njihov pristup valjan.\n\nDiscussant je predložio uključivanje vanjskih varijabli, poput monetarne politike Feda (kamatne stope u SAD-u), kao potencijalno izostavljene varijable u identifikaciji. Pohvalio je novost \"šoka sentimenta\" i njegovo dobro ponašanje, ali je izrazio sumnju u njegovu potpunu razliku od negativnih šokova potražnje. Zaključio je da je rad važan i relevantan za politiku, te da predstavlja \"najnovije\" u istraživanju.",
+    "keywords": [
+      "Lucasova kritika",
+      "tehnički rad",
+      "monetarna politika",
+      "šok sentimenta",
+      "ekonomska teorija"
+    ],
+    "entities": [
+      "Fed"
+    ]
+  },
+  {
+    "subtitle": "Ivo odgovara na kritike: MIT šokovi i relativni model",
+    "screenshot_timestamp": "01:10:48",
+    "screenshot_description": "Ivo (SPEAKER_21) odgovara na komentare Discussanta.",
+    "content": "Ivo je zahvalio Discussantu na korisnim komentarima, ističući da će mnogi od predloženih aspekata biti uključeni u sljedeću reviziju rada. Složio se da je usklađivanje teorije s empirijskim modelima izazovno.\n\nOdgovarajući na Lucasovu kritiku, Ivo je pojasnio da njihov model pretpostavlja \"MIT šokove\", odnosno neočekivane šokove na koje agenti ne mogu anticipirati. Naglasio je da svrha analize nije predviđanje svijeta u kojem bi se to stvarno dogodilo, već izolacija kanala tečaja.\n\nTakođer je istaknuo da njihov model već uključuje \"relativne\" varijable (npr. kamatna stopa ECB-a minus kamatna stopa SAD-a), čime se djelomično uzimaju u obzir globalni šokovi. Međutim, priznao je da veza možda nije simetrična zbog dominantne uloge američkog dolara u globalnoj ekonomiji, te da bi se trebalo raditi na razjašnjavanju tih nelinearnosti.",
+    "keywords": [
+      "MIT šokovi",
+      "Lucasova kritika",
+      "relativni model",
+      "ECB",
+      "američki dolar",
+      "nelinearnosti"
+    ],
+    "entities": [
+      "ECB",
+      "SAD"
+    ]
+  },
+  {
+    "subtitle": "Catherine Mann o ulozi monetarne politike i veličini gospodarstva",
+    "screenshot_timestamp": "01:15:54",
+    "screenshot_description": "Catherine Mann (SPEAKER_04) postavlja pitanja Ivi.",
+    "content": "Catherine Mann iz Banke Engleske postavila je dva ključna pitanja. Prvo, zanimalo ju je kako monetarna politika utječe na ublažavanje prolaza valutnog tečaja, posebno s obzirom na to da središnje banke ciljaju inflaciju. Primijetila je da grafikon monetarnog šoka pokazuje razliku između bazne i kontrafaktualne linije, sugerirajući da bi se na to trebalo fokusirati.\n\nDrugo, pitala je u kojoj mjeri bi se rezultati rada, koji se fokusira na eurozonu i SAD, razlikovali za manje ekonomije. Istaknula je važnost veličine gospodarstva i njegove relativne važnosti na međunarodnim tržištima kapitala, sugerirajući da bi to moglo utjecati na prolaz valutnog tečaja.",
+    "keywords": [
+      "monetarna politika",
+      "prolaz valutnog tečaja",
+      "veličina gospodarstva",
+      "međunarodna tržišta kapitala",
+      "Bank of England"
+    ],
+    "entities": [
+      "Bank of England",
+      "Eurozona",
+      "SAD"
+    ]
+  },
+  {
+    "subtitle": "Andre Meyer o nelinearnostima i konkurentnosti",
+    "screenshot_timestamp": "01:23:24",
+    "screenshot_description": "Andre Meyer (SPEAKER_25) postavlja pitanja Ivi.",
+    "content": "Andre Meyer iz Tudor Capitala postavio je dva pitanja. Prvo, zanimalo ga je jesu li autori pokušali razlikovati pozitivne i negativne šokove, ili male i velike šokove, kako bi uhvatili potencijalne nelinearnosti. Spomenuo je da se često pretpostavlja da slabost valute ima veće učinke od njezine snage.\n\nDrugo, pitao je što relativno niska procjena prolaza valutnog tečaja (5-10%) govori o konkurentskoj strukturi gospodarstva. Usporedio je to s relativno umjerenim prolazom carina u SAD-u, sugerirajući da bi to moglo biti povezano s konkurentnošću.",
+    "keywords": [
+      "nelinearnosti",
+      "šokovi",
+      "konkurentnost",
+      "valutni tečaj",
+      "carine"
+    ],
+    "entities": [
+      "Tudor Capital",
+      "SAD"
+    ]
+  },
+  {
+    "subtitle": "Jaris Dean o izboru tečaja i inflacije",
+    "screenshot_timestamp": "01:27:45",
+    "screenshot_description": "Jaris Dean (SPEAKER_34) postavlja pitanja Ivi.",
+    "content": "Jaris Dean iz Goldman Sachsa postavio je dva povezana pitanja. Prvo, pitao je zašto su autori koristili tečaj euro-dolar umjesto širokog efektivnog tečaja, s obzirom na to da mnoga istraživanja ukazuju na prolaz valutnog tečaja kroz šire mjere.\n\nDrugo, kritizirao je fokus na ukupnu inflaciju, sugerirajući da bi se učinci na tržište mogli odraziti na cijene sirovina koje su u velikoj mjeri denominirane u dolarima. Predložio je da bi se rezultati mogli promijeniti ako se fokusiraju na baznu inflaciju i široki tečaj valute.",
+    "keywords": [
+      "efektivni tečaj",
+      "bazna inflacija",
+      "ukupna inflacija",
+      "cijene sirovina",
+      "dolar"
+    ],
+    "entities": [
+      "Goldman Sachs"
+    ]
+  },
+  {
+    "subtitle": "Ivo o energetskim šokovima i izravnom utjecaju na inflaciju",
+    "screenshot_timestamp": "01:28:34",
+    "screenshot_description": "Ivo (SPEAKER_21) odgovara na pitanja iz publike.",
+    "content": "Ivo je odgovorio na pitanja o odabiru podataka, priznajući njihovu važnost. Posebno se osvrnuo na energetske šokove, poput onih nedavnih, sugerirajući da bi oni mogli dovesti do višeg prolaza valutnog tečaja, s obzirom na značajan volumen uvoza energije u eurozoni.\n\nMeđutim, ponovio je ključnu poantu iz svoje prezentacije: šokovi ponude, uključujući energetske šokove, ne utječu značajno na tečaj. Stoga se njihov utjecaj na inflaciju prenosi izravnije ili putem drugih kanala, a ne primarno kroz kanal tečaja. Ova distinkcija je temeljna za razumijevanje specifičnog fokusa njihovog rada na uzročnom prolazu valutnog tečaja.",
+    "keywords": [
+      "energetski šokovi",
+      "odabir podataka",
+      "eurozona",
+      "inflacija",
+      "kanal tečaja"
+    ],
+    "entities": [
+      "Eurozona"
+    ]
+  }
+]
