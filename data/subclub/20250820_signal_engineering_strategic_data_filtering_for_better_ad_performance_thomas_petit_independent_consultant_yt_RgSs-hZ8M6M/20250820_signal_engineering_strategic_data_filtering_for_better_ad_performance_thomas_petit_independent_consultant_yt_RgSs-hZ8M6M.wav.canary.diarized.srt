@@ -1,0 +1,3948 @@
+1
+00:00:00,000 --> 00:00:09,599
+[SPEAKER_01] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:19,920
+[SPEAKER_01] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_01] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+[SPEAKER_01] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje klijentima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,679 --> 00:01:14,959
+[SPEAKER_01] Više informacija možete pronaći na revenuecat dot com dot Ej, Thomas, hvala ti što si se ponovno priključio podcastu.
+
+6
+00:01:15,599 --> 00:01:17,680
+[SPEAKER_00] Ej, Davide, uvijek sam sretan što se vraćam.
+
+7
+00:01:17,840 --> 00:01:24,079
+[SPEAKER_00] Ovo je jedno od onih vremena u godini u kojem se veselim razgovoru s tobom i istraživanju novih tema oko aplikacija.
+
+8
+00:01:24,159 --> 00:01:25,760
+[SPEAKER_00] Dakle, sretan sam što sam ovdje.
+
+9
+00:01:25,920 --> 00:01:28,319
+[SPEAKER_01] Da, mislim da ćemo ovo učiniti nešto što će postati godišnje.
+
+10
+00:01:29,280 --> 00:01:34,000
+[SPEAKER_01] Mislim da smo to radili posljednje tri godine zaredom krajem ljeta, početkom jeseni.
+
+11
+00:01:34,159 --> 00:01:36,959
+[SPEAKER_01] Dakle, ovo ćemo učiniti nešto što će postati svake godine.
+
+12
+00:01:37,280 --> 00:01:38,319
+[SPEAKER_01] U redu, to je datum.
+
+13
+00:01:39,120 --> 00:01:43,359
+[SPEAKER_01] Glavna stvar o kojoj sam želio danas razgovarati bila je signalna inženjering.
+
+14
+00:01:43,439 --> 00:01:44,480
+[SPEAKER_01] Proveli smo webinar o tome.
+
+15
+00:01:44,719 --> 00:01:45,680
+[SPEAKER_01] Govorio si o tome dosta.
+
+16
+00:01:45,840 --> 00:01:47,040
+[SPEAKER_01] Ljudi su o tome blogirali.
+
+17
+00:01:47,359 --> 00:01:53,439
+[SPEAKER_01] Ali prije nego što dođemoemo do toga, bilo je nekoliko vrućih tema o kojima sam mislio da će ljudi voljeti čuti od vas.
+
+18
+00:01:53,840 --> 00:01:59,920
+[SPEAKER_01] Dakle, prvo ćemo se pozabaviti tim temama, a zatim ćemo se pozabaviti inženjerstvom signala i možda će ovo biti dvosatni ili triaturnog podcasta.
+
+19
+00:02:00,079 --> 00:02:02,159
+[SPEAKER_01] Pogledajmo kako će to proći.
+
+20
+00:02:03,519 --> 00:02:10,560
+[SPEAKER_01] Jedno od toga o čemu sam želio razgovarati jest umjetna inteligencija i kreativna generacija umjetne inteligencije.
+
+21
+00:02:10,719 --> 00:02:24,719
+[SPEAKER_01] U posljednje vrijeme bilo je puno buke o tome da će Facebook ili Meta uzeti sve vaše resurse i sve riješiti i u potpunosti automatizirati sve vaše.
+
+22
+00:02:24,719 --> 00:02:28,000
+[SPEAKER_01] Automatizirajte sve svoje oglase u narednih osamnaest mjeseci.
+
+23
+00:02:28,159 --> 00:02:29,680
+[SPEAKER_01] To će generirati ljude koji izgledaju kao ljudi.
+
+24
+00:02:30,319 --> 00:02:32,800
+[SPEAKER_01] Napisat će vaše slogane umjesto vas.
+
+25
+00:02:33,120 --> 00:02:33,360
+[SPEAKER_01] Sve će učiniti.
+
+26
+00:02:33,840 --> 00:02:40,319
+[SPEAKER_01] Prilagodit će ga svakom pojedincu i to će biti poput utopije oglasa.
+
+27
+00:02:42,080 --> 00:02:44,000
+[SPEAKER_01] I to je stav koji sam čuo od mnogih ljudi.
+
+28
+00:02:44,159 --> 00:02:49,840
+[SPEAKER_01] Ali nedavno sam vidio vaš tweet s malo kontrarijanskim pogledom na to.
+
+29
+00:02:50,319 --> 00:03:00,879
+[SPEAKER_01] Zato bih volio čuti kako razmišljate o korištenju umjetne inteligencije u kreativnom stvaranju, u cijelom procesu stvaranja oglasa i što treba pratiti.
+
+30
+00:03:00,879 --> 00:03:03,680
+[SPEAKER_01] Što treba paziti i kamo mislite da se stvari kreću?
+
+31
+00:03:04,319 --> 00:03:09,439
+[SPEAKER_00] Veliki je fokus na upotrebu umjetne inteligencije posebno za to, kao što je za stvaranje kreativnih djela.
+
+32
+00:03:10,000 --> 00:03:17,599
+[SPEAKER_00] I mislim da je to zapravo pogreška u smislu da skriva činjenicu da možemo koristiti umjetnu inteligenciju za brojne druge stvari koje nisu kreativna produkcija.
+
+33
+00:03:18,000 --> 00:03:28,960
+[SPEAKER_00] Naravno, to je prirodno zbog troška proizvodnje, ali i ideja i kako možemo učiniti više violina mnogo lakšima nego prije.
+
+34
+00:03:29,439 --> 00:03:36,479
+[SPEAKER_00] Dakle, malo je očito da je 95 posto rasprave tu, ali moj prvi odgovor bi bio, možda nemamo.
+
+35
+00:03:36,479 --> 00:03:39,360
+[SPEAKER_00] Možda nismo puno radili drugdje.
+
+36
+00:03:39,840 --> 00:03:43,360
+[SPEAKER_00] I mislim da je posebno u kreativnoj analizi malo praznina.
+
+37
+00:03:44,240 --> 00:03:49,199
+[SPEAKER_00] Vidim nekoliko alata koji dolaze i neke ljude, ali to je još uvijek rijetka rasprava.
+
+38
+00:03:49,680 --> 00:03:53,840
+[SPEAKER_00] Kao da se puno fokusa usredotočuje na kreativnu produkciju i to je na neki način očekivano.
+
+39
+00:03:54,080 --> 00:04:10,479
+[SPEAKER_00] Mislim da ako se vratimo na vrijeme kad je GPT izašao, na početku, očito je bilo uglavnom tekst, a onda smo dobili Mid Journey i Delhi, ali kao što su statične slike, barem za aplikacije, relativno mala količina oglasa koji se zapravo bacaju tamo.
+
+40
+00:04:10,800 --> 00:04:12,879
+[SPEAKER_00] A tekst je važan, posebno na Googleu.
+
+41
+00:04:13,360 --> 00:04:21,680
+[SPEAKER_00] i drugdje, ali za plaćene društvene mreže, za Meta, za TikTok i za igre i mreže, tekst je vrlo mali do značajan dio.
+
+42
+00:04:22,240 --> 00:04:29,439
+[SPEAKER_00] Dakle, očito je da je ubrzanje uglavnom bilo negdje oko posljednjih šest, dvanaest mjeseci, kada je stvaranje videozapisa postalo stvarno moguće.
+
+43
+00:04:29,839 --> 00:04:38,399
+[SPEAKER_00] Mislim, do prije godinu dana, ljeti 2025., do prošlog ljeta, kvaliteta umjetne inteligencije za stvaranje videozapisa nije bila dovoljno dobra za stvaranje oglasa.
+
+44
+00:04:38,720 --> 00:04:48,639
+[SPEAKER_00] A onda, kao što je sve povezano s umjetnom inteligencijom, to se ubrzalo toliko da mislim da ne znam ni jednu ekipu koja ne koristi bilo koji alat za stvaranje oglasa, što se ne događa.
+
+45
+00:04:48,639 --> 00:04:53,360
+[SPEAKER_00] To ne znači da je sto posto oglasa generirano umjetnom inteligencijom.
+
+46
+00:04:53,600 --> 00:04:57,759
+[SPEAKER_00] I mislim da nikad nećemo doći do sto posto, osim ako jedna platforma ne odluči da nema drugog izbora.
+
+47
+00:04:57,920 --> 00:04:59,120
+[SPEAKER_00] Ali mislim da neće biti tako.
+
+48
+00:04:59,519 --> 00:05:14,480
+[SPEAKER_00] Mislim da će biti malo mješavine i vjerojatno će biti većina, ali to ne znači da će biti cjelina, pogotovo oko stvaranja, kao što mislim da možete koristiti ne samo za generiranje same slike, već i za generiranje, kao što su briefingovi.
+
+49
+00:05:14,800 --> 00:05:18,000
+[SPEAKER_00] Mislim da je više varijacija još jedna upotreba.
+
+50
+00:05:18,079 --> 00:05:24,959
+[SPEAKER_00] Dakle, u kreativnoj produkciji postoji mnogo slojeva načina na koji koristite umjetnu inteligenciju.
+
+51
+00:05:24,959 --> 00:05:36,959
+[SPEAKER_00] I nije tako, pa bi to moglo biti stvaranje vrijednosti, moglo bi biti pronalaženje novih ideja, a ponekad biste upotrebljavali nekoliko alata zaredom, kao što je jedan za generiranje ideja, a drugi za klasifikaciju i isprobavanje, a zatim kasnije jedan za proizvodnju.
+
+52
+00:05:37,920 --> 00:05:39,120
+[SPEAKER_00] Postoji jedan koji je vrlo uzbudljiv.
+
+53
+00:05:40,319 --> 00:05:42,959
+[SPEAKER_00] Vidio sam poruku prošli tjedan i pomislio sam, oh, ludilo.
+
+54
+00:05:43,439 --> 00:05:47,759
+[SPEAKER_00] Sjećam se da sam o tome napisao prije šest godina, pa prije GPT-a.
+
+55
+00:05:48,000 --> 00:05:56,399
+[SPEAKER_00] Bilo je to prilično smiješno, što je bilo poput, oh, ovo je prvi put da postoji alat koji vam omogućuje stvarno testiranje kreativnosti bez trošenja ni jednog dolara.
+
+56
+00:05:56,720 --> 00:06:00,639
+[SPEAKER_00] I zapravo postoji ovaj bazen umjetnih ljudi koji su.
+
+57
+00:06:00,639 --> 00:06:12,160
+[SPEAKER_00] Ljudi koji se koriste nisu ljudi, samo su generirani umjetnom inteligencijom kako bi se utvrdilo ima li oglas šanse da postane pobjednik bez trošenja novca, što je san.
+
+58
+00:06:12,800 --> 00:06:27,759
+[SPEAKER_00] Jer, mislim, s jedne strane, moramo proizvesti mnogo stvari da bismo saznali što funkcionira, a statistike su otprilike, morate proizvesti pedeset kreativnih da biste imali jednu koja je zapravo pobjednik, a ovaj pobjednik će preuzeti više od devedeset posto trošenja oglasa.
+
+59
+00:06:28,079 --> 00:06:32,480
+[SPEAKER_00] To je vrsta normalnog pobjednika preuzima sve mehanike koje se događaju u oglasima.
+
+60
+00:06:32,560 --> 00:06:37,279
+[SPEAKER_00] Dakle, očito je da je to zato što više.
+
+61
+00:06:37,680 --> 00:06:43,680
+[SPEAKER_00] Timovi ubrzavaju trgovanje stotinama tjedno, tisućama mjesečno kako bi pronašli nekoliko pobjednika.
+
+62
+00:06:43,839 --> 00:06:56,160
+[SPEAKER_00] Dakle, to je WSUS, ali imati nešto što vam govori bez potrebe za kreativnim testiranjem, koji ima najveću šansu za pobjedu, nešto je što je još uvijek vrlo početno, vrlo pionirsko.
+
+63
+00:06:56,399 --> 00:07:01,759
+[SPEAKER_00] I ne mislim da će potpuno zamijeniti pravi kreativni test u kojem uložite malo novca u to.
+
+64
+00:07:02,079 --> 00:07:06,399
+[SPEAKER_00] Ali definitivno je to jedan od načina na koji se veselim ubrzanju u sljedećoj godini.
+
+65
+00:07:06,720 --> 00:07:09,680
+[SPEAKER_00] Još nismo tamo, ali nešto što mogu vidjeti da dolazi.
+
+66
+00:07:10,000 --> 00:07:23,600
+[SPEAKER_00] Mislim da će se ubrzati i u analizi, posebno oko RO uzoraka poput onih koji su alati uvijek radili, a koji ne, onda možete doći do toga i sve je to nekako povezano s ubrzavanjem zbog tih različitih slojeva.
+
+67
+00:07:23,920 --> 00:07:27,360
+[SPEAKER_00] Jedan ubrzava sljedeći i pojačava, recimo, sljedeći.
+
+68
+00:07:27,759 --> 00:07:28,639
+[SPEAKER_00] Sve je to vrlo uzbudljivo.
+
+69
+00:07:28,800 --> 00:07:42,800
+[SPEAKER_00] Od kada je Meta, a posebno Mark Zuckerberg, izjavio da je njegov cilj da nema više sredstava, da je sve generirano, mislim da je to bilo dobrovoljno provokativno u smjeru u kojem se kreće.
+
+70
+00:07:43,279 --> 00:07:49,600
+[SPEAKER_00] Mislim da nećemo doći do toga u narednih jedan, dva, tri godine, a svakako ne u osamnaest mjeseci, ali to je svakako smjerjer u kojem se kreće.
+
+71
+00:07:49,759 --> 00:07:53,920
+[SPEAKER_00] Mislim, Google je puno toga učinio na početku s UIC-om i još uvijek radi puno toga.
+
+72
+00:07:54,399 --> 00:07:58,160
+[SPEAKER_00] Meta je učinila neke od njih i očito sada ubrzava.
+
+73
+00:07:58,480 --> 00:08:15,839
+[SPEAKER_00] I mogu vidjeti zašto je ova izjava, mislim, Zuckerberg je rekao na način da pripremi ljude da dolazi, ne nužno da je ovo konačna forma o kojoj govori, što će biti tamo za osamnaest mjeseci, ali je prilično logično u smislu personalizacije dijelova kreativnog.
+
+74
+00:08:16,480 --> 00:08:22,879
+[SPEAKER_00] Na primjer, mogli biste pronaći scenarij kreativnog, nešto što prilično odjekuje s velikim dijelom publike.
+
+75
+00:08:22,959 --> 00:08:35,279
+[SPEAKER_00] Ali onda ako ga povećate, tekst može biti prilagoditi, da se lik u oglasu može prilagoditi i da netko dodaje nešto, netko tko izgleda više poput njih ili malo stariji, a onda možete zadovoljiti još veću publiku.
+
+76
+00:08:35,519 --> 00:08:36,399
+[SPEAKER_00] To ima smisla.
+
+77
+00:08:36,639 --> 00:08:51,279
+[SPEAKER_00] Kao što danas vidim da se to događa na polusustavni način, što je poput, oh, imam nešto što pobjeđuje, napravimo pedeset njih, a jedan s starijim dečkom, a jedan s crnom ženom, a jedan s dvadesetogodišnjom i jedan s bilo čim.
+
+78
+00:08:51,519 --> 00:08:52,639
+[SPEAKER_00] I samo ih isprobajte, zar ne?
+
+79
+00:08:53,279 --> 00:09:01,919
+[SPEAKER_00] Ali mogu vidjeti kako je sada više poput marketinške ideje, oh, imam nešto što pobjeđuje, napravimo varijante iz toga u automatizacijiira više toga.
+
+80
+00:09:02,799 --> 00:09:06,080
+[SPEAKER_00] Dakle, u velikoj mjeri, mislim da je smisleno da krenemo u tom smjeru.
+
+81
+00:09:06,240 --> 00:09:10,639
+[SPEAKER_00] Mislim da to neće biti jedini način na koji se kreativni rezultati proizvode.
+
+82
+00:09:11,360 --> 00:09:13,759
+[SPEAKER_01] Gdje vidite da ljudi sada ne uspijevaju?
+
+83
+00:09:14,080 --> 00:09:16,320
+[SPEAKER_01] Ili što mislite da treba paziti?
+
+84
+00:09:16,480 --> 00:09:34,799
+[SPEAKER_01] Mislim, na neki način ste se dotaknuli da se možda ne bi trebalo oslanjati na ove alate koji odabiru pobjednike unaprijed, ali koje druge stvari vidite da timovi rade ili su vam suradnici predložili da ne mislite da smo baš točno, da to još nije pravi smjer.
+
+85
+00:09:35,200 --> 00:09:36,879
+[SPEAKER_00] Teško je točno utvrditi.
+
+86
+00:09:36,879 --> 00:09:48,000
+[SPEAKER_00] Jedna točka, posebno jedna stvar koja je uvijek teška u ravnoteži, teško je kompromisirati se kad pronađete pobjednike, očito su toliko bolji od ostalih da želite uložiti više truda u to.
+
+87
+00:09:48,159 --> 00:09:49,440
+[SPEAKER_00] Dakle, stvarate puno vrijednosti.
+
+88
+00:09:49,840 --> 00:09:54,960
+[SPEAKER_00] I na kraju ponekad pogledam neke račune i mislim, dobro, ali sve što imate je jedan koncept.
+
+89
+00:09:55,360 --> 00:09:58,399
+[SPEAKER_00] Kao da imate nekoliko oglasa, ali je više istih.
+
+90
+00:09:58,960 --> 00:10:03,840
+[SPEAKER_00] I prije ili kasnije, ovo će pasti i morate se mnogo više pripremiti.
+
+91
+00:10:04,399 --> 00:10:24,720
+[SPEAKER_00] Dakle, umjesto da istražite toliko više koncepata i većina će propasti, trik je iz u tome koliko se moram potruditi da dobijem pobjednike, ali koliko se moram pripremiti za sljedeće, raditi nešto što ima veću vjerojatnost da ne uspije u kratkoročnom razdoblju, ali veću vjerojatnost da će biti potrebno u dugoročnom razdoblju, vrlo je teško uskladiti.
+
+92
+00:10:25,120 --> 00:10:33,679
+[SPEAKER_00] I očito, svi gledaju na kratkoročno, pogotovo na novi način, znate, gledamo rezultate iz jučer i prošlog tromjesečja, već ne postoji.
+
+93
+00:10:34,080 --> 00:10:50,159
+[SPEAKER_00] Dakle, dugoročna priprema za sljedeće i širenje publike, pogotovo kada trošite u velikom opsegu, kao što je račun relativno mali, mislim, možete dodirnuti isti koncept više puta, a s nekoliko varijanti možete ga premjestiti mjesecima, ali sve se ubrzava., čak i u oglasima.
+
+94
+00:10:50,480 --> 00:11:03,360
+[SPEAKER_00] I mislim da je to posebno vidljivo na TikToku gdje trendovi rastu mnogo brže, poput glazbe, oko određenih kuka, oko prvih sekundi, čak i oko koncepta oglasa koji se stvarno ubrzavaju.
+
+95
+00:11:03,679 --> 00:11:14,559
+[SPEAKER_00] I tako ne možete samo dvostruko uložiti na stvari poput toga da samo stvorite, mislim da nas umjetna inteligencija očito omogućuje da idemo brže i, oh, ovo funkcionira, ću proizvesti stotinu verzija toga.
+
+96
+00:11:14,960 --> 00:11:19,440
+[SPEAKER_00] I čak i ako je taj koncept mrtav za dva tjedna, upotrijebit ću ga u međuvremenu.
+
+97
+00:11:19,519 --> 00:11:24,000
+[SPEAKER_00] Dakle, još je korisnije za slučajeve poput toga gdje je umor mnogo brži.
+
+98
+00:11:24,720 --> 00:11:33,039
+[SPEAKER_00] U usporedbi s YouTubeom, gdje vjerojatno želite napraviti mnogo manje oglasa, ali se dublje pozabaviti.
+
+99
+00:11:33,200 --> 00:11:36,480
+[SPEAKER_00] Druga je stvar, jer je pitanje bilo gdje vidite da tim ne uspijeva.
+
+100
+00:11:36,639 --> 00:11:45,360
+[SPEAKER_00] I ovdje postoji nešto što ne želim prihvatiti, ali moram, a to je da ne razumijemo zašto pobjednički oglasi pobjeđuju.
+
+101
+00:11:45,919 --> 00:11:53,440
+[SPEAKER_00] I tako imamo tu tendenciju, Eric Seufert je ekstremist u vezi s tim, da se ni ne pokušavate razumjeti zašto to funkcionira.
+
+102
+00:11:53,600 --> 00:11:54,639
+[SPEAKER_00] To je samo gubitak vremena.
+
+103
+00:11:54,799 --> 00:12:04,399
+[SPEAKER_00] Nisam tako daleko, ali na neki način, da, vidio sam da timovi često ne uspijevaju, ne znam, koristili biste alat za umjetnu inteligenigenciju kaže: Evo, ovo su moje dvjestotinjak posljednjih kreativnih djela.
+
+104
+00:12:04,559 --> 00:12:05,440
+[SPEAKER_00] Ovi su tri najbolji.
+
+105
+00:12:05,919 --> 00:12:06,720
+[SPEAKER_00] Sve ostalo propada.
+
+106
+00:12:07,039 --> 00:12:07,600
+[SPEAKER_00] Reci mi zašto.
+
+107
+00:12:07,919 --> 00:12:24,720
+[SPEAKER_00] I ovdje je to nešto poput toga da ćete dobiti rezultat i dobiti neke uzorke, ali ne mislim da te uzorke guraju vas do sljedećeg, gdje možete tako lako replicirati, kao što su vrlo specifični detalji psihologije, kako ljudi reagiraju, kakva je publika tamo, stvarno je teško objasniti.
+
+108
+00:12:24,799 --> 00:12:31,440
+[SPEAKER_00] Dakle, i dalje to radim i još uvijek razumijem zašto bi ljudi to radili jer onda za iteraciju dovodi vas do sljedećeg.
+
+109
+00:12:31,600 --> 00:12:35,360
+[SPEAKER_00] Želite naučiti iz onoga što ste učinili da biste nastavili napredovati i to je prirodno.
+
+110
+00:12:35,360 --> 00:12:36,399
+[SPEAKER_00] A ponekad možda.
+
+111
+00:12:36,639 --> 00:12:40,559
+[SPEAKER_00] Možda pomaže, ali iskreno, malo je pretjerano.
+
+112
+00:12:41,360 --> 00:12:43,919
+[SPEAKER_00] I vrlo je teško shvatiti zašto pobjedničke oglase pobjeđuju.
+
+113
+00:12:44,080 --> 00:12:48,559
+[SPEAKER_00] A naša ljudska kriterija nije baš dobra, ali zapravo i LLM-ovi nisu baš dobri.
+
+114
+00:12:48,639 --> 00:12:55,440
+[SPEAKER_00] Kao da mogu otkriti nekoliko uzoraka i sve ostalo, ali to neće učiniti sljedeći pobjednički oglas mnogo lakšim.
+
+115
+00:12:56,080 --> 00:13:03,279
+[SPEAKER_00] To je tužno, ali na neki način je više poput, dobro, masovno ćemo proizvesti i vidjeti što će se zalijepiti, umjesto da pokušamo stvarno objasniti zašto funkcionira.
+
+116
+00:13:03,360 --> 00:13:12,960
+[SPEAKER_00] I čak i oglase konkurenata, pokušavate shvatiti zašto funkcioniraju i radi li to s timom i brainstormom ili to radite putem agencije.
+
+117
+00:13:12,960 --> 00:13:16,159
+[SPEAKER_00] Ili je vjerojatno najbolje da radimo oboje.
+
+118
+00:13:16,799 --> 00:13:19,279
+[SPEAKER_00] Ipak, ishod je tanak i prilično loš.
+
+119
+00:13:19,679 --> 00:13:24,879
+[SPEAKER_01] Pa, sljedeće pitanje koje bih želio postaviti jest s kojim alatima trenutno imate uspjeh?
+
+120
+00:13:25,039 --> 00:13:27,200
+[SPEAKER_01] Ali to će to pretvoriti u pet sati dug podcast.
+
+121
+00:13:27,600 --> 00:13:40,879
+[SPEAKER_01] I tako sam razmišljao, dok ste odgovorili na to zadnje pitanje, da bismo trebali samo organizirati webinar, kao što ste vi, možda Nathan Hudson, možda Marcus Burke, da bismo dobili nekoliko ljudi koji su stvarno zainteresirani za ovo i organizirali cijeli webinar posebno o tome koji alatovi funkcioniraju.
+
+122
+00:13:41,039 --> 00:13:48,879
+[SPEAKER_01] Mislim da će se to tako brzo promijeniti da možda neće biti tako dobro da to radite na podcastu kao da samo organizirate webinar i neke blogove koje možemo objaviti.
+
+123
+00:13:48,879 --> 00:13:50,240
+[SPEAKER_01] Imamo blog post koji možemo ažurirati s vremenom.
+
+124
+00:13:50,399 --> 00:13:57,200
+[SPEAKER_01] Ali sljedeća velika tema koju sam želio spomenuti bila je aplikacija na web, tužba Epic, zabrana.
+
+125
+00:13:57,360 --> 00:14:00,639
+[SPEAKER_01] Ako slušate ovaj podcast, sigurno znate, pa nećemo sve to objasniti.
+
+126
+00:14:00,720 --> 00:14:08,080
+[SPEAKER_01] Ali što primjećujete da aplikacije rade trenutačno i primjećujete li da stvari funkcioniraju u slanju ljudi iz aplikacije na web?
+
+127
+00:14:08,399 --> 00:14:22,000
+[SPEAKER_01] A onda, kao prethodnik, vjerojatno ste bili na odmoru, pa vjerojatno niste imali priliku slušati, ali epizoda podcasta koja je tek prije ove, razgovarao sam s Zumba i oni primjećuju uspjeh u slanju ljudi na web i puno su eksperimentirali.
+
+128
+00:14:22,159 --> 00:14:24,639
+[SPEAKER_01] A onda, kao što sam podijelio u drugim epizodama.
+
+129
+00:14:24,639 --> 00:14:29,679
+[SPEAKER_01] Također čujem od mnoštva ljudi da se boje to učiniti jer ne žele da Apple prestane predstavljati njih.
+
+130
+00:14:29,919 --> 00:14:32,960
+[SPEAKER_01] Ne žele se naći u lošem položaju s Appleom.
+
+131
+00:14:33,039 --> 00:14:45,519
+[SPEAKER_01] I tako se čini da se trenutačno odvija velika varijacija u vezi s time trebate li uopće pokušati slati ljude iz aplikacije na web, koga biste trebali poslati iz aplikacije na web, koje biste eksperimente trebali napraviti.
+
+132
+00:14:45,600 --> 00:14:48,799
+[SPEAKER_01] Dakle, dajte nam brzi pogled na, znate, 20.
+
+133
+00:14:48,879 --> 00:14:49,919
+[SPEAKER_01] kolovoza 2025.
+
+134
+00:14:50,399 --> 00:14:54,320
+[SPEAKER_01] Gdje su stvari s aplikacijom na web i kamo mislite da će stvari krenuti?
+
+135
+00:14:54,960 --> 00:14:55,360
+[SPEAKER_00] Sigurno.
+
+136
+00:14:55,759 --> 00:15:00,960
+[SPEAKER_00] Ako bih trebao, recimo, jako pojednostaviti, recimo, ako imate veliku marku ili ako imate veliku marku.
+
+137
+00:15:01,519 --> 00:15:06,799
+[SPEAKER_00] ili nešto što ljudi žele od samog početka, mnogo je vjerojatnije da će AppToWeb funkcionirati.
+
+138
+00:15:06,960 --> 00:15:09,440
+[SPEAKER_00] Dakle, ako ste Spotify, to je očito.
+
+139
+00:15:09,919 --> 00:15:20,960
+[SPEAKER_00] Čak i Zoomba, mislim da je aplikacija prilično nova, ali to je službena aplikacija Zoombe i ljudi već znaju što je to, kao da postoji faktor povjerenja.
+
+140
+00:15:21,039 --> 00:15:32,720
+[SPEAKER_00] Ako ste neovisni programer i lansirate aplikaciju bez marke prošlog mjeseca, vrlo je vjerojatno da je AppToWeb zavaravajući u smislu da, prvo, ne možete sve učiniti jer imate mali tim ili ste samo vi.
+
+141
+00:15:33,279 --> 00:15:39,759
+[SPEAKER_00] Drugo, manje je vjerojatno da će funkcionirati jer nemate prepoznatljivost., ova marka i ljudi manje su skloni da će se zaljubiti.
+
+142
+00:15:39,840 --> 00:15:42,320
+[SPEAKER_00] I treće, analiza je zapravo prilično komplicirana.
+
+143
+00:15:42,480 --> 00:15:44,960
+[SPEAKER_00] Dakle, za izvršavanje ove analize potrebni su minimalni resursi.
+
+144
+00:15:45,200 --> 00:15:58,960
+[SPEAKER_00] Minimalni resursi ne samo u osmišljavanju odličnog toka, što je kao uvjet jer loš tok neće uspjeti tamo gdje bi mogao, već zapravo u pravilnom analiziranju i usporedbi, a usporedba dvaju nije tako jednostavna kao što izgleda.
+
+145
+00:15:59,120 --> 00:16:03,840
+[SPEAKER_00] Na primjer, refund radi drugačije, obnova radi drugačije, besplatni probni period radi vrlo drugačije.
+
+146
+00:16:04,000 --> 00:16:07,200
+[SPEAKER_00] Morate se nositi s drogom, kao što je količina sitnih detalja.
+
+147
+00:16:07,519 --> 00:16:12,720
+[SPEAKER_00] I jedna stvar koja je stvarno zanimljiva od ljudi za koje radi slanje ljudi van.
+
+148
+00:16:12,720 --> 00:16:16,000
+[SPEAKER_00] Da bi ljudi poslali izvan aplikacije, obično ne prodaju iste planove.
+
+149
+00:16:16,159 --> 00:16:29,120
+[SPEAKER_00] Na primjer, ono što radi na toku aplikacije na web mnogo je bliže onome što vidite na toku web-a na aplikaciju, gdje je prvi dodir na webu, a zatim se naplaćujete i tek onda odlaze u aplikaciju, što vidite putem IAP-a.
+
+150
+00:16:30,159 --> 00:16:47,039
+[SPEAKER_00] Dakle, ako prenesete točno isti tok i razina analize nije dovoljno duboka da biste razumjeli sve sitne detalje koji će se promijeniti, zapravo biste mogli propustiti i vjerovati da radite nešto sjajno, iako to nije tako ili obrnuto ili zapravo propustiti nešto što nije tako lako kao što izgleda.
+
+151
+00:16:47,840 --> 00:16:54,000
+[SPEAKER_00] Dakle, moj veliki savjet je da da ako ste veliki i imate resurse i marku, sigurno to isprobajte.
+
+152
+00:16:54,320 --> 00:16:57,360
+[SPEAKER_00] Ako ste vrlo mali i samo ste vi, nemojte ni pokušati.
+
+153
+00:16:57,440 --> 00:16:58,240
+[SPEAKER_00] Nije vrijedno toga.
+
+154
+00:16:58,399 --> 00:17:00,320
+[SPEAKER_00] Plaćate samo pedeset posto i složenost.
+
+155
+00:17:00,639 --> 00:17:03,440
+[SPEAKER_00] Vjerojatno je bolje uložiti trud negdje drugdje.
+
+156
+00:17:03,840 --> 00:17:11,039
+[SPEAKER_00] Ali očito će većina ljudi završiti negdje između i u kojem trenutku ćemo se odlučiti za eksperimentiranje s ovim?
+
+157
+00:17:11,599 --> 00:17:18,079
+[SPEAKER_00] I čudno je da su timovi s kojima sam najbliže radio odlučili da neće ni testirati.
+
+158
+00:17:18,240 --> 00:17:19,440
+[SPEAKER_00] Bio sam poput, zašto?
+
+159
+00:17:19,839 --> 00:17:24,880
+[SPEAKER_00] Bio sam poput, jer je prioritizacija reći ne velikim idejama, ne reći ne glupim idejama.
+
+160
+00:17:26,240 --> 00:17:31,440
+[SPEAKER_00] Imamo ovu kartu za sljedeća tri, šest mjeseci, gdje imamo vrlo velika projekta.
+
+161
+00:17:32,160 --> 00:17:37,759
+[SPEAKER_00] Pričekat ćemo da se prašina smiri jer je tada došlo do druge privlačnosti i onda nismo znali kako će Apple reagirati.
+
+162
+00:17:38,319 --> 00:17:51,119
+[SPEAKER_00] Mislim, ne, mislim da se prašina počinje prodavati i vidimo više-manje drugih primjera i Apple bi možda kasnije promijenio stvari, ali za sada nisu poduzeli masovne odmazde.
+
+163
+00:17:51,359 --> 00:17:53,200
+[SPEAKER_00] Ponekad postoji prednost prvog pokretača.
+
+164
+00:17:53,680 --> 00:17:58,960
+[SPEAKER_00] Na primjer, oni koji su rano oglašavali na TikToku, očito su imali ogromnu prednost.
+
+165
+00:17:59,279 --> 00:18:00,960
+[SPEAKER_00] Radije bih da ljudi iz Telegraph-a.
+
+166
+00:18:00,960 --> 00:18:09,039
+[SPEAKER_00] Ljudi iz timova koji puno eksperimentiraju to rade, a zatim slušaju što rade i skratkuju se prema onome što smatraju da funkcionira, jer je puno toga za testirati.
+
+167
+00:18:09,680 --> 00:18:16,319
+[SPEAKER_00] Mislim na različite tokove, cijene, kako naplaćujete, kako prioritetno postavljate Appleov plaćanje u odnosu na ne i tako dalje.
+
+168
+00:18:16,480 --> 00:18:30,000
+[SPEAKER_00] Kao da postoji mnogo čimbenika, pa su timovi s kojima radim, kao da, gledamo to, razgovaramo s ljudima o tome, ali ćemo to dovesti u sljedeći korak u planu, gdje mislimo da možemo izvršiti brže.
+
+169
+00:18:30,240 --> 00:18:33,680
+[SPEAKER_00] Također imamo malo više jamstava o tome što Apple želi ili ne želi.
+
+170
+00:18:34,000 --> 00:18:36,559
+[SPEAKER_00] Dakle, imao sam nekoliko ljudi koji su testirali i zapravo.
+
+171
+00:18:36,559 --> 00:18:40,960
+[SPEAKER_00] I zapravo, u jednom slučaju to nije velika razlika i to im čini razliku.
+
+172
+00:18:41,440 --> 00:18:46,240
+[SPEAKER_00] Dakle, možda su se odlučili za to, čak i protiv mog vlastitog savjeta, i to im djeluje.
+
+173
+00:18:46,400 --> 00:18:48,559
+[SPEAKER_00] Samo su prešli program za male tvrtke, pa sada plaćaju trideset posto.
+
+174
+00:18:48,799 --> 00:19:04,000
+[SPEAKER_00] Dakle, za njih je očito malo ispod milijuna, mislim, kad već plaćate petnaest posto, mislim da nitko ne bi trebao to isprobati, osim ako ste od samog početka vrlo web-bazirani, kao da imate posao na webu i već imate puno alata i puno iskustva i možete ići.
+
+175
+00:19:04,400 --> 00:19:07,359
+[SPEAKER_00] Ali inače, da, mislim, to je za kasnije faze.
+
+176
+00:19:07,599 --> 00:19:09,680
+[SPEAKER_00] Sveukupno, sjajno je da postoji opcija.
+
+177
+00:19:09,920 --> 00:19:12,160
+[SPEAKER_00] Kao što sam vrlo sretan što možemo učiniti više.
+
+178
+00:19:12,160 --> 00:19:15,920
+[SPEAKER_00] Neki će se odlučiti za samo IAP, a neki će se odlučiti za samo web plaćanje.
+
+179
+00:19:16,880 --> 00:19:28,000
+[SPEAKER_00] I najsavršeniji ljudi moći će odrediti koji će korisnik, koji tok, koji trenutak, koja će cijena funkcionirati, što očito zahtijeva mnogo više rada i nije tako lako kao što izgleda.
+
+180
+00:19:28,160 --> 00:19:37,519
+[SPEAKER_00] Dakle, mislim da je jedina laž ovdje reći ljudima da je lako poslati ljude tamo i uštedjeti trideset posto naknade, što je potpuna laž.
+
+181
+00:19:38,480 --> 00:19:42,240
+[SPEAKER_00] Ali sve ostalo, sretan sam što postoji opcija i sretan sam što vidim različite tokove.
+
+182
+00:19:42,799 --> 00:19:50,000
+[SPEAKER_00] I vidio sam eksperimente na obje strane, pa je bilo stvarno zanimljivo i pokušavam shvatiti, na primjer, zašto je to funk uspjelo u ovom polju, a ne u onom?
+
+183
+00:19:50,960 --> 00:19:57,119
+[SPEAKER_00] Čak i bez obzira na snagu brendova koju imate, kao što je svijest o brendu, vertikalna industrija također igra veliku ulogu.
+
+184
+00:19:57,680 --> 00:20:11,359
+[SPEAKER_00] U nekim vertikalama, gdje je kupnja mnogo instinktivnija i gdje, da, IEP je u ovom slučaju sjajan, pa postoje vertikalne i vertikalne industrije, postoje brendovi i brendovi, postoje vaši, da, mislim da je sjajno imati opcije.
+
+185
+00:20:11,920 --> 00:20:18,000
+[SPEAKER_00] Ali, da, vjerojatno nije loša ideja za Indiju i za Spotify je najbolja vijest ikad.
+
+186
+00:20:20,319 --> 00:20:24,880
+[SPEAKER_01] Da, ne, mislim da je to sjajno sažetak i dobar način razmišljanja za ljude, zar ne?
+
+187
+00:20:25,599 --> 00:20:27,279
+[SPEAKER_01] Ako imate resurse, imate tim.
+
+188
+00:20:27,759 --> 00:20:33,680
+[SPEAKER_01] I mislio sam da je to zaista sjajno, da ako to želite učiniti, ne možete to učiniti na pola brzine.
+
+189
+00:20:34,079 --> 00:20:46,960
+[SPEAKER_01] Morate to shvatiti kao inicijativu, da ćemo poslati ljude na web, ali onda ćemo iterirati na tom protoku, eksperimentirati, dodavati korake, uklanjati korake.
+
+190
+00:20:47,759 --> 00:20:50,160
+[SPEAKER_01] I to je bila razgovor s Zumbom koji smo imali.
+
+191
+00:20:50,400 --> 00:20:57,920
+[SPEAKER_01] Dakle, za ljude koji slušaju podcast koji nisu slušali tu epizodu, ako ste znatiželjni da se dublje uronite, oni su uložili mnogo resursa.
+
+192
+00:20:58,160 --> 00:21:00,880
+[SPEAKER_01] A što se tiče Thomasove točke, prodaju na webu.
+
+193
+00:21:01,359 --> 00:21:02,400
+[SPEAKER_01] već desetljećima.
+
+194
+00:21:03,279 --> 00:21:09,200
+[SPEAKER_01] Prije dvadesetak, dvadeset četiri godine počeli su prodavati VHS kasete u infomercijalima.
+
+195
+00:21:09,279 --> 00:21:10,799
+[SPEAKER_01] Dakle, već su imali cijelu infrastrukturu.
+
+196
+00:21:10,960 --> 00:21:11,599
+[SPEAKER_01] Imali su timove.
+
+197
+00:21:11,680 --> 00:21:12,079
+[SPEAKER_01] Imali su sve.
+
+198
+00:21:12,799 --> 00:21:16,960
+[SPEAKER_01] I kao tim imali su mogućnost posvetiti te resurse.
+
+199
+00:21:18,000 --> 00:21:20,240
+[SPEAKER_01] A onda su napravili mnogo testiranja.
+
+200
+00:21:20,319 --> 00:21:28,960
+[SPEAKER_01] I jedna od stvari koja im je uspjela bila je odabir paketa unutar aplikacije i slanje na web samo za dio plaćanja.
+
+201
+00:21:29,119 --> 00:21:32,960
+[SPEAKER_01] Dakle, osoba je već odabrala paket, učinila je obvezu.
+
+202
+00:21:33,039 --> 00:21:35,599
+[SPEAKER_01] A onda je web dio samo plaćanje.
+
+203
+00:21:35,839 --> 00:21:36,640
+[SPEAKER_01] To je samo plaćanje.
+
+204
+00:21:37,039 --> 00:21:41,839
+[SPEAKER_01] i to je zadano na Apple Payu i to je mjesto gdje su vidjeli da se počinju događati velike pobjede.
+
+205
+00:21:41,920 --> 00:21:57,359
+[SPEAKER_01] Dakle, ako ćete pokušati, vjerojatno je jedan od prvih eksperimenata koji treba napraviti odabir paketa u aplikaciji, a zatim napraviti web samo za plaćanje i onda to učiniti brzo, bez problema, najmanje zbunjujuće, bez opcija, kao što samo plaćate i zatim se vraćate u aplikaciju.
+
+206
+00:21:57,519 --> 00:21:58,960
+[SPEAKER_01] Ali mislim da je to bilo sjajno sažetak.
+
+207
+00:21:59,039 --> 00:22:00,559
+[SPEAKER_01] Dakle, hvala na vašim razmišljanjima.
+
+208
+00:22:00,799 --> 00:22:04,640
+[SPEAKER_01] Zadnja stvar prije nego što dođemo do inženjeringa signala je hibridna monetizacija.
+
+209
+00:22:04,880 --> 00:22:12,000
+[SPEAKER_01] Mislim da je to nešto o čemu smo razgovarali godinama, ali osjećam da je to još uvijek za aplikacije koje nisu za igre i onda za.
+
+210
+00:22:12,160 --> 00:22:21,680
+[SPEAKER_01] Ili, znate, postoje određene kategorije u kojima je hibridna monetizacija djelovala i počinju se uspostavljati neke vrste najboljih praksi.
+
+211
+00:22:22,000 --> 00:22:27,279
+[SPEAKER_01] Ali osjećam da će to biti jedan od onih trendova koji će se nastaviti ubrzavati.
+
+212
+00:22:27,440 --> 00:22:28,640
+[SPEAKER_01] A AI je dobar primjer.
+
+213
+00:22:28,799 --> 00:22:31,680
+[SPEAKER_01] Iskreno, toliko sam frustriran s Claudom.
+
+214
+00:22:32,160 --> 00:22:40,160
+[SPEAKER_01] Sada u svom svakodnevnom radu puno koristim Claudea, uglavnom kao partner za brainstorming i dobivam sažetke podcastova koje slušam i slično.
+
+215
+00:22:40,880 --> 00:22:48,720
+[SPEAKER_01] A posljednje vrijeme sam dosegao njihove granice upotrebe i nema, ne dobivam samo jedan gumb, kao što mi daj dvadeset više.
+
+216
+00:22:49,119 --> 00:22:51,839
+[SPEAKER_01] puta za pet dolara ili nešto slično.
+
+217
+00:22:52,000 --> 00:23:08,640
+[SPEAKER_01] Takve stvari, pogotovo za aplikacije umjetne inteligencije ili gdje imate ograničen resurs, imati neku vrstu načina da se prođe kroz te ograničenja, mislim da je to samo očita stvar za mnoge od tih tvrtki da počnu raditi, ali mislim da postoji toliko drugih primjena.
+
+218
+00:23:08,880 --> 00:23:16,079
+[SPEAKER_01] Dakle, što vidite da radi i gdje vidite da stvari nastaju s otkrivanjem hibridne monetizacije u aplikacijama?
+
+219
+00:23:16,319 --> 00:23:16,799
+[SPEAKER_00] Da, slažem se.
+
+220
+00:23:17,440 --> 00:23:18,319
+[SPEAKER_00] Bilo je prilično sporo.
+
+221
+00:23:19,039 --> 00:23:27,519
+[SPEAKER_00] Već neko vrijeme zagovaram da se ne radi samo o pretplati i većina aplikacija radi s kojima radim, radi se o pretplati i to je to.
+
+222
+00:23:29,920 --> 00:23:39,759
+[SPEAKER_00] I mogao sam vidjeti nekoliko uspjeha ovamo i tamo za vrlo različite slučajeve, neke s oglasima za ljude koji se ne pretplate, ali kad zadržite mnoge aplikacije za pretplatu, one jednostavno ne zadržavaju besplatni sud.
+
+223
+00:23:40,160 --> 00:23:42,640
+[SPEAKER_00] Njihova lažna freemium je da plaćate ili ćete i tako odustati.
+
+224
+00:23:43,279 --> 00:23:45,519
+[SPEAKER_00] Dakle, očito su za određene slučajeve.
+
+225
+00:23:45,920 --> 00:23:48,400
+[SPEAKER_00] IAP uglavnom za prodaju aplikacija i tako dalje.
+
+226
+00:23:48,480 --> 00:23:54,960
+[SPEAKER_00] A zatim puno e-trgovine i prodaje povezanih stranica i tako dalje, što ima smisla i za vrlo specifične slučajeve, ali ne za sve.
+
+227
+00:23:55,519 --> 00:24:03,039
+[SPEAKER_00] Dakle, mislim da morate uzeti model, ali općenito gledam natrag na posljednja dvanje dvije godine i malo sam iznenađena što je to tako sporo.
+
+228
+00:24:03,200 --> 00:24:06,240
+[SPEAKER_00] Mislim da je jedan od razloga složenost oko toga.
+
+229
+00:24:06,559 --> 00:24:11,359
+[SPEAKER_00] Kao što je to s aplikacijom na web, to se ne može lako učiniti.
+
+230
+00:24:12,000 --> 00:24:20,480
+[SPEAKER_00] Nema očitog načina, oh, stavljat ću oglase u aplikaciju i to će povećati konverziju ili ću staviti IEP-ove na vrh pretplate, a ne, stvarno je komplicirano.
+
+231
+00:24:20,720 --> 00:24:22,400
+[SPEAKER_00] Mislim da je to razlog zbog kojeg je to tako sporo.
+
+232
+00:24:22,960 --> 00:24:32,720
+[SPEAKER_00] Zapravo, sve aplikacije koje koriste neku vrstu umjetne inteligencije konačno ubrzavaju ovaj trend jer nemaju drugog izbora.
+
+233
+00:24:33,039 --> 00:24:36,880
+[SPEAKER_00] I istina je da veliki modeli poput Cloud i ChatGPT i slično.
+
+234
+00:24:36,880 --> 00:24:37,359
+[SPEAKER_00] i ChatGPT i slično.
+
+235
+00:24:38,079 --> 00:24:40,559
+[SPEAKER_00] Većinom su odlučili za razredne pretplate.
+
+236
+00:24:40,640 --> 00:24:47,759
+[SPEAKER_00] Dakle, ne znam, ChatGPT, plaćate dvadeset dolara mjesečno, a ako nemate, prestanete plaćati dvjesto dolara mjesečno ili nešto slično.
+
+237
+00:24:47,920 --> 00:24:55,920
+[SPEAKER_00] Ali za mnoge aplikacije koje su poput upotrebe, ovo je model, ali zapravo IAP ima smisla jer možete kupiti kredite na vrhu.
+
+238
+00:24:56,000 --> 00:25:14,720
+[SPEAKER_00] Trenutno radim na projektu u kojem imaju i razredne pretplate i kredite na vrhu, tako da korisnik ne bi imao frustracije koje ste upravo imali, da možda niste htjeli potpuno nadograditi na paket Super Pro, ali onda za jedan slučaj upotrebe radite na nečemu danas i samo biste dodali pet ili deset dolara.ara kredita i završili su.
+
+239
+00:25:15,279 --> 00:25:21,119
+[SPEAKER_00] Imali su vrlo pametan tim od nekoliko ljudi koji su o tome razmišljali mjesecima.
+
+240
+00:25:22,880 --> 00:25:34,000
+[SPEAKER_00] I stvarno je teško dobro dizajnirati kako bi se izbjegla kanibalizacija, kako ne bi frustrirali korisnike, kako bi se nešto napravilo što je pošteno u smislu cijena za korisnike, ali i za razvijatelja.
+
+241
+00:25:34,400 --> 00:25:35,119
+[SPEAKER_00] To je vrlo komplicirano.
+
+242
+00:25:35,200 --> 00:25:42,400
+[SPEAKER_00] Dakle, mislim da je uglavnom zbog ove složenosti, što je prilično malo, što je prirodan slučaj za umjetnu inteligenciju samo zato što ima troškove.
+
+243
+00:25:42,640 --> 00:25:46,160
+[SPEAKER_00] Dakle, očito morate pronaći način da ne izgubite novac.
+
+244
+00:25:46,480 --> 00:25:53,119
+[SPEAKER_00] Ali ostatak je bio spor zbog složenosti., ali i zato što je to posljednja osoba koja se mora boriti.
+
+245
+00:25:53,599 --> 00:25:58,000
+[SPEAKER_00] Postoji toliko lakih plodova oko pretplate.
+
+246
+00:25:58,400 --> 00:26:05,440
+[SPEAKER_00] Drago mi je što je danas normalna rasprava o cijenama i dizajnu plaćene zidine, o tome kako pakirati i besplatni probni period i slično.
+
+247
+00:26:05,759 --> 00:26:21,359
+[SPEAKER_00] Prije tri, četiri godine to je bilo još uvijek malo niša i iznenadilo me je kako ljudi nisu shvatili da mogu masovno povećati prihod iteriranjem jer je došlo do takve ubrzanja i opća razina se tako brzo povećala.
+
+248
+00:26:21,519 --> 00:26:24,480
+[SPEAKER_00] Mislim da će se na kraju i dalje dogoditi da će se hibridna monetizacija dogoditi.
+
+249
+00:26:26,160 --> 00:26:28,559
+[SPEAKER_00] Samo će potrajati jako dugo zbog složenosti.
+
+250
+00:26:28,960 --> 00:26:30,799
+[SPEAKER_00] I za mnoge ljude to je u redu.
+
+251
+00:26:31,359 --> 00:26:32,880
+[SPEAKER_00] Nitko ne bi trebao skočiti u to.
+
+252
+00:26:33,200 --> 00:26:38,960
+[SPEAKER_00] Mislim da sam samo u nekom trenutku vidio kako se krivulja poboljšanja tih eksperimenata u cijenama usporava.
+
+253
+00:26:39,680 --> 00:26:43,920
+[SPEAKER_00] To je vjerojatno pokazatelj da je možda vrijeme da isprobate nešto drugačije.
+
+254
+00:26:44,079 --> 00:26:51,599
+[SPEAKER_00] Ali ako i dalje ostvarujete velike uspjehe u cijenama i pakiranju samo s pretplatom, nastavite dok se ne usporava.
+
+255
+00:26:51,839 --> 00:27:00,720
+[SPEAKER_01] I smiješno je da i ja dosta koristim ChatGPT, ali sam na profesionalnom planu s ChatGPT-om jer toliko koristim dubinsko istraživanje i ChatGPT.
+
+256
+00:27:00,720 --> 00:27:15,039
+[SPEAKER_01] I tako, vjerojatno platim za ChatGPT iz osobnog posla jer ga više koristim za osobne stvari i za svoj posao s popratnim projektom, iako ga zapravo puno koristim za RevenueCat posao.
+
+257
+00:27:15,200 --> 00:27:19,680
+[SPEAKER_01] Ali onda se Cloud zapravo računa putem RevenueCata kao trošak zaposlenika.
+
+258
+00:27:19,839 --> 00:27:23,200
+[SPEAKER_01] I tako bih vjerojatno trebao zatražiti veći stupanj i to je ono na što se oslanjaju.
+
+259
+00:27:23,359 --> 00:27:32,160
+[SPEAKER_01] Dakle, do vaše točke, ako još niste u modelu pretplate na razine, to je prvi korak prije prijelaza na hibridni.
+
+260
+00:27:32,319 --> 00:27:40,400
+[SPEAKER_01] Ali jedno od mjesta na kojem mislim i čuo sam to od Tammy Thaw iz Googlea., prošle godine govorila je na godišnjem događaju rasta aplikacija.
+
+261
+00:27:40,559 --> 00:27:43,920
+[SPEAKER_01] Napravila je podcast mini-soda za izvješće o stanju pretplate.
+
+262
+00:27:44,160 --> 00:27:54,319
+[SPEAKER_01] I jedna od stvari na koju Google jako pritiska jer vidi brojke i vidi da uspijeva, jest rad na hibridnom monetizaciji izvan SAD-a.
+
+263
+00:27:54,480 --> 00:28:12,880
+[SPEAKER_01] I tako, možda je to još jedan tip aspekta gdje ako stvari idu stvarno dobro u SAD-u i još uvijek imate lako postignute rezultate, ali imate širinu ribarstva, onda bi eksperimentiranje s hibridnom monetizacijom izvan SAD-a moglo biti ono što je potrebno da bismo počeli primjećivati više pobjeda izvan SAD-a, pružajući ljudima ne.
+
+264
+00:28:12,880 --> 00:28:25,519
+[SPEAKER_01] jednokratne kupnje, jednokratne pretplate, ponuditi ove jednokratne kupnje koje olakšavaju kupnju, pogotovo u zemljama u kojima pretplate nisu tako široko prihvaćene i korištene.
+
+265
+00:28:26,000 --> 00:28:32,000
+[SPEAKER_01] Dakle, to bi bio još jedan vektor o kojem biste trebali razmišljati, trebate li eksperimentirati s hibridnom monetizacijom.
+
+266
+00:28:32,400 --> 00:28:48,960
+[SPEAKER_00] To me je natjeralo da drugačije razmišljam o tome i kad to čujete, da, prilično je prirodno da je nagrada vjerojatno dalje, gdje postoji vrlo visoka, ne kupovna snaga, već neka vrsta navike plaćanja aplikacijama.
+
+267
+00:28:48,960 --> 00:28:53,599
+[SPEAKER_00] I na Androidu gdje je malo teže pretvoriti, a izvan SAD-a, a kada ih kombinirate, puno je teže.
+
+268
+00:28:54,000 --> 00:28:59,519
+[SPEAKER_00] Očito je da su stope pretvorbe na Androidu Internationalu i USIOS-u iznimno različite.
+
+269
+00:28:59,599 --> 00:29:01,440
+[SPEAKER_00] Dakle, ima smisla započeti s tim.
+
+270
+00:29:01,680 --> 00:29:08,880
+[SPEAKER_00] Ali onda se pridružuje mojoj točki da povećava složenost u smislu, dobro, pa na USIOS-u moram napraviti razrednu pretplatu.
+
+271
+00:29:08,960 --> 00:29:21,200
+[SPEAKER_00] A onda za Latinsku Ameriku moram dodati ove mogućnosti plaćanja jer je to ono što funkcionira jer imaju manje kreditnih kartica, posebno u Brazilu, Argentini, na primjer, gdje su kreditne kartice, međunarodne kreditne kartice, malo ograničene.
+
+272
+00:29:21,279 --> 00:29:24,240
+[SPEAKER_00] A onda će za druge regije biti nešto drugo što će funkcionirati.
+
+273
+00:29:24,240 --> 00:29:31,359
+[SPEAKER_00] Ovdje je očito da ako ste velika tvrtka i možete se usredotočiti na područje i saznati što radi za njih, to je sjajno.
+
+274
+00:29:31,519 --> 00:29:35,279
+[SPEAKER_00] Ali imam puno aplikacija s kojima radim i koje rade u dvjestotinjak zemalja.
+
+275
+00:29:35,599 --> 00:29:45,920
+[SPEAKER_00] Iako postoji poticaj za otkrivanje, količina napora koja se mora uložiti u pronalaženje svih tih poticaja za otkrivanje lijevo i desno je ogroman posao.
+
+276
+00:29:46,319 --> 00:29:50,640
+[SPEAKER_00] Dakle, stvarno ovisi o vrsti organizacije u kojoj se nalazite i fokusu na koji ste svi.
+
+277
+00:29:50,880 --> 00:29:57,920
+[SPEAKER_00] Znam puno manjih ljudi koji rade svugdje, ali devedeset pet posto mojih napora ide u SAD.
+
+278
+00:29:58,000 --> 00:30:00,880
+[SPEAKER_00] Razumijem zašto je za njih hibridna monetizacija nešto što je potrebno.
+
+279
+00:30:00,880 --> 00:30:03,200
+[SPEAKER_00] To je nešto što je na putovnici za 2031.
+
+280
+00:30:03,279 --> 00:30:04,000
+[SPEAKER_00] ili nešto slično.
+
+281
+00:30:05,440 --> 00:30:06,799
+[SPEAKER_01] Da, nema smisla.
+
+282
+00:30:07,279 --> 00:30:25,279
+[SPEAKER_01] Smiješno je, mislim, da su svi tri teme koje smo do sada imali vezane uz prioritet, što su sve dobre ideje, ali morate se pobrinuti da imate resurse na mjestu i da možete uložiti trud da to zapravo funkcionira jer to neće biti samo automatski veliki uspjeh.
+
+283
+00:30:25,920 --> 00:30:36,160
+[SPEAKER_01] I mislim, to može biti još jedan ključ, kao da ako vaš osnovni proizvod ne radi u SAD-u, prvo ga morate učiniti da radi.
+
+284
+00:30:36,240 --> 00:30:44,400
+[SPEAKER_01] Ovo čarobno otključavanje, osim ako iz nekog razloga aplikacija nije pokrenuta u nekoj drugoj zemlji ili postoji primjena izvan SAD-a koja ima smisla.
+
+285
+00:30:44,559 --> 00:30:57,839
+[SPEAKER_01] Ali osim toga, to nije čarobno otključavanje, ako ne radi u SAD-u, ako ne možete naplaćivati pretplatu na IOS-u i ljudi nisu voljni platiti, to je čarobno otključavanje da ćete to učiniti izvan SAD-a i vidjeti sav taj uspjeh.
+
+286
+00:30:58,000 --> 00:31:05,440
+[SPEAKER_01] Dakle, to je kao da morate imati taj osnovni proizvod, vrijednost, aktivaciju, tijekove uvođenja i sve ostalo prilično dobro usklađeno.
+
+287
+00:31:06,240 --> 00:31:12,960
+[SPEAKER_01] I trebalo bi raditi, nadam se, u SAD-u prije nego što uopće razmišljate o tome da to isprobate diljem svijeta.
+
+288
+00:31:13,359 --> 00:31:16,160
+[SPEAKER_00] Vrlo je teško biti pionir u nečemu, zaista.
+
+289
+00:31:16,240 --> 00:31:30,480
+[SPEAKER_00] To ne znači da ne bismo trebali pokušati, ali ponekad je prirodno da se upoznavanje, na primjer, radi o vertikalnom području u kojem je uvijek bilo mnogo više hibridne monetizacije nego bilo gdje drugdje jer su postojala oglasi i određena IAP-a i slično.
+
+290
+00:31:30,799 --> 00:31:37,920
+[SPEAKER_00] I vjerojatno, ako ste u ovoj vertikalnoj industriji, trebali biste pokušati ranije nego u drugim jer je pronađen mnogo uspjeha i korisnici su više navikli na to.
+
+291
+00:31:38,799 --> 00:31:40,799
+[SPEAKER_01] Ali možete slijediti uzorke koji su već uspostavljeni.
+
+292
+00:31:41,200 --> 00:31:41,519
+[SPEAKER_00] Baš tako.
+
+293
+00:31:41,599 --> 00:31:42,720
+[SPEAKER_00] Možete slijediti neke uzorke.
+
+294
+00:31:43,279 --> 00:31:52,799
+[SPEAKER_00] Ako nitko to ne radi u vašoj vertikalnoj industriji, možda postoji razlog zašto, ako ste prvi, možete stvoriti novi nešto novo i postići uspjeh, ali to će koštati mnogo više da to saznate.
+
+295
+00:31:53,039 --> 00:31:55,039
+[SPEAKER_00] Da, nešto jednostavno nije prirodno.
+
+296
+00:31:55,519 --> 00:31:55,599
+[SPEAKER_01] Da.
+
+297
+00:31:56,559 --> 00:31:58,319
+[SPEAKER_01] U redu, pa krenimo s inženjerstvom signala.
+
+298
+00:31:58,480 --> 00:32:13,839
+[SPEAKER_01] Dakle, poslali ste mi poruku e-pošte u proljeće i rekli ste: Ej, Davide, igrao sam se s ovim konceptom i ne sjećam se da ste ga nazvali u prvoj poruci e-pošte ili ste vi kasnije došli na ime, ali imam osjećaj da sada čujem pojam inženjerstvo signala svugdje.
+
+299
+00:32:14,640 --> 00:32:17,039
+[SPEAKER_01] Ali mislim da me vratite na to što je inženjerstvo signala?
+
+300
+00:32:17,920 --> 00:32:24,960
+[SPEAKER_01] I onda, mislim, znam da ljudi rade različite verzije toga dugo, ali kakav je vaš podrijetlo?
+
+301
+00:32:25,039 --> 00:32:34,640
+[SPEAKER_01] Mislio sam da je ovo sljedeća vruća tema ili sljedeće mjesto na kojem bi tim za stjecanje korisnika trebao uložiti trud.
+
+302
+00:32:35,039 --> 00:32:46,799
+[SPEAKER_00] Dakle, ovdje govorimo o optimizaciji onoga što nazivamo signalom, to su podaci koje šaljemo natrag na ne mrežu, na oglasnu platformu kako bismo optimizirali oglase.
+
+303
+00:32:47,119 --> 00:32:53,599
+[SPEAKER_00] Dakle, kad kažete Facebooku, želim instalacije, oni će poslati instalacije, ali onda vjerojatno neće doći daleko.
+
+304
+00:32:53,920 --> 00:32:56,880
+[SPEAKER_00] I izvan instalacije može biti mnogo stvari.
+
+305
+00:32:57,039 --> 00:33:02,240
+[SPEAKER_00] Dakle, neki ljudi optimiziraju za besplatne probne periodove, neki ljudi optimiziraju za zadržavanje ili bilo što drugo.
+
+306
+00:33:02,400 --> 00:33:08,559
+[SPEAKER_00] I to je uvijek postojalo, ali po mom mišljenju zanemareno.
+
+307
+00:33:08,880 --> 00:33:28,000
+[SPEAKER_00] Dakle, to nije ništa novo, ali osjećam da je rasprava tijekom proteklih nekoliko godina bila u 90 posto kreativna i očito je da je kreativni sektor daleko jedan od najvećih ljubitelja, ako ne i najveći ljubitelja u tome što će učiniti da troškovi oglasa ili plaćeni mediji funkcioniraju ili ne.
+
+308
+00:33:28,559 --> 00:33:30,240
+[SPEAKER_00] Ali to ne znači da je jedini.
+
+309
+00:33:30,559 --> 00:33:36,880
+[SPEAKER_00] I ja sam rekao, pa je moj cilj ovdje bio da podsjetim ljude da postoji nekoliko čimbenika u igri.
+
+310
+00:33:36,880 --> 00:33:44,559
+[SPEAKER_00] I ako šaljete strašne podatke natrag na Facebook i Google, možete biti sjajni u kreativnosti, ali i dalje ćete imati problem.
+
+311
+00:33:45,119 --> 00:33:52,480
+[SPEAKER_00] A druga je realizacija bila, recimo, da postoje tri pozicije signalnog inženjeringa.
+
+312
+00:33:52,799 --> 00:33:55,839
+[SPEAKER_00] Jedna je da su podaci koje šaljete natrag potpuno pokvareni.
+
+313
+00:33:57,279 --> 00:34:02,400
+[SPEAKER_00] I to je zapravo prilično česti slučaj u malim i većim organizacijama.
+
+314
+00:34:02,559 --> 00:34:08,000
+[SPEAKER_00] I iskreno, ako je to slučaj, vjerojatno je bolje da ga popravite prije nego što počnete iterirati na bilo čemu drugom.
+
+315
+00:34:08,159 --> 00:34:12,880
+[SPEAKER_00] Na primjer, ako je nešto pošlo po zlu s signalima koje šaljete natrag, to je vaš cilj.
+
+316
+00:34:12,880 --> 00:34:13,440
+[SPEAKER_00] To je vaša glavna prioriteta.
+
+317
+00:34:14,000 --> 00:34:16,239
+[SPEAKER_00] I barem je popraviti, razumjeti što šaljete.
+
+318
+00:34:16,800 --> 00:34:23,840
+[SPEAKER_00] Ne morate biti jako sofisticirani, ali barem morate biti sigurni što šaljete natrag i imati kvalitetu događaja koja se pravilno šalje.
+
+319
+00:34:23,920 --> 00:34:24,239
+[SPEAKER_00] I tako dalje.
+
+320
+00:34:24,480 --> 00:34:25,760
+[SPEAKER_00] To je kao da je to neophodno.
+
+321
+00:34:26,239 --> 00:34:28,639
+[SPEAKER_00] Nije kao da je lijepo eksperimentirati.
+
+322
+00:34:28,800 --> 00:34:30,480
+[SPEAKER_00] Ne, ako je pokvareno, morate ga popraviti.
+
+323
+00:34:30,800 --> 00:34:35,760
+[SPEAKER_00] A onda postoji većina slučajeva ljudi koji nemaju pokvarene podatke, ali nisu puno razmišljali o tome.
+
+324
+00:34:36,159 --> 00:34:39,280
+[SPEAKER_00] Kao da, dobro, optimizirajmo kroz besplatne probne faze i vidjet ćemo.
+
+325
+00:34:39,440 --> 00:34:40,639
+[SPEAKER_00] Ili nešto postavite.
+
+326
+00:34:41,199 --> 00:34:48,639
+[SPEAKER_00] Imam jedan poseban slučaj u kojem zapravo pronađu nešto, ne super sofisticirano, već malo složenije sheme.
+
+327
+00:34:48,639 --> 00:34:55,760
+[SPEAKER_00] Sklopili su shemu u kojoj su slali različite signale kad su ljudi prihvaćali različite vrste pretplate.
+
+328
+00:34:56,159 --> 00:35:01,920
+[SPEAKER_00] Dakle, miješali su tip korisnika i tjedni, godišnji, a imali su samo množenje.
+
+329
+00:35:02,079 --> 00:35:12,639
+[SPEAKER_00] Dakle, dobro, ako je to tjedni pretplatnik od običnog korisnika, pošaljite jedan, a ako je to godišnji pretplatnik od poslovnog korisnika, pošaljite x pet natrag na platformu.
+
+330
+00:35:13,440 --> 00:35:19,039
+[SPEAKER_00] Ali onda su ga hardcodirali i iterirali godinu i pol na cijenama i tako dalje.
+
+331
+00:35:19,119 --> 00:35:29,920
+[SPEAKER_00] A kad sam došao, shvatio sam da je hardcodiranje imalo smisla kad su to radili., zapravo nije bilo reprezentativno za vrijednost korisnika koji su dolazili.
+
+332
+00:35:30,000 --> 00:35:35,360
+[SPEAKER_00] A onda je ponovno postalo prioritet popravak u smislu približavanja stvarnoj vrijednosti.
+
+333
+00:35:36,400 --> 00:35:38,800
+[SPEAKER_00] A posljednja faza je kada postanete stvarno sofisticirani.
+
+334
+00:35:38,960 --> 00:35:48,559
+[SPEAKER_00] Tako sam malo obišao i rekao: Ako je slomljeno, stvarno ga morate popraviti, pronaći mjesto na kojem ste udobni i usmjeriti svoju pozornost na kreativnost i diversifikaciju i druge stvari.
+
+335
+00:35:49,199 --> 00:36:03,760
+[SPEAKER_00] Ali u nekom trenutku, dok rastete, postati malo sofisticiraniji u vezi s tim i prodati nešto bolje od svih besplatnih probnih mjesta zajedno vjerojatno može otključati vrijednost i drugačiji, a većina ljudi traži da otključe vrijednost posvuda.
+
+336
+00:36:03,920 --> 00:36:08,400
+[SPEAKER_00] Dakle, to ne znači da ovdje morate biti jako veliki i imati jako veliku marku da to učinite.
+
+337
+00:36:08,559 --> 00:36:21,119
+[SPEAKER_00] Razgovarao sam s nekoliko ljudi i imam jedan slučaj koji će biti na blogu RevenueCat u nekom trenutku kad završim s završetkom, gdje je prilično mlada aplikacija pronašla ogroman poticaj promjenom događaja koje su slali.
+
+338
+00:36:21,599 --> 00:36:26,320
+[SPEAKER_00] I radili su paralelno na kreativnosti, ali onda je to ubrzalo ono što su mogli učiniti na način.
+
+339
+00:36:26,880 --> 00:36:30,719
+[SPEAKER_00] Dakle, tri stanja, slomljeno, normalno i sofisticirano.
+
+340
+00:36:30,880 --> 00:36:30,960
+[SPEAKER_01] Da.
+
+341
+00:36:31,360 --> 00:36:36,400
+[SPEAKER_01] Pa, i to je ono što sam želio vratiti na slomljeni dio jer ne znam.
+
+342
+00:36:36,400 --> 00:36:44,320
+[SPEAKER_01] Ne znam, možda je ovo samo moj pogled u RevenueCatu jer na kraju razgovaramo s toliko aplikacija u kojima su podaci potpuno pokvareni.
+
+343
+00:36:44,480 --> 00:36:49,440
+[SPEAKER_01] Dakle, moja procjena je mnogo veća samo zato što se s njima više obraćamo.
+
+344
+00:36:50,079 --> 00:37:01,920
+[SPEAKER_01] Recite mi malo više jer sam siguran da će ljudi na podcastu slušati podcast i čuti vas kako to kažete i misliti: Ne osjećam da mogu vjerovati svojim podacima.
+
+345
+00:37:02,880 --> 00:37:03,760
+[SPEAKER_01] Dakle, što mislite time?
+
+346
+00:37:04,000 --> 00:37:08,719
+[SPEAKER_01] A gdje vidite da se podaci pokvaruju na različite načine?
+
+347
+00:37:08,880 --> 00:37:12,880
+[SPEAKER_01] Već ste podijelili jedan, ali kakvi su koraci ili postupci?
+
+348
+00:37:12,880 --> 00:37:21,599
+[SPEAKER_01] Koji su to alati ili kakve su osnove koje biste trebali imati na mjestu za praćenje kako biste bili sigurni da se stvari ne pokvari čak i kad mislite da rade?
+
+349
+00:37:22,639 --> 00:37:25,119
+[SPEAKER_01] Kako utvrdite jesu li vaši podaci dobri ili ne?
+
+350
+00:37:26,639 --> 00:37:33,280
+[SPEAKER_00] Uvijek je teško spriječiti buduće prekide, ali znam kad mi netko kaže: Eh, provjeri moj račun za oglase.
+
+351
+00:37:33,519 --> 00:37:34,159
+[SPEAKER_00] Reci mi što misliš.
+
+352
+00:37:34,480 --> 00:37:37,440
+[SPEAKER_00] Ili ću napraviti ne, ne radim ih toliko, ali ponekad možda je to prijatelj.
+
+353
+00:37:37,679 --> 00:37:38,639
+[SPEAKER_00] Možda je to tvrtka u portfelju.
+
+354
+00:37:38,719 --> 00:37:39,840
+[SPEAKER_00] Dakle, i dalje to radim.
+
+355
+00:37:39,920 --> 00:37:41,840
+[SPEAKER_00] A oni kažu: Evo upravitelja oglasima.
+
+356
+00:37:41,920 --> 00:37:43,679
+[SPEAKER_00] A ja kažem: Ne brinem o upravitelju oglasima.
+
+357
+00:37:44,000 --> 00:37:45,039
+[SPEAKER_00] Pokaži mi upravitelja događaja.
+
+358
+00:37:45,679 --> 00:37:49,039
+[SPEAKER_00] Facebook zove uprav ciljevi.
+
+359
+00:37:49,519 --> 00:37:50,559
+[SPEAKER_00] To je prvo mjesto na koje gledam.
+
+360
+00:37:50,719 --> 00:37:51,840
+[SPEAKER_00] Čak ni ne gledam račun za oglase.
+
+361
+00:37:52,320 --> 00:38:03,280
+[SPEAKER_00] I prvo što ću provjeriti je li iznos konverzije, bilo kakva konverzija, pa recimo da će biti instalacija i besplatni probni period i plaćene pretplate, da bi to bilo jednostavnije.
+
+362
+00:38:03,519 --> 00:38:12,880
+[SPEAKER_00] I provjerit ću u upravitelju događaja, odgovara li broj koji se šalje na platformi više ili manje onome što imamo interno.
+
+363
+00:38:13,440 --> 00:38:14,639
+[SPEAKER_00] I vrlo često to nije slučaj.
+
+364
+00:38:15,280 --> 00:38:19,920
+[SPEAKER_00] Stvarno me ne zanima pet posto neskladnosti ovdje i nikad neće biti sto posto, i to je u redu.
+
+365
+00:38:20,000 --> 00:38:22,960
+[SPEAKER_00] I postoji nekoliko odgovora zašto to nije sto posto.
+
+366
+00:38:23,280 --> 00:38:23,840
+[SPEAKER_00] Nije važno.
+
+367
+00:38:24,480 --> 00:38:27,599
+[SPEAKER_00] Ali u tolikim slučajevima vidim trideset posto ili pedeset posto.
+
+368
+00:38:28,400 --> 00:38:31,840
+[SPEAKER_00] I ovo će biti veliki problem koji moram riješiti prije nego što vidim bilo što drugo.
+
+369
+00:38:32,000 --> 00:38:39,679
+[SPEAKER_00] Dakle, uzeti ću Facebook kao primjer jer je to veliki primjer, ali otići ću u upravitelja događaja i reći ću: U redu, pokaži mi posljednjih trideset dana ili posljednjih sedam dana.
+
+370
+00:38:40,239 --> 00:38:41,280
+[SPEAKER_00] Koliko ste instalacija vidjeli?
+
+371
+00:38:41,519 --> 00:38:44,639
+[SPEAKER_00] Koliko ste besplatnih probnih verzija vidjeli ukupno bez atribucije?
+
+372
+00:38:45,039 --> 00:38:48,320
+[SPEAKER_00] Ne one koje Facebook misli da dolaze iz kampanja.
+
+373
+00:38:48,480 --> 00:38:55,519
+[SPEAKER_00] Ne one koje Google pripisuje ovoj posebnoj plaćanoj aktivnosti, već ono što im zapravo šaljemo jer su to prijavili tamo.
+
+374
+00:38:56,000 --> 00:39:03,679
+[SPEAKER_00] I usporedit ću to s nečim poput RodeCanta ili Amplitude ili MixPanela ili bilo što što imaju što je interno prije nego što ga pošaljemo.
+
+375
+00:39:03,760 --> 00:39:07,039
+[SPEAKER_00] Ako ovdje vidim više od deset posto neslaganja, to će biti problem.
+
+376
+00:39:07,280 --> 00:39:12,559
+[SPEAKER_00] Ti alati nisu posebno sofisticirani, ali nisu ni posebno lako razumljivi.
+
+377
+00:39:12,880 --> 00:39:25,679
+[SPEAKER_00] Dakle, ponekad je prilično teško pravilno uskladiti datume, geografske lokacije, platformu i tako debugirati da zapravo podaci koje vidim tamo budu oni koji bi trebali biti tamo.
+
+378
+00:39:25,920 --> 00:39:32,320
+[SPEAKER_00] Sjećam se da sam ponekad i sam pogriješio, kao što ne znam, u jednom slučaju, bio sam poput, zašto vidim dvostruko više događaja na Facebooku?
+
+379
+00:39:32,400 --> 00:39:36,000
+[SPEAKER_00] Kako je to uopće moguće da imamo dvostruko više korisnika nego što ih zapravo imamo?
+
+380
+00:39:36,320 --> 00:39:42,880
+[SPEAKER_00] Jednostavno postoji dva izvora koja Meta uspijeva deduplikirati, ali to se ne prikazuje na ovaj način u upravitelju događajima.
+
+381
+00:39:43,199 --> 00:39:49,199
+[SPEAKER_00] Dakle, prvi korak koji radim jest da platforma primaju ono što više-manje odgovara onome što mislimo da se događa.
+
+382
+00:39:49,360 --> 00:39:56,559
+[SPEAKER_00] Jer ako to nije slučaj, dobro, nakon toga će pokušati pripisati kampanji i tamo se može dogoditi mnogo drugih stvari.
+
+383
+00:39:57,760 --> 00:40:05,199
+[SPEAKER_00] Jedno je da ne vjerujete u pripisivanje, što bih razumio, ali jedno je da među tim signalima koje ste poslali možda neki nisu imali prave parametre.
+
+384
+00:40:05,840 --> 00:40:12,559
+[SPEAKER_00] Možda, ne znam, sjećam se da sam napravio promjenu i da, samo dvadeset posto konverzija prolazi.
+
+385
+00:40:12,559 --> 00:40:18,960
+[SPEAKER_00] Prolaze, kao da sto posto prelazi upravitelju događaja, ali samo dvadeset posto onoga što mislimo da se događa prijavljuje se na oglasima.
+
+386
+00:40:19,199 --> 00:40:27,039
+[SPEAKER_00] I zapravo Meta nije mogla pripisati to AEM-u i prijavljivala je samo dvostruku optiku, kao što su ljudi iz IDFA-e, sve dok nismo to popravili.
+
+387
+00:40:28,000 --> 00:40:31,679
+[SPEAKER_00] Dakle, da, prvi korak je, je li cijena zapravo u skladu?
+
+388
+00:40:31,840 --> 00:40:35,519
+[SPEAKER_00] Jer, i kažem to jer ako nije, ništa drugo ne može raditi.
+
+389
+00:40:36,079 --> 00:40:37,679
+[SPEAKER_00] I to je prilično jednostavan provjeravajući problem.
+
+390
+00:40:37,840 --> 00:40:46,719
+[SPEAKER_00] Kao da može biti mnogo drugih problema, samo jedan, ali to je tako uobičajeno i toliko blokira da se nešto radi, to je uvijek prvo što provjeravam.
+
+391
+00:40:46,880 --> 00:40:52,079
+[SPEAKER_00] Ono što me dovodi u ludilo je to kad to ne radi., postoji razlog zašto ne radi.
+
+392
+00:40:52,320 --> 00:40:53,440
+[SPEAKER_00] Ali to je nešto što morate popraviti.
+
+393
+00:40:53,760 --> 00:40:54,239
+[SPEAKER_00] Da ili ne.
+
+394
+00:40:54,480 --> 00:40:55,760
+[SPEAKER_00] Na jedan ili drugi način.
+
+395
+00:40:56,000 --> 00:40:57,199
+[SPEAKER_00] To može biti promjena izvora.
+
+396
+00:40:57,280 --> 00:41:01,519
+[SPEAKER_00] To može biti slanje različitih parametara, potpuno promjena događaja ili bilo što drugo.
+
+397
+00:41:02,000 --> 00:41:13,199
+[SPEAKER_00] Također je zato što je zadana konfiguracija, na primjer, meta SDK ili u osnovi možete staviti meta SDK i reći meta, u redu, samo mapirajte svoj događaj na vlastiti način.
+
+398
+00:41:13,679 --> 00:41:18,159
+[SPEAKER_00] I imate instalaciju, na primjer, najteže je debugirati jer to nije događaj.
+
+399
+00:41:18,239 --> 00:41:20,000
+[SPEAKER_00] To je nešto što dolazi unaprijed pakirano.
+
+400
+00:41:20,159 --> 00:41:22,639
+[SPEAKER_00] Dakle, kad ne radi, imate manje poluge za premještanje.
+
+401
+00:41:22,719 --> 00:41:23,280
+[SPEAKER_00] Ali, na primjer.
+
+402
+00:41:25,679 --> 00:41:27,519
+[SPEAKER_00] Plaćena konverzija može se mapirati.
+
+403
+00:41:27,679 --> 00:41:37,280
+[SPEAKER_00] To se često događa, a to je da se izravna kupnja bez besplatnog probnog razdoblja i besplatni probni razdoblje koje se pretvara u plaćanje i obnova sve mapiraju zajedno.
+
+404
+00:41:37,920 --> 00:41:53,199
+[SPEAKER_00] Kako zapravo možete čitati nešto kad imate mješovite vreće događaja, a ponekad koristim mješovite vreće događaja za optimizaciju, ali sve dok razumijem što se zapravo događa i želim sve to pojedinačno kako bih se uvjerio, dobro, otklonio sam greške da rade ispravno.
+
+405
+00:41:53,280 --> 00:41:57,519
+[SPEAKER_00] Sada mogu početi biti malo pametniji oko onoga što šaljem.
+
+406
+00:41:58,159 --> 00:42:00,480
+[SPEAKER_00] I zadana konfiguracija nije tako jednostavna kao što izgleda.
+
+407
+00:42:00,960 --> 00:42:06,079
+[SPEAKER_00] Mislim da je to jedan od slučajeva u kojima uložimo malo truda jer to nije nešto na čemu morate raditi svaki drugi dan.
+
+408
+00:42:06,559 --> 00:42:10,159
+[SPEAKER_00] To je nešto što morate popraviti, ali onda možete raditi na tome šest, dvanaest mjeseci.
+
+409
+00:42:10,320 --> 00:42:16,000
+[SPEAKER_00] Nikad ne možete zaboraviti na to iz razloga koji sam spomenuo na početku, ali to je nešto što popravljate povremeno.
+
+410
+00:42:16,159 --> 00:42:35,039
+[SPEAKER_00] Također, jer vam daje opcije, kao što sam radio s računom koji je imao ogroman uspjeh u skaliranju na nekoliko različitih platformi, kao što je zaista impresivna trajektorija, koja je u nekoliko godina prošla od nula do osam znamenki, kao vrlo lijepa trajektorija.
+
+411
+00:42:35,599 --> 00:42:43,440
+[SPEAKER_00] A onda se na nekim mjestima stvari nisu radile baš dobro i isprobali smo sve što smo mogli, kao što je kreativno i popravljanje događaja i slično.
+
+412
+00:42:43,840 --> 00:42:50,880
+[SPEAKER_00] Jedan od problema je što su stavili sve svoje jaja u jednu košaru i ta košara je dobro radila dugo vremena, ali kad se slomila, nisu imali alternative.
+
+413
+00:42:51,280 --> 00:43:00,559
+[SPEAKER_00] I jedan od razloga za pravilno rukovanje signalima jest i opcionalnost u smislu da ako ono što najbolje funkcionira za vas optimizira besplatni test, tako da je tako.
+
+414
+00:43:01,039 --> 00:43:05,039
+[SPEAKER_00] Ili optimizira vrijednost, kao što je optimizacija prihoda, tako da je tako.
+
+415
+00:43:05,119 --> 00:43:05,519
+[SPEAKER_00] To je sjajno.
+
+416
+00:43:05,599 --> 00:43:07,519
+[SPEAKER_00] Učinite više napora i potrošite na to pedeset posto.
+
+417
+00:43:08,239 --> 00:43:11,599
+[SPEAKER_00] Ali vjerojatno želite imati i druge mogućnosti.
+
+418
+00:43:12,159 --> 00:43:21,920
+[SPEAKER_00] Ponekad zato što je to širenje publike i pokrenuo bih kampanju optimizacije događaja prema besplatnom probnom ciklusu uz kampanju optimizacije prihoda, a Facebook bi u aplikaciju doveo različite korisnike.
+
+419
+00:43:22,000 --> 00:43:28,800
+[SPEAKER_00] Dakle, za skaliranje, ali i za mnoge, mnoge slučajeve u kojima stvari počinju slomiti, što je mnogo češće nego što ljudi misle.
+
+420
+00:43:28,960 --> 00:43:33,280
+[SPEAKER_00] Dakle, radije bih imao različite opcije u svojoj kutiji s alatima, u osnovi.
+
+421
+00:43:33,920 --> 00:43:34,719
+[SPEAKER_00] Možda ne za danas.
+
+422
+00:43:34,880 --> 00:43:42,400
+[SPEAKER_00] Ako nešto funkcionira, naravno, krenimo u to, ali da to imam za kasnije, također da se pripremim za malo eksperimentiranja na stranici.
+
+423
+00:43:44,000 --> 00:43:48,400
+[SPEAKER_00] Dakle, jedan od razloga zbog kojih sam počeo govoriti o ovoj temi bio je jedan.
+
+424
+00:43:48,400 --> 00:43:54,639
+[SPEAKER_00] Imala sam dva slučaja u svom portfelju, u kojima su se događaji očito pokvarili, pa smo ih trebali popraviti.
+
+425
+00:43:54,960 --> 00:44:00,400
+[SPEAKER_00] A onda smo pomislili, ako ćemo ih popraviti, popravimo ih i učinimo ih pametnijima istovremeno.
+
+426
+00:44:00,719 --> 00:44:04,239
+[SPEAKER_00] A onda sam imala još jednog klijenta koji radi s trećom stranom.
+
+427
+00:44:04,480 --> 00:44:09,760
+[SPEAKER_00] Već su sami provodili neku vrstu optimizacije i zapravo već su prilično sofisticirani sustav.
+
+428
+00:44:10,079 --> 00:44:12,239
+[SPEAKER_00] Pomislio sam, što ako nešto propustimo?
+
+429
+00:44:12,559 --> 00:44:15,760
+[SPEAKER_00] Pitajmo neke od najboljih što rade.
+
+430
+00:44:16,400 --> 00:44:18,000
+[SPEAKER_00] I zapravo smo im to predali.
+
+431
+00:44:18,320 --> 00:44:19,360
+[SPEAKER_00] Provodimo dva testa.
+
+432
+00:44:19,519 --> 00:44:20,960
+[SPEAKER_00] Jedan izgleda dobro, a drugi ne.
+
+433
+00:44:21,280 --> 00:44:24,480
+[SPEAKER_00] Dakle, to nije potpuno, recimo, konačno.
+
+434
+00:44:24,480 --> 00:44:30,480
+[SPEAKER_00] Rekla bih da je to konačno, ali definitivno su napravili stvari koje ne bismo napravili sami i otišli korak dalje.
+
+435
+00:44:30,880 --> 00:44:43,360
+[SPEAKER_00] Dakle, ove dvije stvari o popravku, pametnijem i daljnjem odlasku, sve su došle u trenutak u kojem sam istovremeno osjetila da je 95 posto rasprave o plaćenim medijima bilo o kreativnoj produkciji.
+
+436
+00:44:43,519 --> 00:44:46,880
+[SPEAKER_00] Bila sam poput, sigurno, trebalo bi se razgovarati, ali to nije jedina tema.
+
+437
+00:44:46,960 --> 00:44:50,559
+[SPEAKER_00] Zato volim uzeti kontrolu u kapu i reći, govorit ću o nečemu drugom.
+
+438
+00:44:50,800 --> 00:44:53,760
+[SPEAKER_00] Odjednom sam primijetila i mnogo više razgovora o tome.
+
+439
+00:44:54,079 --> 00:44:58,880
+[SPEAKER_00] Dakle, bilo je to vrlo dobar trenutak ili su ljudi samo bili nadahnuti i radili na tome.
+
+440
+00:44:59,039 --> 00:45:00,159
+[SPEAKER_00] Mislim da je bilo malo oboje.
+
+441
+00:45:00,320 --> 00:45:02,800
+[SPEAKER_00] Ali sretan sam što se tema malo razmotrila.
+
+442
+00:45:03,280 --> 00:45:09,119
+[SPEAKER_00] To ne znači da će, ako imate sjajnu inženjering signala i imate jednu reklamu u svom računu, to funkcionirati.
+
+443
+00:45:09,599 --> 00:45:10,320
+[SPEAKER_00] To neće funkcionirati.
+
+444
+00:45:11,039 --> 00:45:11,119
+[SPEAKER_01] Da.
+
+445
+00:45:12,239 --> 00:45:20,159
+[SPEAKER_01] Prije nego što prijeđemo na više pojedinosti o tome kako se radi o inženjeringu signala, htio sam postaviti još jedno pitanje o podacima.
+
+446
+00:45:20,480 --> 00:45:32,480
+[SPEAKER_01] Ponovno, samo zato što su to vrste pitanja koja bi ljudi, mislim, vikali u svoje automobile dok voze slušajući podcast, kako razmišljate o tome kad se povećavate na više mreža?
+
+447
+00:45:33,280 --> 00:45:46,800
+[SPEAKER_01] Dakle, radite na Googleu i Meta i TikToku., trebali bi svi ti menadžeri događaja vidjeti sto posto vaših konverzija, sto posto vaših besplatnih probnih verzija, sto posto svega?
+
+448
+00:45:46,960 --> 00:45:58,800
+[SPEAKER_01] Je li to ono što tražite u svakom pojedinačnom menadžeru događaja ili tražite da Google vidi samo postotak događaja, a Meta vidi postotak događaja?
+
+449
+00:45:58,960 --> 00:46:03,840
+[SPEAKER_00] Ako ste na početku ovog procesa, vjerojatno želite da svi primaju sto posto.
+
+450
+00:46:04,400 --> 00:46:07,760
+[SPEAKER_00] Ne filtrirajte ništa, šaljete sto posto tih različitih događaja.
+
+451
+00:46:08,239 --> 00:46:08,320
+[SPEAKER_00] Da.
+
+452
+00:46:10,000 --> 00:46:12,960
+[SPEAKER_00] Gotovo je normalno da se ista situacija odvija i u drugom.
+
+453
+00:46:12,960 --> 00:46:15,199
+[SPEAKER_00] Ali isti signal neće biti najbolji za svaku platformu.
+
+454
+00:46:15,519 --> 00:46:26,400
+[SPEAKER_00] I moguće je da ćete na kraju optimizirati prihod u Meta i za kvalificiranu probnu verziju u Googleu i za filtar izravnih kupnji i probne konverzije na TikToku, da kažem nešto.
+
+455
+00:46:27,199 --> 00:46:38,239
+[SPEAKER_00] Ono što će funkcionirati neće biti univerzalno, kao što svaka mreža ima drugačiji tip korisnika, ali i drugačiji kontekst, ali i drugačiji način optimizacije, kao što je vrednovanje signala koje im šaljete.
+
+456
+00:46:38,559 --> 00:46:40,239
+[SPEAKER_00] I na vrhu toga, nemaju isti izvor.
+
+457
+00:46:40,400 --> 00:46:48,880
+[SPEAKER_00] Mogli biste koristiti MMP i poslati ga svim tim izvorima, ali je također vrlo moguće da šaljete u Google putem Firebasea i u Facebook putem Facebook SDK-a.
+
+458
+00:46:48,880 --> 00:46:49,360
+[SPEAKER_00] Facebook ima DK i tako dalje.
+
+459
+00:46:49,519 --> 00:46:54,719
+[SPEAKER_00] Dakle, jednostavan odgovor je da, pošaljite sto posto događaja na sve različite platforme.
+
+460
+00:46:55,119 --> 00:47:01,039
+[SPEAKER_00] U stvarnosti, bit će različitih izvora, pa su različiti po prirodi i različite će stvari raditi.
+
+461
+00:47:01,119 --> 00:47:12,159
+[SPEAKER_00] Dakle, na primjer, možda ćete morati filtrirati ispitivanja mlađe publike na TikTok, ali to ne morate nužno činiti za Meta jer to funkcionira drugačije.
+
+462
+00:47:12,239 --> 00:47:14,559
+[SPEAKER_00] Na primjer, ono što radim je da mapiram te različite događaje.
+
+463
+00:47:14,639 --> 00:47:19,599
+[SPEAKER_00] Dakle, recimo da imam svoje besplatne ispitivanja, šaljem ih sve, ali možda ih nikad ne koristim u bilo kojoj kampanji.
+
+464
+00:47:20,000 --> 00:47:23,039
+[SPEAKER_00] A onda mogu provjeriti kvalitetu podataka koji se prenose.
+
+465
+00:47:23,280 --> 00:47:29,840
+[SPEAKER_00] A onda imam svoje kvalificirane bes besplatne probne ili filtrirane probne, recimo, šalju se različitim mrežama, ali ja ih mapiram.
+
+466
+00:47:29,920 --> 00:47:32,719
+[SPEAKER_00] Kada kažem mapiranje, to je kao da ih deklarujem kao drugačije događaje.
+
+467
+00:47:32,800 --> 00:47:42,159
+[SPEAKER_00] Dakle, možda će se sve besplatne probne zove početak probnog, ali onda će se kvalificirana probna zadaća zvati bilo što, možda će biti kupnja, možda pretplata, možda nešto.
+
+468
+00:47:42,400 --> 00:47:51,599
+[SPEAKER_00] Zapravo, želio bih da platforma nudi više opcija u broju događaja koje nudi jer vjerojatno zato što to nije tako uobičajeno, zato je popis ograničen.
+
+469
+00:47:51,679 --> 00:47:55,679
+[SPEAKER_00] I ako se sjetimo prije dvije ili tri godine, Facebook nije imao ni početak probnog i pretplate.
+
+470
+00:47:55,840 --> 00:47:58,000
+[SPEAKER_00] Sve je kupio od igara i e-pošte.
+
+471
+00:47:58,239 --> 00:48:00,559
+[SPEAKER_01] Dakle, osnovna je točka onda da kad počnete.
+
+472
+00:48:01,280 --> 00:48:13,920
+[SPEAKER_01] razmišljati o inženjeringu signala, prvi korak je da se sto posto podataka šalje na sve različite mreže i provjerite da ste u granici od pet do deset posto na svim različitim mrežama.
+
+473
+00:48:14,320 --> 00:48:30,559
+[SPEAKER_01] Zatim nastavite s filtriranjem događaja i tako ćete bolje razumjeti koje bi brojke trebale biti prikazane na svakoj platformi jer možete utvrditi da ne šaljem besplatne probne verzije korisnika mlađih od dvadeset pet godina na TikTok.
+
+474
+00:48:30,800 --> 00:48:35,280
+[SPEAKER_01] I tako možete izračunati, na primjer, dobro, znamo da je kad sam šalio sto posto, radio.
+
+475
+00:48:36,079 --> 00:48:38,719
+[SPEAKER_01] Sada šaljem samo sedamdeset pet posto.
+
+476
+00:48:39,599 --> 00:48:45,360
+[SPEAKER_01] I tako imam ideju što bi trebalo stići na tu određenu oglasnu mrežu.
+
+477
+00:48:45,440 --> 00:48:50,000
+[SPEAKER_01] I tako se provodi validacija podataka nakon što počnete s inženjeringom signala, zar ne?
+
+478
+00:48:50,079 --> 00:48:50,159
+[SPEAKER_00] Da.
+
+479
+00:48:50,639 --> 00:48:51,519
+[SPEAKER_00] Točno.
+
+480
+00:48:51,920 --> 00:48:55,599
+[SPEAKER_00] Sjećam se da sam to radio 2017.
+
+481
+00:48:56,320 --> 00:48:58,239
+[SPEAKER_00] godine i nije mi došlo do genijalne ideje.
+
+482
+00:48:58,639 --> 00:49:03,199
+[SPEAKER_00] Došlo mi je do primjedbe da su mi stope besplatnog probnog razdoblja na Google oglasima bile strašne.
+
+483
+00:49:03,280 --> 00:49:10,000
+[SPEAKER_00] Imali bismo, recimo, četrdeset posto probnog razdoblja za plaćenu konverziju na organskom, na meta, mislim, male razlike.
+
+484
+00:49:10,159 --> 00:49:11,679
+[SPEAKER_00] A onda bismo imali petnaest posto na Googleu.
+
+485
+00:49:12,000 --> 00:49:13,920
+[SPEAKER_00] Bio sam poput, što ovdje radimo pogrešno?
+
+486
+00:49:14,159 --> 00:49:22,719
+[SPEAKER_00] I bio sam poput, dobro, za Google ćemo identificirati neke od razloga zašto ti pokusi ne konvertiraju i poslati im drugačiji signal da pokušamo to popraviti.
+
+487
+00:49:22,800 --> 00:49:36,960
+[SPEAKER_00] Nije bilo tako da ne pokušavamo biti pametniji i samo činiti nešto općenito, nego smo započeli s problemom na početku, kao da možda ako nemate ovaj problem, možda ako je kvaliteta besplatnog pokusa koji dolazi od plaćene je sjajna, onda ne morate ići dalje od sada.
+
+488
+00:49:37,280 --> 00:49:41,519
+[SPEAKER_00] Kao da možda možete učiniti još bolje, ali kao da sam započeo s problemom.
+
+489
+00:49:41,840 --> 00:49:48,960
+[SPEAKER_00] A onda sam vidio da se to pomiče na različite načine, rekao sam, dobro, sad mogu postati malo pametniji.
+
+490
+00:49:48,960 --> 00:49:54,639
+[SPEAKER_00] Jedan od sljedećih koraka jest da sve ove platforme povijesno nude optimizaciju događaja.
+
+491
+00:49:54,719 --> 00:49:58,719
+[SPEAKER_00] Dakle, nude optimizaciju instalacije, što iskreno nikad ne biste trebali činiti.
+
+492
+00:49:58,800 --> 00:50:02,000
+[SPEAKER_00] Postoji nekoliko rubnih slučajeva u kojima biste to mogli učiniti, ali u većini slučajeva to je vrlo loša ideja.
+
+493
+00:50:02,239 --> 00:50:07,840
+[SPEAKER_00] Postoji optimizacija događaja, koja može biti različita događaja koja se mogu filtrirati i tako dalje, a možemo malo više razgovarati o tome.
+
+494
+00:50:07,920 --> 00:50:09,519
+[SPEAKER_00] A postoji optimizacija prihoda.
+
+495
+00:50:09,920 --> 00:50:16,000
+[SPEAKER_00] Problem s optimizacijom prihoda jest da je iz svijeta igara i e-trgovine to bio samo prihod.
+
+496
+00:50:16,239 --> 00:50:19,119
+[SPEAKER_00] To je bio samo prihod koji je generiran prodajom.
+
+497
+00:50:19,360 --> 00:50:24,000
+[SPEAKER_00] Ali u pretplati, jer imamo besplatni probni period i jer imamo obnove.
+
+498
+00:50:24,000 --> 00:50:30,639
+[SPEAKER_00] U konačnici, prihod koji se zapravo događa tog dana zapravo nije ono što trebamo poslati natrag na platformu.
+
+499
+00:50:30,880 --> 00:50:34,639
+[SPEAKER_00] Počeo sam biti pametniji i rekao: U redu, ću inženjerirati prihod koji šaljem.
+
+500
+00:50:35,280 --> 00:50:38,880
+[SPEAKER_00] Dakle, to nije predviđena LTV, to je predviđena vrijednost na dan X.
+
+501
+00:50:39,119 --> 00:50:47,119
+[SPEAKER_00] Možda je to drugi mjesec, možda je to, osobno volim koristiti trinaesti mjesec jer imam prvu godišnju obnovu i mislim da je to bolja usporedba između mjesečnih i godišnjih.
+
+502
+00:50:47,199 --> 00:50:48,960
+[SPEAKER_00] Ali što god, nije važno što mi se sviđa.
+
+503
+00:50:49,280 --> 00:51:00,960
+[SPEAKER_00] Stvarni prihod, onaj koji se zadanim putem SDK-a prolazi, nije onaj koji želim slati jer će besplatna probna konverzija doći prekasno jer će precijeniti godišnji u odnosu na mjesečni, ali možda će precijeniti i godišnji.
+
+504
+00:51:00,960 --> 00:51:02,159
+[SPEAKER_00] Ali možda ćemo uzeti tjedni.
+
+505
+00:51:02,400 --> 00:51:06,400
+[SPEAKER_00] Ponekad je tjedni LTV tjednog odličan jer je cijena mnogo veća.
+
+506
+00:51:06,719 --> 00:51:12,960
+[SPEAKER_00] Ako netko obnovi za šest mjeseci na tjednom planu, prihod koji želimo poslati platformi nije pravi.
+
+507
+00:51:14,800 --> 00:51:22,960
+[SPEAKER_00] Obično će platforma preindeksirati godišnje jer svi prihodi dolaze prvog dana, ali možda vaš tjedni plan ima veći LTV kad ljudi obnavljaju puno.
+
+508
+00:51:23,119 --> 00:51:26,800
+[SPEAKER_00] Dakle, platformi govorite nešto pogrešno o tome što tražite.
+
+509
+00:51:27,039 --> 00:51:30,159
+[SPEAKER_00] I ovdje je ideja ne samo da se prevarite.
+
+510
+00:51:30,320 --> 00:51:36,960
+[SPEAKER_00] Sjećam se da sam razgovarao s Andreom o višem inženjerstvu i saželi su da, oh, Thomas manipuliraram platformom za oglase.
+
+511
+00:51:37,119 --> 00:51:44,320
+[SPEAKER_00] Ja kažem, ne, manipuliram podacima da bih platformi za oglase poslao najbližu vrijednost korisnika koje mi šalju.
+
+512
+00:51:44,800 --> 00:51:45,920
+[SPEAKER_00] Ne pokušavam ovdje lagati.
+
+513
+00:51:46,079 --> 00:51:57,280
+[SPEAKER_00] Naprotiv, pokušavam popraviti nešto što je pokvareno u smislu da platforma prima vrijednost koja nije reprezentativna za moju poslovnu vrijednost, kao što je zadana konfiguracija koja nije reprezentativna.
+
+514
+00:51:57,440 --> 00:52:12,480
+[SPEAKER_00] Jedno na čemu radim sada, na primjer, je da korisnici koji se ne pretvaraju u roku od dvadeset četiri sata, ali pokazuju vrlo veliku vjerojatnost da će se dugo zadržati kao freemium korisnik ili se kasnije pretvarati, dodijelit ćemo joj malu vrijednost.
+
+515
+00:52:12,480 --> 00:52:19,199
+[SPEAKER_00] Ne deset mjesečno ili devedeset godišnje ili bilo što drugo, nego možda jedan dolara, jer sam poput, hmm, sviđa mi se ovaj korisnik.
+
+516
+00:52:19,440 --> 00:52:25,119
+[SPEAKER_00] A ako pošaljem nula, nula događaja, nula vrijednosti, platforma će zaključiti da je to vrsta korisnika koje ne želim.
+
+517
+00:52:25,440 --> 00:52:33,679
+[SPEAKER_00] I možda zato što stvaraju mrežni efekt, stvaraju DAU, stvaraju kasne konverzije koje je mreži vrlo teško asimilirati.
+
+518
+00:52:34,320 --> 00:52:39,519
+[SPEAKER_00] Morat ću poslati nešto što će im pokazati, evo, ovaj korisnik je zapravo nula, ali taj je zapravo nešto malo.
+
+519
+00:52:39,840 --> 00:52:47,039
+[SPEAKER_00] Cijela je shema, želim reći Meta, želim reći Googleu, želim reći TikToku o tome što je vrijedno za mene, jer to nije prirodno za njih.
+
+520
+00:52:47,360 --> 00:52:48,880
+[SPEAKER_00] Samo su primili vrlo tešku konverziju.
+
+521
+00:52:48,880 --> 00:52:50,000
+[SPEAKER_00] To je vrlo primitivan signal.
+
+522
+00:52:50,400 --> 00:52:58,320
+[SPEAKER_00] Prošla sam tjedan čula od Meta da rade na optimizaciji za različite događaje u isto vrijeme, kao što su, na primjer, različite razine pretplate i slično.
+
+523
+00:52:58,480 --> 00:53:08,320
+[SPEAKER_00] Bila sam vrlo sretna jer je to nešto što sam uvijek htjela učiniti i što možete gotovo samo učiniti inženjeriranjem signala i inženjeriranjem prihoda iza njega.
+
+524
+00:53:08,960 --> 00:53:15,840
+[SPEAKER_00] Dakle, što dolazimo do toga je da želim poslati nešto što predstavlja vrijednost, tako da platforma može obaviti posao na najbolji mogući način.
+
+525
+00:53:16,719 --> 00:53:24,559
+[SPEAKER_00] I stvarno su vrlo snažni u predviđanju koji će korisnici dovršiti akciju koju im kažem.
+
+526
+00:53:25,119 --> 00:53:28,639
+[SPEAKER_00] da je radnja pogrešna, svi trčite na jednoj nozi, doslovno.
+
+527
+00:53:28,800 --> 00:53:40,639
+[SPEAKER_00] Odatle dolazi cijela ideja o inženjerstvu signala i optimizaciji podataka koje šaljete natrag, kao da, pošaljite mreži nešto bolje i oni će bolje obaviti posao jer oni bolje obavljaju posao.
+
+528
+00:53:40,639 --> 00:53:41,920
+[UNKNOWN] Vi ne radite svoj.
+
+529
+00:53:42,320 --> 00:53:42,800
+[SPEAKER_01] Lijepo.
+
+530
+00:53:42,960 --> 00:53:54,880
+[SPEAKER_01] Dakle, ušli ste u to i dali mnogo toga što bih pretpostavio da su naše naprednije prakse inženjerstva signala, ali vratimo se i, kad jednom dobijete svoje podatke, zar ne?
+
+531
+00:53:55,119 --> 00:53:56,960
+[SPEAKER_01] Ili vjerujete da imate svoje podatke, zar ne?
+
+532
+00:53:57,039 --> 00:54:00,559
+[SPEAKER_01] Koja je najlakša stvar u inženjerstvu signala?
+
+533
+00:54:00,559 --> 00:54:11,599
+[SPEAKER_01] Koji biste rekli da su prvi koraci koje bi ljudi trebali poduzeti kako bi počeli mijenjati zadane mapiranja načina na koji ti SDK-ovi funkcioniraju zadanim postavkama?
+
+534
+00:54:12,159 --> 00:54:13,039
+[SPEAKER_01] Koji je prvi korak?
+
+535
+00:54:13,599 --> 00:54:20,719
+[SPEAKER_00] Dakle, spomenuli smo da je to drugi korak jer je prvi korak praćenje da se događaji pravilno prenose, što nije zajamčeno.
+
+536
+00:54:20,800 --> 00:54:29,280
+[SPEAKER_00] Ali drugi korak za mene bi bio ili prijeći na ono što nazivamo kvalificiranim ili filtriranim pokusima.
+
+537
+00:54:29,360 --> 00:54:37,599
+[SPEAKER_00] I obično bi to bilo kada vidite da vaši stope besplatnog ispitivanja nisu tako dobri kao kod drugih mreža ili nisu tako dobri kao što su su nekad bili.
+
+538
+00:54:37,840 --> 00:54:42,719
+[SPEAKER_00] I zato što ne trebate veliku inženjering oko predviđanja prihoda i slično da biste to učinili.
+
+539
+00:54:43,039 --> 00:54:49,039
+[SPEAKER_00] Dakle, u osnovi napravite regresiju, dobro, analizirajmo ovaj besplatni probni period koji se ne pretvara.
+
+540
+00:54:49,360 --> 00:54:59,599
+[SPEAKER_00] Ponekad je to kombinacija onoga što nazivam tvrdim čimbenicima, što su uređaj sam po sebi, možda jezik, kao što mi je korisnik rekao, ali nešto što je u samoj hardveru.
+
+541
+00:55:00,000 --> 00:55:04,239
+[SPEAKER_00] Dobro je poznato da se najnoviji uređaj pretvara mnogo bolje.
+
+542
+00:55:04,400 --> 00:55:06,400
+[SPEAKER_00] I tako ću možda filtrirati sve ove vrlo stare iPhoneove.
+
+543
+00:55:06,480 --> 00:55:18,400
+[SPEAKER_00] Zapravo je smiješno kad pogledate određeni uređaj, najnoviji uređaj na Androidu, Google Pixel i najnoviji Samsung Galaxy i još nekoliko drugih jednako dobro se pretvaraju kao i iPhone.
+
+544
+00:55:18,559 --> 00:55:24,159
+[SPEAKER_00] Oni predstavljaju samo pet do deset posto tržišta, a ostatak ima strašan omjer konverzije.
+
+545
+00:55:24,719 --> 00:55:28,159
+[SPEAKER_00] Ali sigurno bih ih volio procijeniti.
+
+546
+00:55:29,440 --> 00:55:34,800
+[SPEAKER_00] Facebook radi na inženjerstvu signala jer postoji vrlo malo drugih poluga koje možemo učiniti.
+
+547
+00:55:34,960 --> 00:55:41,039
+[SPEAKER_00] Ali Facebook je konačno izbacio beta verziju, jednu koju smo zvali BitModifier vrlo, vrlo dugo.
+
+548
+00:55:41,519 --> 00:55:48,559
+[SPEAKER_00] I mogao sam reći Facebooku: O, kad vidite jedan od tih Google Pixela, izravno dodijelite dvadeset posto više od bilo kojeg drugog korisnika jer znam da.
+
+549
+00:55:48,960 --> 00:55:51,440
+[SPEAKER_00] će se lakše konvertirati, da će se produžiti i tako dalje.
+
+550
+00:55:51,920 --> 00:55:58,480
+[SPEAKER_00] Ali kad vidite jedan od onih starih Androida 7 ili bilo čega, nemojte im ni pokazivati oglas.
+
+551
+00:55:58,639 --> 00:56:00,320
+[SPEAKER_00] Ali onda je vrlo često vaš izbor binaran.
+
+552
+00:56:00,880 --> 00:56:06,480
+[SPEAKER_00] Uzmimo prednost jer je prednost pretplate vrlo uobičajeni čimbenik za ljude koji ulaze u besplatni probni period i ne konvertiraju.
+
+553
+00:56:06,800 --> 00:56:11,119
+[SPEAKER_00] Dugo je vrijeme rješenje bilo: U redu, prestanimo oglašavati ljude mlađima od dvadeset pet godina.
+
+554
+00:56:11,760 --> 00:56:12,719
+[SPEAKER_00] I onda više nemam taj problem.
+
+555
+00:56:14,480 --> 00:56:17,519
+[SPEAKER_00] Bilo je kao da zapravo propustim nešto, a to je da postoji mnogo inventara.
+
+556
+00:56:17,840 --> 00:56:24,880
+[SPEAKER_00] Dio onoga što radim, mislim, moja aplikacija odgovara petnaest do dvadeset pet godina, samo imam ovaj problem s besplatnim probnim periodom koji će se pojaviti.
+
+557
+00:56:24,880 --> 00:56:27,039
+[SPEAKER_00] Želim samo to faktorizirati.
+
+558
+00:56:27,199 --> 00:56:32,800
+[SPEAKER_00] Ne želim isključiti sve ispod dvadeset pet jer ograničavam svoje mogućnosti.
+
+559
+00:56:33,199 --> 00:56:35,840
+[SPEAKER_00] I ovo je samo još jedan način da to učinim drugačije.
+
+560
+00:56:36,159 --> 00:56:43,360
+[SPEAKER_00] Netko me nedavno pitao: Ali sad kad imam modifikator ponude, mogu reći Facebooku da su ispod dvadeset pet trideset posto manje vrijedni.
+
+561
+00:56:43,760 --> 00:56:46,400
+[SPEAKER_00] Ne trebam sve ovo filtriranje pokusa.
+
+562
+00:56:46,559 --> 00:56:49,679
+[SPEAKER_00] I volio bih osobno udarati s obje strane.
+
+563
+00:56:49,920 --> 00:56:53,519
+[SPEAKER_00] Ali sigurno je to neka vrsta potencijalne zamjene, ali nije dostupna svugdje.
+
+564
+00:56:53,599 --> 00:56:58,159
+[SPEAKER_00] Niska će se strana vjerojatno koristiti u kvalificiranim pokusima jer je to tako uobičajeni čimbenik.
+
+565
+00:56:58,559 --> 00:56:59,679
+[SPEAKER_00] Ali to ne znači da je za sve.
+
+566
+00:57:00,239 --> 00:57:01,679
+[SPEAKER_00] A što je tvrdi faktor?
+
+567
+00:57:02,000 --> 00:57:03,119
+[SPEAKER_00] A drugi je meki faktor.
+
+568
+00:57:03,199 --> 00:57:04,880
+[SPEAKER_00] A meki faktor je nešto što korisnik radi.
+
+569
+00:57:05,840 --> 00:57:11,119
+[SPEAKER_00] Najčešće je pitanje na uvođenju na koje netko odgovara i koji filtrira.
+
+570
+00:57:11,440 --> 00:57:13,599
+[SPEAKER_00] Možda izjavljuju ovaj interes, a ne ovaj.
+
+571
+00:57:13,920 --> 00:57:22,400
+[SPEAKER_00] Kao da imam aplikaciju za mentalno zdravlje, gdje kad ljudi kažu da imaju visoku razinu anksioznosti, to je mnogo vrijednije nego kad kažu nešto drugo.
+
+572
+00:57:22,800 --> 00:57:24,480
+[SPEAKER_00] I tako, faktoriziramo ovo pitanje.
+
+573
+00:57:24,880 --> 00:57:31,840
+[SPEAKER_00] Sljedeća razina, vrlo sofisticirana razina, bila bi zapravo dodavanje pitanja na uvođenje koje stvaraju ovu varijaciju.
+
+574
+00:57:32,000 --> 00:57:33,039
+[SPEAKER_00] I to je ono što tražite.
+
+575
+00:57:33,519 --> 00:57:39,760
+[SPEAKER_00] Dakle, najlakši je pogled na regresijuiji vrijednosti na temelju takvih pitanja.
+
+576
+00:57:39,920 --> 00:57:45,039
+[SPEAKER_00] A u pogledu prihoda, na primjer, radio sam s nekim tko je bio jako komičan.
+
+577
+00:57:45,199 --> 00:57:49,119
+[SPEAKER_00] Da, moram napraviti nešto vrlo sofisticirano s prihodima i poslati ih na oglasnu platformu.
+
+578
+00:57:49,280 --> 00:57:55,840
+[SPEAKER_00] Imam cijeli tim stručnjaka, analitičara podataka i inženjera s kojima možemo vratiti prediktivni LTV na Facebook i sve ostalo.
+
+579
+00:57:56,000 --> 00:57:57,119
+[SPEAKER_00] Da, pogledajmo vaš prihod.
+
+580
+00:57:57,199 --> 00:57:58,400
+[SPEAKER_00] Zapravo, imate nultu varijaciju.
+
+581
+00:57:58,719 --> 00:58:06,960
+[SPEAKER_00] Kao da imate binarni slučaj u kojem gotovo svi na kraju generiraju ovo u istom rasponu vrijednosti.
+
+582
+00:58:07,119 --> 00:58:09,039
+[SPEAKER_00] U ovom slučaju, ne moraju pretjerivati.
+
+583
+00:58:09,280 --> 00:58:12,559
+[SPEAKER_00] Ali ako primijetite da imate ekstremnu varijaciju, onda je vjerojatno.
+
+584
+00:58:12,559 --> 00:58:32,480
+[SPEAKER_00] Vjerojatno je vrijeme da preskočite kvalificirani pokus i odmah krenete s izradom tih spremnika prihoda jer imate skup korisnika koji će potrošiti jedan dolar IAB, imate skup korisnika koji će uzeti dvanaest dolara pretplate, a zatim imate profesionalnog korisnika s pretplatom za dvjesto dolara, ne znam ni što je to, ali pretplata za ChatGPT.
+
+585
+00:58:33,280 --> 00:58:41,280
+[SPEAKER_00] A ako imate ekstremnu varijabilnost prihoda, mislim da je najlakši način raspodijeliti potrebne resurse jer kvalificirani pokus neće biti dovoljan.
+
+586
+00:58:41,760 --> 00:58:42,559
+[SPEAKER_00] To je samo prvi korak.
+
+587
+00:58:43,119 --> 00:58:46,239
+[SPEAKER_00] Dakle, ovisi o problemu koji imate ili problemima koje nemate.
+
+588
+00:58:46,400 --> 00:58:53,599
+[SPEAKER_00] Ako nemate var problema s pretvorbom besplatnog ispitivanja, nemojte se truditi filtrirati ispitivanja.
+
+589
+00:58:53,760 --> 00:58:56,320
+[SPEAKER_01] Razmotrimo točno kako to radite.
+
+590
+00:58:57,280 --> 00:58:59,039
+[SPEAKER_01] Dakle, volio sam vaš primjer.
+
+591
+00:58:59,440 --> 00:59:06,400
+[SPEAKER_01] Ako ste aplikacija za mentalno zdravlje i imate pitanje za uvođenje u kojem se pita: Koji su vaši ciljevi u korištenju ove aplikacije za mentalno zdravlje?
+
+592
+00:59:06,639 --> 00:59:10,960
+[SPEAKER_01] Jedan od ciljeva je smiriti svoju tjeskobu.
+
+593
+00:59:11,119 --> 00:59:12,239
+[SPEAKER_01] Drugi cilj je samo da budem zdraviji.
+
+594
+00:59:12,800 --> 00:59:13,920
+[SPEAKER_01] Neki vrlo opći cilj.
+
+595
+00:59:14,800 --> 00:59:24,719
+[SPEAKER_01] Vidite da je vrijednost ljudi s tim općim ciljem mnogo niža, a vrijednost onih koji imaju određeni problem za rješavanje, poput tjeskobe, mnogo je veća.
+
+596
+00:59:25,280 --> 00:59:27,280
+[SPEAKER_01] Kako to zapravo instrumentirate?
+
+597
+00:59:27,519 --> 00:59:42,960
+[SPEAKER_01] Je li to unutar aplikacije, kada mapirate događaje, zapravo ne šaljete događaje i morate spriječiti da SDK-ovi samo usisavaju sve događaje kako biste mogli poslati određeni događaj koji želite poslati?
+
+598
+00:59:43,440 --> 00:59:44,400
+[SPEAKER_01] Kako to zapravo radite?
+
+599
+00:59:45,519 --> 00:59:56,719
+[SPEAKER_00] Naravno, neću vam to pokazati, ali prije ću izgovoriti oprezan izraz, a to je da filtriranje, kao što je isključivanje ljudi, može raditi i učinio sam to nekoliko puta, ali to je malo moja posljednja opcija.
+
+600
+00:59:57,199 --> 00:59:59,360
+[SPEAKER_00] Ako mogu pronaći drugi način da ne isključim u potpunosti te ljude.
+
+601
+01:00:00,719 --> 01:00:02,400
+[SPEAKER_00] Jer možda generiraju manju vrijednost.
+
+602
+01:00:02,559 --> 01:00:03,119
+[SPEAKER_00] Manje nije nula.
+
+603
+01:00:03,440 --> 01:00:07,119
+[SPEAKER_00] Dakle, isključivanje ih zapravo je nešto što pokušavam izbjeći.
+
+604
+01:00:07,599 --> 01:00:14,320
+[SPEAKER_00] A kad pogledam, recimo, pitanje o uvođenju i imam visoku anksioznost, želim biti zdraviji ili samo želim bolje spavati.
+
+605
+01:00:15,039 --> 01:00:20,239
+[SPEAKER_00] I pogledat ću je li nešto iznimno manje vrijedno, u kojem slučaju pokušat ću ga isključiti.
+
+606
+01:00:20,800 --> 01:00:24,400
+[SPEAKER_00] Ako je malo manje vrijedno, pokušat ću pronaći nešto drugo.
+
+607
+01:00:24,960 --> 01:00:27,679
+[SPEAKER_00] Ili ću to pustiti da prođe i riješiti se toga.
+
+608
+01:00:27,840 --> 01:00:36,239
+[SPEAKER_00] Pristupit ću optimizaciji prihoda ili ću pokušati pronaći je li to povezano s određenom demografskom skupinom koja koristi modifikatore ponude ili ću pokušati nešto drugo.
+
+609
+01:00:36,400 --> 01:00:40,400
+[SPEAKER_00] Kao što je isključivanje, ako ne mogu učiniti ništa drugo, onda ću to is isključiti.
+
+610
+01:00:40,639 --> 01:00:42,960
+[SPEAKER_00] Recimo da moram filtrirati neke ljude.
+
+611
+01:00:43,039 --> 01:00:46,719
+[SPEAKER_00] U osnovi, neki ljudi u procesu uvođenja samo vam kažu: O, samo pregledavam.
+
+612
+01:00:46,880 --> 01:00:48,320
+[SPEAKER_00] Zapravo nemam namjeru.
+
+613
+01:00:48,559 --> 01:00:50,480
+[SPEAKER_00] To je u osnovi ono što vam kažu.
+
+614
+01:00:51,679 --> 01:00:53,199
+[SPEAKER_00] I vjerojatno ću ih htjeti isključiti.
+
+615
+01:00:53,360 --> 01:01:02,800
+[SPEAKER_00] U ovom slučaju, ili imate platformu kao SDK, ili je obično šaljete putem MMP-a, rjeđe putem prilagođene API-jeve.
+
+616
+01:01:02,880 --> 01:01:04,400
+[SPEAKER_00] Prilagođeni API šaljete što god želite.
+
+617
+01:01:04,559 --> 01:01:08,719
+[SPEAKER_00] Dakle, mislim da filtriramo događaj sami, šaljemo ga, ali to je najmanje uobičajeni slučaj.
+
+618
+01:01:08,880 --> 01:01:16,239
+[SPEAKER_00] Kroz MMP, ono što radim zapravo je pitanje inženjera, htjet ću dodati novi događaj.
+
+619
+01:01:16,320 --> 01:01:17,519
+[SPEAKER_00] Neću filtrirati postojeći događaj.
+
+620
+01:01:17,679 --> 01:01:19,599
+[SPEAKER_00] Besplatna probna verzija bit će besplatna probna verzija.
+
+621
+01:01:19,760 --> 01:01:19,920
+[SPEAKER_00] U redu.
+
+622
+01:01:20,639 --> 01:01:30,880
+[SPEAKER_00] Ako postoji besplatna probna verzija i odgovor na ovo pitanje je ovaj, pošaljite je na Adjust ili Apps Lier ili Singler kao pretplatu ili bilo što drugo.
+
+623
+01:01:31,039 --> 01:01:33,599
+[SPEAKER_00] A onda će Facebook početi primati i ja ću je imati.
+
+624
+01:01:33,760 --> 01:01:35,599
+[SPEAKER_00] To funkcionira isto u Facebook SDK-u.
+
+625
+01:01:35,679 --> 01:01:39,920
+[SPEAKER_00] Možete imati samo zadanu konfiguraciju, ali onda možete postaviti vlastite događaje.
+
+626
+01:01:40,159 --> 01:01:42,000
+[SPEAKER_00] Ne govorim o prilagođenim događajima.
+
+627
+01:01:42,079 --> 01:01:44,320
+[SPEAKER_00] Samo možete prisiliti, ali to se radi na inženjerskoj strani.
+
+628
+01:01:44,559 --> 01:01:46,239
+[SPEAKER_00] To je nešto što marketinzi ne rade.
+
+629
+01:01:46,400 --> 01:01:49,920
+[SPEAKER_00] To je nešto što zahtijeva otvaranje koda i stvarno to raditi.
+
+630
+01:01:50,079 --> 01:01:57,599
+[SPEAKER_00] Dakle, znam da marketinzi postaju pametniji s kodom danas, ali ovo je jedna stvar koju sam nazvao inženjeringom signala jer postoji inženjering iza toga.
+
+631
+01:01:58,239 --> 01:02:04,159
+[SPEAKER_00] u smislu da zapravo malo prilagođavam sustav, ali i zato što vrlo često trebate inženjera.
+
+632
+01:02:04,559 --> 01:02:09,920
+[SPEAKER_00] Zanimljiva je dinamika koliko je malo programera zainteresiranih za sve što se tiče marketinga.
+
+633
+01:02:10,239 --> 01:02:19,760
+[SPEAKER_00] Uvijek postoji malo napetosti u ovoj kartici jer smo mi marketinški stručnjaci strašni u objašnjavanju naših zahtjeva i pravilnom definiranju zahtjeva.
+
+634
+01:02:20,239 --> 01:02:27,599
+[SPEAKER_00] I tako dolazi ulazak i vraćanje, ali također ne znam mnogo inženjera koji vole prilagođavati Facebook SDK ili MMP SDK.
+
+635
+01:02:27,920 --> 01:02:29,519
+[SPEAKER_00] To je vrlo rijetko.
+
+636
+01:02:29,760 --> 01:02:36,239
+[SPEAKER_00] Imam nekoliko prijatelja na koje se mogu osloniti, ali trebalo je mnogo godina da dođem do ove točke i zapravo je vrlo lako izvršiti.
+
+637
+01:02:36,880 --> 01:02:46,239
+[SPEAKER_00] Ali činjenica da marketinški stručnjak koji to traži i razvijač koji zapravo radi promjenu uopće ne govore istim jezikom, čini se vrlo kompliciranim.
+
+638
+01:02:46,400 --> 01:02:52,639
+[SPEAKER_00] I čak i sada ponekad sam iznenađen u nekoliko ovih razgovora gdje samo kažem: Ne znam kako to radite, ali znam da je to moguće.
+
+639
+01:02:52,639 --> 01:02:55,039
+[SPEAKER_00] Ovdje u dokumentaciji piše da možete to učiniti.
+
+640
+01:02:55,519 --> 01:02:56,880
+[SPEAKER_00] Ovdje sam opisao ono što želim.
+
+641
+01:02:57,119 --> 01:02:58,719
+[SPEAKER_00] To je vaša zadaća da se nosite s tim, a ne moja.
+
+642
+01:02:59,440 --> 01:03:00,320
+[SPEAKER_00] I uvijek se to smanjuje.
+
+643
+01:03:00,480 --> 01:03:05,280
+[SPEAKER_00] Ali moje tehničko znanje brzo dosegne granicu kad dođe do toga.
+
+644
+01:03:05,440 --> 01:03:08,480
+[SPEAKER_00] Ali mislim da s MLP SDK-om to nije ni vrlo komplicirano.
+
+645
+01:03:08,559 --> 01:03:16,800
+[SPEAKER_00] Jednom kad to shvatite, kasnije može postati složenije, na primjer, za vrijednost.nosti.
+
+646
+01:03:17,039 --> 01:03:25,519
+[SPEAKER_00] Jedno se događa da ne prolazi kroz SDK, već kroz API koji šalje informacije natrag u SDK.
+
+647
+01:03:25,760 --> 01:03:29,440
+[SPEAKER_00] Ja sam poput, dobro, pa imam ovu kombinaciju, mogli bismo je hardcodirati.
+
+648
+01:03:29,679 --> 01:03:37,760
+[SPEAKER_00] Mogli bismo reći, dobro, ako postoji ovaj plan koji se radi na ovom uređaju nakon što sam odgovorio na ovo pitanje na ulazku, onda je vrijednost pedeset i šest.
+
+649
+01:03:38,079 --> 01:03:39,920
+[SPEAKER_00] A ako je to druga kombinacija, to je dvadeset i tri.
+
+650
+01:03:40,159 --> 01:03:41,119
+[SPEAKER_00] I mogli bismo to hardcodirati.
+
+651
+01:03:41,679 --> 01:03:50,800
+[SPEAKER_00] Ali onda svaki put kad trebam ažurirati, a to se događa neprestano jer mijenjamo plan, promjenjuju se vrijednosti valute i tako dalje, trebao bih imati dodir koda i zatim još jednu verziju.
+
+652
+01:03:50,960 --> 01:03:54,159
+[SPEAKER_00] Dakle, ako znam da ću kasnije raditi puno signalnog inženjeringa, što radim?
+
+653
+01:03:54,480 --> 01:03:57,679
+[SPEAKER_00] zapravo je da postoji poziv API-ja koji kaže: U redu, imam sve ove parametre.
+
+654
+01:03:57,760 --> 01:03:58,559
+[SPEAKER_00] Koja je vrijednost sada?
+
+655
+01:03:59,119 --> 01:03:59,840
+[SPEAKER_00] O, 56.
+
+656
+01:04:00,079 --> 01:04:01,920
+[SPEAKER_00] A sljedeći tjedan bit će 68.
+
+657
+01:04:02,320 --> 01:04:06,960
+[SPEAKER_00] I nitko neće dirati kôd nigdje, ali mogu ga dinamično promijeniti.
+
+658
+01:04:07,280 --> 01:04:13,840
+[SPEAKER_00] I jedan je slučaj u kojem to želite, kao što je to kad radite u zemljama u kojima se valuta obično jako mijenja.
+
+659
+01:04:14,000 --> 01:04:19,519
+[SPEAKER_00] Turska je vrlo velika zemlja, na primjer, gdje ako tamo hardcodirate vrijednost, mrtvi ste.
+
+660
+01:04:19,760 --> 01:04:24,880
+[SPEAKER_00] Ali to je prilično sofisticirano i može se slomiti jer onda imate SDK koji komunicira s API-jem.
+
+661
+01:04:25,199 --> 01:04:29,440
+[SPEAKER_00] Ne mora nužno biti tamo gdje želite započeti, ali na kraju to čini veliku razliku.
+
+662
+01:04:30,000 --> 01:04:33,679
+[SPEAKER_01] To je također sjajan uvid u to kao marketinški stručnjaci.
+
+663
+01:04:33,679 --> 01:04:56,000
+[SPEAKER_01] Trgovci, nešto je što treba znati i na čemu treba raditi, bolje razumjeti na razini koda što se zapravo događa kako biste mogli više surađivati s inženjerskim timom kako biste uspješno implementirali te stvari i zatim razumjeti što se događa ispod poklopca kako biste mogli rješavati probleme kada ne radi dobro.
+
+664
+01:04:56,559 --> 01:05:12,480
+[SPEAKER_01] I na vašu točku, najbolja implementacija je ona koja je mnogo fleksibilnija i nije hardcodirana u odnosu na pisanje hrpe hardcodirane stvari u aplikaciju, a svaki put kad želite napraviti bilo kakvu malu promjenu, morate razgovarati s inženjerskim timom kako biste napravili te promjene..
+
+665
+01:05:12,639 --> 01:05:15,280
+[SPEAKER_01] A onda kad se nešto pokvari, morate poslati ažuriranje aplikacije.
+
+666
+01:05:15,519 --> 01:05:22,159
+[SPEAKER_01] I tako, postoje li neki specifični detalji vezani uz izgradnju koje ste vidjeli da stvarno dobro funkcioniraju?
+
+667
+01:05:22,480 --> 01:05:29,199
+[SPEAKER_01] Na primjer, postoje li neki alati s određenim klijentima s kojima radite koji to čine mnogo lakšim?
+
+668
+01:05:29,920 --> 01:05:34,000
+[SPEAKER_00] Kada pitam programera, kažu mi: Ne, čovječe, ovo je vrlo jednostavna API.
+
+669
+01:05:34,159 --> 01:05:36,800
+[SPEAKER_00] To je kao da postoji jedan poziv, a ja odgovaram na vrijednost.
+
+670
+01:05:36,880 --> 01:05:40,880
+[SPEAKER_00] Čini se da je to ono što su jednom učinili, oni kažu: O, ono što ste pitali zapravo je bilo super jednostavno.
+
+671
+01:05:41,039 --> 01:05:43,119
+[SPEAKER_00] Zašto smo trebali tri mjeseca da dođemo do toga?
+
+672
+01:05:43,199 --> 01:05:44,559
+[SPEAKER_00] Jer je vaše objašnjenje bilo pogrešno.
+
+673
+01:05:44,639 --> 01:05:45,679
+[SPEAKER_00] Dakle, to je bio moj problem.
+
+674
+01:05:45,840 --> 01:05:48,079
+[SPEAKER_00] Znate, to je zapravo bio komunikacijski problem.
+
+675
+01:05:48,559 --> 01:05:51,599
+[SPEAKER_00] Nisam upotrijebio mnogo alata oko toga, uglavnom internih alata.
+
+676
+01:05:51,599 --> 01:06:02,239
+[SPEAKER_00] Morate prilagoditi ovisno o tome šaljete li na platformu SDK kao što su Firebase ili Meta, ili putem MMP-a ili čak putem Overwatch CAD-a i slično.
+
+677
+01:06:02,480 --> 01:06:04,800
+[SPEAKER_00] Morate prilagoditi, ali ostatak je uglavnom bio interni.
+
+678
+01:06:05,199 --> 01:06:12,880
+[SPEAKER_00] Sad radim s tvrtkom Voyantis koja sama izvodi ovaj filtriranje i zatim ga šalje natrag.
+
+679
+01:06:13,199 --> 01:06:15,440
+[SPEAKER_00] Otkrio sam nekoliko novih trikova.
+
+680
+01:06:15,679 --> 01:06:18,480
+[SPEAKER_00] Vrlo je malo ljudi koji rade na tome.
+
+681
+01:06:18,880 --> 01:06:27,920
+[SPEAKER_00] Nisam čuo za alate koji ponekad koriste alat koji je napravljen za nešto drugo u sredini, ali tehnološki je zapravo prilično jednostavan.
+
+682
+01:06:28,000 --> 01:06:29,039
+[SPEAKER_00] Samo ne radi uvijek.
+
+683
+01:06:29,360 --> 01:06:34,960
+[SPEAKER_00] Uvijek postoji malo rasprava, ali kad je u pitanju kod, zapravo je nešto što nije previše komplicirano.
+
+684
+01:06:35,119 --> 01:06:43,199
+[SPEAKER_00] Za mene je najzanimljivija stvar ne toliko izvršenje, što znači da postoje problemi, to je redovito, ali nema ništa što bi moglo biti proboj.
+
+685
+01:06:43,440 --> 01:06:49,760
+[SPEAKER_00] Ne radi se o tome da ga bolje programirate, da će signal biti bolji, već o tome kako definirate signal koji će ga učiniti.
+
+686
+01:06:50,079 --> 01:07:04,960
+[SPEAKER_00] I sve te su se pitanja vezale uz uvođenje i segmentiranje korisnika, stvaranje spremnika vrijednosti zapravo zanimljivo jer je to prekretnica, mislim, puno analize podataka, ali uvijek otkrivamo nešto novo.
+
+687
+01:07:05,119 --> 01:07:09,519
+[SPEAKER_00] Kao da postoji toliko čimbenika i volim se igrati s tim u različitim aplikacijama.
+
+688
+01:07:09,519 --> 01:07:17,360
+[SPEAKER_00] I reći ću vam jednu primjericu, primijetili smo s nekim s kim sam radio da je vrijeme dovršetka uvođenja bilo odlučujući čimbenik u vrijednosti.
+
+689
+01:07:17,599 --> 01:07:23,840
+[SPEAKER_00] I mi smo pomislili, dobro, ljudi koji su odgovorili u manje od minute, a bilo je trideset zaslona, nije bilo ništa.
+
+690
+01:07:25,039 --> 01:07:28,559
+[SPEAKER_00] Vjerojatno su kliknuli sljedeće, sljedeće, sljedeće, zatim su pokrenuli besplatni probni period i otkazali su.
+
+691
+01:07:28,800 --> 01:07:37,599
+[SPEAKER_00] I počeo sam to donositi u druge aplikacije i onda sam pomislio, čovječe, provjerio sam i zapravo su mi najbrži uvođenja zapravo najbolji korisnici jer već znaju što žele i tako dalje.
+
+692
+01:07:37,760 --> 01:07:38,880
+[SPEAKER_00] To nije nužno univerzalno.
+
+693
+01:07:39,360 --> 01:07:43,360
+[SPEAKER_00] I ovo kriterij nije sjajan, ali postoji nekoliko koji su obično vrlo veliki.
+
+694
+01:07:43,440 --> 01:07:45,039
+[SPEAKER_00] Dakle, spomenuli smo dob.
+
+695
+01:07:45,119 --> 01:07:48,079
+[SPEAKER_00] Stvar oko ciljeva vrlo je često vrlo velika.
+
+696
+01:07:48,320 --> 01:07:48,400
+[SPEAKER_00] stvar.
+
+697
+01:07:48,639 --> 01:07:51,920
+[SPEAKER_00] I mnoge aplikacije imaju različite vrste korisnika.
+
+698
+01:07:52,320 --> 01:08:07,760
+[SPEAKER_00] Imale bi više čistih korisnika potrošača, poput punog B2C-a, ali onda bi imale male timove, puno samostalnih poduzetnika, ljudi s trgovinom Shopify ili influencerima koji su zapravo njihov posao za jednu osobu, a ima ih puno.
+
+699
+01:08:07,920 --> 01:08:15,440
+[SPEAKER_00] Ako uspijete identificirati tko su ti mali poduzetnici, samostalni poduzetnici za jednu osobu, obično imaju potpuno drugačiji posao.
+
+700
+01:08:15,599 --> 01:08:30,000
+[SPEAKER_00] Naravno, ako poboljšavate njihov posao jer postovi postaju vidljiviji ili videozapisi su kvalitetniji ili što god, da, osjetljivost na cijenu jer je to njihov posao očito vrlo različ drugačije od nekoga tko samo pokušava učiniti da njegova fotografija izgleda bolje.
+
+701
+01:08:30,319 --> 01:08:32,560
+[SPEAKER_00] I ovo je jedna od najčešćih stvari.
+
+702
+01:08:32,800 --> 01:08:43,279
+[SPEAKER_00] Dakle, da, ciljevi Edgea i ne znam kako definirati ovu tipologiju korisnika između potrošača i prosumera i stvarnih poduzeća i velikih poduzeća.
+
+703
+01:08:43,439 --> 01:08:44,319
+[SPEAKER_00] Ovo je vrlo velika stvar.
+
+704
+01:08:44,800 --> 01:08:52,239
+[SPEAKER_01] Da, znam da puno razgovarate s MMP-ovima i imate ograničen uvid u neke od ovih oglasnih mreža.
+
+705
+01:08:52,560 --> 01:08:56,800
+[SPEAKER_01] Misliš li da bi MMP-ovi i oglasne mreže mogli bolje raditi?
+
+706
+01:08:57,039 --> 01:09:11,680
+[SPEAKER_01] Na primjer, trebali bi, znate, Apps Flower i Adjust i Singular, znate, trebali bi graditi ove vrste alata za inženjering signala u svoje alate kako bi to učin bilo lakše, a vi ste već spomenuli množenje ponuda i slično što Meta radi.
+
+707
+01:09:12,319 --> 01:09:23,039
+[SPEAKER_01] Misliš li da će se takve stvari s vremenom sve više i više olakšavati jer se vrijednost prepoznaje, a onda će i MMP-ovi i oglasne mreže učiniti takve stvari lakšima?
+
+708
+01:09:23,359 --> 01:09:41,359
+[SPEAKER_01] A da malo kompliciram pitanje, koliko će se toga na kraju početi rješavati s Meta-om, ali sve druge velike oglasne mreže koriste sve više umjetne inteligencije za rješavanje problema i strojnog učenja, zapravo je to strojnog učenja koje se dugo koristi, ali ćemo to nazvati umjetnom inteligencijom.
+
+709
+01:09:41,439 --> 01:09:56,479
+[SPEAKER_01] Koliko će se toga samo poboljšati?avati i poboljšavati po zadanim postavkama jer će platforme moći otkriti ove stvari uz bolje strojnog učenja i sofisticiranije alate s njihove strane.
+
+710
+01:09:56,640 --> 01:09:58,000
+[SPEAKER_00] Dakle, ima više ili manje tri pitanja.
+
+711
+01:09:58,159 --> 01:10:00,880
+[SPEAKER_00] Odgovorit ću u drugom redoslijedu u kojem su došle.
+
+712
+01:10:01,039 --> 01:10:12,079
+[SPEAKER_00] Mislio sam da će platforma ponuditi više opcija za stavljanje težine na svaku vrijednost, kao što je PitModify na Facebooku, koji se sada zove vrijednosne pravila, iako ti dva elementa nisu ista, ali nema veze.
+
+713
+01:10:12,560 --> 01:10:13,840
+[SPEAKER_00] Mislim da nećemo vidjeti puno toga.
+
+714
+01:10:14,479 --> 01:10:15,520
+[SPEAKER_00] To nije smjer u kojem se kreće.
+
+715
+01:10:15,760 --> 01:10:20,079
+[SPEAKER_00] Smjer u kojem se kreće je, nemojte se brinuti, marketinški stručnjaci, neka to učinimo.
+
+716
+01:10:20,079 --> 01:10:23,920
+[SPEAKER_00] Mi to radimo bolje nego što ćete ikad znati, s čime se ne slažem.
+
+717
+01:10:24,319 --> 01:10:27,359
+[SPEAKER_00] se s tim da želim da sve bude ručno kao što je bilo prije deset godina.
+
+718
+01:10:27,840 --> 01:10:36,960
+[SPEAKER_00] Svi strojevi koji su Meta i Google implementirali za optimizaciju konverzije bili su nevjerojatno uspješni i ne želimo da se to vrati.
+
+719
+01:10:37,199 --> 01:10:38,800
+[SPEAKER_00] Bez njih bismo bili u mnogo gori situaciji.
+
+720
+01:10:39,840 --> 01:10:49,840
+[SPEAKER_00] I vidite da je to mjesto gdje manja platforma ima problem jer količina napora za implementaciju košta isto za manju platformu, za veliku platformu, ali nagrada nije ista.
+
+721
+01:10:50,479 --> 01:10:55,039
+[SPEAKER_00] Dakle, manja platforma ima tendenciju da bude mnogo primitivnija i to im je protivno.
+
+722
+01:10:55,279 --> 01:11:03,920
+[SPEAKER_00] I to na kraju dovodi do toga da mi, marketinški stručnjaci, koncentriramo sav novac na iste košare jer su te košare mnogo učinkovitije i ne žele nam dati nov više kontrole.
+
+723
+01:11:04,319 --> 01:11:10,000
+[SPEAKER_00] Facebook to zapravo malo čini, ali svi ostali i smjer u kojem se kreće zapravo su manje.
+
+724
+01:11:10,159 --> 01:11:11,520
+[SPEAKER_00] Dakle, ne očekujem da ću vidjeti više toga.
+
+725
+01:11:12,159 --> 01:11:17,039
+[SPEAKER_00] I zato moram to više učiniti na svojoj strani jer mi platforma daje sve manje i manje poluge za povlačenje.
+
+726
+01:11:17,279 --> 01:11:23,520
+[SPEAKER_00] Dakle, igrat ću na polugi, mislim, ne mogu mi spriječiti da odlučim što im šaljem.
+
+727
+01:11:24,000 --> 01:11:25,119
+[SPEAKER_00] I i tako žele taj signal.
+
+728
+01:11:25,680 --> 01:11:28,079
+[SPEAKER_00] Dakle, ovdje će se i dalje raspoređivati.
+
+729
+01:11:28,159 --> 01:11:29,199
+[SPEAKER_00] Dakle, to je bila jedna pitanja.
+
+730
+01:11:29,359 --> 01:11:31,279
+[SPEAKER_00] Drugo, može li MMP pomoći?
+
+731
+01:11:31,520 --> 01:11:32,079
+[SPEAKER_00] Mislim da bi mogli.
+
+732
+01:11:32,399 --> 01:11:36,319
+[SPEAKER_00] Mogli bi to učiniti malo lakšim, također jer vide uzorke.
+
+733
+01:11:36,640 --> 01:11:41,680
+[SPEAKER_00] Kao da ima samo nekoliko MMP-ova i vrlo velik broj klijenata.
+
+734
+01:12:20,479 --> 01:12:22,640
+[SPEAKER_00] To je za njih prilično teško implementirati u velikom opsegu.
+
+735
+01:12:23,119 --> 01:12:28,000
+[SPEAKER_00] Mislim da bi to trebalo biti dio edukativnog paketa, poput, oh, možete to učiniti, ovo, ovo.
+
+736
+01:12:28,319 --> 01:12:39,600
+[SPEAKER_00] Mislim da to nisu puno radili jer je to tako jedinstveno za svaku aplikaciju, ali i zato što je na njihovom mjestu nešto poput, da, čim nam pošaljete događaj, mi ćemo ga poslati na platformu, to je moj posao.
+
+737
+01:12:40,239 --> 01:12:40,880
+[SPEAKER_00] I već to radimo.
+
+738
+01:12:41,279 --> 01:12:46,319
+[SPEAKER_00] Čim mi ga pošaljete, ja ću ga lijepo obraditi, ali možda bi mogli učiniti malo više.
+
+739
+01:12:47,119 --> 01:12:52,640
+[SPEAKER_00] A posljednje pitanje bilo je hoće li umjetna inteligencija zamijeniti ovo na platformi?
+
+740
+01:12:53,119 --> 01:12:59,840
+[SPEAKER_00] I djelomično, da, i to je ono što već rade, ali učinili su sve što su mogli i otišli su vrlo, vrlo daleko.
+
+741
+01:12:59,840 --> 01:13:10,720
+[SPEAKER_00] Moje mišljenje je da je posljednji dio na našoj strani jer je tako jedinstven i jer ne želim da platforma obrađuje moje podatke na isti način na koji obrađuju prosjek u mom sektoru.
+
+742
+01:13:10,880 --> 01:13:14,720
+[SPEAKER_00] Želim da bude što bliže mojoj i ponekad čak i moj vlastiti interni cilj.
+
+743
+01:13:14,800 --> 01:13:15,840
+[SPEAKER_00] S vremenom se mijenjaju.
+
+744
+01:13:16,000 --> 01:13:17,279
+[SPEAKER_00] Recit ću vam jedan primjer.
+
+745
+01:13:17,520 --> 01:13:36,560
+[SPEAKER_00] Imam jedan poseban slučaj u kojem smo optimizirali prema predviđenom LTV-u, a onda smo iznenada shvatili da je novčani tok važniji i shvatili smo da to nije isti korisnik koji donosi maksimalni LTV CAC ili povrat nakon pet godina nego onaj koji ga donosi nakon tri mjeseca.
+
+746
+01:13:36,560 --> 01:13:41,119
+[SPEAKER_00] I mi smo poput, dobro, sada je važnije da maksimiziraiziramo kratkoročnu povratnost.
+
+747
+01:13:41,279 --> 01:13:43,119
+[SPEAKER_00] U redu, promijenimo to.
+
+748
+01:13:43,680 --> 01:13:45,600
+[SPEAKER_00] I to nije nešto što će platforma odlučivati umjesto mene.
+
+749
+01:13:46,079 --> 01:13:47,279
+[SPEAKER_00] Moram to odlučiti sam.
+
+750
+01:13:47,600 --> 01:13:50,800
+[SPEAKER_00] Ali i zato što je svaka konfiguracija malo jedinstvena.
+
+751
+01:13:51,840 --> 01:13:56,479
+[SPEAKER_00] Ipak, vjerujem da će biti umjetne inteligencije i strojnog učenja, ali ne na platformi da odlučim s moje strane.
+
+752
+01:13:56,800 --> 01:13:59,039
+[SPEAKER_00] To bi moglo doći od amplitude.mixpanela.
+
+753
+01:13:59,199 --> 01:14:13,039
+[SPEAKER_00] To bi moglo doći od RevenueCat-a koji kaže: Pogledajte, imamo pristup svim vašim pretplatnicima i otkrili smo da je dvadeset posto njih vrlo niske vrijednosti, dvadeset posto njih iznimno visoke vrijednosti i da ćemo ih pakirati u tri događaja.
+
+754
+01:14:13,199 --> 01:14:14,159
+[SPEAKER_00] Ako ih želite koristiti, koristite ih.
+
+755
+01:14:14,399 --> 01:14:15,760
+[SPEAKER_00] Ako ih ne želite koristiti, koristite ih.
+
+756
+01:14:16,079 --> 01:14:17,840
+[SPEAKER_00] Dakle, zapravo, ovdje ne mislim da će biti fer.
+
+757
+01:14:17,840 --> 01:14:20,479
+[SPEAKER_00] Mislim da neće biti Facebook i Meta koji će to učiniti ili Upload ili bilo tko drugi.
+
+758
+01:14:20,960 --> 01:14:28,720
+[SPEAKER_00] Moguće je da će to biti malo teže za MMP-ove, ali mislim da će to više doći od alata za analizu proizvoda i pretplate kao što je Rodey Cut Tools.
+
+759
+01:14:28,800 --> 01:14:29,920
+[SPEAKER_00] Dakle, zapravo je to više zahtjev.
+
+760
+01:14:30,399 --> 01:14:34,880
+[SPEAKER_00] Bilo bi vrlo lijepo imati, ali mislim da ste na boljem mjestu da to učinite od MMP-ova.
+
+761
+01:14:35,039 --> 01:14:35,359
+[SPEAKER_00] U redu.
+
+762
+01:14:35,520 --> 01:14:38,319
+[SPEAKER_00] Podaci koje imate o prihodima mnogo su čvršći.
+
+763
+01:14:38,479 --> 01:14:40,479
+[SPEAKER_00] Da, to ima smisla.
+
+764
+01:14:40,720 --> 01:14:42,560
+[SPEAKER_00] Brzo sam se vratio k vama, zar ne?
+
+765
+01:14:43,119 --> 01:14:48,960
+[SPEAKER_01] Želio sam se pozabaviti naprednijom stranom stvari.
+
+766
+01:14:49,119 --> 01:14:53,520
+[SPEAKER_01] Dakle, prošli smo kroz to, znate, korak jedan, pobrinite se da su vaši podaci dobri.
+
+767
+01:14:53,760 --> 01:14:56,960
+[SPEAKER_01] Korak dva, znate, odaberite neke od lakih plodova.
+
+768
+01:14:57,279 --> 01:15:02,239
+[SPEAKER_01] A onda ste rekli da je treći korak zaista duboko ući i napraviti neke od tih naprednijih stvari.
+
+769
+01:15:02,479 --> 01:15:14,079
+[SPEAKER_01] I na putu ste u to stavili puno naprednijih stvari, ali htjela sam vam dati priliku da se zaista upoznate i duboko se pozabavite tim naprednijim procesima inženjeringa signala.
+
+770
+01:15:14,159 --> 01:15:18,960
+[SPEAKER_00] Prema mom mišljenju, čim postanete malo sofisticirani, to će se raditi na razini prihoda.
+
+771
+01:15:19,199 --> 01:15:22,720
+[SPEAKER_00] Kao da ćete dijeliti prilagođeni prihod, filtrirani prihod.
+
+772
+01:15:22,800 --> 01:15:24,880
+[SPEAKER_00] Nikad neće biti filtrirani događaji.
+
+773
+01:15:25,439 --> 01:15:27,520
+[SPEAKER_00] Problem događaja je što se događaji događaju.
+
+774
+01:15:27,760 --> 01:15:28,479
+[SPEAKER_00] To je binarno.
+
+775
+01:15:28,640 --> 01:15:29,760
+[SPEAKER_00] Ili se događaju ili se ne događaju.
+
+776
+01:15:30,399 --> 01:15:34,079
+[SPEAKER_00] A platforma može optimizirati samo prema jednom događaju, a ne dvjema ili trima.
+
+777
+01:15:34,079 --> 01:15:35,439
+[SPEAKER_00] Mislim, možete ih zbrojiti, ali to nije.
+
+778
+01:15:35,439 --> 01:15:39,039
+[SPEAKER_00] Ali imat će istu vrijednost za platformu, što se može promijeniti u budućnosti.
+
+779
+01:15:39,199 --> 01:15:43,199
+[SPEAKER_00] I nadam se da će Meta objaviti ovo i da će Google na kraju, ali još nismo došli do toga.
+
+780
+01:15:43,520 --> 01:15:50,479
+[SPEAKER_00] Najsavršenije stvari rade se na razini prihoda jer mogu biti mnogo detaljniji o tome što korisnici vrijede jedan dolar, što korisnici vrijede deset.
+
+781
+01:15:50,880 --> 01:15:51,279
+[SPEAKER_00] To je sve.
+
+782
+01:15:51,840 --> 01:15:57,840
+[SPEAKER_00] Ja ću se boriti protiv svog mišljenja, kao što se može napraviti neke napredne stvari na razini događaja.
+
+783
+01:15:58,640 --> 01:16:04,880
+[SPEAKER_00] I znam da Voyantis, na primjer, vjeruje da vrijeme u kojem šaljete događaj zapravo čini razliku.
+
+784
+01:16:04,960 --> 01:16:08,079
+[SPEAKER_00] I dokazali su to protiv onoga što sam stavio.
+
+785
+01:16:08,319 --> 01:16:09,359
+[SPEAKER_00] Dakle, pobijedili su na tom.
+
+786
+01:16:09,680 --> 01:16:13,600
+[SPEAKER_00] Još uvijek nisam baš dobar u inženjeringu sam, ali pokazali su mi da je to istina.
+
+787
+01:16:13,760 --> 01:16:14,560
+[SPEAKER_00] Zapravo, slanje.
+
+788
+01:16:14,880 --> 01:16:17,359
+[SPEAKER_00] ranije ili kasnije moglo bi napraviti razliku.
+
+789
+01:16:17,920 --> 01:16:21,600
+[SPEAKER_00] Nije prekasno, ali ponekad se dogodi besplatna probna faza.
+
+790
+01:16:22,640 --> 01:16:32,239
+[SPEAKER_00] Ali čak ni pitanje o uvođenju i drugi kriteriji o kojima smo razgovarali nisu dovoljno dobri da bi se odlučilo je li ova besplatna probna faza vrlo vjerojatno da će se konvertirati ili je vrlo vjerojatno da će se konvertirati.
+
+791
+01:16:32,479 --> 01:16:47,199
+[SPEAKER_00] Savršeno biste mogli spriječiti pokretanje događaja, pričekati jednu ili dvije sata, primijetiti da su ti korisnici, ova skupina korisnika, obavili tri aktivnosti, tri meditacije, tri vježbe, tri bilo što u roku od dvije sata, a ova skupina nije.
+
+792
+01:16:47,520 --> 01:16:50,000
+[SPEAKER_00] I ja ću pokrenuti samo one, a ne druge.
+
+793
+01:16:50,640 --> 01:16:53,359
+[SPEAKER_00] Dakle, mogli biste malo odgoditi događaj, i dalje raditi na događaju i učiniti to.
+
+794
+01:16:53,359 --> 01:16:53,760
+[SPEAKER_00] I to je ono što sam učinio.
+
+795
+01:16:53,840 --> 01:17:01,039
+[SPEAKER_00] Osobno mislim da se sve sofisticirane stvari događaju na razini prihoda jer možete biti mnogo precizniji u načinu na koji ga šaljete.
+
+796
+01:17:01,439 --> 01:17:28,640
+[SPEAKER_00] Moj drugi argument protiv vremenskog okvira jest da ću se vratiti na sofisticirani problem u nisko raspoloženje, a to je da sam potpuno uvjeren da je sve što dolazi nakon dvadeset četiri sata beskorisno za optimizaciju platforme, što je vrlo teško pitanje jer mnoge aplikacije, posebno u igranju, trebaju cijeli tjedan da vide kako korisnici vraćaju se u aplikaciju, što rade, pretvaraju li se kasnije, zapravo li započinju s malom kupnjom prije nego što se poveća.
+
+797
+01:17:29,199 --> 01:17:32,560
+[SPEAKER_00] Da, bilo bi sjajno da je uvijek ista situacija s besplatnim probnim periodom jer.
+
+798
+01:17:32,560 --> 01:17:33,920
+[SPEAKER_00] Isto je i s drugim slučajevima jer onda imate tri dana.
+
+799
+01:17:34,159 --> 01:17:42,880
+[SPEAKER_00] Nedavno sam dobio pitanje, netko je rekao: Ako smanjim besplatni probni period s sedam dana na tri dana, platformi će biti mnogo lakše vidjeti te podatke nakon trećeg dana.
+
+800
+01:17:43,119 --> 01:17:48,000
+[SPEAKER_00] Ja sam rekao: Ne, u svakom slučaju, ako to nije prvi dan, po mom mišljenju, nije potpuno beskorisno.
+
+801
+01:17:48,239 --> 01:17:49,920
+[SPEAKER_00] Nije potpuno beskorisno.
+
+802
+01:17:50,079 --> 01:17:52,800
+[SPEAKER_00] Ali po mom mišljenju, trebate pronaći nešto što se događa prvog dana.
+
+803
+01:17:53,279 --> 01:17:59,920
+[SPEAKER_00] I to znači da možete spriječiti snimanje događaja u trenutku kada se dogodi, ali želite ga poslati u prvih sat vremena.
+
+804
+01:18:00,000 --> 01:18:03,279
+[SPEAKER_00] Pričekate nekoliko sati, a zatim ga pošaljete i to je to.
+
+805
+01:18:04,079 --> 01:18:04,479
+[SPEAKER_01] To je ono što imate.
+
+806
+01:18:04,880 --> 01:18:11,600
+[SPEAKER_00] Dakle, jedan od nižih plodova ovdje je da ne optimizirate za svoje sedam ili četrnaest dana, bilo što, optimizirate nešto za vas.
+
+807
+01:18:12,319 --> 01:18:17,760
+[SPEAKER_00] prvi dan, a napredne stvari su premještanje na prihod, tako da možete sve više i više prilagođavati.
+
+808
+01:18:17,840 --> 01:18:29,520
+[SPEAKER_00] A onda ćete uređivati na putu i dodati novi plan i lako možete dodati, u redu, imam novi tip plana ili imam promociju i uredit ću vrijednost vrlo blizu onome što mislim da djeluje.
+
+809
+01:18:30,079 --> 01:18:45,600
+[SPEAKER_00] To može uključivati i, na primjer, možete otkriti da povrat novca ima određeni uzorak, da su neki ljudi koji su skloniji povrat novca učinili ovo i ono i onda korisnicima koji su učinili ovo i ono i ono, dodijelit ćete malo drugačiju vrijednost.
+
+810
+01:18:45,840 --> 01:18:46,479
+[SPEAKER_00] Nikad niste sigurni.
+
+811
+01:18:46,560 --> 01:18:47,600
+[SPEAKER_00] Mislim, sve je vjerojatnost.
+
+812
+01:18:47,840 --> 01:18:49,199
+[SPEAKER_00] Nije kao na razini korisnika.
+
+813
+01:18:49,279 --> 01:18:50,720
+[SPEAKER_00] Da, korisnik pretvara svoj trg.
+
+814
+01:18:50,720 --> 01:18:52,640
+[SPEAKER_00] Ili konverzije, pokusi, povrat novca ili obnovu.
+
+815
+01:18:53,119 --> 01:18:57,680
+[SPEAKER_00] Ali onda ćete u kampanjama imati vreću ovih korisnika i pokušavate doći što bliže stvarnosti.
+
+816
+01:18:58,560 --> 01:19:08,479
+[SPEAKER_00] I jedna stvar koja je zapravo teška, kao što sam to imao s timom, gdje pratimo vrijednost koju šaljemo platformama u odnosu na stvarnu vrijednost koja se događa.
+
+817
+01:19:08,800 --> 01:19:10,720
+[SPEAKER_00] I imamo ovu krivulju koja slijedi.
+
+818
+01:19:11,119 --> 01:19:19,600
+[SPEAKER_00] I čim vidimo da postoji praznina, kao što znamo da nešto ide po zlu, koliko god dinamičan i sofisticiran model bio, nikad ne slijedi točno stvarnost.
+
+819
+01:19:19,760 --> 01:19:21,840
+[SPEAKER_00] Dakle, uvijek i uvijek pokušavamo zatvoriti tu prazninu.
+
+820
+01:19:22,479 --> 01:19:27,439
+[SPEAKER_00] Ovaj programer radi na tome da bude što bliže stvarnoj vrijednosti.
+
+821
+01:19:27,840 --> 01:19:28,880
+[SPEAKER_00] Ali onda možete dalje inženjerirati.
+
+822
+01:19:28,880 --> 01:19:31,920
+[SPEAKER_00] I imala sam još jednu raspravu s njom, možete je lažno prikazati.
+
+823
+01:19:32,079 --> 01:19:38,560
+[SPEAKER_00] I obično nešto što radim jest da je pojačam kako bih učinila posao mreže još lakšim.
+
+824
+01:19:38,720 --> 01:19:40,800
+[SPEAKER_00] Dakle, recimo da pojednostavimo situaciju.
+
+825
+01:19:40,960 --> 01:19:44,880
+[SPEAKER_00] Imam korisnike vrijedne pet dolara i korisnike vrijedne pedeset dolara.
+
+826
+01:19:45,600 --> 01:19:50,720
+[SPEAKER_00] Ono što ću reći platformi jest da su ti pet dolara zapravo tri, ali da su ti pedeset dolara zapravo sto.
+
+827
+01:19:51,840 --> 01:19:55,680
+[SPEAKER_00] I ja ću to prisiliti, kao da ću to učiniti malo ekstremnijim.
+
+828
+01:19:56,239 --> 01:20:00,239
+[SPEAKER_00] Trik je u tome što to znači da više ne mogu čitati vrijednost na platformi.
+
+829
+01:20:00,319 --> 01:20:02,720
+[SPEAKER_00] Ne mogu čitati svoje ROAS na Facebooku jer je sve lažno.
+
+830
+01:20:02,800 --> 01:20:04,479
+[SPEAKER_00] Moram pogledati na svojoj strani, ali nema veze.
+
+831
+01:20:05,039 --> 01:20:08,479
+[SPEAKER_00] Pokušat ću prisiliti platformu da se usmjeri na to što su korisnici.
+
+832
+01:20:08,479 --> 01:20:11,039
+[SPEAKER_00] Kada se malo prisiljavam na korisnike koji su mi najvrijedniji.
+
+833
+01:20:11,279 --> 01:20:16,000
+[SPEAKER_00] Imala sam zabavnu raspravu s nekim iz igara koji je rekao: O, ja radim suprotno.
+
+834
+01:20:16,239 --> 01:20:16,319
+[SPEAKER_00] Što?
+
+835
+01:20:16,880 --> 01:20:22,159
+[SPEAKER_00] Dakle, kada imate korisnika visoke vrijednosti, uzmete platformu koja je srednja vrijednost, recite: Da, jer imamo bušotine.
+
+836
+01:20:23,039 --> 01:20:29,760
+[SPEAKER_00] A onda ako zaista proglasim veliku bušotinu od pet stotina ili tisuću, Meta će reći: To je to, moj posao je za dan.
+
+837
+01:20:29,920 --> 01:20:31,760
+[SPEAKER_00] Donesem tu jednu korisnicu i gotovo sam.
+
+838
+01:20:32,159 --> 01:20:33,279
+[SPEAKER_00] Dakle, zapravo ga ograničavaju.
+
+839
+01:20:33,680 --> 01:20:37,760
+[SPEAKER_00] Stvar je u tome da je mnogo rjeđe u pretplati da to želite učiniti.
+
+840
+01:20:38,159 --> 01:20:41,439
+[SPEAKER_00] Ali recimo da imate ovu razinu pretplate s Chat GPT-om.
+
+841
+01:20:41,680 --> 01:20:47,359
+[SPEAKER_00] Možda će Chat GPT lažno pretpostaviti da je plan od 200 dolara zapravo samo 100 jer inače će se konkurencija.
+
+842
+01:20:47,359 --> 01:20:51,760
+[SPEAKER_00] Inače bi se kampanja mogla brže odviti ako se previše korisnika pojavi istovremeno.
+
+843
+01:20:51,920 --> 01:20:58,399
+[SPEAKER_00] Dakle, nećete, jer su na kraju dana strojevi optimizacije vrlo sofisticirani, ali i malo glupi.
+
+844
+01:20:58,720 --> 01:21:04,479
+[SPEAKER_00] A ponekad kad vide nekoliko dobrih signala, počnu potpuno mijenjati isporuku.
+
+845
+01:21:04,560 --> 01:21:10,239
+[SPEAKER_00] I da, malo se ovdje igramo s vatrom jer smo na putu eksperimentirali i napravili nekoliko pogrešaka na putu.
+
+846
+01:21:11,119 --> 01:21:15,680
+[SPEAKER_00] Ali, drugo, može se brzo odviti na način na koji niste predvidjeli.
+
+847
+01:21:15,920 --> 01:21:26,239
+[SPEAKER_00] I ako pogledate s mrežne strane, s Applea ili s Facebooka, pogledate i kažete, da, logično je da su vidjeli sve te prihode toga dana, sljedeći dan.
+
+848
+01:21:26,560 --> 01:21:30,319
+[SPEAKER_00] isporučili su na način da je sve išlo prebrzo i previše ekstremno.
+
+849
+01:21:30,479 --> 01:21:35,760
+[SPEAKER_00] Morate pronaći ravnotežu jer ja često radim više ekstremno nego što je, ali postoji granica za to.
+
+850
+01:21:36,079 --> 01:21:37,439
+[SPEAKER_00] Ne možete ići predaleko s ovim.
+
+851
+01:21:37,520 --> 01:21:39,199
+[SPEAKER_00] Nemojte to previše gurati.
+
+852
+01:21:39,279 --> 01:21:51,920
+[SPEAKER_00] Također sam imao vrlo zanimljiv razgovor s nekim drugim, a to je bilo nešto poput: Je li bolje lažno pretvarati da ostvarujete više prihoda, tako da će Facebook misliti da ste super uspješni i da vam služi više od drugih oglašivača?
+
+853
+01:21:52,239 --> 01:21:57,600
+[SPEAKER_00] Ili će zapravo doći do vašeg margina i reći: Ovaj tip zarađuje previše novca, pa ću ga podcijeniti?
+
+854
+01:21:57,840 --> 01:22:05,359
+[SPEAKER_00] Ne znam odgovor na ovo pitanje, ali zanimljivo je razmišljati o tome koliko platforma sama reagira na promjene koje radimo.
+
+855
+01:22:05,439 --> 01:22:06,079
+[SPEAKER_00] na toj strani.
+
+856
+01:22:06,720 --> 01:22:08,800
+[SPEAKER_01] Da, to je također fascinantno.
+
+857
+01:22:09,119 --> 01:22:20,319
+[SPEAKER_01] Dakle, u ovom naprednom scenariju zapravo manipuliramo prihodima koje šaljete natrag za ciljeve optimizacije prihoda.
+
+858
+01:22:20,640 --> 01:22:22,239
+[SPEAKER_01] Kako se to zapravo odvija?
+
+859
+01:22:22,319 --> 01:22:42,239
+[SPEAKER_01] Dakle, gledate u amplitude mješavine ili internim dashboardima i određujete, vraćajući se našem primjeru meditacijske aplikacije, da je netko tko odgovara na anksioznost i izvodi ove druge tri radnje naš korisnik s vrlo visokom vrijednošću.
+
+860
+01:22:42,640 --> 01:22:44,000
+[SPEAKER_01] Dakle, zapravo se vraćate unatrag.
+
+861
+01:22:44,000 --> 01:22:51,760
+[SPEAKER_01] Povratak od poznatih podataka i signala koje vidite unutar aplikacije, a zatim dodijeliti vrijednost.
+
+862
+01:22:51,920 --> 01:23:02,560
+[SPEAKER_01] A onda, kao što ste ranije primijetili, ako imaju opću potrebu, ali i dalje zarade, ali ne zarade, onda dodijelite vrijednost od jednog dolara.
+
+863
+01:23:03,279 --> 01:23:05,119
+[SPEAKER_01] Kako to radite i kako razmišljate o tome?
+
+864
+01:23:05,920 --> 01:23:14,800
+[SPEAKER_00] Prije nego što krenete i preuzmete rizik promjene same vrijednosti u nešto što ste lažno izmislili i mislite da ste pametniji, mislim da sam pametniji, što može brzo završiti.
+
+865
+01:23:15,199 --> 01:23:20,960
+[SPEAKER_00] Logika je samo regresija gdje je njihova varijacija.
+
+866
+01:23:21,760 --> 01:23:23,520
+[SPEAKER_00] Znam da imam korisnike različitih vrijednosti.
+
+867
+01:23:23,520 --> 01:23:27,119
+[SPEAKER_00] Koji su kriteriji koji stvaraju ovu varijabilnost?
+
+868
+01:23:27,119 --> 01:23:28,000
+[SPEAKER_00] Je li to pitanje uvođenja?
+
+869
+01:23:28,399 --> 01:23:29,039
+[SPEAKER_00] Je li to uređaj?
+
+870
+01:23:29,199 --> 01:23:30,640
+[SPEAKER_00] Je li to vrijeme za dovršetak?
+
+871
+01:23:30,800 --> 01:23:31,199
+[SPEAKER_00] Je li to ovo?
+
+872
+01:23:31,680 --> 01:23:38,159
+[SPEAKER_00] U osnovi, to je prelazak, u redu, imam ove korisnike visoke vrijednosti i ove korisnike niske vrijednosti i ove korisnike nulte vrijednosti.
+
+873
+01:23:38,399 --> 01:23:40,479
+[SPEAKER_00] Što svaki ima zajedničkog što drugi nemaju?
+
+874
+01:23:40,800 --> 01:23:41,840
+[SPEAKER_00] To je u osnovi regresija.
+
+875
+01:23:42,720 --> 01:23:53,439
+[SPEAKER_00] Realnost je da sam mnogo puta objasnio analitičaru podataka da želim da se ovaj posao završi i da je njegov cilj da pronađe kriterije koje sam sam ne primijetio, poput novih kriterija.
+
+876
+01:23:54,239 --> 01:23:56,560
+[SPEAKER_00] Realnost je da su kriteriji vrlo često isti.
+
+877
+01:23:56,720 --> 01:23:58,560
+[SPEAKER_00] Oni su oni koje smo spomenuli, oni su veliki.
+
+878
+01:23:58,720 --> 01:24:02,479
+[SPEAKER_00] Mislim da kad postanete sofisticiraniji, a imao sam zanimljiv razgovor s Wayneom.
+
+879
+01:24:02,479 --> 01:24:13,760
+[SPEAKER_00] I zanimljiva je rasprava s Yantisom o tome, opet, o broju aktivnosti koje ljudi obavljaju, kada ih obavljaju i u kojem su vremenu dana, a ako ih instaliraju vikendom, onda je to drugačiji uzorak.
+
+880
+01:24:13,920 --> 01:24:26,800
+[SPEAKER_00] Oni idu mnogo dalje od toga, ali mislim da je za većinu ljudi u osnovi gledanje odakle dolazi varijacija, poput regresijalnosti, koji su kriteriji koji stvaraju varijaciju između ljudi koji vraćaju mnogo, između ljudi koji obnavljaju mnogo.
+
+881
+01:24:27,439 --> 01:24:29,920
+[SPEAKER_00] I obično imate 95 posto posla.
+
+882
+01:24:30,640 --> 01:24:35,119
+[SPEAKER_00] Da, ako tražite odakle dolazi varijacija, to bi trebalo biti dovoljno dobro za većinu slučajeva.
+
+883
+01:24:35,199 --> 01:24:37,439
+[SPEAKER_00] Jesu li neki od alata posebno dobri u tome?
+
+884
+01:24:37,680 --> 01:24:42,640
+[SPEAKER_01] Znam da je Amplitude nedavno imao ovu varijaciju AI, otkrivanje varijacija, nešto slično.
+
+885
+01:24:42,960 --> 01:24:44,960
+[SPEAKER_01] Jesu li neki od alata posebno dobri u tome?
+
+886
+01:24:45,439 --> 01:24:45,760
+[SPEAKER_01] Želio bih.
+
+887
+01:24:46,399 --> 01:24:49,439
+[SPEAKER_00] Problem je u tome što su podaci vrlo često malo raspršeni.
+
+888
+01:24:50,079 --> 01:24:55,840
+[SPEAKER_00] Amplitude bi bila vrlo, vrlo dobra, ali onda bi i veza s RevenueCatom ili slično trebala biti iznimno dobra.
+
+889
+01:24:56,079 --> 01:25:00,720
+[SPEAKER_00] Da bi prihod bio ispravan, vrlo često dolazi iz različitih izvora.
+
+890
+01:25:01,119 --> 01:25:06,880
+[SPEAKER_00] Mislim da će doći, ali u slučaju koji sam sam vidio, to je učinjeno ručno iz podataka u pozadini.
+
+891
+01:25:08,000 --> 01:25:15,279
+[SPEAKER_00] Jer je to jedino mjesto gdje smo imali slobodu kopati i upitati podatke na vrlo, vrlo specifičan način sami.
+
+892
+01:25:15,520 --> 01:25:19,840
+[SPEAKER_00] Također, jer smo ih mogli izvući i analitičar je mogao pokrenuti vlastiti model na njemu.
+
+893
+01:25:20,239 --> 01:25:23,279
+[SPEAKER_00] I ne osjećati se ograničenima onim što ti modeli nude.
+
+894
+01:25:23,760 --> 01:25:32,479
+[SPEAKER_00] Ali u jednom konkretnom slučaju, jer su imali vrlo sofisticirane interne alate i imaju amplitude i imaju MMP i tako dalje.
+
+895
+01:25:33,119 --> 01:25:38,720
+[SPEAKER_00] Ali u vlastitom stražnjem dijelu imaju ekvivalent Running Card i ekvivalent amplitude za svaki pojedini zaslon.
+
+896
+01:25:38,880 --> 01:25:42,079
+[SPEAKER_00] I tako je očito da su ti podaci bili potpuniji.
+
+897
+01:25:42,560 --> 01:25:53,039
+[SPEAKER_00] Ako netko ima mješovitu amplitudnu vezu s Running Cardom koja je stvarno ispravno izvedena i vrlo veliku skupinu korisnika, na kraju će se to učiniti automatski.
+
+898
+01:25:53,359 --> 01:25:56,479
+[SPEAKER_00] Možda postoji zajednički rad koji treba obaviti ovdje između vas i njih.
+
+899
+01:25:56,960 --> 01:25:59,119
+[SPEAKER_00] Ali većina onih koje sam vidio bila je ručna.
+
+900
+01:26:00,239 --> 01:26:04,319
+[SPEAKER_00] I mislim da je razlog taj što je, prvo, još uvijek malo pionirska polja.
+
+901
+01:26:04,880 --> 01:26:07,760
+[SPEAKER_00] Drugo, ima puno predviđanja, pa je to vrlo jedinstveno.
+
+902
+01:26:08,000 --> 01:26:12,319
+[SPEAKER_00] I treće, da, vrlo često biste povezali različite izvore podataka.
+
+903
+01:26:13,039 --> 01:26:23,199
+[SPEAKER_00] Iako imate Rolling Cut i iako, na primjer, u Amplitudeu mogu spojiti i podatke MMP, pa mogu filtrirati prema izvoru, to nije nešto što je nadnaravno.
+
+904
+01:26:23,359 --> 01:26:29,680
+[SPEAKER_00] Nije nešto što je potpuno dobro izvedeno izvan okvira jer je napravljeno za analitičare proizvoda.
+
+905
+01:26:29,760 --> 01:26:33,439
+[SPEAKER_00] Nije za voditelje proizvoda i nije za stručnjake za stjecanje korisnika.
+
+906
+01:26:33,439 --> 01:26:35,359
+[SPEAKER_00] Da, to nije alat za optimizaciju prihoda.
+
+907
+01:26:35,439 --> 01:26:37,439
+[SPEAKER_01] To je alat za analizu.
+
+908
+01:26:37,439 --> 01:26:37,920
+[SPEAKER_00] Točno.
+
+909
+01:26:38,000 --> 01:26:46,319
+[SPEAKER_00] Nije za to da je napravljeno i mislim da to nije nemoguće i neki će to učiniti na ovaj način, ali znam da sam se u nekim slučajevima borio s nekim ograničenjima.
+
+910
+01:26:47,119 --> 01:26:48,880
+[SPEAKER_00] Da, to ima smisla.
+
+911
+01:26:49,039 --> 01:26:58,720
+[SPEAKER_01] Pa, prošli smo dosta dugo, ali htio sam vam dati priliku za neku vrstu vreće za uzeti ovdje na kraju drugih razmatranja koja nismo raspravljali.
+
+912
+01:26:58,960 --> 01:27:07,840
+[SPEAKER_01] Dakle, znate, jedna od njih o kojoj smo razgovarali na webinaru bila je kompromis koji napravite u količini događaja u odnosu na kvalitetu događaja.
+
+913
+01:27:08,000 --> 01:27:15,920
+[SPEAKER_01] Zašto ne pokrijete to prvo, a zatim samo vreću za uzeti sve ostalo što mislite da bi ljudi trebali razmotriti dok započinju svoju putanju u inženjeringu signala.
+
+914
+01:27:17,520 --> 01:27:28,399
+[SPEAKER_00] Volumen u odnosu na kvalitetu, mislim, danas nismo komentirali, pa za one koji su propustili prethodni webinar i nisu pročitali članak koji još nisam objavio, nužno su ga propustili.
+
+915
+01:27:28,800 --> 01:27:37,039
+[SPEAKER_00] Dakle, vratit ću se na to jer je prilično temeljno, ali da, možete imati fantastičan događaj ako platforma vidi jedan ili dva svaki dan, neće funkcionirati.
+
+916
+01:27:37,439 --> 01:27:42,479
+[SPEAKER_00] Kao što sam ranije spomenuo, za mene je filtriranje ljudi posljednje rješenje, ali to nije istina.
+
+917
+01:27:43,199 --> 01:27:47,520
+[SPEAKER_00] Ako imam vrlo veliku količinu podataka, skloniji bih isključiti ljude.
+
+918
+01:27:47,840 --> 01:28:01,279
+[SPEAKER_00] To je broj događaja koje ste rekli, pa je ovdje na razini kampanje, kao i u svakoj kampanji, u osnovi postoji prag optimizacije koji mreže., nema točnog broja, ali broj koji se kreće negdje između pedeset i sto tjedno.
+
+919
+01:28:01,520 --> 01:28:08,079
+[SPEAKER_00] Dakle, u glavi pojednostavljujem i kažem da će se stvari malo pogoršati ako ih imam manje od deset dnevno, a kampanja će biti manje od deset.
+
+920
+01:28:08,319 --> 01:28:09,199
+[SPEAKER_00] Što je više, to je bolje.
+
+921
+01:28:09,439 --> 01:28:17,279
+[SPEAKER_00] Dakle, ako mogu imati dvadeset pet umjesto deset, radije ne bih filtrirala i imala bih dvadeset pet, a ako imam četrdeset umjesto dvadeset, onda imam četrdeset, to je bolje.
+
+922
+01:28:17,840 --> 01:28:27,760
+[SPEAKER_00] Ali kad jednom dođete do toga, nema puno prednosti slanja tristo svaki dan, a ima puno prednosti slanja samo trideset svaki dan, ali to je super filtrirano.
+
+923
+01:28:27,840 --> 01:28:30,880
+[SPEAKER_00] Dakle, u ovom slučaju, to je kompromis između volumena i kvalitete.
+
+924
+01:28:31,119 --> 01:28:38,319
+[SPEAKER_00] Dakle, ako ste preuranjeni, u osnovi ne možete provesti kvalificiraneficirane probne radnje jer već imate samo pet probnih radnji dnevno.
+
+925
+01:28:38,399 --> 01:28:39,920
+[SPEAKER_00] Dakle, nemojte ih pokušavati filtrirati.
+
+926
+01:28:41,039 --> 01:28:51,600
+[SPEAKER_00] Gotovo ćete htjeti ići gore prije besplatnog probnog rada i reći: U redu, ti korisnici nisu isprobali besplatni probni period, ali pokazali su vrlo dobre namjere oko pitanja o uvođenju u prvi aktivitet.
+
+927
+01:28:51,840 --> 01:28:54,159
+[SPEAKER_00] Također ću im poslati da imam više događaja.
+
+928
+01:28:54,239 --> 01:28:56,800
+[SPEAKER_00] I što više događaja imate, to više možete filtrirati.
+
+929
+01:28:57,039 --> 01:28:57,680
+[SPEAKER_00] To je prilično jasno.
+
+930
+01:28:57,760 --> 01:28:59,520
+[SPEAKER_00] I ovaj kompromis je prilično temeljni.
+
+931
+01:28:59,680 --> 01:29:03,760
+[SPEAKER_00] Tog dana na webinaru nismo previše govorili o vremenu, ali mislim da sam ga danas dobro obradio.
+
+932
+01:29:04,079 --> 01:29:08,720
+[SPEAKER_00] Također sam obradio drugi dio, drugi dio, ali vrijeme je važno.
+
+933
+01:29:09,119 --> 01:29:10,880
+[SPEAKER_00] A moja je ovdje pravila da nemojte čekati.
+
+934
+01:29:11,039 --> 01:29:11,760
+[SPEAKER_00] Nemojte čekati predugo.
+
+935
+01:29:11,840 --> 01:29:13,520
+[SPEAKER_00] Možete malo pričekati, ali nemojte čekati predugo.
+
+936
+01:29:13,920 --> 01:29:16,720
+[SPEAKER_00] Dakle, vrijeme je jedno, a količina je jedno.
+
+937
+01:29:17,199 --> 01:29:18,239
+[SPEAKER_00] Količina je vrlo kritična.
+
+938
+01:29:18,399 --> 01:29:25,039
+[SPEAKER_00] To je nešto što se s vremenom možda najbolje inženjerstvo koje možete napraviti danas vrlo razlikuje od onog koje možete napraviti za šest mjeseci.
+
+939
+01:29:25,279 --> 01:29:31,279
+[SPEAKER_00] Samo zato što je vaš budžet porastao s 100.000 na 500.000, omogućuje vam da napravite vrlo drugačiji tip filtriranja.
+
+940
+01:29:31,520 --> 01:29:33,199
+[SPEAKER_00] Također, jer je vaša kohorta porasla.
+
+941
+01:29:33,520 --> 01:29:54,079
+[SPEAKER_00] Dakle, čak i s timovima koji imaju najsofisticiraniji model, nastavljamo ponovno razmotriti vrijednost koju pružamo jer se planovi mijenjaju, jer se mijenja monetizacija, jer je mješavina kanala drugačija i cijela korisnička skupina, možda zato što postoji kriza, možda zato što postoji ovo, ako se temelji na agregacacija podataka za pet godina.
+
+942
+01:29:54,960 --> 01:30:00,319
+[SPEAKER_00] Ovdje je i velika kompromisa o tome koliko su novi ili koliko podataka imam.
+
+943
+01:30:00,560 --> 01:30:10,239
+[SPEAKER_00] I, na primjer, imam ovu pravilo u jednom slučaju, a to je da ako imamo dovoljno korisnika u posljednja dva tjedna da napravimo dobru predviđanja, koristimo ovo.
+
+944
+01:30:10,800 --> 01:30:13,680
+[SPEAKER_00] Ali ako nemamo, onda ćemo proširiti na tri mjeseca.
+
+945
+01:30:13,840 --> 01:30:16,720
+[SPEAKER_00] A ako nemamo, onda ćemo popustiti jedan kriterij.
+
+946
+01:30:17,039 --> 01:30:21,520
+[SPEAKER_00] Moguće je da je to zemlja, moguće je brojčano pitanje i tako dalje.
+
+947
+01:30:21,760 --> 01:30:28,159
+[SPEAKER_00] Jer inače, i napravio sam ovu pogrešku nekoliko puta, stvarate beskorisnu fluktuaciju na vrlo malim uzorcima.
+
+948
+01:30:28,159 --> 01:30:30,640
+[SPEAKER_00] Dakle, očito što više podataka imate, to je lakše.
+
+949
+01:30:31,520 --> 01:30:32,560
+[SPEAKER_00] To nije nešto što se može popraviti.
+
+950
+01:30:32,640 --> 01:30:43,920
+[SPEAKER_00] Dakle, savjet ovdje, TLDR, je da povremeno preispitate svoje pretpostavke, svakih šest mjeseci ili bilo gdje, ili barem kontrolirajte da razlika između onoga što šaljete i onoga što se zapravo događa nije prevelika.
+
+951
+01:30:44,000 --> 01:30:47,359
+[SPEAKER_00] A stvar o ovoj razlici je da je zamka gledati ukupno.
+
+952
+01:30:47,760 --> 01:30:49,760
+[SPEAKER_00] Kao da imamo samo dvostruku devijaciju.
+
+953
+01:30:49,920 --> 01:30:55,359
+[SPEAKER_00] Ja kažem, da, ali postoji deset posto ljudi koji su odgovorni za osamdeset posto ove devijacije.
+
+954
+01:30:55,600 --> 01:30:56,640
+[SPEAKER_00] Dakle, ovo je ono što je potrebno.
+
+955
+01:30:56,800 --> 01:30:59,279
+[SPEAKER_00] Dakle, nemojte gledati samo ukupno na ovu razliku.
+
+956
+01:30:59,439 --> 01:31:01,359
+[SPEAKER_00] Pratite da se ne pokvari previše.
+
+957
+01:31:01,520 --> 01:31:03,840
+[SPEAKER_00] A zemlja je velika ovdje, kao što je zemlja i platforma.
+
+958
+01:31:04,079 --> 01:31:11,039
+[SPEAKER_00] Možda nisu potrebni svi pojedinačni kriteriji, ali barem praćenje vrijednosti događaja koje filtriramo prilično je pouzdano.
+
+959
+01:31:12,159 --> 01:31:14,640
+[SPEAKER_00] na razini zemlje s vremenom je dobra ideja.
+
+960
+01:31:14,720 --> 01:31:16,239
+[SPEAKER_00] U redu, ovo je bilo zabavno.
+
+961
+01:31:17,119 --> 01:31:18,079
+[SPEAKER_01] Toliko je dobrih informacija.
+
+962
+01:31:18,239 --> 01:31:19,359
+[SPEAKER_01] Zato to moramo raditi svake godine.
+
+963
+01:31:19,840 --> 01:31:23,760
+[SPEAKER_01] Stalno učite nove stvari i tako ste otvoreni za dijeljenje.
+
+964
+01:31:23,840 --> 01:31:27,279
+[SPEAKER_01] A onda me stalno pitaju: Eh, možeš li napraviti uvod u Thomasa?
+
+965
+01:31:28,159 --> 01:31:29,279
+[SPEAKER_01] Thomas je zauzet.
+
+966
+01:31:29,359 --> 01:31:31,359
+[SPEAKER_01] Bit će zauzet do kraja života.
+
+967
+01:31:32,000 --> 01:31:35,039
+[SPEAKER_00] Previše sam zauzet istraživanjem novih tema za Davida za sljedeći.
+
+968
+01:31:35,840 --> 01:31:36,239
+[SPEAKER_00] Baš tako.
+
+969
+01:31:37,680 --> 01:31:43,600
+[SPEAKER_01] Ali zato ćemo to morati raditi svake godine, jer imate stabilnu skupinu odličnih klijenata od kojih ste naučili.
+
+970
+01:31:44,319 --> 01:31:47,119
+[SPEAKER_01] I tako niste oklijevi u dijeljenju kao i mnogi drugi.
+
+971
+01:31:47,359 --> 01:31:50,720
+[SPEAKER_01] I tako stvarno cijenim da uvijek kopate i dijelite.im što funkcionira.
+
+972
+01:31:51,600 --> 01:31:54,880
+[SPEAKER_01] I ovo je bio majstorski tečaj u otkrivanju ovakvih stvari.
+
+973
+01:31:55,199 --> 01:31:55,920
+[SPEAKER_01] Dakle, hvala još jednom.
+
+974
+01:31:56,079 --> 01:31:57,359
+[SPEAKER_01] A onda brza reklama.
+
+975
+01:31:57,600 --> 01:32:03,600
+[SPEAKER_01] Thomas će zapravo održati praktični radionicu na AppGrowth Annual.
+
+976
+01:32:03,920 --> 01:32:05,680
+[SPEAKER_01] Dakle, to će biti 14.
+
+977
+01:32:05,840 --> 01:32:07,840
+[SPEAKER_01] listopada u New Yorku 2025.
+
+978
+01:32:07,840 --> 01:32:08,000
+[SPEAKER_01] godine.
+
+979
+01:32:08,720 --> 01:32:14,720
+[SPEAKER_01] Dakle, ako želite biti super praktični s Thomasom u jednokratnom inženjerstvu, prijavite se na AppGrowth Annual.
+
+980
+01:32:15,119 --> 01:32:23,840
+[SPEAKER_01] Radionice neće biti uživo emitirane posebno jer želimo da ljudi mogu dijeliti i stvarno se otvoriti i imati stvarne razgovore.
+
+981
+01:32:24,079 --> 01:32:28,880
+[SPEAKER_01] Ako želite kopati dublje, morate biti osobno na sastanku o jednokratnom inženjerstvu.
+
+982
+01:32:28,880 --> 01:32:30,640
+[SPEAKER_01] Signal Engineering Workshop na AppGrowth Annual.
+
+983
+01:32:30,960 --> 01:32:36,560
+[SPEAKER_01] Tako da se veselim susretu s vama za nekoliko mjeseci i još jednom vam se zahvaljujem na današnjem razgovoru.
+
+984
+01:32:36,640 --> 01:32:40,880
+[SPEAKER_00] Da, isto tako, sretno sam da vas vidim osobno i još jednom hvala na pozivu.
+
+985
+01:32:43,520 --> 01:32:45,119
+[SPEAKER_00] Hvala vam na slušanju.
+
+986
+01:32:45,760 --> 01:32:48,720
+[SPEAKER_01] Ako imate minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+987
+01:32:50,000 --> 01:32:57,760
+[SPEAKER_01] Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
+
