@@ -1,0 +1,3220 @@
+1
+00:00:00,000 --> 00:00:09,599
+[SPEAKER_02] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:20,399
+[SPEAKER_02] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_02] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+[SPEAKER_02] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje kupcima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,679 --> 00:00:37,039
+[SPEAKER_02] Više informacija možete pronaći na revenuecat dot com dot Uđimo u emisiju.
+
+6
+00:00:37,359 --> 00:00:38,240
+[SPEAKER_02] Pozdrav, pozdrav.
+
+7
+00:00:40,479 --> 00:00:47,520
+[SPEAKER_02] Dobrodošli na naš godišnji WWDC sažetak s RevenueCatom.
+
+8
+00:00:47,679 --> 00:00:50,960
+[SPEAKER_02] To ćemo podijeliti i kao podclub podcast.
+
+9
+00:00:51,759 --> 00:00:55,920
+[SPEAKER_02] Dakle, za one koji slušaju podcast, ovo je zapravo uživo.
+
+10
+00:00:56,479 --> 00:00:58,240
+[SPEAKER_02] Napravimo kratki krug uvodnih riječi.
+
+11
+00:00:58,320 --> 00:01:00,640
+[SPEAKER_02] Većina ljudi na ovom podcastu vjerojatno me poznaje i Jacoba.
+
+12
+00:01:00,719 --> 00:01:05,599
+[SPEAKER_02] Većina ljudi na webinaru trebala bi znati malo o RevenueCatu i nama, ali napravit ćemo kratki krug uvodnih riječi.
+
+13
+00:01:05,840 --> 00:01:08,480
+[SPEAKER_02] Charlie, reci nam malo o sebi i što radiš u RevenueCatu.
+
+14
+00:01:08,719 --> 00:01:10,319
+[SPEAKER_01] Da, ja sam Charlie Chapman.
+
+15
+00:01:10,480 --> 00:01:12,480
+[SPEAKER_01] Ovdje sam zagovornik programera u RevenueCatu.
+
+16
+00:01:12,480 --> 00:01:30,319
+[SPEAKER_01] A moj posao je dolaziti na događaje poput ovih ili na internet i razgovarati s programerima, razumjeti probleme s kojima se suočavaju i vratiti ih timu, kao i kad izlazimo s novim značajkama, objasniti što možemo učiniti, kako možemo pomoći vašem poslu s aplikacijama za pretplatu, posebno na inženjerskoj strani.
+
+17
+00:01:30,959 --> 00:01:33,760
+[SPEAKER_02] A Jacob je izvršni direktor RevenueCata.
+
+18
+00:01:34,079 --> 00:01:37,840
+[SPEAKER_02] Nije dosadno da ljudima kažete što radite jer većina ljudi ne radi za vaš posao.
+
+19
+00:01:37,920 --> 00:01:38,480
+[SPEAKER_02] To je lažni posao.
+
+20
+00:01:38,879 --> 00:01:40,239
+[SPEAKER_00] Nikad nije dosadan, ali definitivno je lažan.
+
+21
+00:01:40,560 --> 00:01:45,359
+[SPEAKER_00] Zašto nam ne date najbolji prezentacijski govor o RevenueCatu?
+
+22
+00:01:46,319 --> 00:01:48,640
+[SPEAKER_00] Pa, Charlie je to malo okončao, ali da, imamo.
+
+23
+00:01:48,640 --> 00:01:51,200
+[SPEAKER_00] Ali, da, pomažemo programerima da zarade više novca pomoću računala.
+
+24
+00:01:51,359 --> 00:02:02,319
+[SPEAKER_00] Počeli smo kao SK jedan raper, Store K jedan raper, o čemu ćemo govoriti kasnije danas, ali izrađujemo softver koji vam pomaže da se pretplatite na aplikacije, više-manje, i da to bolje učinite, bolje monetizirate i da budete uspješnija aplikacija.
+
+25
+00:02:02,480 --> 00:02:03,040
+[SPEAKER_00] To je naš san.
+
+26
+00:02:03,120 --> 00:02:04,959
+[SPEAKER_00] A onda, da, kao što je rekao David, moj posao je izmišljen.
+
+27
+00:02:05,200 --> 00:02:05,760
+[SPEAKER_00] Radim podcaste.
+
+28
+00:02:05,920 --> 00:02:07,280
+[SPEAKER_00] To je ono što radim posljednja dva dana.
+
+29
+00:02:07,439 --> 00:02:07,760
+[SPEAKER_00] Dakle, da.
+
+30
+00:02:08,159 --> 00:02:10,800
+[SPEAKER_02] A onda sam David Bernard, bio sam zagovornik programera.
+
+31
+00:02:11,039 --> 00:02:12,800
+[SPEAKER_02] To je postalo zbunjujuće jer zapravo nisam programer.
+
+32
+00:02:12,960 --> 00:02:13,759
+[SPEAKER_02] Dakle, izmislili smo ime.
+
+33
+00:02:14,000 --> 00:02:15,840
+[SPEAKER_02] Ja sam zagovornik rasta u RevenueCatu.
+
+34
+00:02:16,319 --> 00:02:21,520
+[SPEAKER_02] Gostujem podcast podcluba, vodim zajednicu podcluba, vodim webinare, govorim na događajima.
+
+35
+00:02:21,599 --> 00:02:25,280
+[SPEAKER_02] Za dva tjedna bit ću u New Yorku na sastanku zaku.
+
+36
+00:02:25,360 --> 00:02:25,919
+[SPEAKER_00] I ja ću.
+
+37
+00:02:26,000 --> 00:02:31,199
+[SPEAKER_02] Dakle, bit ću na pozornici i intervjuirat ću starješinu potpredsjednika za rast u Babbelu.
+
+38
+00:02:31,439 --> 00:02:32,479
+[SPEAKER_02] Dakle, bit ćemo u New Yorku.
+
+39
+00:02:32,879 --> 00:02:36,319
+[SPEAKER_02] Kontaktirajte nas ako ste u New Yorku ili u New Yorku za APS.
+
+40
+00:02:36,639 --> 00:02:40,000
+[SPEAKER_02] Provodit ćemo nekoliko dana prije nego što se sastanemo s ljudima.
+
+41
+00:02:40,159 --> 00:02:42,240
+[SPEAKER_02] Dakle, bez daljnjeg odgađanja, krenimo.
+
+42
+00:02:42,800 --> 00:02:44,400
+[SPEAKER_02] WWC dvadeset dvadeset četiri.
+
+43
+00:02:44,960 --> 00:02:59,680
+[SPEAKER_02] Osobno mislim da je najveća vijest WWC dvadeset četiri bila poništenje omiljene originalne API-jeve za kupnju u aplikaciji.
+
+44
+00:03:00,240 --> 00:03:01,120
+[SPEAKER_00] To je Store Kit jedan.
+
+45
+00:03:01,199 --> 00:03:03,120
+[SPEAKER_00] Prije nego što je bio Store Kit jedan, bio je samo Store Kit.
+
+46
+00:03:03,599 --> 00:03:03,919
+[SPEAKER_00] Store Kit.
+
+47
+00:03:04,879 --> 00:03:05,280
+[SPEAKER_00] Store Kit.
+
+48
+00:03:05,599 --> 00:03:07,120
+[SPEAKER_00] Tko zaista želi znati takve stvari?
+
+49
+00:03:07,439 --> 00:03:08,719
+[SPEAKER_00] Ali mislim da je to Store Kit.
+
+50
+00:03:08,800 --> 00:03:09,439
+[SPEAKER_02] Nikad prije nisam čuo za to.
+
+51
+00:03:09,680 --> 00:03:10,240
+[SPEAKER_00] O, to je.
+
+52
+00:03:10,319 --> 00:03:12,000
+[SPEAKER_00] Samo pretražite moj Twitter za Store Kit.
+
+53
+00:03:12,080 --> 00:03:15,280
+[SPEAKER_00] To je šala koju bih izrekao svakih četiri mjeseca.
+
+54
+00:03:15,439 --> 00:03:16,960
+[SPEAKER_00] Store Kit, više poput Store Kita.
+
+55
+00:03:17,439 --> 00:03:30,240
+[SPEAKER_00] Ali mislim da je ovo dobar trenutak da se prisjetimo našeg dobrog prijatelja, Store Kita, kasnije poznatog kao Store Kit jedan, kasnije poznatog kao originalna API za kupnju u aplikaciji, klasični TM.
+
+56
+00:03:30,639 --> 00:03:31,520
+[SPEAKER_00] Ali lekcija povijesti.
+
+57
+00:03:31,919 --> 00:03:33,919
+[SPEAKER_00] Store Kit nije izašao na IOS-u jedan.
+
+58
+00:03:34,000 --> 00:03:36,719
+[SPEAKER_00] Zapravo je izašao na IOS-u tri, vjerujem.
+
+59
+00:03:36,719 --> 00:03:39,599
+[SPEAKER_00] Mislim da je to zato što nije bilo u prvoj iteraciji trgovine aplikacijama.
+
+60
+00:03:39,759 --> 00:03:41,199
+[SPEAKER_00] Dakle, bilo je 2009.
+
+61
+00:03:41,840 --> 00:03:45,199
+[SPEAKER_00] godine kad smo prvi put dobili Store Kit i to se temeljilo na tome.
+
+62
+00:03:45,360 --> 00:03:46,080
+[SPEAKER_00] To je tako lijepo.
+
+63
+00:03:46,479 --> 00:03:49,360
+[SPEAKER_00] Samo elegancija tehničkog duga.
+
+64
+00:03:49,759 --> 00:03:57,919
+[SPEAKER_00] Temeljilo se na tehničkim temeljima iTunesa, starim iTunesovim kupovinama i cijeloj infrastrukturi trgovine aplikacijama.
+
+65
+00:03:58,000 --> 00:04:06,159
+[SPEAKER_00] Izvorno je izgrađena na infrastrukturi iTunesa, znate, Apple uvijek će biti slanje, koje je izgrađeno na omiljenom, vrlo popularnom web okviru svih poznatom kao WebObjects.
+
+66
+00:04:06,319 --> 00:04:09,919
+[SPEAKER_00] Ako je netko ikad čuo za to, prodavali su ga u kutiji.
+
+67
+00:04:10,000 --> 00:04:12,159
+[SPEAKER_00] Znao sam to jer su ga imali na IL-u.
+
+68
+00:04:12,159 --> 00:04:15,599
+[SPEAKER_00] I imali su ga na jednom od starih Appleovih predmeta.
+
+69
+00:04:15,759 --> 00:04:17,759
+[SPEAKER_00] Možete kupiti kutiju WebObjecta.
+
+70
+00:04:17,839 --> 00:04:20,399
+[SPEAKER_00] Dakle, to je bio početak StoreKita.
+
+71
+00:04:20,959 --> 00:04:24,480
+[SPEAKER_02] I sve se pokreće na Oracleu.
+
+72
+00:04:24,720 --> 00:04:25,519
+[SPEAKER_00] Da, to je sjajno.
+
+73
+00:04:25,680 --> 00:04:28,240
+[SPEAKER_00] Znate, klasična, vrhunska web tehnologija.
+
+74
+00:04:28,800 --> 00:04:29,600
+[SPEAKER_00] I da, znate što?
+
+75
+00:04:30,319 --> 00:04:31,519
+[SPEAKER_00] To je nekako izdržalo.
+
+76
+00:04:31,600 --> 00:04:32,959
+[SPEAKER_00] To je bilo, što, 2009.
+
+77
+00:04:33,040 --> 00:04:33,839
+[SPEAKER_00] do 2024.
+
+78
+00:04:34,079 --> 00:04:34,160
+[SPEAKER_00] godine?
+
+79
+00:04:34,240 --> 00:04:35,120
+[SPEAKER_00] To je, petnaest godina?
+
+80
+00:04:35,519 --> 00:04:35,600
+[SPEAKER_00] Da.
+
+81
+00:04:36,000 --> 00:04:38,399
+[SPEAKER_00] petnaest godina kupnje u aplikaciji s StoreKitom.
+
+82
+00:04:38,800 --> 00:04:40,480
+[SPEAKER_00] Proširili su ga 2013.
+
+83
+00:04:41,199 --> 00:04:48,959
+[SPEAKER_00] godine kako bi dodali ponavljajuće kupnje, za koje nikad nije bio dizajniran, što me ne zanima previše jer mi je stvorio priliku da pokrenem posao.
+
+84
+00:04:48,959 --> 00:04:54,879
+[SPEAKER_00] Za mene je bilo teško pokrenuti posao, ali oni su ga samo produživali i produživali i produživali.
+
+85
+00:04:55,519 --> 00:05:00,720
+[SPEAKER_00] I stvarno je dio gospodarstva aplikacija taj mali SDK i okvir za web objekte i API koji je trajao tako dugo.
+
+86
+00:05:01,040 --> 00:05:01,920
+[SPEAKER_00] Kada je izašao Circuit dva?
+
+87
+00:05:02,480 --> 00:05:10,319
+[SPEAKER_00] Prije dvije godine, prije tri godine, najavili su nešto poput novije, svježe, modernije pristupa tome kako trgovati aplikacijama.
+
+88
+00:05:10,480 --> 00:05:12,560
+[SPEAKER_00] I onda smo znali da će doći taj dan.
+
+89
+00:05:12,800 --> 00:05:13,839
+[SPEAKER_00] Sada su ga zastarjeli.
+
+90
+00:05:15,199 --> 00:05:16,000
+[SPEAKER_00] To ne znači da će nestati.
+
+91
+00:05:17,120 --> 00:05:20,399
+[SPEAKER_00] Zapravo mislim da će vjerojatno ostati zauvijek.
+
+92
+00:05:20,639 --> 00:05:24,399
+[SPEAKER_00] Ne mislim da će ga moći potpuno zastarjeti jer vjerojatno postoje aplikacije.
+
+93
+00:05:24,959 --> 00:05:28,879
+[SPEAKER_00] Ne koriste RevenueCat koji ima IAP kod koji je star milijardu godina.
+
+94
+00:05:28,959 --> 00:05:34,720
+[SPEAKER_00] I možda će ga jednog dana koristiti, ali će proći neko vrijeme prije nego što ga zaista mogu iskoristiti.
+
+95
+00:05:35,120 --> 00:05:44,800
+[SPEAKER_02] Ali ne znam da li bi Apple ikad rekao ovo, ali pretpostavljam da otprilike osamdeset posto svih prihoda u trgovini aplikacijama i dalje ide kroz trgovinu.
+
+96
+00:05:44,959 --> 00:05:46,879
+[SPEAKER_02] Jer toliko velikih aplikacija vjerojatno samo funkcionira.
+
+97
+00:05:47,120 --> 00:05:49,279
+[SPEAKER_02] Da, i kao što je toliko naslijeđenog koda.
+
+98
+00:05:49,360 --> 00:05:50,480
+[SPEAKER_00] Postoji velika pristranost.
+
+99
+00:05:50,560 --> 00:05:54,959
+[SPEAKER_00] Postoji velika pristranost za najveće aplikacije koje su najstarije, zar ne?
+
+100
+00:05:55,040 --> 00:05:57,199
+[SPEAKER_00] I tako će se obično koristiti u trgovini.
+
+101
+00:05:57,279 --> 00:05:59,279
+[SPEAKER_02] I to je veliki pomak za migraciju iz trgovine.
+
+102
+00:05:59,360 --> 00:06:00,000
+[SPEAKER_02] Jedan u trgovinu dva.
+
+103
+00:06:00,000 --> 00:06:09,839
+[SPEAKER_00] Ako počinjete s novim, StoreKit dva je mnogo bolja korisnička iskustva, ali ako pokušavate spojiti stari sustav i novi sustav, pitajte me kako znam, nije to super trivijalno.
+
+104
+00:06:10,000 --> 00:06:13,759
+[SPEAKER_00] Dakle, samo da se oprostite od starog prijatelja.
+
+105
+00:06:13,920 --> 00:06:15,199
+[SPEAKER_00] Dobro je bilo upoznati vas.
+
+106
+00:06:15,439 --> 00:06:19,839
+[SPEAKER_00] RevenueCat će uskoro poništiti naše posljednje ovisnosti o starim potvrdama StoreKita.
+
+107
+00:06:20,160 --> 00:06:23,680
+[SPEAKER_00] Potrebno nam je bilo čak i nekoliko godina da se potpuno migriramo.
+
+108
+00:06:24,000 --> 00:06:35,680
+[SPEAKER_00] I dalje ćemo podržavati tehnologiju i potvrde, a RevenueCat će vjerojatno i dalje raditi s nekom mjerom oba sustava, ali ključni trenutak za oko dvanaest ljudi i nas u toj skupini.
+
+109
+00:06:35,839 --> 00:06:36,560
+[SPEAKER_02] Ali, da.
+
+110
+00:06:36,560 --> 00:06:41,519
+[SPEAKER_02] Mislim, zapravo, vjerojatno ima tisuća inženjera širom svijeta koji se i dalje bave starim vještinama.
+
+111
+00:06:41,759 --> 00:06:47,120
+[SPEAKER_02] Dan za danom moraju se nositi sa Storkitom i svim čudnim stvarima i greškama.
+
+112
+00:06:47,680 --> 00:07:01,279
+[SPEAKER_00] Ali stvarno sam zabrinut što će se dogoditi s podrškom jer ih mogu vidjeti kako slome stvari u originalnom klasiku Storkita i jednostavno neće biti nikakvog poticaja i bit će kao, oh, nadograditi na Storkit dva, što nije nešto što možete brzo učiniti, znate?
+
+113
+00:07:01,600 --> 00:07:09,600
+[SPEAKER_02] Da, ne, posebno su rekli, mislim, i to je kao da ga poništavaju, kao da kažu prestanite ga koristiti.
+
+114
+00:07:09,680 --> 00:07:12,879
+[SPEAKER_02] Nećete prestati ga podržavati, ali vjerujem u, ako se sjećam.
+
+115
+00:07:48,000 --> 00:07:49,680
+[SPEAKER_00] Ali, da, vidjet ćemo se kasnije.
+
+116
+00:07:50,000 --> 00:07:56,560
+[SPEAKER_02] Osobno mislim da je druga najveća vijest iz WWDC-a bila AI, AI, AI.
+
+117
+00:07:57,360 --> 00:07:58,879
+[SPEAKER_02] I očito je sada to isto.
+
+118
+00:07:59,040 --> 00:08:00,000
+[SPEAKER_02] Mislim, inteligentnost.
+
+119
+00:08:00,079 --> 00:08:00,720
+[SPEAKER_02] Inteligentnost, da.
+
+120
+00:08:01,759 --> 00:08:01,839
+[SPEAKER_00] Da.
+
+121
+00:08:02,639 --> 00:08:14,319
+[SPEAKER_02] Dakle, ne želim se previše upuštati danas jer zapravo nadam se da ću uskoro zakazati podcast o budućnosti aplikacija u svijetu nakon AI-a jer mislim da će se održati neke zanimljive rasprave.
+
+122
+00:08:15,040 --> 00:08:18,399
+[SPEAKER_02] Ali budući da je to bila tako velika vijest ovaj tjedan, htjela sam se dotaknuti toga.
+
+123
+00:08:18,720 --> 00:08:31,279
+[SPEAKER_02] A Jacob, mislio sam da je tvoja uokvirenost, pa smo snimili podcast s Mojo i mislio sam da je tvoja revolucija umjetne inteligencije zapravo samo nova i sljedeća revolucija aplikacija.
+
+124
+00:08:31,439 --> 00:08:32,159
+[SPEAKER_02] Što si to mislio?
+
+125
+00:08:32,559 --> 00:08:37,200
+[SPEAKER_00] Probudio sam se ranije ove godine ili možda krajem prošle godine u hladnim znojevima jer sam mislio da su aplikacije gotove.
+
+126
+00:08:37,759 --> 00:08:50,000
+[SPEAKER_00] Imala sam osjećaj da je, oh, Bože, kao što je Chad GPT stvarno snažno, da bi se moglo vidjeti još nekoliko iteracija na tome i da možda samo pričate s nečim i da zadovolji devedeset posto vaših računalnih potreba.
+
+127
+00:08:50,240 --> 00:08:51,759
+[SPEAKER_00] To se može i dalje dogoditi do neke mjere.
+
+128
+00:08:52,000 --> 00:09:00,559
+[SPEAKER_00] Ali mislim da sam shvatio jednu stvar na koju sam došao prije toga, ali je postala vrlo jasna iz Appleove integracije umjetne inteligencije u cijeli operativni sustav.
+
+129
+00:09:00,559 --> 00:09:17,279
+[SPEAKER_00] To je da će mobilni uređaj i paradigma aplikacija biti iznimno važni za sljedeću revoluciju računalstva, poput umjetne inteligencije svega što radimo jer je uvijek uključen, povezan i ima kontekst.
+
+130
+00:09:17,679 --> 00:09:22,320
+[SPEAKER_00] I to je jedna od najvećih stvari koje mobilni uređaj ima, a koje mnoge druge računalne platforme nemaju, jer imaju kontekst.
+
+131
+00:09:22,399 --> 00:09:30,240
+[SPEAKER_00] Smatram da je to tako kod nekih aplikacija za stolne računala koje želim koristiti i slično, da ih naučim razumjeti kontekst, morate se povezati s milijun uređaja i milijun usluga.
+
+132
+00:09:30,399 --> 00:09:36,240
+[SPEAKER_00] Jedan, ne volim davati slučajnim novim aplikacijama za umjetnu inteligenciju, moj kalendar i e-poštu i slično.
+
+133
+00:09:36,320 --> 00:09:36,799
+[SPEAKER_00] To nije sigurno.
+
+134
+00:09:37,519 --> 00:09:37,600
+[SPEAKER_00] Da.
+
+135
+00:09:37,919 --> 00:09:40,000
+[SPEAKER_00] I tako, mobilni uređaj ima mnogo prednosti.
+
+136
+00:09:40,960 --> 00:09:44,960
+[SPEAKER_00] A onda je Apple očito kao arbitrar, znate, imaju ovu sjajnu marku privatnosti.
+
+137
+00:09:45,840 --> 00:09:48,000
+[SPEAKER_00] Razumiju ovo.
+
+138
+00:09:48,159 --> 00:09:50,879
+[SPEAKER_00] Kao što Apple sada gradi CPU-ove i GPU-ove.
+
+139
+00:09:50,960 --> 00:09:53,440
+[SPEAKER_00] Kada je izašla prva serija čipova?
+
+140
+00:09:53,600 --> 00:09:55,279
+[SPEAKER_00] Vjerojatno je to bilo prije gotovo deset godina.
+
+141
+00:09:55,440 --> 00:09:56,960
+[SPEAKER_02] Da, mislim da je to bilo prije više od deset godina.
+
+142
+00:09:57,039 --> 00:09:57,120
+[SPEAKER_02] Da.
+
+143
+00:09:57,360 --> 00:09:57,440
+[SPEAKER_00] Da.
+
+144
+00:09:57,600 --> 00:09:59,679
+[SPEAKER_00] Dakle, Apple zna kako graditi čipove za vektorsku obradu.
+
+145
+00:10:00,159 --> 00:10:08,639
+[SPEAKER_00] Pretpostavljam da će novi iPhone imati ili namjenski ili preimenovani hardver posebno za pokretanje forward pasova na LLM-ovima i slično.
+
+146
+00:10:08,879 --> 00:10:24,720
+[SPEAKER_00] Dakle, stvarno mislim i mislim da je to do te mjere da je revolucija umjetne inteligenigencije, zapravo, ne bismo se trebali bojati toga, jer nam Apple predstavi da ćemo dobiti API-je za pristup njihovim LLM-ovima, LLM-ovima ili, kažem, LLM-ovima ili bilo čemu drugom, značajkama umjetne inteligencije Applea moći će pristupiti vašoj aplikaciji.
+
+147
+00:10:25,120 --> 00:10:37,279
+[SPEAKER_00] Razgovarat ćemo o namjerama aplikacije malo kasnije, ali mislim da ćete moći iskoristiti sve ove značajke na razini operacijskog sustava kako biste pojačali bilo koji mali ili veliki problem u niši koji rješavate.
+
+148
+00:10:37,360 --> 00:10:42,799
+[SPEAKER_00] I da, mnogo sam manje zabrinut zbog toga što će aplikacije ostati iza, jer mislim da je to tako lako implementirati.
+
+149
+00:10:42,960 --> 00:10:43,919
+[SPEAKER_00] To je pristupačno.
+
+150
+00:10:44,320 --> 00:10:47,200
+[SPEAKER_00] Platforme će ga poticati i pružiti razvijačima.
+
+151
+00:10:47,360 --> 00:10:53,919
+[SPEAKER_00] Stvarno mislim da će to umjetna inteligencija eliminirati određeni broj primjena koje su možda mogle biti aplikacije poput Solvera.
+
+152
+00:10:54,080 --> 00:11:06,000
+[SPEAKER_00] Postoji hrpa aplikacija koje su se ove godine na neki način osigurale, ali mislim da nisu u opasnosti jer čak i ako umjetna inteligencija pojede donje dvije slojeve stupca, istovremeno proširuje površinu onoga što se može učiniti s aplikacijama, zar ne?
+
+153
+00:11:06,240 --> 00:11:07,519
+[SPEAKER_00] I stvara nove prilike.
+
+154
+00:11:08,159 --> 00:11:14,559
+[SPEAKER_00] A OpenAI, Apple, Google, svi ti temeljni modeli tvrtki neće moći loviti svaku od tih aplikacija.
+
+155
+00:11:14,639 --> 00:11:18,240
+[SPEAKER_00] I ovdje ulaze programeri da povežu ovu osnovnu tehnologiju s nekom potrebom.
+
+156
+00:11:18,399 --> 00:11:22,240
+[SPEAKER_00] Dakle, Dave, rekao si mi da ne pričam o tome, ali bit će dobar podcast.
+
+157
+00:11:22,720 --> 00:11:23,679
+[SPEAKER_02] Bit će sjajan podcast.
+
+158
+00:11:23,840 --> 00:11:26,639
+[SPEAKER_02] Nadam se da ću dobiti Bena Thompsona jer je dobar dječak.
+
+159
+00:11:26,720 --> 00:11:28,000
+[SPEAKER_00] Ja i Ben imamo povijest.
+
+160
+00:11:28,159 --> 00:11:28,639
+[SPEAKER_00] Znam.
+
+161
+00:11:29,120 --> 00:11:34,480
+[SPEAKER_02] Ti i ja, Jacob, osjećam da smo možda, dobro, definitivno pristrani i da smo jako ljubitelji aplikacija.
+
+162
+00:11:34,879 --> 00:11:36,639
+[SPEAKER_02] I mislim da je Ben nedavno čak i o tome govorio.
+
+163
+00:11:37,120 --> 00:11:38,639
+[SPEAKER_02] Mislim da je na ditheringu ili bilo čemu drugom.
+
+164
+00:11:38,720 --> 00:11:44,480
+[SPEAKER_02] Mislim da je u neku ruku prihvatio da aplikacije neće nestati, baš kao što stolni računalo nije nestalo s mobilnim uređajima.
+
+165
+00:11:44,639 --> 00:11:48,879
+[SPEAKER_02] To je kao da postaje drugačiji primjer, kao što ste rekli, ali on je malo više ljubitelj umjetne inteligencije.
+
+166
+00:11:49,120 --> 00:11:56,559
+[SPEAKER_02] I tako mislim da bi bilo zabavno imati njega ili nekoga poput njega kao neku vrstu ravnoteže za dublju raspravu o budućnosti umjetne inteligencije i aplikacija.
+
+167
+00:11:56,639 --> 00:12:00,879
+[SPEAKER_02] Ali htio sam to prenijeti Charliju jer mislim da postoje neposredne prilike.
+
+168
+00:12:01,679 --> 00:12:09,919
+[SPEAKER_02] s Apple Intelligenceom u iOS-u osamnaest, posebno za razvijače koji vole skočiti na taj trend kako bi privukli pozornost u jesen.
+
+169
+00:12:10,399 --> 00:12:14,799
+[SPEAKER_02] Koje su vaše misli o tome kako razvijači mogu iskoristiti ovo kako bi privukli pozornost u jesen?
+
+170
+00:12:14,960 --> 00:12:22,320
+[SPEAKER_01] Da, bilo je stvarno čudno jer su svi bili jako uzbuđeni gledajući glavnu prezentaciju, misleći da postoji sve ovo što možemo povezati.
+
+171
+00:12:22,480 --> 00:12:34,559
+[SPEAKER_01] Ali tijekom tjedna, dok smo svi zapravo istraživali API-je, kao što je to često slučaj s ovim stvarima, stvarni hakovi koje dobivamo malo su manje punopravni s naše perspektive kao trećih strana razvijača, kao što sam očekivao da će biti.
+
+172
+00:12:34,720 --> 00:12:36,960
+[SPEAKER_01] Na primjer, postoji alat za generiranje slika.
+
+173
+00:12:36,960 --> 00:12:41,200
+[SPEAKER_01] To je zapravo samo glorificirani odabir fotografija s gledišta programera.
+
+174
+00:12:41,360 --> 00:12:43,360
+[SPEAKER_01] Mislim da ne možemo raditi na inženjeringu poziva.
+
+175
+00:12:43,840 --> 00:12:48,799
+[SPEAKER_01] Ali onda je velika stvar moći se povezati s Siri Apple Intelligence.
+
+176
+00:12:50,080 --> 00:12:56,399
+[SPEAKER_01] Ovo je vrsta Applea u najboljem stanju, gdje se zapravo koriste samo sustavom App Intense koji već imaju.
+
+177
+00:12:56,480 --> 00:12:59,200
+[SPEAKER_00] Da, htjela sam reći, postoji li nešto iza toga osim što Siri samo radi?
+
+178
+00:12:59,360 --> 00:13:00,240
+[SPEAKER_01] Da, to je čudno.
+
+179
+00:13:00,480 --> 00:13:01,759
+[SPEAKER_01] Ovo je nešto što je već postojalo.
+
+180
+00:13:02,240 --> 00:13:04,960
+[SPEAKER_01] Moja, recimo, neovisna aplikacija koju imam je, recimo, aplikacija za medije.
+
+181
+00:13:05,039 --> 00:13:08,960
+[SPEAKER_01] Dakle, već sam implementirala sve medije, aplikaciju i stvari.
+
+182
+00:13:09,360 --> 00:13:12,320
+[SPEAKER_01] Dakle, moje razumijevanje je da ne trebam ništa raditi.
+
+183
+00:13:12,480 --> 00:13:24,399
+[SPEAKER_01] To znači da ću u rujnu ili kasnije ove godine moći prodavati značajku kao da je nova, ali mislim da ne trebam ni pisati kôd da bih se mogao uključiti u nju.
+
+184
+00:13:24,639 --> 00:13:29,840
+[SPEAKER_01] Postoji nekoliko novih vrsta, kao što su aplikacije za fotografije koje mogu uređivati fotografije ili nešto slično.
+
+185
+00:13:30,159 --> 00:13:46,159
+[SPEAKER_00] Mislim da će ovo dobro funkcionirati jer samo gledajući kako neki od ograničenih u ekosustavu ChatGPT-a, neki od tih ograničenih veza koje imaju s drugim trećim stranama rade prilično dobro na način na koji LLM-ovi mogu semantično bolje razumjeti namjere aplikacije nego što je Siri ikad mogla, zar ne?
+
+186
+00:13:46,240 --> 00:13:48,720
+[SPEAKER_00] Kao da možete napisati ljudski teksturni.
+
+187
+00:13:48,720 --> 00:13:49,440
+[SPEAKER_00] Ne znam hoće li to uključiti.
+
+188
+00:13:49,600 --> 00:13:59,919
+[SPEAKER_01] To je ključ jer sam Siri podržavao u svojim aplikacijama zauvijek, ali koliko često ljudi kažu: Pustite da ovo sviraju glazbu s Spotifyja i kažu da to nikad ne radi, zar ne?
+
+189
+00:14:00,159 --> 00:14:05,279
+[SPEAKER_00] Kao da samo pomislim na skicu Larryja Davida u kojoj viče na Siri, zar ne?
+
+190
+00:14:05,360 --> 00:14:07,200
+[SPEAKER_00] Da, to nikad ne radi, zar ne?
+
+191
+00:14:07,919 --> 00:14:11,600
+[SPEAKER_00] Ali ako počne raditi, bit ćemo u drugom svijetu.
+
+192
+00:14:11,679 --> 00:14:17,120
+[SPEAKER_01] Mislim da će to stvoriti zanimljiv novi lijevak s poslovnog stajališta.
+
+193
+00:14:17,600 --> 00:14:22,720
+[SPEAKER_01] Paradigma zauvijek je bila otvorena aplikacija, a zatim pratite nekoga kroz korisničko iskustvo.
+
+194
+00:14:22,879 --> 00:14:24,960
+[SPEAKER_01] A sada se to potencijalno tako smanjuje.
+
+195
+00:14:24,960 --> 00:14:33,200
+[SPEAKER_01] taj lijevak, ali onda raste i drugi, poput ulaznog točka, koji je tekstno osmišljen, vrlo jasan i intenzivan ulazni točki u vašu aplikaciju.
+
+196
+00:14:33,200 --> 00:14:38,639
+[SPEAKER_01] I kako se inteligencija Applea s vremenom poboljšava, možda čak neće otvoriti vašu aplikaciju.
+
+197
+00:14:38,799 --> 00:14:46,240
+[SPEAKER_01] Možete samo pružiti akciju, ali kako vi kao razvijač dovodite ljude i pomažete im da nauče o značajkama koje vaša aplikacija ima ako ne gledaju na vaš UI?
+
+198
+00:14:46,639 --> 00:14:50,799
+[SPEAKER_01] Mislim da će u budućnosti biti mnogo novih izazova jer će se to sve više razvijati.
+
+199
+00:14:51,679 --> 00:15:09,679
+[SPEAKER_02] I mislim da bi razvijači trebali razmišljati o tome tijekom ljeta, znate, kao što ste vi već izgradili neke namjere aplikacije, ali možda provesti nekoliko sati brainstormingminga, recimo, dobro, kako bi netko razmišljao o tome da želi neku vrstu bijelog šuma, tamnog šuma, smeđeg šuma, bilo kakvog.
+
+200
+00:15:09,840 --> 00:15:14,240
+[SPEAKER_02] A onda postoje li novi konteksti koje stavljate u te namjere?
+
+201
+00:15:14,480 --> 00:15:22,639
+[SPEAKER_02] Mislim da bi programeri trebali istražiti ovo tijekom ljeta kako bi bili što spremniji za sve što se dogodi.
+
+202
+00:15:22,720 --> 00:15:23,919
+[SPEAKER_00] Mislim da imaš pravo, Charlie.
+
+203
+00:15:24,080 --> 00:15:26,879
+[SPEAKER_00] Vratite se na moj snovni san o kraju aplikacija.
+
+204
+00:15:26,960 --> 00:15:40,399
+[SPEAKER_00] Ovo je malo, i zato je ovo tako teško predvidjeti, kao da to može biti velika prednost umjesto da Siri i OS možda preuzimaju više računalnog radani opterećenje i ne toliko računalni opterećenje, već korisničko sučelje.
+
+205
+00:15:40,559 --> 00:15:47,279
+[SPEAKER_00] Da, kao i sada, sučelje vaše aplikacije postaje manje važno, što može biti negativno, ali funkcionalnost koju pružate.
+
+206
+00:15:47,440 --> 00:15:50,559
+[SPEAKER_00] Mislim, mislim na izazove poput, dobro, kako ćete sada nagovoriti nekoga da plaća za tamni šum?
+
+207
+00:15:50,720 --> 00:16:06,159
+[SPEAKER_00] Kao da samo traže, kao što je gdje postavljate plaćeni zid u namjeri aplikacije, kao što to radite, možete čuti, da, ako netko traži šum, to je premium, samo unaprijed postavite audio koji je poput, znate, hej, pristupite tome ako želite sve te zvukove, što god.
+
+208
+00:16:06,240 --> 00:16:12,960
+[SPEAKER_00] Ali mislim, glupi primjer, ali morat će se ponovno promisliti ako postane značajan novi kanal za ulazak u aplikaciju, morat će se ponovno promisliti.
+
+209
+00:16:12,960 --> 00:16:15,279
+[SPEAKER_00] Morat ćemo ponovno razmisliti o tome kako ćemo uopće zaraditi novac.
+
+210
+00:16:15,519 --> 00:16:16,240
+[SPEAKER_01] Ili je to jedini kanal.
+
+211
+00:16:16,799 --> 00:16:16,879
+[SPEAKER_01] Da.
+
+212
+00:16:17,200 --> 00:16:31,279
+[SPEAKER_01] Ali postaje li to poput ASO-a ili SEO-a, gdje način na koji moram razmišljati o korištenju moje aplikacije je možda način na koji se to uklapa u aplikaciju za bijeli šum, samo kažem: Ej, Siri, smiri me.
+
+213
+00:16:31,360 --> 00:16:31,840
+[SPEAKER_01] A onda, znaš što mislim?
+
+214
+00:16:32,000 --> 00:16:37,120
+[SPEAKER_01] I to je kao da moraš naučiti sve ove nove načine da se sustavu kaže da možeš riješiti ovaj problem.
+
+215
+00:16:37,759 --> 00:16:41,840
+[SPEAKER_00] Jedno od toga u čemu je LM stvarno dobar jest tekstualna ljudska komunikacija.
+
+216
+00:16:42,080 --> 00:16:42,159
+[SPEAKER_00] Da.
+
+217
+00:16:42,879 --> 00:16:44,879
+[SPEAKER_00] I mislim da je to vjerojatno ono što me najviše zanima.
+
+218
+00:16:44,960 --> 00:16:48,000
+[SPEAKER_00] I gdje App Intense nikad nije vidio da postoji, postoji i App Intense.
+
+219
+00:16:48,480 --> 00:16:53,679
+[SPEAKER_00] A onda je bilo i mogućnost pristupa pretraživanju, kao što možete postaviti stvari za pretraživanje u Siri, zar ne?
+
+220
+00:16:53,840 --> 00:16:54,879
+[SPEAKER_00] Ili u Spotlight.
+
+221
+00:16:55,440 --> 00:16:58,960
+[SPEAKER_00] Niti jedno od toga nikad nije bilo smisleno za ulazak u aplikacije.
+
+222
+00:16:59,200 --> 00:17:02,000
+[SPEAKER_00] Mislim da bi ovo moglo imati priliku zapravo to popraviti.
+
+223
+00:17:02,080 --> 00:17:03,279
+[SPEAKER_00] Dakle, to je uzbudljivo.
+
+224
+00:17:03,440 --> 00:17:04,319
+[SPEAKER_02] Da, to je tako rano.
+
+225
+00:17:04,960 --> 00:17:08,079
+[SPEAKER_02] Apple najavljuje ove stvari, a onda je to kasnije ove godine.
+
+226
+00:17:08,400 --> 00:17:11,039
+[SPEAKER_02] Dakle, ne znamo koliko će biti u IOS osamnaest.
+
+227
+00:17:11,440 --> 00:17:16,880
+[SPEAKER_02] A onda ćemo vjerojatno vidjeti neke rane implementacije, a onda će se to razvijati tijekom vremena i slično.
+
+228
+00:17:17,119 --> 00:17:19,440
+[SPEAKER_02] Dakle, vrlo rano, ali uzbudljivo je.
+
+229
+00:17:19,680 --> 00:17:22,480
+[SPEAKER_02] Dakle, definitivno nešto što bi programeri trebali provjeriti.
+
+230
+00:17:22,640 --> 00:17:27,119
+[SPEAKER_02] Ali kad govorimo o ranoj, htjela sam to vrat još jednom vratiti Charliju za Vision Pro.
+
+231
+00:17:27,519 --> 00:17:28,960
+[SPEAKER_02] Ponovno, još je vrlo rano.
+
+232
+00:17:29,359 --> 00:17:38,480
+[SPEAKER_02] Koje su vam misli o tome kako bi programeri trebali razmišljati o Vision Prou u ovoj fazi, čak i kad je dva točka nula najavljena prije nekoliko dana?
+
+233
+00:17:39,279 --> 00:17:45,920
+[SPEAKER_01] Mislim, egoistički sam se nadao da će biti malo više, ali realno ne bih trebao očekivati da će biti toliko ove godine.
+
+234
+00:17:46,480 --> 00:17:57,920
+[SPEAKER_01] Mislim da je moje opće osjećanje isto kao i od početka, što je kao da je zabavna platforma za eksperimentiranje, ali shvatite da ako pokušavate napraviti posao, ovo je još uvijek vrlo mala publika.
+
+235
+00:17:58,000 --> 00:18:02,400
+[SPEAKER_01] Ako je uopće tako, najveća je najava bila samo činjenica da su da ga otvaraju novim tržištima.
+
+236
+00:18:02,559 --> 00:18:04,400
+[SPEAKER_01] Definitivno je još uvijek eksperimentalno.
+
+237
+00:18:04,559 --> 00:18:06,799
+[SPEAKER_01] Još uvijek mislim da je to javno dostupan dev kit.
+
+238
+00:18:07,680 --> 00:18:11,759
+[SPEAKER_00] I mislim da Apple može financirati vrlo dugo da shvati postoji li ovdje tržište ili ne.
+
+239
+00:18:11,839 --> 00:18:12,400
+[SPEAKER_00] I trebali bi.
+
+240
+00:18:12,559 --> 00:18:14,960
+[SPEAKER_00] Ne bi trebali, ne znam koliko će proći dok ne ubiju Newtona.
+
+241
+00:18:15,359 --> 00:18:15,920
+[SPEAKER_00] Znaš što mislim?
+
+242
+00:18:16,079 --> 00:18:22,880
+[SPEAKER_00] Kao da nije neuobičajeno da tvrtke, recimo, uvode novu platformu, a ako se ne uspije za nekoliko godina, moraju je ubiti.
+
+243
+00:18:23,119 --> 00:18:30,640
+[SPEAKER_00] Apple, budući da je tako dobro financiran, može uložiti određenu količinu energije da vidi može li pronaći nišu i da se pokrene.
+
+244
+00:18:30,880 --> 00:18:33,039
+[SPEAKER_02] Dakle, ja sam, ja sam Vision Pro bik.
+
+245
+00:18:33,279 --> 00:18:34,319
+[SPEAKER_02] Mislim da smo tek na početku.
+
+246
+00:18:34,720 --> 00:18:35,680
+[SPEAKER_02] Ja sam s Charliem.
+
+247
+00:18:35,839 --> 00:18:40,640
+[SPEAKER_02] Ovo je bio razvijaijatelje i ide negdje, ali će trebati neko vrijeme da dođe do toga.
+
+248
+00:18:40,799 --> 00:18:43,359
+[SPEAKER_00] To je fenomenalan film Jamesa Camerona.
+
+249
+00:18:43,680 --> 00:18:50,240
+[SPEAKER_00] Ako ga napravite, ne volim James Cameronove filmove baš toliko, ali ako napravite ekskluzivni film Jamesa Camerona za AVP, odmah ću ga kupiti.
+
+250
+00:18:50,640 --> 00:18:52,640
+[SPEAKER_02] Tweetovao sam o tome prije nekog vremena.
+
+251
+00:18:52,799 --> 00:18:58,000
+[SPEAKER_02] Mislim da će to zaista trebati i malo sam zapanjen što Apple to nije učinio, a možda je to i njihova strpljivost, zar ne?
+
+252
+00:18:58,240 --> 00:19:00,880
+[SPEAKER_02] To je da sada znaju da je to komplet za razvijatelje.
+
+253
+00:19:01,200 --> 00:19:07,920
+[SPEAKER_02] Možda će biti vizija koja nije vizija Pro, koja će biti pristupačnija potrošaču.
+
+254
+00:19:08,000 --> 00:19:10,000
+[SPEAKER_02] Dakle, možda malo drže svoje karte.
+
+255
+00:19:10,160 --> 00:19:12,640
+[SPEAKER_00] Kao da žele da se Avatar 3 pretvori u ekskluzivni film za AVP.
+
+256
+00:19:12,880 --> 00:19:14,000
+[SPEAKER_00] sada je to sve skupo.
+
+257
+00:19:14,079 --> 00:19:20,240
+[SPEAKER_02] Da, dok ne postoji uređaj vrijedan tisuću dolara koji je pristupačniji potrošaču, platforma je zrelija, sve te stvari.
+
+258
+00:19:20,640 --> 00:19:24,640
+[SPEAKER_00] Dakle, mora biti cijena lijepog televizora, što je poput pet stotina ili osam stotina dolara, zar ne?
+
+259
+00:19:24,720 --> 00:19:27,519
+[SPEAKER_02] Dakle, mislim da se kreće negdje, ali još je rano.
+
+260
+00:19:27,680 --> 00:19:40,319
+[SPEAKER_02] I tako, mislim da nastavljam razmišljati o tome da ako imate propusnost i neku vrstu financijske potpore da biste mogli istraživati stvari koje ne zahtijevaju neposredni povrat ulaganja, to je zabavno mjesto za igranje.
+
+261
+00:19:40,400 --> 00:19:48,960
+[SPEAKER_02] Kao da postoje cool igre, postoje sjajne iskustva, ljudi rade stvarno cool stvari na njemu i u uronjenju i kao što je Apple Immersive View.
+
+262
+00:19:48,960 --> 00:19:52,559
+[SPEAKER_02] Appleovi videozapisi zaista su sjajni, ali tek je rano.
+
+263
+00:19:53,039 --> 00:19:59,759
+[SPEAKER_02] Dakle, ako si možete priuštiti igru, igrajte, ali to nije kao da na tome gradite posao, to je moj pogled.
+
+264
+00:20:00,000 --> 00:20:00,240
+[SPEAKER_02] Baš tako.
+
+265
+00:20:00,559 --> 00:20:04,480
+[SPEAKER_01] Ranije ove godine održao sam prezentaciju na konferenciji o tome.
+
+266
+00:20:04,799 --> 00:20:11,519
+[SPEAKER_01] I velika transparentna slajd bila je: Ovo nije zlatna groznica, pokušavajući artikulirati da, da, ovo nije originalni iPhone ili originalni iPad.
+
+267
+00:20:11,839 --> 00:20:18,000
+[SPEAKER_01] Ne igrajte istu igru i očekujte da ćete na kraju dobiti posudu zlata kao što ste to radili u tim razdobljima.
+
+268
+00:20:18,079 --> 00:20:21,920
+[SPEAKER_02] Sjećate se barem u smislu smjernica kakve su bile brojke?
+
+269
+00:20:22,160 --> 00:20:25,920
+[SPEAKER_02] iPhone je lansiran, zatim je iPad lansiran, zatim je lansiran satiranje jer su vam slajdovi dovoljno dobri.
+
+270
+00:20:26,240 --> 00:20:31,359
+[SPEAKER_02] Ako ste znatiželjni za Vision Pro, svatko tko nije gledao Charliejevu prezentaciju, održao je fenomenalnu prezentaciju.
+
+271
+00:20:31,440 --> 00:20:33,680
+[SPEAKER_02] Gledao sam je na letovima koje sam imao prošli mjesec.
+
+272
+00:20:33,839 --> 00:20:34,720
+[SPEAKER_02] Bila je stvarno dobra.
+
+273
+00:20:34,799 --> 00:20:40,960
+[SPEAKER_02] Dakle, da, podijelili ste, recimo, na lansiranju ovih različitih platformi, skala je bila potpuno drugačija.
+
+274
+00:20:41,279 --> 00:20:48,559
+[SPEAKER_01] Da, iPhone je bio veći nego što sam očekivao kad sam počeo brojati brojke, a iPad je bio potpuno drugačije skali.
+
+275
+00:20:49,200 --> 00:20:51,599
+[SPEAKER_01] A Apple Watch je još uvijek veći od iPhonea.
+
+276
+00:20:51,680 --> 00:20:55,440
+[SPEAKER_01] Samo je bio smatran neuspjehom jer su očekivanja bila tako visoka.
+
+277
+00:20:55,519 --> 00:21:00,799
+[SPEAKER_01] A onda vidite broj Vision Proa i mislim da ništa od ovoga nije iznenađujuće, ali gledajući ga grafički izrađen na taj način.
+
+278
+00:21:00,799 --> 00:21:05,839
+[SPEAKER_01] To je dobar podsjetnik na to što zapravo možete očekivati ako pokušavate voditi posao u ovoj trgovini aplikacijama.
+
+279
+00:21:05,920 --> 00:21:06,000
+[SPEAKER_02] Da.
+
+280
+00:21:06,160 --> 00:21:17,200
+[SPEAKER_02] A onda, u redovima veličine, to je poput stotina tisuća, za ljude na podcastu, ja držim prste poput malog, sitnog, sitnog komadića, poput Vision Proa, stotine tisuća jedinica.
+
+281
+00:21:17,359 --> 00:21:22,799
+[SPEAKER_02] A onda je iPhone čak bio poput desetaka milijuna jedinica do trenutka kada je trgovina aplikacijama zaista počela rasti.
+
+282
+00:21:22,960 --> 00:21:25,920
+[SPEAKER_02] I čak i na lansiranju, vjerujem da je bilo možda čak i više od deset milijuna.
+
+283
+00:21:26,079 --> 00:21:28,400
+[SPEAKER_02] I barem u prvom je godini bilo u desetinama milijuna.
+
+284
+00:21:28,559 --> 00:21:31,279
+[SPEAKER_02] A onda je iPad bio poput desetaka milijuna vrlo brzo.
+
+285
+00:21:31,359 --> 00:21:41,200
+[SPEAKER_02] I tako je to poput, vidite samo ovaj mali komadić u Charliejevim grafikonima iz njegove prezentacije u usporedbi s, ovim masivnim lansiranjem platforme koje su bile više poput zlatne groznice.
+
+286
+00:21:41,279 --> 00:21:48,000
+[SPEAKER_02] Dakle, rano je bilo i puno prilika, ali danas nije bilo ništa posebno relevantno za poslovanje.
+
+287
+00:21:48,160 --> 00:21:49,119
+[SPEAKER_02] Dakle, nastavit ću dalje.
+
+288
+00:21:49,440 --> 00:21:56,000
+[SPEAKER_02] Ovo ću malo monologirati, ali Charlie i Jacob, zaustavit ću se ovdje i tamo da svi skočite, ali Apple je najavio puno stvari.
+
+289
+00:21:56,480 --> 00:22:06,480
+[SPEAKER_02] A budući da je ovo kratak webinar i najviše sam vremena proveo duboko u sve ovo, proći ću kroz to i samo ću malo govoriti jer su napravili puno zanimljivih stvari.
+
+290
+00:22:06,640 --> 00:22:12,240
+[SPEAKER_02] Dakle, puno toga je u videozapisu Što je novo u App Store Connect WABC ako želite ući u više detalja.
+
+291
+00:22:12,240 --> 00:22:18,720
+[SPEAKER_02] U detaljnijem razgovoru o ovome ćemo se osvrnuti na pet ili šest videozapisa koje možete pogledati za više detalja.
+
+292
+00:22:19,039 --> 00:22:22,319
+[SPEAKER_02] Ali znam da će se puno ljudi ne sjesti i ne pogledati cijeli videozapis.
+
+293
+00:22:22,480 --> 00:22:26,559
+[SPEAKER_02] Dakle, ću vam dati najvažniji dio onoga što je Apple najavio u App Store Connect.
+
+294
+00:22:26,960 --> 00:22:29,440
+[SPEAKER_02] Možete nominirati svoju aplikaciju za predstavljanje.
+
+295
+00:22:29,680 --> 00:22:39,599
+[SPEAKER_02] I to je sjajno jer je to poput potpuno nove korisničke sučelja jer možete reći kada se ove nove značajke lansiraju, kada se lansira vaša tri točke nula, kada se lansira vaša nova aplikacija.
+
+296
+00:22:39,680 --> 00:22:42,319
+[SPEAKER_02] A zatim možete predstaviti Appleu na više usmjeren način.
+
+297
+00:22:42,720 --> 00:22:48,799
+[SPEAKER_02] Dakle, to je sjajna nova značajka App Store Connect i prilika da svoju aplikaciju predstavite Appleu i nadam se da će se predstaviti.
+
+298
+00:22:49,200 --> 00:22:52,559
+[SPEAKER_02] Slično tome, sada postoji stvaranje marketinških sredstava u App Store Connect.
+
+299
+00:22:53,039 --> 00:22:57,279
+[SPEAKER_02] Prvo sam o tome pročitala na webu prije nego što sam vidjela videozapisnu demonstraciju.
+
+300
+00:22:57,440 --> 00:23:00,960
+[SPEAKER_02] Bila sam poput, wow, bilo koji dizajner će moći nešto sastaviti.
+
+301
+00:23:01,119 --> 00:23:03,039
+[SPEAKER_02] Bila sam poput, ah, bit će samo za Indie.
+
+302
+00:23:03,359 --> 00:23:11,680
+[SPEAKER_02] Ali onda sam u videozapisu vidjela da je u App Store Connect-u moguće generirati ove promotivne slike koje su animirane i imaju ove sjajne sitnice.
+
+303
+00:23:12,160 --> 00:23:13,680
+[SPEAKER_02] Apple je zapravo dobro radio s ovim.
+
+304
+00:23:14,000 --> 00:23:15,599
+[SPEAKER_02] Dakle, mislim da neće samo Indie koristiti ovo.
+
+305
+00:23:15,759 --> 00:23:21,680
+[SPEAKER_02] To je kao da možete ući u App Store Connect i izgraditi ove male promotivne slike koje se stvarno dobro igraju.
+
+306
+00:23:21,839 --> 00:23:31,599
+[SPEAKER_02] Imate li mogućnost da ih prilagodite iodba teksta, a onda se automatski generira puno toga, poput animacija i slično, ali mislim da izgleda stvarno lijepo.
+
+307
+00:23:31,759 --> 00:23:31,839
+[SPEAKER_02] Da.
+
+308
+00:23:32,000 --> 00:23:34,240
+[SPEAKER_02] Mislim da izgleda kao da ste nekoga angažirali.
+
+309
+00:23:34,319 --> 00:23:34,400
+[SPEAKER_00] Da.
+
+310
+00:23:34,799 --> 00:23:37,279
+[SPEAKER_00] Ali ako svi izgledaju tako, neće biti diferencirano, zar ne?
+
+311
+00:23:37,359 --> 00:23:40,640
+[SPEAKER_02] Dakle, ali koliko će ljudi vidjeti više od ovih, zar ne?
+
+312
+00:23:40,799 --> 00:23:45,440
+[SPEAKER_02] To je kao da ciljate svoju publiku određenom stvarom i možda je dobro da su slični.
+
+313
+00:23:45,519 --> 00:23:49,200
+[SPEAKER_00] To je kao da su ti resursi, nisu li to resursi koji se koriste u promotivnim banerima i slično?
+
+314
+00:23:49,440 --> 00:23:51,680
+[SPEAKER_02] Ne, to je kao drugačiji vanjski.
+
+315
+00:23:51,759 --> 00:23:58,000
+[SPEAKER_00] To je kao da kažete: Evo, promovirali su me, evo, tweetate o tome ili stavite u svoju distribuciju.
+
+316
+00:23:58,240 --> 00:23:58,319
+[SPEAKER_01] Da.
+
+317
+00:23:58,559 --> 00:23:59,279
+[SPEAKER_00] Da, to je cool.
+
+318
+00:24:00,160 --> 00:24:00,640
+[SPEAKER_00] To je stvarno lijepo.
+
+319
+00:24:00,640 --> 00:24:02,720
+[SPEAKER_00] To je samo poklon od Applea.
+
+320
+00:24:02,799 --> 00:24:02,880
+[SPEAKER_00] Hvala.
+
+321
+00:24:03,200 --> 00:24:03,279
+[SPEAKER_00] Da.
+
+322
+00:24:03,440 --> 00:24:03,519
+[SPEAKER_00] Hvala.
+
+323
+00:24:03,920 --> 00:24:05,680
+[SPEAKER_00] Da nešto radim s tim trideset posto, sretan sam.
+
+324
+00:24:07,119 --> 00:24:15,680
+[SPEAKER_02] A onda je jedna od zanimljivih stvari da će vam Apple sada obavijestiti kad budete predstavljeni, a zatim će stvoriti posebne umjetničke radove koji će istaknuti da ste predstavljeni.
+
+325
+00:24:15,759 --> 00:24:16,319
+[SPEAKER_00] To je tako lijepo.
+
+326
+00:24:16,480 --> 00:24:22,160
+[SPEAKER_00] Postoje određene platforme na koje biste se pretplatili gotovo samo zbog toga, samo da biste znali gdje i kada ste predstavljeni, zar ne?
+
+327
+00:24:22,480 --> 00:24:22,559
+[SPEAKER_00] Da.
+
+328
+00:24:22,880 --> 00:24:29,200
+[SPEAKER_01] Dakle, znate li, Davide, moje razumijevanje iz razgovora koje sam imao ovdje jest da je to samo za aplikaciju dana.
+
+329
+00:24:29,599 --> 00:24:35,680
+[SPEAKER_01] To uključuje i različite popise koje dobivate u cijelom dućanu i različite zemlje?
+
+330
+00:24:35,839 --> 00:24:36,960
+[SPEAKER_02] Nisam vidio detalje o tome.
+
+331
+00:24:36,960 --> 00:24:42,640
+[SPEAKER_02] Ali mislim da će se, ako je trenutačno samo za aplikaciju dana, s vremenom proširiti.
+
+332
+00:24:42,720 --> 00:24:43,759
+[SPEAKER_01] Da, nadam se da će.
+
+333
+00:24:43,839 --> 00:24:48,960
+[SPEAKER_01] Jer to je izazov, pogotovo kao neovisni, kad vidite ovaj nagli porast i pokušavate shvatiti što se dogodilo.
+
+334
+00:24:49,680 --> 00:24:56,480
+[SPEAKER_01] To je kao, oh, u Turskoj postoji popis na kartici Danas, ali to nije nužno aplikacija dana i pronalaženje tih je pravi problem.
+
+335
+00:24:56,880 --> 00:25:00,319
+[SPEAKER_01] Dakle, bilo bi lijepo da možemo dobiti jasnije obavijesti o tome.
+
+336
+00:25:00,480 --> 00:25:10,720
+[SPEAKER_02] Da, ali u vezi s Jacobovim komentarom, ti trećim alatima koji vam govore, kao što je AppFigures, imate sjajan pregled u koji možete ući da biste vidjeli gdje su svi različiti zemlje prikazane i koje su liste prikazane i slično.
+
+337
+00:25:10,960 --> 00:25:12,240
+[SPEAKER_02] Mislim da ti još neće nestati.
+
+338
+00:25:12,720 --> 00:25:18,880
+[SPEAKER_02] Ali je sjajno što Apple ide u tom pravcu i ima ove prilagođene umjetnine koje možete podijeliti kako biste promovirali da ste ih predstavili Apple.
+
+339
+00:25:19,200 --> 00:25:22,640
+[SPEAKER_02] Dakle, sjajna mala detaljna detaljna poveznica za prilagođene stranice proizvoda.
+
+340
+00:25:22,720 --> 00:25:24,400
+[SPEAKER_02] Ovo je još jedna stvar koja je stvarno sjajna.
+
+341
+00:25:24,480 --> 00:25:32,720
+[SPEAKER_02] Ne znam da su mnoge manje aplikacije eksperimentirale s ovim jer je to više poput stvaranja oglasa za veće aplikacije, poput Strava.
+
+342
+00:25:33,119 --> 00:25:35,039
+[SPEAKER_02] Oni trče i bicikliste.
+
+343
+00:25:35,119 --> 00:25:42,640
+[SPEAKER_02] Dakle, ako stvorite oglas usmjereniji na trčanje, želite da se pojavi u trgovini aplikacijama i da vide više o trčanju nego o biciklizmu.
+
+344
+00:25:42,880 --> 00:25:51,759
+[SPEAKER_02] I tako su to radile velike aplikacije, ima više primarnih primjena i različitih značajki.
+
+345
+00:25:52,000 --> 00:25:54,880
+[SPEAKER_02] Možete stvoriti ove prilagođene stranice proizvoda.
+
+346
+00:25:55,039 --> 00:25:57,599
+[SPEAKER_02] A to postoji već neko vrijeme, stvaranje prilagođenih stranica proizvoda.
+
+347
+00:25:57,680 --> 00:26:03,599
+[SPEAKER_02] Ali sada, kada netko kupi putem te prilagođene stranice proizvoda, može se duboko povezati s vašom aplikacijom kako bi se pružilo prilagođeno uvođenje.
+
+348
+00:26:04,079 --> 00:26:10,640
+[SPEAKER_02] Dakle, Strava bi mogla reći: U redu, vidjeli ste oglas o trčanju, vidjeli ste snimke zaslona trgovine aplikacijama o trčanju.
+
+349
+00:26:10,880 --> 00:26:16,079
+[SPEAKER_02] A sada kada otvorite aplikaciju, dobit ćete uvođenje trkača, a ne uvođenje biciklizma.
+
+350
+00:26:16,480 --> 00:26:24,880
+[SPEAKER_02] Ponovno, samo još jedna stvarno sjajna proširenja mogućnosti trgovine aplikacijama koja vam pruža bolji način da prilagodite cijelo iskustvo od početka do kraja.
+
+351
+00:26:24,880 --> 00:26:25,279
+[SPEAKER_02] Cijela doživljaj od početka do kraja.
+
+352
+00:26:25,440 --> 00:26:27,920
+[SPEAKER_02] I ovo je, znate, dugogodišnja pritužba trgovine aplikacijama.
+
+353
+00:26:28,000 --> 00:26:28,960
+[SPEAKER_02] To je velika crna kutija.
+
+354
+00:26:29,039 --> 00:26:30,000
+[SPEAKER_02] Imate vrlo malo kontrole.
+
+355
+00:26:30,319 --> 00:26:41,119
+[SPEAKER_02] Ovo je Apple koji nam daje više kontrole nad načinom na koji želimo da naši potencijalni kupci i kupci doživljavaju našu aplikaciju u trgovini aplikacijama.
+
+356
+00:26:41,359 --> 00:26:46,559
+[SPEAKER_02] A onda, kad jednom imaju, duboko povezuju s aplikacijom s više prilagođenih iskustava.
+
+357
+00:26:46,720 --> 00:26:47,440
+[SPEAKER_02] Dakle, super je.
+
+358
+00:26:47,680 --> 00:26:50,799
+[SPEAKER_02] A onda dolazi do trgovine aplikacijama, tražilica za oglase.
+
+359
+00:26:50,880 --> 00:26:57,839
+[SPEAKER_02] I ovo je, mislim, najavljeno prije da ćete sada moći stvarati različite prilagođene stranice proizvoda za različite tražilice za oglase.
+
+360
+00:26:57,920 --> 00:27:00,400
+[SPEAKER_02] Dakle, opet, Strava je kao da kupuju hrpu tekućih.
+
+361
+00:27:00,400 --> 00:27:04,559
+[SPEAKER_02] Neki od njih koriste mnoštvo tražnih pojmova, ne žele pokazati svoju uobičajenu stranicu proizvoda.
+
+362
+00:27:04,880 --> 00:27:06,960
+[SPEAKER_02] Žele pokazati prilagođenu stranicu proizvoda.
+
+363
+00:27:07,039 --> 00:27:10,400
+[SPEAKER_02] A onda, opet, žele poveznicu s te prilagođene stranice proizvoda na prilagođeno uvođenje.
+
+364
+00:27:10,799 --> 00:27:12,240
+[SPEAKER_02] Dakle, stvarno je snažno.
+
+365
+00:27:12,400 --> 00:27:13,680
+[SPEAKER_01] To olakšava atribuciju?
+
+366
+00:27:14,799 --> 00:27:16,240
+[SPEAKER_00] To sam upravo mislio.
+
+367
+00:27:16,319 --> 00:27:16,480
+[SPEAKER_01] Da.
+
+368
+00:27:16,799 --> 00:27:22,400
+[SPEAKER_01] Mislim, znam da postoje načini na koje neki ljudi to rade, ali ovo se gotovo čini kao službena vrsta API-ja za to.
+
+369
+00:27:22,880 --> 00:27:22,960
+[SPEAKER_00] Da.
+
+370
+00:27:23,119 --> 00:27:25,279
+[SPEAKER_00] Ovisi o tome koliko ih možete stvoriti, zar ne?
+
+371
+00:27:25,440 --> 00:27:26,160
+[SPEAKER_01] Da, to je istina.
+
+372
+00:27:26,240 --> 00:27:26,640
+[SPEAKER_01] To je istina.
+
+373
+00:27:27,039 --> 00:27:33,039
+[SPEAKER_00] Ali čak i ako pokušavate pokrenuti neku lokaliziranu ili možete stvoriti neke široke spremnike, to bi bilo korisno.
+
+374
+00:27:33,039 --> 00:27:33,200
+[SPEAKER_02] Da.
+
+375
+00:27:33,359 --> 00:27:40,079
+[SPEAKER_02] I ovo bi možda trebalo istražiti i napisati blog post ili nešto slično.
+
+376
+00:27:40,160 --> 00:27:48,240
+[SPEAKER_02] Ali mislim da to daje priliku barem šireg razumijevanja kako i zašto vaši kupci dolaze.
+
+377
+00:27:48,559 --> 00:27:50,319
+[SPEAKER_02] Ali pokušavaju spriječiti praćenje.
+
+378
+00:27:50,799 --> 00:27:59,440
+[SPEAKER_02] Dakle, ako samo deset ljudi klikne na određenu poveznicu na određenu stranicu s prilagođenim proizvodom, vjerojatno će i dalje postojati određena razina anonimnosti.
+
+379
+00:27:59,839 --> 00:28:06,319
+[SPEAKER_02] Ali ako se duboko povezuju s vašom aplikacijom, ne znam točno kako bi Apple mogao to provesti jer biste vjerojatno mogli samo to izvući.
+
+380
+00:28:06,480 --> 00:28:12,640
+[SPEAKER_02] Ali mislim da je to Jacobova točka, da čak i ako samo četiri osobe kliknu na poveznicu na ovaj određeni prilagođeni proizvod.
+
+381
+00:28:12,640 --> 00:28:18,720
+[SPEAKER_02] Ne možete stvoriti pedeset tisuća stranica proizvoda na kojima možete individualno identificirati.
+
+382
+00:28:18,880 --> 00:28:20,880
+[SPEAKER_00] Ali čak i ako možete stvoriti jedan spremnik, da.
+
+383
+00:28:21,200 --> 00:28:25,440
+[SPEAKER_00] Da, kao što sada gledam, da, koristi duboke poveznice ili univerzalne poveznice.
+
+384
+00:28:25,519 --> 00:28:37,359
+[SPEAKER_00] Dakle, možete u osnovi dodijeliti univerzalnu poveznicu bilo kojoj od svojih, što je zanimljivo jer ne znam, pretpostavljam da će se pohraniti u predmemoriju kad instalirate, a onda na prvi otvor, kao da ćete dobiti rukovatelja za rukovanje tom univerzalnom poveznicom.
+
+385
+00:28:37,680 --> 00:28:38,480
+[SPEAKER_00] To je zapravo vrlo snažno.
+
+386
+00:28:38,559 --> 00:28:38,960
+[SPEAKER_02] Vrlo je cool.
+
+387
+00:28:39,119 --> 00:28:42,640
+[SPEAKER_02] Definitivno bismo trebali dublje istražiti i napisati sadržaj oko toga.
+
+388
+00:28:42,720 --> 00:28:44,480
+[SPEAKER_02] Postoje neke cool ažuriranja za testiranje.
+
+389
+00:28:44,720 --> 00:28:58,240
+[SPEAKER_02] Dugo napušteni, tek malo pomaknutili proizvod, sada možete poslati poveznice za javne pozive i onda će se naći na stranici trgovine aplikacijama, kao što su snimke zaslona i objašnjenje vaše aplikacije i slično.
+
+390
+00:28:58,559 --> 00:29:03,519
+[SPEAKER_02] Dakle, kada pokušavate zaposliti testiranje, iskustvo zapošljavanja testiranja bilo je prilično loše.
+
+391
+00:29:03,920 --> 00:29:06,000
+[SPEAKER_02] Dakle, napravili su neke prilično velike poboljšanja u tom pogledu.
+
+392
+00:29:06,079 --> 00:29:07,920
+[SPEAKER_02] Možete postaviti i kriterije za to.
+
+393
+00:29:08,480 --> 00:29:19,359
+[SPEAKER_02] Dakle, ako stvarno trebate ljude na IOS-u 15 jer se pobrinete da imate kompatibilnost s prethodnim sustavom, možete reći da dozvolite ljudima da se pridruže samo ako su još uvijek na IOS-u 15 ili slično.
+
+394
+00:29:19,599 --> 00:29:23,039
+[SPEAKER_02] Dakle, a zatim zapravo dobivate statistike o upisu.
+
+395
+00:29:23,200 --> 00:29:24,960
+[SPEAKER_02] Dakle, koliko je ljudi došlo na vašu stranicu?
+
+396
+00:29:24,960 --> 00:29:26,000
+[SPEAKER_02] Koliko ih je zapravo prijavljeno?
+
+397
+00:29:26,400 --> 00:29:27,680
+[SPEAKER_02] Koliko je ispunilo kriterije?
+
+398
+00:29:27,839 --> 00:29:29,119
+[SPEAKER_02] Koliko nije ispunilo vaše kriterije?
+
+399
+00:29:29,599 --> 00:29:30,240
+[SPEAKER_02] To je prilično cool.
+
+400
+00:29:30,559 --> 00:29:32,799
+[SPEAKER_02] Volio bih da ulože više u test let.
+
+401
+00:29:33,279 --> 00:29:43,359
+[SPEAKER_02] Osobno, značajke koje želim vidjeti više su poput upravljanja grupama i mogućnosti slanja e-pošte korisnicima u beta verziji s bilješkama o testiranju.
+
+402
+00:29:43,440 --> 00:29:45,759
+[SPEAKER_02] I ima puno toga što bi mogli učiniti kako bi nastavili poboljšavati test let.
+
+403
+00:29:45,920 --> 00:29:49,839
+[SPEAKER_02] Ali, evo, opet, dobar korak naprijed i dobra mala poboljšanja koja su dodali.
+
+404
+00:29:50,000 --> 00:29:51,920
+[SPEAKER_00] Žao mi je što sam se vratio na temu trideset pet.
+
+405
+00:29:52,000 --> 00:29:54,240
+[SPEAKER_00] Možete imati trideset pet prilagođenih ciljnih stranica.
+
+406
+00:29:54,319 --> 00:29:55,119
+[SPEAKER_00] Nije beskonačno.
+
+407
+00:29:55,279 --> 00:29:57,519
+[SPEAKER_00] I to je vrsta postizanja vizije Applea.
+
+408
+00:29:57,599 --> 00:30:04,799
+[SPEAKER_00] I o tome ćemo kasnije govoriti o atribuciji oglasa, što je neka količina atribucijeta, ali ono što zaista ne žele jest da možete usporiti na osobu.
+
+409
+00:30:04,880 --> 00:30:06,799
+[SPEAKER_00] I tako je to prilično dobar način da to postignete.
+
+410
+00:30:06,880 --> 00:30:20,720
+[SPEAKER_00] Dakle, možete zamisliti postavljanje deset kampanja ili dvadeset kampanja koje svaka povezuju s različitim, možda čak i stranicama koje su iste, ali onda upravljate tom dubokom poveznicom kroz svoju aplikaciju i sada imate način da, recimo, pripisujete kampanju iz koje su došli, što je prilično zanimljivo.
+
+411
+00:30:20,799 --> 00:30:22,720
+[SPEAKER_02] Dakle, da, vrlo je cool.
+
+412
+00:30:23,519 --> 00:30:28,640
+[SPEAKER_02] Sljedeći je korak bio smanjenje zahtjeva za snimkama zaslona.
+
+413
+00:30:28,720 --> 00:30:32,160
+[SPEAKER_02] To je bio naslov odjeljka i to bi moglo biti jedino što su najavili i mislim da bi to bila pobjeda.
+
+414
+00:30:32,400 --> 00:30:35,519
+[SPEAKER_02] Je li ovo treća najvažnija stvar najavljena na WWEC dvadeset i tri?
+
+415
+00:30:35,680 --> 00:30:36,880
+[SPEAKER_02] Da, mislim da je to.
+
+416
+00:30:36,880 --> 00:30:41,440
+[SPEAKER_01] Mislim, ovo je mjesto gdje biste željeli imati stare sesije jer bi u prostoriji bilo pljeska.
+
+417
+00:30:42,079 --> 00:30:55,599
+[SPEAKER_02] Dakle, bit toga je da za one koji nisu imali užitak raditi u App Store Connect, i danas morate učitati snimke zaslona različitih veličina iPhonea za različite veličine iPhonea.
+
+418
+00:30:55,759 --> 00:30:57,279
+[SPEAKER_02] Mislim da je najnovija zahtjev.
+
+419
+00:30:57,359 --> 00:31:00,559
+[SPEAKER_02] Srećom, to ne morate raditi na različitim jezicima, zar ne?
+
+420
+00:31:01,039 --> 00:31:01,119
+[SPEAKER_00] Da.
+
+421
+00:31:01,519 --> 00:31:02,480
+[SPEAKER_00] Da, to radite.
+
+422
+00:31:02,559 --> 00:31:02,880
+[SPEAKER_00] Bože moj.
+
+423
+00:31:05,039 --> 00:31:11,039
+[SPEAKER_02] Dakle, to je kao da svaki jezik koji želite podržati, mislim da su to dva ili tri različita veličina iPhonea i dva ili tri veličina iPada.
+
+424
+00:31:12,000 --> 00:31:12,880
+[SPEAKER_02] Što su učinili.
+
+425
+00:31:13,759 --> 00:31:27,920
+[SPEAKER_02] i mislim da će to biti nešto što će se dogoditi i ove jeseni ili kasnije ove godine, a to je da kada uđete u App Store Connect, možete imati jedan set iPhone snimki zaslona po jeziku, a zatim jedan set iPad snimki zaslona po jeziku.
+
+426
+00:31:28,079 --> 00:31:34,799
+[SPEAKER_02] Dakle, samo masovno smanjite složenost i postoje svi ti alati koji to rade umjesto vas, ali Asplain je imao ugrađene stvari za to, zar ne?
+
+427
+00:31:34,880 --> 00:31:41,039
+[SPEAKER_00] Kao da postoji, da, postoje sve vrste automatizacija, ali sam ih uvijek generirala kao bol u guzi, kao što je točno.
+
+428
+00:31:41,200 --> 00:31:42,400
+[SPEAKER_00] Baš kao da imate toliko slika, zar ne?
+
+429
+00:31:42,640 --> 00:31:48,960
+[SPEAKER_02] I tako za ljude koji vole automatizirati ovo i samo stvarno jednostavne snimke zaslona i postoje alati koji vam pomažu automatizirati ovo, ali kao i svi moji.
+
+430
+00:31:49,039 --> 00:31:50,240
+[SPEAKER_02] snimci zaslona su u Sketchu.
+
+431
+00:31:50,720 --> 00:31:55,440
+[SPEAKER_02] I tako moram uvijek koristiti više veličina, a datoteka Sketcha je u Sketchu.
+
+432
+00:31:55,599 --> 00:32:00,000
+[SPEAKER_00] Srećom, App Store Connect je zaista odzivna i brza.
+
+433
+00:32:00,160 --> 00:32:01,920
+[SPEAKER_02] Dakle, to je stvarno jednostavno.
+
+434
+00:32:02,079 --> 00:32:05,440
+[SPEAKER_02] Ne mogu vam reći koliko sam puta pokušala poslati i to je kao da niste to učinili.
+
+435
+00:32:05,680 --> 00:32:06,960
+[SPEAKER_02] A ja sam poput, što ste učinili?
+
+436
+00:32:07,200 --> 00:32:15,200
+[SPEAKER_02] A onda je to kao da su tri sloja duboko, kao da, oh, nisam ažurirala veličinu snimke zaslona na jednom jeziku ili Davida.
+
+437
+00:32:15,359 --> 00:32:18,559
+[SPEAKER_00] Koriste web objekte i Oracle, pa znate da mora biti brzo.
+
+438
+00:32:19,759 --> 00:32:21,839
+[SPEAKER_00] Čak ne znam i jesu li to još uvijek.
+
+439
+00:32:22,400 --> 00:32:23,279
+[SPEAKER_00] Samo se nadam da neće.
+
+440
+00:32:23,359 --> 00:32:24,160
+[SPEAKER_00] Volim vratiti Apple.
+
+441
+00:32:24,240 --> 00:32:25,519
+[SPEAKER_00] Appleovim timovima za backend teško je.
+
+442
+00:32:26,079 --> 00:32:27,039
+[SPEAKER_02] Ovo je još jedan podcast.
+
+443
+00:32:27,119 --> 00:32:28,880
+[SPEAKER_02] Volio bih napraviti bivšeg zaposlenika Applea.
+
+444
+00:32:29,039 --> 00:32:36,000
+[SPEAKER_00] Ako su spremni samo nekako, recimo, napraviti anonimne, recimo, istinske zločine, bilo je kao da su izostavljeni.
+
+445
+00:32:36,240 --> 00:32:39,200
+[SPEAKER_02] Da, ovo smo zapravo koristili okvir Java koji je imao trideset godina.
+
+446
+00:32:39,279 --> 00:32:40,640
+[SPEAKER_00] Da, to bi bilo dobro.
+
+447
+00:32:40,960 --> 00:32:46,319
+[SPEAKER_02] Volio bih da je povijest backenda trgovine aplikacijama fascinantna.
+
+448
+00:32:46,400 --> 00:32:48,240
+[SPEAKER_02] Da, to je za malu publiku.
+
+449
+00:32:48,400 --> 00:32:51,359
+[SPEAKER_00] David, neke priče se jednostavno ne bi trebale ispričati.
+
+450
+00:32:51,440 --> 00:32:54,240
+[SPEAKER_00] To je jedna koju ćemo vjerojatno izgubiti za povijest, ali je u redu.
+
+451
+00:32:54,480 --> 00:32:54,559
+[SPEAKER_02] Da.
+
+452
+00:32:55,119 --> 00:32:55,359
+[SPEAKER_02] U redu.
+
+453
+00:32:55,599 --> 00:32:57,200
+[SPEAKER_02] Poboljšanja pretraživanja trgovine aplikacijama.
+
+454
+00:32:57,359 --> 00:32:58,240
+[SPEAKER_02] Ovo je još jedna cool stvar.
+
+455
+00:32:58,400 --> 00:33:00,960
+[SPEAKER_02] Ponovno, kao i puno sitnica koje se nakupljaju kako bi stvari bile jednostavnije.
+
+456
+00:33:00,960 --> 00:33:03,039
+[SPEAKER_02] Da bismo stvari poboljšali za trgovinu aplikacijama i programerima.
+
+457
+00:33:03,279 --> 00:33:13,599
+[SPEAKER_02] Dakle, trenutačno, ako odete u trgovinu aplikacijama i odete na karticu pretraživanja, dobit ćete neku vrstu prilagođenog prikaza gdje su predložene pretraživanja i predložene aplikacije i slično, što je stvarno cool.
+
+458
+00:33:13,759 --> 00:33:14,799
+[SPEAKER_02] To postoji već nekoliko godina.
+
+459
+00:33:15,440 --> 00:33:21,119
+[SPEAKER_02] Dakle, sada kada dodirnete polje pretraživanja jer trenutačno, ako dodirnete polje pretraživanja, ništa se ne mijenja.
+
+460
+00:33:21,279 --> 00:33:34,240
+[SPEAKER_02] Dakle, sada, ove jeseni, kada sam imao osamnaest godina, kada dodirnete polje pretraživanja, zapravo vam daje nedavna pretraživanja koja možete izbrisati, a zatim vam daje predložena pretraživanja poput personaliziranih predloženih pretraživanja.
+
+461
+00:33:34,400 --> 00:33:50,960
+[SPEAKER_02] Dakle, još jedna cool stvar je kada netko ide traži i vjerojatno ima nešto na umu, ali ako to ne učini ili se ometa, to će, nadamo se, pomoći da se otkriju više aplikacija jer će ljudi provesti više vremena u pretraživanju i imati personaliziranije preporuke, sve to.
+
+462
+00:33:51,279 --> 00:34:04,000
+[SPEAKER_02] Dakle, još jedna dobra stvar je da sada postoje API-ji za korporativne programe koji nisu baš primjenjivi na nas, ali opet, još jedna dobra stvar koju Apple radi jest omogućavanje izravnijeg pristupa korporativnim značajkama.
+
+463
+00:34:04,160 --> 00:34:10,400
+[SPEAKER_02] Dakle, ako radite bilo kakvu vrstu korporativne distribucije, manje je bolno putem API-ja za analizu aplikacija.
+
+464
+00:34:10,639 --> 00:34:11,599
+[SPEAKER_02] To je prilično cool.
+
+465
+00:34:12,480 --> 00:34:19,280
+[SPEAKER_02] Sada možete dobiti mnogo više detalja o izvedbi trgovine aplikacijama putem API-ja za analizu.
+
+466
+00:34:19,440 --> 00:34:23,840
+[SPEAKER_02] Dakle, alatima poput AppFigures, možda će se na kraju pojaviti i RevenueCat, ne znam.
+
+467
+00:34:24,320 --> 00:34:29,920
+[SPEAKER_02] Morat ćemo pogledati koliko bi to bilo korisno za naše klijente da miješaju neku razinu podataka.
+
+468
+00:34:30,159 --> 00:34:36,159
+[SPEAKER_02] Ipak, izazov, kao i uvijek s analizom trgovine aplikacijama, jest da su uvijek anonimizirane i da su uvijek opt-in.
+
+469
+00:34:36,639 --> 00:34:40,000
+[SPEAKER_02] I tako je to nešto što uvijek imajte na umu ako gledate trgovine aplikacijama.
+
+470
+00:34:40,079 --> 00:34:40,400
+[SPEAKER_00] Sve ovisi.
+
+471
+00:34:41,199 --> 00:34:42,960
+[SPEAKER_00] Financijski izvještaji i slično nisu opt-in.
+
+472
+00:34:44,239 --> 00:34:44,559
+[SPEAKER_00] Točno.
+
+473
+00:34:44,960 --> 00:34:48,960
+[SPEAKER_02] Ali ovo je više poput analize korištenja i slično.
+
+474
+00:34:49,119 --> 00:34:56,320
+[SPEAKER_02] Dakle, ako pokušavate saznati koliko aktivnih korisnika imam, morate ući i neka je anonimna, a neka ne.
+
+475
+00:34:57,920 --> 00:35:07,679
+[SPEAKER_02] I ima malo, ne znam, sigurno je Ariel i AppFigures istražili ovo i već su koristili neke aspekte toga, ali morate znati koji su opt-inovi, a koji su globalni.
+
+476
+00:35:07,840 --> 00:35:11,519
+[SPEAKER_02] Dakle, neke statistike u AppStory Analyticsu su globalne, a neki su opt-inovi.
+
+477
+00:35:11,599 --> 00:35:21,039
+[SPEAKER_02] I tako morate pogledati, a zatim pogledate postotak i kaže vam da je moja aplikacija za vrijeme imala stopu opt-inova od dvadeset pet posto, a LaunchInner Pro je imao stopu opt-inova od dvadeset posto.
+
+478
+00:35:21,199 --> 00:35:24,880
+[SPEAKER_02] Dakle, morate uzeti broj i pomnožiti ga s stopom opt-inova da biste dobili osjećaj što se što se događa.
+
+479
+00:35:25,280 --> 00:35:27,440
+[SPEAKER_02] Jer Apple ne može dijeliti umjesto vas.
+
+480
+00:35:29,119 --> 00:35:29,519
+[SPEAKER_02] Što god.
+
+481
+00:35:30,000 --> 00:35:31,280
+[SPEAKER_02] Mislim, to je prilično važno.
+
+482
+00:35:31,519 --> 00:35:37,119
+[SPEAKER_02] Ako netko gleda brojke i Apple ih je samo pomnožio, uvijek sam mislio da publika nije ista.
+
+483
+00:35:37,199 --> 00:35:39,039
+[SPEAKER_01] Nisu iste.
+
+484
+00:35:39,360 --> 00:35:39,679
+[SPEAKER_02] Da, da.
+
+485
+00:35:39,920 --> 00:35:41,199
+[SPEAKER_02] Ne ponašaju se isto.
+
+486
+00:35:41,679 --> 00:35:46,079
+[SPEAKER_02] A onda je Apple dodao mnoštvo analiza u App Store Connect.
+
+487
+00:35:46,400 --> 00:35:47,760
+[SPEAKER_02] I mislim da je to dio DMA-e.
+
+488
+00:35:47,840 --> 00:35:52,800
+[SPEAKER_02] Mislim da je DMA zahtijevao da podijele više statistike s programerima.
+
+489
+00:35:52,960 --> 00:35:55,920
+[SPEAKER_02] Dakle, dodali su stotine novih mjernih jedinica u App Store Connect.
+
+490
+00:35:56,239 --> 00:35:58,000
+[SPEAKER_02] Dakle, tamo se događa mnogo više.
+
+491
+00:35:58,000 --> 00:36:00,960
+[SPEAKER_00] Ali mislim da nikad ne biste trebali trebati više od stotinu mjernih jedinica.
+
+492
+00:36:02,079 --> 00:36:04,559
+[SPEAKER_00] Nisam ih pogledao, ali što trebate znati?
+
+493
+00:36:04,800 --> 00:36:07,280
+[SPEAKER_00] Ima ih sedam koje su važne.
+
+494
+00:36:07,519 --> 00:36:12,400
+[SPEAKER_00] U svakom slučaju, sretan sam što su nam regulative otvorile preostale tristotinjak i devedeset tri.
+
+495
+00:36:12,800 --> 00:36:21,360
+[SPEAKER_02] U svakom slučaju, još jedna stvar koja je najavljena ranije ove godine i koja se čini da je u zatvorenoj beta fazi su uvjetovane ponude.
+
+496
+00:36:21,440 --> 00:36:24,000
+[SPEAKER_02] Ponovno, još jedna dobra prilika.
+
+497
+00:36:24,239 --> 00:36:26,880
+[SPEAKER_02] Ovo je jedna u kojoj smo vidjeli neke aplikacije koje to rade.
+
+498
+00:36:26,960 --> 00:36:32,400
+[SPEAKER_02] Dakle, zapravo, govoreći o Stravau, Strava sada radi ovu stvar u kojoj promovira druge aplikacije.
+
+499
+00:36:32,480 --> 00:36:38,719
+[SPEAKER_02] Ne znam kakve su ponude s tim aplikacijama ili je li to poput sponzorstva, partnerstva.stvo, partnerstvo ili bilo što drugo.
+
+500
+00:36:39,199 --> 00:36:49,920
+[SPEAKER_02] No uz uvjetnu cijenu, Strava može reći: Evo, kao dio vaše članarine u Stravi, dobivate dvadeset posto popusta na WeatherUp i možete kombinirati cijenu, a to će biti na razini trgovine aplikacijama.
+
+501
+00:36:50,000 --> 00:36:58,559
+[SPEAKER_02] A onda je dobra stvar s uvjetnom cijenom da ako netko odjavi od pretplate na Strava, više nema tu uvjetnu cijenu.
+
+502
+00:36:58,719 --> 00:37:01,280
+[SPEAKER_02] I tako bi se cijene povećale na sljedećem obnovi.
+
+503
+00:37:01,679 --> 00:37:11,360
+[SPEAKER_02] Dakle, Apple to ponovno uključuje na razini trgovine aplikacijama, trenutačno je beta faza, pa ga nismo vidjeli u velikoj mjeri u upotrebi, ali mislim da postoji mnogo prilika za ugovore s partnerima.
+
+504
+00:37:11,519 --> 00:37:12,400
+[SPEAKER_02] Mislim na to za WeatherUp.
+
+505
+00:37:12,400 --> 00:37:22,480
+[SPEAKER_02] Kao što je to kada se otvori široko, s kojim aplikacijama mogu raditi, gdje kad netko prijavi se za uvjetnu ponudu, dobije dvadeset posto popusta, a onda ću dati tu aplikaciju povrat.
+
+506
+00:37:22,639 --> 00:37:25,440
+[SPEAKER_00] I mislim da se sjećate da je to besplatna aplikacija dana.
+
+507
+00:37:25,920 --> 00:37:27,119
+[SPEAKER_02] Da, to se i dalje događa.
+
+508
+00:37:27,199 --> 00:37:28,000
+[SPEAKER_00] To se i dalje događa danas.
+
+509
+00:37:28,079 --> 00:37:28,800
+[SPEAKER_00] Je li to stvar?
+
+510
+00:37:29,199 --> 00:37:34,239
+[SPEAKER_00] Mislio sam da je Apple to nekako zabranio kad su rekli da nema pseudo trgovina aplikacijama u trgovini aplikacijama.
+
+511
+00:37:34,320 --> 00:37:40,559
+[SPEAKER_02] Ne znam je li to točno ista stranica, ali ljudi će to učiniti za ASO jer dobivate masivan porast preuzimanja.
+
+512
+00:37:40,719 --> 00:37:44,719
+[SPEAKER_02] Dakle, ljudi će dati doživotni pristup besplatno i slično za jedan dan.
+
+513
+00:37:44,960 --> 00:37:45,039
+[SPEAKER_02] Da.
+
+514
+00:37:45,280 --> 00:37:47,599
+[SPEAKER_00] Ali da, prije sam mislio da je CrossProm uvijek bio dobar.
+
+515
+00:37:47,679 --> 00:37:55,360
+[SPEAKER_00] Mislim da je ova značajka za, koliko sam shvatio, bit će više usmjerena na ljude koji mogu sklopiti velike poslovne ponude.
+
+516
+00:37:55,519 --> 00:38:01,599
+[SPEAKER_00] Dakle, vjerojatno će je iskoristiti veće aplikacije, ali još uvijek je to još jedna strelica u našem strijelu.
+
+517
+00:38:01,760 --> 00:38:01,840
+[SPEAKER_02] Da.
+
+518
+00:38:02,000 --> 00:38:11,280
+[SPEAKER_02] A onda imamo neke veće stvari u koje ćemo se uroniti, ponude, pojednostavljene kupnje, prikazi trgovinskih kompletnih prikaza, poboljšanja u testovima kupnje u aplikaciji.
+
+519
+00:38:11,360 --> 00:38:17,039
+[SPEAKER_02] Ali posljednja mala stvar je da su to zapravo spomenuli u jednom od tih videozapisa WWC-a i mislim da mnogi ljudi ni ne shvaćaju da postoji.
+
+520
+00:38:17,440 --> 00:38:24,639
+[SPEAKER_02] Apple nudi podršku putem telefona ili e-pošte na devet jezika, dvadeset i četiri sata.
+
+521
+00:38:24,639 --> 00:38:28,000
+[SPEAKER_02] To me uvijek podsjeća na incidente tehničke podrške koje ljudi zaboravljaju da postoje.
+
+522
+00:38:28,079 --> 00:38:37,039
+[SPEAKER_02] Kao što možete dobiti podršku na razini koda od Applea s ovim dvjema besplatnim tehničkim incidentima svake godine koje nitko ne koristi.
+
+523
+00:38:37,280 --> 00:38:39,679
+[SPEAKER_02] A onda ljudi pričaju: O, nikad ne mogu doći do Applea.
+
+524
+00:38:39,840 --> 00:38:40,480
+[SPEAKER_02] Znaš, što god.
+
+525
+00:38:40,960 --> 00:38:42,480
+[SPEAKER_02] Nude telefonsku podršku.
+
+526
+00:38:42,639 --> 00:38:46,000
+[SPEAKER_02] Nisam ih prije nazvao zbog promjene adrese ili nečega sličnog.
+
+527
+00:38:46,159 --> 00:38:50,000
+[SPEAKER_02] I mislio sam da je zanimljivo da je Apple spomenuo to u tom videozapisu WWC-a.
+
+528
+00:38:50,239 --> 00:38:56,000
+[SPEAKER_02] Mislim da je zato što ga tako malo ljudi zapravo koristi i stvarno žele pomoći više programerima putem ovog kanala.
+
+529
+00:38:56,400 --> 00:38:57,840
+[SPEAKER_02] Dakle, prilično je lijepo da to rade.
+
+530
+00:38:58,000 --> 00:39:00,800
+[SPEAKER_02] A onda su to posebno istaknuli u videozapisu WWC-a.
+
+531
+00:39:00,800 --> 00:39:03,519
+[SPEAKER_01] Ovo nije tehnička podrška za kod.
+
+532
+00:39:03,599 --> 00:39:06,639
+[SPEAKER_01] To je kao da imam problem s App Store Connectom.
+
+533
+00:39:06,800 --> 00:39:09,199
+[SPEAKER_01] Trebam promijeniti poslovni adresu ili nešto slično.
+
+534
+00:39:09,280 --> 00:39:09,440
+[SPEAKER_01] U redu.
+
+535
+00:39:09,599 --> 00:39:14,239
+[SPEAKER_02] Da, da, to je podrška za App Store Connect, ali tehnički incident i dalje postoji.
+
+536
+00:39:14,639 --> 00:39:16,239
+[SPEAKER_02] I opet, to je kao da ne znam za to.
+
+537
+00:39:16,800 --> 00:39:24,800
+[SPEAKER_02] Ovo je zaseban resurs, ali ako trebate podršku na razini koda od Applea, imate dva tehnička incidenta godišnje koje možete upotrijebiti.
+
+538
+00:39:25,039 --> 00:39:25,920
+[SPEAKER_00] Kao da ih potražite.
+
+539
+00:39:26,079 --> 00:39:32,400
+[SPEAKER_00] Uvijek bih rekao, osjećam da kad god mi to dođe na pamet, dobro, često bi bilo kao da imate posla s Appar Viewom i mislim da ne pomažu u tom odjelu.
+
+540
+00:39:32,480 --> 00:39:34,320
+[SPEAKER_00] Obično Appar View ima svoje metode eskalacije.
+
+541
+00:39:34,800 --> 00:39:35,039
+[SPEAKER_00] Da, da.
+
+542
+00:39:35,280 --> 00:39:40,159
+[SPEAKER_00] Ali uvijek kažem, neću pozv zvati ove ljude iz trgovine aplikacijama, povezati se s ljudima koji su mi to učinili.
+
+543
+00:39:40,559 --> 00:39:41,119
+[SPEAKER_00] Neću ih zvati.
+
+544
+00:39:41,440 --> 00:39:44,239
+[SPEAKER_00] Samo će mi to učiniti više, ali siguran sam da su u nekim slučajevima korisni.
+
+545
+00:39:44,320 --> 00:39:44,639
+[SPEAKER_00] Dakle, da.
+
+546
+00:39:44,960 --> 00:39:47,519
+[SPEAKER_02] Razgovarajmo o ponudama za povrat.
+
+547
+00:39:47,679 --> 00:39:49,840
+[SPEAKER_02] I znam, Jacob, duboko si se utapao u to.
+
+548
+00:39:49,920 --> 00:39:51,519
+[SPEAKER_02] Želiš li da ti dam pregled ili želiš?
+
+549
+00:39:51,760 --> 00:39:52,960
+[SPEAKER_00] Da, mislim, da, mogu pričati.
+
+550
+00:39:52,960 --> 00:39:54,159
+[SPEAKER_00] Mogu ti dati pauzu, Davide.
+
+551
+00:39:54,239 --> 00:39:55,840
+[SPEAKER_00] Dakle, ponude za povrat.
+
+552
+00:39:56,000 --> 00:39:57,280
+[SPEAKER_02] Dakle, još jedna vrsta ponude.
+
+553
+00:39:57,360 --> 00:39:59,039
+[SPEAKER_02] Dakle, četvrta je četvrta ponuda.
+
+554
+00:39:59,119 --> 00:39:59,599
+[SPEAKER_00] Kako ih možemo brojati?
+
+555
+00:39:59,679 --> 00:40:01,119
+[SPEAKER_00] Dakle, ponude za uvod.
+
+556
+00:40:01,360 --> 00:40:03,280
+[SPEAKER_00] Bit će poput besplatnih probnih i uvodnih ponuda.
+
+557
+00:40:03,360 --> 00:40:08,239
+[SPEAKER_00] Postoje promotivne ponude koje su poput, u osnovi, bilo koje vrijeme kad ste u svojoj aplikaciji.
+
+558
+00:40:08,320 --> 00:40:09,679
+[SPEAKER_00] A sada imamo ponude za povrat.
+
+559
+00:40:09,679 --> 00:40:10,800
+[SPEAKER_02] O, kôdovi ponude.
+
+560
+00:40:10,880 --> 00:40:11,840
+[SPEAKER_02] O, kôdovi ponude.
+
+561
+00:40:12,000 --> 00:40:13,039
+[SPEAKER_00] Imate kôd ponude.?
+
+562
+00:40:13,119 --> 00:40:19,039
+[SPEAKER_00] Pa što je onda to što možete staviti u aplikaciju i promovirati je kad možete staviti IAP u trgovinu aplikacijama?
+
+563
+00:40:19,119 --> 00:40:21,119
+[SPEAKER_00] O, to je potpuno zasebno jer je to zvuči.
+
+564
+00:40:21,199 --> 00:40:23,679
+[SPEAKER_00] Da, to je zasebno, ali mislim da ima i nešto što kaže promovirano.
+
+565
+00:40:23,760 --> 00:40:24,480
+[SPEAKER_00] Da, da, da.
+
+566
+00:40:24,719 --> 00:40:28,079
+[SPEAKER_00] Dakle, tehnički nije povezano, ali imaju neke probleme s organizacijom brendiranja.
+
+567
+00:40:28,159 --> 00:40:30,000
+[SPEAKER_02] Ali u svakom slučaju, imamo četiri vrste ponuda.
+
+568
+00:40:30,079 --> 00:40:30,400
+[SPEAKER_00] Da, da.
+
+569
+00:40:30,480 --> 00:40:38,159
+[SPEAKER_00] Dakle, uvod je poput besplatnih probnih periodova, to je velika stvar, ali onda možete imati i prvi put kad netko započne pretplatu u grupi, možete im dati jeftiniju ponudu.
+
+570
+00:40:38,239 --> 00:40:39,039
+[SPEAKER_00] Dakle, to je jedna opcija.
+
+571
+00:40:39,440 --> 00:40:44,400
+[SPEAKER_00] Možete imati samo jedan ili nijedan na bilo kojem pretplatnom proizvodu u grupi, mislim.
+
+572
+00:40:44,559 --> 00:40:47,280
+[SPEAKER_00] I to je, dobivate ga samo jednom u grupi, ali svaki proizvod može imati razliku.
+
+573
+00:40:47,360 --> 00:40:48,559
+[SPEAKER_00] Dakle, jedan može imati besplatni probni period.
+
+574
+00:40:48,559 --> 00:40:50,400
+[SPEAKER_00] Možete dobiti trideset posto popusta, nešto poput toga.
+
+575
+00:40:51,039 --> 00:40:56,480
+[SPEAKER_00] Promocijske ponude mogu se primijeniti u bilo kojem trenutku u aktivnom ciklusu osobe.
+
+576
+00:40:56,559 --> 00:41:02,000
+[SPEAKER_00] Dakle, ako ima aktivnu pretplatu, možete je primijeniti na nju i smanjiti cijenu te ponude.
+
+577
+00:41:02,079 --> 00:41:07,840
+[SPEAKER_00] Mislim da to možete učiniti i na novoj pretplati, ali postoje neke stvari u kojima je potrebno da je poslužitelj potpisi.
+
+578
+00:41:08,239 --> 00:41:11,360
+[SPEAKER_00] To je zapravo previše kompliciran proces, ali moguće je.
+
+579
+00:41:11,840 --> 00:41:12,880
+[SPEAKER_00] Te promocijske ponude.
+
+580
+00:41:12,960 --> 00:41:14,400
+[SPEAKER_00] A sada imamo ponude za povrat.
+
+581
+00:41:14,480 --> 00:41:24,800
+[SPEAKER_00] Ponude za povrat su u osnovi vrlo slične prvim dvjema kategorijama, ali se odnose na ljude koji su imali pretplatu i sada je istekla, što nije bilo očito.
+
+582
+00:41:25,119 --> 00:41:27,760
+[SPEAKER_00] je da je to jednostavno s postojećim promotivnim ponudama.
+
+583
+00:41:27,840 --> 00:41:34,320
+[SPEAKER_00] I tako, sada nije samo nova kategorija ponude, već ima i neke nove funkcije koje su jedinstvene za druge.
+
+584
+00:41:34,559 --> 00:41:39,280
+[SPEAKER_00] Dakle, prvo, možete postaviti na koga se to odnosi u App Store Connect.
+
+585
+00:41:39,519 --> 00:41:46,719
+[SPEAKER_00] Nisam vidio demonstraciju, ali je to kao da imate neke odabire, kao što se to može primijeniti na ove pretplatnike Lapsa.
+
+586
+00:41:46,880 --> 00:41:47,760
+[SPEAKER_00] Dakle, postavite to tamo.
+
+587
+00:41:47,840 --> 00:41:48,800
+[SPEAKER_00] A onda se događa nekoliko stvari.
+
+588
+00:41:49,360 --> 00:42:00,480
+[SPEAKER_00] Dakle, prvo, sada vidite ovo u polju statusa automatskog obnove na njihovom Store Kit dva odgovora, kao što ćete vidjeti kao upute za povrat ugovora kao niz koji se vraća iz nekih odgovora Store Kit dva.
+
+589
+00:42:00,480 --> 00:42:02,239
+[SPEAKER_00] Dobivamo dva odgovora, ali onda postoje i neke druge stvari.
+
+590
+00:42:02,559 --> 00:42:10,559
+[SPEAKER_00] Dakle, još jedno mjesto na kojem ćete moći opcionalno vidjeti ovo je kada otvore aplikaciju, zapravo mogu dobiti skočni prozor, što je prilično veliko.
+
+591
+00:42:10,639 --> 00:42:13,360
+[SPEAKER_00] Dakle, možete uključiti ovu ponudu za povrat.
+
+592
+00:42:13,599 --> 00:42:21,360
+[SPEAKER_00] Netko otvori aplikaciju i App Store će automatski prikazati modal koji će reći: Eh, imate pravo na ovo, što je zapravo prilično snažno.
+
+593
+00:42:21,599 --> 00:42:24,880
+[SPEAKER_00] Drugo mjesto na kojem možete vidjeti to je u trgovini aplikacijama i to je prilično cool.
+
+594
+00:42:25,039 --> 00:42:25,599
+[SPEAKER_00] Kako su to zvali?
+
+595
+00:42:25,840 --> 00:42:26,719
+[SPEAKER_00] Bezšavna kupnja, David?
+
+596
+00:42:27,039 --> 00:42:27,920
+[SPEAKER_00] Ili kako se zvao?
+
+597
+00:42:28,320 --> 00:42:28,800
+[SPEAKER_02] Streamline kupnja.
+
+598
+00:42:29,119 --> 00:42:29,760
+[SPEAKER_00] Streamline kupnja.
+
+599
+00:42:30,000 --> 00:42:36,480
+[SPEAKER_00] Dakle, na stranici trgovine aplikacijama, kao da će ga imati kao ponudu za povrat i mogu ga kupiti, što je, mislim, netko poput mene koji se širi.
+
+600
+00:42:36,480 --> 00:42:40,639
+[SPEAKER_00] Kao da se kreću stranicama, možda su deinstalirali aplikaciju, vratili se da je ponovno instaliraju i ona je tamo.
+
+601
+00:42:41,199 --> 00:42:42,719
+[SPEAKER_00] Nisam baš uvjeren da je to tako.
+
+602
+00:42:42,800 --> 00:42:45,840
+[SPEAKER_00] Pa, doći ćemo do predviđanja učinkovitosti.
+
+603
+00:42:45,920 --> 00:42:53,199
+[SPEAKER_00] A onda, pretpostavljam da su u aplikaciji imali vlastite prikazi trgovinskog paketa i da ćete imati programski pristup svim upućenim ponudama Winback.
+
+604
+00:42:53,599 --> 00:42:58,639
+[SPEAKER_00] Možete odlučiti kako se prikazuju, ali pristupnost se kontrolira s Appleove strane.
+
+605
+00:42:59,280 --> 00:42:59,599
+[SPEAKER_00] To je cool.
+
+606
+00:43:00,239 --> 00:43:12,480
+[SPEAKER_00] Mislim da su neke stvari koje to čine malo manje učinkovitim i snažnijim nego što bi moglo biti ili ono što tradicionalno mislimo o ponudama Winback vrlo snažne za ponovno aktiviranje i povećanje LTV-a jer ima puno kupaca.
+
+607
+00:43:12,480 --> 00:43:20,320
+[SPEAKER_00] Kupci će se pretplatiti na neko vrijeme, prestat će koristiti aplikaciju, život im je napredovao, ali već znaju tko ste, već su potrošili novac, znate da imaju potrebu, zar ne?
+
+608
+00:43:20,559 --> 00:43:24,400
+[SPEAKER_00] Dakle, marketing toj skupini može biti stvarno jednostavan način povećanja prihoda.
+
+609
+00:43:24,800 --> 00:43:29,360
+[SPEAKER_00] Ali jedan od problema koje vidim s ponudama za povrat je da još uvijek nema načina komunikacije s tim ljudima.
+
+610
+00:43:29,599 --> 00:43:31,360
+[SPEAKER_00] Čekaj, Charlie, nisam li pogriješio?
+
+611
+00:43:31,519 --> 00:43:39,679
+[SPEAKER_01] Dakle, nisu se previše detaljno pozabavili, ali su u svojoj sesiji rekli da postoji način da se generira poveznica ponude koju možete distribuirati na svoj način.
+
+612
+00:43:40,000 --> 00:43:48,400
+[SPEAKER_01] Sada, po mom razumijevanju, morate se savršeno uskladiti s njihovim kriterijima za upućenost ili možete poslati nekome poveznicu za koju nije upućen.
+
+613
+00:43:48,480 --> 00:43:48,639
+[SPEAKER_02] U redu.
+
+614
+00:43:48,639 --> 00:43:48,639
+[UNKNOWN] Da.
+
+615
+00:43:49,039 --> 00:43:50,480
+[SPEAKER_02] Razgovarali su o tome na sjednici.
+
+616
+00:43:50,960 --> 00:43:56,960
+[SPEAKER_02] Bilo je kao da možete stvoriti ovaj link i onda ga podijeliti na društvenim mrežama.
+
+617
+00:43:58,000 --> 00:44:03,199
+[SPEAKER_02] I to je kao da, ako ga podijelite na društvenim mrežama, trebali biste reći, recimo, ako i to se odnosi na prihvatljivost.
+
+618
+00:44:03,440 --> 00:44:03,840
+[SPEAKER_00] Da, da, da.
+
+619
+00:44:04,000 --> 00:44:08,719
+[SPEAKER_00] Jer ono što želite učiniti jest biti poput, evo ponude za povrat, popis ljudi, učinite ih prihvatljivima za nešto.
+
+620
+00:44:08,960 --> 00:44:09,039
+[SPEAKER_00] Da.
+
+621
+00:44:09,280 --> 00:44:13,199
+[SPEAKER_00] Također izravno komunicirajte s tom skupinom ljudi, kao što je ovo nešto za što ste prihvatljivi.
+
+622
+00:44:13,440 --> 00:44:19,519
+[SPEAKER_00] I opet, mislim da su Appleovi malo vezani za svoje noge jer zbog privatnosti i sve te gluposti, ne mogu to zaista učiniti.
+
+623
+00:44:19,599 --> 00:44:22,000
+[SPEAKER_00] Ali to stvarno ograničava koliko je to snažno.
+
+624
+00:44:22,000 --> 00:44:23,679
+[SPEAKER_00] I frustrirajuće je jer imaju informacije.
+
+625
+00:44:24,000 --> 00:44:24,559
+[SPEAKER_00] Poznaju ljude.
+
+626
+00:44:25,199 --> 00:44:33,199
+[SPEAKER_00] Mogu čak reći: Eh, ako je netko u prošlosti odabrao Push ili bilo što drugo, pošalji im stvar za ponovno aktiviranje marketinga s Appleovom markom.
+
+627
+00:44:33,199 --> 00:44:34,800
+[SPEAKER_00] Ako su odabrali, očito je to veća zamisao.
+
+628
+00:44:34,960 --> 00:44:36,880
+[SPEAKER_00] Ali, u svakom slučaju, to je i dalje nešto.
+
+629
+00:44:37,039 --> 00:44:41,199
+[SPEAKER_00] Ali mislim da to čini da je to manje od onoga što bi moglo biti za većinu programera.
+
+630
+00:44:41,280 --> 00:44:44,000
+[SPEAKER_01] Ima još jednu stvar koju su na kratko spomenuli.
+
+631
+00:44:44,239 --> 00:44:50,960
+[SPEAKER_01] Rekli su da će urednička ekipa možda predstaviti vašu ponudu za povrat u trgovini aplikacijama u ovoj kartici podataka.
+
+632
+00:44:51,039 --> 00:44:52,239
+[SPEAKER_02] Pa, ali na personaliziran način.
+
+633
+00:44:52,400 --> 00:44:55,119
+[SPEAKER_01] Dakle, pretpostavljam da nisam napisao tu citat.
+
+634
+00:44:55,280 --> 00:44:57,920
+[SPEAKER_01] Propustio sam je ako su to rekli, ali pitao sam se isto.
+
+635
+00:44:58,000 --> 00:44:59,920
+[SPEAKER_01] Je li to kao da ćemo oglase pokazati osobama koje su upućenice?
+
+636
+00:45:00,000 --> 00:45:13,519
+[SPEAKER_02] Prema onome što razumijem, trgovina aplikacijama sada je zapravo u određenom smislu TikTokov stilska platforma, a Apple sada radi personalizaciju na razini korisnika na mnogim stranicama.
+
+637
+00:45:13,599 --> 00:45:20,079
+[SPEAKER_02] Dakle, da, to je kao da ako je osoba upućenica, može se pojaviti u njihovom feedu danas kao dio toga.
+
+638
+00:45:20,480 --> 00:45:28,960
+[SPEAKER_02] Ako ste upućenici i odete na karticu aplikacija, može se pojaviti u redu zajedno s ostatkom kategorija i slično u kartici aplikacija.
+
+639
+00:45:29,760 --> 00:45:31,039
+[SPEAKER_02] Mislim da je to stvarno cool.
+
+640
+00:45:31,280 --> 00:45:36,960
+[SPEAKER_02] To je kao da Apple pomaže razvijačima da zarade više novca, pomažu sebi da zarade više novca na putu.
+
+641
+00:45:36,960 --> 00:45:44,800
+[SPEAKER_02] Ali, kao što je to za razvijatelje, a što je cool u vezi s ovim, to je kao da samo konfigurirate nekoliko stvari u App Store Connect i gotovo je.
+
+642
+00:45:45,039 --> 00:45:51,199
+[SPEAKER_02] Dakle, je li to samo po sebi, način na koji je trenutno izgrađen, ovo masovno povećanje?
+
+643
+00:45:51,280 --> 00:46:01,199
+[SPEAKER_02] Ne, ali to je kao da provedete deset minuta punjenjem ovog i Apple ga promovira i pojavljuje se u App Storeu kad netko traži i morate se sjetiti da plaćate u složenosti, zar ne?
+
+644
+00:46:01,840 --> 00:46:06,480
+[SPEAKER_00] Dakle, sada imate ovo, ako nije tako učinkovito, to nije program o kojem želite razmišljati i pokretati.
+
+645
+00:46:06,639 --> 00:46:11,360
+[SPEAKER_00] Dakle, ovdje ću dati osnovni slučaj da morate otvoriti aplikaciju da biste je vidjeli.
+
+646
+00:46:11,599 --> 00:46:14,000
+[SPEAKER_02] Ne, jer je vidite na u trgovini aplikacijama jer Apple ima aplikacije.
+
+647
+00:46:14,079 --> 00:46:15,360
+[SPEAKER_00] U redu, ili sam u trgovini aplikacijama.
+
+648
+00:46:15,440 --> 00:46:17,280
+[SPEAKER_00] U redu, ali i dalje je to izmišljeno.
+
+649
+00:46:17,440 --> 00:46:20,079
+[SPEAKER_00] Zapravo ne znamo koliko će to biti vidljivo i slično.
+
+650
+00:46:20,239 --> 00:46:23,440
+[SPEAKER_00] Jer, kao i svaka druga aplikacija koja ima Winback, bit će u natjecanju za isto mjesto.
+
+651
+00:46:23,599 --> 00:46:23,840
+[SPEAKER_00] U redu.
+
+652
+00:46:24,320 --> 00:46:25,840
+[SPEAKER_00] Možda će se to dogoditi, što god.
+
+653
+00:46:25,920 --> 00:46:28,639
+[SPEAKER_00] Ali, kao da morate otvoriti aplikaciju.
+
+654
+00:46:28,960 --> 00:46:29,679
+[SPEAKER_00] Dakle, tko je ovo sada?
+
+655
+00:46:29,920 --> 00:46:36,639
+[SPEAKER_00] To je netko tko je odustao, ali još uvijek aktivno koristi aplikaciju, što u tom trenutku mogu samo, kao da vidim svoju plaćenu zidinu.
+
+656
+00:46:37,039 --> 00:46:37,199
+[SPEAKER_00] U redu.
+
+657
+00:46:37,280 --> 00:46:38,320
+[SPEAKER_00] Kao da sam već dobio tebe.
+
+658
+00:46:38,400 --> 00:46:38,559
+[SPEAKER_00] U redu.
+
+659
+00:46:38,880 --> 00:46:40,480
+[SPEAKER_00] Kao da ne trebam to nužno.
+
+660
+00:46:40,639 --> 00:46:46,000
+[SPEAKER_00] I opet, kao što je ono što čini ponude Winbacka tako snažnima u divljini, to je da imate pristup marketinškim kanalima ovim ljudima.
+
+661
+00:46:46,239 --> 00:46:48,800
+[SPEAKER_00] Pošaljite im poruku e-pošte ili obavijest ili nešto slično.
+
+662
+00:46:49,199 --> 00:46:50,880
+[SPEAKER_00] To je ono što čini Winback tako snažnim.
+
+663
+00:46:50,960 --> 00:46:57,039
+[SPEAKER_00] Ponovno, to je kao da Apple dolazi blizu, ali onda jednostavno propuste ono temeljno što čini nešto snažno, zar ne?
+
+664
+00:46:57,119 --> 00:47:15,840
+[SPEAKER_02] Pa, ja ću moliti Apple da pruži obavijest od poslužitelja do poslužitelja kad netko postane upućen jer bi to bilo stvarno snažno jer bismo onda mi u RevenueCatu ili pojedinačni programeri mogli poslati tu obavijest kad dobijete poslužitelj do poslužitelja da netko postane upućen.
+
+665
+00:47:15,920 --> 00:47:24,960
+[SPEAKER_02] Ali i dalje ste govorili o složenosti i zapravo nema toliko složenosti koja bi to podržala jer koristi isto kao i promotivne ponude.
+
+666
+00:47:24,960 --> 00:47:25,840
+[SPEAKER_00] Ne, nisam govorio o tehničkoj složenosti.
+
+667
+00:47:25,920 --> 00:47:30,880
+[SPEAKER_00] Samo sam rekao da se sada morate sjetiti, da, imam tu ponudu za povrat, a tko je pogođen, a tko ne.
+
+668
+00:47:30,960 --> 00:47:32,000
+[SPEAKER_00] Možda je to manje važno.
+
+669
+00:47:32,159 --> 00:47:32,719
+[SPEAKER_00] Možda je u redu.
+
+670
+00:47:32,880 --> 00:47:38,400
+[SPEAKER_00] A da je sve u osnovi besplatno s Apps for Connect ako vaša aplikacija ima pretplate, to je prilično cool.
+
+671
+00:47:38,800 --> 00:47:43,119
+[SPEAKER_00] I ne morate raditi kao što je JWS autentikacija i kao što su promotivne ponude.
+
+672
+00:47:43,199 --> 00:47:46,079
+[SPEAKER_02] To je sjajna značajka, ali nije primljena.
+
+673
+00:47:46,480 --> 00:47:52,639
+[SPEAKER_02] Mi u RevenueContu stvarno bismo trebali više raditi na promotivnim ponudama kako bi to bilo mnogo lakše jer je to stvarno snažno.
+
+674
+00:47:52,719 --> 00:47:52,800
+[SPEAKER_02] Da.
+
+675
+00:47:53,119 --> 00:47:56,719
+[SPEAKER_02] Ali ovo je poput malog koraka za svakoga, može ga samo postaviti i to je mnogo lakše.
+
+676
+00:47:57,039 --> 00:48:00,960
+[SPEAKER_02] A onda u podršci e-pošte ili bilo gdje možete koristiti ove prilagođene poveznice.
+
+677
+00:48:00,960 --> 00:48:04,400
+[SPEAKER_02] I to je dobar korak u pravom smjeru i olakšava to za programerima.
+
+678
+00:48:04,480 --> 00:48:07,119
+[SPEAKER_00] Da, pretpostavljam da ako imate vrlo širok ciljni pristup, Charlie, što biste rekli?
+
+679
+00:48:07,199 --> 00:48:10,400
+[SPEAKER_01] Samo sam htjela reći da je to funkcionalno kao uvodne ponude.
+
+680
+00:48:11,360 --> 00:48:18,639
+[SPEAKER_01] Čini mi se da kad postavite probnu verziju, to je gotovo kao da to nije nešto što se događa kasnije jer je strateški to mnogo važnije, ali stvarno je jednostavno postaviti.
+
+681
+00:48:18,960 --> 00:48:21,599
+[SPEAKER_01] To je samo padajući uređivač koji izgleda vrlo slično tome.
+
+682
+00:48:22,000 --> 00:48:22,960
+[SPEAKER_01] A onda ga jednostavno imate.
+
+683
+00:48:23,199 --> 00:48:29,039
+[SPEAKER_01] A pogotovo ako je urednička stvar stvar stvarna, to je novi ulazni točki u vaš lijevak, zar ne?
+
+684
+00:48:29,119 --> 00:48:29,199
+[SPEAKER_02] Da.
+
+685
+00:48:29,440 --> 00:48:32,719
+[SPEAKER_00] Pa, priznajem da je bolje od ničega, ali ćemo vidjeti.
+
+686
+00:48:32,880 --> 00:48:34,320
+[SPEAKER_00] I to je zanimljivo, barem.
+
+687
+00:48:34,480 --> 00:48:36,480
+[SPEAKER_00] Mislim da nas je to inspiriralo, RemedyCat.
+
+688
+00:48:36,800 --> 00:48:39,599
+[SPEAKER_00] je nadahnut da se malo više usredotoči na promotivne ponude.
+
+689
+00:48:39,679 --> 00:48:41,519
+[SPEAKER_00] Danas smo razgovarali o Slacku i slično.
+
+690
+00:48:41,679 --> 00:48:43,599
+[SPEAKER_00] Mislim da postoji mnogo toga što bismo mogli učiniti.
+
+691
+00:48:43,760 --> 00:49:00,079
+[SPEAKER_00] Već smo radili na nekim stvarima vezanim uz to, ali nam je to dalo neke dobre ideje o tome kako, jer, znate, ponovno, zbog domene privatnosti u kojoj radimo, imamo malo više individualno identificiranih, kao što možemo povezati tko ima što pretplatu na osobu ili na token za obavijesti o poticaju ili bilo što drugo.
+
+692
+00:49:00,239 --> 00:49:00,719
+[SPEAKER_00] Dakle, možemo ih povezati.
+
+693
+00:49:00,880 --> 00:49:06,800
+[SPEAKER_00] To nam omogućuje da to učinimo, kao što možete vidjeti svijet u kojem u RevenueCatu stvarate ponudu baš kao što biste to učinili ovdje.
+
+694
+00:49:07,039 --> 00:49:11,920
+[SPEAKER_00] Mi to radimo s promotivnom ponudom umjesto s ponudom za povrat, ali onda imamo i popis.
+
+695
+00:49:12,320 --> 00:49:15,760
+[SPEAKER_00] Dakle, možemo vam pomoći da se doista obratite tom skupini kupaca.
+
+696
+00:49:16,000 --> 00:49:20,000
+[SPEAKER_00] Mislim da je to zapravo ono od čega dolazi većina utjecaja u tim kampanjama za povrat.
+
+697
+00:49:20,159 --> 00:49:20,239
+[SPEAKER_00] Da.
+
+698
+00:49:20,400 --> 00:49:21,760
+[SPEAKER_00] Dakle, u svakom slučaju, dobra je posao.
+
+699
+00:49:22,000 --> 00:49:24,480
+[SPEAKER_02] Apple će bolje postići besplatni novac.
+
+700
+00:49:24,559 --> 00:49:30,159
+[SPEAKER_02] Znate, ako je to povećanje od jedan ili dva posto u godini, besplatno je i jeftino i nije previše komplicirano za implementaciju.
+
+701
+00:49:30,239 --> 00:49:31,360
+[SPEAKER_02] Dakle, mislim da je to sjajno.
+
+702
+00:49:31,599 --> 00:49:43,199
+[SPEAKER_02] A ako Apple stvori obavijest od poslužitelja do poslužitelja za to, postaje još moćnija u tome što ćete moći postaviti ciljanje i slati obavijesti i slično uz mnogo manje truda od promotivnih ponuda.
+
+703
+00:49:43,360 --> 00:49:44,000
+[SPEAKER_02] Dakle, super je.
+
+704
+00:49:44,320 --> 00:49:52,239
+[SPEAKER_02] A onda smo se na to kratko dotaknuli, ali je zanimljivo da ljudi mogu optim zapravo izvršiti cijelu transakciju u trgovini aplikacijama.
+
+705
+00:49:52,320 --> 00:49:56,800
+[SPEAKER_02] Dakle, plaćeni list aplikacija pojavit će se u trgovini aplikacijama i oni će platiti u trgovini aplikacijama.
+
+706
+00:49:57,119 --> 00:49:59,039
+[SPEAKER_02] Gledajući sesiju, bilo je zanimljivo.
+
+707
+00:49:59,199 --> 00:50:01,119
+[SPEAKER_02] Možete to isključiti.
+
+708
+00:50:01,280 --> 00:50:03,039
+[SPEAKER_02] I zapravo, ne znam je li to opt-in ili opt-out.
+
+709
+00:50:03,119 --> 00:50:04,320
+[SPEAKER_02] Mislim da je to opt-in.
+
+710
+00:50:04,480 --> 00:50:07,199
+[SPEAKER_01] Dakle, mislim da je opt-out.
+
+711
+00:50:07,360 --> 00:50:07,599
+[SPEAKER_02] U redu.
+
+712
+00:50:07,679 --> 00:50:08,639
+[SPEAKER_01] Dakle, mislim da je tako.
+
+713
+00:50:08,960 --> 00:50:13,760
+[SPEAKER_02] Dakle, kada ga postavite, automatski će omogućiti kupnju u trgovini aplikacijama.
+
+714
+00:50:13,920 --> 00:50:18,719
+[SPEAKER_02] Ako to ne želite, možete im pokazati ponudu u trgovini aplikacijama ili će Apple pokazati ponudu u trgovini aplikacijama.
+
+715
+00:50:18,800 --> 00:50:23,199
+[SPEAKER_02] A onda kad pritisnu gumb, zapravo će otići u vašu aplikaciju gdje možete pružiti prilagođenu iskustvo.
+
+716
+00:50:23,280 --> 00:50:24,960
+[SPEAKER_02] Dakle, ako stvarate nešto što treba imati na umu.
+
+717
+00:50:24,960 --> 00:50:26,159
+[SPEAKER_02] Ipak, stvaranje je nešto što treba imati na umu.
+
+718
+00:50:26,400 --> 00:50:30,800
+[SPEAKER_02] Odlučite hoćete li se uključiti ili odustati od ove pojednostavljene kupnje.
+
+719
+00:50:31,039 --> 00:50:32,960
+[SPEAKER_02] U redu, došli smo do sata.
+
+720
+00:50:33,039 --> 00:50:34,239
+[SPEAKER_02] Mislim da je to sve glavno.
+
+721
+00:50:34,320 --> 00:50:43,840
+[SPEAKER_00] Ima nekoliko sitnica o kojima nismo razgovarali, ali ima puno poboljšanja prikaza trgovinskih kompletova, što je cool, i neke stvari koje se u aplikaciji testiraju kupnje, ali svi koristite RevenueCat, ne trebate ovu smeće.
+
+722
+00:50:43,920 --> 00:50:46,639
+[SPEAKER_01] Ali koristite konfiguracijske datoteke trgovinskih kompletova.
+
+723
+00:50:46,800 --> 00:50:50,079
+[SPEAKER_01] Moram zadovoljiti Josha Holtza jer je to njegova stvar.
+
+724
+00:50:50,320 --> 00:50:59,039
+[SPEAKER_01] Ali, kao i svi koji koriste RevenueCat ili ne za bilo kakve stvari trgovinskih kompletova, trebali biste koristiti konfiguracijske datoteke trgovinskih kompletova da biste testirali sve.
+
+725
+00:50:59,199 --> 00:50:59,920
+[SPEAKER_01] I ove godine su to poboljšali.
+
+726
+00:51:00,000 --> 00:51:00,719
+[SPEAKER_01] To je CLDR.
+
+727
+00:51:00,800 --> 00:51:03,840
+[SPEAKER_02] Dvije posljednje stvari o kojima sam se želio kratko dotaknuti.
+
+728
+00:51:04,159 --> 00:51:23,519
+[SPEAKER_02] Apple je najavio nešto što se zove napredne trgovinske API-je, a još nema puno informacija o tome, ali u najavi se kaže da, a za one koji su na podcastu, radim u zagradama, složene primjene monetizacije, pa su primjeri koje su dali bili aplikacije za stvaranje sadržaja s pretplata za stvaratelje.
+
+729
+00:51:24,400 --> 00:51:28,639
+[SPEAKER_02] To je trenutačno ogroman problem i imamo tisuće kupaca koji dolaze u RevenueCat.
+
+730
+00:51:28,880 --> 00:51:30,800
+[SPEAKER_02] Možete li to riješiti na način na koji App Store ne može?
+
+731
+00:51:31,039 --> 00:51:33,199
+[SPEAKER_02] Odgovor je ne jer Apple to ne podržava.
+
+732
+00:51:33,360 --> 00:51:36,000
+[SPEAKER_02] Dakle, Apple posebno kaže da rade na tome.
+
+733
+00:51:36,639 --> 00:51:38,880
+[SPEAKER_02] Da bismo omogućili više partnera.
+
+734
+00:51:39,039 --> 00:51:41,280
+[SPEAKER_00] Postoji obrasac koji možemo povezati možda u emisiji.
+
+735
+00:51:41,360 --> 00:51:41,440
+[SPEAKER_00] Da.
+
+736
+00:51:41,519 --> 00:51:46,559
+[SPEAKER_02] Možete se prijaviti da biste bili obaviješteni i čini se da će to biti malo više poput bijele rukavice.
+
+737
+00:51:46,639 --> 00:52:08,400
+[SPEAKER_02] Ali način na koji sam to pročitala i postoje i drugi primjeri, složeno SKU pakiranje, digitalni sadržaj u više aplikacija u istom računu razvijača, priopćenje je bilo poput toga da Apple prepoznaje i vjerojatno je prepoznao godinama da postoje svi ti složeni primjeri upotrebe koje trgovina aplikacijama trenutačno ne podržava s standardnim pretplatama i kupnjama u aplikaciji.
+
+738
+00:52:08,480 --> 00:52:12,960
+[SPEAKER_02] I ovo je ono što kažu, dobro, počinjemo dozvoljavati širok spektar.
+
+739
+00:52:12,960 --> 00:52:16,159
+[SPEAKER_00] Omogućavaju šire mogućnosti monetizacije u trgovini aplikacijama.
+
+740
+00:52:16,320 --> 00:52:28,320
+[SPEAKER_00] Možda su konačno shvatili da je njihov monopol na kupnju doveo do nekih negativnih posljedica i vrijeme je da rade ono što bi vam omogućila svaka druga API za kupnju, što je dobro.
+
+741
+00:52:28,800 --> 00:52:31,679
+[SPEAKER_00] Ako je ovo poput DMA-e, jako sam sretan.
+
+742
+00:52:32,639 --> 00:52:36,800
+[SPEAKER_00] Sada sam za DMA jer je ovo samo problem koji smo dugo trebali.
+
+743
+00:52:36,960 --> 00:52:39,599
+[SPEAKER_02] Da, mislim da dobivamo toliko zahtjeva u RevenueCatu.
+
+744
+00:52:39,920 --> 00:52:46,880
+[SPEAKER_00] Ali nikad nisu, mislim da postoje neki veliki primjeri aplikacija koje to rade i mislim da su dobile malo pomoći od Applea da to učine.
+
+745
+00:52:47,280 --> 00:52:48,960
+[SPEAKER_00] Ali ima puno malih aplikacija.
+
+746
+00:52:48,960 --> 00:52:51,679
+[SPEAKER_00] Postoji mnoštvo malih aplikacija koje bi imale koristi od pokušaja da se ovdje nešto cool stvori.
+
+747
+00:52:51,760 --> 00:52:52,559
+[SPEAKER_00] Ima ih puno.
+
+748
+00:52:53,039 --> 00:52:55,679
+[SPEAKER_00] Mislim da je negdje blog post o tome, kao što su aplikacije koje ne postoje.
+
+749
+00:52:55,920 --> 00:52:58,639
+[SPEAKER_00] Ima puno aplikacija koje ne postoje jer je ovo previše teško.
+
+750
+00:52:58,960 --> 00:53:03,760
+[SPEAKER_00] I nadam se da će početi s nekim razvojnim partnerima, a onda će ga smanjiti i otvoriti za više ljudi.
+
+751
+00:53:04,960 --> 00:53:06,639
+[SPEAKER_00] Ali mislim da bi to bilo vrlo dobro.
+
+752
+00:53:07,119 --> 00:53:10,079
+[SPEAKER_02] Ja sam za više poslovnih prilika u trgovini aplikacijama.
+
+753
+00:53:10,320 --> 00:53:15,119
+[SPEAKER_02] I ovo je kao da, znate, s Appleom neprestano imam nade, a onda me razočaraju.
+
+754
+00:53:15,199 --> 00:53:16,400
+[SPEAKER_02] Ali ovo izgleda konkretno.
+
+755
+00:53:16,800 --> 00:53:18,639
+[SPEAKER_01] To je kao da se kreću naprijed s drugim stvarima.
+
+756
+00:53:18,719 --> 00:53:23,920
+[SPEAKER_02] Zanimljivo je da dijele novu monetizaciju i da sam na ovoj poveznici da budem obaviješten.
+
+757
+00:53:24,000 --> 00:53:29,039
+[SPEAKER_02] Svi svoje e-pošte stavljam u tu kutiju jer želim znati što se događa.
+
+758
+00:53:29,679 --> 00:53:32,639
+[SPEAKER_02] A posljednja stvar na koju sam želio dotaknuti jest komplet za atribuciju oglasa.
+
+759
+00:53:32,719 --> 00:53:34,079
+[SPEAKER_02] Napisat ćemo blog post o tome.
+
+760
+00:53:34,320 --> 00:53:39,440
+[SPEAKER_02] Eric Sufer već je napisao sjajan blog post o tome, ali to je nešto poput SK Ad Network 2.0.
+
+761
+00:53:40,320 --> 00:53:42,480
+[SPEAKER_00] Novo je i ima neke lijepe stvari.
+
+762
+00:53:42,800 --> 00:53:45,760
+[SPEAKER_00] Čini se da je malo više s gledišta iskustva razvijatelja.
+
+763
+00:53:45,920 --> 00:53:47,039
+[SPEAKER_00] Malo je više razumljivo.
+
+764
+00:53:47,199 --> 00:53:48,079
+[SPEAKER_00] Gledao sam sesiju o tome.
+
+765
+00:53:48,239 --> 00:53:50,079
+[SPEAKER_00] Moguće je da je to bilo više od SKN-a.
+
+766
+00:53:50,159 --> 00:53:50,480
+[SPEAKER_00] Da, ne.
+
+767
+00:53:50,800 --> 00:53:53,119
+[SPEAKER_02] Da, ali to je bilo nešto poput male evolucije.
+
+768
+00:53:53,199 --> 00:53:56,239
+[SPEAKER_02] Kao da ima neke nove značajke, ali u osnovi je isto.
+
+769
+00:53:56,480 --> 00:53:57,840
+[SPEAKER_00] Da, u osnovi je isto.
+
+770
+00:53:57,920 --> 00:54:00,800
+[SPEAKER_00] Samo je možda DX malo bolji i popravili su nekoliko stvari..
+
+771
+00:54:00,960 --> 00:54:09,760
+[SPEAKER_02] Da, ali nadala sam se da će s preimenovanjem biti sve novo i da će imati nove mogućnosti i da će Apple izgraditi okvir za atribuciju kakav je netko želio.
+
+772
+00:54:10,480 --> 00:54:13,360
+[SPEAKER_02] To nije baš to, ali su to novije značajke i bolje i sve ostalo.
+
+773
+00:54:13,599 --> 00:54:26,239
+[SPEAKER_00] Ali, evo, mislim da je jedna od SKA ad mreža, kao da se nikad nećemo vratiti svijetu atribucije u kojem smo bili i Apple je jasan, ako želite atribuciju, morate je pokrenuti kroz nas, što je malo ludilo, ali to je pravilo koje su nam dali.
+
+774
+00:54:26,480 --> 00:54:27,920
+[SPEAKER_00] Mislim da je DX važan.
+
+775
+00:54:28,239 --> 00:54:32,480
+[SPEAKER_00] Mislim da su abstrakcije SKA ad mreže bile čudne, kao da u mnogim slučajevima nije imalo smisla.
+
+776
+00:54:32,559 --> 00:54:36,320
+[SPEAKER_00] One su još uvijek u novom kompletu za atribuciju oglasa, ali mislim da je malo prijateljskiji.
+
+777
+00:54:36,960 --> 00:55:09,679
+[SPEAKER_02] No frustrirajuća je stvar, i to je kao i kod gotovo svih Appleovih najava, da prema mom čitanju većina značajki zahtijeva najmanje 17.4, iOS 17.4, iPadOS 17.4, ali onda su neke od novih značajki, poput jedne od velikih novih značajki ponovna uključivanja, tako da možete zapravo posebno, jer se u prošlosti dogodilo da samo pokrenete mnoštvo oglasa i SK Ad Network ne zna je li prethodno instalirali aplikaciju, prethodno uključili se, pa se jednostavno pojavljuju kao da su nova korisnica.
+
+778
+00:55:09,840 --> 00:55:10,960
+[SPEAKER_02] Pa to nije dobro.
+
+779
+00:55:11,039 --> 00:55:12,880
+[SPEAKER_02] Želite razumjeti tko je ponovno označen i ponovno uključen.
+
+780
+00:55:12,880 --> 00:55:15,280
+[SPEAKER_02] I ponovno se uključiti u odnosu na nekoga tko je neto novi korisnik.
+
+781
+00:55:15,360 --> 00:55:17,599
+[SPEAKER_02] Dakle, ovo ponovno uključivanje zapravo je stvarno cool.
+
+782
+00:55:17,760 --> 00:55:24,239
+[SPEAKER_02] I to je nekako najveća, mislim, najveća vijest za komplet za atribuciju oglasa, ali to zahtijeva IOS osamnaest.
+
+783
+00:55:24,719 --> 00:55:28,639
+[SPEAKER_02] Dakle, to je poput, dobro, možda u dvadeset osam.
+
+784
+00:55:28,800 --> 00:55:31,199
+[SPEAKER_02] Mislim, na sreću, ljudi su brzo nadogradili.
+
+785
+00:55:31,360 --> 00:55:35,760
+[SPEAKER_02] Vidio sam nedavno da je sedamdeset sedam posto ljudi sada na IOS sedamnaest ili kasnije.
+
+786
+00:55:36,079 --> 00:55:36,559
+[SPEAKER_02] Dakle, to je dobro.
+
+787
+00:55:36,800 --> 00:55:48,880
+[SPEAKER_02] Mislim da se na IOS-u kao platformi ljudi brzo kreću da bi se nadogradili, ali kad dvadeset do trideset posto ljudi nakon godinu dana još uvijek nije na najnovijoj verziji, to je užasno.
+
+788
+00:55:48,880 --> 00:55:52,000
+[SPEAKER_02] Da sve ove nove zabavne stvari nisu kompatibilne unatrag.
+
+789
+00:55:52,079 --> 00:56:08,480
+[SPEAKER_02] Želio bih da Apple pronađe način da radi ono što Google radi i da može unatrag prenijeti neke od tih novih stvari jer sada, možda dvadeset, dvadeset pet i šest, kao što Facebook počinje stvarno povećavati svoj rast, kao da još nisu ni potpuno razvili SK Ad Network.
+
+790
+00:56:08,800 --> 00:56:23,039
+[SPEAKER_02] Dakle, u svakom slučaju, dublje ćemo se pozabaviti, možda čak i napraviti podcast s Ericom Zufferom da bismo sve to detaljnije razmotrili, ali nešto što treba pratiti i znati da postoji, čak i ako nećemo ući u sve pojedinosti ovdje na ovom webinaru s podcastom.
+
+791
+00:56:23,360 --> 00:56:24,239
+[SPEAKER_02] Ali mislim da je to sve.
+
+792
+00:56:25,360 --> 00:56:28,559
+[SPEAKER_00] Iskreno, bilo je prilično lako za DubDAP.
+
+793
+00:56:28,639 --> 00:56:29,599
+[SPEAKER_00] Kao da postoje poboljšanja.
+
+794
+00:56:30,159 --> 00:56:43,440
+[SPEAKER_00] Ulazili smo u to s tom pretpostavkom, barem na strani trgovine, jer mislim da su svi resursi koji su vjerojatno uloženi u usklađenost s DMA-om u posljednjih šest mjeseci vjerojatno oduzeli puno kisika iz prostorije za rad na stvarima u trgovini aplikacijama.
+
+795
+00:56:43,519 --> 00:56:46,079
+[SPEAKER_00] Nemam nikakve unutarnje informacije o tome, ali morate razmišljati.
+
+796
+00:56:46,320 --> 00:56:48,079
+[SPEAKER_00] To nije kao da su Apple ljudi.
+
+797
+00:56:48,320 --> 00:56:51,599
+[SPEAKER_00] Imaju samo toliko resursa i toliko niti koje mogu pokrenuti u određenom trenutku.
+
+798
+00:56:51,679 --> 00:56:57,679
+[SPEAKER_00] Stoga nisam bio iznenađen kad sam vidio neku vrstu dodatnih dobrih stvari, ali ne i veliku revoluciju ove godine na strani trgovine.
+
+799
+00:56:58,000 --> 00:57:05,840
+[SPEAKER_00] Dakle, ponekad je to prilično lijepo kad je tiho., barem za mene i moj posao, lijepo je kad sve potpuno okrenemo naopako.
+
+800
+00:57:06,400 --> 00:57:12,639
+[SPEAKER_02] Dakle, ove godine možemo se više usredotočiti na promocije i druge zabavne stvari umjesto na potpuno novi komplet trgovine ili nešto slično.
+
+801
+00:57:13,119 --> 00:57:14,480
+[SPEAKER_00] U redu, hvala svima na gledanju.
+
+802
+00:57:14,559 --> 00:57:14,800
+[SPEAKER_00] Hvala svima.
+
+803
+00:57:14,960 --> 00:57:17,280
+[SPEAKER_00] Hvala vam puno što ste slušali.
+
+804
+00:57:18,079 --> 00:57:23,360
+[SPEAKER_02] Ako imate minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+805
+00:57:24,639 --> 00:57:31,119
+[SPEAKER_02] Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
+
