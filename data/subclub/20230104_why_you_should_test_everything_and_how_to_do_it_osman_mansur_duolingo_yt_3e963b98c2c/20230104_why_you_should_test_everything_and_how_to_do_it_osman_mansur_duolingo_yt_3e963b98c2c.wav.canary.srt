@@ -1,0 +1,2607 @@
+1
+00:00:00,000 --> 00:00:09,600
+Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:20,000
+Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:29,760
+Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje kupcima i rast aplikacija.
+
+5
+00:00:29,760 --> 00:00:32,880
+i povećati prihod na iOS-u, Androidu i webu.
+
+6
+00:00:33,600 --> 00:00:36,240
+Više informacija možete pronaći na revenucat.com.
+
+7
+00:00:37,280 --> 00:00:46,400
+Uđimo u emisiju Pozdrav, ja sam vaš domaćin David Barnard, a danas je sa mnom Jacob Biding, izvršni direktor tvrtke RevenueCat.
+
+8
+00:00:46,640 --> 00:00:51,840
+Naš današnji gost je Osman Mansour, voditelj proizvoda u timu za zadržavanje u Duolingu.
+
+9
+00:00:52,800 --> 00:00:58,800
+Na podcastu razgovaramo s Osmanom o kulturi eksperimentiranja u Duolingu.
+
+10
+00:00:58,800 --> 00:01:06,560
+Podaci i testiranje kao emocija i zašto pasivno agresivne obavijesti push zapravo mogu funkcionirati u pravom kontekstu.
+
+11
+00:01:07,760 --> 00:01:10,560
+Hej, Osman, hvala ti što si se danas priključio našem podcastu.
+
+12
+00:01:11,280 --> 00:01:12,640
+David, hvala ti što si me primio.
+
+13
+00:01:12,720 --> 00:01:13,520
+Drago mi je da sam ovdje.
+
+14
+00:01:13,600 --> 00:01:15,840
+Da, jako sam uzbuđen što ću razgovarati s tobom i Jacobom.
+
+15
+00:01:15,920 --> 00:01:16,720
+Drago mi je da te vidim.
+
+16
+00:01:16,880 --> 00:01:17,440
+Sretan petak.
+
+17
+00:01:17,840 --> 00:01:18,240
+Ja sam ovdje.
+
+18
+00:01:18,640 --> 00:01:21,200
+Spremni sam razgovarati o pretplati.
+
+19
+00:01:21,520 --> 00:01:21,840
+Učinimo to.
+
+20
+00:01:22,160 --> 00:01:23,200
+Hej, želio sam započeti.
+
+21
+00:01:23,760 --> 00:01:27,760
+Imamo puno stvarno zanimljivih testova koje je Duolingo proveo.
+
+22
+00:01:27,760 --> 00:01:31,360
+Vaš blog je, usput rečeno, sjajan.
+
+23
+00:01:31,440 --> 00:01:32,880
+Nisam ga vidio sve do nedavno.
+
+24
+00:01:33,200 --> 00:01:36,320
+Tweet Storms, blogovi, ima ih toliko, povezat ćemo ih sve u bilješkama emisije.
+
+25
+00:01:37,040 --> 00:01:42,080
+Ali, uh, tako da ćemo razgovarati o pojedinačnim testovima za trenutak jer mislim da su to neke stvarno sjajne stvari koje sam naučio.
+
+26
+00:01:42,320 --> 00:01:48,320
+Ali htio sam započeti samo pričajući o tome kako Duolingo razmišlja o testovima i što je proces.
+
+27
+00:01:49,440 --> 00:01:56,560
+Uh, pa imam nekoliko tema koje sam želio obuhvatiti, ali počnimo s idejama ili ne znam postoji li.
+
+28
+00:01:56,960 --> 00:01:59,600
+možda i širi pregled s kojim biste željeli započeti.
+
+29
+00:01:59,680 --> 00:02:01,600
+Mogu započeti s dubljim dijelom.
+
+30
+00:02:01,680 --> 00:02:06,320
+Kao što sam vidio u jednom od blogova, u Duolingu testiramo sve.
+
+31
+00:02:06,640 --> 00:02:06,800
+Zašto?
+
+32
+00:02:08,320 --> 00:02:09,440
+Da, to je sjajno pitanje.
+
+33
+00:02:09,600 --> 00:02:20,880
+Mislim da je jedna stvar koju kao tvrtka imamo na umu da su podaci i podaci koje prikupljamo i analiziramo te koristimo za poboljšanje našeg proizvoda jedan od naših najboljih načina rada kao tvrtke.
+
+34
+00:02:22,080 --> 00:02:22,880
+Imamo milijune učenika.
+
+35
+00:02:23,280 --> 00:02:25,760
+Mislim da smo sada blizu šezdeset milijuna aktivnih korisnika mjesečno.
+
+36
+00:02:25,760 --> 00:02:37,600
+imamo milijun aktivnih korisnika, što nam omogućava prikupljanje velikog broja podataka koji nam pomažu da se poboljšamo u učenju jezika i da naš proizvod bude zanimljiviji.
+
+37
+00:02:37,920 --> 00:02:51,600
+Od osnutka Dualinga, pridružio sam se prije nekoliko godina, ali od osnutka Dualinga, testiranje AB i razvoj proizvoda koji se temelji na mjerama uvijek su bili dio našeg DNK-a i to je zaista dobro funkcioniralo.
+
+38
+00:02:51,760 --> 00:02:54,080
+Čak i deset godina nakon lansiranja, još uvijek održavamo.
+
+39
+00:02:54,080 --> 00:02:58,720
+Uzgoj DAU-a održava se za pedeset posto u odnosu na prethodnu godinu.
+
+40
+00:02:58,960 --> 00:03:03,760
+Dakle, imamo formulu koja funkcionira i nešto što smo predani dugoročno.
+
+41
+00:03:03,840 --> 00:03:09,760
+Da, i to je, mislim, testiranje nije uvijek srebrna kugla.
+
+42
+00:03:09,920 --> 00:03:19,840
+Ponekad nije lako pronaći infrastrukturu koja vam je potrebna i trud koji je potreban, kao i stručnost da ne testirate loše.
+
+43
+00:03:20,000 --> 00:03:23,680
+I tako, da, gotovo mislim da je to tako da se izjavi hrabro.
+
+44
+00:03:23,680 --> 00:03:31,440
+Kada iznesete hrabar izraz poput toga da je testiranje dio naše kulture, morate to učiniti jer inače, ako samo kažete: Pokušat ćemo testirati neke stvari, vjerojatno neće dobro proći.
+
+45
+00:03:31,920 --> 00:03:32,960
+Morate to učiniti velikom stvarom.
+
+46
+00:03:33,040 --> 00:03:37,120
+I zvuči kao da to zvuči kao da to radite.
+
+47
+00:03:37,200 --> 00:03:47,280
+I stvar s moteom također je vrlo zanimljiva jer, znate, za ljude koji misle, znate, kao što je Dueling, morate razmišljati, zašto neće biti sljedećeg Duelinga?
+
+48
+00:03:47,440 --> 00:03:50,480
+Zašto neće nešto što se može kretati brže od nas pobijediti nas?
+
+49
+00:03:50,560 --> 00:03:53,920
+Jer obično se manja tvrtka može kretati brže od nas napredovati u nekim aspektima, zar ne?
+
+50
+00:03:54,080 --> 00:03:57,280
+Mogu eksperimentirati, nemaju što izgubiti, mogu isprobati stvari.
+
+51
+00:03:57,520 --> 00:03:59,840
+I tako razmišljate o obrani i načinu rada, zar ne?
+
+52
+00:04:00,000 --> 00:04:00,320
+Baš tako.
+
+53
+00:04:00,880 --> 00:04:16,160
+A u potrošačkoj industriji, robna marka je veliki način rada, što ima i Duolingo, ali podaci, pogotovo u potrošačkoj industriji, kad imate toliko korisnika, pogotovo kad ih imate toliko, nešto je što mala startup ne može replicirati, zar ne?
+
+54
+00:04:16,240 --> 00:04:17,200
+I ne mogu odmah testirati.
+
+55
+00:04:17,680 --> 00:04:20,800
+Dakle, strateški je to smisleno, pogotovo u velikom opsegu.
+
+56
+00:04:20,880 --> 00:04:21,200
+Baš tako.
+
+57
+00:04:21,520 --> 00:04:21,600
+Da.
+
+58
+00:04:21,920 --> 00:04:35,520
+Pa, to je dio onoga što sam želio proći kroz ovaj proces jer, iako ne možete testirati u velikom opsegu kao mala tvrtka, mislim da svaka tvrtka može naučiti toliko toga od Duolinga o procesu i razmišljanju iza njega.
+
+59
+00:04:36,000 --> 00:04:41,840
+I to je sjajan način da započneš, Jacob, hvala ti što si uštedio pitanje.
+
+60
+00:04:41,920 --> 00:04:43,520
+Počnite s Y-om, znate?
+
+61
+00:04:43,920 --> 00:04:44,720
+Počnite s Y-om.
+
+62
+00:04:45,040 --> 00:04:50,560
+Dakle, sada ćemo se uroniti u pojedinosti jer mislim da je ovdje puno toga.
+
+63
+00:04:50,560 --> 00:04:56,080
+Mnogo ideja u tehnološkoj zajednici se ne primjećuje, ideja je desetak, a ja sam desetak, a ja desetak.
+
+64
+00:04:56,160 --> 00:05:02,560
+No kao dio kulture testiranja, iznimno je važno doći do ideja za testiranje.
+
+65
+00:05:02,640 --> 00:05:17,040
+I bilo da ste velika ili mala tvrtka, bilo da testirate samo objavom ažuriranja za tjedan dana, a zatim ga promijenite tjedan dana kasnije i gledate rezultate bez ikakve sofisticirane infrastrukture, i dalje morate doći do ideja i isprobati ih te imati hrabre ideje.
+
+66
+00:05:17,280 --> 00:05:18,400
+Dakle, krenimo s tim.
+
+67
+00:05:18,880 --> 00:05:21,200
+Kakav je proces ideiranja?
+
+68
+00:05:21,440 --> 00:05:25,280
+Kako dolazite do ideja koje možete isprobati i kako to izgleda interno?
+
+69
+00:05:25,920 --> 00:05:27,120
+Da, to je sjajno pitanje.
+
+70
+00:05:27,280 --> 00:05:32,080
+Rekla bih da naše ideje i proces ideiranja dolaze iz nekoliko različitih mjesta.
+
+71
+00:05:32,480 --> 00:05:47,040
+Slično drugim potrošačkim aplikacijama, puno istraživamo korisničko iskustvo, imamo sjajnu dizajnersku ekipu, a mnoge ideje mogu doći iz istraživanja tih funkcija, ali i mnoge ideje voze voditelji proizvoda iz pristupa odozdo prema gore.
+
+72
+00:05:47,200 --> 00:05:52,640
+Tako sam se pridruž Dualingu odmah nakon studija kao asistent voditelja proizvoda.
+
+73
+00:05:52,800 --> 00:06:03,040
+Čak i netko poput mene na mlađoj razini imao je ovlasti da vodi timske planove i posjeduje dijelove planova kako bi se ideirale značajke.
+
+74
+00:06:04,000 --> 00:06:13,600
+Dakle, postoji puno toga, poput čiste ideje od najnižeg razine tvrtke sve do izvršnog razine gdje se ideje na kraju predlažu.
+
+75
+00:06:14,000 --> 00:06:17,440
+Ali više taktički, mislim da je puno naše ideje proizašlo iz ovog ciklusa.
+
+76
+00:06:17,840 --> 00:06:19,920
+ponavljanja i provođenja pokusa.
+
+77
+00:06:20,240 --> 00:06:30,000
+Dakle, svaki put kad izvršimo test AB, analiziramo podatke i iz tih podataka naučit ćemo pet ili šest različitih stvari koje možemo odmah vratiti i ponovno isprobati.
+
+78
+00:06:30,160 --> 00:06:34,560
+Dakle, održavamo vrlo čvrsti ciklus ponavljanja i učenja iz pokusa.
+
+79
+00:06:34,640 --> 00:06:40,800
+Mislim da je još jedna stvar koja je zaista jedinstvena za Duolingo da je to aplikacija koju može koristiti svaki zaposlenik.
+
+80
+00:06:41,280 --> 00:06:47,440
+Dakle, imamo vrlo jaku kulturu hranjenja pasa, gdje svi naši zaposlenici od više od šest stotina suinu zaposlenika koristi Dualingo.
+
+81
+00:06:47,920 --> 00:06:57,360
+Imamo veliki kanal na Slacku pod nazivom Feedback Product, gdje ga može svatko u tvrtki jednostavno unijeti povratne informacije o proizvodu o bilo čemu što se odnosi na aplikaciju.
+
+82
+00:06:57,520 --> 00:07:06,720
+Kao voditelji projekata, mi gledamo taj kanal i tko god unosi povratne informacije u taj kanal, možemo ih upotrijebiti za dobivanje uvida i ideja.
+
+83
+00:07:07,200 --> 00:07:19,600
+Mislim da je to zaista jedinstveno za Dualingo jer ga je aplikacija dizajnirana za svakodnevnu upotrebu.
+
+84
+00:07:19,680 --> 00:07:23,520
+To je dnevna aplikacija, pa je možete koristiti svaki dan i brzo dobiti uvid u iteraciju.
+
+85
+00:07:24,320 --> 00:07:28,480
+Kada imate ideju, uvijek mislite: Moramo osmisliti test oko nje.
+
+86
+00:07:28,720 --> 00:07:35,440
+I pitao sam jer su neke ideje, dobro, postoje dva slučaja u kojima, kao vizionarski osnivač, kažem: Ne trebam to testirati.
+
+87
+00:07:35,520 --> 00:07:36,640
+Znam da će biti sjajno.
+
+88
+00:07:36,720 --> 00:07:37,360
+Dakle, to je jedan.
+
+89
+00:07:38,480 --> 00:07:42,800
+A drugi je da je ponekad teško testirati stvari, zar ne?
+
+90
+00:07:42,880 --> 00:07:44,080
+Ponekad nemaju, mislim, mislim da imate.
+
+91
+00:07:44,640 --> 00:07:51,760
+svoje KPI-jeve i slično, ali morate biti razboriti i onda ne možete provesti beskonačne testove, zar ne?
+
+92
+00:07:51,840 --> 00:07:55,360
+U proizvodu postoji samo toliko širine i novih iskustava, zar ne?
+
+93
+00:07:55,440 --> 00:08:00,000
+Postoje ograničenja onoga što možete testirati sinkrono ili zajedno i slično.
+
+94
+00:08:00,320 --> 00:08:01,280
+Dakle, kako to radite?
+
+95
+00:08:01,520 --> 00:08:07,600
+Uvijek testirate sve prije nego što pritisnete gumb za pokretanje ili možete samo upotrijebiti svoj prosudbeni um da biste utvrdili što je važan test ili ne?
+
+96
+00:08:07,920 --> 00:08:09,920
+Ili kako postavljate kriterij?
+
+97
+00:08:10,000 --> 00:08:11,280
+Da, to je sjajno pitanje.
+
+98
+00:08:11,360 --> 00:08:13,040
+Iako zvuči ludost, u osnovi.
+
+99
+00:08:14,000 --> 00:08:15,040
+testiramo sve.
+
+100
+00:08:16,000 --> 00:08:17,680
+Samo najmanje.
+
+101
+00:08:18,000 --> 00:08:19,120
+Sve ide u zastavu značajke.
+
+102
+00:08:19,280 --> 00:08:28,640
+Dakle, sve što gradite označava se i onda, čak i ako ne očekujete neku revolucionarnu vrijednost, uključit ćete i isključiti ga kako biste barem izmjerili osnovne vrijednosti i slično.
+
+103
+00:08:28,800 --> 00:08:29,120
+Točno.
+
+104
+00:08:29,280 --> 00:08:40,080
+Čak i ako je to samo promjena u pozadini koja uopće ne mijenja korisničko iskustvo, samo ćemo je pokrenuti kao AB test samo da bismo bili sigurni da nema regresija koje utječu na nešto drugo u aplikaciji.
+
+105
+00:08:40,640 --> 00:08:41,840
+Dakle, doslovno svaka mala promjena.
+
+106
+00:08:43,280 --> 00:08:44,320
+proći će kao AB test.
+
+107
+00:08:44,480 --> 00:08:45,440
+Tako jednostavno radimo.
+
+108
+00:08:45,920 --> 00:08:46,560
+Zanimljivo.
+
+109
+00:08:46,800 --> 00:08:49,280
+I to zahtijeva puno infrastrukture, zar ne?
+
+110
+00:08:49,760 --> 00:08:54,800
+Ne samo računala, već i ljude koji održavaju te računala i ljude koji održavaju testove.
+
+111
+00:08:54,960 --> 00:09:01,760
+I kako to funkcionira kao PM, pretpostavljam da imate tim s misijom i slično, kao što je to sve klijent?
+
+112
+00:09:02,640 --> 00:09:05,040
+I vi ste zapravo klijenti za cijelu tu infrastrukturu?
+
+113
+00:09:05,200 --> 00:09:06,240
+Je li je lako koristiti?
+
+114
+00:09:06,720 --> 00:09:08,000
+I kako to izgleda?
+
+115
+00:09:08,320 --> 00:09:08,400
+Da.
+
+116
+00:09:08,640 --> 00:09:11,200
+Dakle, svi naši AB testovi su klijentski.
+
+117
+00:09:11,200 --> 00:09:14,640
+Naša infrastruktura za testiranje AB-a izgrađena je u kući.
+
+118
+00:09:14,720 --> 00:09:24,880
+Imamo vrlo snažnu infrastrukturu podataka i tim za eksperimente koji izgrađuju te alate koji inženjerima omogućuju postavljanje testova AB-a nakon što, na primjer, izrade značajku.
+
+119
+00:09:25,040 --> 00:09:32,400
+A onda u istom alatu svakog jutra, svaki dan, generiramo izvješća o novim podacima koji dolaze iz eksperimenata.
+
+120
+00:09:32,560 --> 00:09:39,600
+Kao voditelj projekta, prvo što radim kad se probudim jest provjeriti nadzorni panel eksperimenata, vidjeti sve, kao što je sada.
+
+121
+00:09:39,600 --> 00:09:44,400
+Mislim da je trenutačno moja ekipa provela vjerojatno dvadesetak eksperimenata na različitim dijelovima aplikacije.
+
+122
+00:09:44,640 --> 00:09:49,360
+Dakle, samo praćenje tih eksperimenata obavlja se pomoću alata koji je izgrađen u kući.
+
+123
+00:09:49,680 --> 00:10:00,800
+I da, općenito, u smislu ograničenja ne provođenja previše AB testova, jedan princip koji pokušavamo poštovati jest da ne izvodimo više testova na istom nekretninskom prostoru odjednom.
+
+124
+00:10:00,880 --> 00:10:09,120
+A ako to učinimo, onda ćemo pogledati presjek tih dvaju eksperimenata kako bismo bili sigurni da nema čudnih učinaka s AB testovima.
+
+125
+00:10:11,280 --> 00:10:27,280
+Druga stvar koju ću spomenuti jest da budući da smo oboje na iOS-u i Androidu, često ćemo provesti različite eksperimente na istoj nekretnini na različitim platformama s konačnim ciljem usklađivanja za ravnopravnost platforme ovisno o tome što pobjeđuje.
+
+126
+00:10:27,920 --> 00:10:28,560
+Zanimljivo.
+
+127
+00:10:28,880 --> 00:10:35,120
+Kako razmišljate o dinamici lijevka miješajućih varijabli?
+
+128
+00:10:35,280 --> 00:10:37,920
+Dakle, ako jedan PM testira i uvodi se u proces.
+
+129
+00:10:37,920 --> 00:10:41,360
+Ima li promjene u uvježbavanju koje pomiču fokus u tom smjeru?
+
+130
+00:10:41,680 --> 00:10:48,160
+A vi ste duboko u lijevku zadržavanja, testirate nešto što testira drugačiji smjer.
+
+131
+00:10:48,320 --> 00:10:54,080
+Što mislite o tim ranim ili srednjim ili kasnim testovima koji pomiču varijable jedna protiv druge?
+
+132
+00:10:54,240 --> 00:10:56,720
+Da, jer to nije nužno ista nekretnina, zar ne?
+
+133
+00:10:56,800 --> 00:10:59,600
+Ali to je ista nekretnina u smislu da su sve u aplikaciji.
+
+134
+00:10:59,760 --> 00:11:01,680
+Sve su dio iskustva.
+
+135
+00:11:01,840 --> 00:11:03,040
+Da, to je sjajno pitanje.
+
+136
+00:11:03,200 --> 00:11:06,720
+Mislim da je s gledišta suradnje naš proces.
+
+137
+00:11:06,720 --> 00:11:16,480
+Naša organizacija proizvoda, tim proizvoda, vrlo surađuje u smislu dijeljenja na čemu radi svaka ekipa, na čemu rade različiti PM-ovi u različitim nekretninama.
+
+138
+00:11:16,640 --> 00:11:31,520
+Dakle, kad god naš savjet za recenziju proizvoda odobri promjenu proizvoda, kao što je direktor i drugi, PM će poslati poruku e-pošte organizaciji proizvoda, a drugi također mogu biti na tom popisu, samo objašnjavajući: O, spremni smo to testirati.
+
+139
+00:11:31,760 --> 00:11:33,040
+Ovo je ono što je odobreno.
+
+140
+00:11:33,280 --> 00:11:36,000
+Ovo je bila razgovor u recenziji proizvoda.
+
+141
+00:11:36,080 --> 00:11:38,640
+Dakle, barem postoji osviještenost o tome što se događa.
+
+142
+00:11:39,280 --> 00:11:48,480
+A ako je tim posebno pogođen određenom promjenom, razgovori će se voditi i prije toga kako bi se osiguralo da su voditelji projekata i timovi usklađeni.
+
+143
+00:11:49,120 --> 00:11:52,560
+A onda se isti proces odvija na kraju pokusa kada ga želite pokrenuti.
+
+144
+00:11:52,640 --> 00:11:58,160
+Pošalju poruku e-pošte s podacima i rezultatima u kojoj kažu: Evo što smo naučili.
+
+145
+00:11:59,280 --> 00:12:04,880
+To omogućava voditeljima projekata i drugim timovima koji rade na različitim područjima aplikacije da pogledaju: Evo, ovo je ono što smo naučili.
+
+146
+00:12:04,880 --> 00:12:09,040
+Dakle, pogledajte, evo, ovo bi moglo utjecati na značajke moga tima ili na moje mjerne jedinice.
+
+147
+00:12:09,120 --> 00:12:13,200
+Dakle, postoji neka vrsta suradničkog stila s praktične razine.
+
+148
+00:12:13,200 --> 00:12:20,240
+A onda, kad je u pitanju razina podataka, mislim da također puno analiziramo eksperimente.
+
+149
+00:12:20,640 --> 00:12:30,400
+Dakle, ako znamo da druga ekipa provodi eksperiment koji bi mogao utjecati na jedan od naših eksperimenata, ponovno ćemo pogledati presjek tih eksperimenata da bismo vidjeli postoje li razlike u podacima.
+
+150
+00:12:30,640 --> 00:12:33,920
+Dakle, da, pobrinemo se da se ne potučavamo jedni na druge ili da ne budemo previše brzi.
+
+151
+00:12:33,920 --> 00:12:37,360
+Sjedimo jedan na drugom ili se udaramo laktovima, ali općenito možemo to učiniti prilično glatko, mislim.
+
+152
+00:12:37,920 --> 00:12:43,440
+Mislim da je to nešto poput prirodnog sljedećeg pitanja, poput rezultata i razumijevanja tih stvari.
+
+153
+00:12:43,600 --> 00:12:50,240
+Kao što je to, kako uvijek pratite podatke?
+
+154
+00:12:50,400 --> 00:12:56,560
+Kažete li ikad nešto poput, oh, ovo je naštetilo podacima, ali vizionarski direktor to želi, pa ćemo to i tako učiniti?
+
+155
+00:12:57,360 --> 00:13:08,960
+Kao što je to, kako je to, pa dobivate rezultate i postoji velika kritikaika i mislim da, znate, ako pokušavamo primijeniti ovo na širok, ne svi, na svijetu ima vrlo malo tvrtki poput Revenue Cat, naravno.
+
+156
+00:13:09,040 --> 00:13:15,680
+Nikad nisam radio u tvrtki koja je imala AB sustav testiranja tako dobro postavljen da zvuči kao da je jednako na tračnicama i snažan kao što imate vi svi.
+
+157
+00:13:15,920 --> 00:13:17,600
+To je velika investicija da dođete do toga.
+
+158
+00:13:18,400 --> 00:13:24,800
+Ali, znate, čak i u manjoj skali stalno pokušavate odlučiti, recimo, što mogu testirati?
+
+159
+00:13:25,040 --> 00:13:26,960
+Imam neku vrstu resursa.
+
+160
+00:13:27,120 --> 00:13:30,880
+A onda, ponekad, da, jednostavno ne želite, zar ne?
+
+161
+00:13:31,040 --> 00:13:32,800
+Ne želite znati rezultate, zar ne?
+
+162
+00:13:33,040 --> 00:13:36,800
+A ponekad, ako dobijete rezultat, ako to nije rezultat koji želite, možda ga i tako ignorirate.
+
+163
+00:13:37,360 --> 00:13:40,320
+Zato sam znatiželjan, kako to dopuštate?
+
+164
+00:13:40,560 --> 00:13:50,960
+Mislim, postoji velika kritika dizajna koji se temelji na testovima kao neuspjeha, znate, ima puno ljudi koji kažu, oh, samo ćete optimizirati na neku lokalnu minimalnu ili maksimalnu vrijednost, zar ne?
+
+165
+00:13:51,120 --> 00:13:59,040
+Kako to usklađujete s intuicijom i povratnim informacijama PM-a i kvalitativnim stvarima?
+
+166
+00:13:59,280 --> 00:13:59,920
+Ili kako to funkcionira?
+
+167
+00:14:00,000 --> 00:14:00,960
+Da, kako to ide?
+
+168
+00:14:01,760 --> 00:14:02,320
+Da, potpuno.
+
+169
+00:14:02,480 --> 00:14:09,600
+I mi smo potpuno svjesni nedostataka koji postoje u okviru koji se temelji na AB testiranju.
+
+170
+00:14:10,720 --> 00:14:16,480
+Dakle, postoji mnogo kvalitativnog utjecaja na odluke o pozivanju na eksperiment.
+
+171
+00:14:16,800 --> 00:14:27,920
+Dakle, čak i ako je eksperiment pobjednik za naše glavne mjerne jedinice, i dalje ćemo raspravljati o tome hoće li se dugoročno to uklopiti u naš plan ili ima smisla za korisničko iskustvo.
+
+172
+00:14:28,240 --> 00:14:46,800
+Dakle, vrlo uobičajeno.ena situacija za test koji pobjeđuje u Duolingu jest da ako značajka ili promjena komplicira korisničko iskustvo ili čini aplikaciju jednostavnije ili izgledaju gušće, uvijek postoji razgovor o tome vrijedi li ovdje pobijediti u mjerama učiniti aplikaciju složenijom?
+
+173
+00:14:47,040 --> 00:14:52,480
+A riječi koje najviše čujemo od našeg glavnog izvršnog direktora Luisa su: pokrenite ovo samo ako je to velika pobjeda.
+
+174
+00:14:52,800 --> 00:14:58,560
+Kad god predložimo nešto što komplicira korisničko iskustvo, postoji neka vrsta praga.
+
+175
+00:14:58,560 --> 00:15:04,800
+Prag koji nije uvijek jasan, ali nastaje kada raspravljamo o tome vrijedi li ova mjerna jedinica?
+
+176
+00:15:05,360 --> 00:15:11,040
+Dakle, postoji kvalitativna rasprava koja se odvija s vodstvom, koja se odvija unutar organizacija za proizvod i dizajn.
+
+177
+00:15:11,120 --> 00:15:18,960
+Da, općenito mislim da dobro radimo kako bismo bili sigurni da ne samo slijedimo brojke, već i da je informirano o podacima, zar ne?
+
+178
+00:15:19,120 --> 00:15:21,440
+Kao da se ne odlučuje samo po sebi.
+
+179
+00:15:21,680 --> 00:15:24,480
+Kako vi, kako vi svi razmišljate o značajnosti, zar ne?
+
+180
+00:15:24,880 --> 00:15:27,200
+Jer, znate, možete provesti bilo koji test.
+
+181
+00:15:27,840 --> 00:15:30,720
+i čak i na njemu će biti buke, zar ne?
+
+182
+00:15:30,960 --> 00:15:33,520
+Mogli biste završiti s, mislim, možda ne u tom mjerilu, zar ne?
+
+183
+00:15:33,680 --> 00:15:48,320
+Šestdeset milijuna MAU-a ili bilo kakve druge DAU-e ili bilo kakve druge ludne brojke koje ste rekli, uh, da biste dobili puno značenja iz toga, ali siguran sam da ćete i dalje doći do točke u kojoj su mnogi rezultati nula, kao što su mnogi rezultati, kao da nema razlike.
+
+184
+00:15:48,480 --> 00:15:49,760
+Da, to je sjajno pitanje.
+
+185
+00:15:49,920 --> 00:15:56,560
+Dakle, i imate pravo da na našoj skali i bazi korisnika koju imamo većinu.
+
+186
+00:15:56,560 --> 00:16:09,920
+Većina promjena koje možemo napraviti pokazuje statističku važnost, što je zapravo velika prednost koju imamo, pogotovo u timovima poput moga tima, tima za zadržavanje korisnika koji radi na značajkama koje utječu na cijelu bazu korisnika.
+
+187
+00:16:10,080 --> 00:16:16,640
+Danas možemo pokrenuti eksperiment, a sutra ujutro ćemo imati statistički važne rezultate na našim glavnim mjerama.
+
+188
+00:16:16,960 --> 00:16:19,040
+I to bi bilo kao zadržavanje prvog dana ili nešto slično, zar ne?
+
+189
+00:16:19,120 --> 00:16:19,920
+Da, točno.
+
+190
+00:16:20,160 --> 00:16:23,520
+U osnovi uvijek gledamo DAU, zadržavanje D-a, slično tome.
+
+191
+00:16:23,920 --> 00:16:31,600
+Općenito, osiguravamo da pokr eksperimenti provodimo najmanje tri ili četiri tjedna u prosjeku kako bismo isključili nove učinke.
+
+192
+00:16:31,840 --> 00:16:36,240
+Dakle, osiguravamo da, da, postoji jaka važnost.
+
+193
+00:16:36,640 --> 00:16:43,040
+Ostale su tvrtke u tvrtki koje rade na specifičnijim dijelovima ili možda čak na novim inicijativama.
+
+194
+00:16:43,120 --> 00:16:50,960
+Na primjer, imamo proizvod Duolingo za škole, koji je u osnovi nadzorni panel za nastavnike koji omogućuju učenicima da koriste Duolingo.
+
+195
+00:16:51,600 --> 00:16:54,320
+A budući da imaju manju bazu korisnika nastavnika, moraju to učiniti.
+
+196
+00:16:54,320 --> 00:16:58,080
+Moraju napraviti više izračuna oko toga, dobro, koliko dugo trebamo pokrenuti proširenje?
+
+197
+00:16:58,160 --> 00:17:02,000
+Možemo li to zapravo postići prije toplinske smrti svemira?
+
+198
+00:17:02,320 --> 00:17:02,640
+Baš tako.
+
+199
+00:17:02,720 --> 00:17:03,680
+Da, baš tako.
+
+200
+00:17:03,840 --> 00:17:03,920
+Da.
+
+201
+00:17:04,320 --> 00:17:14,480
+Ali za većinu timova koji šalju značajke milijunima korisnika, a ti korisnici koriste proizvod svaki dan, stvarno je lako dobiti značajnost naših podataka.
+
+202
+00:17:14,800 --> 00:17:16,880
+Kako mislite o povratku?
+
+203
+00:17:17,120 --> 00:17:24,160
+Dakle, imate pobjedu, pokrenete je, ima statističku značajnost, čini se da će to biti velika pobjedajeda.
+
+204
+00:17:24,320 --> 00:17:44,080
+Ponovno li pregledavate neke od tih rezultata za šest mjeseci, dvije godine ili ne, mislim, dvije godine je jako dugo, ali šest mjeseci, devet mjeseci od prvotnog testa da vidite je li dugoročna zadržavanje žrtvovano za kratkoročnu zadržavanje ili je monetizacija žrtvovana dugoročno za DAU ili slično.
+
+205
+00:17:44,320 --> 00:17:47,040
+Kako razmišljate o tim dugoročnim utjecajima?
+
+206
+00:17:47,200 --> 00:17:48,320
+Da, to je sjajno pitanje.
+
+207
+00:17:48,400 --> 00:17:49,280
+Mislim da radimo dvije stvari.
+
+208
+00:17:49,600 --> 00:17:54,800
+Jedno je, posebno za naše veće obće značajke, provodit ćemo eksperimente za zadržavanje.
+
+209
+00:17:54,960 --> 00:18:06,080
+Dakle, nakon pokretanja eksperimenta, zadržat ćemo možda jedan ili dva posto korisnika u kontrolnoj skupini i ostaviti ih da rade tri ili četiri mjeseca, nešto u tom stilu.
+
+210
+00:18:06,400 --> 00:18:10,000
+To nam omogućava da bolje razumijemo dugoročni utjecaj eksperimenta.
+
+211
+00:18:10,480 --> 00:18:21,440
+To je posebno korisno za timove koji žele procijeniti utjecaj promjena koje možda nemaju utjecaja na zadržavanje odmah.
+
+212
+00:18:21,440 --> 00:18:26,880
+Imamo tim koji radi na društvenim značajkama, u osnovi povezivajući učenike s drugim učenicima na platformi.
+
+213
+00:18:27,040 --> 00:18:39,840
+Ponekad dodavanje tih značajki ne utječe odmah na glavne mjerne jedinice kao što je DAU, ali dugoročno gledano, imati više društvenog iskustva putem mrežnih efekata može utjecati na naše glavne mjerne jedinice.
+
+214
+00:18:39,920 --> 00:18:45,520
+Znam da tim provodi mnoštvo eksperimenata s održavanjem na mnogim svojim značajkama.
+
+215
+00:18:45,760 --> 00:18:46,800
+Mi to radimo isto.
+
+216
+00:18:47,040 --> 00:18:56,000
+Druga stvar koju radimo kako bismo bili sigurni da pratimo i dugoročni utjecaj jest je u tome što ćemo pratiti mjerne jedinice razine značajki za značajku koju ćemo pokrenuti dugoročno.
+
+217
+00:18:56,160 --> 00:19:07,440
+Dakle, za svaku značajku koju ćemo izgraditi, imat ćemo nadzorni panel značajki koji prati neke od ad hoc mjernih jedinica, stvari razine angažmana značajki koje nas možda zanimaju.
+
+218
+00:19:07,680 --> 00:19:15,200
+I s vremenom možemo vidjeti, oh, kada smo prvi put pokrenuli ovu značajku, angažman je bio vrlo visok, ali čini se da malo pada.
+
+219
+00:19:15,520 --> 00:19:19,360
+To nam daje neku vrstu indikacije da bi mogao biti neki novi učinak u igri.
+
+220
+00:19:20,240 --> 00:19:26,960
+I da, to su približno dva pristupa koja se koriste kako bismo bili sigurni da gledamo podatke i dugoročno.
+
+221
+00:19:27,600 --> 00:19:47,120
+Želim prijeći na vrste specifičnih testova koji su se provodili, ali još jednom pokušajte sažeti nešto drugo o načinu na koji svi razmišljate o testiranju ili možda nešto što smo izostavili i što smatrate posebno važnim u vezi s načinom na koji Duolingo razmišlja i zapravo provodi testiranje.
+
+222
+00:19:47,280 --> 00:19:47,360
+Da.
+
+223
+00:19:47,520 --> 00:19:56,560
+Da, mislim da ću još nešto spomenuti: jer prikupljamo toliko podataka, to nam omogućava da postanemo vrlo detaljni u analizi koju radimo.
+
+224
+00:19:57,360 --> 00:20:21,200
+Dakle, sigurno ćemo malo više govoriti o obavijestima, ali ću dati jedan primjer: kopija obavijesti očito se drugačije odvija u različitim jezicima korisničkog sučelja i geografskim područjima, ali jer prikupljamo toliko podataka, možemo se malo produbiti i pogledati stope klikova na našim obavijestima po jeziku, što nam omogućava da kaž kažemo: U rumunjskom, ova obavijest nije tako dobra.
+
+225
+00:20:21,360 --> 00:20:27,520
+Trebali bismo razgovarati s našim rumunjskim timom za lokalizaciju i vidjeti postoji li nešto što možemo optimizirati.
+
+226
+00:20:27,760 --> 00:20:39,120
+Dakle, samo zbog ogromnog količine podataka koje prikupljamo, stvarno možemo produbiti i optimizirati mnogo stvari u aplikaciji, a to nas drži zauzetima kao tim za proizvod jer znamo da možemo poboljšati toliko stvari.
+
+227
+00:20:39,600 --> 00:20:49,680
+Imam još jedno pitanje, mislim da je to opća strategija odabira ideja i slično, ali kako je poznavanje mogućnosti testiranjaje značajke utječe na odluku o njezinom izradi?
+
+228
+00:20:49,840 --> 00:20:55,920
+Mislim da je to ikad tako, kao što kažete, jer gledate na glavne redove, uvijek možete imati nešto za mjeriti, zar ne?
+
+229
+00:20:56,480 --> 00:21:01,200
+Ali vi, vi, vi, mislim, ja, ja, i možda biste samo mogli potvrditi moje pretpostavke.
+
+230
+00:21:01,360 --> 00:21:13,280
+Moje pretpostavke su da, jer razmišljate, wow, ovo zapravo mora proizvesti mjerljiv rezultat, mislite li da to tjeraju vaše timove za proizvod da se usredotoče samo na stvari koje će se zapravo pojaviti u podacima?
+
+231
+00:21:13,520 --> 00:21:14,160
+Znaš što mislim?
+
+232
+00:21:14,720 --> 00:21:14,800
+Da.
+
+233
+00:21:14,880 --> 00:21:16,160
+Da, to je dobar pitanju.
+
+234
+00:21:16,240 --> 00:21:19,040
+Mislim da se to razlikuje ovisno o timu u Duolingu.
+
+235
+00:21:19,200 --> 00:21:25,600
+Na primjer, imamo timove za proizvode koji izričito rade na poboljšanju načina na koji aplikacija podučava.
+
+236
+00:21:25,760 --> 00:21:33,920
+Dakle, ovo je područje istraživanja i razvoja u kojem više timova razvija značajke za bolje podučavanje.
+
+237
+00:21:34,240 --> 00:21:41,360
+A za njih, njihovi proizvodi, promjene u proizvodima zapravo ne utječu na glavne mjerne jedinice jer je to tragedija svih obrazovnih aplikacija, zar ne?
+
+238
+00:21:41,520 --> 00:21:42,400
+Baš tako.
+
+239
+00:21:42,480 --> 00:21:43,200
+Da, razumijete.
+
+240
+00:21:44,160 --> 00:21:49,840
+I često kad želimo bolje podučavati, moramo učiniti sadržaj teži, a teži sadržaj često je loš izazov.
+
+241
+00:21:49,920 --> 00:21:52,080
+Isto je i s aplikacijama za fitness, zar ne?
+
+242
+00:21:52,240 --> 00:21:56,000
+Morate održavati taj, znate, taj savršeni položaj.
+
+243
+00:21:56,080 --> 00:21:56,800
+Da, točno.
+
+244
+00:21:57,120 --> 00:22:04,160
+Dakle, za te timove, očito, nisu poticani vrhovnom mjerom za koju optimiziraju.
+
+245
+00:22:04,320 --> 00:22:12,800
+Dakle, velik dio njihova rada više je usklađivanje dionika s učenim znanstvenicima, vodstvom, dizajnerima i slično.
+
+246
+00:22:12,800 --> 00:22:16,960
+Mislim da to znači da se ne bave samo podacima.
+
+247
+00:22:17,680 --> 00:22:23,920
+I općenito, osiguravamo da ne radimo samo stvari koje su vođene mjerama.
+
+248
+00:22:24,080 --> 00:22:30,480
+Uvijek postavljamo OKR-ove za smanjenje tehnološkog duga, stvari poput toga, poboljšanje kvalitete proizvoda, slično tome.
+
+249
+00:22:30,640 --> 00:22:32,640
+Žao mi je, posljednje pitanje.
+
+250
+00:22:32,720 --> 00:22:35,200
+Volite li AB testirati popravke grešaka i slično?
+
+251
+00:22:35,360 --> 00:22:40,800
+Kao da je nešto potpuno pokvareno ili možda ni popravak greške, mislite: Ovo je pogrešno.
+
+252
+00:22:40,880 --> 00:22:45,120
+Mislim da je to još jedna verzija mog prvotnog pitanja, poput, testiraš li sve?
+
+253
+00:22:45,200 --> 00:22:53,120
+Ali, recimo, da, recimo, testiraš li AB popravak greške da je to živa greška koja nije uništena, kao da samo pokvariš aplikaciju ili nešto slično, zar ne?
+
+254
+00:22:53,360 --> 00:23:00,880
+Da, ako je to ogromna greška, onda ćemo je popraviti i možda provesti eksperiment s održavanjem, poput vraćanja greške, zar ne?
+
+255
+00:23:01,040 --> 00:23:03,520
+Dakle, jedan posto korisnika samo da procijeni učinak.
+
+256
+00:23:03,680 --> 00:23:05,120
+Da, to je ludilo.
+
+257
+00:23:05,280 --> 00:23:07,040
+Ali to je ludilo.
+
+258
+00:23:07,120 --> 00:23:09,840
+Mislim, ali zato je to kulturna stvar, zar ne?
+
+259
+00:23:09,920 --> 00:23:10,000
+Mislim.
+
+260
+00:23:10,080 --> 00:23:16,880
+Mislim da je to ono što naši slušatelji razmišljaju o tome kako razvijaju svoje aplikacije i kako žele razvijati proizvode.
+
+261
+00:23:17,200 --> 00:23:19,280
+Mislim da je to došlo od osnivača, zar ne?
+
+262
+00:23:19,360 --> 00:23:21,440
+Ili od vrlo, vrlo rane inicijative, zar ne?
+
+263
+00:23:21,600 --> 00:23:28,320
+To je nešto što su osnivači tvrtke smatrali načinom na koji su željeli razvijati proizvode i usadili su to u kulturu i učinili to stvarom.
+
+264
+00:23:28,480 --> 00:23:34,080
+I mislim da ako ovo slušate i razmišljate, oh, Bože, ne želim postavljati sve te podatkovne infrastrukture i sve to, ne morate.
+
+265
+00:23:34,480 --> 00:23:36,160
+Ima mnogo načina da to učinite, zar ne?
+
+266
+00:23:36,480 --> 00:23:39,840
+Ali mislim da biste trebali biti mišljenja u tome kako to učiniti.
+
+267
+00:23:39,840 --> 00:23:41,280
+U načinu na koji želite to postaviti.
+
+268
+00:23:41,520 --> 00:23:45,600
+Ako želite biti tvrtka koja ne radi nikakve testove, sve je samo korisničko komentiranje.
+
+269
+00:23:45,680 --> 00:23:46,000
+To je u redu.
+
+270
+00:23:46,400 --> 00:23:48,800
+Mislim da postoji mnogo dobrih tvrtki koje su tako izgrađene.
+
+271
+00:23:49,040 --> 00:23:49,120
+Da.
+
+272
+00:23:49,360 --> 00:24:01,600
+Morate razmišljati o tome tko ste kao osnivač i kao izraditelj aplikacija i kao, a zatim primijeniti sustav koji mislite da će vam omogućiti da dobijete najbolje rezultate, a ne samo da to radite.
+
+273
+00:24:01,680 --> 00:24:07,600
+Ne znam drugu tvrtku, barem u našem prostoru, koja radi to do krajnjeg dijela.
+
+274
+00:24:07,680 --> 00:24:07,760
+Da.
+
+275
+00:24:08,240 --> 00:24:08,880
+Samo tako kažem.
+
+276
+00:24:08,880 --> 00:24:08,880
+Da, recimo tako.
+
+277
+00:24:08,960 --> 00:24:14,160
+Da, to je prilično ludilo, ali da, mi smo vrlo usmjereni na podatke ili informirani o podacima, kako ste rekli.
+
+278
+00:24:14,240 --> 00:24:21,360
+Da, ali vjerojatno nije slučajnost da je to jedna od većih aplikacija za pretplatu i javno trgovačka i profitabilna.
+
+279
+00:24:21,440 --> 00:24:28,720
+Mislim da je to jedna od velikih priča o uspjehu mobilnih uređaja, općenito bih rekao.
+
+280
+00:24:28,880 --> 00:24:30,640
+Da, to je ludilo.
+
+281
+00:24:31,040 --> 00:24:35,600
+Želio sam prijeći na određene rezultate jer ste izgradili sve ove infrastrukture.
+
+282
+00:24:35,920 --> 00:24:41,920
+Imate sve ove usklađenosti interno, vi radite sve te testove, ali ono što je važno je ono što iz toga izlazi.
+
+283
+00:24:42,000 --> 00:25:02,400
+A onda mislim da će naši slušatelji, kao što smo razgovarali, vrlo malo njih moći raditi u ovom opsegu, ali mislim da postoje nauke koje je Duolingo ponovno dijelio na blogu i Twitteru i drugim mjestima koje vrijedi testirati ili za proizvod Artur, samo implementirati cijeli Hog na temelju uspjeha Duolinga s njima.
+
+284
+00:25:02,640 --> 00:25:06,800
+Dakle, prvi eksperiment o kojem sam želio govoriti bio je s obavijestima.
+
+285
+00:25:06,800 --> 00:25:18,560
+I tako ste napravili mnogo testiranja oko obavijesti, ali postoji određena tema na Twitteru na koju ćemo se povezati u bilješkama emisije, samo govoreći o tome kako testirate obavijesti i nekim od najboljih lekcija.
+
+286
+00:25:18,720 --> 00:25:21,680
+Zato bih volio da podijelite možda malo pozadine.
+
+287
+00:25:21,760 --> 00:25:33,120
+Ne znam, znate, da nit na Twitteru nije išla previše u detalje o postavkama testiranja i slično, ali možda samo malo pozadine, a onda ćemo razgovarati o rezultatima toga i što ljudi mogu naučiti.
+
+288
+00:25:33,280 --> 00:25:34,720
+Da, potpuno.
+
+289
+00:25:34,960 --> 00:25:41,200
+Obavijesti su veliki motor rasta za Duolingo, toliko da su obavijesti iz Duolinga svojevrsni meme.
+
+290
+00:25:41,520 --> 00:25:46,000
+Sigurno ste možda vidjeli obavijesti iz Zelene sove.
+
+291
+00:25:46,080 --> 00:25:49,440
+Da, vidim da je Zelena sova sada poput Slenderbanda.
+
+292
+00:25:49,920 --> 00:25:52,880
+To je poput uznemirujuće mitske likove.
+
+293
+00:25:53,680 --> 00:25:54,080
+Baš tako.
+
+294
+00:25:55,440 --> 00:26:01,200
+Ali, da, obavijesti su veliki pokretač za zadržavanje i rast korisnika i to je tako već godinama.
+
+295
+00:26:02,080 --> 00:26:09,760
+A sada smo na vrlo točki na kojoj šaljemo mnogo obavijesti, a glavna je podsjetnik na dnevnu vježbu.
+
+296
+00:26:09,920 --> 00:26:12,720
+Dakle, šaljemo vam podsjetnik da vježbate svaki dan.
+
+297
+00:26:13,040 --> 00:26:16,080
+A ako ste bili neaktivni sedam dana, prestat ćemo vam ga slati.
+
+298
+00:26:16,240 --> 00:26:25,200
+Ali unutar tog podsjetnika na dnevnu vježbu imamo, recimo, dvjesto pedeset različitih predloška za kopiranje koje se mogu poslati korisniku.
+
+299
+00:26:25,440 --> 00:26:25,520
+Wow.
+
+300
+00:26:26,240 --> 00:26:30,720
+I imamo algoritam strojnog učenja koji optimizira najbolje za slanje korisniku.
+
+301
+00:26:31,360 --> 00:26:54,080
+Ono što radimo kao PM PM-ovi je da ponovimo te dvjesto pedeset predloška za kopiranje, dodajemo ih više, mijenjamo postojeće predloške za kopiranje i samo testiramo različite tonove poruka, sadržaj unutar tih obavijesti kako bismo u osnovi izvučili više zadržavanja.
+
+302
+00:26:54,400 --> 00:27:00,720
+Naučili smo mnogo o tome što funkcionira i što ne funkcionira s kopijom obavijesti i porukama koje su tamo.
+
+303
+00:27:00,800 --> 00:27:02,720
+Dakle, da, nastavit ću i uroniti u neke od lekcija koje smo dobili iz toga.
+
+304
+00:27:02,720 --> 00:27:02,720
+Da.
+
+305
+00:27:02,720 --> 00:27:06,800
+Dakle, ovo je slučaj u kojem to nije kao da je ovo, ovo izgleda kao još jedan sustav koji ste izgradili.
+
+306
+00:27:06,960 --> 00:27:07,920
+Ovo nije samo još jedan test AB.
+
+307
+00:27:08,400 --> 00:27:24,480
+Imate zaseban model, poput multi-armed bandita koji će ih baciti i optimizirati na individualnoj osnovi, što je moja, moja, moja prva pitanja, mislim, možda, možda ću previše preskočiti, ali to je poput, što ide u tu individualnu odluku?
+
+308
+00:27:24,640 --> 00:27:30,160
+Kao što su vektori ili kao što su ulazi u to, kažete, oh, kao da ćemo pokušati, što znamo o ovoj osobi?
+
+309
+00:27:30,320 --> 00:27:30,960
+Pokušat ćemo ovo.
+
+310
+00:27:31,360 --> 00:27:36,000
+Ovo bi bilo stvarno zanimljivo čuti, na primjer, kako zapravo optimizirate, znate?
+
+311
+00:27:36,560 --> 00:27:38,560
+Da, i uronimo u umjetnu inteligenciju koja stoji iza toga.
+
+312
+00:27:38,720 --> 00:27:44,640
+Mislim, to je nekoliko bodova ispred u našim bilješkama emisije, ali da, to je prilično nevjerojatan sustav koji ste izgradili.
+
+313
+00:27:44,720 --> 00:27:54,480
+Da, prvo što ću spomenuti, a ovo može zvučati i ludilo, ali čak i unutar ovog algoritma višestruke bandite, i dalje radimo AV testove.
+
+314
+00:27:54,720 --> 00:27:55,120
+Zašto ne?
+
+315
+00:27:55,280 --> 00:27:56,240
+Da, zašto ne?
+
+316
+00:27:56,720 --> 00:27:56,960
+Baš tako.
+
+317
+00:27:57,200 --> 00:28:03,280
+Dakle, kako to funkcionira, imamo višestruku bandituit koji ima sve ove predloške za kopiranje obavijesti.
+
+318
+00:28:04,240 --> 00:28:12,560
+A zatim ćemo kao eksperimentalni dio u AB testu imati istog bandita, osim s dodatnim novim predlošcima za kopiranje koje dodajemo.
+
+319
+00:28:13,040 --> 00:28:18,480
+Ili pretpostavljam da možete čak i napraviti promjene konfiguracije ili promjene podešavanja algoritma i slično, a možda i to kao cjelokupno.
+
+320
+00:28:18,480 --> 00:28:19,200
+Da, točno.
+
+321
+00:28:19,360 --> 00:28:25,440
+Dakle, bilo da je riječ o predlošku za kopiranje ili dodajemo više predloška za kopiranje banditu kako bismo optimizirali.
+
+322
+00:28:25,600 --> 00:28:27,600
+Dakle, možete optimizirati i globalno, zar ne?
+
+323
+00:28:27,680 --> 00:28:29,440
+Dakle, možete reći da dodajete ove, ne samo C.
+
+324
+00:28:29,440 --> 00:28:36,480
+Ne samo da vidimo koji je učinkovitiji, već i da ukupno gledamo kada dodamo ove deset novih poruka, kako to mijenja cijelu izvedbu?
+
+325
+00:28:36,560 --> 00:28:47,600
+Da, AB test bi bio i kontrola je višestruki bandit s dvjesto pedeset predloška, a zatim je eksperiment višestruki bandit s dvjesto šezdeset, dodajući deset novih.
+
+326
+00:28:48,560 --> 00:28:48,880
+Baš tako.
+
+327
+00:28:49,040 --> 00:28:58,080
+A onda možemo mjeriti na lokalnoj osnovi kada šaljemo te deset novih, što to čini da klikne, ali i općenito kakav je ukupni utjecaj na.
+
+328
+00:28:58,320 --> 00:29:00,080
+To je povezano s glavnim mjerama.
+
+329
+00:29:00,160 --> 00:29:03,440
+I sve to pokreće umjetna inteligencija i strojno učenje, zar ne?
+
+330
+00:29:03,600 --> 00:29:11,040
+Dakle, imate prilično veliku ekipu za znanost o podacima koja izrađuje te modele koji donose te odluke i analiziraju rezultate.
+
+331
+00:29:11,200 --> 00:29:16,240
+To je umjetna inteligencija i ML, ali iskreno, jednostavnije je nego što se čini.
+
+332
+00:29:16,400 --> 00:29:25,440
+Mislim, da, dajem vam, a vi me možete ispraviti ako se zabunim, ali višestruki bandit, mi smo se u neku vrstu upustili u tehnički pojam.
+
+333
+00:29:25,920 --> 00:29:26,960
+To je u osnovi.
+
+334
+00:29:26,960 --> 00:29:32,080
+Riječ je o računalnoj znanosti ili kombinatorskom problemu ili pitanju u kojem imate n mogućnosti.
+
+335
+00:29:32,240 --> 00:29:36,160
+Možda imate deset različitih poluge koje možete povući i nagrade.
+
+336
+00:29:36,240 --> 00:29:38,960
+Ne znate nužno što ćete dobiti od svake poluge, zar ne?
+
+337
+00:29:39,040 --> 00:29:44,560
+Dakle, problem s više poluge ima optimizacije koje kažu, na primjer, koju polugu trebam povući kada?
+
+338
+00:29:44,800 --> 00:29:46,240
+I algoritam koji to optimizira.
+
+339
+00:29:46,320 --> 00:29:53,120
+To je u osnovi ono što govorite u ovom slučaju, ispravite me ako sam pogriješio, ali umjesto poluga zapravo prikazuju obavijest.
+
+340
+00:29:53,280 --> 00:29:58,240
+To je vaša poluga i pokušavate optimizirati koje obavijesti se pokazuju kada je optimalno.
+
+341
+00:29:58,320 --> 00:29:59,120
+Je li to točno?
+
+342
+00:29:59,600 --> 00:30:07,760
+Dakle, uh, da, u ovom slučaju, poluge su predlošci za kopiranje, dvjesto pedeset različitih koji su prikazani.
+
+343
+00:30:08,080 --> 00:30:22,080
+Jedno od toga što bih samo želio reći, uh, malo etički, jedno od toga što volim razgovarati s vama o tome jest da na neki način čujem sve ovo i mislim, znate, Facebook me uvjerava da kupim neku drugu glupavu stvar.
+
+344
+00:30:22,160 --> 00:30:25,120
+Ne trebam je ili Candy Crush uvjerava milijune ljudi da kupe.
+
+345
+00:30:25,120 --> 00:30:27,920
+da ljudi kupuju više teretana i troše više novca.
+
+346
+00:30:28,160 --> 00:30:41,440
+Znate, postoji mnogo načina na koje se te alate mogu koristiti za manipulaciju i, znate, za povećanje broja pregleda na TikToku i zadržavanje, znate, zadržavanje na Twitteru satima ili je Twitter loš primjer jer ne rade ništa slično.
+
+347
+00:30:41,680 --> 00:30:45,680
+O, ne, rade, rade, kao što su Twitterove obavijesti o zadržavanju na Twitteru ludne.
+
+348
+00:30:45,840 --> 00:30:49,600
+Ako se ne uključite u Twitter vrlo dugo, stvarno počinju vam slati neželjene poruke.
+
+349
+00:30:49,840 --> 00:30:50,240
+Svatko to radi.
+
+350
+00:30:50,320 --> 00:30:50,640
+To je istina.
+
+351
+00:30:50,800 --> 00:31:03,440
+Možda ne baš u ovom slučaju, ali mislim da je, znate, TikTok i Reels i slično su bolji primjer korištenja ovakvog testiranja i učenja za manipulaciju, a s Duolingom pomažete ljudima da nauče.
+
+352
+00:31:03,600 --> 00:31:05,600
+I tako, mislim, to je kao da radite sve ovo.
+
+353
+00:31:05,680 --> 00:31:08,480
+Da, ali je li taj pojam manipulacija i utjecaj različit?
+
+354
+00:31:09,440 --> 00:31:12,960
+To je zapravo samo konotacija onoga što tražite na kraju, zar ne?
+
+355
+00:31:13,680 --> 00:31:16,800
+Dakle, to je stvar s obavijestima.
+
+356
+00:31:16,960 --> 00:31:20,560
+Mislim da je to posebno za raskrižje naše publike, zar ne?
+
+357
+00:31:20,640 --> 00:31:22,000
+Da, aplikacija su turneje.
+
+358
+00:31:22,080 --> 00:31:23,200
+To je moj vrlo težak pojam.
+
+359
+00:31:23,200 --> 00:31:25,920
+Moja nova vrlo teška riječ, David, više ne pružamo usluge nezavisnim razvijačima.
+
+360
+00:31:26,160 --> 00:31:27,680
+Uključujemo se u aplikaciju Artours.
+
+361
+00:31:30,240 --> 00:31:42,480
+Ali mislim da postoji ideja da se posebno radi o obavijestima i da se radi o optimizaciji, ali da su obavijesti loše, da su spam, da su buka, da su oglasi, da su bilo što drugo.
+
+362
+00:31:43,200 --> 00:31:44,240
+Ali mislim da postoje dvije strane toga.
+
+363
+00:31:44,480 --> 00:31:47,600
+Kao da, Apple je sada mnogo bolji u pružanju kontrola.
+
+364
+00:31:47,920 --> 00:31:52,160
+Kao da možete lako uključiti, sjećate se, ovo me zastarjelo, ali ne znam.
+
+365
+00:31:52,160 --> 00:32:01,920
+Ne znam, sigurno su vaše obavijesti sada push, ali u ranim danima postojala je razlika između lokalnih obavijesti i push obavijesti.
+
+366
+00:32:02,080 --> 00:32:06,880
+A push obavijesti možete onemogućiti na iOS-u, ali lokalne obavijesti ne možete.
+
+367
+00:32:07,360 --> 00:32:13,200
+Dakle, svi smo to radili u Elevateu i znam da je Duolingo to radio i 2015.
+
+368
+00:32:13,280 --> 00:32:13,360
+godine.
+
+369
+00:32:13,520 --> 00:32:17,520
+Koristili ste lokalne obavijesti jer ih niste mogli isključiti.
+
+370
+00:32:17,840 --> 00:32:20,880
+Da, to je gnusno, mislim, ali bilo je i jeftinije.
+
+371
+00:32:22,560 --> 00:32:23,360
+nego imati obavijesti.
+
+372
+00:32:23,520 --> 00:32:24,480
+Morali smo izgraditi vlastitu.
+
+373
+00:32:24,720 --> 00:32:29,120
+Apple je na kraju ujednačio to i učinio da su obavijesti kontrolirane na istom mjestu.
+
+374
+00:32:29,280 --> 00:32:35,440
+Da, ali mislim da je moj stav da, znate, u smislu zadržavanja, sigurno je zadržavanje vraćanje nekoga u aplikaciju.
+
+375
+00:32:35,600 --> 00:32:41,760
+Da, što bi moglo bolje funkcionirati od zalijepljenja na njihov početni zaslon, kao da ne koriste aplikaciju.
+
+376
+00:32:41,840 --> 00:32:46,880
+Da, to je kao da je to kao da je to vaša najveća površina u timu za zadržavanje, moram zamisliti.
+
+377
+00:32:47,040 --> 00:32:52,880
+Da, mislim da je tim za zadržavanje u Dualolingu tijekom godina radio je na brojnim različitim značajkama.
+
+378
+00:32:53,040 --> 00:33:03,200
+Dakle, imamo mehanizam dnevnog niza, imamo ljestvice u Duolingu, ali obavijesti su uvijek veliki alat za poticanje zadržavanja.
+
+379
+00:33:03,680 --> 00:33:18,560
+Pridružio sam se timu za zadržavanje kao APM, ali mislim da sam bio prvi punopravni PM koji se punopravno usredotočio na obavijesti, ali to je samo znak koliko je vrijedno optimizirati naše obavijesti za naš rast.
+
+380
+00:33:18,560 --> 00:33:20,240
+U redu, pa smo u trideset minuta.
+
+381
+00:33:20,320 --> 00:33:21,680
+Žao mi je, vratit ću se na trik.
+
+382
+00:33:21,840 --> 00:33:22,880
+Recite nam što ste naučili.
+
+383
+00:33:23,360 --> 00:33:33,040
+Što drugi mogu naučiti iz svih tih testova koje je Duolingo proveo o stvaranju utjecajnih zadržavajućih obavijesti?
+
+384
+00:33:33,280 --> 00:33:48,080
+Da, neke su osnovne stvari koje smo naučili i sigurno ćete povezati Twitter nit u bilješkama emisije, ali vrlo je važno imati vrlo određeni ton i CTA u svojim obavijestima, pogotovo kada šaljete više obavijesti, možda putem e-pošte.
+
+385
+00:33:48,080 --> 00:33:48,880
+Možda čak i isti dan.
+
+386
+00:33:49,760 --> 00:33:53,680
+Dakle, u Duolingu imamo nekoliko različitih obavijesti koje bismo mogli poslati.
+
+387
+00:33:53,920 --> 00:33:56,400
+Jedna od njih je podsjetnik na vježbanje, o kojem sam spomenuo.
+
+388
+00:33:56,800 --> 00:34:05,680
+Imamo vrlo jasnu CTA koja kaže: Vrijeme je za vaš dnevni trening, vratite se u aplikaciju da biste pet minuta učili španjolski, nešto u tom stilu.
+
+389
+00:34:05,840 --> 00:34:16,640
+A zatim za korisnike koji su na dnevnom nizu, šaljemo još jednu obavijest ako nisu vježbali na kraju dana, poput deset navečer, što nazivamo obavijest spasitelja niza.
+
+390
+00:34:16,720 --> 00:34:23,120
+I taj ima alarmantniji ton koji kaže: Posljednje podsjetnik ili Hej, kasno je, slično tome.
+
+391
+00:34:23,280 --> 00:34:28,720
+Kada šaljete više obavijesti, stvarno je važno imati određenu svrhu za svaku od njih.
+
+392
+00:34:29,040 --> 00:34:38,160
+Dakle, s korisničke perspektive, to je više poput, Duo je razgovarao sa mnom, rekao mi je da moram vježbati u četiri popodne, ali sam ga ignorirao.
+
+393
+00:34:38,320 --> 00:34:41,680
+Ali sada u deset navečer postaje malo uplašen jer bih mogao izgubiti seriju.
+
+394
+00:34:42,080 --> 00:34:47,680
+Dakle, imati takvu priču s kojom možete razgovarati s korisnikom s obavijestima su zaista važne.
+
+395
+00:34:47,920 --> 00:34:49,600
+Dakle, spomenuli ste tone.
+
+396
+00:34:51,360 --> 00:34:59,200
+Dakle, što je primjer, mislim da postoji alarmist i ne, ali zapravo u obavijestima govorite glasom ptice, zar ne?
+
+397
+00:34:59,360 --> 00:35:01,120
+Duo, koji sam upravo naučio da se zove Duo.
+
+398
+00:35:01,360 --> 00:35:10,640
+I to je kao da, kad pišete tekst za to, pokušavate li biti slatki s tim ili je to prilično osnovno?
+
+399
+00:35:11,120 --> 00:35:14,960
+Da, pokušavamo promijeniti ton jer smo naučili da je to vrlo jednostavno.
+
+400
+00:35:14,960 --> 00:35:20,240
+Ali varijacije u tonu su dobre jer korisnik dobiva više obavijesti tijekom nekoliko dana.
+
+401
+00:35:20,480 --> 00:35:25,520
+Dakle, neke od naših obavijesti su stvarno slatke, ohrabrujuće i pozitivne, poput sjajna posao.
+
+402
+00:35:25,680 --> 00:35:28,480
+Imate desetodnevnu seriju, vratite se i naučite španjolski.
+
+403
+00:35:28,800 --> 00:35:32,880
+Ponekad duo može biti pasivno agresivniji ili, oh, stvarno?
+
+404
+00:35:33,040 --> 00:35:36,400
+Da, kao da možete vježbati španjolski ako želite.
+
+405
+00:35:36,960 --> 00:35:38,560
+Dakle, pokušavamo imati tu varijaciju.
+
+406
+00:35:38,640 --> 00:35:39,440
+Stvarno se zabavljamo s tim.
+
+407
+00:35:39,520 --> 00:35:41,760
+Kao da stvarno pokušavate to memati.
+
+408
+00:35:42,400 --> 00:35:42,480
+Da.
+
+409
+00:35:42,720 --> 00:35:45,040
+Mislim, to ima smisla.
+
+410
+00:35:45,120 --> 00:35:46,000
+Pišete li ih osobno?
+
+411
+00:35:46,240 --> 00:35:47,520
+Imate li copywritera?
+
+412
+00:35:47,600 --> 00:35:47,600
+Da.
+
+413
+00:35:48,000 --> 00:35:57,360
+Dakle, do sada je puno toga napravili PM-ovi poput mene, ali imamo i dizajneri sadržaja koji nam pomažu u pregledu i pisanju teksta.
+
+414
+00:35:57,600 --> 00:36:00,720
+Ali, da, neko vrijeme je moj posao bio samo pisanje iz glasa ptice i pisanje tweeta za duo.
+
+415
+00:36:01,680 --> 00:36:12,880
+Mislim da je vrijedno naglasiti meta točku ovdje, mislim, o marketingu i nešto u što vjerujem općenito, to je poput mišljenja.
+
+416
+00:36:13,120 --> 00:36:29,120
+Zvuči drugačije, čak i ako je loše, čak i ako je dosadno za neke ljude, uvijek će, mislim, bolje raditi nego izbjeljivač i vrlo, kako se kaže, dezinficirani glas, baš kao vrlo sterilni glas, zar ne?
+
+417
+00:36:29,280 --> 00:36:30,960
+Da pokušavate privući sve.
+
+418
+00:36:31,440 --> 00:36:37,040
+Osobno ne mislim, i mislim da zvuči kao da to potvrđuju podaci koji su vam dani, ne nadmašuje, zar ne?
+
+419
+00:36:37,280 --> 00:36:40,880
+Radije biste imali hitove i vrhove i malo.
+
+420
+00:36:41,360 --> 00:36:49,200
+To je malo čudno jer, opet, čak i na nekom od njih, znate, jako dobro odabirem obavijesti, zar ne?
+
+421
+00:36:49,280 --> 00:36:50,800
+I i dalje ih dobivam puno.
+
+422
+00:36:50,880 --> 00:36:59,920
+Um, pa, znate, ako me jedna od njih nasmiješi, mogu zamisliti da će to povećati vjerojatnost da ću kliknuti.
+
+423
+00:37:00,480 --> 00:37:01,120
+Da, točno.
+
+424
+00:37:01,520 --> 00:37:08,240
+Pogotovo jer šaljemo ove obavijesti do sedam dana, možda će korisnik prve tri jednostavno ignorirati.
+
+425
+00:37:08,320 --> 00:37:13,200
+Ali ako postoji nešto zaista čudno, zabavno ili kreativni koji dobiju na četvrti dan, možda će ih to vratiti.
+
+426
+00:37:13,440 --> 00:37:21,440
+Zato pokušavamo imati varijacije i očito imamo algoritam koji optimizira koje su najučinkovitije u tom rasporedu.
+
+427
+00:37:22,080 --> 00:37:22,160
+Da.
+
+428
+00:37:22,320 --> 00:37:25,040
+I tako sljedeće, sljedeće učenje bilo je da to ostane jednostavno.
+
+429
+00:37:26,000 --> 00:37:27,040
+Što je to značilo?
+
+430
+00:37:27,440 --> 00:37:27,520
+Da.
+
+431
+00:37:27,840 --> 00:37:34,640
+U osnovi, to zvuči kao da je u osnovi samo održavanje poruke ili bilo koje teme obavijesti vrlo jednostavne.
+
+432
+00:37:34,880 --> 00:37:46,240
+To vrijedi posebno za nove korisnike ili korisnike koji nisu toliko uključeni u aplikacacijom su se uključili ljudi za Duolingo koji su možda na kraćim nizovima, a tekst je bio vrlo kratak i sažet.
+
+433
+00:37:46,320 --> 00:37:47,360
+To je posebno vrijedilo.
+
+434
+00:37:47,600 --> 00:37:56,240
+Mislim da zaboravljam je li to bilo na IOS-u 14 ili 15, gdje je Apple počeo izrezivati više teksta u zaglavlju obavijesti.
+
+435
+00:37:56,640 --> 00:37:59,440
+Dakle, mnoge od naših postojećih obavijesti počele su više raditi.
+
+436
+00:37:59,680 --> 00:37:59,760
+Da.
+
+437
+00:38:00,000 --> 00:38:03,440
+Da, počele su se izrezivati gotovo do četvrtog ili petog rješenja.
+
+438
+00:38:03,600 --> 00:38:10,960
+Tada smo napravili mnogo testova koji sadrže samo obavijesti od tri riječi., kao što su tri minute, sada učite španjolski.
+
+439
+00:38:11,360 --> 00:38:18,400
+I stvari poput toga stvarno su dobro funkcionirale jer ljudi, kako ste rekli, dobivaju mnogo obavijesti iz mnogih različitih aplikacija.
+
+440
+00:38:18,480 --> 00:38:26,320
+Dakle, ako možete brzo privući pozornost korisnika dvjema ili trima riječima, to često smanjuje kognitivnu opterećenost.
+
+441
+00:38:26,320 --> 00:38:37,680
+Mislim, to je samo u općenitom upravljanju proizvodom, kao što je dobro, znate, sve što natjera vaše korisnike da razmišljaju teško vjerojatno će imati negativan učinak na njihovu afinitet za proizvod ili volju za angažman jer ste jednostavno.
+
+442
+00:38:37,680 --> 00:38:49,200
+Zanimljivo je da za naše angažiranije učenike, na primjer, ako imate seriju od pedeset dana, složenija poruka često može dobro funkcionirati.
+
+443
+00:38:49,360 --> 00:38:58,800
+Dakle, u obavijestima ćemo se osvrnuti na određene mehanike, kao što je na Duolingu, možete koristiti zamrzavanje serije da biste spremili svoju seriju ako ne vježbate cijeli dan.
+
+444
+00:38:59,360 --> 00:39:02,800
+Dakle, u nekim našim obavijestima reći ćemo: Eh, nemate zamrzavanje serije.
+
+445
+00:39:03,280 --> 00:39:06,560
+Nemojte izgubiti svoju seriju od pedeset dana.
+
+446
+00:39:06,560 --> 00:39:15,920
+I naravno, ta poruka je malo složenija od onih koje bismo poslali manje angažiranim korisnicima, ali imamo varijacije u porukama koje šaljemo manje ili više angažiranim korisnicima.
+
+447
+00:39:16,000 --> 00:39:29,520
+I tako bih razumio da je to i ulaz u algoritam, kao što je, ako postoji pedeseti povrat ili prvi povrat ili nešto slično, to će vam pomoći, kao što ćete odabrati drugačiji tekst ili drugačiju obavijest na temelju toga.
+
+448
+00:39:29,680 --> 00:39:31,760
+Da, zapravo nije tako složeno.
+
+449
+00:39:31,920 --> 00:39:34,960
+Nismo imali toliko parametara u samom algoritmu.
+
+450
+00:39:34,960 --> 00:39:39,920
+Ali ono što radimo je da postavljamo određena kriterija za te predloške za kopiranje.
+
+451
+00:39:40,480 --> 00:39:45,600
+Dakle, za nešto poput: U redu, tako da određene skupine ne mogu dobiti obavijesti koje imaju smisla.
+
+452
+00:39:45,760 --> 00:39:45,920
+Dobro.
+
+453
+00:39:46,160 --> 00:39:52,240
+Dakle, Bandit će samo optimizirati za upućenim predlošcima za koje je određeni korisnik upućen.
+
+454
+00:39:52,720 --> 00:39:53,040
+Razumijem.
+
+455
+00:39:53,360 --> 00:39:53,520
+Dobro.
+
+456
+00:39:53,680 --> 00:39:54,400
+To je tako sjajno.
+
+457
+00:39:54,560 --> 00:39:59,280
+A sljedeće što smo naučili bilo je da zadržite naslove ispod trideset znakova, što ste već objasnili u nastavku.
+
+458
+00:39:59,360 --> 00:40:00,240
+Držite to jednostavno.
+
+459
+00:40:00,800 --> 00:40:02,160
+Ali sljedeće je stvarno zanimljivo.
+
+460
+00:40:02,400 --> 00:40:04,720
+Emoji najbolje funkcioniraju u naslovu, a ne u tijelo.
+
+461
+00:40:04,960 --> 00:40:08,320
+To je jednostavno smiješno, ali podaci su to dokazali.
+
+462
+00:40:09,760 --> 00:40:14,560
+Kako vi svi koristite emotikone i što ste radili u tijelu što jednostavno nije funkcioniralo?
+
+463
+00:40:14,720 --> 00:40:19,440
+Da, emotikoni su još jedan vektor za optimizaciju obavijesti.
+
+464
+00:40:19,520 --> 00:40:22,320
+Ljudi općenito dobro reagiraju na različite emotikone.
+
+465
+00:40:22,480 --> 00:40:29,040
+Primijetili smo da emotikoni općenito bolje funkcioniraju u naslovu obavijesti nego u tijelu.
+
+466
+00:40:29,440 --> 00:40:33,440
+Moja hipoteza je da emotikoni u naslovu stvarno dobro funkcioniraju.
+
+467
+00:40:33,440 --> 00:40:35,840
+Emoji dobro djeluju kao privlačni alat za privlačenje pozornosti.
+
+468
+00:40:36,000 --> 00:40:42,560
+Dok ako imate emotikon u tijelu, obavijest izgleda malo glasno, što je u tom trenutku samo isključivanje.
+
+469
+00:40:43,200 --> 00:40:51,440
+Dakle, testirali smo to i čini se da bolje funkcionira ako imate emotikon u naslovu i također emotikon kao glavni lik umjesto na kraju.
+
+470
+00:40:51,440 --> 00:40:52,480
+To je više poput ikone, zar ne?
+
+471
+00:40:52,800 --> 00:41:02,480
+Imate prilagođenu, osim ikone aplikacije koja se dijeli u obavijesti, možete dodati čak i aktualnu dodatnu ikonu koja će se nekako pojaviti.
+
+472
+00:41:02,480 --> 00:41:04,560
+To je nešto što me privlači.
+
+473
+00:41:04,640 --> 00:41:14,000
+Baš kao i kad čitam tekst s emotikonima ugrađenim u mozak baby boomera, jednostavno ne mogu, kao da je to previše, kao da ne mogu, ne mogu to analizirati, zar ne?
+
+474
+00:41:14,240 --> 00:41:14,960
+To postaje vrlo bučno.
+
+475
+00:41:15,200 --> 00:41:16,720
+Dakle, to je intuitivno.
+
+476
+00:41:16,960 --> 00:41:17,760
+Vidite, ovo je stvar.
+
+477
+00:41:17,920 --> 00:41:19,120
+Imala sam sve te vizije na početku.
+
+478
+00:41:19,200 --> 00:41:20,400
+Nismo trebali provesti sve te testove.
+
+479
+00:41:20,560 --> 00:41:22,320
+Mogao sam vam reći da sam to učinio na početku.
+
+480
+00:41:22,480 --> 00:41:25,680
+Nakon što sam vidio podatke, onda sam siguran da sam bio u pravu.
+
+481
+00:41:27,520 --> 00:41:31,280
+Što se tiče obavijesti, prije nego što nastavimo, ovo zapravo nije bilo podijeljeno u.
+
+482
+00:41:31,280 --> 00:41:42,880
+U Tweet Stormu ili Tweet Threadu koji ćemo povezati, podijelili ste to, ali kao neuspješan eksperiment govorili ste o tome kako upotreba marketinškog tona u obavijestima jednostavno ne funkcionira.
+
+483
+00:41:43,280 --> 00:41:49,840
+Recite mi što je to za razmišljanje i koje su vam eksperimente provedeni koji su jednostavno propadali.
+
+484
+00:41:50,160 --> 00:41:54,800
+Da, to je stvarno zanimljiv eksperiment koji smo nedavno proveli.
+
+485
+00:41:55,200 --> 00:42:00,320
+U osnovi, želimo da učenici dodiruju naše obavijesti.
+
+486
+00:42:00,320 --> 00:42:07,600
+To je zato što kada izravno dodirnete obavijest, izravno vas poveže s lekcijom i to povećava stopu dovršetka lekcije.
+
+487
+00:42:07,760 --> 00:42:14,400
+Imamo taj poticaj da korisnike natjeramo da izravno dodiruju obavijest umjesto da samo prelazi u aplikaciju.
+
+488
+00:42:14,560 --> 00:42:27,040
+Željeli smo isprobati predloške za kopiranje koji su izričito upućivali korisnike da to učine, stvari koje su govorile da dodirnu ovdje da bi pokrenuli brzu lekciju.
+
+489
+00:42:27,200 --> 00:42:29,280
+Iako se to slučajno događa, takav ton ne funkcionira baš dobro.
+
+490
+00:42:29,280 --> 00:42:36,800
+U našoj analizi mislili smo da je to zato što zvuči više kao oglas ili kao da dobivate popust od nekog oblika aplikacije.
+
+491
+00:42:36,880 --> 00:42:40,320
+Da je Duo rekao: Dopusti ovdje, vi biste rekli: Što radiš, čovječe?
+
+492
+00:42:40,720 --> 00:42:41,280
+Da, točno.
+
+493
+00:42:41,440 --> 00:42:42,320
+Zvuči više kao brend.
+
+494
+00:42:42,400 --> 00:42:43,600
+Da su to učinili vaši prijatelji, zar ne?
+
+495
+00:42:43,760 --> 00:42:45,600
+Rekli biste: Što se događa?
+
+496
+00:42:45,760 --> 00:42:47,120
+Ja sam ovdje da odgovorim na poruke.
+
+497
+00:42:47,280 --> 00:42:48,480
+Da, to jednostavno ne funkcionira.
+
+498
+00:42:50,560 --> 00:42:58,400
+Dakle, opet se vraća na ideju da organski ton kad vam lik govori bolje radi nego kad vam značajka govori.
+
+499
+00:42:58,400 --> 00:43:01,120
+Kao da vam robna marka govori s marketinškog stajališta?
+
+500
+00:43:01,280 --> 00:43:02,720
+Da, to je sjajna lekcija.
+
+501
+00:43:02,960 --> 00:43:20,480
+Mislim da ponekad u marketingu aplikacija osjećamo da moramo biti odrasli marketinški stručnjaci i usvojiti sve najbolje marketinške prakse, ali to zapravo ne funkcionira u mnogim od tih slučajeva i mislim da je to stvarno važno imati na umu.
+
+502
+00:43:20,560 --> 00:43:26,560
+Sljedeća stvar o kojoj sam želio govoriti, i mislim da ste o tome zapravo pisali na blogu, bila je fleksibilnost u ulici.
+
+503
+00:43:27,360 --> 00:43:30,800
+Da, recite mi o tim pokusima i što ste naučili.
+
+504
+00:43:31,680 --> 00:43:37,040
+Da, kao što sam ranije spomenuo, na DuelingO-u imate dnevnu seriju.
+
+505
+00:43:37,280 --> 00:43:39,200
+Dakle, svaki dan vježbate, a vaša serija raste.
+
+506
+00:43:40,640 --> 00:43:47,040
+To je bio veliki mehanizam za zadržavanje u ranim danima jer korisnicima daje razlog da se vraćaju svaki dan.
+
+507
+00:43:47,120 --> 00:43:50,480
+A onda je svaka druga društvena aplikacija kopirala to kao u svijetu, zar ne?
+
+508
+00:43:50,640 --> 00:43:51,040
+Baš tako.
+
+509
+00:43:51,200 --> 00:43:51,280
+Da.
+
+510
+00:43:52,240 --> 00:43:54,800
+To je najbolji mehanizam zadržavanja koji možete zamisliti.
+
+511
+00:43:54,880 --> 00:43:56,160
+Ono što smo naučili tijekom vremena jest to.
+
+512
+00:43:56,160 --> 00:44:07,360
+S vremenom smo naučili da je takva vrsta mehanike niza vrlo kaznena u smislu da ako slučajno propustite jedan dan, izgubite niz, što je iznimno demotivantno.
+
+513
+00:44:07,680 --> 00:44:17,760
+Postoji veliki preokretni trenutak u kojem ako izgubite niz, čak i ako ste unaprijed vrlo predani, samo iskustvo gubitka niza je jako demotivantno i korisnici će jednostavno pasti s platforme.
+
+514
+00:44:18,800 --> 00:44:25,200
+Stoga smo htjeli dodati više fleksibilnosti u načinu na koji možete pristupiti nizu.
+
+515
+00:44:25,200 --> 00:44:32,080
+Imamo ovaj predmet u aplikaciji koji možete kupiti ili ga ponekad i dajemo kao nagradu za određene stvari, što je zamrzavanje niza.
+
+516
+00:44:32,480 --> 00:44:35,360
+U osnovi, možete propustiti dan i vaš niz će ostati isti.
+
+517
+00:44:35,760 --> 00:44:40,800
+Možete se vratiti sljedeći dan i nastaviti učiti i povećavati svoj niz.
+
+518
+00:44:40,960 --> 00:44:43,120
+Dodavanje zamrzavanja niza bilo je sjajno za zadržavanje.
+
+519
+00:44:43,280 --> 00:44:53,680
+Samo malo slobode čini proces održavanja niza mnogo lakšim i manje je kažnjavajuće i kažnjavajuće za korisnika da ne mora doći.
+
+520
+00:44:53,920 --> 00:44:55,440
+Morate se vratiti svaki dan.
+
+521
+00:44:56,160 --> 00:45:01,040
+A zatim smo napravili toliko optimizacija oko zamrzavanja niza, igranja s cijenama.
+
+522
+00:45:01,200 --> 00:45:10,240
+Dakle, možete kupiti zamrzavanje niza s našom neupotrebljivom valutom nazvanom dragulji ili, kao što sam spomenuo, možete ih dobiti kao nagradu za završetak dnevnog zadatka, na primjer.
+
+523
+00:45:10,880 --> 00:45:14,080
+Optimizirali smo stope pada kako često padaju kao nagradu.
+
+524
+00:45:14,560 --> 00:45:18,240
+Također smo povećali broj zamrzavanja niza koje možete imati u određenom trenutku.
+
+525
+00:45:18,720 --> 00:45:20,880
+Sada možete opremiti do dva odjednom.
+
+526
+00:45:21,280 --> 00:45:22,640
+U osnovi, možete propustiti dva dana.
+
+527
+00:45:22,640 --> 00:45:24,640
+Dva dana i dalje zadržati seriju.
+
+528
+00:45:24,960 --> 00:45:32,640
+Očito, dok radimo sve ove optimizacije, pokušavamo imati na umu ono što nazivamo svetostom serije kako bismo bili sigurni da je i dalje beznačajna, zar ne?
+
+529
+00:45:32,960 --> 00:45:33,760
+Baš tako.
+
+530
+00:45:34,000 --> 00:45:43,280
+I općenito, dok smo ponavljali, vidjeli smo povećanje zadržavanja i ljudi i dalje pripisuju vrijednost seriji, iako postoji šansa da ste propustili nekoliko dana između njih.
+
+531
+00:45:44,000 --> 00:45:46,240
+Svi mehanizmi su samo proaktivni.
+
+532
+00:45:46,400 --> 00:45:52,080
+Dakle, ako propustim dan serije i pomislim, ah, propustio sam ga.
+
+533
+00:45:52,080 --> 00:45:57,040
+Mogu li ga vratiti ili moram li još uvijek staviti zamrzavanje na svoje mjesto prije?
+
+534
+00:45:57,280 --> 00:45:59,520
+Da, pa morate imati opremljeno zamrzavanje niza.
+
+535
+00:45:59,680 --> 00:46:03,040
+Imamo zaseban mehanizam koji se zove i popravak niza.
+
+536
+00:46:03,520 --> 00:46:03,920
+I ovo je primjer.
+
+537
+00:46:04,000 --> 00:46:05,760
+Da, bacam 1,99 dolara na to.
+
+538
+00:46:06,080 --> 00:46:21,120
+Da, pa je to povijesno bilo neka vrsta neprimjerene kupnje ili je to bonus koji dobivate u našem pretplatu, super, gdje dobivate popravak niza u slučaju da ste upotrijebili sve svoje zamrzavanje niza.
+
+539
+00:46:21,120 --> 00:46:24,640
+Ako se zaustavite, propustite dan i zapravo izgubite seriju, i dalje je možete vratiti.
+
+540
+00:46:25,280 --> 00:46:30,400
+Ali s vremenom pokušavamo se pobrinuti da su sve ove značajke usklađene i da se ne izgubi kontrola.
+
+541
+00:46:30,560 --> 00:46:35,760
+Mislim, ali čini mi se da, mislim, dok postoji neka aktivnost, zar ne?
+
+542
+00:46:35,840 --> 00:46:40,720
+Kao da korisnici razmišljaju o svojoj seriji, to je nešto što želite, kao da, dobro, brinem li se?
+
+543
+00:46:40,800 --> 00:46:42,240
+Ali onda se vraćamo, mislim, na svetost.
+
+544
+00:46:42,320 --> 00:46:50,080
+To je kao da je u nekom trenutku, ako preoptimizirate za serije, serija je važna samo u tolikoj mjeri koliko ljudi rade na poveznicama.
+
+545
+00:46:50,080 --> 00:46:50,880
+Ljudi uče jezik, zar ne?
+
+546
+00:46:50,960 --> 00:46:57,520
+Ako ne uče jezik, onda je niz samo mehanizam ovisnosti i više ne radiš svijet boljim mjestom, zar ne?
+
+547
+00:46:57,600 --> 00:47:00,320
+To je stalna opasnost od toga da si voditelj proizvoda, zar ne?
+
+548
+00:47:00,480 --> 00:47:04,080
+Optimiziraš da stvoriš nešto strašno za svijet, zar ne?
+
+549
+00:47:04,240 --> 00:47:17,440
+Dakle, to je zanimljiva ravnoteža, ali niz, niz, uvijek sam se pitao o tome, kako utječu negativne strane neuspjeha u održavanju te stvari?
+
+550
+00:47:17,760 --> 00:47:21,600
+I siguran sam da je to ne postane dominantni učinak, zar ne?
+
+551
+00:47:22,000 --> 00:47:25,760
+Da ljudi ne gube nizove tako često da to ima značenje.
+
+552
+00:47:25,920 --> 00:47:31,600
+Ali siguran sam da u ovoj fazi, kad optimizirate sve što možete, ima više toga za postići.
+
+553
+00:47:32,320 --> 00:47:38,640
+A onda je to također samo s gledišta brendiranja, čini razgovor malo opuštenijim.
+
+554
+00:47:38,880 --> 00:47:39,440
+Znaš što mislim?
+
+555
+00:47:39,600 --> 00:47:40,800
+Da, to će mi dati odmor.
+
+556
+00:47:41,120 --> 00:47:41,200
+Da.
+
+557
+00:47:41,360 --> 00:47:43,840
+Ako imam vjenčanje u subotu ili nešto slično, moram ići.
+
+558
+00:47:44,000 --> 00:47:44,960
+Neće me to preplaviti.
+
+559
+00:47:45,920 --> 00:47:46,000
+Da.
+
+560
+00:47:46,560 --> 00:47:47,360
+Mislim da je to sjajno.
+
+561
+00:47:47,680 --> 00:47:55,120
+Zapravo sam puno razmišljao o Appleovim fitness trendovima i ponekad si bolestan i ne možeš vježbati.
+
+562
+00:47:55,200 --> 00:47:58,000
+Ili se pojavljuju obavijesti o stanju kad letiš.
+
+563
+00:47:58,160 --> 00:48:01,200
+Bože, izađi odavde.
+
+564
+00:48:01,760 --> 00:48:03,520
+I to je kao da zapravo možeš učiniti više štete nego koristi.
+
+565
+00:48:04,000 --> 00:48:09,040
+Kad sam dobio Apple Watch, bio sam u tome, a onda sam neko vrijeme bio poput, evo, ne prilagođavaš se meni, zar ne?
+
+566
+00:48:09,200 --> 00:48:10,400
+Kao da sam gotov s ovim.
+
+567
+00:48:11,120 --> 00:48:14,720
+Dakle, dok kršiš pravila, to je kao da kršiš pravila na zdrav način.
+
+568
+00:48:15,280 --> 00:48:16,640
+Mislim da je to prilično cool.
+
+569
+00:48:17,040 --> 00:48:19,760
+Zapravo smo razgovarali s bivšim CMO-om Tinder-a.
+
+570
+00:48:19,840 --> 00:48:20,160
+Da, da.
+
+571
+00:48:20,400 --> 00:48:21,760
+A Tinder ima nekoliko takvih stvari.
+
+572
+00:48:21,920 --> 00:48:27,120
+Razgovarali smo o tome kako je dio njihove monetizacije vezan uz kršenje pravila.
+
+573
+00:48:27,520 --> 00:48:32,640
+I zanimljivo je kako možete kršiti pravila na dobar i na loš način.
+
+574
+00:48:33,600 --> 00:48:39,840
+A ravnoteža je u pronalaženju načina kršenja pravila na način koji je zapravo pozitivan i koristan.
+
+575
+00:48:39,920 --> 00:48:44,400
+I to je ono na što će korisnici reagirati, a ne samo kupiti izlaz iz nečega.
+
+576
+00:48:44,880 --> 00:48:47,360
+To je kao, da je to bilo legitimno.
+
+577
+00:48:47,680 --> 00:48:48,000
+Da, da.
+
+578
+00:48:48,160 --> 00:48:48,640
+Pitajte ovo.
+
+579
+00:48:48,720 --> 00:48:51,360
+Trebam da to isprobate.
+
+580
+00:48:51,520 --> 00:48:52,400
+Samo mi recite neke ideje.
+
+581
+00:48:52,880 --> 00:48:54,720
+Razgovarajte s tim momcima iz podkluba.
+
+582
+00:48:55,120 --> 00:48:57,920
+Dali su mi neke sjajne ideje o monetizaciji.
+
+583
+00:48:58,320 --> 00:48:59,440
+O, čovječe.
+
+584
+00:49:00,080 --> 00:49:02,320
+Pa, evo, moramo završiti.
+
+585
+00:49:03,200 --> 00:49:06,160
+Ali imao sam još jedno pitanje, bilo je to o widgetima.
+
+586
+00:49:06,240 --> 00:49:10,400
+Dakle, widgeti su bili ogromni posljednjih nekoliko godina otkako je Apple preoblikovao cijeli početni zaslon.
+
+587
+00:49:10,640 --> 00:49:14,800
+Kakve su rezultate vi vidjeli od sadržaja widgeta za niz?
+
+588
+00:49:14,800 --> 00:49:22,160
+Mislim da pratite statistiku o broju korisnika koji ga zapravo imaju na početnom zaslonu, broju ljudi koji ga dodiruju.
+
+589
+00:49:22,320 --> 00:49:27,360
+Je li to bio veliki pokretač zadržavanja i vidljivosti aplikacije?
+
+590
+00:49:27,440 --> 00:49:28,640
+Da, to je sjajno pitanje.
+
+591
+00:49:29,520 --> 00:49:42,880
+Na iOS-u imamo widget za niz, koji je u osnovi widget za početni zaslon koji prikazuje trenutačnu duljinu vašeg niza i ima slatku sliku Duo tijekom dana, jer ne vježbate, Duo postaje sve ljutiji ili zabrinutiji.
+
+592
+00:49:43,600 --> 00:49:48,880
+To je nešto poput Tamagotchi-ja koji živi na vašem početnom zaslonu kako biste vježbali.
+
+593
+00:49:49,760 --> 00:49:50,240
+To je tako cool.
+
+594
+00:49:50,560 --> 00:49:50,640
+Da.
+
+595
+00:49:50,880 --> 00:49:58,000
+Tako smo ga pokrenuli ove godine i zapravo je premašio naše očekivanja u pogledu toga koliko je dobar mehanizam zadržavanja.
+
+596
+00:49:58,800 --> 00:49:59,520
+I za to postoje dva razloga.
+
+597
+00:50:00,160 --> 00:50:11,360
+Jedan je taj da je za korisnike koji su aktivni i na nizu, to je poput stalnog obavijesti koja živi na vašem početnom zaslonu i podsjeća vas na vašu nizu, ali je i slatkija od obavijesti.
+
+598
+00:50:11,440 --> 00:50:14,400
+To je slatkije i nešto što ste odabrrali dodati na početni zaslon.
+
+599
+00:50:14,720 --> 00:50:20,320
+Dakle, to je mnogo manje neželjena pošta nego pravi obavijest, ali stalno podsjeća na to, evo, ovo je vaša serija.
+
+600
+00:50:20,560 --> 00:50:26,000
+Da, stvarno radite nešto poput edukativnog sadržaja, kao što je ombre čovjek.
+
+601
+00:50:26,080 --> 00:50:32,960
+Ima li neku vrstu zapravo pojačane učenja ili je uglavnom o seriji koja je na našoj putovnici.
+
+602
+00:50:33,040 --> 00:50:37,120
+Još nemamo to, ali ima puno optimizacija i vizionarskog CO-a.
+
+603
+00:50:37,360 --> 00:50:37,840
+Ne činite to.
+
+604
+00:50:38,080 --> 00:50:41,760
+Da, mislim da ljudi samo otvaraju aplikaciju.
+
+605
+00:50:41,760 --> 00:50:45,680
+Moram reći da ste mogli samo navesti broj, da je vaš niz tri, zar ne?
+
+606
+00:50:45,760 --> 00:50:47,040
+Kao da je to vrlo telefonski widget.
+
+607
+00:50:47,840 --> 00:50:49,920
+Eh, i kao da sam prije izradio ove značajke za Apple.
+
+608
+00:50:50,640 --> 00:50:56,960
+I naučio sam da ako ne napravite nešto što pruža vrijednost, nitko neće biti baš uzbuđen zbog toga.
+
+609
+00:50:57,040 --> 00:51:05,200
+Ali ako u to stavljate neku osobnost, stvarate nešto i malo iskustva samo po sebi i izazivate emocije samo s njim, onda imate šansu.
+
+610
+00:51:05,360 --> 00:51:10,640
+Mislim da bi moje pitanje bilo, pomiče li to za sve vas, osim ako ne dobijete ljude da to zapravo dodaju, zar ne?
+
+611
+00:51:11,200 --> 00:51:16,800
+I pokušavate li aktivno poticati to ili samo kažete da je uspješno za ljude koji su ga već instalirali?
+
+612
+00:51:17,120 --> 00:51:18,640
+Ne, to je sjajno pitanje.
+
+613
+00:51:18,800 --> 00:51:21,440
+Dakle, u osnovi moramo raditi na dvije stvari s widgetom.
+
+614
+00:51:21,520 --> 00:51:23,280
+Jedno je da korisnike potaknemo da ga instaliraju.
+
+615
+00:51:23,440 --> 00:51:25,760
+Dakle, imamo promocije u aplikaciji.
+
+616
+00:51:25,920 --> 00:51:30,480
+Kada završite sesiju ili lekciju, reći ćemo: Evo, imamo widget, trebali biste ga instalirati.
+
+617
+00:51:30,800 --> 00:51:37,360
+I kada smo testirali prikazivanje te kartice, zapravo je dovelo iznenađujuće veliki broj korisnika da instaliraju widget.
+
+618
+00:51:37,680 --> 00:51:39,520
+Dakle, naš widget DAU.
+
+619
+00:52:07,680 --> 00:52:10,240
+I znate, još uvijek raste.
+
+620
+00:52:10,720 --> 00:52:15,600
+Pedeset posto rasta DAU-a ili bilo čega što je bilo tijekom protekle godine je prilično ludilo, zar ne?
+
+621
+00:52:16,240 --> 00:52:19,040
+Nikad ne bih pomislio 2013.
+
+622
+00:52:19,200 --> 00:52:24,320
+godine kad je trgovina aplikacijama bila na početku i bilo je tu ovo aplikacija Duolingo, a mi smo pomislili, dobro, daju je besplatno.
+
+623
+00:52:24,480 --> 00:52:25,440
+Nismo baš razumjeli.
+
+624
+00:52:25,600 --> 00:52:29,840
+Nikad ne bih pomislio da će doći do točke danas.
+
+625
+00:52:29,920 --> 00:52:32,080
+Ali opet, nisam znao što vi radite.
+
+626
+00:52:32,240 --> 00:52:33,760
+A sada je to malo smisleno.
+
+627
+00:52:33,840 --> 00:52:36,160
+Dakle, to je prilično nevjerojatno.
+
+628
+00:52:37,040 --> 00:52:37,120
+Da.
+
+629
+00:52:37,120 --> 00:52:38,880
+Mislim da je ovo sjajno mjesto za zaključak.
+
+630
+00:52:39,040 --> 00:52:40,960
+To je nevjerojatna aplikacija.
+
+631
+00:52:41,280 --> 00:52:47,920
+Kakva je to nevjerojatna avantura, od početka trgovine aplikacijama do javne tvrtke.
+
+632
+00:52:48,000 --> 00:52:56,960
+I tako je sjajno na sve različite načine na koje svi uključujete testiranje i podatke kako biste pomogli u utjecaju na to i nastavili rasti i nastaviti učiniti da bude sjajno iskustvo.
+
+633
+00:52:57,360 --> 00:52:59,040
+Želite li nešto podijeliti na kraju?
+
+634
+00:52:59,200 --> 00:53:02,560
+Znam da Duolingo i dalje zapošljava kao lud.
+
+635
+00:53:02,880 --> 00:53:05,840
+Znate, u ostatku tehnologije ima puno ljudi koji traže posao.
+
+636
+00:53:05,840 --> 00:53:07,680
+Želite li nešto podijeliti?
+
+637
+00:53:07,840 --> 00:53:11,520
+Da, ne, imamo sreće što smo još uvijek u dobrom stanju i da još uvijek zapošljavamo.
+
+638
+00:53:11,760 --> 00:53:15,520
+Dakle, pogledajte našu stranicu za karijere ako vas zanimaju neki položaji.
+
+639
+00:53:16,480 --> 00:53:19,360
+I da, preuzmite Duolingo ako ga još niste.
+
+640
+00:53:19,440 --> 00:53:21,200
+Volimo naše korisnike i volimo hakiranje.
+
+641
+00:53:21,360 --> 00:53:22,720
+Da, uvijek ćemo hakirati.
+
+642
+00:53:22,880 --> 00:53:23,280
+Baš tako.
+
+643
+00:53:24,400 --> 00:53:24,560
+Da.
+
+644
+00:53:25,120 --> 00:53:26,000
+U redu, hvala vam puno.
+
+645
+00:53:26,240 --> 00:53:28,560
+Ovo je bila fascinantna rasprava.
+
+646
+00:53:28,640 --> 00:53:32,160
+I opet, jako cijenim koliko je Duolingo otvoren za dijeljenje ovih stvari.
+
+647
+00:53:32,320 --> 00:53:39,680
+Dakle, opet ćemo podijeliti poveznice na blogu u bilješkama emisijeije nalazi se mnogo sjajnih blogova i tweetova i slično.
+
+648
+00:53:39,840 --> 00:53:41,200
+Dakle, još jednom hvala.
+
+649
+00:53:41,440 --> 00:53:42,480
+Hvala vam, Davide i Jacob.
+
+650
+00:53:42,960 --> 00:53:44,560
+Hvala vam na slušanju.
+
+651
+00:53:45,120 --> 00:53:50,880
+Ako imate minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcastova.
+
+652
+00:53:51,920 --> 00:54:00,320
+Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
