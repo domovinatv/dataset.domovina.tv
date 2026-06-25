@@ -1,0 +1,3672 @@
+1
+00:00:00,080 --> 00:00:02,799
+[SPEAKER_00] Dobrodošli u Launched.
+
+2
+00:00:03,040 --> 00:00:09,919
+[SPEAKER_00] Ja sam Charlie Chapman i danas sam uzbuđen što vam predstavljam razvijača nove igre za iOS, The Art of Fauna, Clemens Strasser.
+
+3
+00:00:23,199 --> 00:00:24,399
+[SPEAKER_00] Clemens, dobrodošao u emisiju.
+
+4
+00:00:25,199 --> 00:00:26,640
+[SPEAKER_01] Hvala ti što si me primio.
+
+5
+00:00:27,679 --> 00:00:28,160
+[SPEAKER_00] Bilo je zabavno.
+
+6
+00:00:28,320 --> 00:00:33,039
+[SPEAKER_00] Provodili smo vrijeme u različitim dijelovima svijeta.
+
+7
+00:00:34,479 --> 00:00:36,960
+[SPEAKER_00] I počinjem misliti da je to poput mema.
+
+8
+00:00:36,960 --> 00:00:39,759
+[SPEAKER_00] U ovom trenutku to je poput mema samo za mene, s kojim započinjem emisiju.
+
+9
+00:00:39,840 --> 00:00:45,039
+[SPEAKER_00] Bili ste na mom popisu zauvijek, ali zato što nisam snimio dovoljno epizoda, pa je svatko bio na mom popisu zauvijek.
+
+10
+00:00:45,200 --> 00:00:45,200
+[UNKNOWN] Da.
+
+11
+00:00:45,759 --> 00:00:47,200
+[SPEAKER_00] Ali jako sam uzbuđen što ste na popisu.
+
+12
+00:00:47,280 --> 00:00:50,960
+[SPEAKER_00] Osjećam da ste na neki način došli do neke druge niše.
+
+13
+00:00:51,359 --> 00:00:57,920
+[SPEAKER_00] Nisam imao razvijača neovisnih igara neko vrijeme, možda od kada je Ryan bio Blackbox.
+
+14
+00:00:58,159 --> 00:00:58,240
+[SPEAKER_01] Da.
+
+15
+00:00:59,039 --> 00:01:03,280
+[SPEAKER_00] Dakle, postoji cijeli, to je cijeli drugačiji svijet, ali očito se puno preklapaju.
+
+16
+00:01:03,520 --> 00:01:05,120
+[SPEAKER_00] Zato sam uzbuđen što ću se u to upustiti.
+
+17
+00:01:05,280 --> 00:01:05,359
+[SPEAKER_01] Da.
+
+18
+00:01:05,680 --> 00:01:07,040
+[SPEAKER_01] Sretan sam što sam ovdje.
+
+19
+00:01:07,200 --> 00:01:12,400
+[SPEAKER_01] Već jako, jako dugo slušam Launch, pa nisam mislio da ću.
+
+20
+00:01:13,040 --> 00:01:16,000
+[SPEAKER_01] ikad biti u nekoj epizodi, pa sam jako uzbuđen.
+
+21
+00:01:16,480 --> 00:01:16,799
+[SPEAKER_00] Fantastično.
+
+22
+00:01:17,040 --> 00:01:23,519
+[SPEAKER_00] Pa, prije nego što se pozabavimo vašim igrama, želim svima dati neku vrstu uvodne informacije o tome tko ste.
+
+23
+00:01:23,760 --> 00:01:27,760
+[SPEAKER_00] Dakle, tri pitanja koja uvijek postavljam za početak ove emisije su: odakle ste?
+
+24
+00:01:28,159 --> 00:01:30,400
+[SPEAKER_00] Imate li formalno obrazovanje vezano uz ono što radite?
+
+25
+00:01:30,640 --> 00:01:36,719
+[SPEAKER_00] A onda možemo malo razgovarati o tome kakva je bila vaša karijera prije nego što ste se zaposlili u razvoju indie igara koje radite sada.
+
+26
+00:01:37,760 --> 00:01:39,599
+[SPEAKER_01] Dakle, ja sam iz Graza, Austrija.
+
+27
+00:01:41,120 --> 00:01:47,599
+[SPEAKER_01] U osnovi sam rođen i odrastao ovdje ili u tom području, pa nisam previše daleko.
+
+28
+00:01:48,159 --> 00:02:01,599
+[SPEAKER_01] U stvari, odrastao sam u vrlo malom selu, otprilike dvije sata vožnje odavde, ali onda sam se preselio u manje selo u blizini Graza i sada živim u Grazu osam godina.
+
+29
+00:02:03,599 --> 00:02:15,039
+[SPEAKER_01] I da, imam formalno obrazovanje, pohađao sam prvi, mi u Austriji imamo nešto poput tehničke srednje škole i naučio sam programirati tamo.
+
+30
+00:02:15,599 --> 00:02:23,360
+[SPEAKER_00] Dakle, to je dio osnovne škole ili je to poput post-formalne škole, kao da je to neobavezno?
+
+31
+00:02:23,360 --> 00:02:24,960
+[SPEAKER_00] Samo sam znatiželjan.
+
+32
+00:02:26,240 --> 00:02:37,039
+[SPEAKER_01] Mislim, nisam siguran kako se to odnosi na vaše školske godine, ali kad sam navršio trinaest godina, pohađao sam tu školu, pa mislim da je to u redu, u redu.
+
+33
+00:02:37,599 --> 00:02:39,199
+[SPEAKER_01] Dakle, da, to se slaže.
+
+34
+00:02:40,240 --> 00:02:50,479
+[SPEAKER_01] Dakle, mislim da kad ste trinaest godina u Austriji, morate završiti još jednu godinu obrazovanja i onda možete raditi nešto drugo, ali u osnovi je to zanimljivo.
+
+35
+00:02:51,360 --> 00:03:00,800
+[SPEAKER_01] Većina ljudi zapravo završava ili većina ljudi, to nije potpuno istina, ali mnogi ljudi onda završavaju srednju školu.
+
+36
+00:03:00,800 --> 00:03:01,919
+[SPEAKER_01] I ovdje sam pohađala srednju školu.
+
+37
+00:03:02,240 --> 00:03:18,800
+[SPEAKER_01] A za mene je odabir bio da je tehnička škola godina dulja od drugih obrazovanja, ali u njoj se uče više tehničkih stvari i elektrotehnika je bila velika dio toga, ali i programiranje.
+
+38
+00:03:20,319 --> 00:03:34,879
+[SPEAKER_01] Tako sam naučila programirati u C i u vrlo jezicima koji su blizu hardveru, a zatim sam krenula na nešto višu razinu.
+
+39
+00:03:35,680 --> 00:03:36,000
+[SPEAKER_01] Lijepo.
+
+40
+00:03:36,000 --> 00:03:44,960
+[SPEAKER_01] Nakon toga pohađao sam fakultet ovdje u Grazu i diplomirao i magistrirao računalnu znanost.
+
+41
+00:03:45,439 --> 00:03:54,240
+[SPEAKER_01] Dok sam studirao, počeo sam programirati za iOS i onda sam se u to upustio.
+
+42
+00:03:55,439 --> 00:03:56,000
+[SPEAKER_00] To je zanimljivo.
+
+43
+00:03:57,280 --> 00:04:03,280
+[SPEAKER_00] Samo sam vas dugo pratio, pretpostavio sam da je vaš pozadinski obrazovanje u dizajnu.
+
+44
+00:04:04,240 --> 00:04:08,719
+[SPEAKER_00] Jer to se čini velikim dijelom vašeg fokusa i na što se jako oslanjate.
+
+45
+00:04:09,280 --> 00:04:11,919
+[SPEAKER_01] Da, to je zanimljivo jer sam.
+
+46
+00:04:12,719 --> 00:04:16,319
+[SPEAKER_01] Nikad nisam naučila ništa o dizajnu.
+
+47
+00:04:16,639 --> 00:04:20,959
+[SPEAKER_01] Nikad nisam radila na dizajnu ili radila ništa slično.
+
+48
+00:04:21,199 --> 00:04:29,360
+[SPEAKER_01] Po zanimanju sam računalni programer i to je u osnovi ono što sam uvijek radila.
+
+49
+00:04:29,600 --> 00:04:29,839
+[SPEAKER_00] Lijepo.
+
+50
+00:04:30,480 --> 00:04:37,360
+[SPEAKER_00] Dakle, imate tu diplomu, a zatim ste se upustili u polje i počeli programirati.
+
+51
+00:04:37,519 --> 00:04:41,600
+[SPEAKER_00] Bilo je to kao da radite na mobilnim uređajima ili na iOS-u na početku ili što ste radili?
+
+52
+00:04:42,240 --> 00:04:48,959
+[SPEAKER_01] Dakle, radila sam na bakalaurovi i jedna od mojih studija.
+
+53
+00:04:48,959 --> 00:05:11,439
+[SPEAKER_01] Jedna od stvari koje sam morao naučiti tijekom studija na sveučilištu bile su redovite izraze i nisam baš volio kako se uče na sveučilištu, pa sam pomislio da bih mogao napraviti nešto zanimljivije od toga i uvijek sam želio početi učiti kako programirati za iOS.
+
+54
+00:05:11,839 --> 00:05:29,120
+[SPEAKER_01] Nisam imao iPhone ili nešto slično, ali sam imao Mac i iPod touch i želio sam nešto učiniti jer mi je platforma bila vrlo zanimljiva i tako sam pomislio da ću to učiniti napraviti igru s križalicama koja se bavi pravilnim izrazima.
+
+55
+00:05:30,319 --> 00:05:38,480
+[SPEAKER_01] Tako bih mogao naučiti kako pravilni izrazi zapravo funkcioniraju i kako se radi programiranje u obliku cilja C.
+
+56
+00:05:38,720 --> 00:05:39,920
+[SPEAKER_01] To je bilo 2014.
+
+57
+00:05:40,079 --> 00:05:42,800
+[SPEAKER_01] godine, kada još nismo imali Swift, tako rano 2014.
+
+58
+00:05:42,959 --> 00:05:42,959
+[UNKNOWN] godine.
+
+59
+00:05:43,759 --> 00:05:47,519
+[SPEAKER_01] I tako sam počeo učiti sve to.
+
+60
+00:05:47,920 --> 00:05:55,680
+[SPEAKER_01] A onda kad sam imao ispit o pravilnim izrazima, napravio sam taj ispit.
+
+61
+00:05:55,759 --> 00:05:57,360
+[SPEAKER_01] Tako je to dobro prošlo.
+
+62
+00:05:57,519 --> 00:05:59,920
+[SPEAKER_01] Tako sam znao kako s njima raditi kasnije.
+
+63
+00:06:00,160 --> 00:06:03,839
+[SPEAKER_01] Ali igra koju sam izradio više mi se nije toliko svidjela.
+
+64
+00:06:04,560 --> 00:06:06,639
+[SPEAKER_01] Stoga sam prestao raditi na tome.
+
+65
+00:06:07,439 --> 00:06:12,160
+[SPEAKER_00] Krevetnica o redovitim izrazima nije jednostavno osvojila svijet.
+
+66
+00:06:12,480 --> 00:06:17,360
+[SPEAKER_00] Da, mislim da će New York Times to dodati u bilo kojem trenutku.
+
+67
+00:06:17,439 --> 00:06:21,519
+[SPEAKER_01] Isprva sam bio jako zaljubljen u ideju.
+
+68
+00:06:21,759 --> 00:06:27,360
+[SPEAKER_01] A onda sam pomislio, da, ovo nije najzanimljivija stvar na svijetu.
+
+69
+00:06:27,519 --> 00:06:34,720
+[SPEAKER_01] Stoga sam prestao raditi na tome jer nije bilo ništa što bi me zaista uzbuđivalo ili uhvatilo.
+
+70
+00:06:35,199 --> 00:06:35,279
+[SPEAKER_01] Da.
+
+71
+00:06:37,279 --> 00:06:47,680
+[SPEAKER_01] I onda su prošla nekoliko tjedana ili mjeseci i sjedila sam na kauču kod kuće i gledala u sat.
+
+72
+00:06:47,920 --> 00:06:59,199
+[SPEAKER_01] Tada je to bio mehanički sat jer Apple Watch još nije bio najavljen i znali smo da će se taj proizvod pojaviti u nekom trenutku, ali nismo točno znali kada.
+
+73
+00:06:59,680 --> 00:07:02,000
+[SPEAKER_01] Dakle, bilo je puno glasina oko toga.
+
+74
+00:07:03,040 --> 00:07:12,959
+[SPEAKER_01] I gledala sam u sat i imala sam ideju da imam neku vrlo jednostavnu kviz igru u kojoj imate samo izjave koje su ispravne ili pogrešne i klizite gore ili dolje da biste rekli.
+
+75
+00:07:12,959 --> 00:07:14,160
+[SPEAKER_01] Povećati ili smanjiti da biste rekli je li to ispravno ili pogrešno.
+
+76
+00:07:14,480 --> 00:07:19,199
+[SPEAKER_01] Dakle, izračun poput jednog plus jedan je dva, a vi biste pomaknuli gore jer je to ispravno.
+
+77
+00:07:19,759 --> 00:07:27,680
+[SPEAKER_01] Ili izjava o zemljopisnosti poput Pariza je glavni grad Njemačke i pomaknuli biste gore jer to nije ispravno.
+
+78
+00:07:28,480 --> 00:07:38,560
+[SPEAKER_01] I pomislio sam da bi samo super jednostavna igra s kvizom, dobivate jednu minutu i morate riješiti što više pitanja, bila zanimljiva za Apple Watch.
+
+79
+00:07:38,879 --> 00:07:42,319
+[SPEAKER_01] Ali, kako sam rekao, nije objavljeno, pa još nije objavljeno.
+
+80
+00:07:42,560 --> 00:07:48,000
+[SPEAKER_01] Samo to radim za iPhone i onda mogu lako prenij.
+
+81
+00:07:51,600 --> 00:08:04,319
+[SPEAKER_01] Kad smo dobili SDK, na Apple Watchu nije bilo UI-a, pa je cijela stvar trebala veću rewrite nego što sam očekivao na početku.
+
+82
+00:08:04,319 --> 00:08:07,199
+[SPEAKER_00] Ali vi ste sve to izgradili za iOS.
+
+83
+00:08:07,920 --> 00:08:08,879
+[SPEAKER_00] Jeste li to objavili?
+
+84
+00:08:09,199 --> 00:08:11,759
+[SPEAKER_01] Da, objavio sam to kao iOS aplikaciju.
+
+85
+00:08:11,839 --> 00:08:19,279
+[SPEAKER_01] Nazvala se Elementary Minute i to je bila prva stvar koju sam stavio u trgovinu aplikacijama.
+
+86
+00:08:19,360 --> 00:08:21,920
+[SPEAKER_01] Objavio sam je 1.
+
+87
+00:08:22,240 --> 00:08:23,600
+[SPEAKER_01] prosinca 2014.
+
+88
+00:08:25,040 --> 00:08:40,159
+[SPEAKER_01] Odlučio sam taj datum jer u Austriji ako imate tvrtku, morate platiti određenu naknadu za vladinu stvar koja iznosi sto dolara godišnje i ne morate je platiti kad to učinite u prosincu.
+
+89
+00:08:40,480 --> 00:08:43,200
+[SPEAKER_01] Dakle, premjestio sam lansiranje na 1.
+
+90
+00:08:43,759 --> 00:08:48,559
+[SPEAKER_01] prosinca jer sam mislio da nikad neću zaraditi te sto dolara s aplikacijom.
+
+91
+00:08:49,120 --> 00:08:58,240
+[SPEAKER_01] Dakle, mogu samo izbjeći plaćanje za jednu godinu i tako sam je objavio za iOS.
+
+92
+00:08:59,039 --> 00:09:01,279
+[SPEAKER_01] A u međuvremenu, je objavljen Apple Watch.
+
+93
+00:09:01,919 --> 00:09:05,440
+[SPEAKER_01] Mislim da smo SDK dobili u veljači sljedeće godine.
+
+94
+00:09:06,240 --> 00:09:09,360
+[SPEAKER_00] Pa, prije toga, kako je primljen?
+
+95
+00:09:10,879 --> 00:09:12,320
+[SPEAKER_00] Je li ga netko preuzeo?
+
+96
+00:09:12,559 --> 00:09:13,360
+[SPEAKER_00] Je li donio novac?
+
+97
+00:09:14,080 --> 00:09:16,000
+[SPEAKER_01] Dakle, nije donio mnogo novca.
+
+98
+00:09:16,320 --> 00:09:26,320
+[SPEAKER_01] Dakle, nije bio, ne znam, prodavan je za devedeset devet centi i dobio je jedan ili dva preuzimanja dnevno, ali je i dalje bio dobar, pogotovo.
+
+99
+00:09:26,399 --> 00:09:28,399
+[SPEAKER_00] Da, to je dovoljno da nadoknadite sto dolara.
+
+100
+00:09:28,639 --> 00:09:28,720
+[SPEAKER_00] Da.
+
+101
+00:09:28,960 --> 00:09:29,600
+[SPEAKER_00] Ako se nastavi.
+
+102
+00:09:29,759 --> 00:09:29,840
+[SPEAKER_00] Da.
+
+103
+00:09:30,639 --> 00:09:30,720
+[SPEAKER_01] Da.
+
+104
+00:09:30,960 --> 00:09:39,519
+[SPEAKER_01] I pogotovo, kao u prvih nekoliko dana, vidio sam da ga su ti ljudi vjerojatno moji prijatelji.
+
+105
+00:09:39,679 --> 00:09:51,840
+[SPEAKER_01] Ali onda su ga preuzeli ljudi iz SAD-a i tada nisam poznavala nikoga iz SAD-a, ili su ga preuzeli ljudi iz Kine ili drugih mjesta na svijetu.
+
+106
+00:09:52,320 --> 00:09:59,039
+[SPEAKER_01] I to je bilo samo nevjerojatno osjećaj da netko drugi na svijetu samo igra moju malu igru koju sam napravila u svojoj kupaonici.
+
+107
+00:09:59,200 --> 00:10:00,399
+[SPEAKER_00] Nikad se ne umara.
+
+108
+00:10:00,559 --> 00:10:00,639
+[SPEAKER_01] Da.
+
+109
+00:10:01,440 --> 00:10:12,960
+[SPEAKER_00] Ima nešto u tome da ljudi, nemate pojma tko su, da je nešto što radite imalo neki utjecaj na njihov život i da imate malu niti na web-mjestu koja dokazuje da se to dogodilo.
+
+110
+00:10:12,960 --> 00:10:14,720
+[SPEAKER_00] To je jednostavno čarobno.
+
+111
+00:10:14,879 --> 00:10:21,120
+[SPEAKER_01] Da, to je zaista ludilo da su takve stvari moguće.
+
+112
+00:10:21,840 --> 00:10:26,480
+[SPEAKER_01] I da, to je bilo super dobro osjećanje i super lijepo.
+
+113
+00:10:27,120 --> 00:10:40,960
+[SPEAKER_01] Cijela je verzija za mene prošla dobro jer su ljudi zapravo igrali, ali nije donijela dovoljno novca da pokrije sve moje troškove.
+
+114
+00:10:44,240 --> 00:10:48,639
+[SPEAKER_01] I tako nastavljam, ali nije bilo potrebno jer sam studirao i nisam imao.
+
+115
+00:10:48,639 --> 00:10:54,320
+[SPEAKER_01] I u to vrijeme nisam morao platiti stan ili bilo što drugo.
+
+116
+00:10:54,639 --> 00:11:00,960
+[SPEAKER_01] I tako sam nastavio raditi na tome jer je bilo zabavno raditi na tome.
+
+117
+00:11:01,600 --> 00:11:13,440
+[SPEAKER_01] A SDK za Apple Watch dobili smo u veljači, a cilj mi je bio objaviti igru za Apple Watch u travnju, mislim.
+
+118
+00:11:15,039 --> 00:11:15,919
+[SPEAKER_01] I biti dio prvog dana.
+
+119
+00:11:17,039 --> 00:11:24,480
+[SPEAKER_01] Biti dio prvog dana, a zatim poslati neke e-pošte za tisak prije toga i neke trailere i slično.
+
+120
+00:11:24,480 --> 00:11:30,720
+[SPEAKER_01] Te su stvari preuzete i generirane su malo više preuzimanja, a onda je zapravo dio prvog dana.
+
+121
+00:11:31,360 --> 00:11:35,039
+[SPEAKER_01] Mislim da je bilo četiri ili pet igara na Apple Watchu prvog dana.
+
+122
+00:11:35,600 --> 00:11:36,240
+[SPEAKER_01] To je bilo sjajno.
+
+123
+00:11:37,279 --> 00:11:40,080
+[SPEAKER_01] To su bile Elementary Minute i to je bilo vrlo lijepo.
+
+124
+00:11:41,279 --> 00:11:53,279
+[SPEAKER_01] Problem je u tome što nisam znao da je igranje igara na Apple Watchu ne baš najzabavnije iskustvo jer morate stajati tamo i držati ruku ovako.
+
+125
+00:11:53,919 --> 00:11:56,720
+[SPEAKER_00] Da, jer ste mogli izgraditi samo u simulatoru, zar ne?
+
+126
+00:11:57,039 --> 00:11:57,360
+[SPEAKER_01] Baš tako.
+
+127
+00:11:58,159 --> 00:12:00,399
+[SPEAKER_01] Nisam mogao ni kupiti.
+
+128
+00:12:00,399 --> 00:12:05,200
+[SPEAKER_01] Da bih kupio Apple Watch prvog dana jer je prvi put pušten na tržište samo u SAD-u.
+
+129
+00:12:05,440 --> 00:12:05,519
+[SPEAKER_01] Da.
+
+130
+00:12:08,159 --> 00:12:12,480
+[SPEAKER_01] A onda je pušten na tržište nekoliko mjeseci kasnije u Njemačkoj.
+
+131
+00:12:12,559 --> 00:12:15,279
+[SPEAKER_01] Mislim da je Austrija kupila samo krajem godine.
+
+132
+00:12:15,679 --> 00:12:17,679
+[SPEAKER_01] Dakle, vrlo, vrlo kasno.
+
+133
+00:12:18,159 --> 00:12:21,200
+[SPEAKER_00] Jeste li otišli u Njemačku ili ste čekali da dođe u Austriju?
+
+134
+00:12:21,519 --> 00:12:29,120
+[SPEAKER_01] Ja sam otišao u Njemačku da kupim svoj u rujnu, nešto u tom stilu ili u kolovozu.
+
+135
+00:12:29,360 --> 00:12:29,440
+[SPEAKER_00] Da.
+
+136
+00:12:30,000 --> 00:12:32,240
+[SPEAKER_00] Morali smo kupiti dodatni sat, pretpostavljam.
+
+137
+00:12:32,399 --> 00:12:32,480
+[SPEAKER_00] Da.
+
+138
+00:12:32,720 --> 00:12:33,360
+[SPEAKER_00] Zlatni.
+
+139
+00:12:33,600 --> 00:12:34,159
+[SPEAKER_00] Da, definitivno.
+
+140
+00:12:34,639 --> 00:12:34,720
+[SPEAKER_00] Da.
+
+141
+00:12:34,960 --> 00:12:36,000
+[SPEAKER_00] Tisuću dolara ili nešto u tom stilu.
+
+142
+00:12:36,000 --> 00:12:36,159
+[SPEAKER_00] Da.
+
+143
+00:12:36,240 --> 00:12:36,639
+[SPEAKER_00] Pretpostavljam.
+
+144
+00:12:36,720 --> 00:12:36,799
+[SPEAKER_00] Da.
+
+145
+00:12:36,799 --> 00:12:37,120
+[SPEAKER_01] Da, da.
+
+146
+00:12:37,360 --> 00:12:39,440
+[SPEAKER_00] To je ono što nosiš upravo sada jer je bezvremensko.
+
+147
+00:12:44,080 --> 00:12:48,639
+[SPEAKER_01] Da, mislim da nisam nikad vidjela tu stvar u životu nigdje.
+
+148
+00:12:49,039 --> 00:12:56,240
+[SPEAKER_00] Dakle, ne, ne, mislim da nisu, mislim da su velika većina njih dani zvijezdama, to je bio moj dojam.
+
+149
+00:12:57,600 --> 00:12:59,440
+[SPEAKER_00] Johnny Ive ih ima dvanaest, očito.
+
+150
+00:12:59,600 --> 00:13:00,480
+[SPEAKER_00] Da, definitivno.
+
+151
+00:13:03,840 --> 00:13:12,399
+[SPEAKER_01] Da, ali onda je objavljena i to je privuklo još više pažnje jer je bila.
+
+152
+00:13:12,399 --> 00:13:15,279
+[SPEAKER_01] Zbog toga što je to bilo prikazano u nekoliko priča o izdanju Apple Watcha.
+
+153
+00:13:16,559 --> 00:13:26,080
+[SPEAKER_01] Zatim sam dobio svoju prvu značajku od Applea, koja je bila značajka dvadeset i dvadeset godina, gdje su prikazivali aplikacije koje su napravili ljudi koji su bili dvadeset godina ili mlađi.
+
+154
+00:13:26,159 --> 00:13:26,639
+[SPEAKER_01] O, lijepo.
+
+155
+00:13:27,039 --> 00:13:28,240
+[SPEAKER_00] Je li to bilo posebno za Apple Watch?
+
+156
+00:13:28,960 --> 00:13:34,879
+[SPEAKER_01] Ne, nije bilo za Apple Watch, ali mislim da je Apple samo zbog toga saznao za mene.
+
+157
+00:13:35,279 --> 00:13:36,320
+[SPEAKER_00] Da, točno.
+
+158
+00:13:36,799 --> 00:13:36,879
+[SPEAKER_00] Da.
+
+159
+00:13:37,519 --> 00:13:42,240
+[SPEAKER_00] A vidit iz LookUpa također je bio na tom popisu, što je bilo lijepo.
+
+160
+00:13:42,879 --> 00:14:06,320
+[SPEAKER_01] Ali otkrili smo to tek prošle godine ili sam se sjetio da smo ob prošle godine sjedili u restoranu Indian Place da zajedno večeramo u WTC-u i bilo je jako zanimljivo da smo deset godina nakon što je ta značajka emitirana u trgovini aplikacijama, samo sjedili zajedno i razgovarali jedni s drugima.
+
+161
+00:14:06,480 --> 00:14:07,440
+[SPEAKER_00] To je tako mali svijet.
+
+162
+00:14:07,840 --> 00:14:14,080
+[SPEAKER_00] A onda je to bio peti gost koji sam imao na ovoj emisiji, četiri ili šest ili nešto slično.
+
+163
+00:14:14,159 --> 00:14:15,759
+[SPEAKER_00] Vrlo, vrlo rano je govorio o tome.
+
+164
+00:14:16,879 --> 00:14:17,679
+[SPEAKER_00] Da, to je cool.
+
+165
+00:14:18,159 --> 00:14:24,799
+[SPEAKER_01] Da, to je bio jako lijep trenutak kad sam to zapravo shvatio.
+
+166
+00:14:24,799 --> 00:14:29,840
+[SPEAKER_00] Dakle, na ovoj razini dobivate neku pozornost, pretpostavljam da se povećavaju preuzimanja i sve ostalo.
+
+167
+00:14:30,080 --> 00:14:31,759
+[SPEAKER_00] Još uvijek ste u školi?
+
+168
+00:14:32,240 --> 00:14:32,720
+[SPEAKER_01] Da, da.
+
+169
+00:14:34,879 --> 00:15:00,960
+[SPEAKER_01] Mislim da sam bio u drugom razredu ili mislim da sam bio u drugom razredu diplome, a diploma traje tri godine i da, još sam studirao na sveučilištu u to vrijeme, a onda sam, zahvaljujući nekim vrlo dobrim slučajnostima, dobio priliku da odem na WWW dot DC.
+
+170
+00:15:00,960 --> 00:15:11,600
+[SPEAKER_01] Ove godine sam otišla u WWDC, pa sam mogla letjeti u SAD da se pridružim Appleu u WWDC-u, što je bilo ludilo za mene.
+
+171
+00:15:12,080 --> 00:15:14,559
+[SPEAKER_01] U to vrijeme nikad nisam putovala sama.
+
+172
+00:15:15,360 --> 00:15:20,799
+[SPEAKER_01] Nikad nisam bila izvan Europe u to vrijeme, a onda sam dobila priliku.
+
+173
+00:15:21,120 --> 00:15:24,159
+[SPEAKER_00] Letite u Kaliforniju i vi ste u vrtlogu.
+
+174
+00:15:24,799 --> 00:15:25,279
+[SPEAKER_00] Koja je godina ovo?
+
+175
+00:15:25,440 --> 00:15:27,360
+[SPEAKER_00] Ovo bi bilo dvadeset petnaest.
+
+176
+00:15:27,519 --> 00:15:28,240
+[SPEAKER_00] Da, u redu, da.
+
+177
+00:15:28,480 --> 00:15:31,600
+[SPEAKER_00] Dakle, to je bila velika verzija WWD-a.
+
+178
+00:15:31,759 --> 00:15:36,639
+[SPEAKER_01] Da, kada je još bio u San Franciscu i u Mosconeu.
+
+179
+00:15:37,279 --> 00:15:38,000
+[SPEAKER_00] Kako je to bilo?
+
+180
+00:15:38,159 --> 00:15:58,879
+[SPEAKER_00] Doživio sam WWDC samo kao osobu koja je već bila poznata u industriji ili bilo čemu što želite nazvati ovu stvar koju radimo jer sam se u to uključio neposredno prije COVID-a, a onda je svatko bio zatvoren na dugo vremena.
+
+181
+00:15:59,679 --> 00:16:12,559
+[SPEAKER_00] Dakle, već sam stekao puno prijatelja na mreži i doživio sam samo verziju nakon COVID-a, gdje postoji samo jedan dan, to je mnogo manja skupina ljudi, a onda morate napraviti puno posla da biste se popunili.
+
+182
+00:16:12,559 --> 00:16:17,039
+[SPEAKER_00] Da biste ispunili vrijeme, inače samo sjedite u hotelskoj sobi sami.
+
+183
+00:16:17,360 --> 00:16:19,679
+[SPEAKER_00] Ali ako to možete, to je nevjerojatan doživljaj.
+
+184
+00:16:20,000 --> 00:16:34,799
+[SPEAKER_00] Ali čuo sam od ljudi da je čak i u davnim vremenima, ako niste imali grupu ljudi, ponekad bilo teško, kao što ste morali biti aktivni u tome da se pobrinete da razgovarate s ljudima u redovima i formirate grupe prijatelja, inače ste imali istu vrstu iskustva.
+
+185
+00:16:35,120 --> 00:16:36,320
+[SPEAKER_00] Kakvo je to bilo za vas?
+
+186
+00:16:37,200 --> 00:16:48,000
+[SPEAKER_01] Za mene je bilo i to da sam, pogotovo tada, bio vrlo sramežljiv i nisam bio baš predan ljudima.
+
+187
+00:16:48,080 --> 00:17:09,039
+[SPEAKER_01] Ljudi nisu osoba koja se samo približava ljudima i razgovara s njima, što je definitivno bilo malo teško, ali uvijek sam imala zanimljive ljude oko sebe koje sam počela slušati i onda sam počela razgovarati s njima, pa je to za mene uvijek bilo u redu.
+
+188
+00:17:10,319 --> 00:17:19,599
+[SPEAKER_01] I mislim da ne baš i ove godine, nego posebno u godinama nakon što sam ponovno bila u WPC-u 2017., 2018.
+
+189
+00:17:19,759 --> 00:17:20,240
+[SPEAKER_01] i 2019.
+
+190
+00:17:20,400 --> 00:17:20,480
+[SPEAKER_01] godine.
+
+191
+00:17:20,880 --> 00:17:24,559
+[SPEAKER_01] I posebno u tim godinama, upoznao sam toliko mnogo prijatelja.
+
+192
+00:17:24,960 --> 00:17:27,759
+[SPEAKER_01] s kojima sam danas vrlo dobar prijatelj.
+
+193
+00:17:31,759 --> 00:17:46,480
+[SPEAKER_01] Iako nisam imao veliku sljedbu na Twitteru ili nisam poznavao mnoge ljude putem interneta, pronašao sam ljude s kojima sam se mogao poistovjetiti na WDC-u i ti ljudi su sada moji prijatelji.
+
+194
+00:17:46,640 --> 00:17:48,480
+[SPEAKER_01] I to je bilo super.
+
+195
+00:17:51,920 --> 00:18:00,480
+[SPEAKER_01] I da, posebno sam se tamo započeo s tim, malo smo skakali, ali ima smisla razgovarati o tome sada.
+
+196
+00:18:02,160 --> 00:18:05,680
+[SPEAKER_01] Ušla sam u WDC 2017., 2018.
+
+197
+00:18:05,839 --> 00:18:06,319
+[SPEAKER_01] i 2019.
+
+198
+00:18:06,640 --> 00:18:12,799
+[SPEAKER_01] godine s stipendijom, koja se sada zove Studentski izazov, ali tada je to bio stipendijski program.
+
+199
+00:18:15,440 --> 00:18:18,799
+[SPEAKER_01] I upoznala sam toliko ljudi koji su također dobili stipendiju.
+
+200
+00:18:21,200 --> 00:18:29,839
+[SPEAKER_01] Apple je tada plaćao za sobe u studentskim domovima u blizini koje su bile smještene na Državnom sveučilištu u San Joseu.
+
+201
+00:18:30,480 --> 00:18:35,039
+[SPEAKER_01] I uvijek ste bili u sobi s drugim učenikom.
+
+202
+00:18:35,200 --> 00:18:36,559
+[SPEAKER_01] Dakle, netko tko je.
+
+203
+00:18:36,720 --> 00:18:41,680
+[SPEAKER_01] To je bilo s nekim tko je prošao kroz istu iskustvo s vama i prisiljavajući vas da s njim komuniciramo.
+
+204
+00:18:41,839 --> 00:18:55,279
+[SPEAKER_01] A onda su se održale određene društvene skupine na kojima ste se upoznali s drugim učenicima i tamo se prirodno formirala skupina s kojom još uvijek imam grupni razgovor i još uvijek komuniciram s njima.
+
+205
+00:18:55,920 --> 00:19:11,839
+[SPEAKER_00] Da, stvar s SWIFT studentima, čak i sada u programu učenika, kako se tada zvao, čini mi se da je to tako cool jer nisam nikad bio dio toga, ali kad god idem na DubDub, mogu osjetiti.
+
+206
+00:19:12,000 --> 00:19:25,359
+[SPEAKER_00] Ove mase ljudi koji su došli kroz taj program, bilo da su postali prijatelji tijekom njega ili čak ako su bili iz različitih godina, malo je poput toga da ste bivši studenti na sveučilištu.
+
+207
+00:19:25,519 --> 00:19:25,839
+[SPEAKER_01] Da, definitivno.
+
+208
+00:19:26,079 --> 00:19:33,680
+[SPEAKER_00] Imate neku vrstu društva ili nešto slično, kao da svi doživljavate ovu ludu, vjetrovitom stvar koja je vrlo slična.
+
+209
+00:19:34,880 --> 00:19:48,799
+[SPEAKER_00] I te mreže, kao što znate, biti indie, mislim da je veliki dio mene koji je započeo ovaj show bio pokušati stvoriti jednu od njih za sebe, kao da imate neku vrstu mreže kad god ste sami.
+
+210
+00:19:48,799 --> 00:19:57,440
+[SPEAKER_00] i radite kao neovisni proizvođač negdje u malom gradu, a ne u New Yorku ili Kaliforniji ili bilo gdje drugdje, to je jednostavno nevjerojatno vrijedno.
+
+211
+00:19:57,599 --> 00:19:58,319
+[SPEAKER_00] Da, definitivno.
+
+212
+00:19:59,759 --> 00:20:06,160
+[SPEAKER_00] I u tome da ostanete u redu, ali i u tome da naiđete na nešto čudno.
+
+213
+00:20:06,240 --> 00:20:10,960
+[SPEAKER_00] Samo trebam razgovarati s nekim i imati nekoga tko kaže: Da, naišao sam na to i ovo je odgovor.
+
+214
+00:20:11,599 --> 00:20:14,640
+[SPEAKER_00] Baš nevjerojatno vrijedno.
+
+215
+00:20:14,960 --> 00:20:15,039
+[SPEAKER_01] Da.
+
+216
+00:20:16,240 --> 00:20:24,880
+[SPEAKER_00] Dakle, da, nikad ne znam kakav je najbolji savjet, ali osjećam da kad ljudi idu na ove konferencije, pogotovo.
+
+217
+00:20:24,880 --> 00:20:31,279
+[SPEAKER_00] Posebno razvijači koji su obično ljudi koji ne dolaze i ne razgovaraju s ljudima otvoreno.
+
+218
+00:20:31,759 --> 00:20:36,799
+[SPEAKER_00] Obično su sramežljiviji, posebno indie publika, jer su po prirodi ljudi koji rade sami.
+
+219
+00:20:37,039 --> 00:20:46,480
+[SPEAKER_00] Nevjerojatno namjerno pokušavati izgraditi te mreže, čak i ako je neugodno, ne mogu dovoljno preporučiti.
+
+220
+00:20:47,519 --> 00:20:47,920
+[SPEAKER_01] Definitivno.
+
+221
+00:20:48,160 --> 00:20:51,359
+[SPEAKER_00] Da, dub-dub je sada teško.
+
+222
+00:20:51,599 --> 00:20:53,200
+[SPEAKER_00] Mislim da morate biti vrlo namjerni.
+
+223
+00:20:53,359 --> 00:20:59,359
+[SPEAKER_00] I nadam se, kao i svake godine, da će Apple učiniti malo više da stvori prostore za to.
+
+224
+00:21:01,119 --> 00:21:12,559
+[SPEAKER_00] I opet, nadam se da ćemo ove godine možda imati malo više toga, ali ako ne, pronađite svaki događaj koji možete, budite malo neugodni i pridružite se svemu što možete i razgovarajte s ljudima.
+
+225
+00:21:12,880 --> 00:21:15,039
+[SPEAKER_00] A druga strana radi za ljude koji već imaju mreže.
+
+226
+00:21:15,200 --> 00:21:20,079
+[SPEAKER_00] To je kao da privučete ljude, pokušajte uključiti više ljudi.
+
+227
+00:21:20,400 --> 00:21:24,720
+[SPEAKER_00] Ako vidite nekoga tko izgleda kao da je zainteresiran za dolazak, pozovite ga, znate, takve stvari.
+
+228
+00:21:24,799 --> 00:21:29,200
+[SPEAKER_00] Jer, da, to je jako čudna iskustvo, ali to vrijedi za bilo koju od ovih tehnoloških konferencija.
+
+229
+00:21:29,759 --> 00:21:29,839
+[SPEAKER_01] Da.
+
+230
+00:21:31,039 --> 00:21:32,720
+[SPEAKER_00] To mijenja sve, osjećam.
+
+231
+00:21:33,039 --> 00:21:36,400
+[SPEAKER_01] Da, mislim da je Doppedup prije bio vrlo jednostavan.
+
+232
+00:21:36,400 --> 00:21:48,640
+[SPEAKER_01] Vrlo je jednostavno jer su ljudi nakon sesija išli na različita mjesta, preuzeli nove beta verzije, poigrali se s API-jem, vidjeli ste nekoga tko radi na nečemu što ste i vi samo pogledali.
+
+233
+00:21:50,559 --> 00:22:08,880
+[SPEAKER_01] I ne znam, cijela ta stvar stvorila je osnovu za razgovor s nekim strancem ili ako ste odabrali ručak u redu i u tom trenutku niste bili s roditeljima, odmah ste počeli razgovarati s drugim ljudima koji su samo uzimali ručak.
+
+234
+00:22:08,960 --> 00:22:12,640
+[SPEAKER_00] Svi imamo zajednički interes i zajedničku iskustvo s kojim možete uvijek započeti.
+
+235
+00:22:12,640 --> 00:22:12,799
+[SPEAKER_00] To je ono što uvijek počinjemo.
+
+236
+00:22:13,680 --> 00:22:22,240
+[SPEAKER_00] To je posebno lijepo za, ne dub dub, već za druge konferencije koje su poput jednog traka, gdje svi gledaju istu sesiju.
+
+237
+00:22:22,400 --> 00:22:28,799
+[SPEAKER_00] To je kao da možete doslovno samo spomenuti jednu od sesija i onda, čak i ako je osoba propustila, onda će reći: O, ne, o čemu su govorili?
+
+238
+00:22:28,799 --> 00:22:30,799
+[SPEAKER_00] I onda, bum, možete nastaviti s tim.
+
+239
+00:22:30,960 --> 00:22:31,839
+[SPEAKER_00] Dakle, da, to je lijepo.
+
+240
+00:22:32,000 --> 00:22:39,279
+[SPEAKER_00] Ali u svakom slučaju, da, morate otići na dub dub, ludost, a onda sam vas odvratio, kao što sam navikao.
+
+241
+00:22:40,880 --> 00:22:44,000
+[SPEAKER_00] Dakle, čini se da je to bila vrijedna iskustvo za vas.
+
+242
+00:22:44,400 --> 00:22:48,880
+[SPEAKER_01] Da, da, prvo dub dub, mislim, to je bilo stvarno, stvarno inspiracije.
+
+243
+00:22:48,880 --> 00:23:00,799
+[SPEAKER_01] Stvarno, stvarno je ludilo jer, opet, nisam poznavao nikoga drugog razvijača iOS-a osim prijatelja koji je također malo programirao u Gradu, ali osim toga nisam poznavao nikoga.
+
+244
+00:23:01,119 --> 00:23:19,119
+[SPEAKER_01] I onda sam konačno dobio priliku otići na konferenciju i tražio sam na internetu što da radim, da moram stajati u redu da uđem u veliku prostoriju za konferenciju nekoliko sati prije.
+
+245
+00:23:19,599 --> 00:23:23,359
+[SPEAKER_01] Tako sam letio u San Francisco.
+
+246
+00:23:23,680 --> 00:23:26,480
+[SPEAKER_01] Nisam mogao spavatiati ni sekundu u zrakoplovu.
+
+247
+00:23:26,799 --> 00:23:43,519
+[SPEAKER_01] Tada sam otišla u svoj hotel u kineskom kvartalu i taj je tip u hotelu rekao da su preopterećeni i da nemaju sobu za mene, što je također bilo zanimljivo iskustvo.
+
+248
+00:23:43,680 --> 00:23:52,400
+[SPEAKER_01] I taj drugi tip stigao je sa mnom u točno vrijeme i imao je istu problem kao i ja.
+
+249
+00:23:53,359 --> 00:23:58,319
+[SPEAKER_01] I počeli su se međusobno vikati, a ja sam samo stajala i nisam znala što da radim.
+
+250
+00:23:58,799 --> 00:23:59,519
+[SPEAKER_00] Hvala Bogu.
+
+251
+00:24:00,160 --> 00:24:18,400
+[SPEAKER_01] Da, bilo je vrlo zanimljivo, ali onda sam otišla s tim momkom u sljedeći Starbucks i rezervirala još jedan hotel i malo sam se žalila da sam jako umorna i slično, ali to je zanimljiva prva iskustvo u SAD-u i dobrodošla u Ameriku.
+
+252
+00:24:20,000 --> 00:24:24,720
+[SPEAKER_01] Ali onda je momak samo rekao: Da, učinit ću ti dan malo ugodnijim.
+
+253
+00:24:25,039 --> 00:24:37,039
+[SPEAKER_01] Zapravo radim s Googleom u uredima u San Franciscu i ako želim obilaziti ured u San Franciscu, onda me je odveo u ured i pokazao mi se je okolicu.
+
+254
+00:24:37,200 --> 00:24:38,400
+[SPEAKER_01] Bože, znaš što?
+
+255
+00:24:39,039 --> 00:24:40,880
+[SPEAKER_00] To je vrlo američka iskustvo, zar ne?
+
+256
+00:24:41,039 --> 00:24:41,119
+[SPEAKER_00] Da.
+
+257
+00:24:41,599 --> 00:24:49,279
+[SPEAKER_00] Hrabro, čudno, a onda i dobrodošlo i nešto poput: Eh, budimo prijatelji i provodimo vrijeme zajedno.
+
+258
+00:24:50,400 --> 00:24:54,799
+[SPEAKER_00] Da, to je prilično dobar uvod u Sjedinjene Države.
+
+259
+00:24:54,960 --> 00:25:00,880
+[SPEAKER_01] Da, ali cijelo je to iskustvo bilo malo čudno.
+
+260
+00:25:02,400 --> 00:25:05,839
+[SPEAKER_01] I ne znam, nisam znao gdje ću spavati na početku, ali pronašao sam hotel.
+
+261
+00:25:06,160 --> 00:25:12,640
+[SPEAKER_01] Većina soba je rezervirana jer je bilo povezano s Washingtonom i San Franciscom, ali pronašao sam mjesto.
+
+262
+00:25:13,039 --> 00:25:18,480
+[SPEAKER_01] i otišla u Google ureda, a oni su mi bili jako zanimljivi.
+
+263
+00:25:18,960 --> 00:25:26,559
+[SPEAKER_01] Također, ja sam došla iz Austrije i nikad ne bih pomislila da ću stupiti u jedan od tih ureda.
+
+264
+00:25:27,039 --> 00:25:37,519
+[SPEAKER_01] I, da, otišla sam spavati, a onda sam se probudila vrlo rano, mislim da u četiri ujutro ili nešto u tom stilu, da se uputim u red za WTC.
+
+265
+00:25:38,640 --> 00:25:48,480
+[SPEAKER_01] I dok sam stajala u redu, vidjela sam, mislim, u šest ujutro, nekog momka koji je stajao ispred mene i nosio Apple sat.
+
+266
+00:25:48,480 --> 00:25:52,000
+[SPEAKER_01] I rekao sam: Evo dolara.
+
+267
+00:25:52,160 --> 00:25:58,079
+[SPEAKER_01] Možeš li mi preuzeti Elementary Minute da mogu vidjeti radi li to na Apple Watchu?
+
+268
+00:25:58,240 --> 00:25:59,200
+[SPEAKER_01] Samo nisam znao.
+
+269
+00:25:59,279 --> 00:26:01,119
+[SPEAKER_01] Nikad nisam vidio da radi na pravom uređaju.
+
+270
+00:26:01,359 --> 00:26:04,000
+[SPEAKER_01] A on je rekao: Ne, ne moraš mi ništa davati.
+
+271
+00:26:04,160 --> 00:26:07,759
+[SPEAKER_01] Preuzmi ga i dao mi je Apple Watch i mogao sam se igrati s njim.
+
+272
+00:26:08,240 --> 00:26:14,319
+[SPEAKER_01] I to je bio prvi put da sam ga zapravo vidio uživo na Watchu.
+
+273
+00:26:15,680 --> 00:26:15,759
+[SPEAKER_01] Wow.
+
+274
+00:26:16,480 --> 00:26:17,279
+[SPEAKER_01] To je bilo ludilo.
+
+275
+00:26:17,839 --> 00:26:24,319
+[SPEAKER_01] A onda sam upoznao nekoliko ljudi dok sam čekao u redu za WTC.
+
+276
+00:26:25,039 --> 00:26:27,519
+[SPEAKER_01] Sjednem da vidim konferenciju.
+
+277
+00:26:31,680 --> 00:26:44,799
+[SPEAKER_01] Tada sam se obratio osobi iz tvrtke Apple koja je odgovorna za odnose s razvijačima u Austriji, Njemačkoj i Švicarskoj, a on mi je uvijek poslao poruke.
+
+278
+00:26:44,960 --> 00:26:50,960
+[SPEAKER_01] Dakle, evo, idite na glavnu konferenciju ili glavnu izjavu.
+
+279
+00:26:51,200 --> 00:26:52,160
+[SPEAKER_01] Susret ćemo se tamo.
+
+280
+00:26:52,319 --> 00:26:57,359
+[SPEAKER_01] A onda je, baš prije nego što je počelo, rekao: Ne, nisam mogao doći, ali ćemo se sastati kasnije.
+
+281
+00:26:57,519 --> 00:27:00,960
+[SPEAKER_01] A onda je ponovno napisao o stanju Unije.
+
+282
+00:27:00,960 --> 00:27:14,319
+[SPEAKER_01] Išli smo na državnu nagradu Unije i onda, ah, nisam mogla doći, ali ćemo se sastati na nagrađivanju Apple Design Awards, a onda sam otišla na nagradu Apple Design Awards i rekao je, da, opet, žao mi je zbog vremena, nisam mogla doći, ali definitivno ću vas vidjeti.
+
+283
+00:27:15,279 --> 00:27:19,519
+[SPEAKER_01] A onda sam sjela na nagradu Design Awards.
+
+284
+00:27:21,279 --> 00:27:34,559
+[SPEAKER_01] John Gillinzi je tamo počeo pričati i predstavljati nagrade Design Awards i rekao nešto o studentskim pobjednicima i evo prvog studentskog pobjednika i odjednom se na zaslonu pojavilo moje lice.
+
+285
+00:27:35,039 --> 00:27:35,359
+[SPEAKER_01] Bože moj.
+
+286
+00:27:39,119 --> 00:27:41,039
+[SPEAKER_00] Dakle, niste imali pojma.
+
+287
+00:27:41,359 --> 00:27:42,240
+[SPEAKER_01] Nisam imao pojma.
+
+288
+00:27:42,799 --> 00:27:43,759
+[SPEAKER_01] Apstraktno nisam imao pojma.
+
+289
+00:27:44,640 --> 00:27:44,720
+[SPEAKER_00] Wow.
+
+290
+00:27:46,079 --> 00:27:57,200
+[SPEAKER_01] I da, objavljeno je da je Elementary Minute dobio Appleovu nagradu za dizajn u kategoriji učenika, što je još uvijek postojalo.
+
+291
+00:27:57,440 --> 00:28:02,640
+[SPEAKER_01] I to je bilo tako nevjerojatno za mene, posebno.
+
+292
+00:28:02,960 --> 00:28:09,039
+[SPEAKER_01] Nikad, kao što sam rekao, nisam vidio da Elementary Minute radi na Apple satu prije tog dana.
+
+293
+00:28:09,599 --> 00:28:09,680
+[SPEAKER_01] Da.
+
+294
+00:28:10,480 --> 00:28:12,640
+[SPEAKER_01] Također, mislim da je jedna stvar koju sam.
+
+295
+00:28:12,640 --> 00:28:18,000
+[SPEAKER_01] Mislim da sam nešto što nikad javno nisam rekao bilo gdje jest da tada nisam ni koristio iPhone.
+
+296
+00:28:19,039 --> 00:28:20,400
+[SPEAKER_01] Dakle, nisam imao iPhone.
+
+297
+00:28:21,200 --> 00:28:22,720
+[SPEAKER_00] Imali ste Android telefon u džepu?
+
+298
+00:28:23,039 --> 00:28:33,119
+[SPEAKER_01] Ne, nisam imao Android telefon u džepu, ali tada nisam mogao priuštiti iPhone, pa sam imao Google Nexus telefon.
+
+299
+00:28:33,680 --> 00:28:45,200
+[SPEAKER_01] A kad sam imao priliku otići u WCC, zamolio sam strica da posudi njegov stari iPhone 4, što je bilo dobro jer nisam htio biti taj tip.
+
+300
+00:28:45,359 --> 00:28:48,960
+[SPEAKER_01] Da, jer nisam htio biti taj tip s Android telefonom na aplikaciji.
+
+301
+00:28:48,960 --> 00:28:57,680
+[SPEAKER_01] Na konferenciji Applea sam imao telefon s Androidom i trčao sam s telefonom uvijek priključenim na bateriju jer je baterija bila pokvarena.
+
+302
+00:28:58,640 --> 00:28:58,720
+[SPEAKER_00] Da.
+
+303
+00:28:59,279 --> 00:29:07,519
+[SPEAKER_01] Ali imao sam ga i došao sam s tog mjesta, a zatim sam zapravo dobio nagradu Apple Design Award.
+
+304
+00:29:09,680 --> 00:29:11,839
+[SPEAKER_00] Vau, to je tako smiješno.
+
+305
+00:29:11,920 --> 00:29:20,720
+[SPEAKER_01] Također, objavljeno je da sam dobio nagradu Design Award i sjedio sam tamo i nisam znao da li moram ići na pozornicu ili nešto slično.
+
+306
+00:29:20,720 --> 00:29:21,920
+[SPEAKER_00] Da, što da radim.
+
+307
+00:29:22,319 --> 00:29:23,920
+[SPEAKER_01] Da, što da radim?
+
+308
+00:29:24,960 --> 00:29:30,079
+[SPEAKER_01] Sjedila sam pored stranca i pitala ga: Eh, znaš li da moram ići na pozornicu?
+
+309
+00:29:30,240 --> 00:29:32,720
+[SPEAKER_01] A on je rekao: Nemam pojma, ali čestitke.
+
+310
+00:29:33,279 --> 00:29:43,839
+[SPEAKER_01] A ako pogledate videozapis, vidjet ćete da mi treba minuta da dođem na pozornicu, ali na kraju sam došla, dobila svoj kocki i izašla s pozornice.
+
+311
+00:29:44,000 --> 00:29:51,680
+[SPEAKER_01] A tip iz Odjela za odnose s programerima stajao je tamo i rekao mi u lice: Rekla sam ti da ćemo se na kraju sastati.
+
+312
+00:29:53,200 --> 00:29:53,920
+[SPEAKER_00] Dobro odigrano.
+
+313
+00:29:54,079 --> 00:29:54,160
+[SPEAKER_00] Da.
+
+314
+00:29:54,799 --> 00:29:55,599
+[SPEAKER_00] To je tako ludilo.
+
+315
+00:29:56,000 --> 00:29:56,160
+[SPEAKER_01] Da.
+
+316
+00:29:56,720 --> 00:30:00,960
+[SPEAKER_01] Tako me je samo natjerao da sjednem na Appleovim nagrada za dizajn.
+
+317
+00:30:00,960 --> 00:30:07,519
+[SPEAKER_01] I rekao sam to prije za druge događaje da mi se ne bi činilo neugodno ili da nisam primijetio da se nešto događa.
+
+318
+00:30:08,799 --> 00:30:10,799
+[SPEAKER_01] Dakle, nisam imao pojma.
+
+319
+00:30:11,200 --> 00:30:25,920
+[SPEAKER_01] A onda sam dobio nagradu za dizajnera, sjedio sam ispred jer smo kasnije snimali fotografiju i moja torba s putovnicom i svime što sam imao još je stajala na mom originalnom mjestu.
+
+320
+00:30:26,160 --> 00:30:29,920
+[SPEAKER_01] I to sam i neko vrijeme nije primijetio.
+
+321
+00:30:30,240 --> 00:30:36,240
+[SPEAKER_01] A onda je nakon što smo snimili fotografije, čovjek koji je sjedio pored mene još uvijek sjedio tamo.
+
+322
+00:30:36,960 --> 00:30:40,559
+[SPEAKER_01] jer je gledao moj ruksak i to je bilo jako lijepo.
+
+323
+00:30:41,359 --> 00:30:42,240
+[SPEAKER_00] Da, nema šale.
+
+324
+00:30:43,279 --> 00:30:54,400
+[SPEAKER_01] Toliko je lijepih iskustava nakon, kao što je prvi dojam bio da nisam dobio sobu u San Franciscu, ali onda jedno lijepo iskustvo za drugim.
+
+325
+00:30:55,359 --> 00:30:56,400
+[SPEAKER_00] Bez šale, wow.
+
+326
+00:30:56,799 --> 00:31:03,359
+[SPEAKER_00] Pa mislim da mogu reći prilično pouzdano da je to točno ono što većina ljudi uvijek doživljava kad odlaze na dub dub.
+
+327
+00:31:05,599 --> 00:31:07,440
+[SPEAKER_00] Svi ti događaji će se dogoditi svima.
+
+328
+00:31:07,599 --> 00:31:08,400
+[SPEAKER_01] Da, definitivno.
+
+329
+00:31:08,559 --> 00:31:10,000
+[SPEAKER_00] Dakle, trebali biste doći u Kaliforniju.
+
+330
+00:31:12,319 --> 00:31:12,400
+[UNKNOWN] Da.
+
+331
+00:31:12,559 --> 00:31:13,119
+[SPEAKER_00] To je ludilo.
+
+332
+00:31:13,279 --> 00:31:14,480
+[SPEAKER_00] Dakle, to je bila osnovna minuta.
+
+333
+00:31:14,640 --> 00:31:15,440
+[SPEAKER_00] Još ste u školi.
+
+334
+00:31:15,839 --> 00:31:15,920
+[SPEAKER_00] Da.
+
+335
+00:31:17,680 --> 00:31:18,400
+[SPEAKER_00] Što je sljedeće?
+
+336
+00:31:18,559 --> 00:31:24,559
+[SPEAKER_00] Jeste li izašli s više igara ili više aplikacija dok ste bili u školi ili se sve ostalo događa nakon toga?
+
+337
+00:31:24,880 --> 00:31:24,960
+[SPEAKER_01] Da.
+
+338
+00:31:27,599 --> 00:31:44,400
+[SPEAKER_01] U toj DC-u stajao sam na pozornici pored ljudi iz Flexibita, ljudi koji rade Fantastical i Card Hop jer su osvojili nagradu Apple Design za Fantastical 2 te godine.
+
+339
+00:31:44,960 --> 00:32:00,240
+[SPEAKER_01] I samo smo počeli razgovarati i razmjenjivati e-poštu.poštu i nekoliko mjeseci kasnije, Michael me je kontaktirao i pitao hoću li imati ljetnu praksu, mislim da je to bilo 2016.
+
+340
+00:32:00,720 --> 00:32:01,440
+[SPEAKER_01] ili 2017.
+
+341
+00:32:01,519 --> 00:32:01,599
+[SPEAKER_01] godine.
+
+342
+00:32:01,839 --> 00:32:02,480
+[SPEAKER_00] U redu.
+
+343
+00:32:02,640 --> 00:32:12,000
+[SPEAKER_01] Ne mogu se točno sjetiti, ali to nije bilo u istoj godini, ali malo kasnije, hoću li se pridružiti Flexibitu za ljetnu praksu.
+
+344
+00:32:12,240 --> 00:32:15,039
+[SPEAKER_01] Tada sam bio veliki obožavatelj Fantastica.
+
+345
+00:32:16,319 --> 00:32:24,880
+[SPEAKER_01] Preuzela sam ga iako nisam imala iPhone, imala sam Fantastica na Appleu Touchu, ne zato što sam trebala kalendar.
+
+346
+00:32:24,880 --> 00:32:35,119
+[SPEAKER_01] Nisam imao potrebu za kalendarom, ali jednostavno sam volio dizajn Fantastica i preuzeo sam nekoliko tih aplikacija samo da bih se poigrao i vidio različite efekte i stvari u njima.
+
+347
+00:32:35,680 --> 00:32:41,759
+[SPEAKER_01] A onda je stvarno raditi za tu tvrtku bilo nevjerojatno.
+
+348
+00:32:42,319 --> 00:32:43,279
+[SPEAKER_00] Wow, to je stvarno cool.
+
+349
+00:32:44,240 --> 00:32:48,720
+[SPEAKER_00] I Michael Simmons, također bivši gost na ovom programu.
+
+350
+00:32:48,960 --> 00:32:49,039
+[SPEAKER_01] Da.
+
+351
+00:32:50,160 --> 00:32:51,119
+[SPEAKER_00] Oh, da, to je cool.
+
+352
+00:32:51,279 --> 00:33:00,559
+[SPEAKER_00] I da, rad s ljudima iz Flexibetsa morao je biti sjajno iskustvo gledanja kako ljudi grade ove mnogo više.
+
+353
+00:33:00,559 --> 00:33:04,400
+[SPEAKER_00] To je mnogo složenije od onoga što ste radili, naravno, u to vrijeme.
+
+354
+00:33:04,559 --> 00:33:05,519
+[SPEAKER_00] Točno.
+
+355
+00:33:06,000 --> 00:33:07,519
+[SPEAKER_00] A što se dogodilo nakon što ste diplomirali?
+
+356
+00:33:08,000 --> 00:33:09,599
+[SPEAKER_01] Ne, još sam bio u školi.
+
+357
+00:33:09,759 --> 00:33:10,799
+[SPEAKER_01] To je bio staž.
+
+358
+00:33:11,039 --> 00:33:11,359
+[SPEAKER_00] U redu.
+
+359
+00:33:11,759 --> 00:33:20,160
+[SPEAKER_01] Bio je to staž i još sam bio u školi i uvijek sam radio.
+
+360
+00:33:20,319 --> 00:33:29,759
+[SPEAKER_01] Dakle, nakon staža nastavio sam raditi na Fantasticalu ili u Flexibitu do, mislim, 2021.
+
+361
+00:33:29,839 --> 00:33:29,920
+[SPEAKER_01] godine.
+
+362
+00:33:30,160 --> 00:33:31,119
+[SPEAKER_01] Da, 2021.
+
+363
+00:33:31,519 --> 00:33:31,599
+[SPEAKER_01] godine.
+
+364
+00:33:32,000 --> 00:33:32,720
+[SPEAKER_01] U redu.
+
+365
+00:33:33,359 --> 00:33:52,480
+[SPEAKER_01] I na kraju sam napustio Flexibits konačno je dovršio moju diplomsku disertaciju jer sam imao trenutak u kojem sam prvo radio samo nekoliko sati u Flexibitsu, a onda sam povećao i povećao i na kraju sam počeo raditi punim radnim vremenom za njih.
+
+366
+00:33:53,200 --> 00:34:02,960
+[SPEAKER_01] Osim što sam sve to radio, također sam izradio igre i možemo o tome razgovarati za trenutak, ali uvijek sam izradio igre uz to.
+
+367
+00:34:03,359 --> 00:34:12,239
+[SPEAKER_01] Imala sam punu radnu snagu s četrdeset sati i trebala sam dovršiti svoju diplomsku disertaciju, a sve to nije dobro prošlo u smislu vremena.
+
+368
+00:34:12,800 --> 00:34:49,840
+[SPEAKER_01] Morala sam se na jednom mjestu zaustaviti i napustiti posao u Flexibitu, iako je bilo teško napustiti posao jer sam im jako voljela raditi i posebno sam naučila toliko od Kenta, on je tehnički mozak iza Fantastica i te su godine bile iznimno vrijedne za mene, pa je bilo teško napustiti posao, ali znala sam da moram nešto učiniti da konačno završim svoj Mite svoju diplomski rad.
+
+369
+00:34:49,920 --> 00:34:50,000
+[SPEAKER_00] Da.
+
+370
+00:34:50,400 --> 00:34:51,519
+[SPEAKER_00] A onda ste ga završili?
+
+371
+00:34:52,000 --> 00:34:52,960
+[SPEAKER_01] Ja sam ga završio, da.
+
+372
+00:34:53,840 --> 00:34:54,079
+[SPEAKER_01] Lijepo.
+
+373
+00:34:54,239 --> 00:34:55,599
+[SPEAKER_00] Pa, čestitke.
+
+374
+00:34:55,679 --> 00:34:55,760
+[SPEAKER_00] Da.
+
+375
+00:34:56,239 --> 00:34:56,320
+[SPEAKER_01] Hvala.
+
+376
+00:34:57,599 --> 00:35:04,320
+[SPEAKER_00] I tako, ali u to vrijeme dok ste radili tamo, kao što ste spomenuli, objavljivali ste igre.
+
+377
+00:35:04,480 --> 00:35:04,480
+[UNKNOWN] Da.
+
+378
+00:35:05,119 --> 00:35:10,239
+[SPEAKER_00] I mislim, barem prema mom razumijevanju, da su sve bile neka vrsta igara, zar ne?
+
+379
+00:35:10,320 --> 00:35:13,199
+[SPEAKER_00] Niste gradili aplikacije za produktivnost na strani.
+
+380
+00:35:14,559 --> 00:35:24,960
+[SPEAKER_00] I tako ne moramo se uroniti u svaku od njih, ali imate, recimo, podsvijeća, sobe za pismo, zbirku drevnih društvenih igara.
+
+381
+00:35:24,960 --> 00:35:26,239
+[SPEAKER_00] Sakupljanje, grickalice za učenje.
+
+382
+00:35:26,800 --> 00:35:32,559
+[SPEAKER_00] Sve su to vrste interaktivnih zagonetki i riječnih igara.
+
+383
+00:35:32,719 --> 00:35:37,920
+[SPEAKER_00] Je li to točna objašnjenja općeg stila?
+
+384
+00:35:38,400 --> 00:35:57,199
+[SPEAKER_01] Da, većina ih je, pa je to u osnovi moj glavni fokus, posebno u svlačionicama i podršci, to su vrste igara s kvizovima ili, da, vrsta igara s kvizovima vjerojatno su najbolje objašnjenja u osnovnoj minuti prije toga.
+
+385
+00:35:57,920 --> 00:35:59,360
+[SPEAKER_01] Također, vrsta igara s kvizovima.
+
+386
+00:36:00,159 --> 00:36:04,079
+[SPEAKER_01] U međuvremenu sam dobio Asymmetric ili između njih.
+
+387
+00:36:04,159 --> 00:36:08,639
+[SPEAKER_01] To je bila moja druga igra, koja je bila igra s zagonetkama koja nije dobro prolazila.
+
+388
+00:36:09,039 --> 00:36:10,079
+[SPEAKER_01] Dakle, stvarno?
+
+389
+00:36:10,239 --> 00:36:15,920
+[SPEAKER_00] Ne, nije prolazila u smislu da nije zaradila mnogo novca ili da je nisu koristili mnogi ljudi.
+
+390
+00:36:16,800 --> 00:36:21,119
+[SPEAKER_01] Dakle, ljudi koji su je igrali zapravo su uživali u njoj, ali je nisu igrali mnogi ljudi.
+
+391
+00:36:21,360 --> 00:36:28,480
+[SPEAKER_01] Dakle, samo do danas imam, ne znam, tisuću preuzimanja ili nešto slično za tu igru.
+
+392
+00:36:29,360 --> 00:36:36,320
+[SPEAKER_00] I samo kontekst na vrhu, izgradnja ovih igara bila je ideja da.
+
+393
+00:36:36,480 --> 00:36:40,559
+[SPEAKER_00] Da ste na kraju voljeli ideju o tome da se upišete u industriju i pokušavate izgraditi posao?
+
+394
+00:36:40,559 --> 00:36:40,639
+[SPEAKER_00] Da.
+
+395
+00:36:41,039 --> 00:36:44,159
+[SPEAKER_00] Ili je to bilo samo kreativno izražavanje, zabavno?
+
+396
+00:36:44,320 --> 00:36:47,599
+[SPEAKER_00] Dakle, očito je bilo malo oboje, ali bilo je nešto od toga.
+
+397
+00:36:48,079 --> 00:36:53,360
+[SPEAKER_01] Dakle, u idealnom svijetu, definitivno sam uvijek želio ući u industriju s mojim igrama.
+
+398
+00:36:53,679 --> 00:36:53,760
+[SPEAKER_00] Da.
+
+399
+00:36:54,239 --> 00:37:02,480
+[SPEAKER_01] To je uvijek bilo svojevrsni glavni cilj, ali sam znao i od prijatelja da je igra teška.
+
+400
+00:37:03,840 --> 00:37:03,920
+[SPEAKER_01] Da.
+
+401
+00:37:05,519 --> 00:37:07,760
+[SPEAKER_01] Nije najlakše ući u industriji.
+
+402
+00:37:08,559 --> 00:37:24,000
+[SPEAKER_01] Možete to vidjeti i sada kad ljudi otpušten je lijevo i desno, a uvjeti u kojima se ljudi koji zapravo rade u tim tvrtkama i dalje nalaze, kao što je igra nije najlakša.
+
+403
+00:37:24,480 --> 00:37:29,760
+[SPEAKER_01] Zato sam uvijek izradio svoje aplikacije i igre s izvornim tehnologijama.
+
+404
+00:37:30,639 --> 00:37:35,760
+[SPEAKER_01] Dakle, s objektivom C, Swift UI Kit, Swift UI Sprite Kit i slično.
+
+405
+00:37:36,000 --> 00:37:39,119
+[SPEAKER_01] To sam učinio iz dva razloga.
+
+406
+00:37:39,519 --> 00:37:45,039
+[SPEAKER_01] Jedan je taj da ih na taj način mogu učiniti što dostupnijima.
+
+407
+00:37:45,039 --> 00:37:48,960
+[SPEAKER_01] A drugi razlog je i dostupnima u aplikacijama.
+
+408
+00:37:48,960 --> 00:37:59,360
+[SPEAKER_00] U smislu pristupačnosti za osobe s invaliditetom, očito je manje pristupačna u odnosu na druge platforme u usporedbi s Unityjem ili nečim sličnim.
+
+409
+00:37:59,519 --> 00:38:19,519
+[SPEAKER_01] No htio sam stvoriti najbolju moguću iskustvo za te igre i aplikacije na ograničenoj platformi, ali i dalje, iako se mogu usredotočiti samo na iOS, htio sam da bude stvarno dobra umjesto da je napravim za iOS Android i druge platforme, a zatim da imam opću iskustvo u cijelosti.
+
+410
+00:38:20,719 --> 00:38:33,199
+[SPEAKER_00] Da, i na poslovnoj razini., s Elementary Minuteom, vaš model distribucije bio je Apple koji ga je promovirao, u osnovi, zar ne?
+
+411
+00:38:33,360 --> 00:38:36,159
+[SPEAKER_00] Tako je privlačio sve svoje korisnike.
+
+412
+00:38:36,239 --> 00:38:50,480
+[SPEAKER_00] Dakle, vaša druga aplikacija ili igra, bez obzira koliko je dobra, ako je cijeli vaš model distribucije bio temeljen na tome da je Apple predstavio, ako Apple ga ne predstavlja iz bilo kojeg razloga zbog internih razloga, to je kao da nemate ništa.
+
+413
+00:38:50,639 --> 00:39:08,639
+[SPEAKER_00] Dakle, tijekom svih ovih igara dok ih gradite, počeli ste li graditi neku vrstu marketinga, bilo kakve želite nazvati mehan, mehanizmi za to kako to doprinijeti ljudima, što je možda odgovor da ste nastavili raditi s Appleom, ali ste otkrili kako bolje osigurati dosljednost distribucije Applea.
+
+414
+00:39:09,599 --> 00:39:12,960
+[SPEAKER_00] Ili su postojala drugačija načina na koja ste se učili kroz sve ove aplikacije?
+
+415
+00:39:13,119 --> 00:39:19,760
+[SPEAKER_01] Mislim da je definitivno uglavnom Apple i učenje kako to bolje učiniti.
+
+416
+00:39:20,159 --> 00:39:27,840
+[SPEAKER_01] I mislim da sam s The Art of Fauna shvatio kako to funkcionira.
+
+417
+00:39:27,920 --> 00:39:36,159
+[SPEAKER_00] Da, imam dugačku listu, čini mi se da imate dobar priručnik koji ste isprobali s The Art of Fauna, zbog čega sam postavio to pitanje.
+
+418
+00:39:36,159 --> 00:39:40,880
+[SPEAKER_00] Jer mislim da ste to naučili kroz sve te aplikacije.
+
+419
+00:39:40,960 --> 00:39:56,800
+[SPEAKER_01] Da, ali uvijek je tako, mislim, čak i ako nešto uspije i imam taj priručnik, čak i ako ga ponovno primijenim, i dalje se može dogoditi da zbog nekih razloga ne uspije s Appleom.
+
+420
+00:39:56,880 --> 00:39:58,480
+[SPEAKER_00] Jer je to veći rizik.
+
+421
+00:39:58,719 --> 00:40:00,960
+[SPEAKER_01] Da, definitivno je veći rizik.
+
+422
+00:40:01,039 --> 00:40:06,239
+[SPEAKER_01] Ali također sam definitivno više integriran u cijelu zajednicu.
+
+423
+00:40:07,039 --> 00:40:12,559
+[SPEAKER_01] Dakle, više ljudi ponovno objavljuje o tome na društvenim mrežama.
+
+424
+00:40:12,559 --> 00:40:14,480
+[SPEAKER_01] Znate kako bolje koristiti društvene mreže.
+
+425
+00:40:14,639 --> 00:40:22,639
+[SPEAKER_01] Imam ljudi koji su obožavatelji mojih igara i aplikacija koje sam tijekom godina napravio i koji se vraćaju na nove stvari.
+
+426
+00:40:23,039 --> 00:40:33,199
+[SPEAKER_01] Dakle, u osnovi se radi o izgradnji uspjeha prethodnih igara i nadi da će ljudi ponovno doći za sljedeću, a to je dobro prošlo za druge obožavatelje.
+
+427
+00:40:33,679 --> 00:40:34,960
+[SPEAKER_00] Da, to ima smisla.
+
+428
+00:40:35,039 --> 00:40:40,480
+[SPEAKER_00] I također, mislim da je to još jedan korak u tome da ih napravim s izvornim kodom i da ih napravim posebno za Appleove platforme.
+
+429
+00:40:40,880 --> 00:40:48,719
+[SPEAKER_00] To je još jedan korak u tome da Apple želi promovirati glazbu jer žele promovirati vrlo Appleov centar.
+
+430
+00:40:48,719 --> 00:40:49,840
+[SPEAKER_00] Korištenje aplikacija Apple tehnologija.
+
+431
+00:40:50,719 --> 00:40:51,599
+[SPEAKER_00] Da, to ima smisla.
+
+432
+00:40:51,920 --> 00:40:58,079
+[SPEAKER_00] Dakle, pretpostavljam da ćemo nekako pokrenuti sam proces Artafauna.
+
+433
+00:41:00,559 --> 00:41:11,039
+[SPEAKER_00] Imam puno pitanja o samom, kao što sam rekao, poslovnom aspektu promoviranja, ali samu aplikaciju, odakle je došla ta ideja, ili samu igru, kako je došla do nastanka?
+
+434
+00:41:11,199 --> 00:41:11,280
+[SPEAKER_01] Da.
+
+435
+00:41:12,400 --> 00:41:24,719
+[SPEAKER_01] Dakle, prvi put sam dobio ideju za Artafauna samo sam glupo prolazio Instagramom i onda sam dobio, jer pratim hrpu prirode.
+
+436
+00:41:24,719 --> 00:41:45,519
+[SPEAKER_01] Nakon što sam snimio mnoštvo prirodnih profila i slično, predložio sam profil Biblioteke baštine bioraznolikosti, koja je projekt koji se nalazi u SAD-u, uglavnom je podržan od strane Smithsoniana ili je domaćin Smithsoniana.
+
+437
+00:41:46,079 --> 00:41:54,800
+[SPEAKER_01] Ova organizacija skenira stare knjige i zatim ih stavlja na raspolaganje na internetu besplatno.
+
+438
+00:41:55,039 --> 00:42:06,960
+[SPEAKER_01] Dakle, to su stare knjige, pa ne bilo koje stare knjige., već stare knjige koje sadrže crteže životinja i biljaka i slično.
+
+439
+00:42:07,119 --> 00:42:13,039
+[SPEAKER_01] Imali su Instagram feed na kojem su objavljivali različite stare crteže životinja.
+
+440
+00:42:13,199 --> 00:42:19,519
+[SPEAKER_01] Primila sam jedan prijedlog za jedno od tih životinja i bilo je super lijepo.
+
+441
+00:42:19,920 --> 00:42:23,119
+[SPEAKER_01] Kliknula sam na profil i nisam mogla prestati kliziti.
+
+442
+00:42:24,000 --> 00:42:33,840
+[SPEAKER_00] Da, to je vrlo, sada kad to kažeš, to je poput, kako se zovu ljudi koji nisu nužno znanstvenici, već ljudi koji katalogiziraju, recimo, uzorke?
+
+443
+00:42:35,039 --> 00:42:36,719
+[SPEAKER_01] Dobro pitanje, dra.
+
+444
+00:42:36,719 --> 00:42:38,079
+[SPEAKER_00] Darwin je bio jako zaljubljen u to, zar ne?
+
+445
+00:42:38,239 --> 00:42:39,360
+[SPEAKER_00] To je bilo jedno od njegovih zanimanja.
+
+446
+00:42:39,519 --> 00:42:39,599
+[SPEAKER_00] Da.
+
+447
+00:42:39,840 --> 00:42:45,440
+[SPEAKER_00] Ali, ali ima vrlo specifičnu atmosferu.
+
+448
+00:42:45,679 --> 00:42:48,400
+[SPEAKER_00] Ti pseudovještveni crteži uvijek su na pergamentu.
+
+449
+00:42:48,480 --> 00:42:51,360
+[SPEAKER_00] Dakle, papir ima takav sepijaton.
+
+450
+00:42:51,679 --> 00:42:56,719
+[SPEAKER_00] Sad kad to izgovarate naglas, nisam to sastavio, da je to stil artifavne, ali to je točno.
+
+451
+00:42:56,800 --> 00:42:56,880
+[SPEAKER_00] Da.
+
+452
+00:42:57,199 --> 00:42:57,760
+[SPEAKER_00] O, to je cool.
+
+453
+00:42:57,920 --> 00:42:58,239
+[SPEAKER_00] To je cool.
+
+454
+00:42:59,280 --> 00:43:08,239
+[SPEAKER_01] Mislim, to su stvarno, to su se tada koristili znanstvenicima za proučavanje tih životinja jer Da, ne želim reći da to nisu znanstvenici.
+
+455
+00:43:08,719 --> 00:43:11,679
+[SPEAKER_00] Mislim, to je bilo poput zajednice.
+
+456
+00:43:11,840 --> 00:43:12,719
+[SPEAKER_00] To je riječ koju tražim.
+
+457
+00:43:13,280 --> 00:43:20,960
+[SPEAKER_00] Osjećam da su mnogi od njih bili znanstvenici, ali bilo je i puno njih koji su bili samo čudni ljudi i to je bio njihov hobi.
+
+458
+00:43:21,199 --> 00:43:22,239
+[SPEAKER_01] Da, definitivno.
+
+459
+00:43:23,199 --> 00:44:01,760
+[SPEAKER_01] Ali, mislim, postoje umjetnici poput Johna Goulda, jedan je čovjek u kojem imam puno slika i on je išao na ekspedicije s Darwinom, a također je išao na ekspediciju u Australiju i napisao, mislim, pet ili šest knjiga o životinjama u Australiji i nacrtao ih i te crteže.ži u velikoj mjeri u Autofauni jer su super lijepi i dostupni besplatno jer su ljudi davno mrtvi i njihovo je autorsko pravo davno isteklo.
+
+460
+00:44:02,159 --> 00:44:04,639
+[SPEAKER_00] Nisam shvatio da su ti crteži dobiveni na taj način.
+
+461
+00:44:04,639 --> 00:44:05,840
+[SPEAKER_00] U redu, zanimljivo.
+
+462
+00:44:05,920 --> 00:44:18,400
+[SPEAKER_01] Da, a ja sam se vratio na Instagram feed, samo sam ih prošao i rezervirao sam, mislim, dvjestotinjak slika u to vrijeme samo da ih pogledam.
+
+463
+00:44:18,639 --> 00:44:29,840
+[SPEAKER_01] Nisam ni pomislio da ću nešto napraviti od toga, a onda sam shvatio kad sam gledao datume kada su cr nacrtani, da su nacrtani davno i da ih mogu potencijalno upotrijebiti.
+
+464
+00:44:30,639 --> 00:44:42,480
+[SPEAKER_01] U to vrijeme bio sam duboko upoznat s igrama s zagonetkama, fizičkim, ali i s igrama koja je bila osmišljena na Apple Arcadeu.
+
+465
+00:44:42,480 --> 00:44:46,239
+[SPEAKER_01] Da, a onda mi se sviđaju i oni.
+
+466
+00:44:47,119 --> 00:44:49,920
+[SPEAKER_01] Bio sam duboko upoznat s Albom.
+
+467
+00:44:50,239 --> 00:45:00,960
+[SPEAKER_01] Mislim da se Alba zove po ljudima koji su napravili Monument Valley, koja je bila ta ugodna prirodna igra u kojoj samo trčite po otoku.
+
+468
+00:45:00,960 --> 00:45:05,519
+[SPEAKER_01] Samo se krenite oko otoka i slobodno istražite i slušajte lijepe zvukove životinja.
+
+469
+00:45:05,920 --> 00:45:23,599
+[SPEAKER_01] I obje su me igre inspirirale da nešto slično napravim, gdje sam upotrijebio stare crteže koje su samo stajale na slobodi i napravio puzzle igru oko toga, a to je zapravo način na koji je cijela ideja započela.
+
+470
+00:45:23,840 --> 00:45:24,320
+[SPEAKER_00] To je zanimljivo.
+
+471
+00:45:24,480 --> 00:45:26,880
+[SPEAKER_00] Dakle, nije mehanika došla prvo.
+
+472
+00:45:27,119 --> 00:45:29,599
+[SPEAKER_00] Ne, to je bio vibe.
+
+473
+00:45:30,000 --> 00:45:30,079
+[SPEAKER_00] Da.
+
+474
+00:45:30,880 --> 00:45:31,280
+[SPEAKER_00] Prvo.
+
+475
+00:45:31,440 --> 00:45:36,559
+[SPEAKER_00] To je kombinacija ovih starih crteža koje su me inspirirale i jednostavno.
+
+476
+00:45:36,960 --> 00:45:38,000
+[SPEAKER_00] lijepo i ugodno izgleda.
+
+477
+00:45:38,880 --> 00:45:42,800
+[SPEAKER_00] I vrsta ugodnog stila igre, čak ni ne nužno zagonetki, ugodne igre.
+
+478
+00:45:42,880 --> 00:45:45,199
+[SPEAKER_00] Očito je da je uzorak, ali Alba nije, zar ne?
+
+479
+00:45:45,280 --> 00:45:46,239
+[SPEAKER_00] Ne, Alba nije.
+
+480
+00:45:46,960 --> 00:45:47,039
+[SPEAKER_00] Da.
+
+481
+00:45:47,599 --> 00:45:54,800
+[SPEAKER_00] A onda ste pomislili, dobro, kako mogu uzeti ove dvije elemente, plus vaš stil kuće i ono što znate, i nešto iz toga napraviti?
+
+482
+00:45:55,360 --> 00:45:55,440
+[SPEAKER_01] Da.
+
+483
+00:45:56,639 --> 00:46:03,440
+[SPEAKER_01] I zanimljivo je, ovo je prvi put da se to tako ispostavilo, jer inače uvijek dolazim s igračke strane ili s igračke strane.
+
+484
+00:46:03,519 --> 00:46:04,079
+[SPEAKER_00] Da, da.
+
+485
+00:46:04,639 --> 00:46:10,159
+[SPEAKER_01] Dakle, bilo je zanimljivo kako je to došlo do toga.
+
+486
+00:46:10,320 --> 00:46:21,199
+[SPEAKER_01] Ali ranije sam spomenuo da da sam duboko zainteresiran za pristupačnost stvari i da me to jako zanima.
+
+487
+00:46:21,760 --> 00:46:24,719
+[SPEAKER_01] Napisao sam i svoju diplomski rad o pristupačnosti igara.
+
+488
+00:46:24,800 --> 00:46:28,960
+[SPEAKER_01] Sljedeći tjedan na Arktičkoj konferenciji održat ću predavanje o pristupačnosti igara i slično.
+
+489
+00:46:28,960 --> 00:46:30,639
+[SPEAKER_00] Dakle, nemojte to sada spominjati.
+
+490
+00:46:31,440 --> 00:46:32,880
+[SPEAKER_00] Ja sam u fazi prije FOMO-a.
+
+491
+00:46:32,960 --> 00:46:37,360
+[SPEAKER_00] Mislim da će se to dogoditi kada bude objavljeno ili već se dogodilo, ali, čovječe, jako sam želio otići na to.
+
+492
+00:46:37,519 --> 00:46:42,239
+[SPEAKER_00] Ali, u svakom slučaju, Arktička konferencija.
+
+493
+00:46:42,639 --> 00:46:45,039
+[SPEAKER_00] Mislim da ću kupiti ulaznice za sljedeću godinu jer je sada prekasno.
+
+494
+00:46:46,400 --> 00:46:48,159
+[SPEAKER_00] Želio sam da se ponovi da mogu ići.
+
+495
+00:46:48,239 --> 00:46:50,480
+[SPEAKER_01] Da, definitivno biste trebali ići sljedeće godine.
+
+496
+00:46:50,639 --> 00:46:52,239
+[SPEAKER_01] Mislim da će biti zabavno.
+
+497
+00:46:53,199 --> 00:46:53,280
+[SPEAKER_01] Da.
+
+498
+00:46:55,840 --> 00:47:13,920
+[SPEAKER_01] Dakle, duboko sam u akcesibilnosti i glavni fokus je na akcesibilnosti glasa i na tome da bude dostupna slijepima, a izrada vizualne zagonetke nije baš laka za slijepe ljude.
+
+499
+00:47:14,000 --> 00:47:24,719
+[SPEAKER_01] Dakle, uvijek imam jednu pravilo da ako je ne mogu učiniti dostupnom kako želim, neću graditi aplikaciju.
+
+500
+00:48:00,400 --> 00:48:12,559
+[SPEAKER_01] Možete riješiti zagonetku riješenjem slike ili je to poput ponovnog sastavljanja slike ili možete pritisnuti gumb i okrenuti ga, a zatim ponovno sastaviti tekst.
+
+501
+00:48:13,760 --> 00:48:23,039
+[SPEAKER_01] I na taj način imala sam nešto što je moglo biti zanimljivo za slijepe ljude jer su mogli koristiti tekst za igranje igre.
+
+502
+00:48:23,920 --> 00:48:27,679
+[SPEAKER_00] Dakle, to je gotovo kao zasebna igra u tom smislu, zar ne?
+
+503
+00:48:29,039 --> 00:48:44,960
+[SPEAKER_01] U tom smislu, neka vrsta zasebne igre jer je jedna strana poput ove opuštajuće, opuštajućeštajuća igra u kojoj možete samo odvojiti misli i ponovno sastaviti stvari.
+
+504
+00:48:45,199 --> 00:48:53,360
+[SPEAKER_01] A s druge strane, morate pročitati tekst nekoliko puta da biste rekli da su rečenice u ispravnom redoslijedu.
+
+505
+00:48:53,679 --> 00:48:56,719
+[SPEAKER_01] Dakle, to je drugačija igra.
+
+506
+00:48:56,880 --> 00:48:59,119
+[SPEAKER_01] Jedna je više poput tradicionalne igre s puzzlima.
+
+507
+00:48:59,199 --> 00:49:00,719
+[SPEAKER_01] Druga je više poput igre riječi.
+
+508
+00:49:01,199 --> 00:49:01,280
+[SPEAKER_01] Da.
+
+509
+00:49:03,280 --> 00:49:12,719
+[SPEAKER_01] Ali imati ove dvije strane omogućilo je da se omogući i podrška pristupačnosti, ali i da se pokaže ljudima.
+
+510
+00:49:12,719 --> 00:49:18,480
+[SPEAKER_01] Mnogi su uživali u igranju na strani s tekstom jer su naučili nešto o životinji.
+
+511
+00:49:19,039 --> 00:49:19,920
+[SPEAKER_00] Da, baš tako.
+
+512
+00:49:20,719 --> 00:49:32,239
+[SPEAKER_01] I uvijek ste mogli prebacivati se naprijed-natrag, pa ste mogli malo igrati na strani s slikom, a zatim na stranu s tekstom i natrag na stranu s slikom, što god vam je u tom trenutku lakše.
+
+513
+00:49:33,280 --> 00:49:43,119
+[SPEAKER_01] I da, to je bilo samo lijepo što se dogodilo iz glavnog cilja da se to učini dostupnim slijepim ljudima.
+
+514
+00:49:43,440 --> 00:49:44,719
+[SPEAKER_00] To je stvarno cool.
+
+515
+00:49:45,280 --> 00:49:45,360
+[SPEAKER_00] Da.
+
+516
+00:49:45,840 --> 00:49:48,800
+[SPEAKER_00] Da, nisam ni shvatio da je to u igri.
+
+517
+00:49:49,519 --> 00:49:52,880
+[SPEAKER_00] Radila sam samo na slici slike, o čemu ćemo razgovarati i mi.
+
+518
+00:49:53,440 --> 00:50:19,679
+[SPEAKER_00] Dakle, mehanika igre je takva da imate ove prekrasne slike, kao što smo razgovarali, i one su u obliku karte, ali su sve podijeljene poput slagalice, osim što su za razliku od slagalice u jasnim blokovima, ne nužno kvadratima, već su mnogi od njih pravokutnici, ali su samo blokovi u nepravilnom redoslijedu i možete uzeti bilo koji od tih blokova i staviti ih u pravom redoslijedu i pomaknuti ih.
+
+519
+00:50:20,159 --> 00:50:24,960
+[SPEAKER_00] A kad dobijete dva bloka u pravom redoslijedu, dobivate vrlo zadovoljavajući rezultat.
+
+520
+00:51:00,480 --> 00:51:04,480
+[SPEAKER_00] S tehničke strane, to je vrlo slično Letter Rooms.
+
+521
+00:51:04,559 --> 00:51:08,960
+[SPEAKER_00] U Letter Roomsu imate sve slova poredana i možete ih podići i ponovno razvrstati.
+
+522
+00:51:09,679 --> 00:51:16,320
+[SPEAKER_00] Mislim da su, kad zapravo razmišljam o tome kao igrač, potpuno različite, ali razmišljam o tome da ih podignem i premjestim.
+
+523
+00:51:16,800 --> 00:51:18,639
+[SPEAKER_00] Osjećam se slično na taj način.
+
+524
+00:51:18,800 --> 00:51:21,119
+[SPEAKER_00] Tako ste došli do ove ideje?
+
+525
+00:51:21,199 --> 00:51:23,679
+[SPEAKER_00] Uzimali ste ove ideje iz drugih aplikacija?
+
+526
+00:51:23,760 --> 00:51:26,960
+[SPEAKER_01] Da, mislim da sam došao do te ideje neizravno.
+
+527
+00:51:27,199 --> 00:51:36,639
+[SPEAKER_01] Dakle, kad sam razmišljao o tome kako napraviti zagonetku od toga, samo sam pomislio da ću je podijeliti slično.
+
+528
+00:51:36,639 --> 00:51:56,719
+[SPEAKER_01] Slično kao što sam to učinio s ljestvama, na početku, a također sam to radio red po red, pa nema vertikalnih podjela, ali prva je ideja bila samo horizontalna podjela, tako da imate Ah, da, pa je to skup pravokutnika samo složenih jedan na drugom, ali nijedna nije jedna pored druge.
+
+529
+00:51:56,800 --> 00:52:12,559
+[SPEAKER_01] Da, a sada su ti razredi lako postavljeni, oni na početku, a kasnije dobivate vertikalne podjele, ali prva je ideja bila samo te horizontalne podjele i to je vrlo slično ljestvama, pa definitivno nadahnuće dolazi odatle.
+
+530
+00:52:12,800 --> 00:52:18,400
+[SPEAKER_01] Ali iskreno, to je najjednostavniji način za podjelu slike.
+
+531
+00:52:18,800 --> 00:52:28,320
+[SPEAKER_01] Dakle, ako radim nešto poput stvarnih komada komada, stvari postaju malo složenije, pogotovo kako ih staviti.
+
+532
+00:52:28,480 --> 00:52:33,760
+[SPEAKER_01] A onda bih vjerojatno trebao negdje slojeviti komade da se sve uklapa.
+
+533
+00:52:35,360 --> 00:52:41,920
+[SPEAKER_01] Dakle, to je bilo malo inspiracije iz ladderrooma, ali i najjednostavniji način.
+
+534
+00:52:42,639 --> 00:52:44,639
+[SPEAKER_01] Barem sam mislio da je to najjednostavniji način.
+
+535
+00:52:44,960 --> 00:52:48,960
+[SPEAKER_01] Dakle, zapravo dobiti mehanizam povlačenja i bacanja.
+
+536
+00:52:48,960 --> 00:53:00,320
+[SPEAKER_01] Moguće je da je mehanika dobro napravljena jer, kako ste rekli, dijelovi se slažu ako su pravilno razvrstani, ali ako su pravilno razvrstani vodoravno ili okomito, slažu se.
+
+537
+00:53:00,480 --> 00:53:14,960
+[SPEAKER_01] Dakle, dobivate vrlo nejasne oblike koje morate povući i povući te oblike i pobrinuti se da su te oblike postavljene na pravilno mjesto gdje igrač zapravo misli da bi ih trebalo staviti.
+
+538
+00:53:16,320 --> 00:53:17,679
+[SPEAKER_01] To je sasvim druga priča.
+
+539
+00:53:17,920 --> 00:53:24,480
+[SPEAKER_01] Još uvijek nisam potpuno zadovoljan kako moj kod radi, ali ljudi se čini da su s njim zadovoljni.
+
+540
+00:53:24,480 --> 00:53:32,400
+[SPEAKER_01] Sretan sam s tim, ali mislim da sam morao ponovno napisati taj kod mehanike povlačenja i bacanja tri ili četiri puta da bih ga doveo do svog cilja.
+
+541
+00:53:32,480 --> 00:53:33,280
+[SPEAKER_00] Moram zamisliti.
+
+542
+00:53:33,760 --> 00:53:38,000
+[SPEAKER_00] I to je ugodnije nego pokušavati pomicati ikone u svojem kontrolnom centru.
+
+543
+00:53:38,559 --> 00:53:39,440
+[SPEAKER_00] Da, čuo sam to.
+
+544
+00:53:39,679 --> 00:53:42,320
+[SPEAKER_00] Ali to me podsjeća na takvu vrstu izazova, zar ne?
+
+545
+00:53:42,480 --> 00:53:42,480
+[UNKNOWN] Da.
+
+546
+00:53:43,199 --> 00:53:48,239
+[SPEAKER_00] Povlačenje i bacanje, gdje se stvari pomiču i odlaze na mjesta gdje ljudi očekuju.
+
+547
+00:53:48,639 --> 00:53:48,719
+[SPEAKER_01] Da.
+
+548
+00:53:49,519 --> 00:54:00,000
+[SPEAKER_00] To je, pretpostavljam, jer to nisam učinio, ali pretpostavljam da je to manje tehnički izazov i više dizajnerski izazov u smislu da donosite tisuću odluka.
+
+549
+00:54:00,159 --> 00:54:00,239
+[SPEAKER_01] Da.
+
+550
+00:54:00,239 --> 00:54:03,760
+[SPEAKER_00] Da pokušam napraviti ispravnu pretpostavku.
+
+551
+00:54:03,840 --> 00:54:03,920
+[SPEAKER_00] Da.
+
+552
+00:54:04,239 --> 00:54:09,199
+[SPEAKER_00] I kako donositi te odluke dovoljno pametno da ne uznemiruješ ljude neprestano?
+
+553
+00:54:09,280 --> 00:54:09,360
+[SPEAKER_01] Da.
+
+554
+00:54:10,239 --> 00:54:10,320
+[SPEAKER_00] Da.
+
+555
+00:54:10,559 --> 00:54:10,639
+[SPEAKER_00] Da.
+
+556
+00:54:10,880 --> 00:54:13,199
+[SPEAKER_00] I to mi se definitivno čini fascinantnim.
+
+557
+00:54:13,280 --> 00:54:13,360
+[SPEAKER_01] Da.
+
+558
+00:54:13,679 --> 00:54:13,760
+[SPEAKER_01] Da.
+
+559
+00:54:14,239 --> 00:54:23,440
+[SPEAKER_01] Sam kod nije previše složen jer je to skupica izjava if i petlji pomicanja dijelova i slično.
+
+560
+00:54:23,840 --> 00:54:36,559
+[SPEAKER_01] I nema super složenih algoritama iza toga, ali je i dalje skupina prečaca ili odluka koje je potrebno donijeti u pravo vrijeme da se nešto zapravo premjesti.
+
+561
+00:54:36,559 --> 00:54:49,679
+[SPEAKER_01] Premjestite nešto na ispravno mjesto jer bi se također moglo pojaviti slika poput O-a, gdje u sredini želite staviti komad.
+
+562
+00:54:50,320 --> 00:55:03,039
+[SPEAKER_01] Ima odluku da ako se komad treba staviti u rupu, neće se pomaknuti jer bi ga igrač vjerojatno želio staviti u rupu.
+
+563
+00:55:03,199 --> 00:55:09,840
+[SPEAKER_01] Ali ako se ne uklapa u rupu, onda bi se komad pomaknuo jer bi ga igrač vjerojatno želio staviti iznad.
+
+564
+00:55:10,000 --> 00:55:12,400
+[SPEAKER_01] Dakle, takve stvari postoje.
+
+565
+00:55:12,639 --> 00:55:24,400
+[SPEAKER_01] Postoji mnogo različitih sitnih odluka koje će omogućiti da igra radi onako kako bi igrač očekivao, a i dalje ne radi sto posto savršeno.
+
+566
+00:55:24,719 --> 00:55:30,639
+[SPEAKER_00] Dakle, kakav je cilj za izgradnju toga?
+
+567
+00:55:31,679 --> 00:55:36,000
+[SPEAKER_00] Očito ga pokrenete milijun puta i susrećete se sa svim ovim.
+
+568
+00:55:36,320 --> 00:55:37,599
+[SPEAKER_00] Dajete li telefon ljudima?
+
+569
+00:55:38,000 --> 00:55:44,559
+[SPEAKER_00] Imate li veliku skupinu prijatelja koji kažu: Evo, dolazi Clemens, a vi im dajete telefon i kažete: U redu, učinite ovo.
+
+570
+00:55:44,880 --> 00:55:45,280
+[SPEAKER_00] Što mislite?
+
+571
+00:55:46,719 --> 00:55:48,000
+[SPEAKER_00] I pišete li bilješke?
+
+572
+00:55:48,159 --> 00:55:48,960
+[SPEAKER_00] Kako sve to osjećate?
+
+573
+00:55:49,360 --> 00:55:50,079
+[SPEAKER_00] dobro za što više ljudi.
+
+574
+00:55:50,800 --> 00:56:01,599
+[SPEAKER_01] Da, obično u godinama prije toga, sa svim mojim igrama, vodio sam mnoštvo konferencija o igrama.
+
+575
+00:56:01,760 --> 00:56:14,800
+[SPEAKER_01] Dakle, na konferencijama o igrama, pored stvari poput onih koje imamo u svijetu iOS-a, gdje samo sjednete i gledate mnoštvo predavanja.
+
+576
+00:56:15,039 --> 00:56:21,199
+[SPEAKER_01] Ali obično na tim konferencijama postoje indie prostori na kojima ljudi samo izlažu svoje igre.
+
+577
+00:56:22,000 --> 00:56:24,639
+[SPEAKER_01] Oh, zanimljivo.
+
+578
+00:56:24,639 --> 00:56:29,920
+[SPEAKER_01] U proteklih nekoliko godina napravila sam nekoliko takvih događaja na kojima sam samo stajala i pokazivala ih grupi ljudi.
+
+579
+00:56:30,239 --> 00:56:38,719
+[SPEAKER_01] Obično sam ih postavila na način da nisam ništa objasnila ljudima i samo sam ih promatrala kako s njima komuniciraju.
+
+580
+00:56:39,360 --> 00:56:50,079
+[SPEAKER_01] I naučila sam toliko toga o tome kako se prva interakcija slaže s ljudima ili ne slaže s ljudima samo promatrajući kako bi se s njom suočili.
+
+581
+00:56:52,079 --> 00:57:08,400
+[SPEAKER_01] I to je super lijep način da to učinim na taj način jer ljudi koji dolaze na te konferencije ponekcije o igrama na kojima imamo razgovore, ali postoje i druge konferencije o igrama na kojima se glavni fokus zapravo fokusira na odlazak i igranje igara.
+
+582
+00:57:08,559 --> 00:57:16,480
+[SPEAKER_01] Dakle, tamo će biti više igrača koji nikad više neće doći na te stvari ili ih vjerojatno više nećete vidjeti.
+
+583
+00:57:16,639 --> 00:57:19,519
+[SPEAKER_01] Dakle, vrlo su strogi prema povratnim informacijama koje vam daju.
+
+584
+00:57:20,079 --> 00:57:20,639
+[SPEAKER_01] I to je dobro.
+
+585
+00:57:21,280 --> 00:57:24,400
+[SPEAKER_01] Ali vrlo je dobro da su strogi i iskreni o tome.
+
+586
+00:57:24,719 --> 00:57:25,280
+[SPEAKER_00] To je ono što želite.
+
+587
+00:57:25,360 --> 00:57:26,079
+[SPEAKER_00] Da, to je ono što želite.
+
+588
+00:57:26,320 --> 00:57:27,280
+[SPEAKER_00] To je ono što je super vrijedno.
+
+589
+00:57:27,440 --> 00:57:27,519
+[SPEAKER_01] Da.
+
+590
+00:57:28,320 --> 00:57:36,800
+[SPEAKER_01] Dakle, tijekom godina naučio sam mnogo o tome kako ljudi komuniciraju s igrom i sada imaju, recimo, igru.
+
+591
+00:57:37,440 --> 00:57:41,119
+[SPEAKER_01] Osjećam kako će ljudi vjerojatno komunicirati s njom.
+
+592
+00:57:41,360 --> 00:57:52,480
+[SPEAKER_01] Ali za svaku igru imam grupu prijatelja kojima dajem aplikaciju, želim im objasniti što je manje moguće o aplikaciji ili igri i vidjeti kako će komunicirati s njom.
+
+593
+00:57:52,639 --> 00:58:13,840
+[SPEAKER_00] I samo im kupim večeru ili nešto slično da ih prisilim da ostanu sa mnom ili da Oh, da, mislim da ste dali predavanje u kojem ste imali slike na kojima radite tjesteninu za ljude i onda samo kažete: U redu, dođi i igraj moju igru i pustite da vas gledam kako igrate moju igru i da vas tretira kaojte vas kao pokusnog svinja.
+
+594
+00:58:14,000 --> 00:58:14,079
+[SPEAKER_00] Da.
+
+595
+00:58:14,400 --> 00:58:15,280
+[SPEAKER_00] To je zanimljivo.
+
+596
+00:58:15,599 --> 00:58:17,199
+[SPEAKER_00] Vrlo sam zainteresiran.
+
+597
+00:58:18,239 --> 00:58:25,840
+[SPEAKER_00] Nisam znao da ljudi dolaze na konferencije o razvoju igara djelomično zato što testiraju igre.
+
+598
+00:58:26,000 --> 00:58:30,239
+[SPEAKER_00] Ipak, nisam čuo za koncept indie izložbe.
+
+599
+00:58:30,480 --> 00:58:30,639
+[SPEAKER_00] Da.
+
+600
+00:58:30,800 --> 00:58:35,280
+[SPEAKER_00] Sad pozivam sve organizatore konferencija koji slušaju.
+
+601
+00:58:35,679 --> 00:58:40,800
+[SPEAKER_00] Vrlo sam zainteresiran za istu ideju za indie razvijatelje na konferencijama.
+
+602
+00:58:40,960 --> 00:58:42,239
+[SPEAKER_00] To bi bilo tako zanimljivo.
+
+603
+00:58:42,320 --> 00:58:42,400
+[SPEAKER_00] Da.
+
+604
+00:58:42,719 --> 00:58:46,719
+[SPEAKER_00] Zanima me kako izgledaju mehanizmi za to kako to funkcionira.
+
+605
+00:58:46,800 --> 00:58:48,559
+[SPEAKER_00] Mislim, nećemo se ovdje u to upuštati, ali znate, ljudi.
+
+606
+00:58:48,559 --> 00:58:56,480
+[SPEAKER_00] Ali ljudi bi se trebali obratiti vama ili drugim razvijačima igara jer je to stvarno zanimljivo.
+
+607
+00:58:56,800 --> 00:59:08,159
+[SPEAKER_00] Ideja da biste mogli donijeti ono što pretpostavljam da je neka vrsta demo verzije vaše igre, namjerno izrađene za prikupljanje povratnih informacija.
+
+608
+00:59:08,480 --> 00:59:10,800
+[SPEAKER_00] Definitivno biste mogli učiniti isto na konferenciji.
+
+609
+00:59:11,360 --> 00:59:14,800
+[SPEAKER_00] I dobio sam nešto slično iskustvo gdje svi dajemo svoje telefone jedni drugima.
+
+610
+00:59:14,960 --> 00:59:15,199
+[SPEAKER_01] Baš tako.
+
+611
+00:59:15,360 --> 00:59:24,320
+[SPEAKER_00] Ili im kažete i oni kažu: O, i oni će preuzeti vašu aplikaciju, a onda vam cijelo lice postane crveno jer mislite: O, ne, vidjet će koliko je loše moje uvođenje i koliko je to užasno.
+
+612
+00:59:24,320 --> 00:59:27,760
+[SPEAKER_00] Ali taj povratni informacija često je nevjerojatno vrijedna.
+
+613
+00:59:28,000 --> 00:59:28,639
+[SPEAKER_01] Da, točno.
+
+614
+00:59:30,159 --> 00:59:34,559
+[SPEAKER_00] I stvaranje namjernog prostora za to stvarno je sjajno.
+
+615
+00:59:34,880 --> 00:59:34,960
+[SPEAKER_00] Da.
+
+616
+00:59:35,440 --> 00:59:36,239
+[SPEAKER_00] To je zanimljivo.
+
+617
+00:59:36,480 --> 00:59:36,559
+[SPEAKER_00] Da.
+
+618
+00:59:36,719 --> 00:59:39,440
+[SPEAKER_00] Morat ću se pozvati na neke od svojih prijatelja koji organiziraju konferencije.
+
+619
+00:59:39,519 --> 00:59:40,079
+[SPEAKER_01] Da, definitivno.
+
+620
+00:59:40,639 --> 00:59:56,400
+[SPEAKER_00] Znam, mislim da su to upravo objavili na Twitteru, baš prije nego što smo počeli snimati, ali IOSConf u Makedoniji održava neku vrstu događaja usmjerenog na neovisne programerke.
+
+621
+00:59:58,559 --> 00:59:59,599
+[SPEAKER_00] Ne znam sve pojedinosti.
+
+622
+01:00:00,000 --> 01:00:02,239
+[SPEAKER_00] Kao što su ih opisali jer su upravo objavili tweet o tome.
+
+623
+01:00:02,400 --> 01:00:04,000
+[SPEAKER_00] Dakle, ne želim ništa reći.
+
+624
+01:00:04,480 --> 01:00:06,320
+[SPEAKER_00] Ja pomažem u sponzoriranju.
+
+625
+01:00:06,559 --> 01:00:07,760
+[SPEAKER_00] A pod ja mislim ReveneCat.
+
+626
+01:00:07,840 --> 01:00:09,119
+[SPEAKER_00] ReveneCat ga sponzorira.
+
+627
+01:00:09,360 --> 01:00:15,039
+[SPEAKER_00] Tako da znam malo o tome, ali ne želim reći nešto što nije već javno poznato.
+
+628
+01:00:15,360 --> 01:00:24,239
+[SPEAKER_00] Ali oni rade nešto u tom stilu, što sam stvarno, stvarno znatiželjan vidjeti, ali volim ideju da se inspiriraju takve vrste konferencija za razvoj igara.
+
+629
+01:00:24,320 --> 01:00:25,920
+[SPEAKER_00] Jer, da, to je zanimljiva ideja.
+
+630
+01:00:26,559 --> 01:00:39,599
+[SPEAKER_01] Da, uvijek savjetujem ljudima da ako me pita kako dobijem najbolju povratnu informaciju, da samo pođu na sastanke ili konferencije i pođu im telefon i vide reakciju i vide njihov odgovor.
+
+631
+01:00:39,599 --> 01:01:02,880
+[SPEAKER_01] Jer, kao što ste rekli, jako je bolno ako netko samo zaglavi u procesu uvođenja, ali bolje je da to vidite sami i naučite iz toga, a zatim to poboljšate u tom trenutku nego da to objavite u svijetu i dobijete lošu recenziju za proces uvođenja ili jednostavno izgubite osobu tijekom procesa uvođenja.
+
+632
+01:01:03,039 --> 01:01:06,719
+[SPEAKER_00] Da, najgore je tiho, tiho gubite ljude i nemate pojma zašto.
+
+633
+01:01:07,360 --> 01:01:07,440
+[SPEAKER_00] Da.
+
+634
+01:01:07,760 --> 01:01:08,239
+[SPEAKER_00] To je zanimljivo.
+
+635
+01:01:08,559 --> 01:01:15,599
+[SPEAKER_00] I mislim da u sličnom duhu, kako ste se usredotočili na pristupačnost, ali posebno na slijepe korisnike.
+
+636
+01:01:15,840 --> 01:01:15,920
+[SPEAKER_00] Da.
+
+637
+01:01:16,800 --> 01:01:21,119
+[SPEAKER_00] Imate li slije s kojima radite isto ili kako dobivate takvu povratnu informaciju?
+
+638
+01:01:21,280 --> 01:01:23,519
+[SPEAKER_00] Jer to je nešto što zapravo ne možete učiniti sami.
+
+639
+01:01:23,760 --> 01:01:23,840
+[SPEAKER_01] Da.
+
+640
+01:01:24,880 --> 01:01:29,440
+[SPEAKER_01] Mislim, tijekom godina naučio sam prilično dobro komunicirati s VoiceOverom.
+
+641
+01:01:29,599 --> 01:01:31,920
+[SPEAKER_01] Dakle, imam nešto, da, mislim da možete zatvoriti oči.
+
+642
+01:01:32,880 --> 01:01:40,880
+[SPEAKER_01] Ali to je i dalje nešto vrlo drugačije ako komunicirate s uređajem na kojem znate kako izgleda.
+
+643
+01:01:41,039 --> 01:01:50,639
+[SPEAKER_01] Dakle, već ste modelirali u svojoj glavi kako komunicirati s aplikacijom, a onda netko slijep koji nikad neće vidjeti stvarni korisnički sučelje.
+
+644
+01:01:51,440 --> 01:01:57,599
+[SPEAKER_01] Dakle, nikad ne možete doživjeti to na isti način kao slijepi ljudi.
+
+645
+01:01:57,599 --> 01:01:58,239
+[SPEAKER_01] Jer je to kao i sve ostalo.
+
+646
+01:01:58,320 --> 01:02:04,639
+[SPEAKER_00] Kao da razvijate aplikaciju za iPhone bez ikakvog korištenja iPhonea.
+
+647
+01:02:04,719 --> 01:02:04,800
+[SPEAKER_00] Da.
+
+648
+01:02:05,360 --> 01:02:12,960
+[SPEAKER_00] Stvari ćete raditi na temelju velikog broja pretpostavki da vam je sustav naučio određene stvari, zar ne?
+
+649
+01:02:13,199 --> 01:02:13,199
+[UNKNOWN] Da.
+
+650
+01:02:13,360 --> 01:02:16,719
+[SPEAKER_00] I morate izraditi svoju aplikaciju znajući da je sustav naučio sve.
+
+651
+01:02:16,880 --> 01:02:21,440
+[SPEAKER_00] Da, volio bih da gumb za vraćanje bude na dnu gdje ga vaš palac može doći do njega.
+
+652
+01:02:21,519 --> 01:02:21,599
+[SPEAKER_00] Da.
+
+653
+01:02:21,679 --> 01:02:25,039
+[SPEAKER_00] Ali svaka aplikacija na iOS-u ima gumb za vraćanje u gornjem lijevom kutu.
+
+654
+01:02:25,199 --> 01:02:26,079
+[SPEAKER_00] Tamo biste ga trebali staviti.
+
+655
+01:02:26,400 --> 01:02:36,800
+[SPEAKER_00] Svi ti isti uvjeti, pretpostavljam, vrijede za način rada za glasovni komentar, gdje je to kao da znate kako se kretati po iOS-u u načinu rada za glasovni komentar, postoji mnoštvo konvencija koje možda neće biti u vašem računalu.
+
+656
+01:02:36,800 --> 01:02:39,760
+[SPEAKER_00] To možda nije intuitivno ako ga koristite samo u svojoj aplikaciji.
+
+657
+01:02:39,920 --> 01:02:40,000
+[SPEAKER_00] Da.
+
+658
+01:02:40,800 --> 01:02:49,360
+[SPEAKER_00] I to je teško, možete provesti puno vremena učeći kako koristiti VoiceOver način rada, ali to će biti teško učiniti bez povratnih informacija ljudi koji u njemu žive svaki dan.
+
+659
+01:02:49,519 --> 01:02:49,599
+[SPEAKER_00] Da.
+
+660
+01:02:50,239 --> 01:02:50,320
+[UNKNOWN] Da.
+
+661
+01:02:50,559 --> 01:02:54,480
+[SPEAKER_01] A glavni izvor za to je Apple Vis forum.
+
+662
+01:02:54,960 --> 01:02:55,039
+[SPEAKER_01] Da.
+
+663
+01:02:56,159 --> 01:02:59,440
+[SPEAKER_01] To je, mislim da ću se pobrinuti da je to u bilješkama emisije.
+
+664
+01:03:00,000 --> 01:03:00,880
+[SPEAKER_01] Da, definitivno.
+
+665
+01:03:01,599 --> 01:03:12,639
+[SPEAKER_00] Bilo je gotovo zatvoreno prošle godine jer sam htjela reći, nije li to bilo kao da je prijetnja zatvaranja jer je originalni tvorac bio poput, nisu imali vremena za to ili nešto?
+
+666
+01:03:12,880 --> 01:03:18,480
+[SPEAKER_01] Da, originalni tvorac je bio potpuno iscrplcrpljen i više nisam imao vremena za to.
+
+667
+01:03:19,199 --> 01:03:25,440
+[SPEAKER_01] I kao i u nekoliko prijetnji, postao je malo otrovan i slično.
+
+668
+01:03:25,599 --> 01:03:26,880
+[SPEAKER_01] Dakle, umjerenost je također bila problem.
+
+669
+01:03:27,599 --> 01:03:38,239
+[SPEAKER_01] A ljudi iz Be My Eyes-a su ga preuzeli i sada financiraju da se pravilno pokrene.
+
+670
+01:03:38,320 --> 01:03:47,840
+[SPEAKER_01] Nisam siguran kako točno model sada funkcionira, ali stvar je sada u sigurnoj vodi ili kako god to zovete.
+
+671
+01:03:48,480 --> 01:03:54,480
+[SPEAKER_01] I tako zajednica nastavlja postojati i ta stvar je zaista najvrjednija stvar.
+
+672
+01:03:54,480 --> 01:03:57,360
+[SPEAKER_01] vrijedna stvar za pronaći ljude koji su slijepi da je isprobaju.
+
+673
+01:03:57,519 --> 01:04:06,320
+[SPEAKER_01] Mislim da sam za Subworlds objavio na forumima, pa evo, ovo je moja igra.
+
+674
+01:04:06,559 --> 01:04:09,199
+[SPEAKER_01] Želim je učiniti dostupnom slijepim ljudima.
+
+675
+01:04:09,280 --> 01:04:10,719
+[SPEAKER_01] Evo poveznice za testni let.
+
+676
+01:04:11,360 --> 01:04:15,280
+[SPEAKER_01] Ako biste se mogli pridružiti i dati mi povratne informacije, to bi bilo jako dobrodošlo.
+
+677
+01:04:16,239 --> 01:04:22,639
+[SPEAKER_01] 50 ljudi se obratilo i samo su se pridružili i dali mi super vrijedne povratne informacije o tome kako je poboljšati.
+
+678
+01:04:22,880 --> 01:04:31,760
+[SPEAKER_01] I u malim mjestima postoje određene geste koje ljudi vjerojatno ne znaju ako ne koriste glasovni prevod.
+
+679
+01:04:32,159 --> 01:04:33,360
+[SPEAKER_01] I naučio sam o tim gestima.
+
+680
+01:04:33,360 --> 01:04:43,599
+[SPEAKER_01] O tim gestama ljudi koji su rekli da bi bilo dobro da se jedan element ponovno odabere ako upotrijebite gestu bijega ili slično.
+
+681
+01:04:43,679 --> 01:04:44,079
+[SPEAKER_01] Da, da.
+
+682
+01:04:44,960 --> 01:04:50,320
+[SPEAKER_01] Ta povratna informacija bila je iznimno vrijedna jer je učinila da bude iznimno dostupna slijepim ljudima.
+
+683
+01:04:51,519 --> 01:05:02,639
+[SPEAKER_01] A skupina ljudi koje sam upoznao na forumima kroz razvoj Supportsa nastavila je testirati moje aplikacije u budućnosti.
+
+684
+01:05:02,960 --> 01:05:06,400
+[SPEAKER_01] I da, to su zapravo oni na testnom letu.
+
+685
+01:05:06,719 --> 01:05:12,639
+[SPEAKER_01] Imam novu igru ili novu aplikaciju i pitam ih jesu li voljni ponovno je isprobati i zatim im šaljem izgradnju.
+
+686
+01:05:13,679 --> 01:05:14,320
+[SPEAKER_00] To je sjajno.
+
+687
+01:05:14,480 --> 01:05:16,000
+[SPEAKER_00] To je, da, to je stvarno, stvarno cool.
+
+688
+01:05:16,239 --> 01:05:16,239
+[UNKNOWN] Da.
+
+689
+01:05:16,800 --> 01:05:26,000
+[SPEAKER_01] I mogu preporučiti bilo kojem drugom programeru koji želi poboljšati svoju podršku za pristupačnost da samo napiše na forume.
+
+690
+01:05:26,320 --> 01:05:29,760
+[SPEAKER_01] I ima toliko vrlo lijepih ljudi koji su voljni pomoći.
+
+691
+01:05:30,320 --> 01:05:30,320
+[UNKNOWN] Da.
+
+692
+01:05:30,880 --> 01:05:43,360
+[SPEAKER_00] I mislim da je to istina kad god radite testne letove ili bilo što drugo, ali to je posebno istina kad se obratite određenoj zajednici, poput slijepe zajednice.
+
+693
+01:05:43,599 --> 01:05:46,320
+[SPEAKER_00] Uvijek mora biti, znate, kao da je ton važan.
+
+694
+01:05:46,719 --> 01:05:48,559
+[SPEAKER_00] Kao da ih tražite pomoć.
+
+695
+01:05:48,719 --> 01:05:48,960
+[SPEAKER_00] Ne znam.
+
+696
+01:05:49,679 --> 01:05:50,719
+[SPEAKER_00] Mislim da ponekad ljudi dođu.
+
+697
+01:05:52,079 --> 01:05:54,239
+[SPEAKER_00] i traže stvari ili nešto poput: Pa, ovo radim za tebe.
+
+698
+01:05:54,400 --> 01:05:56,239
+[SPEAKER_00] Zašto ne radiš sve ovo besplatno za mene?
+
+699
+01:05:57,360 --> 01:06:06,320
+[SPEAKER_00] I tako, biti uključen kad ti ljudi daju povratne informacije, uvijek reagirati i integrirati njihove povratne informacije i zahvaliti im.
+
+700
+01:06:07,119 --> 01:06:24,800
+[SPEAKER_00] Kažem da mislim da je to posebno u ranim danima kad sam prvi put gradio tamni šum, uvijek sam se pobrinuo da u svojim testnim bilješkama svaki put kad sam dodao nešto što je bilo iz nekog preporuka, stavio bih to u zagrade, kao da im se zahvalim.
+
+701
+01:06:24,880 --> 01:06:30,480
+[SPEAKER_00] I toliko ljudi, a neki od njih su bili istaknuti ljudi u zajednici, govorili bi: Eh, spomenuli su me u.
+
+702
+01:06:30,480 --> 01:06:39,039
+[SPEAKER_00] U bilješkama sam spomenula i bilo mi je kao da sam uložila tako malo truda, ali samo da bih zahvalila ljudima, takve stvari imaju veliku ulogu.
+
+703
+01:06:39,519 --> 01:06:52,480
+[SPEAKER_00] I kao u vašem slučaju, jer gradite mnoge od tih aplikacija, imate zajednicu ljudi koji to žele jer je zabavno i poticali ste ih baš kao što su oni poticali vas i to stvara neku vrstu male zajednice.
+
+704
+01:06:52,559 --> 01:06:53,440
+[SPEAKER_00] Dakle, to je stvarno cool.
+
+705
+01:06:53,760 --> 01:07:05,199
+[SPEAKER_01] To je također, ja radim isto svaki put kad mi netko istakne bucket, stavim ga u stvarne bilješke o izdanju zahvaljujući im samo ime, a ne da bih dala povratne informacije.
+
+706
+01:07:05,280 --> 01:07:05,599
+[SPEAKER_00] Da, točno.
+
+707
+01:07:06,000 --> 01:07:08,800
+[SPEAKER_00] Uvijek postoji neka vrsta implikacije za privatnost.
+
+708
+01:07:08,800 --> 01:07:18,000
+[SPEAKER_01] Ali znaju da ako kažem da sam popravio grešku zbog njih, znat će to i to je uvijek lijepo.
+
+709
+01:07:18,639 --> 01:07:26,880
+[SPEAKER_01] Također, u svojim aplikacijama uvijek imam zasluge na kojima zahvaljujem različitim testirima i ljudima koji su mi pomogli s aplikacijom.
+
+710
+01:07:27,039 --> 01:07:28,480
+[SPEAKER_00] Da, to je dobra ideja.
+
+711
+01:07:28,639 --> 01:07:30,239
+[SPEAKER_00] Dakle, izgradili ste AutoFauna.
+
+712
+01:07:30,639 --> 01:07:33,199
+[SPEAKER_00] Razgovarali smo o tome što je aplikacija i sve ostalo.
+
+713
+01:07:33,679 --> 01:07:42,239
+[SPEAKER_00] Ali izdavanje ove aplikacije osjećalo se kao da ste zapravo dobro podesili mnoge dijelove.
+
+714
+01:07:42,559 --> 01:07:48,719
+[SPEAKER_00] Čini se da je to vrlo dobra izdaja, a ne samo da sam je objavio i da je Apple predstavio, stoga je dobio mnogo puno pozornosti.
+
+715
+01:07:49,039 --> 01:07:50,800
+[SPEAKER_00] Bilo je kao da ste dosegli mnogo različitih stvari.
+
+716
+01:07:51,119 --> 01:07:55,360
+[SPEAKER_00] Možete li mi reći kakva je bila vaša strategija za taj lansiranje?
+
+717
+01:07:55,840 --> 01:08:01,440
+[SPEAKER_00] Koje su različite stvari koje ste učinili kako biste pokušali pomoći da postane jednako veliki uspjeh kao što je i ostalo?
+
+718
+01:08:01,679 --> 01:08:01,760
+[UNKNOWN] Da.
+
+719
+01:08:02,159 --> 01:08:08,800
+[SPEAKER_01] Dakle, prvo što sam učinio bilo je da sam vrlo rano izradio unaprijed naručeno za Autofaunu.
+
+720
+01:08:09,440 --> 01:08:15,440
+[SPEAKER_01] Dakle, započeo sam s unaprijed naručeno u početku prosinca.
+
+721
+01:08:15,519 --> 01:08:16,800
+[SPEAKER_01] I, oh, wow.
+
+722
+01:08:17,039 --> 01:08:17,119
+[SPEAKER_01] Da.
+
+723
+01:08:17,520 --> 01:08:19,920
+[SPEAKER_00] To je mjesec dana prije nego što sam započeo s unaprijednom narudžbom, zar ne?
+
+724
+01:08:20,159 --> 01:08:24,000
+[SPEAKER_01] Mislim da sam to učinio dva mjeseca prije samog izlaska.
+
+725
+01:08:25,039 --> 01:08:27,439
+[SPEAKER_01] I onda sam se obratio.
+
+726
+01:08:27,439 --> 01:08:31,680
+[SPEAKER_01] Eh, kontaktirao sam Apple putem tih obrazaca za nominaciju za značajke kako bih se predstavio.
+
+727
+01:08:32,640 --> 01:08:41,199
+[SPEAKER_01] I nisam siguran postoji li odjeljak u odjeljku za aplikacije, ali u odjeljku za igre postoji dodatni odjeljak o igrama koje će uskoro biti dostupne.
+
+728
+01:08:42,079 --> 01:08:43,439
+[SPEAKER_01] I ja sam se predstavio tamo.
+
+729
+01:08:43,760 --> 01:08:45,920
+[SPEAKER_00] O, nisam znao da postoji.
+
+730
+01:08:46,399 --> 01:08:46,880
+[SPEAKER_00] Dakle, možete pitati.
+
+731
+01:08:47,439 --> 01:08:51,840
+[SPEAKER_00] Dakle, govorimo o nominaciji, koja je sada poput gumba u App Store Connect.
+
+732
+01:08:51,920 --> 01:08:52,880
+[SPEAKER_00] Mnogo je lakše doći do nje.
+
+733
+01:08:52,960 --> 01:08:53,039
+[SPEAKER_00] Da.
+
+734
+01:08:53,279 --> 01:09:00,880
+[SPEAKER_00] Kaže da nominirajte svoju aplikaciju i možete ispuniti kratki opis da objasnite zašto bi Apple mogao biti zainteresiran za predstavljanje vaše aplikacije, zar ne?
+
+735
+01:09:01,039 --> 01:09:04,960
+[SPEAKER_00] Dakle, možete to učiniti za aplikaciju u unaprijed naručeni format.
+
+736
+01:09:05,439 --> 01:09:05,840
+[SPEAKER_00] Baš tako.
+
+737
+01:09:05,840 --> 01:09:08,880
+[SPEAKER_00] Da ih nekako nominiramo za promicanje prednarudžbe.
+
+738
+01:09:08,960 --> 01:09:09,039
+[SPEAKER_00] Da.
+
+739
+01:09:10,000 --> 01:09:10,960
+[SPEAKER_00] O, fascinantno.
+
+740
+01:09:11,039 --> 01:09:11,920
+[SPEAKER_00] U redu, nisam znao to.
+
+741
+01:09:12,079 --> 01:09:23,039
+[SPEAKER_01] A ako odete na karticu igre, definitivno postoji neka aplikacija koja je trenutačno promovirana u odjeljku za igre koje će uskoro biti dostupne, ali i na velikim transparentama.
+
+742
+01:09:23,199 --> 01:09:32,239
+[SPEAKER_01] Tako sam dobio i značajku s autofaunom, gdje su je promovirali da će uskoro biti dostupna.
+
+743
+01:09:32,479 --> 01:09:37,680
+[SPEAKER_01] I to mi je donijelo šest tisuća pet stotina prednarudžbi tijekom dva mjeseca.
+
+744
+01:09:38,000 --> 01:09:39,119
+[SPEAKER_01] Do trenutka kada je lansirana?
+
+745
+01:09:39,279 --> 01:09:40,319
+[SPEAKER_01] Do trenutka kada je lansirana.
+
+746
+01:09:40,399 --> 01:09:42,239
+[SPEAKER_00] I to je bilo puno.
+
+747
+01:09:42,399 --> 01:09:42,800
+[SPEAKER_00] To je puno.
+
+748
+01:09:43,119 --> 01:09:44,800
+[SPEAKER_01] I to je dobra stvar.
+
+749
+01:09:44,880 --> 01:09:53,840
+[SPEAKER_01] Dobra je stvar da će se aplikacija preuzimati na njihov uređaj točno istog dana.
+
+750
+01:09:59,279 --> 01:10:07,920
+[SPEAKER_01] Dakle, algoritam je sličan ili isti kao da su kliknuli gumb za preuzimanje točno na taj datum.
+
+751
+01:10:08,079 --> 01:10:13,199
+[SPEAKER_01] A ja sam, imajući preuzimanje, mogao ga nekoliko puta promovirati na Twitteru.
+
+752
+01:10:13,520 --> 01:10:16,239
+[SPEAKER_01] Apple ga je preuzeo putem predstavljanja i slično.
+
+753
+01:10:16,399 --> 01:10:24,239
+[SPEAKER_01] Dakle, imao sam veliki broj ljudi koji su zainteresirani za aplikaciju, ali su je preuzeli i točno na istu datum.
+
+754
+01:10:26,720 --> 01:10:36,159
+[SPEAKER_01] Algoritam i grafikoni, pozicija grafikona bila je prilično dobra za autofauna već prvog dana, što je također generiralo više preuzimanja.
+
+755
+01:10:36,239 --> 01:10:37,199
+[SPEAKER_01] Dakle, to je bilo dobro.
+
+756
+01:10:37,520 --> 01:10:42,319
+[SPEAKER_00] Sve to pomaže vašem ASO-u i svim tim poslovnim stvarima.
+
+757
+01:10:44,239 --> 01:10:47,039
+[SPEAKER_01] I to je definitivno puno pomoglo.
+
+758
+01:10:47,279 --> 01:11:00,720
+[SPEAKER_01] Imala sam i puno ljudi koji su testirali autofauna putem testnog leta prije samog izlaska i bili su jako ljubazni i objavili su o autofauni nakon izlaska.
+
+759
+01:11:00,960 --> 01:11:02,560
+[SPEAKER_01] Dakle, mislim da sam dobila.
+
+760
+01:11:02,560 --> 01:12:23,600
+[SPEAKER_01] Dobio sam toliko pohvala iz zajednice na datumu lansiranja, što je bilo jako zadovoljavajuće i nevjerojatno za mene, pogotovo jer sam sada prijatelj s nekoliko ljudi poput Jordija ili Hidde, ali prije nekoliko godina samo sam ih pratio na Twitteru i bio sam impresioniran njihovim radom, a sada zapravo objavljuju o mojoj aplikaciji ili igri koju sam objavio, pa su takve stvari nevjerojatno bi bili ljutiti i ponovno promijenili ocjenu.
+
+761
+01:12:23,760 --> 01:12:30,960
+[SPEAKER_01] Ali to je vrlo dobro funkcioniralo jer su mnogi ljudi ocjenjivali aplikaciju vrlo rano.
+
+762
+01:12:31,359 --> 01:12:36,319
+[SPEAKER_01] Mislim da sam sada na oko dvije tisuće dvjesto ocjena, četrdeset.
+
+763
+01:12:36,399 --> 01:12:36,479
+[SPEAKER_01] Da.
+
+764
+01:12:37,680 --> 01:12:45,119
+[SPEAKER_01] Nakon mjesec dana izlaska, što je više od svih drugih aplikacija i igara zajedno, što je ludilo.
+
+765
+01:12:45,279 --> 01:12:45,600
+[SPEAKER_01] Ali to je.
+
+766
+01:12:46,560 --> 01:12:56,399
+[SPEAKER_00] Je li to izravno povezano s brojem preuzimanja ili je to nešto jedinstveno za zahtjeve za ocjenama, poput vremena koje imate, mislite?
+
+767
+01:12:57,439 --> 01:12:59,279
+[SPEAKER_01] Mislim da je definitivno.
+
+768
+01:12:59,359 --> 01:13:02,640
+[SPEAKER_01] Definitivno je to zbog vremena i stvarno?
+
+769
+01:13:02,960 --> 01:13:03,760
+[SPEAKER_00] O, to je zanimljivo.
+
+770
+01:13:04,000 --> 01:13:04,640
+[SPEAKER_00] Nekako je to igra.
+
+771
+01:13:04,800 --> 01:13:12,479
+[SPEAKER_00] Jer mislim da je bolje imati nekoliko zagonetki nego da ih otvoriš toliko puta.
+
+772
+01:13:13,600 --> 01:13:23,840
+[SPEAKER_00] Jer vjerojatno ima dosta ljudi koji ih preuzimaju, igraju besplatne zagonetke i nikad ih više ne dodiruju.
+
+773
+01:13:25,600 --> 01:13:37,600
+[SPEAKER_00] I tako, kad dobiješ nekoliko besplatnih stvari, veća je vjerojatnost da ćeš dati pozitivnu ocjenu, ali općenito govoreći, savjet je da je još uvijek bolje tražiti ocjenu nego da je ne otvoriš.
+
+774
+01:13:37,760 --> 01:13:38,880
+[SPEAKER_00] Dakle, ne želiš previše pružati.
+
+775
+01:13:40,960 --> 01:13:42,319
+[SPEAKER_00] samo u pozitivnom trenutku.
+
+776
+01:13:42,640 --> 01:13:43,760
+[SPEAKER_00] Bolje je pokazati to rano.
+
+777
+01:13:43,840 --> 01:13:50,800
+[SPEAKER_00] Ali u vašem slučaju, ako ste prošli kroz nekoliko zagonetki, vjerojatno ćete imati veću vjerojatnost da ćete ostaviti ocjenu.
+
+778
+01:13:50,960 --> 01:13:51,920
+[SPEAKER_00] Da, to je stvarno zanimljivo.
+
+779
+01:13:52,079 --> 01:13:55,760
+[SPEAKER_00] Koje su bile druge aplikacije, na primjer, u vašim drugim aplikacijama, kako ste obično radili na pozivu za ocjenjivanje?
+
+780
+01:13:55,840 --> 01:14:17,039
+[SPEAKER_01] Također, u podsvjesnim aplikacijama, na primjer, u StudySnacksu, temelji se na tome da su je koristili za rješavanje niza lekcija u jednoj sesiji ili nakon što su u aplikaciju ušli za vrijeme ili nešto slično.
+
+781
+01:14:17,680 --> 01:14:21,199
+[SPEAKER_01] I onda ispravno završiti nastavni seminar.
+
+782
+01:14:21,359 --> 01:14:25,199
+[SPEAKER_01] Nisam siguran kako je bilo s kolekcijom drevnih društvenih igara za kasnije sobe.
+
+783
+01:14:25,359 --> 01:14:29,600
+[SPEAKER_01] Također je nakon rješavanja hrpe zagonetki, ali vjerojatno prekasno.
+
+784
+01:14:29,840 --> 01:14:31,279
+[SPEAKER_01] Moram to malo prilagoditi.
+
+785
+01:14:32,479 --> 01:14:41,680
+[SPEAKER_00] Dakle, s Artafaunom mislite da je veliki razlikovni čimbenik u osnovi to što ćete vjerojatnije pitati, bilo da je ranije ili bilo što drugo.
+
+786
+01:14:42,159 --> 01:14:45,039
+[SPEAKER_00] To je faza u kojoj će biti više ljudi pozvane.
+
+787
+01:14:45,520 --> 01:14:45,600
+[SPEAKER_00] Da.
+
+788
+01:14:46,560 --> 01:14:47,680
+[SPEAKER_01] Zanimljivo.
+
+789
+01:14:48,319 --> 01:14:56,800
+[SPEAKER_01] I to je u točki u kojoj su prvi put dobili teži stupanj ili drugi put dobili malo drugačiji stupanj.
+
+790
+01:15:35,359 --> 01:15:38,399
+[SPEAKER_01] Poboljšati algoritam da preuzme aplikaciju.
+
+791
+01:15:39,199 --> 01:15:54,560
+[SPEAKER_01] A onda, svaki put kad bih dosegao cilj s ocjenama, mogao bih objaviti post na društvenim mrežama, a zatim ga objaviti na Twitteru i Blue Skyu i Instagram kanalu Fauna, a zatim dobiti više ljudi koji će ga ponovno objaviti.
+
+792
+01:15:54,640 --> 01:15:56,960
+[SPEAKER_01] I onda, opet, ljudi će ga preuzeti.
+
+793
+01:15:57,199 --> 01:16:14,640
+[SPEAKER_00] Mislim da je to jedna od stvari za koju sam se osjećao da ste ovaj put učinili vrlo dobro, a to je da se pridružite meni u slavljenju uspjeha ove stvari, što znam da je za mnoge ljude stvarno neugodno jer većina ljudi misli da ljudi misle na njih.
+
+794
+01:16:14,640 --> 01:16:17,760
+[SPEAKER_00] Ljudi o njima razmišljaju više nego što zapravo razmišljaju i misle: O tome sam već govorio.
+
+795
+01:16:18,079 --> 01:16:19,119
+[SPEAKER_00] Ljudi će se naljutiti.
+
+796
+01:16:19,279 --> 01:16:26,640
+[SPEAKER_00] Ali stvarnost je, mislim, stvarnost je da postoji mali broj ljudi koji će se naljutiti i to je dio koji je težak.
+
+797
+01:16:27,439 --> 01:16:31,760
+[SPEAKER_00] Ali većina ljudi, mislim, barem ja, uzbuđujem se.
+
+798
+01:16:32,079 --> 01:16:34,159
+[SPEAKER_00] Volim pratiti uspjeh drugih ljudi.
+
+799
+01:16:35,199 --> 01:16:37,119
+[SPEAKER_00] To mi se čini stvarno inspirativnim.
+
+800
+01:16:38,239 --> 01:16:39,279
+[SPEAKER_00] I to je samo zabavno.
+
+801
+01:16:39,359 --> 01:16:40,960
+[SPEAKER_00] I svaka od njih podsjeća me na to.
+
+802
+01:16:41,119 --> 01:16:49,840
+[SPEAKER_00] Kao da sam sigurno propustio jedan od vaših originalnih najava o prednarudžbi ili bilo čemu drugom.
+
+803
+01:16:50,000 --> 01:16:53,359
+[SPEAKER_00] Ali kad god ste rekli nešto poput: O moj Bože, priješao sam sto.
+
+804
+01:16:53,359 --> 01:16:55,439
+[SPEAKER_00] Stotinu unaprijed naručivanja ili bilo što drugo.
+
+805
+01:16:55,600 --> 01:16:58,239
+[SPEAKER_00] Vjerojatno sam to vidio i pomislio: O, Bože, izlazi nova aplikacija.
+
+806
+01:16:58,640 --> 01:16:59,199
+[SPEAKER_00] To je prilično cool.
+
+807
+01:16:59,359 --> 01:16:59,760
+[SPEAKER_00] Točno.
+
+808
+01:17:00,000 --> 01:17:07,039
+[SPEAKER_00] Pogotovo u današnjem hiperfraktuiranom društvenom mediju, ne možete pretpostaviti da će svi vidjeti sve.
+
+809
+01:17:07,279 --> 01:17:10,640
+[SPEAKER_00] Gotovo nitko nije Twitter-ov završitelj kao u starim danima.
+
+810
+01:17:11,279 --> 01:17:14,720
+[SPEAKER_00] Dakle, stvarno ne znam, možda će se puno ljudi složiti.
+
+811
+01:17:15,279 --> 01:17:16,239
+[SPEAKER_00] Napišite ako to učinite.
+
+812
+01:17:16,640 --> 01:17:29,199
+[SPEAKER_00] Ali stvarno mislim da postoji ogromna korist za zajednicu, ne samo za vas, nego i za sebe ako javno slavite svoje pobjede tamo gdje su stvari.
+
+813
+01:17:30,239 --> 01:17:32,000
+[SPEAKER_00] I mislim da ako želite biti iskreni.
+
+814
+01:17:33,520 --> 01:17:36,960
+[SPEAKER_00] Druga strana toga je javno govoriti o tome kad stvari ne idu dobro.
+
+815
+01:17:38,239 --> 01:17:43,039
+[SPEAKER_00] Dodavanje kvalifikacija, ne biti neiskren o tome zašto stvari idu dobro.
+
+816
+01:17:43,600 --> 01:17:46,079
+[SPEAKER_00] Jer to može biti lako učiniti.
+
+817
+01:17:47,119 --> 01:17:59,039
+[SPEAKER_00] Ali da, volim, spomenuo sam to u emisiji prije, ali kad sam se prvi put uključio u ovu šalu, bilo je to odmah nakon što je Jordan Morgan konačno objavio svoju aplikaciju SpinStacks na kojoj je radio zauvijek.
+
+818
+01:17:59,680 --> 01:18:07,920
+[SPEAKER_00] I bio sam jako nadahnut koliko je izvanredno javan sa svime, brojevima, svime dok se događalo.
+
+819
+01:18:08,319 --> 01:18:12,479
+[SPEAKER_00] I nekako sam slijedio tu mentalitet i osjećam da mi je to jako dobro služilo..
+
+820
+01:18:13,359 --> 01:18:22,720
+[SPEAKER_00] A posebno s Artafaunom, osjećala sam da vas zaista prati na tom putu putem društvenih mreža, ne samo zato što se poznajemo.
+
+821
+01:18:24,159 --> 01:18:31,359
+[SPEAKER_00] I mislim da to pomaže u izgradnji takve vrste zamaha i povećava šanse da će netko to možda uhvatiti na strani tiska.
+
+822
+01:18:31,439 --> 01:18:32,640
+[SPEAKER_00] Da, definitivno.
+
+823
+01:18:33,840 --> 01:18:46,479
+[SPEAKER_01] I mislim da je to bilo i kao da je unaprijed naručivanje bilo tako rano, da su ljudi bili uzbuđeni zbog stvarnog izlaska, definitivno je doprinijelo.
+
+824
+01:18:46,720 --> 01:18:50,800
+[SPEAKER_01] I da, kao što ste rekli, ako samo jednom objavim o aplikaciji.
+
+825
+01:20:08,239 --> 01:20:14,319
+[SPEAKER_01] Oni su na Redditu i drugim društvenim mrežama i sve je dobro prošlo.
+
+826
+01:20:15,039 --> 01:20:29,600
+[SPEAKER_01] Primio sam neke ljude koji su zatim saznali za određene dijelove aplikacije o kojima nisu znali, ali mislim da je to definitivno bilo vrijedno za mene da to učinim i da se više upoznam s uređivanjem i da budem bolji u tome.
+
+827
+01:20:30,319 --> 01:20:31,520
+[SPEAKER_00] Dakle, vi ste ih izgradili?
+
+828
+01:20:31,600 --> 01:20:32,720
+[SPEAKER_00] Da, izgradio sam ih.
+
+829
+01:20:33,439 --> 01:20:35,119
+[SPEAKER_01] Što ste za to koristili?
+
+830
+01:20:35,279 --> 01:20:41,439
+[SPEAKER_01] Dakle, za početni pregled aplikacije imam Final Cut koji leži naokolo.
+
+831
+01:20:42,079 --> 01:20:42,640
+[SPEAKER_01] U redu.
+
+832
+01:20:43,359 --> 01:20:50,079
+[SPEAKER_01] I koristim ga, ali za posljednja dva videa koristio sam Re Ribeo, mislim da je Ribeo izgovoreno.
+
+833
+01:20:50,720 --> 01:20:51,520
+[SPEAKER_01] Provjerit ću.
+
+834
+01:20:51,840 --> 01:20:55,199
+[SPEAKER_00] Uključit ću poveznicu i u bilješke emisije.
+
+835
+01:20:55,359 --> 01:21:11,279
+[SPEAKER_00] Većinom sam bio znatiželjan jer je smiješno, nije kao da je bio previše poliran ili nešto slično, ali imao je, kao što sam rekao, taj stil kuće ovih vertikalnih mobilnih igara, poput promo oglasa.
+
+836
+01:21:11,760 --> 01:21:16,239
+[SPEAKER_00] I tako sam bio znatiželjan što ste za to upotrijebili, čak i samo glas, to mi se isticalo.
+
+837
+01:21:16,319 --> 01:21:24,239
+[SPEAKER_01] Da, da, postoji u videozapisu koji sam snimio s uređivačem TikToka, a to je osnovni glas TikToka.
+
+838
+01:21:24,960 --> 01:21:25,920
+[SPEAKER_01] U redu, da.
+
+839
+01:21:26,640 --> 01:21:39,039
+[SPEAKER_01] Ali Ribio ima i puno različitih glasova, a jedan se zove David i on je starac iz Ujedinjenog Kraljevstva koji zvuči kao David Attenborough.
+
+840
+01:21:39,359 --> 01:21:43,119
+[SPEAKER_01] Da, to je savršeno za Arnofanu.
+
+841
+01:21:43,279 --> 01:21:44,640
+[SPEAKER_00] Da, za Arnofanu.
+
+842
+01:21:45,279 --> 01:21:56,399
+[SPEAKER_01] Koristio sam to za posljednji videozapis i iako nije dobio puno pažnje, bio je jednostavno super zabavan za snimanje i definitivno bih vam preporučio da to radite.
+
+843
+01:21:56,640 --> 01:21:57,279
+[SPEAKER_01] To je sjajno.
+
+844
+01:21:58,079 --> 01:22:13,279
+[SPEAKER_00] U redu, približavamo se kraju, pa ću završiti postavljajući pitanje koje uvijek postavljam na kraju emisijeiji, što je, što je osoba ili ljudi koji su vas inspirirali i koje biste preporučili da drugi pogledaju?
+
+845
+01:22:14,399 --> 01:22:33,359
+[SPEAKER_01] Dakle, pripremio sam se za ovo pitanje i, mislim, imam puno ljudi koji su se ovdje poredali i o kojima neću više govoriti jer postoje epizode s njima iz emisije Launch Podcast, kao što su Leo, Jordi ili Hide.
+
+846
+01:22:35,119 --> 01:22:41,680
+[SPEAKER_01] Posebno sam neko vrijeme pratio Hideovo djelo i uvijek sam impresioniran onim što radi.
+
+847
+01:22:42,319 --> 01:22:44,239
+[SPEAKER_01] Dakle, definitivno je vrijedno pogledati.
+
+848
+01:22:46,640 --> 01:23:11,439
+[SPEAKER_01] Također, stvarno mi se sviđa Andy Allenov rad iz aplikacija Not Boring Apps jer mislim da definitivno radi stvari drugačije i samo prelazi granice onoga kako aplikacije mogu izgledati i kako se osjećaju, posebno kao što je to u vezi s dizajnom zvuka i haptičkim dizajnom koji sam napravio.
+
+849
+01:23:11,520 --> 01:23:13,039
+[SPEAKER_01] Da, čak nismo ni došli do toga.
+
+850
+01:23:13,359 --> 01:23:13,439
+[SPEAKER_00] Da.
+
+851
+01:23:13,760 --> 01:23:20,159
+[SPEAKER_00] Nećemo o tome govoriti, ali da, ako još niste preuzeli Artifauna, što radite?
+
+852
+01:23:20,319 --> 01:23:23,279
+[SPEAKER_00] Ali, drugo, učinite to samo da biste doživjeli.
+
+853
+01:23:23,279 --> 01:23:30,319
+[SPEAKER_00] To je poput ugodnih vibracija, zvučnog dizajna dok se stvari kreću, stalnog ambientnog zvuka.
+
+854
+01:23:30,479 --> 01:23:32,399
+[SPEAKER_00] To je samo Chefova pretpostavka.
+
+855
+01:23:32,640 --> 01:23:33,600
+[SPEAKER_00] To je vrlo, vrlo, vrlo dobro.
+
+856
+01:23:34,000 --> 01:23:34,079
+[SPEAKER_00] Hvala.
+
+857
+01:23:34,720 --> 01:23:46,000
+[SPEAKER_01] Pomoć mi je dobio Josh Mobley, koji je također radio na zvuku za Fantastical, na primjer, ili Flighty i mnoge poznate aplikacije.
+
+858
+01:23:46,079 --> 01:23:52,319
+[SPEAKER_01] Dakle, on je stvarno, stvarno dobar u onome što radi i napravio je zvučni dizajn.
+
+859
+01:23:52,880 --> 01:23:57,760
+[SPEAKER_01] Ali definitivno sam bio nadahnut radom Andija na aplikacijama koje nisu dosadne.
+
+860
+01:23:58,560 --> 01:23:58,720
+[SPEAKER_01] Da.
+
+861
+01:23:59,279 --> 01:24:04,479
+[SPEAKER_01] I tako definitivno slijedite ono što radi jer je to vrlo zanimljivo.
+
+862
+01:24:05,039 --> 01:24:06,720
+[SPEAKER_01] Trebam ga pozvati u emisiju.
+
+863
+01:24:07,920 --> 01:24:08,960
+[SPEAKER_00] Andy, ako slušaš.
+
+864
+01:24:11,520 --> 01:24:27,439
+[SPEAKER_01] A osoba o kojoj definitivno želim govoriti je Frederick iz Womstecka, kojeg biste trebali pozvati u emisiju prije ili kasnije jer sam Fredericka upoznao 2015.
+
+865
+01:24:28,000 --> 01:24:29,199
+[SPEAKER_01] na prvom dub-dub-u.
+
+866
+01:24:29,279 --> 01:24:35,199
+[SPEAKER_01] Bio je učenjak tamo i mislim da je osoba koja je imala najviše stipendija ikad.
+
+867
+01:24:35,359 --> 01:24:44,800
+[SPEAKER_01] Dakle, mislim da je ondje i postali smo prijatelji tijekom godina.
+
+868
+01:24:45,119 --> 01:24:48,880
+[SPEAKER_01] Također, sada uvijek putujemo zajedno u DC.
+
+869
+01:24:51,039 --> 01:25:05,439
+[SPEAKER_01] I da, jako sam impresioniran onim što je učinio s OneSeqom, posebno, i posebno njegovim pristupom uvođenju znanstvenika da proučava korisnike ili proučava interakciju OneSeq-a.
+
+870
+01:25:05,760 --> 01:25:20,399
+[SPEAKER_01] I to je vrlo drugačiji pristup načinu na koji većina ljudi gradi aplikacije i kako većina ljudi, posebno, analizira svoje podatke, radi stvarnu znanost s njima i sve što je on učinio.
+
+871
+01:25:20,399 --> 01:25:29,840
+[SPEAKER_01] Sve što radi oko OneSec-a i s drugim aplikacijama, ali OneSec me posebno fascinira i super je.
+
+872
+01:25:30,239 --> 01:25:33,279
+[SPEAKER_01] I svakako biste ga trebali uskoro donijeti na emisiju.
+
+873
+01:25:34,399 --> 01:25:37,359
+[SPEAKER_00] Da, ako slušate, Frederic, nazovite me.
+
+874
+01:25:37,840 --> 01:25:46,319
+[SPEAKER_00] Da, oboje su, kako uvijek kažem, na mom popisu neko vrijeme, ali da, definitivno moram to učiniti.
+
+875
+01:25:48,079 --> 01:25:48,800
+[SPEAKER_00] Da, trebali biste.
+
+876
+01:25:50,479 --> 01:25:50,800
+[SPEAKER_00] Fantastično.
+
+877
+01:25:51,039 --> 01:25:54,079
+[SPEAKER_00] Pa, to su odlični odabiri.
+
+878
+01:25:54,640 --> 01:25:55,359
+[SPEAKER_00] Hvala vam.
+
+879
+01:25:55,439 --> 01:25:58,479
+[SPEAKER_00] I da, svi bi trebali pratiti sve te ljude.
+
+880
+01:26:37,359 --> 01:26:45,520
+[SPEAKER_00] Koliko sam vremena proveo analizirajući Helm od Hitde i Paula, a i ja ih nisam imao uključenih.
+
+881
+01:26:45,600 --> 01:26:49,119
+[SPEAKER_00] Možda bih trebao imati obojicu uključenih da pričaju o Helm-u jer to zaslužuje svoj vlastiti epizodu.
+
+882
+01:26:49,279 --> 01:26:53,199
+[SPEAKER_00] Ali, u svakom slučaju, ta je Mac aplikacija jednostavno sjajna.
+
+883
+01:26:53,359 --> 01:26:54,800
+[SPEAKER_00] I nalazi se u trgovini aplikacijama za Mac.
+
+884
+01:26:54,880 --> 01:27:02,319
+[SPEAKER_00] Dakle, znam da je sve to što možete učiniti jer je Mac uvijek čudan jer postoji, recimo, koliko ljudi hakira stvari i sve ostalo.
+
+885
+01:27:02,399 --> 01:27:10,880
+[SPEAKER_00] I samo je mogućnost da se samo igram i vidim kako ljudi rješavaju različite probleme ili što su učinili super inspirativna.
+
+886
+01:27:10,960 --> 01:27:17,279
+[SPEAKER_00] I taj popis, kao što su Leo, Jordi, Hitta, Andy i Frederick, to je kao sve njihove aplikacije.
+
+887
+01:27:17,760 --> 01:27:23,600
+[SPEAKER_00] su vrlo solidne, dobro promišljene, sve su to detalje koje svi izrađuju.
+
+888
+01:27:24,079 --> 01:27:25,680
+[SPEAKER_00] Dakle, to je dobar popis.
+
+889
+01:27:26,159 --> 01:27:26,239
+[SPEAKER_00] Da.
+
+890
+01:27:28,079 --> 01:27:28,399
+[SPEAKER_01] Fina je.
+
+891
+01:27:28,560 --> 01:27:31,760
+[SPEAKER_00] Pa, mislim da ću nastaviti i sletjeti avionom ovdje.
+
+892
+01:27:31,920 --> 01:27:34,960
+[SPEAKER_00] Gdje ljudi mogu pronaći vas i vaše radove?
+
+893
+01:27:35,760 --> 01:27:41,760
+[SPEAKER_01] Ja sam na svim društvenim mrežama koje su sada dostupne.
+
+894
+01:27:42,159 --> 01:27:45,760
+[SPEAKER_01] Dakle, na Blue Skyu uglavnom.
+
+895
+01:27:46,079 --> 01:27:51,039
+[SPEAKER_01] Dakle, tamo objavljujem većinu stvari, ali također i na Twitteru objavljujem stvari iz Fonda.
+
+896
+01:27:51,520 --> 01:27:57,199
+[SPEAKER_01] Imam i kanal Mastodon koji bih trebao više koristiti češće.
+
+897
+01:27:59,359 --> 01:28:02,960
+[SPEAKER_01] I imam web-stranicu koja se zove strasser.app.
+
+898
+01:28:03,279 --> 01:28:06,800
+[SPEAKER_01] Možete je povezati, na kojoj se nalaze sve moje aplikacije.
+
+899
+01:28:07,600 --> 01:28:08,800
+[SPEAKER_01] I da.
+
+900
+01:28:10,079 --> 01:28:11,520
+[SPEAKER_01] LiveJournal, Handle.
+
+901
+01:28:17,039 --> 01:28:18,479
+[SPEAKER_01] LiveJournal, nije li to nešto?
+
+902
+01:28:20,159 --> 01:28:21,039
+[SPEAKER_00] Što je LiveJournal?
+
+903
+01:28:22,159 --> 01:28:23,760
+[SPEAKER_00] To je kao prije MySpacea.
+
+904
+01:28:26,640 --> 01:28:28,960
+[SPEAKER_00] Ne, znatiželjan sam hoće li još uvijek živjeti.
+
+905
+01:28:29,119 --> 01:28:34,640
+[SPEAKER_01] I imali smo nešto slično pod nazivom Schuler Fazette.
+
+906
+01:28:34,640 --> 01:28:43,840
+[SPEAKER_01] Ako sam to rekao u Njemačkoj, Austriji, mislim da su to bile moje prve stvari na društvenim mrežama, ali nikad nisam imao jednu.
+
+907
+01:28:44,640 --> 01:28:46,960
+[SPEAKER_00] Samo sam tražio najneobičniju koju sam mogao tražiti.
+
+908
+01:28:49,359 --> 01:28:49,760
+[UNKNOWN] Fantastično.
+
+909
+01:28:51,520 --> 01:28:56,800
+[SPEAKER_00] I mislim da ću to pokušati ponovno ovdje i samo ću to reproducirati uživo umjesto da radim nešto unaprijed snimljeno.
+
+910
+01:28:56,880 --> 01:28:58,880
+[SPEAKER_00] Dakle, ovo je kraj epizode.
+
+911
+01:28:59,279 --> 01:29:02,640
+[SPEAKER_00] Ako želite pronaći više Launched, možete otići na launchedfm.com.
+
+912
+01:29:04,399 --> 01:29:11,920
+[SPEAKER_00] Također sam na svim društvenim mrežama koje postoje, uključujući onu koja je vjerojatno objavljena sutra.
+
+913
+01:29:12,399 --> 01:29:14,079
+[SPEAKER_00] Dakle, obično je to Launchedfm.
+
+914
+01:29:14,079 --> 01:29:18,479
+[SPEAKER_00] Mislim da je lansirano na Mastodonu, ali svugdje drugdje je lansirano na FM-u.
+
+915
+01:29:18,560 --> 01:29:22,159
+[SPEAKER_00] Blue Sky je, mislim, launchedfm dot com dot Ali, da, možete me pronaći.
+
+916
+01:29:22,399 --> 01:29:24,800
+[SPEAKER_00] A onda me možete pronaći na Charlie M.
+
+917
+01:29:25,039 --> 01:29:29,359
+[SPEAKER_00] Chapman gotovo svugdje osim na Twitteru, koji je još uvijek podcrtavanje Chuck E.
+
+918
+01:29:29,439 --> 01:29:29,520
+[SPEAKER_00] C.
+
