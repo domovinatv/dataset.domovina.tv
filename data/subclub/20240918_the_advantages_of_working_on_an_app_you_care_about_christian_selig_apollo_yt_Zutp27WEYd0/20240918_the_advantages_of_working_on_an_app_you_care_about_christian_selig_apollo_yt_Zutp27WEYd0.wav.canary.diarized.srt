@@ -1,0 +1,3680 @@
+1
+00:00:00,000 --> 00:00:09,679
+[SPEAKER_00] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:09,919 --> 00:00:20,480
+[SPEAKER_00] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,559 --> 00:00:22,559
+[SPEAKER_00] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+[SPEAKER_00] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje kupcima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,679 --> 00:00:38,240
+[SPEAKER_00] Više informacija možete pronaći na revenuecat.com Uđimo u emisiju.
+
+6
+00:00:40,159 --> 00:00:45,200
+[SPEAKER_00] Pozdrav, ja sam vaš voditelj, David Barnard, a danas sam ovdje s Jacobom Heidingom, izvršnim direktorom tvrtke RevenueCat.
+
+7
+00:00:45,439 --> 00:00:53,280
+[SPEAKER_00] Naš današnji gost je Christian Selig, neovisni programer iza velike aplikacije Apollo za Reddit, koji trenutačno radi na PixelPalsu i Juno.
+
+8
+00:00:53,679 --> 00:01:07,280
+[SPEAKER_00] Na podcastu razgovaramo s Christianom o prednostima stvaranja nečega što vas osobno zanima, kako uskladiti povratne informacije korisnika s intuicijom o proizvodu i zašto su procesi, okvire i vanjski savjeti često vrijedni ignoriranja.
+
+9
+00:01:07,439 --> 00:01:09,920
+[SPEAKER_00] Hej, Christian, hvala ti što si danas bio na podcastu.
+
+10
+00:01:10,319 --> 00:01:11,359
+[SPEAKER_00] Stvarno sam uzbuđen što sam ovdje.
+
+11
+00:01:11,599 --> 00:01:13,519
+[SPEAKER_02] Da, dugo je to bilo na putu.
+
+12
+00:01:13,840 --> 00:01:14,560
+[SPEAKER_02] Da, mislim da je tako.
+
+13
+00:01:14,799 --> 00:01:18,239
+[SPEAKER_02] Mislim da smo svi razgovarali na neki način tijekom godina, pa je lijepo formalizirati to.
+
+14
+00:01:18,319 --> 00:01:25,680
+[SPEAKER_01] Iz bilješki sam saznao da sam ja bio taj koji je predložio ili sam razgovarao s vama o tome da Apollo dobije pretplatu i ne znam jesam li se sjetio te razgovora.
+
+15
+00:01:25,760 --> 00:01:28,319
+[SPEAKER_01] Moguće je da je bilo nekakvo DM na Twitteru ili nešto slično.
+
+16
+00:01:28,480 --> 00:01:30,959
+[SPEAKER_02] Mislim da je to bilo kao e-pošta, kada su e-pošte bile velika stvar.
+
+17
+00:01:31,120 --> 00:01:31,519
+[SPEAKER_02] Da, da.
+
+18
+00:01:31,840 --> 00:01:34,079
+[SPEAKER_02] Mislim da ste rekli da dolazi nešto s pretplatom.
+
+19
+00:01:34,159 --> 00:01:34,239
+[SPEAKER_02] Da.
+
+20
+00:01:34,319 --> 00:01:35,920
+[SPEAKER_02] Ne znam jesam li čuo za to.
+
+21
+00:01:36,319 --> 00:01:39,599
+[SPEAKER_02] I mislim da sam tada još uvijek bio malo poput kokošjeg sranja gdje su svi bili malo prženi zbog toga.
+
+22
+00:01:39,760 --> 00:01:42,319
+[SPEAKER_02] I bio sam poput, ne znam, ne znam o čemu govori ovaj tip, ali bio si ispred svog vremena.
+
+23
+00:01:42,560 --> 00:01:45,519
+[SPEAKER_02] Ne znam jesam li se sjetio, ne znam jesam li se sjetio.
+
+24
+00:01:45,680 --> 00:01:46,319
+[SPEAKER_02] To je prilično cool.
+
+25
+00:01:46,400 --> 00:01:48,000
+[SPEAKER_00] Pa, možemo se više pozabaviti tim pitanjem malo kasnije.
+
+26
+00:01:48,159 --> 00:01:48,959
+[SPEAKER_00] Samo sam htio započeti.
+
+27
+00:01:48,959 --> 00:01:51,439
+[SPEAKER_00] pričajući o tome kako si se upustio u razvoj indie tehnologije.
+
+28
+00:01:51,519 --> 00:01:58,799
+[SPEAKER_00] Zapravo sam prije ovog podcasta posjetio tvoju LinkedIn stranicu kako bih napišao tvoju biografiju i slično.
+
+29
+00:01:59,120 --> 00:02:01,920
+[SPEAKER_00] Ne, i to je savršena LinkedIn stranica.
+
+30
+00:02:02,000 --> 00:02:05,680
+[SPEAKER_00] Bilo je kao da si neko vrijeme bio u Appleu, a onda si je više nikad nije ažurirao.
+
+31
+00:02:06,239 --> 00:02:08,960
+[SPEAKER_00] Savršeni indie LinkedIn, ne brinem.
+
+32
+00:02:09,680 --> 00:02:11,680
+[SPEAKER_02] Ne znam jesam li se ikad prijavio od tada.
+
+33
+00:02:11,919 --> 00:02:16,240
+[SPEAKER_02] Da, povremeno dobivam DM-ove u kojima kažu: Poslao sam ti poruku na LinkedIn-u.
+
+34
+00:02:17,039 --> 00:02:23,360
+[SPEAKER_01] A ja kažem: Pa, naš zajednički kršćanin je isti Appleov zaposlenik koji nas je morao zaposliti.
+
+35
+00:02:23,520 --> 00:02:24,479
+[SPEAKER_02] Oh, bio je to Mike?
+
+36
+00:02:25,120 --> 00:02:26,240
+[SPEAKER_02] Ne, to je bio Joshua.
+
+37
+00:02:26,639 --> 00:02:28,080
+[SPEAKER_02] O, možda zvuči poznato.
+
+38
+00:02:28,159 --> 00:02:29,360
+[SPEAKER_02] U redu, u redu, nema veze.
+
+39
+00:02:29,439 --> 00:02:30,800
+[SPEAKER_01] Nije bilo tako daleko od toga da sam bio tamo.
+
+40
+00:02:30,879 --> 00:02:32,080
+[SPEAKER_01] Bio sam tamo nekoliko godina prije tebe, ali.
+
+41
+00:02:32,400 --> 00:02:35,039
+[SPEAKER_00] Dakle, bio si u Appleu i što se dogodilo nakon toga?
+
+42
+00:02:36,240 --> 00:02:38,080
+[SPEAKER_00] Jer put postaje mračan.
+
+43
+00:02:38,560 --> 00:02:40,080
+[SPEAKER_02] Da, volim biti tajanstven.
+
+44
+00:02:40,319 --> 00:02:47,439
+[SPEAKER_02] Bio sam tamo na ljetnom pripravništvu na fakultetu i gotovo sam nakon toga dobio taj vatru u trbuhu koju često imate kad radite negdje stvarno cool.
+
+45
+00:02:48,560 --> 00:02:50,479
+[SPEAKER_02] I bio sam poput, u redu, želim nešto izgraditi.
+
+46
+00:02:51,280 --> 00:02:52,719
+[SPEAKER_02] A Reddit je tada bio jako velik.
+
+47
+00:02:53,039 --> 00:02:57,199
+[SPEAKER_02] I dalje je, očito, ali bio je jako, jako velik, pogotovo gdje sam bio na fakultetu.
+
+48
+00:02:57,280 --> 00:03:00,639
+[SPEAKER_02] I bilo je Alien Blue, ali zapravo nije bilo bilo bilo bilo, kao da je bilo IOS-a.
+
+49
+00:03:00,639 --> 00:03:02,879
+[SPEAKER_02] Ovo je bila prva aplikacija za iOS koja mi se zaista svidjela.
+
+50
+00:03:03,039 --> 00:03:04,319
+[SPEAKER_02] Bila sam poput, znaš, nema veze.
+
+51
+00:03:04,560 --> 00:03:07,199
+[SPEAKER_02] Ovo bi mogao biti zabavan projekt s kojim bih se mogao malo upustiti.
+
+52
+00:03:07,280 --> 00:03:10,560
+[SPEAKER_02] Tako sam počeo s njom raditi i sve je dobro prošlo.
+
+53
+00:03:10,800 --> 00:03:12,639
+[SPEAKER_02] Na kraju sam je objavio na Appleovom subredditu, mislim.
+
+54
+00:03:13,280 --> 00:03:14,479
+[SPEAKER_02] I zaista je poletjela na velik način.
+
+55
+00:03:14,560 --> 00:03:16,080
+[SPEAKER_02] Ljudi su bili zainteresirani za beta testiranje.
+
+56
+00:03:16,159 --> 00:03:19,919
+[SPEAKER_02] Tako sam došao do te točke u kojoj sam pomislio, oh, ovo bi moglo imati neke noge.
+
+57
+00:03:20,240 --> 00:03:22,000
+[SPEAKER_02] Diplomirao sam za nekoliko mjeseci.
+
+58
+00:03:22,159 --> 00:03:28,000
+[SPEAKER_02] Trebam li dobiti veliku posao, vratiti se u Apple ili nešto slično ili vidjeti ima li ovo noge i isprobati je neko vrijeme.
+
+59
+00:03:28,240 --> 00:03:32,479
+[SPEAKER_02] I na kraju sam je isprobao neko vrijeme, potrošio sam sve uštede koje sam dobio u Appleu.
+
+60
+00:03:32,560 --> 00:03:34,000
+[SPEAKER_02] I na kraju je sve dobro prošlo.
+
+61
+00:03:34,000 --> 00:03:36,639
+[SPEAKER_02] Dakle, na neki način je bilo slučajno, ali i jednostavno.
+
+62
+00:03:36,639 --> 00:03:38,240
+[SPEAKER_02] Ali i nešto što se dogodilo organski, mislim.
+
+63
+00:03:38,879 --> 00:03:41,680
+[SPEAKER_01] Jeste li prije Apolona izradili aplikacije ili nešto drugo?
+
+64
+00:03:41,840 --> 00:03:45,680
+[SPEAKER_02] Da, imao sam aplikaciju pod nazivom Syllable koja je bila poput aplikacije za brzo čitanje.
+
+65
+00:03:45,840 --> 00:03:51,520
+[SPEAKER_02] Pomogla vam je, bila je jedna od onih koja je bliskovito prikazivala jednu riječ i pokušavala vam pomoći da naučite čitati malo brže.
+
+66
+00:03:51,599 --> 00:03:57,360
+[SPEAKER_02] I bilo je sjajno jer je zaradila nekoliko stotina dolara tijekom godine na fakultetu, što je, znate, kao student je nevjerojatno.
+
+67
+00:03:57,439 --> 00:03:58,719
+[SPEAKER_02] Da, da, to je nevjerojatno.
+
+68
+00:03:59,120 --> 00:04:02,080
+[SPEAKER_02] I mislim da je to bilo u vrijeme kad je bilo, oh, postoji aplikacija za to.
+
+69
+00:04:02,159 --> 00:04:03,520
+[SPEAKER_02] Reklamne su se prikazivale posvuda.
+
+70
+00:04:03,680 --> 00:04:06,879
+[SPEAKER_02] Dakle, bilo je ove velike aplikacije, to je bio tako novi koncept.
+
+71
+00:04:07,120 --> 00:04:12,960
+[SPEAKER_02] Dakle, još sam bio, bilo je tako uzbuđeno raditi na nečemu ovakvom.
+
+72
+00:04:12,960 --> 00:04:17,519
+[SPEAKER_01] I još uvijek je bilo dovoljno aplikacija da biste mogli poslati aplikaciju i dobiti razumnu količinu prometa samo zbog toga što ste u trgovini aplikacijama.
+
+73
+00:04:17,600 --> 00:04:21,759
+[SPEAKER_02] Da, TechCrunch bi trebao biti poput, danas je objavljena nova aplikacija.
+
+74
+00:04:21,839 --> 00:04:22,160
+[UNKNOWN] Pogledajte ovo.
+
+75
+00:04:22,319 --> 00:04:23,759
+[SPEAKER_02] Koju više ne vidite puno.
+
+76
+00:04:24,000 --> 00:04:25,120
+[SPEAKER_00] Koja je godina bila ta?
+
+77
+00:04:25,519 --> 00:04:29,680
+[SPEAKER_02] Vjerojatno 2012., 2013., nešto u tom stilu.
+
+78
+00:04:29,839 --> 00:04:31,920
+[SPEAKER_00] A kada ste počeli raditi na Apollo?
+
+79
+00:04:32,240 --> 00:04:36,639
+[SPEAKER_02] Dakle, završio sam s Appleom 2014., pa mislim da bih to mogao biti, da, jesen 2014.
+
+80
+00:04:36,720 --> 00:04:37,920
+[SPEAKER_02] kada sam počeo raditi na njemu.
+
+81
+00:04:38,000 --> 00:04:40,959
+[SPEAKER_02] Da, da, pa je to, da, wow, približno deset godina.
+
+82
+00:04:41,439 --> 00:04:48,000
+[SPEAKER_00] Koje su okvire i procesi koristili za izgradnju Apolloa?
+
+83
+00:04:48,399 --> 00:04:48,480
+[SPEAKER_00] Da.
+
+84
+00:04:51,600 --> 00:04:57,439
+[SPEAKER_02] Posebno je postalo malo bolje s vremenom, možda, ali posebno na početku, bio sam dječak na sveučilištu.
+
+85
+00:04:57,759 --> 00:05:07,199
+[SPEAKER_02] Dakle, mislim da mnogi programeri imaju, znate, godine u rovovima radeći u velikom startupu ili formaliziranoj tehnološkoj tvrtki gdje razvijaju ove stvarno sjajne prakse, a ja nisam imao ništa od toga.
+
+86
+00:05:07,439 --> 00:05:12,079
+[SPEAKER_02] Na primjer, moja škola je bila vrlo temeljena na teoriji računalnih znanosti, pa se aplikacije nisu ni podučavale.
+
+87
+00:05:12,160 --> 00:05:13,920
+[SPEAKER_02] Dakle, bilo je puno osjećaja u mraku.
+
+88
+00:05:14,160 --> 00:05:21,600
+[SPEAKER_02] I da, Apollo sam samo radio na tome ovamo i tamo, kao da sam imao puno vremena i samo sam ga stavljao zajedno.
+
+89
+00:05:22,000 --> 00:05:24,959
+[SPEAKER_02] I sjećam se da je trebalo, kao da sam ga objavio, želim reći, kao da sam ga objavio.
+
+90
+00:06:00,319 --> 00:06:01,519
+[SPEAKER_02] I znam da je to Zapad.
+
+91
+00:06:02,079 --> 00:06:05,600
+[SPEAKER_02] I to je bilo gotovo sve što sam organizirao.
+
+92
+00:06:05,920 --> 00:06:07,600
+[SPEAKER_02] Dakle, vaš subreddit je uvijek bio vrlo aktivan.
+
+93
+00:06:07,759 --> 00:06:07,839
+[SPEAKER_02] Da.
+
+94
+00:06:07,920 --> 00:06:11,040
+[SPEAKER_01] Je li to mjesto gdje biste dobili najviše povratnih informacija od kupaca i slično?
+
+95
+00:06:11,279 --> 00:06:11,759
+[SPEAKER_02] Sigurno, da.
+
+96
+00:06:12,079 --> 00:06:16,000
+[SPEAKER_02] To je nekako olakšalo jer je povratni krug bio tako blizu.
+
+97
+00:06:16,079 --> 00:06:20,000
+[SPEAKER_02] Bilo je kao da ste bili u aplikaciji, mogli ste samo proći ovdje da biste dali neku povratnu informaciju.
+
+98
+00:06:20,079 --> 00:06:22,399
+[SPEAKER_02] I to je bilo stvarno lijepo jer nije bilo trenja.
+
+99
+00:06:22,639 --> 00:06:23,920
+[SPEAKER_02] Ljudi su uvijek davali vrlo dobru povratnu informaciju.
+
+100
+00:06:24,079 --> 00:06:28,800
+[SPEAKER_02] A posebno tijekom beta procesa, to je zaista pomoglo oblikovati aplikaciju na bolje jer sam imao neku osnovnu ideju o tome što želim.
+
+101
+00:06:28,879 --> 00:06:36,560
+[SPEAKER_02] Ali povratne informacije koje su ljudi davali tijekom godina stvarno su je oblikovale u nešto što mislim da je postalo više od samo moje ideje o tome što je klijent na Redditu.
+
+102
+00:06:36,560 --> 00:06:44,720
+[SPEAKER_02] Oblikovan je u ono što bi bilo savršeno za zajednicu i puno je glasova oblikovalo to, poput drveta koji pluta oceanom i gdje se na lijep način istroši.
+
+103
+00:06:44,959 --> 00:06:50,639
+[SPEAKER_01] Ali mislim da je to način na koji se svi, kao i većina odličnih proizvoda, dobro, postoji mnogo različitih načina za izradu proizvoda, ali mislim da je to jedan način, zar ne?
+
+104
+00:06:50,879 --> 00:07:00,560
+[SPEAKER_01] Imate puno povratnih informacija i upotrebe, ljudi i zajednicu koja se brine, a onda mislim da imate autora, imate urednika negdje tko donosi neke odluke o tome što se stavlja i što ne.
+
+105
+00:07:00,959 --> 00:07:01,839
+[SPEAKER_01] To je posao, zar ne?
+
+106
+00:07:02,160 --> 00:07:03,759
+[SPEAKER_01] Dobri proizvodi se izrađuju s trenjem, zar ne?
+
+107
+00:07:03,839 --> 00:07:09,040
+[SPEAKER_01] Rekao je to, poput istrošivanja stvari i rada na tome dok to nije, to je vrlo Apple, zar ne?
+
+108
+00:07:09,199 --> 00:07:11,360
+[SPEAKER_01] Kao da bi samo trljali i trljali na stvarima.
+
+109
+00:07:11,600 --> 00:07:15,680
+[SPEAKER_02] Ne, mislim da je ovo bilo jedinstveno.veni ja.
+
+110
+00:07:15,759 --> 00:07:18,000
+[SPEAKER_01] To je ključna teorija o čovjeku u povijesti.
+
+111
+00:07:18,079 --> 00:07:19,120
+[SPEAKER_01] Da, mislim da sam bio prvi.
+
+112
+00:07:20,319 --> 00:07:26,160
+[SPEAKER_01] Kada ste se odlučili ili shvatili ili u nekom trenutku to je postalo komercijalna stvar?
+
+113
+00:07:26,560 --> 00:07:33,920
+[SPEAKER_01] Nije bilo tako da zaraditi novac možda nije bilo prva stvar, ali u nekom trenutku ste pomislili: Moram jesti i možda će ovaj klijent na Redditu biti način na koji ću jesti.
+
+114
+00:07:34,000 --> 00:07:36,879
+[SPEAKER_02] Da, to je uvijek bio cilj na vidiku.
+
+115
+00:07:37,439 --> 00:07:41,040
+[SPEAKER_02] Apple je plaćao prilično dobro čak i kao pripravnik, a živio sam s još šest prijatelja.
+
+116
+00:07:41,120 --> 00:07:52,560
+[SPEAKER_02] Dakle, život je bio prilično jeftin i polako sam to prožvao, ali znao sam da je to mik kao stopa trošenja i znao sam da moram to objaviti do određenog datuma, inače bi to bilo problematično.
+
+117
+00:07:52,639 --> 00:07:58,639
+[SPEAKER_02] Dakle, to sam imao na vidiku i tada sam znao da imam ovu novu ideju, kao što je, znate, dvjesto devedeset devet jednokratna naknada.
+
+118
+00:07:58,879 --> 00:08:03,839
+[SPEAKER_02] Ekonomija je tada bila mnogo jednostavnija i mislio sam da ću to objaviti i nadam se da će se riješiti sama od sebe.
+
+119
+00:08:04,000 --> 00:08:07,839
+[SPEAKER_02] To je bilo, recimo, razmotrio sam monetizaciju, ali na kraju je dobro prošlo.
+
+120
+00:08:07,920 --> 00:08:14,399
+[SPEAKER_02] Kao i prvi dan, dobio je mnogo preuzimanja jer je bilo puno nakupljene potražnje od ljudi koji su vidjeli beta verziju, ali je bila puna i nisu mogli doći.
+
+121
+00:08:14,480 --> 00:08:17,279
+[SPEAKER_02] Dakle, bilo je puno ljudi koji su odmah skočili na profesionalnu verziju.
+
+122
+00:08:17,519 --> 00:08:24,560
+[SPEAKER_02] Bilo je financijski održivo od prvog dana stvarnog izdanja, ali bilo je puno trošenja sredstava kako bi došli do nje.
+
+123
+00:08:24,800 --> 00:08:24,879
+[SPEAKER_01] Da.
+
+124
+00:08:24,879 --> 00:08:30,560
+[SPEAKER_01] Da, mislim da je financijski održivo kada živi jedna mlada osoba s još šest ili pet drugih ljudi, zar ne?
+
+125
+00:08:30,720 --> 00:08:31,600
+[SPEAKER_01] Kao da je to u redu.
+
+126
+00:08:32,000 --> 00:08:33,840
+[SPEAKER_02] Kao da je to način na koji biste trebali započeti, zar ne?
+
+127
+00:08:34,240 --> 00:08:36,000
+[SPEAKER_02] Da, da, definitivno je puno pomoglo.
+
+128
+00:08:36,080 --> 00:08:38,080
+[SPEAKER_01] Da, to je kao da možete učiniti mnogo stvari.
+
+129
+00:08:38,480 --> 00:08:45,360
+[SPEAKER_01] Vaši troškovi izravno utječu na ono što možete isprobati i rizik koji možete preuzeti i slično, a onda možete kasnije kombinirati, zar ne?
+
+130
+00:08:45,440 --> 00:08:47,679
+[SPEAKER_01] Možete izgraditi više prihoda ili to otkriti kasnije.
+
+131
+00:08:47,919 --> 00:09:00,960
+[SPEAKER_01] Ali da, Sam Altman je govorio o tome više kad nije bio najbogatiji, najpoznatiji umjetni intelekt na svijetu, ali samo reći da je vaš osobni izgaranje vjerojatno vaš broj jedan, može biti vaš broj jedan prepreka za preuzimanje rizika, kao što povećavate svoj osobni izgaranje.
+
+132
+00:09:00,960 --> 00:09:05,120
+[SPEAKER_01] To samo smanjuje prilike koje možete iskoristiti jer imate, znate, ima mnogo razloga za to.
+
+133
+00:09:05,519 --> 00:09:14,720
+[SPEAKER_01] Dakle, netko je možda odabrao brzinu izgorijevanja na taj način, ali to je ogroman doprinos količini rizika i stvari koje možete isprobati i slično.
+
+134
+00:09:14,960 --> 00:09:31,759
+[SPEAKER_01] I mislim da mi, mislim, ne kažem da ste sretni, ali mislim da smo svi sretni na neki način, kao da ste bili mladi, imali ste vještine, imali ste vrijeme, imali ste financijsku priliku, a onda, znate, naravno, imali ste viziju da nešto izgradite za zajednicu, ali mislim da smanjenje brojača na tome čini veliku razliku.
+
+135
+00:09:31,840 --> 00:09:36,960
+[SPEAKER_02] O, to je okrutno jer ću dobiti, recimo, Twitter DM-ove gdje će ljudi biti poput, oh, kako bih trebao ući u to?
+
+136
+00:09:37,120 --> 00:09:37,360
+[SPEAKER_02] upustio?
+
+137
+00:09:37,440 --> 00:09:38,720
+[SPEAKER_02] Preporučili biste li sličnu stazu?
+
+138
+00:09:38,799 --> 00:09:45,840
+[SPEAKER_02] I to je kao da, ne, kao što ste rekli, stepenice su poravnate, ljudi s, znate, troje djece i obitelji i, znate, deset sati tjedno slobodnog vremena.
+
+139
+00:09:46,320 --> 00:09:49,679
+[SPEAKER_02] To nije formula koju bih mogao stvarno stvoriti.
+
+140
+00:09:50,639 --> 00:09:52,960
+[SPEAKER_02] Dakle, mislim da sam imao sreće što sam imao okruženje.
+
+141
+00:09:53,200 --> 00:09:55,519
+[SPEAKER_01] Da, to čini uređaj ne previše prenosivim, zar ne?
+
+142
+00:09:55,600 --> 00:09:57,919
+[SPEAKER_01] Nije kao da je u tom trenutku nemoguće ući u indie.
+
+143
+00:09:58,000 --> 00:10:00,240
+[SPEAKER_01] Samo je kao da će vaša osnovna vrijednost biti mnogo veća, zar ne?
+
+144
+00:10:00,320 --> 00:10:01,200
+[SPEAKER_01] I to će biti teže.
+
+145
+00:10:01,279 --> 00:10:03,519
+[SPEAKER_01] Možda će biti izazovnije krenuti.
+
+146
+00:10:03,679 --> 00:10:12,879
+[SPEAKER_00] Ali to je ono što je sjajno u sceni indie hakera i sposobnosti u softveru da imate stranske projekte i imate punu radnu snagu i možete nešto brzo izgraditi.
+
+147
+00:10:13,039 --> 00:10:14,159
+[SPEAKER_00] nešto zanimljivo u samo deset sati tjedno.
+
+148
+00:10:14,399 --> 00:10:17,919
+[SPEAKER_00] Ne možete slijediti Apolloovu knjigu da biste to učinili.
+
+149
+00:10:18,080 --> 00:10:21,279
+[SPEAKER_01] Da, koliko ste vjerojatno radili na tome, Christian, u tom vremenu?
+
+150
+00:10:21,360 --> 00:10:22,080
+[SPEAKER_02] Nebožan.
+
+151
+00:10:22,320 --> 00:10:34,559
+[SPEAKER_02] Jer to je poput, to je poput, to je poput, hobija slash radne barijere koja postaje stvarno opasna, gdje ste poput, oh, radim na ovoj značajci i to je jako zabavno, a onda je deset navečer i vi ste poput, mislim da to zovu vaš životni rad, mislim da se to zove.
+
+152
+00:10:34,639 --> 00:10:38,799
+[SPEAKER_02] Mislim, ali polako više nemate radne sate, mislim.
+
+153
+00:10:38,960 --> 00:10:44,960
+[SPEAKER_02] Što je na neki način sjajno, ali na drugi način, kao da se ti nekoliko sati svake večeri netko može napuniti na neki način, vi ste poput, još uvijek samo radi.
+
+154
+00:10:45,279 --> 00:10:48,639
+[SPEAKER_01] Mislim da postoji ovo, neću nužno optužiti indie zajednicu da ima ovo.
+
+155
+00:10:48,639 --> 00:10:50,480
+[SPEAKER_01] Da bi taj mit bio veći u njihovom svijetu.
+
+156
+00:10:50,559 --> 00:10:54,799
+[SPEAKER_01] Ali mislim da postoji neka vrsta općenito mita da možete postići iznimne nagrade.
+
+157
+00:10:54,960 --> 00:10:58,879
+[SPEAKER_01] Mislim da su David DHH i trideset i sedam seksualnih dečki to pogoršali.
+
+158
+00:10:59,039 --> 00:11:07,679
+[SPEAKER_01] Ali misliti da ćete to moći postići, možda možete, ali većina dobrih ishoda došla je kroz barem neku razdoblje intenzivnog ulaganja, zar ne?
+
+159
+00:11:07,919 --> 00:11:09,039
+[SPEAKER_01] I možda to nije bilo tako loše, zar ne?
+
+160
+00:11:09,120 --> 00:11:17,120
+[SPEAKER_01] Možda je to bilo nešto što ste bili potpuno sretni s činjenicom, ali znate, opet je to bilo vrijeme u vašem životu u kojem niste imali obveze koje ste morali ispuniti.
+
+161
+00:11:17,279 --> 00:11:18,879
+[SPEAKER_01] Bilo je zabavno, zar ne?
+
+162
+00:11:19,039 --> 00:11:22,559
+[SPEAKER_01] I imate tu intenzitet u kojem gradite i gradite i gradite i gradite.
+
+163
+00:11:22,720 --> 00:11:28,159
+[SPEAKER_01] Osjećam da postoji pokret u kojem je to kao da je to loše., znaš, kao da nisi u ravnoteži i sve to.
+
+164
+00:11:28,240 --> 00:11:31,440
+[SPEAKER_01] A ti kažeš, da, ali ne znam, htjela sam.
+
+165
+00:11:32,480 --> 00:11:45,519
+[SPEAKER_02] Da, da, da, ne, nitko mi nije držao pištolj na glavi i bilo je jako zabavno, ali to je bilo samo jedno od onih, kao da se osvrneš na to i kažeš, da, bilo je u prirodi, kao da ravnoteža nije bila riječ koju bih upotrijebila za to, ali bilo je kao da pokušavam to replicirati za nekog drugog.
+
+166
+00:11:45,600 --> 00:11:49,600
+[SPEAKER_02] Teško je reći, oh, samo radi na tome, znaš, osamdeset sati tjedno.
+
+167
+00:11:50,080 --> 00:11:50,960
+[SPEAKER_02] To je sve što moraš učiniti.
+
+168
+00:11:51,039 --> 00:11:51,840
+[SPEAKER_02] A oni kažu, dobro.
+
+169
+00:11:53,840 --> 00:11:57,679
+[SPEAKER_01] Mislim, možda će biti, pretpostavit ću da možda nije jedina stvar koja je važna.
+
+170
+00:11:58,159 --> 00:12:00,879
+[SPEAKER_01] I opet, nisam radio osamdeset sati tjedno na Redditu.
+
+171
+00:12:39,679 --> 00:12:51,360
+[SPEAKER_00] Ako imate samo deset sati tjedno i troje djece, vjerojatno ćete trebati više razmišljati, planirati i imati više procesa te istraživati tržište i slično.
+
+172
+00:12:51,759 --> 00:13:05,840
+[SPEAKER_00] Ali mislim da se puno dobrih stvari isplati baš onako kako ste to radili, čak i ako je to deset sati tjedno ili dvadeset sati tjedno ili se prepustite i provede četrdeset sati tjedno na tome nekoliko tjedana dok još uvijek radite četrdeset sati tjedno u svom dnevnom poslu, jednostavno ste strastveni u tome i morate izgraditi tu stvar.
+
+173
+00:13:06,799 --> 00:13:17,279
+[SPEAKER_00] Za razliku od toga, mislim da može postati previše formalno, gdje samo gradite tu stvar jer mislite da će vas učiniti ti donijeti novac, ali ti to ni ne zanima.
+
+174
+00:13:17,360 --> 00:13:18,480
+[SPEAKER_02] I to je teško.
+
+175
+00:13:18,559 --> 00:13:21,440
+[SPEAKER_02] Da, mislim da ne bih došao do kraja da je tako bilo.
+
+176
+00:13:21,600 --> 00:13:22,559
+[SPEAKER_02] Jer sam ga iskoristio do kraja.
+
+177
+00:13:22,639 --> 00:13:23,600
+[SPEAKER_02] Dakle, to je bilo nešto što sam morao vidjeti.
+
+178
+00:13:23,759 --> 00:13:25,919
+[SPEAKER_02] Mislim da je to jako podcijenjeno, zar ne?
+
+179
+00:13:26,159 --> 00:13:28,080
+[SPEAKER_01] Biti potrošač vlastitog proizvoda.
+
+180
+00:13:28,480 --> 00:13:42,559
+[SPEAKER_01] Ali taj proces korištenja ljudi, interakcije s njima, a zatim biti vrh koplja, osoba koja može stvarno izgraditi i implementirati, to će nadmašiti bilo kakav okvir ili proces ili bilo što drugo, prema mom iskustvu, mislim.
+
+181
+00:13:42,879 --> 00:13:43,279
+[SPEAKER_02] To je zanimljivo.
+
+182
+00:13:43,360 --> 00:13:44,879
+[SPEAKER_02] Nikad nisam razmišljao o tome na taj način.
+
+183
+00:13:44,960 --> 00:13:46,159
+[SPEAKER_02] Da, to je točno.
+
+184
+00:13:46,240 --> 00:13:48,399
+[SPEAKER_02] Samo koliko ste bili blizu potrošača, korisnika.
+
+185
+00:13:48,399 --> 00:13:51,840
+[SPEAKER_01] I onda biste mogli odmah popraviti njihovu stvar ako želite.
+
+186
+00:13:52,399 --> 00:13:54,080
+[SPEAKER_02] To je gotovo okvir sam po sebi.
+
+187
+00:13:54,240 --> 00:13:58,960
+[SPEAKER_01] Da, mislim da u odsutnosti okvira to je samo benzin i kisik ili bilo što drugo.
+
+188
+00:13:59,120 --> 00:14:12,879
+[SPEAKER_01] To je kao da samo stavite ove dvije i to će biti nešto poput, ne znam, mislim da smo razgovarali o načinu osnivača, to je tjedan načina osnivača, snimamo ovo za ljude koji su terminalno online, ali Christian me pitao o tome i mislim da je to nešto poput jednog od mojih učenja.
+
+189
+00:14:13,519 --> 00:14:17,759
+[SPEAKER_01] Oprostite, oprostite.
+
+190
+00:14:18,240 --> 00:14:19,200
+[SPEAKER_01] Ne, ne, molim vas.
+
+191
+00:14:19,360 --> 00:14:20,559
+[SPEAKER_01] U ovoj je razgovoru puno sinergije.
+
+192
+00:14:21,360 --> 00:14:22,559
+[SPEAKER_01] Da, znam, David, znam.
+
+193
+00:14:23,039 --> 00:14:23,919
+[SPEAKER_01] Uništilo me je.
+
+194
+00:14:24,559 --> 00:14:37,200
+[SPEAKER_01] Mislim da je jedno od mojih spoznaja tijekom proteklih nekoliko godina bilo da mislim da su osnovni sastojci koji su tamo na neki način nadmoćni nad svim procesima ili bilo čime.
+
+195
+00:14:37,600 --> 00:14:43,840
+[SPEAKER_01] I da su ti osnovni sastojci ljudi koji mogu graditi stvari, ljudi koji imaju potrebu, a onda samo energija, zar ne?
+
+196
+00:14:44,159 --> 00:14:50,399
+[SPEAKER_01] Baš kao da razgovaram s njima, vidim kakvi su njihovi problemi i koristim vrlo osnovno razmišljanje da kažem, dobro, što je sljedeće?
+
+197
+00:14:50,799 --> 00:14:59,200
+[SPEAKER_01] Sada kažem da s koliko god godina iskustva u izradi softvera iza mene i svim ovim stvarima koje mogu sintetizirati i razumjeti što je moguće i što nije i sve to.
+
+198
+00:14:59,360 --> 00:15:13,279
+[SPEAKER_01] Dakle, možda je to prejednostavljenljenje, ali mislim da postoji želja da se previše sistematizira mnogo toga što bi trebalo biti organsko i umjetničko.
+
+199
+00:15:13,679 --> 00:15:14,639
+[SPEAKER_02] To je dobra riječ za to.
+
+200
+00:15:14,799 --> 00:15:26,320
+[SPEAKER_02] Kao da uvijek vidite te stare milijarderice koji pišu knjige i kažu: Evo kako to radite ja, kad ne znam jesu li ti koraci u biti ponovljivi ili je to bilo samo nešto što ste radili dok je željezo bilo vruće.
+
+201
+00:15:26,480 --> 00:15:28,960
+[SPEAKER_02] Da, ili postoji čak i neka uzrokova.
+
+202
+00:15:29,519 --> 00:15:35,360
+[SPEAKER_01] To sam radio i to sam radio kad sam pronašao zlatnu rudnik.
+
+203
+00:15:35,519 --> 00:15:36,960
+[SPEAKER_01] Sjećate se da sam to rekao.
+
+204
+00:15:36,960 --> 00:15:38,240
+[SPEAKER_02] Rekli su to s takvom uvjerenjem.
+
+205
+00:15:38,799 --> 00:15:40,879
+[SPEAKER_02] Kao da čitate knjigu i mislite: Dang, i ja mogu to učiniti.
+
+206
+00:15:41,039 --> 00:15:51,440
+[SPEAKER_02] I to me toliko plaši kad netko traži savjet da slučajno krenete tom putom, gdje mislite: Ovo je za mene djelovalo u ovom hiper specifičnom slučaju, pa ću vam to propisati kao nešto što će djelovati i u vašem slučaju.
+
+207
+00:15:51,600 --> 00:16:02,000
+[SPEAKER_02] Dok mislim da je, kao što ste rekli, imati organski pristup, imati prave sastojke u kotlu, mnogo korisnije od neke inherentne formule ili okvira.
+
+208
+00:16:02,879 --> 00:16:06,960
+[SPEAKER_01] Tragična je stvar u tome što možete imati sve sastojke, ali i dalje neće djelovati, zar ne?
+
+209
+00:16:07,440 --> 00:16:08,159
+[SPEAKER_01] I vjerojatno neće.
+
+210
+00:16:08,320 --> 00:16:12,720
+[SPEAKER_01] Ako imate dovoljno udaraca i ako možete ostati u igri dovoljno dugo i nastaviti pokušavati, na kraju ćete imati nešto.
+
+211
+00:16:13,200 --> 00:16:17,519
+[SPEAKER_01] nešto što će raditi, što je također nešto s čime se ljudi suočavaju.
+
+212
+00:16:17,759 --> 00:16:22,879
+[SPEAKER_01] Ljudi stalno smanjuju gubitke na projektu koji ne ide nigdje i odlučuju kada je dovoljno.
+
+213
+00:16:23,039 --> 00:16:28,639
+[SPEAKER_01] Christian, imao si ikad nešto na čemu si radio i pomislio si, ah, mislim da moram to baciti jer više nije vrijedno truda?
+
+214
+00:16:29,440 --> 00:16:33,200
+[SPEAKER_02] Ne, ne znam, Batman sto, ovaj tip, ili Batman tisuću.
+
+215
+00:16:33,279 --> 00:16:34,480
+[SPEAKER_02] To je manje to i više to.
+
+216
+00:16:35,039 --> 00:16:39,279
+[SPEAKER_02] Mislim da ne počinjem raditi na nečemu osim ako sam stvarno siguran da mi je to stalo.
+
+217
+00:16:39,440 --> 00:16:40,639
+[SPEAKER_02] Što je zanimljivo.
+
+218
+00:16:40,960 --> 00:16:42,960
+[SPEAKER_01] Nije nešto u čemu si stvarno siguran da radiš.
+
+219
+00:16:43,200 --> 00:16:45,840
+[SPEAKER_01] To je nešto u čemu si stvarno siguran da ti je stalo, zar ne?
+
+220
+00:16:46,000 --> 00:16:46,559
+[SPEAKER_02] Da, točno.
+
+221
+00:16:46,639 --> 00:16:48,480
+[SPEAKER_02] I u mjeri u kojoj, ako ovo objavim.
+
+222
+00:16:48,879 --> 00:16:49,919
+[SPEAKER_02] I ja sam jedini koji to voli.
+
+223
+00:16:50,000 --> 00:16:51,679
+[SPEAKER_02] U nekim slučajevima to je dovoljno dobro za mene.
+
+224
+00:16:51,840 --> 00:16:58,399
+[SPEAKER_02] Dok me gotovo zavidaju nekima koji su poput, dobili su slučajnu ideju koristeći toalet i onda su poput, ovo ću izgraditi ovaj tjedan.
+
+225
+00:16:58,639 --> 00:17:03,120
+[SPEAKER_02] I to zvuči jako zabavno, ali meni se to malo čini i mislim, gdje bih ovo odnio?
+
+226
+00:17:03,600 --> 00:17:05,839
+[SPEAKER_02] Kakve bi to bile noge?
+
+227
+00:17:05,920 --> 00:17:07,839
+[SPEAKER_02] I to je trenutak kad uložim vrijeme u to.
+
+228
+00:17:08,400 --> 00:17:15,039
+[SPEAKER_02] A onda se osjećam dovoljno samouvjereno i uložio sam dovoljno vremena u to da mi se ne izdavanje čini potrošačkim.
+
+229
+00:17:15,119 --> 00:17:22,240
+[SPEAKER_02] Do određene mjere, poput smanjenja gubitaka, ali meni se do određene mjere čini da sam mislio da će to imati noge u nekom trenutku.
+
+230
+00:17:22,480 --> 00:17:26,480
+[SPEAKER_02] Želio sam to vidjeti do kraja da vidim ima li to noge neku osnovu u stvarnosti.
+
+231
+00:17:26,960 --> 00:17:34,079
+[SPEAKER_02] I nisam imao toliko aplikacija da bih bio siguran da će to na kraju biti strašna formula, ali imao sam samo tri aplikacije ili nešto slično i do sada je dobro prošlo.
+
+232
+00:17:34,640 --> 00:17:46,240
+[SPEAKER_00] Smiješno je da ste upotrijebili riječ briga jer baš to sam htio reći, da čak i ako to nije financijski uspjeh, ako je nešto što vam je stalo, može biti nevjerojatno ispunjavajuće.
+
+233
+00:17:46,400 --> 00:17:57,359
+[SPEAKER_00] A ako ga gradite samo da bude financijski uspjeh, možda vam je potrebno, a ako mora biti financijski uspjeh, kao da trošite svoje životne uštede da ga izgradite, onda možda to radite.
+
+234
+00:17:57,680 --> 00:18:00,960
+[SPEAKER_00] Ali mislim, čak i za mene, bilo da je to financijski uspjeh ili ne, to je nešto što je važno.
+
+235
+00:18:00,960 --> 00:18:02,880
+[SPEAKER_00] Moja aplikacija za vremenske uvjete nije bila previše uspješna.
+
+236
+00:18:02,960 --> 00:18:13,119
+[SPEAKER_00] Mislim, zaradila je nekoliko stotina tisuća dolara tijekom posljednjih pet godina i ove godine je dobro prošla, ali meni je to jako zadovoljavajuće iako vjerojatno nikad neće platiti račune.
+
+237
+00:18:13,359 --> 00:18:16,640
+[SPEAKER_01] David je najviše zaljubljen u vremenske aplikacije od svih koje sam ikad upoznao.
+
+238
+00:18:16,799 --> 00:18:20,799
+[SPEAKER_01] Imam jednu i došla je s telefonom i mislim da ga malo uvrijedi što kažem: U redu je.
+
+239
+00:18:20,960 --> 00:18:21,759
+[SPEAKER_01] Zapravo, to nije istina.
+
+240
+00:18:22,079 --> 00:18:24,640
+[SPEAKER_01] Imam neke specijalizirane vremenske aplikacije, ali.
+
+241
+00:18:24,880 --> 00:18:36,799
+[SPEAKER_00] I stvar je u tome što me to zaista ne zanima jer je prije nekoliko tjedana došla oluja i doveli smo beta verziju u ovo čudno stanje s korupcijom podataka u kojem nisam mogao koristiti svoju aplikaciju.
+
+242
+00:18:36,799 --> 00:18:43,920
+[SPEAKER_00] I onda sam otišla u trgovinu aplikacijama i preuzela dvadeset različitih aplikacija za vrijeme, ali mi se nisu svidjele.
+
+243
+00:18:44,079 --> 00:18:48,640
+[SPEAKER_00] Bilo je nevjerojatno ispunjavajuće za mene da kažem: Želim samo svoju aplikaciju za vrijeme.
+
+244
+00:18:48,720 --> 00:18:51,519
+[SPEAKER_00] I tako, zar će ikad zaraditi milijun dolara?
+
+245
+00:18:51,599 --> 00:18:51,759
+[SPEAKER_00] Ne znam.
+
+246
+00:18:51,920 --> 00:19:01,039
+[SPEAKER_00] Možda ću nastaviti raditi na tome, ali osjećam nevjerojatno puno ispunjenja izgradnjom ove stvari i mogu je izgraditi sa svojim rođakom, što je jako zabavno.
+
+247
+00:19:01,519 --> 00:19:04,880
+[SPEAKER_00] Dakle, u mom slučaju, znate, radim punim radnim vremenom u RevenueCatu.
+
+248
+00:19:05,039 --> 00:19:05,680
+[SPEAKER_00] To je popratni projekt.
+
+249
+00:19:06,240 --> 00:19:09,039
+[SPEAKER_00] Većinu tjedana ne ulažem u to ni deset sati tjedno.
+
+250
+00:19:09,279 --> 00:19:12,960
+[SPEAKER_00] Kada imam velike ažuriranja, ulažem više vremena, ali je prilično cool da mogu to učiniti.
+
+251
+00:19:12,960 --> 00:19:18,400
+[SPEAKER_00] Vrlo je lijepo što mogu raditi na tome što me zaista zanima i osjećati ispunjenje, čak i ako ne donosi milijune dolara.
+
+252
+00:19:18,480 --> 00:19:23,920
+[SPEAKER_02] Da, i gotovo mislim da ako je financijski aspekt jedina stvar koja te motivira, ne znam koliko je to dugoročno održivo.
+
+253
+00:19:24,079 --> 00:19:26,000
+[SPEAKER_02] Osjećam da se brzo iscrpite.
+
+254
+00:19:26,240 --> 00:19:31,599
+[SPEAKER_01] Biti u YC-u, samo ću to spomenuti, samo da se uvjerim da je to ovdje, ali zašto Combinator?
+
+255
+00:19:31,759 --> 00:19:33,759
+[SPEAKER_01] Pa, imaš puno ljudi u svojoj bazi koje si vidio.
+
+256
+00:19:33,920 --> 00:19:40,240
+[SPEAKER_01] Vidite puno ljudi koji dolaze i mislim da sam naišao na puno ljudi koji su rano, vjerojatno je slično tebi, Christian, kao da imaš indie hakere koji žele ući u to.
+
+257
+00:19:40,480 --> 00:19:45,680
+[SPEAKER_01] Imam puno ljudi koji se obraćaju na ranoj fazi, na poduzetničkoj stazi, tražeći savjete i slično.
+
+258
+00:19:47,359 --> 00:20:00,480
+[SPEAKER_01] I definitivno mogu primijetiti psihološku razliku u nekome tko to radi jer je to nešto što gori u njemu u odnosu na nekoga tko želi pokrenuti start-up zbog potvrde i možda novca i slično.
+
+259
+00:20:00,880 --> 00:20:01,759
+[SPEAKER_01] To su također dobri znakovi.
+
+260
+00:20:01,920 --> 00:20:03,440
+[SPEAKER_01] Možete li to odmah otkriti?
+
+261
+00:20:03,599 --> 00:20:04,799
+[SPEAKER_01] Postoji nekoliko znakova.
+
+262
+00:20:04,960 --> 00:20:10,400
+[SPEAKER_01] Ako netko govori o prodaji tvrtke jednog dana, o tome da je preokreće, ja kažem: Čovječe, već si se odjavio.
+
+263
+00:20:10,480 --> 00:20:12,480
+[SPEAKER_01] Znam da ćeš se manje potruditi, zar ne?
+
+264
+00:20:12,559 --> 00:20:24,799
+[SPEAKER_01] Postoje određeni znakovi koji su manji, ali da, iskreno mislim da ako bi to mogao znati u nekom srcu, a mislim da većina ljudi zapravo ne poznaje sebe na nekoj razini, ali ako to možeš znati, mislim da bi bio najuspješniji anđeoski ulagač na svijetu.
+
+265
+00:20:24,799 --> 00:20:37,920
+[SPEAKER_01] Mislim da biste to dobro razumjeli, jer su to ljudi koji to rade radi brige o zanatu, osobnih razloga, duhovnih razloga, bilo kakvih drugih.
+
+266
+00:20:38,079 --> 00:20:47,200
+[SPEAKER_01] Mislim da su to ljudi koji će se više potruditi, koji će se više potruditi, koji će imati malo mentalitet gorenja, gdje će reći: Nema puta natrag, neću se okrenuti, zar ne?
+
+267
+00:20:47,359 --> 00:20:52,160
+[SPEAKER_01] Dakle, mislite li da imate dovoljno dobar prosjek da biste ikad ušli u tu područje anđeoskog ulaganja?
+
+268
+00:20:52,799 --> 00:20:53,759
+[SPEAKER_01] Ne, nisam.
+
+269
+00:20:54,880 --> 00:20:58,000
+[SPEAKER_01] Učinio sam malo toga i mislim da sam prilično loš.
+
+270
+00:20:58,720 --> 00:20:59,599
+[SPEAKER_01] To je pošteno.
+
+271
+00:20:59,680 --> 00:21:00,400
+[SPEAKER_01] Da, ne znam.
+
+272
+00:21:00,400 --> 00:21:02,400
+[SPEAKER_01] Ne znam, mogli bismo razgovarati o poduzetničkom radu.
+
+273
+00:21:02,559 --> 00:21:16,960
+[SPEAKER_01] To je jako zanimljivo jer mislim da je u svijetu poduzetničkog radu jedina razlika, jedina razlika između, dobro, ne jedine, ima puno razlika iz drugog reda koje se javljaju kada radite poduzetničku tvrtku u odnosu na, recimo, poduzetničku tvrtku, ali zapravo je to samo, recimo, financijska stvar.
+
+274
+00:21:17,359 --> 00:21:19,519
+[SPEAKER_01] Kao što znate, imamo sve iste probleme, zar ne?
+
+275
+00:21:19,759 --> 00:21:28,400
+[SPEAKER_01] Imate korisnike, trebate dobiti prilagođenost proizvodu tržištu, trebate imati dobru kulturu, kao što je u vašoj, znate, ako je to tvrtka jednog, lakše je održavati tu kulturu, zar ne?
+
+276
+00:21:28,480 --> 00:21:32,319
+[SPEAKER_01] Ali, recimo, da, ali mislim da je vaša kultura samo vaš osobni mentalni stan, zar ne?
+
+277
+00:21:32,400 --> 00:21:33,519
+[SPEAKER_01] I vaša osobna ponašanja, zar ne?
+
+278
+00:21:33,680 --> 00:21:34,319
+[SPEAKER_01] Koja su važna.
+
+279
+00:21:34,559 --> 00:21:47,519
+[SPEAKER_01] I tako mislim da je mnogo razlika u tome što smo malo prije razgovarali o načinu rada osnivača, što je nešto što je napisao Paul Graham.
+
+280
+00:21:48,319 --> 00:21:49,519
+[SPEAKER_01] Da, vi ste veliki zagovornik.
+
+281
+00:21:50,799 --> 00:21:51,599
+[SPEAKER_01] Mislim, ne znam.
+
+282
+00:21:51,920 --> 00:21:57,039
+[SPEAKER_01] Nikad nisam čuo da je netko tako uzbuđen zbog toga.
+
+283
+00:21:57,119 --> 00:21:59,680
+[SPEAKER_01] Mislim da bi svi trebali vjerovati u sebe.
+
+284
+00:22:00,319 --> 00:22:07,839
+[SPEAKER_01] I tako, ako vam se sviđa, mislim da još uvijek volim film, ali mislim da ako vam se sviđa, trebali biste to učiniti.
+
+285
+00:22:08,400 --> 00:22:12,880
+[SPEAKER_01] Ali mislim da je proces vjerovanja u sebe, vjerovanja u sebe.
+
+286
+00:22:12,880 --> 00:22:14,079
+[SPEAKER_01] Vjerovati u ono što gradite.
+
+287
+00:22:14,559 --> 00:22:24,720
+[SPEAKER_01] Mislim da sve te stvari na neki način nadmašuju način na koji ste financirani ili ako niste financirani, kao što je imati svrhu u onome što radite, činiti stvari koje imaju smisla za vas kao graditelja nečega.
+
+288
+00:22:25,279 --> 00:22:32,400
+[SPEAKER_01] I mislim da se to zapravo odnosi na ljude koji nisu nužno osnivači stvari ili vlasnici stvari, čak i na vlastito djelo.
+
+289
+00:22:32,559 --> 00:22:38,160
+[SPEAKER_01] Mislim da ako stalno pokušavamo, recimo, cargo kult, što ne znam, to se odnosi na nekoga, cargo kulting?
+
+290
+00:22:38,480 --> 00:22:39,440
+[SPEAKER_01] Da, da.
+
+291
+00:22:39,839 --> 00:22:45,519
+[SPEAKER_01] Da, mislim da stalno pokušavamo cargo kult, kao što su procesi drugih uspješnih tvrtki i mjesta.
+
+292
+00:22:45,680 --> 00:22:50,240
+[SPEAKER_01] I to se vraća na vašu točku, Christian, o knjizi od milijardera.dera i njihova mirovinska godina.
+
+293
+00:22:50,480 --> 00:22:55,920
+[SPEAKER_01] To je kao da se to može kopirati, ali vjerojatno to nije ono što je učinilo to čarobnim.
+
+294
+00:22:56,000 --> 00:22:58,559
+[SPEAKER_01] Mislim da je to istina za mnoge nas u Indylandu.
+
+295
+00:22:58,799 --> 00:23:04,640
+[SPEAKER_01] Kopiramo Steva i mislim da su neke stvari koje je rekao i osjećao i učinio bile ključne za njihov uspjeh.
+
+296
+00:23:04,799 --> 00:23:06,319
+[SPEAKER_01] Ali ako ste kopirali Stevea Harveya?
+
+297
+00:23:06,480 --> 00:23:07,920
+[SPEAKER_01] Da, Steve Harvey, da, točno.
+
+298
+00:23:08,079 --> 00:23:09,039
+[SPEAKER_01] Da, obiteljska ljubav.
+
+299
+00:23:09,200 --> 00:23:13,759
+[SPEAKER_01] Ali ako ste kopirali sve što Apple radi, mislim da biste mogli završiti s vrlo slomljenom tvrtkom, zar ne?
+
+300
+00:23:14,559 --> 00:23:15,920
+[SPEAKER_01] Da, oh, da, sigurno.
+
+301
+00:23:16,480 --> 00:23:19,440
+[SPEAKER_01] Ima puno stvari koje zapravo nisu povezane s njihovim uspjehom.
+
+302
+00:23:19,519 --> 00:23:21,519
+[SPEAKER_01] Ali da, ja sam veliki obožavatelj načina osnivača.
+
+303
+00:23:21,599 --> 00:23:22,559
+[SPEAKER_01] Ja sam načina osnivača broj jedan.
+
+304
+00:23:22,720 --> 00:23:23,680
+[SPEAKER_01] Osnivač broj jedan, to sam ja.
+
+305
+00:23:23,839 --> 00:23:25,759
+[SPEAKER_02] Da, čak si promijenila majicu.
+
+306
+00:23:25,920 --> 00:23:27,039
+[SPEAKER_02] Da, da, imam je ovdje.
+
+307
+00:23:27,519 --> 00:23:35,200
+[SPEAKER_02] Ne, zanimljivo je, ljudi vole, ne znam je li to skratnica ili jednostavno volimo pokušati pronaći svoj proces da bismo nešto bolje učinili.
+
+308
+00:23:35,279 --> 00:23:42,960
+[SPEAKER_02] I ne znam je li to evolucijska tehnika ili nešto slično, ali divno je kako je gotovo, volimo propisivati, ako učinite X, rezultat će biti Y.
+
+309
+00:23:43,839 --> 00:23:51,519
+[SPEAKER_01] Mislim da imamo želju da mapiramo predvidiv sustav na u biti kaotične podatke.
+
+310
+00:23:52,000 --> 00:23:55,920
+[SPEAKER_01] Uvijek pokušavamo pronaći temeljnu fiziku i svojstva.
+
+311
+00:23:56,000 --> 00:23:57,519
+[SPEAKER_01] A ponekad to uspijeva, zar ne?
+
+312
+00:23:57,680 --> 00:24:05,440
+[SPEAKER_01] I naučimo plivati i skakati i sve te stvarno složene stvari fizičke osobine i stvari, a naučili smo ih evolucijski ili ne.
+
+313
+00:24:06,240 --> 00:24:07,279
+[SPEAKER_01] Zašto ljudi mogu voziti?
+
+314
+00:24:07,519 --> 00:24:08,640
+[SPEAKER_01] Kako smo to shvatili?
+
+315
+00:24:08,880 --> 00:24:12,160
+[SPEAKER_01] Možemo se povezati s ovim ludim sustavima.
+
+316
+00:24:12,480 --> 00:24:15,759
+[SPEAKER_01] Ali postoje neki sustavi koji su jednostavno u biti kaotični.
+
+317
+00:24:15,920 --> 00:24:23,200
+[SPEAKER_01] Mislim da su većina sustava na svijetu, mislim da su proizvodi i način na koji djeluju s ljudima i zarade li tvrtke novac ili ne, prilično kaotični.
+
+318
+00:24:23,839 --> 00:24:36,000
+[SPEAKER_01] Stalno pokušavamo, ako samo radite OKR-ove i ovo i ono, to je temeljna fizika sustava i moći ćete manipulirati i kontrolirati taj sustav.
+
+319
+00:24:36,880 --> 00:24:40,559
+[SPEAKER_01] Mislim da će u osnovi uvijek biti vrlo kaotični.
+
+320
+00:24:41,119 --> 00:24:47,680
+[SPEAKER_01] Gotovo mislim da je bolje prilagoditi se tom kaosu, nekako organski, vratiti se na organski, što god to znači.
+
+321
+00:24:48,079 --> 00:24:52,480
+[SPEAKER_01] Da, to je riječ samo usredotočenosti na vrlo osnovne stvari, zar ne?
+
+322
+00:24:52,640 --> 00:24:57,119
+[SPEAKER_01] Tada se možete prilagoditi kaosu i ne pokušavati ga nužno ukrotiti, možda je bolje.
+
+323
+00:24:57,359 --> 00:25:01,680
+[SPEAKER_01] Ali da, volimo pokušati staviti složene stvari u kutije koje zapravo ne odgovaraju.
+
+324
+00:25:02,480 --> 00:25:04,559
+[SPEAKER_01] A onda kažemo, zašto ništa nema smisla?
+
+325
+00:25:04,720 --> 00:25:09,039
+[SPEAKER_00] Čini se da je kaos nešto što ste izgradili u Apollu.
+
+326
+00:25:09,359 --> 00:25:12,960
+[SPEAKER_00] Kao da ste samo pratili korisnike, pratili ste svoje vlastite korisnike.
+
+327
+00:25:12,960 --> 00:25:14,960
+[SPEAKER_01] Christian pokušava odlučiti je li to uvreda ili kompliment.
+
+328
+00:25:15,279 --> 00:25:16,079
+[SPEAKER_00] Ne, ne, ne, ne.
+
+329
+00:25:16,319 --> 00:25:16,559
+[SPEAKER_02] Ne, ne.
+
+330
+00:25:16,799 --> 00:25:19,680
+[SPEAKER_02] Rekao sam da je to vrlo romantičan način da se izrazi ono što se nije činilo tako.
+
+331
+00:25:19,759 --> 00:25:22,640
+[SPEAKER_02] Činilo mi se kao kompliment i nisam siguran da je zaslužen, ali cijenim to.
+
+332
+00:25:22,960 --> 00:25:35,759
+[SPEAKER_00] Želio sam se vratiti na izgradnju ovog posla koji je započeo kao ovaj lud projekt strasti za koji ste se nadali da će donijeti novac, a onda ga pokrenete, pokrenete ga i rekao ste da je to bilo 199 dolara unaprijed.
+
+333
+00:25:35,839 --> 00:25:38,319
+[SPEAKER_02] Moguće je da je čak i 199 dolara bilo za prvu godinu.
+
+334
+00:25:38,400 --> 00:25:47,279
+[SPEAKER_02] Bilo je to jedno od onih stvari u kojima, da, u retrospektivi nije bilo dobro jer ne znam, razlika između 199 dolara i 299 dolara ili čak 399 dolara, vjerojatno ste o tome puno raspravljali.
+
+335
+00:25:47,359 --> 00:25:48,960
+[SPEAKER_01] Ili ne, zapravo sam znatiželjan.
+
+336
+00:25:48,960 --> 00:25:55,599
+[SPEAKER_01] Neki ljudi sjednu i trljaju se rukama zbog odabira cijene zauvijek, a ja uvijek kažem: Samo odaberite cijenu i onda je možete promijeniti kasnije.
+
+337
+00:25:55,759 --> 00:25:56,240
+[SPEAKER_01] U redu je.
+
+338
+00:25:56,559 --> 00:25:59,920
+[SPEAKER_01] Mislim da nisam uložio toliko, mislim da je Alien Blue koštala nešto poput 2,99 dolara.
+
+339
+00:26:00,079 --> 00:26:05,599
+[SPEAKER_02] I mislio sam da je to možda u to vrijeme bilo razumno za naplaćivanje za aplikaciju na Redditu.
+
+340
+00:26:05,920 --> 00:26:19,680
+[SPEAKER_02] Ali u retrospektivi, to je jedna od onih stvari u kojima sam učinio isto s cijenama za cijeli život kad sam konačno slijedio Jacobov savjet i imao pretplate, gdje je bilo 19,99 dolara za prvu godinu, što je bila lud cijena kad sam mislio da je bilo 10 dolara godišnje za stvarnu pretplatu.
+
+341
+00:26:19,759 --> 00:26:20,960
+[SPEAKER_02] Dakle, to je kao da se isplati.
+
+342
+00:26:21,200 --> 00:26:28,559
+[SPEAKER_02] I na kraju sam povećao na 30 ili 40 dolara i stopa prihoda se nije uopće nije promijenila i to je jedna od onih stvari u kojima se pitate: U gadu.
+
+343
+00:26:28,799 --> 00:26:30,720
+[SPEAKER_02] Dakle, imali ste neuspješnu stopu potražnje.
+
+344
+00:26:30,880 --> 00:26:31,279
+[SPEAKER_01] Sto posto.
+
+345
+00:26:31,359 --> 00:26:31,680
+[SPEAKER_02] Da, da.
+
+346
+00:26:31,839 --> 00:26:40,640
+[SPEAKER_02] Da, bilo je puno kaosa, ali da, bilo je puno kaosa tijekom godina, mislim, gdje je bilo dobro kaosa i subreddit je služio gotovo kao kontinuirana sjeverna zvijezda.
+
+347
+00:26:40,960 --> 00:26:46,000
+[SPEAKER_02] Bilo je kao da previše dugo radite na pogrešnoj značajci i počnete čuti od ljudi.
+
+348
+00:26:46,160 --> 00:26:47,119
+[SPEAKER_01] Da, počinju vas vikati.
+
+349
+00:26:47,200 --> 00:26:47,680
+[SPEAKER_01] Ovo sam ja na Twitteru.
+
+350
+00:26:47,759 --> 00:26:49,359
+[SPEAKER_01] Kad god ne gradim ono što trebam graditi, znam.
+
+351
+00:26:49,599 --> 00:26:50,319
+[SPEAKER_02] Oh, sto posto.
+
+352
+00:26:50,480 --> 00:26:51,119
+[SPEAKER_02] Pa, da, da.
+
+353
+00:26:51,519 --> 00:26:54,720
+[SPEAKER_02] I to je sjajno jer služi kao ta sjeverna zvijezda.
+
+354
+00:26:55,680 --> 00:26:58,000
+[SPEAKER_02] Dakle, bilo je nešto poput pastirskog kaosa u toj ulozi.
+
+355
+00:26:58,000 --> 00:27:00,960
+[SPEAKER_02] Dakle, nije bilo, mislim, tako kaotično kao raditi potpuno samostalno.
+
+356
+00:27:00,960 --> 00:27:01,279
+[SPEAKER_02] Bio je to kao da radim potpuno sam.
+
+357
+00:27:01,519 --> 00:27:05,039
+[SPEAKER_02] U nekim aspektima uspoređivao sam ga s timom.
+
+358
+00:27:05,119 --> 00:27:06,480
+[SPEAKER_02] O, kao i vaša zajednica.
+
+359
+00:27:06,880 --> 00:27:08,799
+[SPEAKER_02] Da, da, jer su vas na neki način upravljali.
+
+360
+00:27:08,880 --> 00:27:10,079
+[SPEAKER_02] Uvijek su dali povratne informacije.
+
+361
+00:27:10,480 --> 00:27:12,400
+[SPEAKER_02] Ako im nešto nije bilo drago, bili su vrlo glasni o tome.
+
+362
+00:27:12,720 --> 00:27:14,160
+[SPEAKER_02] Dakle, na neki način je pomoglo.
+
+363
+00:27:14,240 --> 00:27:19,839
+[SPEAKER_02] Ali tijekom godina, da, bilo je puno slušanja, znate, najskakavija kotača dobije masnoću ili bilo što što kaže izreka.
+
+364
+00:27:19,920 --> 00:27:23,279
+[SPEAKER_02] Kao da će ono što viču o tom mjesecu vjerojatno biti nešto što ću staviti na plan, raditi na tome.
+
+365
+00:27:23,440 --> 00:27:26,480
+[SPEAKER_02] I bilo je poput ispiranja i ponavljanja godinama i godinama i godinama.
+
+366
+00:27:26,640 --> 00:27:27,599
+[SPEAKER_02] I dobro je funkcioniralo.
+
+367
+00:27:27,759 --> 00:27:38,240
+[SPEAKER_01] Ovdje održavamo planove, ali mislim da bi, da je to bilo na meni, plan bio samo ono na čemu radimo, a onda je li to Davidova stvar?
+
+368
+00:27:39,519 --> 00:27:41,359
+[SPEAKER_01] Što god želi, da, u osnovi.
+
+369
+00:27:41,599 --> 00:27:43,680
+[SPEAKER_00] O, ja se stvarno teško borim za stvari.
+
+370
+00:27:44,240 --> 00:27:51,920
+[SPEAKER_00] Napokon smo dobili našu, ehm, grafikon za automatski obnovu pretplate u RevenueCatu nakon dvije godine kada sam se žalio i jastukao na to.
+
+371
+00:27:52,240 --> 00:27:55,359
+[SPEAKER_01] I bio je popularan, pa, znaš, možda bi trebao više slušati.
+
+372
+00:27:55,599 --> 00:28:03,119
+[SPEAKER_01] Zapravo, to bi mogao biti dobar primjer, recimo, gdje, znaš, imamo proces intervjua s klijentima i, znaš, probali smo neke stvari i bilo što.
+
+373
+00:28:03,680 --> 00:28:08,000
+[SPEAKER_01] I nije se činilo da je to bilo tako vruće i vratilo se prioritetima, ali nije bilo ogromnog posla.
+
+374
+00:28:08,960 --> 00:28:21,279
+[SPEAKER_01] Ali, recimo, ako nam netko vrišti zbog toga, vjerojatno bismo trebali pokušatiati nešto brzo izgraditi jer će to biti najbolji način na koji ćemo naučiti vrijedi li to zaista, a ne da uložite puno unaprijed radova, recimo, hoće li ljudi to koristiti?
+
+375
+00:28:21,599 --> 00:28:33,119
+[SPEAKER_01] Trebali biste uložiti malo unaprijed rada, ali, recimo, upravo sam vidio da smo u prošlosti održavali dulji, složeniji plan i ne znam, uvijek je bilo demoralizirajuće i uvijek je bilo kao da se osjećate vezanima?
+
+376
+00:28:33,200 --> 00:28:33,759
+[SPEAKER_01] Da, baš tako.
+
+377
+00:28:33,920 --> 00:28:36,880
+[SPEAKER_01] Kao da bismo samo mislili, dobro, htjela sam reći ovo.
+
+378
+00:28:37,200 --> 00:28:39,680
+[SPEAKER_01] U nekom trenutku samo kažem, nemojte to održavati.
+
+379
+00:28:40,240 --> 00:28:42,400
+[SPEAKER_01] Ako je dovoljno važno, nastavit će se pojavljivati.
+
+380
+00:28:42,640 --> 00:28:44,319
+[SPEAKER_01] Kao da će se kupci neprestano žale na to.
+
+381
+00:28:44,480 --> 00:28:46,480
+[SPEAKER_01] Kao da ćemo to neprestano čuti.
+
+382
+00:28:46,799 --> 00:28:47,519
+[SPEAKER_01] I mislim da je bilo bolje.
+
+383
+00:28:47,680 --> 00:28:48,400
+[SPEAKER_01] Mislim da je bilo bolje.
+
+384
+00:28:48,400 --> 00:28:52,160
+[SPEAKER_01] Ne, mi nismo potpuno, potpuno reaktivni, ali pokušavamo biti reaktivniji.
+
+385
+00:28:52,319 --> 00:28:53,680
+[SPEAKER_02] Da, postoji točka u kojoj možemo doći.
+
+386
+00:28:53,839 --> 00:29:00,240
+[SPEAKER_01] Da, mislim da ne možete jednostavno nemati smisla i da vam je potrebna tu, recimo, uredska knjiga, zar ne?
+
+387
+00:29:00,720 --> 00:29:04,480
+[SPEAKER_01] Imate neku ideju o tome kako izgleda gotov Apollo, zar ne?
+
+388
+00:29:04,480 --> 00:29:06,640
+[SPEAKER_01] Ili kako izgleda proizvod u cjelini.
+
+389
+00:29:06,960 --> 00:29:08,400
+[SPEAKER_02] Pa, sada je prilično gotov.
+
+390
+00:29:08,559 --> 00:29:08,640
+[SPEAKER_01] Da.
+
+391
+00:29:14,799 --> 00:29:16,240
+[SPEAKER_01] To je prilično dobro.
+
+392
+00:29:16,319 --> 00:29:24,720
+[SPEAKER_01] Ali kad god radite na tome, imate neku ideju o tome gdje bi to moglo ići i možete odlučiti, čak i ako vas vrište, recimo, kažem vrište.
+
+393
+00:29:24,720 --> 00:29:29,119
+[SPEAKER_01] Kažem da to ljubazno viknite, ali, evo, to je ljubazna povratna informacija od kupaca.
+
+394
+00:29:29,359 --> 00:29:33,759
+[SPEAKER_01] Neke stvari možete reći, da, čujem to, ali to nije put koji ćemo ići i vi ćete donijeti tu odluku.
+
+395
+00:29:34,240 --> 00:29:34,880
+[SPEAKER_01] To je i dalje važno.
+
+396
+00:29:34,960 --> 00:29:46,480
+[SPEAKER_02] Da, i mislim da ovisno o tome kako to artikulirate, sjećam se da je kupac imao relativno popularnu ideju i nije mi se svidjela, uvijek sam se bojao reći ne.
+
+397
+00:29:46,880 --> 00:29:53,680
+[SPEAKER_02] Ali došlo je do točke u kojoj sam prvi put kad sam to učinio, objasnio svoje razloge zašto nisam mislio da je to dobra ideja jer možda nemaju cjelokupnu sliku.
+
+398
+00:29:53,759 --> 00:29:56,319
+[SPEAKER_02] A odgovori su bili, oh, jebao, da, to je dobra točka.
+
+399
+00:29:56,400 --> 00:29:56,559
+[SPEAKER_01] U redu.
+
+400
+00:29:56,720 --> 00:29:58,960
+[SPEAKER_02] A ja sam rekao, oh, jebao, u redu, neću to vikati.
+
+401
+00:29:59,039 --> 00:29:59,200
+[SPEAKER_01] Da.
+
+402
+00:29:59,359 --> 00:30:00,960
+[SPEAKER_01] Moj bi potez bio da kažem, dajem da to kažem.
+
+403
+00:30:00,960 --> 00:30:02,079
+[SPEAKER_01] Prvi korak bio bi da ga dodam na plan koji ne postoji.
+
+404
+00:30:02,880 --> 00:30:04,319
+[SPEAKER_01] To je u redu.
+
+405
+00:30:05,119 --> 00:30:06,880
+[SPEAKER_01] To je na našem radarskom polju.
+
+406
+00:30:06,960 --> 00:30:10,079
+[SPEAKER_01] To je ono što kažem ljudima na Twitteru kad predlažu nešto čudno.
+
+407
+00:30:10,559 --> 00:30:12,799
+[SPEAKER_01] Bilo bi mi zanimljivo da li ste se osjećali isto.
+
+408
+00:30:12,880 --> 00:30:13,599
+[SPEAKER_01] Uvijek postoji pravi problem.
+
+409
+00:30:14,319 --> 00:30:16,240
+[SPEAKER_01] Uvijek imaju pravi problem.
+
+410
+00:30:16,480 --> 00:30:22,559
+[SPEAKER_01] A onda bi predložili nešto i ja bih rekao: To je možda najglupija rješenja koja sam ikad čuo.
+
+411
+00:30:22,720 --> 00:30:24,400
+[SPEAKER_01] Ili ne, znate, šalim se.
+
+412
+00:30:24,480 --> 00:30:26,160
+[SPEAKER_01] Ali to neće funkcionirati iz više razloga.
+
+413
+00:30:26,319 --> 00:30:29,119
+[SPEAKER_02] Ponekad primjećujem da jednostavno nemaju cjelokupnu sliku.
+
+414
+00:30:29,200 --> 00:30:34,160
+[SPEAKER_02] Uobičajena slika za Apollo je da postoje usluge koje neprestano prikupljaju podatke na Redditu, što je sasvim druga priča.
+
+415
+00:30:34,319 --> 00:30:36,960
+[SPEAKER_02] Kao rezultat toga, imaju neku vrstu predmemorije svakog komentara.
+
+416
+00:30:36,960 --> 00:30:40,240
+[SPEAKER_02] Dakle, ako netko izbriše vrlo ukusan komentar, teoretski možete vratiti i vratiti ga.
+
+417
+00:30:40,319 --> 00:30:42,400
+[SPEAKER_02] I to je bilo uobičajeno zahtjev, poput dodavanja toga u Apollo.
+
+418
+00:30:42,480 --> 00:30:43,599
+[SPEAKER_02] Želim vidjeti što su izbrisali.
+
+419
+00:30:43,839 --> 00:30:54,799
+[SPEAKER_02] I bilo je kao da na površini vidim zašto mislite da bi to bilo nešto što biste željeli, ali kad dođete do svih tih sigurnosnih problema, možda su se doxali i ljudi bi vjerojatno trebali imati pravo brisati komentar koji žele poništiti.
+
+420
+00:30:55,119 --> 00:30:58,079
+[SPEAKER_02] I vi se nekako upuštate u ovu zonu, to je nekako sumnjivo.
+
+421
+00:30:58,400 --> 00:31:02,000
+[SPEAKER_02] I čim to objasnite, oni će reći, oh, jebao, nisam razmišljao o tom aspektu.
+
+422
+00:31:02,240 --> 00:31:03,599
+[SPEAKER_02] Da, to je nekako sumnjivo.
+
+423
+00:31:03,920 --> 00:31:08,400
+[SPEAKER_02] I mislim da ponekad kao osnivač, tvorac, imate mnogo više, znate, kuglica od svih ostalih.
+
+424
+00:31:08,640 --> 00:31:09,200
+[SPEAKER_01] Da, evo.
+
+425
+00:31:09,359 --> 00:31:10,960
+[SPEAKER_01] Christian podržava način osnivača baš tamo.
+
+426
+00:31:11,039 --> 00:31:11,680
+[SPEAKER_02] Da, da, da.
+
+427
+00:31:12,400 --> 00:31:13,839
+[SPEAKER_01] Pokušavam vas uključiti.
+
+428
+00:31:14,000 --> 00:31:26,559
+[SPEAKER_01] Neću vas ponovno vratiti u način osnivača, ali imam osjećaj da postoji napetost s tvrtkama koje podržavaju VC-ovi i neću nikoga optužiti, ali ne znam, mislim da postoji, dobro, ne znam.
+
+429
+00:31:26,720 --> 00:31:29,759
+[SPEAKER_01] Dio toga je, mislim, kao da je trava zelenija u oba smjera.
+
+430
+00:31:29,920 --> 00:31:36,559
+[SPEAKER_01] Mislim da ponekad gledam ljude koji se bave neovisnim poslovanjem i kažem, Bože, u gadu, samo si sam.
+
+431
+00:31:36,640 --> 00:31:39,359
+[SPEAKER_01] Nemate sve te dugove, kao dug, to jest, kapital koji morate vratiti.
+
+432
+00:31:39,680 --> 00:31:41,359
+[SPEAKER_01] Znate, možete raditi ono što želite.
+
+433
+00:31:41,680 --> 00:31:43,440
+[SPEAKER_01] Dakle, morate vratiti taj kapital?
+
+434
+00:31:43,759 --> 00:31:48,400
+[SPEAKER_01] Da, to nije samo, mislim, trebali bismo napraviti epizodu Venture Capital jedan na jedan, možda epizodu David.
+
+435
+00:31:48,400 --> 00:31:51,680
+[SPEAKER_01] Epizoda, David, ali, znaš, mislim da su vlasnici dijela tvrtke, zar ne?
+
+436
+00:31:51,920 --> 00:31:53,839
+[SPEAKER_01] Dakle, to nije samo besplatni novac.
+
+437
+00:31:54,240 --> 00:31:54,319
+[SPEAKER_01] Da.
+
+438
+00:31:54,720 --> 00:31:58,400
+[SPEAKER_01] U redu, pa ovo je zapravo uobičajena zabluda.
+
+439
+00:31:59,279 --> 00:32:02,240
+[SPEAKER_01] Mislim da ljudi to pogrešno shvaćaju u oba smjera.
+
+440
+00:32:02,400 --> 00:32:08,880
+[SPEAKER_01] U jednom smjeru ljudi misle, oh, Bože, investitori ne očekuju ništa, što god, dobiješ novac i samo gradiš i onda što god.
+
+441
+00:32:08,960 --> 00:32:16,000
+[SPEAKER_01] I mislim da postoje neki osnivači koji imaju takav stav, kao što je, što god, to je glupo novac, uzeti ću njihov ček i onda, znaš, samo ću graditi što god želim.
+
+442
+00:32:16,160 --> 00:32:17,359
+[SPEAKER_01] I to ne možeš učiniti.
+
+443
+00:32:17,440 --> 00:32:18,079
+[SPEAKER_01] Morate imati nešto.
+
+444
+00:32:18,799 --> 00:32:26,240
+[SPEAKER_01] A onda mislim da ljudi imaju suprotno mišljenje, kao da, jednom kad uzmete njihov novac, kao da ste vlasnik i kao da ne možete zad ništa učiniti.
+
+445
+00:32:26,640 --> 00:32:28,799
+[SPEAKER_01] To nije daleko od istine, zar ne?
+
+446
+00:32:29,119 --> 00:32:35,440
+[SPEAKER_01] Ali postoji očekivanje da će vam dati dolar i da će voljeti nešto malo više od dolara natrag, zar ne?
+
+447
+00:32:35,680 --> 00:32:36,240
+[SPEAKER_01] I na kraju.
+
+448
+00:32:36,559 --> 00:32:39,839
+[SPEAKER_01] Očekuju da će se mnogi njihovi dolari smanjiti na nulu, zar ne?
+
+449
+00:32:40,079 --> 00:32:45,200
+[SPEAKER_01] I zarade novac kad se jedan dolar ne smanji na dvadeset dolara, zarade novac kad se jedan dolar smanji na deset dolara.
+
+450
+00:32:45,279 --> 00:32:46,079
+[SPEAKER_01] O, zanimljivo.
+
+451
+00:32:46,319 --> 00:32:54,799
+[SPEAKER_01] I to je nesklad, znate, ulažu u deset tvrtki, pet ih se smanjuje na nulu, četiri ih se vraćaju na dva dolara, a zatim jedna od njih se vraća na deset.
+
+452
+00:32:55,119 --> 00:32:55,599
+[SPEAKER_01] Tako zarade novac.
+
+453
+00:32:56,000 --> 00:32:58,400
+[SPEAKER_01] Ne rade kao da se buntingom bore, nego se bore za plotove.
+
+454
+00:32:58,480 --> 00:32:59,200
+[SPEAKER_01] Ne, točno.
+
+455
+00:32:59,359 --> 00:33:00,160
+[SPEAKER_01] O, zanimljivo.
+
+456
+00:33:00,400 --> 00:33:00,799
+[SPEAKER_01] U redu.
+
+457
+00:33:00,799 --> 00:33:00,799
+[UNKNOWN] Baš tako.
+
+458
+00:33:00,960 --> 00:33:06,880
+[SPEAKER_01] I onda dolazi nesklad jer je kao osnivač često BUNT dobra ponuda za vas osobno, zar ne?
+
+459
+00:33:07,039 --> 00:33:08,640
+[SPEAKER_01] Možete izgraditi ono što želite izgraditi.
+
+460
+00:33:08,799 --> 00:33:12,000
+[SPEAKER_01] Znate, možete zaraditi mnogo novca na tome ako je to vaša motivacija i slično.
+
+461
+00:33:12,480 --> 00:33:16,160
+[SPEAKER_01] I priznajem, mislim da nisam potpuno cijenio to kad sam ušao u to.
+
+462
+00:33:16,480 --> 00:33:24,960
+[SPEAKER_01] Ali to je stvar koja je prije nego što ljudi potpuno odaberu put poduzetničkog kapitala u odnosu na indie put, morate samo razumjeti kakav je njihov posao.
+
+463
+00:33:25,039 --> 00:33:30,480
+[SPEAKER_01] Ako razumijete njihov posao i s time ste u redu, to može biti stvarno dobra kombinacija, zar ne?
+
+464
+00:33:30,559 --> 00:33:33,519
+[SPEAKER_01] I ovo je moje opravdanje sada kad sam trajno predan tome.
+
+465
+00:33:34,000 --> 00:33:36,559
+[SPEAKER_02] Znajući ono što znate sada, učinili biste li nešto drugačije?
+
+466
+00:33:37,680 --> 00:33:43,599
+[SPEAKER_01] Oh, mislim, sigurno postoje točke na kojima sam rekao, oh, ne, naravno, mogao sam pričekati da podignem tu rundu.
+
+467
+00:33:43,839 --> 00:33:50,079
+[SPEAKER_01] Da bih započeo iz nule, bih li radio RevenueCat, kao što je način rada Indie Hacker, umjesto da ne bih?
+
+468
+00:33:50,400 --> 00:34:03,119
+[SPEAKER_01] Mislim da je stvarnost drugačija ovisno o tome što gradite, mislim da ako gradite aplikaciju, to nije u potpunosti istina, ali općenito je moj savjet da ne prikupljate novac ako gradite aplikaciju, kao što je aplikacija za pretplatu.
+
+469
+00:34:03,200 --> 00:34:05,359
+[SPEAKER_01] Ili barem pokrenite do točke u kojoj radi i stvarno radi.
+
+470
+00:34:05,759 --> 00:34:12,400
+[SPEAKER_01] Ili budite spremni za isključivanje, prikupljajte vrlo malo novca i budite spremni za isključivanje i očekujte da će biti uspješan ili ne.
+
+471
+00:34:12,400 --> 00:34:16,079
+[SPEAKER_01] Mislim da je vrlo, vrlo teško dobiti povrat ulaganja u aplikacije.
+
+472
+00:34:16,400 --> 00:34:18,719
+[SPEAKER_02] Mislim da je teško dobiti novac.
+
+473
+00:34:19,199 --> 00:34:20,880
+[SPEAKER_01] Da, dobro, i zato, zar ne?
+
+474
+00:34:21,039 --> 00:34:25,039
+[SPEAKER_01] Jer su ljudi gledali povijesne podatke i bilo je pobjednika, ali oni su vrlo rijetki.
+
+475
+00:34:25,199 --> 00:34:37,039
+[SPEAKER_01] To nije kao u B2B SaaS-u, sve dok imate usklađenost proizvoda s tržištem, način na koji funkcionira cijena i sve to, možete se pomaknuti, što je zapravo bio moj put, samo sam se pomaknuo prema gore na ljestvici prihoda.
+
+476
+00:34:37,519 --> 00:34:48,800
+[SPEAKER_01] Da odgovorim na vaše pitanje, vraćajući se, mislim da je za proizvod poput RevenueCata tako širok i postoji toliko toga što možemo izgraditi i mislim da postoji stvarna prednost u tome da se povećava.
+
+477
+00:34:48,800 --> 00:34:58,639
+[SPEAKER_01] Da bismo brzo dosegli određenu razinu složenosti, mogli bismo služiti ovoj industriji i postati vođe i sve to, što bi bilo vrlo izazovno, zar ne?
+
+478
+00:34:59,360 --> 00:35:01,280
+[SPEAKER_01] Jer stalno radite između usta.
+
+479
+00:35:01,360 --> 00:35:04,960
+[SPEAKER_01] Kažete: Želim nešto izgraditi, ali sve moje novce ću platiti ljudima.
+
+480
+00:35:05,440 --> 00:35:08,239
+[SPEAKER_01] I možda postoji malo vremena, želim izgraditi sljedeću stvar, ali moram pričekati ili nešto slično.
+
+481
+00:35:08,400 --> 00:35:18,800
+[SPEAKER_01] I kako je to sada za nas, jedina stvarna propusnost, jedina stvarna ograničenja su: možemo li zaposliti, možemo li pronaći ljude koji će dobro raditi s nama i možemo li povećati naš tim i procese i slično?
+
+482
+00:35:18,880 --> 00:35:21,280
+[SPEAKER_01] I imamo li dovoljno mentalne propusnosti da to preuzmemo?
+
+483
+00:35:21,679 --> 00:35:22,800
+[SPEAKER_01] To su naše ograničenja.
+
+484
+00:35:22,960 --> 00:35:24,880
+[SPEAKER_01] Novac nije ograničenje.
+
+485
+00:35:24,880 --> 00:35:26,079
+[SPEAKER_02] Niste osjetili taj pritisak na deset X-a?
+
+486
+00:35:26,239 --> 00:35:27,360
+[SPEAKER_02] Naravno, da, da.
+
+487
+00:35:28,320 --> 00:35:30,079
+[SPEAKER_02] Mislim, vjerojatno ste ga osjetili od 2017.
+
+488
+00:35:30,159 --> 00:35:30,639
+[SPEAKER_02] ili bilo čega.
+
+489
+00:35:30,719 --> 00:35:34,719
+[SPEAKER_01] Da, mislim da su mnogi moji investitori, kako se kaže, u novcu, zar ne?
+
+490
+00:35:34,880 --> 00:35:38,719
+[SPEAKER_01] I mislim da je to također, govorite o odlukama, što bih učinio drugačije?
+
+491
+00:35:38,800 --> 00:35:50,880
+[SPEAKER_01] Postoje neke mikro izbore gdje je to poput, dobro, vjerojatno sam previše novca preuzeo na preveliku vrijednost da nisam bio dovoljno siguran u to vrijeme i mislim da me je to stavilo pod pritisak i osjećao sam se kao, oh, Bože, neću li moći to napraviti?
+
+492
+00:35:51,760 --> 00:36:00,400
+[SPEAKER_01] I tako mislim da postoje trenuci u kojima bih volio, ovo je jedna od onih neintuitivnih stvari gdje je zapravo reći da je vaša tvrtka manje vrijedna vrlo dobro za vas, zar ne?
+
+493
+00:36:00,400 --> 00:36:01,840
+[SPEAKER_01] U redu, postavite svoje očekivanja.
+
+494
+00:36:02,000 --> 00:36:02,960
+[SPEAKER_01] Postoji velika neskladnost.
+
+495
+00:36:03,039 --> 00:36:08,719
+[SPEAKER_01] Ljudi žele da brojevi budu što veći, ali kad budu manji, vaše buduće ja će vam zahvaliti.
+
+496
+00:36:09,280 --> 00:36:13,519
+[SPEAKER_01] Previše obećanja, previše ispunjavanja, zar ne?
+
+497
+00:36:13,920 --> 00:36:14,880
+[SPEAKER_01] I tako postoje neke odluke.
+
+498
+00:36:15,280 --> 00:36:24,960
+[SPEAKER_01] Rekla bih da mislim da možete reći da je to prednost ili nedostatak, ovisi o tome kako to gledate, ali mislim da me je to prisililo da kažem: Da, moram izgraditi nešto masivno.
+
+499
+00:36:25,199 --> 00:36:28,880
+[SPEAKER_01] Mislim da bih mogla reći da sam sretna jer mislim da radi, udarac na drvo.
+
+500
+00:36:29,039 --> 00:36:31,280
+[SPEAKER_01] Na tom smo putu i to je stvarno cool.
+
+501
+00:36:31,440 --> 00:36:34,000
+[SPEAKER_01] Moći ću se vratiti i reći: Bože, izgradila sam nešto.
+
+502
+00:36:34,320 --> 00:36:36,960
+[SPEAKER_01] Nema šanse da bih to mogla izgraditi bez toga.
+
+503
+00:36:36,960 --> 00:36:38,719
+[SPEAKER_01] Mislim da ne bih išao tom putom, zar ne?
+
+504
+00:36:39,280 --> 00:36:41,679
+[SPEAKER_02] I to je prilično konačan odgovor, da.
+
+505
+00:36:42,000 --> 00:36:43,519
+[SPEAKER_01] Da, a u retrospektivi, da.
+
+506
+00:36:43,840 --> 00:36:48,880
+[SPEAKER_01] Mislim da da nisam, možda bi postojao svijet u kojem bih rekao: Ovo je stvarno teško.
+
+507
+00:36:49,119 --> 00:36:53,599
+[SPEAKER_01] Možda bih trebao malo odustati od plina, možda malo sporije i onda ne znam gdje bismo bili, zar ne?
+
+508
+00:36:53,679 --> 00:36:55,760
+[SPEAKER_01] Možda ne bismo bili u poziciji u kojoj smo sada.
+
+509
+00:36:55,920 --> 00:36:57,280
+[SPEAKER_01] I to je teška igra za igranje, da.
+
+510
+00:36:57,599 --> 00:37:00,480
+[SPEAKER_01] Da, teško je vratiti se i nema smisla.
+
+511
+00:37:00,880 --> 00:37:10,639
+[SPEAKER_01] Rekla bih da je bilo jedno razgovaranje s članom obitelji prije nekoliko godina kad smo prvi put počeli primjećivati neki uspjeh i prikupivati novac i slično, gdje je rekao: O, samo očekuje da ću biti entuzijastičan.
+
+512
+00:37:10,719 --> 00:37:12,800
+[SPEAKER_01] Da, rekao je: O, učinili biste sve to ponovno ponovili?
+
+513
+00:37:13,119 --> 00:37:15,840
+[SPEAKER_01] I ja sam samo, ne znam.
+
+514
+00:37:16,000 --> 00:37:17,679
+[SPEAKER_01] Mislim da to nije jednostavan odgovor, zar ne?
+
+515
+00:37:17,760 --> 00:37:19,519
+[SPEAKER_01] Bilo je puno žrtve.
+
+516
+00:37:20,079 --> 00:37:28,639
+[SPEAKER_01] Postavljam vam to pitanje, kao što je bilo s Apollo, pogotovo sada kad vidim kako je sve završilo i sve ostalo, znate li što znate o putovanju, učinili biste to ponovno?
+
+517
+00:37:28,800 --> 00:37:30,960
+[SPEAKER_01] Bože, u tren oka, da, da.
+
+518
+00:37:31,280 --> 00:37:36,079
+[SPEAKER_01] U redu, vidite, u životu sam donio pogrešan izbor jer sam rekao, oh, čovječe, ne znam.
+
+519
+00:37:36,159 --> 00:37:37,599
+[SPEAKER_01] Bilo je prilično teško za nekoliko ljudi.
+
+520
+00:37:38,480 --> 00:37:40,400
+[SPEAKER_00] Pa, dajmo malo konteksta brzo.
+
+521
+00:37:40,480 --> 00:37:42,719
+[SPEAKER_00] Ne znam da će svi koji slušaju znati cijeli kontekst.
+
+522
+00:37:43,280 --> 00:37:44,719
+[SPEAKER_00] Dakle, Christian je izgradio Apollo.
+
+523
+00:37:45,039 --> 00:37:46,639
+[SPEAKER_00] Postao je vrlo uspješan.
+
+524
+00:37:46,800 --> 00:37:48,880
+[SPEAKER_00] Ne znam da li ste ikad radili na nekom indie hikingu.
+
+525
+00:37:48,880 --> 00:37:52,480
+[SPEAKER_00] I nekako sam se bavio tim indie hakerom, poput dijeljenja brojeva, ali čini se da je to bilo vrlo uspješno.
+
+526
+00:37:52,559 --> 00:38:00,000
+[SPEAKER_00] Mislim da je to bio najomiljeniji i nevjerojatno voljen, puno vrlo strastvenih korisnika, a onda je Reddit zapravo isključio.
+
+527
+00:38:00,159 --> 00:38:11,679
+[SPEAKER_00] Bio je na raspolaganju da će naplaćivati smiješnu naknadu za pristup API-ju, što je bilo neprihvatljivo, i da, ne trebamo se u to upuštati, ali morali ste potpuno isključiti.
+
+528
+00:38:11,840 --> 00:38:13,440
+[SPEAKER_00] Dakle, da, učinili biste to ponovno?
+
+529
+00:38:14,079 --> 00:38:24,960
+[SPEAKER_02] Da, to je jedna od onih stvari u kojima je lako pogledati i reći, prošlog lipnja bilo je puno svađa, kao što je vjerojatno bilo Apollo, spomenuli ste puno žrtava i puno, znate, vjerojatno mentalnih poteškoća tijekom godina.
+
+530
+00:38:24,960 --> 00:38:27,199
+[SPEAKER_02] godina suočio s mentalnim poteškoćama, ali za Apollo je bilo prilično glatko.
+
+531
+00:38:27,280 --> 00:38:28,800
+[SPEAKER_02] Bilo je vrlo glatko cijelo vrijeme.
+
+532
+00:38:29,199 --> 00:38:35,199
+[SPEAKER_02] Mislim da sam se na neki način našao kao crna rupa, umiruća zvijezda svađe odjednom.
+
+533
+00:38:35,360 --> 00:38:46,719
+[SPEAKER_02] I to je bilo teško, ali to je jedna od onih stvari u kojima je, ne znam, nešto poput TV emisije, gdje ako imate TV emisiju koja vam se zaista sviđa i ima devet sezona, onda ste poput, Bože, i zapravo ima uzbudljiv završetak.
+
+534
+00:38:46,960 --> 00:38:47,920
+[SPEAKER_01] U redu, u redu, točno.
+
+535
+00:38:48,639 --> 00:38:51,119
+[SPEAKER_02] I tako je teško reći, O, čovječe, imali smo samo devet sezona.
+
+536
+00:38:52,079 --> 00:38:53,440
+[SPEAKER_02] Ne, to je jebeno sjajno.
+
+537
+00:38:53,519 --> 00:38:54,559
+[SPEAKER_02] Bio je to sjajan nastup.
+
+538
+00:38:54,880 --> 00:38:56,639
+[SPEAKER_02] Imala sam puno vremena, puno zabave radeći to.
+
+539
+00:38:56,719 --> 00:39:00,239
+[SPEAKER_02] Da, i to je kao, da, osjećam se jako sretnom što je trajalo tako dugo.
+
+540
+00:39:00,239 --> 00:39:09,119
+[SPEAKER_02] I ja sam uspio izgraditi nešto tako sjajno što je utjecalo na toliko ljudi i upoznao toliko različitih ljudi poput vas, a to je teško biti mrzovoljan zbog toga.
+
+541
+00:39:09,360 --> 00:39:14,320
+[SPEAKER_02] Bilo bi gotovo kao da nisam iskren ili da nemam zahvalnost za, znate, vrste karata koje sam dobio.
+
+542
+00:39:14,400 --> 00:39:16,239
+[SPEAKER_01] Da, bilo je li u vama dijela?
+
+543
+00:39:16,480 --> 00:39:18,480
+[SPEAKER_01] Ponekad, mislim, ovo je vrlo šala.
+
+544
+00:39:18,639 --> 00:39:23,760
+[SPEAKER_01] Mislim da je svatko tko radi na nečemu dugo vremena samo poput, u gadu, želio bih da mogu ići i raditi nešto drugo.
+
+545
+00:39:24,079 --> 00:39:28,559
+[SPEAKER_01] Da, bilo je li u vama dijela koji je bio pomalo olakšan, poput, oh, dobro, dobro sam očistio ovo.
+
+546
+00:39:28,800 --> 00:39:30,639
+[SPEAKER_01] Ne radim s klijentima na Redditu cijeli život.
+
+547
+00:39:31,920 --> 00:39:45,760
+[SPEAKER_02] Iskreno, to je složen odgovor jer mislim da kad sam bio u rovovima s Apol Apolloom, možda kroz kaos, nisam imao nikakvog iscrpljenja samo zato što nisam htio raditi na njemu nekoliko dana i htio sam samo pogriješiti, kao da nemam zaposlenika, mogao sam to učiniti.
+
+548
+00:39:45,840 --> 00:39:51,760
+[SPEAKER_02] I kao rezultat te slobode, Apollo mi se još uvijek činilo svježim nakon devet godina i još sam se zabavljao radeći to.
+
+549
+00:39:52,320 --> 00:39:55,519
+[SPEAKER_02] Dakle, mislim da bih rekao da bih mogao raditi ovo zauvijek, da bih mogao nastaviti.
+
+550
+00:39:55,840 --> 00:40:07,519
+[SPEAKER_02] Ali to je bilo nešto poput onih stvari u kojima sam nakon što je završilo, znači, iznenada sam mogao raditi na nekim različitim projektima koje sam imao u pozadini, a onda sam pomislio, oh, ovo je na neki način lijepo.
+
+551
+00:40:07,760 --> 00:40:12,880
+[SPEAKER_02] Nisam se nadao da će završiti, ali kad je završilo, definitivno je imao neke pozitivne strane.
+
+552
+00:40:12,880 --> 00:40:14,559
+[SPEAKER_02] I oslobodila sam neke stvari na zabavan način.
+
+553
+00:40:14,719 --> 00:40:25,280
+[SPEAKER_01] Mislim, ne da stalno vraćam u svijet poduzetničkog kapitala, ali jer je vaš temelj bio vaš čas i godine i sve ostalo, a općenito ste se osjećali kao da su dobro potrošeni i da vam se sviđa, jasno ste bili u novcu, zar ne?
+
+554
+00:40:25,440 --> 00:40:36,079
+[SPEAKER_01] Kao da ste vi i jedan investitor dobili odličan povrat ulaganja i, znate, to je loše za ljude koji koriste aplikaciju i možda sve ostalo, ali znate, svi su zaradili novac, kako kažu.
+
+555
+00:40:36,239 --> 00:40:36,559
+[SPEAKER_01] O, ne.
+
+556
+00:40:36,800 --> 00:40:38,000
+[SPEAKER_01] I meni je to bilo loše.
+
+557
+00:40:38,239 --> 00:40:43,039
+[SPEAKER_02] Bilo je kao da je bilo u financijskim aspektima i, znate, nije tako da želite provesti vrijeme, zar ne?
+
+558
+00:40:43,679 --> 00:40:44,159
+[SPEAKER_02] Ne, ne, ne.
+
+559
+00:40:45,280 --> 00:40:46,239
+[SPEAKER_02] I pokušavam biti zahvalan.
+
+560
+00:40:46,719 --> 00:40:52,960
+[SPEAKER_02] Objektivno je bilo loše, ali to je jedna od onih stvari u u kojima je teško gledati samo na to što je loše.
+
+561
+00:40:53,119 --> 00:40:54,559
+[SPEAKER_02] Imali ste takvu.
+
+562
+00:40:54,719 --> 00:40:59,599
+[SPEAKER_01] Da, a onda postoji pitanje, mislim, što je dugoročno vlasništvo?
+
+563
+00:41:00,000 --> 00:41:04,639
+[SPEAKER_01] Mislim da svaki osnivač poduzeća, osoba koja se bavi neovisnim poslom, mora o tome razmišljati.
+
+564
+00:41:04,639 --> 00:41:11,920
+[SPEAKER_01] Mislim da ako su vaši ulazi niski i sve ostalo, a to ste samo vi, to je kao da možete samo zatvoriti, nema problema, ili možda možete prodati nekome, to je u redu.
+
+565
+00:41:12,079 --> 00:41:14,400
+[SPEAKER_01] U nekim poduzećima to postaje složenije, zar ne?
+
+566
+00:41:14,639 --> 00:41:24,880
+[SPEAKER_01] Kao da postaje veće, mislim da je to možda stvar s prihodima i stvar s poduzetničkim fondovima, mislim da je vjerojatno općenito, da se vaši rezultati jednostavno zatvaraju jer smo izgubili glavnu stvar i sve ostalo.
+
+567
+00:41:27,119 --> 00:41:28,000
+[SPEAKER_01] Da, vjerojatno ih ima još nekoliko.
+
+568
+00:41:28,320 --> 00:41:28,400
+[SPEAKER_01] Da.
+
+569
+00:41:28,559 --> 00:41:30,320
+[SPEAKER_01] Vjerojatno je nešto poput: U redu, moramo to shvatiti.
+
+570
+00:41:30,639 --> 00:41:32,000
+[SPEAKER_01] Moramo učiniti nešto drugačije.
+
+571
+00:41:32,480 --> 00:41:36,239
+[SPEAKER_01] Možda bi bolja opcija za ljude bilo samo uzeti svoje žetone i otići kući.
+
+572
+00:41:36,639 --> 00:41:38,719
+[SPEAKER_01] I mislim da ljudi ne donose uvijek racionalnu odluku.
+
+573
+00:41:39,119 --> 00:41:42,159
+[SPEAKER_01] Ili možda racionalna za investitore, ali ne i za uključene ljude.
+
+574
+00:41:42,239 --> 00:41:45,280
+[SPEAKER_01] Dakle, postoji određena količina blagoslova i čisti završetak.
+
+575
+00:41:45,440 --> 00:41:48,000
+[SPEAKER_01] I da, kao što je završna sezona, završetak sezone bio je jako intenzivan.
+
+576
+00:41:48,079 --> 00:41:48,480
+[SPEAKER_01] Bio je.
+
+577
+00:41:48,639 --> 00:41:48,960
+[SPEAKER_01] Da, da.
+
+578
+00:41:49,280 --> 00:41:51,840
+[SPEAKER_01] Na Rotten Tomatoesu je jako jak do kraja.
+
+579
+00:41:52,000 --> 00:41:52,480
+[SPEAKER_01] To je istina.
+
+580
+00:41:52,880 --> 00:41:54,480
+[SPEAKER_02] Da, ne, uzeti ću to.
+
+581
+00:41:54,800 --> 00:42:00,880
+[SPEAKER_00] Jedno od toga što me zanimalo od prošle godine, a vi i ja nismo o tome razgovarali, možda ste o tome razgovarali na drugom podcastu.
+
+582
+00:42:00,880 --> 00:42:15,679
+[SPEAKER_00] Ovo je nešto o čemu sam govorio na drugom podcastu ili slično, ali s modelom pretplate, mogao si potencijalno podići cijenu do te mjere i smanjiti poziv API-ja, kao da si bio skrupulan s pozivima API-ja kako bi možda pronašao pravu ravnotežu.
+
+583
+00:42:15,920 --> 00:42:26,639
+[SPEAKER_00] Prošao si kroz taj proces u tom, bilo kakvim to bilo, kao da je bilo dva mjeseca naprijed-natrag s Redditom, kao da mogu zapravo učiniti da ovo funkcionira pod ovom novom paradigmom?
+
+584
+00:42:26,719 --> 00:42:27,280
+[SPEAKER_02] Da, sigurno.
+
+585
+00:42:27,360 --> 00:42:32,559
+[SPEAKER_02] I razgovarao sam s toliko ljudi u zajednici, kao da daju brojke i nešto poput, vidite li ovdje put naprijed?
+
+586
+00:42:33,039 --> 00:42:36,000
+[SPEAKER_02] I to je bilo nešto poput onih stvari gdje je najveća stvar koju mislim.
+
+587
+00:42:36,159 --> 00:42:43,760
+[SPEAKER_02] Mislim da je sve u sranju bilo to što su u osnovi dali trideset dana od dana kada su objavili cijenu do trenutka kada biste počeli plaćati naknade.
+
+588
+00:42:44,239 --> 00:42:50,159
+[SPEAKER_02] A u slučaju Apolla, to je bilo u rasponu od dvadeset milijuna dolara godišnje, što je daleko iznad svega što je Apollo zarađivao.
+
+589
+00:42:50,320 --> 00:42:56,880
+[SPEAKER_02] Bilo je vrlo slično, ti troškovi će uskoro dosegnuti vrhunac, pa što da radim s tim?
+
+590
+00:42:57,280 --> 00:43:06,639
+[SPEAKER_02] I bilo je aspekta, imam određeni broj postojećih pretplatnika koji imaju zaključanu naknadu koju mogu povećati jer, znate, u prirodi tako funkcioniraju pretplate.
+
+591
+00:43:06,800 --> 00:43:11,840
+[SPEAKER_02] O tome je bilo puno računa i na kraju se svodilo na to da bi možda bilo više vremena.
+
+592
+00:43:12,239 --> 00:43:16,559
+[SPEAKER_02] Možda bih mogao usmjeriti brod u drugom smjeru i nešto učiniti da funkcionira.
+
+593
+00:43:16,559 --> 00:43:19,840
+[SPEAKER_02] Ali samo brzina kojom su sve prisilili da se dogodi.
+
+594
+00:43:20,000 --> 00:43:26,159
+[SPEAKER_02] Mislim na to kako je Apple kupio Dark Sky, mislim da su dali osamnaest mjeseci prije nego što je API isključen, a mislim da su ga produžili za šest mjeseci.
+
+595
+00:43:26,480 --> 00:43:33,039
+[SPEAKER_02] Dakle, bilo je kao da imate trideset dana i nije bilo samo zamjena izvornog API-a za vrijeme, bilo je kao zamjena izvornog API-a.
+
+596
+00:43:33,360 --> 00:43:34,559
+[SPEAKER_02] Bilo je vrlo agresivno.
+
+597
+00:43:34,639 --> 00:43:43,519
+[SPEAKER_02] Ali to je jedna od onih stvari u kojima sam čak i ako sam bio u hibernaciji Apollo nekoliko mjeseci, nekako sam sve riješio i onda ga oživio novim modelom cijena.
+
+598
+00:43:43,679 --> 00:43:48,000
+[SPEAKER_02] To je jedna od onih stvari u kojima čak i reproduciranje toga, matematika jednostavno nije imala smisla.
+
+599
+00:43:48,000 --> 00:43:51,440
+[SPEAKER_01] Ovo je osnovni trošak od dvadeset milijuna dolara godišnje, zar ne?
+
+600
+00:43:51,519 --> 00:43:54,079
+[SPEAKER_01] Dakle, dobivate, dobro, dobivate da svi pokriju to.
+
+601
+00:43:54,559 --> 00:43:55,440
+[SPEAKER_01] Što je ostalo za Christiana?
+
+602
+00:43:55,599 --> 00:43:57,119
+[SPEAKER_01] Što je ostalo za ulaganje?
+
+603
+00:43:57,199 --> 00:43:59,679
+[SPEAKER_02] Bilo je kao da bih imao ove astronomske troškove.
+
+604
+00:43:59,760 --> 00:44:07,679
+[SPEAKER_02] Usput, jedna od rasprava koju sam vodio s Redditom bila je, možete li potpisati ugovor u kojem bi se ti troškovi popravili barem na godinu ili dvije?
+
+605
+00:44:08,159 --> 00:44:15,519
+[SPEAKER_02] Samo da kažem, uspijem to učiniti i šest mjeseci kasnije ne kažete, oh, jeba, naš tajni pokušaj da ubijemo ove aplikacije nije uspio.
+
+606
+00:44:15,599 --> 00:44:16,719
+[SPEAKER_02] Ponovo ćemo udvostručiti cijene.
+
+607
+00:44:16,880 --> 00:44:17,920
+[SPEAKER_02] Da se to ne bi dogodilo.
+
+608
+00:44:18,159 --> 00:44:19,519
+[SPEAKER_02] Nisu mogli jamčiti ništa od toga.
+
+609
+00:44:19,760 --> 00:44:24,719
+[SPEAKER_02] Dakle, bilo je to kao da financijski podaci jednostavno nisu imali smisla, gdje bih morao naplaćivati mnogo više.
+
+610
+00:44:24,719 --> 00:44:30,400
+[SPEAKER_02] To je daleko izvan onoga što sam smatrao vrijednim aplikacije na Redditu, samo da bih dobio novčiće za svoj posao tamo.
+
+611
+00:44:30,719 --> 00:44:38,639
+[SPEAKER_02] I istovremeno, oslanjajući se na ovu nevjerojatno neravnu osnovu, čini mi se da više ne žele programeri na svojoj platformi.
+
+612
+00:44:38,960 --> 00:44:45,119
+[SPEAKER_02] Vi ste u nekoj vrsti nekretnine, gdje ste možda zakonski upravičeni na to, ali nitko vas ne želi tamo.
+
+613
+00:44:45,199 --> 00:44:49,039
+[SPEAKER_02] I to se čini vrlo nesigurnom osnovom za izgradnju dugoročnog proizvoda.
+
+614
+00:44:49,119 --> 00:44:54,159
+[SPEAKER_01] Bili ste uvjereni da je cilj bio samo otjerati sve klijente, poput klijenata treće strane?
+
+615
+00:44:54,239 --> 00:44:55,519
+[SPEAKER_02] Da, u potpunosti.
+
+616
+00:44:55,599 --> 00:44:59,840
+[SPEAKER_01] Ne znam ništa, ali sam samo znatiželjan zašto nisu samo rekli, evo, zatvaramo sve klijente treće strane.
+
+617
+00:45:00,079 --> 00:45:01,840
+[SPEAKER_01] Klijenti, jer je to potrebno za naš posao.
+
+618
+00:45:02,000 --> 00:45:04,960
+[SPEAKER_01] Misliš li da bi se samo povećao između većeg Reddita?
+
+619
+00:45:05,760 --> 00:45:11,360
+[SPEAKER_02] Želim reći da je to bilo nešto veliko, puno su razmišljali, ali stvarno se nije činilo tako.
+
+620
+00:45:11,679 --> 00:45:16,000
+[SPEAKER_02] Jer jedna od stvari koja je bila najčudnija bila je da se sve to dogodilo u svibnju.
+
+621
+00:45:16,159 --> 00:45:21,679
+[SPEAKER_02] A u siječnju sam imao godišnji poziv s Redditom i rekli su mi: Ne, sve je u redu s API-jem.
+
+622
+00:45:21,760 --> 00:45:26,159
+[SPEAKER_02] Nadamo se da ćemo napraviti neke promjene u onome što je dostupno, ali ove godine nismo planirali nikakve velike promjene u API-ju.
+
+623
+00:45:26,239 --> 00:45:30,639
+[SPEAKER_02] A to je bilo tri mjeseca kasnije i rekli su mi: Uistinu, bit će dvadeset milijuna dolara godišnje.
+
+624
+00:45:30,719 --> 00:45:32,719
+[SPEAKER_01] A ja sam rekao: Vau, to je velika promjena u odnosu na siječanj.
+
+625
+00:45:32,880 --> 00:45:34,960
+[SPEAKER_01] Čini se da netko radi u načinu osnivača u toj tvrtki.
+
+626
+00:45:35,199 --> 00:45:36,239
+[SPEAKER_02] Da, da, da, točno.
+
+627
+00:45:36,239 --> 00:45:40,559
+[SPEAKER_02] U glavi su mi govorili: Ne možemo samo zatvoriti sve aplikacije jer će izbiti pandemija.
+
+628
+00:45:41,280 --> 00:45:42,320
+[SPEAKER_02] Dakle, možda ćemo ih samo ugušiti.
+
+629
+00:45:42,559 --> 00:45:43,519
+[SPEAKER_02] Možda će to bolje proći.
+
+630
+00:45:44,000 --> 00:45:44,960
+[SPEAKER_02] Nadam se da ne.
+
+631
+00:45:46,400 --> 00:45:54,239
+[SPEAKER_01] Da sam to morao učiniti iz poslovnih razloga, a možda bih to učinio, vjerojatno bih se na nekom trenutku testirao na tome.
+
+632
+00:45:54,400 --> 00:45:56,480
+[SPEAKER_01] Nadam se da bih samo rekao: Evo što radimo.
+
+633
+00:45:56,639 --> 00:45:57,840
+[SPEAKER_01] Ove godine ćemo se javno javno prodavati.
+
+634
+00:45:57,920 --> 00:46:00,000
+[SPEAKER_01] Ne želimo da netko gleda Reddit, a ne na Redditu.
+
+635
+00:46:00,159 --> 00:46:01,280
+[SPEAKER_01] Zato ćemo to učiniti.
+
+636
+00:46:01,760 --> 00:46:08,159
+[SPEAKER_02] Iskreno mislim da bi ja i svi drugi to malo više cijenili jer bi to bilo iskrenije.
+
+637
+00:46:08,480 --> 00:46:11,360
+[SPEAKER_01] Da, ako ćete nekoga prevariti, samo mu recite zašto.
+
+638
+00:46:11,599 --> 00:46:12,880
+[SPEAKER_01] Samo mu recite, dobro, u redu.
+
+639
+00:46:48,000 --> 00:46:49,519
+[SPEAKER_01] U kojem je kao da si ti cijeli tip, ti si cijela stvar.
+
+640
+00:46:49,599 --> 00:46:54,559
+[SPEAKER_01] Možeš reći i učiniti, možeš djelovati kao Apollo jednoglasno, ali oni ne mogu, zar ne?
+
+641
+00:46:54,719 --> 00:46:58,000
+[SPEAKER_01] Dakle, postoji neka vrsta asimetrije agencije kad se radi s ljudima.
+
+642
+00:46:58,639 --> 00:47:10,880
+[SPEAKER_02] Ne znam je li to bilo tako daleko, jer u normalnim slučajevima, naravno, ali tip s kojim sam razgovarao bio je ispod razine izvršnog direktora i bio je kao da je izvršni direktor bio uočen u mnogim e-poštama i bio je vrlo upoznat s razgovorom.
+
+643
+00:47:11,039 --> 00:47:14,480
+[SPEAKER_02] Dakle, nije bilo kao da mislim da je bilo nekakve razlike.
+
+644
+00:47:14,639 --> 00:47:23,280
+[SPEAKER_02] Kao da bih trebao pogoditi, opet, ovo je samo pretpostavka, ali izgleda da je bilo kao da se javno javno javno javno javljaju i da je bilo nekakve brze žurbe da se riješe ove neodređene stvari.
+
+645
+00:47:23,519 --> 00:47:26,400
+[SPEAKER_01] Da, u nekoj tvrtki se događa pun u nekoj tvrtki kad se pripremate za IPO?
+
+646
+00:47:26,480 --> 00:47:26,960
+[SPEAKER_01] To je ludilo.
+
+647
+00:47:27,119 --> 00:47:30,159
+[SPEAKER_02] Da, a oni su rekli: U redu, imamo ovo neispravno pitanje i moramo ga zaključiti.
+
+648
+00:47:30,400 --> 00:47:31,280
+[SPEAKER_02] Tko ima ideju?
+
+649
+00:47:31,440 --> 00:47:33,440
+[SPEAKER_02] A možda ideja nije bila dobra.
+
+650
+00:47:34,639 --> 00:47:35,760
+[SPEAKER_01] Ne mogu svi biti hiti.
+
+651
+00:47:36,000 --> 00:47:36,800
+[SPEAKER_02] Ne, ne, ne, ne.
+
+652
+00:47:36,960 --> 00:47:38,079
+[SPEAKER_02] I ne možete ih kriviti zbog toga.
+
+653
+00:47:38,400 --> 00:47:39,119
+[SPEAKER_01] I mislim da je to uspjelo.
+
+654
+00:47:39,280 --> 00:47:40,800
+[SPEAKER_02] Ima li još nekih klijenata treće strane na Redditu?
+
+655
+00:47:42,079 --> 00:47:46,320
+[SPEAKER_02] Mislim da ih ima nekoliko, ali ne čujem puno o njima i mislim da ne uspijevaju nužno.
+
+656
+00:47:46,639 --> 00:47:54,880
+[SPEAKER_02] To je jedna od onih stvari i teško je jer čak i ako pogledate brojke prihoda tvrtke, kad devedeset posto prihoda ide za plaćanje računa, to je kao da.
+
+657
+00:47:55,119 --> 00:47:56,960
+[SPEAKER_01] Da, to nije sjajna tvrtka, zar ne?
+
+658
+00:47:57,039 --> 00:48:00,960
+[SPEAKER_01] Bili ste li vi značajan broj njihovih DAU-ova koji su čak i učinili razliku?
+
+659
+00:48:00,960 --> 00:48:01,280
+[SPEAKER_01] Da je to uopće imalo značenje?
+
+660
+00:48:01,519 --> 00:48:04,000
+[SPEAKER_02] Apollo je bila najveća aplikacija treće strane.
+
+661
+00:48:04,159 --> 00:48:04,559
+[SPEAKER_02] To sam znao.
+
+662
+00:48:04,639 --> 00:48:07,519
+[SPEAKER_02] Ali zamislite da je njihova prva strana još veća.
+
+663
+00:48:07,840 --> 00:48:08,639
+[SPEAKER_02] Oh, sto posto.
+
+664
+00:48:09,199 --> 00:48:10,000
+[SPEAKER_02] Vjerojatno u redu.
+
+665
+00:48:10,079 --> 00:48:12,320
+[SPEAKER_02] To je bila jedna od najzabavnijih stvari na jednom telefonskom pozivu.
+
+666
+00:48:12,559 --> 00:48:15,679
+[SPEAKER_02] Rekli su: Znate li koliko posto korisnika imate?
+
+667
+00:48:15,920 --> 00:48:18,480
+[SPEAKER_02] A ja sam rekao: Ne, ne bih znao.
+
+668
+00:48:19,519 --> 00:48:20,320
+[SPEAKER_02] A ja sam rekao: Da.
+
+669
+00:48:20,559 --> 00:48:21,920
+[SPEAKER_02] A ja sam rekao: Ne, koliko posto?
+
+670
+00:48:22,239 --> 00:48:23,679
+[SPEAKER_02] A oni su rekli: Ne, nismo sigurni.
+
+671
+00:48:23,760 --> 00:48:25,360
+[SPEAKER_01] Rekao je: Imam brojčanu jedinicu.
+
+672
+00:48:25,440 --> 00:48:26,320
+[SPEAKER_01] Nemam nazivnik.
+
+673
+00:48:26,480 --> 00:48:27,360
+[SPEAKER_01] U redu, u redu, u redu.
+
+674
+00:48:27,440 --> 00:48:29,519
+[SPEAKER_02] A ja sam rekao: Kakva je to čudna pitanja.
+
+675
+00:48:29,840 --> 00:48:31,840
+[SPEAKER_02] Očito ne znam, ali očito nemate.
+
+676
+00:48:32,000 --> 00:48:36,400
+[SPEAKER_01] Za sve tvrtke koje se brinu da nikad nećete doći do IPO-a, Reddit je došao.
+
+677
+00:48:36,480 --> 00:48:36,880
+[SPEAKER_01] Učinili su to.
+
+678
+00:48:37,119 --> 00:48:38,159
+[SPEAKER_01] Prošli su kroz sve to.
+
+679
+00:48:38,400 --> 00:48:38,960
+[SPEAKER_01] Shvatili su.
+
+680
+00:48:39,119 --> 00:48:40,079
+[SPEAKER_01] I vi možete to učiniti, znate?
+
+681
+00:48:40,480 --> 00:48:41,440
+[SPEAKER_01] Samo je bilo puno kaosa.
+
+682
+00:48:41,920 --> 00:48:43,199
+[SPEAKER_01] dvadeset godina ili bilo što drugo.
+
+683
+00:48:43,360 --> 00:48:46,320
+[SPEAKER_01] Znate, možda će vam trebati nekoliko, možda će vam trebati nekoliko, ali stići ćete do toga.
+
+684
+00:48:46,400 --> 00:48:47,360
+[SPEAKER_01] Postoji nada za sve nas.
+
+685
+00:48:47,840 --> 00:48:51,360
+[SPEAKER_00] Pa, htjela sam razgovarati o nekim vašim projektima nakon Apolloa.
+
+686
+00:48:52,000 --> 00:48:56,239
+[SPEAKER_00] Početak farme, premještanje, čula sam neke mješovite izvještaje o tome.
+
+687
+00:48:56,800 --> 00:48:57,519
+[SPEAKER_00] Mnogo ose.
+
+688
+00:48:58,000 --> 00:49:04,000
+[SPEAKER_00] Jer sam zaljubljenik u jedan od vaših trenutačnih projekata, koji je Juno na Apple Vision Pro.
+
+689
+00:49:04,559 --> 00:49:05,360
+[SPEAKER_00] Kako je to prošlo?
+
+690
+00:49:05,440 --> 00:49:07,360
+[SPEAKER_00] Mislim da je puno ljudi znatiželjno.
+
+691
+00:49:07,599 --> 00:49:20,159
+[SPEAKER_00] Mislim da sam posebno znatiželjan zašto niste pretplatili nakon toga, jer ne znam što sam misl platio, što je to bilo, pet dolara unaprijed, kao u siječnju, a to je gotovo jedina aplikacija koju koristim na Vision Prou.
+
+692
+00:49:21,440 --> 00:49:23,920
+[SPEAKER_00] I koristim je, znate, barem tjedno.
+
+693
+00:49:24,159 --> 00:49:28,800
+[SPEAKER_02] Rekla bih da većina mojih ideja ne dolazi iz logičkog mjesta.
+
+694
+00:49:28,800 --> 00:49:37,840
+[SPEAKER_02] Mislim da je to bilo jedno od onih stvari u kojima je bilo, bilo je vrlo slično, mislim da je tjedan dana prije izlaska Vision Proa YouTube rekao: Eh, nećemo to raditi.
+
+695
+00:49:38,000 --> 00:49:43,840
+[SPEAKER_02] A ja sam rekao: O, imam sve ovo kôd iz Apolloa za rukovanje YouTubeovim ugrađivanjem koje bih vjerojatno mogla brzo pretvoriti u aplikaciju.
+
+696
+00:49:43,920 --> 00:49:49,840
+[SPEAKER_02] I opet, isto je i kad kažem: Ako samo želim gledati YouTube na Vision Prou, ako sam jedina osoba koja kor koristi ovu aplikaciju, nema problema.
+
+697
+00:49:49,920 --> 00:49:51,280
+[SPEAKER_02] Dakle, pomislila sam, oh, izgradit ću je.
+
+698
+00:49:51,360 --> 00:49:53,519
+[SPEAKER_02] I pomislila sam, oh, i opet, to je bilo vrlo kratko razdoblje.
+
+699
+00:49:53,599 --> 00:49:55,760
+[SPEAKER_02] Dakle, pomislila sam, oh, samo ću joj staviti pet dolara.
+
+700
+00:49:55,840 --> 00:50:00,079
+[SPEAKER_02] Čini mi se da ako platite tri tisuće dolara za slušalice, možete si priuštiti pet dolara.
+
+701
+00:50:00,320 --> 00:50:01,920
+[SPEAKER_01] Nije bilo kao veliki plan.
+
+702
+00:50:02,480 --> 00:50:08,880
+[SPEAKER_01] Podcjenjujete svoju veliku strategiju, ali vidjeli ste da YouTube neće uzeti njihovu imovinu, kao da neće tvrditi da imaju pravo, zar ne?
+
+703
+00:50:09,039 --> 00:50:10,400
+[SPEAKER_01] I pomislili ste, oh, sjajno.
+
+704
+00:50:10,480 --> 00:50:11,760
+[SPEAKER_01] Ovdje je kršćanski oblik.
+
+705
+00:50:12,000 --> 00:50:12,719
+[SPEAKER_01] Baš tako.
+
+706
+00:50:13,039 --> 00:50:26,000
+[SPEAKER_02] Jer imaju ovu izvrsnu, potpunu dokumentaciju o mogućnosti ugradnje na YouTube jer je to tako uobičajeno da to želite učiniti u aplikacijama, na primjer, na Twitteru ili slično gdje netko objavljuje videozapis na YouTubeu i vi se pitate kako ga mogu reproducirati bez da ga iz ih izbacim na Safari ili YouTube.
+
+707
+00:50:26,239 --> 00:50:30,079
+[SPEAKER_02] Dakle, imaju ovo, to je zapravo samo akorame gdje možete samo reproducirati videozapis na YouTubeu.
+
+708
+00:50:30,400 --> 00:50:32,239
+[SPEAKER_02] I ja sam poput, sjajno, to sam koristio u Apollu godinama.
+
+709
+00:50:32,400 --> 00:50:34,000
+[SPEAKER_02] Samo ću reproducirati videozapis tamo.
+
+710
+00:50:34,079 --> 00:50:40,239
+[SPEAKER_02] A budući da je to samo akorame i daju vam određenu razinu kontrole, mogu ga malo manipulirati da izgleda malo više poput Vision OS-a.
+
+711
+00:50:40,800 --> 00:50:41,599
+[SPEAKER_02] I bilo je jako zabavno.
+
+712
+00:50:41,760 --> 00:50:47,920
+[SPEAKER_02] Bilo je tako zabavno ponovno biti poput, oh, jeba, imam tjedan dana da ovo izgradim ili dva tjedna ili bilo što drugo.
+
+713
+00:50:48,079 --> 00:50:49,599
+[SPEAKER_02] I samo, kakve su značajke važne?
+
+714
+00:50:50,159 --> 00:50:50,800
+[SPEAKER_02] Što mogu izgraditi?
+
+715
+00:50:50,960 --> 00:50:54,480
+[SPEAKER_02] I stvarno sam se vratio u taj raniji način Apollo, samo ga izvaditi.
+
+716
+00:50:54,719 --> 00:50:56,880
+[SPEAKER_02] I sjećam se da nismo dobili Vision Pro u Kanadi.
+
+717
+00:50:57,039 --> 00:50:59,360
+[SPEAKER_02] Dakle, završio sam kao da sam vozio u New Hampshire da ga dobijem.
+
+718
+00:50:59,679 --> 00:51:00,960
+[SPEAKER_02] I sjećam se punjenja.
+
+719
+00:51:01,119 --> 00:51:03,440
+[SPEAKER_02] na super punjaču i gledanja na telefonu, oh, odobreno je.
+
+720
+00:51:03,679 --> 00:51:04,480
+[SPEAKER_02] Ja sam pomislio, oh, super.
+
+721
+00:51:04,559 --> 00:51:04,960
+[SPEAKER_02] U redu, dobro.
+
+722
+00:51:05,039 --> 00:51:07,440
+[SPEAKER_02] Cijela je putovanja bila bezvrijedna.
+
+723
+00:51:08,719 --> 00:51:14,239
+[SPEAKER_02] Bilo je to kao da je to bilo u posljednji trenutak kad sam sljedećeg jutra pokrenuo i konačno sam dobio odobrenje.
+
+724
+00:51:14,480 --> 00:51:15,840
+[SPEAKER_02] Bilo je jako zabavno.
+
+725
+00:51:16,000 --> 00:51:21,280
+[SPEAKER_02] Bilo je to jedno od onih trenutaka kad je putovanje bilo tako zabavno da nisam mislio, oh, Bože, ovo će biti moj sljedeći Apollo.
+
+726
+00:51:21,440 --> 00:51:22,639
+[SPEAKER_02] Ovo će zaraditi mnogo novca.
+
+727
+00:51:22,719 --> 00:51:24,400
+[SPEAKER_02] Bilo je to nešto poput, ovo ću uživati.
+
+728
+00:51:24,480 --> 00:51:27,280
+[SPEAKER_02] Nadam se da će biti korisno i drugim ljudima koji žele gledati YouTube.
+
+729
+00:51:28,159 --> 00:51:35,840
+[SPEAKER_01] Mislim da je pozicioniranje dobre medijske aplikacije, znate, iskustvo, i možda neće uvijek biti samo YouTube, zar ne?
+
+730
+00:51:36,000 --> 00:51:40,559
+[SPEAKER_01] Možete zamisliti svijet u kojem je osvajanje tog položaja definitivno vrijedilo dvije tjedne.
+
+731
+00:51:40,559 --> 00:51:41,280
+[SPEAKER_01] A onda ćete vidjeti.
+
+732
+00:51:41,360 --> 00:51:44,159
+[SPEAKER_01] Vjerojatno ovisi uglavnom o tome kako se AVP odvija, zar ne?
+
+733
+00:51:44,480 --> 00:51:45,199
+[SPEAKER_01] Zanima me to.
+
+734
+00:51:45,679 --> 00:51:48,239
+[SPEAKER_01] Jesu li se prodaje smanjile na gotovo ništa?
+
+735
+00:51:48,400 --> 00:51:48,880
+[SPEAKER_02] Ne, čudno.
+
+736
+00:51:50,239 --> 00:51:56,320
+[SPEAKER_02] Očito je da je to vrlo slično VisionPro-u koji je izašao na vrhuncu, kao što je lansiranje u drugim zemljama na vrhuncu, ali nije došao na nulu.
+
+737
+00:51:56,400 --> 00:51:58,000
+[SPEAKER_02] I dalje donosi, znate, sto dolara dnevno.
+
+738
+00:51:58,239 --> 00:52:01,039
+[SPEAKER_01] Neke su dane, kao da je to pristojno za, da, to je osnovna alatna oprema.
+
+739
+00:52:01,119 --> 00:52:01,360
+[SPEAKER_01] Doista.
+
+740
+00:52:01,519 --> 00:52:03,199
+[SPEAKER_01] Mislim da bi trebalo biti ugrađeno.
+
+741
+00:52:03,519 --> 00:52:03,760
+[SPEAKER_02] Baš tako.
+
+742
+00:52:04,079 --> 00:52:04,719
+[SPEAKER_02] I to je stvar.
+
+743
+00:52:04,880 --> 00:52:12,960
+[SPEAKER_02] I nekako se veselim danu kad će YouTube izaći s nečim jer mogu učiniti toliko toga što ja ne mogu, kao što je to kroz sadržaje koje koristim.
+
+744
+00:52:12,960 --> 00:52:16,639
+[SPEAKER_02] Bilo bi sjajno vidjeti punopravnu aplikaciju s kojom možete doista doći do detalja.
+
+745
+00:52:16,880 --> 00:52:23,039
+[SPEAKER_00] Imate li neke korisničke analize ili možda čak samo trgovinu aplikacijama da biste razumjeli kakva je upotreba Vision Proa?
+
+746
+00:52:23,360 --> 00:52:28,320
+[SPEAKER_00] To je vrsta čudne platforme za Apple koja je malo na polici.
+
+747
+00:52:30,000 --> 00:52:31,679
+[SPEAKER_00] Hoće li potpuno propasti?
+
+748
+00:52:31,920 --> 00:52:39,119
+[SPEAKER_00] Hoće li, kao što sam rekao, u vrlo ograničenom vremenu koje imam za upotrebu Vision Proa, to je gotovo sve što upotrebljavam na Vision Prou.
+
+749
+00:52:39,199 --> 00:52:41,679
+[SPEAKER_00] To je poput opuštanja, stavite Vision Pro i gledajte malo YouTubea.
+
+750
+00:52:41,920 --> 00:52:43,119
+[SPEAKER_00] To je poput vremena za opuštanje.
+
+751
+00:52:43,280 --> 00:52:48,000
+[SPEAKER_02] Iskreno, Vision Pro nije ni moja aplikacija, ali Vision Pro je sjajan način za gledanje videozapisa.
+
+752
+00:52:48,159 --> 00:52:48,880
+[SPEAKER_02] Doista izvrsno izlazi.
+
+753
+00:52:48,880 --> 00:52:49,199
+[SPEAKER_02] Zaista je sjajan u tome.
+
+754
+00:52:49,440 --> 00:52:50,400
+[SPEAKER_02] Dakle, čujem te.
+
+755
+00:52:50,719 --> 00:52:52,639
+[SPEAKER_02] Što se tiče brojeva, nemam nikakve analitike.
+
+756
+00:52:52,880 --> 00:52:54,559
+[SPEAKER_02] Vjerojatno bih mogao provjeriti App Store Connect.
+
+757
+00:52:54,719 --> 00:52:55,039
+[SPEAKER_02] Nemam.
+
+758
+00:52:56,000 --> 00:52:58,320
+[SPEAKER_01] To je stvarno teško jer zapravo ne znate stopu prijave.
+
+759
+00:52:58,639 --> 00:53:01,840
+[SPEAKER_01] Dakle, dobivanje apsolutnih brojeva stvarno je komplicirano.
+
+760
+00:53:02,000 --> 00:53:02,400
+[SPEAKER_01] Baš tako.
+
+761
+00:53:02,719 --> 00:53:10,079
+[SPEAKER_02] I to je jedna od onih stvari u kojima je, da, dovoljno dobro napravljeno i ljudi ga izgledaju kao da ga preuzimaju da mi to nije bilo toliko važno.
+
+762
+00:53:10,320 --> 00:53:15,760
+[SPEAKER_02] Da sam morao pogoditi, osobno, nisam, kao da je upotreba Vision Pro-a smanjena tijekom mjeseci i ne koristim ga toliko kao prije.
+
+763
+00:53:15,840 --> 00:53:22,719
+[SPEAKER_02] I ne bi me iznenadilo da se to odražava na brojkama, gdje ljudi to isprobaju, uživaju u tome, možda ga stavljaju u ormar i ne.
+
+764
+00:53:23,039 --> 00:53:27,280
+[SPEAKER_02] Ali za mnoge ljude se čini da kad dobiju Vision Pro, to je aplikacija koju žele isprobati.
+
+765
+00:53:27,440 --> 00:53:27,519
+[SPEAKER_01] Da.
+
+766
+00:53:27,840 --> 00:53:30,079
+[SPEAKER_01] Vidite, imate dva velika projekta na kojima radite?
+
+767
+00:53:30,400 --> 00:53:31,599
+[SPEAKER_02] Da, to i PixelFiles.
+
+768
+00:53:31,760 --> 00:53:31,840
+[SPEAKER_02] Da.
+
+769
+00:53:32,400 --> 00:53:34,400
+[SPEAKER_01] Mislim da većinu vašeg vremena provodite na PixelFilesu.
+
+770
+00:53:34,480 --> 00:53:36,239
+[SPEAKER_01] Pa, ili većinu vašeg vremena provodite na paddleboardu.
+
+771
+00:53:36,400 --> 00:53:39,760
+[SPEAKER_02] O, čovječe, ja sam strašan u paddleboardu.
+
+772
+00:53:39,920 --> 00:53:40,800
+[SPEAKER_02] To je nešto na čemu moram raditi.
+
+773
+00:53:40,960 --> 00:53:44,639
+[SPEAKER_02] Samo pokušavam odabrati stereotipnu aktivnost iz Nove Škotske, ako vam se sviđa.
+
+774
+00:53:44,719 --> 00:53:45,840
+[SPEAKER_02] Da, mislim da je to klizanje.
+
+775
+00:53:46,320 --> 00:53:48,079
+[SPEAKER_02] Ali ne, ne, ne, ne mogu to dobro raditi.
+
+776
+00:53:48,239 --> 00:53:49,519
+[SPEAKER_02] Trebam dobar primjer.
+
+777
+00:53:49,599 --> 00:53:53,039
+[SPEAKER_02] Ali ne, to se vraća na to da nisam najbolji u logici i poslu.
+
+778
+00:53:53,679 --> 00:53:59,679
+[SPEAKER_02] PixelFiles radi vrlo dobro i zaradio je mnogo više od Juno, aplikacije YouTube Vision Pro.
+
+779
+00:54:00,400 --> 00:54:04,559
+[SPEAKER_02] Ali bio sam toliko očaran Division Pro-om tri ili četiri mjeseca da sam na tome puno radio.
+
+780
+00:54:04,800 --> 00:54:06,559
+[SPEAKER_01] U osnovi, to je ono što nazivaju nerds sniped.
+
+781
+00:54:07,119 --> 00:54:07,440
+[SPEAKER_01] Baš tako.
+
+782
+00:54:07,599 --> 00:54:15,679
+[SPEAKER_02] Bio sam toliko očaran, iako su brojke bile bez smisla da se usredotočim na to u odnosu na drugu stvar, bilo je jako zabavno raditi na tome.
+
+783
+00:54:16,000 --> 00:54:19,760
+[SPEAKER_02] Tako sam to radio mjesecima i mjesecima i mjesecima, a ove godine puno više radim na Pixel Palsu.
+
+784
+00:54:20,559 --> 00:54:26,400
+[SPEAKER_02] Ali da, nekako sam se izgubio u umaku nekoliko mjeseci na tome što bi bilo najkorisnije raditi na tome.
+
+785
+00:54:26,480 --> 00:54:27,440
+[SPEAKER_02] Ali bilo je jako zabavno, barem.
+
+786
+00:54:27,519 --> 00:54:37,920
+[SPEAKER_01] Mislim da je Pixel Pals stvarno zanimljiv kao projekt jer mislim da većina neovisnih programera obično ostaje u utiliteta ili bilo gdje drugdje, a to je nekako na raskrižju igara i utilitaiteti, možda, zar ne?
+
+787
+00:54:38,079 --> 00:54:39,840
+[SPEAKER_01] Igre su jebeno profitabilne.
+
+788
+00:54:40,320 --> 00:54:43,280
+[SPEAKER_01] Pogledajte, u trgovini aplikacijama igre i dalje dominiraju.
+
+789
+00:54:43,360 --> 00:54:46,800
+[SPEAKER_01] Zapravo, možda su aplikacije sada možda pedeset posto, možda je jednako.
+
+790
+00:54:47,039 --> 00:54:48,559
+[SPEAKER_02] Ali, da, nema smisla.
+
+791
+00:54:48,719 --> 00:54:56,239
+[SPEAKER_02] I to je puno, poput Vision Proa, gdje je, da, tako dugo ostanemo u utiliteti da je imati nešto što uopće nije u tom području poput rastezanja različitih mišića.
+
+792
+00:54:56,320 --> 00:55:02,559
+[SPEAKER_01] Da, kad postoji samo više kreativnog područja, kao da ništa ne morate raditi jer ljudi traže svrhu, zar ne?
+
+793
+00:55:02,719 --> 00:55:06,800
+[SPEAKER_01] Možete samo, recimo, graditi cool stvari jer su slatke i potpuno je za umjetnost, znate?
+
+794
+00:55:07,199 --> 00:55:07,840
+[SPEAKER_01] To je jako zabavno.
+
+795
+00:55:08,000 --> 00:55:12,960
+[SPEAKER_02] I možete raditi s Apollo, recimo, u mjeri u kojoj bih obično radio s dizajnerima, radi se o tome da se izrade prilagođene ikone aplikacija.
+
+796
+00:55:12,960 --> 00:55:13,280
+[SPEAKER_02] Kao što su napravljene prilagođene ikone aplikacija.
+
+797
+00:55:13,360 --> 00:55:17,119
+[SPEAKER_02] Ali s Pixel Palasom možete napraviti puno piksel umjetnosti od nekih vrlo talentiranih ljudi.
+
+798
+00:55:17,199 --> 00:55:24,960
+[SPEAKER_02] Jer sam htjela pitati sljedećeg, radi li se potpuno kreativno ili ne, voljela bih da mogu to učiniti jer je piksel umjetnost, ne znam, toliko nostalgijska.
+
+799
+00:55:25,119 --> 00:55:27,119
+[SPEAKER_02] To bi bila stvarno cool umjetnička forma u koju bih se mogla upustiti.
+
+800
+00:55:27,360 --> 00:55:31,920
+[SPEAKER_01] To je jedna od onih stvari u kojima mislim da bih, Dunning Kruger, sama rekla: Da, samo kvadrati, zar ne?
+
+801
+00:55:32,000 --> 00:55:34,639
+[SPEAKER_01] Kao da bih mogla samo nacrtati kvadrate, a onda bi rekla: Ne, apsolutno ne mogu to učiniti.
+
+802
+00:55:34,719 --> 00:55:40,159
+[SPEAKER_02] Ne, ne, to je kao šivanje križa i sve to, gdje je to jednostavno na površini, ali definitivno ima umjetnost u tome.
+
+803
+00:55:40,400 --> 00:55:48,880
+[SPEAKER_02] I oslobađa puno vremena, gdje, ne znam, s inženjerskim radom, iterirate do točke u kojoj mislite: Dovoljno je brzo, dovoljno dobro radi, znate, šaljite ga.
+
+804
+00:55:48,880 --> 00:55:56,480
+[SPEAKER_02] Kada sam pokušao napraviti piksel umjetnost, pomaknuo sam piksel udesno, a zatim ulijevo, gore-dolje i onda sam pomislio: Ah, nema definitivnog, ovo je gotovo.
+
+805
+00:55:56,559 --> 00:55:58,719
+[SPEAKER_02] I možeš se izgubiti u detaljima.
+
+806
+00:55:58,880 --> 00:56:01,519
+[SPEAKER_02] Lakše je pustiti da to riješi profesionalac.
+
+807
+00:56:01,920 --> 00:56:08,320
+[SPEAKER_01] To bi moglo biti prepoznatljivo za dobre umjetnike, jer mogu znati kada je gotovo, znaš, samo znati da je dovoljno dobro.
+
+808
+00:56:08,559 --> 00:56:09,599
+[SPEAKER_01] Znaš, mogu poslati ovo.
+
+809
+00:56:09,679 --> 00:56:12,239
+[SPEAKER_01] Vidio sam dovoljno stvari koje mogu poslati i ovo je na razini.
+
+810
+00:56:12,320 --> 00:56:16,079
+[SPEAKER_01] Ali čak i to, mislim da su recenzije kolega i slično korisne.
+
+811
+00:56:16,159 --> 00:56:24,880
+[SPEAKER_01] Nekoliko sam vremena radio na igri za iPhone i definitivno je bilo mnogo bolje kad si imao nekoliko umjetnika umjesto jednog jer su umjetnici mogli pregledati i provjeravati.
+
+812
+00:56:24,880 --> 00:56:27,039
+[SPEAKER_01] I kao da se prekrižavamo, kritiziramo rad jedni drugih, što vrijedi i za programiranje.
+
+813
+00:56:27,360 --> 00:56:28,480
+[SPEAKER_01] Mislim da je u mnogim slučajevima to istina.
+
+814
+00:56:28,559 --> 00:56:33,840
+[SPEAKER_01] Jeste li ikad, mislim, spomenuo sam Apple, ali ste li ikad radili s drugim programerima, recimo, kritizirali svoj kod i slično?
+
+815
+00:56:34,320 --> 00:56:35,920
+[SPEAKER_01] Ne od fakulteta.
+
+816
+00:56:36,159 --> 00:56:37,280
+[SPEAKER_02] Ne, ne mislim.
+
+817
+00:56:37,679 --> 00:56:39,519
+[SPEAKER_01] Vi ste poput jedne od tih netaknutih plemena.
+
+818
+00:56:39,679 --> 00:56:42,800
+[SPEAKER_01] Kao da je vaš kod vjerojatno samo, oh, to je kaos.
+
+819
+00:56:42,960 --> 00:56:50,239
+[SPEAKER_02] Da, bilo je nekih datoteka u Apollu koje su, recimo, sigurno kršile Ženevsku konvenciju u smislu onoga što ste smjeli raditi.
+
+820
+00:56:50,320 --> 00:56:52,000
+[SPEAKER_02] Ipak, postoji prava sloboda u tome.
+
+821
+00:56:52,159 --> 00:56:53,039
+[SPEAKER_01] I razumio sam to.
+
+822
+00:56:53,599 --> 00:56:54,880
+[SPEAKER_01] Dakle, to je programiranje.
+
+823
+00:56:54,960 --> 00:56:55,760
+[SPEAKER_01] Osnivački način.
+
+824
+00:56:56,320 --> 00:56:58,239
+[SPEAKER_01] I dalje ćemo ga vraćati u osnivački način.
+
+825
+00:56:58,559 --> 00:57:00,719
+[SPEAKER_01] To je kao da samo, samo, samo radi ono što moraš.
+
+826
+00:57:01,760 --> 00:57:04,800
+[SPEAKER_01] Vjerojatno možeš brzo krenuti i to je dug koji si uzimao i ne brineš se.
+
+827
+00:57:05,039 --> 00:57:05,840
+[SPEAKER_01] I možda to nije dug.
+
+828
+00:57:06,000 --> 00:57:08,880
+[SPEAKER_01] To je dug samo ako te sprečava da nešto učiniš u budućnosti.
+
+829
+00:57:08,960 --> 00:57:10,239
+[SPEAKER_01] Inače je to samo besplatni novac.
+
+830
+00:57:10,320 --> 00:57:13,440
+[SPEAKER_02] I često je to bio dug u smislu, mislim da je ovo dobar način da to učiniš.
+
+831
+00:57:13,519 --> 00:57:16,320
+[SPEAKER_02] A onda prođe godina ili dvije i postaješ bolji programer.
+
+832
+00:57:16,639 --> 00:57:20,480
+[SPEAKER_01] To je najgore, iskreno, to su najgori dugovi koje uzimaš kad ni ne shvaćaš da je to dug.
+
+833
+00:57:20,719 --> 00:57:24,559
+[SPEAKER_01] Kažeš, ovo radim samo zato što mislim da je to prava arhitektura i radiš polovično dobru posao.
+
+834
+00:57:24,639 --> 00:57:29,679
+[SPEAKER_01] A onda kasnije shvatiš, ima toliko stvari u RevenueCat-u o kojima smo Miguel i ja donijeli odluke 2017.
+
+835
+00:57:29,760 --> 00:57:30,239
+[SPEAKER_01] i 2018.
+
+836
+00:57:30,320 --> 00:57:32,400
+[SPEAKER_01] godine, gdje sam rekao, zašto još uvijek imamo ovaj bug?
+
+837
+00:57:32,719 --> 00:57:34,800
+[SPEAKER_01] I to je kao, dobro, gospodine, jer ste 2017.
+
+838
+00:57:35,039 --> 00:57:36,639
+[SPEAKER_01] godine odlučili napraviti ovu jednu tablicu nastavaka.
+
+839
+00:57:36,639 --> 00:57:38,400
+[SPEAKER_01] I ja kažem: U redu.
+
+840
+00:57:38,719 --> 00:57:39,679
+[SPEAKER_02] Da, krivite se.
+
+841
+00:57:40,239 --> 00:57:40,320
+[SPEAKER_02] Da.
+
+842
+00:57:40,960 --> 00:57:41,039
+[SPEAKER_02] Ne.
+
+843
+00:57:41,519 --> 00:57:52,159
+[SPEAKER_02] Ali kad niste možda u tako velikoj tvrtki, na neki način je zabavno gledati unatrag na te stvari novim, boljim očima i reći: Bože, to je bio tako glupi način rješavanja toga.
+
+844
+00:57:52,480 --> 00:57:56,320
+[SPEAKER_02] Kao da mogu to učiniti u pola redaka koda s polovicom grešaka.
+
+845
+00:57:56,639 --> 00:58:00,239
+[SPEAKER_02] Kao da se vraćate i igrate nogomet protiv svoje osnovne škole.
+
+846
+00:58:00,880 --> 00:58:02,320
+[SPEAKER_02] To je kao da je to lako.
+
+847
+00:58:02,400 --> 00:58:03,760
+[SPEAKER_02] Kao da su ti djeca gnjavaža.
+
+848
+00:58:04,079 --> 00:58:05,440
+[SPEAKER_02] Kao da je ponekad zabavno.
+
+849
+00:58:05,679 --> 00:58:09,599
+[SPEAKER_02] Ali da, postaje kao da je bilo što, ako je previše, to na neki način usporava cijeli projekt.
+
+850
+00:58:09,840 --> 00:58:09,920
+[SPEAKER_01] Da.
+
+851
+00:58:10,239 --> 00:58:12,719
+[SPEAKER_01] Ali znate, ne morate nužno rješavati to.
+
+852
+00:58:12,719 --> 00:58:15,199
+[SPEAKER_01] Mislim da je ovo nešto o čemu smo se Miguel i ja raspravljali.
+
+853
+00:58:16,079 --> 00:58:21,599
+[SPEAKER_01] A onda mislim da sam u prošlosti radio na mjestima gdje smo bili mnogo oprezniji u vezi s našim arhitekturom i svim ovim stvarima.
+
+854
+00:58:21,679 --> 00:58:22,800
+[SPEAKER_01] Nikad nismo htjeli stvoriti dug.
+
+855
+00:58:23,119 --> 00:58:30,239
+[SPEAKER_01] I mislim da je jedna od stvari u kojoj smo dobro radili u RevenueCatu bila da ćemo svjesno stvoriti dug i znati da će se dio toga baciti, ali biti razboriti u tome gdje to radimo.
+
+856
+00:58:30,400 --> 00:58:31,119
+[SPEAKER_01] I to je bilo ogromno.
+
+857
+00:58:31,280 --> 00:58:32,800
+[SPEAKER_01] Uzimamo dugove cijelo vrijeme.
+
+858
+00:58:32,960 --> 00:58:35,519
+[SPEAKER_02] Pa, vi ste financirani od VC-a.
+
+859
+00:58:35,920 --> 00:58:36,000
+[SPEAKER_01] Da.
+
+860
+00:58:37,119 --> 00:58:38,639
+[SPEAKER_01] U redu, dionica i dug.
+
+861
+00:58:38,800 --> 00:58:44,559
+[SPEAKER_01] David, moramo napraviti sto jedan jer su to stvari poput dionice i duga, potpuno različita sredstva i imaju različite posljedice.
+
+862
+00:58:44,639 --> 00:58:45,920
+[SPEAKER_01] A ljudi također uzimaju dugove.
+
+863
+00:58:46,000 --> 00:58:47,519
+[SPEAKER_01] To se zove dug ulaganja i to je super.
+
+864
+00:58:47,920 --> 00:58:51,519
+[SPEAKER_01] To je zapravo opasna stvar u nekim slučajevima, ali napravit ćemo cijeli podcast o tome.
+
+865
+00:58:51,840 --> 00:58:52,800
+[SPEAKER_01] Iskreno, volio bih to.
+
+866
+00:58:52,880 --> 00:58:57,199
+[SPEAKER_01] Sljedeći put kad ću raspravljati s ljudima na Twitteru o tome, svi će biti informirani.
+
+867
+00:58:57,199 --> 00:58:57,440
+[SPEAKER_01] Da, da.
+
+868
+00:58:58,000 --> 00:59:01,360
+[SPEAKER_02] Siguran sam da će vam to učiniti Twitter debate ugodnijima.
+
+869
+00:59:02,480 --> 00:59:03,360
+[SPEAKER_01] Poslušajte moj podcast.
+
+870
+00:59:03,599 --> 00:59:05,519
+[SPEAKER_01] Ne mijenjamo svijet našim podcastovima.
+
+871
+00:59:05,679 --> 00:59:09,280
+[SPEAKER_02] Kažem da vaši tweeti mijenjaju svijet, a vaši podcastovi su nešto poput zasebne stvari.
+
+872
+00:59:09,360 --> 00:59:10,960
+[SPEAKER_00] Da, znate, za to sam ovdje.
+
+873
+00:59:11,760 --> 00:59:19,599
+[SPEAKER_00] Pa, Christian, bilo je jako zabavno razgovarati o svemu ovome i malo smo se zavrtjeli, ali trebamo li još jednom razgovarati o načinu osnivača?
+
+874
+00:59:19,840 --> 00:59:21,599
+[SPEAKER_00] Mislim da možda malo svjetla na to.
+
+875
+00:59:22,000 --> 00:59:24,880
+[SPEAKER_00] Mislim da će za mnoge ljude ovo biti besplatno.
+
+876
+00:59:24,880 --> 00:59:30,159
+[SPEAKER_00] Ovo će biti oslobađajuća rasprava, poput: Eh, ne trebam sve svoje gluposti da nešto izgradim.
+
+877
+00:59:30,639 --> 00:59:31,440
+[SPEAKER_00] Samo pogledajte ovaj nered.
+
+878
+00:59:31,599 --> 00:59:32,559
+[SPEAKER_00] Pogledajte koliko je uspješna.
+
+879
+00:59:32,639 --> 00:59:33,039
+[SPEAKER_02] Da, da, da.
+
+880
+00:59:33,199 --> 00:59:34,239
+[SPEAKER_02] Hej, netko je to napokon rekao.
+
+881
+00:59:34,480 --> 00:59:45,119
+[SPEAKER_00] Ali, u konačnici, mislim da je zaključak iz ove rasprave da su korisnici ono što je važno i da im stvaramo vrijednost.
+
+882
+00:59:45,519 --> 00:59:59,360
+[SPEAKER_00] I ono što ste učinili nevjerojatno dobro bez procesa jer ste bili vrlo strastveni i pronašli zajednicu i ono što ljudi trebaju učiniti, čak i ako ne mogu, znate, formirati podreddit strastvenih ljudi koji će, volim ono što ste rekli.
+
+883
+01:00:00,239 --> 01:00:02,880
+[SPEAKER_00] Znate, vaš subreddit vas je na neki način upravljao.
+
+884
+01:00:03,119 --> 01:00:07,599
+[SPEAKER_00] Čak i ako ne možete izgraditi takvu zajednicu oko svoje aplikacije, morate razgovarati s korisnicima.
+
+885
+01:00:07,679 --> 01:00:15,840
+[SPEAKER_00] Mislim, nešto što puno radimo u RevenueCatu, što jako cijenim u našoj kulturi, jest da ne možete dopustiti korisnicima da vode brod.
+
+886
+01:00:16,000 --> 01:00:21,679
+[SPEAKER_00] Ali ako ćete izgraditi brod na koji će ljudi ukrcati, morate se pobrinuti da pronađu nešto vrijedno.
+
+887
+01:00:21,840 --> 01:00:22,880
+[SPEAKER_00] To je putovanje koje žele napraviti.
+
+888
+01:00:23,280 --> 01:00:28,880
+[SPEAKER_00] Mislim da ste to učinili nevjerojatno dobro bez svih gluposti i procesa i gluposti.
+
+889
+01:00:29,039 --> 01:00:31,440
+[SPEAKER_00] To je kao da ste to učinili na svoj način i uspjeli ste u tome.
+
+890
+01:00:31,679 --> 01:00:36,639
+[SPEAKER_00] I kao što sam rekao, vi ste, znate, tri od četiri, kao da su tri vaše aplikacije nevjerojatno voljene.
+
+891
+01:00:36,639 --> 01:00:41,119
+[SPEAKER_00] Mislim, opet, koristim Juno, iako je to bio neki drugi projekt koji ste bacili u tjednu.
+
+892
+01:00:41,519 --> 01:00:50,719
+[SPEAKER_00] To je ispunilo potrebu i stvarno je sjajno iskustvo na Apple Vision Pro-u koje ne bih imao u Safari YouTube iskustvu.
+
+893
+01:00:50,880 --> 01:00:51,599
+[SPEAKER_02] Potpuno se slažem.
+
+894
+01:00:51,679 --> 01:01:00,159
+[SPEAKER_02] Osjećam da je naša industrija jedna od najgorih, čak ni ne kao da je vrata čuvara, nego slučajno vrata čuvara, jer mislim da činimo da smo čarobnjaci ovdje ili nešto slično.
+
+895
+01:01:00,320 --> 01:01:04,960
+[SPEAKER_02] I ljudi kažu: Bože, nikad ne bih mogao programirati ili nikad ne bih mogao izgraditi aplikaciju.
+
+896
+01:01:05,039 --> 01:01:05,519
+[SPEAKER_02] To je ludilo.
+
+897
+01:01:05,679 --> 01:01:06,880
+[SPEAKER_02] Ali to nije tako.
+
+898
+01:01:07,599 --> 01:01:08,639
+[SPEAKER_02] Ne trebate puno procesa.
+
+899
+01:01:08,719 --> 01:01:11,679
+[SPEAKER_02] Trebate samo dobru ideju i uvjerenje da želite vidjeti da se ostvari.
+
+900
+01:01:11,679 --> 01:01:12,880
+[SPEAKER_01] Ali pogledajte Freya.
+
+901
+01:01:12,880 --> 01:01:17,360
+[SPEAKER_02] Ali kad pogledate pukovnika Sandersa, znate, upravo ste imali dobru recepturu i htjeli ste napraviti piletinu i to funkcionira.
+
+902
+01:01:17,519 --> 01:01:20,400
+[SPEAKER_02] Samo trebate imati dobru ideju i htjeti je vidjeti.
+
+903
+01:01:20,719 --> 01:01:27,920
+[SPEAKER_02] Ali, da, da, mislim da postoji mnogo procesa koji mislim da ljudi izvana izgledaju zastrašujuće, ali mislim da možete srušiti mnoge od tih zidova i nije tako loše kao što izgleda.
+
+904
+01:01:28,320 --> 01:01:32,960
+[SPEAKER_00] U redu, bilo što želite podijeliti dok završavamo, mislim da ljudi mogu pratiti vas na Twitteru.
+
+905
+01:01:33,119 --> 01:01:34,639
+[SPEAKER_00] Imate razvijajuću karijeru na YouTubeu.
+
+906
+01:01:35,199 --> 01:01:38,719
+[SPEAKER_00] Zapravo sam obožavao vaš videozapis na YouTubeu o izradi vlastite tipkovnice.
+
+907
+01:01:38,800 --> 01:01:40,079
+[SPEAKER_00] Bio je nevjerojatan.
+
+908
+01:01:40,559 --> 01:01:42,159
+[SPEAKER_00] Pogledajte cijelo, poslali ste ga sinu.
+
+909
+01:01:42,480 --> 01:01:46,000
+[SPEAKER_00] Obojica smo malo ljubitelji tipkovnica, pa je to sjajno.
+
+910
+01:01:46,159 --> 01:01:46,559
+[SPEAKER_02] Vi ste moj narod.
+
+911
+01:01:46,639 --> 01:01:51,360
+[SPEAKER_02] Da, ne, to je kao sve i bilo što drugo, samo želite nešto učiniti i objaviti to u svijetu i nadati se da će i ljudi uživati.
+
+912
+01:01:51,679 --> 01:01:53,840
+[SPEAKER_02] Ali da, ja sam Christian svugdje, gotovo.
+
+913
+01:01:54,000 --> 01:01:56,880
+[SPEAKER_02] Držim se dosljednog imena, tako da je lako pronaći me.
+
+914
+01:01:56,960 --> 01:01:58,239
+[SPEAKER_00] U redu, hvala vam što ste se priključili.
+
+915
+01:01:58,480 --> 01:01:59,920
+[SPEAKER_00] Ovo je bila stvarno zabavna rasprava.
+
+916
+01:02:00,079 --> 01:02:01,519
+[SPEAKER_02] Oh, ne, užitak je na mome.
+
+917
+01:02:01,599 --> 01:02:02,960
+[SPEAKER_02] Nadam se da je bilo nešto vrijedno.
+
+918
+01:02:03,199 --> 01:02:03,760
+[UNKNOWN] Hvala vam što ste slušali.
+
+919
+01:02:05,360 --> 01:02:10,880
+[SPEAKER_00] Ako imate minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+920
+01:02:12,159 --> 01:02:20,639
+[SPEAKER_00] Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
+
