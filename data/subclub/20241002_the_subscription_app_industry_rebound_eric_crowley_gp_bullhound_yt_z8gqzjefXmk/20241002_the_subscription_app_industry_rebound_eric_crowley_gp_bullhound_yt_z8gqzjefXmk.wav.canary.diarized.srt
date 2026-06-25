@@ -1,0 +1,3548 @@
+1
+00:00:00,000 --> 00:00:09,599
+[SPEAKER_00] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:20,000
+[SPEAKER_00] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,559
+[SPEAKER_00] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+[SPEAKER_00] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje klijentima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,679 --> 00:00:37,039
+[SPEAKER_00] Više informacija možete pronaći na revenuecat dot com dot Uđimo u emisiju.
+
+6
+00:00:37,359 --> 00:00:45,200
+[SPEAKER_00] Pozdrav, ja sam vaš domaćin David Barnard, a danas sam ovdje s Jacobom Eitingom, izvršnim direktorom RevenueCata.
+
+7
+00:00:45,359 --> 00:00:56,479
+[SPEAKER_00] Naš današnji gost je Eric Crowley, tehnološki investicijski bankar iz tvrtke GP Bullhound, gdje pruža savjete o transakcijama i kapital vodećim tvrtkama u području softvera za pretplatu potrošača.
+
+8
+00:00:56,719 --> 00:01:11,599
+[SPEAKER_00] Na podcastu razgovaramo s Ericom o oporavku vrijednosti pretplate potrošača i interesa investitora, kako ostvariti zadržavanje neto prihoda u potrošačkim sektorima i zašto biste trebali utvrditi gdje se vaša aplikacija nalazi na Maslowovoj hijerarhiji potreba.
+
+9
+00:01:12,000 --> 00:01:14,959
+[SPEAKER_00] Hej, Ericiku, hvala ti što si se danas priključio našem podcastu.
+
+10
+00:01:15,280 --> 00:01:15,680
+[SPEAKER_02] Hvala ti, ljudi.
+
+11
+00:01:16,000 --> 00:01:16,879
+[SPEAKER_02] Uvijek je lijepo biti ovdje.
+
+12
+00:01:16,959 --> 00:01:18,319
+[SPEAKER_02] Zaista cijenim što si me ponovno došao.
+
+13
+00:01:18,640 --> 00:01:20,400
+[SPEAKER_02] Peti put na podcastu.
+
+14
+00:01:20,799 --> 00:01:23,040
+[SPEAKER_02] Ti si najiskusniji gost.
+
+15
+00:01:23,280 --> 00:01:24,159
+[SPEAKER_02] To je velika čast.
+
+16
+00:01:24,319 --> 00:01:27,599
+[SPEAKER_02] Vjerojatno je ovo jedna od stvari na koju se radujem svake godine.
+
+17
+00:01:28,000 --> 00:01:29,439
+[SPEAKER_01] Zato radiš izvješće sada?
+
+18
+00:01:29,599 --> 00:01:33,760
+[SPEAKER_01] Ti si poput, ako ne radim izvješće, neću se uključiti u Subclub i to bi samo uništilo moj godinu.
+
+19
+00:01:33,920 --> 00:01:37,840
+[SPEAKER_01] Vi ste toliko popularni danas da moram održavati svoju igru kako bih se uključio u igru.
+
+20
+00:01:38,000 --> 00:01:39,439
+[SPEAKER_01] Moram održavati korak.
+
+21
+00:01:40,079 --> 00:01:42,480
+[SPEAKER_00] A Jacob, lijepo je razgovarati i s tobom danas.
+
+22
+00:01:42,959 --> 00:01:43,200
+[SPEAKER_01] Ja sam ovdje.
+
+23
+00:01:43,599 --> 00:01:43,920
+[SPEAKER_01] Ja sam dobar.
+
+24
+00:01:44,159 --> 00:01:48,159
+[SPEAKER_01] Ja sam nepripravljen, što je sjajno jer je Erik previše pripremljen.
+
+25
+00:01:50,560 --> 00:01:56,239
+[SPEAKER_01] Uvijek sam uzbuđen što ne znam, mi živimo makro u RevenueCatu, zar ne?
+
+26
+00:01:56,400 --> 00:02:06,159
+[SPEAKER_01] Kao da se svakodnevno bavimo kupcima, ali lijepo je imati priliku pogledati industriju malo šire i uvjeriti se da je još uvijek tu i da još uvijek raste.
+
+27
+00:02:06,319 --> 00:02:16,479
+[SPEAKER_00] Dakle, da, i to je zapravo točno gdje sam želio započeti, da svake godine izradimo izvješće o stanju aplikacija za pretplatu, a sada smo napravili drugo, već planirali treće za 2025.
+
+28
+00:02:17,199 --> 00:02:24,879
+[SPEAKER_00] Ovo je vaš peti ili četvrti izvještaj o CSS-u i osjećam da je vaš izvještaj u jesen uvijek dobar način da se sve to odvija.
+
+29
+00:02:24,879 --> 00:02:25,759
+[SPEAKER_00] Upravo je to neka vrsta stanja industrije.
+
+30
+00:02:26,000 --> 00:02:29,360
+[SPEAKER_00] U našem izvješću gledate na industriju mnogo šire nego što mi to činimo.
+
+31
+00:02:29,840 --> 00:02:31,199
+[SPEAKER_00] I tako je to neka vrsta lijepog balansa.
+
+32
+00:02:31,360 --> 00:02:38,800
+[SPEAKER_00] I znate, pročitavši nacrt vašeg izvješća ovaj tjedan, pronašao sam puno stvarno zanimljivih stvari o kojima nisam tako duboko razmišljao.
+
+33
+00:02:38,960 --> 00:02:44,159
+[SPEAKER_00] Ali htio sam započeti samo nekako razgovarajući o tome kakvo je stanje u industriji aplikacija za pretplatu?
+
+34
+00:02:44,400 --> 00:02:49,199
+[SPEAKER_00] Kako se stvari odvijaju s vašeg stajališta u pogledu financiranja i M i A i sve te stvari?
+
+35
+00:02:49,680 --> 00:02:49,759
+[SPEAKER_02] Da.
+
+36
+00:02:49,919 --> 00:02:51,199
+[SPEAKER_02] Dakle, hvala što ste nas primili, ljudi.
+
+37
+00:02:51,439 --> 00:02:56,479
+[SPEAKER_02] Mislim da, znate, za ljude koji nisu vidjeli naš izvještaj prije, mi smo investicijska banka i fondovi za poduzetnički kapital.
+
+38
+00:02:56,879 --> 00:03:00,319
+[SPEAKER_02] Dakle, pristupamo industriji CSS-a kao neka vrsta transakcijske industrije.
+
+39
+00:03:00,319 --> 00:03:10,560
+[SPEAKER_02] Nismo graditelji, kao što su mnogi vaši slušatelji, već savjetnici ili ulagači u tvrtke u potrošačkoj pretplati ili, kako to nazivamo, industriji CSS-a.
+
+40
+00:03:10,800 --> 00:03:16,800
+[SPEAKER_02] Naš izvještaj se približava s tog stajališta, a to je, kako uložiti ili kupiti ili prodati tvrtke u ovom području?
+
+41
+00:03:16,960 --> 00:03:20,159
+[SPEAKER_02] Mislim, vi to znate jer ste vidjeli podatke na mikro razini, zar ne?
+
+42
+00:03:20,479 --> 00:03:22,719
+[SPEAKER_02] Industrija je prošla kroz ogroman procvat 2021.
+
+43
+00:03:23,199 --> 00:03:23,280
+[SPEAKER_02] godine.
+
+44
+00:03:23,360 --> 00:03:29,280
+[SPEAKER_02] Dolazilo je mnogo kapitala, što je značilo da je mnogo kapitala potrošeno na marketing i rast te nove ideje.
+
+45
+00:03:29,680 --> 00:03:33,680
+[SPEAKER_02] A onda je dio tog kapitala nažalost bio potrošen.
+
+46
+00:03:33,840 --> 00:03:34,639
+[SPEAKER_02] Dakle, 2022.
+
+47
+00:03:34,719 --> 00:03:35,199
+[SPEAKER_02] i 2023.
+
+48
+00:03:35,360 --> 00:03:36,879
+[SPEAKER_02] bila je teška godina za mnoge od tih tvrtki.
+
+49
+00:03:36,879 --> 00:03:40,240
+[SPEAKER_02] previše zaposlilo, a povrat ulaganja u marketing smanjio se.
+
+50
+00:03:40,319 --> 00:03:42,560
+[SPEAKER_02] Nisu uspjeli rasti gotovo tako brzo kao što su se nadali.
+
+51
+00:03:42,639 --> 00:03:44,879
+[SPEAKER_02] Vidjeli ste puno boli u 2022.
+
+52
+00:03:44,960 --> 00:03:45,360
+[SPEAKER_02] i 2023.
+
+53
+00:03:45,439 --> 00:03:51,280
+[SPEAKER_02] godini, kada su neke tvrtke kupile posao, smanjile su se, prebacile se na modele, prebacile se na B2B, e-trgovinu za pretplatu.
+
+54
+00:03:52,080 --> 00:03:54,159
+[SPEAKER_02] No ono što vam mogu reći sada u 2024.
+
+55
+00:03:54,319 --> 00:03:56,080
+[SPEAKER_02] godini jest da stvari vjerojatno nikad nisu bile bolje.
+
+56
+00:03:56,719 --> 00:04:05,919
+[SPEAKER_02] Mnoge su tvrtke uzele svoje lijekove, mnogi su stvarno sjajni osnivači i graditelji držali glavu spuštenu i nastavili su raditi točno ono što je njihova misija, a to je služiti svojim klijentima.
+
+57
+00:04:06,240 --> 00:04:10,960
+[SPEAKER_02] I sada vidimo bolje prilike i bolje tvrtke nego što smo imali 2021.
+
+58
+00:04:11,039 --> 00:04:11,039
+[UNKNOWN] godine.
+
+59
+00:04:11,280 --> 00:04:12,560
+[SPEAKER_02] Dakle, tvrtke brzo rastu.
+
+60
+00:04:12,560 --> 00:04:17,680
+[SPEAKER_02] Rastu brzo, rastu profitabilno, imaju fantastične stope zadržavanja.
+
+61
+00:04:17,839 --> 00:04:24,959
+[SPEAKER_02] Kao savjetnik za spajanje i prodaju, obično vidimo da tvrtke ulaze na tržište kad su spremne za nešto, nazovu nas.
+
+62
+00:04:25,600 --> 00:04:34,399
+[SPEAKER_02] Imamo prozor, obično šest do devet mjeseci prije nego što se dogodi transakcija, a znamo koje su sjajne tvrtke ulazile na tržište.
+
+63
+00:04:34,560 --> 00:04:40,720
+[SPEAKER_02] Vjerojatno nikad nismo bili tako zauzeti, što je očito uzbudljivo za mene, ali nadam se da će biti uzbudljivo i za industriju tijekom sljedećih šest do dvanaest mjeseci.
+
+64
+00:04:40,800 --> 00:04:52,079
+[SPEAKER_00] Kao što dijelite u izvješću, to nije slučaj samo u privatnim razgovorima koje vodite s aplikacijama koje žele prodati ili pokupiti ili bilo što drugo drugo, ali vidimo to i u javnim procjenama.
+
+65
+00:04:52,240 --> 00:05:02,560
+[SPEAKER_00] Kao što je Duolingo trgovao, mislim da je to najviši multiplikator prihoda u odnosu na balon 2021., ali sigurno se dosta oporavio od pada.
+
+66
+00:05:02,639 --> 00:05:06,079
+[SPEAKER_02] Da, mislim da to vidite na svim područjima, uz neke iznimke, zar ne?
+
+67
+00:05:06,160 --> 00:05:12,240
+[SPEAKER_02] Postoje neke tvrtke koje su imale ogroman covid boom, kao što su neke od usluga upoznavanja koje jednostavno nisu mogle održati tu razinu rasta.
+
+68
+00:05:12,639 --> 00:05:24,639
+[SPEAKER_02] Rekli su: Eh, vjerojatno smo previše zaposlili, previše potrošili, usredotočili smo se na profitabilnost, što znači da je njihov rast usporen i da su njihovi multiplikatori prihoda pali, ali i dalje su fantastične tvrtke koje trguje dobrim multiplikatorima prihoda i odličnim multiplikatorima EBITDA.
+
+69
+00:05:24,639 --> 00:05:36,240
+[SPEAKER_02] Mislim da to vidite, ali to se događa i u softveru B2B, u tehnologiji, gdje ako niste jedan od Sedam sjajnih, procjenjuju vas na temelju financijskih rezultata.
+
+70
+00:05:36,319 --> 00:05:43,759
+[SPEAKER_02] Tako rast prihoda i EBITDA marže postaju način na koji tržište procjenjuje poslovanje CSS-a, baš kao što procjenjuju poslovanje SaaS-a B2B.
+
+71
+00:05:43,839 --> 00:05:47,439
+[SPEAKER_00] U svom izvješću spomenuli ste ideju da se prelazi pravilo četrdeset.
+
+72
+00:05:47,680 --> 00:05:50,000
+[SPEAKER_00] Nisam sasvim shvatio što ste to mislili u izvješću.
+
+73
+00:05:50,160 --> 00:06:00,879
+[SPEAKER_02] Volio bih napokon naučiti pravilo četrdeset jer sam se povremeno pretvarala da ga znam, ali u investicijskom svemiru se puno šali i gotovo počinje se demantirati, ali za slušatelje.
+
+74
+00:06:01,279 --> 00:06:04,240
+[SPEAKER_02] koji nisu proveli vrijeme na ovo, a nadam se da nisu, oni grade kôd.
+
+75
+00:06:04,480 --> 00:06:06,480
+[SPEAKER_02] Pravilo četrdeset je naš investicijski pojam.
+
+76
+00:06:06,720 --> 00:06:08,639
+[SPEAKER_02] Dakle, uzimate svoju stopu rasta iz godine u godinu.
+
+77
+00:06:08,800 --> 00:06:11,279
+[SPEAKER_02] Recimo da je vaša stopa rasta iz godine u godinu trideset posto.
+
+78
+00:06:11,839 --> 00:06:21,439
+[SPEAKER_02] A onda ako imate EBITDA maržu ili maržu novčanog tijeka od deset posto, dakle, dolara novčanog tijeka koje imate podijeljena s prihodima, to je, i dodate te dvije stvari zajedno.
+
+79
+00:06:21,519 --> 00:06:24,000
+[SPEAKER_02] Uzmete trideset posto plus deset posto, to je četrdeset.
+
+80
+00:06:24,560 --> 00:06:25,519
+[SPEAKER_02] Barem četrdeset, zar ne?
+
+81
+00:06:25,680 --> 00:06:26,560
+[SPEAKER_02] Što je više, to je bolje.
+
+82
+00:06:26,639 --> 00:06:28,639
+[SPEAKER_02] Da, cilj je veći, zar ne?
+
+83
+00:06:28,720 --> 00:06:31,759
+[SPEAKER_02] I možete rasti šezdeset posto i izgubiti deset posto na EBITDA marži.
+
+84
+00:06:31,839 --> 00:06:33,040
+[SPEAKER_02] Dakle, imate pravilo pedeset.
+
+85
+00:06:33,360 --> 00:06:34,639
+[SPEAKER_02] To i dalje znači da se dobro snalazite.
+
+86
+00:06:34,720 --> 00:06:36,639
+[SPEAKER_02] I tako, na javnim tržištima postoji slajd.
+
+87
+00:06:37,120 --> 00:06:44,079
+[SPEAKER_02] da ljudi mogu vidjeti da postoji vrlo visoka korelacija između toga što je višestruko trgovački multiplikator prihoda i što je vaša ocjena od četrdeset.
+
+88
+00:06:44,480 --> 00:06:58,800
+[SPEAKER_02] To je zaista intrigantno, ali postoji još jedan podatkovni točki koji će biti u izvješću, a to je pravilo X, što zapravo znači da kad jednom razumijete pravilo četrdeset, o čemu smo upravo kratko govorili, sada postoji pravilo X, što zapravo znači da postoji veća korelacija s tvrtkama koje rastu brže.
+
+89
+00:06:59,040 --> 00:07:21,759
+[SPEAKER_02] Dakle, ako uzmete matematiku i kažete da umjesto da samo radite jedan stopu rasta prihoda plus EBITDA marža, sada ako radite stopu rasta prihoda pomnožena s dvjema i dodate je na EBITDA maržu, tako da je to svojevrsni preopterećenje, preopterećujete stopu rasta prihoda prihoda, zapravo je korelacija još veća, koja se odnosi na otprilike šezdeset, sedamdeset posto cijene dionice u odnosu na, znate, drugu koja je bila blizu, pravilo četrdeset je bliže otprilike pedeset i šest.
+
+90
+00:07:22,000 --> 00:07:24,639
+[SPEAKER_02] I tako, u osnovi, to je samo, znate, heuristika.
+
+91
+00:07:24,959 --> 00:07:26,079
+[SPEAKER_02] Je li to nešto što ste vi izmislili?
+
+92
+00:07:26,160 --> 00:07:27,600
+[SPEAKER_02] Mi definitivno nismo izmislili.
+
+93
+00:07:27,680 --> 00:07:31,920
+[SPEAKER_02] Mislim da je jedan od investicijskih fondova, Bessemer, mislim da je pokrenuo ili je Bessemer izmislio pravilo X, što je prilično cool.
+
+94
+00:07:32,000 --> 00:07:39,519
+[SPEAKER_01] Baš kao da izmišljaju bolji model za usklađivanje trgovačkih vrijednosti s stopom rasta i profitabilnošću.
+
+95
+00:07:39,759 --> 00:07:40,560
+[SPEAKER_02] To su samo pravila.
+
+96
+00:07:40,639 --> 00:07:46,560
+[SPEAKER_01] Da, jer je stvar u tome da je četrdeset, netko je upravo rekao da je četrdeset na neki način dobro, iznad toga je dobro, a ispod toga je loše.
+
+97
+00:07:46,639 --> 00:07:52,879
+[SPEAKER_01] Pa, prvo, matematički je to užasno dodati stopu rasta u maržu EBITDA-e.
+
+98
+00:07:53,120 --> 00:07:56,079
+[SPEAKER_01] Oboje su postoci, ali su jabuke i naranče, zar ne?
+
+99
+00:07:56,240 --> 00:08:00,480
+[SPEAKER_01] To je čudna stvar, ali slučajno vam daje neke informacije.
+
+100
+00:08:00,879 --> 00:08:11,920
+[SPEAKER_01] I s brojem četrdeset, barem, i možda ako to kažem pogrešno, Eric, ispravi me, ali u osnovi, ako rastete više od četrdeset posto godišnje, nema problema ako niste profitabilni jer rastete četrdeset posto godišnje.
+
+101
+00:08:12,160 --> 00:08:12,480
+[SPEAKER_01] To je u redu.
+
+102
+00:08:12,800 --> 00:08:17,040
+[SPEAKER_01] Možete potrošiti neku količinu, znate, za svaki bod, vi ste više od četrdeset posto stope rasta.
+
+103
+00:08:17,120 --> 00:08:20,959
+[SPEAKER_01] Ako gubite taj postotak na marži, marži novčanog tijeka, nema problema.
+
+104
+00:08:21,040 --> 00:08:24,879
+[SPEAKER_01] Ali ako ste ispod toga, ako ste ispod četrdeset, vjerojatno biste trebali imati novčani tok.
+
+105
+00:08:24,879 --> 00:08:26,800
+[SPEAKER_01] Da bi novac mogao teći ili barem da bi bio profitabilan.
+
+106
+00:08:26,959 --> 00:08:35,360
+[SPEAKER_01] Ali opet, taj broj četrdeset bio je neki broj koji je neka osoba koja se bavi ulaganjima stavila na ploču u nekom trenutku, ali je to pojamski točno i zanimljivo.
+
+107
+00:08:35,519 --> 00:08:41,519
+[SPEAKER_00] Ali istovremeno govori da ako rastiš na šezdeset i gubiš četrdeset, onda ne dostižeš pravilo četrdeset i dva.
+
+108
+00:08:41,600 --> 00:08:46,080
+[SPEAKER_00] Dakle, to je kao da ne možeš samo zapaliti novac kao što je bilo 2021.
+
+109
+00:08:46,240 --> 00:08:47,120
+[SPEAKER_01] godine za RevenueCat.
+
+110
+00:08:47,279 --> 00:08:49,279
+[SPEAKER_01] Kao da smo išli iznad i ispod iz različitih razloga.
+
+111
+00:08:49,519 --> 00:08:54,320
+[SPEAKER_01] Kao da smo imali godine u kojima je naš stopa rasta bila vrlo visoka, ali naš je trošak bio vrlo visok i zapravo smo bili ispod linije.
+
+112
+00:08:54,480 --> 00:09:00,879
+[SPEAKER_01] A onda smo imali godine u kojima je naša stopa rasta ostala visoka, ali smo zapravo postali malo bolje fit fiskalno, i dalje gubimo novac.
+
+113
+00:09:02,720 --> 00:09:03,039
+[SPEAKER_01] Ne znam.
+
+114
+00:09:04,000 --> 00:09:09,679
+[SPEAKER_01] To je nešto što vjerojatno ne zanima nijednu tvrtku SaaS-a s prihodima manjim od pet ili deset milijuna dolara.
+
+115
+00:09:10,000 --> 00:09:16,159
+[SPEAKER_01] Mislim da ne biste trebali gledati na to, ali kad ste u fazi rasta i razmjera, to može biti koristan način gledanja na svoj posao.
+
+116
+00:09:16,320 --> 00:09:16,799
+[SPEAKER_02] To je pravilo.
+
+117
+00:09:17,279 --> 00:09:19,279
+[SPEAKER_02] To je poput hodanja deset tisuća koraka dnevno.
+
+118
+00:09:19,360 --> 00:09:22,720
+[SPEAKER_02] Da, mislim da ako ne želite izaći, usredotočite se na izgradnju svog posla, zar ne?
+
+119
+00:09:22,879 --> 00:09:24,960
+[SPEAKER_02] Izgradite ono što je ispravno za svoje klijente.
+
+120
+00:09:25,039 --> 00:09:27,600
+[SPEAKER_02] Ove heuristike, ove pravila, riješit će se same.
+
+121
+00:09:27,919 --> 00:09:30,320
+[SPEAKER_02] To je točka podataka u trenutku vremena, zar ne?
+
+122
+00:09:30,960 --> 00:09:32,720
+[SPEAKER_02] Tvrtka nije točka podataka.
+
+123
+00:09:33,039 --> 00:09:36,639
+[SPEAKER_02] To je linearna progresija, korak jedan, korak dva, korak tri, korak četiri.
+
+124
+00:09:36,639 --> 00:09:40,639
+[SPEAKER_02] Dakle, možda će biti godina u kojima ćeš potrošiti hrpu novca jer postoji ogromna prilika.
+
+125
+00:09:40,879 --> 00:09:40,960
+[SPEAKER_01] Da.
+
+126
+00:09:41,039 --> 00:09:42,480
+[SPEAKER_01] I često je to vrijeme kada to trebaš, zar ne?
+
+127
+00:09:42,559 --> 00:09:49,679
+[SPEAKER_01] Na primjer, ako se taj broj poveća, tvoja stopa rasta počinje padati, možda ćeš morati potrošiti mnogo više novca da promijeniš proizvod ili da otkriješ novu stvar za rast.
+
+128
+00:09:49,759 --> 00:09:50,960
+[SPEAKER_02] To nije ono što ćeš podnijeti.
+
+129
+00:09:51,200 --> 00:09:55,919
+[SPEAKER_02] To su samo jednostavne analogije za ulagače koje će im pomoći da sužuju investicijske prilike, a ovo je ono što koriste.
+
+130
+00:09:56,000 --> 00:09:56,240
+[SPEAKER_02] Dakle, da.
+
+131
+00:09:56,480 --> 00:09:57,360
+[SPEAKER_02] Dakle, izvještavamo o tome.
+
+132
+00:09:57,440 --> 00:09:57,519
+[SPEAKER_00] Da.
+
+133
+00:09:57,840 --> 00:09:59,200
+[SPEAKER_00] Super je korisno za ljude u publici.
+
+134
+00:09:59,279 --> 00:10:08,639
+[SPEAKER_00] Mislim da ćemo vjerojatno imati ljude koji će godišnje potrošiti desetke milijuna dolara slušajući ovaj podcast i razmišljajući o tome kada je prava izlazna prilika i kakve su to višestruke vrijednosti.
+
+135
+00:10:08,720 --> 00:10:12,480
+[SPEAKER_00] Dakle, da, sjajna je pravila za optimizaciju ako ste.
+
+136
+00:10:12,480 --> 00:10:19,840
+[SPEAKER_00] Ako tražite neku vrstu izlaska ili financiranja ili na drugi način u kratkoročnom razdoblju, trebali biste barem znati kakva je vaša mjerna jedinica.
+
+137
+00:10:20,080 --> 00:10:21,200
+[SPEAKER_02] To je najbolji način razmišljanja o tome.
+
+138
+00:10:21,279 --> 00:10:24,480
+[SPEAKER_00] Čini se da je i M i A ove godine bilo vruće.
+
+139
+00:10:24,879 --> 00:10:27,039
+[SPEAKER_00] Mnogo je CSS tvrtki u pokretu.
+
+140
+00:10:27,519 --> 00:10:28,480
+[SPEAKER_02] Da, bilo je dobro.
+
+141
+00:10:28,960 --> 00:10:32,080
+[SPEAKER_02] Mislim da je još rano, ali dolazi još mnogo toga.
+
+142
+00:10:32,399 --> 00:10:39,120
+[SPEAKER_02] Mislim da smo radili na nekoliko, znate, ima još nekoliko drugih, kao što je sedam Maxa, koji je upravo kupio Buddy Fit u Italiji, što je fitness, zar ne?
+
+143
+00:10:39,200 --> 00:10:41,600
+[SPEAKER_02] Ako razmišljate o aplikacijama za fitness, još uvijek radite posao.
+
+144
+00:10:41,759 --> 00:10:42,960
+[SPEAKER_02] To je prilično uzbudljivo.
+
+145
+00:10:43,039 --> 00:10:47,039
+[SPEAKER_02] Znate, Outside je upravo kupio Mat My Fitness, koji je od Under Rover, što je cool posao.
+
+146
+00:10:47,279 --> 00:10:48,960
+[SPEAKER_02] Zapravo sam bio osnivač koji je kupio kao stariji.
+
+147
+00:10:48,960 --> 00:10:49,679
+[SPEAKER_02] Kupnja starog poduzeća.
+
+148
+00:10:50,000 --> 00:10:54,480
+[SPEAKER_02] Vidjeli smo puno drugih zanimljivih stvari koje se događaju i mislim da očekujemo još mnogo toga.
+
+149
+00:10:54,879 --> 00:11:00,080
+[SPEAKER_02] Dakle, Bending Spoons bio je zauzet, Francisco Partners bar, vremenska tvrtka, što je prilično zanimljivo.
+
+150
+00:11:00,159 --> 00:11:06,159
+[SPEAKER_02] Pomogli smo timu Snap kupiti Mojo, taj posao u području sportova za mlade, zbog čega smo stvarno uzbuđeni.
+
+151
+00:11:06,480 --> 00:11:09,600
+[SPEAKER_02] A onda, znate, bilo je i nekih financiranja koja su bila stvarno uzbudljiva.
+
+152
+00:11:09,679 --> 00:11:11,919
+[SPEAKER_02] Imali smo sreće što smo radili s Flow Healthom.
+
+153
+00:11:12,159 --> 00:11:15,919
+[SPEAKER_02] Vi znate posao ženskog zdravlja, jednostavno je fenomenalan posao.
+
+154
+00:11:16,000 --> 00:11:18,559
+[SPEAKER_02] Pomogli smo im prikupiti vrlo dobar broj novca za General Atlantic.
+
+155
+00:11:18,799 --> 00:11:20,320
+[SPEAKER_02] Dakle, bilo je stvarno uzbudljivo.
+
+156
+00:11:20,480 --> 00:11:28,879
+[SPEAKER_00] Nisam mogao otići previše duboko u Flow, ali htio sam otići malo dublje i vi ste o tome govor malo pričate u izvješću, ali kakva je investicijska teza?
+
+157
+00:11:29,200 --> 00:11:35,440
+[SPEAKER_00] Mislim, znate, javno je najavljeno da su prikupili dvjesto milijuna s vrijednošću od više od milijardu dolara.
+
+158
+00:11:35,840 --> 00:11:44,480
+[SPEAKER_00] A onda u izvješću čak dijelite da su krenuli u potragu za sto milijuna i završili u vrlo konkurencijskoj situaciji u kojoj su je prikupili na dvjesto.
+
+159
+00:11:44,559 --> 00:11:55,919
+[SPEAKER_00] Dakle, što možete javno podijeliti, volio bih čuti malo više informacija o tome kako se to dogodilo i kakva je investicijska teza iza tako visoke vrijednosti, a zatim konkurencija da se uključe u to.
+
+160
+00:11:56,240 --> 00:12:05,279
+[SPEAKER_02] Da, tako da je Flow dugo postojao, osnovan od strane Dimitri, znate, prije mnogo godina, a poznajem ga od 2019., otkako sam započeo u industriji.
+
+161
+00:12:05,679 --> 00:12:08,240
+[SPEAKER_02] Dakle, Flo je tvrtka usmjerena na žensko zdravlje.
+
+162
+00:12:08,399 --> 00:12:09,440
+[SPEAKER_02] Ima freemium model.
+
+163
+00:12:10,000 --> 00:12:17,600
+[SPEAKER_02] Dakle, mislim da smo to objavili, ali postoji više od šezdeset milijuna MAU-a, a onda je dio toga zapravo plaćeni pretplatnici.
+
+164
+00:12:17,679 --> 00:12:29,360
+[SPEAKER_02] I tako, Flo odlično radi pružajući ženama i sada njihovim partnerima informacije o reproduktivnim ciklusima, menstrualnom zdravlju, a sada prelazi u perimenopauzu i menopauzu, što je stvarno, stvarno uzbudljivo.
+
+165
+00:12:29,519 --> 00:12:36,720
+[SPEAKER_02] I tako, stvar o ovom prostoru, a o tome ćete govoriti kad dođemo do drugih područja pretplate za potrošače, jest da je jako gužva.
+
+166
+00:12:36,720 --> 00:12:40,000
+[SPEAKER_02] Ima ih mnogo, možete koristiti Aura, možete koristiti Apple Health.
+
+167
+00:12:40,240 --> 00:12:41,600
+[SPEAKER_02] I to su velika imena, zar ne?
+
+168
+00:12:41,679 --> 00:12:42,240
+[SPEAKER_02] Svatko ih poznaje.
+
+169
+00:12:42,320 --> 00:12:45,759
+[SPEAKER_02] A onda ima mnogo drugih aplikacija za praćenje zdravlja žena ili mjesečnica.
+
+170
+00:12:46,000 --> 00:12:56,799
+[SPEAKER_02] Ono što nam se stvarno sviđa u Flo je to što će raditi s ženama na početku, kada su na samom početku svog zdravstvenog putovanja, znate, petnaest, šesnaest, sedamnaest, zar ne?
+
+171
+00:12:56,879 --> 00:12:58,000
+[SPEAKER_02] I oni će pružiti besplatni proizvod.
+
+172
+00:12:58,559 --> 00:13:05,919
+[SPEAKER_02] I oni će stvoriti ovu podatkovnu razinu između osamnaest godina i trideset pet, četrdeset, pedeset godina, ulazeći u menopauzu.
+
+173
+00:13:06,240 --> 00:13:10,000
+[SPEAKER_02] A onda možete pružiti besplatne usluge toj osobi koliko god ih treba.
+
+174
+00:13:10,480 --> 00:13:12,639
+[SPEAKER_02] A onda kad ih treba prebaciti na plaćeni program.
+
+175
+00:13:12,639 --> 00:13:15,440
+[SPEAKER_02] U plaćenom programu postoje moduli na koje se možete pretplatiti.
+
+176
+00:13:15,759 --> 00:13:20,559
+[SPEAKER_02] Dobivate sve usluge Flow Premium, ali možda možete koristiti samo jednu ili dvije ili možda sve.
+
+177
+00:13:21,200 --> 00:13:22,960
+[SPEAKER_02] Ali sjajno je što su tu samo kad ih trebate.
+
+178
+00:13:23,519 --> 00:13:37,840
+[SPEAKER_02] I tako, mislim da je teza GA-e bila da možete nastaviti s šivanjem i dodavanjem novih ponuda na sloj podataka o toku, a to samo povećava površinu za njih, znate, šezdeset milijuna MAU-a će pronaći razlog za pretplatu.
+
+179
+00:13:38,159 --> 00:13:43,519
+[SPEAKER_02] I čak i ako uhvatite jedan, dva, tri posto od njih s novim modulom, to je prihod od stotina milijuna.
+
+180
+00:13:43,600 --> 00:13:45,039
+[SPEAKER_02] I tako smo bili stvarno uzbuđeni zbog toga.
+
+181
+00:13:45,200 --> 00:13:46,480
+[SPEAKER_02] Mislim da je teza bila iskazana.
+
+182
+00:13:46,639 --> 00:13:47,919
+[SPEAKER_02] Mnogi su investitori vidjeli taj potencijal.
+
+183
+00:13:48,000 --> 00:13:50,720
+[SPEAKER_02] Znate, vjerojatno ćemo se na neki trenutak pozabaviti javnom tvrtkom.
+
+184
+00:13:50,960 --> 00:13:52,480
+[SPEAKER_02] Zaista smo uzbuđeni zbog toga.
+
+185
+00:13:52,639 --> 00:13:55,519
+[SPEAKER_02] Mislim, to će biti još jedna sjajna tvrtka za CSS koja se nalazi na javnom tržištu.
+
+186
+00:13:55,759 --> 00:13:59,200
+[SPEAKER_02] Dakle, da, rado ću odgovoriti na sva pitanja, ali očito moram zadržati većinu stvari povjerljivima.
+
+187
+00:13:59,279 --> 00:14:00,799
+[SPEAKER_01] Da, mislim da ću napraviti neku analizu.
+
+188
+00:14:01,279 --> 00:14:07,200
+[SPEAKER_01] Šestdeset milijuna, ima puno ljudi, milijarde potencijalnih korisnika na planetu, pa je to vrlo dobra teza.
+
+189
+00:14:07,519 --> 00:14:14,159
+[SPEAKER_01] A onda mislim da smo to više puta vidjeli da se, recimo, podaci generiraju zadržavanje, zar ne?
+
+190
+00:14:14,240 --> 00:14:21,600
+[SPEAKER_01] Ili, recimo, što više netko uloži u aplikaciju i što više vremena ima s vama, recimo, to će biti veće zadržavanje.
+
+191
+00:14:21,840 --> 00:14:24,639
+[SPEAKER_01] I to je nešto što uvijek, to više nije toliko rasprava, ali ja sam to uvijek govorio.
+
+192
+00:14:24,639 --> 00:14:31,440
+[SPEAKER_01] Ali prije sam dobivao puno pitanja, recimo, trebam li napraviti ovu aplikaciju za pretplatu i kako strukturirati aplikaciju koja je vrijedna dodavanja pretplate?
+
+193
+00:14:31,840 --> 00:14:39,279
+[SPEAKER_01] I mislim da sam uvijek savjetovao i i dalje vjerujem da će nešto što se s vremenom poboljšava imati prirodan rezultat.
+
+194
+00:14:39,440 --> 00:14:47,840
+[SPEAKER_01] Jedan je taj da će se pretplata opravdati jer je nešto što ljudi koriste godinama, ali onda se vrijednost povećava, znate, s vremenom.
+
+195
+00:14:48,000 --> 00:14:53,120
+[SPEAKER_01] I tako, da, mislim da je to vrlo prirodna velika ljudska potreba, velika TAM.
+
+196
+00:14:53,759 --> 00:14:55,039
+[SPEAKER_01] Znate, to je natjecateljski prostor.
+
+197
+00:14:55,279 --> 00:14:56,720
+[SPEAKER_01] Zanimljivo je da bi se mogao pojaviti jedan.
+
+198
+00:14:57,679 --> 00:15:00,960
+[SPEAKER_01] Mislim da se čini da se tržišta razvijaju s vremenom.
+
+199
+00:15:00,960 --> 00:15:07,840
+[SPEAKER_01] Vrijeme je kao da netko jednom otkrije optimalnu kombinaciju trenutačnih dostupnih tehnologija, a onda će doći do male oligopole.
+
+200
+00:15:08,080 --> 00:15:09,039
+[SPEAKER_01] To me ne iznenađuje.
+
+201
+00:15:09,120 --> 00:15:15,519
+[SPEAKER_01] Ali, da, zanimljivo je razmišljati da vjerojatno postoje druge kategorije koje se nisu toliko razvile kao Flow.
+
+202
+00:15:15,759 --> 00:15:17,919
+[SPEAKER_01] I mislim da to i dalje govori o sazrijevanju.
+
+203
+00:15:18,080 --> 00:15:20,159
+[SPEAKER_01] Šestdeset milijuna, to je kao da nitko ne zna što mislim.
+
+204
+00:15:20,240 --> 00:15:25,360
+[SPEAKER_01] Ne znam ukupni broj kupaca jer postoje neki dijelovi od osam milijardi ljudi prema dolje.
+
+205
+00:15:25,600 --> 00:15:27,039
+[SPEAKER_01] Ali, očito, tek smo započeli.
+
+206
+00:15:27,679 --> 00:15:30,879
+[SPEAKER_02] Da, vi ste na konceptu koji nazivamo kategorijskim ubojicama, Jacob.
+
+207
+00:15:31,039 --> 00:15:36,559
+[SPEAKER_02] I malo smo o tome razgovarali u posljednjem izvješću, gdje u potrošačkim pravima potrošači hrle na najbolje od vrste.
+
+208
+00:15:36,559 --> 00:15:41,360
+[SPEAKER_02] I oni uče i odlučuju što je najbolja pasmina jer im drugi potrošači kažu.
+
+209
+00:15:41,440 --> 00:15:44,000
+[SPEAKER_02] Riječ usmenom je tako dominantan kanal, zar ne?
+
+210
+00:15:44,159 --> 00:15:45,679
+[SPEAKER_02] I tako, znate, Flow je zaista poseban.
+
+211
+00:15:45,759 --> 00:15:49,840
+[SPEAKER_02] Mislim da je Dimitri o tome govorio, gdje dobivaju više od pedeset posto korisnika organskih proizvoda, zar ne?
+
+212
+00:15:49,919 --> 00:15:51,679
+[SPEAKER_02] Imaju sjajne rangiranja u trgovinama aplikacijama, zar ne?
+
+213
+00:15:51,759 --> 00:15:56,559
+[SPEAKER_02] Ljudi, znate, mame sada govore svojim kćerima, prijateljima, djevojkama u školi, govore jedni drugima o tome, zar ne?
+
+214
+00:15:56,639 --> 00:15:59,039
+[SPEAKER_02] Dakle, to je zaista snažan kotač.
+
+215
+00:15:59,360 --> 00:16:04,639
+[SPEAKER_02] I tako smo to vidjeli u novim sportovima, kao što smo vidjeli, znate, mislimo da će biti dva, možda tri pobjednika u novim sportovima.
+
+216
+00:16:04,720 --> 00:16:06,000
+[SPEAKER_02] Mislim da je tim Snap jedan od njih.
+
+217
+00:16:06,399 --> 00:16:12,639
+[SPEAKER_02] Imamo nekoliko predviđanja oko financijskih usluga, vijesti o umjetnoj inteligenciji, velika je u obiteljskom zdravlju ili upravljanju obitelji.
+
+218
+00:16:12,639 --> 00:16:14,240
+[SPEAKER_02] Naša obiteljska uprava, nazivamo je glavnim domaćinskim službenikom.
+
+219
+00:16:14,399 --> 00:16:15,519
+[SPEAKER_02] Mislimo da će i tamo biti jednorožac.
+
+220
+00:16:15,679 --> 00:16:25,440
+[SPEAKER_02] I mislim da je to ono na čemu se usmjerava naša praksa CSS-a, koja pomaže u pronalaženju tih jednorožaca na početku, pomaže im da dođu na sljedeću razinu i onda ih, nadamo se, vide da postaju javni.
+
+221
+00:16:25,759 --> 00:16:26,879
+[SPEAKER_02] Ali mislim da je još mnogo toga pred nama.
+
+222
+00:16:26,960 --> 00:16:30,799
+[SPEAKER_02] Dakle, mislimo da je FLO savršeni primjer onoga što će biti mnogo budućih javnih društava.
+
+223
+00:16:30,960 --> 00:16:41,600
+[SPEAKER_00] Jedno od toga što ste spomenuli o FLO-u, a zatim imamo i cijeli slajd u izvješću o pronalaženju načina za ostvarivanje čiste zarade u pretplati potrošača.
+
+224
+00:16:41,679 --> 00:16:50,879
+[SPEAKER_00] I ti dva kratica obično ne idu zajedno, CSS i NRR, barem pozitivni Nno ili negativno.
+
+225
+00:16:51,039 --> 00:16:54,480
+[SPEAKER_00] Ali da, volio bih da nam objasnite svoje razmišljanje.
+
+226
+00:16:54,559 --> 00:16:58,799
+[SPEAKER_00] Već ste malo govorili o tome s Floomom i proširenju proizvoda.
+
+227
+00:16:58,879 --> 00:17:11,759
+[SPEAKER_00] Ali na koji drugi način tvrtke za pretplatu potrošača mogu početi razmišljati o tome da je NRR mogućnost umjesto da je uvijek negativan s puno otpada?
+
+228
+00:17:11,839 --> 00:17:19,440
+[SPEAKER_02] Da, pa kad smo pokrenuli CSS praksu, najveća stvar koju smo morali prevladati bila je da su ljudi rekli: Ovo nije B2B SaaS.
+
+229
+00:17:19,680 --> 00:17:26,480
+[SPEAKER_02] Velika stvar koju ljudi vole u B2B SaaS-u jest da kad jednom stekli kupca, hipotetski biste im mogli prodati više više mjesta tijekom vremena, zar ne?
+
+230
+00:17:26,720 --> 00:17:30,319
+[SPEAKER_02] Dakle, znate, počinjete s deset mjesta, a zatim idete na dvadeset mjesta, a zatim na trideset mjesta.
+
+231
+00:17:30,400 --> 00:17:32,720
+[SPEAKER_02] Dakle, znate, ako Salesforce prodaje kupcu, zar ne?
+
+232
+00:17:32,880 --> 00:17:34,880
+[SPEAKER_02] Mogu postupno rasti s tim kupcem.
+
+233
+00:17:34,960 --> 00:17:36,160
+[SPEAKER_02] I to je stvarno uzbudljivo, zar ne?
+
+234
+00:17:36,240 --> 00:17:41,200
+[SPEAKER_02] Jer trošak dobivanja njih traje samo jednom, a zatim dodate više prihoda i postaje iznimno profitabilan poslovni model.
+
+235
+00:17:41,839 --> 00:17:48,240
+[SPEAKER_02] Problem koji ljudi misle da vide kod potrošača jest da prodate potrošača jednom, a onda je ta cijena ograničena, zar ne?
+
+236
+00:17:48,319 --> 00:17:50,880
+[SPEAKER_02] Prodate ih za dvadeset devet dolara i devedeset devet centi, na primjer, godinu dana.
+
+237
+00:17:51,039 --> 00:17:53,200
+[SPEAKER_02] To je sve novac koji ćete zaraditi od tog pojedinog najboljeg slučaja.
+
+238
+00:17:53,279 --> 00:17:57,200
+[SPEAKER_02] A onda postoji tako visoka stopa odustajanja da nikad nećete ostvariti pozitivan neto prihod.
+
+239
+00:17:58,160 --> 00:17:59,839
+[SPEAKER_02] I znate, odgovor je da to nije istina.
+
+240
+00:18:00,640 --> 00:18:10,480
+[SPEAKER_02] To nije uobičajeno, ali u najboljim površinama CSS poduzeća, način razmišljanja o tome jest da svako poduzeće s pretplatom na potrošače ima odlazak, a većina njih ima visok odlazak.
+
+241
+00:18:10,640 --> 00:18:12,400
+[SPEAKER_02] Postavlja se pitanje kada se taj odlazak stabilizira?
+
+242
+00:18:12,559 --> 00:18:18,160
+[SPEAKER_02] Kada pronađete ono što nazivamo u našem izvješću o GPB CSS-u, kao što su lokalni u odnosu na turiste?
+
+243
+00:18:18,640 --> 00:18:25,759
+[SPEAKER_02] Dakle, da upotrijebim primjer, ako počnete s sto korisnika i odlazite pedeset u prvoj godini, svi na godišnjim pretplatama, smanjili ste se na pedeset korisnika.
+
+244
+00:18:25,920 --> 00:18:28,160
+[SPEAKER_02] Zatim u drugoj godini zadržite pedeset pet.
+
+245
+00:18:28,240 --> 00:18:29,039
+[SPEAKER_02] od tih pedeset, zar ne?
+
+246
+00:18:29,200 --> 00:18:32,960
+[SPEAKER_02] Dakle, sada ste na četrdeset posto, ali onda u trećoj godini zadržite četrdeset tri, zar ne?
+
+247
+00:18:33,039 --> 00:18:34,640
+[SPEAKER_02] A onda u četvrtoj godini zadržite četrdeset dva.
+
+248
+00:18:34,799 --> 00:18:36,960
+[SPEAKER_02] Dakle, sada se taj parabola odjednom samo promijenila.
+
+249
+00:18:36,960 --> 00:18:37,759
+[SPEAKER_02] Abilo je upravo dosegla ravnotežu.
+
+250
+00:18:37,839 --> 00:18:40,319
+[SPEAKER_02] Dakle, zapravo, vaša zadržavanje prihoda u dolarima jednaka je.
+
+251
+00:18:41,119 --> 00:18:46,799
+[SPEAKER_02] Ali onda je ovdje gdje NRR može početi igrati ulogu, a to je da su tvrtke CSS shvatile da možete povećati cijenu.
+
+252
+00:18:46,960 --> 00:18:56,160
+[SPEAKER_02] Dakle, imamo to u našem izvješću, na kojem smo na neki način prikazali troškove pretplate na Amazon Prime, Netflix i Hulu jer su svi uglavnom javni i povećavaju se svakih dvije godine.
+
+253
+00:18:56,240 --> 00:19:00,799
+[SPEAKER_02] I tako, odjednom, sada vidite širenje cijena, što je, David, pitao si se kako dobiti NRR.
+
+254
+00:19:01,039 --> 00:19:10,720
+[SPEAKER_02] Dakle, sada ako imate ravnu kohortu broja korisnika, samo dodajete povećanje cijena, što može prevladati dvomestnu inflaciju koja će pomoći da tržište bude prihvatljivo za to.
+
+255
+00:19:10,799 --> 00:19:12,960
+[SPEAKER_02] Industrijalno, možete se izvući s tim, to je sigurno.
+
+256
+00:19:12,960 --> 00:19:13,599
+[SPEAKER_02] Ali onda vidite druge načine za zaradu, zar ne?
+
+257
+00:19:13,759 --> 00:19:17,119
+[SPEAKER_02] Kao što je Spotify Duolingo, pokrenuli su obiteljske planove.
+
+258
+00:19:17,279 --> 00:19:21,119
+[SPEAKER_02] Dakle, sada su stekli majku, a majka je proširila i prodala za oca i obitelj.
+
+259
+00:19:21,279 --> 00:19:22,319
+[SPEAKER_02] Dakle, sada postoji obiteljski plan.
+
+260
+00:19:22,480 --> 00:19:25,839
+[SPEAKER_02] Dakle, samo ste dobili, imali ste proširenje korisnika s istim jednim kupcem.
+
+261
+00:19:26,160 --> 00:19:27,920
+[SPEAKER_02] Sada možete prodavati nove značajke, zar ne?
+
+262
+00:19:28,079 --> 00:19:32,960
+[SPEAKER_02] Kao Quicken, Onex, Onex je pokrenuo globalne karte, zar ne, umjesto samo vaše državne karte.
+
+263
+00:19:33,119 --> 00:19:34,640
+[SPEAKER_02] Dakle, možete nadograditi na višu razinu.
+
+264
+00:19:34,799 --> 00:19:37,359
+[SPEAKER_02] Quicken dodaje alate za planiranje nasljeđa, stvarno je cool.
+
+265
+00:19:37,440 --> 00:19:43,839
+[SPEAKER_02] Dakle, ako već koristite njihov softver za upravljanje financijama, sada možete napraviti oporuke i povjerenja i imati ormar za pohranu važnih dokumenata.
+
+266
+00:19:44,000 --> 00:19:45,680
+[SPEAKER_02] To je jednostavan nadogradnja za korisnike.
+
+267
+00:19:45,839 --> 00:19:48,960
+[SPEAKER_02] I tako vidimo neke stvarno cool načine na koje se korisnici mogu prilagoditi.
+
+268
+00:19:48,960 --> 00:20:05,680
+[SPEAKER_02] da CSS tvrtke ostvaruju zadržavanje neto prihoda, ali to zahtijeva da se doista duboko upoznate s podacima i shvatite kako ti poduzeća funkcioniraju, što potrošači cijene, a zatim se vratite na to, kako donijeti više vrijednosti istoj pretplati koja može opravdati povećanje cijene ili ih samo zadržati u pretplati?
+
+269
+00:20:05,839 --> 00:20:07,599
+[SPEAKER_02] Oboje bi mogli biti korisni.
+
+270
+00:20:07,680 --> 00:20:24,559
+[SPEAKER_01] To zaista nije polugu vrijedna povlačenja dok ne budete u CSS-u, dok ne ste se složili nekoliko godina i imate bazu čvrstih dugoročnih pretplatnika koje možete, kad ih malo odustane, ali onda i samo imati tijelo dugoročnih pretplatnika koje možete.
+
+271
+00:20:24,559 --> 00:20:27,839
+[SPEAKER_01] da možete ponuditi nešto ili čak povećati cijenu.
+
+272
+00:20:27,920 --> 00:20:29,200
+[SPEAKER_01] Mislim da povećanje cijene nije tako.
+
+273
+00:20:29,680 --> 00:20:42,000
+[SPEAKER_01] Da, mislim da su Netflix i Disney dobro odradili posao u postavljanju očekivanja s potrošačke perspektive, istovremeno s povećanjem cijena i gotovo svugdje.
+
+274
+00:20:42,640 --> 00:20:51,599
+[SPEAKER_01] Bio sam jako protiv toga jer sam mislio, ne znam, samo sam mislio da to nije vrijedno toga, da nije vrijedno negativne medije, što opet mislim da za većinu rane faze povećanja nije tako.
+
+275
+00:20:51,839 --> 00:20:59,200
+[SPEAKER_01] Ali kad ste u kasnoj fazi, kada imate vrlo zrelu bazu pretplatnika i počinjete, znate, četrdeset se ne dodaje.
+
+276
+00:20:59,359 --> 00:20:59,839
+[SPEAKER_01] Znaš što mislim?
+
+277
+00:21:00,000 --> 00:21:00,799
+[SPEAKER_01] Morate voljeti.
+
+278
+00:21:00,799 --> 00:21:01,599
+[SPEAKER_01] Mislim da morate pronaći svaki točki.
+
+279
+00:21:03,039 --> 00:21:04,160
+[SPEAKER_01] Mislim da postoji argument da je to u redu.
+
+280
+00:21:04,400 --> 00:21:06,000
+[SPEAKER_01] Morate to opravdati korisnicima, zar ne?
+
+281
+00:21:06,319 --> 00:21:07,039
+[SPEAKER_01] Ne možete to proći.
+
+282
+00:21:07,200 --> 00:21:12,880
+[SPEAKER_02] Pošaljite poruku e-pošte i recite: Evo, ljudi, idemo s dvadeset devet dolara i devedeset devet centi na trideset pet dolara i devedeset devet centi.
+
+283
+00:21:13,119 --> 00:21:13,440
+[SPEAKER_02] Evo zašto.
+
+284
+00:21:13,680 --> 00:21:16,160
+[SPEAKER_02] Evo svih prednosti koje dobivate za te dodatne šest dolara.
+
+285
+00:21:16,319 --> 00:21:18,640
+[SPEAKER_02] Ponovno, ako su to zaista vaši korisnici, zar ne?
+
+286
+00:21:18,799 --> 00:21:27,839
+[SPEAKER_02] Ako su to zaista ljudi koji su pretplatnici dvije do tri godine i kažu: Da, koristim ovaj proizvod svaki mjesec ili ga koristim jednom godišnje za veliki izlet ili Eh, prijavljujem se svaki dan.
+
+287
+00:21:28,000 --> 00:21:28,559
+[SPEAKER_01] Ne mijenjaju se.
+
+288
+00:21:28,720 --> 00:21:32,000
+[SPEAKER_01] Samo im pošaljite poveznicu na izvješće o inflaciji za manje.
+
+289
+00:21:32,160 --> 00:21:33,359
+[SPEAKER_02] Možete AB testati stvari.
+
+290
+00:21:33,599 --> 00:21:35,200
+[SPEAKER_02] Kao i mnoge tvrtke, AB testovi, zar ne?
+
+291
+00:21:35,279 --> 00:21:36,960
+[SPEAKER_02] Pokušavaju malo, vide kakva je njihova zadržavanje.
+
+292
+00:21:36,960 --> 00:21:37,039
+[SPEAKER_02] Pogledajmo što je zadržavanje.
+
+293
+00:21:37,119 --> 00:21:44,319
+[SPEAKER_02] Ali općenito, ono što sam otkrio kod većine svojih klijenata jest da ako ste najbolja pasmina i pružate kvalitetnu uslugu, ljudi će je dobiti.
+
+294
+00:21:44,480 --> 00:21:45,200
+[SPEAKER_01] Da, imate maržu.
+
+295
+00:21:45,279 --> 00:21:47,359
+[SPEAKER_01] Imate neiskorištenu maržu, u osnovi, zar ne?
+
+296
+00:21:47,519 --> 00:21:49,200
+[SPEAKER_01] To je ono što ostavljate na stolu.
+
+297
+00:21:49,359 --> 00:21:51,119
+[SPEAKER_01] Ne radi se samo o tome da dobijete poštenu cijenu.
+
+298
+00:21:51,200 --> 00:21:51,599
+[SPEAKER_01] I ne znam.
+
+299
+00:21:51,680 --> 00:21:55,519
+[SPEAKER_01] Mislim da postoji neki argument da možete imati asimetričnu moć.
+
+300
+00:21:55,759 --> 00:21:58,880
+[SPEAKER_01] Kao da ste uhvatili podatke ljudi i, znate, ne znam.
+
+301
+00:21:58,960 --> 00:22:02,319
+[SPEAKER_01] Mislim da postoji neka količina ravnoteže koju želite postići.
+
+302
+00:22:02,640 --> 00:22:04,079
+[SPEAKER_01] Ali, znate, ne znam.
+
+303
+00:22:04,640 --> 00:22:08,000
+[SPEAKER_01] Idealno je da pronađemo optimalne cijene.
+
+304
+00:22:08,160 --> 00:22:08,240
+[SPEAKER_01] Da.
+
+305
+00:22:08,400 --> 00:22:12,960
+[SPEAKER_02] Ne, ne, ne, ne, stvar hvatanja vrijednosti, nikad ne vjerujem u to jer je jednostavno puno toga.
+
+306
+00:22:12,960 --> 00:22:14,160
+[SPEAKER_02] Jer postoji mnogo opcija za potrošače.
+
+307
+00:22:14,240 --> 00:22:16,960
+[SPEAKER_02] Dakle, ako nekoga uvrijedite, zar ne?
+
+308
+00:22:17,119 --> 00:22:24,160
+[SPEAKER_02] Ako ga osobno uvrijedite na način na koji ste ga poslali poruku ili recimo, ne možete se odreći jer imam vaše podatke, bit će malo ljut.
+
+309
+00:22:25,119 --> 00:22:25,200
+[SPEAKER_02] Da?
+
+310
+00:22:25,519 --> 00:22:29,279
+[SPEAKER_02] I tako stvarate želju da se osvetite vama.
+
+311
+00:22:29,519 --> 00:22:29,599
+[SPEAKER_02] Da?
+
+312
+00:22:29,839 --> 00:22:30,640
+[SPEAKER_02] Dakle, ne želite to.
+
+313
+00:22:30,799 --> 00:22:32,799
+[SPEAKER_02] Samo želite, recimo, Evo, ljudi, mi radimo najbolje za vas.
+
+314
+00:22:33,119 --> 00:22:34,000
+[SPEAKER_02] Ovo je najbolje za nas.
+
+315
+00:22:34,240 --> 00:22:35,440
+[SPEAKER_02] Dakle, samo se sastanimo na sredini.
+
+316
+00:22:35,759 --> 00:22:37,519
+[SPEAKER_02] I mislim da su potrošači potpuno u redu s tim.
+
+317
+00:22:37,680 --> 00:22:44,160
+[SPEAKER_01] Mislim da osnivači obično, ovisno o tome koliko ste blizu proizvodu, vjerojatno kad govorite o pravilu četrdeset, to više nije problem.
+
+318
+00:22:44,480 --> 00:22:54,799
+[SPEAKER_01] Ali kad je riječ o autoru koji se sjeća da nije ništa naplaćivaujete ništa za svoj proizvod, to može biti vrlo, vrlo neugodno jer će netko biti ljut i morate biti u redu s tim.
+
+319
+00:22:55,039 --> 00:22:56,319
+[SPEAKER_01] Sigurno će se to dogoditi.
+
+320
+00:22:56,400 --> 00:23:02,160
+[SPEAKER_01] Ako niste bili u redu s time da je jedna osoba ljut, vjerojatno niste trebali pokrenuti tvrtku ili izgraditi aplikaciju jer je to malo u vašoj teritoriji.
+
+321
+00:23:02,720 --> 00:23:03,839
+[SPEAKER_00] Još nismo razgovarali o tome.
+
+322
+00:23:04,079 --> 00:23:14,000
+[SPEAKER_00] Mislim da to ne spominjete izričito u izvješću, ali mnoge tvrtke za CSS također razbijaju kod za jednokratne kupnje, kao što su dodatci.
+
+323
+00:23:14,240 --> 00:23:16,000
+[SPEAKER_00] Duolingo je sjajan primjer toga.
+
+324
+00:23:16,400 --> 00:23:20,240
+[SPEAKER_00] Mislim da u njihovim brojevima ne pokazuju jer imaju prilično visoku stopu rotacije.
+
+325
+00:23:20,400 --> 00:23:24,160
+[SPEAKER_00] Dakle, mislim da još nisu ni blizu pozitivnog NRR-a.
+
+326
+00:23:24,160 --> 00:23:33,119
+[SPEAKER_00] Još ne, ali oni se kreću u tom smjeru kupnjom, zaboravljam što su sve sitnice, poput oporavka od niza i slično.
+
+327
+00:23:33,279 --> 00:23:37,039
+[SPEAKER_00] To je definitivno nešto što aplikacije mogu i trebale istraživati.
+
+328
+00:23:37,200 --> 00:23:37,519
+[SPEAKER_02] Naravno.
+
+329
+00:23:37,599 --> 00:23:39,359
+[SPEAKER_02] Mislim da Tinder to radi godinama, zar ne?
+
+330
+00:23:39,440 --> 00:23:41,359
+[SPEAKER_02] Možete kupiti košare s super likeovima, zar ne?
+
+331
+00:23:41,440 --> 00:23:45,279
+[SPEAKER_02] To nije pretplata, ali to poboljšava vašu sposobnost korištenja proizvoda, zar ne?
+
+332
+00:23:45,359 --> 00:23:55,519
+[SPEAKER_02] Mislim da ćemo vidjeti sve više toga s CSS-om, pogotovo jer možete sve više ciljano prilagoditi ponude, proizvode koje zapravo prodajete s nekim od ovih alata za umjetnu inteligenciju.
+
+333
+00:23:55,920 --> 00:23:58,559
+[SPEAKER_02] Možete koristiti jedinstvene karte, možete koristiti određene slojeve.
+
+334
+00:23:58,640 --> 00:24:00,720
+[SPEAKER_02] Mislim da to vidite u mnogim alatima za profesionalce.
+
+335
+00:24:00,720 --> 00:24:05,759
+[SPEAKER_02] Ako želite stvoriti vlastiti predložak ili predložak za e-poštu ili nešto slično, to je jednokratna kupnja.
+
+336
+00:24:06,640 --> 00:24:10,480
+[SPEAKER_02] Dakle, dolazi puno zanimljivih stvari i mislim da će to postati još zanimljivije.
+
+337
+00:24:10,559 --> 00:24:13,119
+[SPEAKER_02] Dakle, mislim, David, da se pridržavate pretplate.
+
+338
+00:24:13,279 --> 00:24:14,640
+[SPEAKER_02] To je mjesto gdje se nalazi ogromna količina novca.
+
+339
+00:24:14,880 --> 00:24:21,119
+[SPEAKER_02] Ali ako postoji nešto što možete ponuditi svojim korisnicima bez da skrenete pogled s pretplate, mislim da je to nešto o čemu treba razmisliti.
+
+340
+00:24:21,200 --> 00:24:30,720
+[SPEAKER_00] Već smo govorili uglavnom o pozitivnim aspektima, ali u industriji postoji i mnogo prijetnji, a jedan od njih izravno se odnosi na Flow.
+
+341
+00:24:31,200 --> 00:24:35,599
+[SPEAKER_00] I zapravo ću uskoro imati osnivača Dimitri na podcastu.
+
+342
+00:24:36,000 --> 00:24:37,519
+[SPEAKER_00] Stoga sam već razgovarao s njim.
+
+343
+00:24:37,759 --> 00:24:45,200
+[SPEAKER_00] Dakle, mali pregled tog epizoda, ali imao je neke zanimljive misli o tome kada je Apple Health ušao u svoj prostor.
+
+344
+00:24:45,920 --> 00:24:50,400
+[SPEAKER_00] Uveli su praćenje razdoblja kao zadani dio operacijskog sustava.
+
+345
+00:24:50,640 --> 00:24:56,960
+[SPEAKER_00] AllTrails se suočava s tim s IOS-om 18, dodajući planinarske karte izravno u ugrađenu kartu.
+
+346
+00:24:57,039 --> 00:25:03,119
+[SPEAKER_00] Dakle, što mislite o prijetnji vlasnika platforme koja se šire u te prostore proizvoda?
+
+347
+00:25:03,200 --> 00:25:10,160
+[SPEAKER_02] Većina ovih usluga ovisi o Appleu i Googleu za neku razinu stjecanja kupaca, nekih značajki, zar ne?
+
+348
+00:25:10,319 --> 00:25:17,119
+[SPEAKER_02] Koristeći hardver koji Apple i Google, na to se usredotočujemujem na te dvije stvari, ali mogli biste proširiti na Aura, mogli biste proširiti na Whoop, naš generator, zar ne?
+
+349
+00:25:17,279 --> 00:25:18,720
+[SPEAKER_02] I tako ste u opasnosti.
+
+350
+00:25:19,200 --> 00:25:21,599
+[SPEAKER_02] I mislim da ćemo se usredotočiti na Apple, zar ne?
+
+351
+00:25:21,680 --> 00:25:28,079
+[SPEAKER_02] Jer obično dobivaju većinu puta i puta, jer su stvarno vrijedni sudionici u ovom ekosustavu.
+
+352
+00:25:28,240 --> 00:25:28,960
+[SPEAKER_02] Ne možete to kritizirati.
+
+353
+00:25:28,960 --> 00:25:32,880
+[SPEAKER_02] Ali mislim da počinju dobivati malo pritiska jer naplaćuju prilično visoke naknade, zar ne?
+
+354
+00:25:32,960 --> 00:25:34,079
+[SPEAKER_02] Trideset posto naknade.
+
+355
+00:25:34,240 --> 00:25:48,960
+[SPEAKER_02] A onda imaju i povijest, a taj pojam Sure Locking dolazi iz povijesne stvari koju su napravili s drugom aplikacijom pod nazivom Watson, gdje će kopirati značajke koje se često koriste u nekim od njihovih glavnih aplikacija i nastaviti graditi ekosustav usluga Apple.
+
+356
+00:25:48,960 --> 00:25:55,599
+[SPEAKER_02] I tako, mislim da ste to vjerojatno vidjeli u njihovim javnim izvješćima, kao što se prodaja hardvera usporava, a prodaja usluga raste poput požara.
+
+357
+00:25:56,240 --> 00:26:01,119
+[SPEAKER_02] I tako, puno stvari koje nude besplatno, kao što su karte, stavljaju karte za pješačenje u usluge karata.
+
+358
+00:26:01,359 --> 00:26:03,920
+[SPEAKER_02] To je samo da bi više ljudi koristilo karte, zar ne?
+
+359
+00:26:04,000 --> 00:26:09,599
+[SPEAKER_02] Jer mogu početi prodavati sve više oglasa na temelju toga, dodavajući više podataka u zdravlje, što im pomaže prodavati satove.
+
+360
+00:26:09,680 --> 00:26:11,200
+[SPEAKER_02] To je usluga s dodanom vrijednošću za njih.
+
+361
+00:26:11,279 --> 00:26:17,119
+[SPEAKER_02] Dakle, ako ste osnivač i gradite, mislim da je jedna od osoba o kojoj uvijek pričamo da je dan demonstracije Applea dan smrti startupa, zar ne?
+
+362
+00:26:17,519 --> 00:26:22,160
+[SPEAKER_02] Jer nikad ne znate kada Apple nešto objavi ako je to savršeno dizajnirano za ono što ste pokušavali riješiti.
+
+363
+00:26:22,240 --> 00:26:24,000
+[SPEAKER_02] I tako, da, to je konkurencija.
+
+364
+00:26:24,000 --> 00:26:26,240
+[SPEAKER_02] Nema zanijekanja, nema previše prostora za papir.
+
+365
+00:26:27,599 --> 00:26:30,079
+[SPEAKER_02] Ali srebrna strana je da je Apple veliki div.
+
+366
+00:26:30,559 --> 00:26:33,279
+[SPEAKER_02] Daju mnogo svijesti o kategoriji, zar ne?
+
+367
+00:26:33,440 --> 00:26:36,640
+[SPEAKER_02] Dakle, određena stvar koju dodaju, ljudi sada postaju svjesni te značajke.
+
+368
+00:26:36,720 --> 00:26:37,920
+[SPEAKER_02] Tražit će najbolju vrstu.
+
+369
+00:26:38,319 --> 00:26:42,640
+[SPEAKER_02] Dakle, ako ste aplikacija u gornjem dvadeset posto, to bi vam moglo biti od koristi, zar ne?
+
+370
+00:26:42,640 --> 00:26:44,240
+[SPEAKER_02] Ali morate je neprestano držati podalje.
+
+371
+00:26:44,480 --> 00:26:46,960
+[SPEAKER_02] Ne možete samo izgraditi aplikaciju, kao što je, znate, za primjer, All Trails.
+
+372
+00:26:47,920 --> 00:26:50,240
+[SPEAKER_02] Ne mogu samo prestati raditi stvari i reći, dobro, dobro smo.
+
+373
+00:26:50,640 --> 00:26:50,799
+[SPEAKER_02] U redu.
+
+374
+00:26:50,960 --> 00:26:54,799
+[SPEAKER_02] Uvijek moraju biti deset puta bolji od bilo kakve ponude Applea, zar ne?
+
+375
+00:26:54,960 --> 00:26:56,319
+[SPEAKER_02] Više fotografija, više recenzija.
+
+376
+00:26:56,400 --> 00:26:57,839
+[SPEAKER_02] Sada rade društvene značajke, zar ne?
+
+377
+00:26:58,000 --> 00:26:58,799
+[SPEAKER_02] Apple to ne radi.
+
+378
+00:26:59,200 --> 00:27:03,039
+[SPEAKER_02] Znate što se događa, mislim, znate, morate koristiti Flow i AllTrails kao primjer.
+
+379
+00:27:03,599 --> 00:27:11,440
+[SPEAKER_02] Apple može odrezati nekoliko posto besplatnih korisnika, ali ono što ne čine jest da ne uzimaju ljude koji bi platili za AllTrails i Flow.
+
+380
+00:27:11,759 --> 00:27:14,079
+[SPEAKER_02] Ti ljudi ne ostanu samo na Appleu, zar ne?
+
+381
+00:27:14,160 --> 00:27:16,799
+[SPEAKER_02] Pokušavaju tražiti premium iskustvo, pa će ići na premium.
+
+382
+00:27:16,960 --> 00:27:18,640
+[SPEAKER_02] Ali ako koristite negativnu stranu, zar ne?
+
+383
+00:27:18,799 --> 00:27:26,480
+[SPEAKER_02] Ako ste aplikacija koja nije inovirala, vi ste vrsta aplikacije MeToo koja se nalazi na dnu rangova, rangova u trgovini aplikacijama, to je teško.
+
+384
+00:27:26,640 --> 00:27:27,759
+[SPEAKER_02] To je teško mjesto za biti.
+
+385
+00:27:27,920 --> 00:27:29,599
+[SPEAKER_02] I tako su investitori prilično pametni u tome.
+
+386
+00:27:29,759 --> 00:27:34,559
+[SPEAKER_02] Morate biti vrlo informirani i sposobni prevladati takvu izazovnu temu koja će se pojaviti.
+
+387
+00:27:34,799 --> 00:27:41,200
+[SPEAKER_00] Volim način na koji to ob koji to u izvješću oblikujete, da postoji širok i plitak, što je ono što platforme rade.
+
+388
+00:27:41,359 --> 00:27:46,960
+[SPEAKER_00] To je kao da su, kad su u Apple Watch uvedli praćenje razdoblja, morali to učiniti za masu.
+
+389
+00:27:47,599 --> 00:27:48,720
+[SPEAKER_00] To je širok i plitak.
+
+390
+00:27:48,880 --> 00:27:50,640
+[SPEAKER_00] Nije to super duboka značajka.
+
+391
+00:27:50,720 --> 00:27:52,640
+[SPEAKER_00] A onda je Flow upravo suprotno.
+
+392
+00:27:52,960 --> 00:28:07,200
+[SPEAKER_00] A način na koji to oblikujete u izvješću je vertikalni i dubok, gdje imaju toliko drugih značajki i slojevitih, kao što ste ranije spomenuli, to je kao da su stvari za koje će ljudi platiti u Flowu stvari koje Apple nikad neće dodati ovoj masovnoj aplikaciji.
+
+393
+00:28:07,440 --> 00:28:12,640
+[SPEAKER_00] Dakle, najbolja obrana protiv Sherlockinga je izgradnja pravog jarka.
+
+394
+00:28:12,640 --> 00:28:20,960
+[SPEAKER_00] Stvarno je to prava jarka s tom dubinom i vertikalnom ponudom proizvoda umjesto da radite nešto poput ja sam i to što vas stavlja u veliku opasnost.
+
+395
+00:28:21,119 --> 00:28:25,359
+[SPEAKER_01] Je li ikad bilo bilo bilo kakve druge aplikacije osim Watsona koja je bila Sherlocked?
+
+396
+00:28:25,599 --> 00:28:26,799
+[SPEAKER_00] Zapravo je bila Sherlocked, zar ne?
+
+397
+00:28:26,880 --> 00:28:26,960
+[SPEAKER_00] Da.
+
+398
+00:28:27,279 --> 00:28:27,359
+[SPEAKER_00] Da.
+
+399
+00:28:27,519 --> 00:28:33,759
+[SPEAKER_01] Osjećam da je to nešto o čemu svi stalno pričaju, ali nikad zapravo nije bilo, recimo, tko je to bio nedavno?
+
+400
+00:28:33,920 --> 00:28:34,480
+[SPEAKER_01] One Password.
+
+401
+00:28:34,559 --> 00:28:37,440
+[SPEAKER_01] Jer Apple je nadogradio sve svoje stvari vezane uz lozinke.
+
+402
+00:28:37,519 --> 00:28:39,039
+[SPEAKER_01] I svi su, wow, One Password je gotov.
+
+403
+00:28:39,200 --> 00:28:45,599
+[SPEAKER_01] A ja sam poput, koristimo One Password, poslovni sinkronizam, sve to, prekogranično.
+
+404
+00:28:46,000 --> 00:28:47,039
+[SPEAKER_01] Ne, nikad u milijun godina.
+
+405
+00:28:47,279 --> 00:28:48,319
+[SPEAKER_01] Kao da će to učiniti, znaš.
+
+406
+00:28:48,319 --> 00:28:56,960
+[SPEAKER_01] Mislim da su ljudi vjerojatno previše usmjereni na razgovore o Appleovom ekosustavu, znate, koji misle, oh, sve ću raditi putem Applea.
+
+407
+00:28:57,200 --> 00:28:57,599
+[SPEAKER_01] Ne znam.
+
+408
+00:28:57,759 --> 00:29:02,480
+[SPEAKER_01] Mislim da zapravo nije bilo toliko slučajeva ili ništa smisleno, na neki način, kao što je rekao Eric.
+
+409
+00:29:02,880 --> 00:29:08,160
+[SPEAKER_00] To je kao da su MeToos, da, sigurno, možda su odbačeni, ali ništa nas ne zanima.
+
+410
+00:29:08,319 --> 00:29:11,839
+[SPEAKER_01] Mislim da bih možda razmislio dvaput da postoji odlična rješenja na razini OS-a.
+
+411
+00:29:12,079 --> 00:29:15,759
+[SPEAKER_01] Moguće je da bih razmislio dvaput prije nego što bih tamo pokrenuo nešto novo.
+
+412
+00:29:15,839 --> 00:29:24,240
+[SPEAKER_01] Ali ako ste već u tom prostoru i pretpostavljam da, ako niste tek na početku, ako vaš proizvod ima bilo kakvu razliku, kao što je Apple.
+
+413
+00:29:24,480 --> 00:29:27,359
+[SPEAKER_01] Apple i Google ili bilo tko drugi to grade jer postoji nešto.
+
+414
+00:29:27,599 --> 00:29:30,240
+[SPEAKER_01] Ne bi ih to zanimalo ako to nije bilo značajno.
+
+415
+00:29:31,440 --> 00:29:37,359
+[SPEAKER_01] I tako vjerujem da je to u većini slučajeva neka vrsta blagoslova ili barem neutralno, osim možda nekoliko slučajeva.
+
+416
+00:29:37,599 --> 00:29:41,200
+[SPEAKER_02] Ako ste najbolji u tome, razmislite o tome s gledišta bilježenja, zar ne?
+
+417
+00:29:41,359 --> 00:29:45,519
+[SPEAKER_02] Notion će vjerojatno preživjeti sve alate za umjetnu inteligenciju koje Apple integrira u bilješke, zar ne?
+
+418
+00:29:45,599 --> 00:29:46,319
+[SPEAKER_02] Vjerojatno će preživjeti.
+
+419
+00:29:46,640 --> 00:29:51,680
+[SPEAKER_02] Ima puno drugih aplikacija za bilježenje koje mogu imati stvarno teško vrijeme s privlačenjem kupaca.
+
+420
+00:29:52,079 --> 00:29:53,759
+[SPEAKER_02] Dakle, Notion je vjerojatno u redu, zar ne?
+
+421
+00:29:54,000 --> 00:30:00,480
+[SPEAKER_02] I ne znam Notion, znam tu informaciju, ali ako ste netko drugi i oni su umjetna inteligencija i Apple se odjednom integrira kao nešto.
+
+422
+00:30:00,480 --> 00:30:05,200
+[SPEAKER_02] Integrirano kao i nekoliko drugih alata ili počinje izgledati malo više poput Google dokumenata u svojoj platformi bilješki.
+
+423
+00:30:05,440 --> 00:30:06,079
+[SPEAKER_02] To bi moglo biti teško.
+
+424
+00:30:06,160 --> 00:30:08,720
+[SPEAKER_02] Koristim neke od usluga transkripcije u glasovnoj pošti Applea.
+
+425
+00:30:08,960 --> 00:30:10,000
+[SPEAKER_02] To je prilično dobro, zar ne?
+
+426
+00:30:10,160 --> 00:30:13,119
+[SPEAKER_02] Dakle, ako koristite nešto, zaseban proizvod, to bi moglo biti problem.
+
+427
+00:30:13,440 --> 00:30:15,359
+[SPEAKER_02] Ne možete prestati rasti u tom prostoru samo zato što postoji Apple.
+
+428
+00:30:15,839 --> 00:30:20,079
+[SPEAKER_02] To je ono što su ljudi radili u društvenim mrežama, poput, Bože, Google radi nešto, Facebook je mrtav.
+
+429
+00:30:20,240 --> 00:30:20,319
+[SPEAKER_02] Ne.
+
+430
+00:30:20,720 --> 00:30:20,799
+[SPEAKER_01] Ne.
+
+431
+00:30:21,039 --> 00:30:27,519
+[SPEAKER_01] David, pokušavam, pokušavam, ne mogu zamisliti jedan alat koji bih prešao na razinu operacijskog sustava.
+
+432
+00:30:27,680 --> 00:30:36,480
+[SPEAKER_00] Znate, bilješke su dobar primjer jer je Apple sve više i više dodao bilješke, vjerojatno prije pet godina, prestao sam koristiti aplikaciju za bilješke treće strane.
+
+433
+00:30:37,519 --> 00:30:41,440
+[SPEAKER_01] Da, jer prije nisu imali sinkronizaciju, a sada je sinkronizacija stvarno dobra.
+
+434
+00:30:41,519 --> 00:30:42,559
+[SPEAKER_00] To je sjajna aplikacija.
+
+435
+00:30:43,200 --> 00:30:47,440
+[SPEAKER_00] Da, zaista je fantastična aplikacija, ali nisam nikad koristio Evernote.
+
+436
+00:30:47,599 --> 00:31:01,920
+[SPEAKER_00] Koristio sam, zapravo savršeno potvrđuje Ericovu točku, kao da sam koristio neku vrstu osnovne aplikacije za bilješke treće strane MeToo koja nije imala ni super sofisticiranu sinkronizaciju, nije bila super bogata značajkama.
+
+437
+00:31:02,000 --> 00:31:08,319
+[SPEAKER_00] I tako je premještanje bilješki Applea bilo smisleno jer su dodali sve ove značajke, ali nisam bio tipičan korisnik Evernotea.
+
+438
+00:31:09,039 --> 00:31:18,400
+[SPEAKER_01] Da, na strani umjetne inteligencije, to je kao da je aplikacija za bilješ bilješke na razini sustava naviknuti korisnike na neke od tih značajki, a Apple ih neće ažurirati, ali jednom godišnje, ako je to u redu.
+
+439
+00:31:18,720 --> 00:31:23,759
+[SPEAKER_01] I tako sada svi ostali koji razvijaju AI integrirani imaju neku vrstu zagrijavajuće aplikacije koju svi koriste.
+
+440
+00:31:24,240 --> 00:31:28,799
+[SPEAKER_01] Tada ste u razredu i vidite nekoga pored vas koji koristi nešto ludije i mislite: O, ne koristiš što god.
+
+441
+00:31:29,119 --> 00:31:31,200
+[SPEAKER_01] A onda je to kao da ću prijeći na to, zar ne?
+
+442
+00:31:31,359 --> 00:31:39,279
+[SPEAKER_01] Dakle, ovo je tako dinamično i teško je potpuno opisati ponašanje potrošača da mislim da je pretjerano.
+
+443
+00:31:40,079 --> 00:31:40,960
+[SPEAKER_00] To je fantastičan komentar.
+
+444
+00:31:41,440 --> 00:31:58,880
+[SPEAKER_00] Apple vjerojatno neće integrirati značajke AI u aplikaciju za bilješke na razini koja bi bila smislena zao za mene, ali sad kad to spomenete, zapravo bih, mislim, imao toliko bilješki koje sežu pet ili šest godina unatrag otkako sam je počeo detaljnije koristiti da je teško pronaći.
+
+445
+00:31:59,200 --> 00:32:00,640
+[SPEAKER_01] Teško bi bilo prebaciti se, zar ne?
+
+446
+00:32:00,799 --> 00:32:04,640
+[SPEAKER_00] Ne, ne, ne, ali kažem da je to poput više poticaja za prebacivanje s AI-om.
+
+447
+00:32:04,799 --> 00:32:09,519
+[SPEAKER_00] Tvrtke postaju agresivnije s boljim alatima i pronalaženjem i traženjem i sve to.
+
+448
+00:32:10,000 --> 00:32:10,079
+[SPEAKER_00] Da.
+
+449
+00:32:10,400 --> 00:32:16,960
+[SPEAKER_02] Jer s AI-om, posebno, nismo to stavili u izvješće, ali ako o tome razmišljate, trebat će pristup podacima, zar ne?
+
+450
+00:32:17,039 --> 00:32:20,960
+[SPEAKER_02] I tako će htjeti specifične zahtjeve poput pristupa vašim kontaktima, pristupa vašim alatima za računanje.
+
+451
+00:32:21,039 --> 00:32:28,400
+[SPEAKER_02] Apple će biti malo zaštitnički u tom pogledu, ali koji su potrošači?č vjerovati da će pokrenuti AI motor na vlastite osobne podatke?
+
+452
+00:32:28,480 --> 00:32:30,480
+[SPEAKER_02] Mislim da postoji i dvostruka mač.
+
+453
+00:32:30,799 --> 00:32:38,480
+[SPEAKER_02] Mislim da će usmjerivači i izraditelji integrirati alate za umjetnu inteligenciju mnogo brže od Applea, samo faktorizirano vjerojatno tri puta, dvije, tri godine ispred Applea.
+
+454
+00:32:38,720 --> 00:32:45,440
+[SPEAKER_02] Ali ako želite vjerovati nekome s izvorom podataka ili s podacima o vašem tečaju, poput kontakata ili kalendara, Apple bi mogao imati malu prednost.
+
+455
+00:32:45,599 --> 00:32:50,400
+[SPEAKER_02] Morate se povezati s ovom vrhunskom ponudom ili dobiti potrošača koji će se uključiti, što je poput: Eh, što koriste moji prijatelji?
+
+456
+00:32:50,559 --> 00:32:51,039
+[SPEAKER_02] Vole li to?
+
+457
+00:32:51,200 --> 00:32:51,279
+[SPEAKER_02] Super.
+
+458
+00:32:51,599 --> 00:32:53,039
+[SPEAKER_02] I onda ću upotrijebiti tu aplikaciju.
+
+459
+00:32:53,200 --> 00:33:00,559
+[SPEAKER_00] Ne želim se previše dublje ući jer se o tome puno govori, ali budući da se o tome puno govori, volio bih samo nekako dobiti.
+
+460
+00:33:00,559 --> 00:33:07,119
+[SPEAKER_00] Želim samo da se upoznate s DMA-om i svim regulatornim previsokim pitanjima koja imamo.
+
+461
+00:33:07,519 --> 00:33:07,839
+[SPEAKER_00] Sve je gotovo.
+
+462
+00:33:08,079 --> 00:33:09,279
+[SPEAKER_01] Thierry je podnio ostavku.
+
+463
+00:33:09,440 --> 00:33:10,640
+[SPEAKER_01] Sve će nestati, zar ne?
+
+464
+00:33:10,799 --> 00:33:13,039
+[SPEAKER_01] Mislio sam da je sve gotovo kad je otišao.
+
+465
+00:33:13,200 --> 00:33:14,160
+[SPEAKER_01] Ne, tako Europa ne funkcionira.
+
+466
+00:33:14,640 --> 00:33:14,880
+[SPEAKER_01] U redu.
+
+467
+00:33:15,839 --> 00:33:18,480
+[SPEAKER_00] Ali kako se to cijeni u akvizicijama?
+
+468
+00:33:18,640 --> 00:33:20,960
+[SPEAKER_00] Kako se to cijeni u ulaganjima?
+
+469
+00:33:21,200 --> 00:33:26,640
+[SPEAKER_00] Kako ulagačka zajednica razmišlja o regulaciji, i to pozitivno i negativno?
+
+470
+00:33:27,039 --> 00:33:32,160
+[SPEAKER_02] Da, mislim da se na strani DMA-e, usredotočujući se na Europu, za ljude koji ne znaju što je to, radi se o Zakonu o digitalnim tržištima.
+
+471
+00:33:32,559 --> 00:33:35,359
+[SPEAKER_02] Dakle, to je zakon koji je uspostavila EU.
+
+472
+00:33:36,240 --> 00:33:45,279
+[SPEAKER_02] Mislim da je to ono što je osmišljeno da učvrsti utjecaj nekih velikih platformi, posebno Applea i Googlea, na nezavisne programerke.
+
+473
+00:33:45,599 --> 00:33:46,799
+[SPEAKER_02] I ima nekoliko područja, zar ne?
+
+474
+00:33:46,960 --> 00:33:57,279
+[SPEAKER_02] Oni na neki način ograničavaju plaćanja, na što se svi jako usredotočuju, ali ograničavaju i mnoge druge stvari, kao što su novi marketinški popusti, ponude, slično tome, prilagodba, recenzija aplikacija.
+
+475
+00:33:57,440 --> 00:33:58,160
+[SPEAKER_00] Da, to je točno.
+
+476
+00:33:58,319 --> 00:34:02,079
+[SPEAKER_00] Samo sam imao nekoliko susreta s recenzijom aplikacije u svojoj aplikaciji za strateški projekt.
+
+477
+00:34:03,119 --> 00:34:04,720
+[SPEAKER_01] David je iznenada postao pro DMA.
+
+478
+00:34:05,920 --> 00:34:10,559
+[SPEAKER_02] Rekao je: Nikad nisam bio toliko zadovoljan francuskim zakonima nego sada.
+
+479
+00:34:10,639 --> 00:34:12,719
+[SPEAKER_02] Dakle, mislim da je to nešto što EU općenito.
+
+480
+00:34:13,280 --> 00:34:14,639
+[SPEAKER_02] bila na čelu privatnosti.
+
+481
+00:34:14,719 --> 00:34:19,760
+[SPEAKER_02] Ono što rade, ponekad se ponekad filtrira ovdje u SAD, ali to je prilično vruća tema.
+
+482
+00:34:19,840 --> 00:34:22,079
+[SPEAKER_02] Trenutno je stvarno teško odrediti cijenu.
+
+483
+00:34:22,239 --> 00:34:28,320
+[SPEAKER_02] Svatko kaže: Mogu li pretpostaviti da će trideset posto Applea koštati petnaest posto i da će tvrtka biti petnaest posto profitabilnija?
+
+484
+00:34:28,320 --> 00:34:29,199
+[SPEAKER_02] Ne, ne mogu.
+
+485
+00:34:29,519 --> 00:34:34,960
+[SPEAKER_02] Mogu li vam reći sigurno da svaki od mojih klijenata traži neku vrstu ponude za pretplatu na internetu?
+
+486
+00:34:35,119 --> 00:34:35,360
+[SPEAKER_02] Sigurno.
+
+487
+00:34:35,440 --> 00:34:36,639
+[SPEAKER_02] I one postaju sve bolji i bolji.
+
+488
+00:34:36,719 --> 00:34:38,320
+[SPEAKER_02] Mislim da RevenueCat radi na nekim stvarima.
+
+489
+00:34:38,480 --> 00:34:48,960
+[SPEAKER_02] Postoji mnoštvo drugih imena koja razmišljaju o tome kako ponuditi alat za pretplatu na internetu koji pruža iste značajke kao i trgovina aplikacijama, što su upravljanje korisnicima, porezi, plaćanje, osiguravanje da.
+
+490
+00:34:49,280 --> 00:34:55,679
+[SPEAKER_02] prikupljate poreze i profilirate u svakoj jurisdikciji, uz proviziju od sedam posto u odnosu na trideset posto.
+
+491
+00:34:56,480 --> 00:35:03,679
+[SPEAKER_02] I mislim da će se dogoditi neke velike promjene kad se ti proizvodi poveća i postanu stvarno, stvarno dobri, što je trgovina aplikacijama imala desetogodišnju prednost u tome.
+
+492
+00:35:04,639 --> 00:35:11,360
+[SPEAKER_02] Mislim da će potrošači biti udobni uzeti popust od deset, dvadeset posto i brzo se prijaviti na web, a zatim se vratiti na aplikaciju.
+
+493
+00:35:11,840 --> 00:35:14,800
+[SPEAKER_02] Mislim da ćemo se obučavati na to, baš kao što smo se obučavali na to kako radimo pretplate.
+
+494
+00:35:15,280 --> 00:35:19,440
+[SPEAKER_02] Dakle, teško je reći što će se još dogoditi u narednih nekoliko godina, ali to je definitivno vruća tema.
+
+495
+00:35:19,519 --> 00:35:24,880
+[SPEAKER_01] Da, mislim da je bilo puno energije oko web lijevka i bilo je nekih.
+
+496
+00:35:24,880 --> 00:35:31,440
+[SPEAKER_01] I postoje neke nove tehnologije koje ljudi razvijaju, alate za to, ali ništa od toga nije vođeno DMA-om.
+
+497
+00:35:31,519 --> 00:35:33,360
+[SPEAKER_01] Kao što je puno toga bilo dopušteno prije.
+
+498
+00:35:33,599 --> 00:35:38,320
+[SPEAKER_01] Zanimljivo mi je vidjeti hoće li neki od tih trgovina dostići neku vrstu brzine bijega.
+
+499
+00:35:38,639 --> 00:35:46,000
+[SPEAKER_01] Mislim da je veličina tržišta previše restriktivna da bi dosegla bilo kakvu smislenu razmjeru na nacionalnoj i međunarodnoj razini.
+
+500
+00:35:46,159 --> 00:35:56,559
+[SPEAKER_01] I iskreno, ovo je kao da snimamo ovo tjedan dana nakon što je Thierry Breton, mislim da je njegovo ime, koji je bio šef DMA-e, odustao ili je zatražio da odustaje, što mislim da je Marksov potencijal.
+
+501
+00:35:56,880 --> 00:35:57,360
+[SPEAKER_01] Mislim, tko zna?
+
+502
+00:35:57,360 --> 00:36:00,639
+[SPEAKER_01] Ne znam kakva je unutarnja politika Komisije, ali mislim da je Marksov potencijal ovdje.
+
+503
+00:36:00,639 --> 00:36:01,280
+[SPEAKER_01] To bi moglo biti velika promjena.
+
+504
+00:36:01,440 --> 00:36:10,880
+[SPEAKER_01] Ne znam znači li to da će se DMA promijeniti ili će se barem možda više neće koristiti provedba zakona, ali prošle godine je Apple bio poprilično aktivan u nadzoru zbog određenih detalja.
+
+505
+00:36:11,599 --> 00:36:18,480
+[SPEAKER_01] Možete zamisliti verziju DMA-e koja je izašla, Apple je isporučio svoju verziju, a onda je EC samo šutnja i to je bilo to.
+
+506
+00:36:18,639 --> 00:36:23,280
+[SPEAKER_01] Ali prošli smo kroz prošlu godinu u kojoj je bilo tik-tak i naprijed-natrag u velikoj nesigurnoj nered.
+
+507
+00:36:23,760 --> 00:36:33,280
+[SPEAKER_01] Čak i ako se samo vrati u status quo, mislim da je to dobro za, mislim, možda to nije ishod koji je svatko želio, ali mislim da je to dobro za industriju u smislu da imamo neku stabilnost.
+
+508
+00:36:33,920 --> 00:36:35,280
+[SPEAKER_01] Ali da, samo sam nadahnut.
+
+509
+00:36:35,599 --> 00:36:38,480
+[SPEAKER_01] Možda će biti malo manje uzbudljbudljivo sljedeće godine.
+
+510
+00:36:39,119 --> 00:36:39,840
+[SPEAKER_02] To bi bio moj san.
+
+511
+00:36:40,159 --> 00:36:42,079
+[SPEAKER_02] Ljudi vole predvidljivost i stabilnost.
+
+512
+00:36:42,320 --> 00:36:42,719
+[SPEAKER_01] To je istina.
+
+513
+00:36:42,800 --> 00:36:56,719
+[SPEAKER_01] Mislim, to je klišejski, ali, evo, ako želimo nešto izgraditi s ovim platformama ili ovim promjenama ili ovim otvaranjem, ako trebamo stabilnost i trebamo vrijeme da bismo pomislili, dobro, kako ćemo zapravo integrirati ovo?
+
+514
+00:36:56,960 --> 00:37:00,880
+[SPEAKER_01] Ali, da, vraćajući se na vašu predviđanje da će više ljudi voziti na web.
+
+515
+00:37:01,039 --> 00:37:02,800
+[SPEAKER_01] Mislim da će to općenito biti istina.
+
+516
+00:37:03,039 --> 00:37:04,960
+[SPEAKER_01] Mislim da će iskustvo i dalje ostati u aplikaciji.
+
+517
+00:37:05,039 --> 00:37:20,960
+[SPEAKER_01] I dalje sam veliki zagovornik toga da korisničko iskustvo Delta između onoga što se može pružiti u web pregledniku i onoga što mislim da je bilo deset godina u kojima smojima smo mislili da će web preglednik biti dovoljno razvijen da će ga nadmašiti, ali dva najveća proizvođača web preglednika su Apple i Google.
+
+518
+00:37:21,280 --> 00:37:24,239
+[SPEAKER_01] Dakle, imaju veliki poticaj da se pobrinu da preglednik nikad ne postane previše dobar.
+
+519
+00:37:24,400 --> 00:37:24,719
+[SPEAKER_01] Točno.
+
+520
+00:37:24,800 --> 00:37:26,159
+[SPEAKER_01] Dakle, mislim da to nećemo vidjeti uskoro.
+
+521
+00:37:26,639 --> 00:37:30,480
+[SPEAKER_00] Međutim, taj trend je također na Appleu, zar ne?
+
+522
+00:37:30,639 --> 00:37:35,119
+[SPEAKER_00] I tako, u njihovom alatnom sanduku postoje alati koji će malo obrnuti taj trend.
+
+523
+00:37:35,599 --> 00:37:39,920
+[SPEAKER_00] Na primjer, postoje načini na koje mogu jače poticati kupnju aplikacija.
+
+524
+00:37:40,320 --> 00:37:45,039
+[SPEAKER_00] I, i kao što ste ranije spomenuli, Eric, alati za to nisu potpuno zreli.
+
+525
+00:37:45,519 --> 00:37:47,599
+[SPEAKER_00] Kao što je Stripe upravo kupio Lemon Squeezy.
+
+526
+00:37:48,000 --> 00:37:53,119
+[SPEAKER_00] Vidjela sam oglas za posao za nekog menadžera trgovca zapisima.
+
+527
+00:37:53,360 --> 00:38:01,199
+[SPEAKER_00] Dakle, Stripe izgleda kao da gradi trgovca zapisima pod markom Stripe, slično onome što radi Paddle, ali to je kao da to tek sada rade.
+
+528
+00:38:01,360 --> 00:38:08,639
+[SPEAKER_00] I tako, čak ni Stripe danas ne podržava sve zemlje i sve načine plaćanja i sve što Apple čini.
+
+529
+00:38:09,599 --> 00:38:13,039
+[SPEAKER_00] I tako postoji potencijal za Apple da inovira.
+
+530
+00:38:13,440 --> 00:38:25,920
+[SPEAKER_00] I to je ono što želite u dobrom pravnom okviru i dobrom pravilniku, da prisilite nekoga poput Applea da bude konkurentniji umjesto da samo skuplja trideset posto i da se oslanja naja na svoje zasluge.
+
+531
+00:38:26,000 --> 00:38:30,559
+[SPEAKER_00] Zato sam malo znatiželjan da vidim što će se dogoditi u narednih nekoliko godina ako se malo odupru.
+
+532
+00:38:30,719 --> 00:38:32,559
+[SPEAKER_01] Ništa od toga nije bilo izazvano DMA-om.
+
+533
+00:38:32,800 --> 00:38:37,039
+[SPEAKER_01] Paddle i sve to već se događalo i Apple možda će reagirati ili neće reagirati.
+
+534
+00:38:37,280 --> 00:38:39,519
+[SPEAKER_01] I zapravo je to ono što je uzrokovalo to.
+
+535
+00:38:39,679 --> 00:38:39,760
+[SPEAKER_01] Da.
+
+536
+00:38:40,000 --> 00:38:43,599
+[SPEAKER_01] Ali siguran sam da će netko reći: Pa, onda je to bio DMA, a onda je Apple poboljšao.
+
+537
+00:38:44,000 --> 00:38:46,239
+[SPEAKER_01] I to je kao da, ne, mislim da su to i tako htjeli učiniti.
+
+538
+00:38:46,320 --> 00:38:47,519
+[SPEAKER_01] Ali, dobro, to je dobra točka.
+
+539
+00:38:47,840 --> 00:38:50,320
+[SPEAKER_00] Ali, da, i dalje će biti zanimljivo vidjeti što će se dogoditi.
+
+540
+00:38:50,480 --> 00:38:55,920
+[SPEAKER_00] I posebno sam znatiželjan da vidim što će Apple učiniti da to pomakne jer definitivno postoji trend prema tome.
+
+541
+00:38:56,000 --> 00:39:01,119
+[SPEAKER_00] Kao što je rekao Eric, postoji trend prema tome da ljudi pokušavaju uhvatiti sve više na webu kako bi izbjegli taj tr trideset posto.
+
+542
+00:39:02,639 --> 00:39:06,480
+[SPEAKER_00] Apple je to sigurno vidio i pokušava shvatiti što da radi.
+
+543
+00:39:06,639 --> 00:39:16,800
+[SPEAKER_00] A onda će Google, kao druga polovica oligopola, ili slijediti njihov primjer ili imati vlastiti inovativan pristup pokušavajući vratiti dio toga.
+
+544
+00:39:17,280 --> 00:39:22,559
+[SPEAKER_01] U izvješću malo govorite o IPO-ovima i o tome kako CSS odnosi na IPO-ove.
+
+545
+00:39:22,639 --> 00:39:26,719
+[SPEAKER_01] Mislim da smo u vrlo zanimljivom trenutku na javnim tržištima ili njihovom nedostatku.
+
+546
+00:39:26,960 --> 00:39:29,119
+[SPEAKER_01] Mislim da je bilo četiri IPO-a ove godine.
+
+547
+00:39:29,280 --> 00:39:32,719
+[SPEAKER_01] Sigurno ih je bilo više, ali četiri su na mojoj desnoj strani.
+
+548
+00:39:33,039 --> 00:39:36,880
+[SPEAKER_01] Bilo je vjerojatno jedno od najintenzivnijih suša na javnim tržištima, a to je na strani B2B2B.
+
+549
+00:39:37,440 --> 00:39:40,559
+[SPEAKER_01] Dakle, kad pogledate potrošače, moram pretpostaviti da je zapravo gore.
+
+550
+00:39:40,960 --> 00:39:48,159
+[SPEAKER_01] Zato sam znatiželjan, znate, na manje, čini mi se da je više ugovora koji su manje nego javni, više poput akvizicija privatnog kapitala i slično.
+
+551
+00:39:48,559 --> 00:39:51,599
+[SPEAKER_01] Ali kako vi vidite, mislim, tržište IPO-a općenito?
+
+552
+00:39:51,760 --> 00:39:53,199
+[SPEAKER_01] A zatim kako se to odnosi na ovaj segment?
+
+553
+00:39:53,599 --> 00:39:53,679
+[UNKNOWN] Da.
+
+554
+00:39:53,840 --> 00:39:59,599
+[SPEAKER_02] Mislim da ste u pravu, Jacob, kao što su IPO-ovi definitivno pali od 2021., 2022.
+
+555
+00:39:59,840 --> 00:39:59,920
+[SPEAKER_02] godine.
+
+556
+00:40:00,079 --> 00:40:02,559
+[SPEAKER_02] Mislim da nismo ni na razini 2018., 2019.
+
+557
+00:40:02,960 --> 00:40:03,039
+[SPEAKER_02] godine.
+
+558
+00:40:03,360 --> 00:40:07,599
+[SPEAKER_02] Dakle, mislim da je puno investitora gladnih novca, ali događa se puno privatnih ugovora.
+
+559
+00:40:08,000 --> 00:40:09,039
+[SPEAKER_02] Stripe je savršeni primjer.
+
+560
+00:40:09,039 --> 00:40:09,679
+[SPEAKER_02] Rekli ste ih ranije.
+
+561
+00:40:09,920 --> 00:40:11,360
+[SPEAKER_02] Učinili su mnogo sekundarnih ugovora.
+
+562
+00:40:11,519 --> 00:40:11,599
+[SPEAKER_02] Da.
+
+563
+00:40:11,840 --> 00:40:16,239
+[SPEAKER_02] Dakle, umjesto da se javno u prodaju, kažu: U redu, samo ćemo prikupiti ček i moći isplatiti neke od naših ulagača.
+
+564
+00:40:16,320 --> 00:40:18,239
+[SPEAKER_02] Da, a jedini gubitnik je trgovina, zar ne?
+
+565
+00:40:18,320 --> 00:40:18,400
+[SPEAKER_02] Da.
+
+566
+00:40:18,559 --> 00:40:20,480
+[SPEAKER_02] Dakle, samo se javno prodaju kasnije, zar ne?
+
+567
+00:40:20,800 --> 00:40:21,920
+[SPEAKER_01] To je rizik.
+
+568
+00:40:22,079 --> 00:40:26,079
+[SPEAKER_01] Da bih to mogao kvantificirati, imaju milijarde prihoda, zar ne?
+
+569
+00:40:26,480 --> 00:40:27,280
+[SPEAKER_01] To je ludost.
+
+570
+00:40:27,519 --> 00:40:37,280
+[SPEAKER_02] I ima puno potrošačkih poduzeća koja su se javno prodala, kao što je Allbirds, znate, koja su se javno prodala tijekom nekog razdoblja kada su se javno prodavale s SPAC-om.
+
+571
+00:40:37,519 --> 00:40:42,480
+[SPEAKER_02] Vrlo je teško biti podmorska javna tvrtka koja nema određenu razinu predvidljivosti, zar ne?
+
+572
+00:40:42,639 --> 00:40:44,880
+[SPEAKER_02] Čak i Bumble, koja je poznata tvrtka, zar ne?
+
+573
+00:40:45,039 --> 00:40:46,000
+[SPEAKER_02] Ima milijarde prihoda.
+
+574
+00:40:46,159 --> 00:40:47,679
+[SPEAKER_02] Njihove dionice su se srušile, zar ne?
+
+575
+00:40:47,840 --> 00:40:48,639
+[SPEAKER_02] Dueling je dobro prošao.
+
+576
+00:40:48,639 --> 00:40:50,239
+[SPEAKER_01] Duolingo je zaista dobro prošao, pa je definitivno imovina i nemovina.
+
+577
+00:40:50,639 --> 00:40:56,400
+[SPEAKER_01] Misliš li da postoji svijet u kojem netko ponavlja uspjeh Duolinga na javnim tržištima s potrošačke strane?
+
+578
+00:40:56,800 --> 00:40:58,320
+[SPEAKER_01] Mislim da sam nedavno radio s jednom od njih.
+
+579
+00:40:58,639 --> 00:40:59,599
+[SPEAKER_01] Da, u redu.
+
+580
+00:41:00,000 --> 00:41:03,360
+[SPEAKER_02] Dakle, definitivno mislim da postoje sjajne tvrtke za CSS koje počinju rasti.
+
+581
+00:41:03,760 --> 00:41:09,840
+[SPEAKER_02] Znaš, ako počneš ostvarivati prihod od četiri ili pet stotina milijuna dolara i predvidljivo si, javni tržišta to vole, zar ne?
+
+582
+00:41:09,920 --> 00:41:17,840
+[SPEAKER_02] Ako mogu vidjeti taj put, evo, postaješ javni na pet stotina milijuna dolara, a sada si bliže sedam stotina pedeset dolara na putu do sedam stotina pedeset dolara i profitabilan prema vlastitom sudbini, ljudi to kupuju.
+
+583
+00:41:18,079 --> 00:41:24,320
+[SPEAKER_01] Lako je reći brojke, ali kad pričate o tome da je doći do te veličine tako lud put.
+
+584
+00:41:24,320 --> 00:41:34,000
+[SPEAKER_01] I kao što su brojevi, koliko je pretplatnih aplikacija, barem kao što su čisto, ako samo pogledate, kao što su samo aplikacije za iOS, možda ih ima petnaest, čak i u tom području.
+
+585
+00:41:34,800 --> 00:41:36,079
+[SPEAKER_01] Mislim da ih ima dosta dobrih.
+
+586
+00:41:36,159 --> 00:41:40,639
+[SPEAKER_02] Mislim da možete početi ići, kao što je, niz red, zar ne?
+
+587
+00:41:40,639 --> 00:41:42,480
+[SPEAKER_02] Ima ljudi, svi poznaju Strava, zar ne?
+
+588
+00:41:42,800 --> 00:41:45,679
+[SPEAKER_02] Nekoliko stotina milijuna, imate Discord, zar ne?
+
+589
+00:41:45,760 --> 00:41:47,840
+[SPEAKER_02] Odjednom je to prilično veliko, zar ne?
+
+590
+00:41:48,079 --> 00:41:51,679
+[SPEAKER_02] Ili neka vrsta proizvođača hardvera s ponudom pretplate, zar ne?
+
+591
+00:41:51,760 --> 00:41:55,280
+[SPEAKER_02] Gdje, znate, vjerojatno su netko tko bi mogao postati javni i nekako se natjecati s Garminom, zar ne?
+
+592
+00:41:55,360 --> 00:41:57,039
+[SPEAKER_02] S zdravljem i dobrobiti, zar ne?
+
+593
+00:41:57,039 --> 00:41:57,599
+[SPEAKER_02] To je igra.
+
+594
+00:41:57,840 --> 00:41:59,280
+[SPEAKER_02] Mislim da je više nego što mislite, zar ne?
+
+595
+00:41:59,360 --> 00:42:02,159
+[SPEAKER_02] Imam puno informacija koje vjerojatno ne mogu razgovarati.
+
+596
+00:42:02,719 --> 00:42:07,199
+[SPEAKER_02] I postoje sjajne tvrtke koje su u velikom opsegu i jednostavno ne žele izaći na burzu.
+
+597
+00:42:07,440 --> 00:42:14,719
+[SPEAKER_01] Je li ograničenje zbog toga što tvrtke ne žele to učiniti zbog krvi na ulicama, kao da je to gnusno tamo, ili je to više na kupovnoj strani?
+
+598
+00:42:14,960 --> 00:42:17,679
+[SPEAKER_01] Samo je kao da investitori na javnom tržištu nisu baš zainteresirani.
+
+599
+00:42:17,760 --> 00:42:18,639
+[SPEAKER_02] To je malo od obojega, zar ne?
+
+600
+00:42:18,800 --> 00:42:24,079
+[SPEAKER_02] Kao da ste osnivač i mislite, čovječe, još uvijek pokušavam rasti, rasti, imam puno stvari koje se događaju, usredotočujem se na proizvod.
+
+601
+00:42:24,559 --> 00:42:28,159
+[SPEAKER_02] Želite li se baviti javnim tržištima i raditi tromjesečne projekcije?
+
+602
+00:42:28,239 --> 00:42:28,320
+[SPEAKER_02] Ne.
+
+603
+00:42:28,719 --> 00:42:29,920
+[SPEAKER_02] O, niste me pitali.
+
+604
+00:42:30,079 --> 00:42:31,039
+[SPEAKER_01] To je bilo ono što sam rekao.
+
+605
+00:42:31,519 --> 00:42:32,719
+[SPEAKER_02] Možda nešto što ćete dobiti.
+
+606
+00:42:32,880 --> 00:42:36,639
+[SPEAKER_01] Ne da sam na mjeri kakvu netko misli, ali morate, znate.
+
+607
+00:42:36,639 --> 00:42:38,800
+[SPEAKER_01] Ali onda pogledate ljude s javnih tržišta, zar ne?
+
+608
+00:42:39,039 --> 00:42:40,880
+[SPEAKER_02] I mnogi od tih ljudi su se okupali krvlju.
+
+609
+00:42:40,960 --> 00:42:45,760
+[SPEAKER_01] Da, nisam nikad upoznao osnivača čija je javna tržišna dionica viša od cijene IPO-a.
+
+610
+00:42:46,639 --> 00:42:49,920
+[SPEAKER_02] To bi mogao biti jedinstveni trenutak u mom životu.
+
+611
+00:42:50,159 --> 00:42:50,880
+[SPEAKER_02] Ima puno toga.
+
+612
+00:42:51,199 --> 00:42:51,840
+[SPEAKER_01] Ima puno toga.
+
+613
+00:42:52,159 --> 00:42:54,400
+[SPEAKER_01] Vjerojatno je IPO izašao 2002.
+
+614
+00:42:54,639 --> 00:42:56,559
+[SPEAKER_01] ili nešto u tom stilu, pretpostavljam.
+
+615
+00:42:56,639 --> 00:42:59,119
+[SPEAKER_01] Ako ste IPO izašli 2021., velika je šansa da ste pod vodom.
+
+616
+00:42:59,360 --> 00:43:03,360
+[SPEAKER_00] Pa, evo, dok snimamo ovo, Fed je upravo pao pedeset baznih bodova.
+
+617
+00:43:03,519 --> 00:43:05,199
+[SPEAKER_00] Dakle, novac je ponovno besplatan, zar ne?
+
+618
+00:43:05,280 --> 00:43:06,880
+[SPEAKER_00] Da, sjajno, sjajno.
+
+619
+00:43:06,960 --> 00:43:08,559
+[SPEAKER_01] Trebala sam IPO-irati jučer.
+
+620
+00:43:08,719 --> 00:43:09,280
+[SPEAKER_01] U gadu.
+
+621
+00:43:09,679 --> 00:43:11,280
+[SPEAKER_02] Postoji sekundarna dostupna, zar ne?
+
+622
+00:43:11,360 --> 00:43:12,960
+[SPEAKER_02] Kao, znate, frekvencija poslovanja.
+
+623
+00:43:12,960 --> 00:43:15,199
+[SPEAKER_02] Znate, ugovori koje smo vidjeli da se sklapaju ili smo ih sklopili, a ima ih puno sekundarnih.
+
+624
+00:43:15,360 --> 00:43:21,039
+[SPEAKER_02] Dakle, ima novca koji se širi i koji nije na javnim tržištima i koji je vrlo sretan što sklapa sekundarne ugovore.
+
+625
+00:43:21,119 --> 00:43:29,280
+[SPEAKER_02] I ako to postoji, ljudi, to rješava problem, olakšava pritisak na vaše zaposlenike ili ulagače, a zatim i dalje dovodi novac u vašu tvrtku.
+
+626
+00:43:29,360 --> 00:43:30,159
+[SPEAKER_02] To je jednostavan odgovor, zar ne?
+
+627
+00:43:30,239 --> 00:43:33,519
+[SPEAKER_02] Dakle, zašto se javno javno javiti dok zaista ne trebate tu marku?
+
+628
+00:43:33,599 --> 00:43:37,119
+[SPEAKER_01] Jednostavno želim odbiti privatnim ulagačima naknade, Eriku.
+
+629
+00:43:37,360 --> 00:43:41,039
+[SPEAKER_01] To je ono što mi je stalo, samo dvije i dvadeset, ne mogu to podnijeti.
+
+630
+00:43:41,360 --> 00:43:44,239
+[SPEAKER_01] E-trgovina je mnogo učinkovitija, ali to je potpuno u redu.
+
+631
+00:43:44,480 --> 00:43:46,000
+[SPEAKER_02] Dvije i dvadeset je velika količina.
+
+632
+00:43:46,000 --> 00:43:47,599
+[SPEAKER_02] Neću to zanijekati.
+
+633
+00:43:47,679 --> 00:43:49,599
+[SPEAKER_01] Da, to je zanimljiv trenutak.
+
+634
+00:43:49,840 --> 00:43:50,159
+[SPEAKER_01] Vidjet ćemo.
+
+635
+00:43:50,480 --> 00:43:51,360
+[SPEAKER_01] Bit će to jedan od dva.
+
+636
+00:43:51,920 --> 00:43:59,840
+[SPEAKER_01] Jedan je taj da smo u prilično teškom tržišnom depresiji u vezi s javno objavljivanjem tvrtki, a zatim se okrenemo zdravijem, pristupačnijem konačnom odredištu za tvrtke.
+
+637
+00:43:59,920 --> 00:44:14,559
+[SPEAKER_01] Ali zabrinjavam se zbog šireg makroekonomskog utjecaja činjenice da su samo pojedinci s visokim neto vrijednostima i ljudi koji upravljaju novcem oni koji mogu uložiti u tvrtke s malom kapitalizacijom jer je to mjesto gdje se najviše povećava rast, zar ne?
+
+638
+00:44:14,639 --> 00:44:18,000
+[SPEAKER_01] Što mislim da će imati negativne posljedice za nejednakost u bogatstvu i slično.
+
+639
+00:44:18,159 --> 00:44:20,880
+[SPEAKER_01] Mislim da možda nije značajno, ali mislim da je to gubitak.
+
+640
+00:44:20,960 --> 00:44:24,880
+[SPEAKER_01] Mislim da je svijet koji smo imali u nekim od dvadesetih godina prošlog stoljeća i da se vraćamo čak i na.
+
+641
+00:44:25,519 --> 00:44:28,079
+[SPEAKER_01] 2000-te godine, kada je javno ulazak bio samo nešto što ste radili.
+
+642
+00:44:28,159 --> 00:44:32,239
+[SPEAKER_01] Nakon što ste imali određenu razinu opsega i određenu mjeru predvidljivosti, to je nestalo.
+
+643
+00:44:33,039 --> 00:44:40,480
+[SPEAKER_01] Ali mislim da je vjerojatno, kao što ste rekli, vrlo rijetka situacija da se čak i nađete u situaciji da razmotrite to.
+
+644
+00:44:40,960 --> 00:44:49,920
+[SPEAKER_01] Mislim da je mnogo više osnivača, ako je izlazak nešto što vas zanima, mislim da postoji mnogo lakši put nego ciljanje javnog ulaza s mnogo manje posla, iskreno.
+
+645
+00:44:50,719 --> 00:44:52,239
+[SPEAKER_00] Pa, i to ste obuhvatili u izvješću.
+
+646
+00:44:52,400 --> 00:44:55,920
+[SPEAKER_00] Mislim da postoji cijeli slajd o drugim dobrim ishodima za tvrtke CSS.
+
+647
+00:44:56,559 --> 00:44:59,360
+[SPEAKER_00] I htjela sam zapravo razgovarati o nekim od njih.
+
+648
+00:44:59,840 --> 00:45:07,599
+[SPEAKER_00] Dakle, osim težnje za IP.O, kakvi su neki od rezultata koje vaši klijenti očekuju kao sjajne za svoje tvrtke?
+
+649
+00:45:08,159 --> 00:45:15,760
+[SPEAKER_02] Mislim da smo objasnili zašto su IPO pozitivni i negativni, ali mislim da je sjajno u CSS-u to što ima puno ljudi koji žele posjedovati sjajne CSS tvrtke.
+
+650
+00:45:16,079 --> 00:45:20,719
+[SPEAKER_02] Dakle, prodali smo tvrtku NutriCheck tvrtki za sadržaj pod nazivom Immedia Media.
+
+651
+00:45:21,199 --> 00:45:27,440
+[SPEAKER_02] Tako su mogli reći: Želimo, imamo model koji se temelji na oglasima s mnogo MAU-a, ljudi koji gledaju naš sadržaj.
+
+652
+00:45:27,599 --> 00:45:29,519
+[SPEAKER_02] Trebamo ponudu pretplate za to, zar ne?
+
+653
+00:45:29,599 --> 00:45:31,039
+[SPEAKER_02] I to je bio hitni posao.
+
+654
+00:45:31,280 --> 00:45:33,840
+[SPEAKER_02] Dakle, to je bio posao pretplate koji se prodaje tvrtki za sadržaj.
+
+655
+00:45:33,920 --> 00:45:36,639
+[SPEAKER_02] A kad ih spojite, riješili ste mnogo pitanja vezanih uz CAC.
+
+656
+00:45:36,639 --> 00:45:37,760
+[SPEAKER_02] Riješit će puno pitanja vezanih uz CAC.
+
+657
+00:45:37,920 --> 00:45:40,079
+[SPEAKER_02] Privatni kapital aktivno traži prostor, zar ne?
+
+658
+00:45:40,320 --> 00:45:44,880
+[SPEAKER_02] Dakle, aktivno traže sjajne tvrtke koje imaju novčani tok, baš kao što bi to činili s našim poslovima pranja automobila.
+
+659
+00:45:45,199 --> 00:45:49,519
+[SPEAKER_02] Vole tvrtke koje rastu i imaju dobre, predvidljive tokove prihoda.
+
+660
+00:45:49,679 --> 00:45:51,599
+[SPEAKER_02] CSS je doslovno definicija toga.
+
+661
+00:45:52,000 --> 00:45:53,679
+[SPEAKER_02] A onda su tu tvrtke koje su osnivači.
+
+662
+00:45:53,920 --> 00:45:55,840
+[SPEAKER_02] Vidjeli smo puno ljudi koji su samo rekli: Eh, sve je u redu.
+
+663
+00:45:56,400 --> 00:46:01,199
+[SPEAKER_02] I sjednu i prikupljaju dividende, a to je fenomenalan ishod za njih, a to nije loše.
+
+664
+00:46:01,440 --> 00:46:05,280
+[SPEAKER_02] A onda je jedno područje koje nas zaista zanima agregatori CSS-a.
+
+665
+00:46:05,440 --> 00:46:08,400
+[SPEAKER_02] O tome smo se malo razgovarali prije, ali ima ih mnogo.
+
+666
+00:46:08,880 --> 00:46:13,760
+[SPEAKER_02] U trgovini aplikacijama ima pet milijuna tvrtki koje z, a većina je mala.
+
+667
+00:46:13,920 --> 00:46:18,400
+[SPEAKER_02] Vrlo je malo tvrtki koje, kako je rekao Jacob, imaju prihod od više od pet stotina milijuna dolara.
+
+668
+00:46:18,480 --> 00:46:23,519
+[SPEAKER_02] To je vrlo rijetko, ali ima ih mnogo koje imaju profitabilan prihod od pet, deset, petnaest milijuna dolara.
+
+669
+00:46:23,840 --> 00:46:26,239
+[SPEAKER_02] Sigurno je da su mnoge tvrtke RevenueCat kupce.
+
+670
+00:46:26,880 --> 00:46:35,599
+[SPEAKER_02] I tako počinjemo primjećivati agregatore CSS-a, a u našem izvješću ćemo ih nazvati nekoliko, ali neću to ovdje raditi, koji kupuju ove tvrtke za više EBITDA-e.
+
+671
+00:46:35,679 --> 00:46:37,760
+[SPEAKER_02] Daju osnivačima likvidnost.
+
+672
+00:46:38,000 --> 00:46:38,880
+[SPEAKER_02] Preuzimaju aplikaciju.
+
+673
+00:46:39,039 --> 00:46:40,239
+[SPEAKER_02] Ponekad donose tim, ponekad ne.
+
+674
+00:46:40,559 --> 00:46:41,519
+[SPEAKER_02] To ovisi o kupcu.
+
+675
+00:46:41,760 --> 00:46:43,920
+[SPEAKER_02] I to su sjajne izvore likvidnosti za osnivače.
+
+676
+00:46:44,000 --> 00:46:47,599
+[SPEAKER_02] Vidimo da ti ljudi stvarno raste, prikupljaju institucionalni kapital.
+
+677
+00:46:48,079 --> 00:46:51,280
+[SPEAKER_02] I mi smo ovdje, poput Berkshire Hathaway, trgovine aplikacijama.
+
+678
+00:46:51,360 --> 00:46:55,360
+[SPEAKER_02] Kada prolaze kroz to, kupuju te stvari, cijene su pošteno, ali ne dobivaju višestruke prihode, zar ne?
+
+679
+00:46:55,760 --> 00:46:57,760
+[SPEAKER_02] Ovi momci kupuju višestruke EBITDA.
+
+680
+00:46:58,320 --> 00:47:02,239
+[SPEAKER_02] Dakle, ako generiraš EBITDA i kažeš: Eh, gotovo sam, želim otići i učiniti nešto drugo.
+
+681
+00:47:02,320 --> 00:47:07,840
+[SPEAKER_02] Mislim da mogu dobiti dvadeset, trideset milijuna u džepu ili mogu prikupljati VC krug i onda moram prodati za sto milijuna.
+
+682
+00:47:08,000 --> 00:47:09,679
+[SPEAKER_02] To je prilično dobra opcija za osnivača.
+
+683
+00:47:09,760 --> 00:47:12,000
+[SPEAKER_02] I tako, to se događa dosta često upravo sada.
+
+684
+00:47:12,159 --> 00:47:15,760
+[SPEAKER_02] Dakle, na primjer, Benning Spoons je kupio Evernote, vrlo dobar primjer.
+
+685
+00:47:15,840 --> 00:47:16,800
+[SPEAKER_02] Kupili su i WeTransfer.
+
+686
+00:47:18,159 --> 00:47:22,400
+[SPEAKER_02] I ima ih puno u Europi, a zatim nekoliko ovdje u SAD-u.
+
+687
+00:47:22,480 --> 00:47:24,880
+[SPEAKER_01] Postoji li teorija za to zašto su češći u Europi?
+
+688
+00:47:25,280 --> 00:47:25,760
+[SPEAKER_00] češće nego ovdje.
+
+689
+00:47:26,000 --> 00:47:27,760
+[SPEAKER_01] Moguće je da je Bending Spoons u Europi.
+
+690
+00:47:28,239 --> 00:47:29,119
+[SPEAKER_01] Da, mogu biti dio toga.
+
+691
+00:47:29,360 --> 00:47:30,880
+[SPEAKER_01] Da, Bending Spoons definitivno je u Europi.
+
+692
+00:47:30,960 --> 00:47:32,079
+[SPEAKER_01] I čini se da su oni koji to rade najviše.
+
+693
+00:47:32,239 --> 00:47:33,199
+[SPEAKER_01] Oni su sjajni.
+
+694
+00:47:33,360 --> 00:47:34,719
+[SPEAKER_02] Da, stvarno su pametni operatori.
+
+695
+00:47:34,960 --> 00:47:36,079
+[SPEAKER_02] Ali mislim da postoji nekoliko stvari.
+
+696
+00:47:36,239 --> 00:47:38,559
+[SPEAKER_02] Jedno, u Europi ima malo jeftinijeg tehničkog talenta.
+
+697
+00:47:39,519 --> 00:47:41,920
+[SPEAKER_02] Ako nećete dovesti tim, netko će voditi posao umjesto vas.
+
+698
+00:47:42,159 --> 00:47:42,239
+[SPEAKER_02] Da.
+
+699
+00:47:42,480 --> 00:47:51,519
+[SPEAKER_01] Dakle, kao i tvrtke s visokom profitabilnošću, dvije tvrtke s jednakim, sve ostalo jednako, imat će veći profit i nižu životnu cijenu.
+
+700
+00:47:51,760 --> 00:47:51,840
+[SPEAKER_01] Da.
+
+701
+00:47:52,159 --> 00:47:52,239
+[SPEAKER_02] Da.
+
+702
+00:47:52,480 --> 00:47:55,519
+[SPEAKER_02] Ako možete i dalje pravilno obavljati marketing, i dalje privlačiti američke potrošače.
+
+703
+00:47:55,599 --> 00:47:55,679
+[SPEAKER_02] Da.
+
+704
+00:47:55,760 --> 00:47:59,519
+[SPEAKER_02] Dakle, mislim da smo vidjeli da se takve stvari stvarno povećavaju.
+
+705
+00:47:59,679 --> 00:48:00,960
+[SPEAKER_02] Ali i neki talent koji je tamo.
+
+706
+00:48:00,960 --> 00:48:02,960
+[SPEAKER_02] Ali neki od talenata tamo su jednostavno fenomenalni i zaista razumiju marketing.
+
+707
+00:48:03,599 --> 00:48:05,360
+[SPEAKER_02] Znaju najbolje prakse, zar ne?
+
+708
+00:48:05,440 --> 00:48:07,280
+[SPEAKER_02] Uvode umjetnu inteligenciju lijevo i desno.
+
+709
+00:48:07,440 --> 00:48:15,599
+[SPEAKER_02] Tako su uspjeli povećati posao koji, kao što su neki nazivi koje nismo čuli, ako ste u svijetu tehnološkog kriza, ako želite, koji koriste stotine milijuna ljudi diljem svijeta.
+
+710
+00:48:15,760 --> 00:48:20,960
+[SPEAKER_02] Samo se ne nalaze u Silicijskoj dolini ili Austinu, pa ne dobivaju pozornost, ali su veliki, veliki poduzeća.
+
+711
+00:48:21,119 --> 00:48:24,880
+[SPEAKER_01] Mislim da je također vrijedno napomenuti da su izlazi potrebni samo ako ih trebate.
+
+712
+00:48:25,599 --> 00:48:30,719
+[SPEAKER_01] Mislim da je dobro ako želite izlaziti i onda morate znati ove stvari i trebate se prema tome planirati.
+
+713
+00:48:31,280 --> 00:48:36,960
+[SPEAKER_01] I mislim da postoje neke strateške odluke koje možete donijeti kao vlasnik poduzeća kako biste se planirali za to i dali sebi mogućnost izbora.
+
+714
+00:48:37,599 --> 00:48:50,320
+[SPEAKER_01] Ali također bih rekao da ako ne vidite da vam je potrebna velika količina likvidnosti u kratkoročnom razdoblju i da ste u tome za dugoročni razvoj, vratite se na originalni algoritam koji je Eric govorio i usredotočite se na svoj posao.
+
+715
+00:48:50,400 --> 00:48:56,079
+[SPEAKER_01] Držite glavu spuštenu jer će tržište izgledati potpuno drugačije ako nećete prodavati deset, petnaest ili dvadeset godina.
+
+716
+00:48:56,239 --> 00:48:58,079
+[SPEAKER_01] Tržište će biti potpuno drugačije.
+
+717
+00:48:58,159 --> 00:49:00,239
+[SPEAKER_01] I puno ovog savjeta može biti beznačajno.
+
+718
+00:49:00,400 --> 00:49:06,639
+[SPEAKER_01] Jedino što će vjerojatno izdržati test vremena su dobri poduzeća koja proizvode dobre proizvode i rade to učinkovito.
+
+719
+00:49:07,039 --> 00:49:08,480
+[SPEAKER_01] To će uvijek biti istina.
+
+720
+00:49:08,559 --> 00:49:08,639
+[SPEAKER_01] Da.
+
+721
+00:49:08,719 --> 00:49:09,360
+[SPEAKER_02] I to je posljednje.
+
+722
+00:49:09,599 --> 00:49:11,039
+[SPEAKER_02] Samo smo rekli da držite novac na glavi.
+
+723
+00:49:11,199 --> 00:49:19,760
+[SPEAKER_02] Znam puno osnivača u San Franciscu.cu širom svijeta koji imaju dobar posao koji im donosi tri, četiri milijuna dolara EBITDA-e, uzimaju dobru dividendu i sretni su.
+
+724
+00:49:19,920 --> 00:49:20,960
+[SPEAKER_02] To je sjajno.
+
+725
+00:49:21,679 --> 00:49:23,280
+[SPEAKER_02] Dakle, ne trebate članak u TechCrunchu.
+
+726
+00:49:23,679 --> 00:49:26,400
+[SPEAKER_02] Ne trebate me zvati da prodate svoj posao za pedeset milijuna dolara.
+
+727
+00:49:26,480 --> 00:49:28,639
+[SPEAKER_02] Imam fenomenalan ishod.
+
+728
+00:49:28,960 --> 00:49:31,679
+[SPEAKER_02] Mislim da je to sve češće za ljude.
+
+729
+00:49:31,760 --> 00:49:33,119
+[SPEAKER_02] I mi to savjetujemo cijelo vrijeme.
+
+730
+00:49:33,280 --> 00:49:36,079
+[SPEAKER_02] Kao što, ne mislimo da će se ovo prodati za pedeset milijuna.
+
+731
+00:49:36,320 --> 00:49:37,920
+[SPEAKER_02] Dakle, sjednite i čuvajte.
+
+732
+00:49:38,079 --> 00:49:39,679
+[SPEAKER_02] Kupite dobar drugi dom.
+
+733
+00:49:40,000 --> 00:49:40,480
+[SPEAKER_02] Živite dobar život.
+
+734
+00:49:40,719 --> 00:49:48,159
+[SPEAKER_00] U redu, posljednja stvar o kojoj sam želio govoriti dok završavamo je da imate ovu slajd pod nazivom Maslowova hijerarhija pretplate.
+
+735
+00:49:48,159 --> 00:49:53,039
+[SPEAKER_00] Mislio sam da je ovo zabavno mjesto, optimistično mjesto za završetak epizode.
+
+736
+00:49:54,000 --> 00:49:54,880
+[SPEAKER_00] Što mislite time?
+
+737
+00:49:55,039 --> 00:49:57,280
+[SPEAKER_00] A gdje vidite prilike?
+
+738
+00:49:57,360 --> 00:50:00,639
+[SPEAKER_02] Mislim da je mnogo ljudi upoznato s Maslova hijerarhijom potreba.
+
+739
+00:50:01,039 --> 00:50:08,559
+[SPEAKER_02] Ovo je psihološki pojam koji zapravo opisuje kako potrošači usmjeravaju svoj život i svoje ciljeve, kako usmjeravaju svoj život.
+
+740
+00:50:08,719 --> 00:50:16,400
+[SPEAKER_02] Dakle, počevši odozdo prema gore, nema ilustracije ovdje, ali prvo se usredotočite na hranu, vodu, sklonište, osnovne stvari, samo da ostanete živi.
+
+741
+00:50:16,480 --> 00:50:20,880
+[SPEAKER_02] A onda odlazite na sigurnost, sretni ste, zdravi ste kao vaša obitelj, sretni i zdravi.
+
+742
+00:50:21,199 --> 00:50:24,960
+[SPEAKER_02] Ali onda počinje biti malo ezoteričnije, malo više poput osobnog samopouzdanja.
+
+743
+00:50:24,960 --> 00:50:26,719
+[SPEAKER_02] Imate osobno ispunjenje, imate ljubav i pripadnost.
+
+744
+00:50:26,800 --> 00:50:28,480
+[SPEAKER_02] Imate li nekoga koga ste partner?
+
+745
+00:50:28,639 --> 00:50:30,960
+[SPEAKER_02] Jeste li dio zajednice u kojoj se zaista osjećate kao dio?
+
+746
+00:50:31,280 --> 00:50:32,159
+[SPEAKER_02] Imate li poštovanje?
+
+747
+00:50:32,320 --> 00:50:34,159
+[SPEAKER_02] Osjećate li se dobro zbog sebe?
+
+748
+00:50:34,320 --> 00:50:38,159
+[SPEAKER_02] Jeste li zadovoljni sa svojom zdravljem, izgledom, kondicijom?
+
+749
+00:50:38,320 --> 00:50:43,679
+[SPEAKER_02] A zatim imate samopouzdanje, što znači da želim biti bolji nego što jesam danas, pa radim nešto da se poboljšam.
+
+750
+00:50:44,320 --> 00:50:50,559
+[SPEAKER_02] I tako smo prošle godine razgovarali o tome da ako gradite sjajnu CSS tvrtku, vezivanje je uz strast.
+
+751
+00:50:50,800 --> 00:50:56,400
+[SPEAKER_02] To je sjajan način za poboljšanje zadržavanja i strasti povezane s identitetom.
+
+752
+00:50:56,880 --> 00:51:00,400
+[SPEAKER_02] Dakle, ako o tome razmišljate, ako kažem da sam korisnik Strava, što mislite?
+
+753
+00:51:00,800 --> 00:51:01,920
+[SPEAKER_02] Što misli ta osoba?
+
+754
+00:51:02,079 --> 00:51:02,960
+[SPEAKER_02] Pa vjerojatno je sportaš.
+
+755
+00:51:03,599 --> 00:51:05,119
+[SPEAKER_02] Vjerojatno mu je stalo do kondicije.
+
+756
+00:51:05,280 --> 00:51:06,320
+[SPEAKER_02] To je identitet.
+
+757
+00:51:06,400 --> 00:51:08,480
+[SPEAKER_02] Ako koristite Surf Line, surfer ste.
+
+758
+00:51:08,800 --> 00:51:09,440
+[SPEAKER_02] To je ono što jeste.
+
+759
+00:51:10,320 --> 00:51:11,440
+[SPEAKER_02] To je ono što se identificira.
+
+760
+00:51:11,679 --> 00:51:15,519
+[SPEAKER_02] Ako koristite TeamSnap, vjerojatno ste strastveni trener mladih sportova.
+
+761
+00:51:15,599 --> 00:51:19,440
+[SPEAKER_02] Možda vaši sinovi i kćeri igraju nogomet negdje i vi ste poput: To sam ja.
+
+762
+00:51:20,000 --> 00:51:20,880
+[SPEAKER_02] Volim koristiti TeamSnap.
+
+763
+00:51:20,960 --> 00:51:22,239
+[SPEAKER_02] Ako ste oneks, lovac ste.
+
+764
+00:51:22,639 --> 00:51:23,280
+[SPEAKER_02] To je ono što jeste.
+
+765
+00:51:23,360 --> 00:51:24,159
+[SPEAKER_02] Vi ste ljubitelj prirode.
+
+766
+00:51:24,239 --> 00:51:24,639
+[SPEAKER_02] Vi ste grubi.
+
+767
+00:51:24,719 --> 00:51:25,280
+[SPEAKER_02] Vi ste robusni.
+
+768
+00:51:25,679 --> 00:51:26,320
+[SPEAKER_02] To je ono što jeste.
+
+769
+00:51:26,480 --> 00:51:33,679
+[SPEAKER_02] Dakle, mi smo, mi smo, mi smo, nekako uzeli piramidu i postavili različite tvrtke CSS koje se temelje na tim različitim potrebama.
+
+770
+00:51:33,840 --> 00:51:36,719
+[SPEAKER_02] I način na koji bismo potaknuli osnivače da razmišljaju o tome je, što je to malo.
+
+771
+00:51:36,719 --> 00:51:39,440
+[SPEAKER_02] To je malo ezoterično, ali to je poput, na koju potrebu ciljate?
+
+772
+00:51:39,519 --> 00:51:44,079
+[SPEAKER_02] Ako želite raditi na ljubavi i pripadanju, dobro, trebali biste imati funkciju zajednice ugrađenu u svoju aplikaciju.
+
+773
+00:51:44,239 --> 00:51:44,559
+[SPEAKER_02] U potpunosti.
+
+774
+00:51:44,960 --> 00:51:50,960
+[SPEAKER_02] Ako radite na Steamu, neka vrsta ljestvice je sjajan način da ljudi osjete Steam znajući gdje se nalaze na toj ljestvici.
+
+775
+00:51:51,119 --> 00:51:55,920
+[SPEAKER_02] Samoaktualizacija, stalno stavljate novi sadržaj da ljudi mogu postati sve bolji u onome što pokušavaju učiniti.
+
+776
+00:51:56,320 --> 00:52:02,159
+[SPEAKER_02] Na primjer, ako je to aplikacija za jogu ili mentalno zdravlje, mora postojati novi sadržaj da bi postali sve bolji u praksi joge.
+
+777
+00:52:02,239 --> 00:52:04,159
+[SPEAKER_02] Dakle, da, mislimo da je ovdje puno toga za razmotriti.
+
+778
+00:52:04,559 --> 00:52:12,960
+[SPEAKER_02] To je novi koncept za nas, novi okvir koji pokušavamo, ali uvijek volimo razmišljati ne samo o dionicama i grafikonima, kao da gledamo unatrag, želimo gledati naprijed.
+
+779
+00:52:12,960 --> 00:52:19,599
+[SPEAKER_02] U redu, i pitanje je kako razmišljate o izgradnji nove tvrtke ili preusmjeravanju postojeće tvrtke prema tome gdje je tržište ili gdje će biti?
+
+780
+00:52:19,920 --> 00:52:21,119
+[SPEAKER_00] Da, grafikon je također vrlo zabavan.
+
+781
+00:52:21,679 --> 00:52:24,960
+[SPEAKER_00] Dakle, priložit ćemo poveznicu na cjelokupni izvještaj u bilješkama emisije.
+
+782
+00:52:25,039 --> 00:52:30,400
+[SPEAKER_00] Dakle, ako još niste preuzeli izvještaj i ne pratite ga, svakako biste trebali pogledati ovaj grafikon.
+
+783
+00:52:30,800 --> 00:52:36,800
+[SPEAKER_00] Mislim, ima toliko sjajnog sadržaja, pa bi ga svakako trebali preuzeti na bilo koji način, ali volim način na koji ste ih nacrtali.
+
+784
+00:52:36,880 --> 00:52:49,840
+[SPEAKER_00] I na samom vrhu, znate, s autokoncepcijom su stvari poput Reflectly, poput dnevnika koji se pokreće umjetnom inteligencijom i Audible, znate, slušanje audioknjiga i učenje i mirno, znate, rad na sv vašem mentalnom prostoru.
+
+785
+00:52:50,000 --> 00:52:56,000
+[SPEAKER_00] Da, to je fantastičan grafikon i sjajno vježbanje za ljude da se na taj grafikon nacrtaju.
+
+786
+00:52:56,079 --> 00:53:04,800
+[SPEAKER_00] A ako ne pronađete mjesto na kojem se možete nacrtati na taj grafikon, potražite početak u grafikonu na kojem biste trebali ciljati da se uklopite na taj grafikon.
+
+787
+00:53:04,960 --> 00:53:07,280
+[SPEAKER_00] Dakle, mislio sam da je to stvarno dobro.
+
+788
+00:53:07,599 --> 00:53:13,519
+[SPEAKER_00] Još jedna napomena koju ste stavili tamo na koju nisam pomislio i osjećam da u svakom izvješću ima jednu ili dvije linije koje me jednostavno zapanjuju.
+
+789
+00:53:13,679 --> 00:53:18,960
+[SPEAKER_00] I rekli ste tamo da potrošački troškovi čine sedamdeset posto američkog BDP-a.
+
+790
+00:53:19,119 --> 00:53:25,920
+[SPEAKER_00] I naravno, velik dio toga ide na hipoteku i plaćanja automobila, kao što su osnovne potrebe za hranom, prijevozom i stambenim namo zbrinjavanje, takve stvari.
+
+791
+00:53:26,639 --> 00:53:34,800
+[SPEAKER_00] Ali kad razmislite i kao što smo razgovarali u posljednjem izvješću, troši se mnogo novca na mnogo različitih područja.
+
+792
+00:53:35,519 --> 00:53:47,039
+[SPEAKER_00] Onex, o kojem ste upravo govorili, ljudi troše desetke tisuća dolara godišnje kao lovci, te strasti, te samopouzdanje, ljubav i pripadnost, zajednica, ulazi mnogo novca u to.
+
+793
+00:53:47,199 --> 00:54:00,239
+[SPEAKER_00] A potrošačke pretplate tvrtke koje izrađuju sjajne proizvode imaju priliku ući na te tržišta i zaraditi mnogo više od tih troškova nego što se trenutačno zaradilo u ovom području.
+
+794
+00:54:36,000 --> 00:54:38,559
+[SPEAKER_02] To su sigurnosne potrebe, zar ne?
+
+795
+00:54:38,800 --> 00:54:43,519
+[SPEAKER_02] O kojima obično ne biste razmišljali kao o pretplati na softver, a ljudi su rekli: Čovječe, postoji praznina na tržištu.
+
+796
+00:54:43,920 --> 00:54:44,559
+[SPEAKER_02] Ja ću nešto izgraditi.
+
+797
+00:54:44,800 --> 00:54:45,840
+[SPEAKER_02] Dakle, znam gdje su moji djeca.
+
+798
+00:54:46,079 --> 00:54:48,079
+[SPEAKER_02] Mislim da pričamo o vremenu provedenom pred zaslonom, zar ne?
+
+799
+00:54:48,239 --> 00:54:49,840
+[SPEAKER_02] To je vrsta sigurnosnog pitanja, zar ne?
+
+800
+00:54:49,920 --> 00:54:52,159
+[SPEAKER_02] Kao što su vaši djeca, s kim vaši djeca komuniciraju na mreži?
+
+801
+00:54:53,119 --> 00:54:56,000
+[SPEAKER_02] Ti proizvodi se grade i dobri su, zar ne?
+
+802
+00:54:56,400 --> 00:54:58,880
+[SPEAKER_02] I tako mislim da je svijet sve više digitalan.
+
+803
+00:54:59,039 --> 00:55:01,599
+[SPEAKER_02] Trebat će nam samo nove rješenja u toj piramidi potreba.
+
+804
+00:55:01,760 --> 00:55:06,639
+[SPEAKER_00] Dakle, da, mislimo da je to prilično široko područje i pronalaženje vrijednih mjesta na ovoj tablici.
+
+805
+00:55:06,880 --> 00:55:12,880
+[SPEAKER_00] Postoji tvrtka pod nazivom Bright Canary na koju sam zapravo pretplatio i to je jedna od onih stvari na koje jednostavno ne biste.
+
+806
+00:55:13,679 --> 00:55:27,119
+[SPEAKER_00] ni pomislili da to može postojati, ali ja plaćam bilo što, šest, osam, deset dolara mjesečno i ni ne razmišljam o tome jer ono što čini jest da zapravo prati gledanje YouTubea mojih djece i zatim označava bilo kakav zabrinjavajući sadržaj.
+
+807
+00:55:27,199 --> 00:55:31,760
+[SPEAKER_00] I tako, znate, kao roditelj, jako sam zabrinut zbog toga što su moji djeca izložena online.
+
+808
+00:55:31,920 --> 00:55:40,800
+[SPEAKER_00] Dakle, do te točke provedenog pred zaslonom, kao roditelj, plaćanje osam dolara mjesečno da dobijem sažetak onoga što moji djeca gledaju na YouTubeu je kao da nema smisla.
+
+809
+00:55:41,519 --> 00:55:47,599
+[SPEAKER_00] I tako postoji toliko prilika da pronađem stvari koje ljudi cijene i onda izgradim proizvode oko toga.
+
+810
+00:55:47,679 --> 00:55:54,000
+[SPEAKER_00] I nešto poput Bright Canaryjaja prilično je jedinstveno na tržištu i to prije nekoliko godina ne bi moglo postojati.
+
+811
+00:55:54,079 --> 00:56:00,239
+[SPEAKER_00] A sada je to kao potpuno novi segment koji mogu usmjeriti na sigurnost djece na mreži.
+
+812
+00:56:00,400 --> 00:56:02,880
+[SPEAKER_02] Da, vidimo, mislim, stvari poput promatranja ptica.
+
+813
+00:56:03,039 --> 00:56:05,199
+[SPEAKER_02] Postoje gnijezda ptica s omogućenoj AI kamerom.
+
+814
+00:56:05,599 --> 00:56:09,840
+[SPEAKER_02] To će vam reći točno što se pojavilo, tako da možete naučiti, recimo, koji je svatko sjajan posao, čovječe.
+
+815
+00:56:10,000 --> 00:56:10,480
+[SPEAKER_01] Sjajan proizvod.
+
+816
+00:56:10,559 --> 00:56:12,159
+[SPEAKER_01] Moja majka, ove godine smo kupili jednu za moju majku.
+
+817
+00:56:12,239 --> 00:56:17,440
+[SPEAKER_02] Dakle, to je i susjedna tvrtka, ali postoji još jedna tvrtka koju volim, nazvana Tractive, koja se nalazi u prostoru za ovratnike za pse.
+
+818
+00:56:17,760 --> 00:56:22,719
+[SPEAKER_02] Ovratnici za pse, najne tehnološki, ali sada su dodali GPS i vi ste poput, dobro, to je cool.
+
+819
+00:56:22,800 --> 00:56:24,639
+[SPEAKER_02] Živim u gradu, zar ne?
+
+820
+00:56:24,639 --> 00:56:26,079
+[SPEAKER_02] Ne trebam znati gdje je moj pas.
+
+821
+00:56:26,400 --> 00:56:27,119
+[SPEAKER_02] Živi u mom stanu.
+
+822
+00:56:27,280 --> 00:56:30,719
+[SPEAKER_02] To je, znate, mali štenad, ali sada su dodali funkcije ljestvice.
+
+823
+00:56:30,800 --> 00:56:34,559
+[SPEAKER_02] Da, tako da možete vidjeti koliko je vaš mops hodao prvi od drugih mopsa.
+
+824
+00:56:34,719 --> 00:56:36,239
+[SPEAKER_02] I želite li biti roditelj koji ne vodi psa?
+
+825
+00:56:36,480 --> 00:56:44,960
+[SPEAKER_02] Da, pa odjednom počinjete dodavati više značajki, što je, opet, sve dizajnirano da vaš pas bude zdrav i siguran, ali dodali su značajke koje vas potiču da to učinite.
+
+826
+00:56:45,119 --> 00:56:48,239
+[SPEAKER_02] I to je nešto što vjerojatno nije trebalo postojati prije tri ili četiri godine.
+
+827
+00:56:48,480 --> 00:56:49,440
+[SPEAKER_00] To je nevjerojatno sjajno.
+
+828
+00:56:49,519 --> 00:56:50,639
+[SPEAKER_00] Zapravo sam kupio ovratnik za psi.
+
+829
+00:56:51,440 --> 00:56:55,679
+[SPEAKER_00] Prijatelj podcasta, Gerald Stone, mislim da je potpredsjednik proizvoda.
+
+830
+00:56:56,559 --> 00:56:57,679
+[SPEAKER_00] Fantastičan proizvod.
+
+831
+00:56:58,000 --> 00:57:00,960
+[SPEAKER_00] A onda sam ranije govorio o NRR-u i širenju tržišta.
+
+832
+00:57:00,960 --> 00:57:03,280
+[SPEAKER_00] Upravo sam dobio oglas u Thaiu.
+
+833
+00:57:03,599 --> 00:57:11,039
+[SPEAKER_00] Rasporedili su dodatak za kućne ljubimce, poput dodavanja toga hrani za pse vašeg ljubimca kako bi ostali zdravi, kako bi im dlaka bila sjajnija i sve ostalo.
+
+834
+00:57:11,280 --> 00:57:12,719
+[SPEAKER_00] To je vrlo uvjerljiva ponuda.
+
+835
+00:57:12,800 --> 00:57:22,960
+[SPEAKER_00] Kada jednom dobijete pozornost vrijednosti ovratnika s GPS-om, što je također vrlo zabavno, kao što je vidjeti koliko je pasa napravio koraka i gdje se nalazi na ljestvici.
+
+836
+00:57:23,119 --> 00:57:25,360
+[SPEAKER_00] Cijela naša obitelj već je jako zaljubljena u to.
+
+837
+00:57:25,760 --> 00:57:34,960
+[SPEAKER_00] I imaju ogromnu priliku za širenje tržišta na tržištu kućnih ljubimaca gdje trošimo, znate, dvjesto dolara mjesečno na našu jebeno psa.
+
+838
+00:57:35,199 --> 00:57:38,559
+[SPEAKER_02] David, ne trošite dvjesto dol dolara mjesečno na svog psa.
+
+839
+00:57:38,800 --> 00:57:40,639
+[SPEAKER_02] Trošite dvjesto dolara na člana obitelji.
+
+840
+00:57:41,519 --> 00:57:41,760
+[SPEAKER_02] Istina.
+
+841
+00:57:41,920 --> 00:57:42,480
+[SPEAKER_01] Da, naravno.
+
+842
+00:57:42,719 --> 00:57:44,960
+[SPEAKER_01] Da, ali to je vjerojatno vaš najjeftiniji član obitelji.
+
+843
+00:57:45,039 --> 00:57:49,760
+[SPEAKER_01] Ako želimo početi podijeliti članove obitelji po stavkama, David, vjerojatno je jedan od vaših jeftinijih.
+
+844
+00:57:49,840 --> 00:57:53,199
+[SPEAKER_00] To je daleko najjeftiniji član obitelji i ja ga obožavam do smrti.
+
+845
+00:57:53,280 --> 00:57:57,840
+[SPEAKER_00] On je tako slatki, ali kad vidim račune i ja sam malo u strahu, to nije koštalo toliko.
+
+846
+00:57:58,559 --> 00:57:59,360
+[SPEAKER_01] To nije koštalo toliko.
+
+847
+00:57:59,760 --> 00:58:00,639
+[SPEAKER_01] Stil života, znate?
+
+848
+00:58:00,880 --> 00:58:01,360
+[SPEAKER_01] Ne, sigurno.
+
+849
+00:58:01,760 --> 00:58:04,320
+[SPEAKER_00] Ali u svakom slučaju, to je bilo sjajno mjesto za završetak.
+
+850
+00:58:04,480 --> 00:58:09,679
+[SPEAKER_00] Mislim da je, znate, koliko god se tržište osjećalo zasićenim, još uvijek ima toliko prilika.
+
+851
+00:58:10,320 --> 00:58:12,719
+[SPEAKER_00] Prilika za postojeće tvrtke da rastu i pronađu nove.
+
+852
+00:58:13,039 --> 00:58:20,079
+[SPEAKER_00] slojeve usklađenosti proizvoda s tržištem, prilike za širenje NRR-a, prilike za rast na drugim tržištima.
+
+853
+00:58:20,639 --> 00:58:26,480
+[SPEAKER_00] U ovom prostoru još uvijek postoji toliko prilika, a čak i prilika za potpuno nove tvrtke koje su započele 2024.
+
+854
+00:58:26,559 --> 00:58:29,280
+[SPEAKER_00] godine da postanu kandidati za IPO za nekoliko godina.
+
+855
+00:58:29,599 --> 00:58:37,280
+[SPEAKER_00] Dakle, stvarno, stvarno zabavno mjesto za igranje i stvarno zabavno mjesto za rad i stvarno zabavno razgovarati s vama o svemu ovome danas.
+
+856
+00:58:37,440 --> 00:58:38,400
+[SPEAKER_00] Volimo ono što radimo svaki dan.
+
+857
+00:58:38,559 --> 00:58:40,079
+[SPEAKER_02] Upoznajemo ove sjajne tvrtke.
+
+858
+00:58:40,239 --> 00:58:42,400
+[SPEAKER_02] Dakle, hvala što ste me ponovno pozvali, ljudi.
+
+859
+00:58:42,480 --> 00:58:43,119
+[SPEAKER_02] Uvijek je užitak.
+
+860
+00:58:43,199 --> 00:58:43,840
+[SPEAKER_00] Da, sjajno.
+
+861
+00:58:43,920 --> 00:58:47,519
+[SPEAKER_00] Dakle, povezat ćemo se s vašim LinkedInom i izvješćem na web-mjestu GP Boulder.
+
+862
+00:58:48,159 --> 00:58:50,079
+[SPEAKER_00] Sviđa mi se što želite podijeliti dok završavamo.
+
+863
+00:58:50,159 --> 00:58:52,639
+[SPEAKER_02] Da, najbolje je razgovarati, samo se obratite.
+
+864
+00:58:52,800 --> 00:58:56,480
+[SPEAKER_02] Bit ću na konferenciji Revenue Tag u San Franciscu 26.
+
+865
+00:58:56,880 --> 00:59:01,519
+[SPEAKER_02] Dakle, ako ste tamo, pozdravite me, ali se obratite i e-poštom, Eric Crowley na gpeblehind.com.
+
+866
+00:59:01,599 --> 00:59:02,559
+[SPEAKER_02] Čak i ako ne želite prodati, nema problema.
+
+867
+00:59:02,800 --> 00:59:03,840
+[SPEAKER_02] Ne trebamo razgovarati s vama zbog toga.
+
+868
+00:59:03,920 --> 00:59:13,119
+[SPEAKER_02] Organiziramo večere za izvršne direktore CSS-a, volimo samo okupljati operatere da sjede i razgovaraju i odluče gdje su mogućnosti, gdje bismo trebali izgraditi.
+
+869
+00:59:13,199 --> 00:59:16,000
+[SPEAKER_01] Svi trebate pomoći Ericu da snalazi tok poslova, to je ono što pokušava reći.
+
+870
+00:59:16,239 --> 00:59:18,960
+[SPEAKER_01] Jer ti cjevovodi se ne grade sami, bejbe.
+
+871
+00:59:19,280 --> 00:59:21,199
+[SPEAKER_01] Mislim da nam je sve u redu.
+
+872
+00:59:21,360 --> 00:59:24,400
+[SPEAKER_02] Mislim da smo prilično zadovoljni reputacijom koju imamo i dobivamo mnogo.
+
+873
+00:59:24,400 --> 00:59:26,480
+[SPEAKER_02] I imamo puno, puno sjajnih tvrtki koje vole razgovarati.
+
+874
+00:59:26,639 --> 00:59:31,760
+[SPEAKER_01] Malo se šalim, ali mislim da možda nikad nećete sudjelovati u transakciji.
+
+875
+00:59:31,920 --> 00:59:38,079
+[SPEAKER_01] Korisno je poznavati ljude koji mogu utvrditi gdje ste, ako razmišljate o tome da to možda jednog dana učinite.
+
+876
+00:59:38,159 --> 00:59:44,000
+[SPEAKER_01] A onda, ako ikad želite raditi na transakciji s nekim, korisno je poznavati ga više od cijelog života transakcije.
+
+877
+00:59:44,719 --> 00:59:47,360
+[SPEAKER_02] Dakle, ne, uvijek ćemo saznati za ljude.
+
+878
+00:59:47,519 --> 00:59:59,840
+[SPEAKER_02] Ako nas nazovu iznenada, voljeli bismo vas poznavati dvije, tri godine, znati kakvi su vaši ciljevi, kakvi su vaši ciljevi, gdje su slabosti, gdje su prednosti, kao što je provoditi vrijeme upoznavajući svakog savjetnika, bez obzira na odvjetnika ili računovođu, kako bi vam zaista mogli pomoći.
+
+879
+01:00:00,559 --> 01:00:03,280
+[SPEAKER_02] Ne zvoni ih i reci: Eh, želiš nešto učiniti?
+
+880
+01:00:03,840 --> 01:00:05,519
+[SPEAKER_02] Ovo je važan trenutak za tvoju tvrtku.
+
+881
+01:00:05,679 --> 01:00:06,639
+[SPEAKER_02] Uzmite si vremena.
+
+882
+01:00:06,800 --> 01:00:15,039
+[SPEAKER_00] U redu, bilo je jako zabavno razgovarati s Ericom i vidjet ćemo se u San Franciscu sljedeći tjedan i ponovno ćemo se vidjeti na podcastu sljedeće godine za izvješće za 2025.
+
+883
+01:00:16,320 --> 01:00:16,800
+[SPEAKER_00] godinu.
+
+884
+01:00:17,039 --> 01:00:18,559
+[SPEAKER_02] Bilo bi mi čast da me razmotre.
+
+885
+01:00:18,639 --> 01:00:19,599
+[SPEAKER_02] Hvala ti što si me slušao.
+
+886
+01:00:22,639 --> 01:00:27,840
+[SPEAKER_00] Ako imaš minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcastova.
+
+887
+01:00:28,800 --> 01:00:33,679
+[SPEAKER_00] Također možeš posjetiti chat dot subclub dot com da se pridružiš našoj privatnoj zajednici.
+
