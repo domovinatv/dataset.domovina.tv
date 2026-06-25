@@ -1,0 +1,3364 @@
+1
+00:00:00,000 --> 00:00:09,599
+[SPEAKER_00] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:09,919 --> 00:00:20,000
+[SPEAKER_00] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+[SPEAKER_00] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje kupcima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,679 --> 00:00:37,039
+[SPEAKER_00] Više informacija možete pronaći na revenuecat dot com dot Uđimo u emisiju.
+
+6
+00:00:37,359 --> 00:00:44,640
+[SPEAKER_00] Pozdrav, ja sam vaš voditelj, David Barnard, a danas sam sa mnom Jacob Biding, izvršni direktor RevenueCata.
+
+7
+00:00:44,719 --> 00:00:54,799
+[SPEAKER_00] Naš današnji gost je John Gruber, Rack and Tour, Appleov ljubitelj, voditelj podcasta i jedini vlasnik Daring Fireball.
+
+8
+00:00:55,759 --> 00:01:12,640
+[SPEAKER_00] Na podcastu razgovaramo s Johnom o dalekosežnim posljedicama Zakona o digitalnim tržištima, kako bi razvijači aplikacija trebali razmišljati o stvaranju prilika i zašto bi Apple koji tako puno zarađuje iz trgovine aplikacijama zapravo mogao biti loš za Apple.
+
+9
+00:01:12,640 --> 00:01:14,959
+[SPEAKER_01] To bi zapravo bilo loše za Apple na dugoročnoj razini.
+
+10
+00:01:15,200 --> 00:01:17,599
+[SPEAKER_00] Hej, Johne, hvala ti što si se danas priključio našem podcastu.
+
+11
+00:01:17,840 --> 00:01:21,200
+[SPEAKER_00] Nisam mogao dočekati da razgovaramo o svim ovim zabavnim regulacijama.
+
+12
+00:01:21,680 --> 00:01:22,959
+[SPEAKER_01] Da, što bi moglo biti zabavnije?
+
+13
+00:01:23,599 --> 00:01:27,040
+[SPEAKER_01] Zato smo svi krenuli u karijeru u pravu, zar ne?
+
+14
+00:01:28,319 --> 00:01:30,640
+[SPEAKER_00] A Jacob, lijepo te je vidjeti danas.
+
+15
+00:01:30,799 --> 00:01:37,200
+[SPEAKER_02] O, dobio sam poruku u panici jučer navečer da moram razumjeti ovu DMA stvar.
+
+16
+00:01:37,680 --> 00:01:40,319
+[SPEAKER_02] I tako nisam mogao zamisliti bolji dan za petak.
+
+17
+00:01:40,400 --> 00:01:45,040
+[SPEAKER_00] Hej, ovo je najbolji način da te obavijestim o svim najnovijim stvarima o Appleu.
+
+18
+00:01:45,280 --> 00:01:45,359
+[SPEAKER_00] Znam.
+
+19
+00:01:45,519 --> 00:01:48,879
+[SPEAKER_02] Čekaj dok mi netko kaže da je dovoljno važno da pročitam sve članke.ke.
+
+20
+00:01:49,120 --> 00:01:51,760
+[SPEAKER_02] Prešli smo taj prag, pa sam uzbuđen što ću danas biti obrazovan.
+
+21
+00:01:52,959 --> 00:02:10,639
+[SPEAKER_00] Upoznat ćemo se s ovim DMA-om, ali razlog zbog kojeg sam želio da ste na podcastu i bio sam jako uzbuđen što ću s vama razgovarati jest taj da će se tijekom sljedećih osamnaest mjeseci, ovaj dug horizont, od razumijevanja aspekata onoga što će se dogoditi do stvarnog objavljivanja što će Apple učiniti i EU-a koji će potencijalno reći ne.
+
+22
+00:02:10,719 --> 00:02:12,000
+[SPEAKER_00] I mislim da će se puno toga događati.
+
+23
+00:02:12,080 --> 00:02:30,159
+[SPEAKER_00] Ali tvrtke, programeri aplikacija, Microsoft, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google, Google., Facebook, sve te tvrtke i naša publika će donositi odluke.
+
+24
+00:02:30,719 --> 00:02:31,919
+[SPEAKER_00] Pritiskamo li više na web?
+
+25
+00:02:32,240 --> 00:02:36,080
+[SPEAKER_00] Pobrinjavamo li se za plaćanja aplikacijama u našoj aplikaciji?
+
+26
+00:02:36,560 --> 00:02:37,039
+[SPEAKER_00] Što radimo?
+
+27
+00:02:37,680 --> 00:02:44,080
+[SPEAKER_00] I tako će se tijekom sljedećih osamnaest mjeseci postaviti klađenja o tome kako će se to odvijati.
+
+28
+00:02:44,319 --> 00:02:59,360
+[SPEAKER_00] I kao strastveni promatrač Applea i s kontaktom u industriji i pratio sam tvrtku od devedesetih, mislio sam da bi bilo stvarno zanimljivo dobiti vašu perspektivu o tome kako Apple možda razmišlja o ovim stvarima.
+
+29
+00:02:59,680 --> 00:03:00,879
+[SPEAKER_00] Dakle, s tim u vidu.
+
+30
+00:03:00,879 --> 00:03:05,360
+[SPEAKER_00] Pa, nakon što smo to riješili, htjela sam se pozabaviti vašim kratkim opisom.
+
+31
+00:03:05,759 --> 00:03:06,560
+[SPEAKER_00] Što je DMA?
+
+32
+00:03:06,719 --> 00:03:12,240
+[SPEAKER_00] A onda ćemo se pozabaviti svim pojedinostima, odjeljak po odjeljak, John, molim te.
+
+33
+00:03:13,199 --> 00:03:16,159
+[SPEAKER_01] To je istovremeno, dobro, to je Zakon o digitalnim tržištima.
+
+34
+00:03:16,319 --> 00:03:21,360
+[SPEAKER_01] Donijela ga je Europska komisija, koja je regulatorni dio Europske unije.
+
+35
+00:03:22,319 --> 00:03:30,400
+[SPEAKER_01] I to je, u običnim riječima, više-manje pokušaj EU-a da regulira velike tehnološke tvrtke.
+
+36
+00:03:30,639 --> 00:03:36,560
+[SPEAKER_01] I to je uvijek, meni se sviđa, kao što je to učinio Ben Thomas.
+
+37
+00:03:36,560 --> 00:03:39,199
+[SPEAKER_01] Uh, Ben Thompson i ja na našem podcastu Dithering razgovarali smo o tome.
+
+38
+00:03:39,280 --> 00:03:54,400
+[SPEAKER_01] I opet, nismo odvjetnici, pa možda je to poput folklore, ali postoji neka vrsta, ne znam, oboje smo to čuli i odrasli razmišljajući da u Sjedinjenim Državama, na primjer, nije legalno donositi zakone koji se odnose na pojedinca.
+
+39
+00:03:54,479 --> 00:04:00,400
+[SPEAKER_01] Ne možete, znate, ne možete samo reći da se ovaj zakon odnosi samo na određenu osobu.
+
+40
+00:04:00,479 --> 00:04:02,000
+[SPEAKER_00] Uh, i to ima smisla, zar ne?
+
+41
+00:04:02,159 --> 00:04:03,280
+[SPEAKER_00] Pravedno, pravedno i pošteno.
+
+42
+00:04:04,159 --> 00:04:05,919
+[SPEAKER_01] I mislim da ne postoji takav zakon protiv tvrtki.
+
+43
+00:04:06,080 --> 00:04:12,879
+[SPEAKER_01] Zapravo možete, mislim, možete donijeti zakon koji samo navodi da Apple mora promijeniti svoje, da se sastavi.
+
+44
+00:04:12,879 --> 00:04:14,639
+[SPEAKER_01] Sjednite u svoje ruke ili u svoje sranje.
+
+45
+00:04:16,000 --> 00:04:17,680
+[SPEAKER_01] Prvi pisk je tamo.
+
+46
+00:04:17,839 --> 00:04:19,680
+[SPEAKER_01] Sjednite u svoje ruke.
+
+47
+00:04:20,319 --> 00:04:22,639
+[SPEAKER_01] Ali pokušavaju ga zaobiti.
+
+48
+00:04:22,800 --> 00:04:30,639
+[SPEAKER_01] Definirali su ovu definiciju, recimo, čuvara vrata, koja je, ne znam, neka kombinacija broja korisnika i ogromnih količina novca.
+
+49
+00:04:30,800 --> 00:04:31,360
+[SPEAKER_02] To je stvarno divno.
+
+50
+00:04:31,439 --> 00:04:36,079
+[SPEAKER_02] Ocijenjenost je osamdeset milijardi dolara i četrdeset devet milijuna korisnika, što je čudno.
+
+51
+00:04:36,639 --> 00:04:38,800
+[SPEAKER_01] I možda je i prihod miješan u to.
+
+52
+00:04:39,759 --> 00:04:40,720
+[SPEAKER_01] I to je prilično teško.
+
+53
+00:04:40,800 --> 00:04:48,720
+[SPEAKER_01] Svi znamo tko su velike pet, šest tehnoloških tvrtki, ali prilično je teško nacrtati definiciju koja ih obuhvaća sve.
+
+54
+00:04:48,720 --> 00:04:50,240
+[SPEAKER_01] Svi ih koriste jer su njihovi poslovni sustavi toliko različiti, zar ne?
+
+55
+00:04:50,639 --> 00:04:58,160
+[SPEAKER_01] Apple, iako se ovdje radi o uslugama i slično, svi znaju odakle dolazi Appleov novac.
+
+56
+00:04:58,480 --> 00:05:00,240
+[SPEAKER_01] Dođe iz prodaje računala, zar ne?
+
+57
+00:05:00,480 --> 00:05:13,439
+[SPEAKER_01] A računalo koje zarađuje većinu novca zove se iPhone, ali prodaju uređaje i imaju ovu masivnu opskrbnu lancem hardvera u Kini i šire se širom svijeta.
+
+58
+00:05:13,600 --> 00:05:15,360
+[SPEAKER_01] Facebook nema ništa slično, zar ne?
+
+59
+00:05:15,600 --> 00:05:24,160
+[SPEAKER_01] Microsoft prodaje neku vrstu hardvera, ali Microsoft je svojevrsna obrnuta tvrtka Apple, gdje je njihov hardver svojevrsna sporedna tvrtka, a glavna stvar je softver.
+
+60
+00:05:24,639 --> 00:05:25,439
+[SPEAKER_01] Nitko od njih zapravo ne radi.
+
+61
+00:05:25,519 --> 00:05:29,199
+[SPEAKER_01] Dakle, to je kombinacija puno korisnika i puno novca, zar ne?
+
+62
+00:05:29,279 --> 00:05:33,279
+[SPEAKER_01] I nazivaju te tvrtke čuvarima i da se na njih primjenjuju te propise.
+
+63
+00:05:33,600 --> 00:05:39,519
+[SPEAKER_01] Što se tiče, mislim da je naša rasprava uglavnom o dijelovima koji se bave Appleom.
+
+64
+00:05:40,319 --> 00:05:43,360
+[SPEAKER_01] I mislim da je pošteno reći da se značajan dio toga odnosi na to.
+
+65
+00:05:43,519 --> 00:05:46,000
+[SPEAKER_02] To me je šokiralo, baš kao što sam čitao DMA.
+
+66
+00:05:46,160 --> 00:05:50,480
+[SPEAKER_02] To je kao da je netko pročitala smjernice trgovine aplikacijama i pretvorio ih u zakon.
+
+67
+00:05:50,720 --> 00:05:51,199
+[UNKNOWN] Stvarno je divno.
+
+68
+00:05:51,759 --> 00:05:55,360
+[SPEAKER_01] To je stotinu stranica, plus ili minus, ovisno o tome kako ga ispisujete.
+
+69
+00:05:55,439 --> 00:06:21,600
+[SPEAKER_01] Pokušao sam ga pročitati nakon priče Marka Germana u Bloombergu, što je na neki način potaknulo cijnulo cijelu ovu raspravu, gdje je priča Germana u Bloombergu ranije ovog tjedna više-manje samo rekla ono što smo pretpostavljali da se mora dogoditi, ali potvrdio je da je to sada zakon u EU-u, prošlo je, pa djeluju prema njemu i moraju djelovati sada da bi bili u skladu s tim, kao što je ožujak 2024.
+
+70
+00:06:21,680 --> 00:06:22,879
+[SPEAKER_01] godine, rok je za puno toga.
+
+71
+00:06:23,759 --> 00:06:32,399
+[SPEAKER_01] I ako znate, svi koji slušaju ovu emisiju, sigurno znaju Appleov osnovni raspored u kojem će biti iOS 17 sljedeći rujan.
+
+72
+00:06:33,279 --> 00:06:36,959
+[SPEAKER_01] Očito, sada rade na tome i već neko vrijeme rade.
+
+73
+00:06:37,920 --> 00:06:44,959
+[SPEAKER_01] Objavit će ga i barem neke aspekte na WWDC-u, što svi očekuju da će se dogoditi u lipnju.
+
+74
+00:06:45,199 --> 00:06:52,000
+[SPEAKER_01] Ali to znači da će IOS 17, koji će biti lansiran sljedeće jeseni, biti trenutačni IOS u ožujku 2024.
+
+75
+00:06:52,079 --> 00:06:52,160
+[SPEAKER_01] godine.
+
+76
+00:06:52,319 --> 00:07:03,439
+[SPEAKER_01] Dakle, očekujem da će se odredbe koje se bave ovim usklađenjem s DMA-om početi primjenjivati s IOS 17.3, možda 17.4.
+
+77
+00:07:04,079 --> 00:07:07,839
+[SPEAKER_01] Nikad ne znate kako će izraditi te male točke između njih.
+
+78
+00:07:08,000 --> 00:07:12,160
+[SPEAKER_01] Dioovi koji se bave Appleom uglavnom se odnose na trgovinu aplikacijama.
+
+79
+00:07:12,319 --> 00:07:35,519
+[SPEAKER_01] Uh, i to su stvari o tome da ako ste jedan od tih čuvara, uh, mislim da su dva velika koja stvarno mijenjaju našu zajednicu, uh, da ako imate trgovinu aplikacijama, ako imate neku vrstu hardverske platforme koja ima trgovine aplikacijama, morate podržavati alternativne trgovine aplikacijama iz one u vlasništvu čuvara.
+
+80
+00:07:35,759 --> 00:07:39,680
+[SPEAKER_01] Dakle, drugim riječima, trgovine aplikacijama treće strane i da ih morate podržavati.
+
+81
+00:07:40,160 --> 00:07:42,240
+[SPEAKER_01] Nikad nisu koristili riječ bočno učitavanje.
+
+82
+00:07:42,399 --> 00:07:48,959
+[SPEAKER_01] Uh, zaboravio sam kako to zovu, ali u osnovi ono što mi u našem industrijskom jeziku nazivamo bočnim učitavanjem, morate, morate dopustiti.
+
+83
+00:07:48,959 --> 00:07:53,759
+[SPEAKER_01] Morate dozvoliti instalaciju aplikacija izvan trgovine aplikacijama.
+
+84
+00:07:53,839 --> 00:07:59,920
+[SPEAKER_00] I prema mom razumijevanju, to su zapravo trgovine aplikacijama trećih strana ili bočno učitavanje, zar ne?
+
+85
+00:08:00,319 --> 00:08:02,720
+[SPEAKER_00] Nije bilo tako, ali morali su podržavati oboje.
+
+86
+00:08:03,040 --> 00:08:04,319
+[SPEAKER_01] Ovisi o upotrebi ili, zar ne?
+
+87
+00:08:04,480 --> 00:08:13,360
+[SPEAKER_01] I opet, to je jedan od tih naslonjača, a odvjetnici, naravno, nikad nisu za amatersko odvjetništvo.
+
+88
+00:08:14,399 --> 00:08:24,720
+[SPEAKER_01] I svakako bih savjetovao svakoga tko ima pravne probleme da, znate, ili da uspostavi pravi, ako uspostavljate vlastitu korporaciju ili bilo što drugo, da uspostavi pravog odvjetnika, znate, ali postoje.
+
+89
+00:08:24,879 --> 00:08:34,399
+[SPEAKER_01] Kao stručnjak, postoje aspekti koje ne možete, da je to doslovno, znate, zakon je napisan jednostavnim jezikom ili jezikom koji možete pročitati.
+
+90
+00:08:34,480 --> 00:08:50,879
+[SPEAKER_01] I da, postoje odjeljci koji kažu nešto o tome da morate dozvoliti izravno preuzimanje aplikacija ili, znate, i da se ti pravila primjenjuju na ovu aplikaciju, bočno učitavanje ili trgovine aplikacijama trećih strana.
+
+91
+00:08:51,200 --> 00:08:53,440
+[SPEAKER_01] I to ponavljaju i ponavljaju.
+
+92
+00:08:53,759 --> 00:09:00,480
+[SPEAKER_01] I mislim, i mislim da većina ljudi koji to čitaju misli da to znače ili ili ili i ili ili oboje ili nešto.
+
+93
+00:09:00,960 --> 00:09:01,120
+[SPEAKER_01] drugo.
+
+94
+00:09:01,200 --> 00:09:02,879
+[SPEAKER_02] Da, ovo ili ono, kao jedinica, zar ne?
+
+95
+00:09:03,440 --> 00:09:06,879
+[SPEAKER_02] Kao da se naša trgovina aplikacijama učitava kao pojedinačno imenica.
+
+96
+00:09:07,120 --> 00:09:07,360
+[SPEAKER_01] Točno.
+
+97
+00:09:07,679 --> 00:09:28,799
+[SPEAKER_01] Mislili su da, znate, znajući kakve su njihove namjere i znajući kakve su kontroverze i znajući što Appleovi protivnici traže, mislili biste da bi mislili oboje, ali jednostavno čitanje toga čini da znači da bi mogli odabrati bilo jedno ili drugo, što znači, znate, tko zna kako će Apple to analizirati.
+
+98
+00:09:29,120 --> 00:09:30,320
+[SPEAKER_02] I ja također mislim da, mislim da to radimo, zar ne?
+
+99
+00:09:30,399 --> 00:09:39,759
+[SPEAKER_02] Razmotrit će to na način koji im je apsolutno najprijateljski prikladan, što smo vidjeli da rade s Nizozemskom i Južnom Korejom i nekoliko drugih zem mjesta prisiljeni su raditi stvari.
+
+100
+00:09:40,320 --> 00:09:40,960
+[SPEAKER_02] Nisu.
+
+101
+00:09:41,120 --> 00:09:43,759
+[SPEAKER_02] Duh zakona nije im stvarno zanimljiv.
+
+102
+00:09:44,480 --> 00:09:49,679
+[SPEAKER_01] Mislim da je to vrlo teško reći jer je Apple vrlo neproziran u svemu što čini, naravno.
+
+103
+00:09:50,000 --> 00:09:57,440
+[SPEAKER_01] Ali čini mi se da će učiniti nešto ako Apple dozna dvoznačnost u tim smjernicama?
+
+104
+00:09:57,679 --> 00:10:06,480
+[SPEAKER_01] Hoće li otići u EC i zatražiti jasnost privatno iza kulisa i pokušati što jasnije objasniti stvari?
+
+105
+00:10:06,879 --> 00:10:11,039
+[SPEAKER_01] Ili će se upustiti u dvoznačnosti i pokušati iskoristiti ih kao propuste?
+
+106
+00:10:11,519 --> 00:10:14,720
+[SPEAKER_01] A onda kad ih se iznenadi?, recimo, Eh, to nije ono što smo mislili.
+
+107
+00:10:14,799 --> 00:10:20,480
+[SPEAKER_01] Rekli će, Pa, evo jezika i, znaš, i to bi im pomoglo da odgađuju stvari.
+
+108
+00:10:20,639 --> 00:10:20,799
+[SPEAKER_01] Ne znam.
+
+109
+00:10:20,879 --> 00:10:22,080
+[SPEAKER_02] To su milijarde dolara, zar ne?
+
+110
+00:10:22,159 --> 00:10:31,919
+[SPEAKER_02] Kao da imaju potencijalnu gubitak ovdje, stvarno, ako mogu odgoditi za pet godina, to su milijarde dodatnih dolara prihoda prije nego što moraju, znaš, zapravo nositi troškove.
+
+111
+00:10:32,159 --> 00:10:39,360
+[SPEAKER_00] Jedno od važnih stvari ovdje je da, iako su to milijarde dolara za Apple, to su trilijuni dolara u gospodarstvu trgovina aplikacijama tijekom godina i desetljeća.
+
+112
+00:10:39,519 --> 00:10:42,399
+[SPEAKER_00] Kao da je to puno novca.
+
+113
+00:10:42,559 --> 00:10:51,360
+[SPEAKER_00] To je kao računalo koje svi imamo u džepovima i koje ti zakoni utječu na Appleove inter interpretacije se oblikovale.
+
+114
+00:10:51,919 --> 00:10:52,000
+[SPEAKER_00] Da.
+
+115
+00:10:53,200 --> 00:10:53,840
+[SPEAKER_02] To me plaši.
+
+116
+00:10:54,080 --> 00:10:55,679
+[SPEAKER_02] Danas sam razmišljao o tome.
+
+117
+00:10:55,919 --> 00:10:58,799
+[SPEAKER_02] Mislim, opet, nisam odvjetnik, nisam baš obrazovan, jednostavno.
+
+118
+00:10:59,279 --> 00:11:08,399
+[SPEAKER_02] Ali razmišljao sam o tome, ovo je, osjećam da smo u trenutku u kojem je ova industrija, znate, svi smo odrasli s automobilskom industrijom, zar ne?
+
+119
+00:11:08,480 --> 00:11:10,639
+[SPEAKER_02] Već je bila ukorijenjena u velikim trima, super ukorijenjena.
+
+120
+00:11:10,799 --> 00:11:17,840
+[SPEAKER_02] Postoji sve ovo miješanje između vlade i ovih automobilskih tvrtki, a sve se to dogodilo na prijelazu stoljeća do pedesetih i šezdesetih godina prošlog stoljeća, zar ne?
+
+121
+00:11:18,000 --> 00:11:20,559
+[SPEAKER_02] I do tog trenutka imali smo ovu masovno ukorijenjenu oligopoliju.
+
+122
+00:11:21,279 --> 00:11:24,320
+[SPEAKER_02] I pitao sam se, osjećam da se to događa sada.
+
+123
+00:11:24,320 --> 00:11:34,320
+[SPEAKER_02] Bilo je kao da imamo ovu novu industriju, a sada regulatori, bilo da su u suradnji ili suprotno, dolaze i stavljaju prste u to.
+
+124
+00:11:34,639 --> 00:11:38,639
+[SPEAKER_02] I ono što će se dogoditi jest da će se cijela ta stvar na vrlo čudan način pretvoriti u kalcifikaciju.
+
+125
+00:11:39,279 --> 00:11:43,120
+[SPEAKER_02] I mislim da je to ono što pokušavamo predvidjeti sada, kako će se sve to ispasti?
+
+126
+00:11:43,840 --> 00:11:49,360
+[SPEAKER_02] I ne mislim da možemo, znate, prognozirati, ali stvarno je to tako dinamičan sustav.
+
+127
+00:11:49,440 --> 00:11:53,519
+[SPEAKER_02] Teško je reći što će Apple učiniti, kakvi će biti nuspojave toga, znate?
+
+128
+00:11:54,000 --> 00:11:58,240
+[SPEAKER_01] Pa, vratit ću se na to što će Apple učiniti putem pozadinskih kanala.
+
+129
+00:11:58,559 --> 00:12:00,879
+[SPEAKER_01] I mislim, Jacob, spomenuo si Japansku trgovinsku komisiju.
+
+130
+00:12:00,879 --> 00:12:12,000
+[SPEAKER_01] Mislim da je jedan od vas to učinio, ali s Japanskom trgovinskom komisijom, čini mi se vrlo očitim da je Apple imao približno najprijateljski odnos s njima.
+
+131
+00:12:12,080 --> 00:12:15,120
+[SPEAKER_01] Da, i ništa nije postalo javno.
+
+132
+00:12:17,360 --> 00:12:22,240
+[SPEAKER_01] Nije bilo vijesti o tome da Apple bori protiv JTC-a.
+
+133
+00:12:22,399 --> 00:12:32,639
+[SPEAKER_01] A onda kad su došli do zajedničkog sporazuma i objavili ga, mislio sam da je Appleova priopćenja za tisak nekako previše hvalila odnos koji su imali s njima.
+
+134
+00:12:32,879 --> 00:12:34,000
+[SPEAKER_01] Bilo je bez kontroverzi.
+
+135
+00:12:34,480 --> 00:12:36,960
+[SPEAKER_01] Obje strane bile su sretne što su se složile.
+
+136
+00:12:36,960 --> 00:12:40,240
+[SPEAKER_01] Sretni smo što smo se složili s tim uvjetima, a JTC ih je sretan što ih prihvaća.
+
+137
+00:12:40,799 --> 00:12:45,120
+[SPEAKER_01] I znate, pomaknuli su platformu dalje na način koji je, mislim, bio dobar za sve.
+
+138
+00:12:46,159 --> 00:12:49,360
+[SPEAKER_01] Međutim, ne mislim da Apple ima takve odnose s EU-om.
+
+139
+00:12:49,600 --> 00:12:58,720
+[SPEAKER_01] Mislim da je s EU-om jer je EU u tisku izazvala neugodne reakcije i bila kontroverzna, mislim da je Apple već na suprotnoj poziciji s njima.
+
+140
+00:12:58,879 --> 00:12:59,600
+[SPEAKER_01] To je drugačije.
+
+141
+00:12:59,679 --> 00:13:05,519
+[SPEAKER_01] Ali samo ću naglasiti da mislim da je Apple imao vrlo prijateljski odnos s JTC-om.
+
+142
+00:13:05,600 --> 00:13:08,639
+[SPEAKER_00] Dakle, tko zna, znate, pustite me da se malo protivim tome.
+
+143
+00:13:08,720 --> 00:13:12,879
+[SPEAKER_00] Mislim da je prijateljski odnos i onda se savijanje unatrag znači da su bili.
+
+144
+00:13:12,879 --> 00:13:18,320
+[SPEAKER_00] Jedna od mojih najnovijih riječi jest da su ih prisiljavali da popuste na vrlo očitom mjestu.
+
+145
+00:13:18,480 --> 00:13:22,000
+[SPEAKER_00] I tako im je lako biti srdačni kad ih se ne tjeraju previše.
+
+146
+00:13:22,080 --> 00:13:23,120
+[SPEAKER_00] Da, da ih se ne prijete.
+
+147
+00:13:23,279 --> 00:13:23,600
+[SPEAKER_01] Da, da.
+
+148
+00:13:23,840 --> 00:13:23,919
+[SPEAKER_01] Da.
+
+149
+00:13:24,000 --> 00:13:26,639
+[SPEAKER_01] JTC nije pritisnuo na bočno opterećenje.
+
+150
+00:13:26,720 --> 00:13:26,799
+[SPEAKER_01] Da.
+
+151
+00:13:26,960 --> 00:13:28,799
+[SPEAKER_01] Ili nešto drugo što ne žele učiniti.
+
+152
+00:13:29,120 --> 00:13:31,440
+[SPEAKER_00] Ili nešto što bi im značajno utjecalo na njihov posao.
+
+153
+00:13:31,519 --> 00:13:34,399
+[SPEAKER_00] Mislim, ovo je bilo njihovo popustljavanje, znate.
+
+154
+00:13:34,720 --> 00:13:38,559
+[SPEAKER_00] I tako, oh, pogledajte, mi smo tako dobri prijatelji s regulatorima.
+
+155
+00:13:38,720 --> 00:13:38,799
+[SPEAKER_00] Da.
+
+156
+00:13:39,039 --> 00:13:40,080
+[SPEAKER_00] Pustit ćemo da popuste.
+
+157
+00:13:40,159 --> 00:13:47,039
+[SPEAKER_00] Znate, mislim, to je bila moja percepcija o tome zašto je taj posebno došao tako srdačan.
+
+158
+00:13:47,279 --> 00:13:48,960
+[SPEAKER_00] Ali, ali, ali, da se vratim na vašu točku.
+
+159
+00:13:48,960 --> 00:13:57,840
+[SPEAKER_00] Mislim da je zanimljivo čitati sve ovo, a nisam baš tako razmišljao, da su EU i Apple više suprotstavljeni.
+
+160
+00:13:58,000 --> 00:14:00,080
+[SPEAKER_00] Mislim da je to gotovo poput Applea i Facebooka.
+
+161
+00:14:00,559 --> 00:14:01,759
+[SPEAKER_00] I znate, Apple ima.
+
+162
+00:14:02,399 --> 00:14:03,360
+[SPEAKER_00] To je ironično, zar ne?
+
+163
+00:14:03,519 --> 00:14:13,039
+[SPEAKER_02] Kao da je EU, znate, GDPR objavljen prije nekoliko godina, kao da će, ako netko biti njihov saveznik u toj borbi, to će biti Apple, potencijalno, zar ne?
+
+164
+00:14:13,200 --> 00:14:16,960
+[SPEAKER_02] I čini se da je to onaj na koji se ovdje najviše ljutito usmjeravaju.
+
+165
+00:14:17,120 --> 00:14:18,159
+[SPEAKER_02] Kako to još sažeti?
+
+166
+00:14:18,480 --> 00:14:20,720
+[SPEAKER_01] Znate, problem, mislim da je dvostruki.
+
+167
+00:14:20,879 --> 00:14:24,879
+[SPEAKER_01] Mislim da je, općenito, DMA predugačak i previše je ljut.
+
+168
+00:14:24,879 --> 00:14:27,440
+[SPEAKER_01] To je dugo i vrlo je gusto pravno.
+
+169
+00:14:27,679 --> 00:14:38,720
+[SPEAKER_01] Ali kad dođete do sitnih, pohlepnih detalja nekih od tih, rekao bih, izravno spektakularnih zahtjeva, znate, to su vrlo značajni tehnički zahtjevi.
+
+170
+00:14:39,279 --> 00:14:41,519
+[SPEAKER_01] To je nevjerojatno nedovoljno opisano.
+
+171
+00:14:41,840 --> 00:14:45,039
+[SPEAKER_01] Za mene je to vrlo loše napisan zakon.
+
+172
+00:14:45,679 --> 00:14:51,840
+[SPEAKER_01] I na svojoj sam stranici spomenuo to u usporedbi s njihovim zahtjevima za USB-C priključcima za punjenje.
+
+173
+00:14:52,159 --> 00:14:54,399
+[SPEAKER_01] I protiv sam se tome da se to uvede regulacijom.
+
+174
+00:14:54,480 --> 00:14:55,360
+[SPEAKER_01] Mislim da to nije potrebno.
+
+175
+00:14:56,000 --> 00:15:00,639
+[SPEAKER_01] Mislim da je tržište riješilo sve te argumente o tome.
+
+176
+00:15:00,639 --> 00:15:06,799
+[SPEAKER_01] uvijek započinju gledajući ovu sliku dvadeset različitih punjača za telefone i znate, ima ih dvadesetak različitih kabela.
+
+177
+00:15:07,039 --> 00:15:08,399
+[SPEAKER_01] Ta slika je iz prije dvadeset godina.
+
+178
+00:15:08,559 --> 00:15:10,639
+[SPEAKER_01] Tržišne sile su radile na tome.
+
+179
+00:15:10,879 --> 00:15:13,039
+[SPEAKER_01] Ne želim se ovdje svađati o USB-C-u i gubiti vrijeme.
+
+180
+00:15:13,679 --> 00:15:15,360
+[SPEAKER_00] Ne, ali to je primjenjivo.
+
+181
+00:15:15,519 --> 00:15:28,320
+[SPEAKER_01] Da, razumijem kamo idete, ali iako se ne slažem s obvezom da svi uređaji poput telefona i slušalica, mobitela i slušalica, ako imaju priključak za punjenje, priključak mora biti USB-C.
+
+182
+00:15:28,399 --> 00:15:35,039
+[SPEAKER_01] Mislim da nema razloga da to bude regulirano zakonom, ali barem je zakon vrlo jasan.
+
+183
+00:15:35,360 --> 00:15:36,879
+[SPEAKER_01] Ono što su tražili vrlo je jasno.
+
+184
+00:15:36,879 --> 00:15:41,679
+[SPEAKER_01] Ako izrađujete takve uređaje i imaju priključak za punjenje, onda mora biti priključak USB-C.
+
+185
+00:15:42,320 --> 00:15:43,919
+[SPEAKER_01] U redu, pa barem znate kako se pridržavati.
+
+186
+00:15:44,399 --> 00:16:05,679
+[SPEAKER_01] Dok postoje zahtjevi da ako ste čuvar i pokrenete jednu od ovih platformi i morate dozvoliti bočno učitavanje, ali imate dozvolu zaštitu cjelovitosti hardvera i cjelovitosti operativnog sustava i sigurnosti korisnika, kako točno trebate omogućiti bočno učitavanje, to je za mene, a ja sam zapravo proveo cijeli dan.
+
+187
+00:16:05,840 --> 00:16:12,720
+[SPEAKER_01] Mislim, možda dokument ove dužine, dan nije dovoljno, ali mogao bih to podnijeti.
+
+188
+00:16:14,720 --> 00:16:22,720
+[SPEAKER_01] Ali, recimo, u usporedbi s Androidom, Android je već u potpunosti u skladu s propisima?
+
+189
+00:16:22,799 --> 00:16:32,320
+[SPEAKER_01] Podržavaju bočno učitavanje od samog početka i podržavaju i trgovine aplikacijama trećih strana.
+
+190
+00:16:32,639 --> 00:16:33,360
+[SPEAKER_01] Da, nisam siguran.
+
+191
+00:16:33,440 --> 00:16:36,320
+[SPEAKER_01] Dakle, na površini biste mislili da su već u skladu s tim.
+
+192
+00:16:36,559 --> 00:16:49,200
+[SPEAKER_01] Nisam siguran da način na koji se radi bočno učitavanje na Androidu je u skladu s propisima jer postoji neka vrsta jezika o tome što se događa po zadanimim postavkama.
+
+193
+00:16:50,159 --> 00:16:54,799
+[SPEAKER_01] I zapravo mislim da je Android sustav, zapravo, i ja, znate, uvijek imam rezervni Android telefon ovdje.
+
+194
+00:16:55,039 --> 00:17:14,240
+[SPEAKER_01] Mislim da, znate, programeri koji žele da telefoni budu poput računala, znate, Windows i Mac, Windows PC-a i Mac-a u smislu podrške za instalaciju aplikacija s bilo kojeg mjesta nikad neće biti zadovoljni.
+
+195
+00:17:14,400 --> 00:17:16,960
+[SPEAKER_01] Mislim da to nije primjereno za većinu korisnika.
+
+196
+00:17:17,279 --> 00:17:18,319
+[SPEAKER_01] Mislim da su telefoni različiti.
+
+197
+00:17:18,799 --> 00:17:26,480
+[SPEAKER_01] Želio bih da Apple na način na koji Apple proizvodi dvije platforme tipa prij iPad i MacBook.
+
+198
+00:17:26,960 --> 00:17:34,240
+[SPEAKER_01] Teorijski bih želio da su napravili dva telefona, Mac telefona i iPhonea, a ja bih kupio Mac telefona.
+
+199
+00:17:34,400 --> 00:17:38,960
+[SPEAKER_01] Volio bih ga, kao da sam više entuzijastični telefon, ali razumijem zašto to ne žele.
+
+200
+00:17:39,680 --> 00:17:59,839
+[SPEAKER_01] Mislim da nema financijskog smisla da to učine, ali način na koji, znate, programeri koji žele zaobiti Play Store nisu zadovoljni time da se u nastave uranjaju, odlaze u napredne, kliknu ovu tipku da dopuštaju aplikacije s drugog mjesta, potvrđuju da priznajete da je to opasno i da vjerujete ovom programeru, bla, bla, bla.
+
+201
+00:18:00,160 --> 00:18:01,839
+[SPEAKER_01] Je li to u skladu s DMA-om?
+
+202
+00:18:02,000 --> 00:18:02,240
+[SPEAKER_01] Ne znam.
+
+203
+00:18:02,240 --> 00:18:03,279
+[SPEAKER_01] Ne znam što se događa.
+
+204
+00:18:03,359 --> 00:18:07,599
+[SPEAKER_02] Mislim da je to sasvim razumna odluka za tvrtku koja proizvodi softver za potrošače, zar ne?
+
+205
+00:18:07,759 --> 00:18:08,880
+[SPEAKER_02] Kao da to nije nemoguće.
+
+206
+00:18:08,960 --> 00:18:10,480
+[SPEAKER_02] To nije ništa i da je dostupno.
+
+207
+00:18:10,720 --> 00:18:10,799
+[SPEAKER_02] Da.
+
+208
+00:18:11,119 --> 00:18:24,160
+[SPEAKER_02] Samo se vraćam usporedbi USB-a s App Storeom i razmišljam o razlikama u velikosti složenosti, kao što je USB priključak, postoji specifikacija ISO-a ili nešto slično, kao da je to zapisano, zar ne?
+
+209
+00:18:24,319 --> 00:18:25,759
+[SPEAKER_02] To su inženjeri dogovorili.
+
+210
+00:18:25,839 --> 00:18:26,559
+[SPEAKER_02] To je vrlo jasno.
+
+211
+00:18:26,799 --> 00:18:31,519
+[SPEAKER_02] U App Storeu ima ih četiri i svaka je vrlo različita, vrlo nova.
+
+212
+00:18:31,599 --> 00:18:32,960
+[SPEAKER_02] Mislim, ovo je moj posao.
+
+213
+00:18:33,039 --> 00:18:34,240
+[SPEAKER_00] To je kao da ih ima stotine.
+
+214
+00:18:34,640 --> 00:18:35,359
+[SPEAKER_00] Ako pogledate kineski.
+
+215
+00:18:35,519 --> 00:18:36,880
+[SPEAKER_02] Mislim, postoje različ i oni.
+
+216
+00:18:37,039 --> 00:18:40,480
+[SPEAKER_02] I svi su na neki način izvedeni jedni od drugih, ali svaki ima malo drugačije pravila.
+
+217
+00:18:40,640 --> 00:18:41,359
+[SPEAKER_02] Nisam baš siguran.
+
+218
+00:18:41,839 --> 00:18:44,240
+[SPEAKER_02] Mislim da je to distribucija softvera u kombinaciji s bilo čim.
+
+219
+00:18:44,640 --> 00:18:55,200
+[SPEAKER_02] Ali, da, mislim da ne mogu vidjeti kako bi mogli u dokumentu od stotinu stranica, bilo što, navesti što to zapravo znači, što znači da nas čeka glupost.
+
+220
+00:18:55,440 --> 00:18:58,559
+[SPEAKER_02] Nema načina da ovo ne postane ogroman nered.
+
+221
+00:18:59,680 --> 00:19:12,559
+[SPEAKER_01] I druga stvar koja je, mislim, stvarno važna za ljude koji će slušati emisiju poput ove jest da postoje, bih se usudio reći, milijuni ljudi poput nas, tehnički osmišljeni programeri ili ljudi.
+
+222
+00:19:13,279 --> 00:19:26,240
+[SPEAKER_01] koji su na neki način uključeni u stvaranje softvera za telefone i ove platforme ili jednostavno stvarno brinu o tome i entuzijasti za to.
+
+223
+00:19:27,039 --> 00:19:30,960
+[SPEAKER_01] A naše brige nisu njihove.
+
+224
+00:19:32,400 --> 00:19:41,759
+[SPEAKER_01] Mislim da je jedna od stvari koju treba shvatiti o EC-u da se, po mom mišljenju, uglavnom ne bave potrebama potrošača ili entuzijasta.
+
+225
+00:19:43,039 --> 00:19:51,759
+[SPEAKER_01] Bave se brigama srednjih tvrtki poput Spotify je najveći na popisu želja, zar ne?
+
+226
+00:19:52,480 --> 00:19:55,039
+[SPEAKER_01] Spotify, Epic, takve tvrtke.
+
+227
+00:19:55,440 --> 00:19:56,240
+[SPEAKER_01] I to je vrlo drugačije.
+
+228
+00:19:56,319 --> 00:20:01,200
+[SPEAKER_01] Ali s druge strane, postoje aspekti toga koji čak ni ne zadovoljavaju, kao što je Spotify.
+
+229
+00:20:02,400 --> 00:20:08,160
+[SPEAKER_01] I spomenuo si, mislim, Davida, nizozemsku stvar s upoznavanjem, zar ne?
+
+230
+00:20:08,240 --> 00:20:08,319
+[SPEAKER_01] Da.
+
+231
+00:20:09,119 --> 00:20:14,799
+[SPEAKER_01] Dakle, Nizozemci, ovo nije EC-ova stvar, ali bi moglo biti jer je to vrsta stvari koja bi se mogla širiti.
+
+232
+00:20:14,960 --> 00:20:26,160
+[SPEAKER_01] Ali u Nizozemskoj, njihov ekvivalent FTC-a zabrinut je za aplikacije za upoznavanje i što moraju platiti i kakva je obrada plaćanja jer postoji, pretpostavljam, sjedište grupepe Match ili nešto slično.
+
+233
+00:20:27,119 --> 00:20:27,519
+[SPEAKER_01] Naravno.
+
+234
+00:20:27,599 --> 00:20:30,400
+[SPEAKER_01] Pa, mislim da ni ne krivim zakonodavce.
+
+235
+00:20:30,559 --> 00:20:33,119
+[SPEAKER_01] Znate, trebali biste se brinuti o svojim biračima.
+
+236
+00:20:33,200 --> 00:21:12,880
+[SPEAKER_01] Znate, pa možete malo povući oči i ja to radim, ali velika je nesporazumljivost koju su ljudi u našoj zajednici imali jer toliko ljudi u našoj zajednici brine svaki tjedan kad ste razvijač, gledate svoj prihod i prihod i brinete se o trideset petnaest podjela iz trgovine aplikacijama, provizije, poreza, kako god to želite nazvati s nizozemskom trgovinom aplikacijama.ama, bilo je kao da morate dozvoliti obradu trećih strana ili da morate dozvoliti registraciju poveznica na web iz aplikacije, što, znate, svi u našoj zajednici znaju koliko je to ludilo.
+
+237
+00:21:13,680 --> 00:21:22,240
+[SPEAKER_01] I to je jedna od onih stvari za koje bih rekao da sam u ovom trenutku potpuno bijesan na Apple jer ne dozvoljava poveznice na web iz aplikacija.
+
+238
+00:21:22,319 --> 00:21:23,759
+[SPEAKER_01] To je jednostavno smiješno.
+
+239
+00:21:24,160 --> 00:21:26,240
+[SPEAKER_01] I mislim da je to očito pogrešno.
+
+240
+00:21:26,640 --> 00:21:27,519
+[SPEAKER_01] I to je stvarno tako.
+
+241
+00:21:27,599 --> 00:21:31,839
+[SPEAKER_01] Mislim da Apple nije obično tvrtka koja želi zaraditi novac, ali činjenica da su to učinili.
+
+242
+00:21:32,000 --> 00:21:34,400
+[SPEAKER_02] To je malo kršenje računala.
+
+243
+00:21:34,559 --> 00:21:35,599
+[SPEAKER_01] I zdravog razuma, zar ne?
+
+244
+00:21:36,000 --> 00:21:36,000
+[UNKNOWN] Da.
+
+245
+00:21:36,160 --> 00:21:36,799
+[SPEAKER_01] I to ne možete.
+
+246
+00:21:37,200 --> 00:21:39,519
+[SPEAKER_01] I moj, moj, moj najbolji način, uvijek se vraćam na to.
+
+247
+00:21:39,759 --> 00:21:48,640
+[SPEAKER_01] Ponavljala sam to mnogo puta, da je jedna od pravila u trgovini aplikacijama da ne možete objasniti pravila trgovine aplikacijama u svojoj aplikaciji.
+
+248
+00:21:48,880 --> 00:21:49,359
+[SPEAKER_00] Dakle, možete, zar ne?
+
+249
+00:21:49,440 --> 00:21:50,400
+[SPEAKER_00] I meni, meni, to je tako.
+
+250
+00:21:50,720 --> 00:21:54,480
+[SPEAKER_02] To je povijesno obilježje velikih sustava, zar ne?
+
+251
+00:21:54,640 --> 00:21:56,880
+[SPEAKER_02] Ako vam nije dopušteno reći ljudima kako to funkcionira.
+
+252
+00:21:57,039 --> 00:21:57,359
+[SPEAKER_01] U redu.
+
+253
+00:21:57,519 --> 00:22:02,240
+[SPEAKER_01] Dakle, Netflix je sjajan primjer jer je Netflix bio u trgovini aplikacijama.
+
+254
+00:22:02,400 --> 00:22:08,480
+[SPEAKER_01] Pretpostavljam da je Netflix još uvijek jedna od aplikacija s najvećim prihodima u trgovini aplikacijama zbog svega toga.
+
+255
+00:22:08,640 --> 00:22:12,960
+[SPEAKER_01] I mislim da je to možda samo razlog zbog kojeg je Apple prestao objavljivati aplikacije s najvećim prihodima.
+
+256
+00:22:12,960 --> 00:22:19,759
+[SPEAKER_01] Zbog toga što Netflix bi bio tamo pet ili šest godina nakon što su prestali prihvaćati prijave.
+
+257
+00:22:19,839 --> 00:22:35,680
+[SPEAKER_01] Ali ako ste novi klijent Netflixa ili recimo povratni klijent koji je prethodno otkazao vaš račun i sada želite se vratiti jer ste čuli da postoji nova emisija i preuzimate Netflixovu aplikaciju na svoj iPhone ili Apple TV i pitate se kako se prijaviti?
+
+258
+00:22:36,400 --> 00:22:41,279
+[SPEAKER_01] Jedino što pitaju je kakva je vaša e-pošta, kakva je vaša lozinka, prijavite se.
+
+259
+00:22:41,440 --> 00:22:44,400
+[SPEAKER_01] A ako nemate e-poštu ili lozinku za Netflix, što radite?
+
+260
+00:22:44,720 --> 00:22:45,680
+[SPEAKER_01] I to se ne kaže.
+
+261
+00:22:45,680 --> 00:22:47,359
+[SPEAKER_02] Ne možete ni reći, ne možete ni naći poveznicu.
+
+262
+00:22:47,519 --> 00:22:50,240
+[SPEAKER_02] Ne možete ni reći, da idete na web-lokaciju da se prijavite, zar ne?
+
+263
+00:22:50,400 --> 00:22:50,799
+[SPEAKER_01] Točno.
+
+264
+00:22:50,880 --> 00:22:51,519
+[SPEAKER_01] Ne mogu ni reći to.
+
+265
+00:22:51,680 --> 00:22:52,559
+[SPEAKER_01] I ne mogu reći da ste potrošač.
+
+266
+00:22:52,640 --> 00:23:05,599
+[SPEAKER_01] I ne mogu, i definitivno ne mogu reći da ne možete reći da idete na web da se prijavite, da idete na netflix dot com da se prijavite, a kamoli da napravite nešto što možete dodirnuti da biste, znate, doista došli tamo.
+
+267
+00:23:05,839 --> 00:23:13,519
+[SPEAKER_01] I napisao sam o tome prije godina i u Netflixu je smiješno jer imaju broj telefona ako trebate pomoć.
+
+268
+00:23:13,599 --> 00:23:18,720
+[SPEAKER_01] Tako sam ga nazvao i pitao broj telefona, Eh, nemam račun za Netflix.
+
+269
+00:23:18,880 --> 00:23:19,359
+[SPEAKER_01] Što da radim?
+
+270
+00:23:19,599 --> 00:23:21,519
+[SPEAKER_01] I to je bila pripremljena odgovora.
+
+271
+00:23:21,680 --> 00:23:23,839
+[SPEAKER_01] Rekli su mi, O, trebate ići na pravi računalo.
+
+272
+00:23:24,160 --> 00:23:29,200
+[SPEAKER_01] Imate li pristup Macu ili Windowsu i idete na web-lokaciju.
+
+273
+00:23:29,359 --> 00:23:31,519
+[SPEAKER_02] Znate zašto to još uvijek dopustite?
+
+274
+00:23:32,000 --> 00:23:33,359
+[SPEAKER_01] Jer AppReview nikad nije nazvao broj.
+
+275
+00:23:33,440 --> 00:23:34,880
+[SPEAKER_01] Zaručujem vam da je nazvao broj.
+
+276
+00:23:35,119 --> 00:23:36,240
+[SPEAKER_01] Netflix dobiva.
+
+277
+00:23:36,559 --> 00:23:36,880
+[SPEAKER_01] Ne znam.
+
+278
+00:23:37,119 --> 00:23:41,200
+[SPEAKER_01] Koliko tvrtki može podržati punopravni broj 1800?
+
+279
+00:23:41,680 --> 00:23:44,400
+[SPEAKER_02] Znate, u svakom slučaju, to je sjajna ideja za hackathon.
+
+280
+00:23:44,720 --> 00:23:47,279
+[SPEAKER_02] Baš kao i Twilio aplikacija koju možete baciti i učiniti.
+
+281
+00:23:47,440 --> 00:23:47,920
+[UNKNOWN] To je ludilo.
+
+282
+00:23:48,319 --> 00:24:00,880
+[SPEAKER_01] Ali u svakom slučaju, s nizozemskom stvarom, svi su mislili da će ih Nizozemci napraviti, čak i ako je to samo za ovu ograničenu kategoriju aplikacija za upoznavanje, sada kad ove aplikacije za upoznavanje mogu obraditi plaćanja sami.
+
+283
+00:24:01,359 --> 00:24:04,160
+[SPEAKER_01] putem vlastitog trećeg procesora, vjerojatno Stripea, zar ne?
+
+284
+00:24:04,319 --> 00:24:11,599
+[SPEAKER_01] To je ono što svi vole, ali što god žele u svojoj aplikaciji ili staviti gumb koji će vas prebaciti na web gdje možete platiti tamo.
+
+285
+00:24:12,160 --> 00:24:32,240
+[SPEAKER_01] I stvar o kojoj su svi govorili, što, što, u dugačku je to bilo kad je Apple objavio, znate, evo kako ćemo se pridržavati toga, rekli su da ćete, znate, ako odaberete bilo koju od ovih opcija, morat ćete nam dopustiti da revidiramo vaše knjige i mi ćemo prikupiti dvadeset i sedam posto prihoda koji prolazi kroz vaše kupnje u aplikaciji ili prodaju na webu.
+
+286
+00:24:32,480 --> 00:24:36,240
+[SPEAKER_01] I morali su plesati naprijed-natrag.
+
+287
+00:24:36,240 --> 00:24:42,720
+[SPEAKER_01] I tako smo se s njemačkom ACM-om i regulatorima razgovarali o nekoliko stvari, kao što je jezik i slično.
+
+288
+00:24:43,039 --> 00:24:47,839
+[SPEAKER_01] Ali osnovna ideja da i dalje mogu primiti tu platformu nije ni bila u pitanju.
+
+289
+00:24:47,920 --> 00:24:50,640
+[SPEAKER_01] A mi smo se pitali, što?
+
+290
+00:24:51,519 --> 00:24:58,000
+[SPEAKER_01] Ali to nije nezakonito, to nije izvan granica.
+
+291
+00:24:58,240 --> 00:24:59,680
+[SPEAKER_02] I to nije ni ovdje u pitanju.
+
+292
+00:25:00,160 --> 00:25:03,119
+[SPEAKER_02] Mislim, to je bio i slučaj Alpha, Epic, zar ne?
+
+293
+00:25:03,519 --> 00:25:04,319
+[SPEAKER_02] To je u redu.
+
+294
+00:25:04,640 --> 00:25:10,240
+[SPEAKER_01] I to je prvi put da smo doista dobili trag da je Apple tako razmišljao o tome, kad je Tim Cook bio na svjedokama.
+
+295
+00:25:10,400 --> 00:25:12,720
+[SPEAKER_01] I još uvijek mislim, u retrospektivi, znam da je bio vrlo dobro.
+
+296
+00:25:13,119 --> 00:25:13,359
+[SPEAKER_01] pripremljen.
+
+297
+00:25:13,519 --> 00:25:16,160
+[SPEAKER_01] Naravno, Tim Cook je Tim Cook i obavio je svoju zadaću.
+
+298
+00:25:16,480 --> 00:25:26,400
+[SPEAKER_01] Mislio sam da je došao vrlo loše s PR perspektive, ali nitko se ne čini da se sjeća toga, pa je možda pametniji od mene i da je ton koji je odabrao bio primjeren.
+
+299
+00:25:26,640 --> 00:25:37,920
+[SPEAKER_01] Ali jedno od pitanja koje je postavio bilo je o tome što imamo tendenciju da mislimo da je provizija za trgovinu aplikacijama naknada za obradu plaćanja i zato je svatko toliko uzrujan zbog toga.
+
+300
+00:25:38,000 --> 00:25:44,400
+[SPEAKER_01] Kada prođete kroz Stripe ili PayPal, plaćate tri posto ili dva i pol posto, nešto u tom stilu.
+
+301
+00:25:44,720 --> 00:25:48,960
+[SPEAKER_01] I brojite povratne troškove i ovo i ono.
+
+302
+00:25:48,960 --> 00:25:50,559
+[SPEAKER_01] Zaokružite na pet posto, zar ne?
+
+303
+00:25:50,960 --> 00:25:54,640
+[SPEAKER_01] Pet posto naknade za obradu plaćanja je prilično standardno.
+
+304
+00:25:55,039 --> 00:25:55,119
+[SPEAKER_01] Da.
+
+305
+00:25:55,440 --> 00:25:56,960
+[SPEAKER_01] Kada je sve rečeno i učinjeno.
+
+306
+00:25:57,039 --> 00:25:57,200
+[SPEAKER_01] I tako.
+
+307
+00:25:57,200 --> 00:25:57,279
+[SPEAKER_01] Da.
+
+308
+00:25:58,079 --> 00:26:03,359
+[SPEAKER_00] I pustite da vas prekidam jer mislim da je to zapravo važan aspekt, da to nije samo pet posto.
+
+309
+00:26:03,680 --> 00:26:14,400
+[SPEAKER_00] I zapravo sam proveo mnogo istraživanja za RevenueCat i naše klijente koji koriste Stripe jer morate registrirati domicil za prikupljanje poreza.
+
+310
+00:26:14,559 --> 00:26:16,480
+[SPEAKER_00] A onda morate prebaciti plaćanja.
+
+311
+00:26:16,559 --> 00:26:18,079
+[SPEAKER_00] A Stripe to ne radi umjesto vas.
+
+312
+00:26:18,160 --> 00:26:24,960
+[SPEAKER_00] Postoji treća strana za Stripe pod nazivom Avalara koja će provesti reviziju i utvrditi gdje imate porezne obveze.
+
+313
+00:26:24,960 --> 00:26:27,359
+[SPEAKER_00] A zatim postoje minimalne naknade za svaku državu.
+
+314
+00:26:27,440 --> 00:26:32,720
+[SPEAKER_00] Dakle, pet posto, da, možda samo prikupljanje poreza, ali Apple radi i sve ostalo.
+
+315
+00:26:32,799 --> 00:26:35,680
+[SPEAKER_00] A onda, evo, sada ste prosvijetljeni.
+
+316
+00:26:35,759 --> 00:26:37,039
+[SPEAKER_00] Proveli ste istraživanje.
+
+317
+00:26:37,680 --> 00:26:39,920
+[SPEAKER_00] Bože, nisam imao pojma.
+
+318
+00:26:40,000 --> 00:26:45,599
+[SPEAKER_00] Mislim, nisam bio potpuno informiran o svemu ovome dok nisam počeo istraživati.
+
+319
+00:26:45,759 --> 00:26:46,240
+[SPEAKER_00] Dakle, nastavite.
+
+320
+00:26:46,480 --> 00:26:54,960
+[SPEAKER_00] Ali, da, mislim, očito je to oko pet posto izravnih plaćanja, ali onda je i puno više posla u neusklađenosti s tim pet posto, zar ne?
+
+321
+00:26:55,039 --> 00:26:59,839
+[SPEAKER_02] Ako sve to ignoriramo, što će vjerojatno učiniti većina neovisnih programera, dok im netko ne kaže da ne mogu.
+
+322
+00:26:59,920 --> 00:27:02,400
+[SPEAKER_01] Ali gdje god dođete, možete ići i do visoke razine.
+
+323
+00:27:02,559 --> 00:27:07,839
+[SPEAKER_01] Vidio sam ljude koji procjenjuju do sedam i pol posto kad je sve rečeno i učinjeno, s onim što trebate učiniti.
+
+324
+00:27:07,920 --> 00:27:19,440
+[SPEAKER_01] Ali gdje god dođete za obradu vlastitih plaćanja putem pouzdanih, pouzdanih, uglednih procesora poput Stripea, to je mnogo manje od trideset posto ili petnaest posto, zar ne?
+
+325
+00:27:20,319 --> 00:27:23,519
+[SPEAKER_01] I to je ono o čemu su ljudi razmišljali.
+
+326
+00:27:23,839 --> 00:27:28,720
+[SPEAKER_01] I zato ljudi vrlo jasno smatraju da je to samo naknada za obradu plaćanja.
+
+327
+00:27:29,119 --> 00:27:36,319
+[SPEAKER_01] I zato je cijela njihova pravna argumentacija u njihovom slučaju, ili ne u potpunosti, već velik dio toga bio samo da je to stvar obrade plaćanja.
+
+328
+00:27:36,319 --> 00:27:43,519
+[SPEAKER_01] Pobrinjavaju se za previše, pa bi ih trebalo prisiliti da se natječu samo za obradu plaćanja.
+
+329
+00:27:43,920 --> 00:27:46,559
+[SPEAKER_01] I da li je to istina, mislim da bi imali sjajan argument.
+
+330
+00:27:47,279 --> 00:27:49,519
+[SPEAKER_01] Problem je u tome što Apple to ne vidi na taj način.
+
+331
+00:27:49,599 --> 00:27:52,000
+[SPEAKER_01] Apple to vidi kao pristojbu za licenciranje.
+
+332
+00:27:52,319 --> 00:28:08,000
+[SPEAKER_01] To je način na koji mogu monetizirati intelektualnu imovinu iOS-a, da je to njihova platforma i da žele naknadu od omogućavanja trećim stranama da se nalaze na platformi.
+
+333
+00:28:08,240 --> 00:28:12,400
+[SPEAKER_01] To su mogli učiniti na više načina.
+
+334
+00:28:12,480 --> 00:28:22,319
+[SPEAKER_01] Na primjer, kad sam bio mlad, to je bilo više način na koji se licenciralo, znate, bilo je kao da je Unix nevjerojatno skup.
+
+335
+00:28:22,480 --> 00:28:28,960
+[SPEAKER_01] Kao da je dobivanje stvarnog poslužitelja marke Unix bilo, znate, ne znam, dvadeset tisuća dolara ili nešto slično.
+
+336
+00:28:29,200 --> 00:28:36,799
+[SPEAKER_01] Mogli su naplaćivati dvadeset tisuća dolara za licencu za iPhone ili naplaćivati prema korisničkim razinama.
+
+337
+00:28:36,880 --> 00:28:42,640
+[SPEAKER_01] I kad jednom premašite broj preuzimanja, znate, bez obzira na sve, čak i za besplatnu aplikaciju, zar ne?
+
+338
+00:28:42,799 --> 00:28:45,359
+[SPEAKER_01] Ili naplaćivati za komplet za razvoj, zar ne?
+
+339
+00:28:45,599 --> 00:28:47,359
+[SPEAKER_01] dvadeset tisuća dolara za komplet za razvoj.
+
+340
+00:28:47,359 --> 00:28:47,519
+[SPEAKER_01] Da.
+
+341
+00:28:47,839 --> 00:28:50,559
+[SPEAKER_01] I to na sve načine.
+
+342
+00:28:50,640 --> 00:28:56,720
+[SPEAKER_01] Igračke platforme obično naplaćuju za komplet za razvijatelje i naplaćuju trideset posto prihoda.
+
+343
+00:28:56,880 --> 00:28:56,960
+[SPEAKER_00] Da.
+
+344
+00:28:57,200 --> 00:29:01,839
+[SPEAKER_01] Ali ono na što su došli je u osnovi da ćemo i to je bio veliki dio priopćenja.
+
+345
+00:29:02,880 --> 00:29:07,759
+[SPEAKER_01] Ako se vratite na Steve Jobsa koji je objavio u trgovini aplikacijama da je vaša aplikacija besplatna, besplatna je.
+
+346
+00:29:07,920 --> 00:29:08,559
+[SPEAKER_01] Besplatna je, zar ne?
+
+347
+00:29:08,640 --> 00:29:09,440
+[SPEAKER_01] To je nevjerojatno, zar ne?
+
+348
+00:29:09,599 --> 00:29:14,799
+[SPEAKER_01] Samo ćemo je gostiti i da je jedini način na koji ćemo zaraditi novac uzimanje trideset posto prihoda.
+
+349
+00:29:14,880 --> 00:29:15,599
+[SPEAKER_02] To je iznenađujuće.
+
+350
+00:29:15,680 --> 00:29:16,400
+[SPEAKER_02] Da, bilo je.
+
+351
+00:29:16,559 --> 00:29:17,200
+[SPEAKER_02] A 2008.
+
+352
+00:29:17,279 --> 00:29:19,759
+[SPEAKER_02] godine to je bilo kao, wow, to je sjajna ponuda, znate?
+
+353
+00:29:20,000 --> 00:29:22,559
+[SPEAKER_00] A kad sam pokrenuo svoju aplikaciju 2008.
+
+354
+00:29:22,720 --> 00:29:24,720
+[SPEAKER_00] godine, bio sam poput, Bože, znate?
+
+355
+00:29:24,799 --> 00:29:29,759
+[SPEAKER_00] Znate, moja aplikacija prodavala se u Saudijskoj Arabiji, Australiji i EU-u.
+
+356
+00:29:30,400 --> 00:29:37,359
+[SPEAKER_00] I ja sam rekao: Plaćam Appleu trideset posto za gostovanje, porez, upravljanje usklađenosti, sve što oni rade.
+
+357
+00:29:37,519 --> 00:29:40,799
+[SPEAKER_00] A ja sam rekao: Jedan tip prodaje softver diljem svijeta.
+
+358
+00:29:40,960 --> 00:29:44,079
+[SPEAKER_00] Ja sam rekao: Plaćam Appleu trideset posto za web aplikacije.
+
+359
+00:29:44,240 --> 00:29:48,240
+[SPEAKER_02] Nismo imali sve te niske troškove, kao što je slanje web aplikacije na GitHub, jednostavne stvari.
+
+360
+00:29:48,319 --> 00:29:53,440
+[SPEAKER_02] Dakle, čak i ako ste prodavali, prije nego što sam radio aplikacije za iPhone, radio sam aplikacije za Facebook i to je bilo skupo.
+
+361
+00:29:53,519 --> 00:29:58,480
+[SPEAKER_02] Morali ste platiti trideset, četrdeset, pedeset dolara mjesečno samo za poslužitelj za gostovanje vaše glupe male Facebook stvari.
+
+362
+00:29:58,880 --> 00:30:01,279
+[SPEAKER_02] A ovo je bilo poput: Vau, mogu ga samo izgraditi na na svom Macu.
+
+363
+00:30:01,440 --> 00:30:03,519
+[SPEAKER_02] Mogu ga poslati u trgovinu aplikacijama i onda sam gotov.
+
+364
+00:30:03,599 --> 00:30:05,599
+[SPEAKER_02] Kao da sam plaćen, možda, zar ne?
+
+365
+00:30:05,839 --> 00:30:06,480
+[SPEAKER_02] To je fantastično.
+
+366
+00:30:06,559 --> 00:30:06,799
+[SPEAKER_02] Nevjerojatno.
+
+367
+00:30:06,880 --> 00:30:21,039
+[SPEAKER_01] Dakle, s Cookom na svjedočenju u svjedočenju Epic-a, ispostavilo se da je njegov argument bio, dobro, jedan od razloga zašto smo platformu monetizirali na ovaj način putem ovih provizija putem trgovine aplikacijama jest da je to najjednostavniji način za nas da prikupljamo naknade koje bismo trebali.
+
+368
+00:30:21,119 --> 00:30:31,440
+[SPEAKER_01] A da bismo dozvolili obradu plaćanja trećim stranama, morali bismo učiniti nešto drugo da bismo prikupljali naknade, znate, i to bi bilo komplicirano i morali bismo revidirati njihove knjige i svi su bili poput, o čemu govori?
+
+369
+00:30:31,599 --> 00:30:36,240
+[SPEAKER_01] Znate, to je poput, ne, samo želimo staviti Stripe u naše aplikacije i zašto biste mogli prikupljati bilo što?
+
+370
+00:30:36,240 --> 00:30:39,599
+[SPEAKER_01] Ne očekujemo ništa jer bismo plaćali Stripe za naknade za obradu plaćanja, ali to je sve.
+
+371
+00:30:39,759 --> 00:30:41,599
+[SPEAKER_01] To nisu naknade za obradu plaćanja.
+
+372
+00:30:41,920 --> 00:30:51,119
+[SPEAKER_01] Očekuju otprilike trideset posto prihoda od digitalnih sadržaja kupovane putem telefona i iPada.
+
+373
+00:30:52,480 --> 00:31:04,319
+[SPEAKER_01] To je ono što misle i što su postavili da morate proći kroz trgovinu aplikacijama i aplikacije u trgovini aplikacijama moraju proći kroz Appleovu obradu plaćanja jer je to daleko najjednostavniji način za Apple da prikupi svoj udio.
+
+374
+00:31:04,720 --> 00:31:09,599
+[SPEAKER_01] I vidjeli smo da su s nizozemskim regulatorima postavili ovaj naporan sustav.
+
+375
+00:31:09,680 --> 00:31:12,640
+[SPEAKER_01] Mislim, gdje su i oni.
+
+376
+00:31:12,640 --> 00:31:15,599
+[SPEAKER_01] Gdje su smanjili stopu na dvadeset i sedam posto kako bi se nadoknadio.
+
+377
+00:31:15,680 --> 00:31:16,480
+[SPEAKER_01] To je tako smiješno.
+
+378
+00:31:16,799 --> 00:31:17,519
+[SPEAKER_01] To je tako smiješno.
+
+379
+00:31:17,839 --> 00:31:30,160
+[SPEAKER_01] Ali to pokazuje, pokazuje, ali to je kao da se na stražnjoj strani omotnice izračunava da je tri posto obrada kreditne kartice, a dvadeset i sedam posto je Appleov udio za monetizaciju svoje intelektualne imovine.
+
+380
+00:31:30,319 --> 00:31:48,880
+[SPEAKER_01] Dakle, ovo je jedan od mojih velikih zaključaka iz DMA-e, mislim da će ljudi koji su pročitali taj Bloomberg izvještaj ovaj tjedan i bili vrlo uzbuđeni, biti vrlo razočarani Appleovim odgovorom jer mislim da će Appleov odgovor na to za cijelu Europu biti u tom smjeru.
+
+381
+00:31:48,880 --> 00:32:09,920
+[SPEAKER_01] Da bi se to dogodilo i da će razviti sustav u kojem možete, dobro, ako želite, možete staviti aplikacije na stranu ili, pretpostavljam, možda će dopustiti trgovine aplikacijama trećih strana ovisno o tome kako to rade ili, ali da će sve morati biti, uh, i dalje ćete morati biti registrirani Appleov programer, i dalje ćete morati potpisati svoje aplikacije.
+
+382
+00:32:10,160 --> 00:32:22,319
+[SPEAKER_01] I ako dobijete te prava da to učinite, morat ćete revidirati svoje knjige i pokazati ih Appleu i platiti im dvadeset i sedam ili trinaest posto, znate, uh, uh, svog novca.
+
+383
+00:32:22,400 --> 00:32:34,079
+[SPEAKER_02] Dakle, mislite da, mislite da postoji, da, jer sam to se pitao, pa ako je u svijetu dodavanja Stripea postojećoj aplikaciji vrlo jasno, dobro, ne plaćate za Xcode, ne plaćate za distribuciju trgovine aplikacijama, morate platiti za to, to je jasno.
+
+384
+00:32:34,240 --> 00:32:52,160
+[SPEAKER_02] Ako stvorite novu trgovinu aplikacijama, pretpostavljam da ako postoji sve to, i opet, sve će se svesti na to kako će se izvući s implementacijom, pa ako morate proći kroz pregled aplikacije, morate koristiti Xcode, morate koristiti sve te stvari, dobro, to ima smisla, ali je li trideset posto, pretpostavljam da je pitanje, je li trideset posto za trgovinu aplikacijama i distribuciju koju dobivate iz trgovine aplikacijama?
+
+385
+00:32:52,240 --> 00:32:52,319
+[SPEAKER_02] Ne.
+
+386
+00:32:52,480 --> 00:32:54,319
+[SPEAKER_02] Je li trideset posto za trgovinu aplikacijama i telefon?
+
+387
+00:32:55,039 --> 00:33:00,160
+[SPEAKER_01] Dakle, radi se o licenciranju iOS-a ili, da, radi se o monetizaciji njihove intelektualne imovine.
+
+388
+00:33:00,559 --> 00:33:02,799
+[SPEAKER_01] I ta fraza, API-jevi, zar ne?
+
+389
+00:33:02,880 --> 00:33:05,039
+[SPEAKER_02] Kao da plaćam za korištenje UI kita, u biti.
+
+390
+00:33:05,359 --> 00:33:22,799
+[SPEAKER_01] I za monetizaciju hardvera, na kojem ste na ovoj platformi za hardver u koju ulažu sve te novce i očekuju da je privilegij, smatraju privilegijom da vaša softverska oprema radi na njihovom sustavu.
+
+391
+00:33:23,039 --> 00:33:32,160
+[SPEAKER_01] To je kao da nikad nisu mislili na platformu za iOS kao na Mac ili PC, gdje je otvorena računalna platforma.
+
+392
+00:33:32,319 --> 00:33:34,640
+[SPEAKER_01] Nikad je nisu opisali na taj način.
+
+393
+00:33:35,200 --> 00:33:36,880
+[SPEAKER_01] Ne vide je na taj način.
+
+394
+00:33:36,880 --> 00:33:40,400
+[SPEAKER_01] Na tehničkoj razini, naravno, to je ono što je, zar ne?
+
+395
+00:33:40,559 --> 00:33:43,759
+[SPEAKER_01] Ali Xbox postoji od 1999.
+
+396
+00:33:43,839 --> 00:33:44,559
+[SPEAKER_01] ili 2000.
+
+397
+00:33:44,640 --> 00:33:50,799
+[SPEAKER_01] godine, a Xbox je uvijek bio samo računalo uvučeno u bočnu crnu kutiju, zar ne?
+
+398
+00:33:51,119 --> 00:33:58,960
+[SPEAKER_01] Mislim, a cijela je ideja za programerima bila da milijuni od vas, programeri igara, znaju kako pisati igre za računala s Windowsom.
+
+399
+00:33:59,279 --> 00:34:10,800
+[SPEAKER_01] Sada možete samo pritisnuti gumb i izbaciti Xbox aplikaciju, ali to je zapravo računalo, ali nikad niste mogli staviti aplikacije na Xbox.
+
+400
+00:34:11,039 --> 00:34:12,559
+[SPEAKER_01] Znaš, to je telefon.
+
+401
+00:34:12,559 --> 00:34:15,039
+[SPEAKER_01] Telefon, vide telefon kao taj tip računala.
+
+402
+00:34:15,199 --> 00:34:22,639
+[SPEAKER_01] A ja sam upotrijebio riječ konzola i ljudi su se zapetljali jer misle da čuju konzolu i da misle samo na igre i igre.
+
+403
+00:34:22,800 --> 00:34:26,719
+[SPEAKER_01] A ako to nije konzola Switch, Xbox ili PlayStation, to nije konzola.
+
+404
+00:34:27,280 --> 00:34:34,000
+[SPEAKER_01] Ali meni se čini da je to vrsta genijalnosti iPhonea, da je zapravo konzola za bilo koju vrstu aplikacije.
+
+405
+00:34:34,079 --> 00:34:42,480
+[SPEAKER_01] Ali tako Apple to vidi i oni, oni, bez obzira na to kako plaćate, žele otprilike trideset do petnaest posto vašeg prihoda.
+
+406
+00:34:43,280 --> 00:34:48,239
+[SPEAKER_01] I ja, ja, ja ne znam da će to učiniti radi usklađenosti s ovim EU-ovim stvarima.
+
+407
+00:34:48,239 --> 00:34:57,360
+[SPEAKER_01] Ali nisam, stvarno sam pokušao pronaći nešto što bi govorilo da ne mogu, a ne vidim to.
+
+408
+00:34:57,599 --> 00:34:58,320
+[SPEAKER_02] Pa zašto ne bi?
+
+409
+00:34:58,400 --> 00:35:04,800
+[SPEAKER_02] Da, mislim da će to provoditi kao zlonamjerno ili ne, učinit će ono što je tako smiješno, zar ne?
+
+410
+00:35:05,280 --> 00:35:06,639
+[SPEAKER_02] Neće ostaviti ništa na stolu.
+
+411
+00:35:07,199 --> 00:35:09,039
+[SPEAKER_02] Zašto bi to učinili zlonamjerno?
+
+412
+00:35:09,119 --> 00:35:09,760
+[SPEAKER_02] Da, točno.
+
+413
+00:35:10,000 --> 00:35:15,039
+[SPEAKER_01] I počeo sam tražiti kako, znaš, Apple bi mogao pristupiti tome na različite načine.
+
+414
+00:35:15,360 --> 00:35:24,960
+[SPEAKER_01] Kao što sam napisao u svom članku o tome, znaš, da bi mogli pristupiti tome s, dobro, popustimo, ovo je zakon u Europi, znaš, učinimo ovo što je najprijateljskije za potrošače.
+
+415
+00:35:24,960 --> 00:35:25,599
+[SPEAKER_01] Pokušajmo biti što prijateljski prema potrošačima.
+
+416
+00:35:25,760 --> 00:35:37,920
+[SPEAKER_01] Pokušajmo učiniti sve što možemo da, znate, ostanemo na sigurnom, da stvari ostanu u sandboxu i da bude što prijateljski prema onim korisnicima koji bi to možda htjeli učiniti.
+
+417
+00:35:38,000 --> 00:35:38,800
+[SPEAKER_01] Ali mislim da to neće biti njihov stav.
+
+418
+00:35:38,960 --> 00:35:40,320
+[SPEAKER_02] Zamislio sam to na putu ovdje danas.
+
+419
+00:35:40,639 --> 00:35:45,599
+[SPEAKER_02] Pitao sam se hoće li staviti crvenu granicu oko svih aplikacija koje pokreću u ovom načinu rada, zar ne?
+
+420
+00:35:45,840 --> 00:35:51,920
+[SPEAKER_02] Kao da će učiniti sve što mogu da bude neugodno, kao što su upozorenja o cigaretama u Europi, zar ne?
+
+421
+00:35:52,000 --> 00:35:57,840
+[SPEAKER_02] To će staviti aplikacije pune virusa, slika i slično da vas uplaše prije nego što ih instaliraju.
+
+422
+00:35:58,159 --> 00:35:58,960
+[SPEAKER_02] Mogli bi.
+
+423
+00:35:59,679 --> 00:36:05,920
+[SPEAKER_00] Što mislite da će trebati i hoće li Apple ikad popustiti u tom stajalištu?
+
+424
+00:36:06,239 --> 00:36:09,599
+[SPEAKER_00] Jer je li to samo, je li to samo prikupljanje novca u ovom trenutku?
+
+425
+00:36:09,679 --> 00:36:29,440
+[SPEAKER_00] Jer svjedočenje Phila Schillera ili možda je to bio dokument koji je objavljen u epskom suđenju, ali bilo je prilično osuđujuće da je Phil Schiller u jednom trenutku postavljao hipotezu oko toga trebamo li ograničiti prihod Applea od App Storea na bilo kakve vrijednosti, deset milijuna dolara godišnje ili bilo kakve vrijednosti.
+
+426
+00:36:29,519 --> 00:36:29,679
+[SPEAKER_00] Ne znam.
+
+427
+00:36:29,760 --> 00:36:37,920
+[SPEAKER_00] U redu, to je mnogo novca, ali bilo kako bilo, kao da su interno razgovarali o tome trebamo li ograničiti prihod prihod trgovine aplikacijama?
+
+428
+00:36:38,000 --> 00:36:46,480
+[SPEAKER_00] I meni je to bilo osuđujuće, posebno osuđujuće jer kaže da vide prednosti svoje platforme hardvera od stvarno sjajne trgovine aplikacijama.
+
+429
+00:36:46,719 --> 00:36:54,480
+[SPEAKER_00] A trideset posto recenzija aplikacija, toliko toga što Apple radi s trgovinom aplikacijama 2022.
+
+430
+00:36:54,639 --> 00:37:05,039
+[SPEAKER_00] godine, što se činilo logičnim 2008., više ne čini i stvarno je ometalo inovacije, ometalo je eksperimentiranje s poslovnim modelima.
+
+431
+00:37:05,119 --> 00:37:12,320
+[SPEAKER_00] I tako s jedne strane imaju ovu platformu koja je sjajna za potrošače, sjajna za programerke poput mene.
+
+432
+00:37:12,880 --> 00:37:14,960
+[SPEAKER_00] koji su oko toga izgradili cijele tvrtke.
+
+433
+00:37:16,159 --> 00:37:17,920
+[SPEAKER_00] I to je jednostavno fantastična stvar za svijet.
+
+434
+00:37:18,079 --> 00:37:25,039
+[SPEAKER_00] Mislim, s tim džepnim računalima koji rade ove nevjerojatne stvari koje možemo posjetiti bilo gdje i nazvati Uber i provjeriti let i sve to.
+
+435
+00:37:25,599 --> 00:37:49,920
+[SPEAKER_00] Ali onda mi se sve više činilo da donose loše odluke o upravljanju aplikacijama u trgovini aplikacijama, posebno kako bi nastavili tvrdoglavom skupljanju tog mješanja, umjesto da rade ono što je ispravno za potrošače i rade ono što je ispravno za platformu koja im pomaže da imaju pedeset posto prihoda.oda na hardveru.
+
+436
+00:37:50,000 --> 00:38:10,719
+[SPEAKER_02] Razgovarali smo o nekim od tih rubnih slučajeva, kao što su naknade za NFT plin ili ponekad platforme za stvaranje, kao što je, oh, Bože, ne mogu se sjetiti imena, stvari u kojima plaćate ljudima da vas zvijezde iznenade, sve to, gdje imate neku vrstu, mislim, Spotify je možda loš primjer, ali svi ti poslovni modeli koji nisu poput aplikacije za pretplatu na način života, zar ne?
+
+437
+00:38:10,800 --> 00:38:14,719
+[SPEAKER_02] Aplikacija za pretplatu na način života s nultim maržama.
+
+438
+00:38:15,599 --> 00:38:19,760
+[SPEAKER_02] Čini mi se da je to, je li to Apple kao upravitelji?
+
+439
+00:38:20,000 --> 00:38:23,679
+[SPEAKER_02] Je li za njih važno da se pobrinu da, bez obzira na to kako su.
+
+440
+00:38:24,079 --> 00:38:33,280
+[SPEAKER_02] Međutim, prikupljaju naknadu za licenciranje, prilagođavaju se tim primjerima upotrebe i štete potrošačima ne pružajući prilagodbe.
+
+441
+00:38:33,360 --> 00:38:33,920
+[SPEAKER_02] I štete sebi.
+
+442
+00:38:34,079 --> 00:38:37,039
+[SPEAKER_02] Ironično, DMA ne zvuči kao da će riješiti problem, što nije tako.
+
+443
+00:38:37,199 --> 00:38:38,000
+[SPEAKER_01] Ne, ne mislim tako.
+
+444
+00:38:39,360 --> 00:38:41,760
+[SPEAKER_01] Mislim da je to u ovom trenutku samo zarada.
+
+445
+00:38:42,079 --> 00:38:50,400
+[SPEAKER_01] I često kažem, i to me je rijetko iznevjerilo, Apple ne govori mnogo, ali ono što govore gotovo je uvijek istina.
+
+446
+00:38:50,880 --> 00:38:54,559
+[SPEAKER_01] I ako ikad lažu, to su uvijek laži iz ometanja, zar ne?
+
+447
+00:38:54,719 --> 00:38:55,760
+[SPEAKER_01] To su stvari koje ne spominju.
+
+448
+00:38:56,320 --> 00:38:58,639
+[SPEAKER_01] I to je, znate, ali kad kažu nešto, stvarno to misle.
+
+449
+00:38:58,800 --> 00:39:00,960
+[SPEAKER_01] A kad se vratite na originalnu uvodnu riječ o iPhoneu.
+
+450
+00:39:00,960 --> 00:39:17,519
+[SPEAKER_01] ili u trgovinu aplikacijama, godinu dana nakon iPhonea, Jobs je opisao to kao ponudu za izravno zaradu, znate, da žele samo prikupiti ovaj podijelak od sedam tisuća trideset, što je za telefone nevjerojatno u korist razvijača, zar ne?
+
+451
+00:39:17,760 --> 00:39:25,599
+[SPEAKER_01] Kao da je svatko tko je razvio softver za telefone prije iPhonea dobio kratki dio podijela od pedeset tisuća pedeset, znate, bilo je obrnuto.
+
+452
+00:39:26,159 --> 00:39:30,079
+[SPEAKER_01] I to su operateri bili oni koji su zaradili sve novac, znate, jer je sve prolazilo kroz operater.
+
+453
+00:39:30,239 --> 00:39:36,320
+[SPEAKER_01] Dakle, nije bilo kao da je Nokia zaradila sve novac, već je to bilo Verizon i ATT i znate, drugi operateri širom svijeta.
+
+454
+00:39:36,400 --> 00:39:36,480
+[SPEAKER_02] Da.
+
+455
+00:39:36,480 --> 00:39:39,920
+[SPEAKER_02] Da, i zbog toga je softver poznat po tome što je smeće, zar ne?
+
+456
+00:39:40,079 --> 00:39:41,360
+[SPEAKER_02] Kao da nije bilo ništa.
+
+457
+00:39:41,599 --> 00:39:47,760
+[SPEAKER_01] Ali smiješno je i zato što je podjela od sedam tisuća trideset također jasno došla iz trgovine glazbom iTunes, zar ne?
+
+458
+00:39:48,159 --> 00:39:51,440
+[SPEAKER_02] I, i cijela, mislim, tako i dalje funkcioniraju kupnje u aplikaciji.
+
+459
+00:39:51,519 --> 00:39:56,480
+[SPEAKER_02] Da, i dalje je kao infrastruktura, aplikacije, trgovina iTunes, zbog čega postoji moj posao.
+
+460
+00:39:56,559 --> 00:39:56,639
+[SPEAKER_01] Da.
+
+461
+00:39:57,280 --> 00:40:04,480
+[SPEAKER_01] I tako je fascinantno razmišljati što bi se moglo dogoditi u scenariju što ako netko drugi pobijedio Apple u trgovini glazbom iTunes.
+
+462
+00:40:05,199 --> 00:40:12,480
+[SPEAKER_01] Kao da je Amazon u dvije tisuće, pa znate, iPod je izašao u dvije tisuće jedan, znate.
+
+463
+00:40:12,639 --> 00:40:14,719
+[SPEAKER_01] Znate, 1999., 1998.
+
+464
+00:40:14,880 --> 00:40:37,679
+[SPEAKER_01] ili negdje oko toga, da je Amazon izašao s preuzimanjem MP3 trgovine glazbom u kojoj ste mogli kupiti sve, znate, svaku pjesmu s svakog velikog izdavačkog kuća za 99 centi kao nešto što je uznemirilo Napster i sve dijeljenje datoteka u to vrijeme, a Apple je rekao: Nećemo ući na tržište na kojem ne možemo napraviti razliku.
+
+465
+00:40:37,840 --> 00:40:40,400
+[SPEAKER_01] Mislim da bi i dalje napravili iPod, zar ne?
+
+466
+00:40:40,559 --> 00:40:42,000
+[SPEAKER_01] Jer to je nešto što nitko drugi ne može napraviti.
+
+467
+00:40:42,159 --> 00:40:48,960
+[SPEAKER_01] Bio je to revolucionarni hardverski uređaj, ali možda ne bi ušli u glazbeni biznis prodajući se sami, ili bi možda bilo drugačije..
+
+468
+00:40:49,039 --> 00:40:56,480
+[SPEAKER_01] Ali da nije bilo iTunesove glazbene trgovine s podjelom od sedam tisuća trideset, kako bi podjela funkcionirala kad su najavili App Store 2008.
+
+469
+00:40:56,639 --> 00:40:56,719
+[SPEAKER_01] godine?
+
+470
+00:40:56,800 --> 00:40:58,239
+[SPEAKER_01] Ne znam je li to bilo sedam tisuća trideset.
+
+471
+00:40:58,320 --> 00:40:59,519
+[SPEAKER_01] Moguće je da je bilo osam tisuća dvadeset.
+
+472
+00:40:59,679 --> 00:41:01,039
+[SPEAKER_01] Moguće je da je bilo manje, zar ne?
+
+473
+00:41:01,360 --> 00:41:04,800
+[SPEAKER_02] Ili bi možda slijedili primjer sadašnjeg status quo, zar ne?
+
+474
+00:41:04,960 --> 00:41:07,440
+[SPEAKER_02] Bili bi malo bolji od tržišta i to bi bilo još gore.
+
+475
+00:41:07,920 --> 00:41:12,480
+[SPEAKER_01] Ali u osnovi mislim da su to mislili, da nisu to smatrali profitnim centrom.
+
+476
+00:41:12,639 --> 00:41:14,320
+[SPEAKER_01] Željeli su se nekako izjednačiti.
+
+477
+00:41:15,039 --> 00:41:18,000
+[SPEAKER_01] I onda nisam zarađivao toliko novca ni tada.
+
+478
+00:41:18,159 --> 00:41:18,880
+[SPEAKER_01] Da, zar ne?
+
+479
+00:41:19,360 --> 00:41:21,360
+[SPEAKER_02] I nikad nije bilo kao što je sada.
+
+480
+00:41:21,360 --> 00:41:24,000
+[SPEAKER_01] I jer smo shvatili, a Apple je naravno bio u krivu.
+
+481
+00:41:24,239 --> 00:41:28,480
+[SPEAKER_01] Znate, osnovna ideja na početku bila je da će postojati besplatne i plaćene aplikacije i to je to.
+
+482
+00:41:28,559 --> 00:41:36,000
+[SPEAKER_01] Nije postojala takva stvar kao što je kupnja u aplikaciji ili pretplata, a stvari za koje sada znamo da donose najviše novca nisu ni zamišljene.
+
+483
+00:41:36,079 --> 00:41:36,320
+[SPEAKER_01] Gotovo.
+
+484
+00:41:36,480 --> 00:41:36,639
+[SPEAKER_01] Točno.
+
+485
+00:41:36,719 --> 00:41:45,760
+[SPEAKER_01] I znate, na sreću, volim da još uvijek postoje igre koje su poput, plaćate pet dolara, dobivate cijelu igru i to je to.
+
+486
+00:41:46,079 --> 00:41:51,440
+[SPEAKER_01] I nema oglasa i nema neupotrebljivih igara ili kantina dragulja ili zvjezdica ili bilo čega.
+
+487
+00:41:52,000 --> 00:41:56,480
+[SPEAKER_01] Znate, volim to, ali to nije način na koji većina aplikacija zarađuje novac.
+
+488
+00:41:56,639 --> 00:42:00,719
+[SPEAKER_02] Znate, jedini koji nisu u toj kategoriji koji to čine su hrpa iznimnih robnih marki, zar ne?
+
+489
+00:42:00,719 --> 00:42:00,719
+[UNKNOWN] Točno.
+
+490
+00:42:00,719 --> 00:42:01,119
+[SPEAKER_02] To je nevjerojatno.
+
+491
+00:42:01,280 --> 00:42:01,599
+[SPEAKER_01] Točno.
+
+492
+00:42:02,159 --> 00:42:03,039
+[SPEAKER_01] Kao Minecraft, zar ne?
+
+493
+00:42:03,199 --> 00:42:04,800
+[SPEAKER_01] Minecraft i dalje zarađuje milijune dolara.
+
+494
+00:42:05,039 --> 00:42:16,079
+[SPEAKER_01] Ali negdje na putu, kad je to postalo mnogo popularnije nego što je Apple ikad zamišljao, i mislim da ne znam da je netko mogao zamisliti da će iPhone postati jednako popularan.
+
+495
+00:42:16,239 --> 00:42:17,840
+[SPEAKER_01] Čak ni Steve Jobs, zar ne?
+
+496
+00:42:18,159 --> 00:42:24,719
+[SPEAKER_01] Mislim da je znao da će imati hit, ali mislim da je to bilo izvan svake mašte.
+
+497
+00:42:25,360 --> 00:42:27,760
+[SPEAKER_02] Nismo znali da će to promijeniti svijet, zar ne?
+
+498
+00:42:27,840 --> 00:42:31,440
+[SPEAKER_02] Nismo znali da će to biti telefon ili uređaj, zar ne?
+
+499
+00:42:31,679 --> 00:42:36,960
+[SPEAKER_01] Vrlo sporo promjene od ugodnog, toplog svijeta.
+
+500
+00:42:36,960 --> 00:42:39,840
+[SPEAKER_01] Voda je bila vruća voda, zar ne?
+
+501
+00:42:40,400 --> 00:42:45,599
+[SPEAKER_01] Kako je Apple bio zainteresiran za prihod koji je ostvario s njihove strane provizije u trgovini aplikacijama.
+
+502
+00:42:45,920 --> 00:42:52,079
+[SPEAKER_01] I jasno je da se u nekom trenutku promijenilo i postalo je važan pokretač rasta njihovih usluga, zar ne?
+
+503
+00:42:52,320 --> 00:42:59,760
+[SPEAKER_01] I u kombinaciji s činjenicom da su sredinom posljednjeg desetljeća izgledali kao da su se zaglavili na rastu svugdje drugdje.
+
+504
+00:43:00,480 --> 00:43:15,280
+[SPEAKER_01] A iPhone je posebno očito još uvijek malo rastao, ali se približava prodaji iPhonea sv pred Androidom.
+
+505
+00:43:15,599 --> 00:43:16,880
+[SPEAKER_01] Oni su dosegli svoj maksimum.
+
+506
+00:43:17,360 --> 00:43:38,880
+[SPEAKER_01] I tako su usluge postale priča u njihovim pozivima, pozivima na dionice, pozivima na tromjesečje analitičarima, a oni su povećali svoje usluge uvelike onako kako su rekli da očekuju, ali veliki dio tog rasta usluga je novac koji zarađuju putem trgovine aplikacijama, uglavnom igrama, zar ne?
+
+507
+00:43:39,119 --> 00:43:40,639
+[SPEAKER_01] I u Epic-u je izašlo mnogo brojeva.
+
+508
+00:43:40,719 --> 00:43:41,199
+[SPEAKER_01] To je mnogo novca.
+
+509
+00:43:41,360 --> 00:43:46,159
+[SPEAKER_01] To je vrlo uspješna, možda najuspješnija platforma za igre na svijetu, mislim, financijski.
+
+510
+00:43:46,639 --> 00:43:47,039
+[SPEAKER_01] To je ogromno.
+
+511
+00:43:47,679 --> 00:43:48,880
+[SPEAKER_01] Vrlo su zainteresirani za taj novac.
+
+512
+00:43:48,880 --> 00:43:53,840
+[SPEAKER_01] Sada su vrlo zainteresirani za taj novac i to je u suprotnosti s onim što bi trebali biti njihovi interesi.
+
+513
+00:43:54,400 --> 00:44:02,639
+[SPEAKER_01] Mislim da je to slučaj novca, znate, način na koji uvijek morate biti opasni, da novac može pokvariti bilo koga i mislim da je to na neki način pokvarilo ono što bi trebali biti njihovi prioriteti.
+
+514
+00:44:03,039 --> 00:44:08,639
+[SPEAKER_02] Mislim da su članovi upravnog odbora javne tvrtke koja se mora pojavljivati svakog tromjesečja i reći: brojke rastu, brojke rastu, zar ne?
+
+515
+00:44:08,800 --> 00:44:10,559
+[SPEAKER_02] Naći će najjednostavniji način da to učine.
+
+516
+00:44:10,880 --> 00:44:20,320
+[SPEAKER_01] Ali postoje i druge stvari koje su se dogodile i mislim da je David ranije na to uputio, gdje su sigurno povrijedili svoju reputaciju kod razvijača, zar ne?
+
+517
+00:44:20,480 --> 00:44:29,039
+[SPEAKER_01] Razvijatelji, mislim da su uglavnom, posebno nezavisni razv programeri uglavnom vide Applea kao nekoga od koga ne bi trebali ovisiti.
+
+518
+00:44:29,360 --> 00:44:36,719
+[SPEAKER_01] I mislim da je mnogo manje ljudi koji misle da bismo trebali izgraditi tvrtku koja se temelji na aplikacijama putem Appleovog trgovina aplikacijama.
+
+519
+00:44:36,880 --> 00:44:39,280
+[SPEAKER_02] Svatko traži izlaz, zar ne?
+
+520
+00:44:39,360 --> 00:44:41,280
+[SPEAKER_02] Svatko traži sigurnosnu čamac.
+
+521
+00:44:41,679 --> 00:44:44,480
+[SPEAKER_00] Vidimo to u našim brojevima, kao što Stripe raste.
+
+522
+00:44:44,800 --> 00:44:47,199
+[SPEAKER_02] Svatko to sada radi na način na koji može.
+
+523
+00:44:48,239 --> 00:44:55,119
+[SPEAKER_01] I ne možete točno staviti broj, ali je u korist Applea imati sjajne ekskluzivne aplikacije, zar ne?
+
+524
+00:44:55,760 --> 00:45:00,400
+[SPEAKER_01] Svi imamo svoje omiljene, kao što je Fantastical, aplikacije od njih.
+
+525
+00:45:02,239 --> 00:45:03,199
+[SPEAKER_02] Postoji razni tipovi.
+
+526
+00:45:03,360 --> 00:45:10,159
+[SPEAKER_02] Sve su sjajne aplikacije, ili ne sve, ali ako pogledate one zaista zapanjujuće, ne postoji mnogo njih koji su multiplatformni.
+
+527
+00:45:10,239 --> 00:45:20,400
+[SPEAKER_01] Ali u određenom smislu, vrlo je dobro za Apple da ima ove ekskluzivne aplikacije na svojoj platformi i to drži ljude vezane uz njihovu platformu.
+
+528
+00:45:20,480 --> 00:45:28,079
+[SPEAKER_01] I uglavnom zarađuju prodajući te uređaje i održavajući to i imajući ekskluzivne naslove.
+
+529
+00:45:28,320 --> 00:45:36,559
+[SPEAKER_01] I što više razvijač kopa u stvari koje su specifične za iOS, samo su korisničko sučelje i API-je dostupni.
+
+530
+00:45:36,559 --> 00:45:39,599
+[SPEAKER_01] Razvijaju se, što je teže ikad prijeći preko platforme.
+
+531
+00:45:40,800 --> 00:45:44,800
+[SPEAKER_01] Ali ljudi koji gledaju na to s poslovnog stajališta kažu da je to nepouzdani partner.
+
+532
+00:45:45,119 --> 00:45:49,360
+[SPEAKER_01] Postoji stalna, beskonačna, neuspješna, zar ne?
+
+533
+00:45:50,239 --> 00:46:00,079
+[SPEAKER_01] I ne znam nikoga tko je razvijač aplikacija, tko je nastavio s tim i tko nema nevjerojatne priče o tome kako se nositi s recenzijama aplikacija, zar ne?
+
+534
+00:46:00,320 --> 00:46:12,800
+[SPEAKER_01] I tako ljudi prirodno misle, čak i ako bi u teoriji mogli izgraditi ekskluzivne aplikacije za platformu, mislite da ne bismo trebali graditi ekskluzivne aplikacije za platformu jer je to nepotrebna opasnost za našu budućnost.
+
+535
+00:46:12,800 --> 00:46:13,119
+[SPEAKER_01] To je vrlo rizično za našu budućnost.
+
+536
+00:46:13,199 --> 00:46:14,639
+[SPEAKER_01] Trebali bismo, znate, nešto izgraditi.
+
+537
+00:46:14,880 --> 00:46:16,320
+[SPEAKER_02] Također je puno konkuriralo, zar ne?
+
+538
+00:46:16,400 --> 00:46:27,199
+[SPEAKER_02] Bilo je moguće da ako ste bili sjajan razvijač iOS-a i da ste doista duboko razumjeli platformu, mogli biste je samo upotrijebiti, dobro pratiti Higga, igrati na pravi način i imati izlaz.
+
+539
+00:46:27,280 --> 00:46:28,960
+[SPEAKER_02] Ali ne znam je li to dovoljno danas, zar ne?
+
+540
+00:46:29,119 --> 00:46:48,480
+[SPEAKER_01] To je u osnovi ono što mislim da je Phil Schiller htio reći u tom e-poštom koji je izašao u Epic Trial, gdje, znate, zašto ne bismo samo rekli da ćemo, kad dođemo do milijardu dolara u našem udjelu u trgovini aplikacijama, nastaviti smanjivati stope kako bismo zadržali svoj udio na milijardu, što je dobra novčana vrijednost za nas, ali ne i ogromna novčana vrijednost za Apple.
+
+541
+00:46:48,480 --> 00:46:53,039
+[SPEAKER_00] To bi Appleu donijelo ogroman novac, ali to bi ih učinilo boljim upraviteljem platforme.
+
+542
+00:46:53,840 --> 00:46:59,920
+[SPEAKER_01] I možete reći, naravno, nisu to učinili jer je novac sve, ali novac nije sve.
+
+543
+00:47:00,320 --> 00:47:01,519
+[SPEAKER_01] Vrijednost je sve.
+
+544
+00:47:02,239 --> 00:47:14,079
+[SPEAKER_01] I vrijednost je u dobronamjernosti programera i dobronamjernosti zajednice koja bi se dogodila da su tijekom godina umjesto trideset i petnaest posto smanjili na dvadeset pet posto.
+
+545
+00:47:14,480 --> 00:47:20,239
+[SPEAKER_02] Bože, mogli bi svake godine na Božić smanjiti na dva posto i potpuno obrnuti trend da je Apple zlikovac.
+
+546
+00:47:20,320 --> 00:47:24,719
+[SPEAKER_01] To bi napravilo veliku razliku i to bi bila investicija u.
+
+547
+00:47:24,719 --> 00:47:27,840
+[SPEAKER_01] Ulaganje u robnu marku i platformu.
+
+548
+00:47:28,159 --> 00:47:28,239
+[SPEAKER_00] Da.
+
+549
+00:47:28,639 --> 00:47:31,199
+[SPEAKER_00] I to je mjesto gdje bi ih to moglo pogoditi.
+
+550
+00:47:31,519 --> 00:47:35,199
+[SPEAKER_00] A kad ste to rekli, upalilo mi je glavu.
+
+551
+00:47:35,679 --> 00:47:54,320
+[SPEAKER_00] Jacob i ja razgovarali smo o tome prije emisije, da ako EU prisili trostruke trgovine aplikacijama, a onda će druge zemlje širom svijeta početi slijediti njihov primjer, Facebook će izgraditi platformu Oculus i Meta i moći će koristiti iOS i činiti sve što god žele.
+
+552
+00:47:55,280 --> 00:47:58,000
+[SPEAKER_00] A programeri će reći: O, super.
+
+553
+00:47:58,719 --> 00:48:00,719
+[SPEAKER_00] I tako Apple sada objavljuje svoje.
+
+554
+00:48:00,719 --> 00:48:07,119
+[SPEAKER_00] Apple je objavio svoje slušalice, pa će sljedeća platforma pokrenuti na vrhu pametnog telefona.
+
+555
+00:48:07,760 --> 00:48:11,119
+[SPEAKER_00] Apple je imao zaključavanje na to i zaključavanje na programerima.
+
+556
+00:48:11,280 --> 00:48:24,960
+[SPEAKER_00] I bacajući velik dio tog raspoloženja programera, bacajući mnoge od tih prilika u boljem upravljanju trgovinom aplikacijama, stavili su sljedeću platformu u mnogo veći rizik.
+
+557
+00:48:25,280 --> 00:48:29,760
+[SPEAKER_01] Dakle, vratite se, ponovno, vratite se kada je trgovina aplikacijama prvi put najavljena 2008.
+
+558
+00:48:29,840 --> 00:48:29,920
+[SPEAKER_01] godine.
+
+559
+00:48:30,000 --> 00:48:33,360
+[SPEAKER_01] Razvijatelji Maca, posebno, bili su oduševljeni, zar ne?
+
+560
+00:48:33,519 --> 00:48:36,960
+[SPEAKER_01] Bili su poput, wow, ovo će imati više korisnika.
+
+561
+00:48:36,960 --> 00:48:38,719
+[SPEAKER_01] To je poznato okruženje.
+
+562
+00:48:38,960 --> 00:48:39,840
+[SPEAKER_01] Ovo će biti sjajno.
+
+563
+00:48:40,000 --> 00:48:44,320
+[SPEAKER_01] Iskreno, većina Mac razvijača nije bila baš dobra.
+
+564
+00:48:44,559 --> 00:48:50,880
+[SPEAKER_01] Ispostavilo se drugačije nego što smo zamišljali, ali to je bilo zato što je taj dobar odnos izgradio, bili su entuzijastični zbog toga.
+
+565
+00:48:51,039 --> 00:49:01,599
+[SPEAKER_01] S druge strane, mislim da imate pravo, kada Apple izlazi s sljedećom platformom za razvijatelje, koja će očito biti slušalice, bit će entuzijazam jer će vjerojatno biti cool, zar ne?
+
+566
+00:49:01,840 --> 00:49:08,559
+[SPEAKER_01] I bit će poželjna, znate, ako pretpostavimo da će Apple nastaviti biti bolji od Questa, zar ne?
+
+567
+00:49:08,719 --> 00:49:09,360
+[SPEAKER_01] Substantialno.
+
+568
+00:49:09,360 --> 00:49:10,719
+[SPEAKER_01] O, mislim da mora biti.
+
+569
+00:49:10,800 --> 00:49:12,719
+[SPEAKER_01] I da nije, mislim da bi otkazali projekt.
+
+570
+00:49:12,719 --> 00:49:16,239
+[SPEAKER_01] Samo bih otkazao projekt, znate, da je to, da je to, da mora biti.
+
+571
+00:49:16,559 --> 00:49:33,039
+[SPEAKER_01] Ali mislim da će entuzijazam za razvijačima biti umjeren jer svi već imaju, ako samo pričamo o rješavanju samo recenzija trgovine aplikacijama, a kamoli naknade za obradu, ljudi će reći: Ovo je opet, znate, mislim da sam igrao svaki put kad je izašao iPad, skočio sam na izgradnju za to.
+
+572
+00:49:33,199 --> 00:49:35,360
+[SPEAKER_02] Kad je izašao sat, skočio sam na izgradnju za to.
+
+573
+00:49:35,599 --> 00:49:38,719
+[SPEAKER_02] Kad je izašao Apple TV SDK, skočio sam na izgradnju za to.
+
+574
+00:49:38,880 --> 00:49:44,320
+[SPEAKER_02] I svaki put sam dobio, jednostavno, nikad nije uspjelo.
+
+575
+00:49:44,480 --> 00:49:46,159
+[SPEAKER_02] Nikad nije bilo kao dobra ova stvar, zar ne?
+
+576
+00:49:46,480 --> 00:49:56,719
+[SPEAKER_02] Dakle, u ovoj fazi, ako postoje drugi razvijači koji su to prošli to prošli, pogotovo s obzirom na sve što se događa, kao što sam ja, stvarno bih se jako potrudio, pogotovo kad pogledate, mislim, provjeravam što se događa na strani Oculusa.
+
+577
+00:49:57,039 --> 00:50:00,480
+[SPEAKER_02] Da, to je ružno i objavili su ga rano i nema nogu i sve to smeće.
+
+578
+00:50:01,039 --> 00:50:05,119
+[SPEAKER_02] Ali svake godine provjeravam, kao da se sve više približavaju nečemu.
+
+579
+00:50:05,519 --> 00:50:14,880
+[SPEAKER_02] A ja nisam, prije sam se svađao s Davidom na Slack-u o tome, ovo nije, ne vidim kako će netko graditi aplikacije o kojima se netko brine.
+
+580
+00:50:14,960 --> 00:50:22,239
+[SPEAKER_02] Ali onda sam shvatio, dobro, zapravo ima četiri ili pet tvrtki koje već imaju trgovine aplikacijama, u osnovi, samo imaju trojanski konj u aplikaciji.
+
+581
+00:50:22,320 --> 00:50:24,960
+[SPEAKER_02] Kao da ima toliko igara na Slack-u.
+
+582
+00:50:24,960 --> 00:50:28,880
+[SPEAKER_02] Igra na Xboxu koja se lako može prekompilirati za iOS.
+
+583
+00:50:29,039 --> 00:50:32,480
+[SPEAKER_02] Vjerojatno čak ni ne koriste Apple Toolchains ako su to uspjeli.
+
+584
+00:50:32,559 --> 00:50:32,800
+[SPEAKER_02] Točno.
+
+585
+00:50:32,880 --> 00:50:39,119
+[SPEAKER_02] Znate, to su Unity i Unity i, ehm, druge stvarne igre koje se mogu prekompilirati.
+
+586
+00:50:39,280 --> 00:50:44,719
+[SPEAKER_02] Vjerojatno čak ne bi mogli koristiti Xcode i, ehm, potencijalno zaobiti neke druge stvari poput naknada za platformu.
+
+587
+00:50:44,800 --> 00:50:56,159
+[SPEAKER_02] Ehm, i mogu ih unijeti, znate, i, ehm, to je zapravo za mene, kad razmišljam o primjeru upotrebe za potrošače, kao da je Apple možda znatno povukao se unatrag.
+
+588
+00:50:56,239 --> 00:51:02,079
+[SPEAKER_02] Kao da nikad nisu imali te tržište premium igara.
+
+589
+00:51:04,320 --> 00:51:05,679
+[SPEAKER_02] I možda su ga samo izgubili.
+
+590
+00:51:07,519 --> 00:51:12,800
+[SPEAKER_02] I mislim da će trgovina aplikacijama vjerojatno uvijek biti trgovina aplikacijama, zar ne?
+
+591
+00:51:12,960 --> 00:51:17,119
+[SPEAKER_02] Ne vidim da netko drugi ulazi i kaže: Microsoft, pogledaj naše aplikacije.
+
+592
+00:51:17,199 --> 00:51:20,000
+[SPEAKER_02] Imamo druge trgovine aplikacijama koje su gnusne, zar ne?
+
+593
+00:51:20,400 --> 00:51:22,239
+[SPEAKER_02] Play Store ne uništava trgovinu aplikacijama.
+
+594
+00:51:22,400 --> 00:51:24,480
+[SPEAKER_02] Amazon ne uništava trgovinu aplikacijama.
+
+595
+00:51:24,719 --> 00:51:31,360
+[SPEAKER_02] Ali mogu vidjeti da ti drugi već zakoreninjeni, zaključani sadržaj stvarno čine veliku stvar.
+
+596
+00:51:31,679 --> 00:51:33,599
+[SPEAKER_02] I ne znam, ne mislim da je sada zakon stvar.
+
+597
+00:51:33,679 --> 00:51:34,239
+[SPEAKER_02] Što može učiniti Apple?
+
+598
+00:51:34,639 --> 00:51:34,960
+[SPEAKER_02] Sve je gotovo.
+
+599
+00:51:35,519 --> 00:51:36,880
+[SPEAKER_02] Ne mogu vratiti duha.
+
+600
+00:51:36,880 --> 00:51:37,760
+[SPEAKER_01] Vratite džina u bocu, zar ne?
+
+601
+00:51:37,840 --> 00:51:59,360
+[SPEAKER_01] Pa, znatiželjno sam što vi mislite o tome zašto se ne koriste trgovine aplikacijama trećih strana, jer su dopuštene na Androidu, postoje na Androidu, ali nikad, zapravo, opći Android krajolik ne čini se da je manje dominiran Googleovim trgovinama Play Store nego što je Appleov trgovina aplikacijama, iako Google dopušta ove stvari.
+
+602
+00:52:00,000 --> 00:52:04,960
+[SPEAKER_01] I mislim da je to, mislim da je to vrlo, vrlo nejasno za mene zašto je to tako, zašto to nikad nije krenulo.
+
+603
+00:52:05,679 --> 00:52:09,599
+[SPEAKER_01] Epic je poznato po tome što je napravio vlastitu trgovinu za Android.
+
+604
+00:52:09,679 --> 00:52:12,559
+[SPEAKER_01] I znate, oni, mislim, brinu se dovoljno da to doslovno.
+
+605
+00:52:14,000 --> 00:52:32,159
+[SPEAKER_01] borili protiv Applea i izvršili trik trojanskog konja s ugrađenim obračunom plaćanja, pa su ih izbacili s iOS-a i zaradili, ne znam, zaboravio sam kakve su brojke, ali iOS nije bio najveća platforma Fortnitea, ali je bio dovoljno velik da se može reći da su to zaista mislili.
+
+606
+00:52:32,480 --> 00:52:34,000
+[SPEAKER_01] To je mnogo novca za odustati.
+
+607
+00:52:34,159 --> 00:52:37,360
+[SPEAKER_01] Ali njihov je trgovina aplikacijama, ali tužili su i Google.
+
+608
+00:52:38,800 --> 00:52:41,360
+[SPEAKER_01] To je ono što je za mene najzanimljivije, i to je način na koji znam.
+
+609
+00:52:42,880 --> 00:52:56,400
+[SPEAKER_01] Ali to je malo čudno da su tužili Google jer su ga više-manje tužili jer nisu smatrali da je to poštenšteno ili ispravno da postoje nekoliko upozorenja i prepreka koje korisnici moraju prijeći na Androidu kako bi to omogućili?
+
+610
+00:52:56,639 --> 00:52:57,039
+[SPEAKER_01] Ja sam to učinio.
+
+611
+00:52:57,199 --> 00:53:02,000
+[SPEAKER_01] Zapravo sam na svoj Android telefon instalirao Epic App Store i dobio Fortnite na svoj Android telefon.
+
+612
+00:53:02,639 --> 00:53:11,199
+[SPEAKER_02] Mislio sam da je to razumno, ali je jasno da je to sigurno za korisnike Fortnita, ali vjerojatno ne i za tipične korisnike običnog telefona, zar ne?
+
+613
+00:53:11,679 --> 00:53:13,599
+[SPEAKER_01] Ali opet, ima toliko pitanja koje ne znamo.
+
+614
+00:53:13,760 --> 00:53:24,719
+[SPEAKER_01] Dakle, Tencent, na primjer, imao bi ogroman financijski interes u stvaranju vlastite trgovine igrama za iOS, tako da bi, da bi im bilo dopušteno da to učine na način da ne moraju dati Appleu dio kupnji u aplikaciji.
+
+615
+00:53:26,079 --> 00:53:36,400
+[SPEAKER_01] I meni je to ogromna otvorena pitanja može li Apple još uvijek inzistirati da svi koji to rade, i na primjer, druge su mi pitanja na koja ne vjerujem da su odgovorena u DMA-i.
+
+616
+00:53:36,639 --> 00:53:47,280
+[SPEAKER_01] Može li Apple reći da ako uzmete te prava i stavite svoju aplikaciju u trgovinu aplikacijama treće strane ili dopustite da se učita, izađete iz naše trgovine aplikacijama.
+
+617
+00:53:47,360 --> 00:53:53,599
+[SPEAKER_01] Možete biti, ako ste u našoj trgovini aplikacijama, dio termina je da se složite da je to ekskluzivan način distribucije vaše aplikacije.
+
+618
+00:53:53,679 --> 00:53:59,039
+[SPEAKER_02] Mislim, postoji jezik o tome da se ne treba odmazdu za druge stvari, ali ne baš to, zar ne?
+
+619
+00:53:59,039 --> 00:53:59,679
+[SPEAKER_01] Da, mislim da ne.
+
+620
+00:54:00,400 --> 00:54:12,480
+[SPEAKER_01] Dakle, svi, znate, Facebook je još jedan na koji svi razmišljaju jer je Facebook očito vrlo nezadovoljan transparentnošću praćenja aplikacija i, znate, prema svim izvješćima, čini se da je to negativno utjecalo na prihod.
+
+621
+00:54:12,719 --> 00:54:20,400
+[SPEAKER_01] Znate, da je promjena Appleovih pravila o praćenju aplikacija na iOS-u na samo jednoj platformi ozbiljno utjecala na prihod Facebooka.
+
+622
+00:54:21,039 --> 00:54:25,280
+[SPEAKER_01] Dakle, što ako Facebook stvori vlastitu trgovinu aplikacijama samo radi distribucije svojih aplikacija?
+
+623
+00:54:26,079 --> 00:54:29,039
+[SPEAKER_02] I Mark vjerojatno ima iracionalan razlog da to učini, zar ne?
+
+624
+00:54:29,519 --> 00:54:31,119
+[SPEAKER_02] Kao da ih želi udariti natrag.
+
+625
+00:54:31,280 --> 00:54:36,800
+[SPEAKER_01] A što ako su njihove aplikacije distribuirane izvan Appleovog trgovine aplikacijama samo ignoriraju transparentnost praćenja aplikacija?
+
+626
+00:54:36,800 --> 00:54:44,400
+[SPEAKER_01] I tako je rekao da nećemo ni pitati, smije li Apple na neki način zabraniti aplikaciju jer se na neki način još odobrava ili ne?
+
+627
+00:54:44,559 --> 00:54:46,079
+[SPEAKER_02] Mislim, naravno, od strane DMA-e, zar ne?
+
+628
+00:54:46,159 --> 00:54:48,559
+[SPEAKER_02] Kao da je to u njihovim uvjetima, kao da to mogu učiniti, zar ne?
+
+629
+00:54:48,719 --> 00:54:50,320
+[SPEAKER_02] Kao da je to samo poslovni odnos.
+
+630
+00:54:51,280 --> 00:55:02,320
+[SPEAKER_01] I mislim da bi mogli, da bi dijelovi o tome da se čuvarima dopušta zaštita integriteta, ne mislim da se spominje riječ privatnost, ali sigurnost korisnika i podataka.
+
+631
+00:55:02,400 --> 00:55:12,480
+[SPEAKER_02] Ta je riječ bila u Zakonu o otvorenim tržištima, američkoj verziji, kao da im je dopušteno poduzeti korake za zaštitu integriteta platforme, što u osnovi otvara Apple da može učiniti bilo što.
+
+632
+00:55:12,559 --> 00:55:19,280
+[SPEAKER_01] Mislim da ljudi koji to imaju na umu, znate, neki ljudi imaju samo sjajne ideje koje žele, zar ne?
+
+633
+00:55:19,440 --> 00:55:25,039
+[SPEAKER_01] Jednostavno žele napraviti sjajne stvari i znaju da to ne može proći kroz trgovinu aplikacijama i žele to učiniti putem bočnog učitavanja.
+
+634
+00:55:25,280 --> 00:55:30,639
+[SPEAKER_02] I tako sam pomalo optimističan da će to biti, ali znate, da će biti Cedia, bit će poput službene Cedije, zar ne?
+
+635
+00:55:30,800 --> 00:55:33,599
+[SPEAKER_02] To je kao da sada možete učitati bočno, ali prvo morate instalirati trgovinu.
+
+636
+00:55:34,159 --> 00:55:36,960
+[SPEAKER_02] Mislim da je stvar s trgovinom ili nešto slično, da, ne znam.
+
+637
+00:55:37,280 --> 00:55:39,199
+[SPEAKER_02] Vjerojatno će biti papirnati postupak za trgovinu, zar ne?
+
+638
+00:55:39,519 --> 00:55:41,440
+[SPEAKER_02] Morate proći kroz postupak, prava, bilo što.
+
+639
+00:55:41,760 --> 00:55:56,400
+[SPEAKER_01] Pa, u osnovi, neke stvari koje ljudi rade s ne-App Store distribucijom putem test leta i drugih beta vr verzije, kao što je alt store, možda bi postale lakše i mogle bi se povećati na više korisnika, ali neće utjecati na trgovinu aplikacijama.
+
+640
+00:55:56,480 --> 00:55:57,199
+[SPEAKER_02] Neće biti tržišno.
+
+641
+00:55:57,599 --> 00:55:58,800
+[SPEAKER_02] Vjerojatno neće biti tržišno održivo.
+
+642
+00:55:58,880 --> 00:56:06,800
+[SPEAKER_02] Jedini koji će biti tržišno održivi su oni koji su podržani velikim platformama, kao što je primjer Xboxa, znate, imam desetke Xbox naslova koji su već plaćeni.
+
+643
+00:56:07,360 --> 00:56:14,400
+[SPEAKER_02] Nema potrebe za dodatnim plaćanjima, kao što je WhatsApp, znate, ako bi Apple želio sakupljati, kako bi Apple sakupljao na to?
+
+644
+00:56:14,480 --> 00:56:20,159
+[SPEAKER_02] Kao da bih mogao pristupiti polovici tih naslova na svojem iPhoneu, već sam ih platio.
+
+645
+00:56:20,480 --> 00:56:21,679
+[SPEAKER_02] Platio sam ih izvan trgovine.
+
+646
+00:56:21,679 --> 00:56:26,400
+[SPEAKER_02] Nema kupnji u aplikaciji, kao što Apple ne može ništa sakupljati, barem s k trenutačnim, trenutačnim, zar ne?
+
+647
+00:56:26,480 --> 00:56:27,760
+[SPEAKER_02] To bi prekinuo njihov režim.
+
+648
+00:56:27,920 --> 00:56:31,519
+[SPEAKER_02] To bi prekinuo njihov trenutačni mehanizam prikupljanja.
+
+649
+00:56:31,679 --> 00:56:37,199
+[SPEAKER_02] Dakle, da, mislim da sam bio spreman doći i reći: Ovo je ništa, burger, potpuno ništa.
+
+650
+00:56:37,599 --> 00:56:40,320
+[SPEAKER_02] Ne mislim da to toliko utječe na našu zajednicu.
+
+651
+00:56:40,480 --> 00:56:43,840
+[SPEAKER_01] Ne znam je li to još ništa, jer ne znam kako će to razjasniti.
+
+652
+00:56:44,239 --> 00:56:55,039
+[SPEAKER_01] Ako to razjasne i kažu da ne, čuvari za bočno učitavanje i trgovine aplikacijama trećih strana ne smiju prikupljati obveznu proviziju na bilo kojoj razini, onda je to, znate, to je nešto.
+
+653
+00:56:55,119 --> 00:56:55,599
+[SPEAKER_01] To je nešto.
+
+654
+00:56:55,840 --> 00:56:56,320
+[SPEAKER_01] To je nešto.
+
+655
+00:56:56,400 --> 00:56:56,639
+[SPEAKER_02] Točno.
+
+656
+00:56:56,719 --> 00:56:59,679
+[SPEAKER_02] Jer mogli bi samo otići na Xbox i reći: Eh, da, u redu, sada mijenjamo pravilo.
+
+657
+00:56:59,840 --> 00:57:03,519
+[SPEAKER_02] Morate nam platiti pedeset naknadu od pedeset tisuća dolara godišnje ako želite distribuirati.
+
+658
+00:57:04,239 --> 00:57:06,960
+[SPEAKER_01] Ali mislim da je vrlo nejasno hoće li se to dogoditi.
+
+659
+00:57:07,039 --> 00:57:16,800
+[SPEAKER_01] A na Androidu ne morate plaćati kao što je Epic App Store sakupio vlastite plaćanja, ali korisnici ga nisu koristili.
+
+660
+00:57:17,599 --> 00:57:34,000
+[SPEAKER_01] I to je ono što mislim, čak i ako Apple mora pristati na to i učiniti to na način da to ne utječe na masovnu primjenu na tržištu, ne znam hoće li to utjecati, ali možda je iOS dovoljno drugačiji od Androida da bi to učinio.
+
+661
+00:57:34,159 --> 00:57:36,960
+[SPEAKER_01] Mislim, poznato je da svi znaju da se može zaraditi više novca.
+
+662
+00:57:36,960 --> 00:57:41,519
+[SPEAKER_01] Prosječni korisnik iPhonea može zaraditi više novca nego prosječni korisnik Androida.
+
+663
+00:57:41,599 --> 00:57:42,480
+[SPEAKER_01] To je znatna količina više novca.
+
+664
+00:57:42,559 --> 00:57:43,360
+[SPEAKER_02] I u većini slučajeva.
+
+665
+00:57:43,440 --> 00:57:44,960
+[SPEAKER_02] To nije ni samo na temelju po korisniku.
+
+666
+00:57:45,039 --> 00:57:48,800
+[SPEAKER_02] Kao da zaradite više novca u trgovini aplikacijama za znatnu maržu.
+
+667
+00:57:49,199 --> 00:58:02,239
+[SPEAKER_01] Dakle, tvrtka poput Tencent s ogromnim količinama novca na kocki za kupnju u igri mogla bi smatrati da Android nije vrijedan truda, ali bi mogla pogledati iOS i reći: Da, učinit ćemo to.
+
+668
+00:58:02,639 --> 00:58:19,199
+[SPEAKER_01] Ali opet, učinit će li to ako Apple, čak i ako im je dopušteno da to učine bez da Appleu daju dio novca ili ako EU pojasni da je ograničen na deset posto ili pet posto ili neku brojku koja je mnogo niža od trenutačnih brojki, a u zakonu nema ništa slično.
+
+669
+00:58:19,360 --> 00:58:32,880
+[SPEAKER_01] Ali ako to u budućnosti razjasne na taj način, učinili bi to da bi to značilo da bi Apple mogao reći: Ali ako to učinite, izbacit ćemo vas iz redovite trgovine aplikacijama ili čak samo rizik, kao što ćete izgraditi cijelu ovu stvar i Apple, znate, Apple to ne želi.
+
+670
+00:58:33,440 --> 00:58:34,960
+[SPEAKER_02] I uložit ćete u to puno ulaganja.
+
+671
+00:58:35,199 --> 00:58:37,119
+[SPEAKER_02] A onda će jednog dana Apple reći: Da, žao mi je.
+
+672
+00:58:37,199 --> 00:58:39,599
+[SPEAKER_02] Sada možete pokazivati svoje aplikacije samo u crno-bijeloj boji.
+
+673
+00:58:39,679 --> 00:58:40,400
+[SPEAKER_02] Ili nešto glupo.
+
+674
+00:58:40,480 --> 00:58:40,719
+[SPEAKER_02] Da, da.
+
+675
+00:58:41,119 --> 00:58:48,960
+[SPEAKER_00] Dva velika prekretnica su da je DMA jasno rekao da aplikacije mogu.
+
+676
+00:58:49,679 --> 00:58:52,320
+[SPEAKER_00] u aplikaciji govoriti o vanjskim plaćanjima.
+
+677
+00:58:53,280 --> 00:58:58,480
+[SPEAKER_00] Dakle, Apple će morati natjecati se i to se čini prilično jasnim.
+
+678
+00:58:59,519 --> 00:59:03,360
+[SPEAKER_00] Drugo je pitanje može li Apple platiti proviziju i te interakcije.
+
+679
+00:59:03,599 --> 00:59:10,239
+[SPEAKER_00] Dakle, ako možete reći da idete na web da biste platili za ovo, Apple će morati natjecati se s web plaćanjima.
+
+680
+00:59:10,320 --> 00:59:19,360
+[SPEAKER_00] A onda je vjerojatno duh DMA-e taj da Apple ne može zatim prikupiti svoju licencijsku naknadu iz web plaćanja.
+
+681
+00:59:19,920 --> 00:59:22,239
+[SPEAKER_00] Ali to je, ali to je drugi ključ toga.
+
+682
+00:59:24,159 --> 00:59:36,880
+[SPEAKER_00] Kako uopće možemo pogoditi, mislim, mislim da EU mora razjasniti može li Apple primiti proviziju za licenciranje intelektualnog vlasništva.
+
+683
+00:59:37,039 --> 00:59:45,920
+[SPEAKER_00] A onda je to zapravo bit svega ovoga, kao da kažu da Apple ne može primiti naknadu za licenciranje, onda Pandora je kutija.
+
+684
+00:59:46,159 --> 00:59:56,960
+[SPEAKER_00] I onda će se vjerojatno odvijati na način da Apple pretvori da može, a onda će biti godina ulazaka i tužbi i što god.
+
+685
+00:59:57,039 --> 00:59:59,679
+[SPEAKER_00] Mislim, gdje mislite da će to ići na tom određenom području?
+
+686
+01:00:00,000 --> 01:00:02,400
+[SPEAKER_01] Ne znam, ali slažem se s vama.
+
+687
+01:00:03,360 --> 01:00:05,599
+[SPEAKER_01] To se zove anti-korisni odredbe, zar ne?
+
+688
+01:00:05,679 --> 01:00:10,960
+[SPEAKER_01] A tako anti-korisni odredbe znače da ne smijete usmjeriti svog klijenta na web kako bi izvršio plaćanje iz aplikacije.
+
+689
+01:00:11,519 --> 01:00:16,320
+[SPEAKER_01] Za mene je to najnevjerojatnija stvar s kojom se potpuno ne slažem s Appleovim dijelom.
+
+690
+01:00:16,639 --> 01:00:23,360
+[SPEAKER_01] Mislim da je to zaista protukonkurentno u pravom smislu riječi, bez obzira na to kako to smatrate zakonitim.
+
+691
+01:00:23,519 --> 01:00:25,280
+[SPEAKER_01] To je neetičko, po mom mišljenju.
+
+692
+01:00:25,599 --> 01:00:30,960
+[SPEAKER_01] Da je EU zatražila moje mišljenje, rekao bih da biste se trebali usredotočiti na to i da bi to trebalo postati zakon.
+
+693
+01:00:30,960 --> 01:00:34,559
+[SPEAKER_01] Znate, učinite to zakonom i mislim da je to na razini zdravog razuma.
+
+694
+01:00:34,559 --> 01:00:46,320
+[SPEAKER_01] Da, i svi, ne vidim kako bi to bilo moguće objasniti ljudima i ljudi bi rekli: Ne mogu vjerovati da to nije bilo nezakonito.
+
+695
+01:00:46,320 --> 01:00:49,280
+[SPEAKER_01] Da, mislim da su ljudi zaprepašteni kad im kažete da vam ne smiju reći da možete platiti deset dolara.
+
+696
+01:00:49,440 --> 01:00:52,239
+[SPEAKER_02] Morate koristiti aplikacije, IAP, da, morate koristiti IAP, zar ne?
+
+697
+01:00:52,719 --> 01:00:54,320
+[SPEAKER_02] Nitko to ne zna osim programera.
+
+698
+01:00:54,480 --> 01:00:54,559
+[SPEAKER_01] Da.
+
+699
+01:00:55,360 --> 01:00:56,159
+[SPEAKER_01] Gdje mislim da to ide?
+
+700
+01:00:58,480 --> 01:00:58,800
+[SPEAKER_00] Ne znam.
+
+701
+01:00:59,599 --> 01:01:00,800
+[SPEAKER_00] Samo nemamo dovoljno jasnoće.
+
+702
+01:01:01,199 --> 01:01:03,840
+[SPEAKER_00] Mislim da Apple nastavlja biti tvrdoglav.
+
+703
+01:01:04,079 --> 01:01:04,480
+[SPEAKER_00] Mislim da je točno.
+
+704
+01:01:05,199 --> 01:01:07,679
+[SPEAKER_01] Mislim da je točka da ne budemo tvrdoglavi prošla, zar ne?
+
+705
+01:01:07,760 --> 01:01:20,079
+[SPEAKER_01] I nažalost, volio bih da to uzmu kao trenutak razmatranja jer je druga zanimljiva stvar u vezi s ovim da Apple voli imati što više globalne kontinuiteta.
+
+706
+01:01:20,800 --> 01:01:25,360
+[SPEAKER_01] I tako, s Japanskom trgovinskom komisijom, rekli su: Ovo ćemo učiniti diljem svijeta.
+
+707
+01:01:25,440 --> 01:01:26,480
+[SPEAKER_01] I vole imati stvari.
+
+708
+01:01:26,880 --> 01:01:28,400
+[SPEAKER_01] I naravno, postoje određene iznimke.
+
+709
+01:01:28,639 --> 01:01:30,880
+[SPEAKER_01] Cijela stvar s podatkovnim centrima smještenima na kopnu.
+
+710
+01:01:30,880 --> 01:01:34,639
+[SPEAKER_01] Centarima za podatke koji se nalaze na kopnu Kine ogromna je iznimka samo za Kinu, a ne bi se to dogodilo u većini zemalja.
+
+711
+01:01:35,119 --> 01:01:36,239
+[SPEAKER_01] Da li je to tako?
+
+712
+01:01:36,880 --> 01:01:44,159
+[SPEAKER_01] Da li je Poljska donijela takav zakon, mislim da bi Apple morao reći: Žao mi je, poljski korisnici, ne dobivate iCloud.
+
+713
+01:01:45,599 --> 01:01:47,280
+[SPEAKER_01] Znate, i mogli bi to učiniti?
+
+714
+01:01:47,440 --> 01:01:48,239
+[SPEAKER_02] Mislim, mogli bi prijetiti?
+
+715
+01:01:48,400 --> 01:01:52,960
+[SPEAKER_02] Mislim, mogli bi zamisliti, možda mnogo novca, ali ako je to egzistencijalno za njih.
+
+716
+01:01:53,039 --> 01:02:00,000
+[SPEAKER_01] Pa, mislim da bi se poljski zakonodavci shvatili da ćemo to izgubiti.
+
+717
+01:02:00,559 --> 01:02:00,639
+[SPEAKER_01] Da.
+
+718
+01:02:00,800 --> 01:02:00,960
+[SPEAKER_01] U redu.
+
+719
+01:02:01,119 --> 01:02:03,199
+[SPEAKER_02] I mislim da mislim na cijelu EU, u redu?
+
+720
+01:02:03,840 --> 01:02:04,480
+[SPEAKER_02] Pa, to je stvar.
+
+721
+01:02:04,960 --> 01:02:07,360
+[SPEAKER_01] EU je dovoljno veliki blok da Apple mora biti u skladu.
+
+722
+01:02:07,519 --> 01:02:07,679
+[SPEAKER_01] U redu.
+
+723
+01:02:08,000 --> 01:02:08,559
+[SPEAKER_01] To je stvar.
+
+724
+01:02:08,639 --> 01:02:14,320
+[SPEAKER_01] To je, znate, to je, to je, to je, to je, ali dobro, ako je to egzistencijalno, što mislim da ne misle da je.
+
+725
+01:02:14,400 --> 01:02:17,199
+[SPEAKER_02] Ako bi mislili da je to egzistencijalno, ne bi pokušavali biti u skladu.
+
+726
+01:02:17,360 --> 01:02:18,320
+[SPEAKER_02] Igrao bi se teže.
+
+727
+01:02:18,639 --> 01:02:22,079
+[SPEAKER_00] Ništa nije egzistencijalno za Apple, i to je ono što smo ranije govorili.
+
+728
+01:02:22,400 --> 01:02:23,280
+[SPEAKER_00] Ovo je njihova platforma.
+
+729
+01:02:23,920 --> 01:02:24,800
+[SPEAKER_00] Ovo je njihov hardver.
+
+730
+01:02:25,440 --> 01:02:26,480
+[SPEAKER_00] App Store je pouzdan.
+
+731
+01:02:26,719 --> 01:02:28,559
+[SPEAKER_00] App Store će se nastaviti koristiti.
+
+732
+01:02:28,719 --> 01:02:28,800
+[SPEAKER_00] Da.
+
+733
+01:02:29,199 --> 01:02:30,239
+[SPEAKER_00] Procjene su da, znate.
+
+734
+01:02:30,239 --> 01:02:35,199
+[SPEAKER_00] Ali čak i da bi se to u potpunosti provodilo, to bi bilo kao da je to dvostruko više prihoda Applea u cijelom svijetu.
+
+735
+01:02:36,800 --> 01:02:38,000
+[SPEAKER_00] To nije egzistencijalno.
+
+736
+01:02:38,159 --> 01:02:42,719
+[SPEAKER_00] Kada Apple počne raditi ono što je ispravno za platformu?
+
+737
+01:02:43,360 --> 01:02:54,559
+[SPEAKER_00] A onda, kad je u pitanju vaš stav, rekao sam: U redu, da, riješili smo to za EU, Apple može prikupiti najviše deset posto IP provizije za licenciranje svojih API-ja.
+
+738
+01:02:54,719 --> 01:03:00,480
+[SPEAKER_00] Ali nije tako jednostavno jer, evo, sada mogu prikupiti deset posto naknada od Ubera jer licenciraju.
+
+739
+01:03:00,639 --> 01:03:06,239
+[SPEAKER_00] I tako se sve pretvara u veliku gomilu pitanja na što im je pravo na prikupljanje, a na što ne.
+
+740
+01:03:06,719 --> 01:03:21,760
+[SPEAKER_00] Ali u konačnici bi bilo bolje da tržišta odluče nego da se radi o dokumentu od stotinu stranica iz EU-a, ali nešto se mora dogoditi i to je ono što je jasno, a Apple se bori zubima i noktima protiv svakog malog centimetra.
+
+741
+01:03:21,840 --> 01:03:30,639
+[SPEAKER_01] Jedina stvar koju mislim da se nadam da će se dogoditi, nadam se da će se protivni upravljanje proširiti diljem svijeta i nadam se da će se otvarati u vezi s tim.
+
+742
+01:03:30,639 --> 01:03:52,800
+[SPEAKER_01] Mislim da bi programeri koji su zainteresirani za to, koji još nemaju, koji sve rade u aplikaciji, možda trebali početi razmišljati o tome što bi se dogodilo da bismo značajan broj naših korisnika mogli usmjeriti da izađu iz aplikacije na web-lokaciju i registriraju se ovdje, a znate, vrijedilo bi li izgradnja toga razlike u proviziji koju bismo platili?
+
+743
+01:03:52,960 --> 01:03:56,000
+[SPEAKER_00] I smiješno je da za većinu aplikacija vjerojatno nije.
+
+744
+01:03:56,320 --> 01:04:00,960
+[SPEAKER_00] Jer čak i da postoji razlika od dvadeset i sedam posto, ljudi plaćaju mnogo više.
+
+745
+01:04:00,960 --> 01:04:00,960
+[UNKNOWN] Da.
+
+746
+01:04:00,960 --> 01:04:08,719
+[SPEAKER_00] Kao da ljudi plaćaju licem, kao što su stope konverzije, kako je lako, kako svi imaju karticu na datoteci jer moraju za svoje slatkiše.
+
+747
+01:04:09,199 --> 01:04:10,480
+[SPEAKER_00] Ovo nije akademski, ljudi pokušavaju.
+
+748
+01:04:10,559 --> 01:04:12,079
+[SPEAKER_00] Oduševljenje i sve to.
+
+749
+01:04:12,320 --> 01:04:12,400
+[SPEAKER_00] Da.
+
+750
+01:04:12,800 --> 01:04:40,239
+[SPEAKER_01] Znam da pokušavamo to postići, ali mislim da je najveća stvar da ljudi koji su uopće tehnički orijentirani i koji, i mislim to, da ako se osjećate ugodno instalirajući aplikacije na svoj Mac ili Windows računalo, samo izvan trgovine aplikacijama, to je razina tehničke stručnosti o kojoj govorim, ali jer većina ljudi to ili se osjeća da to ne mogu učiniti ili ih to plaši, i to je zasluženo jer ne znate na Macu ili PC-u nešto što ste preuzeli od treće strane.
+
+751
+01:04:40,400 --> 01:04:41,760
+[SPEAKER_02] Nemate pojma što se nalazi u pozadini.
+
+752
+01:04:41,920 --> 01:04:42,719
+[SPEAKER_02] To nije rizik za rep.
+
+753
+01:04:43,199 --> 01:04:44,079
+[SPEAKER_02] To je vrlo stvarna stvar.
+
+754
+01:04:44,320 --> 01:04:51,039
+[SPEAKER_01] Koliko puta poznajemo ljude koji su tipični slučajni korisnici koji su nešto instalirali i sada se iznenada počinju uplašivati.
+
+755
+01:04:51,119 --> 01:04:51,760
+[SPEAKER_02] Propustila sam te dane.
+
+756
+01:04:51,840 --> 01:04:55,920
+[SPEAKER_02] Pop-upi koji dolaze kad su stotine pop-upova u pregledniku.
+
+757
+01:04:56,000 --> 01:04:59,599
+[SPEAKER_01] Mislim da su oni od nas koji su udobni s tom razinom stručnosti.
+
+758
+01:05:00,880 --> 01:05:32,000
+[SPEAKER_01] Ne možemo, svi mi, čak i ja koji pokušavam naglasiti to ovdje, podcjenjujemo koliko je zatvoreni krug iOS-a važan s korisničkog gledišta, kada želite dodati novu aplikaciju u svoju trgovinu, ovo je mjesto gdje idete, trgovina aplikacijama, idete tamo, tražite ili idete, znate, pronađete je, znate, samo i onda dodirnete instaliraj tamo i onda ide tamo i znate, ništa, loše s vašim telefonom.
+
+759
+01:05:32,159 --> 01:05:38,880
+[SPEAKER_01] Neće se iznenada početi isprazniti baterija u pozadini ili pojaviti skočni prozor kad ponovno pokrenete telefon ili nešto slično.
+
+760
+01:05:39,119 --> 01:05:40,159
+[SPEAKER_01] Ništa slično se ne može dogoditi.
+
+761
+01:05:40,239 --> 01:05:44,559
+[SPEAKER_01] Ako želite da se riješite toga, samo ga dodirnite i držite pritisnuti i pritisnite crveni gumb i nestat će.
+
+762
+01:05:44,719 --> 01:05:47,760
+[SPEAKER_01] Taj zatvoreni krug, ovo je jedino mjesto na kojem možete otići za softver.
+
+763
+01:05:48,239 --> 01:05:52,000
+[SPEAKER_01] Ovo je i to je apsolutno, znate, lako se može vratiti.
+
+764
+01:05:52,480 --> 01:06:00,960
+[SPEAKER_01] Mislim da ne možete dovoljno naglasiti koliko je to bitno za razumijevanje ljudi o njihovim telefonima i što ih čini entuzijastičnim preuzimanjem novih igara i aplikacija i slično.
+
+765
+01:06:00,960 --> 01:06:01,039
+[SPEAKER_01] Igre i aplikacije i slično.
+
+766
+01:06:01,280 --> 01:06:03,199
+[SPEAKER_02] Zašto postoji ovaj tržište četrnaest godina kasnije?
+
+767
+01:06:03,280 --> 01:06:13,280
+[SPEAKER_01] Mislim da je zato i zašto se bočno učitavanje i trgovine aplikacijama trećih strana na Androidu nikad zaista nisu razvili jer ne mogu doći do masovnih, znate, i to je sjajno za entuzijaste.
+
+768
+01:06:13,440 --> 01:06:22,000
+[SPEAKER_01] Znate, entuzijasti imaju bolju, bolju opremu za bočno učitavanje stvari na Androidu nego što mi imamo prolazeći kroz testni let i stvari razvoja ili samo jailbreaking.
+
+769
+01:06:22,079 --> 01:06:26,000
+[SPEAKER_02] Ne znam kako, mislim, ako vam stvarno brine, jailbreakirat ćete ili što god, kao da ćete to učiniti.
+
+770
+01:06:26,079 --> 01:06:26,559
+[SPEAKER_01] Ne znam.
+
+771
+01:06:26,639 --> 01:06:28,239
+[SPEAKER_01] Je li jailbreaking još uvijek nešto na iPhoneu?
+
+772
+01:06:28,400 --> 01:06:28,800
+[SPEAKER_01] Ne znam.
+
+773
+01:06:28,880 --> 01:06:29,920
+[SPEAKER_02] Nisam to radio godinama.
+
+774
+01:06:30,159 --> 01:06:30,960
+[SPEAKER_02] Samo sam o tome razgovarao.
+
+775
+01:06:30,960 --> 01:06:31,440
+[SPEAKER_02] Moram se sjetiti da ovdje govorim izvan škole.
+
+776
+01:06:32,639 --> 01:06:40,639
+[SPEAKER_01] Mislim da su se toliko približili zatvaranju tih, tih, tih, tih grešaka koje se mogu iskoristiti da meni to nije ni problem.
+
+777
+01:06:41,039 --> 01:06:43,360
+[SPEAKER_02] I mislim da s testnim letom gotovo više ne trebate, zar ne?
+
+778
+01:06:44,400 --> 01:06:45,440
+[SPEAKER_02] Kao da možete, možete učiniti mnogo toga.
+
+779
+01:06:45,679 --> 01:06:57,440
+[SPEAKER_01] To je, mislim da je lakoća i pouzdanost testnog leta za sve neugodnosti i popis korisničkih ograničenja i dijelove koji ne bi bili tako dobri kao bočno učitavanje, barem znate da neće nestati.
+
+780
+01:06:57,519 --> 01:07:00,880
+[SPEAKER_01] Dok, ako gradite nešto na što se oslanjate na jailbreaking, to bi moglo nestati.
+
+781
+01:07:00,880 --> 01:07:03,679
+[SPEAKER_01] Moguće je da nestane s bilo kojom ažuriranom operacijskom sustavom.
+
+782
+01:07:04,000 --> 01:07:07,119
+[SPEAKER_01] I stalno kažu: Nemojte ažurirati na IOS 16.2.
+
+783
+01:07:07,360 --> 01:07:10,000
+[SPEAKER_01] Da, to nije baš izvedivo.
+
+784
+01:07:10,320 --> 01:07:10,400
+[SPEAKER_00] Da.
+
+785
+01:07:11,039 --> 01:07:13,280
+[SPEAKER_00] Pa, sjajno ste to uspjeli.
+
+786
+01:07:15,760 --> 01:07:21,519
+[SPEAKER_00] Mislim da, znate, ukratko, ima toliko nepoznanica koje će se odvijati.
+
+787
+01:07:21,599 --> 01:07:27,199
+[SPEAKER_02] Dakle, kažem Davidu da mislim da će najveći učinak toga biti na ljude koji će blogirati o Appleu tijekom sljedećih osamnaest mjeseci.
+
+788
+01:07:29,360 --> 01:07:30,719
+[SPEAKER_01] Ne znam što sam mislio na to.
+
+789
+01:07:30,719 --> 01:07:30,880
+[SPEAKER_01] Da, i ja sam o tome razmišljao.
+
+790
+01:07:30,960 --> 01:07:34,159
+[SPEAKER_01] Zašto sam ovdje i prigovaram o tome cijeli tjedan i razmišljao sam o tome.
+
+791
+01:07:34,480 --> 01:07:36,880
+[SPEAKER_01] Pitao sam se zašto se prigovaram?
+
+792
+01:07:37,599 --> 01:07:43,920
+[SPEAKER_01] Ljudi će se obratiti meni i tražiti moj pogled na svaki korak toga.
+
+793
+01:07:44,159 --> 01:07:45,440
+[SPEAKER_00] Da, da, da, da, da, da.
+
+794
+01:07:45,519 --> 01:07:49,599
+[SPEAKER_00] To će biti na CNBC-u pet puta tijekom sljedeće godine, govoreći o svemu ovome.
+
+795
+01:07:50,480 --> 01:07:53,199
+[SPEAKER_00] Dakle, da, TBD, to je otvorena rasprava.
+
+796
+01:07:53,360 --> 01:08:00,719
+[SPEAKER_00] Možda ćemo vas ponovno pozvati nakon WWE-a da vidimo kako se stvari počinju razvijati, hoće li Apple dati napojnicu ili nešto slično.
+
+797
+01:08:01,039 --> 01:08:12,480
+[SPEAKER_01] Da, to će biti stvarno zanimljivo za mene jer bih mogao vidjeti da će se to odvijati u oba smjera, gdje će dati ove velike, ogromne tragove ili će nas iznenaditi u četvrtak, kao što uvijek rade.
+
+798
+01:08:12,559 --> 01:08:13,920
+[SPEAKER_01] Ali ako daju tragove, zar ne?
+
+799
+01:08:14,239 --> 01:08:24,000
+[SPEAKER_01] Bilo bi tako nevjerojatno i bilo bi tako tipično, Appleov, znate, tipičan pristup, da počnu govoriti o tome što je zapravo bočno punjenje, ali da su izmislili način da to učine.
+
+800
+01:08:26,399 --> 01:08:29,520
+[SPEAKER_02] Nazivamo to test letom, u redu.
+
+801
+01:08:29,680 --> 01:08:30,239
+[SPEAKER_01] Što god, u redu?
+
+802
+01:08:30,479 --> 01:08:37,039
+[SPEAKER_01] I znate, postoje i druge platforme koje su to imale, ali to je korisnicima otvorilo sve te probleme, znate, sve te noćne more.
+
+803
+01:08:37,199 --> 01:08:52,000
+[SPEAKER_01] Našli smo način koji je siguran i znali bismo da je sve ovo samo o poštivanju zakona, ali oni se ponašaju kao da su došli na ovu sjajnu ideju i izmislili ovu sjajnu novu stvar, instalirajući Apple ne laže, ali, čovječe, oni se okreću.
+
+804
+01:08:52,319 --> 01:08:52,479
+[SPEAKER_02] Točno.
+
+805
+01:08:52,640 --> 01:08:52,960
+[SPEAKER_02] Točno.
+
+806
+01:08:53,279 --> 01:08:53,520
+[SPEAKER_02] Točno.
+
+807
+01:08:53,600 --> 01:08:53,920
+[SPEAKER_02] Točno.
+
+808
+01:08:54,479 --> 01:08:54,960
+[SPEAKER_01] Točno.
+
+809
+01:08:55,039 --> 01:08:57,199
+[SPEAKER_01] I znate kada se šale, zar ne?
+
+810
+01:08:57,279 --> 01:08:58,079
+[SPEAKER_01] I znate kada to rade.
+
+811
+01:08:58,399 --> 01:09:00,720
+[SPEAKER_01] Dakle, to nije laž sama po sebi, ali je kao da znate.
+
+812
+01:09:30,079 --> 01:09:34,159
+[SPEAKER_01] Oz i dalje govori o softveru u kutiji u trgovinama.
+
+813
+01:09:34,319 --> 01:09:38,720
+[SPEAKER_01] Ali većina potrošača na iPhoneu nikad nije vidjela kutiju s softverom.
+
+814
+01:09:39,760 --> 01:09:45,119
+[SPEAKER_01] Da, sada ima toliko korisnika koji govore o crno-bijeloj televiziji.
+
+815
+01:09:45,279 --> 01:09:45,840
+[SPEAKER_01] Tako su mladi.
+
+816
+01:09:45,920 --> 01:09:52,479
+[SPEAKER_01] I sve je kao da je trgovina aplikacijama tako sjajna u usporedbi s kupnjom softvera u kutiji i instalacijom.
+
+817
+01:09:52,640 --> 01:09:54,319
+[SPEAKER_01] I to je kao da, o čemu govoriš?
+
+818
+01:09:54,800 --> 01:09:55,680
+[SPEAKER_02] Ima dobar TikTok.
+
+819
+01:09:56,239 --> 01:09:57,359
+[SPEAKER_02] Samo pitajte neke generacije Z.
+
+820
+01:09:57,920 --> 01:10:00,640
+[SPEAKER_02] Što je kutija s softverom?
+
+821
+01:10:00,640 --> 01:10:10,640
+[SPEAKER_00] Zato se smijemo tome i ima toliko otvorenih pitanja, ali to će utjecati na trilijune dolara koji će ulaziti i izlaziti iz džepova korisnika u narednih nekoliko godina.
+
+822
+01:10:10,720 --> 01:10:13,279
+[SPEAKER_02] I naučite voljeti rez, Davide.
+
+823
+01:10:13,359 --> 01:10:13,760
+[SPEAKER_02] Samo se vozite.
+
+824
+01:10:14,159 --> 01:10:17,600
+[SPEAKER_02] Znate, mi smo samo, molim vas, na stražnjoj strani Nelly.
+
+825
+01:10:17,680 --> 01:10:17,840
+[SPEAKER_02] U redu.
+
+826
+01:10:18,000 --> 01:10:19,199
+[SPEAKER_02] Bit će ono što će biti.
+
+827
+01:10:20,159 --> 01:10:22,399
+[SPEAKER_00] Pa, John, hvala ti što si se priključio nama.
+
+828
+01:10:22,560 --> 01:10:26,000
+[SPEAKER_00] Ovo je bila stvarno zabavna rasprava i mislim da je bila vrlo poučna.
+
+829
+01:10:26,159 --> 01:10:29,199
+[SPEAKER_00] Mislim da si me sigurno natjerao da razmišljam.
+
+830
+01:10:29,279 --> 01:10:30,960
+[SPEAKER_00] I onda, i opet, mislim da imaš svoje mišljenje.
+
+831
+01:10:30,960 --> 01:10:39,439
+[SPEAKER_00] Imate mrzitelje koji vas nazivaju Appleovim šalom ili bilo čime i sve to sranje, ali znate, u industriji je malo ljudi koji zaista poznaju Apple na način na koji ga poznajete vi.
+
+832
+01:10:39,680 --> 01:10:49,279
+[SPEAKER_00] I ako pokušavate pročitati listove, ako pokušavate donijeti poslovnu odluku o tome što ćete raditi tijekom sljedećih osamnaest mjeseci, morate razmisliti o Appleovoj perspektivi.
+
+833
+01:10:50,560 --> 01:10:55,199
+[SPEAKER_00] I prilično elokventno ste podijelili aspekte načina na koji oni razmišljaju interno u Appleu.
+
+834
+01:10:55,520 --> 01:10:56,159
+[SPEAKER_00] Ovo je IP.
+
+835
+01:10:56,479 --> 01:11:00,560
+[SPEAKER_00] Dakle, nadam se da su ljudi smatrali ovo pouzdanim i vratit ćemo vas.
+
+836
+01:11:01,680 --> 01:11:08,159
+[SPEAKER_00] da pričamo više, ali, evo, ima toliko toga ovdje, pa hvala.
+
+837
+01:11:08,880 --> 01:11:09,359
+[SPEAKER_00] Bilo je zabavno.
+
+838
+01:11:09,439 --> 01:11:09,600
+[SPEAKER_01] Hvala.
+
+839
+01:11:09,840 --> 01:11:11,279
+[SPEAKER_01] Hvala vam puno što ste slušali.
+
+840
+01:11:13,119 --> 01:11:18,640
+[SPEAKER_00] Ako imate minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+841
+01:11:19,920 --> 01:11:28,319
+[SPEAKER_00] Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
+
