@@ -1,0 +1,832 @@
+1
+00:00:00,000 --> 00:00:09,599
+[SPEAKER_01] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:20,399
+[SPEAKER_01] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_01] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+[SPEAKER_01] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje klijentima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,679 --> 00:00:36,159
+[SPEAKER_01] Više informacija možete pronaći na revenuecat.com.
+
+6
+00:00:36,960 --> 00:00:37,679
+[SPEAKER_01] Uđimo u emisiju.
+
+7
+00:00:41,439 --> 00:00:43,600
+[SPEAKER_01] Pozdrav, ja sam vaš voditelj, David Bernard.
+
+8
+00:00:44,000 --> 00:00:49,920
+[SPEAKER_01] Današnja je rasprava kraća nego inače i bit će prikazana u izvješću RevenueCat o stanju pretplatnih aplikacija.
+
+9
+00:00:50,479 --> 00:00:58,399
+[SPEAKER_01] Svaka epizoda ove serije istražit će jednu ključnu temu i podijelit će korisne spoznaje od najboljih operatera pretplatnih aplikacija.
+
+10
+00:00:58,560 --> 00:01:03,280
+[SPEAKER_01] Danas sam sa mnom, Patrick Rills, glavni direktor za proizvode i tehnologiju u Lose It.
+
+11
+00:01:03,759 --> 00:01:10,879
+[SPEAKER_01] Na podcastu razgovaram s Patrickom o testiranju cijena od pet dolara do sto dvadeset dolara godišnje.
+
+12
+00:01:11,359 --> 00:01:14,640
+[SPEAKER_01] Zašto su rastuće troškove stjecanja kupaca doveli do povećanja cijena?
+
+13
+00:01:14,640 --> 00:01:20,640
+[SPEAKER_01] To je prisililo na preispitivanje cijena i kako povećanje cijene omogućuje im agresivnije popuste.
+
+14
+00:01:21,040 --> 00:01:23,519
+[SPEAKER_01] Hej, Patrick, hvala ti što si se danas priključio podcastu.
+
+15
+00:01:23,920 --> 00:01:25,519
+[SPEAKER_00] Hej, Davide, sretan sam što sam ovdje.
+
+16
+00:01:25,680 --> 00:01:29,200
+[SPEAKER_00] Mislim da sam gotovo slušao svaku epizodu Subcluba.
+
+17
+00:01:29,439 --> 00:01:33,920
+[SPEAKER_00] Mislim da postoji samo nekoliko koje nisam slušao, pa je ovo za mene ostvarena želja.
+
+18
+00:01:34,079 --> 00:01:35,760
+[SPEAKER_00] To je nevjerojatno.
+
+19
+00:01:36,000 --> 00:01:37,359
+[SPEAKER_01] Nisam ni znao to.
+
+20
+00:01:38,000 --> 00:01:38,719
+[SPEAKER_01] Hvala što si to rekao.
+
+21
+00:01:39,120 --> 00:01:43,120
+[SPEAKER_01] Pa, htio sam te imati jer sam prije govorio o Lose It-u, aplikaciji Storied.
+
+22
+00:01:43,840 --> 00:01:47,920
+[SPEAKER_01] Ne znam znaš li ovo.
+
+23
+00:01:48,319 --> 00:01:49,280
+[SPEAKER_01] Zapravo sam 2008.
+
+24
+00:01:49,439 --> 00:01:54,239
+[SPEAKER_01] godine radio na aplikaciji za zdravlje i dobrobit kad je Lose It izašao već sedamnaest godina.
+
+25
+00:01:54,640 --> 00:01:56,159
+[SPEAKER_00] Sada smo u osamnaestoj godini.
+
+26
+00:01:56,480 --> 00:01:57,760
+[SPEAKER_01] Da, točno.
+
+27
+00:01:58,159 --> 00:02:03,120
+[SPEAKER_01] Dakle, ove godine ste udvostručili cijenu, što je velika stvar.
+
+28
+00:02:03,519 --> 00:02:15,120
+[SPEAKER_01] I mislim, znate, svi testiraju cijenu i vi ste testirali cijenu, ali za pohranjenu aplikaciju poput Lose It s tolikim zamahom, kao dio javno trgovanog društva, udvostručivanje cijene velika je stvar.
+
+29
+00:02:15,199 --> 00:02:20,159
+[SPEAKER_01] Ovo nije prosječna neovisna aplikacija koja je naplaćivala deset dolara godišnje, a udvostručila se na dvadeset.
+
+30
+00:02:20,319 --> 00:02:21,039
+[SPEAKER_01] Ovo je velika stvar.
+
+31
+00:02:21,120 --> 00:02:28,719
+[SPEAKER_01] Želio sam započeti s nekim mislima iza toga i nekim lekcijama koje ljudi mogu ponijeti iz toga zašto ste to učinili i što učite.
+
+32
+00:02:28,719 --> 00:02:29,360
+[SPEAKER_01] na putu?
+
+33
+00:02:30,240 --> 00:02:30,800
+[SPEAKER_00] Da, sigurno.
+
+34
+00:02:30,960 --> 00:02:39,280
+[SPEAKER_00] Imali smo istu cijenu otkako smo lansirali premium proizvod 2012., što je zapravo prije nego što sam započeo u Lose It-u.
+
+35
+00:02:39,759 --> 00:02:45,120
+[SPEAKER_00] Izvorna cijena za premium proizvod, osnovna cijena, uvijek je bila 39,99 dolara godišnje.
+
+36
+00:02:45,919 --> 00:02:53,680
+[SPEAKER_00] Čak i prije nego što smo implementirali pretplate za automatski obnavljanje, izvorni proizvod u aplikaciji bio je samo potrošački ulazak u kupnju.
+
+37
+00:02:53,919 --> 00:02:57,840
+[SPEAKER_00] A onda bismo morali poslati e-poštu da bismo zamolili ljude da obnove.
+
+38
+00:02:58,240 --> 00:03:02,719
+[SPEAKER_00] A kad su izašli pretplate za automatski obnavljanje, to je u osnovi promijenilo naš posao.
+
+39
+00:03:02,879 --> 00:03:05,680
+[SPEAKER_00] Ali tijekom godina, od kada smo zadržali cijenu.
+
+40
+00:03:05,680 --> 00:03:06,240
+[SPEAKER_00] nepromijenjenom.
+
+41
+00:03:06,639 --> 00:03:08,639
+[SPEAKER_00] U ekonomiji aplikacija se puno promijenilo.
+
+42
+00:03:09,280 --> 00:03:26,719
+[SPEAKER_00] Posebno bih rekao da je najveći poticaj za to povećanje troškova stjecanja, pogotovo jer se cijene na svim kanalima povećavaju zbog povećane konkurencije i postoje neke restrikcije.
+
+43
+00:03:27,360 --> 00:03:34,159
+[SPEAKER_00] Meta je nedavno ograničila aplikacije za zdravlje i dobrobit kako bi oglašavale na svojoj platformi.
+
+44
+00:03:34,560 --> 00:03:36,560
+[SPEAKER_00] To je dovelo do povećanja troškova.
+
+45
+00:03:36,800 --> 00:03:42,639
+[SPEAKER_00] I to je bio glavni pokretač, osim što su druge stvari bile skuplje nego što su bile 2012.
+
+46
+00:03:42,639 --> 00:03:43,039
+[SPEAKER_00] Bili su u dvanaestoj godini.
+
+47
+00:03:43,120 --> 00:03:46,000
+[SPEAKER_01] I to je bilo povijesno i za Lusa, zar ne?
+
+48
+00:03:46,560 --> 00:03:50,639
+[SPEAKER_01] To je da ste se mnogo više oslanjali na organski pretraživanje.
+
+49
+00:03:50,719 --> 00:04:08,639
+[SPEAKER_01] Mislim, nakon osamnaest godina u trgovini aplikacijama, bili ste vrlo visoko rangirani za aplikaciju za dijetu i mršavljenje te sve te velike ključne riječi, pa je aplikacija povijesno više oslanjala na ovaj organski potisak, ali onda ste u posljednjih nekoliko godina više usmjeravali na stjecanje korisnika, zar ne?
+
+50
+00:04:08,879 --> 00:04:09,520
+[SPEAKER_00] Tako je, da.
+
+51
+00:04:10,080 --> 00:04:14,479
+[SPEAKER_00] Sagradili smo mote, jer smo u trgovini aplikacijama od studenog 2008.
+
+52
+00:04:14,639 --> 00:04:19,600
+[SPEAKER_00] godine, i sagradili smo prilično mote s stotinama tisuća pet zvjezdica.
+
+53
+00:04:19,759 --> 00:04:23,920
+[SPEAKER_00] se pojavljuje na vrhu pretraživanja i to se i dalje događa.
+
+54
+00:04:24,160 --> 00:04:27,920
+[SPEAKER_00] Ali kako konkurentnost raste, to će se događati sve rjeđe.
+
+55
+00:04:28,079 --> 00:04:38,000
+[SPEAKER_00] Stoga želimo zaista povećati plaćene akvizicije i trebamo da je ekonomija za to malo bolja.
+
+56
+00:04:38,319 --> 00:04:46,399
+[SPEAKER_00] Za cijenu od četrdeset dolara, znate, mnogo je teže nego za cijenu od osamdeset dolara da dobijete ROAS koji vam je potreban.
+
+57
+00:04:46,639 --> 00:04:47,439
+[SPEAKER_01] Da, apsolutno.
+
+58
+00:04:47,839 --> 00:04:50,399
+[SPEAKER_01] Znam da ste u prošlosti proveli neke testove cijena.
+
+59
+00:04:51,120 --> 00:04:56,399
+[SPEAKER_01] Objasnite neke od testova cijena koji su doveli do ovakvih lekcija koje ste naučili dok ste isprobavali ove druge proizvode.
+
+60
+00:04:56,399 --> 00:04:57,199
+[SPEAKER_01] Pokušali ste s ovim drugim cijenama.
+
+61
+00:04:57,439 --> 00:05:01,120
+[SPEAKER_00] Nismo ih zadržali na laganoj razini od četrdeset dolara tijekom godina.
+
+62
+00:05:02,319 --> 00:05:06,079
+[SPEAKER_00] Stalno smo testirali krivulju potražnje.
+
+63
+00:05:06,720 --> 00:05:12,160
+[SPEAKER_00] Testirali smo sve od pet dolara godišnje do sto dvadeset dolara godišnje.
+
+64
+00:05:12,639 --> 00:05:21,360
+[SPEAKER_00] I obično ćete primijetiti da kad podignete cijenu, konverzije padaju, a kad je smanjite, konverzije naravno rastu.
+
+65
+00:05:21,759 --> 00:05:24,800
+[SPEAKER_00] Ali obično to ne iznosi rezultate.
+
+66
+00:05:24,959 --> 00:05:33,600
+[SPEAKER_00] Osjećali smo da smo s četrdeset dolara, uz sustav prodaje koji smo imali, bili u prilično dobrom ravnoteži.
+
+67
+00:05:33,600 --> 00:05:39,759
+[SPEAKER_00] Kao da nismo mogli shvatiti strukturu cijena koja bi je dosljedno mogla nadmašiti.
+
+68
+00:05:40,240 --> 00:05:43,040
+[SPEAKER_00] Međutim, krajem 2024.
+
+69
+00:05:43,279 --> 00:05:51,920
+[SPEAKER_00] godine ponovno smo počeli testirati cijene jer su telefoni sve skuplji, a naši su konkurenti sve skuplji.
+
+70
+00:05:52,319 --> 00:05:55,279
+[SPEAKER_00] Stoga smo odlučili ponovno ga testirati, kao da su možda na pravom putu.
+
+71
+00:05:55,920 --> 00:05:59,279
+[SPEAKER_00] I kad smo ga prvi put testirali, doseglo je ravnotežu.
+
+72
+00:06:00,560 --> 00:06:04,000
+[SPEAKER_00] Dakle, rekao bih da je net doseglo ravnotežu.
+
+73
+00:06:04,240 --> 00:06:08,639
+[SPEAKER_00] To je bilo prilično iznenađujuće za nas jer se to nikad prije nije dogodilo.
+
+74
+00:06:08,879 --> 00:06:21,360
+[SPEAKER_00] I tako smo ga testiraliali na iOS-u i Androidu, na različitim skupinama korisnika, novim korisnicima, postojećim korisnicima, ponovno aktiviranim korisnicima.
+
+75
+00:06:21,600 --> 00:06:23,279
+[SPEAKER_00] I dalje smo dobivali slične rezultate.
+
+76
+00:06:23,839 --> 00:06:28,399
+[SPEAKER_00] Bili smo prilično sigurni da povećanjem cijene nećemo izgubiti novac.
+
+77
+00:06:28,800 --> 00:06:37,600
+[SPEAKER_00] Ako će to zaista otključati plaćene akvizicije i neke druge stvari, kao što su granični troškovi značajki umjetne inteligencije za nas, zašto to ne bismo učinili?
+
+78
+00:06:37,839 --> 00:06:40,800
+[SPEAKER_00] To daje našem marketinškom timu mnogo više prostora za rad.
+
+79
+00:06:41,199 --> 00:06:43,839
+[SPEAKER_01] Budući da ste proveli ove eksperimente još 2024.
+
+80
+00:06:44,240 --> 00:06:47,439
+[SPEAKER_01] i da niste potpuno usvojili tu novu cijenu do 2022.
+
+81
+00:06:48,480 --> 00:06:51,439
+[SPEAKER_01] Mislim da imate mnogo podataka da biste mogli pogledati zadržavanje.
+
+82
+00:06:51,839 --> 00:07:01,360
+[SPEAKER_01] Jedno od toga što se tiče povećanja cijena jest da u podacima RevenueCats-a koje dijelimo u izvješću, vidimo veće zadržavanje po nižim cijenama.
+
+83
+00:07:01,519 --> 00:07:03,040
+[SPEAKER_01] Sada to neće uvijek biti slučaj.
+
+84
+00:07:03,360 --> 00:07:08,879
+[SPEAKER_01] Ponekad proizvodi po višim cijenama bolje zadržavaju, ali općenito to vidimo u podacima.
+
+85
+00:07:09,199 --> 00:07:12,480
+[SPEAKER_01] Dakle, mislim da je to nešto s čime se suočavaju mnoge aplikacije.
+
+86
+00:07:13,120 --> 00:07:18,160
+[SPEAKER_01] I tako ste li pronašli zadržavanje da barem dostigne i ravnotežu?
+
+87
+00:07:18,560 --> 00:07:21,839
+[SPEAKER_00] Da, rekao bih da je naša zadržavanje vrlo stabilno.
+
+88
+00:07:22,720 --> 00:07:23,600
+[SPEAKER_00] I mislim da je to zato što.
+
+89
+00:07:23,600 --> 00:07:31,519
+[SPEAKER_00] Iako zbog višeg cjenovnog razdoblja dobivamo manje novih premium korisnika, naš besplatni proizvod je sjajan.
+
+90
+00:07:32,160 --> 00:07:34,959
+[SPEAKER_00] Od samog početka, zapravo smo radili od 2008.
+
+91
+00:07:35,040 --> 00:07:35,839
+[SPEAKER_00] do 2012.
+
+92
+00:07:36,160 --> 00:07:36,959
+[SPEAKER_00] bez plaćenog proizvoda.
+
+93
+00:07:37,040 --> 00:07:45,519
+[SPEAKER_00] Dakle, naš proizvod je uvijek bio premium model i naš besplatni proizvod uvijek je bio vrlo koristan za ljude.
+
+94
+00:07:46,240 --> 00:07:47,759
+[SPEAKER_00] Ulažemo u njega mnogo.
+
+95
+00:07:47,920 --> 00:07:51,040
+[SPEAKER_00] Osiguravamo da je besplatni proizvod sjajno iskustvo.
+
+96
+00:07:51,439 --> 00:07:53,680
+[SPEAKER_00] Premium proizvod je jednostavno mnogo bolji.
+
+97
+00:07:54,160 --> 00:08:05,360
+[SPEAKER_00] Mislim da ako su ljudi motiviraniji, mogu dobiti premium značajke i to im pomaže.že, ali možete učiniti sve što vam je potrebno da biste smršavjeli u besplatnom proizvodu.
+
+98
+00:08:05,600 --> 00:08:06,560
+[SPEAKER_00] I mi smo vrlo ponosni na to.
+
+99
+00:08:06,720 --> 00:08:13,839
+[SPEAKER_01] Rekli ste da su to neke od velikih otključavanja za povećanje cijene, znate, sposobnost toleriranja viših CAC-ova.
+
+100
+00:08:13,920 --> 00:08:24,000
+[SPEAKER_01] Rekli ste o značajkama umjetne inteligencije, gdje znate, dodatni troškovi pružanja usluga tim korisnicima rastu kako povećavate troškove održavanja nekih od tih značajki.
+
+101
+00:08:24,639 --> 00:08:27,839
+[SPEAKER_01] Koje su druge otključavanja vidjeli od mogućnosti povećanja cijene?
+
+102
+00:08:28,000 --> 00:08:38,399
+[SPEAKER_00] Da, tijekom godina izgradili smo prilično mehanizam prodaje tijekom cijelog životnog ciklusa i to je domaći sustav koji smo ugradili u aplikaciju i usavršili tijekom godina.
+
+103
+00:08:38,399 --> 00:08:39,039
+[SPEAKER_00] I to se razvijalo tijekom godina i godina.
+
+104
+00:08:39,440 --> 00:08:50,399
+[SPEAKER_00] Dakle, koliko popusta korisnik dobije na određenom mjestu svog putovanja potpuno je ugrađeno u iskustvo.
+
+105
+00:08:50,639 --> 00:09:06,080
+[SPEAKER_00] A viša cijena omogućuje nam da ponudimo više popusta više korisnika i pokušamo dobiti više područja ispod krivulje jer od nule do četrdeset nema toliko prostora za popuste od pedeset, dvadeset pet posto, sedamdeset pet posto.
+
+106
+00:09:06,799 --> 00:09:09,919
+[SPEAKER_00] Ali za osamdeset dolara možemo ponuditi veće popuste.
+
+107
+00:09:11,279 --> 00:09:14,960
+[SPEAKER_00] I svi znaju za psihologiju prodaje.
+
+108
+00:09:14,960 --> 00:09:21,759
+[SPEAKER_00] Više je postotaka, obično veća je konverzija, čak i u apsolutnim dolarima, cijena je veća.
+
+109
+00:09:22,080 --> 00:09:25,840
+[SPEAKER_01] Kako je tim za proizvodnju reagirao na povećanje cijene?
+
+110
+00:09:26,000 --> 00:09:38,480
+[SPEAKER_01] Jer znam da ponekad može biti napetosti između prihoda i optimizacije monetizacije, a ljudi za proizvod možda imaju čišći stav, poput: Želimo da je to dobra ponuda za korisnike i slično.
+
+111
+00:09:38,720 --> 00:09:42,799
+[SPEAKER_00] Da, tim za proizvodnju bio je potpuno uključen i zapravo su se za to trudili.
+
+112
+00:09:43,039 --> 00:09:46,320
+[SPEAKER_00] Učinili su sve što su mogli da to omoguće.
+
+113
+00:09:46,799 --> 00:09:52,480
+[SPEAKER_00] Jer mislim da je njihov pogled na to da svi naši glavni konkurenti koštaju oko osamdeset dolara..
+
+114
+00:09:52,639 --> 00:10:00,000
+[SPEAKER_00] I ne želim ponižavati bilo kojeg od naših konkurentâ, ali vjerujemo da je naš proizvod jednako dobar kao i njihov.
+
+115
+00:10:00,480 --> 00:10:04,000
+[SPEAKER_00] Međutim, naša cijena to zapravo nije odražavala.
+
+116
+00:10:04,080 --> 00:10:12,960
+[SPEAKER_00] Osjećali su da rade posao koji je jednako vrijedan za korisnike kao i posao naših drugih konkurentâ, ali to se nije odrazilo na cijenu.
+
+117
+00:10:13,440 --> 00:10:17,360
+[SPEAKER_00] A što su cijene, ako ne i informacije o tome koliko je nešto vrijedno?
+
+118
+00:10:17,600 --> 00:10:17,679
+[SPEAKER_00] Da.
+
+119
+00:10:18,240 --> 00:10:29,279
+[SPEAKER_01] Tek sam razgovarao s nekim o cijenama i kako u prostoru aplikacija to nije kao polica u trgovini gdje ljudi gledaju Campbellovu juhu, a zatim juhu robne marke i rade isto.
+
+120
+00:10:29,279 --> 00:10:31,279
+[SPEAKER_01] Ispravno, i računanje i odabir na temelju cijene.
+
+121
+00:10:31,360 --> 00:10:36,639
+[SPEAKER_01] Ljudi dolaze iz oglasa, pa nemaju nužno taj referentni okvir.
+
+122
+00:10:36,960 --> 00:10:53,279
+[SPEAKER_01] I tako, čak i kad razmišljate o nižoj cijeni kao o razlikovnoj značajci, to nije nužno zato što ljudi ne kupaju cijene na isti način, pogotovo kad se produbite u privlačenju plaćenih korisnika, vjerojatno ćete i tako dobiti manje te usporedbe cijena.
+
+123
+00:10:53,840 --> 00:10:54,240
+[SPEAKER_01] To je istina.
+
+124
+00:10:54,559 --> 00:11:04,879
+[SPEAKER_00] Rekla bih da su nam niži cjenovni razredi pomogli, mislim, u ranim fazama pandemije.
+
+125
+00:11:05,440 --> 00:11:14,879
+[SPEAKER_00] Bili su zarobljeni u svojim domovima, nesigurni kako će ostvariti svoje ciljeve u vezi zdravlja i kondicije, ali i nesigurni u svoju financijsku situaciju.
+
+126
+00:11:15,039 --> 00:11:28,240
+[SPEAKER_00] Jer znam da ne volimo vratiti se i sjećati se kakvo je bilo u ožujku i travnju 2020., ali nismo imali pojma što će se dogoditi, pa mislim da nam je niska cijena stvarno pomogla.
+
+127
+00:11:29,679 --> 00:11:31,759
+[SPEAKER_00] Ali mislim da ste potpuno u pravu.
+
+128
+00:11:32,240 --> 00:11:39,440
+[SPEAKER_00] Kao što nismo vidjeli ništa, mislim da se ne događa previše usporedbe, što je još jedan razlog zašto ovo funkcionira.
+
+129
+00:11:39,600 --> 00:11:43,120
+[SPEAKER_01] Pitate li se jeste li razmotrili višu razinu.
+
+130
+00:11:43,120 --> 00:11:47,759
+[SPEAKER_01] Što mislite o povećanju cijene za sve i zašto ste se odlučili protiv toga?
+
+131
+00:11:48,639 --> 00:11:50,320
+[SPEAKER_01] Razmotrili smo sve mogućnosti.
+
+132
+00:11:50,399 --> 00:11:51,440
+[SPEAKER_01] Viša razina nije izvan rasprave.
+
+133
+00:11:51,440 --> 00:12:00,159
+[SPEAKER_00] Od tada smo u besplatnom proizvodu implementirali monetizaciju na temelju oglasa.
+
+134
+00:12:00,240 --> 00:12:02,480
+[SPEAKER_00] Želimo monetizirati na sve načine.
+
+135
+00:12:03,120 --> 00:12:06,399
+[SPEAKER_00] Dodali smo kupnje u aplikaciji, jednorazne kupnje u aplikaciji.
+
+136
+00:12:06,960 --> 00:12:10,960
+[SPEAKER_00] Dodali smo partnerstva u aplikaciji, znate, prihod od pridruženih partnera.
+
+137
+00:12:11,200 --> 00:12:12,559
+[SPEAKER_00] Dakle, ništa nije izvan rasprave.
+
+138
+00:12:12,639 --> 00:12:14,960
+[SPEAKER_00] Rekla bih da se nismo odlučili protiv toga.
+
+139
+00:12:15,840 --> 00:12:19,279
+[SPEAKER_00] Uvijek smo otvoreni novim idejama za monetizaciju.
+
+140
+00:12:19,279 --> 00:12:29,919
+[SPEAKER_01] Cilj je bio podići razinu, podići glavnu cijenu pretplate, a to nam još uvijek ostavlja priliku da dodamo razine i istražimo druge načine monetizacije.
+
+141
+00:12:30,799 --> 00:12:31,440
+[SPEAKER_01] Baš tako, da.
+
+142
+00:12:31,840 --> 00:12:35,440
+[SPEAKER_00] Imamo tako odanu bazu korisnika.
+
+143
+00:12:35,840 --> 00:12:45,600
+[SPEAKER_00] Volimo svoje korisnike, a oni vole nas, a postoji podskup korisnika koji žele najbolje što Lucid ima za ponuditi.
+
+144
+00:12:45,919 --> 00:12:55,759
+[SPEAKER_00] Ako se jako trudimo i kreiramo proizvod koji generira mnogo vrijednosti, imamo mnogo sjajnih korisnika koji su potpuno na toj strani.
+
+145
+00:12:56,000 --> 00:12:56,399
+[SPEAKER_00] To je sjajno.
+
+146
+00:12:56,960 --> 00:13:02,159
+[SPEAKER_01] Jedno što niste učinili bilo je povećanje cijena postojećih korisnika, što je uvijek tako teška odluka.
+
+147
+00:13:02,240 --> 00:13:04,080
+[SPEAKER_01] Slušao sam da se to događa u oba smjera.
+
+148
+00:13:04,240 --> 00:13:09,120
+[SPEAKER_01] Slušao sam neke ljude koji kažu da su udvostručili cijene i da nisu osigurali da korisnici budu u skladu s pravom.
+
+149
+00:13:09,279 --> 00:13:20,159
+[SPEAKER_01] Budući da je njihova baza korisnika bila tako odana, zaradili su mnogo više novca i vidjeli su određenu fluktuaciju, ali to je značajno nadoknađeno povećanjem cijene.
+
+150
+00:13:20,639 --> 00:13:22,399
+[SPEAKER_01] Zašto ste se odlučili da to ne učinite?
+
+151
+00:13:22,960 --> 00:13:25,200
+[SPEAKER_00] Da, bilo je nekoliko razloga zašto.
+
+152
+00:13:25,679 --> 00:13:33,200
+[SPEAKER_00] Dakle, način na koji morate povećati cijenu postojećih pretplata u trgovini aplikacijama.
+
+153
+00:13:33,360 --> 00:13:37,519
+[SPEAKER_00] Osjećam da je korisnička iskustvo zbunjujuće i zamorno.
+
+154
+00:13:37,759 --> 00:13:47,919
+[SPEAKER_00] Mislim da dobivate obavijest koja kaže da će cijena porasti kad obnovite, a onda moraju otići u trgovinu aplikacijama i odabrati ili ne odabrati.
+
+155
+00:13:48,240 --> 00:13:51,200
+[SPEAKER_00] Nisam mislio da je to dobra iskustvo za naše korisnike.
+
+156
+00:13:51,360 --> 00:13:52,879
+[SPEAKER_00] Za nas je bilo nemoguće provesti test AB.
+
+157
+00:13:53,600 --> 00:13:53,679
+[SPEAKER_00] Da.
+
+158
+00:13:54,159 --> 00:13:57,600
+[SPEAKER_00] To je bio ogroman rizik za nas koji smo osjećali da ne možemo preuzeti.
+
+159
+00:13:58,240 --> 00:14:02,480
+[SPEAKER_00] Kakva je stopa gubitka kada podignete cijenu postojeće pretplate?
+
+160
+00:14:02,720 --> 00:14:03,120
+[SPEAKER_00] Ne znam.
+
+161
+00:14:03,600 --> 00:14:05,759
+[SPEAKER_00] To bi moglo biti u izvješću o pretplatnim aplikacijama.
+
+162
+00:14:05,840 --> 00:14:06,399
+[SPEAKER_00] Ne znam.
+
+163
+00:14:06,480 --> 00:14:08,480
+[SPEAKER_00] Ali za nas je kao da ne možemo riskirati.
+
+164
+00:14:08,799 --> 00:14:09,759
+[SPEAKER_00] Je li to sedamdeset pet posto?
+
+165
+00:14:10,000 --> 00:14:10,799
+[SPEAKER_00] Je li to dvadeset pet posto?
+
+166
+00:14:10,799 --> 00:14:13,360
+[SPEAKER_00] Bilo je to preveliko nepoznato za nas.
+
+167
+00:14:14,320 --> 00:14:22,000
+[SPEAKER_00] Također, uvijek smo imali povijest kad god smo tijekom godina promijenili politiku ili proizvod kako bismo se pridružili našim vjernim korisnicima.
+
+168
+00:14:22,080 --> 00:14:35,840
+[SPEAKER_00] Kada smo bili na godišnjem događaju rasta aplikacije u listopadu, naša osoba za rast i jedna od naših voditelja proizvoda, Danielle i Burton, predstavili su kako smo skeniranje Parcode premjestili iza plaćene zida.
+
+169
+00:14:36,000 --> 00:14:44,639
+[SPEAKER_00] Kada smo zapravo napravili tu promjenu, pridružili smo se besplatnim korisnicima i ta je promjena bila samo za nove korisnike.
+
+170
+00:14:44,879 --> 00:14:48,000
+[SPEAKER_00] Uvijek smo imali samo tradiciju da to radimo.
+
+171
+00:14:48,000 --> 00:14:58,080
+[SPEAKER_00] To radim samo zato što, opet, volimo svoje korisnike i osjećamo da pokušavamo zadržati što više bilo kakve ponude u koje su se uključili kad su došli k nama.
+
+172
+00:14:58,639 --> 00:15:00,320
+[SPEAKER_00] Da, mislim da postoji taj poticaj.
+
+173
+00:15:00,639 --> 00:15:02,399
+[SPEAKER_01] Već sam o tome govorio na podcastu.
+
+174
+00:15:02,799 --> 00:15:09,919
+[SPEAKER_01] Uključio sam se u neku posebnu ponudu s Headspaceom, gdje sam, mislim, plaćao oko tri dolara mjesečno ili nešto slično.
+
+175
+00:15:10,000 --> 00:15:14,879
+[SPEAKER_01] A onda je cijena u to vrijeme porasla na dvanaest dolara mjesečno ili šezdeset dolara godišnje.
+
+176
+00:15:15,200 --> 00:15:19,759
+[SPEAKER_01] I znao sam da ću morati platiti mnogo više ako otkažem, kad se ponovno pretplatim.
+
+177
+00:15:20,879 --> 00:15:24,399
+[SPEAKER_01] I tako sam zadržao tu pretplatu, iako nisam ni puno koristio aplikaciju u to vrijeme.
+
+178
+00:15:24,399 --> 00:15:26,480
+[SPEAKER_01] Mislim da je to malo i za vaše starije korisnike.
+
+179
+00:15:26,879 --> 00:15:36,240
+[SPEAKER_01] A onda bih pretpostavio da će, ako se odustanu i vrate u aplikaciju, vidjeti novu cijenu i morati platiti veću cijenu.
+
+180
+00:15:36,399 --> 00:15:36,879
+[SPEAKER_01] Da, da.
+
+181
+00:15:37,120 --> 00:15:40,639
+[SPEAKER_00] Dakle, mislim da je to zanimljiv eksperiment koji možemo provesti odmah, zar ne?
+
+182
+00:15:40,799 --> 00:15:50,960
+[SPEAKER_00] Kao da je netko označio jeftiniju pretplatu da se ne obnovi, znate, mogli bismo intervenirati i pitati se jeste li sigurni jer će biti drugačije.
+
+183
+00:15:51,200 --> 00:15:58,559
+[SPEAKER_01] Imali ste mjesec dana da uvedeš ovu novu cijenu svima i to je bio najvažniji mjesec za aplikaciju za zdravlje i fitness.
+
+184
+00:15:59,039 --> 00:16:05,039
+[SPEAKER_01] Dakle, kakvi su rani znakovi uvij da smo to implementirali u cijeloj bazi korisnika?
+
+185
+00:16:05,200 --> 00:16:11,840
+[SPEAKER_00] Do sada bih rekao da su rezultati bili točno isti kao i rezultati naših eksperimenata, što se rijetko događa, zar ne?
+
+186
+00:16:13,440 --> 00:16:25,600
+[SPEAKER_00] Obično, kad nešto pušite u divljinu, malo je drugačije, ali do sada je to održalo rezultate naših eksperimenata i to je zasluga našeg marketinškog tima za rast i našeg tima za proizvode.
+
+187
+00:16:25,919 --> 00:16:33,919
+[SPEAKER_00] Oni su to stvarno rigorozno testirali, stvarno analizirali podatke i do sada je to održalo vrlo, vrlo dobro.
+
+188
+00:16:34,559 --> 00:16:35,679
+[SPEAKER_00] Vrlo smo uzbuđeni zbog toga.
+
+189
+00:16:36,000 --> 00:16:36,480
+[SPEAKER_00] Fantastično.
+
+190
+00:16:36,799 --> 00:16:39,440
+[SPEAKER_01] Mislim da je ovo sjajno mjesto za za završavanje.
+
+191
+00:16:39,519 --> 00:16:41,200
+[SPEAKER_01] Želite li podijeliti nešto dok završavamo?
+
+192
+00:16:41,279 --> 00:16:48,559
+[SPEAKER_01] U bilješkama emisije stavit ću poveznicu na Lose It i vaš LinkedIn, ali želite li još nešto reći dok završavamo?
+
+193
+00:16:48,799 --> 00:16:51,120
+[SPEAKER_00] Da, trebamo iOS programerke.
+
+194
+00:16:51,279 --> 00:16:57,519
+[SPEAKER_00] Dakle, ako ste iOS programer, potražite me na LinkedIn-u.
+
+195
+00:16:57,679 --> 00:16:58,480
+[SPEAKER_00] Pokušavamo rasti.
+
+196
+00:16:58,559 --> 00:16:59,759
+[SPEAKER_00] Pokušavamo učiniti mnogo stvari.
+
+197
+00:17:00,399 --> 00:17:01,279
+[SPEAKER_00] Trebamo ljude.
+
+198
+00:17:01,360 --> 00:17:02,559
+[SPEAKER_00] Da, to je stvarno sjajna ekipa.
+
+199
+00:17:02,720 --> 00:17:06,640
+[SPEAKER_01] Upoznao sam mnogo ljudi iza Lose It-a i svi su poput svih s kojima sam razgovarao.
+
+200
+00:17:06,880 --> 00:17:08,480
+[SPEAKER_01] Dakle, da, bilo je sjajno.
+
+201
+00:17:08,720 --> 00:17:14,079
+[SPEAKER_01] Znaš, godišnji događaj o rastu aplikacija bio je stvarno zabavan za upoznavanje ljudi iz industrije.
+
+202
+00:17:15,119 --> 00:17:20,160
+[SPEAKER_01] Mislim da sam upoznao šest ili osam ljudi iz tima Lose It između godišnjeg događaja App Growth i drugih događaja i slično.
+
+203
+00:17:20,319 --> 00:17:21,039
+[SPEAKER_01] Odličan tim.
+
+204
+00:17:21,279 --> 00:17:26,720
+[SPEAKER_01] Ako ste razvijač iOS-a ili poznajete dobar, mogu reći da su to dobri ljudi, dobri ljudi i sjajan proizvod.
+
+205
+00:17:27,119 --> 00:17:30,559
+[SPEAKER_00] Pa, hvala vam puno.
+
+206
+00:17:31,039 --> 00:17:32,319
+[SPEAKER_01] Hvala vam puno što ste slušali.
+
+207
+00:17:32,400 --> 00:17:36,319
+[SPEAKER_01] Ako imate minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+208
+00:17:37,519 --> 00:17:47,039
+[SPEAKER_01] Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
+
