@@ -1,0 +1,1124 @@
+1
+00:00:00,000 --> 00:00:09,599
+[SPEAKER_00] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:19,920
+[SPEAKER_00] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:31,839
+[SPEAKER_00] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da će omogućiti kupnju aplikacija, upravljati klijentima i povećati prihod na iOS-u i Androidu.
+
+5
+00:00:31,839 --> 00:00:36,159
+[SPEAKER_00] Više informacija možete pronaći na revenucat.com.
+
+6
+00:00:37,280 --> 00:00:38,240
+[SPEAKER_00] Uđimo u emisiju.
+
+7
+00:00:41,520 --> 00:00:43,600
+[SPEAKER_00] Pozdrav, ja sam vaš domaćin David Bernard.
+
+8
+00:00:44,159 --> 00:00:48,079
+[SPEAKER_00] Današnja je rasprava kraća nego inače i bit će predstavljena u izvješću o stanju aplikacija za pretplatu tvrtke RevenueCat.
+
+9
+00:00:48,799 --> 00:00:58,240
+[SPEAKER_00] Svaka epizoda ove serije istražit će jednu ključnu temu i podijelit će praktične spoznaje od najboljih operatera aplikacija za pretplatu.
+
+10
+00:00:58,399 --> 00:01:02,719
+[SPEAKER_00] Danas sam sa mnom, Sean Gong, voditelj proizvoda koji gradi inženjer za monetizaciju i rast.
+
+11
+00:01:02,719 --> 00:01:06,400
+[SPEAKER_00] i motorima rasta za potrošačke jedinice, uključujući Tinder i Grinder.
+
+12
+00:01:06,879 --> 00:01:24,159
+[SPEAKER_00] Na podcastu pričam s Seanom o tome kako su Tinderove plaćene zidove koje se temelje na strojnom učenju donijeli milijune novih prihoda, o umjetnosti prodaje značajki iz košarice bez ukidanja prihoda od pretplate i zašto je Tinder Select propao unatoč tome što su korisnici rekli da su platili za to.
+
+13
+00:01:24,560 --> 00:01:27,040
+[SPEAKER_00] Hej, Seane, hvala ti što si se danas pridružio meni na podcastu.
+
+14
+00:01:27,280 --> 00:01:32,079
+[SPEAKER_01] Hvala ti, Dave, za to što si me tako volio.
+
+15
+00:01:33,040 --> 00:01:35,359
+[SPEAKER_01] Bulletin, podcast i sve ostalo.
+
+16
+00:01:35,519 --> 00:01:38,560
+[SPEAKER_01] Dakle, čast mi je biti ovdje s vama.
+
+17
+00:01:39,120 --> 00:01:40,159
+[SPEAKER_01] Hvala vam puno, čovječe.
+
+18
+00:01:40,319 --> 00:01:53,599
+[SPEAKER_00] Pa, imao sam nekoliko bivših zaposlenika Tindera na podcastu, ali jako sam uzbuđen što ste se uključili jer nisam imao priliku razgovarati s osobom koja je bila u rovovima posljednjih nekoliko godina, a Tinder je napravio mnogo zanimljivih stvari na području monetizacije.
+
+19
+00:01:54,400 --> 00:02:00,079
+[SPEAKER_00] Želio sam se pozabaviti projektom na kojem ste puno radili, a to je cijena koja se temelji na umjetnoj inteligenciji.
+
+20
+00:02:00,239 --> 00:02:01,359
+[SPEAKER_00] Dakle, što je bilo problem?
+
+21
+00:02:01,680 --> 00:02:03,920
+[SPEAKER_00] Što ste pokušavali riješiti i kako su stvari išle?
+
+22
+00:02:04,239 --> 00:02:04,319
+[SPEAKER_00] Da.
+
+23
+00:02:04,400 --> 00:02:05,680
+[SPEAKER_01] Da, jako sam uzbuđen.
+
+24
+00:02:06,079 --> 00:02:13,039
+[SPEAKER_01] Pa krenimo s osnovnim problemom jer je to zapravo oblikovalo sve što gradimo u Tingeri.
+
+25
+00:02:14,000 --> 00:02:18,479
+[SPEAKER_01] Dakle, problem korisnika je preopterećenje odluka, kako bi se to jednostavno reklo.
+
+26
+00:02:18,560 --> 00:02:29,280
+[SPEAKER_01] Kao što možda znate, Tingera ima mnogo mogućnosti kupnje za više razina pretplate, a ispod svakog razina postoji nekoliko planova, kao što su tjedni i mjesečni.
+
+27
+00:02:29,439 --> 00:02:31,680
+[SPEAKER_01] A zatim imamo mnogo drugih proizvoda za košaricu.
+
+28
+00:02:32,159 --> 00:02:35,520
+[SPEAKER_01] Dakle, to je sjajno jer imamo toliko proizvoda za odabir korisnika.
+
+29
+00:02:35,520 --> 00:02:40,800
+[SPEAKER_01] Međutim, razgovarali smo s korisnicima i primijetili smo barem dvije stvari.
+
+30
+00:02:41,439 --> 00:02:50,319
+[SPEAKER_01] Jedno je da su neki korisnici kupili platinu, najvišu razinu pretplate koju nudimo svima, jednostavno zato što je to najskuplja.
+
+31
+00:02:50,639 --> 00:02:58,400
+[SPEAKER_01] Dakle, njihova je uvjerenja da sam spreman platiti najviše i da ću dobiti najbolje, pa ću kupiti platinu, što je sjajno.
+
+32
+00:02:58,560 --> 00:03:05,840
+[SPEAKER_01] Međutim, primijetili smo da neki korisnici koji su kupili platinu koriste samo značajke u našem drugom razredu, zlato.
+
+33
+00:03:06,400 --> 00:03:11,360
+[SPEAKER_01] Zato su shvatili: Eh, zapravo ste kupili nešto što niste ni potpuno iskoristili.
+
+34
+00:03:11,599 --> 00:03:15,840
+[SPEAKER_01] Mogli ste kupiti pretplatu na našu Go kako biste uštedjeli novac.
+
+35
+00:03:16,400 --> 00:03:20,159
+[SPEAKER_01] Ili možda je još jedan problem taj da možemo bolje educirati korisnike.
+
+36
+00:03:20,319 --> 00:03:22,400
+[SPEAKER_01] Eh, postoje druge značajke za platinu.
+
+37
+00:03:22,719 --> 00:03:23,759
+[SPEAKER_01] Trebali biste ih iskoristiti.
+
+38
+00:03:23,919 --> 00:03:25,199
+[SPEAKER_01] Još ih niste iskoristili.
+
+39
+00:03:25,759 --> 00:03:32,000
+[SPEAKER_01] Druga stvar koju primjećujemo jest da neki korisnici nisu ništa kupili jednostavno zato što su bili preopterećeni.
+
+40
+00:03:32,159 --> 00:03:34,240
+[SPEAKER_01] To je kao da imam toliko opcija.
+
+41
+00:03:34,400 --> 00:03:34,960
+[SPEAKER_01] Ne želim odabrati.
+
+42
+00:03:35,680 --> 00:03:37,039
+[SPEAKER_01] A onda je stvarnost koju smo naučili.
+
+43
+00:03:37,039 --> 00:03:39,919
+[SPEAKER_01] Možda ćemo naučiti nešto što ste možda naučili, Davide, imate vlastito iskustvo.
+
+44
+00:03:40,159 --> 00:03:44,719
+[SPEAKER_01] Znate, kad pogledate posebno prihod, specijalizirani ste za plaćanje, zar ne?
+
+45
+00:03:44,879 --> 00:03:50,319
+[SPEAKER_01] Dakle, jedan uobičajeni greška koju mnoge tvrtke čine jest da opisuju sve značajke ili prednosti.
+
+46
+00:03:50,879 --> 00:03:52,159
+[SPEAKER_01] Prednosti su bolje od značajki, da.
+
+47
+00:03:52,560 --> 00:03:55,919
+[SPEAKER_01] Međutim, mislite li da će korisnici preuzeti rizik i donijeti odluku?
+
+48
+00:03:56,159 --> 00:03:58,240
+[SPEAKER_01] Ne, to je ono što smo mislili da ćete učiniti.
+
+49
+00:03:58,560 --> 00:04:05,840
+[SPEAKER_01] U redu, usporedimo Tingers Plus, Tingers Glow, Tingers Planum, a zatim usporedimo drugi automobil i donesemo odluku.
+
+50
+00:04:06,319 --> 00:04:08,639
+[SPEAKER_01] Ne, korisnici donose odluku u roku od sekunde.
+
+51
+00:04:08,639 --> 00:04:12,159
+[SPEAKER_01] Naša je zadaća pomoći im da donesu bolje odluke.
+
+52
+00:04:12,240 --> 00:04:18,000
+[SPEAKER_01] To je u osnovi problem korisnika, preopterećenost odlukama, a onda je preopterećenost.
+
+53
+00:04:18,639 --> 00:04:25,519
+[SPEAKER_01] A onda je poslovni problem, naravno, koji dovodi do relativno niže konverzije, zar ne?
+
+54
+00:04:25,759 --> 00:04:31,839
+[SPEAKER_01] Jer za neke korisnike koji su htjeli kupiti, ali su bili preopterećeni, odlučili su ne kupiti, a onda je to niža konverzija.
+
+55
+00:04:32,240 --> 00:04:36,639
+[SPEAKER_01] Dakle, to je klasičan slučaj neskladnih poticaja.
+
+56
+00:04:37,040 --> 00:04:39,600
+[SPEAKER_01] Želimo maksimizirati prihod, ali na kraju.
+
+57
+00:04:39,600 --> 00:04:44,480
+[SPEAKER_01] Ali naša korisnička sučelja otežala vam je donošenje pouzdane odluke.
+
+58
+00:04:44,560 --> 00:04:47,920
+[SPEAKER_00] Da, i mislim na Tinder, poznat po tome što vas pozivam na to.
+
+59
+00:04:48,000 --> 00:04:59,759
+[SPEAKER_00] I toliko ljudi u industriji govorilo je o Tinderu jer je on bio vođa u hibridnom monetiziranju, ali imati tri različite razine plana, a zatim ćete isprobati četvrtu razinu plana.
+
+60
+00:05:00,000 --> 00:05:03,920
+[SPEAKER_00] O tome ćemo razgovarati na kraju, nadam se, ako imamo vremena, ali postaje jako zbunjujuće.
+
+61
+00:05:04,079 --> 00:05:08,000
+[SPEAKER_00] A onda imate super pojačanja i druge kupnje u aplikaciji i slično.
+
+62
+00:05:08,160 --> 00:05:15,759
+[SPEAKER_00] Dakle, što ste zapravo učinili da biste riješili tajiti to i učiniti ga dostupnijim ljudima i dovesti ih do prave platforme.
+
+63
+00:05:16,079 --> 00:05:21,839
+[SPEAKER_01] To je bilo izazovno, ali na sreću imali smo sjajnu ekipu za strojno učenje.
+
+64
+00:05:21,920 --> 00:05:33,279
+[SPEAKER_01] Kad sam razgovarao s članovima tima, rekli su mi: Evo, možemo pokušati izgraditi modele strojnog učenja i onda ih upotrijebiti za predviđanje korisnika koji će biti spremni platiti.
+
+65
+00:05:33,439 --> 00:05:38,319
+[SPEAKER_01] A onda možemo pokazati najbolji proizvod koji će vjerojatno kupiti.
+
+66
+00:05:38,639 --> 00:05:44,959
+[SPEAKER_01] To je naša rješenja jer se temelji na uvidima o kojima smojoj pričamo jest da ljudi, kupci, ne trebaju puno opcija.
+
+67
+00:05:45,120 --> 00:05:46,000
+[SPEAKER_01] Trebaju pravu.
+
+68
+00:05:46,240 --> 00:05:47,759
+[SPEAKER_01] Razmislite o Netflixu.
+
+69
+00:05:48,160 --> 00:05:50,480
+[SPEAKER_01] Koliko je korisnika, recimo, Bože, ne znam što da gledam.
+
+70
+00:05:50,639 --> 00:05:56,319
+[SPEAKER_01] Ima toliko mogućnosti da na kraju provode satima klizajući i ne gledaju ništa.
+
+71
+00:05:56,639 --> 00:06:05,519
+[SPEAKER_01] Zato Netflix ima nešto poput najboljih odabira za vas, na temelju vašeg prethodnog ponašanja i ocjena, predviđaju što ćete najvjerojatnije gledati.
+
+72
+00:06:05,680 --> 00:06:06,480
+[SPEAKER_01] Dakle, riješite taj problem.
+
+73
+00:06:06,800 --> 00:06:07,519
+[SPEAKER_01] Dakle, vrlo je slično.
+
+74
+00:06:08,079 --> 00:06:18,959
+[SPEAKER_01] Dakle, ovo je veliki trenutak za nas, mislim, posebno čak i za Tinder, za N industriju, prešli smo s zastarjelih cijena na dinamičnu cijenu.
+
+75
+00:06:19,199 --> 00:06:22,959
+[SPEAKER_01] Dakle, ne prikazujemo istu plaćenu zidinu, isti proizvod svim korisnicima.
+
+76
+00:06:23,839 --> 00:06:31,040
+[SPEAKER_01] Dakle, znate, razmislite, recimo, David, želite kupiti platinu, zašto bismo vam trebali pokazati plus, zar ne?
+
+77
+00:06:31,199 --> 00:06:33,759
+[SPEAKER_01] Mislim, to je problem ne samo s poslovnog stajališta.
+
+78
+00:06:34,319 --> 00:06:41,279
+[SPEAKER_01] Nećemo moći maksimizirati prihod i onda možemo to upotrijebiti za ponovnu investiciju kako bismo proizvod učinili boljim za vas.
+
+79
+00:06:41,519 --> 00:06:43,360
+[SPEAKER_01] Drugi problem je da ne možete uložiti u proizvod.
+
+80
+00:06:43,360 --> 00:06:46,240
+[SPEAKER_01] Ne možete uživati u svim najboljim prednostima koje možemo ponuditi, zar ne?
+
+81
+00:06:46,319 --> 00:06:48,240
+[SPEAKER_01] Jednostavno zato što ste odabrali plus.
+
+82
+00:06:49,040 --> 00:06:51,439
+[SPEAKER_01] Zato je rješenje koje dolazi s njim.
+
+83
+00:06:51,519 --> 00:07:01,439
+[SPEAKER_01] Koristimo strojovo učenje, trenirali smo model, a zatim smo na kraju objavili model za predviđanje i pružanje najboljeg SKU-a za kupce.
+
+84
+00:07:01,920 --> 00:07:02,800
+[SPEAKER_00] Kako to testirate?
+
+85
+00:07:02,879 --> 00:07:04,560
+[SPEAKER_00] Kakav je bio test AB?
+
+86
+00:07:05,279 --> 00:07:15,920
+[SPEAKER_00] Bio je to samo standardni, nekako deterministički, normalan, svi dobivaju ovu plaćenu zid u ovoj fazi tijeka, a zatim svi dobivaju tu plaććenu zidnu ploču u tom dijelu tijeka.
+
+87
+00:07:16,000 --> 00:07:24,000
+[SPEAKER_00] A upravo ste napravili AB test da biste dokazali da je model odlučivanja u ML-u bolji od onog koji ste imali prije?
+
+88
+00:07:24,160 --> 00:07:24,959
+[SPEAKER_00] Da, točno.
+
+89
+00:07:25,279 --> 00:07:25,360
+[SPEAKER_01] Da.
+
+90
+00:07:26,079 --> 00:07:33,680
+[SPEAKER_01] Ali očito, kako bismo smanjili rizik, ne bismo mogli početi s svim plaćnim zidinama, zar ne?
+
+91
+00:07:33,839 --> 00:07:35,519
+[SPEAKER_01] Jer imamo puno različitih plaćnih zidina.
+
+92
+00:07:35,680 --> 00:07:47,360
+[SPEAKER_01] A istovremeno je to vrlo skupo i traje puno vremena i truda da se model trenira, da se model testirarali model, počinjemo s nečim malim.
+
+93
+00:07:47,600 --> 00:07:53,439
+[SPEAKER_01] Dakle, testiramo nekoliko značajki, a zatim samo, znate, počinjemo s, znate, ne cijelim opsegom.
+
+94
+00:07:53,600 --> 00:08:06,560
+[SPEAKER_01] Dakle, možemo vidjeti, evo, na temelju ovog strojnog modela, povijesno, znate, kao što je verzija kontrole bit će ista, znate, kao što smo navikli prikazivati plaćeni zid i proizvode na novi.
+
+95
+00:08:06,879 --> 00:08:07,680
+[SPEAKER_01] To je dinamično.
+
+96
+00:08:08,160 --> 00:08:16,079
+[SPEAKER_01] Promijenit ćemo se na temelju, u osnovi, kada pokažu korisnika, recimo za Davida, a zatim će naš plaćeni zid pitati.
+
+97
+00:08:16,079 --> 00:08:18,560
+[SPEAKER_01] Model ML-a, evo, koji ćemo plaćeni zid pokazati?
+
+98
+00:08:18,800 --> 00:08:22,240
+[SPEAKER_01] A onda će plaćeni zid odlučiti, dobro, koji proizvod ćemo preporučiti Davidu?
+
+99
+00:08:22,800 --> 00:08:25,120
+[SPEAKER_01] I tako testiramo tretman.
+
+100
+00:08:25,360 --> 00:08:29,279
+[SPEAKER_01] A onda možemo izmjeriti konverziju i ukupni prihod.
+
+101
+00:08:29,600 --> 00:08:30,879
+[SPEAKER_00] I kako je to prošlo?
+
+102
+00:08:31,040 --> 00:08:31,439
+[SPEAKER_00] To je sjajno.
+
+103
+00:08:31,680 --> 00:08:31,680
+[UNKNOWN] Da.
+
+104
+00:08:32,000 --> 00:08:40,080
+[SPEAKER_01] Dakle, na temelju naše predviđanja, mislim da je definitivno godišnji porast od više milijuna dolara za Tinder.
+
+105
+00:08:40,480 --> 00:08:45,440
+[SPEAKER_01] Također želim razjasniti, znate, za to nije samo maksimalni prihod.
+
+106
+00:08:45,679 --> 00:08:46,799
+[SPEAKER_01] To je kao zločesti poslovni plan.
+
+107
+00:08:47,200 --> 00:08:52,879
+[SPEAKER_01] Ne, novac koji ćemo potrošiti možemo ponovno uložiti u proizvod, zar ne?
+
+108
+00:08:53,039 --> 00:08:59,120
+[SPEAKER_01] Dakle, možemo poboljšati korisničko iskustvo i stvoriti više koristi za kupce.
+
+109
+00:08:59,360 --> 00:09:06,799
+[SPEAKER_01] Zato kad razgovaram s mnogim osnivačima startupa, uvijek im savjetujem: Nemojte čekati da razmislite o svojoj strategiji monetizacije.
+
+110
+00:09:07,600 --> 00:09:10,320
+[SPEAKER_01] Ne osjećajte se loše zbog naplaćivanja korisnika.
+
+111
+00:09:10,559 --> 00:09:17,919
+[SPEAKER_01] Žele vam platiti i zaslužuju to jer ćete im pružiti bolju iskustvo, a da ne spominjemo da ćete se natjecati s konkurencijom.
+
+112
+00:09:17,919 --> 00:09:18,399
+[SPEAKER_01] I mogli biste se brže i prije kretati.
+
+113
+00:09:18,639 --> 00:09:22,159
+[SPEAKER_01] A što je s mjerama za protuprojektivnost?
+
+114
+00:09:22,720 --> 00:09:33,200
+[SPEAKER_00] Pazili ste li na nešto kako biste bili sigurni da se stvari ne pogoršavaju u zadržavanju ili korisničkom iskustvu, znate, da ljudi nisu bili zadovoljni planovima koji su im bili predstavljeni?
+
+115
+00:09:33,600 --> 00:09:41,600
+[SPEAKER_01] Tinger ima vrlo dobar proces i da moramo mjeriti i naše mjerne protuprojektivnosti.
+
+116
+00:09:41,840 --> 00:09:46,799
+[SPEAKER_01] To je sjajno jer, znate, ne možete se usredotočiti samo na jednu području.
+
+117
+00:09:46,960 --> 00:09:54,559
+[SPEAKER_01] Na primjer, u ovom slučaju ne možemo se usredotočitiiti samo na prvu konverziju i onda samo na iznos prihoda, zar ne?
+
+118
+00:09:54,720 --> 00:10:03,360
+[SPEAKER_01] Moramo izmjeriti, recimo, Davida, na temelju našeg modela, možda bi prije toga kupio plus, a sada je kupio platinu.
+
+119
+00:10:03,600 --> 00:10:05,759
+[SPEAKER_01] Želimo provjeriti, hoće li se David vratiti?
+
+120
+00:10:06,080 --> 00:10:07,679
+[SPEAKER_01] Hoće li David ponovno kupiti platinu?
+
+121
+00:10:08,480 --> 00:10:09,279
+[SPEAKER_01] Hoće li otkazati?
+
+122
+00:10:09,679 --> 00:10:19,840
+[SPEAKER_01] Dakle, definitivno mjerimo ove dugoročne mjerne jedinice uspjeha kako bismo bili sigurni da je ovaj model zaista ispravno služio jer to nije nešto na čemu želimo nastaviti raditi.
+
+123
+00:10:19,840 --> 00:10:27,200
+[SPEAKER_01] Kao i većina značajki proizvoda, ne radi se o pokretanju i završetku, već o optimizaciji iteracije.
+
+124
+00:10:27,440 --> 00:10:30,399
+[SPEAKER_01] Želimo naučiti, evo, zapravo imamo različite modele.
+
+125
+00:10:30,799 --> 00:10:47,840
+[SPEAKER_01] Izradili smo različite modele, želimo ih usporediti, želimo vidjeti kako se ponašaju između tih modela, istovremeno kako se ponašaju u usporedbi s plaćom bez modela, tako da možemo biti sigurni da se usredotočujemo na dugoročni uspjeh.
+
+126
+00:10:48,159 --> 00:10:51,120
+[SPEAKER_01] Dakle, zaključavanje ovog primjera nije bilo samo plaćanje.
+
+127
+00:10:51,120 --> 00:10:55,039
+[SPEAKER_01] Ne radi se samo o boljoj cijeni, već o boljoj odluci, dizajnu, u redu?
+
+128
+00:10:55,279 --> 00:10:58,399
+[SPEAKER_01] Pomaže korisnicima da odaberu proizvod koji im zaista odgovara.
+
+129
+00:10:59,360 --> 00:11:15,759
+[SPEAKER_01] Dakle, za vaš proizvod, znate, bilo koji osnivač ili startup, čak i ako još nemate tim za ML, mislim da je možda jednostavan način da to učinite dizajnirati tri proizvoda ili razine za kupce.
+
+130
+00:11:16,240 --> 00:11:16,399
+[SPEAKER_01] Zašto?
+
+131
+00:11:16,639 --> 00:11:20,879
+[SPEAKER_01] Jer to je vrlo uobičajeni ili jednostavan način za odabir, u redu?
+
+132
+00:11:21,360 --> 00:11:25,120
+[SPEAKER_01] Neki žele kupiti najskuplji, a neki samo najjeftiniji.
+
+133
+00:11:25,360 --> 00:11:28,720
+[SPEAKER_01] A onda neki ne znaju kako donijeti odluke i kupuju srednji.
+
+134
+00:11:28,960 --> 00:11:35,919
+[SPEAKER_01] Dakle, to je obično najjednostavniji način za dizajniranje vašeg proizvoda jer zapravo mijenja način na koji se donose odluke.
+
+135
+00:11:36,320 --> 00:11:42,399
+[SPEAKER_01] Recimo, Dave, ako nudite samo jedan proizvod, vaša odluka je trebam li kupiti ili ne.
+
+136
+00:11:43,120 --> 00:11:48,320
+[SPEAKER_01] Ali ako vam Dave pokaže tri proizvoda, sada razmišljate koji bih trebao kupiti?
+
+137
+00:11:48,720 --> 00:11:52,960
+[SPEAKER_01] Dakle, zaobilaze se odgovorima da ili ne, a onda je veća vjerojatnost da ćete se pretvoriti.
+
+138
+00:11:52,960 --> 00:11:54,320
+[SPEAKER_00] Da, to je fantastičan savjet.
+
+139
+00:11:54,720 --> 00:11:56,879
+[SPEAKER_00] Želio bih da svi imamo timove za učenje i učenje.
+
+140
+00:11:56,960 --> 00:12:02,960
+[SPEAKER_00] Možda bismo trebali raditi na tome u RevenueCatu kako bismo pomogli ljudima da u svoje aplikacije ugrade takve sofisticirane stvari.
+
+141
+00:12:03,440 --> 00:12:14,480
+[SPEAKER_00] Ali, u svakom slučaju, želio sam prijeći na ideju o monetizaciji, razdvajanju, jer ne svi žele punu pretplatu, ne svi će se uklopiti u zlatnu platinu.
+
+142
+00:12:15,200 --> 00:12:17,360
+[SPEAKER_00] Dakle, kako mislite o razdvajanju toga?
+
+143
+00:12:18,000 --> 00:12:25,840
+[SPEAKER_01] Zapravo, vjerojatno znate da već imamo neke proizvode za razdvajanje, kao što su A Boost, Superlikes.
+
+144
+00:12:26,399 --> 00:12:33,519
+[SPEAKER_01] Mislim da je nekoliko stvari o kojima biste trebali razmišljati, osim jednog problema koji ste već naglasili, da ne želi svatko imati pretplatu, zar ne?
+
+145
+00:12:33,679 --> 00:12:34,639
+[SPEAKER_01] Pretplata je sjajna.
+
+146
+00:12:34,720 --> 00:12:44,639
+[SPEAKER_01] Mislim, nemojte me krivo shvatiti, jer dobivate paket, mnogo je lakše nego odlučiti iz kojih značajki želite odabrati i onda ga kupiti na taj način.
+
+147
+00:12:45,039 --> 00:12:45,840
+[SPEAKER_01] To je bolno, zar ne?
+
+148
+00:12:46,240 --> 00:12:51,279
+[SPEAKER_01] Lakše je kupiti cijeli paket i onda ga ponoviti, automatski ga obnoviti, pa biste trebali razmišljati o tome dvaput.
+
+149
+00:12:51,360 --> 00:12:52,879
+[SPEAKER_01] Ali postoje neki primjeri upotrebe.
+
+150
+00:12:53,039 --> 00:12:54,879
+[SPEAKER_01] Razmislite o Boostu.
+
+151
+00:12:54,879 --> 00:12:56,799
+[SPEAKER_01] Mislim da je to savršeno za proizvod automobila.
+
+152
+00:12:57,120 --> 00:12:57,279
+[SPEAKER_01] Zašto?
+
+153
+00:12:57,600 --> 00:13:02,240
+[SPEAKER_01] Jer ovisi o tome kada ga želite upotrijebiti, zar ne?
+
+154
+00:13:02,480 --> 00:13:05,759
+[SPEAKER_01] Kada ne primite dovoljno lajkova, pa želite da se pojačate.
+
+155
+00:13:06,159 --> 00:13:10,320
+[SPEAKER_01] Kada recimo klizite tijekom vrhunskih sati, pa želite da ga upotrijebite.
+
+156
+00:13:10,480 --> 00:13:11,360
+[SPEAKER_01] Dakle, to ima smisla.
+
+157
+00:13:11,519 --> 00:13:12,480
+[SPEAKER_01] Super lajkovi, zar ne?
+
+158
+00:13:12,639 --> 00:13:15,919
+[SPEAKER_01] Jer je to kao da ne znam koliko ću super lajkova poslati.
+
+159
+00:13:16,159 --> 00:13:18,799
+[SPEAKER_01] Ovisi o tome koga vidim u aplikaciji, zar ne?
+
+160
+00:13:19,120 --> 00:13:25,919
+[SPEAKER_01] A drugi primjer koji smo odlučili isprobati je putovni način, poznat i kao putovni način.
+
+161
+00:13:25,919 --> 00:13:30,320
+[SPEAKER_01] Pomoću načina rada za putovnicu bilo koji korisnik može vidjeti bilo koga diljem svijeta.
+
+162
+00:13:30,480 --> 00:13:31,519
+[SPEAKER_01] To je tako sjajno.
+
+163
+00:13:31,919 --> 00:13:36,799
+[SPEAKER_01] Recimo da možete otići u Pariz, Španjolsku, bilo gdje želite otići, ovisno o svojim potrebama.
+
+164
+00:13:36,960 --> 00:13:39,679
+[SPEAKER_01] Može biti da želite putovati tamo ili da želite samo upoznati ljude tamo.
+
+165
+00:13:40,000 --> 00:13:43,919
+[SPEAKER_01] A stvar o toj značajci je da je možda ne želi svatko, zar ne?
+
+166
+00:13:44,159 --> 00:13:47,279
+[SPEAKER_01] Možda zato što je to vrlo poseban slučaj za potrebe određenih ljudi.
+
+167
+00:13:47,759 --> 00:13:53,679
+[SPEAKER_01] U tom slučaju, ta značajka je sjajan kandidat kao neobjavljena značajka.
+
+168
+00:13:54,159 --> 00:13:59,759
+[SPEAKER_01] Tako razmišljamo o tome koje značajke imaju sm smisla da se razdvoje i osmisle za naše klijente.
+
+169
+00:14:00,080 --> 00:14:01,519
+[SPEAKER_01] Kako funkcionira način rada putovnice?
+
+170
+00:14:01,919 --> 00:14:05,120
+[SPEAKER_00] Je li to jednokratna kupnja na ograničenom vremenu?
+
+171
+00:14:05,200 --> 00:14:07,919
+[SPEAKER_00] Je li to dodatna pretplata ili kako točno funkcionira?
+
+172
+00:14:08,480 --> 00:14:14,720
+[SPEAKER_01] Da, tako da je ova značajka povijesno dio pretplate, pa morate dobiti pretplatu da biste je koristili.
+
+173
+00:14:15,200 --> 00:14:25,279
+[SPEAKER_01] Ali, kao što smo razgovarali, izazov je u tome što neki korisnici žele je koristiti samo kada planiraju putovati ili upoznati ljude izvan svog rodnog grada.
+
+174
+00:14:25,440 --> 00:14:27,840
+[SPEAKER_01] A onda možda ne žele kupiti pretplatu.
+
+175
+00:14:28,399 --> 00:14:33,840
+[SPEAKER_01] jer jednostavno ne žele imati tu obvezu ili ne žele, ne osjećaju potrebu za korištenjem drugih značajki.
+
+176
+00:14:34,000 --> 00:14:35,519
+[SPEAKER_01] Dakle, to je savršeni kandidat za njih.
+
+177
+00:14:35,919 --> 00:14:55,440
+[SPEAKER_01] Dakle, isprobali smo značajku koja nam je pomogla da uhvatimo neupisane korisnike za korisnike koji žele samo kupiti drugi automobil za ovu značajku putovnice, a zatim je mogu koristiti jedan dan, tri dana, tjedan na temelju ponuda koje smo im pružili, a zatim mogu uživati u tim prednostima da upoznaju ljude bilo gdje na svijetu.
+
+178
+00:14:55,600 --> 00:14:58,799
+[SPEAKER_00] Kako su se stvari odvijale s značajkom putovnice?
+
+179
+00:14:58,799 --> 00:15:03,279
+[SPEAKER_00] Vidjeli ste li da se značajka putovnice odvajala od pretplate?
+
+180
+00:15:03,919 --> 00:15:12,000
+[SPEAKER_01] Da, zapravo, mislim da je tako zabavno pričati o tome jer to nije bio lansiranje i onda priča o uspjehu.
+
+181
+00:15:12,080 --> 00:15:13,519
+[SPEAKER_01] To je sve, nije tako jednostavno.
+
+182
+00:15:13,759 --> 00:15:15,919
+[SPEAKER_01] Naučili smo nekoliko stvari na temelju naših testova.
+
+183
+00:15:16,159 --> 00:15:24,000
+[SPEAKER_01] Prvo je kad smo pokrenuli ovu samostalnu značajku putovnice za automobile, a zatim je konverzija bila ludost.
+
+184
+00:15:24,159 --> 00:15:25,039
+[SPEAKER_01] Bilo je sjajno.
+
+185
+00:15:25,519 --> 00:15:28,879
+[SPEAKER_01] Međutim, primijetili smo da to šteti našoj pretplati Plus.
+
+186
+00:15:28,879 --> 00:15:35,519
+[SPEAKER_01] Neki korisnici odlučili su kupiti ovu značajku samo sada kako bi kupili pretplatu, ali to može biti nekoliko stvari.
+
+187
+00:15:35,679 --> 00:15:38,080
+[SPEAKER_01] Dakle, jedna je, oh, možda smo je cijenili previše nisko.
+
+188
+00:15:38,559 --> 00:15:40,240
+[SPEAKER_01] Previše je pristupačno.
+
+189
+00:15:40,480 --> 00:15:42,639
+[SPEAKER_01] I onda je to kao da je to jasno.
+
+190
+00:15:42,720 --> 00:15:43,759
+[SPEAKER_01] Dakle, korisnici ga koriste.
+
+191
+00:15:43,919 --> 00:15:53,120
+[SPEAKER_01] Druga stvar koju smo učinili je, oh, trebali bismo povećati cijenu za našu karticu i vidjeti kako će to promijeniti konverziju i zatim kanabisiranje pretplate.
+
+192
+00:15:53,200 --> 00:16:01,600
+[SPEAKER_01] Dakle, definitivno smo primijetili da se kanabisiranje pretplate smanjilo kako smo očekivali, a zatim se konverzija smanjila malo, ali ukupni prihod se zapravo je porastao.
+
+193
+00:16:01,679 --> 00:16:03,120
+[SPEAKER_01] To je bilo vrlo pozitivno.
+
+194
+00:16:03,360 --> 00:16:08,320
+[SPEAKER_01] A onda smo nastavili s testovima jer smo htjeli minimizirati kanibalizaciju pretplate.
+
+195
+00:16:08,399 --> 00:16:13,279
+[SPEAKER_01] Dakle, ponovno smo povećali cijenu i zatim smo također imali povećanje na plaćeni zid.
+
+196
+00:16:13,360 --> 00:16:20,879
+[SPEAKER_01] U osnovi smo pokazali: Eh, Davide, možeš kupiti samostalnu karticu za putovnicu, ali možeš kupiti i plus pretplatu.
+
+197
+00:16:21,279 --> 00:16:24,720
+[SPEAKER_01] A onda smo upotrijebili vrlo zanimljivu vrstu psihologije.
+
+198
+00:16:25,120 --> 00:16:31,200
+[SPEAKER_01] U osnovi, za našu sedmodnevnu karticu za putovnicu, cijena je ista.
+
+199
+00:16:31,840 --> 00:16:33,919
+[SPEAKER_01] kao i pretplata za sedam dana.
+
+200
+00:16:34,320 --> 00:16:41,600
+[SPEAKER_01] Dakle, u tom slučaju, Davide, mislite: Da, onda je pretplata za sedam dana bolja ponuda, zar ne?
+
+201
+00:16:41,840 --> 00:16:43,840
+[SPEAKER_01] Mogu dobiti više od ove značajke.
+
+202
+00:16:43,919 --> 00:16:52,559
+[SPEAKER_01] Dakle, to je također pomoglo, naravno, znate, to znači smanjiti kategorizaciju, a također povećati prihod od konverzije, ali i dalje nije dovoljno dobro.
+
+203
+00:16:53,039 --> 00:16:56,960
+[SPEAKER_01] Dakle, odlučili smo: Evo, ponovno ćemo upotrijebiti naš savršeni model ML.
+
+204
+00:16:57,120 --> 00:16:59,679
+[SPEAKER_01] Dakle, prvo ćemo pokazati pretplatu korisnicima.
+
+205
+00:17:00,080 --> 00:17:04,400
+[SPEAKER_01] Ako ne želite kupiti pretplatu, pokazat ćemo vam sve trošk automobile, pa smo vam dali drugu priliku.
+
+206
+00:17:04,559 --> 00:17:15,759
+[SPEAKER_00] Volim čuti takve priče jer mislim da je Tinder postojao tako dugo i da ga mnogi od nas u industriji gledaju kao pionira u monetizaciji aplikacija.
+
+207
+00:17:16,240 --> 00:17:25,279
+[SPEAKER_00] I mislim da toliko aplikacija ostavlja novac na stolu jer ne eksperimentiraju s ovakvim stvarima i ne isprobavaju sve različite tri razine.
+
+208
+00:17:25,359 --> 00:17:28,240
+[SPEAKER_00] I, znate, i kao što smo rekli, to može dovesti do zbunjenosti.
+
+209
+00:17:28,400 --> 00:17:33,119
+[SPEAKER_00] Nije to prava stvar za svaku aplikaciju, ali postoji toliko prilika da se sastanete s korisnicima.
+
+210
+00:17:33,839 --> 00:17:35,599
+[SPEAKER_00] tamo gdje se nalaze i naplaćivanje.
+
+211
+00:17:35,759 --> 00:17:40,319
+[SPEAKER_00] A onda, govoreći o tome, Tinder Select bio je zaista zanimljiv eksperiment.
+
+212
+00:17:40,559 --> 00:17:43,279
+[SPEAKER_00] Zato bih volio čuti od vas kako je to išlo.
+
+213
+00:17:43,920 --> 00:17:49,759
+[SPEAKER_00] Zvuči fantastično i o tome smo mnogo puta govorili na podcastu prije, znate, dodajte super premium razinu.
+
+214
+00:17:50,000 --> 00:17:53,759
+[SPEAKER_00] Znate, ranije smo o tome govorili, kao da će neki ljudi samo kupiti najskuplju stvar.
+
+215
+00:17:54,559 --> 00:17:56,960
+[SPEAKER_00] Zvučalo je kao zaista zanimljiva ideja.
+
+216
+00:17:57,519 --> 00:17:59,279
+[SPEAKER_00] Kako je išlo s Tinder Selectom?
+
+217
+00:17:59,359 --> 00:18:04,480
+[SPEAKER_01] Da, mislim da je Tinder Select vrlo zanimljiv studij slučaja u smislu usklađivanja proizvoda i tržišta.
+
+218
+00:18:06,480 --> 00:18:20,799
+[SPEAKER_01] Dakle, krenimo s hipotezom, znate, u osnovi, mogućnost koju je Tinder istraživao i zašto je Tinder stvorio Tinder Select jer Tinder ima ogromnu globalnu bazu korisnika, a onda imamo i neke dobrote, zar ne?
+
+219
+00:18:20,960 --> 00:18:29,759
+[SPEAKER_01] Znate, u osnovi korisnici koji su voljni potrošiti mnogo novca, kupuju mnogo visokih pretplata i onda sve kartice, potroše mnogo novca s nama kako bi maksimizirali ishod.
+
+220
+00:18:29,920 --> 00:18:33,519
+[SPEAKER_01] Dakle, definitivno smo vidjeli, evo, postoji volja za plaćanjem.
+
+221
+00:18:34,160 --> 00:18:34,880
+[SPEAKER_01] Pokušajmo ako.
+
+222
+00:18:35,039 --> 00:18:43,039
+[SPEAKER_01] Ako imamo još višu razinu i pružamo još bolju uslugu i proizvod, korisnik će ih kupiti ili ne?
+
+223
+00:18:43,839 --> 00:18:46,000
+[SPEAKER_01] Dakle, to je u osnovi hipoteza koju smo imali.
+
+224
+00:18:46,160 --> 00:18:50,160
+[SPEAKER_01] A onda bi to bili različiti segmenti na koje ciljamo, naravno, zar ne?
+
+225
+00:18:50,319 --> 00:18:53,359
+[SPEAKER_01] A onda ponekad mislim da je izazov dvije stvari.
+
+226
+00:18:53,920 --> 00:18:58,640
+[SPEAKER_01] Jedna je usklađenost identiteta i pozicioniranje brendova, zar ne?
+
+227
+00:18:58,799 --> 00:19:03,920
+[SPEAKER_01] Jer za bilo koji proizvod ne može svaka tvrtka samo ponuditi vrhunski proizvod.
+
+228
+00:19:04,079 --> 00:19:06,319
+[SPEAKER_01] To je zapravo ukorijenjeno u tome što je to.
+
+229
+00:19:06,319 --> 00:19:10,720
+[SPEAKER_01] Uključite to u ono što je vaša marka i kako kupci misle da je dobra kombinacija ili ne.
+
+230
+00:19:11,119 --> 00:19:22,480
+[SPEAKER_01] Mislim da je za Tinder jer se odnosimo na masovnu populaciju, a u tom slučaju je malo teško da neki korisnici misle: Ovo je dobra kombinacija za mene.
+
+231
+00:19:22,720 --> 00:19:37,359
+[SPEAKER_01] Razmislite o tome, Davide, ako vam kažemo: Eh, platit ćete četiri dolara i devedeset devet centi mjesečno za pretplatu, a zatim na Tinderu, a kad dođete na Tinder, vidjet ćete ljude koje možda možete vidjeti čak i samo koristeći platformu.
+
+232
+00:19:37,359 --> 00:19:38,720
+[SPEAKER_01] Samo upotrijebite pretplatu na platinu.
+
+233
+00:19:38,720 --> 00:19:42,000
+[SPEAKER_01] Sada biste mogli pomisliti: U redu, ovdje se ne osjećam posebno.
+
+234
+00:19:42,400 --> 00:19:49,519
+[SPEAKER_01] Možda mi date neku posebnu tretman i prednosti, ali ne osjećam da je okruženje ovdje posebno, zar ne?
+
+235
+00:19:50,079 --> 00:19:50,799
+[SPEAKER_01] To je samo teško.
+
+236
+00:19:51,200 --> 00:19:52,079
+[SPEAKER_01] To je vrlo uobičajeno.
+
+237
+00:19:52,160 --> 00:19:53,279
+[SPEAKER_01] Zamislite i klub, zar ne?
+
+238
+00:19:53,440 --> 00:19:58,480
+[SPEAKER_01] To je ekskluzivni, vrlo skup, a ne običan, ali imate skupi stol.
+
+239
+00:19:58,559 --> 00:20:00,960
+[SPEAKER_01] Dakle, razmislite o tom scenariju.
+
+240
+00:20:01,039 --> 00:20:02,559
+[SPEAKER_01] Mislim da je zato izazovno.
+
+241
+00:20:02,799 --> 00:20:07,839
+[SPEAKER_01] To je poput luksuzne ponude, ali ljudi možda ne osjećaju prednosti.
+
+242
+00:20:07,839 --> 00:20:09,359
+[SPEAKER_01] Prednosti ispunjavaju naše očekivanja.
+
+243
+00:20:09,839 --> 00:20:11,440
+[SPEAKER_01] Koja je budućnost Tinder Select?
+
+244
+00:20:11,599 --> 00:20:12,559
+[SPEAKER_00] Hoće li nestati?
+
+245
+00:20:13,039 --> 00:20:14,160
+[SPEAKER_00] Hoće li se razvijati?
+
+246
+00:20:14,640 --> 00:20:22,799
+[SPEAKER_01] Da, mislim da nećemo proširivati dalje i onda postupno smanjivati.
+
+247
+00:20:23,200 --> 00:20:35,440
+[SPEAKER_01] Nije kao da je propao, u osnovi smo naučili ono što smo prvotno htjeli, a onda smo shvatili da to nije vrijedno stalnih ulaganja i dovoljno sredstava da bismo imali ovu značajku.
+
+248
+00:20:35,599 --> 00:20:37,440
+[SPEAKER_01] Nije nam najbolja opcija.
+
+249
+00:20:37,680 --> 00:20:39,359
+[SPEAKER_01] Imamo bolje klađenja za konkurenciju.
+
+250
+00:20:40,000 --> 00:20:51,839
+[SPEAKER_00] Mislim da je super što ste svi pokušali i, kao i uvijek, sjajna lekcija da ljudi ne čine uvijek ono što kažu u anketi ili intervjuu s korisnicima.
+
+251
+00:20:52,319 --> 00:20:56,799
+[SPEAKER_00] Dakle, uvijek je sjajna lekcija koju se treba zapamtiti, ali trebali biste pokušati i to je sjajna stvar.
+
+252
+00:20:57,039 --> 00:20:58,799
+[SPEAKER_00] A onda ste to učinili i naučili.
+
+253
+00:20:59,119 --> 00:21:02,559
+[SPEAKER_00] Želite li nešto podijeliti s publikom dok završavamo?
+
+254
+00:21:02,799 --> 00:21:10,319
+[SPEAKER_01] Mislim da je najvažnije da publika shvati ili razumije da ne tretirajte svoje korisnike kao svoje korisnike.
+
+255
+00:21:10,319 --> 00:21:12,079
+[SPEAKER_01] Korisnici kao logični ljudi.
+
+256
+00:21:12,799 --> 00:21:20,960
+[SPEAKER_01] Dakle, što mislim na to jest da ne možete misliti da ne možete biti poput: Dajem ti ovaj proizvod i korisnik će pročitati sve na zaslonu.
+
+257
+00:21:21,759 --> 00:21:30,160
+[SPEAKER_01] Morat će donijeti odluku na temelju informacija koje sam im podijelio, a zatim donijeti odluku o kupnji, bilo što žele, što želite da učine, zar ne?
+
+258
+00:21:30,319 --> 00:21:31,920
+[SPEAKER_01] Ne, stvarnost, ne rade tako.
+
+259
+00:21:32,799 --> 00:21:35,039
+[SPEAKER_01] Ne slijede vaše korisničko iskustvo.
+
+260
+00:21:35,440 --> 00:21:37,759
+[SPEAKER_01] Ne čitaju sve samo da bi donijeli odluku.
+
+261
+00:21:38,240 --> 00:21:41,039
+[SPEAKER_01] Dakle, oni su poput nas, na neki način stvaramo emocije.
+
+262
+00:21:41,039 --> 00:21:43,440
+[SPEAKER_01] Mislim da je to vrlo važno.
+
+263
+00:21:43,759 --> 00:21:52,799
+[SPEAKER_01] Zato moramo zaista promatrati kako se ponašaju i razgovarati s njima kako bismo zaista otključali emocije iza toga.
+
+264
+00:21:52,960 --> 00:21:55,599
+[SPEAKER_01] Inače ćete donijeti pogrešne odluke.
+
+265
+00:21:55,839 --> 00:21:59,519
+[SPEAKER_00] Gdje vas ljudi mogu pronaći ili postoje li neki poslije koje želite ispričati na Tinderu?
+
+266
+00:21:59,839 --> 00:22:03,920
+[SPEAKER_00] Da, mislim da Tinder definitivno još uvijek raste, ima puno zabavnih prilika.
+
+267
+00:22:04,079 --> 00:22:05,599
+[SPEAKER_01] Stoga potičem ljude da ga provjere.
+
+268
+00:22:05,759 --> 00:22:11,200
+[SPEAKER_01] To je jedno od najboljih mjesta na kojima sam ikad bio jer je to stvarno zabavna kultura, vrlo progresivna.
+
+269
+00:22:11,279 --> 00:22:14,079
+[SPEAKER_01] A onda se zaista brinem o životu ljudi.
+
+270
+00:22:14,480 --> 00:22:19,279
+[SPEAKER_01] Kad odem u blagovaonicu, svaki put sam emotivan jer vidim zid.
+
+271
+00:22:19,519 --> 00:22:22,640
+[SPEAKER_01] Pokazujemo svim korisnicima koji su nam pisali pisma, pokazujemo njihove svadbene slike.
+
+272
+00:22:22,960 --> 00:22:31,039
+[SPEAKER_01] O, znate, kao što je naš posao napravio razliku, znate, učinio je ljudima da imaju novu obitelj zajedno, kako je to lijepo.
+
+273
+00:22:31,119 --> 00:22:42,799
+[SPEAKER_01] A ponekad, ako želite razviti svoj proizvod i ne povrijediti zadržavanje, onda vam mogu pomoći da otključate korisničke emocije i dizajn.
+
+274
+00:22:42,799 --> 00:22:47,519
+[SPEAKER_01] Moje obranljive cikluse rasta, a zatim me možete pronaći na LinkedIn-u i MentooCruiseu.
+
+275
+00:22:47,680 --> 00:22:49,119
+[SPEAKER_01] Fantastično, hvala vam što ste se priključili.
+
+276
+00:22:49,279 --> 00:22:50,480
+[SPEAKER_00] Ovo je bila stvarno zabavna rasprava.
+
+277
+00:22:50,720 --> 00:22:51,920
+[SPEAKER_00] Da, hvala ti, Davor.
+
+278
+00:22:52,400 --> 00:22:54,799
+[SPEAKER_01] Uvijek mi je najveća čast razgovarati s tobom.
+
+279
+00:22:57,039 --> 00:22:58,400
+[UNKNOWN] Hvala ti što si me slušao.
+
+280
+00:22:59,200 --> 00:23:02,400
+[SPEAKER_00] Ako imaš minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+281
+00:23:03,599 --> 00:23:08,400
+[SPEAKER_00] Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
+
