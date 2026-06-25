@@ -1,0 +1,2779 @@
+1
+00:00:00,000 --> 00:00:09,600
+Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:20,080
+Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje klijentima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,680 --> 00:00:37,040
+Više informacija možete pronaći na revenuecat dot com dot Uđimo u emisiju.
+
+6
+00:00:37,280 --> 00:00:46,400
+Pozdrav, ja sam vaš domaćin David Bernard, a danas sam s vama, izvršni direktor RevenueCat Jacob Biding.
+
+7
+00:00:46,960 --> 00:00:54,960
+Naši su današnji gosti Jack McDermott i Tanme Jane, oboje rade na mobilnom rastu u 11 Labs, vodećem laboratoriju za glasovni intelekt.
+
+8
+00:00:55,280 --> 00:01:12,960
+Na podcastu razgovaramo s Tanme i Jackom o tome kako mogu zaraditi mediji poboljšati plaćeni izvedbu, izraditi značajke koje čine dobre tweete i zašto bi uklanjanje kviza za uvođenje moglo pobijediti optimizaciju.
+
+9
+00:01:12,960 --> 00:01:19,280
+Danas imamo dva gosta i Jacoba, pa ćemo ih proći jedan po jedan da ljudi upoznaju vaš glas.
+
+10
+00:01:19,440 --> 00:01:21,680
+Jack, hvala ti što si se danas priključio našem podcastu.
+
+11
+00:01:22,000 --> 00:01:23,040
+Hej, divno je biti ovdje.
+
+12
+00:01:23,120 --> 00:01:23,840
+Hvala što si nas primio.
+
+13
+00:01:24,080 --> 00:01:25,760
+A Tanmei, lijepo je da si ovdje.
+
+14
+00:01:25,840 --> 00:01:27,840
+Da, jako sam uzbuđen što sam ovdje.
+
+15
+00:01:27,920 --> 00:01:30,640
+A Jacob, uvijek je lijepo da si na podcastu.
+
+16
+00:01:30,800 --> 00:01:36,080
+Oduševljen sam što sam danas muha na zidu s velikom ekipom, ali jako sam uzbuđen.
+
+17
+00:01:37,040 --> 00:01:39,760
+Fan sam jedanaest laboratorija i sve ostalo.
+
+18
+00:01:39,920 --> 00:01:45,040
+Vi ste bili jako ambiciozni u više područja, pa sam uzbuđen što ću govoriti o tome što se događa.
+
+19
+00:01:45,200 --> 00:01:46,560
+I baš odatle sam želio započeti.
+
+20
+00:01:46,960 --> 00:01:48,640
+Jedanaest laboratorija je jako ambiciozno.
+
+21
+00:01:48,640 --> 00:01:59,760
+I jedna od sjajnih stvari koju svi radite nije samo da ste temeljna tvrtka i tvrtka za API-je koje pružaju usluge svim vrstama aplikacija i korporativnih rješenja, već da stvarate potrošačke aplikacije.
+
+22
+00:01:59,840 --> 00:02:05,920
+Želio sam započeti s pitanjem zašto stvarati potrošačke aplikacije kao modelnu tvrtku?
+
+23
+00:02:06,320 --> 00:02:08,880
+Mislim, na neki način ljudi koji slušaju mogu to shvatiti kao konkurenciju.
+
+24
+00:02:09,040 --> 00:02:11,200
+Kao da su programeri, žele eksperimentirati s glasom.
+
+25
+00:02:11,520 --> 00:02:15,120
+Zašto se natječu s klijentima na strani API-ja?
+
+26
+00:02:15,760 --> 00:02:17,840
+Mislim da je to stvarno sjajan način za izgradnju tvrtke.
+
+27
+00:02:18,000 --> 00:02:19,920
+Dakle, volio bih čuti vaše mišljenje iza toga.
+
+28
+00:02:20,000 --> 00:02:24,960
+Mislim da je važan dio Love Labs-a taj da se stvarno smatramo istraživačima.
+
+29
+00:02:24,960 --> 00:02:26,000
+Istraživanje i tvrtka koja proizvodi proizvode.
+
+30
+00:02:26,240 --> 00:02:33,440
+Tako smo započeli, sve se vraća na istraživanje na početku, a na kraju možemo ga implementirati kao pojedinačne proizvode.
+
+31
+00:02:34,240 --> 00:02:38,560
+I vi možete biti razvijač koji to konzumira ili gradi na tome putem API-ja.
+
+32
+00:02:38,800 --> 00:02:44,960
+Možda ste kreativna osoba ili tvorac koji gradi na našem webu ili na našem mobilnom sučelju.
+
+33
+00:02:45,280 --> 00:02:48,480
+I na kraju počinjemo kretati prema potrošačima.
+
+34
+00:02:48,720 --> 00:02:56,240
+Dakle, stvarno mislimo da je jedna od temeljnih stvari koje mnoge laboratorije rade vrsta zamagljene granice između tvorca i potrošača.
+
+35
+00:02:56,480 --> 00:02:58,880
+I mislimo da se ta granica počinje malo zamagljivati.
+
+36
+00:02:59,040 --> 00:03:00,640
+Dakle, na kraju dana, želimo imati.
+
+37
+00:03:01,280 --> 00:03:09,280
+izravan odnos s korisnicima, potrošačima, tvorcima i, u konačnici, s razvijačima u nekim od najvećih poduzeća.
+
+38
+00:03:10,000 --> 00:03:18,640
+Dakle, da, nekako započinjemo s prvom točkom, sposobnošću izgradnje na vrhu odličnih istraživanja, a zatim ga implementirati na različite načine i proizvode.
+
+39
+00:03:18,800 --> 00:03:26,880
+Tako je snažno biti prvi najbolji klijent vaše API-jeve, a imati te potrošačke proizvode može biti supermoć za API.
+
+40
+00:03:27,360 --> 00:03:33,360
+To je bolja API kada možete interno testirati protiv nje i znati kakva je iskustvo izgradnje protiv te API-jeve.
+
+41
+00:03:33,360 --> 00:03:34,720
+Ima li nešto što biste dodali, Tane?
+
+42
+00:03:35,040 --> 00:03:36,720
+Ne, mislim da je Jack to pogodio.
+
+43
+00:03:36,800 --> 00:03:37,520
+Baš to i činimo.
+
+44
+00:03:37,600 --> 00:03:40,560
+Mi smo laboratorij za istraživanje umjetne inteligencije, ali zapravo nismo.
+
+45
+00:03:40,560 --> 00:03:45,680
+Mi smo tvrtka za istraživanje proizvoda i istraživanja i jako smo duboko u proizvodu, jako, jako duboko u usjevu.
+
+46
+00:03:45,840 --> 00:03:56,800
+Ima nekoliko, znate, otvorena umjetna inteligencija je možda najveći primjer i to je bilo iznenađujuće, kršilo sam ono što sam očekivao da će se dogoditi, što sam mislio da će sve te tvrtke biti iza pozornice, tvrtke za korporativne API-je.
+
+47
+00:03:56,960 --> 00:03:59,200
+Tradicionalno je to ono na čemu se fokusira i gdje je skala.
+
+48
+00:03:59,840 --> 00:04:02,400
+Dakle, teško vam je biti oboje?
+
+49
+00:04:02,960 --> 00:04:05,920
+Kao što je tvrtka, jer sam uglavnom tvrtka za korporativne API-je.
+
+50
+00:04:06,080 --> 00:04:06,480
+Borim se ovdje.
+
+51
+00:04:06,560 --> 00:04:07,520
+Kao da je puno toga, zar ne?
+
+52
+00:04:07,600 --> 00:04:12,960
+Dakle, kako vi oboje, kao da, kao da ravnotežuju potrebe?
+
+53
+00:04:12,960 --> 00:04:14,240
+jer je to vrlo drugačije, zar ne?
+
+54
+00:04:14,400 --> 00:04:16,960
+Izgraditi, znate, očito postoji neka preklapanja.
+
+55
+00:04:17,280 --> 00:04:37,680
+Jedno što ću reći i što mislim da je zaista jedinstveno u Eleven Labs-u jest da ljudi možda misle na Eleven Labs kao na jednu poduzeću ili jednu startup za skaliranje, ali unutar Eleven Labs-a, ako biste se na to pogledali, stvarno izgledamo i osjećamo se kao možda deset ili dvanaest pojedinačnih startupa koji svi grade, isporučuju i moniteriraju odjednom.
+
+56
+00:04:38,080 --> 00:04:41,600
+I tako namjerno održavamo naše timove vrlo malim.
+
+57
+00:04:41,840 --> 00:04:48,880
+Naš mobilni tim trenutačno ima oko dvanaest ljudi i raste, ali svaki tim koji smo postavili kao pod ili vrsta.
+
+58
+00:04:48,880 --> 00:05:01,520
+Ili brzi čamac, kako volimo misliti, kao vlastiti, neka vrsta samostalnog razvoja, dizajna, proizvoda rasta i može slobodno raditi u njemu.
+
+59
+00:05:01,680 --> 00:05:10,960
+I to vrijedi za sve, od glasovnog agenta do kreativne platforme do istraživačkog tima, koji je, opet, u nekim većim laboratorijima iznenađujuće mali.
+
+60
+00:05:11,360 --> 00:05:18,560
+I tako volimo pronaći i igrati se na toj određenoj ravnoteži malih timova s velikim ciljevima i velikom prilikom.
+
+61
+00:05:19,120 --> 00:05:24,000
+I to je jedna od ključnih stvari koja, mislim, izvana izgleda zaista jedinstveno u laboratorijima Lovin.
+
+62
+00:05:24,800 --> 00:05:24,880
+Da.
+
+63
+00:05:24,880 --> 00:05:26,240
+To je definitivno nešto što sam primijetio.
+
+64
+00:05:26,480 --> 00:05:29,840
+Na primjer, upravljam aplikacijom Eleven Labs, vrstom vrhunske aplikacije na mobilnim uređajima.
+
+65
+00:05:29,920 --> 00:05:35,280
+Mnogo je trenutaka kada moramo razmišljati o tome kako se to ponaša na webu, kako se to ponaša na mobilnim uređajima, kako upravljati takvim prekriženjem.
+
+66
+00:05:35,360 --> 00:05:39,120
+A smjernice koje sam trenutno dobio su samo: brzo šaljite, šaljite brzo.
+
+67
+00:05:39,200 --> 00:05:45,920
+Vjerujemo da ćete donijeti pravu odluku i ako postoje praznine, otkrili ćemo ih i šaljiti ih.
+
+68
+00:05:46,480 --> 00:05:50,080
+Jedno od zanimljivih što vi radite jest stvaranje više aplikacija.
+
+69
+00:05:51,040 --> 00:05:58,960
+I vidimo to s OpenAI-jem koji stvara Sora, aplikaciju za zdravlje s izlazom i ChatGPT-jem, naravno, kao glavnom aplikacijom.
+
+70
+00:05:59,200 --> 00:06:03,360
+Ali kako razmišljate o tome da budete vi ste tvrtka koja proizvodi više potrošačkih aplikacija?
+
+71
+00:06:03,520 --> 00:06:07,040
+Jedno je, mislim, dio Eleven Labs, zar ne?
+
+72
+00:06:07,120 --> 00:06:11,280
+Od samog početka izgradili smo vrlo horizontalnu platformu.
+
+73
+00:06:11,760 --> 00:06:21,200
+Možete stvarati govor, možete stvarati zvučne efekte, možete stvarati glazbu, možete stvarati govor za čitanje na glas, audioknjigu ili za reprodukciju u oglasu.
+
+74
+00:06:21,280 --> 00:06:26,400
+Dakle, mislim da imamo vrlo horizontalan skup primjena na kojima možete graditi.
+
+75
+00:06:27,120 --> 00:06:36,960
+I jedna od stvari na koju pokušavamo misliti u našem timu kad stvaramo aplikacije jest zapravo kakav je oblik i kakav je idealni primjer koji odgovara pojedincu na mjestu na kojem se nalazi.
+
+76
+00:06:36,960 --> 00:06:37,680
+Individualno gdje se nalazi, zar ne?
+
+77
+00:06:37,760 --> 00:06:48,720
+I tako, ako ste tvorac kratkih videozapisa na putu, možda ćete trebati ili moći koristiti podskup tih horizontalnih mogućnosti.
+
+78
+00:06:48,880 --> 00:07:01,280
+Dok ste potrošač koji pokušava pretvoriti PDF u stvarni audio kako bi mogao poboljšati čitanje i razumijevanje na putu, to je i svoj zaseban primjer.
+
+79
+00:07:01,360 --> 00:07:07,600
+Dakle, mislim da se zaista pokušavamo započeti s time da smo toliko raspršeni koliko možemo kao platforma.
+
+80
+00:07:08,320 --> 00:07:14,000
+Morate se prisiliti da razmišljate o tome što je idealna korisničkanička osobnost?
+
+81
+00:07:14,240 --> 00:07:15,280
+Kakav je to oblik?
+
+82
+00:07:15,680 --> 00:07:18,400
+Je li aplikacija pravi pristup za upotrebu?
+
+83
+00:07:18,640 --> 00:07:27,440
+I barem smo dva puta otkrili da je to pravi pristup i omogućilo nam je da nastavimo brzo napredovati i da budemo jako, jako usredotočeni na određene korisnike.
+
+84
+00:07:27,520 --> 00:07:28,240
+Žao mi je.
+
+85
+00:07:28,320 --> 00:07:40,080
+A da podelim primjer, prethodno sam bio u Canvi i to je bila priča u kojoj smo zapravo imali super aplikaciju i pokušali su razviti zasebnu aplikaciju i na kraju su se vratili da je unesu u jednu osnovnu aplikaciju.
+
+86
+00:07:40,160 --> 00:07:48,960
+Razlog tome bio je u usporedbi s Eleven Labs, koji je usmjeren na horizontalnu API, dok Canva služi kao neka vrsta alata za dizajn za sve i poluhorizontalna.
+
+87
+00:07:50,240 --> 00:07:54,720
+Pokušali su razviti verziju pod nazivom Canva Stories usmjerenu na Instagram Stories.
+
+88
+00:07:55,040 --> 00:07:56,000
+Proizvod je bio sjajan.
+
+89
+00:07:56,240 --> 00:07:57,440
+Dobio je nagrade Applea.
+
+90
+00:07:58,480 --> 00:08:07,600
+Bio je lijepo dizajniran, vrlo, vrlo jedinstven primjer koji je bio vrlo raširen u to vrijeme, znate, 2019., 2020., ali nikad nije mogao riješiti te probleme s akvizicijom.
+
+91
+00:08:08,160 --> 00:08:09,680
+Nikad nije mogao riješiti zadržavanje.
+
+92
+00:08:09,920 --> 00:08:11,680
+Nikad nije mogao riješiti, znate, osviještenost o robnoj marki.
+
+93
+00:08:11,760 --> 00:08:13,680
+Ljudi su došli i očekivali, dobro, želimo Canvu.
+
+94
+00:08:14,160 --> 00:08:16,400
+Ovo je samo jedinstveni skup, znate, ovo je podskup.
+
+95
+00:08:16,480 --> 00:08:18,640
+I zbog toga se nikad nije potaknuo.
+
+96
+00:08:19,600 --> 00:08:24,960
+I tako je potrebna vrlo jedinstvena i vrlo precizna struktura tvrtke da bi to uspjelo.
+
+97
+00:08:24,960 --> 00:08:30,560
+I prednost je u tome što sada imamo dva različita područja za testiranje za mnoštvo različitih stvari, za dva vrlo različita primjena.
+
+98
+00:08:30,720 --> 00:08:35,040
+I tako često ću otići i testirati nešto ili će Jack otići i testirati nešto i razmijeniti bilješke.
+
+99
+00:08:35,200 --> 00:08:47,120
+Na primjer, znate, trenutačno testiramo plaćene zidove i prolazimo kroz vježbu u kojoj testiramo nekoliko hipoteza, Jack radi isto i znatiželjni smo da vidimo da gotovo udvostručimo ili četverostruko povećamo površinu učenja.
+
+100
+00:08:47,200 --> 00:08:54,080
+I tako, samo da budem jasan, Tenme, vi pokrenete vodeću aplikaciju, jedanaest, kako se zove, samo jedanaest laboratorija?
+
+101
+00:08:54,240 --> 00:08:55,520
+Ima samo jedanaest laboratorija, da.
+
+102
+00:08:55,760 --> 00:09:00,640
+A onda Jack, vi pokrenete jedanaest čitača, koji je još više usmjeren na potrošače, gdje vi.
+
+103
+00:09:00,640 --> 00:09:03,120
+Upravo je to aplikacija usmjerena na potrošača, gdje možete učitati PDF i generirati zvuk.
+
+104
+00:09:03,360 --> 00:09:04,560
+Usput, to je stvarno cool aplikacija.
+
+105
+00:09:04,800 --> 00:09:11,920
+Ja i moj sin igrali smo se s tekstom u glas, a on je pokušao izraditi aplikaciju i odmah smo otišli do Eleven Reader.
+
+106
+00:09:12,000 --> 00:09:13,760
+Bio sam poput, oh, čovječe, ovo je tako dobro.
+
+107
+00:09:13,920 --> 00:09:22,320
+Kako mislite o takvoj vrsti međufunkcionalnog, poput ne stupanja na prste jedni drugih, već poput uključivanja tih učenja u obje aplikacije?
+
+108
+00:09:22,400 --> 00:09:29,840
+Mislim da je jedna stvar koja je za nas bila zanimljiva da smo zapravo morali namjerno stvoriti malo prostora između dviju aplikacija.
+
+109
+00:09:29,920 --> 00:09:36,640
+Jer kad uđete u trgovinu aplikacijama, trgovinu Play i upisujete Eleven Labs, možda očekujete određeni rezultat.
+
+110
+00:09:36,640 --> 00:09:38,800
+Kada radite takvu pretraživanje robne marke, nećete dobiti određeni rezultat.
+
+111
+00:09:39,200 --> 00:09:47,360
+A ako pokušavate pronaći aplikaciju koja vam omogućuje pretvaranje bilo čega u audioknjigu, možda nećete biti na prvom mjestu u laboratorijima.
+
+112
+00:09:47,440 --> 00:09:59,680
+Ali mi smo pokušali stvarno namjerno stvoriti vlastite robne marke i vlastiti izgled i osjećaj za svaku aplikaciju, ali dijelimo zajednički dizajnerski sustav, zajednički skup tehnologija.
+
+113
+00:10:00,000 --> 00:10:05,040
+Mnogi naši programeri su do sada radili na obje aplikacije i imaju puno iskustva između njih.
+
+114
+00:10:05,600 --> 00:10:12,160
+A zatim imamo nekoliko drugih koji su u fazi testiranja ili u maloj stazi koju inkubiramo.
+
+115
+00:10:12,240 --> 00:10:26,000
+Jednostavno je vrlo jasno u vezi s ulogom svake aplikacije i ulogom svake publike koju pokušavate postići i biti pametan u vezi s tim u kojoj mjeri morate razdvojiti ili odvojiti dvije aplikacije i pokrenuti ih obje.
+
+116
+00:10:26,320 --> 00:10:28,800
+I očekujem da ćemo i dalje razvijati i lansirati mnogo više kako idemo dalje.
+
+117
+00:10:28,960 --> 00:10:32,640
+A što mislite o rastu s dvije odvojene aplikacije?
+
+118
+00:10:32,720 --> 00:10:41,520
+Znaš, mislim da radite neke oglase i usmjerene na rast vrlo specifično za aplikaciju čitatelja koja ima vrlo drugačiji primjer upotrebe i obećanje proizvoda.
+
+119
+00:10:41,600 --> 00:10:53,040
+A onda s glavnom aplikacijom Eleven Labs, mislim da radite vrlo različite stvari, ali onda možete, kao robna marka., također smo neka vrsta tvrtke za porez na glas.
+
+120
+00:10:53,440 --> 00:10:57,680
+Dakle, kako razmišljate o rastu u obje aplikacije i u obje marke?
+
+121
+00:10:57,840 --> 00:11:02,960
+Postoji nekoliko zajedničkih dijelova koji, mislim, podupiru rast obje aplikacije.
+
+122
+00:11:03,280 --> 00:11:08,080
+Jedan je, s temeljnog razine građevnih blokova, dijelimo mnoge iste tehnologije.
+
+123
+00:11:08,720 --> 00:11:19,840
+Dakle, kad je u pitanju postavljanje baze podataka, MMP, alata za testiranje, to su mnoge zajedničke dijelove aplikacija koje možemo posuditi i premjestiti zajedno.
+
+124
+00:11:19,920 --> 00:11:24,480
+Dakle, kad je u pitanju rast, možemo posuditi i mnoge stvari između dviju aplikacija.
+
+125
+00:11:24,480 --> 00:11:33,200
+Dakle, stvaranje sjajnog sadržaja UGC-a kako bi se povećalo na stranici ili kako bi se moglo objavljivati na organskom sadržaju.
+
+126
+00:11:33,360 --> 00:11:43,840
+Mnogi od tih tvoraca ili agencija često rade isto u različitim robnim markama i možemo odabrati ono što se čini da dobro funkcionira na drugom.
+
+127
+00:11:44,160 --> 00:11:47,040
+Ili mislim da je dobar primjer u svijetu MMP-a, zar ne?
+
+128
+00:11:47,200 --> 00:11:58,640
+Kao što je mogućnost mapiranja i definiranja određenih događaja između aplikacija koje pokazuju najveću količinu signala, iako će se temeljni primjer upotrebe aplikacije razlikovati.
+
+129
+00:11:58,800 --> 00:12:12,720
+Dakle, mislim da se to počinjeje mijenjati, znate, kad razmišljate o zadržavanju i angažmanu i monetizaciji, to je mjesto gdje se dosta razlikujemo, da morate izgraditi posebno za taj primjer upotrebe i za tu publiku.
+
+130
+00:12:13,120 --> 00:12:28,080
+Jedno od toga što to omogućava i što je došlo iz, znate, to je došlo u razgovoru o super aplikaciji u odnosu na, znate, odvojene aplikacije, bili smo stvarno u mogućnosti prilagoditi plaćene planove ili monetizaciju izravno vrijednosti koju taj ICP ili taj korisnik traži.
+
+131
+00:12:28,240 --> 00:12:34,720
+Dakle, kad razmišljamo o jedanaest čitača, ne razmišljaju u smislu kredita i žetona kad je u pitanju, znate, aplikacija usmjerena na slušanje ili potrošnju.
+
+132
+00:12:34,960 --> 00:12:55,120
+Dakle, znate, Jack je mogao stvarno uskladitiili troškove s našim iskustvom i iskustvom usmjerenim na potrošnju, a u usporedbi s aplikacijom Leavenlabs, koja je vrlo kreativna, a korisnici su u našu korist obučeni i pripremljeni za učenje o kreditima i likovima i svim ovim različitim digitalnim ekonomijama.
+
+133
+00:12:55,200 --> 00:13:04,640
+Tako smo se odvajanjem mogli zapravo dobiti dozvolu za odlazak i isprobati različite cijene i ambalaže na vrlo, vrlo jedinstven i koristan način.
+
+134
+00:13:04,720 --> 00:13:14,560
+Budući da smo na temi stjecanja korisnika, znatiželjan sam kako vi svi razmišljate o pokretanju plaćenog UA-a i nekom obliku izgradnje.iti motor rasta.
+
+135
+00:13:15,360 --> 00:13:18,240
+I znam da koristite puno vrlo profinjenih videozapisa.
+
+136
+00:13:18,320 --> 00:13:33,840
+Slušao sam u drugom podcastu u kojem je jedan od vaših kolega bio, da ste čak angažirali i dizajner pokreta posebno da biste dobili takve medije koje ste zaradili, to su veliki lansiranja, ali onda pokušavate izgraditi plaćeni UA kotač koji radi neprestano i istovremeno radi takve velike lansiranja.
+
+137
+00:13:33,920 --> 00:13:37,280
+Dakle, recite mi kako razmišljate o tim stvarima i kako ih zapravo izvršavate.
+
+138
+00:13:37,440 --> 00:13:39,600
+Uvijek razmišljamo o lansiranju kao o dvjema vrstama.
+
+139
+00:13:39,760 --> 00:13:47,680
+Imamo trenutke u kojima išli i tražili ste zaradili medije, a zatim imamo trenutke u kojima morate ići i predvidjeti održivi mjesečni rast, zar ne?
+
+140
+00:13:47,840 --> 00:13:53,040
+Obje stvari moraju biti ist istiniti istovremeno, a to je nešto što morate stalno raditi kao osoba koja se bavi rastom i proizvodima.
+
+141
+00:13:53,120 --> 00:13:57,200
+Čak i u našim medijima razmišljamo o tome na kojoj razini ciljamo to.
+
+142
+00:13:57,360 --> 00:13:59,440
+Je li to nešto što se pojavljuje na svim našim kanalima?
+
+143
+00:13:59,520 --> 00:14:00,800
+Je li to nešto što se pojavljuje na e-pošti?
+
+144
+00:14:01,440 --> 00:14:06,400
+Možda ljudi ne brinu o našem LinkedInu, o vodećoj aplikaciji Eleven Labs jer je kratica od kreativnog fokusa.
+
+145
+00:14:06,480 --> 00:14:09,840
+Dakle, razumijevanje tko se uklapa gdje i zašto je stvarno, stvarno važno.
+
+146
+00:14:10,000 --> 00:14:12,720
+A onda na plaćanoj strani razmišljamo o tome, dobro, što je kanal?
+
+147
+00:14:13,040 --> 00:14:14,160
+Što je proizvod?
+
+148
+00:14:14,480 --> 00:14:16,320
+Koja je specifična poruka koju pokušavamo poslati?
+
+149
+00:14:16,400 --> 00:14:21,360
+I kako možemo postaviti pravu vrstu modela kako bismo mogli shvatiti kako to učiniti na stvarno održiv način?
+
+150
+00:14:21,840 --> 00:14:24,720
+Jer to gledamo kao kanal održivog rasta, a ne kao.
+
+151
+00:14:24,720 --> 00:14:26,880
+da se neprestano krećemo i lansiramo.
+
+152
+00:14:27,280 --> 00:14:33,840
+Dakle, mislim da su razlike između lansiranja poput tradicionalne tvrtke, gdje je to jednom godišnje, jednom, jednom svakih šest mjeseci.
+
+153
+00:14:33,920 --> 00:14:36,320
+Iskreno, vjerojatno bismo radili više od jednom tromjesečjem.
+
+154
+00:14:36,400 --> 00:14:40,240
+Ili bih rekao da je mjesečno vjerojatno prosječna kadencija za tim u jedanaest laboratorija.
+
+155
+00:14:40,320 --> 00:14:46,160
+Dakle, imamo mnogo prilika da istražimo ove vrste virusnih pozitivnih trenutaka, a istovremeno imamo i ovaj neprestani motor rasta.
+
+156
+00:14:46,240 --> 00:14:48,800
+Koje su glavne kanale koje koristite u plaćenim?
+
+157
+00:14:48,960 --> 00:14:53,840
+Jedan, mi, mi radimo na mnogim plaćenim oglasnim kanalima koje biste očekivali, zar ne?
+
+158
+00:14:53,920 --> 00:15:00,960
+Dakle, radimo na Meta, TikToku, Appleovim oglasima za pretraživanje, Google Play, Google oglasima i stvarno pristupamo preciznim temama.
+
+159
+00:15:00,960 --> 00:15:07,440
+Dakle, primjenjujemo precizan pristup kako bismo mogli gledati rezultate i podatke na sve manji način svaki tjedan ili mjesec.
+
+160
+00:15:08,000 --> 00:15:24,960
+Mislim da je jedna stvar koja je jedinstvena u Eleven Labs-u, i opet se vraćam na tu ideju horizontalne platforme koju imamo, da smo u dobrom položaju u kojem ne moramo uvijek optimizirati, recimo, za konverziju na šesti dan ili konverziju na osmi dan ili čak konverziju na nulu.
+
+161
+00:15:25,040 --> 00:15:36,320
+Mi smo u položaju u kojem imamo i pokušavamo izgraditi marku i pokušavamo izgraditi publiku i pokušavamo potaknuti angažiranost iz koje želimo u konačnici zaraditi mnogo vrijednosti.
+
+162
+00:15:36,800 --> 00:16:08,560
+Ali jedna stvar koja je prilično dobra u poziciji koju smo uspjeli izgraditi velikom količinom brendovskog rada u laboratorijima Eleven kroz sve ove lansiranja, gdje najavljujemo nove modele i dobivamo dobru količinu medija, jest da nam to daje malo više fleksibilnosti u plaćanju kako bismo mogli testirati nove kreativne stvari ili da zaista ne moramo postići taj tjedan povrat, već da zaista omogućimo malo više fleksibilnosti kako bismo odredili i testirali pravi povrat ili LTV CAC.
+
+163
+00:16:08,720 --> 00:16:10,880
+Dakle, to je način na koji smo razmišljali o tome.
+
+164
+00:16:10,960 --> 00:16:12,960
+I naravno, na kraju dana, to je puno posla.
+
+165
+00:16:12,960 --> 00:16:23,120
+jer će svaki novi kanal raditi na svoj način i stvarno ćete shvatiti kakav će se tip kreativnog sadržaja odvijati, koji je pravi pristup za svaki od njih.
+
+166
+00:16:23,280 --> 00:16:33,760
+Mislim da je to važan dio da to ne gledamo samo kao plaćeni u cjelini, već stvarno precizan pristup svakom pojedinačnom kanalu na način na koji se slojevi povezuju prema rastu.
+
+167
+00:16:33,840 --> 00:16:38,240
+Mislim da je medij koji se zarađuje nešto što mnoge tvrtke stvarno podcjenjuju, zar ne?
+
+168
+00:16:38,640 --> 00:16:41,840
+Mislim da je medij koji se zarađuje zapravo kumulativni učinak, zar ne?
+
+169
+00:16:42,080 --> 00:16:48,560
+Svaki lansiranje koje radimo zarađuje više ljudi, što znači da sljedeće lansiranje zarađuje više ljudi.
+
+170
+00:16:48,560 --> 00:16:49,200
+I to se zaista nakuplja.
+
+171
+00:16:49,760 --> 00:16:56,240
+I onda se nakuplja, vjerujem, ne da smo ikad izračunali brojke, ali mogu reći s pouzdanjem da se nakuplja i u našim plaćenim medijima.
+
+172
+00:16:56,560 --> 00:17:00,480
+Znate, prvo mjesto na kojem započinjemo je brendirano pretraživanje tvrtke Eleven Labs.
+
+173
+00:17:00,560 --> 00:17:01,520
+To je najlakše postići.
+
+174
+00:17:01,680 --> 00:17:05,840
+Dobivamo puno toga jer radimo puno medija i možemo to nabaviti.
+
+175
+00:17:06,080 --> 00:17:09,280
+I prilično sam siguran da su ljudi kad dobiju oglase čuli za nas.
+
+176
+00:17:09,600 --> 00:17:10,320
+Vole nas.
+
+177
+00:17:10,560 --> 00:17:13,680
+Znaju da nudimo najizrazitiji model teksta govora.
+
+178
+00:17:13,840 --> 00:17:18,800
+I tako kad ih na vrlo jedinstven način pogodimo oglasom o tome, veća je vjerojatnost da će se pretvoriti.
+
+179
+00:17:19,040 --> 00:17:22,960
+I mislim da to rezultira boljim, znate, CPA-om ili CPI-om, bilo što gledamo.
+
+180
+00:17:23,040 --> 00:17:23,200
+Da.
+
+181
+00:17:23,360 --> 00:17:24,880
+Teško je reći kakav je, recimo, učinkovit.
+
+182
+00:17:24,880 --> 00:17:25,200
+Što su efikasnosti.
+
+183
+00:17:25,840 --> 00:17:27,200
+Teško je mjeriti, naravno.
+
+184
+00:17:27,280 --> 00:17:27,520
+Točno.
+
+185
+00:17:27,600 --> 00:17:28,800
+Brend je uvijek jako težak.
+
+186
+00:17:28,880 --> 00:17:38,800
+Ali, da, vi svi, ovo je stari trik iz prošlosti, ali lansiranje i koordinacija s platformama bila je velika prednost u to vrijeme.
+
+187
+00:17:39,520 --> 00:17:43,120
+Prije je bilo lansiranja veća na platformi, na primjer, u trgovini aplikacijama.
+
+188
+00:17:43,680 --> 00:17:49,040
+Razmišljate li o suradnji ili radu s platformama na tome što žele vidjeti, kao što su vaši predstavnici trgovine aplikacijama ili predstavnici trgovine Play?
+
+189
+00:17:49,920 --> 00:17:56,720
+I razmišljate li o tome previše ili je to više poput, ne, mi smo veći od toga, ali to nije naš glavni polug.
+
+190
+00:17:57,360 --> 00:18:00,880
+Imamo sjajne odnose s našim predstavnicima i timovima.
+
+191
+00:18:00,960 --> 00:18:13,840
+I ja radim u Appleu i Googleu, ali mislim da je način na koji smo pristupili tome da morate započeti, pogotovo danas, s snagom vlastite priče o tome što je lansiranje i kako želite posjedovati i ispričati.
+
+192
+00:18:14,000 --> 00:18:15,360
+I uspjeli smo uložiti mnogo truda.
+
+193
+00:18:16,000 --> 00:18:23,360
+Najeli smo vlastitog internog tvorca koji je poput osoblja da snima i stvara kratke sadržaje.
+
+194
+00:18:23,760 --> 00:18:31,120
+Mislim da je dugo vremena pendulum oscilovao od toga tko ima priču koju treba ispričati.
+
+195
+00:18:32,000 --> 00:18:36,960
+Morate li se oslanjati na platformu da biste došli na naslovnicu trgovine aplikacijama?
+
+196
+00:18:36,960 --> 00:18:43,280
+ili možete li stvarno stvoriti organski ili zaraditi ili plaćeni pristup kako biste mogli objaviti stvarno sjajnu priču?
+
+197
+00:18:43,440 --> 00:18:53,760
+Dakle, trošimo puno vremena unaprijed, vjerojatno, znate, jedan do dva tjedna nekakvog usavršavanja priče koju želimo objaviti i voditi.
+
+198
+00:18:54,000 --> 00:19:03,280
+I tamo je toliko buke, uh, pogotovo u našem prostoru gdje gradite i lansirate modele umjetne inteligencije koji izgledaju kao novi, najsuvremeniji benchmark svaki tjedan.
+
+199
+00:19:03,520 --> 00:19:03,680
+U redu.
+
+200
+00:19:03,840 --> 00:19:07,760
+Dakle, promijenite ime, stavite broj, kao da je cool, pobijedite neku benchmark.
+
+201
+00:19:07,840 --> 00:19:08,720
+Nikad prije nisam čuo za to.
+
+202
+00:19:08,960 --> 00:19:09,200
+Odlično.
+
+203
+00:19:09,360 --> 00:19:10,000
+Zvuči sjajno.
+
+204
+00:19:10,160 --> 00:19:10,240
+Da.
+
+205
+00:19:10,400 --> 00:19:10,800
+U redu.
+
+206
+00:19:10,960 --> 00:19:12,640
+I onda, tako da mislim u tome.
+
+207
+00:19:12,640 --> 00:19:21,200
+Mislim da u tom posebnom okruženju, ako ne počnete s vrlo jasnom pričom, nećete moći oslanjati se na nju.
+
+208
+00:19:21,360 --> 00:19:22,320
+Ja sam na nekoga drugog.
+
+209
+00:19:22,400 --> 00:19:24,880
+Da, Tanya, volio bih da se u to uglavnom upoznate.
+
+210
+00:19:25,520 --> 00:19:35,280
+Rekao si mi da si mi u vremenu provedenom u Amazonu rekao da je cijela ideja da prvo napišem priopćenje za tisak i da je to postalo drugačiji u Eleven Labs.
+
+211
+00:19:35,600 --> 00:19:37,040
+Kako to planiraš?
+
+212
+00:19:37,360 --> 00:19:38,720
+Bilo je stvarno zanimljivo.
+
+213
+00:19:38,880 --> 00:19:42,480
+Mislim da sam nakon šest tjedana morao krenuti s prvim lansiranjem.
+
+214
+00:19:42,560 --> 00:19:45,600
+Znate, ovdje u Eleven Labs nemamo dugačke procese uvođenja.
+
+215
+00:19:45,680 --> 00:19:48,480
+I odmah sam dobio doktorat i Jack mi je bio jako koristan u tome.
+
+216
+00:19:48,480 --> 00:19:56,320
+Gdje je bilo nešto poput: U redu, napišite svoju vrijednost, kao što je obećanje o osnovnoj vrijednosti, svoje sekundarne obećanja o vrijednosti, vrlo suptilno, vrlo čvrsto.
+
+217
+00:19:56,960 --> 00:20:16,240
+Ali onda prvo što ćete učiniti je pretvoriti to u Twitterov niz i razmišljati o tome što je glavni naslov, što je zanimljiv privlačni element koji će vas dovesti do druge stvari koja vas dovede do sljedećeg podtvita i sljedećeg podtvita i kako možete obuhvatiti tu priču u smislu niza malih Twitterovih niza koje zaista privlače publiku i guraju medije.
+
+218
+00:20:16,320 --> 00:20:24,960
+A zatim je sljedeća aktivnost, dobro, kako to pretvoriti u videozapis i kako to izraziti putem videozapisa jer je videozapis toliko važan u svim tim kanalima.
+
+219
+00:20:24,960 --> 00:20:27,760
+Kanali su onaj na kojem se proizvodi mnogo više performansi i organskih dojmova.
+
+220
+00:20:27,920 --> 00:20:36,400
+I znate, ponekad izgleda kao da snimamo animirani videozapis u kojem imamo vlastiti tim koji neprestano proizvodi najkvalitetnije videozapise koje sam ikad vidio.
+
+221
+00:20:36,560 --> 00:20:41,120
+I ne znam kako to rade, sve do više ljudi u kameri, nekakvog fokusa sadržaja.
+
+222
+00:20:41,360 --> 00:20:52,640
+I to je nešto što kao tvrtka osjećam da se obučavate jer provodite puno vremena gledajući sav sadržaj koji tim objavljuje u tim različitim timovima Tiger koji šalju sve ovo stvarno sjajno sadržaj.
+
+223
+00:20:52,800 --> 00:20:54,720
+A onda se i samo usavršavate.
+
+224
+00:20:54,880 --> 00:21:02,560
+Znate, objavljujete scenarij, kreativni tim će vam dati povratne informacije, napišete Twitter nit, znate, Jack ili Luke, voditelj rasta, koji će dati neke stvarno smislene povratne informacije.
+
+225
+00:21:02,720 --> 00:21:05,600
+Dakle, imate mnogo prilika da i vi dobijete takve vrste ponavljanja.
+
+226
+00:21:05,760 --> 00:21:09,360
+Mislim da je to tako podcijenjen proizvod i polugon rasta.
+
+227
+00:21:09,680 --> 00:21:16,480
+Ako radite na značajci i ona ne čini dobru Twitterovu nit, bolje je imati dobar razlog da ste.
+
+228
+00:21:16,640 --> 00:21:23,200
+Ponekad dobivam puno gluposti interno u RevenueCatu jer je to kao da, oh, upravljamo interakcijama na Twitteru.
+
+229
+00:21:23,360 --> 00:21:26,000
+A ja sam poput, dobro, znate, to nije najgora vodilna sila.
+
+230
+00:21:26,160 --> 00:21:26,720
+Znate što mislim?
+
+231
+00:21:26,880 --> 00:21:29,920
+Kao da barem znate da je netko ljut ili želi nešto, zar ne?
+
+232
+00:21:31,280 --> 00:21:36,960
+I istina je, ako nešto izgradimo i objavim to i nitko se ne brine, to je kao da je to najvjerojatnije značajka, znate?
+
+233
+00:21:36,960 --> 00:21:46,080
+Vjerojatno postoji korelacija, barem da se stvari koje se objavljuju na Twitteru dobro primaju i zamijenite X Twitter tamo gdje su vaši kupci.
+
+234
+00:21:46,640 --> 00:21:53,920
+Očito je da je to samo zamjenski pokazatelj za to da ste tamo gdje su korisnici i da ostanete stvarno, to je klasični savjet YC-a, samo razgovarajte s kupcima.
+
+235
+00:21:54,160 --> 00:21:57,760
+Ako ono što gradite ne odgovara njima, zašto to gradite?
+
+236
+00:21:58,160 --> 00:21:59,200
+Za koga točno?
+
+237
+00:21:59,440 --> 00:22:05,600
+Dakle, podržavam vibracije, postavljanje planova proizvoda i slično.
+
+238
+00:22:06,000 --> 00:22:08,640
+Imate li lekcije iz vremena provedenog u Canbi, Tande?
+
+239
+00:22:08,720 --> 00:22:12,480
+Bilo je to način na koji pristupate stvarima i u Canbi?
+
+240
+00:22:12,480 --> 00:22:14,080
+Canva je malo drugačija.
+
+241
+00:22:14,240 --> 00:22:16,320
+Dakle, moj je period bio malo ranije u procesu.
+
+242
+00:22:16,560 --> 00:22:19,680
+Bilo je, znate, 2019., 2020., 2021.
+
+243
+00:22:19,760 --> 00:22:20,480
+do 2022.
+
+244
+00:22:20,720 --> 00:22:23,200
+Dakle, vrlo drugačiji je period, znate, u smislu tržišta.
+
+245
+00:22:23,520 --> 00:22:28,320
+Ovo je uvelike prije umjetne inteligencije, prije nego što je GPT 3.5 postao velika stvar.
+
+246
+00:22:28,800 --> 00:22:32,080
+I tako je bilo mnogo više starog stila.
+
+247
+00:22:32,400 --> 00:22:38,160
+Mislim, još smo imali medije koje smo stekli, ali znate, kad smo lansirali proizvod za videozapise, imali smo dvanaestomjesečni rast.
+
+248
+00:22:38,320 --> 00:22:40,640
+Proveli smo tri mjeseca razrađivajući poruke.
+
+249
+00:22:40,720 --> 00:22:42,960
+I da, imali smo sjajan videozapis na pozadini.
+
+250
+00:22:43,200 --> 00:22:48,960
+Imali smo puno istih stvari koje radimo sada, ali taj je vremenski period i taj vremenski horizont bio masovno produžen.
+
+251
+00:22:48,960 --> 00:22:55,360
+I sve je bilo o tome, znate, pokrenuli smo se u taj dan i objavili smo, znate, vijesti točno tog dana.
+
+252
+00:22:55,920 --> 00:23:06,160
+Složili smo sve te velike stavke i, znate, ne mogu govoriti o tome što se događa interno sada, ali definitivno u laboratorijima za ljubav, brzo se pokrenemo, često se pokrenemo, stvarno to dobro prođemo i shvatimo što rezonira.
+
+253
+00:23:06,240 --> 00:23:08,480
+Da, to mora biti jako zabavno.
+
+254
+00:23:08,560 --> 00:23:10,240
+Eh, kretanje u više startupa.
+
+255
+00:23:10,560 --> 00:23:12,720
+Volim način na koji je Jack to opisao na početku.
+
+256
+00:23:12,880 --> 00:23:18,720
+To je jednostavno tako sjajan način upravljanja tvrtkom, pogotovo tvrtkom s više proizvoda, jer ste gotovo poput malih startupa unutar tvrtke.
+
+257
+00:23:19,200 --> 00:23:27,280
+Eh, i tako volim takvu fleksibilnost i fokus za timove da se mogu usredotočiti na pojedinačnejedinačnim proizvodima na kojima radimo i brzo se krećemo.
+
+258
+00:23:27,520 --> 00:23:28,080
+To je stvarno sjajno.
+
+259
+00:23:28,160 --> 00:23:38,800
+A kad govorimo o tome, jedna od jedinstvenih stvari koju sam čitao o strukturi tima u laboratorijima u jedanaest je da su inženjeri koje zapošljavate filtrirani prema tome što imaju čvrsti instinkt za proizvod.
+
+260
+00:23:38,880 --> 00:23:45,200
+Gotovo da inženjeri više misle na PM-a, a onda su ljudi koji više rade na PM-u više voditelji rasta.
+
+261
+00:23:46,080 --> 00:23:47,040
+Kako to funkcionira?
+
+262
+00:23:47,120 --> 00:23:54,160
+Da, jedna stvar koju smo vidjeli jest da vjerujemo da želimo ili graditi ili rasti.
+
+263
+00:23:54,560 --> 00:24:00,880
+I mi, mi, mi, mi smatramo da su te dvije strane ključ za COGS i kotač koji pokreće naš konačni rast.
+
+264
+00:24:00,880 --> 00:24:01,280
+I to će potaknuti naš konačni rast.
+
+265
+00:24:01,440 --> 00:24:02,720
+I što to znači?
+
+266
+00:24:03,120 --> 00:24:18,080
+S jedne strane, mislim da to znači da ono što vidimo u laboratorijima za jedanaest, a to vrijedi i za mene i za Tonme, kao što imamo puno bivših poduzetnika, puno bivših osnivača startupa u timu, vjerojatno najveći broj koji sam imao, barem u tvrtki, daleko.
+
+267
+00:24:19,360 --> 00:24:31,360
+A onda s inženjerske strane, tražimo i pregledavamo one koji sami grade strateške projekte, koji mogu identificirati bolnu točku korisnika i stvarno graditi i biti obožavatelji toga.
+
+268
+00:24:31,840 --> 00:24:36,960
+Mnogi inženjeri koji se pridružuju našem timu jednostavno vole sposobnost da se nekako poput toga.
+
+269
+00:24:36,960 --> 00:24:46,080
+To je nešto poput osvježavajućeg osjećaja mogućnosti da se uključite od početka do kraja i da imate ciklus proizvoda od faze ideje do izvršenja.
+
+270
+00:24:46,240 --> 00:24:56,880
+Dakle, to je također bilo malo uspješno, poput samodjelovanja vrsta inženjera koji žele izgraditi i posjedovati u tom stilu kulture, i mislim da je to samodjelovanje i na strani rasta.
+
+271
+00:24:57,440 --> 00:24:59,040
+Gdje se uklapaš, Tanme?
+
+272
+00:24:59,280 --> 00:25:03,680
+Ti si voditelj proizvoda za rast ili inženjerski voditelj proizvoda?
+
+273
+00:25:03,840 --> 00:25:05,360
+Koja je tvoja uloga posebno?
+
+274
+00:25:05,760 --> 00:25:14,400
+Da, ja i Jack imali smo više razgovora o tome i sve je potrebno da, znaš, to je ono što želim reći da ljudi kažu: Kakvo je moje djelo?
+
+275
+00:25:14,560 --> 00:25:15,280
+Ja kažem: Ne znam.
+
+276
+00:25:15,520 --> 00:25:17,200
+Pomažem programerima da zarade više novca.
+
+277
+00:25:17,280 --> 00:25:17,760
+Da, doslovno.
+
+278
+00:25:18,720 --> 00:25:24,480
+Ponekad ću spojiti vrlo sumnjive PR-ove koje voli moja inženjerska ekipa.
+
+279
+00:25:24,800 --> 00:25:27,040
+Provjerit ću Figma dizajne.
+
+280
+00:25:27,200 --> 00:25:29,680
+Sam ću pokazati eksperimente s plaćanim zidovima.
+
+281
+00:25:29,920 --> 00:25:32,640
+Provjerit ću kreativni sadržaj koji naše agencije objavljuju.
+
+282
+00:25:33,200 --> 00:25:35,680
+Sve je to što se mora dogoditi i jednostavno to shvatite.
+
+283
+00:25:35,920 --> 00:25:39,520
+I mislim da je zato to poput mačjeg mlijeka za osnivače ili bivše osnivače.
+
+284
+00:25:39,680 --> 00:25:41,360
+Da, dobro, htjela sam pitati i nastaviti s tim.
+
+285
+00:25:41,520 --> 00:25:48,640
+To je poput, što ste učinili ili što tvrtka radi da, znate, mislim da je širok opseg jedna stvar, ali postoji li nešto što oni.
+
+286
+00:25:48,640 --> 00:25:51,040
+Jako je uzbudljivo biti u laboratoriju Eleven Labs.
+
+287
+00:25:51,680 --> 00:25:55,600
+Dobro je biti u tvrtki koja raste i radi nešto jedinstveno, ali postoji li nešto što rade da bi se naišli na to?
+
+288
+00:25:55,680 --> 00:25:56,480
+Jer meni je teško.
+
+289
+00:25:56,560 --> 00:25:58,560
+Ljudi koji nešto grade žele nešto graditi.
+
+290
+00:25:58,720 --> 00:26:00,560
+Često su to njihovi vlastiti proizvodi, zar ne?
+
+291
+00:26:00,800 --> 00:26:02,400
+Teško ih je natjerati da se pridruže timu.
+
+292
+00:26:02,480 --> 00:26:11,360
+Dakle, što čini laboratorij Eleven Labs da bi ljudi došli u Borg, znate, vjerojatno je to dobar okoliš, što mislim da je Tamma, to je ono što ste namigovali.
+
+293
+00:26:11,440 --> 00:26:24,800
+Da, mogu reći što je to bilo za mene, ovdje sam samo četiri mjeseca, ali kad sam došao, bilo je super svježe i ćelija je bila vrlo osnivačica, zar ne?
+
+294
+00:26:24,800 --> 00:26:27,520
+Bio sam u velikim tvrtkama, bio sam u nešto manjim tvrtkama.
+
+295
+00:26:27,760 --> 00:26:31,920
+Moja supruga radi kao voditelj projekta u velikoj tvrtki, znate, Fang, pa je vidim svaki dan.
+
+296
+00:26:32,240 --> 00:26:35,760
+Zadnja stvar koju bih želio učiniti jest provesti život u odnosima s javnošću i pravnim pregledima.
+
+297
+00:26:36,000 --> 00:26:40,640
+Kao bivši osnivač, nešto bi poslali i dobili povratne informacije sljedeći dan.
+
+298
+00:26:40,960 --> 00:26:45,280
+A onda dođete na mjesto poput Lovin Labs, to je poput, evo, mi smo uspješna tvrtka.
+
+299
+00:26:45,600 --> 00:26:50,240
+Imamo nevjerojatan talent koji preuzima ekstremnu odgovornost za sve što rade.
+
+300
+00:26:50,560 --> 00:27:00,880
+I vi možete otići i pridružiti se ovoj skupini ljudi razreda A, a zatim dobivate potpunu autonomiju da posjedujete prostor i krenete što brže možete i što želite.
+
+301
+00:27:01,120 --> 00:27:01,200
+želite.
+
+302
+00:27:01,600 --> 00:27:03,200
+To je kao mačja mreža za osnivača.
+
+303
+00:27:03,360 --> 00:27:06,080
+Jedini ograničivač stope zapravo je vaša sposobnost.
+
+304
+00:27:06,640 --> 00:27:07,680
+Da, teško je postaviti.
+
+305
+00:27:07,760 --> 00:27:08,160
+Kako to radite?
+
+306
+00:27:08,240 --> 00:27:28,480
+Želio sam pitati, imate li neku sveobuhvatnu, na primjer, marketinšku funkciju koja postavlja, dobro, kako ćemo razgovarati, znate, vi radite kampanju za rast i oni to gledaju ili nešto, ili, jer je to nešto što mislim da ponekad, ne bih rekao da se borimo, ali volim postavljati timove da rade što god žele, ali ponekad je izazov dosljednost, u redu?
+
+307
+00:27:28,640 --> 00:27:31,440
+I glas, kako to radite u tom okruženju?
+
+308
+00:27:31,520 --> 00:27:36,880
+Da, jedna stvar koja je bila dobra je da imamo sve ove male kapsule koje se grade i rastu.
+
+309
+00:27:36,880 --> 00:27:40,400
+Izgraditi i razvijati pojedinačne proizvode ili aplikacije.
+
+310
+00:27:40,480 --> 00:27:47,200
+A onda, naravno, postoji skup zajedničkih ili organizacijskih uloga koje pomažu u okupiti sve.
+
+311
+00:27:48,080 --> 00:27:55,200
+Dakle, razmislite o svemu, od operacija do kreativnog i brendiranja, do SEO-a i našeg web razvoja.
+
+312
+00:27:55,360 --> 00:28:07,440
+Dakle, na kraju dana, postoje neke stvari koje su dovoljno važne i dovoljno široke u svojem opsegu da želimo kohezivnu marku ili želimo potpuno operativnu organizaciju.
+
+313
+00:28:07,680 --> 00:28:17,280
+Ali pokušavamo pronaći, mislim da pokušavamo pronaći ravnotežu između toga gdje je tradicionalno.ionalna hijerarhijska ili matrična organizacija?
+
+314
+00:28:17,840 --> 00:28:19,360
+Gdje vam je potrebna zajednička podrška?
+
+315
+00:28:20,080 --> 00:28:26,480
+Dakle, svaka mala ekipa ne mora preimenovati sebe, ali postoji zajednički skup smjernica.
+
+316
+00:28:26,960 --> 00:28:48,960
+Također, u laboratorijima Eleven uloženo je mnogo truda kako bi se osiguralo da postoje standardi i smjernice vezane uz robnu marku, komunikacije i operacije, kao što je mogućnost da to učinite i na vrlo maloj ekipi, jer imate pristup mnoštvu alata za umjetnu inteligenciju koji će vam pomoći da proširite taj utjecaj.
+
+317
+00:28:48,960 --> 00:28:54,320
+Dakle, postoji mnoštvo zajedničkih uloga koje se mogu odvojiti i ne morate svaki put izmišljati novo kolo.
+
+318
+00:28:55,040 --> 00:29:01,280
+Dakle, možete samo uzeti nešto s police, poput, evo našeg standarda, kako to radimo, a onda možda, možda pogriješite i mora se ispraviti.
+
+319
+00:29:01,680 --> 00:29:06,160
+Da, ili, evo, kako izgleda stvaranje u SEO-u, zar ne?
+
+320
+00:29:06,480 --> 00:29:22,000
+Kao, oh, dobro, ima nekoliko ljudi ovdje koji imaju desetljećima iskustva u tom određenom području, što bi se dobro moglo primijeniti na posao koji pokušavamo obaviti na, znate, mobilnom webu u aplikaciji ili na način na koji pokušavamo riješiti određeni problem, zar ne?
+
+321
+00:29:22,320 --> 00:29:24,960
+Dakle, biti u mogućnosti biti vrlo suradnički na kraju.
+
+322
+00:29:25,360 --> 00:29:29,600
+dana smatramo dijelom tima jedanaest laboratorija i da imamo vrlo čvrstu skupinu.
+
+323
+00:29:29,840 --> 00:29:33,840
+Pomaže nam da napravimo tjedan dana dug IF-ov web-mjesto koje smo napravili posljednje dvije godine.
+
+324
+00:29:34,080 --> 00:29:35,920
+Cijela ekipa, kao i svi, cijela tvrtka.
+
+325
+00:29:36,000 --> 00:29:36,560
+Cijela tvrtka.
+
+326
+00:29:36,640 --> 00:29:37,280
+Da, cijela tvrtka.
+
+327
+00:29:37,360 --> 00:29:38,960
+Dakle, vjerojatno je to bilo u stotinama, zar ne?
+
+328
+00:29:39,040 --> 00:29:39,600
+Ako pretpostavljam.
+
+329
+00:29:39,840 --> 00:29:43,600
+Da, sada smo došli do otprilike tristo, četiri, sada smo došli do četiri stotine.
+
+330
+00:29:43,920 --> 00:29:47,760
+I mi smo se svi okupili u Italiji ove jeseni na tjedan dana.
+
+331
+00:29:48,080 --> 00:29:50,240
+Godinu dana ranije, svi smo se sastali u Hrvatskoj.
+
+332
+00:29:50,320 --> 00:29:58,160
+Dakle, izgradnja ljudske veze i omogućavanje velikim ljudima da rade, mislim da je to bilo ključno.
+
+333
+00:29:58,240 --> 00:30:00,720
+Da, kao što je Jacob i spomenuo, čini se da je to.
+
+334
+00:30:01,040 --> 00:30:05,840
+stvarno teško izgraditi takve timove i postići takav način razmišljanja osnivača.
+
+335
+00:30:06,160 --> 00:30:14,960
+I osobno ću reći da su inženjeri s kojima sam najviše uživao u radu na svojim vlastitim proizvodima oni koji su zaista usmjereni na proizvod.
+
+336
+00:30:15,200 --> 00:30:16,080
+Kako to filtriramo?
+
+337
+00:30:16,240 --> 00:30:20,880
+Postoji li određeni način na koji oblikujete prijavu za posao, postupak razgovora?
+
+338
+00:30:21,840 --> 00:30:27,600
+Dobro proučavamo javne profile na GitHubu kako bismo vidjeli tko je uključen u što.
+
+339
+00:30:28,000 --> 00:30:36,640
+I proučavamo i određene tvrtke za koje znamo da imaju vrlo jake kulture izgradnje proizvoda i pokušavamo ih privući.
+
+340
+00:30:36,640 --> 00:30:39,440
+Da bi privukli ljude koji žele pristupiti takvoj tvrtki.
+
+341
+00:30:39,600 --> 00:30:42,560
+Također sam rekao da postaje kotač preporuka, zar ne?
+
+342
+00:30:42,640 --> 00:30:42,720
+Da.
+
+343
+00:30:43,040 --> 00:30:45,440
+Ljudi koji dolaze, onda poznaju i ljude poput njih.
+
+344
+00:30:45,840 --> 00:30:47,200
+Ljudi s kojima rade, zar ne?
+
+345
+00:30:47,280 --> 00:30:47,920
+Da, točno.
+
+346
+00:30:48,400 --> 00:30:49,200
+To je ludilo.
+
+347
+00:30:49,360 --> 00:30:59,200
+Bilo je razdoblje u kojem su ljudi govorili: O, samo ćeš crpiti iz ograničenog broja ljudi, ali rizik je toliko visok da bi to mogao učiniti, zar ne?
+
+348
+00:30:59,440 --> 00:31:04,000
+I moraš biti oprezan jer ponekad ljudi preporučuju: O, poznavao sam ovu osobu s fakulteta i nisam s njom radio.
+
+349
+00:31:04,080 --> 00:31:06,800
+Morate malo istražiti i pitati se kako ih zapravo poznajete?
+
+350
+00:31:08,160 --> 00:31:10,800
+Možda bonus preporuke stvara taj problem.
+
+351
+00:31:10,880 --> 00:31:12,880
+Ali da, to je često stvarno teško.
+
+352
+00:31:12,960 --> 00:31:14,960
+reći dok niste radili s nekim, zar ne?
+
+353
+00:31:15,120 --> 00:31:17,440
+Čak i ako netko kaže da je to učinio, zar ne?
+
+354
+00:31:17,520 --> 00:31:18,960
+Naravno, na internetu sve je laž, zar ne?
+
+355
+00:31:19,120 --> 00:31:21,920
+Nitko ne zna da sam pas, ali to je vrlo nepopolno.
+
+356
+00:31:22,000 --> 00:31:24,720
+Ali, da, to otključava mnogo toga.
+
+357
+00:31:24,960 --> 00:31:40,080
+I znate, mislim i na inženjere i ljude koji se bave proizvodima, na neki način svi, oni su toliko uvjetovani na drugim mjestima, kao što ste govorili, kao da samo čekaju PR recenziju ili pravnu recenziju i postaju toliko uvjetovani da ne poduzimaju rizike i slično.
+
+358
+00:31:40,320 --> 00:31:48,640
+I zvuči kao da svi radite u tom smislu, što je posebno u razdoblju u kojem je rast tako brz, kao da ima problema u laboratoriju ili da ne radi.
+
+359
+00:31:48,640 --> 00:31:50,720
+Ako se ne ponavlja četvrtinu, gotovo je.
+
+360
+00:31:51,360 --> 00:31:52,880
+Netko dolazi brzo.
+
+361
+00:31:53,040 --> 00:31:57,840
+Trenutno ima toliko toga za dobiti da netko stoji iza vas i spreman zauzeti taj prostor.
+
+362
+00:31:58,240 --> 00:32:03,280
+I tako, ne radi se o tome da nemate vremena, mislim, ne radi se o tome da pravni i odnosi s javnošću nisu važni.
+
+363
+00:32:03,920 --> 00:32:08,400
+Samo je možda ne postoji ili manje postoji od selidbe, zar ne?
+
+364
+00:32:08,560 --> 00:32:10,320
+I tako je to kao, dobro, kako ćemo uskladiti?
+
+365
+00:32:10,400 --> 00:32:16,560
+I to zahtijeva, ne znam, pretpostavljam da su osnivači i vođe tvrtke tolerantni prema pogreškama i riziku, zar ne?
+
+366
+00:32:16,640 --> 00:32:17,600
+To je vjerojatno jedna stvar.
+
+367
+00:32:18,000 --> 00:32:27,120
+A onda se pobrinite da ljudi znaju da možete samo raditi stvari, što nije tipično za korporativne poslna kultura u svijetu.
+
+368
+00:32:27,680 --> 00:32:34,000
+Jedino što sam htjela reći na tu temu jest da često čujemo da brzina postaje glavni cilj.
+
+369
+00:32:34,400 --> 00:32:42,400
+I mislim da se na neki način pridržavamo toga i pokušavamo zaista prihvatiti brzinu i veličinu iteracije i količinu koju isporučujemo.
+
+370
+00:32:42,640 --> 00:32:48,560
+I tako, do neke mjere, to je poput vašeg pitanja, Jacob, poput razumijevanja onoga što bi se moglo dogoditi.
+
+371
+00:32:48,880 --> 00:33:00,400
+I naš tim za podršku radi nevjerojatan posao jer često postoje, znate, izbjeglice u modelu koje se mogu pojaviti ili specifične, vrlo važne stvari, ali stvari koje.
+
+372
+00:33:00,400 --> 00:33:12,560
+To su stvari za koje često morate napraviti kompromis između toga hoćemo li ovaj model, znate, u potpunosti precizirati ili smo li spremni brže i nastaviti s guranjem granica.
+
+373
+00:33:13,360 --> 00:33:29,120
+I tako mislim da kad to postane vodiljni princip i etos tvrtke, onda je prilično jasno da je brže kretanje važnije od osiguravanja da postoji pokrivenost svake sitnice.
+
+374
+00:33:30,000 --> 00:33:36,880
+I tako mislim da je zato te stvari, male veličine tima, pozadina koju vodi osnivač.
+
+375
+00:33:36,880 --> 00:33:39,840
+Zadnji dio, brzina, svi moraju biti u skladu, svi moraju biti u skladu.
+
+376
+00:33:39,920 --> 00:33:40,320
+Da, da, da.
+
+377
+00:33:40,400 --> 00:33:40,480
+Da.
+
+378
+00:33:40,560 --> 00:33:42,800
+Trebate ljude koji preuzimaju odgovornost, zar ne?
+
+379
+00:33:43,040 --> 00:33:49,920
+Savjet je da ne izađete i ne pronađete grupu bivših osnivača i ne dovodite ih u vrlo hijerarhijsku kulturu.
+
+380
+00:33:50,080 --> 00:33:51,840
+To neće uspjeti.
+
+381
+00:33:52,080 --> 00:33:57,520
+Imat ćete puno sukoba i oni će otići i bit će puno ideja koje će se natjecati.
+
+382
+00:33:57,840 --> 00:34:01,520
+Ali kad stvorite sustave koji se uklapaju, zar ne?
+
+383
+00:34:01,920 --> 00:34:12,640
+Male timove s inženjerima i osnivačima koji su usmjereni na proizvod i koji se uklapaju u nešto poput brze i pokreta broda, mislim da je to mjesto gdje stvarno počnete dobivati harmoniju.
+
+384
+00:34:12,640 --> 00:34:15,520
+Teško je postići harmoniju i postići veće rezultate.
+
+385
+00:34:16,080 --> 00:34:28,640
+Jedan od izazova brzog kretanja, a onda, koliko god sam ga hvalio, poput izgradnje na Twitteru ili virusnom TikToku, jest da ponekad možete završiti s izgradnjom nekih vrsta trikova u obliku bljeskalice.
+
+386
+00:34:28,960 --> 00:34:46,160
+Kako razmišljate o balansiranju takvog brzog kretanja i stvaranja velikih lansiranja, ali i izgradnje prema ovim više zadržavajućim primjenama, proizvodu koji će se koristiti godinama i biti smislen godinama, a ne samo brzog kretanja i dodavanja puno značajki koje se na kraju ne koriste?
+
+387
+00:34:46,240 --> 00:34:46,960
+To je vrlo dobar pitanju.
+
+388
+00:34:47,040 --> 00:34:59,840
+Već mogu razmišljati o tome., znate, tijekom protekle godine i pol, o nekoliko značajki ili kampanja za rast koje smo izgradili i pokrenuli, što bi se u retrospektivi moglo činiti bljeskom.
+
+389
+00:35:00,400 --> 00:35:10,160
+Jedno što mi je naš izvršni direktor i suosnivač Mati rekao prije nekoliko tjedana, potaknuo je citat Briana Armstronga na Coinbaseu gdje akcija dobiva informacije.
+
+390
+00:35:10,560 --> 00:35:23,680
+I tako mislim da ćete na kraju dana, ako ste voljni poduzeti akciju, na kraju dobiti više informacija, znate, više informacija o svom tržištu, o svojim korisnicima, o svojem modelu cijena nego da to jednostavno ne slijedite.
+
+391
+00:35:23,920 --> 00:35:35,360
+Dakle, mislim da je to način razmišljanja o tome da u retrospektivi to može biti samo bljesak, ali u budućnosti to može zapravo pomoći u usmjeravanju vaših budućih odluka.
+
+392
+00:35:35,520 --> 00:35:38,800
+Dakle, mislim da je to jedna stvar koju sam ovdje osjetio kao istinitu.
+
+393
+00:35:38,880 --> 00:35:50,160
+Kada razmišljamo o ovim lansiranjima, ne radi se o tome da lansiramo samo radi lansiranja, već zapravo o tome što je najutjecajnija stvar koju možemo izgraditi koja će pružiti bolju korisničku izkušnju?
+
+394
+00:35:50,400 --> 00:35:56,160
+Kako možemo izgraditi što je brže moguće i što je brže moguće, a zatim izraziti vrijednost na najbolji mogući način?
+
+395
+00:35:56,480 --> 00:36:00,160
+Da, duboko razmišljamo o tome što ćemo sljedeće lansirati.
+
+396
+00:36:00,800 --> 00:36:10,000
+Sigurno će neki od njih uspjeti, a neki ne, ali uvijek gledamo na to kako to poboljšava korisničko iskustvo, a ne na to da ne bismo bili sjajni da isporučimo ovu stvar.
+
+397
+00:36:10,160 --> 00:36:32,320
+I ja imam tendenciju da, znate, mislim da ste to spomenuli, Jacob, da imam tendenciju da X za Y vodi vas na pogrešnu stazu, kao što kad pomislim na vrijeme kada smo razvili ili izgradili ili razvili alate koji nisu radili, to je obično primjena ideja ili koncepata iz nekog drugog mjesta i pitanje je, ne bi li bilo sjajno da ili, znate, vidjeli ste li to?
+
+398
+00:36:32,640 --> 00:36:33,680
+Možemo li to učiniti?
+
+399
+00:36:34,160 --> 00:36:36,480
+I ta izravna primjena jedan na jedan.
+
+400
+00:36:36,480 --> 00:36:47,840
+U odnosu na početak, znate, kakva je naša jedinstvena mišljenja ili kakva je naša jedinstvena priča o tome ili kakve su sposobnosti koje imamo u laboratorijima koje nitko drugi nema.
+
+401
+00:36:48,880 --> 00:37:04,000
+I mislim da kad se vratite u taj prostor, počnete otključavati mnogo više kreativnih ideja koje će vam na kraju, znate, ići dalje od flash i panoramskog stupnja i zapravo vam omogućiti da izgradite, znate, složen rast tijekom vremena.
+
+402
+00:37:04,240 --> 00:37:10,560
+Da, na tu temu, Tony, imao si sjajan post na LinkedInu o tome da ne gradite samo još jedan Spotify raft.
+
+403
+00:37:10,720 --> 00:37:12,640
+Mislim, to je savršeni primjer onoga što je Jack rekao.
+
+404
+00:37:13,280 --> 00:37:18,800
+o tome kako svi misle: Pa kako mogu napraviti ovaj Spotify wrapped svojeg proizvoda?
+
+405
+00:37:19,200 --> 00:37:22,400
+Ali vaš post bio je sjajan jer to nije dobar način razmišljanja.
+
+406
+00:37:22,720 --> 00:37:23,440
+Recite mi više o tome.
+
+407
+00:37:23,840 --> 00:37:27,600
+Da, vidio sam ovaj uzorak i osjećam da postaje sve istinitiji i istinitiji svake godine.
+
+408
+00:37:27,760 --> 00:37:34,720
+Mislio sam da će ljudi svake godine naučiti, ali postaje sve istinitije i istinitije, da će Spotify wrapped svake godine izaći poput satova i to je nevjerojatno.
+
+409
+00:37:35,680 --> 00:37:39,760
+A slučajni proizvod koji postoji, ne da navodim imena, napravit će svoju verziju wrap-a.
+
+410
+00:37:39,920 --> 00:37:41,920
+Moj je ovaj godina Phil's Coffee.
+
+411
+00:37:42,080 --> 00:37:48,800
+Imam Phil's Coffee wrapped u kutiji ove godine, što je način na koji sam znao da je preskočio morskog psa.
+
+412
+00:37:48,960 --> 00:37:54,560
+Da, da, tako znate kada je rap postao mainstream, a post cool vjerojatno je to.
+
+413
+00:37:55,120 --> 00:37:58,160
+Volim Philov kavu, nemojte me krivo shvatiti, ali možda nam nije trebala rap.
+
+414
+00:37:58,480 --> 00:37:58,960
+To je u redu.
+
+415
+00:37:59,040 --> 00:38:01,120
+Da, možda ćemo preskočiti ovo.
+
+416
+00:38:01,280 --> 00:38:05,520
+Dakle, mislim da je razlog zbog kojeg ljudi zaboravljaju zašto je Spotify Rapt zaista počeo rasti, zar ne?
+
+417
+00:38:05,600 --> 00:38:14,480
+Uzeo je ovo, poput pasivnog konzumiranja, ponašanja korisnika, a zatim ga pretvorio u ovu prirodnu zajedničku iskustvo, zar ne?
+
+418
+00:38:14,800 --> 00:38:27,520
+Ljudi općenito rezoniraju i identificiraju se oko glazbe koju slušaju, a vi je predstavite u ovom prekrasnom formatu i dijelite je, a postaje viralna i sve je to oko, znate, kom za Griff PM, to je mačja pijanica.
+
+419
+00:38:27,680 --> 00:38:32,480
+Uzmite jednu korisničku iskustvo i dodajte neku vrstu virusnog faktora oko nje.
+
+420
+00:38:32,640 --> 00:38:36,720
+Dakle, nešto što znate, imate neku vrstu K faktora koji možete mjeriti i to je super fantastično.
+
+421
+00:38:37,120 --> 00:38:43,600
+Ali ono što ljudi propuste jest da morate razmišljati o tome kakav je vaš prirodni trenutak za dijeljenje u vašem proizvodu, zar ne?
+
+422
+00:38:43,680 --> 00:38:47,760
+I znate, mislim da sam u postu objavio neke od proizvoda za koje mislim da to rade vrlo dobro, GitHub Skyline.
+
+423
+00:38:48,080 --> 00:38:51,680
+Vjerojatno je nešto što nije trebalo toliko vremena da netko implementira, ali je to dosljedno bilo tamo.
+
+424
+00:38:51,840 --> 00:39:05,360
+I povremeno, povremeno, vidjet ćete ljude koji, znate, stavljaju snimku zaslona Skylinea ili mislim da čak i tim za prihod, stavljate oglasni pano pano na Times Squareu, a onda ljudi stoje ispred njega i fotografiraju se.
+
+425
+00:39:05,520 --> 00:39:07,120
+Da, taj je, usput rečeno, nestao.
+
+426
+00:39:07,200 --> 00:39:08,800
+Mislim da je svatko shvatio taj trik.
+
+427
+00:39:08,960 --> 00:39:10,560
+Da, mislim da je to u redu.
+
+428
+00:39:10,880 --> 00:39:11,440
+Tako je, zar ne?
+
+429
+00:39:11,520 --> 00:39:15,760
+Sve se na kraju zapakira i morate prijeći na nešto drugo.
+
+430
+00:39:16,160 --> 00:39:16,480
+Baš tako.
+
+431
+00:39:16,800 --> 00:39:20,000
+Sve se zapakira i postoji kratka životna vijek, ali morate pronaći ono što rezonira.
+
+432
+00:39:20,160 --> 00:39:25,200
+Čak i u timu Eleven Labs podijelili smo to ljudima koji su gradili na platformi agenata.
+
+433
+00:39:25,840 --> 00:39:28,560
+Ovo je broj sati interakcije s agentima koje ste imali, zar ne?
+
+434
+00:39:28,720 --> 00:39:33,680
+Vrlo slično kao na YouTubeu, znate, dosegli ste sto tisuća ili Stripe, dosegli ste neku vrstu, znate, važnog mjestu.
+
+435
+00:39:34,000 --> 00:39:41,280
+To su prirodni dijelivi trenuci koji se uklapaju s vrijednošednošću koju korisnik dobiva od platforme na koju je osobno jako ponosan i koju je spreman podijeliti.
+
+436
+00:39:41,360 --> 00:39:42,960
+I zapravo je to stvarno važno.
+
+437
+00:39:43,040 --> 00:39:45,120
+Znate, bilo je stvarno zanimljivo.
+
+438
+00:39:45,440 --> 00:39:52,160
+S godinama smo izradili različite verzije dijeljenja ovog snimka zaslona ili dijeljenja ovog grafikona u našem nadzornom panelu.
+
+439
+00:39:52,480 --> 00:39:54,400
+Nikad, gotovo nikad ih nisam vidio u prirodi.
+
+440
+00:39:54,640 --> 00:40:01,440
+Najveća značajka za dijeljenje koju smo ikad izradili bila je samo izrada mobilne aplikacije jer su ljudi onda mogli lako snimiti zaslon.
+
+441
+00:40:01,520 --> 00:40:08,880
+I mislim da to nije bilo namjerno, ali je početni zaslon učinio prilično estetski i prilično jednostavan za snimanje i dijeljenje.
+
+442
+00:40:09,040 --> 00:40:11,600
+I sto puta sam naš proizvod vidio na X-u preko noći.
+
+443
+00:40:11,680 --> 00:40:13,840
+Nije bilo ni značajke za dijeljenje, zar ne?
+
+444
+00:40:14,480 --> 00:40:14,960
+Znaš što mislim?
+
+445
+00:40:15,120 --> 00:40:25,200
+Mislim, možda bismo trebali misliti, naravno, u retrospektivi bismo mogli reći, da, jasno smo znali da će se viralnost povećati s mobilnom aplikacijom, ali, znaš, i samo smo propustili da nemamo mobilnu aplikaciju toliko dugo koliko je nemamo, zar ne?
+
+446
+00:40:25,680 --> 00:40:31,840
+I, znaš, mislio sam da je to poput igračke, nešto poput, oh, da, mi smo tvrtka B2B, zašto nam je potrebna mobilna aplikacija?
+
+447
+00:40:31,920 --> 00:40:35,840
+I možda sam je preuzeo od Stripea, kao da imaju mobilnu aplikaciju, ali koliko je to važno za mene?
+
+448
+00:40:36,000 --> 00:40:39,760
+Nikad nije bilo tako važno biti na određenoj pozornici, ali, znaš, potpuno mi nedostaje ovo.
+
+449
+00:40:39,920 --> 00:40:47,680
+A onda u retrospektivi, sada je očito da ima gotovo istu upotrebu na dnevnoj bazi kao i naš dashboard, znaš što mislim?
+
+450
+00:40:47,840 --> 00:40:49,920
+I ljudi su me godinama vikali da to učinim.
+
+451
+00:40:50,160 --> 00:40:52,560
+Ja sam samo bio poput Davida, uključujući i mene.
+
+452
+00:40:52,560 --> 00:40:53,520
+Ali ja sam to jednostavno ignorirao.
+
+453
+00:40:53,600 --> 00:40:54,800
+Ali to je točno ono što ste rekli, zar ne?
+
+454
+00:40:54,880 --> 00:41:01,200
+Bio sam poput Eh, pogrešno, znate, to je ono što drugi ljudi rade, duh, duh, duh, duh, umjesto da samo kažem Zašto korisnik danas vikne?
+
+455
+00:41:01,360 --> 00:41:02,400
+U redu, ja sam to izgradio.
+
+456
+00:41:02,880 --> 00:41:09,440
+To bi bio bolji algoritam i dovelo me do toga da se otključam mnogo ranije, zar ne?
+
+457
+00:41:09,680 --> 00:41:14,000
+Ali da, ponekad je iznenađujuće, efekti drugog reda koje dobivate, znate?
+
+458
+00:41:14,320 --> 00:41:18,640
+Siguran sam da ljudi na Spotifyju nikad nisu znali da će rap postati ono što je, zar ne?
+
+459
+00:41:18,720 --> 00:41:21,360
+Teško je stvoriti te trenutke za dijeljenje.
+
+460
+00:41:21,600 --> 00:41:24,560
+Često završavaju prirodnije.
+
+461
+00:41:24,640 --> 00:41:27,920
+I kad pokušate izgraditi za to, pogriješite.
+
+462
+00:41:28,160 --> 00:41:30,800
+Čak i jedan koji je, mislim, dobro prošao je Flightyjev.
+
+463
+00:41:31,200 --> 00:41:36,800
+Flighty nekako radi nešto poput kraja godine, poput letova, a to je postalo, znate, prilično viralno.
+
+464
+00:41:36,880 --> 00:41:38,640
+Mnogi ljudi objavljuju i slično.
+
+465
+00:41:39,520 --> 00:41:43,440
+Ali to je malo uvjerljivije od toga koliko sam kava naručio ove godine.
+
+466
+00:41:43,760 --> 00:41:44,320
+U potpunosti.
+
+467
+00:41:44,400 --> 00:41:57,280
+Ali Brian je čak govorio o tome, bilo je na njegovoj godišnjoj intervjuu o rastu aplikacije s Charliejem koji je objavljen u lansiranju, sestrinskom podcastu ovog lansiranja, gdje je govorio o tome kako su se borili s tim.
+
+468
+00:41:57,360 --> 00:42:04,160
+Prošli su kroz više iteracija prije nego što su sl došli do nečega što je zapravo bilo stvarno podijelivo.
+
+469
+00:42:04,400 --> 00:42:12,960
+Mislim da je to bio vaš stav, Tanmay, s tom objavom i s onim što govorite, da morate iterirati prema tom stvarnom trenutku koji se može podijeliti i onda isprobati stvari.
+
+470
+00:42:13,280 --> 00:42:20,240
+A ako ljudi ne dijele, onda to nije zato što niste dovoljno dobro istaknuli ili što god, to je kao da to nije trenutak koji se može podijeliti.
+
+471
+00:42:20,320 --> 00:42:24,480
+A onda nastavite iterirati i pronađete taj trenutak koji se može podijeliti.
+
+472
+00:42:24,960 --> 00:42:28,400
+To je vrlo slično April Foolsu kao marketinškom trikovima, zar ne?
+
+473
+00:42:28,560 --> 00:42:30,960
+To je bilo tako veliko događanje nekoliko godina.
+
+474
+00:42:31,200 --> 00:42:35,520
+A onda se ne sjećam kada je bilo, ali u nekom trenutku je samo preskočilo morski pas i postalo je neugodno to učiniti.
+
+475
+00:42:35,680 --> 00:42:36,240
+Znaš što mislim?
+
+476
+00:42:36,400 --> 00:42:41,520
+To se i dalje događa, ali imam osjećaj da je doseglo vrhunac, a onda, znate, ali mislim da je to više zbog toga što se događaju stvari koje su na pola puta.
+
+477
+00:42:42,080 --> 00:42:43,840
+To je u svemu u ekonomiji pažnje, zar ne?
+
+478
+00:42:44,000 --> 00:42:52,800
+To je kao da pronađete nešto jedinstveno, što može privući pozornost, a onda ćete privući milijun brzih sljedbenika u taj prostor, a onda je nestalo za dvije godine.
+
+479
+00:42:52,960 --> 00:42:55,360
+Ali to je ono što, mislim, to je ono što ga održava zanimljivim, zar ne?
+
+480
+00:42:55,520 --> 00:42:56,720
+Zato je to rast, hakiranje.
+
+481
+00:42:56,880 --> 00:42:59,120
+Nije samo, nije formalno ili nešto slično.
+
+482
+00:42:59,280 --> 00:43:01,920
+Morate stalno razmišljati o zanimljivim stvarima koje možete učiniti.
+
+483
+00:43:02,080 --> 00:43:12,800
+Uvijek smo, da, naravno, posuđujemo stvari od drugih marki i platformi, ali onda uvijek dolazimo s najboljim neupućenim, koliko god možemo sanjati.
+
+484
+00:43:13,280 --> 00:43:18,640
+Mnogo toga definitivno svijetli dan, ali jedna od deset glupih stvari koju netko kaže, zapravo, znate što?
+
+485
+00:43:18,960 --> 00:43:21,040
+Možda možemo to učiniti, zar ne?
+
+486
+00:43:21,200 --> 00:43:24,880
+I onda to možete pomnožiti i s više proizvoda za vas.
+
+487
+00:43:25,040 --> 00:43:28,080
+To je kao da možete ići u mnogo smjerova, što je cool.
+
+488
+00:43:28,480 --> 00:43:33,760
+Da, pronašli ste li neke ključne otključavanje u potrošačkim aplikacijama u laboratorijima za jedanaest?
+
+489
+00:43:33,840 --> 00:43:34,960
+Ima li trenutaka za dijeljenje?
+
+490
+00:43:35,120 --> 00:43:38,000
+I dalje se trudite pronaći takav krug?
+
+491
+00:43:38,560 --> 00:43:40,320
+Da, još uvijek se malo trudimo.
+
+492
+00:43:40,960 --> 00:43:47,280
+Jedno što sam pokušao pogledati i što mi puno gledamo jest društveno praćenje.
+
+493
+00:43:47,520 --> 00:43:53,680
+Dakle, dobro i ozbiljno gled proučavamo spomenute na Redditu, Discordu, X-u itd.
+
+494
+00:43:54,480 --> 00:43:55,760
+i vidjeli smo neke ankete.
+
+495
+00:43:55,840 --> 00:44:13,360
+Za nas je, mislim, aha kada možete donijeti vlastitu e-knjigu ili e-pub ili PDF datoteku i odabrati određeni glas, glas u glavi koji želite da vam čita tu priču ili knjigu.
+
+496
+00:44:13,520 --> 00:44:24,000
+Dakle, mislim da je glavni cilj, znate, znam da je puno toga napravljeno o trendu oko kvizova za uvođenje.
+
+497
+00:44:24,000 --> 00:44:26,560
+I ako uvodite ciljeve., postavljanje ciljeva i slično.
+
+498
+00:44:26,720 --> 00:44:37,360
+Zapravo smo postigli veći uspjeh u pokušaju da se malo skratimo i skratimo vrijeme između, recimo, sadržaja koji želim pročitati i glasa koji imam na umu.
+
+499
+00:44:37,520 --> 00:44:40,640
+Možemo li vam pomoći da brzo pronađete taj glas?
+
+500
+00:44:40,960 --> 00:44:55,760
+I vidimo snimke zaslona i videozapise i snimke zaslona ljudi s određenim glasom, recimo, oh, nisam znao da mi Michael Caine može pročitati kao Dickens ili da mi može pročitati domaću zadaću za doktorat iz kemije ili bilo što drugo.
+
+501
+00:44:55,840 --> 00:45:03,520
+I tako mislim da to postaje nešto jedinstveno za nas i da počinjemo stavljati malo malo više goriva na potrošačku stranu.
+
+502
+00:45:03,680 --> 00:45:06,000
+Sve je u redu ako to učini korisnik, zar ne?
+
+503
+00:45:09,760 --> 00:45:12,000
+Dakle, to su najbolji trenuci.
+
+504
+00:45:12,240 --> 00:45:15,600
+Mislim, mislim da to dolazi samo s davanjem snažnih alata ljudima, zar ne?
+
+505
+00:45:15,680 --> 00:45:24,000
+Oni će, znate, kao i puno toga, ne znam da li to zovete zasluženim ili samo viralnim, ali kao što sam rekao, mi ljudi objavljujemo snimke zaslona naše aplikacije, zar ne?
+
+506
+00:45:24,160 --> 00:45:26,080
+Nije bilo nešto što smo pokušavali postići.
+
+507
+00:45:26,400 --> 00:45:27,920
+Samo smo obavili svoj posao, zar ne?
+
+508
+00:45:28,000 --> 00:45:29,840
+I brzo smo privukli ljude do vrijednosti.
+
+509
+00:45:29,920 --> 00:45:35,280
+A onda, znate, to samo stvara, stvara, osigurava prirodnu viralnost i rast na taj način.
+
+510
+00:45:35,520 --> 00:45:48,560
+Jedno što povezuje ove dvije apl aplikacije i dio je mnogih laboratorija, a to je važnost i središnja važnost glasa kao medija, tona i kvalitete.
+
+511
+00:45:49,120 --> 00:45:59,440
+I tako mislim da što više radimo na preoblikovanju kako bismo učinili da se iskustvo glasa čini emotivnijim, zar ne?
+
+512
+00:45:59,520 --> 00:46:12,400
+Kakav bi bio izgled glasa i kako možemo na neki način premostiti jaz između onoga što čujete i načina na koji ćete odabrati glas ili kako možete stvoriti klon glasa koji će predstavljati vaš vlastiti glas?
+
+513
+00:46:13,200 --> 00:46:24,160
+Možemo li početi eksperimentirati u tom području jer je to prilično čarobno iskustvo moći stvarati novi audio u tonovima glasa.
+
+514
+00:46:24,240 --> 00:46:32,640
+I tako mislim da je to bio jedan osnovni krug kroz glasovne agencije, kroz našu osnovnu aplikaciju i kroz potrošačku stranu.
+
+515
+00:46:32,800 --> 00:46:37,280
+Da, kada ću dobiti prilagođenu prenosivost glasa na druge LM-ove?
+
+516
+00:46:37,360 --> 00:46:46,880
+Želim to jer vam kažem da sam mnogo tolerantniji prema standardnom ponašanju i odgovorima od pet i pol kad ga čitam.
+
+517
+00:46:46,960 --> 00:46:51,600
+Ali kad počne govoriti sa mnom, osoba postaje toliko s dosadna kad počne nešto pokvariti, razumijete što mislim?
+
+518
+00:46:52,560 --> 00:46:53,440
+I moram to malo popraviti.
+
+519
+00:46:53,600 --> 00:46:54,400
+To je tako smiješno.
+
+520
+00:46:54,720 --> 00:47:08,080
+Mislim, ovo je neka vrsta odmaknutog dijela, ali moja supruga je čula da sam imao standardni ChatGPT o kojem pričamo, ali standardni ChatGPT glasovni agent, a ona ima australski i kaže: Zašto je tvoj tako dosadan?
+
+521
+00:47:08,480 --> 00:47:10,000
+A ja sam rekao: Ne znam što.
+
+522
+00:47:10,080 --> 00:47:11,040
+Rekla je: Slušaj moj.
+
+523
+00:47:11,120 --> 00:47:12,080
+A ja sam rekao: Da, znaš što?
+
+524
+00:47:12,320 --> 00:47:15,440
+Tvoj zvuči manje dosadno iz nekog razloga, zar ne?
+
+525
+00:47:15,600 --> 00:47:22,960
+Ali to je primjer o čemu pričate, gdje je glas toliko važan, znate, ide dalje od teksta, zar ne?
+
+526
+00:47:23,040 --> 00:47:31,120
+To je poput informacija i to je poput najprirodnijeg sučelja za ove simbolične mozgove u kutiji, zar ne?
+
+527
+00:47:31,280 --> 00:47:42,000
+To je vrlo prirodan način da ih se humanizira, što, ne znam, očito je ogromna površina za vas da izmislite nove i zanimljive iskustva, što je prilično cool.
+
+528
+00:47:42,160 --> 00:47:47,840
+Koliko bi bilo ludilo da mogu klonirati svoj glas i pretvoriti ga u chat GPT, znate, baš kao da pričam sa sobom?
+
+529
+00:47:48,000 --> 00:47:48,800
+To bi bilo vrlo čudno.
+
+530
+00:47:48,960 --> 00:47:50,000
+To bi nekoga razljutilo.
+
+531
+00:47:50,080 --> 00:48:00,880
+Pa, da, samo sam htjela reći da smo napravili brzu analizu s potrošačke strane i možemo pogledati kakva je frekvencija glasova koje ljudi odabiru.
+
+532
+00:48:00,880 --> 00:48:10,880
+I postoje li skupovi ili se obično okupljaju jer većina aplikacija ne bi omogućila odabir ili dvije ili tri opcije.
+
+533
+00:48:11,200 --> 00:48:25,200
+Na našoj potrošačkoj aplikaciji imamo više od šest stotina glasova i omogućuje vam da odaberete vlastitog glasnog pripovjedača ili čitate odličnu audioknjigu, odličnu sadržaj za audioknjige.
+
+534
+00:48:25,360 --> 00:48:27,840
+I nijedan glas nema više od deset ili dvanaest posto korištenja.
+
+535
+00:48:27,920 --> 00:48:31,120
+Dakle, rep je iznimno dug, zar ne?
+
+536
+00:48:31,360 --> 00:48:36,000
+Kao što je prosječna količina korištenja vjerojatno blizu jedan ili dva posto, zar ne?
+
+537
+00:48:36,000 --> 00:48:47,840
+Kada razmišljate o tome kako ljudi doživljavaju glas i žele takvu vrstu odabira, a moj preferirani glas nije isti kao Davidov, nije isti kao i kod bilo koga drugog.
+
+538
+00:48:48,000 --> 00:48:49,600
+I tako mislim da je to jedna stvar koju vidimo.
+
+539
+00:48:49,920 --> 00:48:52,640
+To zapravo dovodi do sljedećeg pitanja koje sam htjela postaviti.
+
+540
+00:48:52,800 --> 00:48:58,560
+Bilo bi nepošteno da ne iznesem ono što svi u industriji zabrinjaju.
+
+541
+00:48:58,960 --> 00:49:01,280
+I mislim da je i Eleven Labs sigurno razmišlja o tome.
+
+542
+00:49:01,600 --> 00:49:08,640
+Ali, velike tri tvrtke za učenje učenja učenja, OpenAI, ThoughtPic i Google, samo potroše sve?
+
+543
+00:49:09,680 --> 00:49:16,800
+Sve aplikacije postaju li samo mala sučeljeja i kako ChatGPT radi, sve glasove se potpuno uključuje.
+
+544
+00:49:17,040 --> 00:49:20,560
+I mislim da je to dobar primjer vaših šest stotina kvalitetnih glasova.
+
+545
+00:49:21,120 --> 00:49:22,480
+I mislim isto s Jacobom.
+
+546
+00:49:22,640 --> 00:49:30,640
+Nisam veliki obožavatelj glasova nekih drugih LLM-ova, ali jedanaest laboratorija, to je kao da vode i da se ističu.
+
+547
+00:49:31,200 --> 00:49:33,360
+I čini se da je to jedan od razlika.
+
+548
+00:49:34,000 --> 00:49:38,000
+Ali, da, kako razmišljate o natjecanju s ovim drugim laboratorijima?
+
+549
+00:49:38,080 --> 00:49:40,080
+Dakle, mislim da mi padaju na pamet nekoliko stvari.
+
+550
+00:49:40,320 --> 00:49:46,960
+Jedno je da smo nastavili povećavati brzinu tijekom vremena.
+
+551
+00:49:47,040 --> 00:49:48,320
+I tako smo nastavili.
+
+552
+00:49:48,720 --> 00:49:57,840
+Nadalje smo se usredotočili na glas, govor i zvuk kao našu stručnost i nastavili smo se u to uložiti.
+
+553
+00:49:57,920 --> 00:50:04,640
+I tako postoji mnogo sjajnih modela i videozapisa i slika i, znate, naravno, i teksta, zar ne?
+
+554
+00:50:06,000 --> 00:50:13,120
+Ali nastavili smo se uložiti u svaki potez kako bismo se brzo kretali i zadržali prednost i ostali ispred kad je u pitanju glas.
+
+555
+00:50:13,280 --> 00:50:22,320
+Mislim da smo svi svjesni da, znate, da biste nastavili dodavati i dobivati vrijednost, morate učiniti više od samo jedne stvari.
+
+556
+00:50:22,960 --> 00:50:24,720
+I tako mislim da je to dio razloga.
+
+557
+00:50:24,720 --> 00:50:29,920
+Zato smo pokušali izgraditi našu platformu za glasovne agente kao dobar primjer, zar ne?
+
+558
+00:50:30,080 --> 00:50:32,640
+Ne radi se samo o odabiru glasa i razgovoru.
+
+559
+00:50:33,200 --> 00:50:44,960
+Ugradili smo prilagođene procjene i radne tokove te neke integracije koje vam omogućuju da počnete koncentrirati puno svog rada oko te specifične glasovne iskustva.
+
+560
+00:50:45,200 --> 00:50:48,960
+Mislim da isto vrijedi i za ono što radimo s aplikacijama, zar ne?
+
+561
+00:50:49,120 --> 00:51:00,480
+Na primjer, ako imate veću sigurnost i veću vezu kad je u pitanju brend koji imate, ako imate komplet za kreatore koji se proteže na mobilne uređaje, ako imate skup poduzeća.
+
+562
+00:51:00,960 --> 00:51:04,560
+koja stvaraju sjajan tekst koji može doći do potrošača.
+
+563
+00:51:04,880 --> 00:51:13,920
+Dio pristupa je da morate početi stvarati malo ekosustava i imati puno međusobno povezanih dijelova ako želite nastaviti napredovati.
+
+564
+00:51:14,000 --> 00:51:23,440
+Ponovno, jedan od načina na koji sam pogriješio u posljednje dvije godine, mislim da je to učinilo mnogo ljudi, bilo je to da bih pretpostavio da ćete biti najbolji glasovni model i da će to biti vaša prednost.
+
+565
+00:51:23,680 --> 00:51:31,680
+Ali možete dovoljno daleko ekstrapolirati da, znate, Amazon, mislim da je Amazon poput Costca računalnih usluga.
+
+566
+00:51:32,240 --> 00:51:40,800
+U nekom trenutku, kao što će Amazon Web Services imati model koji je vjerojatno prilično dobar dobar i možda ne toliko dobar kao vrhunski rub, ali vjerojatno je dovoljno dobar.
+
+567
+00:51:40,960 --> 00:51:42,640
+I tako biste mogli izgubiti taj rub.
+
+568
+00:51:42,880 --> 00:51:49,520
+A onda se čini da, barem s mjesta na kojem stojim, nakon dvije godine ovog ludog ciklusa, čini se da je to ono što govorite.
+
+569
+00:51:49,600 --> 00:51:52,960
+To je kao da se prednosti nakupljaju u sloju aplikacije, zar ne?
+
+570
+00:51:52,960 --> 00:51:59,920
+To je kao što, što i kako, i to je mjesto gdje Amazon Web Services nikad neće moći klonirati glasovni model.
+
+571
+00:52:00,320 --> 00:52:05,760
+Moguće je da će moći klonirati prihvatljiv glasovni model, ali neće imati sve sitne trikove sloja aplikacija.
+
+572
+00:52:07,120 --> 00:52:15,040
+I prije sam rekao da sam prošle godine igrao s audioknjigama i vi ste rekli da su bi se moglo dogoditi još toga.
+
+573
+00:52:15,120 --> 00:52:21,760
+Tko će izgraditi najbolju platformu za upotrebu glasovnog modela za generiranje audioknjiga?
+
+574
+00:52:22,320 --> 00:52:23,040
+Tko će to učiniti?
+
+575
+00:52:23,360 --> 00:52:34,560
+Možda neki ljudi, ali sada ste stekli prednost da je stvarnost u tome što se može naučiti u tokenima unutra, izlaziti, gradientno spuštanje, a to će postati komoditizirano.
+
+576
+00:52:34,720 --> 00:52:39,680
+Stvari koje se ne mogu naučiti su interakcija s ljudima koji zapravo koriste te alate, razumijevanje njihovih ljudskih potreba.
+
+577
+00:52:39,760 --> 00:52:40,000
+Ne znam.
+
+578
+00:52:40,080 --> 00:52:46,880
+Ne znam kako vi, ljudi, stalno se vraćam između toga da je moj posao zauvijek gotov i da će ljudi biti dominantni tvorci softvera.
+
+579
+00:52:47,040 --> 00:52:47,840
+Još uvijek ne znam.
+
+580
+00:52:48,000 --> 00:52:49,680
+Svaki dan idem i vraćam se.
+
+581
+00:52:50,240 --> 00:53:02,480
+Ali to je nešto što mislim, slijedeći ono što si upravo rekao, Jacku, to promovira neku vrstu ljudsko usmjerene verzije budućnosti razvoja softvera, koja je poput razgovora s ljudima i otkrivanja kako se modeli zapravo uklapaju u njihove potrebe, što bi moglo postati prednost, zar ne?
+
+582
+00:53:02,640 --> 00:53:04,000
+Jer svi će imati modele, zar ne?
+
+583
+00:53:04,320 --> 00:53:08,160
+Kao da će svi imati, a to je i na strani građevine, generiranje koda i sve te stvari.
+
+584
+00:53:08,480 --> 00:53:15,200
+I također, na strani brendova, mislim da Jacob i ja oboje prepoznajemo jedanaest laboratorija kao daleko najbolje glasove u industriji.
+
+585
+00:53:15,760 --> 00:53:17,600
+Naravno, neću prvo ići na AWS.
+
+586
+00:53:18,080 --> 00:53:18,640
+Znaš što mislim?
+
+587
+00:53:19,360 --> 00:53:20,400
+Kao da sam čuo za dobru.
+
+588
+00:53:20,880 --> 00:53:23,360
+Pokušat ću dobru, a onda ćemo možda pogledati troškove ili što god.
+
+589
+00:53:23,360 --> 00:53:24,320
+Ali, da, sigurno.
+
+590
+00:53:24,720 --> 00:53:28,480
+To će vam definitivno dati neku vrstu prednosti, dok je to istina.
+
+591
+00:53:28,960 --> 00:53:32,480
+Mislim, to se vraća, kao što je samo medijska kombinacija, zar ne?
+
+592
+00:53:32,640 --> 00:53:41,280
+Svaki put kad netko pomisli na glas ili govor i zvuk, Eleven Labs je ime koje odmah pada na pamet, zar ne?
+
+593
+00:53:41,440 --> 00:54:01,920
+I naravno, pružatelji modela će uložiti sve napore u objavljivanje nečega, ali naša kombinacija fokusa na neumorno udaranje bubnja i često lansiranje i, znate, guranje rubova brže od bilo koga drugog na tržištu i kombiniranje toga na medijima koji su zaradili i kombiniranje toga s, znate, pametnim modelom rasta koji to stvarno omogućava i stvarno ga ovlaštene inženjerske timove.
+
+594
+00:54:02,160 --> 00:54:04,880
+Sve se to samo nakuplja tako da imate ovaj mote.
+
+595
+00:54:05,440 --> 00:54:06,560
+I ne znam kako se zove taj mote.
+
+596
+00:54:06,640 --> 00:54:07,440
+Možda je to stara škola.
+
+597
+00:54:07,520 --> 00:54:11,520
+Nazivamo ga robnom markom ili, znate, robna marka gotovo izgleda prejednostavno.
+
+598
+00:54:11,680 --> 00:54:12,240
+Znate što mislim?
+
+599
+00:54:12,400 --> 00:54:13,680
+U dvadeset i šestoj godini.
+
+600
+00:54:13,840 --> 00:54:15,760
+Pa, mislim da je to sjajno mjesto za zaključak.
+
+601
+00:54:15,840 --> 00:54:21,760
+Imam tri pitanja koja sam postavio svakom gostiju i ili oboje možete odgovoriti na svako od njih ili jedan od vas može uzeti to.
+
+602
+00:54:22,160 --> 00:54:26,400
+Ali koji je najutjecajniji eksperiment ili promjena koju ste proveli ove godine?
+
+603
+00:54:26,640 --> 00:54:32,000
+Koja je najveća pobjeda koju ste vidjeli ove godine i od koje mislite da bi ljudi mogli naučiti lekciju?
+
+604
+00:54:32,240 --> 00:54:42,160
+Mislim da je najveća pob je stvarno ne zaboraviti činjenicu da, da, umjetna inteligencija je svugdje.
+
+605
+00:54:42,400 --> 00:55:01,440
+I ako provodite vrijeme kao što smo mi pokušavajući procijeniti referentne vrijednosti i potrošnju po kreditu, kao i u žetonima i sve ostalo, kada se sastanete s potrošačem koji pokušava razmišljati o tome, htio bih potrošiti određenu količinu sadržaja i zvuka, često neće početi s točkom žetona i kredita i slično.
+
+606
+00:55:01,760 --> 00:55:12,880
+Dakle, najveća je stvar samo sposobnost prenošenja ili komunikacije i jednostavnih planova cijena i jednostavnih priča koje se nekako počinju.
+
+607
+00:55:12,880 --> 00:55:16,560
+To je poput toga da počnete odstupati od složenosti umjetne inteligencije, što je stvarno.
+
+608
+00:55:16,800 --> 00:55:28,000
+Za razliku od nekih aplikacija SaaS, postoje stvarni troškovi, stvarni troškovi o kojima morate biti pametni, ali to ne bi trebalo značiti da komuniciramo na taj način s potrošačem.
+
+609
+00:55:28,080 --> 00:55:32,560
+Najveća pobjeda koju smo ostvarili na našoj strani bila je samo to što smo uklonili cijeli razred cijena.
+
+610
+00:55:32,800 --> 00:55:44,960
+Prešli smo na mogućnost komunikacije s brojem sati koje provodite kako biste mogli reproducirati sjajan sadržaj i početi odstupati od mnogih detalja koji su uključeni u model umjetne inteligencije.
+
+611
+00:55:45,200 --> 00:55:47,600
+Mislim da je to bila najveća pobjeda s naše strane.
+
+612
+00:55:47,840 --> 00:55:50,000
+Mislim da je za nas to bila jednostavnost., kao i verzija jednostavnosti.
+
+613
+00:55:50,560 --> 00:55:52,800
+I to se pojavilo na nekoliko različitih načina.
+
+614
+00:55:53,040 --> 00:55:58,800
+Radim na aplikaciji koju radim, pokušavamo prenijeti najbolje iz weba u mobilnu aplikaciju.
+
+615
+00:55:58,880 --> 00:56:05,840
+I tako često pričamo o tome da je destiliramo, a ne samo da prenesemo cijelo i stisnemo je u mobilni oblik.
+
+616
+00:56:05,920 --> 00:56:17,520
+Mislim da mi se to malo podsjeća na stare dane kada je svatko imao ove dodatne aplikacije koje su bile ili stvarno, stvarno osnovne, ili su bile samo stolna ploča stisnuta u mali oblik.
+
+617
+00:56:17,760 --> 00:56:24,960
+I razmišljamo o tome kako možemo učiniti da bude super jednostavno i odabrati najbolje što radi na webu, što stvarno rezonira s publikom i smanjiti to.
+
+618
+00:56:24,960 --> 00:56:36,240
+I to se također dogodilo s našim cijenama, znate, gdje nudimo, mislim, više od pet planova, a na mobilnim uređajima to jednostavno nije imalo smisla, znate, iz različitih razloga, u odnosu na ograničenja Applea i Playsa.
+
+619
+00:56:36,640 --> 00:56:41,520
+Ali čak i kao mobilna aplikacija, htjeli smo da bude vrlo jednostavno u različitim strukturama cijena koje nudimo.
+
+620
+00:56:41,600 --> 00:56:53,360
+I tako nudimo jednu cijenu, znate, testiramo je i testiramo s različitim poticajima oko nje, ali to nas drži, drži stvari vrlo jednostavnima i to također znači da se vrlo odgovorno držimo kad odaberemo sljedeću stvar na kojoj ćemo raditi.
+
+621
+00:56:53,520 --> 00:56:54,320
+U redu, zabavna je.
+
+622
+00:56:54,560 --> 00:56:56,480
+Koja je vaša najveća neuspjeh godine?
+
+623
+00:56:56,720 --> 00:56:57,680
+Što ste pogriješili?
+
+624
+00:56:58,000 --> 00:57:00,640
+To je bila nevjerojatna lekcija za vaš komentar.
+
+625
+00:57:00,640 --> 00:57:05,760
+Jack, što se odnosi na tvoj komentar ranije, koji je pružio mnogo informacija, čak i ako nije pružio veliku pobjedu.
+
+626
+00:57:06,000 --> 00:57:17,440
+Prvi dojmovi su važni i moraš potrošiti mnogo vremena da bi se onboarding mogao pravilno optimizirati i biti učinkovit, što može značiti mnogo stvari.
+
+627
+00:57:18,160 --> 00:57:24,160
+Vjerojatno smo previše vremena pokušavali izjednačiti i optimizirati onboarding.
+
+628
+00:57:24,800 --> 00:57:33,360
+I na kraju, neke od stvari koje bih učinio u retrospektivi su, recimo, kakav je osnovni slučaj?
+
+629
+00:57:34,400 --> 00:57:36,880
+Što se događa ako imate samo obrazac za prijavu koji ide izravno?
+
+630
+00:57:36,880 --> 00:57:38,080
+Ova je obrasca koja izravno ulazi u vaš proizvod ZeroState.
+
+631
+00:57:38,640 --> 00:57:49,520
+Koja je stopa zadržavanja ili stopa angažmana ili stopa monetizacije koju će ovaj tok otključati kad je u pitanju skupina potrošača koje služite?
+
+632
+00:57:49,920 --> 00:57:50,000
+Da.
+
+633
+00:57:50,320 --> 00:57:59,040
+I tako mislim da bez toga, stvarno pokušavajući procijeniti tu skalu stope, zapravo samo slijepo stavljate na složenu vrijednost, zar ne?
+
+634
+00:57:59,280 --> 00:58:02,960
+Pokušavate se udvostručiti nečemu što ste već pokušali udvostručiti.
+
+635
+00:58:03,040 --> 00:58:09,040
+I tako smo samo previše, mislim da smo previše rotirali u tom određenom području jer je puno toga tamo.
+
+636
+00:58:09,200 --> 00:58:12,960
+Pročitali ste tone blogova o ovom kvizu i ovom.
+
+637
+00:58:12,960 --> 00:58:25,280
+I ovaj lijevak za uvođenje, ali mislim da ako ga ne usporedite s osnovnim slučajem, poput toga da ga potpuno izbacite za deset posto, za pet dana, i vidite kakva je veličina prilike.
+
+638
+00:58:25,760 --> 00:58:27,200
+I to je bio veliki neuspjeh.
+
+639
+00:58:27,520 --> 00:58:39,760
+Vjerojatno smo potrošili previše ciklusa, previše eksperimenata, a na kraju je jednostavno, jasno i izravno u vezi s tim za koga je aplikacija i pokušaj da vas dovede do toga aha s manje zaslona pokazao se većim pobjedom.
+
+640
+00:58:39,920 --> 00:58:48,880
+Da, rekao bih da je moj više o mojoj bivšoj prošlosti kao osnivača, koja je učinila vašu cijenu jeftinijom kada je to dovelo do smislenog zadržavanja ljudi koji se ne brinu o proizvodu.
+
+641
+00:58:48,880 --> 00:58:55,040
+Zvuči vrlo očito kad to izgovorite naglas, ali onda kažete: Eh, na ovoj cijeni možda smo je maksimalno iskoristili.
+
+642
+00:58:55,120 --> 00:59:09,680
+Znate, radite tipičnu YC stvar: prvo naplaćujemo, znate, sto dolara mjesečno, a zatim dvjesto i četiri stotine, a onda na neki način na kraju naplaćujete, znate, par tisuća dolara, a onda se iznenada vidi da se to izjednači i možda ljudi rade na, znate, tisuću dolara.
+
+643
+00:59:09,760 --> 00:59:12,480
+Dakle, kažu mi da postoje proračunske ograničenja.
+
+644
+00:59:12,560 --> 00:59:15,920
+Možda će smanjenje cijene značiti da ćemo moći bolje zadržati ljude.
+
+645
+00:59:16,240 --> 00:59:19,840
+Možda ih zadržite dodatni mjesec, ali ako ih vaš proizvod ne zanima, neće ostati.
+
+646
+00:59:20,000 --> 00:59:24,880
+Sretni će biti da prođu kroz, znate, prošetaju preko vatre ili preko ugljena kako bi koristili svoj proizvod.
+
+647
+00:59:24,880 --> 00:59:26,560
+Kod za korištenje vašeg proizvoda, čak i ako je jako skup.
+
+648
+00:59:27,040 --> 00:59:33,280
+I to zvuči, da, jako očito u retrospektivi, ali u tom trenutku možete postati vrlo akademski i pokvariti ga.
+
+649
+00:59:33,360 --> 00:59:34,560
+U redu, posljednje pitanje.
+
+650
+00:59:34,800 --> 00:59:38,080
+Rast bi bio lakši da svi moji konkurenti odustanu.
+
+651
+00:59:38,240 --> 00:59:38,720
+Žao mi je.
+
+652
+00:59:38,960 --> 00:59:43,680
+Mislio sam da bih rekao da nema više od dva milijuna aplikacija u trgovini aplikacijama.
+
+653
+00:59:43,840 --> 00:59:57,040
+Mislim da bih rekao, znate, i znam da smo u tome provodili mnogo vremena, Tom, samo je broj alata koji se koriste u modernom vrećici za rast na pravi način počeo se množiti, što je dobro.
+
+654
+00:59:57,840 --> 00:59:59,280
+Sve su alate povezane.
+
+655
+01:00:00,400 --> 01:00:06,000
+I to je vrsta istinskog sjevera kad je u pitanju, posebno oko atribucije.
+
+656
+01:00:07,040 --> 01:00:09,600
+I to je dobro napisano i dobro poznato.
+
+657
+01:00:09,920 --> 01:00:18,960
+Ali mislim da bismo na kraju dana, ako bi alatima bilo moguće komunicirati jednako dobro kao što mogu komunicirati naši glasovni modeli, onda bismo uštedjeli mnogo vremena.
+
+658
+01:00:19,600 --> 01:00:21,280
+To možda neće biti tako visoko na nebu.
+
+659
+01:00:21,600 --> 01:00:24,640
+Želim da znate, za godinu dana, to je očito kada svinje polete.
+
+660
+01:00:24,800 --> 01:00:29,200
+Ali znate, ovo bi moglo biti godina u kojoj će se ti alati zapravo početi međusobno komunicirati.
+
+661
+01:00:29,280 --> 01:00:31,440
+Mislim, moj inženjer je rekao: Zašto ne možemo samo prokleti ovo?
+
+662
+01:00:31,600 --> 01:00:35,280
+A ja sam rekao: Pa, ovaj MMP nije, baza koda nije u pokazivaču.
+
+663
+01:00:35,600 --> 01:00:39,840
+I znate, API Meta Ads je u Custeru, pa se ispričavam, čovječe.
+
+664
+01:00:39,920 --> 01:00:44,400
+Ali mislim da smo samo oteli Lightning Ram, ali mislim da bi to moglo biti velika stvar.
+
+665
+01:00:44,560 --> 01:00:48,160
+Znate, prošle godine vidjeli smo da agenti dolaze na Code, zar ne?
+
+666
+01:00:48,320 --> 01:00:56,880
+I s nekim alatima mislim da će sve više proizvoda postati nativnih, tako da će ljudi moći donijeti vlastitog agenta i koordinirati se među agentima.
+
+667
+01:00:56,960 --> 01:01:03,840
+Ili će imati svoj ugradili agent ili ćete koristiti Claude ili bilo kojeg agenta koji želite na lokalnom i on će raditi ovo umjesto vas.
+
+668
+01:01:03,920 --> 01:01:06,240
+Dakle, mislim da to više nije ludost na popisu želja.
+
+669
+01:01:06,560 --> 01:01:07,360
+Možda nismo daleko.
+
+670
+01:01:08,880 --> 01:01:08,960
+Da.
+
+671
+01:01:11,120 --> 01:01:25,520
+Moja je reakcija različita od onoga što je rekao Jack, a to je da smo prošli kroz nedavnu situaciju i možda je to samo nedavna pristranost naših odgovora, ali imali smo četiri, tri ili četiri različite osobe koje su razumjele četrdeset posto ove ogromne razine rasta koju smo trebali implementirati.
+
+672
+01:01:25,760 --> 01:01:30,960
+I svi smo razumjeli različite četrdeset posto i svi smo ih opisali malo drugačije.
+
+673
+01:01:31,200 --> 01:01:36,160
+I koliko je puta bilo samo razgovora poput, oh, dobro, znate, ovo se ne događa na ovoj platformi.
+
+674
+01:01:36,240 --> 01:01:36,880
+Zašto se to ne događa?
+
+675
+01:01:36,960 --> 01:01:38,320
+U redu, razgovarajmo s timom za informacije.
+
+676
+01:01:38,400 --> 01:01:41,680
+A onda je to poput, dobro, kako ću prevesti ovo pitanje koje ste mi postavili na tim za informacije?
+
+677
+01:01:41,840 --> 01:01:45,840
+Dakle, mislim da je s rastom i velikim rasporedom alata.
+
+678
+01:01:45,840 --> 01:01:48,000
+O alatima koje morate koristiti i mjestima na kojima morate komunicirati.
+
+679
+01:01:48,320 --> 01:01:50,640
+Želio bih da je to samo neka vrsta mega aplikacije za prijevod.
+
+680
+01:01:50,720 --> 01:01:52,720
+U redu, ovo je bilo jako zabavno.
+
+681
+01:01:52,960 --> 01:01:59,040
+Znam da vi zapošljavate neke određene poslove koje ste htjeli ispričati ili nešto drugo što ste htjeli podijeliti dok završavamo.
+
+682
+01:01:59,200 --> 01:01:59,920
+Mi rastemo kao mobilni tim.
+
+683
+01:02:00,240 --> 01:02:06,400
+Dakle, mislim da mnogi ljudi misle na mnoge laboratorije za API i ono što gradite na webu.
+
+684
+01:02:06,640 --> 01:02:14,080
+Također imamo izvorne SDK-ove kako bismo mogli graditi glasovne agente i glasovne iskustva u izvorni mobilni uređaj.
+
+685
+01:02:14,160 --> 01:02:14,880
+A naš tim raste.
+
+686
+01:02:15,200 --> 01:02:20,240
+Dakle, zapošljavamo ljude za iOS i Android, kao i za web, FullStack, kao i ljude za rast.
+
+687
+01:02:20,240 --> 01:02:23,120
+Volimo se povezati s ljudima koji su na podcastu.
+
+688
+01:02:23,280 --> 01:02:24,320
+Fantastično, hvala vam puno.
+
+689
+01:02:24,720 --> 01:02:29,120
+U bilješkama emisije ostavit ćemo poveznicu za ljude, ali hvala vam puno što ste se priključili podcastu.
+
+690
+01:02:29,280 --> 01:02:31,280
+Ovo je bilo jako zabavno, stvarno zabavna rasprava.
+
+691
+01:02:31,520 --> 01:02:32,560
+Fantastično, hvala što ste nas primili.
+
+692
+01:02:32,800 --> 01:02:35,840
+Hvala što ste nas primili, ovo je bilo sjajno.
+
+693
+01:02:36,320 --> 01:02:37,680
+Hvala vam puno što ste nas poslušali.
+
+694
+01:02:38,640 --> 01:02:41,920
+Ako imate minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcastova.
+
+695
+01:02:42,960 --> 01:02:50,720
+Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.
