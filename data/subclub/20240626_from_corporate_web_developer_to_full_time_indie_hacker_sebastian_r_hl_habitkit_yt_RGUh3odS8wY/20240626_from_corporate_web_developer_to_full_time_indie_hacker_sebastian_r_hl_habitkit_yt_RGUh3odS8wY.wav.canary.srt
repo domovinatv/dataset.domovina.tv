@@ -1,0 +1,3151 @@
+1
+00:00:00,000 --> 00:00:09,600
+Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:20,400
+Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje kupcima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,680 --> 00:00:36,160
+Više informacija možete pronaći na revenuecat.com.
+
+6
+00:00:36,960 --> 00:00:38,240
+Uđimo u emisiju.
+
+7
+00:00:40,160 --> 00:00:45,440
+Pozdrav, ja sam vaš voditelj, David Barnard, a danas sam sa mnom Jacob Biding, izvršni direktor RevenueCata.
+
+8
+00:00:45,680 --> 00:00:51,600
+Naš današnji gost je Sebastian Roll, neovisni razvijač aplikacija iz Njemačke koji je osmislio HabitKit.
+
+9
+00:00:52,080 --> 00:01:05,360
+Na podcastu razgovaramo s Sebastianom o tome kako je napustio posao kako bi izradio svoje aplikacije, vratio se na taj posao nakon što nije uspio dobiti poticaj i prekretnica koja mu je omogućila da napokon napusti posao zauvijek.
+
+10
+00:01:05,840 --> 00:01:08,720
+Hej, Sebastiane, hvala ti što si se danas priključio našem podcastu.
+
+11
+00:01:09,200 --> 00:01:10,640
+Pozdrav, hvala što si me primio.
+
+12
+00:01:10,800 --> 00:01:13,760
+Ja sam veliki obožavatelj podcasta i RevenueCata, naravno.
+
+13
+00:01:14,000 --> 00:01:15,120
+Oh, blagoslovljen.a si.
+
+14
+00:01:16,080 --> 00:01:18,480
+A Jacob, lijepo te je ponovno vidjeti na podcastu.
+
+15
+00:01:18,560 --> 00:01:19,920
+Dugo sam bio bez tebe.
+
+16
+00:01:20,160 --> 00:01:26,640
+Proizvodni raspored za Subclub je zbunjujući i izvan mog vidokruga, ali pretpostavljam da sam na svakoj epizodi.
+
+17
+00:01:26,800 --> 00:01:27,440
+Nije li to slučaj?
+
+18
+00:01:27,600 --> 00:01:28,720
+Ima li epizoda bez mene?
+
+19
+00:01:29,120 --> 00:01:31,680
+Samo da bismo o tome razgovarali.
+
+20
+00:01:31,840 --> 00:01:36,000
+Učinio sam neke uživo epizode i bio sam na Google IO-u.
+
+21
+00:01:36,080 --> 00:01:36,480
+Da, dobro.
+
+22
+00:01:36,560 --> 00:01:38,320
+Slušam svaku pojedinačnu epizodu.
+
+23
+00:01:38,400 --> 00:01:38,960
+Nisam na njoj.
+
+24
+00:01:39,200 --> 00:01:39,520
+Obećavam.
+
+25
+00:01:39,680 --> 00:01:39,840
+Naravno.
+
+26
+00:01:40,000 --> 00:01:40,640
+Bolje da budeš.
+
+27
+00:01:41,200 --> 00:01:41,520
+U redu.
+
+28
+00:01:41,760 --> 00:01:44,640
+Dakle, Sebastian, danas sam želio započeti.
+
+29
+00:01:44,800 --> 00:01:50,240
+Dakle, vi ste karijerni web razvijač, ali sada samostalni razvijač aplikacija.
+
+30
+00:01:50,800 --> 00:01:54,480
+Kako ste započeli s aplikacijama kao web razvijač?
+
+31
+00:01:55,040 --> 00:02:02,960
+Motivacija za izradu mobilnih aplikacija zapravo je bila zato što sam odlučio pokrenuti vlastiti posao s aplikacijama.
+
+32
+00:02:03,120 --> 00:02:16,160
+Jednostavno sam želio raditi na vlastitim proizvodima i prodavati ih na internetu i zaraditi od toga, a sve su mi ideje bile povezane s najboljim odgovarajućim za mobilnu platformu.
+
+33
+00:02:16,400 --> 00:02:20,560
+Tako sam se na početku zainteresirao za razvoj mobilnih aplikacija.
+
+34
+00:02:20,640 --> 00:02:31,600
+Čini mi se da su aplikacije sjajan tržište, ne samo kao što ste rekli, ideje, već kao tržište i pristup nekim toliko potrošača izravno putem trgovina aplikacijama.
+
+35
+00:02:31,840 --> 00:02:40,560
+Nije bilo web projekata za koje ste mislili da će biti uspješni ili je bilo jednostavno uzbudljivije stvarati aplikacije umjesto svog glavnog web razvoja?
+
+36
+00:02:40,800 --> 00:02:48,560
+Da, cijela ta stvar s web razvojem uvijek mi se činila malo zastrašujućom kao samostalnom poduzetniku.
+
+37
+00:02:48,960 --> 00:02:56,240
+Morate izgraditi ovaj backend i morate se nositi s plaćanjima i porezu na promet i slično.
+
+38
+00:02:56,640 --> 00:03:02,880
+A kad ste na mobilnoj platformi, sve te plaćanja i porez na promet obrađuju Apple i Google.
+
+39
+00:03:03,840 --> 00:03:05,520
+I to je zaista bio dobar trenutak za mene.
+
+40
+00:03:06,880 --> 00:03:07,040
+početak.
+
+41
+00:03:07,040 --> 00:03:09,840
+I da, ideje, kao što sam već rekao.
+
+42
+00:03:10,240 --> 00:03:11,520
+Da, čini ga mnogo privlačnijim.
+
+43
+00:03:11,680 --> 00:03:22,640
+Osjećam da u web razvijanju ili stvaranju neovisnih web aplikacija vidite mnogo više stvari poput prosumera ili utilitarnih softvera i mnogo manje stvari usmjerenih na način života potrošača.
+
+44
+00:03:22,800 --> 00:03:27,440
+Dakle, to je gotovo kao da želite stvarati stvari za potrošače, za ljude, web nije dobra opcija.
+
+45
+00:03:27,600 --> 00:03:27,680
+Da.
+
+46
+00:03:27,920 --> 00:03:30,400
+Kao što je mobilni uređaj očito bolji.
+
+47
+00:03:30,480 --> 00:03:35,120
+A onda, naravno, sve što ste raspravljali, kao što su plaćanja, kao što je imati trgovca zapisima, sve to.
+
+48
+00:03:35,360 --> 00:03:42,800
+A ako ste u potrošačkoj industriji, svi ti problemi su mnogo više pomnoženi jer ako prodajete B2B, broj kupaca obično je mnogo, mnogo manji niže, zar ne?
+
+49
+00:03:42,880 --> 00:03:44,640
+Moguće je da je na stotinama ako vam je dobro.
+
+50
+00:03:45,440 --> 00:03:50,000
+I u tom slučaju, kao da imate posla s manje pravnih područja i da je možda malo lakše uskladiti se s tim.
+
+51
+00:03:50,240 --> 00:03:53,120
+Ali kad imate posla s potrošačima, to su tisuće, zar ne?
+
+52
+00:03:53,280 --> 00:03:54,720
+A sada množite taj problem.
+
+53
+00:03:55,120 --> 00:03:59,360
+Dakle, da, gotovo da nije ni opcija za izradu web aplikacije za potrošače.
+
+54
+00:03:59,520 --> 00:03:59,600
+Da.
+
+55
+00:03:59,760 --> 00:04:04,640
+A kad sam počeo s HabitKitom, već sam dobio ideju za ovu aplikaciju prije nekoliko godina.
+
+56
+00:04:04,720 --> 00:04:14,800
+I tada, kad se pomaknete prema dolje na moj Twitter profil i pogledate moje prve objave, zapravo možete vidjeti kako izradim vrlo ranu web verziju HabitKita.
+
+57
+00:04:15,760 --> 00:04:24,160
+I zapravo sam je potpuno napustio jer je praćenje navika to nije mi se činilo prirodnim na webu, pa sam se osjećao mnogo bolje.
+
+58
+00:04:24,560 --> 00:04:31,920
+Pa, mislim da bi ga mogao izgraditi kao naprednu web aplikaciju, sigurno, ali onda izgubite distribuciju, izgubite sve što ga čini ugodnim u mobilnosti.
+
+59
+00:04:32,240 --> 00:04:34,000
+Ovo je poput jedne od onih kontroverznih mišljenja.
+
+60
+00:04:34,080 --> 00:04:41,200
+Osjećam da PWA nikad ne može biti potpuno ugodan kao Swift ili čak Flutter ili neka vrsta mobilne aplikacije podržane nativno.
+
+61
+00:04:41,280 --> 00:04:42,320
+Mislim da to nije kontroverzno.
+
+62
+00:04:42,480 --> 00:04:53,440
+I dalje mislim da su ljudi koji su odabrali upotrebu te tehnologije umrli na tom brdu, ali, dobro, nagrada od tisuću dolara, osoba može staviti PWA pred mene i ja ne bih shvatio da je to PWA.
+
+63
+00:04:54,400 --> 00:04:56,240
+Zaručujem vam da ću znati.
+
+64
+00:04:56,240 --> 00:05:05,360
+Rekao si da želiš napraviti svoje stvari i da uvijek postoji privlačnost stranskog projekta, poput toga da se nešto radi na strani.
+
+65
+00:05:05,600 --> 00:05:07,840
+Ali je li cilj uvijek bio napustiti posao?
+
+66
+00:05:08,160 --> 00:05:10,560
+Što je tako loše u tome da imaš dnevni posao?
+
+67
+00:05:10,800 --> 00:05:18,960
+Mislim da sam prvi put razmišljao o izradi vlastitih aplikacija na kraju studija, kada sam pisao svoju diplomski rad.
+
+68
+00:05:19,440 --> 00:05:31,200
+U to sam vrijeme otkrio zajednicu indiehackers dot com i saznao za sve ove cool ljude koji izrađuju svoje proizvode i prodaju ih na internetu i zapravo zarađuju od toga.
+
+69
+00:05:32,000 --> 00:05:34,400
+I to mi se činilo super i uzbudljivljivo za mene.
+
+70
+00:05:35,200 --> 00:05:44,400
+Iako sam nakon fakulteta dobio pravi posao softverskog inženjera, misao o pokretanju vlastite tvrtke zaista mi je ostala u pozadini glave.
+
+71
+00:05:44,480 --> 00:05:54,480
+Dakle, nakon tri godine rada za tu tvrtku, zapravo smo sklapali ugovore za tu drugu tvrtku i razvijali softver za planiranje korporativnih resursa.
+
+72
+00:05:54,960 --> 00:05:59,360
+Zašto bi indie hakiranje izgledalo privlačno ako to radite cijeli dan?
+
+73
+00:05:59,600 --> 00:06:02,800
+Da, mislim da je to priroda ugovora.
+
+74
+00:06:03,120 --> 00:06:10,480
+Imate vrlo ograničenu kontrolu nad izgledom proizvoda koji razvijate, njegovim ponašanjem, kakva je korisnička iskustvo.
+
+75
+00:06:10,480 --> 00:06:11,200
+Što je UX i UI?
+
+76
+00:06:11,840 --> 00:06:17,280
+I jedina stvar nad kojom većinom imate kontrolu je tehnička strana kao programer u ovom projektu.
+
+77
+00:06:17,920 --> 00:06:22,320
+I nisam baš tip programera koji bezuvjetno voli programiranje.
+
+78
+00:06:22,800 --> 00:06:33,840
+Definitivno nisam tip softverskog inženjera koji se zanima za optimizaciju algoritama ili nešto slično, što se također ne čini kao nešto što često radite kad programirate ERP za internu upotrebu.
+
+79
+00:06:34,640 --> 00:06:35,760
+Da, točno.
+
+80
+00:06:36,320 --> 00:06:46,240
+Ja sam tip programera koji voli izraditi vlastite koncepte i kako bi se problem trebao riješiti, a zatim ga sam razviti i vidjeti koncept u stvarnom svijetu.
+
+81
+00:06:46,960 --> 00:06:51,680
+I da, pa sam se malo dosađivao ovim projektom od kojeg nisam mogao pobjeći.
+
+82
+00:06:52,320 --> 00:07:01,040
+I nemojte me krivo shvatiti, posao je bio dobar i puno sam naučio, upoznao sam mnoge cool ljude, ali u to vrijeme htio sam isprobati svoje stvari.
+
+83
+00:07:01,120 --> 00:07:07,680
+Bilo je to i samo neka vrsta izlaza, kao da radim na ovom poslu gdje zvuči kao da sam kao konzultant dobio specifikacije.
+
+84
+00:07:08,000 --> 00:07:14,720
+Kao da niste ni mogli komunicirati s timom proizvoda ili biti na sastancima na kojima su se odlučivali stvari i slično.
+
+85
+00:07:14,880 --> 00:07:17,520
+Dakle, bilo je to nekako samo kao da moram graditi stvari?
+
+86
+00:07:17,920 --> 00:07:23,520
+Zvuči kao da je to vaša dublja motivacija, bila je kreativnost i samo želja da gradim proizvode.
+
+87
+00:07:23,600 --> 00:07:26,880
+Da, na kraju je najvažniji aspekt bila ta stvar kreativnosti.
+
+88
+00:07:27,760 --> 00:07:33,840
+Mislim da neki posao to definitivno mogu omogućiti, ali to obično nije slučaj u svijetu ugovornih poslova.
+
+89
+00:07:34,080 --> 00:07:38,080
+Možda bih bio bolje u tvrtki u kojoj razvijaju vlastiti proizvod.
+
+90
+00:07:38,480 --> 00:07:46,880
+Nadam se da možete potvrditi, ali mogu zamisliti da programeri u RevenueCatu mogu donijeti vlastite ideje i imati stvaran utjecaj na proizvod.
+
+91
+00:07:47,120 --> 00:07:47,520
+Sigurno.
+
+92
+00:07:47,760 --> 00:07:48,000
+Sigurno.
+
+93
+00:07:48,160 --> 00:08:01,440
+Mislim da je trenutak u kojem je sve pokvareno za vas bio kada ste pronašli anyhackers dot com dot Jer mislim da kad netko dobije ideju da mora to učiniti ili želi to učiniti, kao i sve ostalo, osjećate da samo tražite opravdanje da to učinite.
+
+94
+00:08:02,320 --> 00:08:04,480
+učinite, iako zapravo želite to učiniti, zar ne?
+
+95
+00:08:04,640 --> 00:08:06,240
+To je nešto što morate učiniti.
+
+96
+00:08:06,560 --> 00:08:14,880
+I pokušavam to reći ljudima, znate, i vi ste u tehnologiji dovoljno dugo, a to vrijedi od startupa s podupiranjem rizika do neovisnih projekata koji postaju neovisni, sve to.
+
+97
+00:08:15,200 --> 00:08:27,440
+Mislim da ako osjetite potrebu da to učinite, kao da imate to u sebi, kao da je to u vama i samo trebate to učiniti, možete provesti koliko god želite opravdavajući to, izgraditi sve što trebate učiniti da biste se uvjerili da je u redu.
+
+98
+00:08:28,240 --> 00:08:31,920
+Ali stvarna odluka je, je li to u vama i morate li to učiniti?
+
+99
+00:08:32,160 --> 00:08:35,680
+Ako je to, ah, bilo bi lijepo, bilo bi cool, ali što god, nemojte to činiti.
+
+100
+00:08:35,840 --> 00:08:38,320
+Nemojte to činiti jer devet od deset puta.
+
+101
+00:08:38,320 --> 00:08:39,680
+Možda je dobro prošlo za tebe, Sebastiane.
+
+102
+00:08:39,840 --> 00:08:40,320
+Ne znam.
+
+103
+00:08:40,640 --> 00:08:45,200
+Ali, recimo, neće se ispostaviti, ali uspjet će ako moraš to učiniti.
+
+104
+00:08:45,360 --> 00:08:48,000
+I onda, barem ako ne uspije, kao da si to učinio, zar ne?
+
+105
+00:08:48,160 --> 00:08:53,440
+Izvadio si to iz sebe i onda možeš odlučiti, kao da imaš jasan pogled na ono što želiš raditi u životu.
+
+106
+00:08:53,520 --> 00:09:02,720
+I cijeniš li stvari koje, jer mislim da ti se sviđa čitanje Indie Hackera, očito je bilo cool, ali što je bilo privlačno za tebe, osim što imaš kreativnu kontrolu nad onim što gradiš?
+
+107
+00:09:03,200 --> 00:09:03,280
+Da.
+
+108
+00:09:03,520 --> 00:09:07,120
+Dakle, radi se o izgradnji cool životnog stila za sebe.
+
+109
+00:09:07,760 --> 00:09:09,440
+Želim raditi kad god želim.
+
+110
+00:09:09,840 --> 00:09:11,600
+Želim uzeti pauze kad god želim.
+
+111
+00:09:11,920 --> 00:09:14,160
+Ako mi život stoji na putu, nešto je s obitelji.
+
+112
+00:09:14,480 --> 00:09:20,320
+Želim biti tamo i želim da moj posao bude tamo i da ga ne dodirujem, ali na neki način bi trebao biti sam.
+
+113
+00:09:20,400 --> 00:09:24,640
+Ova stvar s pasivnim prihodima, znam da nije pasivna, ali samo sam.
+
+114
+00:09:24,720 --> 00:09:26,640
+Kao što su nekretnine za iznajmljivanje, zar ne?
+
+115
+00:09:26,720 --> 00:09:27,760
+Vrlo pasivna, vrlo pasivna.
+
+116
+00:09:27,920 --> 00:09:31,600
+Svatko tko je ikad posjedovao nekretninu za iznajmljivanje zna da je vrlo pasivna.
+
+117
+00:09:32,240 --> 00:09:40,080
+Mislim, samo sam uzela tri tjedna odmora i nisam morala ništa učiniti za svoj posao i nastavila sam raditi ovdje.
+
+118
+00:09:40,480 --> 00:09:40,560
+Wow.
+
+119
+00:09:41,280 --> 00:09:49,680
+Imala sam na neki način drugačije iskustvo s indie hakerskom stranom jer sam započela s poslom i skočila s litice.
+
+120
+00:09:49,760 --> 00:09:51,920
+Ali reći ću za one koji to slušaju.
+
+121
+00:09:51,920 --> 00:09:58,400
+Iako je to san i Sebastian je to dobro učinio, za mene je to bilo kao da sam se više od deset godina trudila.
+
+122
+00:09:58,480 --> 00:10:01,120
+A to je bilo prije pretplate, pa sam uvijek plaćala unaprijed.
+
+123
+00:10:01,200 --> 00:10:03,760
+A onda su moje aplikacije često dobivale puno tisaka.
+
+124
+00:10:03,840 --> 00:10:06,480
+A onda je uvijek bilo nešto poput: U redu, kada ću dobiti sljedeći tisak?
+
+125
+00:10:06,560 --> 00:10:11,600
+I tako, znate, imala sam puno fleksibilnosti i mogla sam uzeti neko vrijeme prema potrebi.
+
+126
+00:10:11,840 --> 00:10:24,080
+Ali mislim da ovisi o vašoj osobnosti i financijskoj potpori i drugim stvarima, hoće li čak i kad počnete postići određenu razinu uspjeha, to uzeti kao luksuz u odnosu na to da imate ovo stalno.
+
+127
+00:10:24,640 --> 00:10:25,920
+I imala sam četiri djece na putu.
+
+128
+00:10:26,000 --> 00:10:28,400
+Dakle, za mene je bilo nešto poput stalnog vatre ispod mene.
+
+129
+00:10:28,560 --> 00:10:34,400
+Rekao sam to kako bih možda uravnotežio perspektivu, da je to bio stalni požar.
+
+130
+00:10:34,560 --> 00:10:40,080
+Iako sam vidio određenu razinu uspjeha, nikad nisam uzimao trotjedan odmor.
+
+131
+00:10:40,160 --> 00:10:40,960
+Bilo je prilično sjajno.
+
+132
+00:10:41,360 --> 00:10:44,800
+Tako rano u vašoj putanji da ste mogli uzeti taj slobodan dan.
+
+133
+00:10:44,960 --> 00:10:47,840
+Mislim, za mene je to bilo samo, oh, što je sljedeće?
+
+134
+00:10:48,080 --> 00:10:48,480
+Što je sljedeće?
+
+135
+00:10:48,720 --> 00:10:50,000
+I samo se truditi, truditi, truditi.
+
+136
+00:10:50,160 --> 00:10:51,360
+Mislim da je to velika stvar osobnosti.
+
+137
+00:10:51,680 --> 00:10:57,440
+Vidim to i kod poduzetnika izvan tehnologije, kao što su ljudi koji posjeduju poduzeća s novcem i slično.
+
+138
+00:10:57,600 --> 00:11:03,200
+Neki od njih su stvarno dobri u tome da to zapravo koriste za, recimo, usmjeravanje na način života koji žele.
+
+139
+00:11:03,680 --> 00:11:06,000
+Drugi, to postaje gore od posla.
+
+140
+00:11:06,320 --> 00:11:10,880
+jer se možeš odustati od posla ili otpustiti, zar ne?
+
+141
+00:11:11,040 --> 00:11:15,760
+Postoje izlazi koji su ti dostupni, ali ponekad s tim poslovima nema ih.
+
+142
+00:11:15,920 --> 00:11:22,800
+I onda je tu Sebastian, kad si odsutan tri tjedna, nitko se nije naljutio, nitko se nije javio ili su se pojavili i ti si samo rekao: Znaš što?
+
+143
+00:11:22,960 --> 00:11:23,360
+Oni će živjeti.
+
+144
+00:11:23,440 --> 00:11:26,160
+Koja je tvoja filozofija za stvaranje tih granica?
+
+145
+00:11:26,400 --> 00:11:30,240
+Obično dobivam dva ili tri poruke dnevno u ovoj sezoni.
+
+146
+00:11:30,400 --> 00:11:36,240
+Zimi je malo više, ali ljeti je to samo tri ili četiri poruke dnevno.
+
+147
+00:11:36,480 --> 00:11:46,000
+I uglavnom su to zahtjevi za značajkama, ljudi koji kažu: Volim tvoju aplikaciju, ali bilo bi sjajno da to možeš dodati., a to nije e-pošta na koju moram odgovoriti.
+
+148
+00:11:46,240 --> 00:11:47,040
+Ali vi ih gledate.
+
+149
+00:11:47,600 --> 00:11:47,680
+Da.
+
+150
+00:11:48,000 --> 00:11:49,200
+Jeste li ih gledali?
+
+151
+00:11:49,360 --> 00:11:50,080
+U redu, u redu.
+
+152
+00:11:51,120 --> 00:11:52,480
+Vidite, to je uvijek u načinu života.
+
+153
+00:11:52,560 --> 00:11:54,000
+Ne govore vam to na Indie Hackersima.
+
+154
+00:11:54,240 --> 00:11:57,200
+Vi ste na Ya-u tri tjedna ili bilo što drugo, ali vi provjeravate, zar ne?
+
+155
+00:11:57,440 --> 00:11:58,400
+I mislim da sam provjeravao.
+
+156
+00:11:58,560 --> 00:11:58,720
+Da.
+
+157
+00:11:59,040 --> 00:11:59,040
+Da.
+
+158
+00:11:59,360 --> 00:12:02,320
+Jeste li čak i odgovorili na neke od njih nakon što sam se vratio.
+
+159
+00:12:02,560 --> 00:12:02,640
+Da.
+
+160
+00:12:02,960 --> 00:12:03,520
+U redu.
+
+161
+00:12:03,760 --> 00:12:03,840
+Da.
+
+162
+00:12:04,240 --> 00:12:07,440
+Sad ste stvarno na suđenju, Sebastian.
+
+163
+00:12:07,920 --> 00:12:09,200
+To je Indie Hacker Court.
+
+164
+00:12:09,600 --> 00:12:10,480
+Ali mislim da je to dobra točka.
+
+165
+00:12:10,560 --> 00:12:15,280
+I očito, to vam se ne čini uvredljivim, što mislim da i s poslom ponekad može biti vrlo drugačije, zar ne?
+
+166
+00:12:15,440 --> 00:12:20,160
+Kao s poslom, ako ste na odmoru ili radite nešto i posao pokušava ukrasti dio vašeg vremena.
+
+167
+00:12:20,160 --> 00:12:22,480
+To je mnogo uvredljivije.
+
+168
+00:12:22,640 --> 00:12:30,480
+Ponekad kad je to tvoja stvar, misliš: Ovo je moja stvar i ja sam vlasnik toga i moram to učiniti, a to ne mora nužno biti posao.
+
+169
+00:12:30,640 --> 00:12:34,480
+Ali opet, to je toliko psihološko, kao da ovisi o osobi i načinu razmišljanja.
+
+170
+00:12:34,560 --> 00:12:35,680
+I isto je i za tvoj posao.
+
+171
+00:12:36,000 --> 00:12:40,720
+Neki ljudi ne smatraju da im je potrebno brinuti se za stvari za svoj posao kad su očito vani.
+
+172
+00:12:40,880 --> 00:12:46,160
+Drugi ljudi, to je najgore na svijetu i stvarno ovisi o tvojem načinu razmišljanja i osobnosti i slično.
+
+173
+00:12:46,240 --> 00:12:57,040
+Ne znam ni da postoji bolji ili gori način pristupa tome, ali mislim da je zanimljivo jer još nismo došli do toga jer si ušao u indie život, a onda si izašao iz njega.
+
+174
+00:12:57,040 --> 00:13:05,840
+Baš ne, jer moj posao s aplikacijama zapravo nije započeo kao stranski projekt jer sam zapravo napustio posao kako bih pokrenuo vlastiti posao.
+
+175
+00:13:06,560 --> 00:13:09,840
+Većina hakera u industriji savjetuje vam da to ne radite.
+
+176
+00:13:10,080 --> 00:13:14,160
+Radite to samo kad imate stabilan prihod od svog stranskog posla.
+
+177
+00:13:14,800 --> 00:13:20,480
+Ali ja sam zapravo učinio suprotno i napustio svoj udoban posao i pokrenuo svoj posao s aplikacijama.
+
+178
+00:13:20,720 --> 00:13:21,840
+Kako je to funkcioniralo financijski?
+
+179
+00:13:22,160 --> 00:13:25,760
+Samo ste uštedjeli i bili sami i držali ste troškove niske.
+
+180
+00:13:25,840 --> 00:13:28,000
+Ili kako ste skočili s te litice?
+
+181
+00:13:28,160 --> 00:13:30,480
+Imala sam ovu sigurnosnu mrežu koju sam izgradila prije.
+
+182
+00:13:30,960 --> 00:13:33,840
+Znala sam da barem kao iskusni programer ovdje.
+
+183
+00:13:33,840 --> 00:13:38,960
+Ako sam ovdje u Njemačkoj razvijač softvera, nije teško ponovno pronaći pravi posao ako se posao pokvari.
+
+184
+00:13:39,040 --> 00:13:40,080
+Tako sam dobio tu sigurnost.
+
+185
+00:13:40,480 --> 00:13:44,800
+Sakupljao sam neke uštede od kojih sam mogao živjeti najmanje godinu dana.
+
+186
+00:13:45,200 --> 00:13:48,800
+I u to vrijeme nisam imao mnogo financijskih obveza.
+
+187
+00:13:49,040 --> 00:13:56,240
+Naravno, morao sam platiti stan i hranu i slično, ali nisam imao djecu, nisam imao zajmova za kuću ili nešto slično.
+
+188
+00:13:56,800 --> 00:13:59,440
+Dakle, u osnovi sam bio slobodan da radim što god želim.
+
+189
+00:14:00,080 --> 00:14:04,880
+Da, to je teško razumjeti za većinu ljudi, poput konceptualizacije rizika, zar ne?
+
+190
+00:14:05,120 --> 00:14:08,320
+Kada ste blizu dna, a to nije dno, život je prilično dobar.
+
+191
+00:14:08,400 --> 00:14:14,480
+Imate stan, imate sve te stvari, ali nemate dugoveova, nemate obveze, nemate puno duga na sebi osobno.
+
+192
+00:14:15,040 --> 00:14:17,600
+Kao da možete skočiti s litice i samo padnete, zar ne?
+
+193
+00:14:18,320 --> 00:14:26,400
+Kao da, ali čak i ako nemate puno imovine, kao da morate proglasiti bankrot, vaš kredit je u krivu, ali što će uzeti, zar ne?
+
+194
+00:14:26,560 --> 00:14:27,600
+Kao da nemate imovinu.
+
+195
+00:14:27,760 --> 00:14:38,640
+Većina banaka ne bi vam dala zajmove i većinu vremena nećete završiti dužni novcem koji ne možete platiti, ali stvarno, pogotovo u ranoj dobi, to je samo činjenica da je manje na kocki i to je često vrijeme kada je najbolje nešto započeti.
+
+196
+00:14:39,680 --> 00:14:45,040
+Ali s druge strane, vjerojatno znate najmanje i imate najmanje iskustva i slično.
+
+197
+00:14:45,360 --> 00:14:47,920
+I savjetujem nekoga koga poznajem, koji ima dvadeset i jednu godinu.
+
+198
+00:14:48,240 --> 00:14:50,080
+i razmišlja o pokretanju poduzeća.
+
+199
+00:14:50,160 --> 00:14:52,160
+Ali očito ima puno razmatranja.
+
+200
+00:14:52,320 --> 00:14:53,280
+I ja kažem, mogu to učiniti.
+
+201
+00:14:53,440 --> 00:14:57,280
+Jer čak i ako ne znaš što radiš, ako ne uspije, stavite nešto u svoju torbu iskustva.
+
+202
+00:14:57,680 --> 00:15:07,120
+Ako uspije, u ime svemira, ako ste pokrenuli poduzeće koje se nakuplja s 21 godinu, mogli biste se umiroviti do 35.
+
+203
+00:15:07,440 --> 00:15:09,120
+godine ako stvarno želite, ako sve dobro prođe.
+
+204
+00:15:09,440 --> 00:15:13,200
+Da, kao što je mogućnost pokretanja tako rano u životu prednost.
+
+205
+00:15:13,920 --> 00:15:15,280
+Ali opet, nema besplatnog ručka.
+
+206
+00:15:15,360 --> 00:15:15,440
+Da.
+
+207
+00:15:15,680 --> 00:15:18,960
+Dakle, rano to raditi umjesto kasnije, kao da sve ima svoje kompromise.
+
+208
+00:15:19,200 --> 00:15:22,640
+Mislim da postoji nešto što volim, kao što je razgovor s mnogim poduzetnicima.
+
+209
+00:15:22,720 --> 00:15:28,080
+Mislim da postoji dobar savjet i, recimo, I kao što je spašavanje i sigurnost prije nego što možete napraviti skok.
+
+210
+00:15:28,400 --> 00:15:39,680
+Ali, i sam sam znatiželjan kako vas je to motiviralo, ali mislim da kad skočite s litice, čak i ako imate neku mrežu za sigurnost, znate, bilo što, mislim da je skakanje prije nego što imate užad za čvrsto se uhvatiti dobar motivator, zar ne?
+
+211
+00:15:39,840 --> 00:15:41,440
+To je nešto poput, mora raditi.
+
+212
+00:15:41,680 --> 00:15:42,240
+Znaš što mislim?
+
+213
+00:15:42,640 --> 00:15:47,040
+Kao što ste se osjećali kad ste skočili bez ničega u ruci do trenutka kad ste postali neovisni?
+
+214
+00:15:47,120 --> 00:15:50,240
+Da, to je definitivno bilo zastrašujuće i čudno.
+
+215
+00:15:50,400 --> 00:16:02,160
+Ali osim svih mreža za sigurnost koje sam ranije spomenuo, rekao sam sebi, dobro, ograničio sam ovaj poslovni eksperiment s aplikacijama na točno dvanaest mjesecici.
+
+216
+00:16:02,320 --> 00:16:06,160
+Čini mi se razumnim imati ovaj plan za pričuvu ako ne uspije.
+
+217
+00:16:06,640 --> 00:16:11,600
+I rekao sam sebi: U redu, ako ovo ne uspije, vratit ću se na stari posao ili na drugi.
+
+218
+00:16:11,920 --> 00:16:14,160
+A kakva je bila vaša granica za definiciju vježbanja?
+
+219
+00:16:14,240 --> 00:16:18,560
+Imali ste li broj ili nešto u glavi što ste rekli: Ovo je uspješno?
+
+220
+00:16:19,120 --> 00:16:22,880
+Dakle, uvjet je bio da se dosegne osnovna razina na kojoj bih mogao živjeti.
+
+221
+00:16:23,200 --> 00:16:27,120
+Neki indie hakeri to nazivaju profitabilnošću od ramena.
+
+222
+00:16:27,280 --> 00:16:28,960
+Ali zapravo nisam došao do nje.
+
+223
+00:16:29,280 --> 00:16:35,280
+I tako sam otišao u dobrim odnosima sa svojim prethodnim poslodavcem i zapravo sam se vratio k njima.
+
+224
+00:16:35,360 --> 00:16:38,800
+I vratio sam se na dvanaest mjeseci.
+
+225
+00:16:38,800 --> 00:16:40,880
+Morala sam priznati poraz i onda sam se morala vratiti.
+
+226
+00:16:40,960 --> 00:16:41,440
+Bilo je teško?
+
+227
+00:16:41,520 --> 00:16:46,160
+Imala si puno ponosa i bilo ti je teško vratiti se i to učiniti ili si se jednostavno osjećala kao da si postavila ovo za sebe?
+
+228
+00:16:46,320 --> 00:16:49,440
+Kakvo je to bilo psihološki za tebe da se moraš vratiti?
+
+229
+00:16:49,760 --> 00:16:58,560
+To nije bilo tako loše jer sam u slobodnoj godini naučila toliko mnogo dobrih stvari, stekla sam toliko samopouzdanja.
+
+230
+00:16:58,880 --> 00:17:07,120
+Razvila sam ove dvije sjajne aplikacije i puno ljudi ih je već preuzelo i to je zaista razvilo moju samopouzdanje.
+
+231
+00:17:07,520 --> 00:17:09,360
+Dakle, vratiti se nije bilo tako loše.
+
+232
+00:17:09,520 --> 00:17:12,720
+Čak sam dobila i lijepu plaću i da, bilo je sjajno.
+
+233
+00:17:13,920 --> 00:17:14,480
+Evo, ljudi.
+
+234
+00:17:15,360 --> 00:17:18,400
+Minimalno možete se vratiti i pregovarati o svojoj plaći.
+
+235
+00:17:18,480 --> 00:17:20,960
+Dakle, tijekom te godine, kako su se stvari odvijale?
+
+236
+00:17:21,360 --> 00:17:27,920
+Imali ste li već neku aplikaciju u glavi kad ste odustali ili je bilo kao da ste odustali i, dobro, sad moram odabrati proizvod.
+
+237
+00:17:28,640 --> 00:17:32,000
+Razgovarajmo o tom prvom razdoblju i kako ste nešto izgradili.
+
+238
+00:17:32,320 --> 00:17:39,280
+Kada sam donio odluku da pokrenem vlastitu tvrtku, nisam imao dobru ideju koju aplikaciju bih trebao izgraditi.
+
+239
+00:17:39,360 --> 00:17:44,320
+Mislim da na kraju prva ideja nije baš tako važna.
+
+240
+00:17:44,640 --> 00:17:48,160
+Važnije je početi se kretati i jednostavno izgraditi bilo što.
+
+241
+00:17:48,560 --> 00:17:52,240
+Nije baš važno što, jer kad jednom počnete graditi nešto.
+
+242
+00:17:52,240 --> 00:17:55,280
+Ako nešto napisate, automatski ćete postati novi i bolji.
+
+243
+00:17:55,360 --> 00:17:56,080
+Samo počnite pisati.
+
+244
+00:17:56,160 --> 00:17:57,440
+To je poznato i za pisanje.
+
+245
+00:17:57,760 --> 00:17:59,040
+To je kao da samo počnete pisati.
+
+246
+00:17:59,120 --> 00:17:59,680
+Počnite pisati.
+
+247
+00:17:59,840 --> 00:18:03,760
+I onda, čak i ako to bacite, veća je vjerojatnost da ćete se izgubiti u nečemu dobrom.
+
+248
+00:18:04,320 --> 00:18:05,840
+Da, samo se uključite u tok.
+
+249
+00:18:06,080 --> 00:18:11,760
+Siguran sam da aktivira određene dijelove vašeg mozga koji su odgovorni za kreativnost ili nešto slično.
+
+250
+00:18:12,320 --> 00:18:19,360
+Kad sam napustio posao, pogledao sam svoje osobno življenje i pokušao shvatiti koja aplikacija ne zadovoljava moje zahtjeve.
+
+251
+00:18:19,760 --> 00:18:24,480
+I brzo sam odlučio da želim izgraditi svoju verziju aplikacije za praćenje kondicije.
+
+252
+00:18:24,800 --> 00:18:26,080
+Da, zvuči stvarno dosadno.
+
+253
+00:18:26,480 --> 00:18:27,840
+Već postoji stotinu.
+
+254
+00:18:28,320 --> 00:18:29,440
+Malo konkurentan tržište, da.
+
+255
+00:18:29,440 --> 00:18:37,680
+Da, već postoji milijun drugih aplikacija za praćenje kondicije, ali htjela sam samo krenuti dalje i zato sam odabrala ovu ideju.
+
+256
+00:18:37,840 --> 00:18:40,400
+Tako sam došla do izrade svoje prve aplikacije LiftBear.
+
+257
+00:18:40,800 --> 00:18:44,560
+S ovim jednim godinom, to je u konačnici puno vremena.
+
+258
+00:18:44,720 --> 00:18:51,360
+Dakle, mogli ste i ja biti osoba koja radi ovo, raditi dvanaest mjeseci i onda poslati aplikaciju.
+
+259
+00:18:52,080 --> 00:18:53,200
+Imali ste li rok?
+
+260
+00:18:54,080 --> 00:19:01,200
+Moram to staviti u trgovinu aplikacijama do x dana da znam hoće li to raditi ili ne, da mogu ponavljati.
+
+261
+00:19:01,840 --> 00:19:06,080
+Kako ste postavili rokove i postavili očekivanja u tom dvanaestomjesečnom razdoblju?
+
+262
+00:19:06,560 --> 00:19:18,880
+Već sam pratio mnoge druge hackere u industriji i dobio sam neke savjete i znao sam da ne bih trebao razvijati ovu aplikaciju dvanaest mjeseci, a onda je objaviti i vidjeti da nitko zaista ne brine o njoj.
+
+263
+00:19:19,200 --> 00:19:27,440
+Jednostavno sam bio dovoljno discipliniran da se posvetim i razvijem je u prvih dva mjeseca slobodne godine, a zatim je pokrenem.
+
+264
+00:19:27,520 --> 00:19:29,600
+Dakle, nisam imao problema s ovim.
+
+265
+00:19:30,240 --> 00:19:33,360
+Da, morate imati niske očekivanja o tome što ćete proizvesti.
+
+266
+00:19:33,680 --> 00:19:36,560
+Mislim, realistična očekivanja, ne nužno niska.
+
+267
+00:19:36,720 --> 00:19:37,120
+Ne, niska.
+
+268
+00:19:37,280 --> 00:19:37,920
+Kažem niska.
+
+269
+00:19:38,240 --> 00:19:43,440
+Trebam pronaći, vidio sam prvi snimak zaslona RevenueCap-a prije nekoliko dana i izgleda strašno.
+
+270
+00:19:43,440 --> 00:19:52,400
+Iskreno, mislim da ne bih hvalio sebe ili nešto slično, ali mislim da bi mnogi ljudi imali problema s poslanjem toga.
+
+271
+00:19:53,040 --> 00:19:59,200
+I jednostavno me ne zanima što ljudi misle, znaš, ili što većina ljudi misli, ili nešto slično, zar ne?
+
+272
+00:19:59,200 --> 00:20:01,920
+Kao što je to s tvojom točkom, Sebastian, samo nešto učini.
+
+273
+00:20:02,080 --> 00:20:05,920
+I mislim da je druga strana, možda te brine tvoja percepcija sebe i ono što možeš stvoriti.
+
+274
+00:20:06,080 --> 00:20:06,560
+To je jedan problem.
+
+275
+00:20:06,800 --> 00:20:10,080
+Mislim da su drugi ljudi zabrinuti, kao što će ljudi misliti o meni.
+
+276
+00:20:10,480 --> 00:20:13,840
+I stvar je u tome da čak i ako je to glupo, nitko ne obraća pozornost.
+
+277
+00:20:14,000 --> 00:20:22,080
+Ako nešto pošalješ glupo, nema problema jer će to primijetiti samo nekoliko ljudi, a možda će to smatrati glupim, ali većina ljudi to ne jednostavno neće primijetiti i neće ih brinuti.
+
+278
+00:20:22,240 --> 00:20:26,640
+A onda to s vremenom učinite lijepim i sve više ljudi se upoznaje s njim kako postaje sve bolje.
+
+279
+00:20:26,960 --> 00:20:27,920
+Sada postoje i druge strane.
+
+280
+00:20:28,000 --> 00:20:35,200
+Ako ste poput humanističkog tima ili drugih tima, gdje imate puno pozornosti na sebi, vaš početni lansiranje zaista ima značenje, ali vi niste humanistički tim.
+
+281
+00:20:35,280 --> 00:20:37,360
+Većina ljudi nije takva, zar ne?
+
+282
+00:20:37,440 --> 00:20:38,800
+Možete jednostavno poslati neke stvari.
+
+283
+00:20:39,120 --> 00:20:39,760
+Mislim da je to sjajno.
+
+284
+00:20:39,920 --> 00:20:44,720
+Dva mjeseca, to je dobar vremenski okvir za dovesti nešto u proizvodnju i početi učiti.
+
+285
+00:20:44,880 --> 00:20:53,680
+I malo smo pokvarili kraj jer ste se vratili na posao, ali kakvo je bilo odaziv na LiftBear i kako su se stvari odvijale prilikom lansiranja i ostatak te godine?
+
+286
+00:20:54,080 --> 00:20:57,520
+Kao što ste već rekli, Jacob, postavljanje očekivanja zaista je važno.
+
+287
+00:20:58,480 --> 00:21:05,680
+ne samo u smislu onoga što proizvodite, već i u smislu onoga kako će primiti vašu prvu aplikaciju.
+
+288
+00:21:05,760 --> 00:21:08,080
+Dakle, Lyft Bear nije bio pravi uspjeh.
+
+289
+00:21:08,240 --> 00:21:10,240
+Bio je to vrlo tiho lansiranje.
+
+290
+00:21:10,400 --> 00:21:19,520
+Kada sam ga objavio, tada nisam imao mnogo sljedbenika na Twitteru i bio sam i još uvijek sam, usput rečeno, veliki početnik kad je u pitanju marketing.
+
+291
+00:21:20,160 --> 00:21:21,360
+Dakle, da, bilo je teško.
+
+292
+00:21:21,600 --> 00:21:28,960
+Dobio sam samo nekoliko preuzimanja, ali ponosan sam što sam konačno imao svoju aplikaciju u trgovini aplikacijama i Google Playu.
+
+293
+00:21:29,040 --> 00:21:30,880
+To je bio ogroman korak naprijed.
+
+294
+00:21:31,040 --> 00:21:33,200
+Da, idete u trgovinu aplikacijama, preuzimate je, vidite svoje ime.
+
+295
+00:21:33,680 --> 00:21:36,640
+Neki korisnici su ga preuzeli, zar ne?
+
+296
+00:21:36,720 --> 00:21:37,120
+Siguran sam.
+
+297
+00:21:37,440 --> 00:21:43,040
+A vi ste rekli da su ga preuzeli nekoliko ljudi, doslovno dvije osobe.
+
+298
+00:21:43,200 --> 00:21:49,600
+Bilo ih je više, ali u prvoj je tjednu možda stotinu, a nakon toga samo deset tjedno ili nešto slično.
+
+299
+00:21:49,840 --> 00:21:56,240
+Da, što je onda kao da ih je deset aktiviralo, pet ih je zapravo otvorilo aplikaciju, dva su zapravo završila uvođenje, a onda su sve to završile u tjednu, zar ne?
+
+300
+00:21:56,400 --> 00:22:00,320
+Dakle, to je ispod minimalnog praga za nešto što se zapravo koristi, zar ne?
+
+301
+00:22:00,560 --> 00:22:01,600
+Ali na neki način to je zapravo nevjerojatno.
+
+302
+00:22:01,840 --> 00:22:11,520
+To je kao da ste nešto izgradili i stotinu slučajnih stranaca širom svijeta pronašli su ga i preuzeli, a zatim deset ljudi tjedno širom svijeta.
+
+303
+00:22:11,840 --> 00:22:13,520
+Mislim, snaga trgovine aplikacijama, zar ne?
+
+304
+00:22:13,680 --> 00:22:21,680
+To je kao da ljudi traže, čak i ako ste na petom mjestu na popisu u pretraživanju ili bilo čemu drugom, to je kao da se pozadinska radijska mjesta u trgovini aplikacijama pronađu.
+
+305
+00:22:22,000 --> 00:22:22,080
+Da.
+
+306
+00:22:22,400 --> 00:22:27,040
+Kada ste vidjeli te brojke, sada kažete da ste loš marketinški stručnjak, da niste razmišljali o rastu.
+
+307
+00:22:27,200 --> 00:22:28,720
+Jeste li pomislili, oh, imam problem s rastom?
+
+308
+00:22:28,960 --> 00:22:30,000
+Kakva je bila vaša dijagnoza?
+
+309
+00:22:30,240 --> 00:22:34,080
+Jer u nekom trenutku, nakon šest mjeseci, možda ste u trgovini, znate da brojke nisu sjajne.
+
+310
+00:22:34,640 --> 00:22:37,680
+Što ste učinili ili pokušali ili što je bilo vaše sljedeće poteškoće?
+
+311
+00:22:37,840 --> 00:22:37,920
+Da.
+
+312
+00:22:38,240 --> 00:22:48,480
+Dakle, nakon ovog vrlo tihe lansiranja, naravno, i dalje sam dobio povratne informacije od prijatelja i nekoliko sljedbenika na Twitteru i od svoje obitelji jer sam sam sam koristio Twitter.
+
+313
+00:22:48,480 --> 00:22:50,000
+Ja sam osobno svakodnevno koristio aplikaciju.
+
+314
+00:22:50,080 --> 00:22:51,840
+Odlučio sam je odmah ne odustati.
+
+315
+00:22:52,640 --> 00:22:57,680
+A onda sam nastavio razvijati nove cool značajke jer to rade programeri.
+
+316
+00:22:57,760 --> 00:22:58,320
+Da, da, da.
+
+317
+00:22:58,480 --> 00:22:59,840
+Jasno je da trebam više značajki.
+
+318
+00:23:00,080 --> 00:23:02,400
+Jasno je da je problem u skupini značajki.
+
+319
+00:23:02,800 --> 00:23:07,680
+Dakle, dodao sam cool stvari poput statistike i novih vrsta vježbi i slično.
+
+320
+00:23:08,000 --> 00:23:09,520
+Ima logike u tome, zar ne?
+
+321
+00:23:09,600 --> 00:23:18,960
+Kao da postoji logika za izradu cool stvari kao metode rasta, ali morate imati i kanal da novim ljudima kažete da ta značajka postoji, zar ne?
+
+322
+00:23:19,200 --> 00:23:25,120
+Jer čak i ako su deset ljudi koji su je preuzeli sve sretniji od te značajke, to neće stvoriti motor rasta.
+
+323
+00:23:25,680 --> 00:23:26,240
+Da, točno.
+
+324
+00:23:26,560 --> 00:23:27,280
+To je prilično teško.
+
+325
+00:23:27,680 --> 00:23:30,240
+Da, to sam radio otprilike šest mjeseci.
+
+326
+00:23:30,640 --> 00:23:41,600
+Također sam pokušao optimizirati popis trgovina, raditi neke ASO, pokušati raditi neku marketinšku aktivnost na Instagramu i čak sam pokušao Apple Search Ads, ali aplikacija zapravo nije išla nigdje.
+
+327
+00:23:41,840 --> 00:23:44,640
+I nakon šest mjeseci više nisam mogao izdržati.
+
+328
+00:23:44,880 --> 00:23:50,720
+Mogao sam se vratiti na otprilike sto dolara prihoda ukupno u šest mjeseci.
+
+329
+00:23:51,040 --> 00:23:51,760
+Brutalno, zar ne?
+
+330
+00:23:52,320 --> 00:23:52,400
+Wow.
+
+331
+00:23:52,800 --> 00:24:01,200
+Da, to je cool jer sam zaradio sto dolara s aplikacijom, ali znao sam da ako želim nastaviti raditi na ovoj aplikaciji, definitivno moram.
+
+332
+00:24:01,520 --> 00:24:02,400
+Tvoja osobna stopa gorenja.
+
+333
+00:24:02,400 --> 00:24:04,160
+Mislim da je vaš osobni stopa trošenja malo veća.
+
+334
+00:24:04,560 --> 00:24:05,520
+Da, definitivno.
+
+335
+00:24:05,840 --> 00:24:13,200
+Mislim, ako vas to čini da se osjećate bolje, RevenueCat, dvanaest mjeseci nakon toga, mislim da smo zaradili tristotinjak dolara.
+
+336
+00:24:13,280 --> 00:24:13,360
+Da.
+
+337
+00:24:13,680 --> 00:24:18,240
+Dakle, kao što je obično niža stopa početka, ali i dalje smo bili u istoj poziciji.
+
+338
+00:24:18,400 --> 00:24:22,480
+Sjećam se da smo Miguel i ja samo rekli: Ovo nikad neće uspjeti.
+
+339
+00:24:22,640 --> 00:24:28,000
+Tristotinjak i deset tisuća su toliko različiti u mentalnom smislu, da ste samo rekli: Ovo nikad neće uspjeti.
+
+340
+00:24:28,080 --> 00:24:28,160
+Da.
+
+341
+00:24:28,400 --> 00:24:34,720
+Dakle, potpuno mogu razumjeti da je to vrlo demoralizirajuće na početku kada imate samo vrlo male brojke.
+
+342
+00:24:34,800 --> 00:24:39,280
+I ako to stavite u kontekst, kao da ćete potrošiti sto dolara na ukusnu večeru, da.
+
+343
+00:24:39,360 --> 00:24:41,680
+To postaje stvarno brutalno.
+
+344
+00:24:42,880 --> 00:24:42,960
+Da.
+
+345
+00:24:43,200 --> 00:24:46,320
+I baš u tom trenutku morate donijeti odluku.
+
+346
+00:24:46,800 --> 00:24:53,600
+Da li ću s istim proizvodom učiniti nešto drugačije ili ću ga potpuno prebaciti na novi proizvod ili ću se vratiti na posao?
+
+347
+00:24:53,680 --> 00:24:55,200
+Da, vratio sam se na posao.
+
+348
+00:24:55,520 --> 00:24:55,600
+Da.
+
+349
+00:24:55,840 --> 00:24:57,920
+Ali to nije bio dio u kojem sam se vratio na posao.
+
+350
+00:24:58,000 --> 00:24:59,680
+Još sam imao šest mjeseci u slobodnom životu.
+
+351
+00:24:59,760 --> 00:25:00,080
+U redu.
+
+352
+00:25:00,240 --> 00:25:00,640
+U redu.
+
+353
+00:25:00,880 --> 00:25:01,120
+Dobro.
+
+354
+00:25:01,520 --> 00:25:06,560
+Nakon svih tih depresija s Liftreom, odlučio sam se usredotočiti na novi projekt.
+
+355
+00:25:07,520 --> 00:25:09,600
+Tada sam to želio učiniti kao eksperiment.
+
+356
+00:25:10,080 --> 00:25:14,400
+Postavio sam si vrlo kratak rok od dva mjeseca za izradu.
+
+357
+00:25:14,400 --> 00:25:16,000
+I da, tako sam izgradio svoj.
+
+358
+00:25:16,320 --> 00:25:20,560
+svoju drugu aplikaciju HabitKit, koja je tada bila mnogo uspješnija.
+
+359
+00:25:20,800 --> 00:25:22,800
+Jeste li odmah znali kad ste je pokrenuli?
+
+360
+00:25:22,960 --> 00:25:29,600
+Bilo je to kao noć i dan između dvaju pokretanja ili kada ste znali da je ovo možda bolji pokušaj?
+
+361
+00:25:29,920 --> 00:25:32,000
+Zapravo je to bilo prije pokretanja aplikacije.
+
+362
+00:25:32,320 --> 00:25:44,160
+Izradio sam je javno na Twitteru i prvi put kad sam objavio sliku glavnog zaslona HabitKita, ovaj je post potpuno eksplodirao i zapravo sam dobio osam stotina lajkova.
+
+363
+00:25:44,320 --> 00:25:45,680
+To je bilo mnogo za mene tada.
+
+364
+00:25:46,560 --> 00:25:52,720
+To je bio trenutak kad sam znao, dobro, ovo bi moglo biti uspješnije od LiveBear-a.
+
+365
+00:25:52,880 --> 00:25:53,280
+Zanimljivo.
+
+366
+00:25:53,280 --> 00:25:54,160
+A što je s tom objavom?
+
+367
+00:25:54,240 --> 00:25:57,680
+Jer to je mogla biti slučajnost, ali morao je biti nešto, zar ne?
+
+368
+00:25:57,840 --> 00:25:59,040
+Većina mojih objav ne razumije to.
+
+369
+00:25:59,520 --> 00:26:01,040
+I oni su sjajni, po mom mišljenju.
+
+370
+00:26:01,360 --> 00:26:01,680
+Što je to bilo?
+
+371
+00:26:01,760 --> 00:26:04,880
+Bilo je to samo nešto poput: Evo što gradim ili je to bilo nešto poput: Evo što ću pokrenuti?
+
+372
+00:26:05,200 --> 00:26:08,640
+Kakva je priroda toga bila ta koja je ljudima učinila tako zanimljivim?
+
+373
+00:26:09,120 --> 00:26:09,280
+Da.
+
+374
+00:26:09,520 --> 00:26:13,440
+Dakle, mislim da je tekst bio samo: Ovo je nova aplikacija koju gradim.
+
+375
+00:26:13,680 --> 00:26:14,560
+To je glavni zaslon.
+
+376
+00:26:14,960 --> 00:26:21,040
+A onda sam objavio glavni zaslon HabitKita gdje vidite mrežu s bojnim pločicama i slično za vaše navike.
+
+377
+00:26:21,280 --> 00:26:21,680
+To je bilo to.
+
+378
+00:26:21,920 --> 00:26:23,760
+I ljudi su se činili da su se slagali s njom.
+
+379
+00:26:23,920 --> 00:26:24,880
+Zaista su je voljeli.
+
+380
+00:26:25,360 --> 00:26:28,640
+I ne znam zašto, ali zapravo je prošlo kroz krov.
+
+381
+00:26:28,960 --> 00:26:29,120
+U redu.
+
+382
+00:26:29,360 --> 00:26:29,360
+Da.
+
+383
+00:26:29,600 --> 00:26:32,000
+Mislim da je to prilagođenost proizvodu tržištu, zar ne?
+
+384
+00:26:32,080 --> 00:26:39,840
+Ili je to nešto što rast ne mora toliko značiti ako imate tržište proizvoda, barem rast nije neophodan za određenu količinu uspjeha.
+
+385
+00:26:40,000 --> 00:26:43,680
+Ako imate tržište proizvoda, to jest, ljudi će vam izvući proizvod iz vas.
+
+386
+00:26:43,920 --> 00:26:46,640
+Možete nekako pričekati i odgoditi aspekte rasta.
+
+387
+00:26:46,800 --> 00:26:53,120
+I zapravo, svaki dragulj ili dolar koji uložite u rast će se više pomnožiti što je bolji vaš proizvod.
+
+388
+00:26:53,520 --> 00:26:55,840
+I tako je to stvarno mjesto na kojem želite započeti.
+
+389
+00:26:56,000 --> 00:26:59,600
+Teško je kvantificirati vrijednost tih signala, ali je to nešto, zar ne?
+
+390
+00:26:59,760 --> 00:27:02,560
+To je izazov s prilagođenosti proizvodu tržištu ili validacijom.
+
+391
+00:27:02,640 --> 00:27:03,760
+Imam li zanimljiv proizvod?
+
+392
+00:27:04,000 --> 00:27:07,120
+Pogotovo prije nego što imate potpuno implementiran proizvod i ljudi ga koriste u stvarnoj mjeri.
+
+393
+00:27:07,120 --> 00:27:13,360
+Korištenjem stvarnih mjera ili mjernih jedinica, stvarno morate pogledati ove anegdotalne kvalitativne stvari i čini se da je to valjano.
+
+394
+00:27:13,440 --> 00:27:18,160
+Dakle, to je moralo biti stvarno ohrabrujuće dok ste bili u pripremi za produkciju da biste dobili takvu reakciju.
+
+395
+00:27:18,240 --> 00:27:19,680
+Da, to je bilo sjajno.
+
+396
+00:27:20,320 --> 00:27:26,320
+Ovo je osam mjeseci nakon vaše godine u Indyju, ali i dalje ste se vratili na posao.
+
+397
+00:27:26,480 --> 00:27:33,920
+Dakle, pretpostavljam da lansiranje nije prošlo baš onako dobro kao što je možda jedan tweet koji je eksplodirao ukazivao na to da bi mogao?
+
+398
+00:27:34,080 --> 00:27:42,880
+Dakle, u prvom mjesecu nakon izlaska Habit Kitsa zaradio sam više novca nego u posljednjih šest mjeseci zajedno.
+
+399
+00:27:43,040 --> 00:27:44,160
+Dakle, to je bila velika pobjeda.
+
+400
+00:27:44,160 --> 00:27:51,600
+Da, pa prvih šest mjeseci s HabitKitom zaradio sam otprilike 1,500 dolara ukupnog prihoda mjesečno.
+
+401
+00:27:51,760 --> 00:28:02,000
+Ali tužna je stvar bila da je moj rok od dvanaest mjeseci završio i da prihod nije bio tako velik kao što sam se nadao.
+
+402
+00:28:02,160 --> 00:28:03,760
+Razmišljali ste li o kršenju pravila?
+
+403
+00:28:03,840 --> 00:28:09,760
+Da, suočio sam se s teškom odlukom da nastavim ili se vratim na prethodni posao.
+
+404
+00:28:09,840 --> 00:28:12,960
+Ali mislim da je to odluka koju ljudi ne shvaćaju.
+
+405
+00:28:13,120 --> 00:28:14,720
+Ne radi se samo o tome da li nešto pokrenem.
+
+406
+00:28:15,200 --> 00:28:18,000
+Postoji mnogo takvih točaka, pogotovo u ranim danima prije nego što se pokrene.
+
+407
+00:28:18,160 --> 00:28:23,120
+A onda čak i tijekom cijelog života posla, to je kao da, sam došao do ovoga, da li ću se još više potruditi?
+
+408
+00:28:23,280 --> 00:28:24,240
+Da li ću nastaviti ulagati?
+
+409
+00:28:24,640 --> 00:28:27,280
+Pogotovo ako niste profitabilni, kao da se trošiš, zar ne?
+
+410
+00:28:27,440 --> 00:28:36,640
+Bilo je kao da je u redu, mislim da postoji stava u koju mogu nastaviti ulagati ili je vrijeme da, recimo, iskoristim svoje novčane novčanice i odustanem ili promijenim strategiju.
+
+411
+00:28:37,120 --> 00:28:42,000
+Da sam znao što će uslijediti, ne bih se vratio na svoje staro posao, pa je to uvijek stvarno teška odluka.
+
+412
+00:28:42,080 --> 00:28:45,360
+I zapravo je bilo prilično zastrašujuće nastaviti trošiti za svoje uštede.
+
+413
+00:28:45,440 --> 00:28:46,000
+To je stvarno novac.
+
+414
+00:28:46,080 --> 00:28:46,800
+Da, točno.
+
+415
+00:28:46,880 --> 00:28:48,320
+Ti si Nijemac, ne možeš prekršiti pravila.
+
+416
+00:28:48,400 --> 00:28:56,080
+Nisam htio reći da ovdje ne radimo stereotipe, ali bilo je kao da je to vrlo, vrlo drvena stvar, da kažem, napravio sam pravilo, ne mogu ga prekršiti.
+
+417
+00:28:56,960 --> 00:28:57,520
+Što je to?
+
+418
+00:28:57,840 --> 00:29:05,760
+gotovo do dana ili mjeseca, kao da ste se vratili točno na dvanaest mjeseci ili ste nekako vidjeli pisanje na zidu i nekako ste se približavali tome?
+
+419
+00:29:05,920 --> 00:29:07,920
+Da, točno su bili dvanaest mjeseci.
+
+420
+00:29:08,000 --> 00:29:12,000
+Počeo sam svoju slobodnu godinu u travnju i vratio sam se u travnju.
+
+421
+00:29:12,240 --> 00:29:12,400
+Vau.
+
+422
+00:29:12,560 --> 00:29:14,640
+Dakle, vratili ste se na posao, ali sada imate dodatni projekt u HabitKitu.
+
+423
+00:29:14,960 --> 00:29:16,080
+Kako je to išlo?
+
+424
+00:29:16,640 --> 00:29:21,360
+Raditi punim radnim vremenom i raditi na HabitKitu na strani?
+
+425
+00:29:21,840 --> 00:29:29,600
+Moram reći da sam želio nastaviti raditi na svojem Appsu na strani, pa sam odlučio raditi samo četiri dana u tjednu za svog prethodnog poslodavca.
+
+426
+00:29:29,840 --> 00:29:33,920
+To je dobra prednost, kao da to nije uvijek super moguće u mnogim nastupima, pa je to bilo sjajno.
+
+427
+00:29:34,160 --> 00:29:35,520
+Da, to je bilo zaista sjajno.
+
+428
+00:29:35,760 --> 00:29:44,320
+To mi je omogućilo da uzmem slobodan petak i da imam cijeli dan za svoje aplikacije, gdje mogu nastaviti unaprjeđivati svoje aplikacije i raditi ono što radim.
+
+429
+00:29:44,640 --> 00:29:45,440
+To je bilo sjajno.
+
+430
+00:29:45,840 --> 00:29:51,840
+Tako sam se vratio na svoje staro posao i nakon otprilike dva mjeseca dogodilo se nešto zaista sjajno.
+
+431
+00:29:52,320 --> 00:30:01,280
+Zapravo se sjećam da sam tada bio na vjenčanju prijatelja u subotu i iznenada mi je telefon počeo zviždujeti s ludom frekvencijom obavijesti.
+
+432
+00:30:01,440 --> 00:30:11,280
+I kad sam provjerio da su to zapravo obavijesti o prodaji iz RevenueCat-a, brzo sam provjerio neke statistike i onda sam vidio da su se naoružali.
+
+433
+00:30:11,280 --> 00:30:17,440
+Konačno sam počeo rangirati u prvih pet za veliku ključnu riječ u trgovini aplikacijama i Google Playu.
+
+434
+00:30:18,080 --> 00:30:21,200
+To je dovelo do ludog rasta preuzimanja i prihoda.
+
+435
+00:30:21,280 --> 00:30:21,520
+Stvarno?
+
+436
+00:30:21,920 --> 00:30:26,560
+Dakle, to je bilo poput jednog koraka prema gore u rangiranju pretraživanja, a onda se to promijenilo.
+
+437
+00:30:26,800 --> 00:30:27,680
+Osjećalo se tako.
+
+438
+00:30:27,840 --> 00:30:27,840
+Da.
+
+439
+00:30:28,400 --> 00:30:28,480
+Da.
+
+440
+00:30:28,560 --> 00:30:29,520
+Fold je stvarna stvar, zar ne?
+
+441
+00:30:29,680 --> 00:30:31,920
+Biti iznad i ispod fold-a stvarna je stvar.
+
+442
+00:30:32,080 --> 00:30:37,920
+Je li to bila promjena koju ste napravili na strani ASO-a ili je to bila promjena algoritma koja vas je potaknula?
+
+443
+00:30:38,400 --> 00:30:40,560
+Ne, zapravo nisam ništa promijenio.
+
+444
+00:30:41,120 --> 00:30:43,200
+Tada sam tri mjeseca ili nešto slično.
+
+445
+00:30:43,440 --> 00:30:45,040
+Ništa nisam promijenio.
+
+446
+00:30:45,360 --> 00:30:48,880
+Dakle, to nije bio izravan rezultat promjene.
+
+447
+00:30:48,880 --> 00:30:50,000
+Bio sam malo nezadovoljavajući zbog nečega.
+
+448
+00:30:50,160 --> 00:30:51,920
+Bilo je malo nezadovoljavajuće.
+
+449
+00:30:52,400 --> 00:30:56,480
+Bilo je kao da sam uspješan, ali ne znam zašto i nemam kontrolu nad njim.
+
+450
+00:30:57,360 --> 00:30:59,840
+Ne, zapravo, bilo je stvarno sjajno.
+
+451
+00:30:59,920 --> 00:31:00,240
+U redu, dobro.
+
+452
+00:31:00,720 --> 00:31:02,240
+Dobro, sretnija si od mene.
+
+453
+00:31:03,200 --> 00:31:04,800
+Nisam imala nikakvih kajanja.
+
+454
+00:31:04,960 --> 00:31:08,080
+Bilo je više kao da sam konačno dobila priznanje.
+
+455
+00:31:08,480 --> 00:31:11,680
+Da, uvijek sam znala da je sjajno.
+
+456
+00:31:11,920 --> 00:31:12,960
+Da, točno.
+
+457
+00:31:13,920 --> 00:31:15,840
+Dakle, to je dva mjeseca nakon početka posla.
+
+458
+00:31:16,080 --> 00:31:22,480
+U kojem trenutku ste dosegli profitabilnost ramena i onda ste pomislili, dobro, sad stvarno mogu odustati?
+
+459
+00:31:22,720 --> 00:31:25,840
+Mislim da je to bilo na početku jeseni.
+
+460
+00:31:25,840 --> 00:31:33,680
+U rujnu, na kraju ljeta, moram provjeriti brojke, ali mislim da je to bio prvi put da sam dostigao prihod od više tisuća dolara.
+
+461
+00:31:34,560 --> 00:31:36,720
+To me je dovelo do ponovnog donošenja teške odluke.
+
+462
+00:31:36,880 --> 00:31:42,480
+Trebam li nastaviti s poslom ili bih trebao napustiti posao i ponovno se posvetiti punom radnom vremenu ovom indie hakerom?
+
+463
+00:31:42,720 --> 00:31:49,280
+To je bio trenutak u kojem sam morao potrošiti nekoliko mjeseci na razmišljanje jer sam se zaista osjećao loše.
+
+464
+00:31:49,440 --> 00:31:57,600
+Zaista sam se žalio na svog poslodavca i imao sam neke sjajne prijatelje u tvrtki i bili su zaista predani da me vrate.
+
+465
+00:31:57,680 --> 00:31:59,200
+I da, osjećao sam se zaista loše.
+
+466
+00:31:59,440 --> 00:32:02,560
+Ali s tim brojevima, iskreno, nisam imao drugog izbora.
+
+467
+00:32:02,560 --> 00:32:03,600
+Nema druge opcije za to.
+
+468
+00:32:03,840 --> 00:32:05,840
+I tako je to bilo u jesen 2022.
+
+469
+00:32:06,160 --> 00:32:08,240
+ili je to bilo samo prošlog jeseni 2022.?
+
+470
+00:32:08,560 --> 00:32:10,080
+Bilo je prošlog jeseni, da, točno.
+
+471
+00:32:10,160 --> 00:32:10,560
+U redu.
+
+472
+00:32:10,800 --> 00:32:10,880
+Wow.
+
+473
+00:32:11,520 --> 00:32:22,400
+I tako ste objavljivali javno i do toga ćemo doći ovdje za trenutak, ali znam sve vaše brojke jer objavljujete, kao da imate cijeli blog s tjednim recenzijama i sve to.
+
+474
+00:32:22,640 --> 00:32:25,200
+Dakle, završili ste 2023.
+
+475
+00:32:25,760 --> 00:32:30,320
+s 120.000 preuzimanja i 51.000 dolara prihoda.
+
+476
+00:32:30,640 --> 00:32:34,480
+Nije loša godina za ovaj stranski projekt koji je slučajno eksplodirao.
+
+477
+00:32:34,800 --> 00:32:35,760
+Da, točno.
+
+478
+00:32:36,080 --> 00:32:39,120
+Pogotovo ako uzmete u obzir i moju plaću kao softverskog inženjera.
+
+479
+00:32:39,200 --> 00:32:42,880
+Da, to je bilo apsolutno ludilo.
+
+480
+00:32:43,120 --> 00:32:51,280
+I gledajući unatrag, još je ludije bilo u siječnju i veljači ove godine.
+
+481
+00:32:51,840 --> 00:32:55,840
+Da, pa sam ponovno gledao, gledao sam vaše brojke pripremajući se za ovu raspravu.
+
+482
+00:32:55,840 --> 00:32:59,520
+I opet, sve ste objavili javno, samo za korist slušatelja.
+
+483
+00:32:59,920 --> 00:33:02,240
+Dakle, napustili ste u jesen i krenuli na pun radni dan.
+
+484
+00:33:02,320 --> 00:33:04,480
+A onda bih se želio pitati zašto mislite da se to dogodilo.
+
+485
+00:33:04,640 --> 00:33:08,400
+Ali što se dogodilo je da ste u prvih dva mjeseca 2024.
+
+486
+00:33:08,560 --> 00:33:12,800
+godine zaradili 60.000, gotovo 10.000 više nego u cijelom 2023.
+
+487
+00:33:13,120 --> 00:33:14,800
+godini, samo u siječnju i veljači.
+
+488
+00:33:14,880 --> 00:33:18,320
+A onda u ožujku, travnju i sv svibnju zaradili ste još pedeset i jedan tisuću.
+
+489
+00:33:18,400 --> 00:33:23,920
+Dakle, u tim tri mjeseca zaradili ste punu količinu koju ste zaradili prethodne godine, ali već ste zaradili šezdeset tisuća.
+
+490
+00:33:24,000 --> 00:33:28,080
+Dakle, do sada ste zaradili sto deset tisuća u 2024.
+
+491
+00:33:28,320 --> 00:33:28,560
+godini.
+
+492
+00:33:29,040 --> 00:33:29,520
+Nevjerojatno.
+
+493
+00:33:29,760 --> 00:33:30,480
+Čestitke.
+
+494
+00:33:31,520 --> 00:33:32,160
+Što se dogodilo?
+
+495
+00:33:32,160 --> 00:33:40,960
+Kao da ste napustili posao u jesen, imali ste neku snagu, ali što je bio taj prekretnica u kojoj je to postalo stvarno stvarno u 2024.
+
+496
+00:33:41,040 --> 00:33:41,200
+godini?
+
+497
+00:33:41,280 --> 00:33:45,360
+U svibnju sam počeo rangirati za App Store i Google Play za ove velike ključne riječi.
+
+498
+00:33:46,000 --> 00:33:53,200
+A tada, od prošle zime, nisam imao nikakve točke, nikakve brojke prihoda jer jednostavno nisam stigao do.
+
+499
+00:33:53,440 --> 00:33:55,520
+To je bilo vrlo složeno s onim što imam danas.
+
+500
+00:33:55,680 --> 00:34:00,240
+Stoga nisam mogla usporediti i nisam znala što će se dogoditi zimi.
+
+501
+00:34:00,720 --> 00:34:06,720
+Mislim da je u prirodi aplikacija za praćenje navika da je snažno pod utjecajem sezonalnosti.
+
+502
+00:34:07,520 --> 00:34:16,720
+Dakle, na početku godine, mnogi ljudi donose odluke za novu godinu, započinju nove hobije ili jednostavno žele poboljšati sebe.
+
+503
+00:34:17,200 --> 00:34:18,960
+Dakle, to je ogroman čimbenik, mislim.
+
+504
+00:34:19,520 --> 00:34:22,720
+I to je dovelo do nevjerojatnih prihoda.
+
+505
+00:34:22,880 --> 00:34:22,960
+Wow.
+
+506
+00:34:23,200 --> 00:34:24,240
+Dakle, to nije bilo novo marketing.
+
+507
+00:34:24,800 --> 00:34:28,000
+Nije bilo dodavanje značajki u aplikaciju.
+
+508
+00:34:28,400 --> 00:34:34,000
+Bilo je to da ste izgradili ovu bazu dovoljno dobre proizvodnje koji je ljudima svidio i bili su voljni platiti za njega.
+
+509
+00:34:34,080 --> 00:34:44,720
+A onda ste, mislim, imali sreće u kombinaciji izrade dobrih proizvoda i algoritama koji su vam bili povoljni, dobili ste taj zamah u pretraživanju.
+
+510
+00:34:44,880 --> 00:34:48,560
+Tada je bilo samo organsko pretraživanje i taj porast iz novogodišnjeg razdoblja.
+
+511
+00:34:48,720 --> 00:34:52,240
+Dakle, točka prekretnice bila je, opet, u određenoj mjeri izvan vašeg nadzora.
+
+512
+00:34:52,400 --> 00:34:54,560
+To je ljepota trgovine aplikacijama i Google Playja.
+
+513
+00:34:54,640 --> 00:34:58,720
+Mislim, dobivate sve te impresije i doseg besplatno, u osnovi.
+
+514
+00:34:58,880 --> 00:35:00,480
+A oni rade sve marketinške aktivnosti.
+
+515
+00:35:00,800 --> 00:35:02,320
+Nemaju s tim ništa veze.
+
+516
+00:35:02,800 --> 00:35:06,320
+Razvili ste li neku vezu s Appleovim uredničkim člankom ili bilo čim sličnim?
+
+517
+00:35:06,400 --> 00:35:10,000
+Dali su vam značajke?ki ili bilo kakvih uredničkih sadržaja?
+
+518
+00:35:10,400 --> 00:35:10,960
+Uopće ne.
+
+519
+00:35:11,280 --> 00:35:15,920
+Prijavila sam se putem njihovog obrazca za predstavljanje i slično, ali to se nikad nije dogodilo.
+
+520
+00:35:16,320 --> 00:35:17,360
+Dakle, još uvijek čekam to.
+
+521
+00:35:18,000 --> 00:35:19,120
+To je stvarno zanimljivo.
+
+522
+00:35:19,280 --> 00:35:25,520
+Radite li nešto da iskoristite jer mislim da je jedno od lako dolazi, lako ide s ovim algoritmima, zar ne?
+
+523
+00:35:25,680 --> 00:35:31,040
+Brinete li se zbog još jedne promjene algoritma ili možda samo da padnete u rangiranju?
+
+524
+00:35:31,440 --> 00:35:33,520
+Kako razmišljate o tome kao o riziku za ono što imate?
+
+525
+00:35:34,160 --> 00:35:36,000
+To je definitivno velika točka.
+
+526
+00:35:36,640 --> 00:35:44,080
+Stvarno sam uplašena ili uplašena ovim algoritmima, ali imam osnovne ASO-ove na mjestu.
+
+527
+00:35:44,080 --> 00:35:46,720
+Nisam napravio nikakve pogreške.
+
+528
+00:35:47,040 --> 00:35:57,360
+Zato sam siguran da ako ne napravim veliku pogrešku i ne padnem natrag u aplikaciju ili nešto slično, neću pasti toliko u ovoj rangiranju.
+
+529
+00:35:57,520 --> 00:35:58,560
+Nadam se da će barem tako biti.
+
+530
+00:35:58,720 --> 00:36:08,880
+Mislim, može biti izdržljivo, pogotovo kad se vaša baza recenzija poveća i vaša mini marka, a ne znam kako točno funkcioniraju algoritmi ASO, ali mislim da što više klikova, a znam da koriste i upotrebu kao posrednik.
+
+531
+00:36:09,040 --> 00:36:12,160
+Dakle, ako imate dobru zadržavanje u svom proizvodu, taj se faktor uključuje.
+
+532
+00:36:12,240 --> 00:36:13,440
+Dakle, opet, to je loše.
+
+533
+00:36:13,600 --> 00:36:14,320
+To je crna kutija.
+
+534
+00:36:14,640 --> 00:36:18,160
+Ne znate što se događa, ali nadate se da je usklađeno s pravilnim poticajima.
+
+535
+00:36:18,320 --> 00:36:19,680
+Siguran sam da Apple želi to.
+
+536
+00:36:19,680 --> 00:36:21,600
+Kao da žele pravilne poticaje korisnika.
+
+537
+00:36:21,600 --> 00:36:23,760
+Ne znam jesu li koristili zadržavanje pretplate.
+
+538
+00:36:23,840 --> 00:36:24,480
+Ne bih bio iznenađen.
+
+539
+00:36:24,880 --> 00:36:27,840
+Ne znam zašto ne bi koristili i to kao mjeru.
+
+540
+00:36:28,240 --> 00:36:31,120
+Očito bi trebali promovirati aplikacije koje im donose više novca, zar ne?
+
+541
+00:36:31,280 --> 00:36:33,920
+To bi im bilo pametno s poslovnog stajališta.
+
+542
+00:36:34,000 --> 00:36:35,520
+Ali da, uvijek postoji strah.
+
+543
+00:36:35,760 --> 00:36:46,640
+Živite prema algoritmima trgovine aplikacijama, umirate algoritmima trgovine aplikacijama i ne znam odgovor za Indie, za ono gdje ste, jer biste mogli pokušati izgraditi vlastite kanale za stjecanje i možda je vrijedno eksperimentirati s tim.
+
+544
+00:36:46,720 --> 00:36:53,040
+I možda ste eksperimentirali s ASA-om, ali čak i dalje, ali to se iznenada proširuje samo na opseg onoga što radite.
+
+545
+00:36:53,200 --> 00:36:56,560
+Rekli ste da eksperimentirate s Instagramovim oglasima, ali recimo da želite eksperimentirati s tim.
+
+546
+00:36:57,040 --> 00:36:58,480
+Ne možete samo reći, napravit ću kupac.
+
+547
+00:36:58,480 --> 00:37:00,160
+Ne može biti samo da napravim lošu reklamu i stavim je na TikTok.
+
+548
+00:37:00,320 --> 00:37:04,320
+Morate uložiti u to kao da je to cijeli projekt, zar ne?
+
+549
+00:37:04,800 --> 00:37:06,240
+Što će privući ljude?
+
+550
+00:37:06,400 --> 00:37:08,160
+Što je u mojoj aplikaciji zanimljivo?
+
+551
+00:37:08,320 --> 00:37:09,040
+Kako da to funkcionira?
+
+552
+00:37:09,360 --> 00:37:10,800
+Inače ćete izgubiti novac.
+
+553
+00:37:10,880 --> 00:37:12,880
+To jednostavno neće biti profitabilan posao.
+
+554
+00:37:12,960 --> 00:37:21,760
+Da, definitivno bih trebao to učiniti ili zaposliti ljude da to učine, ali sada se usredotočujem na kreativnost i radim stvari koje su zabavne za mene.
+
+555
+00:37:21,840 --> 00:37:24,880
+Trenutno nisam u strašnom algoritmu, zar ne?
+
+556
+00:37:24,960 --> 00:37:28,320
+Nije strašan algoritam jer ćete barem to raditi s energijom, zar ne?
+
+557
+00:37:28,400 --> 00:37:34,640
+Za razliku od toga da vam oglas na TikToku ne zvuči zabavno, nemojte to raditi jer ćete vjerojatno loše raditi.
+
+558
+00:37:34,880 --> 00:37:42,800
+Baš tako, to bi vjerojatno bilo kao posao i da sam ovdje kod kuće i da se usredotočim na svoje proizvode i da ih poboljšam.
+
+559
+00:37:42,960 --> 00:37:44,320
+To mi se ne čini kao posao.
+
+560
+00:37:44,400 --> 00:37:47,280
+Što, mislim, ponavljajuće pretplate, zar ne?
+
+561
+00:37:47,360 --> 00:37:56,160
+Kao da imate ponavljajuće pretplate, čak i ako vas Apple odbaci, znate, idealno je zadržati ove ljude, možda čak i uhvatiti sposobnost da im se prodaje.
+
+562
+00:37:56,400 --> 00:37:58,480
+Također gradite svoju prisutnost u indie industriji, zar ne?
+
+563
+00:37:58,640 --> 00:38:00,080
+Postanete poznatiji, zar ne?
+
+564
+00:38:00,160 --> 00:38:06,960
+Dakle, ne dobivate samo novac i preuzimanja, već ih pretvarate u robne marke, u bazu instalacija i sve su te stvari do neke mjere izdržljive.
+
+565
+00:38:07,280 --> 00:38:12,480
+I uvijek postoje šanse da iskoristite to, što nemate kad prvi put napustite posao.
+
+566
+00:38:12,480 --> 00:38:14,720
+Prvo ste radili s prihodima od nula dolara.
+
+567
+00:38:14,880 --> 00:38:22,880
+A Jacob je ranije rekao da sada kada imate takvu razinu tržišta proizvoda i sada imate kanal, ASO je vaš kanal.
+
+568
+00:38:23,120 --> 00:38:27,280
+I tako, kao što je Jacob ranije rekao, trebate kanal, trebate neku potporu.
+
+569
+00:38:27,440 --> 00:38:45,680
+A kad imate tu potporu i kanal, onda je izgradnja značajki zapravo možda najbolja stvar koju možete učiniti, dok ne vidite znakove da padate u algoritmu, a možda će u nekom trenutku biti noć i dan, razlika je u tome što se jednog dana probudite i izađete iz prvih pet i ne dobivate toliko preuzimanja.
+
+570
+00:38:45,760 --> 00:38:49,440
+Ali čak i onda je to kao da biste vjerojatno dospjeli do deset i sada dobivate polovicu preuzimanja.
+
+571
+00:38:49,600 --> 00:38:50,000
+ili bilo što drugo.
+
+572
+00:38:50,320 --> 00:39:02,240
+Neće biti noć i dan, ali sad kad imate takav spremnik i privlačnost na tržištu, stvaranje stvarno sjajne aplikacije, eksperimentiranje s monetizacijom i slično vjerojatno je bolji način korištenja vašeg vremena.
+
+573
+00:39:02,400 --> 00:39:02,720
+Da, možda.
+
+574
+00:39:03,040 --> 00:39:06,800
+I imam i ovaj drugi kanal o kojem nismo govorili.
+
+575
+00:39:07,120 --> 00:39:14,960
+Dakle, gradio sam svoje aplikacije u javnosti i zapravo sam povećao broj sljedbenika na X-u, a danas i na LinkedInu.
+
+576
+00:39:15,200 --> 00:39:24,640
+Čak i ako Apple odluči smanjiti razinu naoružanja, uvijek imam publiku ljudi koji me podržavaju, koji su uključeni u mene i koji žele mi pomoći.
+
+577
+00:39:24,880 --> 00:39:26,320
+Uvijek mogu upotrijebiti to.
+
+578
+00:39:26,320 --> 00:39:29,760
+Iskoristite to da biste izgradili novu aplikaciju ili je popeli na bolje rangiranje ili slično.
+
+579
+00:39:29,920 --> 00:39:30,400
+To je zajednica.
+
+580
+00:39:30,480 --> 00:39:31,760
+Mislim, zajednica je jako izdržljiva.
+
+581
+00:39:31,840 --> 00:39:32,800
+Zato radimo ovaj podcast.
+
+582
+00:39:33,040 --> 00:39:37,760
+Zato su te aktivnosti vrlo vrijedne ako možete stvoriti sadržaj koji ljudi smatraju zanimljivim i žele biti dio toga.
+
+583
+00:39:37,920 --> 00:39:39,920
+Planirao sam pitati, pregledavao sam aplikaciju.
+
+584
+00:39:40,000 --> 00:39:42,800
+Mislim da ne prikupljate nikakve kontaktne podatke u aplikaciji.
+
+585
+00:39:42,960 --> 00:39:43,600
+Je li to točno?
+
+586
+00:39:43,920 --> 00:39:44,720
+Da, ništa.
+
+587
+00:39:45,120 --> 00:39:52,640
+Da, što je kao da postoje dobri razlozi za to i za to da to ne radite, ali prikupljanje nekog načina komunikacije s tom korisničkom bazom također je vrlo vrijedno.
+
+588
+00:39:52,800 --> 00:39:57,200
+Dakle, recimo da pod ASO ispadne ispod vas, možete ponovno uključiti tu korisničku bazu.
+
+589
+00:39:57,280 --> 00:39:59,840
+Možete im poslati nešto poput, evo, vidio sam nove značajke ili nešto poput toga.
+
+590
+00:39:59,920 --> 00:40:03,120
+Možete čak dodati i ja samo dajem savjete o aplikaciji koje ne želite, ali uvijek možete dodati.
+
+591
+00:40:03,120 --> 00:40:08,640
+Kao što možete, uvijek se možete prijaviti za newsletter Habit Kit, prijaviti se za ažuriranja e-pošte i učiniti ga vrlo opt-in, zar ne?
+
+592
+00:40:08,720 --> 00:40:09,600
+Možete ga učiniti vrlo laganim.
+
+593
+00:40:09,680 --> 00:40:10,160
+To je jedna stvar.
+
+594
+00:40:10,320 --> 00:40:15,920
+Čak i s RevenueCatom, bio sam iznenađen, kao da smo dugo gradili kontaktne liste, ali zapravo nismo puno marketirali.
+
+595
+00:40:16,240 --> 00:40:22,320
+Ali onda sam naučio, da, slanje stvari je sjajno, ali morate i reći ljudima o tome, ili se to ne povezuje.
+
+596
+00:40:23,200 --> 00:40:30,240
+Možete povezati te dvije stvari, kao što je izgradnja novih značajki koje su zanimljive, a zatim reći ljudima kojima bi trebalo brinuti, to je stvarno čarobno.
+
+597
+00:40:30,400 --> 00:40:35,600
+I to može stvoriti pravi efekt kotača za ponovno uključivanje postojećih korisnika i može biti stvarno izdržljivo.
+
+598
+00:40:35,680 --> 00:40:40,080
+Ali to je uvijek moja najveća stvar s ljudima koji su vrlo uspješni iz trgovine aplikacijama, to je u redu.
+
+599
+00:40:40,080 --> 00:40:44,240
+Bilo je to nešto poput: U redu, iskoristite ovaj zamah da pronađete način da budete uspješni bez trgovine aplikacijama.
+
+600
+00:40:44,320 --> 00:40:45,760
+Bilo je kao da možda neće uvijek biti tu.
+
+601
+00:40:46,240 --> 00:40:46,880
+Da, definitivno.
+
+602
+00:40:47,200 --> 00:40:47,760
+To je dobra točka.
+
+603
+00:40:47,920 --> 00:40:50,240
+Imam ovu stvar s e-poštom na popisu zadataka.
+
+604
+00:40:50,560 --> 00:40:51,840
+Moj popis zadataka je vrlo dug.
+
+605
+00:40:52,160 --> 00:40:53,120
+Da, sigurno je.
+
+606
+00:40:54,800 --> 00:40:54,880
+Da.
+
+607
+00:40:55,440 --> 00:41:02,320
+Govorili ste o prednostima izgradnje u javnosti, poput izgradnje zajednice i imati publiku za koju možete malo prodavati.
+
+608
+00:41:02,560 --> 00:41:16,880
+Iako možda publika koju gradite nije nužno ljudi koji će biti pretplatnici ili nešto slično, ali kakve su neke druge prednosti i nedostatke koje ste vidjeli izgradnjom u javnosti na način na koji ste izgradili u javnosti?
+
+609
+00:41:17,280 --> 00:41:22,160
+definitivno je bila jedna od najboljih odluka koje sam donio tijekom izgradnje ove aplikacije.
+
+610
+00:41:22,320 --> 00:41:38,480
+Prednosti su da ćete se uroniti u ovu zaista cool zajednicu drugih graditelja i tvoraca, programera i dizajnera, upoznati ih, upoznati ih ili surađivati s njima i moći ćete crpiti puno motivacije i inspiracije jedni od drugih.
+
+611
+00:41:39,120 --> 00:41:48,320
+Dakle, kad se osjećam tužno i nisam baš raspoložen za izgradnju novih stvari ili nešto slično, otvaram Twitter i vidim da moji prijatelji grade druge cool aplikacije i značajke.
+
+612
+00:41:48,480 --> 00:41:50,880
+Odmah sam motiviran da to radim sam.
+
+613
+00:41:51,360 --> 00:41:59,200
+To je ogroman aspekt toga na početku., kada izlažete novu aplikaciju, dobivate puno povratnih informacija, što je iznimno važno.
+
+614
+00:41:59,360 --> 00:42:01,120
+Čak i ako nije iznimno izdržljiva, zar ne?
+
+615
+00:42:01,200 --> 00:42:04,080
+Kao da je to samo nešto, neki pogledi, neki komentari.
+
+616
+00:42:04,560 --> 00:42:11,360
+To obično zaista pomaže u poboljšanju prve verzije ili vam daje barem pokazatelj kamo se dalje krećete.
+
+617
+00:42:11,440 --> 00:42:13,520
+A vidjeli ste li neke nedostatke?
+
+618
+00:42:14,000 --> 00:42:18,800
+Ima nekih nedostataka, ali mislim da prednosti definitivno nadmašuju njih.
+
+619
+00:42:19,040 --> 00:42:31,200
+Ali sigurno, kad ljudi vide da možete zaraditi toliko novca s relativno jednostavnom aplikacijom poput HabitKita, na primjer, ne treba predugo da ljudi počnu kopirati sadržaj vaše aplikacije.
+
+620
+00:42:31,200 --> 00:42:35,440
+Kopiranje koncepta aplikacije ili čak bez srama početi kopirati svoj dizajn blok po blok.
+
+621
+00:42:35,760 --> 00:42:41,360
+To je nedostatak, ali obično pokušavam ignorirati ove kopije i usredotočiti se na svoje stvari.
+
+622
+00:42:42,400 --> 00:42:47,360
+I stvar je u tome da, bilo da gradite u javnosti ili ne, ljudi mogu vidjeti podatke o senzorskom tornju.
+
+623
+00:42:47,600 --> 00:42:52,400
+Da, možda ćete to učiniti malo brže jer ćete biti vidljiviji, ali prednosti ih nadmašuju.
+
+624
+00:42:52,560 --> 00:42:56,160
+I nikad se u RevenueCatu nismo obvezali da ćemo biti potpuno otvoreni, zar ne?
+
+625
+00:42:56,320 --> 00:42:59,040
+Dakle, to je samo drugačije, ali vjerojatno smo bili otvoreniji od većine.
+
+626
+00:42:59,120 --> 00:43:05,440
+I iz istih razloga, to je poput, eh, gradimo za graditelje, pa je to nešto o čemu se može razgovarati.
+
+627
+00:43:05,600 --> 00:43:08,080
+Ljudi vole vidjeti što gradimo i kako gradimo, a to stvara zajednicu.
+
+628
+00:43:08,080 --> 00:43:18,240
+I znate, povremeno kažete nešto ili učinite nešto što ima određenu negativnu reakciju ili određenu negativnu reakciju i onda se s time suočite, ispričate se ili izdate povlačenje ili bilo što drugo.
+
+629
+00:43:18,400 --> 00:43:20,000
+Možda je ovo samo moj problem.
+
+630
+00:43:20,240 --> 00:43:21,200
+Ovo bi mogao biti moj problem.
+
+631
+00:43:21,520 --> 00:43:23,280
+To se nije često događalo, zar ne?
+
+632
+00:43:23,520 --> 00:43:29,280
+Ali mislim da općenito, znate, ako netko obraća pozornost na vas, to je uvijek, znate, nema loše publike.
+
+633
+00:43:29,360 --> 00:43:31,120
+Iskreno mislim da to ide prilično daleko.
+
+634
+00:43:31,200 --> 00:43:37,360
+Ako ljudi pričaju o tome što radite i vi ste u redu s onim što radite etički, mislim da je sve pozitivno biti tamo, pokazati se.
+
+635
+00:43:37,600 --> 00:43:38,080
+Da, sigurno.
+
+636
+00:43:38,240 --> 00:43:44,880
+Ponekad dobivate i sve te zlobne komentare ili uvijek postoje ljudi koji znaju sve.
+
+637
+00:43:45,520 --> 00:43:45,600
+bolje.
+
+638
+00:43:46,000 --> 00:43:47,760
+I u svakom anketi.
+
+639
+00:43:48,160 --> 00:43:51,360
+Uvijek je zanimljivo, ali nitko od njih nije uspješniji od vas.
+
+640
+00:43:51,680 --> 00:43:52,640
+To je stvarno smiješno.
+
+641
+00:43:53,600 --> 00:43:54,000
+Ne radi se tako.
+
+642
+00:43:54,400 --> 00:43:58,640
+Samo je iz nekog razloga uvijek manje uspješni ljudi koji imaju manje toga za pokazati znaju sve odgovore.
+
+643
+00:43:58,720 --> 00:43:59,200
+Ne znam.
+
+644
+00:43:59,280 --> 00:44:00,160
+Postoji neka korelacija.
+
+645
+00:44:00,400 --> 00:44:02,800
+Oni su uvijek pametniji od mene.
+
+646
+00:44:02,960 --> 00:44:03,280
+Da, da.
+
+647
+00:44:04,320 --> 00:44:07,680
+To može biti prilično zastrašujuće, pogotovo kad vidite da.
+
+648
+00:44:07,840 --> 00:44:10,080
+Da, ako zapravo nemate ništa u ruci, zar ne?
+
+649
+00:44:10,480 --> 00:44:12,960
+Kao da zapravo niste dokazali sposobnost izgradnje nečega.
+
+650
+00:44:13,120 --> 00:44:24,880
+Ti komentari mogu izgledati kao da imamo jednu poznatu osobu, napravili smo naljepnice za tim, ovog korisnika Reddita koji nas je nazvao Ripoff Middlemen Made Easy jer je naš slogan bio pretplata na aplikacije Made Easy.
+
+651
+00:44:25,360 --> 00:44:31,120
+I snimio sam ga i podijelio u Slacku prilično često kad god imamo određeni uspjeh.
+
+652
+00:44:31,360 --> 00:44:37,120
+Ali kad smo to objavili, bilo je 2017., kao da nemamo prihoda, nemamo aplikacije, nemamo ništa.
+
+653
+00:44:37,280 --> 00:44:42,480
+I tako me netko na internetu nazvao ovim, bio sam poput, znaš, tko je ta osoba?
+
+654
+00:44:42,880 --> 00:44:43,280
+Što znaju?
+
+655
+00:44:43,440 --> 00:44:44,400
+Znaju li više od mene?
+
+656
+00:44:44,560 --> 00:44:45,440
+I uzmi to ozbiljno.
+
+657
+00:44:45,600 --> 00:44:47,920
+A onda će proći neko vrijeme dok ne prestaneš.
+
+658
+00:44:48,080 --> 00:44:51,360
+Ali mislim da je savjet za svakoga da nikad ne uzmeš mrzitelje ozbiljno.
+
+659
+00:44:51,440 --> 00:44:58,800
+Mislim, osim ako, doslovno, sve što dobiješ su mrzitelji, onda možda, možda, možda, postoji neka granica.
+
+660
+00:44:58,800 --> 00:45:02,080
+Ali možda ne objavljujte uvijek samo kroz to.
+
+661
+00:45:02,240 --> 00:45:04,640
+Uvijek čuvam ovo jer mi se čini super motivantnim.
+
+662
+00:45:04,720 --> 00:45:05,840
+Čuvam ga za mrzitelje.
+
+663
+00:45:05,920 --> 00:45:11,360
+Imam mapu mrzitelja sa svim mržnjačkim komentarima koje su ljudi rekli o RevenueCatu i mislim, znaš što?
+
+664
+00:45:11,520 --> 00:45:13,200
+Samo ću je upotrijebiti kao gorivo.
+
+665
+00:45:13,520 --> 00:45:14,000
+To je smiješno.
+
+666
+00:45:14,240 --> 00:45:15,920
+Imam suprotnu mapu.
+
+667
+00:45:16,080 --> 00:45:17,040
+Samo sam pozitivan.
+
+668
+00:45:17,040 --> 00:45:18,080
+Da, javni sustav.
+
+669
+00:45:20,240 --> 00:45:25,040
+Različiti udarci za različite ljude, bilo što je potrebno.
+
+670
+00:45:25,360 --> 00:45:31,360
+To je vjerojatno više dijagnoza psiholoških profila nego što bi ikad mogao učiniti bilo koji test Myers Briggs.
+
+671
+00:45:31,760 --> 00:45:36,000
+Pa, govoreći o neobičnim savjetima ljudi koji su manje uspješni.
+
+672
+00:45:36,000 --> 00:45:36,720
+Oni su manje uspješni od vas.
+
+673
+00:45:36,960 --> 00:45:41,440
+Zadnja stvar na koju sam želio dotaknuti bila je vaša cijena jer mislim da je previše niska.
+
+674
+00:45:42,160 --> 00:45:43,040
+Povećajte cijenu.
+
+675
+00:45:43,200 --> 00:45:49,680
+Zanima me jeste li eksperimentirali s cijenama i kakva je vaša filozofija cijena.
+
+676
+00:45:49,760 --> 00:45:51,520
+Bože, devedeset devet centi mjesečno.
+
+677
+00:45:51,680 --> 00:45:56,000
+Devedeset devet centi mjesečno, šest dolara godišnje ili petnaest dolara za život.
+
+678
+00:45:56,240 --> 00:45:57,440
+Prolazio sam kroz aplikaciju.
+
+679
+00:45:57,520 --> 00:46:01,360
+Već sam je prije preuzimao, ali nisam posvetio previše pažnje vašoj monetizaciji.
+
+680
+00:46:01,520 --> 00:46:05,920
+Ali kad smo govorili o tome da dolazite na podcast, gledao sam vašu plaćenu zidinu i sve slično.
+
+681
+00:46:06,000 --> 00:46:07,760
+Kao, wow, wow, wow, pričekajte trenutak.
+
+682
+00:46:07,920 --> 00:46:11,040
+On je poput uspješnog indiea koji naplaćuje šest dolara godišnje.
+
+683
+00:46:11,280 --> 00:46:12,080
+Što se ovdje događa?
+
+684
+00:46:12,320 --> 00:46:12,640
+Dakle, da.
+
+685
+00:46:12,640 --> 00:46:15,120
+Da, kakva je vaša filozofija cijena?
+
+686
+00:46:15,280 --> 00:46:20,320
+Kad sam objavio prvi aplikaciju HabitKit, to mi se činilo poštenom cijenom.
+
+687
+00:46:20,400 --> 00:46:24,240
+Nakon toga sam dodavao jednu značajku za drugom i puno zanimljivih stvari.
+
+688
+00:46:25,360 --> 00:46:32,960
+I uvijek sam sebi govorio: U redu, nakon sljedeće značajke ili ažuriranja, podići ćete cijene.
+
+689
+00:46:33,040 --> 00:46:34,400
+I nisam to učinio.
+
+690
+00:46:34,800 --> 00:46:35,120
+To je sve.
+
+691
+00:46:36,080 --> 00:46:38,160
+To je na mom popisu zadataka.
+
+692
+00:46:38,320 --> 00:46:40,160
+I prije nego što napravite popis e-pošte, znate što?
+
+693
+00:46:40,560 --> 00:46:42,560
+Vi ste u situaciji u kojoj možete udvostručiti cijenu.
+
+694
+00:46:42,720 --> 00:46:43,520
+Samo udvostručite.
+
+695
+00:46:43,680 --> 00:46:44,480
+Dva dolara mjesečno.
+
+696
+00:46:44,560 --> 00:46:45,360
+To je i dalje jako nisko.
+
+697
+00:46:45,600 --> 00:46:46,960
+I nitko vam neće dati dvanaest dolara godišnje.
+
+698
+00:46:47,040 --> 00:46:51,200
+Nastavite udvostručivati dok vam ne dođe u mapu s mrziteljima.itelje postaje prevelika.
+
+699
+00:46:51,360 --> 00:46:53,280
+A onda je vratite i izbjegnite.
+
+700
+00:46:53,360 --> 00:46:59,280
+Imala sam ovu aplikaciju koju sam prodala, aplikaciju za Windows za Microsoft Flight Simulator, koju sam pokrenula 2011.
+
+701
+00:46:59,520 --> 00:47:00,640
+godine za četiri dolara ili nešto slično.
+
+702
+00:47:00,720 --> 00:47:01,600
+Napisala sam je u vikendu.
+
+703
+00:47:01,680 --> 00:47:03,520
+Sve što je radila bilo je da uzme jednu utičnicu.
+
+704
+00:47:03,840 --> 00:47:09,600
+Povezala je aplikaciju za iPad, aplikaciju za iPad za letenje s Microsoft Flight Simulatorom, ovo je stvarno mala specijalizirana alatna oprema.
+
+705
+00:47:09,680 --> 00:47:12,000
+A to je bilo prije nego što je Indie Hacking imao ime, bilo što.
+
+706
+00:47:12,240 --> 00:47:12,880
+Samo sam je stavila.
+
+707
+00:47:13,040 --> 00:47:14,480
+Tu je nešto što je Gumroad upravo pokrenuo.
+
+708
+00:47:14,560 --> 00:47:18,480
+Stavila sam je tamo za pet dolara mjesečno i prodala sam puno i puno i puno.
+
+709
+00:47:18,560 --> 00:47:19,200
+I imala sam sve ove podrške.
+
+710
+00:47:19,280 --> 00:47:20,560
+Bila sam poput, oh, Bože, što god.
+
+711
+00:47:20,640 --> 00:47:23,920
+I na kraju sam bila toliko ljuta zbog svih podrških koje sam morala pružiti.
+
+712
+00:47:24,000 --> 00:47:25,360
+Bila sam poput, ne želim više.
+
+713
+00:47:25,440 --> 00:47:27,040
+Ne želim da netko više pre ne može preuzeti ovo.
+
+714
+00:47:27,120 --> 00:47:32,640
+Tako sam ga zaradio za dvadeset dolara mjesečno, bez promjene u preuzimanju.
+
+715
+00:47:33,280 --> 00:47:37,680
+Nitko nije rekao: Vjerojatno bih mogao zaraditi pedeset dolara i svi bi i dalje platili.
+
+716
+00:47:37,760 --> 00:47:39,440
+Jer, naravno, to je poput niše.
+
+717
+00:47:39,600 --> 00:47:40,720
+Sada su navike drugačije, zar ne?
+
+718
+00:47:40,880 --> 00:47:49,760
+Vjerojatno ne biste mogli preuzeti i možda ništa ne biste vidjeli, ali to je za mene bila najviše visceralna iskustvo ne razumijevanja krivulje vrijednosti cijene, zar ne?
+
+719
+00:47:49,920 --> 00:47:54,160
+Kao razvijač, ne možete to osjetiti dok zapravo ne primite podatke, znate?
+
+720
+00:47:54,480 --> 00:47:56,720
+Da, mislim da postoje uvijek dva tipa ljudi.
+
+721
+00:47:57,120 --> 00:48:00,080
+Neki ljudi kažu: Eh, komplet navika je previše jeftin.
+
+722
+00:48:00,160 --> 00:48:01,920
+Trebali biste udvostručiti cijene.
+
+723
+00:48:01,920 --> 00:48:03,840
+A onda postoje ljudi koji obično kažu: Eh, ovo je previše jeftino.
+
+724
+00:48:03,840 --> 00:48:05,840
+Obično loše recenzije na Google Playu.
+
+725
+00:48:05,920 --> 00:48:08,640
+Recimo, jedan dolar mjesečno za ovu aplikaciju.
+
+726
+00:48:08,720 --> 00:48:09,040
+Nikad.
+
+727
+00:48:09,280 --> 00:48:11,840
+To je malo zastrašujuće, ali da, definitivno bih trebao.
+
+728
+00:48:12,000 --> 00:48:12,080
+Da.
+
+729
+00:48:12,240 --> 00:48:15,200
+Mislim, po definiciji ta osoba nema vrijednost za vas.
+
+730
+00:48:15,440 --> 00:48:15,520
+Da.
+
+731
+00:48:16,240 --> 00:48:18,800
+Vjerojatno nikad ne bi kupila ovu aplikaciju.
+
+732
+00:48:18,880 --> 00:48:20,080
+Da, nikad je neće kupiti.
+
+733
+00:48:20,480 --> 00:48:26,080
+I mislim, to je još jedna stvar, znate, ne možete gledati na svoju cjenovnu poluge na Androidu i IOS-u na isti način, zar ne?
+
+734
+00:48:26,160 --> 00:48:27,440
+To su vrlo različite zajednice.
+
+735
+00:48:27,520 --> 00:48:35,920
+Možda ne biste trebali dvostruko trošiti na Android, ali stavio bih novac na činjenicu da biste dvostruko zaradili novac ako biste dvostruko povećali cijenu.
+
+736
+00:48:36,240 --> 00:48:37,280
+To je pedeset pet.
+
+737
+00:48:37,360 --> 00:48:39,040
+Rekao bih da je pedeset pet više ili manje.
+
+738
+00:48:39,200 --> 00:48:40,560
+Mislim da je to prilično vjerojatno.
+
+739
+00:48:40,560 --> 00:48:41,840
+Da, po toj cijeni.
+
+740
+00:48:42,080 --> 00:48:44,400
+Da, dvanaest dolara godišnje, dva dolara mjesečno.
+
+741
+00:48:44,480 --> 00:48:49,680
+Pa, ako postoji alat, Sebastian, koji bi ti omogućio da to isprobate uz prilično nisku napora.
+
+742
+00:48:49,920 --> 00:48:54,720
+Znam nekog, reci mi ako želiš isprobati, ali možeš to isprobati.
+
+743
+00:48:54,880 --> 00:48:55,760
+Slušala sam za to.
+
+744
+00:48:56,000 --> 00:48:56,800
+Da, definitivno bih to učinila.
+
+745
+00:48:56,800 --> 00:49:04,160
+Premjestite to na vrh popisa zadataka i podijelite na Twitteru i u tjednom dnevniku kako stvari izgledaju.
+
+746
+00:49:04,560 --> 00:49:07,200
+Ali da, dok završavamo, bilo je još nešto što si htjela podijeliti?
+
+747
+00:49:07,280 --> 00:49:12,880
+Postavit ćemo poveznice na tvoj dnevnik gdje objavljuješ tjedne ažuriranja, na aplikaciju, na tvoj Twitter profil i LinkedIn.
+
+748
+00:49:13,120 --> 00:49:15,200
+Da, bilo je još nešto što si htjela podijeliti dok završavamo?
+
+749
+00:49:15,440 --> 00:49:15,680
+Ne baš.
+
+750
+00:49:15,840 --> 00:49:16,640
+Da, bilo bi sjajno.
+
+751
+00:49:16,800 --> 00:49:19,600
+Provjeri moju aplikacijuacije i Twitter i Lifu Weather.
+
+752
+00:49:19,760 --> 00:49:20,160
+Fantastično.
+
+753
+00:49:20,640 --> 00:49:22,080
+Pa, ovo je bilo jako zabavno.
+
+754
+00:49:22,320 --> 00:49:27,360
+Već neko vrijeme nismo radili ovakvu priču o indie uspjehu i ja sam jako uzbuđen, čovječe.
+
+755
+00:49:27,440 --> 00:49:28,400
+To je tako cool vidjeti.
+
+756
+00:49:28,800 --> 00:49:33,280
+O, ne, David će si dati rok od dva mjeseca i napustiti posao.
+
+757
+00:49:33,440 --> 00:49:34,720
+Svatko nastavite raditi na brodu.
+
+758
+00:49:35,040 --> 00:49:35,760
+Imam svoju aplikaciju.
+
+759
+00:49:35,920 --> 00:49:36,480
+To je sve što tražim.
+
+760
+00:49:36,560 --> 00:49:43,440
+Moja aplikacija Weather Up ove godine je bila stvarno dobra i stvarno je zabavno imati je.
+
+761
+00:49:43,520 --> 00:49:44,480
+Nedostaje mi aplikacija.
+
+762
+00:49:44,720 --> 00:49:46,160
+Moram reći da nedostaje mi aplikacija.
+
+763
+00:49:46,240 --> 00:49:47,680
+Nedostaje mi malo aplikacije.
+
+764
+00:49:47,920 --> 00:49:53,840
+Iako imam veliku tvrtku SaaS, bilo što, ali ima nešto posebno, čarobno u tome da imaš svoju malu aplikaciju.
+
+765
+00:49:54,000 --> 00:49:54,320
+Zabavno je.
+
+766
+00:49:54,320 --> 00:49:54,560
+Baš kao što je zabavno.
+
+767
+00:49:54,640 --> 00:49:55,360
+Da, sjajno je.
+
+768
+00:49:55,600 --> 00:49:55,840
+U redu.
+
+769
+00:49:56,000 --> 00:49:58,080
+Hvala ti što si se priključio nama.
+
+770
+00:49:58,240 --> 00:50:01,840
+Bilo je tako zabavno razgovarati o svemu ovome i puno sreće.
+
+771
+00:50:02,240 --> 00:50:03,600
+Mislim da ideš nigdje.
+
+772
+00:50:03,680 --> 00:50:04,720
+Mislim da imaš sjajnu malu tvrtku ovdje.
+
+773
+00:50:04,880 --> 00:50:07,120
+Neće biti tako mala za godinu dana i za godinu dana.
+
+774
+00:50:07,360 --> 00:50:14,160
+Neki od drugih ljudi koje smo imali, kao što je Curtis Herbert, zaradio je deset tisuća dolara u prva dva godine, a sada zaradio više od milijun dolara godišnje.
+
+775
+00:50:14,320 --> 00:50:20,320
+Dakle, ludilo je kako se te stvari mogu povećati od malih stranskih projekata i indie hackinga do pravih tvrtki.
+
+776
+00:50:20,560 --> 00:50:25,440
+Znaš, zvuči kao da ne želiš zaposliti ljude i raditi takve stvari, ali možeš izgraditi sjajnu životnu tvrtku.
+
+777
+00:50:25,520 --> 00:50:25,600
+Da.
+
+778
+00:50:25,760 --> 00:50:26,640
+Da, stvarno ludilo.
+
+779
+00:50:26,720 --> 00:50:29,440
+Uzbuđen sam zbog vremena koje dolazi i da.
+
+780
+00:50:29,760 --> 00:50:31,600
+Hvala ti što si me primio i želim ti sve najbolje.
+
+781
+00:50:32,160 --> 00:50:32,960
+u novom Katu.
+
+782
+00:50:33,120 --> 00:50:35,600
+Naravno, upotrijebit ću ga u svakoj drugoj aplikaciji koju napravim.
+
+783
+00:50:35,760 --> 00:50:36,880
+Evo, evo snimke.
+
+784
+00:50:37,200 --> 00:50:38,000
+Hvala, Sebastiane.
+
+785
+00:50:39,520 --> 00:50:39,840
+Hvala ti.
+
+786
+00:50:42,560 --> 00:50:43,840
+Hvala ti puno što si me slušao.
+
+787
+00:50:44,800 --> 00:50:47,840
+Ako imaš minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+788
+00:50:49,040 --> 00:50:53,920
+Također možete posjetiti chat dot subclub dot com da se pridružite našoj privatnoj zajednici.

@@ -1,0 +1,69 @@
+# Od korporativnog web developera do samostalnog indie hakera — Sebastian Röhl, HabitKit
+
+**Kanal:** subclub  
+**Datum:** 2024-06-26  
+**Trajanje:** 51 min  
+**YouTube:** https://youtu.be/RGUh3odS8wY  
+**Model:** gemini-2.5-flash  
+
+## Sažetak
+
+Sebastian Röhl, neovisni razvijač aplikacija iz Njemačke i tvorac HabitKita, dijeli svoje iskustvo napuštanja korporativnog posla kako bi se posvetio razvoju vlastitih aplikacija. Razgovor pokriva njegov prvi neuspješni pokušaj s aplikacijom LiftBear, povratak na stari posao, te neočekivani uspjeh HabitKita koji mu je omogućio da trajno napusti korporativni svijet. Ističe važnost kreativne kontrole, prednosti mobilnih platformi za indie hakere i utjecaj sezonalnosti te algoritama trgovina aplikacijama na uspjeh.
+
+## Ključne teme
+
+- indie hacking
+- razvoj mobilnih aplikacija
+- monetizacija aplikacija
+- trgovine aplikacijama (App Store, Google Play)
+- ASO (optimizacija za trgovine aplikacijama)
+- balans između posla i života
+- rizici i nagrade samostalnog poduzetništva
+- izgradnja u javnosti (build in public)
+- sezonalnost prihoda
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_02 | David Barnard | voditelj |
+| SPEAKER_00 | Jacob Biding | gost |
+| SPEAKER_01 | Sebastian Röhl | gost |
+
+## Ključni zaključci
+
+1. Sebastian Röhl je napustio posao web developera kako bi se posvetio razvoju mobilnih aplikacija, motiviran željom za kreativnom kontrolom i izgradnjom vlastitih proizvoda.
+2. Mobilne platforme su privlačnije za indie hakere zbog pojednostavljenog rukovanja plaćanjima i porezima u usporedbi s web razvojem.
+3. Njegov prvi pokušaj s aplikacijom LiftBear nije bio uspješan, što ga je dovelo do povratka na korporativni posao nakon godinu dana.
+4. Drugi projekt, HabitKit, doživio je neočekivani uspjeh nakon što je objava na Twitteru "eksplodirala" i aplikacija se počela visoko rangirati u trgovinama aplikacijama.
+5. Sebastian je donio odluku da ponovno napusti posao i posveti se HabitKitu puno radno vrijeme nakon što je aplikacija počela generirati značajan prihod, posebno zbog sezonalnosti početkom godine.
+6. Izgradnja u javnosti (build in public) donijela je Sebastianu motivaciju, povratne informacije i izgradnju zajednice, unatoč riziku kopiranja ideja.
+7. Cijene aplikacije HabitKit su trenutno niske, a Sebastian razmišlja o njihovom povećanju, što je česta dilema za indie hakere.
+
+## Spomenute osobe
+
+- David Barnard
+- Jacob Biding
+- Sebastian Röhl
+- Miguel
+- Curtis Herbert
+
+## Spomenuta mjesta
+
+- Njemačka
+- Google IO
+
+## Spomenute organizacije
+
+- SubClub
+- RevenueCat
+- Apple
+- Google
+- IndieHackers
+- Microsoft
+- TikTok
+- Reddit
+- Gumroad
+
+---
+*Sentiment: positive | Generirano: 2026-06-23T15:13:47.804Z*
