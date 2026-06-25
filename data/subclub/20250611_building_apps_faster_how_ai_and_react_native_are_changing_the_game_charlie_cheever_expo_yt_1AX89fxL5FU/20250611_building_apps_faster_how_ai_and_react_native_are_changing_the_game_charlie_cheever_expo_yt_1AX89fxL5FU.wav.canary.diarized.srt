@@ -1,0 +1,2596 @@
+1
+00:00:00,000 --> 00:00:09,599
+[SPEAKER_00] Dobrodošli na podcast SubClub, emisiju posvećenu najboljim praksama za izgradnju i rast aplikacijskih tvrtki.
+
+2
+00:00:10,160 --> 00:00:19,920
+[SPEAKER_00] Sjednemo s poduzetnicima, investitorima i graditeljima koji stoje iza najuspješnijih aplikacija na svijetu kako bismo naučili iz njihovih uspjeha i neuspjeha.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] SubClub vam donosi RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,960
+[SPEAKER_00] Tisuće najboljih aplikacija na svijetu vjeruju RevenueCatu da omogući kupnju aplikacija, upravljanje kupcima i povećanje prihoda na iOS-u, Androidu i webu.
+
+5
+00:00:33,679 --> 00:00:37,039
+[SPEAKER_00] Više informacija možete pronaći na revenuecat dot com dot Uđimo u emisiju.
+
+6
+00:00:37,280 --> 00:00:46,240
+[SPEAKER_00] Pozdrav, ja sam vaš domaćin David Bernard, a danas sam s Jacobom Eitingom, izvršnim direktorom RevenueCata.
+
+7
+00:00:46,479 --> 00:00:57,119
+[SPEAKER_00] Naš današnji gost je Charlie Cheever, suosnivač i izvršni direktor Expo, najjednostavnijeg načina za izradu izvornih aplikacija i web-mjesta koja se koriste svugdje pomoću React-a.
+
+8
+00:00:57,359 --> 00:01:12,239
+[SPEAKER_00] Na podcastu razgovaramo s Charliem o tome zašto je izvorni React postao standard za aplikacije koje financiraju VC-ovi, kako AI ubrzava razvojne cikluse i zašto je brzina iteracije važnija od programskog jezika.
+
+9
+00:01:12,640 --> 00:01:15,439
+[SPEAKER_00] Ej, Charlie, hvala ti što si se priključio našem podcastu.
+
+10
+00:01:15,519 --> 00:01:16,560
+[SPEAKER_02] Ej, hvala što si me primio.
+
+11
+00:01:16,640 --> 00:01:17,599
+[SPEAKER_02] Fantastično je biti ovdje.
+
+12
+00:01:17,840 --> 00:01:19,760
+[SPEAKER_00] A Jacob, lijepo je da si i ti danas ovdje.
+
+13
+00:01:20,319 --> 00:01:29,120
+[SPEAKER_01] Oduševljen sam što ću razgovarati o jednom od alata za razvijanje koji sam dugo poznavao, a koji je također postao super, super relevantan 2025.
+
+14
+00:01:29,280 --> 00:01:29,359
+[SPEAKER_01] godine.
+
+15
+00:01:29,519 --> 00:01:30,799
+[SPEAKER_01] Dakle, da, Expo.
+
+16
+00:01:31,439 --> 00:01:52,799
+[SPEAKER_00] Da, Charlie, ima puno razloga zbog kojih sam te želio imati na podcastu, ali glavni je Jacob, na koji je Jacob uputio kao izvršni direktor Expo, vidio si puno stvari koje se događaju danas s novim ljudima koji ulaze u programiranje, a posebno s Reactom koji postaje sve popularnijinije i sve se više koristi, što je svojevrsni zadani model za mnoge tvrtke.
+
+17
+00:01:52,959 --> 00:01:56,719
+[SPEAKER_00] Zašto ne bismo započeli s nekom vrstom visokog pregleda?
+
+18
+00:01:57,040 --> 00:02:07,840
+[SPEAKER_00] Mislim da mnogi ljudi koji slušaju neće biti programeri, pa možda ne razumiju što je React Native, a možemo o tome razgovarati i kako Expo radi s tim.
+
+19
+00:02:08,000 --> 00:02:10,159
+[SPEAKER_00] Dakle, da, recite nam malo o React-u.
+
+20
+00:02:10,400 --> 00:02:24,960
+[SPEAKER_02] Da, React je JavaScript okvir koji je izumio prije više od deset godina, opet, Jordan Walk u Facebooku, kako bi se izgradile složene korisničke sučelja na način da se može razmišljati i dosljedno generirati.
+
+21
+00:02:24,960 --> 00:02:26,000
+[SPEAKER_02] Osnovna ideja je da je to na neki način temeljeno na komponentima.
+
+22
+00:02:26,080 --> 00:02:30,879
+[SPEAKER_02] Dakle, način na koji bi čovjek razbio proizvod ili korisničko sučelje, to se uklapa u to.
+
+23
+00:02:31,360 --> 00:02:37,439
+[SPEAKER_02] Recite nešto poput: Evo mog komponenta cijene, a unutar toga imam komponentu dolara i komponentu sensa ili nešto slično.
+
+24
+00:02:37,680 --> 00:02:52,240
+[SPEAKER_02] Ali onda je prava magija u tome da predstavljate stanje kao nešto poput toga, imate ovo apstraktno stanje svijeta, a zatim se korisničko sučelje uvijek ponovno prikazuje kako bi se ažuriralo i predstavljalo bilo kakvo trenutno stanje svijeta.
+
+25
+00:02:52,560 --> 00:03:10,080
+[SPEAKER_02] Dakle, ako se sjetite starijih web-mjesta, često biste mogli kliknuti gumb da kažete Slijedite nekoga i to bi se dogod ispravno ažuriralo na mjestu na kojem ste kliknuli, ali onda bi stvari izgledale pogrešno na drugim dijelovima zaslona ili bi postojale neka vrsta nedosljednosti.
+
+26
+00:03:11,199 --> 00:03:16,639
+[SPEAKER_02] I općenito, kad koristite React, sve se to magično uklapa na svoje mjesto jer se to događa.
+
+27
+00:03:16,800 --> 00:03:22,960
+[SPEAKER_02] Zapravo, mislim da je ta ideja došla iz načina na koji su videoigre došle na rad.
+
+28
+00:03:23,120 --> 00:03:29,360
+[SPEAKER_02] Dakle, ako razmišljate o stvarno starim videoigrama, kao što je zmija koja se kreće po zaslonu na vrlo nisko razlučivom zaslonu.
+
+29
+00:03:29,759 --> 00:03:39,840
+[SPEAKER_02] I tako se zmija kreće tako da na desnoj strani nacrtajte još jedan piksel da se glava pomakne malo dalje i izbrišete jedan piksiksel na krajnjem lijevom dijelu kako bi se rep pomaknuo naprijed.
+
+30
+00:03:40,159 --> 00:03:45,199
+[SPEAKER_02] To je dovoljno jednostavno da možete izravno manipulirati pikselima kako biste promijenili stvari onako kako želite da budu.
+
+31
+00:03:45,439 --> 00:03:56,960
+[SPEAKER_02] Ali ako zamislite neku vrstu moderne videoigre ili bilo što drugo kad uđete u eru 3D-a, to je poput Call of Dutyja i pokušavanja shvatiti što je bilo koji piksel na zaslonu.
+
+32
+00:03:57,120 --> 00:03:59,039
+[SPEAKER_02] Samo je ludost shvatiti kako to učiniti.
+
+33
+00:03:59,280 --> 00:04:09,680
+[SPEAKER_02] I tako ljudi na kraju to rade u osnovi kao da imaju neku vrstu predstavljanja onoga što se događa u svijetu, a zatim sustav koji shvaća, dobro, ovo je ovaj 3D model i sastoji se od svih ovih trokuta, pa ćemo ga nacrtati ovdje.
+
+34
+00:04:09,919 --> 00:04:12,560
+[SPEAKER_02] A onda se sve nekako ponovno renderira svaki kadar zbog toga.
+
+35
+00:04:13,280 --> 00:04:16,000
+[SPEAKER_02] React je nešto što se odnosi na korisničko sučelje za aplikacije.
+
+36
+00:04:16,639 --> 00:04:23,120
+[SPEAKER_02] I tako je postao daleko najpopularniji način izrade web-mjesta danas.
+
+37
+00:04:23,519 --> 00:04:34,240
+[SPEAKER_02] I još uvijek postoji puno starijeg koda koji koristi jQuery i Angular, koji je još uvijek prilično velik, ali gotovo sve novo što rade razumni ljudi radi se pomoću React-a.
+
+38
+00:04:34,319 --> 00:04:37,519
+[SPEAKER_01] Revenuecat dot com dot Revenuecat dot com dot razumni ljudi.
+
+39
+00:04:37,759 --> 00:04:37,839
+[SPEAKER_02] Da.
+
+40
+00:04:38,000 --> 00:04:48,959
+[SPEAKER_02] Svi ti razvoji umjetne inteligencije još više ubrzavaju to jer su to neke vrste najviše podataka za treniranje i jer je to neka vrsta sustava temeljenog na komponentima koji se podudara s načinom na koji ljudi razmišljaju o stvarima.
+
+41
+00:04:48,959 --> 00:04:49,199
+[SPEAKER_02] Ljudi iz različitih razloga.
+
+42
+00:04:49,439 --> 00:04:53,439
+[SPEAKER_02] Postoji mnogo razloga zašto su LM-ovi stvarno dobri u generiranju koda React i slično.
+
+43
+00:04:54,000 --> 00:05:08,959
+[SPEAKER_02] No ono što je Expo zapravo način na koji se koristi React za pisanje korisničkih sučelja koja ne samo da rade na webu, već i na IOS-u i Androidu i drugim uslugama i pružaju vam neke vrste stvarno izvorne aplikacije.
+
+44
+00:05:09,199 --> 00:05:14,079
+[SPEAKER_02] Izgrađen je na ovoj tehnologiji iz React Native, nazvanoj React Native, koja je nastala na Facebooku Meta.
+
+45
+00:05:14,560 --> 00:05:19,519
+[SPEAKER_02] Ali možete razmišljati o Expo kao o ekvivalentu Next.js u web-svijetu.
+
+46
+00:05:19,600 --> 00:05:34,240
+[SPEAKER_02] Ako ljudi ne znaju što je to, to je zapravo okvir iz Brackella koji je postao najpopularniji web način izrade nove web-lokacije pomoću React-a uključuje mnogo baterija, a mnoge su dobre značajke već konfigurirane i pravilno postavljene.
+
+47
+00:05:34,800 --> 00:05:36,079
+[SPEAKER_02] I riješeno je mnogo problema.
+
+48
+00:05:36,800 --> 00:05:38,000
+[SPEAKER_02] I to je postalo standard.
+
+49
+00:05:38,480 --> 00:05:42,959
+[SPEAKER_02] Dakle, postoji mnogo drugih primjera koda koji se oslanja na to, slično tome.
+
+50
+00:05:43,120 --> 00:05:45,439
+[SPEAKER_02] Ono što nudimo u Expo-u je nekoliko različitih stvari.
+
+51
+00:05:46,000 --> 00:05:57,600
+[SPEAKER_02] Jedno je to što nudimo ono što nazivamo Expo SDK, koji ima doslovno stotinu različitih API-ja koji vam omogućuju pristup svim senzorima na uređaju, kao što su ubrzivač ili žiroskop, slično tome.
+
+52
+00:05:57,680 --> 00:06:00,800
+[SPEAKER_02] Ali onda se također bave osnovnim zadacima kao što su video i audio.
+
+53
+00:06:01,279 --> 00:06:05,759
+[SPEAKER_02] reprodukcija i snimanje te stvari koje želite učiniti u aplikaciji poput lokacijskih usluga, slično.
+
+54
+00:06:06,000 --> 00:06:11,120
+[SPEAKER_02] Općenito će vam dati pristup, znate, postoje više implementacija tih stvari i dobro su testirane i slično.
+
+55
+00:06:11,279 --> 00:06:22,800
+[SPEAKER_02] Dakle, rade na iOS-u, rade na Androidu i rade na webu na isti način kao što standardna biblioteka u Pythonu ili slično uključuje mnoge osnovne stvari koje trebate učiniti da biste napisali program koji zapravo radi nešto.
+
+56
+00:06:23,120 --> 00:06:28,240
+[SPEAKER_02] Znate, standardna biblioteka Expo u osnovi je vrsta osnovnih baterija uključenih u način da započnete.
+
+57
+00:06:28,399 --> 00:06:40,639
+[SPEAKER_02] A onda imamo mnoštvo alata koji uključuju ExpoGo, koja je aplikacija u trgovini aplikacijama koja će vam omogućiti da se započnete uređivati stvarnu aplikacikaciju na stvarno uređaj u roku od nekoliko sekundi, što je pravi razlika.
+
+58
+00:06:40,800 --> 00:06:57,920
+[SPEAKER_02] Dakle, mnoge nove alate koji rade na razvoju umjetne inteligencije, na kraju koriste Expo kao način isporuke tih stvari jer možete preuzeti ExpoGo na svoj telefon, skenirati jedan od ovih QR kodova koje generiraju ti alati za umjetnu inteligenciju i zapravo može biti poput vib-koda ili uživo uređivanja aplikacije na licu mjesta.
+
+59
+00:06:58,000 --> 00:07:00,800
+[SPEAKER_02] A zatim također nudimo komplet usluga u oblaku koje su način na koji zarađujemo novac.
+
+60
+00:07:00,959 --> 00:07:06,319
+[SPEAKER_02] Na primjer, pokrenuli smo uslugu za izradu koja pokreće Xcode u oblaku i Android Studio u oblaku.
+
+61
+00:07:06,480 --> 00:07:09,920
+[SPEAKER_02] Pokrenuli smo uslugu ažuriranja koja je analogna web hostingu.
+
+62
+00:07:10,000 --> 00:07:12,000
+[SPEAKER_02] Također radimo web hosting i nekoliko drugih stvari.
+
+63
+00:07:12,720 --> 00:07:48,959
+[SPEAKER_01] Jedna od ljepota React-a, rad u React-u na webu ili u React-u natativnom, jest poput uživo ažuriranja, što nije nešto za mobilne uređaje koje smo imali bez React-a natativnog, kao da biste izgradili, promijenili svoj cilj C ili Swift ili bilo što drugo, morali biste ponovno sastaviti cijelu aplikaciju, morali biste je implementirati u simulator ili uređaj i to je kao da imate malu aplikaciju, možda je to trideset sekundi, ali ako imate veliku aplikaciju, to može biti minute, ciklus korištenja, znate, React-a natativnog, a zatim ExpoGo omogućio vam je da imate ovaj ludno tijesni ciklus izgradnje i promjene i prikaza koji je, iako je React natativan, mislim, pogotovo u ranim danima bio nešto.
+
+64
+00:07:48,959 --> 00:07:54,160
+[SPEAKER_01] Bilo je teško raditi s njim ili nije bilo puno baterija kao što ste ga sada napravili s Expo stvarima.
+
+65
+00:07:54,480 --> 00:07:57,600
+[SPEAKER_01] Ako ste to uspjeli učiniti, bilo je jednostavno ludilo koliko brzo ste mogli iterirati.
+
+66
+00:07:58,000 --> 00:07:59,759
+[SPEAKER_01] Mislim da je to bilo ogromno.
+
+67
+00:07:59,839 --> 00:08:11,600
+[SPEAKER_01] Ne znam koliko je Expo dobio zasluge za to što je React postao stvar, ali mislim da je to učinilo iskustvo razvijača stvarno održivim i zapravo na mnogo načina boljem od iskustva razvijanja na mobilnim uređajima.
+
+68
+00:08:11,759 --> 00:08:16,000
+[SPEAKER_02] Da, ta brzina iteracije je ogroman razlog zašto su ljudi krenuli u tom pravcu.
+
+69
+00:08:16,399 --> 00:08:29,199
+[SPEAKER_02] Mislim da su mnogi od naših kupaca sada zapravo radili na IOS-u, znate, napisanom u Swift-ftu, napisani u Directive C aplikacijama i radnim Android aplikacijama koje su napisane u Javi ili Kotlinu.
+
+70
+00:08:29,839 --> 00:08:33,200
+[SPEAKER_02] I jednostavno su otkrili da je previše posla za održavanje tih aplikacija.
+
+71
+00:08:33,279 --> 00:08:38,240
+[SPEAKER_02] Ako želimo dodati nove značajke, ne možemo se dovoljno brzo kretati na bilo kojoj platformi, a kamoli na obje istovremeno.
+
+72
+00:08:38,399 --> 00:08:41,120
+[SPEAKER_02] Stvarno je teško zaposliti za takve vrste specijaliziranih pozicija.
+
+73
+00:08:41,440 --> 00:08:44,879
+[SPEAKER_02] Uvijek smo u opasnosti ako naša osoba za Android napusti, što ćemo učiniti?
+
+74
+00:08:45,519 --> 00:08:53,279
+[SPEAKER_02] I tako je velika stvar za sve te tvrtke u osnovi da se možemo kretati brže nego što bismo mogli na bilo kojoj platformi sami, ali sada možemo napisati jednu React bazu koda.
+
+75
+00:08:53,679 --> 00:09:01,360
+[SPEAKER_02] Na svijetu ima mnogo više React razvijača nego na bilo kojoj nativnoj platformi poput Swift razvijača ili Kotlina razvijača.če.
+
+76
+00:09:01,440 --> 00:09:04,399
+[SPEAKER_01] Da, samo zato što je to zadana vrijednost na webu, zar ne?
+
+77
+00:09:04,559 --> 00:09:05,440
+[SPEAKER_01] To stvara samo više.
+
+78
+00:09:05,840 --> 00:09:05,919
+[SPEAKER_02] Da.
+
+79
+00:09:06,320 --> 00:09:16,159
+[SPEAKER_02] I tako možete uzeti istu skupinu ljudi iz kojih biste zaposlili tim za web-lokaciju i staviti ih sve u neku vrstu tima za aplikacije i oni mogu raditi na svim proizvodima odjednom.
+
+80
+00:09:16,480 --> 00:09:18,159
+[SPEAKER_02] I to je stvarno velika stvar za mnoge ljude.
+
+81
+00:09:18,320 --> 00:09:28,399
+[SPEAKER_02] Ali čak i uz to, i dalje se krećete brže jer umjesto da morate ponovno sastaviti svaki put kad napravite promjenu, obično dobivate iste prednosti koje biste dobili u osnovi radeći na web-lokaciji.
+
+82
+00:09:28,480 --> 00:09:35,039
+[SPEAKER_02] Kao što je način razmišljanja o tome što Expo čini, to je da uzima neke stvari koje su dobre u vezi s web razvojem i donosi ih u svijet s mobilnim uređajima.
+
+83
+00:09:35,039 --> 00:09:36,960
+[SPEAKER_01] Jeste li vi ikad dobili gluposti od Applea?
+
+84
+00:09:37,679 --> 00:09:44,320
+[SPEAKER_01] što su skinuli neku vrstu uživo koda jer su imali glupe pravila o tome i mislim da su ih popustili.
+
+85
+00:09:44,559 --> 00:09:46,559
+[SPEAKER_02] Pravila su se s vremenom zaista promijenila.
+
+86
+00:09:46,720 --> 00:09:51,679
+[SPEAKER_02] Bila su jako stroga i govorila da ne možete preuzeti nikakav kod, ali onda su ljudi koristili WebViews.
+
+87
+00:09:52,159 --> 00:09:56,960
+[SPEAKER_02] A onda je, naravno, način na koji web funkcionira preuzimanje puno koda, kao što su JavaScript i CSS i slično.
+
+88
+00:09:57,120 --> 00:09:59,039
+[SPEAKER_02] A onda su to i velike tvrtke radile.
+
+89
+00:09:59,519 --> 00:10:02,720
+[SPEAKER_02] I tako je to bilo neka vrsta politike ne pitajte, ne govorite ili bilo što drugo.
+
+90
+00:10:02,799 --> 00:10:05,039
+[SPEAKER_02] Ali onda su shvatili da je to jednostavno glupo spriječiti to.
+
+91
+00:10:05,120 --> 00:10:07,759
+[SPEAKER_02] Promijenili su mnoga pravila tijekom proteklih nekoliko godina.
+
+92
+00:10:07,919 --> 00:10:12,879
+[SPEAKER_02] Dakle, sada se u osnovi kaže da ne trebate prevariti ljude ili ih zavaravati.
+
+93
+00:10:12,879 --> 00:10:19,679
+[SPEAKER_02] Ali ako možete preuzeti i pokrenuti kod, to mora biti neka vrsta interpretiranog koda, a ne kompiliranog binarnog koda, što je u redu.
+
+94
+00:10:20,480 --> 00:10:32,799
+[SPEAKER_02] I način na koji to funkcionira je da preuzmete JavaScript ili JavaScript bajt kod, a zatim se interpretira na uređaju na način na koji vaš web preglednik na računalu može preuzeti JavaScript za web-lokaciju i pokrenuti stvari.
+
+95
+00:10:32,960 --> 00:10:43,039
+[SPEAKER_02] I tako nikad nismo imali previše problema s tim jer smo počeli postati popularni, a Apple se malo povlačio od toga da bude super strog prema tim pravilima.
+
+96
+00:10:43,519 --> 00:10:47,360
+[SPEAKER_01] Pet godina ranije vjerojatno biste imali teškoće, ali oni su, da, možda.
+
+97
+00:10:47,600 --> 00:10:48,720
+[SPEAKER_02] Ali imaju i, ima i, ima i.
+
+98
+00:10:48,720 --> 00:10:56,320
+[SPEAKER_02] Ali možda su i u jednom ili dva slučaja, recimo, nešto poput aplikacije za fintech ili slično, rekli su: Ne želimo da nešto preuzimate.
+
+99
+00:10:56,720 --> 00:11:00,559
+[SPEAKER_02] Vidimo mrežne zahtjeve za stvari koje izgledaju kao da mijenjaju korisničko sučelje.
+
+100
+00:11:00,639 --> 00:11:22,159
+[SPEAKER_02] Prošlo je dosta vremena otkako ste čuli za nešto slično, ali možda smo u ranim danima čuli za jednu ili dvije stvari poput toga, ali to je prilično uobičajeno da Apple i Google, ali posebno Apple, često vole samo nešto provjeravati i izmišljati razloge za odbijanje aplikacija povremeno, samo da vam se podsjeti tko je na vlasti i da se pobrinete da, dobro, mislim da to na neki način zaobilaze recenzije aplikacija, zar ne?
+
+101
+00:11:22,480 --> 00:11:24,960
+[SPEAKER_01] Kao da možete uništiti cijelu aplikaciju.
+
+102
+00:11:24,960 --> 00:11:27,919
+[SPEAKER_02] Da, način na koji su promijenili pravila nije da kažu da možete raditi što god želite.
+
+103
+00:11:28,240 --> 00:11:46,399
+[SPEAKER_02] Samo je to da se više usredotočite na proizvod na način na koji to opisuju, gdje, recimo, da biste rekli da biste koristili ovu tehnologiju preuzimanja novog koda da biste uzeli, znate, aplikaciju koja je bila za kupnju namirnica i pretvorili je u nešto, znate, poput OnlyFans-a, onda bi rekli: Eh, ne možete to jednostavno promijeniti ispod nogu ljudi.
+
+104
+00:11:46,559 --> 00:11:47,919
+[SPEAKER_02] Ovo nije ono za što su se prijavili.
+
+105
+00:11:48,000 --> 00:11:48,720
+[SPEAKER_02] Prevarate ljude.
+
+106
+00:11:48,799 --> 00:11:49,759
+[SPEAKER_02] Zabranit ćemo vas zbog toga.
+
+107
+00:11:50,000 --> 00:11:52,000
+[SPEAKER_02] Ali manje je važno mehanizam koji koristite za to.
+
+108
+00:11:52,320 --> 00:11:56,000
+[SPEAKER_02] I više je važno činjenica da prevarate korisnike i skidate tepih s njih.
+
+109
+00:11:56,159 --> 00:11:57,039
+[SPEAKER_01] Je li to Von Neumann?
+
+110
+00:11:57,039 --> 00:11:58,799
+[SPEAKER_01] Tko je taj koji kaže da su kod i podaci isto?
+
+111
+00:11:59,039 --> 00:11:59,679
+[SPEAKER_01] Znaš što mislim?
+
+112
+00:12:00,000 --> 00:12:06,240
+[SPEAKER_01] Baš je teško razlikovati jer možete poslati JSON koji vaša aplikacija funkcionalno tumači kako bi nešto učinila, zar ne?
+
+113
+00:12:06,399 --> 00:12:09,120
+[SPEAKER_01] Dakle, stvarno je teško reći što je kôd, a što nije.
+
+114
+00:12:09,360 --> 00:12:24,159
+[SPEAKER_02] Tako se radi s mnogim modernim aplikacijama koje ne koriste Java, poput Yelp-a, koje su starije aplikacije napisane u objektivnom C-swift-u ili bilo čemu drugom, rade točno ono što opisujete, gdje preuzimaju mnogo komada JSON-a kako bi isporučili prilagođene korisničke sučelja.
+
+115
+00:12:24,320 --> 00:12:28,799
+[SPEAKER_02] Oni se nekako probijaju do izgradnje nekog polukrašenog dinamičkog tumačitelja korisničkih sučelja.
+
+116
+00:12:28,879 --> 00:12:36,799
+[SPEAKER_01] U osnovi, React prikazuje graf scene ili ne znam kako se zove u React-u, ali postoji neka vrsta umjereno poznate, stara.
+
+117
+00:12:37,039 --> 00:12:48,080
+[SPEAKER_02] CS-ova izreka koja kaže da svaki dovoljno složen sustav u C plus plusu sadrži polutrajuću, neučinkovitu verziju Lispa ili nešto slično.
+
+118
+00:12:48,240 --> 00:12:49,840
+[SPEAKER_02] I to je nešto slično onome što opisujete.
+
+119
+00:12:50,399 --> 00:12:59,759
+[SPEAKER_00] Jedno od toga o čemu sam želio razgovarati jest da je kombinacija React Nativea i Expo posebno postala nova zadana vrijednost.
+
+120
+00:13:01,600 --> 00:13:12,799
+[SPEAKER_00] I citirali ste u našem izvješću o stanju pretplate da je pragmatični inženjer izvijestio da gotovo sve nove start-upove s financiranjem VC-a koriste React Native umjesto izgradnje.
+
+121
+00:13:12,799 --> 00:13:23,200
+[SPEAKER_00] Radi se o izradi aplikacija na nativnom i ogromnim aplikacijama, kao što su Spotify, Discord, NFL, znate, mnoštvo najvećih aplikacija s kojima ljudi svakodnevno komuniciraju izrađeno je na nativnom React-u.
+
+122
+00:13:23,279 --> 00:13:31,360
+[SPEAKER_00] Već smo se dotaknuli brzine izvršenja, mogućnosti promjene stvari na daljinu, ali mislite li da je izrada aplikacija s nativnim kodom manje važna u 2025.
+
+123
+00:13:31,840 --> 00:13:32,480
+[SPEAKER_00] godini i zašto?
+
+124
+00:13:32,720 --> 00:13:33,440
+[SPEAKER_02] Dogodilo se nekoliko stvari.
+
+125
+00:13:34,799 --> 00:13:38,559
+[SPEAKER_02] Jedno je opće poboljšanje tehnologije.
+
+126
+00:13:38,799 --> 00:13:46,000
+[SPEAKER_02] Vidite da se to događa posvuda, gdje pisanje stvari na klijentskom JavaScriptu nije imalo smisla 2004.
+
+127
+00:13:46,000 --> 00:13:48,879
+[SPEAKER_02] godine jer jednostavno nisu postojale sve značajke koje ste trebali i performanse.
+
+128
+00:13:49,440 --> 00:13:50,720
+[SPEAKER_02] JSVM-ova nisu bile tamo itd.
+
+129
+00:13:51,200 --> 00:13:52,320
+[SPEAKER_02] A onda stvari postaju brže i bolje.
+
+130
+00:13:52,639 --> 00:13:56,639
+[SPEAKER_02] To je dio onoga što se ovdje događa, gdje se u ovom prostoru dogodilo mnogo stvari.
+
+131
+00:13:56,879 --> 00:13:58,639
+[SPEAKER_02] Neke su stvari prilično niske.
+
+132
+00:13:59,039 --> 00:14:01,360
+[SPEAKER_02] Meta je odgovorna za dvije od tih stvari.
+
+133
+00:14:01,519 --> 00:14:08,240
+[SPEAKER_02] I sjajno je imati neku vrstu duboke tvrtke iza toga koja se oslanja na mnogo važnih stvari.
+
+134
+00:14:08,480 --> 00:14:24,960
+[SPEAKER_02] I tako su dvije stvarno važne stvari koje su se dogodile u ekosustavu ova nova JSVM pod nazivom Hermes, koja zapravo nije, ne znam hoćete li da se previše uplitam u detalje, ali u osnovi, znate, najpoznatija JSVM danas je ona koja je dobila GPU.
+
+135
+00:14:24,960 --> 00:14:26,639
+[SPEAKER_02] Kao što je Google napravio za Chrome, zove se V eight.
+
+136
+00:14:27,039 --> 00:14:31,919
+[SPEAKER_02] I to je zaista sjajna JS VM, koja je zaista pomaknula web naprijed, pomaknula je JS naprijed.
+
+137
+00:14:32,240 --> 00:14:33,200
+[SPEAKER_02] To je VM za jitting.
+
+138
+00:14:33,759 --> 00:14:36,480
+[SPEAKER_02] I tako radi kompilaciju vašeg koda u pravo vrijeme.
+
+139
+00:14:36,960 --> 00:14:44,000
+[SPEAKER_02] I tako, dok se vaš kod pokreće prvi put, pratit će vruće putove i kompilirati ih na licu mjesta, a oni će se pokretati brže.
+
+140
+00:14:44,320 --> 00:14:56,720
+[SPEAKER_02] Ali u korisničkom sučelju to zapravo ne želite često jer ne radite puno složenih izračuna ili matematičkih stvari.
+
+141
+00:14:56,960 --> 00:15:00,480
+[SPEAKER_02] Samo pokušavate proći kroz stvari jednom i staviti ih na zaslon.
+
+142
+00:15:00,480 --> 00:15:11,759
+[SPEAKER_02] I tako, zapravo želite odabrati i, kao i mnoge druge stvari, kad razmišljate o tome što želite u korisničkom sučelju, želite da prva interakcija bude što je brža moguća, a ne da počnete brže i brže raditi dok se vaš kod pokreće.
+
+143
+00:15:11,919 --> 00:15:19,840
+[SPEAKER_01] Vrlo je dobar u prolasku određenog benchmarka, ali zapravo nije ono što je važno za renderiranje scene grafa zbog ograničenja Applea na izvršenje nekog native koda.
+
+144
+00:15:20,480 --> 00:15:23,279
+[SPEAKER_02] Ne možete stvarno pokrenuti JIT na prevoditelju.
+
+145
+00:15:23,440 --> 00:15:31,759
+[SPEAKER_01] To je ono što sam trebao pitati, kakav je status toga, jer nisam mislio da će Apple to dozvoliti iz očiglednih, ali vjerojatno legitimnih sigurnosnih razloga.
+
+146
+00:15:31,919 --> 00:15:36,799
+[SPEAKER_02] Da, mislim da nije ludost da na ovaj način ograničavaju stvari.
+
+147
+00:15:36,799 --> 00:15:40,559
+[SPEAKER_02] Hermes je dizajniran da se ne koristi u JIT-u iz razloga performansi na zanimljiv način.
+
+148
+00:15:41,279 --> 00:15:44,720
+[SPEAKER_02] I stvarno je dizajniran za ovaj primjer upotrebe i nekoliko drugih.
+
+149
+00:15:44,799 --> 00:15:46,720
+[SPEAKER_02] Također koristi format bajtkoda.
+
+150
+00:15:47,200 --> 00:15:55,919
+[SPEAKER_02] Dakle, umjesto da šalje nizove teksta koji su čitljivi za čovjeka, nekako se prekompilira u neku vrstu srednjeg formata i šalje se, što je uštedjelo neko vrijeme.
+
+151
+00:15:56,159 --> 00:15:59,039
+[SPEAKER_02] To je samo poboljšalo performanse, posebno na Androidu niske razine.
+
+152
+00:15:59,120 --> 00:16:00,799
+[SPEAKER_02] Ali općenito, Hermes je veliki korak.
+
+153
+00:16:01,039 --> 00:16:11,919
+[SPEAKER_02] I postoji nešto što se zove nova arhitektura React Native o kojoj se govori godinama, a napokon je prošle godine pokrenuta i nekako je zadana vrijednost za nove React Native aplikacije.
+
+154
+00:16:12,000 --> 00:16:24,720
+[SPEAKER_02] Omogućuje mnogo veću kontrolu nad stvarima na nižoj razini koje zapravo želite optimizirati performanse stvari, kao što su popisi zaista važni za korisničko sučelje na mobilnim uređajima.
+
+155
+00:16:24,799 --> 00:16:27,759
+[SPEAKER_02] Gotovo svaka aplikacija koju koristite uključuje pregledavanje velikih popisa.
+
+156
+00:16:27,919 --> 00:16:30,639
+[SPEAKER_02] Razmislite o Instagramu, razmislite o bilo kojem Messengeru koji koristite.
+
+157
+00:16:30,639 --> 00:16:40,639
+[SPEAKER_01] Mislim da je prikaz popisa korisničkog sučelja bio najvažniji dio Cocoa jer je bio super optimiziran i tako brz da je originalni iPhone bio tako dobar.
+
+158
+00:16:40,720 --> 00:16:48,559
+[SPEAKER_02] I tako, jedna stvar koju ova nova arhitektura omogućuje jest da možete pisati mnogo brže popise jer možete sinkrono mjeriti elemente.
+
+159
+00:16:48,559 --> 00:16:53,039
+[SPEAKER_02] Elementi i reagirati na te promjene bez potrebe za puno koraka ponovnog prikaza.
+
+160
+00:16:53,279 --> 00:16:59,360
+[SPEAKER_02] Prolazim kroz puno toga, ali u osnovi je ova nova arhitektura veliki korak naprijed u smislu mogućnosti učinkovitosti i nekoliko drugih stvari.
+
+161
+00:16:59,600 --> 00:17:07,440
+[SPEAKER_02] Druga stvar koja se dogodila jest da ste postavili pitanje je li manje važno pisati izvorni kod na mobilnim uređajima?
+
+162
+00:17:07,599 --> 00:17:15,759
+[SPEAKER_02] Ali zapravo, jedna stvar koju smo neko vrijeme radili na izložbi bila je da je puno lakše pisati izvorni kod kao dio React Native aplikacije.
+
+163
+00:17:15,839 --> 00:17:26,079
+[SPEAKER_02] I tako, dio tog sna o React Nativeu uvijek je bio da zapravo prepletate stvari koje su poput izvornog koda s stvarima koje su poput orkestrirane JavaScriptom.
+
+164
+00:17:26,400 --> 00:17:36,960
+[SPEAKER_01] Pišete React za web, kako možete u osnovi spojiti HTML, u osnovi, kao stil u JavaScriptu, znate, kao da možete nekako besprijekorno pisati komponente i zatim ih prebacivati.
+
+165
+00:17:37,200 --> 00:17:37,839
+[SPEAKER_02] To je nešto poput toga.
+
+166
+00:17:39,039 --> 00:17:49,200
+[SPEAKER_02] A React Native, kada generiramo UI, prikaz ili, znate, prikaz popisa ili prikaz klizača, jedna od stvari koja je stvarno privlačna u React Nativeu jest da zapravo generira komponente operativnog sustava.
+
+167
+00:17:50,000 --> 00:17:55,359
+[SPEAKER_02] Dakle, prikaz u React Nativeu na IOS-u će generirati prikaz UI iz UIKIT-a i na Android-u.
+
+168
+00:17:55,599 --> 00:18:01,200
+[SPEAKER_02] Dakle, stvarni elementi s kojima komuniciramo trebali bi se osjećati točno kao da su točno za operativni sustav na kojem kojem se nalazite.
+
+169
+00:18:01,279 --> 00:18:16,640
+[SPEAKER_02] Ali ako trebate napisati neku vrstu specijaliziranog izvornog koda za neku vrstu fluidne simulacije ili neku vrstu stvarno prilagođenog reproduktora videozapisa ili nešto slično, ili neku vrstu prikaza koji se pojavi u izvornom dijalogu za dijeljenje ili izvornom dijalogu za plaćanja ili nešto slično, možete lako otići u izvorni kod i napisati tu stvar.
+
+170
+00:18:16,960 --> 00:18:22,400
+[SPEAKER_02] Velika stvar na kojoj smo radili na izložbi je da se to malo zapetljava, ali zapravo je prilično važno.
+
+171
+00:18:22,559 --> 00:18:26,559
+[SPEAKER_02] Razvili smo nešto što nazivamo konfiguracijskim dodatcima u CNG-u.
+
+172
+00:18:27,200 --> 00:18:36,799
+[SPEAKER_02] A način na koji biste radili izvorni kod u projektima React Native prije toga bio je približno isti način na koji biste se mogli baviti konfiguracijskim programima.
+
+173
+00:18:36,799 --> 00:18:50,640
+[SPEAKER_02] U prošlosti ste se bavili PHP proširenjima ili spajanjem koda C plus plus s jezikom skripta gdje sami kompilirate, shvaćate koje stvari trebate preuzeti i koje ovisnosti trebate preuzeti i kako ih sve staviti na pravo mjesto.
+
+174
+00:18:51,440 --> 00:18:59,599
+[SPEAKER_01] Ako ste u mom, u mom, u mom, u mom stanju pokušavali napraviti React SDK koji bi netko drugi mogao koristiti i koji je bio temeljen na izvornom kodu, to je bilo teško.
+
+175
+00:18:59,759 --> 00:19:01,119
+[SPEAKER_02] Stvarno, stvarno teško.
+
+176
+00:19:01,279 --> 00:19:10,319
+[SPEAKER_02] I tako, kao i mnogi od ovih projekata, znate, idete na GitHub i čitanje mi je poput četiri ili pet stranica dugačke stvari s, evo, sve korake koje trebate učiniti na Androidu.
+
+177
+00:19:10,400 --> 00:19:12,319
+[SPEAKER_02] Evo, sve korake koje trebate učiniti na iOS-u.
+
+178
+00:19:12,319 --> 00:19:26,480
+[SPEAKER_02] A zatim, ako unosite modul RevenueCat i poseban modul za reprodukciju videozapisa i modul za kameru, često će se ti upute zapravo, bilo da uređujete različite konfiguracijske datoteke ili slično, možda međusobno suprotstaviti, poput: Eh, u ovoj aplikaciji delegat, dodajte ove linije.
+
+179
+00:19:26,640 --> 00:19:32,079
+[SPEAKER_02] A onda ćete reći: Pa, te linije ne izgledaju onako kako kaže da će izgledati jer sam dodao ovaj drugi modul ili nešto slično.
+
+180
+00:19:32,240 --> 00:19:42,880
+[SPEAKER_02] Dakle, konfiguracijski dodatci su u osnovi nešto poput: U vašem modulu možete dodati skup uputa ili skripte koji u osnovi govore izvornom kodu kako se instalirati na generaliziran način.
+
+181
+00:19:43,440 --> 00:19:46,559
+[SPEAKER_02] A zatim je CNG kontinuirano izvorno generiranje.
+
+182
+00:19:48,000 --> 00:19:59,519
+[SPEAKER_02] U tipičnom starom Reactovom nativnom projektu, imate direktorij JavaScript izvornog kodiranja koji sadrži Reactov kod, a zatim imate direktorij Android i IOS gdje bi se nalazio posebni nativni kod za Android i IOS.
+
+183
+00:20:00,559 --> 00:20:13,119
+[SPEAKER_02] A u nekom ekspo projektu koji koristi CNG, u vašem projektu obično nema direktorija Android i IOS jer se generiraju svaki put kad napravite promjenu u skupu konfiguracijskih dodataka koje koristite.
+
+184
+00:20:13,279 --> 00:20:15,039
+[SPEAKER_01] Sada su gotovo kao strojni kod, zar ne?
+
+185
+00:20:15,680 --> 00:20:16,960
+[SPEAKER_01] Kao da su na pola puta.
+
+186
+00:20:17,119 --> 00:20:29,519
+[SPEAKER_02] Kada instalirate neki paket npm, otkriva što treba preuzeti i premješta te datoteke u pravi direktorij i čini da možete pre to jednostavno zahtjevati u svom projektu ili uvoziti u svoj projekt i jednostavno će raditi.
+
+187
+00:20:29,680 --> 00:20:40,319
+[SPEAKER_02] I možete to shvatiti kao isto, gdje možete samo jednom naredbom instalirati novi, znate, React Native Purchases ili neku drugu paket, a onda se sve postavke riješe.
+
+188
+00:20:40,480 --> 00:20:46,319
+[SPEAKER_02] A ako nadogradite na novu verziju React Native ili novu stvar, sve to će se jednostavno dogoditi besprijekorno.
+
+189
+00:20:46,559 --> 00:20:49,200
+[SPEAKER_02] Postalo je mnogo, mnogo lakše zapravo koristiti stvarni kod.
+
+190
+00:20:49,359 --> 00:20:59,359
+[SPEAKER_02] I tako čak i za ljude koji misle da je stvarni kod zaista važan, postalo je mnogo smislenije koristiti React Native nego što je bilo u prošlosti jer je mnogo lakše pristupiti stvarnim slojevima.
+
+191
+00:20:59,359 --> 00:21:00,880
+[SPEAKER_02] Mnogi ljudi to gledaju na način na koji to gledaju.
+
+192
+00:21:00,880 --> 00:21:08,400
+[SPEAKER_02] To je ono što bih vjerojatno trebao shvatiti, ako razmišljate o tome što se događa u svijetu umjetne inteligencije, očito je da je izvedba iznimno važna za sve te stvari vezane uz strojovo učenje itd.
+
+193
+00:21:08,880 --> 00:21:21,440
+[SPEAKER_02] Ali velik dio koda koji ljudi rade na optimizaciji tih modela u OpenAI-u ili igraju s tim stvarima, pokreće puno Pythona jer neke stvari moraju biti jako, jako brze, ali puno stvari ne mora biti jako, jako brze.
+
+194
+00:21:21,519 --> 00:21:25,759
+[SPEAKER_02] Samo kažete, idite i napravite ovu zadaću koja mora biti jako brza i vi nekako orkestriramo stvari.
+
+195
+00:21:26,000 --> 00:21:27,759
+[SPEAKER_02] I tako vidite da se to događa u mnogim sustavima.
+
+196
+00:21:27,839 --> 00:21:29,680
+[SPEAKER_02] I to je jedan veliki čimbenik.
+
+197
+00:21:30,240 --> 00:21:35,279
+[SPEAKER_02] Drugi čimbenik je, prije nekoliko godina, inženjeri su bili nekako sredstva za tehnološke tvrtke.
+
+198
+00:21:35,519 --> 00:21:41,519
+[SPEAKER_02] I tako su ljudi pokušavali zaposliti.iti, znate, ako mogu zaposliti sto ljudi, vrijedit ću sto milijuna dolara ili nešto slično, to je blog post koji sam pročitala.
+
+199
+00:21:41,599 --> 00:21:43,359
+[SPEAKER_02] I ljudi više ne razmišljaju na taj način.
+
+200
+00:21:43,599 --> 00:22:02,559
+[SPEAKER_02] Mnoge tvrtke s kojima smo razgovarali i koje koriste Expo, čak su imale i dobro recenzirane i dobro funkcionalne aplikacije za iOS, ali su jednostavno shvatili da je stvarno teško brzo napredovati, stvarno teško održavati te stvari usklađenima, stvarno teško zaposliti za te pozicije.
+
+201
+00:22:02,720 --> 00:22:11,039
+[SPEAKER_02] I također su bili u opasnosti da izgube svog jednog razvijača Androida ili jednog razvijača iOS-a i da bi jednostavno bili zarobljeni i da ne bi mogli nastaviti s proizvodom.
+
+202
+00:22:11,200 --> 00:22:17,599
+[SPEAKER_01] I tako stvara neke stvarnono neugodne odluke kad kažemo: Želimo nešto isprobati, ali onda smo prisiljeni ne raditi parodiju.
+
+203
+00:22:17,680 --> 00:22:23,039
+[SPEAKER_01] Morate to raditi na jednoj platformi, a zatim ga vratiti natrag, a onda taj vrat nikad ne dolazi jer ste zauzeti i da.
+
+204
+00:22:23,599 --> 00:22:29,440
+[SPEAKER_02] A sada je sva vaša dokumentacija za vaše korisnike i tim za korisničku podršku zbunjen i mora postaviti više pitanja.
+
+205
+00:22:29,759 --> 00:22:33,119
+[SPEAKER_02] Postoji samo sve vrste stvari koje su loše vijesti o tome da se krene tom putom.
+
+206
+00:22:33,279 --> 00:22:43,839
+[SPEAKER_02] Općenito, postojala je ideja da korisnici Androida imaju u osnovi drugačije očekivanja od korisnika iOS-a, a web je sama po sebi zvijer.
+
+207
+00:22:43,920 --> 00:22:56,079
+[SPEAKER_02] Dakle, ako se vratite u prošlost, recimo u 2011., mislim da je Dropbox bio vrlo i Slack bili dva prilično dobra primjera toga gdje su imali potpuno različite dizajnerske timove koji su radili na svojim Android i iOS proizvodima.
+
+208
+00:22:56,160 --> 00:23:03,279
+[SPEAKER_02] Dakle, ako želite prebaciti s Android telefona na iOS telefon ili obrnuto i koristite Dropbox ili Slack, jednostavno ćete reći: Ne znam gdje je sve.
+
+209
+00:23:03,599 --> 00:23:04,319
+[SPEAKER_02] Što je ovo?
+
+210
+00:23:04,640 --> 00:23:06,799
+[SPEAKER_02] Jer je to potpuno drugačiji proizvod.
+
+211
+00:23:06,960 --> 00:23:12,559
+[SPEAKER_02] A sada su stvari zaista krenule u drugu stranu, gdje se razvija konvergencija, zar ne?
+
+212
+00:23:12,640 --> 00:23:16,559
+[SPEAKER_01] Ispostavilo se da postoji samo toliko načina da se napravi pristojna mobilna aplikacija.
+
+213
+00:23:16,640 --> 00:23:19,599
+[SPEAKER_02] Ljudi žele u osnovi isti proizvod na iOS-u i Androidu i webu.
+
+214
+00:23:19,920 --> 00:23:29,119
+[SPEAKER_02] I tako, kad koristim aplikaciju United Airlines na svom telefonu, bilo da je na iPhoneu ili Androiduid telefonu, mobilnoj web-stranici ili web-stranici, zapravo je isti proizvod, isti jezik dizajna.
+
+215
+00:23:29,279 --> 00:23:30,799
+[SPEAKER_02] Sve je na istim mjestima.
+
+216
+00:23:31,119 --> 00:23:33,119
+[SPEAKER_02] Mislim da United Airlines zapravo ne koristi React.
+
+217
+00:23:33,200 --> 00:23:34,640
+[SPEAKER_02] Moguće je da ga koriste, ali ne vjerujem.
+
+218
+00:23:34,880 --> 00:23:38,160
+[SPEAKER_02] Mislim da se opće razmišljanje o proizvodu kreće u tom smjeru.
+
+219
+00:23:38,400 --> 00:23:44,640
+[SPEAKER_02] Ali kad se vaše razmišljanje o proizvodu kreće u tom smjeru, pitate se zašto naša implementacija ne odgovara načinu na koji stvarno gradimo proizvod?
+
+220
+00:23:44,960 --> 00:23:46,000
+[SPEAKER_01] Oh, razumijem što govorite.
+
+221
+00:23:46,079 --> 00:23:49,759
+[SPEAKER_01] Dakle, stvarna konformnost dolazi prva, kao da bismo trebali da stvari budu identične.
+
+222
+00:23:49,920 --> 00:23:54,240
+[SPEAKER_01] A onda slijedi, kao što imamo ove odvojene verige alata, zar ne?
+
+223
+00:23:54,400 --> 00:23:54,480
+[SPEAKER_01] Da.
+
+224
+00:23:55,039 --> 00:24:00,960
+[SPEAKER_02] A onda je još jedna stvar koja je došla na internet, napravili smo mnogo posla da bismo Expo učinili da radi na web-mjestu.
+
+225
+00:24:00,960 --> 00:24:03,920
+[SPEAKER_02] Imao sam priliku da Expo radi na webu, kao i na iOS-u i Androidu.
+
+226
+00:24:04,240 --> 00:24:09,759
+[SPEAKER_02] Dakle, mnogi ljudi koji sada koriste Expo zapravo imaju jednu ekipu na iOS-u, Androidu i webu.
+
+227
+00:24:09,839 --> 00:24:11,599
+[SPEAKER_02] I tako to nije samo nešto što se može koristiti samo za mobitele.
+
+228
+00:24:12,079 --> 00:24:26,640
+[SPEAKER_02] Dakle, jedna od najistaknutijih i najzanimljivijih aplikacija za Expo je Blue Sky, koja je stvarno dobra i mislim da je zapravo jednako dobra kao i aplikacija koja nedostaje nekoliko naprednih značajki videozapisa i slično, ali inače je prilično usporediva s Twitterom i uvijek se osjeća sjajno.
+
+229
+00:24:26,799 --> 00:24:28,319
+[SPEAKER_02] Ali imali su svoju vrstu stvari.
+
+230
+00:24:28,559 --> 00:24:36,799
+[SPEAKER_02] Rekli su da je jedan čovjek, tri platforme, četiri mjeseca kako su izgradili svoju prvu verziju aplikacije jer nisu ni planirali izgraditi aplikaciju.
+
+231
+00:24:36,799 --> 00:24:57,920
+[SPEAKER_02] To je složena priča o podrijetlu, ali znate, kad je Jack Dorsey razmišljao o tome kako bi se društvene mreže trebale razvijati i kako bi se mogle federirati, on je odvojio financijska sredstva za federirani protokol, ali zapravo su samo zamišljali da će napraviti protokol za federiranje nečega poput Twittera i da će Twitter biti prvi klijent tog protokola.
+
+232
+00:24:58,400 --> 00:25:01,759
+[SPEAKER_02] A onda, znate, na Moskvi, Twitter je samo nešto poput, zašto mi je to potrebno?
+
+233
+00:25:01,839 --> 00:25:05,279
+[SPEAKER_02] Znate, pokušavam sve izrezati i učiniti ovo vitkom i snažnom mašinom.
+
+234
+00:25:05,440 --> 00:25:11,839
+[SPEAKER_02] Ne trebam se baviti ovim, ali oni su ga ugradili kao zasebnu tvrtku i financijska sredstva su već bila određena za to.
+
+235
+00:25:11,920 --> 00:25:20,799
+[SPEAKER_02] Dakle, mogli su nastaviti., ali znate, gledali su oko sebe i rekli su: Imamo tim od deset ljudi i nemamo programera koji su programeri za iOS ili Android, a mi smo na nekoj vrsti uske vremenske crte.
+
+236
+00:25:21,119 --> 00:25:27,599
+[SPEAKER_02] I shvatili smo da je naš jedini način naprijed stvaranje aplikacije koja će biti vrhunska verzija našeg, znate, federiranog protokola.
+
+237
+00:25:28,000 --> 00:25:38,319
+[SPEAKER_02] I tako su imali Paula u timu, koji nije imao iskustva s Reactom, a on je samo naučio na licu mjesta i bio je vrlo pametan tip s prilično dobrim ukusom i uspio je napraviti nešto prilično dobro odmah.
+
+238
+00:25:38,559 --> 00:25:42,799
+[SPEAKER_02] I dalje imaju samo oko tri osobe koje rade na aplikaciji i radi na svim različitim platformama.
+
+239
+00:25:42,880 --> 00:25:48,880
+[SPEAKER_01] I tako je to jedan, imaju jedan kod za svoj web, to je poput ekstremnog korisničkog sučelja React, zar ne?
+
+240
+00:25:48,880 --> 00:25:50,559
+[SPEAKER_01] Da bismo mogli skalirati, to je ludilo.
+
+241
+00:25:51,039 --> 00:25:53,039
+[SPEAKER_01] Jedno je pitanje, govorili smo o ulaganjima u Facebook.
+
+242
+00:25:54,240 --> 00:26:01,599
+[SPEAKER_01] Tko sada radi većinu posla na posljednjoj razini prijevoda, od grafikona scene do renderiranja u izvornim korisničkim sučeljima i slično?
+
+243
+00:26:01,680 --> 00:26:02,640
+[SPEAKER_01] Facebook još uvijek razvija puno toga?
+
+244
+00:26:02,799 --> 00:26:04,079
+[SPEAKER_01] Radi li to zajednica?
+
+245
+00:26:04,160 --> 00:26:11,279
+[SPEAKER_01] Jer mislim da je puno toga što čini React Native plus Expo stvarno dobrim, to je vrsta posljednje milje prijevoda na platformu.
+
+246
+00:26:11,839 --> 00:26:17,359
+[SPEAKER_02] Mnogo toga ne treba toliko promjena koliko biste mogli misliti.
+
+247
+00:26:17,680 --> 00:26:22,880
+[SPEAKER_02] Jedan od razloga zašto to na mnogo načina dobro funkcionira jest taj što to nije super teška razina.
+
+248
+00:26:23,279 --> 00:26:35,839
+[SPEAKER_02] Ovdje sam malo razmišljao, ali ako napravite prikaz u React-u, znate, upotrebljavate zagrade i pišete prikaz, pišete neki React kod, kada se to odnosi na web, to će se pretvoriti u div.
+
+249
+00:26:36,400 --> 00:26:43,440
+[SPEAKER_02] Ne postoji neka vrsta ludog, ogromnog preobrazbe i možete razmišljati o tome kako će završiti.
+
+250
+00:26:43,920 --> 00:26:50,079
+[SPEAKER_02] A kada imate taj prikaz i ide na IOS, završit će samo s prikazom korisničkog sučelja iz UIKita.
+
+251
+00:26:51,039 --> 00:26:53,839
+[SPEAKER_02] I ima malo omota i drugih stvari koje se događaju.
+
+252
+00:26:54,079 --> 00:27:01,119
+[SPEAKER_02] I u osnovi, puno toga što smatramo aplikacijama su samo neka vrsta pravokutnika i neka vrsta boja i stiliranja i teksta, a zatim neke slike i slično..
+
+253
+00:27:01,440 --> 00:27:02,720
+[SPEAKER_02] I tako, ima posla.
+
+254
+00:27:02,880 --> 00:27:14,880
+[SPEAKER_02] Kao što smo nedavno objavili nešto pod nazivom Expo Image, što, znate, puno ljudi koristi stvari poput SD Web Image i Fast Image i određene stvari koje će se baviti pohranom u različitim formatima i slično.
+
+255
+00:27:15,359 --> 00:27:23,440
+[SPEAKER_02] I, uh, mi smo, nekako, nekako, nekako odlučili da bismo to trebali izgraditi sami i staviti u SDK i nekako standardizirati i slično.
+
+256
+00:27:23,680 --> 00:27:24,400
+[SPEAKER_02] Dakle, puno toga radimo.
+
+257
+00:27:24,720 --> 00:27:34,559
+[SPEAKER_02] Također, puno inovacija koje se događaju upravo sada, što je prilično dobro za prostor, znate, očekivanja o tome što očekujemo od proizvoda znatno su se povećala.
+
+258
+00:27:34,799 --> 00:27:37,519
+[SPEAKER_02] To vrijedi na webu, nekako dvostruko vrij istinito na mobilnim uređajima.
+
+259
+00:27:37,759 --> 00:27:46,880
+[SPEAKER_02] Ali ako se prisjetite, recimo, weba prije petnaest godina ili nešto slično, ono što biste očekivali od web-mjesta jest da ne biste očekivali nikakve 3D grafike ili zanimljive prijelazne slike ili bilo što drugo.
+
+260
+00:27:46,960 --> 00:27:50,079
+[SPEAKER_02] Ali sada čak i idete na neku nasumičnu stranicu s proizvodima ili nešto slično.
+
+261
+00:27:50,160 --> 00:27:56,319
+[SPEAKER_02] I često ćete se pomaknuti prema dolje i dogodit će se neka vrsta ludog 3D animacije dok se pomičete ili nešto slično.
+
+262
+00:27:56,480 --> 00:28:00,880
+[SPEAKER_02] I puno toga je poput WebGL-a i stvari za to na webu su napredne.
+
+263
+00:28:01,200 --> 00:28:12,720
+[SPEAKER_02] I tako, ako želite dodati puno stvarno lijepih dodira nekoj vrsti React Native aplikacije ili nešto slično, postoje neke stvarno dobre biblioteke, kao što je React Native SKIA, koja dodaje ovu vrstu SKIA 2D.
+
+264
+00:28:12,720 --> 00:28:14,160
+[SPEAKER_02] Ovo je neka vrsta SKIA 2D grafičkog motora.
+
+265
+00:28:14,240 --> 00:28:21,839
+[SPEAKER_02] A onda je na ovoj konferenciji na kojoj sam danas, bilo je samo nekih najava o Ragnative Web GPU-u i pristupu tome.
+
+266
+00:28:22,079 --> 00:28:27,119
+[SPEAKER_02] A onda je tu nešto što se zove Reanimated, napravljeno od tvrtke u Poljskoj pod nazivom Software Manchin.
+
+267
+00:28:27,279 --> 00:28:41,839
+[SPEAKER_02] Također su napravili nešto što se zove Ragnative Gesture Handler, poput tih snažnih biblioteka koje vam omogućuju da sve ove geste i animacije budu stvarno ispravne, ali i da budu poput stvari koje možete napisati samo u JavaScriptu umjesto da morate pisati hrpu prilagođenog native koda da nešto izgleda i osjeća se stvarno cool.
+
+268
+00:28:42,240 --> 00:28:44,400
+[SPEAKER_01] Ne vraćam se u problem multiplatforme, zar ne?
+
+269
+00:28:44,480 --> 00:28:46,240
+[SPEAKER_01] Gdje morate raditi neke stvari poput native stvari.
+
+270
+00:28:46,480 --> 00:28:48,240
+[SPEAKER_01] Čini se da se stvari stvarno ubrzavaju.
+
+271
+00:28:48,319 --> 00:29:01,200
+[SPEAKER_01] Mislim da je bilo, ne znam kada je to bilo, ali bilo je trenutaka, možda prije pet godina, kad je Facebook na neki način otpustio React Native i bilo je puno FUD-a o tome da je možda React Native gotov, ali čini se da je sada suprotno.
+
+272
+00:29:01,440 --> 00:29:04,480
+[SPEAKER_01] Je li to uvijek bila samo lažna vijest ili kakva je bila priča?
+
+273
+00:29:04,960 --> 00:29:24,960
+[SPEAKER_02] Bilo je nekoliko stvari koje su bile izazovne, najštetnije što se vjerojatno dogodilo u povijesti React Native-a jest da je Airbnb bio neka vrsta rane korisnice i imali su nekoliko ljudi koji su bili stvarno dobri programeri i doprinijeli su mnogo i išli su na mnoge konferencije i razgovarali o svom radu iz više složenih razloga.
+
+274
+00:29:24,960 --> 00:29:31,039
+[SPEAKER_02] Inženjerstvo u Airbnb Beachu odlučilo je da nema smisla održavati naše izvorne i Reactove stvari.
+
+275
+00:29:31,519 --> 00:29:34,640
+[SPEAKER_02] Odlučili smo da će izvorni ljudi pobijediti.
+
+276
+00:29:34,799 --> 00:29:35,599
+[SPEAKER_02] Dakle, prestat ćemo s ovim.
+
+277
+00:29:35,759 --> 00:29:38,720
+[SPEAKER_01] Ipak, nikad nisu bili potpuno izvorna aplikacija za React.
+
+278
+00:29:39,599 --> 00:29:40,960
+[SPEAKER_01] Imali su Reactove komponente.
+
+279
+00:29:41,599 --> 00:29:44,720
+[SPEAKER_02] Ne, koristili su je za dvadeset posto aplikacije ili nešto slično.
+
+280
+00:29:44,880 --> 00:29:46,640
+[SPEAKER_02] Ali bili su prilično glasni u vezi s tim.
+
+281
+00:29:46,799 --> 00:29:48,799
+[SPEAKER_01] Što je manje, onda dobivate manje koristi, zar ne?
+
+282
+00:29:48,880 --> 00:29:50,480
+[SPEAKER_01] Kao da imate izvorni i.
+
+283
+00:29:50,559 --> 00:29:54,480
+[SPEAKER_02] Malo je komplicirano imati vrlo miješan pristup.
+
+284
+00:29:55,200 --> 00:30:04,160
+[SPEAKER_02] Kao da je to kompliciranije nego imati web-lokaciju koja koristi jQuery, a zatim koristi React za jedan od zaslona jer na web-mjestu svugdje koristi JavaScript.
+
+285
+00:30:04,559 --> 00:30:16,799
+[SPEAKER_02] Dakle, ako imate neke podatke koji se spuštaju pomoću poziva jQuery Ajax, a zatim ih želite upotrijebiti u komponenti React ili ponoviti upotrebu nekog od istog stanja, možete jednostavno proslijediti te varijable ili ih upotrijebiti.
+
+286
+00:30:16,960 --> 00:30:19,519
+[SPEAKER_02] I ovo je samo jedan primjer, samo da ilustriram točku.
+
+287
+00:30:19,599 --> 00:30:28,480
+[SPEAKER_02] Ali recimo da imate zaslon na aplikaciji Airbnb-a koji je napisan u Swift-u, a zatim je drugi dio tog zaslona napisan u React-u.
+
+288
+00:30:29,119 --> 00:30:33,519
+[SPEAKER_02] A zatim se oslanja na neki profil za popis kuća.
+
+289
+00:30:33,599 --> 00:30:38,480
+[SPEAKER_02] A taj popis kuća sadrži neke podatke i ima URL fotografije ili slično.
+
+290
+00:30:39,839 --> 00:30:43,279
+[SPEAKER_02] I povlačite te podatke u Swift i sada su u Swift varijablama.
+
+291
+00:30:43,359 --> 00:30:51,359
+[SPEAKER_02] I onda odjednom ste poput React Nativea koji želi pristup istoj fotografiji kako bi se uvjerio da je to ispravna stvar ili želi istaknuti nešto.
+
+292
+00:30:51,599 --> 00:30:58,640
+[SPEAKER_02] I ti podaci nisu dostupni u JavaScriptu, pa morate na neki način stvoriti neki način da sve organizirate preko nekog mosta i slično.
+
+293
+00:30:58,720 --> 00:30:58,880
+[SPEAKER_01] Mosta.
+
+294
+00:30:59,279 --> 00:31:03,039
+[SPEAKER_01] A onda sada, barem, vjerojatno dupliciramo potrošnju memorije, zar ne?
+
+295
+00:31:03,200 --> 00:31:04,960
+[SPEAKER_02] I to se jednostavno događa na različite načine.
+
+296
+00:31:05,279 --> 00:31:12,640
+[SPEAKER_02] Ali to je gotovo kao da imate ove tri stvari zbog kojih se morate brinuti, poput svog nativnog svijeta, svog svijeta JavaScript.
+
+297
+00:31:12,640 --> 00:31:14,400
+[SPEAKER_02] I onda način na koji se krećemo između njih.
+
+298
+00:31:14,640 --> 00:31:21,839
+[SPEAKER_02] I tako sada, kao i puno stvari koje su, mislim da je to nešto na čemu stvarno želim raditi, učiniti taj postupni prijelaz lakšim.
+
+299
+00:31:22,000 --> 00:31:29,200
+[SPEAKER_02] Ali u svijetu u kojem se nalazimo sada, definitivno su stvari koje imaju najveći uspjeh koje vidimo stvari koje započinju od početka kao Rack Native aplikacije.
+
+300
+00:31:29,359 --> 00:31:42,000
+[SPEAKER_02] Mogu koristiti puno native koda, ali obično je na ovaj način gdje je to poput, oh, napravit ćemo neke stvarno specifične stvari, kao što je prilagođeni videoplayer, ali to će biti Rack Native modul koji se može samo spojiti i možemo spustiti native kod gdje god to trebamo.
+
+301
+00:31:42,079 --> 00:31:45,920
+[SPEAKER_02] Ali cijeli sustav je nekako orkestriran i kontroliran od strane Rack Native.
+
+302
+00:31:46,319 --> 00:32:10,480
+[SPEAKER_02] Druga stvar o kojoj sam govorio o tr prijelazu na to da je to prilično standardno, Evan Bacon iz našeg tima bio je sjajan, a vodio je rad na nečemu što se zove Expo Router, što je prilično uobičajeno u svijetu React ili web-mjesta da imaju neku vrstu usmjerivača, nešto što će se baviti mapiranjem arhitekture svih kartica na vašem zaslonu ili na koje se URL-ove mapiraju i slično.
+
+303
+00:32:10,720 --> 00:32:24,960
+[SPEAKER_02] To je mnogo složeniji problem na ovakvoj vrsti mobilnih platformi na više platformi jer ako se dobro zamislite, ovo je vjerojatno nešto što može razumjeti svatko ako se zaustavi i razmisli o tome na trenutak, ali većina nas to ne čini.
+
+304
+00:32:24,960 --> 00:32:28,000
+[SPEAKER_02] Struktura web-mjesta je takva da imate ovu URL traku i gumb za vraćanje.
+
+305
+00:32:28,559 --> 00:32:40,319
+[SPEAKER_02] To znači da postoji jedna vrsta navigacijske gomile u mnogim slučajevima, gdje ako razmislite, znate, svi vjerojatno poznaju Instagram koji slušaju ovaj podcast.
+
+306
+00:32:40,640 --> 00:32:48,480
+[SPEAKER_02] I to je prilično uobičajena paradigma u kojoj postoji četiri ili pet kartica na dnu zaslona, a svaka od njih je svojevrsna vlastita gomila.
+
+307
+00:32:48,559 --> 00:32:55,920
+[SPEAKER_02] Dakle, ako odete na karticu Profil, dodirnete sljedbenike, a zatim dodirnete profil nekog drugog, sve se događa ispod kartice Profil.
+
+308
+00:32:56,240 --> 00:32:59,359
+[SPEAKER_02] Ali ako odete na karticu Traživanje, možete pogledati profil nekog drugog.
+
+309
+00:32:59,519 --> 00:33:00,480
+[SPEAKER_02] Ali ako se vratite na svoj profil.
+
+310
+00:33:00,480 --> 00:33:00,880
+[SPEAKER_02] To je vaša kartica profila.
+
+311
+00:33:01,599 --> 00:33:03,039
+[SPEAKER_02] I dalje je ono što ste navigirali.
+
+312
+00:33:03,279 --> 00:33:05,759
+[SPEAKER_02] I postoji više hijerarhija stvari.
+
+313
+00:33:06,079 --> 00:33:12,559
+[SPEAKER_02] Dakle, kada izradite aplikaciju koja postoji kao mobilna aplikacija, često želite da se paradigma više nalazi u aplikaciji za Instagram.
+
+314
+00:33:13,039 --> 00:33:17,599
+[SPEAKER_02] Ali kad ste na webu, želite da se osjeća kao web-mjesto i da bude prirodno na taj način.
+
+315
+00:33:17,759 --> 00:33:21,759
+[SPEAKER_02] A onda postoji i duboko povezivanje, što je taj složen problem koji je zapravo prilično teško riješiti.
+
+316
+00:33:21,839 --> 00:33:31,440
+[SPEAKER_02] Ako razmislite o bilo čemu za što imate instaliranu aplikaciju, možda će vam poslati poruku e-pošte koja kaže: Pogledajte ovu ponudu za ovaj proizvod na prodaju u našoj aplikaciji ili bilo gdje drugdje.
+
+317
+00:33:31,519 --> 00:33:36,720
+[SPEAKER_02] A onda dodirnete poveznicu i otvori se aplikacija, a ona se zbunjuje i odvede vas na početni zaslon.
+
+318
+00:33:36,720 --> 00:33:39,359
+[SPEAKER_02] I vi ste poput, pokušavao sam doći do određenog proizvoda ili određenog videozapisa.
+
+319
+00:33:39,440 --> 00:33:43,920
+[SPEAKER_01] To je oko pedeset, pedeset, osjećam da kad se duboko povežem u aplikaciju, ako želim doći do mjesta na kojem pokušavam doći.
+
+320
+00:33:44,000 --> 00:33:44,079
+[SPEAKER_02] Da.
+
+321
+00:33:44,400 --> 00:33:51,920
+[SPEAKER_02] I tako Expo Router to rješava i radi u osnovi jednako dobro kao i sve što može raditi na iOS-u i Androidu i webu.
+
+322
+00:33:52,079 --> 00:33:59,920
+[SPEAKER_02] I samo taj problem postaje nešto što se rješava umjesto nešto što provodite satima i satima pokušavajući to učiniti i stresati se zbog toga i što god.
+
+323
+00:34:00,640 --> 00:34:01,759
+[SPEAKER_02] I tako je to vrlo lijepo.
+
+324
+00:34:02,319 --> 00:34:04,559
+[SPEAKER_02] To je samo učinilo mnogo lakšim za ljude da ga prihvate.
+
+325
+00:34:04,799 --> 00:34:12,880
+[SPEAKER_00] Istraživajući za ovaj podcast, a sada slušajući vas posljednjih trideset minuta ili nešto, puno sam ažurirao svoje prioritetne podatke.
+
+326
+00:34:12,880 --> 00:34:20,800
+[SPEAKER_00] Bio sam jedan od onih ponosnih razvijača iOS-a koji su se toliko usredotočili na to da mora biti izvorni.
+
+327
+00:34:20,880 --> 00:34:27,920
+[SPEAKER_00] React Native je samo glupi web raper i korisnici će primijetiti da performanse neće biti dobri.
+
+328
+00:34:28,239 --> 00:34:33,199
+[SPEAKER_01] Bit će složenije i sve to, što je možda bilo istina 2019.
+
+329
+00:34:33,440 --> 00:34:35,440
+[SPEAKER_01] ili 2018., ali možda ne i danas.
+
+330
+00:34:35,599 --> 00:34:37,599
+[SPEAKER_02] Na webu uvijek možete pregledavati izvor.
+
+331
+00:34:38,079 --> 00:34:41,039
+[SPEAKER_02] I tako možete uvijek shvatiti s čime je izgrađen svaki web-mjesto.
+
+332
+00:34:41,280 --> 00:34:48,239
+[SPEAKER_02] Ali jedna stvar koja mi se uvijek činila smiješnom jest da kad netko odlično radi na izradi React Native aplikacije, ne primjećujete.
+
+333
+00:34:48,719 --> 00:34:51,599
+[SPEAKER_02] i pretpostavljate da je to stvarno izvorno ili nešto slično.
+
+334
+00:34:51,840 --> 00:34:56,000
+[SPEAKER_01] Također možete napraviti prilično loše aplikacije za SwiftUI i UIKit, zar ne?
+
+335
+00:34:56,239 --> 00:34:56,800
+[SPEAKER_01] Vidio sam ih.
+
+336
+00:34:57,039 --> 00:35:09,199
+[SPEAKER_02] I tako postoje neke loše aplikacije za React i loše aplikacije za izložbe koje samo, znate, nepotrebno uzrokuju sve vrste ponovnih pokretanja ili petlji ili što god, ali možete to učiniti i kao što govorite, s SwiftUI-om ili bilo čime.
+
+337
+00:35:09,519 --> 00:35:14,079
+[SPEAKER_02] Mnogo puta će biti loša aplikacija za SwiftUI i ljudi će samo reći: O, glupa aplikacija za React.
+
+338
+00:35:14,159 --> 00:35:15,360
+[SPEAKER_02] Ne mogu reći da je to ovo.
+
+339
+00:35:16,559 --> 00:35:19,440
+[SPEAKER_02] I zato što nema jednostavnog načina da se vrati pretraživanje izvora.
+
+340
+00:35:19,679 --> 00:35:22,320
+[SPEAKER_01] Jeste li ikad napravili slijepe testove okusa?
+
+341
+00:35:22,480 --> 00:35:24,880
+[SPEAKER_01] Bilo bi vrlo smiješno.
+
+342
+00:35:24,880 --> 00:35:37,920
+[SPEAKER_02] Mislim da su James i Brent u našem timu bili prilično dobri u tome da mogu reći: Eh, povući ću ove zaslone i primijetit ću neki artefakt u ovoj stvari i mogu reći da koristi ovu biblioteku i slično.
+
+343
+00:35:38,159 --> 00:35:53,679
+[SPEAKER_02] Sve je teže, ali još uvijek postoje načini na koje možete sigurno reći određene stvari, ali pokušali smo skenirati trgovinu aplikacijama i preuzeti mnoge od najboljih aplikacija i jednostavno smo napravili istraživački projekt da bismo zapravo samo shvatili što, jer smo otvoreni izvorni kod, pa zapravo ne znamo sve koji koriste Xbox.
+
+344
+00:35:53,920 --> 00:35:55,760
+[SPEAKER_02] Ako samo koristite okvir otvorenog koda, ne znamo.
+
+345
+00:35:55,840 --> 00:36:00,719
+[SPEAKER_02] Morali smo preuzeti samo sto najboljih aplikacija u svakoj kategoriji samo da bismo dobili osjećaj što se događa.
+
+346
+00:36:00,719 --> 00:36:02,559
+[SPEAKER_00] Govorio sam o ažuriranju svojih prethodnih podataka.
+
+347
+00:36:03,199 --> 00:36:07,760
+[SPEAKER_00] Najveća stvar koja me je prisilila da ažuriram prethodne podatke bila je zapravo naš izvještaj o stanju pretplate aplikacija.
+
+348
+00:36:08,000 --> 00:36:15,440
+[SPEAKER_00] I o tome sam želio govoriti sljedeće, u našem izvješću pokazali smo da su aplikacije Rack Native zapravo bolje monetizirane od aplikacija Native.
+
+349
+00:36:16,000 --> 00:36:19,599
+[SPEAKER_00] Vjerojatno postoji malo, sto posto pozitivno, sve je u okviru.
+
+350
+00:36:19,760 --> 00:36:21,519
+[SPEAKER_00] Vjerojatno postoji malo pristranosti u tome.
+
+351
+00:36:21,760 --> 00:36:27,199
+[SPEAKER_00] I o tome smo razgovarali prije, da imamo puno neovisnih programera na RevenueCatu koji su samo za iOS.
+
+352
+00:36:27,280 --> 00:36:35,920
+[SPEAKER_00] I da, znate, prema našem ranijem primjetbi, mnoge aplikacije koje financiraju VC-ovi su od samog početka prekogranične i grade posao, a ne hobi.
+
+353
+00:36:36,000 --> 00:36:37,920
+[SPEAKER_00] Možda će se skloniti React Nativeu.
+
+354
+00:36:38,000 --> 00:36:44,079
+[SPEAKER_00] Dakle, u podacima postoji određena pristranost i ranije ste se na to osvrnuli, da je vaša tehnologija važna.
+
+355
+00:36:44,159 --> 00:36:49,119
+[SPEAKER_00] I ako možete brže iterirati i razviti bolji proizvod, nije važno koju tehnologiju koristite.
+
+356
+00:36:49,679 --> 00:36:57,039
+[SPEAKER_00] I zapravo, možda je važno da React Native omogućuje brže napredovanje i da nemate više timova, da stvari ne izlaze iz sinkronizacije i slično.
+
+357
+00:36:57,599 --> 00:37:07,039
+[SPEAKER_00] Ali znam da ste vidjeli te podatke jer smo vas zamolili da u našem izvješću napravite kratku prezentaciju, ali vas je iznenadilo da naše podatke pokažu da React Native aplikacije bolje zarade od nativnih aplikacija?
+
+358
+00:37:08,239 --> 00:37:17,840
+[SPEAKER_02] To me malo iznenadi jer bih očekivao da će mnoge nativne aplikacije biti su samo za iPhone i iPhone ima tendenciju da bolje monetizira od Androida u mojoj ograničenoj količini.
+
+359
+00:37:17,920 --> 00:37:21,280
+[SPEAKER_01] Mislim, vi biste znali bolje od mene, ali gotovo uvijek je kao da je to iOS i Android, zar ne?
+
+360
+00:37:21,360 --> 00:37:23,599
+[SPEAKER_01] Dakle, Android je gotovo uvijek kao da je sve korisno.
+
+361
+00:37:23,760 --> 00:37:33,440
+[SPEAKER_02] Vidio sam nešto ovdje gdje je to kao da je puno ljudi koristi React, kao da ćete imati više Reactovih aplikacija koje su novije jer je React Native samo, naravno, Expo posljednje vrijeme postalo mnogo popularnije.
+
+362
+00:37:33,599 --> 00:37:38,079
+[SPEAKER_02] Na primjer, naš tjedni preuzimanje NPM-a utrostručilo se prošle godine.
+
+363
+00:37:38,719 --> 00:37:48,639
+[SPEAKER_02] Dakle, puno stvari koje su izgrađene na taj način bit će novije i ljudi će donositi aktivne odluke, poput istraživanja najboljeg načina rada i rada na tome.
+
+364
+00:37:48,639 --> 00:37:51,599
+[SPEAKER_02] Rad na stvarima i pokušaj korištenja najboljih tehnologija i najboljih praksi.
+
+365
+00:37:52,079 --> 00:37:55,519
+[SPEAKER_02] Dok su neke od starijih stvari možda samo nešto poput: Ovaj proizvod postoji već neko vrijeme.
+
+366
+00:37:55,760 --> 00:37:57,760
+[SPEAKER_02] Bio je u načinu rada za kontrolu tempomata.
+
+367
+00:37:58,320 --> 00:38:03,199
+[SPEAKER_02] Ne kažem način održavanja, već nešto poput: Pokušavamo ga održati u pogonu ili nešto slično.
+
+368
+00:38:03,599 --> 00:38:21,360
+[SPEAKER_02] To bi bilo dio pretpostavke koju bih iznio, ali također bih samo ponovo naglasio da je u React Nativeu sada prilično lako spustiti se i zapisati cijeli zaslon u SwiftUI-u i Kotlinu ili bilo čemu što želite za platforme ZIC-a.
+
+369
+00:38:22,000 --> 00:38:24,639
+[SPEAKER_02] Dakle, ako ste dobar React Native razvijač.
+
+370
+00:38:24,639 --> 00:38:27,199
+[SPEAKER_02] Vjerojatno to radite u različitim trenucima kad god vam je potrebno.
+
+371
+00:38:27,360 --> 00:38:31,199
+[SPEAKER_02] Ali na zaslonu postavki uglavnom to nikad ne trebate raditi u većini slučajeva.
+
+372
+00:38:31,599 --> 00:38:47,039
+[SPEAKER_02] To su stvari koje se u mnogim dijelovima aplikacije za postavke iOS-a, ako uđete u upravljanje pretplatama na iOS stvari, zapravo koriste WebViews, iako to smatramo nekom vrstom izvornog za platformu Apple.
+
+373
+00:38:47,519 --> 00:38:48,000
+[SPEAKER_01] Da, da.
+
+374
+00:38:48,239 --> 00:38:49,440
+[SPEAKER_01] Pretplatnica me ludi.
+
+375
+00:38:49,599 --> 00:38:51,119
+[SPEAKER_01] To je znatno sporije.
+
+376
+00:38:51,280 --> 00:38:52,239
+[SPEAKER_01] Bilo bi bolje da je zapravo koristite.
+
+377
+00:38:52,320 --> 00:38:53,199
+[SPEAKER_01] Da, mislim da bi to zapravo bilo.
+
+378
+00:38:53,519 --> 00:39:00,719
+[SPEAKER_01] Nikad ne bi se usuđivali staviti JavaScript između njih i UIC.
+
+379
+00:39:00,719 --> 00:39:08,800
+[SPEAKER_02] Ali mislim da je veliki dio toga što je strop porastao, mnogo je lakše pristupiti najboljim mogućnostima uređaja nego što je bio prije.
+
+380
+00:39:09,039 --> 00:39:16,639
+[SPEAKER_01] Moje mišljenje je da je vjerojatno sve, mislim, da nema NOX-a za React, native i Expo, ali, znate, to je u velikoj mjeri stvar odabira.
+
+381
+00:39:16,800 --> 00:39:25,920
+[SPEAKER_01] Kao da ste više usmjereni na poslovni uspjeh i poslovne rezultate, što je možda sjajan argument za platformu, zar ne?
+
+382
+00:39:26,559 --> 00:39:40,559
+[SPEAKER_01] I mislim, kao što je rekao David, mislim da ako ste mobilni, ako ste native mobilni programer, mislim da je vrijeme da barem isprobate i ponovno procijenite svoje prethodne vrijednosti jer sam izradio aplikacije na Reacact Native frustriraju me na različite načine, ali to je bilo prije pet, šest godina, zar ne?
+
+383
+00:39:40,639 --> 00:39:42,239
+[SPEAKER_01] I stvari su se promijenile.
+
+384
+00:39:42,400 --> 00:39:44,559
+[SPEAKER_02] Postalo je mnogo bolje, mnogo je lakše stvarati stvari.
+
+385
+00:39:44,719 --> 00:39:50,400
+[SPEAKER_01] Da, zahvaljujući vama i također kao i osnovnim tehnološkim promjenama, telefoni su i brži.
+
+386
+00:39:50,559 --> 00:40:00,480
+[SPEAKER_01] I tako se sjećam da sam u kasnim tinejdžerskim godinama bio skeptičan prema ljudima koji su donosili ovu odluku jer sam bio isprobani i istinit mobilni objektivni i Java razvijač.
+
+387
+00:40:01,280 --> 00:40:12,960
+[SPEAKER_01] I sjećam se da sam bio skeptičan, ali sada kad se vratim, te su tvrtke imale različite uspjehe i neuspjehe, ali ništa od toga nije bilo povrijeđeno činjenicom da su zapravo, znate, kao da ste vi, zbog svih razloga zbog kojih ste me iznenadili.
+
+388
+00:40:12,960 --> 00:40:13,679
+[SPEAKER_01] Mislim da su to bile dobre odluke.
+
+389
+00:40:14,559 --> 00:40:16,639
+[SPEAKER_01] To je bio posao u kojem ste se nalazili.
+
+390
+00:40:17,360 --> 00:40:25,119
+[SPEAKER_00] A sada, danas, znate, kad govorimo o olakšavanju stvari, sljedeća vrsta tema koju sam želio raspravljati bila je razvoj pomoću umjetne inteligencije.
+
+391
+00:40:25,360 --> 00:40:29,760
+[SPEAKER_00] Želio sam nekako staviti ove dvije različite stvari u kavez jer mislim da se mogu malo pomiješati.
+
+392
+00:40:30,079 --> 00:40:41,920
+[SPEAKER_00] Dakle, prvo ćemo razgovarati o onome što ja nazivam razvojem aplikacija pomoću umjetne inteligencije, gdje ste programer, znate što radite i umjetna inteligencija ubrzava stvari bez obzira na to koristite li React ili ne.
+
+393
+00:40:42,239 --> 00:40:48,639
+[SPEAKER_00] A onda imate neku vrstu vibekodiranja, poput, skočit ću u Bolt ili Replet i baciti nekoliko poziva u to.
+
+394
+00:40:48,639 --> 00:40:50,639
+[SPEAKER_00] I ja zapravo ne znam kako programirati, ali će izgraditi aplikaciju.
+
+395
+00:40:50,800 --> 00:41:07,280
+[SPEAKER_00] Ali prvo ćemo razgovarati o tome što vidite u tom ciklusu razvoja aplikacija pomoću umjetne inteligencije, poput stvarno vrhunskih programera koji koriste umjetnu inteligenciju i React kako bi se brže kretali, koristeći stvari poput Cursor i Windsurfa, GitHub Copilot i Cloud Code i sve te vrste alata kako bi se brže kretali.
+
+396
+00:41:07,599 --> 00:41:08,320
+[SPEAKER_00] Što vidite tamo?
+
+397
+00:41:08,639 --> 00:41:14,559
+[SPEAKER_00] I možda i što je Expo, poput jedinstvenog položaja u ovom svijetu, što mislim da je zanimljivo za takve stvari.
+
+398
+00:41:15,199 --> 00:41:21,039
+[SPEAKER_02] Jedno je stvarno velika stvar, poput toga koliko su modeli dobro obučeni u stvarima koje imate na pravom mjestu?
+
+399
+00:41:21,039 --> 00:41:24,880
+[SPEAKER_02] I jedna stvar koja je dobra u Reactu je da postoji mnogo otvorenog koda.
+
+400
+00:41:24,880 --> 00:41:32,719
+[SPEAKER_02] Postoji mnogo primjera otvorenog koda i ljudi imaju tendenciju da je mnogo češće napraviti projekt React otvorenog koda nego projekt Swift.
+
+401
+00:41:33,199 --> 00:41:40,480
+[SPEAKER_02] Ovi LM-ovi zapravo su prilično dobri u tome da do neke mjere shvate većinu stvari, ali što više podataka za trening imaju, to će biti bolji i tako dalje.
+
+402
+00:41:40,639 --> 00:41:50,719
+[SPEAKER_02] Dakle, trenutačno postoji više od 1,2 milijuna projektova Expo koji su otvoreni na GitHubu, a neki su stariji i zastarjeli, što može uzrokovati vlastiti problem ili nešto slično.
+
+403
+00:41:51,440 --> 00:41:52,880
+[SPEAKER_02] Ali velik dio toga je samo to.
+
+404
+00:41:53,199 --> 00:42:22,079
+[SPEAKER_02] Ali onda se događa i nešto drugo, kada imate ovakav programiranje pomoću umjetne inteligencije u svom programeru, zapravo sam predavao radionicu prije nekoliko dana godina, kad sam to radio, provodio sam puno vremena u tome, kad sam podučavao radionicu, stvarajući osnovnu aplikaciju, samo sam tipkao, znate, osnovne stvari o upravljanju staništem ili, znate, išao sam na naš dokument da bih pronašao pravu stvar, znate, pravu zaključavanje za uvoz modula kamere ili slično.
+
+405
+00:42:22,639 --> 00:42:29,280
+[SPEAKER_02] A onda sam samo rekao, u pet minuta, nekako sam izgradio cijelu aplikaciju s popisom zadataka i dodao joj nekoliko značajki.
+
+406
+00:42:29,599 --> 00:42:34,639
+[SPEAKER_02] I bio sam samo nešto poput, u redu, klasa, neću vas gledati kako koristim Cloud do kraja ove sjednice.
+
+407
+00:42:34,719 --> 00:42:36,960
+[SPEAKER_02] Samo dođite do mene ako imate problema i razgovarat ću s vama.
+
+408
+00:42:36,960 --> 00:42:40,639
+[SPEAKER_02] I ja ću vam samo reći da vrijeme potrebno za obavljanje osnovnih stvari jednostavno se jako, jako smanjuje.
+
+409
+00:42:40,800 --> 00:42:48,719
+[SPEAKER_02] I tako, kad se to događa, počinjemo biti jako osjetljivi na stvari koje počinju potrajati i usporavati vas.
+
+410
+00:42:48,800 --> 00:42:58,239
+[SPEAKER_02] I tako, da, sigurno ste vi vidjeli taj poznati strip XKCD gdje su ljudi poput kartonske mačeve u vrtljavim stolicama dok čekaju da se stvari kompile.
+
+411
+00:42:58,719 --> 00:43:12,480
+[SPEAKER_02] I tako, kad vam treba samo dio sekunde da napišete kôd, a onda odjednom provodite minutu i četrdeset pet sekundi dok vaša aplikacija, vrsta neugodne stvari o nekakvim kompiliranim aplikacijama i slično, počinju se nekako kao kad imate.
+
+412
+00:43:12,480 --> 00:43:19,039
+[SPEAKER_02] Kada imate bijeli zaslon s crnim tekstom koji samo kaže, pozdrav, to je kao da je kompilacija prilično brza.
+
+413
+00:43:19,119 --> 00:43:26,559
+[SPEAKER_01] Ali onda čak i kad počnete s šest, sedam zaslona koji su prilično dobri, to je kao da su četiri Git podmodula, SPM, CocoaPod, na neki način oboje u istom projektu.
+
+414
+00:43:26,800 --> 00:43:26,880
+[SPEAKER_01] Da.
+
+415
+00:43:27,599 --> 00:43:31,599
+[SPEAKER_02] Da, odjednom je to sada četrdeset pet sekundi, minuta četrdeset pet, i to je samo nekako.
+
+416
+00:43:31,679 --> 00:43:40,800
+[SPEAKER_02] Velike tvrtke koje imaju ove ogromne, prostrane aplikacije poput Ubera, kao ogroman dio inženjerstva i slično, kao da je potrebno četrdeset pet minuta više da se kompilira naša aplikacija.
+
+417
+00:43:40,880 --> 00:43:46,000
+[SPEAKER_02] I tako ljudi odlaze i rade nove projekte gdje grade nove korisničke sučelja i pokušavaju ih nekako kopirati i zalijepiti, to je ludilo.
+
+418
+00:43:46,239 --> 00:43:48,000
+[SPEAKER_02] Dakle, u svakom slučaju, tangent.
+
+419
+00:43:48,400 --> 00:43:54,480
+[SPEAKER_02] Ali možete zamisliti da je čekanje na kompilaciju dok zapravo ne provodite vrijeme pišući kôd jednostavno jako, jako bolno.
+
+420
+00:43:54,800 --> 00:44:04,239
+[SPEAKER_02] I tako, ideja da možete napraviti brzu promjenu, spremiti je i da se korisničko sučelje odmah ažurira na vašem telefonu ili simulatoru ili bilo čemu drugom, to je jednostavno mnogo bolje.
+
+421
+00:44:04,800 --> 00:44:10,239
+[SPEAKER_02] I taj je zaglavlje stvarno izloženo jer stvarno smanjite vrijeme koje provodite pišući kôd.
+
+422
+00:44:10,480 --> 00:44:18,800
+[SPEAKER_02] Sličan je princip i kod vib-koda, gdje su modeli poput Claudea i Gemini ili bilo čega slični u pisanju Swift koda ili bilo čega drugog.
+
+423
+00:44:18,880 --> 00:44:34,880
+[SPEAKER_02] To je zapravo prilično uzbudljivo za React Native jer sam danas razgovarao s nekim, koji je vrlo dobar React Native razvijač, ovaj tip Fernando., koji je šef mobilnih uređaja u Versal, govorio je da je mnogo toga što je radio u posljednje vrijeme više u Swiftu na iOS-u jer ne mora postati stručnjak za Swift.
+
+424
+00:44:35,360 --> 00:44:45,760
+[SPEAKER_02] Kad želi nešto učiniti, može samo nekako imati umjetnu inteligenciju koja ga usmjerava u pravom smjeru, čisti stvari i čini da to funkcionira, pa može pisati više stvari u izvornom kodu.
+
+425
+00:44:46,159 --> 00:44:52,400
+[SPEAKER_02] Dakle, LM-ovi su zapravo dobri u pisanju takvih stvari, ali zamislite da ste vibekoder i samo ste poput, hej, želim isprobati.
+
+426
+00:44:52,480 --> 00:44:58,400
+[SPEAKER_02] Slušala sam da mogu napraviti stvari samo vibekodiranjem i odlučite da to želite učiniti tako što ćete pisati neki Swift kod.
+
+427
+00:44:58,719 --> 00:45:00,480
+[SPEAKER_02] I to je poput, dobro, prvo, trebate samo Mac.
+
+428
+00:45:00,880 --> 00:45:03,679
+[SPEAKER_02] Samo dvanaest posto računala diljem svijeta ima Macove.
+
+429
+00:45:03,760 --> 00:45:06,639
+[SPEAKER_02] U redu, pa sada je puno ljudi samo zaglavljeno i ne mogu ništa učiniti.
+
+430
+00:45:06,800 --> 00:45:09,280
+[SPEAKER_02] Ali recimo da imate Mac i recimo da je to brz Mac ili nešto slično.
+
+431
+00:45:09,599 --> 00:45:14,159
+[SPEAKER_02] I to je nešto poput, u redu, sada je sljedeća uputa da preuzmete Xcode.
+
+432
+00:45:14,400 --> 00:45:16,480
+[SPEAKER_02] I to često traje četrdeset pet minuta.
+
+433
+00:45:16,960 --> 00:45:19,840
+[SPEAKER_02] A onda je postavljanje kao još četrdeset pet minuta.
+
+434
+00:45:19,920 --> 00:45:22,639
+[SPEAKER_01] Devedeset devet dolara za registraciju u Apple Developer programu.
+
+435
+00:45:22,719 --> 00:45:23,440
+[SPEAKER_01] Trebate broj DUNS?
+
+436
+00:45:23,679 --> 00:45:27,199
+[SPEAKER_02] Ne, to ne morate učiniti, ali ne trebate broj DUNS dok ne želite otići u trgovinu aplikacijama.
+
+437
+00:45:27,280 --> 00:45:31,440
+[SPEAKER_02] Ali, znate, to vam može potrajati tri dana prije nego što dobijete odobrenje za svoj račun za razvijatelja.
+
+438
+00:45:31,519 --> 00:45:34,639
+[SPEAKER_02] Više vam nije potreban račun za razvijatelja da biste nešto stavili na svoje uređaje.
+
+439
+00:45:34,800 --> 00:45:36,239
+[SPEAKER_01] Ali, recimo, čak ni simulator.
+
+440
+00:45:36,639 --> 00:45:38,880
+[SPEAKER_01] na vašem uređaju, možete to učiniti bez njega.
+
+441
+00:45:39,119 --> 00:45:39,440
+[SPEAKER_02] Da, možete.
+
+442
+00:45:39,679 --> 00:45:44,880
+[SPEAKER_02] Ako priključite telefon na računalo, na mnogo načina je to prilično praktično, ali oni su malo opušteniji.
+
+443
+00:45:45,280 --> 00:45:56,000
+[SPEAKER_02] Na primjer, misao je poput toga da je privilegij da možete pisati bilo kakvo softver na ovim uređajima koji su svojevrsni nedotknuti igraonici.
+
+444
+00:45:56,239 --> 00:45:58,400
+[SPEAKER_01] Mislim, neću to raditi u svoje vrijeme, ali sada je puno lakše.
+
+445
+00:45:58,480 --> 00:46:00,079
+[SPEAKER_02] Postalo je lakše, ali još uvijek nije aktivno lako.
+
+446
+00:46:00,239 --> 00:46:02,079
+[SPEAKER_02] To je kao da postoji cijeli niz prepreka.
+
+447
+00:46:02,159 --> 00:46:06,400
+[SPEAKER_01] Otvaranje datoteke HTML u Chromeu i bum, pokrenete se.
+
+448
+00:46:06,639 --> 00:46:19,599
+[SPEAKER_02] Expo ima samo hrpu različitih alata i volim, trebalo mi je dugo da ih sve objasnim, ali jedan od njih je ova aplikacija ExpoGo koju možete preuzeti iz trgov iz trgovine aplikacijama i to je u osnovi kao i većina modula u SDK-u Expo.
+
+449
+00:46:19,920 --> 00:46:26,960
+[SPEAKER_02] Dakle, ako želite koristiti samo pogled kamere ili lokaciju ili žiroskop ili bilo koju od osnovnih stvari, one su već ugrađene nativno.
+
+450
+00:46:27,360 --> 00:46:30,320
+[SPEAKER_02] To pokriva puno područja za mnoge ljude.
+
+451
+00:46:30,800 --> 00:46:39,679
+[SPEAKER_02] Dakle, ako možete pisati stvari koje možete koristiti bilo koju font koju želite, možete napraviti bilo kakav stil koji želite, možete napraviti bilo kakve stvari, čak ima ugrađenu RackNative SKIA.
+
+452
+00:46:40,320 --> 00:46:43,360
+[SPEAKER_02] Dakle, možete napraviti prilično složene stvari samo s ovim.
+
+453
+00:46:43,599 --> 00:46:46,559
+[SPEAKER_02] Dakle, puno vibekodera u osnovi je poput ovdje, ovdje su vaše upute.
+
+454
+00:46:46,639 --> 00:46:52,480
+[SPEAKER_02] Preuzmite aplikaciju ExpoGo s trgovine aplikacijamaacije ExpoGo iz trgovine aplikacijama, na zaslon stavljamo QR kod, skeniramo taj QR kod i bum.
+
+455
+00:46:53,199 --> 00:47:00,800
+[SPEAKER_02] U manje od trideset, četrdeset sekundi, aplikacija vam je na telefonu dok u njoj radite promjene i pišete stvari.
+
+456
+00:47:01,039 --> 00:47:02,159
+[SPEAKER_02] To se jednostavno događa.
+
+457
+00:47:02,320 --> 00:47:05,119
+[SPEAKER_02] Bila sam upravo u Seattlu na mjestu koje se zove AI.
+
+458
+00:47:05,440 --> 00:47:10,800
+[SPEAKER_02] To je komplicirano, poput inkubatora, prostora za događaje i prostora za suradnju.
+
+459
+00:47:10,960 --> 00:47:16,559
+[SPEAKER_02] Osoba koja vodi taj fizički prostor rekao mi je da im je potrebna neka vrsta prijave.
+
+460
+00:47:16,639 --> 00:47:24,559
+[SPEAKER_02] Mnogi uredi imaju takvu vrstu prijave, gdje odlazite do stola i imaju iPad i popunjavate svoje ime i koga ćete posjetiti i slično.
+
+461
+00:47:24,639 --> 00:47:38,639
+[SPEAKER_02] I govorila je da su to hibridni proizvodi od nekoliko različitih stvari odjednom, pa nijedna od rješenja koja su im bila na polici nije bila baš ono što su trebali, ali nisu trebali ni nešto jako komplicirano jer nemaju stotinu lokacija.
+
+462
+00:47:38,800 --> 00:47:40,000
+[SPEAKER_02] Imaju samo jedno mjesto.
+
+463
+00:47:40,480 --> 00:48:12,880
+[SPEAKER_02] Nije tradicionalno obučena razvijačica ni ništa drugo, ali uspjela je pokrenuti Bolt s Expo i izgraditi aplikaciju koja je samo vibrantna i ima cijeli popis stručnjaka povezan s tom bazom podataka, a zatim cijeli obrasac za registraciju i možete potpisati svoje ime, a zatim ga podnosi i pohranjuje u bazu podataka Postgresa u oblaku pomoću Superbasea i mogu pristupiti nite joj i uspjela je to učiniti u nekoliko sati, samo nekako, znate, ponavljano pozivajući, ne uređujući kôd, što bi bilo poput usporedbe čak i stručnjaka za razvijatelje koji bi trebalo tjedan dana da to radi, zar ne?
+
+464
+00:48:13,199 --> 00:48:14,159
+[SPEAKER_02] Da, vjerojatno.
+
+465
+00:48:14,400 --> 00:48:20,400
+[SPEAKER_02] To je zapravo kao da je sada uživo, kao da koristi neke od alata za izložbu kako bi pomogli u nekom obliku testnog leta.
+
+466
+00:48:20,639 --> 00:48:26,239
+[SPEAKER_02] Kao da je puno toga što zapravo radimo samo rješavanje ovog problema distribucije, poput, hello, želim uzeti ovu aplikaciju i ući.
+
+467
+00:48:26,400 --> 00:48:28,800
+[SPEAKER_01] Dakle, sjajno je da možete pokrenuti aplikaciju Go.
+
+468
+00:48:29,280 --> 00:48:30,960
+[SPEAKER_01] Mislim, znam da vi još uvijek puno radite.
+
+469
+00:48:31,119 --> 00:48:39,039
+[SPEAKER_01] Mislim, mislim da je ono što je učinilo izložbu, jedna od stvari koja je učinila izložbu tako relevantnom, iznenada za sve ove ljude, to je uživo kao da je posljednja milja na mobilnim uređajima tako bolna.
+
+470
+00:48:39,199 --> 00:48:39,760
+[SPEAKER_01] Da, pa je sjajno.
+
+471
+00:48:39,840 --> 00:48:45,440
+[SPEAKER_01] Možete nešto vibrirati i, uh, i to je u, znate, u osnovi radi u pregledniku, ali onda, dobro, želite ga staviti u trgovinu aplikacijama.
+
+472
+00:48:45,599 --> 00:48:45,679
+[SPEAKER_02] Da.
+
+473
+00:48:46,000 --> 00:49:01,599
+[SPEAKER_02] I tako, puno toga na čemu smo radili posljednje godine ili dvije, radi se o stvarima poput onih na kojima smo nedavno objavili modul pod nazivom NPM test let gdje možete u osnovi u Exo projektu pokrenuti NPM test let i on će vas samo voditi kroz sve korake i staviti ga u test let i ne morate razmišljati o profilima za pružanje usluga.
+
+474
+00:49:01,760 --> 00:49:12,960
+[SPEAKER_02] Ne razmišljate o distribucijskim certifikatima, svim ovim stvarima koje su poput, osjećam da sam razgovarao s toliko ljudi koji su u mobilnom svijetu i ako ih na neki način stavite na stranu i kažete mi, objasnite mi što je profil za pružanje usluga.
+
+475
+00:49:48,239 --> 00:49:57,840
+[SPEAKER_02] Uložili smo mnogo truda u to da bismo, recimo, pokrenuli web jer smo dodali web hosting i slično, ili pokrenuli putem TestFlita ili trgovine aplikacijama ili bilo čega drugog, sve su te stvari bile mnogo lakše.
+
+476
+00:49:57,920 --> 00:50:02,159
+[SPEAKER_02] Kao što je stvarno dobar tok koji mnogi ljudi vole, zapravo pokrenemo Excode i Redstudio u oblaku za ljude.
+
+477
+00:50:02,239 --> 00:50:04,800
+[SPEAKER_02] To je jedan od glavnih načina na koji zaradimo novac kao tvrtka.
+
+478
+00:50:04,960 --> 00:50:08,480
+[SPEAKER_02] A ako nemate Mac ili brzi računalo, to je jednostavno lijepo.
+
+479
+00:50:08,559 --> 00:50:11,199
+[SPEAKER_02] Ali to također znači da ne morate stalno trčati s računalom.
+
+480
+00:50:11,440 --> 00:50:14,079
+[SPEAKER_02] Svaki put kad se prijavite, lako je imati izgradnju ili pokretanje u oblaku.
+
+481
+00:50:14,159 --> 00:50:21,360
+[SPEAKER_02] Ali onda možemo uzeti taj artefakt i jednostavno ga poslati za vas ili staviti u TestFlight ili jednostavno učiniti bilo što, gdje god taj artefakt treba ići.
+
+482
+00:50:21,599 --> 00:50:22,639
+[SPEAKER_02] Možemo riješiti te probleme.
+
+483
+00:50:22,960 --> 00:50:24,719
+[SPEAKER_02] Možemo pokrenuti mnoštvo, možete imati mnoštvo skripta.
+
+484
+00:50:24,719 --> 00:50:28,559
+[SPEAKER_02] Znate, protiv toga se pokreće mnoštvo napisanih testova, a zatim se generira izvješće i slično.
+
+485
+00:50:28,639 --> 00:50:38,000
+[SPEAKER_02] Dakle, rješavanje velikog broja tih problema veliki je dio onoga što smo upravo shvatili da ljudi trebaju prijeći od ideje do živog bića koje radi u proizvodnji onako kako žele.
+
+486
+00:50:38,719 --> 00:50:46,159
+[SPEAKER_01] Rekli ste da postoje Bolt i Replet i Lovable i AZERO, postoji mnoštvo njih i većina njih prolazi kroz vas.
+
+487
+00:50:46,320 --> 00:50:48,559
+[SPEAKER_01] Misliš li da će se stvari tako ispostaviti?
+
+488
+00:50:49,360 --> 00:50:57,679
+[SPEAKER_01] Jer se pitam i za nas kao infrastrukturnu tvrtku, ovisi o vašem uvjerenju u AGI, može li biti poput Build Expo, znate, kao nešto poput naredbenog retka.
+
+489
+00:50:57,840 --> 00:51:02,559
+[SPEAKER_01] Misliš li da će to trebati posjedovati?
+
+490
+00:51:02,639 --> 00:51:10,239
+[SPEAKER_01] Mislim da se postavlja pitanje gdje se vrijednost nakuplja i slično, ili možda čak možeš reći, razmišljate li o tome da posjedujete sloj vibekodiranja?
+
+491
+00:51:10,320 --> 00:51:11,519
+[SPEAKER_01] Gdje mislite da će to ići?
+
+492
+00:51:11,760 --> 00:51:14,639
+[SPEAKER_02] Razvijatelji žele raditi sve vrste stvari na različite načine.
+
+493
+00:51:14,800 --> 00:51:20,480
+[SPEAKER_02] I tako, ako bismo svaki put kad smo rekli, dobro, mislimo da vjerojatno većina ljudi želi to raditi.
+
+494
+00:51:20,559 --> 00:51:31,280
+[SPEAKER_02] Dakle, pretpostavimo da ćemo sve izgraditi oko toga, na kraju ćemo dobiti puno ljudi koji će reći, zapravo želim učiniti nešto stvarno čudno ili moram jer mislim da će to biti zapravo prilično širok izbor različitih stvari.
+
+495
+00:51:31,679 --> 00:51:36,320
+[SPEAKER_02] Druga strana kovanice je da mislim da je jedna stvar koju sam primijetio o AI-ju.
+
+496
+00:51:36,559 --> 00:51:42,079
+[SPEAKER_02] Generirao sam kôd i slično, što općenito bolje funkcionira, što više ga zadržavate na tračnicama.
+
+497
+00:51:42,239 --> 00:51:53,199
+[SPEAKER_02] I tako je veliki korak naprijed za Bolt i Lovable bio kada su oboje uzeli SuperBase i učinili ga ovakvim, ovakvim, ovakvim, ovakvim načinom na koji radimo backend za vas.
+
+498
+00:51:53,519 --> 00:51:57,920
+[SPEAKER_02] I siguran sam da je dio toga bio samo neka vrsta povezivanja SuperBasea i olakšavanja postavljanja računa.
+
+499
+00:51:58,159 --> 00:52:12,880
+[SPEAKER_02] Ali mislim da je drugi dio vjerojatno bio to što su prilagođavali neku vrstu sustavnih poziva za ono što su radili, samo kažu, kada radite backend, evo pravila, kao što su upotreba SuperBasea, zadržite, pobrinite se da ne curite privatni ključ klijentovima, znate, samo radite ove stvari na ovaj način.
+
+500
+00:52:12,880 --> 00:52:13,599
+[SPEAKER_02] Ovo je način na koji to radimo.
+
+501
+00:52:14,639 --> 00:52:24,159
+[SPEAKER_02] I mislim da je na mnogo načina smislenije oslanjati se na standardni, vrlo popularan pružatelj usluga jer će biti dobri podatci za obuku.
+
+502
+00:52:24,400 --> 00:52:26,639
+[SPEAKER_02] Svatko će znati kako s njim raditi i slično.
+
+503
+00:52:26,880 --> 00:52:48,559
+[SPEAKER_02] Mislim da smo još uvijek u ranim danima i slično, ali mislim da ćemo vidjeti puno pobjednika koji će pobijediti jer će ljudi samo početi i ne žele se boriti protiv umjetne inteligencije koja je samo nekako trenirana da, oh, koristi ovu rješenje ili, mislim, vjerojatno biste mogli dobiti umjetnu inteligenciju da generira web-lokaciju Svelte ili nešto slično danas.
+
+504
+00:52:48,559 --> 00:52:48,880
+[SPEAKER_02] Ne znam, nešto ovakvo danas.
+
+505
+00:52:49,039 --> 00:52:58,079
+[SPEAKER_02] Kao da samo kažem, molim te, upotrijebi Svelte, ali ako samo kažem, napravi mi web-lokaciju, gotovo svaki model će se zadržati na React-u i skloniti se u tom smjeru.
+
+506
+00:52:58,480 --> 00:53:00,400
+[SPEAKER_01] I vjerojatno će ti reći da odeš na izložbu, zar ne?
+
+507
+00:53:00,480 --> 00:53:02,079
+[SPEAKER_01] Kao da se pitaš kako ću to staviti na svoj telefon?
+
+508
+00:53:02,239 --> 00:53:04,800
+[SPEAKER_01] Vjerojatno će ti devet od deset puta reći da će ti to reći.
+
+509
+00:53:04,960 --> 00:53:07,280
+[SPEAKER_01] Vidimo puno toga za RevenueCats, kao što je, kako ću to kupiti?
+
+510
+00:53:07,519 --> 00:53:10,559
+[SPEAKER_01] Kao da to sve radiš ili odeš na revenuecat dot com, zar ne?
+
+511
+00:53:10,719 --> 00:53:11,840
+[SPEAKER_01] Kao da je to opcija.
+
+512
+00:53:12,159 --> 00:53:22,320
+[SPEAKER_02] Mislim da je puno stvari jednostavnije i da se izbjegne drugi neugodni korak, kao što kažeš, ili odeš na revenuecat dot com i da će ti se mnogi problemi s kojima ćeš se suočiti nestati ili se riješiti ovim.
+
+513
+00:53:22,559 --> 00:53:30,320
+[SPEAKER_02] Mislim da će ljudi imati mnogo manje strpljenjajivost za takve druge korake ili takve vrste lutanja šumom pokušavajući postići da nešto komplicirano funkcionira?
+
+514
+00:53:30,400 --> 00:53:45,920
+[SPEAKER_01] Imam neku vrstu argumenta, argument gradientnog spusta, gdje je energija koja je potrebna za slanje nekoga u RevenueCat ili Expo ili bilo što drugo uvijek manja od energije koja bi trebala biti potrebna za generiranje žetona, model bi trebao optimizirati prema tom ishodu, zar ne?
+
+515
+00:53:46,400 --> 00:53:54,079
+[SPEAKER_01] Što je uglavnom lijep način da kažem ono što govorite, što je da je to već relativno minimalno, kao da će nastaviti jačati to, zar ne?
+
+516
+00:53:54,159 --> 00:54:01,920
+[SPEAKER_01] Kao da koristim bazu i bilo što drugo, za razliku od istraživanja novog prostora, što je ono što vibracije zapravo grade, to je mjesto gdje bi se model trebao trošiti većinu svoje energije.
+
+517
+00:54:02,400 --> 00:54:12,400
+[SPEAKER_02] Također mislim da postoje stvari u kojima, kao što je puno ljudi koji rade ove, znate, web-bazne prijatelje za AI-jeve i slično, ne žele se upuštati u neke uske dijelove problema.
+
+518
+00:54:12,559 --> 00:54:15,920
+[SPEAKER_02] To je kao, ili ponekad čak ni ne, mislim da naš prostor zapravo nije jako uski.
+
+519
+00:54:16,320 --> 00:54:20,639
+[SPEAKER_02] Dio izazova u tome je što se toliko toga događa na mobilnim uređajima i tako ogromna područja usluga.
+
+520
+00:54:20,800 --> 00:54:24,400
+[SPEAKER_02] I, znate, mogli biste pokušati izgraditi sve što smo izgradili?
+
+521
+00:54:24,719 --> 00:54:27,119
+[SPEAKER_02] Da, mogli biste, uz dovoljno truda, mogli biste.
+
+522
+00:54:27,280 --> 00:54:31,039
+[SPEAKER_02] I vjerojatno bi bilo lakše drugi put jer biste mogli samo pogledati što smo napravili u mnogim slučajevima.
+
+523
+00:54:31,119 --> 00:54:32,639
+[SPEAKER_02] Vjerojatno istina i za RevenueCat.
+
+524
+00:54:33,679 --> 00:54:36,880
+[SPEAKER_02] Ako želite izgraditi nešto slično RevenueCatu, mogli biste samo pogledati i staviti ga u to.
+
+525
+00:55:12,239 --> 00:55:17,119
+[SPEAKER_00] Jer LLM može zapravo renderirati, testirati i zatvoriti krug.
+
+526
+00:55:17,599 --> 00:55:22,960
+[SPEAKER_00] Jeste li primijetili da je to trend, da se sve više poboljšava u tome što je tako brzo?
+
+527
+00:55:23,440 --> 00:55:29,440
+[SPEAKER_00] Kao što ste rekli, ne želite morati sastaviti aplikaciju, pričekati pet minuta da biste zatim testirali kod.
+
+528
+00:55:30,000 --> 00:55:38,400
+[SPEAKER_01] Da, čak i upotreba kursora ili ChatGPT-a uz Xcode je samo podstandardno iskustvo za upotrebu jednog od ovih alata za vibraciju kodiranja iz tog razloga, zar ne?
+
+529
+00:55:38,880 --> 00:55:41,599
+[SPEAKER_01] LM može zapravo pokrenuti kod, što je velika prednost.
+
+530
+00:55:41,920 --> 00:55:54,559
+[SPEAKER_02] Jedno sam čuo da je jedan od razloga zašto su ti LM-ovi prilično dobri u pisanju koda u usporedbi s mnogimim drugim stvarima, to je zato što su mogli generirati izlaz, a zatim pokrenuti kod i reći je li radio.
+
+531
+00:55:55,199 --> 00:56:00,000
+[SPEAKER_02] I tako je mnogo lakše trenirati na tome u odnosu na, je li ovo dobra pjesma?
+
+532
+00:56:00,159 --> 00:56:04,960
+[SPEAKER_01] Kada ga zamolim da izradi strategiju tvrtke, nema načina da to vrati, na primjer.
+
+533
+00:56:05,119 --> 00:56:17,599
+[SPEAKER_02] Ali onda postoji i, ovo možda nije baš ono o čemu govorite, ali to je nešto o čemu govorite, ali u određenoj mjeri je to verzija s povećanjem, gdje sam radio s nekim tko je bio jako dobar dizajner i inženjer Swift.
+
+534
+00:56:18,960 --> 00:56:24,639
+[SPEAKER_02] I pokrenuo je novi start-up koji je bio poput potrošačkog proizvoda i izgradili su ga u Swiftu iz svih razloga.
+
+535
+00:56:24,639 --> 00:56:28,880
+[SPEAKER_02] Razlog zbog kojeg ljudi misle: Moramo savršeno komunicirati.
+
+536
+00:56:29,119 --> 00:56:32,960
+[SPEAKER_02] Mi smo potrošački proizvodi, pa svaki mali detalj ima značenje, i tako dalje.
+
+537
+00:56:33,039 --> 00:56:47,199
+[SPEAKER_02] A onda je došlo do točke u kojoj su ljudi voljeli nešto, ali to nije bilo baš na točki na kojoj bi se moglo podići kao serija B ili je bilo stvarno na putu, pa su morali na tome raditi, ali su imali i neke mrežne efekte.
+
+538
+00:56:47,519 --> 00:56:53,440
+[SPEAKER_02] Bili su poput: Moramo biti na Androidu i Webu, ali moramo i promijeniti ovaj proizvod.
+
+539
+00:56:54,079 --> 00:57:00,960
+[SPEAKER_02] Dakle, hoćemo li sve zamrznuti i izgraditi Android verziju, ali onda ćemo ostati s dvije verzije koda i nikad nećemo moći napredovati?
+
+540
+00:57:00,960 --> 00:57:08,239
+[SPEAKER_02] I, kao što je i to, čak i da bismo se držali samo iOS-a, kao da nam treba puno vremena da napravimo čak i jedan novi zaslon ili bilo što drugo.
+
+541
+00:57:08,480 --> 00:57:14,960
+[SPEAKER_02] I tako, znate, sada radi na nečemu novom i zapravo je samo nešto poput, da, samo koristim Expo za to.
+
+542
+00:57:15,280 --> 00:57:22,159
+[SPEAKER_02] Tehnologija je došla do točke u kojoj sam mogao napraviti stvari koje trebam učiniti i mogu mnogo brže reći volim li nešto ili ne.
+
+543
+00:57:22,719 --> 00:57:25,760
+[SPEAKER_02] I mogu se spustiti u Swift kad trebam, ali zapravo još nisam trebao.
+
+544
+00:57:26,800 --> 00:57:36,800
+[SPEAKER_02] I tako mislim da se puno ljudi uče druge lekcije o iteraciji na težak način ili je to kao da se često nađete na sredini u kojoj ste poput, ovo je dobro, ali je li to točno ono što želim?.
+
+545
+00:57:36,960 --> 00:57:40,079
+[SPEAKER_02] I ako ne možete, morate znati što želite.
+
+546
+00:57:40,239 --> 00:57:42,480
+[SPEAKER_02] Mislim da je to vrijedno toga.
+
+547
+00:57:42,800 --> 00:57:49,440
+[SPEAKER_01] Čak i ako postoji neka relativna poteškoća s radom s alatima, to se može lako uništiti malim povećanjem brzine iteracije.
+
+548
+00:57:49,760 --> 00:57:49,840
+[SPEAKER_01] Da.
+
+549
+00:57:50,000 --> 00:57:50,079
+[SPEAKER_01] Da.
+
+550
+00:57:50,480 --> 00:57:53,280
+[SPEAKER_00] Ja i Jake razgovarali smo o tome prije nego što smo se uključili na Craigslist.
+
+551
+00:57:53,440 --> 00:57:56,480
+[SPEAKER_00] Provjerio sam to u trgovini aplikacijama jer godinama nisam koristio Craigslist.
+
+552
+00:57:56,960 --> 00:58:04,719
+[SPEAKER_00] Zapravo nisam ni preuzeo aplikaciju, iznenađujuće, ali ima oko četiri stotine pedeset tisuća recenzija i prosječno četiri i pol zvjezdice.
+
+553
+00:58:04,800 --> 00:58:17,199
+[SPEAKER_01] I znate, kad sam to vidio, pomislio sam da je to aplikacija React Native, usput rečeno, ili React Expo, React Native, o kojoj smo razgovarali na pozivuivu, kao da je moja duga priča previše detaljna, ali moja supruga je tamo radila 2016.
+
+554
+00:58:17,280 --> 00:58:17,760
+[SPEAKER_01] i 2017.
+
+555
+00:58:17,840 --> 00:58:17,920
+[SPEAKER_01] godine.
+
+556
+00:58:18,000 --> 00:58:20,559
+[SPEAKER_01] I to je bilo nešto o čemu sam otišao i razgovarao s njima kako bih im pomogao.
+
+557
+00:58:20,639 --> 00:58:22,480
+[SPEAKER_01] Vjerojatno ću prekršiti ugovor o neovlaštenosti.
+
+558
+00:58:22,800 --> 00:58:23,199
+[SPEAKER_01] Ne brinem.
+
+559
+00:58:23,280 --> 00:58:25,360
+[SPEAKER_01] I očito sam rekao: O, trebao bi pogledati Expo.
+
+560
+00:58:25,519 --> 00:58:31,199
+[SPEAKER_01] I očito je to bila jedna od prvih velikih tvrtki ili nešto slično, ili nešto poput šokantnih logotipa koje si vidio, Charlie, što je prilično smiješno.
+
+561
+00:58:31,280 --> 00:58:34,320
+[SPEAKER_02] Došli su do nas i rekli: Eh, razmišljamo o tome da te upotrijebimo za to.
+
+562
+00:58:34,400 --> 00:58:35,280
+[SPEAKER_02] Nismo imali ništa.
+
+563
+00:58:35,440 --> 00:58:38,159
+[SPEAKER_02] Mislim da je najveća stvar s Expo u to vrijeme bila urbanna rječnika.
+
+564
+00:58:39,039 --> 00:58:39,840
+[SPEAKER_01] To je prilično veliko.
+
+565
+00:58:40,239 --> 00:58:41,199
+[SPEAKER_01] Mislim da je to cool.
+
+566
+00:58:41,360 --> 00:58:45,039
+[SPEAKER_01] Počinjete s marki, ali znate, to je veliki korak naprijed.
+
+567
+00:58:45,039 --> 00:58:45,360
+[SPEAKER_01] Pa, da.
+
+568
+00:58:45,599 --> 00:58:45,679
+[SPEAKER_00] Da.
+
+569
+00:58:45,920 --> 00:58:48,880
+[SPEAKER_00] Samo sam htio reći, kad sam to vidio, stvarno me je zapanjilo.
+
+570
+00:58:49,760 --> 00:58:55,519
+[SPEAKER_00] da ljudi pregledavaju i brinu se i ocjenjuju ishod.
+
+571
+00:58:55,599 --> 00:58:59,039
+[SPEAKER_00] Pomaže li mi Craigslist da postignem ono što sam se odlučio postići?
+
+572
+00:58:59,519 --> 00:59:04,960
+[SPEAKER_00] Ne ocjenjuju svaku malu interakciju za koju mislite da mora biti savršena.
+
+573
+00:59:05,199 --> 00:59:10,320
+[SPEAKER_00] I mislim, samo gledajući snimke zaslona, možete reći da je aplikacija Craigslista kao i web-lokacija Craigslista.
+
+574
+00:59:11,360 --> 00:59:14,559
+[SPEAKER_00] Nije to nevjerojatno polirana, savršena iskustvo.
+
+575
+00:59:14,639 --> 00:59:18,239
+[SPEAKER_01] Možda razmišljate, što je zapravo ograničavajući čimbenik ovdje, kao ograničavajući čimbenik?
+
+576
+00:59:18,480 --> 00:59:22,639
+[SPEAKER_01] Možda to nije ExpoS poliranje ili Raccoon poliranje, ali možda Craigslist dizajn.
+
+577
+00:59:23,360 --> 00:59:24,320
+[SPEAKER_00] U redu, potpuno.
+
+578
+00:59:24,320 --> 00:59:26,960
+[SPEAKER_00] Ali bit je u tome što ljudi vole aplikaciju.
+
+579
+00:59:27,519 --> 00:59:32,639
+[SPEAKER_00] Znate, četiri i pol zvjezdice, četiri stotine pedeset tisuća recenzija.
+
+580
+00:59:32,800 --> 00:59:34,559
+[SPEAKER_01] Ima puno aplikacija koje nisu ni blizu toga.
+
+581
+00:59:34,719 --> 00:59:41,599
+[SPEAKER_02] Da, jedna je da je najveći korisnik Rack Nativea u Meta, mislim, zapravo Marketplace, koji svakodnevno koristi milijardu ljudi.
+
+582
+00:59:42,079 --> 00:59:47,280
+[SPEAKER_02] I tako, mislim da je i Craigslist i stvar koja je zamijenila Craigslist za mnoge od nas, naša tvrtka.
+
+583
+00:59:47,440 --> 00:59:48,800
+[SPEAKER_02] I mislim da je Marketplace zapravo prilično dobar.
+
+584
+00:59:48,960 --> 00:59:51,599
+[SPEAKER_01] Prije toga sam rekao Davidu da je to moja omiljena društvena mreža.
+
+585
+00:59:51,679 --> 00:59:53,280
+[SPEAKER_01] Volim tamo ići i pregledavati.
+
+586
+00:59:53,519 --> 00:59:54,400
+[SPEAKER_01] I jednostavno je zabavno.
+
+587
+00:59:54,480 --> 00:59:56,480
+[SPEAKER_01] Algo ne pokušava agresivno privući moju pozornost.
+
+588
+00:59:56,639 --> 00:59:57,280
+[SPEAKER_01] Fantastično je.
+
+589
+00:59:57,679 --> 00:59:58,719
+[SPEAKER_02] I to je vrlo stvarno.
+
+590
+00:59:58,880 --> 00:59:59,599
+[SPEAKER_02] Ali onda je tu još jedna stvar.
+
+591
+01:00:00,000 --> 01:00:02,960
+[SPEAKER_02] Jedna stvar koja mi se podsjeća na to jest da me je nešto dovelo do ludila godinama.
+
+592
+01:00:03,199 --> 01:00:12,239
+[SPEAKER_02] I dio razloga zbog kojeg radim na tome jest taj što kad se oko sebe okrenem i pogledam kako ljudi koje poznajem i ja koristimo softver, uglavnom radim na svom mobilnom uređaju.
+
+593
+01:00:12,400 --> 01:00:14,639
+[SPEAKER_02] Ja sam netko čiji je posao cijeli dan sjediti ispred računala.
+
+594
+01:00:14,719 --> 01:00:21,599
+[SPEAKER_02] Dakle, definitivno nisam protiv računala, ali većina ljudi nema posao u kojem cijeli dan sjedi ispred računala.
+
+595
+01:00:21,920 --> 01:00:28,480
+[SPEAKER_01] Mislim da je postalo mnogo manje normalno da ljudi koji nemaju posao s računalom ili nisu ljubitelji računala redovito koriste računalo.
+
+596
+01:00:28,880 --> 01:00:36,320
+[SPEAKER_02] Ali ako razmislite o tome na čemu rade programeri, to je nešto poput većine ljudi koji tamo rade web programeri koji stvaraju web-lokacije za ljude koji sjede is za računalom.
+
+597
+01:00:36,880 --> 01:00:41,519
+[SPEAKER_02] I, znate, način na koji koristimo softver je da većina ljudi koristi aplikaciju na svom telefonu za bilo što.
+
+598
+01:00:41,599 --> 01:00:42,800
+[SPEAKER_02] I to postaje sve istinitije.
+
+599
+01:00:42,960 --> 01:00:46,079
+[SPEAKER_02] Kad je prije bilo tako, znate, nisam pisala važne poruke na telefon.
+
+600
+01:00:46,320 --> 01:00:49,679
+[SPEAKER_02] Sjedila bih i sada, znate, većinu važnih poruka koje pišem, pišem s telefona.
+
+601
+01:00:49,840 --> 01:00:58,960
+[SPEAKER_02] I, znate, možda bih rekla, znate, u ranim danima Expo-a, ponekad bih to naglasila i rekla bih, znate, to nije kao da ćemo, znate, igrati videoigre u prvom licu i uređivati videozapise i slično.
+
+602
+01:00:59,119 --> 01:01:01,360
+[SPEAKER_02] To vjerojatno neće prijeći na mobilne uređaje.
+
+603
+01:01:01,599 --> 01:01:08,559
+[SPEAKER_02] Ali sada, znate, TikTok vjerojatno ima više minuta uređivanja videozapisa dnevno nego ukupno, znate, Final Cut i Premiere ili bilo što drugo.
+
+604
+01:01:08,639 --> 01:01:17,360
+[SPEAKER_02] I onda, znate, siguran sam da je to ukupnona zbroj minuta koje se igraju na, recimo, prvoj osobi na Android uređajima veća nego na računalima danas i slično.
+
+605
+01:01:17,679 --> 01:01:20,880
+[SPEAKER_01] Da, koliko ljudi više ne sjedi i ne igra Counter-Strike?
+
+606
+01:01:21,519 --> 01:01:24,480
+[SPEAKER_02] Sve su to stvari o kojima sam razmišljao, ne znam hoće li se to premjestiti.
+
+607
+01:01:24,559 --> 01:01:25,280
+[SPEAKER_02] Sve su to zapravo.
+
+608
+01:01:25,920 --> 01:01:40,480
+[SPEAKER_02] I tako, dio onoga što želim riješiti jest kako možemo učiniti da je dovoljno jednostavno raditi na mobilnim uređajima kako bismo uskladili napore i energiju programera s načinom na koji ljudi zapravo koriste softver u svijetu.
+
+609
+01:01:40,719 --> 01:01:45,599
+[SPEAKER_02] Jer se sjećam da sam bio u Miamiju i sjedio sam pored nekoga tko mi je rekao da radi na.
+
+610
+01:01:45,599 --> 01:01:51,039
+[SPEAKER_02] Radili su na nekoj od tih startupa za kupnju trave ili bilo čemu drugom.
+
+611
+01:01:51,119 --> 01:01:54,719
+[SPEAKER_02] Rekli su mi da rade u dvadesetogodišnjem timu za razvijanje.
+
+612
+01:01:54,960 --> 01:02:04,400
+[SPEAKER_02] A on je rekao: Da, mislim da imamo mene i ponekad mi ta druga osoba pomaže u aplikaciji i koristimo React Native za to.
+
+613
+01:02:04,719 --> 01:02:05,760
+[SPEAKER_02] A ja sam rekao: U redu.
+
+614
+01:02:06,159 --> 01:02:09,599
+[SPEAKER_02] A on je rekao: Da, gotovo svi ostali rade na web-mjestu.
+
+615
+01:02:09,679 --> 01:02:16,000
+[SPEAKER_02] A ja sam rekao: Pa, pa, aplikacija mora biti neka vrsta oglasa ovdje ili nije važna za vas.
+
+616
+01:02:16,400 --> 01:02:19,360
+[SPEAKER_02] A on je rekao: Ne, ne, ne, devedeset pet posto naših prodaja je putem aplikacije.
+
+617
+01:02:19,519 --> 01:02:20,239
+[SPEAKER_02] Ali iz nekog razloga.
+
+618
+01:02:20,239 --> 01:02:22,559
+[SPEAKER_02] Ne znam zašto, ali znate, možete zaposliti web programera.
+
+619
+01:02:22,800 --> 01:02:26,559
+[SPEAKER_02] I tako su imali sve te ljude koji su radili na web-mjestu.
+
+620
+01:02:26,719 --> 01:02:32,880
+[SPEAKER_02] I mislim da je velik dio industrije u državi gdje je mnogo lakše pisati i implementirati stvari na webu.
+
+621
+01:02:32,960 --> 01:02:37,920
+[SPEAKER_02] I to je samo bolja iskustvo razvoja u povijesti, pa na kraju završavamo kao da se okrećemo tom pravom.
+
+622
+01:02:38,000 --> 01:02:43,440
+[SPEAKER_01] Ove su ograničenja poput odjeka i stvaraju neke vrste neravnoteže, znate, slučajno.
+
+623
+01:02:43,679 --> 01:02:47,920
+[SPEAKER_02] Ali mislim da se neke od tih stvari mijenjaju i postaju malo lakše za rukovanje i slično.
+
+624
+01:02:48,159 --> 01:02:58,159
+[SPEAKER_02] I znate, neke od načina na koje se neke politike mijenjaju na temelju nekih od tih tužbi i slično, mislim da će to na se sve više liberalizirati, zar ne?
+
+625
+01:02:58,239 --> 01:03:00,719
+[SPEAKER_01] Ne očekujem da će Apple nastaviti s tužbama i bez njih.
+
+626
+01:03:00,880 --> 01:03:02,800
+[SPEAKER_01] Mislim da će se sve samo nastaviti.
+
+627
+01:03:03,039 --> 01:03:13,599
+[SPEAKER_02] Mislim da je to način na koji razmišljam, nešto poput, znate, kada je Uber prvi put pokrenut, mislim da je to vjerojatno tehnički bilo ilegalno na mnogim mjestima, ali na kraju dana, ako je nešto stvarno dobro, gdje je to samo ako ljudi to traže, to će se dogoditi.
+
+628
+01:03:13,760 --> 01:03:16,960
+[SPEAKER_02] Tada će se na kraju, vrata, brana uhvatiti ili puknuti ili nešto slično.
+
+629
+01:03:17,199 --> 01:03:30,639
+[SPEAKER_00] Pa mislim da je to sjajna tema za zaključak, znate, s povećanjem alata, umjetne inteligencije, sa svime što se događa u industriji, sve je brže.
+
+630
+01:03:30,639 --> 01:03:33,199
+[SPEAKER_00] Brže i jednostavnije je razvijati softver koji pomaže ljudima.
+
+631
+01:03:33,280 --> 01:03:34,639
+[SPEAKER_00] I to je stvarno sjajno.
+
+632
+01:03:34,800 --> 01:03:36,320
+[SPEAKER_00] I uzbudljivo je biti dio toga.
+
+633
+01:03:36,719 --> 01:03:38,800
+[SPEAKER_00] Želite li podijeliti još nešto dok završavamo?
+
+634
+01:03:38,960 --> 01:03:42,159
+[SPEAKER_02] Ne, imam osjećaj da sam mogao pokazati naše proizvode.
+
+635
+01:03:42,239 --> 01:03:43,039
+[SPEAKER_02] Žao mi je.
+
+636
+01:03:43,119 --> 01:03:50,960
+[SPEAKER_01] Rekao sam da možete otići na web-stranicu Expo, ali iskreno, ljudi će vas vjerojatno pronaći putem Bolt-a, znate, kao da će vam LLM-ovi reći da tamo idete.
+
+637
+01:03:51,119 --> 01:03:52,800
+[SPEAKER_01] Ali ne, mislim da je stvarno sjajno što vi gradite.
+
+638
+01:03:52,960 --> 01:03:58,800
+[SPEAKER_01] Mislim da me to uzbuđuje jer smo još uvijek na početku prijelaza na mobilne uređaje.
+
+639
+01:03:59,039 --> 01:04:03,679
+[SPEAKER_01] I zapravo, možda je e-komunikacija i Shopify otvorili e-komunikaciju za mnoge ljude.
+
+640
+01:04:03,760 --> 01:04:05,440
+[SPEAKER_01] I dalje mislim da je mobilni razvoj.
+
+641
+01:04:05,440 --> 01:04:09,920
+[SPEAKER_01] Razvoj mobilnih uređaja i razvoj općenito sada se konačno otvara i Expo igra veliku ulogu u tome.
+
+642
+01:04:10,159 --> 01:04:11,199
+[SPEAKER_01] To je jednostavno stvarno sjajno.
+
+643
+01:04:11,440 --> 01:04:12,800
+[SPEAKER_00] Da, hvala na radu koji radite.
+
+644
+01:04:13,039 --> 01:04:13,920
+[SPEAKER_00] U redu, hvala, Charlie.
+
+645
+01:04:14,079 --> 01:04:15,599
+[SPEAKER_02] U redu, lijep dan, Davide.
+
+646
+01:04:15,679 --> 01:04:16,719
+[SPEAKER_02] Razgovarajmo kasnije, Jacob.
+
+647
+01:04:18,960 --> 01:04:20,800
+[SPEAKER_00] Hvala ti puno što si me slušao.
+
+648
+01:04:21,199 --> 01:04:25,199
+[SPEAKER_00] Ako imaš minutu, ostavite mi recenziju u svom omiljenom reproduktoru podcasta.
+
+649
+01:04:25,519 --> 01:04:33,840
+[SPEAKER_00] Također možeš posjetiti chat dot subclub dot com da se pridružiš našoj privatnoj zajednici.
+
