@@ -1,25 +1,24 @@
-# Stuff — Austin Blake
+# 93: Stuff — Austin Blake
 
 **Kanal:** launched  
 **Datum:** 2026-06-03  
 **Trajanje:** 66 min  
 **YouTube:** https://youtu.be/029f40caafc  
-**Model:** gemini-2.5-flash  
+**Model:** gemini-3.5-flash  
 
 ## Sažetak
 
-Austin Blake, kreator aplikacije za upravljanje zadacima "Stuff", dijeli svoje putovanje od studenta filma do neovisnog iOS developera. Razgovor se fokusira na izazove natjecanja na zasićenom tržištu produktivnih aplikacija, važnost dizajna i korisničkog iskustva, te kako je njegova aplikacija "Stuff" dobila priznanje od Applea. Blake također govori o prelasku na RevenueCat i razvoju Mac verzije aplikacije, naglašavajući važnost dugoročne predanosti i povratnih informacija korisnika.
+U ovoj epizodi podcasta Launched, voditelj Charlie Chapman razgovara s Austinom Blakeom, tvorcem aplikacije za upravljanje zadacima Stuff. Austin dijeli svoj karijerni put od studenta filma na sveučilištu BYU i velikog obožavatelja Applea, preko rada u Appleu kao ugovorni suradnik, pa sve do razvoja vlastitih aplikacija. Glavna tema razgovora je razvoj i lansiranje aplikacije Stuff, njezina inspiracija aplikacijom Wunderlist, izazovi privlačenja korisnika na konkurentnom tržištu te nedavno lansiranje verzije za Mac.
 
 ## Ključne teme
 
-- razvoj mobilnih aplikacija
-- aplikacije za produktivnost
-- Apple ekosustav
-- marketing aplikacija
-- korisničko iskustvo i dizajn
-- poslovni modeli pretplate
-- razvoj Mac aplikacija
-- umjetna inteligencija u aplikacijama
+- upravljanje zadacima
+- razvoj aplikacija
+- dizajn softvera
+- produktivnost
+- apple
+- marketing
+- macOS razvoj
 
 ## Govornici
 
@@ -30,24 +29,20 @@ Austin Blake, kreator aplikacije za upravljanje zadacima "Stuff", dijeli svoje p
 
 ## Ključni zaključci
 
-1. Unatoč zasićenosti tržišta aplikacijama za zadatke, uvijek postoji prostor za nove konkurente ako se developer posveti stvaranju jedinstvenog i kvalitetnog proizvoda.
-2. Austin Blake je razvio "Stuff" inspiriran aplikacijom "Wonderlist", s ciljem kombiniranja jednostavnosti i moćnih značajki, poput ovisnosti između zadataka, koje je želio vidjeti u aplikaciji.
-3. Važnost dizajna i korisničkog iskustva ključna je za uspjeh aplikacije, posebno u Appleovom ekosustavu, gdje korisnici cijene polirane proizvode koji "osjećaju ispravno".
-4. Predbilježbe i aktivno prikupljanje povratnih informacija od korisnika tijekom razvoja pomažu u izgradnji zajednice i poboljšanju aplikacije, čineći korisnike uključenima od početka.
-5. Appleovo isticanje aplikacije "Stuff" zbog implementacije novih značajki temeljenih na umjetnoj inteligenciji (način slušanja i skeniranja) značajno je doprinijelo njenom rastu.
-6. Dugoročna predanost razvoju i transparentna komunikacija s korisnicima ključni su za izgradnju povjerenja, posebno kod aplikacija koje pohranjuju važne osobne podatke.
-7. Razvoj Mac verzije aplikacije zahtijevao je prilagodbu dizajna i funkcionalnosti specifičnostima platforme, poput podrške za tipkovničke prečace i više prozora, kako bi se osiguralo izvorno iskustvo.
+1. Austin Blake je počeo kao student filma na BYU, ali je nakon predavanja Appleovog direktora oglašavanja odlučio promijeniti smjer i samostalno naučiti programirati.
+2. Njegova aplikacija Stuff inspirirana je aplikacijom Wunderlist i nastoji ponuditi jednostavan, ali moćan sustav za upravljanje zadacima s čistim dizajnom.
+3. Rad kao ugovorni suradnik u Appleu omogućio mu je da paralelno razvija vlastite projekte, iako je usklađivanje dvaju poslova bilo iznimno iscrpljujuće.
+4. Aplikacija Stuff je doživjela značajan rast nakon što ju je Apple istaknuo u svojim novostima zbog integracije novih modela umjetne inteligencije na uređaju.
+5. Nedavno lansiranje verzije za Mac zahtijevalo je prilagodbu dizajna i uvođenje specifičnih funkcionalnosti poput prečaca na tipkovnici i podrške za više prozora.
+6. Austin redovito objavljuje mjesečne video dnevnike programera na YouTubeu kako bi održao transparentnost i izgradio dugoročno povjerenje sa zajednicom korisnika.
 
 ## Spomenute osobe
 
-- Charlie Chapman
-- Austin Blake
 - Steve Jobs
-- Ian Small
 - Paul Hudson
 - Chance Miller
+- Ian Small
 - Johnny Ive
-- Tiago Forte
 - Steph Ango
 - JC Hammond
 - Sean Hickman
@@ -56,22 +51,17 @@ Austin Blake, kreator aplikacije za upravljanje zadacima "Stuff", dijeli svoje p
 ## Spomenuta mjesta
 
 - Salt Lake
-- Sveučilište Brigham Young
 
 ## Spomenute organizacije
 
 - RevenueCat
 - Apple
+- Brigham Young University
+- BYU
 - Evernote
 - Microsoft
 - Notion
-- JIRA
-- Carrot Weather
 - Obsidian
-- Sofa
-- Xbox Game Pass
-- Maxon Cinema 4D
-- HI.RO Report
 
 ---
-*Sentiment: positive | Generirano: 2026-06-23T14:23:11.762Z*
+*Sentiment: positive | Generirano: 2026-07-30T22:23:49.153Z*
