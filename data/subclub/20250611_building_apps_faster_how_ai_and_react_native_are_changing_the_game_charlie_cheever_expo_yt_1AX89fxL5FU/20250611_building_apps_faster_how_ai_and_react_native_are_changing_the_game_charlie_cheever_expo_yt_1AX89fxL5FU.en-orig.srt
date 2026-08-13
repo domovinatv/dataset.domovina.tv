@@ -1,0 +1,8280 @@
+1
+00:00:00,000 --> 00:00:04,600
+Hello, I'm your host David Bernard and
+
+2
+00:00:02,320 --> 00:00:06,960
+with me today RevenueCat CEO Jacob
+
+3
+00:00:04,600 --> 00:00:10,720
+Eiding. Our guest today is Charlie
+
+4
+00:00:06,960 --> 00:00:12,920
+Cheever, the co-founder and CEO of Expo,
+
+5
+00:00:10,720 --> 00:00:15,440
+the easiest way to create native apps
+
+6
+00:00:12,920 --> 00:00:17,720
+and websites that run everywhere using
+
+7
+00:00:15,440 --> 00:00:20,200
+React. On the podcast we talk with
+
+8
+00:00:17,720 --> 00:00:23,200
+Charlie about why React Native has
+
+9
+00:00:20,200 --> 00:00:25,480
+become the default for VC funded apps.
+
+10
+00:00:23,200 --> 00:00:26,680
+How AI is accelerating development
+
+11
+00:00:25,480 --> 00:00:29,720
+cycles.
+
+12
+00:00:26,680 --> 00:00:31,680
+And why speed of iteration matters more
+
+13
+00:00:29,720 --> 00:00:33,200
+than programming language.
+
+14
+00:00:31,680 --> 00:00:35,320
+Hey Charlie, thanks so much for joining
+
+15
+00:00:33,200 --> 00:00:36,840
+us on the podcast. Hey, thanks for
+
+16
+00:00:35,320 --> 00:00:38,280
+having me. It's awesome to be here.
+
+17
+00:00:36,840 --> 00:00:40,640
+And Jacob, nice to have you on as well
+
+18
+00:00:38,280 --> 00:00:43,240
+today. Excited to talk about I think one
+
+19
+00:00:40,640 --> 00:00:46,040
+of the a dev tool I've been aware for a
+
+20
+00:00:43,240 --> 00:00:50,320
+long time has also become suddenly super
+
+21
+00:00:46,040 --> 00:00:52,440
+super relevant in 2025. So yeah, Expo.
+
+22
+00:00:50,320 --> 00:00:53,400
+Yeah, Charlie, so there's a lot of
+
+23
+00:00:52,440 --> 00:00:55,760
+reasons I wanted to have you on the
+
+24
+00:00:53,400 --> 00:00:58,640
+podcast, but the main one kind of Jacob
+
+25
+00:00:55,760 --> 00:01:01,080
+alluded to. As CEO of Expo, you're
+
+26
+00:00:58,640 --> 00:01:03,080
+seeing a lot of things happen these days
+
+27
+00:01:01,080 --> 00:01:05,640
+with new people getting into to
+
+28
+00:01:03,080 --> 00:01:07,880
+programming with React specifically
+
+29
+00:01:05,640 --> 00:01:10,520
+becoming more and more popular, more and
+
+30
+00:01:07,880 --> 00:01:12,520
+more used, kind of the the default for a
+
+31
+00:01:10,520 --> 00:01:14,440
+lot of companies to build on. So I don't
+
+32
+00:01:12,520 --> 00:01:16,200
+want to we just kick things off with
+
+33
+00:01:14,440 --> 00:01:18,000
+kind of a high-level overview. I think a
+
+34
+00:01:16,200 --> 00:01:20,120
+lot of folks listening won't be
+
+35
+00:01:18,000 --> 00:01:23,120
+developers themselves, so they might not
+
+36
+00:01:20,120 --> 00:01:24,720
+kind of understand what React Native is
+
+37
+00:01:23,120 --> 00:01:26,760
+and we can talk about that and then as
+
+38
+00:01:24,720 --> 00:01:28,360
+well as like how Expo works with that.
+
+39
+00:01:26,760 --> 00:01:31,040
+So yeah, tell us a little bit about
+
+40
+00:01:28,360 --> 00:01:33,720
+React. Yeah, so React is this JavaScript
+
+41
+00:01:31,040 --> 00:01:36,040
+framework that was invented
+
+42
+00:01:33,720 --> 00:01:37,560
+gosh, you know, over a decade ago by a
+
+43
+00:01:36,040 --> 00:01:39,960
+guy named Jordan Walke at Facebook to
+
+44
+00:01:37,560 --> 00:01:41,240
+build complicated UIs in a way that you
+
+45
+00:01:39,960 --> 00:01:43,640
+could reason about and generate
+
+46
+00:01:41,240 --> 00:01:46,040
+consistently. The core idea is that it's
+
+47
+00:01:43,640 --> 00:01:48,040
+sort of component-based, so like the way
+
+48
+00:01:46,040 --> 00:01:49,800
+a human being would break down a product
+
+49
+00:01:48,040 --> 00:01:50,800
+or a UI, it winds up pretty much with
+
+50
+00:01:49,800 --> 00:01:52,720
+that. You know, you'd say like, "Oh,
+
+51
+00:01:50,800 --> 00:01:54,120
+here's my pricing component and within
+
+52
+00:01:52,720 --> 00:01:55,360
+that I have, you know, the dollars
+
+53
+00:01:54,120 --> 00:01:57,240
+component, the cents component" or
+
+54
+00:01:55,360 --> 00:02:00,040
+something like that. But then the the
+
+55
+00:01:57,240 --> 00:02:02,920
+real magic to it is that you represent
+
+56
+00:02:00,040 --> 00:02:05,600
+state as sort of like you have this
+
+57
+00:02:02,920 --> 00:02:08,200
+abstract state of the world and then the
+
+58
+00:02:05,600 --> 00:02:10,160
+UI is always sort of being re-rendered
+
+59
+00:02:08,200 --> 00:02:11,800
+to update to to represent whatever the
+
+60
+00:02:10,160 --> 00:02:14,040
+current state of the world is. And so if
+
+61
+00:02:11,800 --> 00:02:15,400
+you remember like older websites, a lot
+
+62
+00:02:14,040 --> 00:02:17,120
+of times you would have, you know, you
+
+63
+00:02:15,400 --> 00:02:19,680
+might click a button to say follow
+
+64
+00:02:17,120 --> 00:02:21,400
+somebody and
+
+65
+00:02:19,680 --> 00:02:23,800
+it would update correctly where you
+
+66
+00:02:21,400 --> 00:02:25,720
+clicked, but then things sort of would
+
+67
+00:02:23,800 --> 00:02:27,280
+look incorrect in other parts of the
+
+68
+00:02:25,720 --> 00:02:30,240
+screen or there would just sort of be
+
+69
+00:02:27,280 --> 00:02:32,400
+these inconsistencies with that. And as
+
+70
+00:02:30,240 --> 00:02:33,640
+a general rule when you use React, all
+
+71
+00:02:32,400 --> 00:02:35,360
+of this stuff sort of magically falls
+
+72
+00:02:33,640 --> 00:02:37,080
+into place because you know, this stuff
+
+73
+00:02:35,360 --> 00:02:39,320
+happens. Actually, this sort of idea, I
+
+74
+00:02:37,080 --> 00:02:40,680
+believe, sort of came from
+
+75
+00:02:39,320 --> 00:02:42,280
+the way that
+
+76
+00:02:40,680 --> 00:02:44,240
+video games have come to work. So if you
+
+77
+00:02:42,280 --> 00:02:46,160
+think about like really old video games,
+
+78
+00:02:44,240 --> 00:02:48,560
+like, you know, a snake is moving across
+
+79
+00:02:46,160 --> 00:02:50,040
+the screen on a really low-res monitor.
+
+80
+00:02:48,560 --> 00:02:52,200
+And so the way that the snake moves is
+
+81
+00:02:50,040 --> 00:02:54,040
+that you you draw one more pixel on the
+
+82
+00:02:52,200 --> 00:02:55,959
+right for the head to move a little one
+
+83
+00:02:54,040 --> 00:02:58,040
+step further and you erase one pixel on
+
+84
+00:02:55,959 --> 00:02:59,840
+the far left for the tail to kind of
+
+85
+00:02:58,040 --> 00:03:01,320
+shimmy forward. It's simple enough that
+
+86
+00:02:59,840 --> 00:03:03,320
+you can actually just like manipulate
+
+87
+00:03:01,320 --> 00:03:04,840
+pixels directly to kind of change things
+
+88
+00:03:03,320 --> 00:03:07,280
+how you want them to be. But then if you
+
+89
+00:03:04,840 --> 00:03:09,400
+imagine, you know, sort of a a modern
+
+90
+00:03:07,280 --> 00:03:11,800
+video game or anything once you get into
+
+91
+00:03:09,400 --> 00:03:13,360
+the era of 3D, it's kind of like think
+
+92
+00:03:11,800 --> 00:03:15,480
+about like Call of Duty and like trying
+
+93
+00:03:13,360 --> 00:03:17,320
+to figure out what any given pixel on
+
+94
+00:03:15,480 --> 00:03:18,800
+the screen is just crazy to to figure
+
+95
+00:03:17,320 --> 00:03:20,040
+out how to do that. And so the way that
+
+96
+00:03:18,800 --> 00:03:21,400
+the people end up doing it is basically
+
+97
+00:03:20,040 --> 00:03:22,640
+having some sort of representation
+
+98
+00:03:21,400 --> 00:03:24,519
+what's going on in the world and then a
+
+99
+00:03:22,640 --> 00:03:26,440
+system that sort of figures out, "Okay,
+
+100
+00:03:24,519 --> 00:03:27,680
+here's this 3D model and it's made up of
+
+101
+00:03:26,440 --> 00:03:29,440
+all these triangles, so we're going to
+
+102
+00:03:27,680 --> 00:03:30,560
+draw this here." And then, you know,
+
+103
+00:03:29,440 --> 00:03:32,200
+everything gets sort of re-rendered
+
+104
+00:03:30,560 --> 00:03:34,239
+every frame because of that. And so
+
+105
+00:03:32,200 --> 00:03:36,760
+React is sort of that for UIs for
+
+106
+00:03:34,239 --> 00:03:39,440
+applications. And so
+
+107
+00:03:36,760 --> 00:03:43,040
+it's become by far the most popular way
+
+108
+00:03:39,440 --> 00:03:44,519
+to build websites these days. And
+
+109
+00:03:43,040 --> 00:03:46,680
+there's still a lot of older code out
+
+110
+00:03:44,519 --> 00:03:48,120
+there that's using like jQuery and
+
+111
+00:03:46,680 --> 00:03:50,720
+Angular is still pretty big, but like
+
+112
+00:03:48,120 --> 00:03:52,360
+almost everything new that's done by,
+
+113
+00:03:50,720 --> 00:03:53,280
+you know, reasonable people is is done
+
+114
+00:03:52,360 --> 00:03:55,720
+using React.
+
+115
+00:03:53,280 --> 00:03:56,600
+Or run your cat.com, app.runyourcat.com,
+
+116
+00:03:55,720 --> 00:03:58,600
+reasonable people.
+
+117
+00:03:56,600 --> 00:03:59,920
+Yeah. All this AI development is even
+
+118
+00:03:58,600 --> 00:04:01,160
+further accelerating that because
+
+119
+00:03:59,920 --> 00:04:03,440
+there's sort of the most training data
+
+120
+00:04:01,160 --> 00:04:06,360
+to train on and because it's sort of
+
+121
+00:04:03,440 --> 00:04:07,680
+component-based system that's lines up
+
+122
+00:04:06,360 --> 00:04:09,400
+with the way human beings reason about
+
+123
+00:04:07,680 --> 00:04:11,080
+stuff. There's a bunch of reasons why
+
+124
+00:04:09,400 --> 00:04:13,400
+LLMs are really good at at generating
+
+125
+00:04:11,080 --> 00:04:16,200
+React code and things like that. But,
+
+126
+00:04:13,400 --> 00:04:21,079
+what Expo is is basically like a way to
+
+127
+00:04:16,200 --> 00:04:23,040
+use React to write UI's that not only
+
+128
+00:04:21,079 --> 00:04:26,000
+work on the web, but also work on iOS
+
+129
+00:04:23,040 --> 00:04:28,400
+and Android and other surfaces and give
+
+130
+00:04:26,000 --> 00:04:29,440
+you sort of actually native apps there.
+
+131
+00:04:28,400 --> 00:04:30,680
+It's built on top of this technology
+
+132
+00:04:29,440 --> 00:04:32,360
+from React Native that it's called React
+
+133
+00:04:30,680 --> 00:04:33,960
+Native. It came out of
+
+134
+00:04:32,360 --> 00:04:36,000
+Facebook Meta. But, you can kind of
+
+135
+00:04:33,960 --> 00:04:37,800
+think of Expo as sort of like
+
+136
+00:04:36,000 --> 00:04:39,160
+the equivalent of what Next.js is in the
+
+137
+00:04:37,800 --> 00:04:40,760
+web world. If people don't know what
+
+138
+00:04:39,160 --> 00:04:42,360
+that is, that's basically like this
+
+139
+00:04:40,760 --> 00:04:44,560
+framework from Vercel that's become sort
+
+140
+00:04:42,360 --> 00:04:47,600
+of the most popular way to build a new
+
+141
+00:04:44,560 --> 00:04:49,120
+website using React. A lot of batteries
+
+142
+00:04:47,600 --> 00:04:50,800
+are included, a lot of like nice
+
+143
+00:04:49,120 --> 00:04:53,040
+features are just sort of like already
+
+144
+00:04:50,800 --> 00:04:55,080
+configured for you and set up properly.
+
+145
+00:04:53,040 --> 00:04:56,520
+And a lot of problems are just solved
+
+146
+00:04:55,080 --> 00:04:58,240
+and there's it just sort of become the
+
+147
+00:04:56,520 --> 00:05:00,600
+standard. And so, there's a lot of
+
+148
+00:04:58,240 --> 00:05:02,360
+other, you know, a lot of example code
+
+149
+00:05:00,600 --> 00:05:03,760
+relies on it, things like that. What we
+
+150
+00:05:02,360 --> 00:05:05,880
+provide with Expo is sort of a couple
+
+151
+00:05:03,760 --> 00:05:07,680
+different things. One is we provide this
+
+152
+00:05:05,880 --> 00:05:09,320
+sort of what we call the Expo SDK which
+
+153
+00:05:07,680 --> 00:05:12,919
+has, you know, literally a hundred
+
+154
+00:05:09,320 --> 00:05:14,160
+different APIs that let you have access
+
+155
+00:05:12,919 --> 00:05:15,200
+to all the sensors on the device, you
+
+156
+00:05:14,160 --> 00:05:16,720
+know, like the accelerometer, the
+
+157
+00:05:15,200 --> 00:05:18,640
+gyroscope, things like that. But, then
+
+158
+00:05:16,720 --> 00:05:20,800
+also handle, you know, basic tasks like,
+
+159
+00:05:18,640 --> 00:05:22,000
+you know, video and audio playback and
+
+160
+00:05:20,800 --> 00:05:24,120
+recording and things that you want to do
+
+161
+00:05:22,000 --> 00:05:25,520
+in an app like that, location services,
+
+162
+00:05:24,120 --> 00:05:26,720
+things like that. And generally they'll
+
+163
+00:05:25,520 --> 00:05:28,040
+give you access to, you know, they're
+
+164
+00:05:26,720 --> 00:05:29,520
+sort of multiple implementations of
+
+165
+00:05:28,040 --> 00:05:31,400
+these so and they're well tested and
+
+166
+00:05:29,520 --> 00:05:32,640
+things like that. So, they work on iOS,
+
+167
+00:05:31,400 --> 00:05:34,440
+they work on Android, and they work on
+
+168
+00:05:32,640 --> 00:05:36,960
+the web. In the same way that like a
+
+169
+00:05:34,440 --> 00:05:38,280
+standard library in, you know, Python or
+
+170
+00:05:36,960 --> 00:05:40,360
+something like that includes a lot of
+
+171
+00:05:38,280 --> 00:05:42,080
+the basic things you need to do or write
+
+172
+00:05:40,360 --> 00:05:43,640
+a program that actually does something,
+
+173
+00:05:42,080 --> 00:05:46,000
+you know, the Expo standard library is
+
+174
+00:05:43,640 --> 00:05:47,320
+basically a sort of basic batteries
+
+175
+00:05:46,000 --> 00:05:49,360
+included way to get started. And then we
+
+176
+00:05:47,320 --> 00:05:51,440
+have a bunch of tools that include Expo
+
+177
+00:05:49,360 --> 00:05:53,280
+Go, which is an app in the App Store
+
+178
+00:05:51,440 --> 00:05:55,920
+that will let you sort of get going
+
+179
+00:05:53,280 --> 00:05:58,080
+editing a live real app on your actual
+
+180
+00:05:55,920 --> 00:06:00,040
+device within seconds, which is which is
+
+181
+00:05:58,080 --> 00:06:02,360
+a real differentiating factor. So, a lot
+
+182
+00:06:00,040 --> 00:06:05,280
+of the new tools that are doing AI stuff
+
+183
+00:06:02,360 --> 00:06:07,520
+with development like they end up using
+
+184
+00:06:05,280 --> 00:06:09,240
+Expo as their way to deliver the stuff
+
+185
+00:06:07,520 --> 00:06:10,760
+because you can you can download Expo Go
+
+186
+00:06:09,240 --> 00:06:11,920
+on your phone, scan one of these QR
+
+187
+00:06:10,760 --> 00:06:13,400
+codes that these actual tools are
+
+188
+00:06:11,920 --> 00:06:15,960
+generating, and you can actually be sort
+
+189
+00:06:13,400 --> 00:06:18,600
+of like vibe coding or live editing your
+
+190
+00:06:15,960 --> 00:06:20,240
+app on the fly. And then we also provide
+
+191
+00:06:18,600 --> 00:06:22,200
+a suite of cloud services that is sort
+
+192
+00:06:20,240 --> 00:06:23,600
+of how we make money. Like we run a a
+
+193
+00:06:22,200 --> 00:06:25,160
+build service that runs Xcode in the
+
+194
+00:06:23,600 --> 00:06:27,280
+cloud and Android Studio in the cloud.
+
+195
+00:06:25,160 --> 00:06:28,440
+We run sort of a an update service,
+
+196
+00:06:27,280 --> 00:06:30,640
+which is kind of the analog of web
+
+197
+00:06:28,440 --> 00:06:32,400
+hosting. We also do web hosting and a
+
+198
+00:06:30,640 --> 00:06:34,360
+few other things. One of the beauties of
+
+199
+00:06:32,400 --> 00:06:36,520
+React or working in React on web or on
+
+200
+00:06:34,360 --> 00:06:38,240
+React Native is like live updating,
+
+201
+00:06:36,520 --> 00:06:40,720
+which is not something for mobile that
+
+202
+00:06:38,240 --> 00:06:42,640
+we had without React Native. It's like
+
+203
+00:06:40,720 --> 00:06:44,440
+you would build, you'd modify your
+
+204
+00:06:42,640 --> 00:06:46,160
+Objective-C or Swift or whatever, you'd
+
+205
+00:06:44,440 --> 00:06:47,919
+have to re- compile the whole app, you'd
+
+206
+00:06:46,160 --> 00:06:49,919
+have to deploy it to the simulator or to
+
+207
+00:06:47,919 --> 00:06:51,800
+the device. And it's like if you have a
+
+208
+00:06:49,919 --> 00:06:52,800
+small app, maybe it's 30 seconds.
+
+209
+00:06:51,800 --> 00:06:54,800
+Sometimes But if you have a big app,
+
+210
+00:06:52,800 --> 00:06:57,520
+that could be minutes. The cycle of
+
+211
+00:06:54,800 --> 00:07:00,000
+using, you know, well, React Native and
+
+212
+00:06:57,520 --> 00:07:02,960
+then Expo Go allows you to have this
+
+213
+00:07:00,000 --> 00:07:05,440
+like insanely tight build and change and
+
+214
+00:07:02,960 --> 00:07:06,680
+view cycle that was even though React
+
+215
+00:07:05,440 --> 00:07:08,480
+Native, I think especially in the early
+
+216
+00:07:06,680 --> 00:07:09,960
+days was like somewhat difficult to work
+
+217
+00:07:08,480 --> 00:07:11,919
+with or had it wasn't as batteries
+
+218
+00:07:09,960 --> 00:07:13,800
+loaded as as you've made it now with
+
+219
+00:07:11,919 --> 00:07:15,680
+with all the Expo stuff. If you could
+
+220
+00:07:13,800 --> 00:07:16,919
+get that to work, it was just crazy how
+
+221
+00:07:15,680 --> 00:07:18,840
+fast you could iterate. I mean, I think
+
+222
+00:07:16,919 --> 00:07:21,080
+that was like a huge I don't know how
+
+223
+00:07:18,840 --> 00:07:22,720
+much credit Expo gets for like making
+
+224
+00:07:21,080 --> 00:07:24,720
+React Native a thing, but I think that
+
+225
+00:07:22,720 --> 00:07:27,000
+made that made the developer experience
+
+226
+00:07:24,720 --> 00:07:28,520
+really viable and and actually like in a
+
+227
+00:07:27,000 --> 00:07:30,600
+lot of ways better than the native
+
+228
+00:07:28,520 --> 00:07:33,160
+development experience on on mobile.
+
+229
+00:07:30,600 --> 00:07:34,240
+Yeah, that iteration speed is a huge
+
+230
+00:07:33,160 --> 00:07:36,560
+reason why people have kind of moved in
+
+231
+00:07:34,240 --> 00:07:39,280
+this direction. Like I think a lot of
+
+232
+00:07:36,560 --> 00:07:42,720
+the customers that we have now, a lot of
+
+233
+00:07:39,280 --> 00:07:44,120
+them have actually had working like iOS,
+
+234
+00:07:42,720 --> 00:07:46,520
+you know, written in Swift, written in
+
+235
+00:07:44,120 --> 00:07:48,640
+Objective C apps, and working Android
+
+236
+00:07:46,520 --> 00:07:51,160
+apps that are written in Java or Kotlin,
+
+237
+00:07:48,640 --> 00:07:53,000
+and they just have found it's too much
+
+238
+00:07:51,160 --> 00:07:54,800
+work to maintain these. If you add we
+
+239
+00:07:53,000 --> 00:07:56,200
+wanted new features, we we can't move
+
+240
+00:07:54,800 --> 00:07:57,560
+fast enough on either platform, much
+
+241
+00:07:56,200 --> 00:07:59,040
+less both at the same time. It's really
+
+242
+00:07:57,560 --> 00:08:01,120
+hard to hire for these sort of
+
+243
+00:07:59,040 --> 00:08:02,440
+specialized positions. We're at risk all
+
+244
+00:08:01,120 --> 00:08:04,280
+the time before sort of one Android
+
+245
+00:08:02,440 --> 00:08:06,200
+person leaves, what are we going to do?
+
+246
+00:08:04,280 --> 00:08:08,080
+And so, a huge deal for a lot of these
+
+247
+00:08:06,200 --> 00:08:09,360
+companies is basically like we can move
+
+248
+00:08:08,080 --> 00:08:11,360
+faster than we could on either platform
+
+249
+00:08:09,360 --> 00:08:13,360
+by itself, but now we're able to write
+
+250
+00:08:11,360 --> 00:08:14,680
+one React code base. There's way more
+
+251
+00:08:13,360 --> 00:08:17,640
+React developers in the world than there
+
+252
+00:08:14,680 --> 00:08:19,320
+are basically any native platform like,
+
+253
+00:08:17,640 --> 00:08:21,640
+you know, Swift developers or Kotlin
+
+254
+00:08:19,320 --> 00:08:23,080
+developers. Yeah, it just just because
+
+255
+00:08:21,640 --> 00:08:25,320
+of the it's the default on the web,
+
+256
+00:08:23,080 --> 00:08:27,200
+right? Like creates just more Right. And
+
+257
+00:08:25,320 --> 00:08:28,440
+so, you can you can take your the same
+
+258
+00:08:27,200 --> 00:08:30,720
+pool of people you'd be hiring your
+
+259
+00:08:28,440 --> 00:08:32,719
+website team from and put them all on
+
+260
+00:08:30,720 --> 00:08:34,800
+the you know, sort of application team,
+
+261
+00:08:32,719 --> 00:08:36,560
+and they can work on all products all at
+
+262
+00:08:34,800 --> 00:08:38,000
+once. And that's a really big deal for a
+
+263
+00:08:36,560 --> 00:08:39,599
+lot of people. But then even on top of
+
+264
+00:08:38,000 --> 00:08:40,719
+that, you're still moving faster because
+
+265
+00:08:39,599 --> 00:08:42,919
+you're getting instead of having to
+
+266
+00:08:40,719 --> 00:08:44,039
+recompile every time you make a change,
+
+267
+00:08:42,919 --> 00:08:46,120
+you're you're usually getting the same
+
+268
+00:08:44,039 --> 00:08:47,880
+benefits that you would uh basically
+
+269
+00:08:46,120 --> 00:08:49,920
+work on a website. Like a lot of the way
+
+270
+00:08:47,880 --> 00:08:51,120
+to think about what Expo does is sort of
+
+271
+00:08:49,920 --> 00:08:52,680
+takes the things that are good about
+
+272
+00:08:51,120 --> 00:08:54,120
+doing web development and bring them
+
+273
+00:08:52,680 --> 00:08:56,960
+into the world of native mobile. Did you
+
+274
+00:08:54,120 --> 00:08:59,320
+guys ever get guff from Apple for like
+
+275
+00:08:56,960 --> 00:09:00,920
+pulling down sort of like live code? Cuz
+
+276
+00:08:59,320 --> 00:09:02,360
+they used they used to have like stupid
+
+277
+00:09:00,920 --> 00:09:04,240
+rules about this, and they I think they
+
+278
+00:09:02,360 --> 00:09:06,400
+relaxed them. They've really changed the
+
+279
+00:09:04,240 --> 00:09:07,520
+rules over time. Like they used to be
+
+280
+00:09:06,400 --> 00:09:09,200
+really strict and say like, you know,
+
+281
+00:09:07,520 --> 00:09:11,120
+you can't download any code, but then
+
+282
+00:09:09,200 --> 00:09:12,680
+like people would just use web views,
+
+283
+00:09:11,120 --> 00:09:14,440
+and then of course, the way that the web
+
+284
+00:09:12,680 --> 00:09:16,200
+works is it downloads much of code like
+
+285
+00:09:14,440 --> 00:09:17,800
+JavaScript and CSS and stuff. And then
+
+286
+00:09:16,200 --> 00:09:19,400
+also like big companies were just doing
+
+287
+00:09:17,800 --> 00:09:22,000
+it, and so it was sort of a don't ask,
+
+288
+00:09:19,400 --> 00:09:23,160
+don't tell policy or whatever. But then
+
+289
+00:09:22,000 --> 00:09:24,760
+they they kind of realized that it was
+
+290
+00:09:23,160 --> 00:09:26,120
+just stupid to prevent that. They
+
+291
+00:09:24,760 --> 00:09:27,480
+changed a lot of the rules over the last
+
+292
+00:09:26,120 --> 00:09:30,360
+couple of years. So, now it basically
+
+293
+00:09:27,480 --> 00:09:32,040
+says, you know, don't like trick people
+
+294
+00:09:30,360 --> 00:09:34,040
+or mislead people, but if you and you
+
+295
+00:09:32,040 --> 00:09:36,080
+can download code and you can run it. It
+
+296
+00:09:34,040 --> 00:09:40,400
+has to be sort of interpreted code, not
+
+297
+00:09:36,080 --> 00:09:41,920
+compiled binary code, which is fine. And
+
+298
+00:09:40,400 --> 00:09:43,960
+like the way that that Expo works is you
+
+299
+00:09:41,920 --> 00:09:45,880
+you download JavaScript or JavaScript
+
+300
+00:09:43,960 --> 00:09:47,720
+bytecode, and then it gets interpreted
+
+301
+00:09:45,880 --> 00:09:49,480
+on the device. Kind of the way that like
+
+302
+00:09:47,720 --> 00:09:51,080
+your web browser on your computer might
+
+303
+00:09:49,480 --> 00:09:52,800
+download JavaScript for a website and
+
+304
+00:09:51,080 --> 00:09:54,160
+and run stuff. And so,
+
+305
+00:09:52,800 --> 00:09:56,360
+we never had too much trouble with that
+
+306
+00:09:54,160 --> 00:09:58,160
+because as we were kind of starting to
+
+307
+00:09:56,360 --> 00:09:59,840
+get popular, Apple was in the process of
+
+308
+00:09:58,160 --> 00:10:01,520
+kind of pulling back a little bit from
+
+309
+00:09:59,840 --> 00:10:03,240
+being super duper strict about those
+
+310
+00:10:01,520 --> 00:10:04,760
+rules. Five years earlier, you would
+
+311
+00:10:03,240 --> 00:10:07,480
+have probably had a hard time, but they
+
+312
+00:10:04,760 --> 00:10:09,280
+were Yeah. Possibly. But, they've also
+
+313
+00:10:07,480 --> 00:10:11,280
+there there's maybe literally like one
+
+314
+00:10:09,280 --> 00:10:12,920
+or two cases where something that was
+
+315
+00:10:11,280 --> 00:10:14,000
+like a fintech app or something like
+
+316
+00:10:12,920 --> 00:10:16,080
+that, they sort of said, "Hey, we don't
+
+317
+00:10:14,000 --> 00:10:17,560
+want you downloading anything. We see
+
+318
+00:10:16,080 --> 00:10:19,160
+network requests for things that look
+
+319
+00:10:17,560 --> 00:10:20,080
+like they change the UI of this." It's
+
+320
+00:10:19,160 --> 00:10:21,320
+been a while since you've heard of
+
+321
+00:10:20,080 --> 00:10:23,640
+anything like that, but maybe you know,
+
+322
+00:10:21,320 --> 00:10:24,880
+back in the early days, we heard of one
+
+323
+00:10:23,640 --> 00:10:26,280
+or two things like that. But, that
+
+324
+00:10:24,880 --> 00:10:27,880
+that's pretty common that like Apple and
+
+325
+00:10:26,280 --> 00:10:30,400
+Google, but especially Apple, are are
+
+326
+00:10:27,880 --> 00:10:33,040
+often pretty They like to just kind of
+
+327
+00:10:30,400 --> 00:10:34,680
+like poke at things and sort of come up
+
+328
+00:10:33,040 --> 00:10:35,880
+with reasons to reject apps every once
+
+329
+00:10:34,680 --> 00:10:37,640
+in a while just to remind you who's in
+
+330
+00:10:35,880 --> 00:10:39,560
+charge, and make sure that they're like
+
+331
+00:10:37,640 --> 00:10:41,120
+Well, I mean, it it literally in a way
+
+332
+00:10:39,560 --> 00:10:43,680
+does circumvent app review, right? Like,
+
+333
+00:10:41,120 --> 00:10:45,120
+you can blow away an entire app. But,
+
+334
+00:10:43,680 --> 00:10:46,680
+The way they've changed the rules is not
+
+335
+00:10:45,120 --> 00:10:48,360
+to sort of say you can do whatever you
+
+336
+00:10:46,680 --> 00:10:49,760
+want. It's just to say it's to be more
+
+337
+00:10:48,360 --> 00:10:51,480
+product focused in the way that they
+
+338
+00:10:49,760 --> 00:10:53,520
+describe it, where like if you were to
+
+339
+00:10:51,480 --> 00:10:55,680
+say if you were to use this downloading
+
+340
+00:10:53,520 --> 00:10:57,880
+new code technology to take, you know,
+
+341
+00:10:55,680 --> 00:11:00,200
+an app that was for buying groceries and
+
+342
+00:10:57,880 --> 00:11:02,560
+turn it into some, you know, like
+
+343
+00:11:00,200 --> 00:11:04,200
+OnlyFans type thing, like then they
+
+344
+00:11:02,560 --> 00:11:05,600
+would say, "Hey, you can't just like
+
+345
+00:11:04,200 --> 00:11:06,680
+change this under people's feed. This
+
+346
+00:11:05,600 --> 00:11:08,360
+isn't what they signed up for. You're
+
+347
+00:11:06,680 --> 00:11:09,839
+tricking people. We're going to ban you
+
+348
+00:11:08,360 --> 00:11:11,120
+for that." But, it's less about the
+
+349
+00:11:09,839 --> 00:11:12,560
+mechanism they're using to do it, and
+
+350
+00:11:11,120 --> 00:11:14,080
+it's more just like the fact that you're
+
+351
+00:11:12,560 --> 00:11:15,560
+you're tricking users and pulling the
+
+352
+00:11:14,080 --> 00:11:16,920
+rug out from under them. Is it von
+
+353
+00:11:15,560 --> 00:11:18,480
+Neumann? Who's the one that says code
+
+354
+00:11:16,920 --> 00:11:19,680
+and data are the same thing? You know
+
+355
+00:11:18,480 --> 00:11:21,240
+what I mean? Like, it's really hard to
+
+356
+00:11:19,680 --> 00:11:22,760
+like differentiate, cuz you could send
+
+357
+00:11:21,240 --> 00:11:24,560
+JSON down that your your app
+
+358
+00:11:22,760 --> 00:11:26,240
+functionally interprets to like do
+
+359
+00:11:24,560 --> 00:11:27,720
+things, right? So, it's like it's really
+
+360
+00:11:26,240 --> 00:11:29,960
+difficult to say what's code and what's
+
+361
+00:11:27,720 --> 00:11:31,640
+not. That's the way a lot of modern apps
+
+362
+00:11:29,960 --> 00:11:33,840
+that like don't use Java like things
+
+363
+00:11:31,640 --> 00:11:35,360
+like Yelp that are older apps that are
+
+364
+00:11:33,840 --> 00:11:36,960
+written in, you know, Objective-C,
+
+365
+00:11:35,360 --> 00:11:37,960
+Swift, or whatever. They're are doing
+
+366
+00:11:36,960 --> 00:11:39,680
+exactly what you're describing, where
+
+367
+00:11:37,960 --> 00:11:42,240
+they're downloading lots of chunks of
+
+368
+00:11:39,680 --> 00:11:44,600
+JSON to deliver custom UI. They're sort
+
+369
+00:11:42,240 --> 00:11:47,080
+of like edging their way into building
+
+370
+00:11:44,600 --> 00:11:49,320
+sort of a half-baked dynamic interpreter
+
+371
+00:11:47,080 --> 00:11:51,040
+of UIs. Basically React rendering a
+
+372
+00:11:49,320 --> 00:11:53,040
+scene graph or I don't know what the
+
+373
+00:11:51,040 --> 00:11:55,480
+what it's called in in React land, but
+
+374
+00:11:53,040 --> 00:11:58,080
+there's a kind of moderately famous like
+
+375
+00:11:55,480 --> 00:12:00,560
+old CS quote that's sort of like any
+
+376
+00:11:58,080 --> 00:12:03,480
+sufficiently complicated, you know,
+
+377
+00:12:00,560 --> 00:12:05,560
+system in C++ contains a
+
+378
+00:12:03,480 --> 00:12:07,080
+half-working, you know, inefficient
+
+379
+00:12:05,560 --> 00:12:08,040
+version of Lisp or something like that.
+
+380
+00:12:07,080 --> 00:12:09,560
+And it's kind of the same thing that
+
+381
+00:12:08,040 --> 00:12:11,520
+you're describing. Well, one of the
+
+382
+00:12:09,560 --> 00:12:14,120
+things that I did want to kind of talk
+
+383
+00:12:11,520 --> 00:12:17,640
+through is that the combination of React
+
+384
+00:12:14,120 --> 00:12:20,520
+Native and Expo, especially, have kind
+
+385
+00:12:17,640 --> 00:12:22,440
+of become a new default. And you you
+
+386
+00:12:20,520 --> 00:12:26,040
+quoted in our our state of subscription
+
+387
+00:12:22,440 --> 00:12:29,280
+apps report that the Pragmatic Engineer
+
+388
+00:12:26,040 --> 00:12:31,120
+reported that almost all new VC-funded
+
+389
+00:12:29,280 --> 00:12:34,080
+startups are using React Native versus
+
+390
+00:12:31,120 --> 00:12:36,400
+building native. And huge apps, Spotify,
+
+391
+00:12:34,080 --> 00:12:38,280
+Discord, NFL, you know, tons of the
+
+392
+00:12:36,400 --> 00:12:40,760
+biggest apps that people interact with
+
+393
+00:12:38,280 --> 00:12:41,920
+on a daily basis are built in React
+
+394
+00:12:40,760 --> 00:12:43,680
+Native. The movie kind of already
+
+395
+00:12:41,920 --> 00:12:45,160
+touched on it, speed of execution, being
+
+396
+00:12:43,680 --> 00:12:47,480
+able to, you know, change things
+
+397
+00:12:45,160 --> 00:12:49,600
+remotely. But do you think building apps
+
+398
+00:12:47,480 --> 00:12:51,680
+with native code is less important in
+
+399
+00:12:49,600 --> 00:12:53,560
+2025? And why?
+
+400
+00:12:51,680 --> 00:12:55,920
+There's a couple things going on.
+
+401
+00:12:53,560 --> 00:12:57,960
+One is just there's a general
+
+402
+00:12:55,920 --> 00:12:59,320
+improvement in the technology. You see
+
+403
+00:12:57,960 --> 00:13:02,040
+this happen all over the place where
+
+404
+00:12:59,320 --> 00:13:04,040
+like writing stuff in client-side
+
+405
+00:13:02,040 --> 00:13:06,800
+JavaScript didn't make sense in like
+
+406
+00:13:04,040 --> 00:13:08,120
+2004 cuz it just all the features you
+
+407
+00:13:06,800 --> 00:13:09,920
+needed weren't there and the performance
+
+408
+00:13:08,120 --> 00:13:11,400
+of JS VMs wasn't there, etc. etc. And
+
+409
+00:13:09,920 --> 00:13:12,680
+then things just get faster and better.
+
+410
+00:13:11,400 --> 00:13:14,440
+That's one part of what's happening
+
+411
+00:13:12,680 --> 00:13:16,360
+here, where there's a lot of stuff
+
+412
+00:13:14,440 --> 00:13:18,600
+that's happened in the space. Like some
+
+413
+00:13:16,360 --> 00:13:20,160
+of it's like pretty low-level. Meta is
+
+414
+00:13:18,600 --> 00:13:22,200
+responsible for like two of these
+
+415
+00:13:20,160 --> 00:13:23,920
+things, and it's great to have sort of a
+
+416
+00:13:22,200 --> 00:13:26,720
+deep-pocketed
+
+417
+00:13:23,920 --> 00:13:28,040
+company behind a lot of this that like
+
+418
+00:13:26,720 --> 00:13:29,400
+relies on it for a lot of poor things.
+
+419
+00:13:28,040 --> 00:13:31,440
+And so two really important things that
+
+420
+00:13:29,400 --> 00:13:34,320
+have happened in the ecosystem are this
+
+421
+00:13:31,440 --> 00:13:35,880
+new JS VM called Hermes, which is
+
+422
+00:13:34,320 --> 00:13:37,200
+actually like I don't know if you want
+
+423
+00:13:35,880 --> 00:13:39,800
+me to go too much in the weeds here, but
+
+424
+00:13:37,200 --> 00:13:42,680
+basically like there's um you know, the
+
+425
+00:13:39,800 --> 00:13:44,800
+the most famous JS VM these days is is
+
+426
+00:13:42,680 --> 00:13:47,320
+like the one that Google made for Chrome
+
+427
+00:13:44,800 --> 00:13:49,320
+called V8. And that's a really great JS
+
+428
+00:13:47,320 --> 00:13:51,760
+VM or it you know, really moved the web
+
+429
+00:13:49,320 --> 00:13:53,320
+forward. It moved JS forward. It's a a
+
+430
+00:13:51,760 --> 00:13:54,880
+jitting VM and so it like does
+
+431
+00:13:53,320 --> 00:13:57,200
+just-in-time compilation of your code
+
+432
+00:13:54,880 --> 00:13:58,360
+and so like you know, as your code is
+
+433
+00:13:57,200 --> 00:13:59,800
+running for the first couple times,
+
+434
+00:13:58,360 --> 00:14:01,680
+it'll sort of track the hot paths and
+
+435
+00:13:59,800 --> 00:14:05,240
+sort of compile those on the fly and
+
+436
+00:14:01,680 --> 00:14:09,480
+they'll run faster. But in UIs you
+
+437
+00:14:05,240 --> 00:14:11,720
+actually don't really
+
+438
+00:14:09,480 --> 00:14:13,360
+want that a lot of times because you're
+
+439
+00:14:11,720 --> 00:14:15,920
+not doing lots of like complicated
+
+440
+00:14:13,360 --> 00:14:17,560
+computations of or mathy type things.
+
+441
+00:14:15,920 --> 00:14:19,120
+You're just like trying to like run
+
+442
+00:14:17,560 --> 00:14:20,760
+through stuff once and put stuff on the
+
+443
+00:14:19,120 --> 00:14:21,760
+screen. And so you actually want to op
+
+444
+00:14:20,760 --> 00:14:23,160
+and like a lot of times when you think
+
+445
+00:14:21,760 --> 00:14:25,720
+about what you want in UIs, you want it
+
+446
+00:14:23,160 --> 00:14:28,240
+to be like that first interaction comes
+
+447
+00:14:25,720 --> 00:14:29,880
+as quickly as possible rather than like
+
+448
+00:14:28,240 --> 00:14:30,960
+you start running faster and faster as
+
+449
+00:14:29,880 --> 00:14:32,400
+your code runs over time.
+
+450
+00:14:30,960 --> 00:14:34,480
+It's really good at passing some certain
+
+451
+00:14:32,400 --> 00:14:35,960
+benchmark, but not actually what matters
+
+452
+00:14:34,480 --> 00:14:38,200
+for scene graph rendering.
+
+453
+00:14:35,960 --> 00:14:39,480
+Because of Apple's restrictions on sort
+
+454
+00:14:38,200 --> 00:14:42,560
+of native code execution, you can't
+
+455
+00:14:39,480 --> 00:14:44,160
+really run a jit on an interpreter. That
+
+456
+00:14:42,560 --> 00:14:45,400
+was going to be what I asked like what
+
+457
+00:14:44,160 --> 00:14:47,000
+the status on that was cuz I didn't
+
+458
+00:14:45,400 --> 00:14:49,040
+think you you famously like Apple
+
+459
+00:14:47,000 --> 00:14:50,960
+wouldn't allow this for uh sensibly but
+
+460
+00:14:49,040 --> 00:14:52,480
+probably legitimately security reasons.
+
+461
+00:14:50,960 --> 00:14:54,040
+Yeah, I think that's it's like not crazy
+
+462
+00:14:52,480 --> 00:14:57,240
+that they they restrict stuff in this
+
+463
+00:14:54,040 --> 00:14:59,360
+way. So Hermes is designed to not jit
+
+464
+00:14:57,240 --> 00:15:01,640
+for performance reasons in a interesting
+
+465
+00:14:59,360 --> 00:15:03,760
+way. And it's really designed for this
+
+466
+00:15:01,640 --> 00:15:05,560
+use case in particular and a few others.
+
+467
+00:15:03,760 --> 00:15:07,800
+And it also you know, it uses a bytecode
+
+468
+00:15:05,560 --> 00:15:09,640
+format. So like instead of just sending
+
+469
+00:15:07,800 --> 00:15:11,520
+down you know, strings of text that are
+
+470
+00:15:09,640 --> 00:15:13,120
+human-readable, it sort of pre-compiles
+
+471
+00:15:11,520 --> 00:15:14,240
+into sort of more intermediate format
+
+472
+00:15:13,120 --> 00:15:16,280
+and gets sent that down. That saves some
+
+473
+00:15:14,240 --> 00:15:17,920
+time. That just boosted performance
+
+474
+00:15:16,280 --> 00:15:19,640
+especially on low-end Android, but
+
+475
+00:15:17,920 --> 00:15:20,800
+across the board Hermes is a big step.
+
+476
+00:15:19,640 --> 00:15:22,840
+And there's also something called the
+
+477
+00:15:20,800 --> 00:15:24,600
+new architecture of Native that like,
+
+478
+00:15:22,840 --> 00:15:26,480
+you know, it's been talked about for
+
+479
+00:15:24,600 --> 00:15:28,240
+years and finally in the last year it's
+
+480
+00:15:26,480 --> 00:15:29,760
+now rolled out and sort of the default
+
+481
+00:15:28,240 --> 00:15:31,720
+of new Expo apps and new React Native
+
+482
+00:15:29,760 --> 00:15:33,720
+apps is to use this new architecture. It
+
+483
+00:15:31,720 --> 00:15:36,760
+allows a lot more control over low-level
+
+484
+00:15:33,720 --> 00:15:39,040
+stuff that you actually want to really
+
+485
+00:15:36,760 --> 00:15:41,160
+optimize the performance of things like
+
+486
+00:15:39,040 --> 00:15:43,160
+lists are really important to UIs on
+
+487
+00:15:41,160 --> 00:15:45,560
+mobile. Like almost every app that you
+
+488
+00:15:43,160 --> 00:15:46,880
+use involves like
+
+489
+00:15:45,560 --> 00:15:48,640
+scrolling through lots of lists. You
+
+490
+00:15:46,880 --> 00:15:49,720
+know, think about Instagram, think about
+
+491
+00:15:48,640 --> 00:15:51,720
+any messenger you use.
+
+492
+00:15:49,720 --> 00:15:53,920
+UI list view, I think famously was like
+
+493
+00:15:51,720 --> 00:15:55,840
+the singular most important component of
+
+494
+00:15:53,920 --> 00:15:57,600
+Cocoa originally cuz it was just super
+
+495
+00:15:55,840 --> 00:16:00,280
+optimized and so fast and what made the
+
+496
+00:15:57,600 --> 00:16:02,040
+original iPhone feel so good. And so one
+
+497
+00:16:00,280 --> 00:16:04,200
+thing that this new architecture enables
+
+498
+00:16:02,040 --> 00:16:05,520
+is just like you can write much faster
+
+499
+00:16:04,200 --> 00:16:08,840
+lists because you can sort of
+
+500
+00:16:05,520 --> 00:16:10,360
+synchronously measure elements and react
+
+501
+00:16:08,840 --> 00:16:12,320
+to those changes without having to go
+
+502
+00:16:10,360 --> 00:16:13,760
+through lots of re-rendering steps. I'm
+
+503
+00:16:12,320 --> 00:16:14,960
+like glossing over a lot of stuff there,
+
+504
+00:16:13,760 --> 00:16:16,160
+but basically this new architecture is a
+
+505
+00:16:14,960 --> 00:16:17,880
+a big step forward in terms of
+
+506
+00:16:16,160 --> 00:16:19,040
+performance possibilities and a few
+
+507
+00:16:17,880 --> 00:16:20,240
+other things. The other thing that's
+
+508
+00:16:19,040 --> 00:16:21,720
+happened
+
+509
+00:16:20,240 --> 00:16:23,640
+is you sort of
+
+510
+00:16:21,720 --> 00:16:25,280
+the way you pose this question was like,
+
+511
+00:16:23,640 --> 00:16:27,120
+is it less important to write native
+
+512
+00:16:25,280 --> 00:16:30,120
+code on mobile? But actually one thing
+
+513
+00:16:27,120 --> 00:16:32,560
+that we spent a while doing at Expo was
+
+514
+00:16:30,120 --> 00:16:34,839
+making it a lot easier to write native
+
+515
+00:16:32,560 --> 00:16:37,240
+code as part of a React Native app. And
+
+516
+00:16:34,839 --> 00:16:38,560
+so like part of the sort of dream of
+
+517
+00:16:37,240 --> 00:16:41,839
+React Native was always that you're
+
+518
+00:16:38,560 --> 00:16:44,000
+actually interweaving stuff that's like
+
+519
+00:16:41,839 --> 00:16:45,160
+native code with stuff that's like
+
+520
+00:16:44,000 --> 00:16:46,520
+orchestrated by JavaScript.
+
+521
+00:16:45,160 --> 00:16:49,520
+writing React for web, how you can
+
+522
+00:16:46,520 --> 00:16:51,560
+interleave like HTML basically, right?
+
+523
+00:16:49,520 --> 00:16:52,480
+Like style within your JavaScript, you
+
+524
+00:16:51,560 --> 00:16:54,800
+know? Like you can kind of like
+
+525
+00:16:52,480 --> 00:16:56,400
+seamlessly like write components out and
+
+526
+00:16:54,800 --> 00:16:58,960
+then switch back and forth. It's kind of
+
+527
+00:16:56,400 --> 00:17:01,839
+like that. And um and React Native like
+
+528
+00:16:58,960 --> 00:17:03,480
+when you generate like a UI a view or uh
+
+529
+00:17:01,839 --> 00:17:04,319
+you know, a list view or a scroll view,
+
+530
+00:17:03,480 --> 00:17:05,680
+one of the things that's really
+
+531
+00:17:04,319 --> 00:17:07,240
+appealing about React Native is it's
+
+532
+00:17:05,680 --> 00:17:09,920
+actually generating like the operating
+
+533
+00:17:07,240 --> 00:17:11,520
+system components. So like
+
+534
+00:17:09,920 --> 00:17:13,600
+a view in React Native on iOS will
+
+535
+00:17:11,520 --> 00:17:15,520
+generate a UI view from UI Kit and on
+
+536
+00:17:13,600 --> 00:17:17,240
+Android you and so like the actual
+
+537
+00:17:15,520 --> 00:17:18,959
+elements that you're interacting with
+
+538
+00:17:17,240 --> 00:17:20,439
+should feel exactly right to the
+
+539
+00:17:18,959 --> 00:17:21,400
+operating system you're on. But then if
+
+540
+00:17:20,439 --> 00:17:23,160
+you do need to write some sort of
+
+541
+00:17:21,400 --> 00:17:25,160
+specialized native code to do some sort
+
+542
+00:17:23,160 --> 00:17:27,040
+of fluid simulation or some really
+
+543
+00:17:25,160 --> 00:17:30,200
+custom video player or something like
+
+544
+00:17:27,040 --> 00:17:31,680
+that or some view that pops up a native
+
+545
+00:17:30,200 --> 00:17:33,160
+share dialogue or native payments
+
+546
+00:17:31,680 --> 00:17:34,960
+dialogue or something like that, you can
+
+547
+00:17:33,160 --> 00:17:36,800
+easily drop down into native code and
+
+548
+00:17:34,960 --> 00:17:39,480
+write that stuff. A big thing that we
+
+549
+00:17:36,800 --> 00:17:40,240
+worked on at Expo is we This gets a
+
+550
+00:17:39,480 --> 00:17:41,520
+little bit This gets a little bit but
+
+551
+00:17:40,240 --> 00:17:44,120
+it's actually pretty important. We
+
+552
+00:17:41,520 --> 00:17:46,040
+developed this thing that we call config
+
+553
+00:17:44,120 --> 00:17:48,480
+plugins and CNG.
+
+554
+00:17:46,040 --> 00:17:50,880
+And the sort of way that you would do
+
+555
+00:17:48,480 --> 00:17:53,240
+native code in React Native projects
+
+556
+00:17:50,880 --> 00:17:56,320
+before that was kind of the same way
+
+557
+00:17:53,240 --> 00:17:58,920
+that you might have like dealt with like
+
+558
+00:17:56,320 --> 00:18:00,880
+PHP extensions back in the day or like
+
+559
+00:17:58,920 --> 00:18:02,200
+weaving together C++ code with like a
+
+560
+00:18:00,880 --> 00:18:04,280
+scripting language where you're doing a
+
+561
+00:18:02,200 --> 00:18:05,520
+lot of like compiling stuff yourself,
+
+562
+00:18:04,280 --> 00:18:07,200
+figuring out which things you need to
+
+563
+00:18:05,520 --> 00:18:08,680
+download and which dependencies you need
+
+564
+00:18:07,200 --> 00:18:09,880
+to download and like how to put them all
+
+565
+00:18:08,680 --> 00:18:11,240
+in the in the right place.
+
+566
+00:18:09,880 --> 00:18:13,440
+And then like if you were making in my
+
+567
+00:18:11,240 --> 00:18:15,640
+my my shoes trying to make a React
+
+568
+00:18:13,440 --> 00:18:17,200
+Native SDK that somebody else could then
+
+569
+00:18:15,640 --> 00:18:18,800
+go use that was based on native code, it
+
+570
+00:18:17,200 --> 00:18:20,520
+was rough.
+
+571
+00:18:18,800 --> 00:18:22,320
+Really really rough to do. And so like
+
+572
+00:18:20,520 --> 00:18:24,240
+all a lot of these projects would have,
+
+573
+00:18:22,320 --> 00:18:26,400
+you know, you go to the GitHub for it
+
+574
+00:18:24,240 --> 00:18:28,120
+and the read me is sort of like a four
+
+575
+00:18:26,400 --> 00:18:29,240
+or five page long thing with like here's
+
+576
+00:18:28,120 --> 00:18:30,360
+all the steps you need to do on Android,
+
+577
+00:18:29,240 --> 00:18:31,960
+here's all the steps you need to do on
+
+578
+00:18:30,360 --> 00:18:34,560
+iOS. And then if you're bringing in the
+
+579
+00:18:31,960 --> 00:18:36,520
+RevenueCat module and a special video
+
+580
+00:18:34,560 --> 00:18:37,880
+player module and a camera module, a lot
+
+581
+00:18:36,520 --> 00:18:39,480
+of times those things would actually the
+
+582
+00:18:37,880 --> 00:18:41,000
+instructions whatever you're editing
+
+583
+00:18:39,480 --> 00:18:42,840
+various config files and whatnot and
+
+584
+00:18:41,000 --> 00:18:44,800
+they might step on each other's toes.
+
+585
+00:18:42,840 --> 00:18:46,120
+Like hey, in this app delegate add this
+
+586
+00:18:44,800 --> 00:18:47,760
+add these lines and then you're like,
+
+587
+00:18:46,120 --> 00:18:49,640
+well, those lines that doesn't look the
+
+588
+00:18:47,760 --> 00:18:50,920
+way I it says it's going to look because
+
+589
+00:18:49,640 --> 00:18:52,800
+I added this other module or whatever.
+
+590
+00:18:50,920 --> 00:18:55,000
+And so what config plugins are are
+
+591
+00:18:52,800 --> 00:18:57,000
+basically sort of in your module you can
+
+592
+00:18:55,000 --> 00:18:59,200
+add sort of a set of instructions or
+
+593
+00:18:57,000 --> 00:19:00,920
+scripts that basically like tell the
+
+594
+00:18:59,200 --> 00:19:04,240
+native code how to install itself in a
+
+595
+00:19:00,920 --> 00:19:06,560
+generalized way. And then what CNG is is
+
+596
+00:19:04,240 --> 00:19:08,680
+continuous native generation. And so in
+
+597
+00:19:06,560 --> 00:19:10,480
+a typical like old school React Native
+
+598
+00:19:08,680 --> 00:19:12,400
+project, you'd have like your JavaScript
+
+599
+00:19:10,480 --> 00:19:14,240
+source directory that that has like your
+
+600
+00:19:12,400 --> 00:19:15,840
+React code. And then you have like an
+
+601
+00:19:14,240 --> 00:19:17,240
+Android directory and iOS directory
+
+602
+00:19:15,840 --> 00:19:19,880
+where sort of like the special native
+
+603
+00:19:17,240 --> 00:19:23,440
+code for Android and iOS would live. And
+
+604
+00:19:19,880 --> 00:19:25,560
+in a sort of Expo project using CNG,
+
+605
+00:19:23,440 --> 00:19:26,800
+you don't have the Android and the iOS
+
+606
+00:19:25,560 --> 00:19:28,560
+directory typically living in your
+
+607
+00:19:26,800 --> 00:19:30,600
+project cuz they get generated every
+
+608
+00:19:28,560 --> 00:19:32,400
+time that you make a change to the set
+
+609
+00:19:30,600 --> 00:19:33,960
+of config plugins you use. They're
+
+610
+00:19:32,400 --> 00:19:35,240
+almost like at machine code now, right?
+
+611
+00:19:33,960 --> 00:19:37,000
+Like they're kind of like halfway
+
+612
+00:19:35,240 --> 00:19:39,840
+between. When you NPM install some
+
+613
+00:19:37,000 --> 00:19:41,280
+package, it like figures out what needs
+
+614
+00:19:39,840 --> 00:19:43,000
+to get downloaded and kind of moves
+
+615
+00:19:41,280 --> 00:19:44,000
+those files into the right directory and
+
+616
+00:19:43,000 --> 00:19:46,880
+kind of makes it so that you can just
+
+617
+00:19:44,000 --> 00:19:48,240
+sort of require that in your or import
+
+618
+00:19:46,880 --> 00:19:49,360
+it in your project and it just kind of
+
+619
+00:19:48,240 --> 00:19:51,680
+work. And you can kind of think of it as
+
+620
+00:19:49,360 --> 00:19:54,440
+the same thing where you can just kind
+
+621
+00:19:51,680 --> 00:19:56,160
+of one command to install a new, you
+
+622
+00:19:54,440 --> 00:19:58,440
+know, React Native purchases or some
+
+623
+00:19:56,160 --> 00:19:59,760
+other package and then all of the setup
+
+624
+00:19:58,440 --> 00:20:01,720
+just gets taken care of. And if you
+
+625
+00:19:59,760 --> 00:20:03,320
+upgrade to a new version of React Native
+
+626
+00:20:01,720 --> 00:20:04,880
+or new native stuff, all that stuff it
+
+627
+00:20:03,320 --> 00:20:07,600
+just sort of happens seamlessly. It's
+
+628
+00:20:04,880 --> 00:20:09,160
+gotten way, way easier to actually use
+
+629
+00:20:07,600 --> 00:20:10,040
+native code. And so even for people that
+
+630
+00:20:09,160 --> 00:20:12,120
+like
+
+631
+00:20:10,040 --> 00:20:13,840
+think native code is really important,
+
+632
+00:20:12,120 --> 00:20:15,200
+it's gotten much more sensible to use
+
+633
+00:20:13,840 --> 00:20:17,040
+React Native than it was in the past
+
+634
+00:20:15,200 --> 00:20:18,680
+because it's a lot easier to access the
+
+635
+00:20:17,040 --> 00:20:19,720
+native layers of stuff. The way a lot of
+
+636
+00:20:18,680 --> 00:20:20,920
+people probably look at it is like if
+
+637
+00:20:19,720 --> 00:20:22,960
+you think about what's going on in the
+
+638
+00:20:20,920 --> 00:20:25,320
+world of AI, obviously performance is
+
+639
+00:20:22,960 --> 00:20:26,960
+super important in you know, doing all
+
+640
+00:20:25,320 --> 00:20:28,760
+this machine learning type stuff, etc.
+
+641
+00:20:26,960 --> 00:20:31,200
+etc. But a lot of the code that people
+
+642
+00:20:28,760 --> 00:20:32,960
+who, you know, work on optimizing these
+
+643
+00:20:31,200 --> 00:20:34,080
+models at OpenAI or or playing around
+
+644
+00:20:32,960 --> 00:20:36,360
+with these things, they're running a lot
+
+645
+00:20:34,080 --> 00:20:37,360
+of Python because
+
+646
+00:20:36,360 --> 00:20:39,760
+some things need to be really, really
+
+647
+00:20:37,360 --> 00:20:40,840
+fast, but a lot of stuff doesn't need to
+
+648
+00:20:39,760 --> 00:20:42,760
+be really, really fast. You're just sort
+
+649
+00:20:40,840 --> 00:20:43,800
+of saying, "Go do this task that has to
+
+650
+00:20:42,760 --> 00:20:45,280
+be really, really fast." And you're sort
+
+651
+00:20:43,800 --> 00:20:46,800
+of orchestrating things. And so you see
+
+652
+00:20:45,280 --> 00:20:49,440
+this happening in a lot of systems. And
+
+653
+00:20:46,800 --> 00:20:50,560
+so that's that's one big factor. Another
+
+654
+00:20:49,440 --> 00:20:52,600
+factor is like, you know, a couple of
+
+655
+00:20:50,560 --> 00:20:54,480
+years ago engineers were sort of
+
+656
+00:20:52,600 --> 00:20:55,960
+considered assets to tech companies. And
+
+657
+00:20:54,480 --> 00:20:57,680
+so people were trying to hire, you know,
+
+658
+00:20:55,960 --> 00:20:59,720
+"If I can hire 100 people, I'm worth
+
+659
+00:20:57,680 --> 00:21:01,360
+$100 million or something." is is a blog
+
+660
+00:20:59,720 --> 00:21:02,880
+post I read. And like people are not
+
+661
+00:21:01,360 --> 00:21:05,080
+thinking that way anymore. A lot of the
+
+662
+00:21:02,880 --> 00:21:06,960
+companies that we talked to that are
+
+663
+00:21:05,080 --> 00:21:08,480
+using Expo, they they even had like
+
+664
+00:21:06,960 --> 00:21:10,800
+working iOS apps that were well
+
+665
+00:21:08,480 --> 00:21:13,480
+reviewed, perfectly fine, and you know,
+
+666
+00:21:10,800 --> 00:21:15,440
+good Android apps that were also in sync
+
+667
+00:21:13,480 --> 00:21:16,520
+with that and perfectly functional, but
+
+668
+00:21:15,440 --> 00:21:18,120
+they were just finding it was really
+
+669
+00:21:16,520 --> 00:21:19,560
+hard to move forward quickly, really
+
+670
+00:21:18,120 --> 00:21:21,640
+hard to keep those things in sync,
+
+671
+00:21:19,560 --> 00:21:23,080
+really hard to hire for these positions,
+
+672
+00:21:21,640 --> 00:21:24,560
+and also they just like they were really
+
+673
+00:21:23,080 --> 00:21:25,880
+at risk if they were to lose their one
+
+674
+00:21:24,560 --> 00:21:28,040
+Android developer or their one iOS
+
+675
+00:21:25,880 --> 00:21:29,800
+developer, and they just be stuck and
+
+676
+00:21:28,040 --> 00:21:31,520
+unable to like keep their their product
+
+677
+00:21:29,800 --> 00:21:33,280
+going. And so, Creates some really
+
+678
+00:21:31,520 --> 00:21:34,240
+awkward choices, too, when you're like,
+
+679
+00:21:33,280 --> 00:21:35,520
+"Oh, we want to experiment with
+
+680
+00:21:34,240 --> 00:21:36,960
+something." But then you kind of are
+
+681
+00:21:35,520 --> 00:21:38,880
+forced to not do parity. You have to do
+
+682
+00:21:36,960 --> 00:21:40,440
+it on one platform and then backport it,
+
+683
+00:21:38,880 --> 00:21:42,600
+and then that backport never happens
+
+684
+00:21:40,440 --> 00:21:44,480
+because like you're busy and yeah. And
+
+685
+00:21:42,600 --> 00:21:46,080
+now your all of your documentation to
+
+686
+00:21:44,480 --> 00:21:47,760
+your users and your customer service
+
+687
+00:21:46,080 --> 00:21:49,280
+team is getting confused and has to ask
+
+688
+00:21:47,760 --> 00:21:51,040
+more questions. There's just all kinds
+
+689
+00:21:49,280 --> 00:21:52,480
+of things that are, you know, bad news
+
+690
+00:21:51,040 --> 00:21:53,320
+about going in that path. In general,
+
+691
+00:21:52,480 --> 00:21:55,640
+like
+
+692
+00:21:53,320 --> 00:21:57,800
+there used to be this idea that like,
+
+693
+00:21:55,640 --> 00:21:59,480
+you know, your Android users have
+
+694
+00:21:57,800 --> 00:22:02,520
+fundamentally different expectations
+
+695
+00:21:59,480 --> 00:22:04,480
+than iOS users, and the web is its own
+
+696
+00:22:02,520 --> 00:22:06,440
+beast. And so, like if you go
+
+697
+00:22:04,480 --> 00:22:08,640
+rewind time back to say like, you know,
+
+698
+00:22:06,440 --> 00:22:10,440
+2011, and like Dropbox and Slack were
+
+699
+00:22:08,640 --> 00:22:12,400
+two pretty good examples of this where
+
+700
+00:22:10,440 --> 00:22:14,800
+they had totally separate design teams
+
+701
+00:22:12,400 --> 00:22:15,920
+working on their Android and iOS
+
+702
+00:22:14,800 --> 00:22:17,760
+products. And so, if you like switch
+
+703
+00:22:15,920 --> 00:22:19,680
+from an Android phone to an iOS phone or
+
+704
+00:22:17,760 --> 00:22:21,400
+vice versa, and you're using Dropbox or
+
+705
+00:22:19,680 --> 00:22:22,600
+using Slack, you'd just be like,
+
+706
+00:22:21,400 --> 00:22:23,920
+"I don't know where anything is. What
+
+707
+00:22:22,600 --> 00:22:25,920
+the heck is this?" Because it's just
+
+708
+00:22:23,920 --> 00:22:28,480
+like a totally different product. And
+
+709
+00:22:25,920 --> 00:22:30,360
+now things have really gone pretty far
+
+710
+00:22:28,480 --> 00:22:32,440
+in the other direction where Conversion
+
+711
+00:22:30,360 --> 00:22:34,400
+evolution, right? Like it turns out that
+
+712
+00:22:32,440 --> 00:22:36,360
+there's only a so many ways to like make
+
+713
+00:22:34,400 --> 00:22:38,720
+a decent mobile app. want basically the
+
+714
+00:22:36,360 --> 00:22:40,920
+same product on iOS and Android and web.
+
+715
+00:22:38,720 --> 00:22:42,840
+And if so, like when I use the United
+
+716
+00:22:40,920 --> 00:22:44,600
+Airlines app on my phone, whether it's
+
+717
+00:22:42,840 --> 00:22:45,840
+on iPhone or my Android phone or the
+
+718
+00:22:44,600 --> 00:22:47,640
+mobile website or the website, it's
+
+719
+00:22:45,840 --> 00:22:48,920
+basically the same product, same design
+
+720
+00:22:47,640 --> 00:22:50,800
+language. Things are all in basically
+
+721
+00:22:48,920 --> 00:22:52,280
+the same places. I don't think United
+
+722
+00:22:50,800 --> 00:22:53,560
+Airlines actually uses React Native.
+
+723
+00:22:52,280 --> 00:22:54,840
+They might, but I'm I don't believe it.
+
+724
+00:22:53,560 --> 00:22:56,240
+I just think like
+
+725
+00:22:54,840 --> 00:22:57,720
+the general thinking around product is
+
+726
+00:22:56,240 --> 00:22:58,760
+moving in that direction. But then once
+
+727
+00:22:57,720 --> 00:23:00,160
+your thinking around product moves in
+
+728
+00:22:58,760 --> 00:23:02,600
+that direction, you're like, "Why
+
+729
+00:23:00,160 --> 00:23:04,080
+doesn't our implementation match the way
+
+730
+00:23:02,600 --> 00:23:05,000
+that we're actually building product?
+
+731
+00:23:04,080 --> 00:23:06,640
+Oh, I see what you're saying. So the
+
+732
+00:23:05,000 --> 00:23:07,840
+actual the actual conformity comes
+
+733
+00:23:06,640 --> 00:23:09,560
+first. Like that we should just have
+
+734
+00:23:07,840 --> 00:23:10,920
+things be identical. And then from then
+
+735
+00:23:09,560 --> 00:23:13,920
+it follows like why do we have these
+
+736
+00:23:10,920 --> 00:23:15,120
+like separate tool chains, right? Yeah.
+
+737
+00:23:13,920 --> 00:23:18,440
+And then another thing that's kind of
+
+738
+00:23:15,120 --> 00:23:22,400
+come online is we did a lot of work to
+
+739
+00:23:18,440 --> 00:23:24,720
+make Expo work on web as well as iOS and
+
+740
+00:23:22,400 --> 00:23:26,960
+Android. So a lot of the people now that
+
+741
+00:23:24,720 --> 00:23:28,920
+use Expo actually going to have one team
+
+742
+00:23:26,960 --> 00:23:31,320
+across iOS and Android and web. And so
+
+743
+00:23:28,920 --> 00:23:33,480
+it's not just a mobile only thing. So
+
+744
+00:23:31,320 --> 00:23:36,040
+one of the most prominent exciting Expo
+
+745
+00:23:33,480 --> 00:23:38,240
+apps is Blue Sky, which is like feels
+
+746
+00:23:36,040 --> 00:23:40,440
+really good. And like I find it
+
+747
+00:23:38,240 --> 00:23:42,440
+basically as good as an app. Missing a
+
+748
+00:23:40,440 --> 00:23:43,840
+few, you know, advanced video features
+
+749
+00:23:42,440 --> 00:23:44,920
+and stuff, but otherwise like pretty
+
+750
+00:23:43,840 --> 00:23:47,200
+comparable to Twitter and all those
+
+751
+00:23:44,920 --> 00:23:49,960
+feels great. But they had their sort of
+
+752
+00:23:47,200 --> 00:23:52,080
+thing they'll say is like one man, three
+
+753
+00:23:49,960 --> 00:23:53,400
+platforms, four months was how they
+
+754
+00:23:52,080 --> 00:23:54,520
+built their the first version of it
+
+755
+00:23:53,400 --> 00:23:56,200
+because they weren't even planning to
+
+756
+00:23:54,520 --> 00:23:58,240
+build an app. It's a complicated sort of
+
+757
+00:23:56,200 --> 00:24:00,240
+origin story, but you know, when Jack
+
+758
+00:23:58,240 --> 00:24:01,960
+Dorsey was sort of thinking about how
+
+759
+00:24:00,240 --> 00:24:04,200
+social media needed to evolve and how it
+
+760
+00:24:01,960 --> 00:24:07,240
+could be federated, he sort of allocated
+
+761
+00:24:04,200 --> 00:24:08,960
+some funding for a federated kind of
+
+762
+00:24:07,240 --> 00:24:10,480
+protocol. But they were really just
+
+763
+00:24:08,960 --> 00:24:12,360
+imagining they would make a protocol for
+
+764
+00:24:10,480 --> 00:24:14,920
+how to federate something like Twitter.
+
+765
+00:24:12,360 --> 00:24:18,000
+And that Twitter would be the first
+
+766
+00:24:14,920 --> 00:24:19,280
+client of this protocol. And then, you
+
+767
+00:24:18,000 --> 00:24:21,160
+know, you almost got Twitter just sort
+
+768
+00:24:19,280 --> 00:24:22,760
+of like, why do I need this, you know,
+
+769
+00:24:21,160 --> 00:24:24,400
+I'm trying to cut everything and make
+
+770
+00:24:22,760 --> 00:24:25,880
+this a lean and mean machine. I don't
+
+771
+00:24:24,400 --> 00:24:27,600
+need to deal with this. But they had
+
+772
+00:24:25,880 --> 00:24:30,160
+incorporated as a separate company and
+
+773
+00:24:27,600 --> 00:24:31,600
+sort of the funding was sort of already
+
+774
+00:24:30,160 --> 00:24:32,920
+earmarked for it. So they were able to
+
+775
+00:24:31,600 --> 00:24:33,760
+keep going, but they, you know, they
+
+776
+00:24:32,920 --> 00:24:35,280
+were looking around and they're like, we
+
+777
+00:24:33,760 --> 00:24:37,160
+have like a 10-person team and we have
+
+778
+00:24:35,280 --> 00:24:38,800
+no developers who are iOS developers or
+
+779
+00:24:37,160 --> 00:24:40,680
+Android developers. And we're on a kind
+
+780
+00:24:38,800 --> 00:24:41,880
+of tight time on here. We need And we
+
+781
+00:24:40,680 --> 00:24:44,240
+realized like our only way forward is to
+
+782
+00:24:41,880 --> 00:24:45,920
+actually make an app to be the flagship
+
+783
+00:24:44,240 --> 00:24:48,120
+version of our, you know, federated
+
+784
+00:24:45,920 --> 00:24:49,560
+protocol. And so they just had Paul on
+
+785
+00:24:48,120 --> 00:24:51,600
+their team didn't even have React
+
+786
+00:24:49,560 --> 00:24:53,760
+experience. And he just learned on the
+
+787
+00:24:51,600 --> 00:24:56,040
+fly and he was he just a really sharp
+
+788
+00:24:53,760 --> 00:24:57,080
+guy with pretty good taste and was able
+
+789
+00:24:56,040 --> 00:24:58,320
+to make something pretty good out of the
+
+790
+00:24:57,080 --> 00:25:00,080
+gate. And they've still only have about
+
+791
+00:24:58,320 --> 00:25:01,000
+three people working on the app and it
+
+792
+00:25:00,080 --> 00:25:03,200
+works across all the different
+
+793
+00:25:01,000 --> 00:25:05,040
+platforms. And so it's one they have one
+
+794
+00:25:03,200 --> 00:25:08,320
+code base for their web. That's like
+
+795
+00:25:05,040 --> 00:25:10,920
+extreme React UI, right? Like to be able
+
+796
+00:25:08,320 --> 00:25:12,240
+to scale. That's crazy. One thing I
+
+797
+00:25:10,920 --> 00:25:14,000
+we talking about the Facebook
+
+798
+00:25:12,240 --> 00:25:16,200
+investments. Who is doing most of the
+
+799
+00:25:14,000 --> 00:25:18,920
+work on that last translation layer now
+
+800
+00:25:16,200 --> 00:25:20,520
+from like your scene graph to rendering
+
+801
+00:25:18,920 --> 00:25:22,000
+in native UIs and stuff? Is Facebook
+
+802
+00:25:20,520 --> 00:25:23,600
+still developing a lot of that? Is it
+
+803
+00:25:22,000 --> 00:25:26,240
+handled by the community? Cuz I imagine
+
+804
+00:25:23,600 --> 00:25:27,640
+a lot of what makes React Native plus
+
+805
+00:25:26,240 --> 00:25:29,560
+Expo work really well is kind of that
+
+806
+00:25:27,640 --> 00:25:32,360
+like last mile translating it to the
+
+807
+00:25:29,560 --> 00:25:35,440
+platform. Well, a lot of that kind of
+
+808
+00:25:32,360 --> 00:25:37,560
+doesn't need as much like change as you
+
+809
+00:25:35,440 --> 00:25:40,320
+might think. One reason it works pretty
+
+810
+00:25:37,560 --> 00:25:42,480
+well in a lot of ways is that there's
+
+811
+00:25:40,320 --> 00:25:44,280
+it's not a super heavy layer.
+
+812
+00:25:42,480 --> 00:25:47,120
+I'm glossing over a bit here,
+
+813
+00:25:44,280 --> 00:25:48,920
+but like if you make a view in React
+
+814
+00:25:47,120 --> 00:25:50,560
+Native like, you know, you know, you use
+
+815
+00:25:48,920 --> 00:25:52,320
+angle brackets and you write view,
+
+816
+00:25:50,560 --> 00:25:54,040
+you're writing some React code.
+
+817
+00:25:52,320 --> 00:25:55,840
+When that targets web, that's just going
+
+818
+00:25:54,040 --> 00:25:57,160
+to turn into a div. There isn't some
+
+819
+00:25:55,840 --> 00:26:00,200
+sort of like
+
+820
+00:25:57,160 --> 00:26:01,600
+crazy like giant transformation. You can
+
+821
+00:26:00,200 --> 00:26:03,880
+kind of reason about how it's going to
+
+822
+00:26:01,600 --> 00:26:06,480
+end up running. And when you have that
+
+823
+00:26:03,880 --> 00:26:08,760
+view and it goes on iOS, it's going to
+
+824
+00:26:06,480 --> 00:26:10,640
+end up with just like a UI view from UI
+
+825
+00:26:08,760 --> 00:26:12,280
+Kit. And like there's a little bit of
+
+826
+00:26:10,640 --> 00:26:14,000
+wrapping and other kinds of things that
+
+827
+00:26:12,280 --> 00:26:15,280
+go on there. And like basically like a
+
+828
+00:26:14,000 --> 00:26:17,040
+lot of what we think of as apps is just
+
+829
+00:26:15,280 --> 00:26:18,760
+sort of like rectangles and sort of
+
+830
+00:26:17,040 --> 00:26:20,800
+coloring and styling and text and then
+
+831
+00:26:18,760 --> 00:26:23,040
+some images and things like that. And so
+
+832
+00:26:20,800 --> 00:26:24,480
+there is work to do. Like we released
+
+833
+00:26:23,040 --> 00:26:26,440
+something not that long ago called Expo
+
+834
+00:26:24,480 --> 00:26:29,080
+image, which you know, a lot of people
+
+835
+00:26:26,440 --> 00:26:30,880
+are using things like SD web image and
+
+836
+00:26:29,080 --> 00:26:32,600
+fast image and certain like things that
+
+837
+00:26:30,880 --> 00:26:35,120
+will handle caching and different
+
+838
+00:26:32,600 --> 00:26:36,440
+formats and things like that. And uh we
+
+839
+00:26:35,120 --> 00:26:37,720
+kind of like some of those weren't that
+
+840
+00:26:36,440 --> 00:26:39,120
+well maintained and so we just sort of
+
+841
+00:26:37,720 --> 00:26:40,640
+decided this is something we should
+
+842
+00:26:39,120 --> 00:26:42,800
+build ourselves and pull it to the SDK
+
+843
+00:26:40,640 --> 00:26:44,560
+and sort of standardize and whatnot. So
+
+844
+00:26:42,800 --> 00:26:45,920
+we do a lot of that. There's also a lot
+
+845
+00:26:44,560 --> 00:26:49,480
+of the innovation that's happening right
+
+846
+00:26:45,920 --> 00:26:51,760
+now that's pretty good for the space is,
+
+847
+00:26:49,480 --> 00:26:53,960
+you know, expectations of what we expect
+
+848
+00:26:51,760 --> 00:26:55,320
+from products have gone up a lot. This
+
+849
+00:26:53,960 --> 00:26:56,880
+is true on the web, kind of double true
+
+850
+00:26:55,320 --> 00:26:58,960
+on mobile, but if you think back to
+
+851
+00:26:56,880 --> 00:27:00,600
+like, you know, a web 15 years ago or
+
+852
+00:26:58,960 --> 00:27:02,200
+something, what you'd expect from a
+
+853
+00:27:00,600 --> 00:27:04,240
+website is you wouldn't expect any kind
+
+854
+00:27:02,200 --> 00:27:05,840
+of like 3D graphics or, you know,
+
+855
+00:27:04,240 --> 00:27:08,840
+interesting transitions or whatever, but
+
+856
+00:27:05,840 --> 00:27:10,120
+now you even go to like some random
+
+857
+00:27:08,840 --> 00:27:11,400
+product page for something and a lot of
+
+858
+00:27:10,120 --> 00:27:13,840
+times you'll scroll down and some sort
+
+859
+00:27:11,400 --> 00:27:16,200
+of crazy 3D animation will happen as you
+
+860
+00:27:13,840 --> 00:27:17,840
+scroll or something like that. And a lot
+
+861
+00:27:16,200 --> 00:27:19,200
+of this is like WebGL and just like
+
+862
+00:27:17,840 --> 00:27:21,120
+things for doing that on the web have
+
+863
+00:27:19,200 --> 00:27:23,960
+advanced a lot. And so, if you want to
+
+864
+00:27:21,120 --> 00:27:25,120
+add a lot of really nice touches to uh
+
+865
+00:27:23,960 --> 00:27:26,520
+sort of
+
+866
+00:27:25,120 --> 00:27:28,480
+React Native app or something like that,
+
+867
+00:27:26,520 --> 00:27:30,680
+there's some really good libraries out
+
+868
+00:27:28,480 --> 00:27:33,280
+there like React Native Skia, which adds
+
+869
+00:27:30,680 --> 00:27:34,440
+the sort of Skia 2D graphics engine. And
+
+870
+00:27:33,280 --> 00:27:36,440
+then there's, you know, at this
+
+871
+00:27:34,440 --> 00:27:38,080
+conference I'm at today, there was just
+
+872
+00:27:36,440 --> 00:27:41,040
+some announcements around React Native
+
+873
+00:27:38,080 --> 00:27:42,160
+WebGPU and having access to that. And
+
+874
+00:27:41,040 --> 00:27:45,120
+then there's something called
+
+875
+00:27:42,160 --> 00:27:46,720
+Reanimated, made by a a firm in Poland
+
+876
+00:27:45,120 --> 00:27:47,760
+called Software Mansion. They also have
+
+877
+00:27:46,720 --> 00:27:49,480
+something called React Native Gesture
+
+878
+00:27:47,760 --> 00:27:50,960
+Handler that like like these powerful
+
+879
+00:27:49,480 --> 00:27:52,880
+libraries that let you get all these
+
+880
+00:27:50,960 --> 00:27:55,320
+gestures and animations
+
+881
+00:27:52,880 --> 00:27:56,200
+to be really right, but also be like
+
+882
+00:27:55,320 --> 00:27:57,800
+things that you can write in just
+
+883
+00:27:56,200 --> 00:27:59,200
+JavaScript instead of having to go write
+
+884
+00:27:57,800 --> 00:28:00,520
+a bunch of custom native code to make
+
+885
+00:27:59,200 --> 00:28:01,920
+something like look and feel really
+
+886
+00:28:00,520 --> 00:28:03,560
+cool. Now getting back into the
+
+887
+00:28:01,920 --> 00:28:05,440
+multi-platform problem, right? Where you
+
+888
+00:28:03,560 --> 00:28:06,360
+have to like do some like native stuff.
+
+889
+00:28:05,440 --> 00:28:08,000
+It sounds like stuff's really
+
+890
+00:28:06,360 --> 00:28:09,240
+accelerating. I I think there was a I
+
+891
+00:28:08,000 --> 00:28:11,520
+don't know when this was, but there was
+
+892
+00:28:09,240 --> 00:28:13,400
+a moment, maybe it was 5 years ago, when
+
+893
+00:28:11,520 --> 00:28:15,440
+like Facebook kind of dropped React
+
+894
+00:28:13,400 --> 00:28:17,720
+Native and there was like a lot of flood
+
+895
+00:28:15,440 --> 00:28:19,960
+about maybe React Native's over, but it
+
+896
+00:28:17,720 --> 00:28:21,880
+seems like that that's the opposite.
+
+897
+00:28:19,960 --> 00:28:24,120
+Now, is that was that always just a fake
+
+898
+00:28:21,880 --> 00:28:25,400
+news or what was the story? There were a
+
+899
+00:28:24,120 --> 00:28:28,000
+couple things that were challenging. The
+
+900
+00:28:25,400 --> 00:28:29,160
+most damaging thing that probably ever
+
+901
+00:28:28,000 --> 00:28:31,880
+happened in the history of React Native
+
+902
+00:28:29,160 --> 00:28:33,480
+is the Airbnb was kind of an early user
+
+903
+00:28:31,880 --> 00:28:35,160
+of it and they, you know, they had a
+
+904
+00:28:33,480 --> 00:28:36,840
+couple of guys there that were really
+
+905
+00:28:35,160 --> 00:28:38,040
+good developers and and you know,
+
+906
+00:28:36,840 --> 00:28:39,560
+contributed a lot and they they'd go
+
+907
+00:28:38,040 --> 00:28:42,120
+around at a lot of conferences and talk
+
+908
+00:28:39,560 --> 00:28:44,040
+about their work. For a bunch of like
+
+909
+00:28:42,120 --> 00:28:45,600
+complicated reasons, the engineering
+
+910
+00:28:44,040 --> 00:28:47,520
+team at Airbnb just decided like it
+
+911
+00:28:45,600 --> 00:28:49,360
+doesn't make sense to kind of maintain
+
+912
+00:28:47,520 --> 00:28:51,600
+our sort of native stuff and our React
+
+913
+00:28:49,360 --> 00:28:53,760
+Native stuff and we decided that like
+
+914
+00:28:51,600 --> 00:28:55,440
+the native people kind of win.
+
+915
+00:28:53,760 --> 00:28:57,360
+And so like we're going to just stop
+
+916
+00:28:55,440 --> 00:28:58,840
+doing this. And they were never a fully
+
+917
+00:28:57,360 --> 00:29:01,160
+React Native app though. They had like
+
+918
+00:28:58,840 --> 00:29:02,840
+React Native components. No, they were
+
+919
+00:29:01,160 --> 00:29:04,080
+using it for like you know 20% of the
+
+920
+00:29:02,840 --> 00:29:05,800
+app or something like that but they were
+
+921
+00:29:04,080 --> 00:29:07,520
+just they were pretty vocal about it.
+
+922
+00:29:05,800 --> 00:29:08,920
+Which is less you get less benefit then
+
+923
+00:29:07,520 --> 00:29:10,880
+right? Like if you have like a native
+
+924
+00:29:08,920 --> 00:29:13,400
+and It's somewhat complicated to kind of
+
+925
+00:29:10,880 --> 00:29:15,040
+have a really mixed brown field type
+
+926
+00:29:13,400 --> 00:29:16,440
+approach like
+
+927
+00:29:15,040 --> 00:29:18,520
+it's more complicated than having a
+
+928
+00:29:16,440 --> 00:29:20,680
+website that was using jQuery and then
+
+929
+00:29:18,520 --> 00:29:22,320
+is using React for one of the screens.
+
+930
+00:29:20,680 --> 00:29:24,000
+Because in a website you're using
+
+931
+00:29:22,320 --> 00:29:27,240
+JavaScript everywhere and so if you have
+
+932
+00:29:24,000 --> 00:29:29,320
+some data that's pulled down by a jQuery
+
+933
+00:29:27,240 --> 00:29:31,320
+Ajax call and then you want to use it
+
+934
+00:29:29,320 --> 00:29:33,360
+inside of a React component or reuse
+
+935
+00:29:31,320 --> 00:29:35,200
+some of the same state you can just pass
+
+936
+00:29:33,360 --> 00:29:36,600
+those variables back and forth or refer
+
+937
+00:29:35,200 --> 00:29:38,440
+to them. And this is just like one
+
+938
+00:29:36,600 --> 00:29:40,440
+example just to illustrate the point.
+
+939
+00:29:38,440 --> 00:29:42,280
+But like let's say that you had you know
+
+940
+00:29:40,440 --> 00:29:45,200
+a screen on Airbnb's app that's written
+
+941
+00:29:42,280 --> 00:29:47,040
+in Swift and then you know another part
+
+942
+00:29:45,200 --> 00:29:49,680
+of that screen is written in React
+
+943
+00:29:47,040 --> 00:29:52,520
+Native. And then it's relying on you
+
+944
+00:29:49,680 --> 00:29:54,240
+know some profile for a house listing
+
+945
+00:29:52,520 --> 00:29:56,680
+and that house listing has some data and
+
+946
+00:29:54,240 --> 00:29:59,400
+has like a you know URL of a photo or
+
+947
+00:29:56,680 --> 00:30:01,040
+something like that. And you pull down
+
+948
+00:29:59,400 --> 00:30:03,040
+that data in Swift and it's now in like
+
+949
+00:30:01,040 --> 00:30:04,320
+Swift variables and then all of a sudden
+
+950
+00:30:03,040 --> 00:30:06,280
+you're like
+
+951
+00:30:04,320 --> 00:30:08,280
+React Native wants to access to the same
+
+952
+00:30:06,280 --> 00:30:10,120
+photo to make sure it's the right thing
+
+953
+00:30:08,280 --> 00:30:11,480
+or it wants to you know do highlight
+
+954
+00:30:10,120 --> 00:30:12,840
+something and like that data isn't
+
+955
+00:30:11,480 --> 00:30:14,760
+available in JavaScript you have to kind
+
+956
+00:30:12,840 --> 00:30:16,720
+of create some sort of way to you know
+
+957
+00:30:14,760 --> 00:30:18,960
+marshal things across some bridge and
+
+958
+00:30:16,720 --> 00:30:20,800
+what not. Bridge and then now you at a
+
+959
+00:30:18,960 --> 00:30:22,480
+minimum you're probably duplicating your
+
+960
+00:30:20,800 --> 00:30:23,760
+memory consumption right? And it just
+
+961
+00:30:22,480 --> 00:30:25,120
+gets like there's different ways you can
+
+962
+00:30:23,760 --> 00:30:26,360
+handle it but it's it's sort of like you
+
+963
+00:30:25,120 --> 00:30:27,320
+now have it's almost like you have this
+
+964
+00:30:26,360 --> 00:30:29,400
+like
+
+965
+00:30:27,320 --> 00:30:31,640
+three things to worry about like your
+
+966
+00:30:29,400 --> 00:30:33,040
+native your native world your JavaScript
+
+967
+00:30:31,640 --> 00:30:35,200
+world and then the way to move between
+
+968
+00:30:33,040 --> 00:30:37,320
+them. And so now like a lot of things
+
+969
+00:30:35,200 --> 00:30:38,640
+that are I think that's something I
+
+970
+00:30:37,320 --> 00:30:40,840
+really want to work on is making that
+
+971
+00:30:38,640 --> 00:30:42,680
+sort of incremental transition easier.
+
+972
+00:30:40,840 --> 00:30:43,720
+But in the world where we are now
+
+973
+00:30:42,680 --> 00:30:46,000
+definitely the things that are having
+
+974
+00:30:43,720 --> 00:30:47,360
+the most success that we see are things
+
+975
+00:30:46,000 --> 00:30:48,680
+that kind of start from the beginning as
+
+976
+00:30:47,360 --> 00:30:50,720
+React Native apps. They might use a lot
+
+977
+00:30:48,680 --> 00:30:52,120
+of native code, but it's usually in this
+
+978
+00:30:50,720 --> 00:30:54,680
+way where it's like, "Oh, we're going to
+
+979
+00:30:52,120 --> 00:30:56,640
+do some really specific stuff, like have
+
+980
+00:30:54,680 --> 00:30:58,080
+a custom video player, but it's going to
+
+981
+00:30:56,640 --> 00:30:59,320
+be a React Native module and that can
+
+982
+00:30:58,080 --> 00:31:00,960
+just sort of plug in and we can drop
+
+983
+00:30:59,320 --> 00:31:02,160
+down to native code wherever we need to,
+
+984
+00:31:00,960 --> 00:31:04,440
+but the whole system is kind of being
+
+985
+00:31:02,160 --> 00:31:06,600
+orchestrated and controlled by by React
+
+986
+00:31:04,440 --> 00:31:07,680
+Native." Another thing that
+
+987
+00:31:06,600 --> 00:31:09,920
+you know, when I was talking about the
+
+988
+00:31:07,680 --> 00:31:11,680
+transition to this being pretty standard
+
+989
+00:31:09,920 --> 00:31:13,360
+is a thing that we spent a lot of time
+
+990
+00:31:11,680 --> 00:31:15,160
+on was Evan Bacon on our team, who was
+
+991
+00:31:13,360 --> 00:31:18,320
+amazing, spearheaded this work on
+
+992
+00:31:15,160 --> 00:31:20,680
+something called Expo Router, which is
+
+993
+00:31:18,320 --> 00:31:22,040
+pretty common in the world of React or
+
+994
+00:31:20,680 --> 00:31:24,160
+websites to have a sort of router thing
+
+995
+00:31:22,040 --> 00:31:25,640
+that will handle, you know, just a
+
+996
+00:31:24,160 --> 00:31:27,600
+mapping out like the architecture of
+
+997
+00:31:25,640 --> 00:31:29,720
+like all the tabs in your screen or like
+
+998
+00:31:27,600 --> 00:31:32,760
+what URLs map to and what what not. It's
+
+999
+00:31:29,720 --> 00:31:34,840
+a much more complicated pro- problem on
+
+1000
+00:31:32,760 --> 00:31:36,280
+this sort of multi-platform mobile type
+
+1001
+00:31:34,840 --> 00:31:37,840
+thing because if you think about like
+
+1002
+00:31:36,280 --> 00:31:39,040
+this is probably something that like
+
+1003
+00:31:37,840 --> 00:31:40,200
+anybody can kind of understand if they
+
+1004
+00:31:39,040 --> 00:31:42,080
+stop and think about it for a minute,
+
+1005
+00:31:40,200 --> 00:31:44,600
+but most of us don't. We're like, on the
+
+1006
+00:31:42,080 --> 00:31:46,080
+web, the structure of websites is that
+
+1007
+00:31:44,600 --> 00:31:48,720
+you have this URL bar and there's kind
+
+1008
+00:31:46,080 --> 00:31:50,720
+of a back button and like
+
+1009
+00:31:48,720 --> 00:31:53,520
+it means that like there's kind of one
+
+1010
+00:31:50,720 --> 00:31:55,520
+stack of like navigation in a lot of
+
+1011
+00:31:53,520 --> 00:31:57,200
+cases, where if you think about, you
+
+1012
+00:31:55,520 --> 00:31:58,520
+know, everybody probably is familiar
+
+1013
+00:31:57,200 --> 00:32:00,280
+with Instagram who's who's listening to
+
+1014
+00:31:58,520 --> 00:32:02,400
+this podcast. And and that's a pretty
+
+1015
+00:32:00,280 --> 00:32:04,280
+common paradigm where there's like four
+
+1016
+00:32:02,400 --> 00:32:06,200
+or five tabs at the bottom of your
+
+1017
+00:32:04,280 --> 00:32:08,600
+screen and each of those is kind of its
+
+1018
+00:32:06,200 --> 00:32:11,040
+own stack. And so if you, you know, go
+
+1019
+00:32:08,600 --> 00:32:12,440
+to your profile tab and then you tap on
+
+1020
+00:32:11,040 --> 00:32:13,480
+followers and then you tap on somebody
+
+1021
+00:32:12,440 --> 00:32:15,120
+else's profile. That's like all
+
+1022
+00:32:13,480 --> 00:32:16,440
+happening underneath the profile tab,
+
+1023
+00:32:15,120 --> 00:32:17,360
+but then if you go to the search tab,
+
+1024
+00:32:16,440 --> 00:32:19,000
+you can go look at somebody else's
+
+1025
+00:32:17,360 --> 00:32:21,160
+profile, but then if you go back to your
+
+1026
+00:32:19,000 --> 00:32:22,400
+own profile tab, it's still whatever
+
+1027
+00:32:21,160 --> 00:32:24,600
+you've navigated to and there's kind of
+
+1028
+00:32:22,400 --> 00:32:27,640
+like multiple hierarchies of stuff going
+
+1029
+00:32:24,600 --> 00:32:29,280
+on. And so when you're making an app
+
+1030
+00:32:27,640 --> 00:32:30,680
+that like exists as a mobile app, you
+
+1031
+00:32:29,280 --> 00:32:32,200
+often want that paradigm that's more
+
+1032
+00:32:30,680 --> 00:32:34,400
+like the Instagram app, but then when
+
+1033
+00:32:32,200 --> 00:32:36,000
+you're on the web, you want it to feel
+
+1034
+00:32:34,400 --> 00:32:38,040
+like a website and be natural in that
+
+1035
+00:32:36,000 --> 00:32:39,760
+way. And then there's also this deep
+
+1036
+00:32:38,040 --> 00:32:40,920
+linking is this gnarly problem that is
+
+1037
+00:32:39,760 --> 00:32:42,200
+actually pretty hard to get right. Where
+
+1038
+00:32:40,920 --> 00:32:43,800
+like if you think about like anything
+
+1039
+00:32:42,200 --> 00:32:45,320
+you have an app installed for, they
+
+1040
+00:32:43,800 --> 00:32:46,960
+might send you an email that has like a
+
+1041
+00:32:45,320 --> 00:32:48,840
+you know, hey like check out this
+
+1042
+00:32:46,960 --> 00:32:50,640
+listing you know, for this product for
+
+1043
+00:32:48,840 --> 00:32:52,440
+sale on our app or whatever. And then
+
+1044
+00:32:50,640 --> 00:32:53,680
+you tap in the link and it like opens
+
+1045
+00:32:52,440 --> 00:32:54,880
+the app and it just is like gets
+
+1046
+00:32:53,680 --> 00:32:56,280
+confused and takes you to the home
+
+1047
+00:32:54,880 --> 00:32:57,440
+screen and you're like, I was trying to
+
+1048
+00:32:56,280 --> 00:32:59,720
+get to the specific product or the
+
+1049
+00:32:57,440 --> 00:33:01,400
+specific video. It's about 50/50 I feel
+
+1050
+00:32:59,720 --> 00:33:02,800
+like when I deep link into an app if I'm
+
+1051
+00:33:01,400 --> 00:33:05,320
+going to get where I'm trying to go.
+
+1052
+00:33:02,800 --> 00:33:07,400
+Yeah, and so Expo router handles that
+
+1053
+00:33:05,320 --> 00:33:10,280
+and just like works basically as well as
+
+1054
+00:33:07,400 --> 00:33:11,880
+anything can work across iOS and Android
+
+1055
+00:33:10,280 --> 00:33:13,080
+and web and just that problem just
+
+1056
+00:33:11,880 --> 00:33:14,360
+becomes
+
+1057
+00:33:13,080 --> 00:33:15,840
+a thing that's solved for you rather
+
+1058
+00:33:14,360 --> 00:33:17,440
+than a thing that you spend hours and
+
+1059
+00:33:15,840 --> 00:33:19,440
+hours and hours trying to get right and
+
+1060
+00:33:17,440 --> 00:33:21,480
+and stressing about and whatever. And so
+
+1061
+00:33:19,440 --> 00:33:22,760
+that's a a very nice thing that's just
+
+1062
+00:33:21,480 --> 00:33:25,280
+made it a lot easier for people to
+
+1063
+00:33:22,760 --> 00:33:27,520
+adopt. In researching for this podcast
+
+1064
+00:33:25,280 --> 00:33:29,880
+and then now in listening to you for the
+
+1065
+00:33:27,520 --> 00:33:32,320
+last you know, 30 minutes or so, I've
+
+1066
+00:33:29,880 --> 00:33:34,320
+updated my priors a lot and you know, I
+
+1067
+00:33:32,320 --> 00:33:36,280
+was one of those like snooty iOS
+
+1068
+00:33:34,320 --> 00:33:38,160
+developers who was like, oh and you
+
+1069
+00:33:36,280 --> 00:33:40,000
+know, that was like so focused on oh
+
+1070
+00:33:38,160 --> 00:33:42,800
+it's it's got to be native like React
+
+1071
+00:33:40,000 --> 00:33:45,320
+Native just a you know, lame web wrapper
+
+1072
+00:33:42,800 --> 00:33:47,000
+and like users are going to notice the
+
+1073
+00:33:45,320 --> 00:33:48,480
+performance is not going to be there.
+
+1074
+00:33:47,000 --> 00:33:50,640
+It's going to be more complicated and
+
+1075
+00:33:48,480 --> 00:33:54,360
+like all of that is which may have been
+
+1076
+00:33:50,640 --> 00:33:56,880
+true in 2019 or 18, but maybe not today.
+
+1077
+00:33:54,360 --> 00:33:58,400
+On the web, you can always view source
+
+1078
+00:33:56,880 --> 00:34:00,480
+and so you can kind of always figure out
+
+1079
+00:33:58,400 --> 00:34:02,520
+whatever any website is built with. But
+
+1080
+00:34:00,480 --> 00:34:04,600
+one thing that's I've always found funny
+
+1081
+00:34:02,520 --> 00:34:06,840
+is like when somebody does an awesome
+
+1082
+00:34:04,600 --> 00:34:08,960
+job building a React Native app,
+
+1083
+00:34:06,840 --> 00:34:10,879
+you don't notice and you just assume
+
+1084
+00:34:08,960 --> 00:34:11,639
+that it's like you know, truly native or
+
+1085
+00:34:10,879 --> 00:34:14,360
+whatever like that.
+
+1086
+00:34:11,639 --> 00:34:16,320
+pretty trash Swift UI and UI Kit apps
+
+1087
+00:34:14,360 --> 00:34:18,440
+too, right? I've seen them. Right. And
+
+1088
+00:34:16,320 --> 00:34:19,760
+so so there are some bad React Native
+
+1089
+00:34:18,440 --> 00:34:21,240
+and bad Expo apps out there that are
+
+1090
+00:34:19,760 --> 00:34:22,960
+just like you know,
+
+1091
+00:34:21,240 --> 00:34:24,679
+unnecessarily causing all kinds of
+
+1092
+00:34:22,960 --> 00:34:26,080
+re-renders or loops or whatever. And you
+
+1093
+00:34:24,679 --> 00:34:27,760
+know, and you but you can also do that
+
+1094
+00:34:26,080 --> 00:34:29,360
+as you're saying with Swift UI or
+
+1095
+00:34:27,760 --> 00:34:31,800
+whatever. Like a lot of times they'll be
+
+1096
+00:34:29,360 --> 00:34:33,560
+like a bad Swift UI app and people will
+
+1097
+00:34:31,800 --> 00:34:35,600
+just be "Oh, stupid React Native. I can
+
+1098
+00:34:33,560 --> 00:34:36,879
+tell that this is
+
+1099
+00:34:35,600 --> 00:34:38,480
+And like, because there's no there's no
+
+1100
+00:34:36,879 --> 00:34:40,240
+easy way to kind of do a view source
+
+1101
+00:34:38,480 --> 00:34:42,280
+search. Have you ever done any like uh
+
+1102
+00:34:40,240 --> 00:34:43,600
+blind taste tests? That'd be very funny
+
+1103
+00:34:42,280 --> 00:34:45,720
+to like
+
+1104
+00:34:43,600 --> 00:34:47,520
+James and Brent on our team, I think
+
+1105
+00:34:45,720 --> 00:34:50,040
+used to be pretty good about being able
+
+1106
+00:34:47,520 --> 00:34:52,600
+to sort of Oh, I'm going to drag this
+
+1107
+00:34:50,040 --> 00:34:54,360
+screens, and like I'll I'll notice some,
+
+1108
+00:34:52,600 --> 00:34:56,280
+you know, artifact in this thing, and I
+
+1109
+00:34:54,360 --> 00:34:57,480
+can tell that that's using this library.
+
+1110
+00:34:56,280 --> 00:34:59,360
+And stuff like that. It's getting
+
+1111
+00:34:57,480 --> 00:35:01,160
+harder, but there's still some ways that
+
+1112
+00:34:59,360 --> 00:35:03,360
+you can tell certain things for sure.
+
+1113
+00:35:01,160 --> 00:35:05,160
+But, we've also tried scanning the App
+
+1114
+00:35:03,360 --> 00:35:06,760
+Store and downloading a lot of the top
+
+1115
+00:35:05,160 --> 00:35:08,080
+apps and just sort of like we did a
+
+1116
+00:35:06,760 --> 00:35:09,560
+research project to basically just
+
+1117
+00:35:08,080 --> 00:35:11,240
+figure out what cuz we're an open source
+
+1118
+00:35:09,560 --> 00:35:13,040
+product. So, we don't actually know
+
+1119
+00:35:11,240 --> 00:35:14,200
+everybody who's using Expo. If you're
+
+1120
+00:35:13,040 --> 00:35:15,560
+just using the open source framework, we
+
+1121
+00:35:14,200 --> 00:35:17,400
+don't know. So, we had to download it
+
+1122
+00:35:15,560 --> 00:35:19,480
+just like the top 100 apps in every
+
+1123
+00:35:17,400 --> 00:35:20,960
+category just to get a sense of of what
+
+1124
+00:35:19,480 --> 00:35:22,600
+was going on there. So, talking about
+
+1125
+00:35:20,960 --> 00:35:24,640
+updating my priors, the biggest thing
+
+1126
+00:35:22,600 --> 00:35:26,320
+that forced me to update my priors is
+
+1127
+00:35:24,640 --> 00:35:27,560
+actually our state of subscription app
+
+1128
+00:35:26,320 --> 00:35:30,120
+report. And that's what I wanted to talk
+
+1129
+00:35:27,560 --> 00:35:32,800
+about next is that in our report, we
+
+1130
+00:35:30,120 --> 00:35:34,760
+showed that React Native apps actually
+
+1131
+00:35:32,800 --> 00:35:36,600
+monetize better than native apps.
+
+1132
+00:35:34,760 --> 00:35:38,640
+There's probably a little bit of 100%
+
+1133
+00:35:36,600 --> 00:35:40,280
+positive. It's all the framework data.
+
+1134
+00:35:38,640 --> 00:35:41,640
+There's probably a little bit of bias in
+
+1135
+00:35:40,280 --> 00:35:43,240
+that, and then we talked about this
+
+1136
+00:35:41,640 --> 00:35:45,360
+before, that, you know, we have a ton of
+
+1137
+00:35:43,240 --> 00:35:47,800
+indie developers on on RevenueCat who
+
+1138
+00:35:45,360 --> 00:35:50,160
+are iOS only, and that, you know, to our
+
+1139
+00:35:47,800 --> 00:35:52,200
+point earlier, a lot of the VC-funded
+
+1140
+00:35:50,160 --> 00:35:53,840
+apps are cross-platform from the
+
+1141
+00:35:52,200 --> 00:35:56,200
+beginning and kind of building a
+
+1142
+00:35:53,840 --> 00:35:57,600
+business, not a hobby, tend towards
+
+1143
+00:35:56,200 --> 00:35:59,400
+React Native. So, there there's some
+
+1144
+00:35:57,600 --> 00:36:01,040
+bias in the data. And and you kind of
+
+1145
+00:35:59,400 --> 00:36:03,440
+alluded to this to this earlier, that
+
+1146
+00:36:01,040 --> 00:36:05,280
+what matters is your product. And if
+
+1147
+00:36:03,440 --> 00:36:06,560
+you're able to iterate more quickly,
+
+1148
+00:36:05,280 --> 00:36:08,320
+build a better product, it doesn't
+
+1149
+00:36:06,560 --> 00:36:10,360
+matter what technology you're using. And
+
+1150
+00:36:08,320 --> 00:36:12,360
+and in fact, maybe it does in that React
+
+1151
+00:36:10,360 --> 00:36:13,920
+Native lets you move quicker, and that
+
+1152
+00:36:12,360 --> 00:36:15,240
+you don't have multiple teams, you don't
+
+1153
+00:36:13,920 --> 00:36:17,160
+have things getting out of sync and
+
+1154
+00:36:15,240 --> 00:36:19,120
+stuff like that. But, I know you saw
+
+1155
+00:36:17,160 --> 00:36:20,920
+that data cuz, you know, we we had you
+
+1156
+00:36:19,120 --> 00:36:22,800
+do a little blurb in our report, but did
+
+1157
+00:36:20,920 --> 00:36:24,880
+that surprise you to see our data that
+
+1158
+00:36:22,800 --> 00:36:27,200
+React Native apps are monetizing better
+
+1159
+00:36:24,880 --> 00:36:28,800
+than native apps? It's is surprising to
+
+1160
+00:36:27,200 --> 00:36:30,560
+me just because like
+
+1161
+00:36:28,800 --> 00:36:31,920
+I would have expected that a lot of the,
+
+1162
+00:36:30,560 --> 00:36:34,480
+you know, native apps would be iPhone
+
+1163
+00:36:31,920 --> 00:36:35,960
+only and like iPhone tends to monetize
+
+1164
+00:36:34,480 --> 00:36:37,040
+better than Android in my limited I
+
+1165
+00:36:35,960 --> 00:36:38,880
+mean, you guys would know better than I
+
+1166
+00:36:37,040 --> 00:36:40,480
+would, but But it's almost always like
+
+1167
+00:36:38,880 --> 00:36:41,680
+it's iOS and Android, right? So, the
+
+1168
+00:36:40,480 --> 00:36:43,640
+Android's almost probably always like
+
+1169
+00:36:41,680 --> 00:36:45,160
+incremental. I could see something here
+
+1170
+00:36:43,640 --> 00:36:46,240
+where it's just like a lot of people
+
+1171
+00:36:45,160 --> 00:36:47,960
+using React like you're going to have
+
+1172
+00:36:46,240 --> 00:36:49,640
+more React Native apps that are newer
+
+1173
+00:36:47,960 --> 00:36:51,520
+because React Native is just I certainly
+
+1174
+00:36:49,640 --> 00:36:53,600
+Expo has gotten, you know, way more
+
+1175
+00:36:51,520 --> 00:36:55,840
+popular recently like our
+
+1176
+00:36:53,600 --> 00:36:58,680
+our NPM weekly downloads have tripled in
+
+1177
+00:36:55,840 --> 00:37:00,760
+the past year, for example. So, like a
+
+1178
+00:36:58,680 --> 00:37:01,760
+lot of stuff that's built that way is
+
+1179
+00:37:00,760 --> 00:37:04,360
+going to be newer and it's going to have
+
+1180
+00:37:01,760 --> 00:37:06,800
+people people making active choices like
+
+1181
+00:37:04,360 --> 00:37:09,120
+researching the best way to do stuff and
+
+1182
+00:37:06,800 --> 00:37:11,080
+working on things and trying to use the
+
+1183
+00:37:09,120 --> 00:37:12,400
+best technologies and best practices,
+
+1184
+00:37:11,080 --> 00:37:13,920
+whereas some of the older stuff might
+
+1185
+00:37:12,400 --> 00:37:15,960
+just be kind of like this project's been
+
+1186
+00:37:13,920 --> 00:37:17,880
+around a while, it's kind of been, you
+
+1187
+00:37:15,960 --> 00:37:19,040
+know, cruise control mode. Like I'm not
+
+1188
+00:37:17,880 --> 00:37:20,600
+saying maintenance mode, but just kind
+
+1189
+00:37:19,040 --> 00:37:23,480
+of like we're just trying to keep this
+
+1190
+00:37:20,600 --> 00:37:25,560
+running or whatever. That would be part
+
+1191
+00:37:23,480 --> 00:37:27,240
+of the the guess I would make. But also
+
+1192
+00:37:25,560 --> 00:37:29,280
+would just sort of like bring up the
+
+1193
+00:37:27,240 --> 00:37:31,840
+point again that like whenever you need
+
+1194
+00:37:29,280 --> 00:37:34,240
+to in React Native, it's now quite easy
+
+1195
+00:37:31,840 --> 00:37:37,800
+to drop down and write, you know, a
+
+1196
+00:37:34,240 --> 00:37:39,360
+whole screen in SwiftUI and Kotlin, you
+
+1197
+00:37:37,800 --> 00:37:41,960
+know, Kotlin or whatever you want for
+
+1198
+00:37:39,360 --> 00:37:43,880
+the specific platforms. And so like if
+
+1199
+00:37:41,960 --> 00:37:45,480
+you're a good React Native developer,
+
+1200
+00:37:43,880 --> 00:37:47,320
+you're probably doing that at various
+
+1201
+00:37:45,480 --> 00:37:49,080
+points whenever you need to. But like,
+
+1202
+00:37:47,320 --> 00:37:51,000
+you know, under setting screen,
+
+1203
+00:37:49,080 --> 00:37:52,880
+you basically don't ever need to do that
+
+1204
+00:37:51,000 --> 00:37:54,760
+in most cases. Like you those are the
+
+1205
+00:37:52,880 --> 00:37:56,520
+kind of things that in a lot of even
+
+1206
+00:37:54,760 --> 00:37:58,880
+a lot of parts of the actual iOS
+
+1207
+00:37:56,520 --> 00:38:00,960
+settings app, like if you go into like
+
+1208
+00:37:58,880 --> 00:38:02,280
+your manage your subscriptions of your
+
+1209
+00:38:00,960 --> 00:38:03,720
+iOS app a lot of stuff has actually been
+
+1210
+00:38:02,280 --> 00:38:04,960
+using like web views even though we
+
+1211
+00:38:03,720 --> 00:38:06,720
+think of it as sort of like native to
+
+1212
+00:38:04,960 --> 00:38:08,360
+the Apple platform. Oh, yeah, yeah, like
+
+1213
+00:38:06,720 --> 00:38:10,320
+the subscription one. It drives me nuts.
+
+1214
+00:38:08,360 --> 00:38:11,280
+It's like it is markedly slower. It
+
+1215
+00:38:10,320 --> 00:38:13,760
+would be better if React Native Yeah,
+
+1216
+00:38:11,280 --> 00:38:17,520
+they should use
+
+1217
+00:38:13,760 --> 00:38:20,640
+They would never. They would never dare
+
+1218
+00:38:17,520 --> 00:38:22,800
+put JavaScript between them and UI Kit.
+
+1219
+00:38:20,640 --> 00:38:24,400
+But I think a big part of it is like the
+
+1220
+00:38:22,800 --> 00:38:25,720
+ceiling gone up on just being it's a lot
+
+1221
+00:38:24,400 --> 00:38:27,560
+easier to access the the best
+
+1222
+00:38:25,720 --> 00:38:29,560
+capabilities of the device than it used
+
+1223
+00:38:27,560 --> 00:38:32,560
+to be. My two cents is it's probably all
+
+1224
+00:38:29,560 --> 00:38:34,200
+I mean, not no no knocks to React Native
+
+1225
+00:38:32,560 --> 00:38:35,800
+uh and Expo, but like, you know, it's
+
+1226
+00:38:34,200 --> 00:38:37,920
+very much a selection bias thing. Like,
+
+1227
+00:38:35,800 --> 00:38:40,320
+if you are more focused on business
+
+1228
+00:38:37,920 --> 00:38:42,160
+success and business outcomes, which
+
+1229
+00:38:40,320 --> 00:38:44,680
+maybe is like that's a great like it's a
+
+1230
+00:38:42,160 --> 00:38:46,360
+great argument for the the platform,
+
+1231
+00:38:44,680 --> 00:38:47,720
+right? Like and I think
+
+1232
+00:38:46,360 --> 00:38:49,280
+and like David was saying is I think if
+
+1233
+00:38:47,720 --> 00:38:51,920
+you're mobile if you're a native mobile
+
+1234
+00:38:49,280 --> 00:38:53,720
+developer, like I think it is time to at
+
+1235
+00:38:51,920 --> 00:38:56,000
+least like give it a try and re-evaluate
+
+1236
+00:38:53,720 --> 00:38:57,520
+your priors cuz I've built apps in React
+
+1237
+00:38:56,000 --> 00:38:58,800
+Native. It's been frustrating in
+
+1238
+00:38:57,520 --> 00:39:00,440
+different ways, but this was 5-6 years
+
+1239
+00:38:58,800 --> 00:39:02,640
+ago, right? And like things have
+
+1240
+00:39:00,440 --> 00:39:04,160
+changed. It's gotten way way better, way
+
+1241
+00:39:02,640 --> 00:39:06,360
+easier to make stuff. Yeah, thanks to
+
+1242
+00:39:04,160 --> 00:39:08,720
+you guys and and also just like baseline
+
+1243
+00:39:06,360 --> 00:39:11,840
+technology changes. Phones are faster as
+
+1244
+00:39:08,720 --> 00:39:13,600
+well. And so, I remember in the late
+
+1245
+00:39:11,840 --> 00:39:15,840
+teens being skeptical of people that
+
+1246
+00:39:13,600 --> 00:39:18,400
+were making this choice cuz I was
+
+1247
+00:39:15,840 --> 00:39:21,080
+tried and true mobile Objective-C and
+
+1248
+00:39:18,400 --> 00:39:24,320
+Java developer. And I remember being
+
+1249
+00:39:21,080 --> 00:39:25,920
+skeptical, but now looking back, these
+
+1250
+00:39:24,320 --> 00:39:27,560
+companies have had various success and
+
+1251
+00:39:25,920 --> 00:39:29,360
+not success, but none of it was like
+
+1252
+00:39:27,560 --> 00:39:31,040
+hurt by the fact that they were you
+
+1253
+00:39:29,360 --> 00:39:32,080
+know, in fact like I think are you for
+
+1254
+00:39:31,040 --> 00:39:33,880
+all the reasons we talked about today, I
+
+1255
+00:39:32,080 --> 00:39:35,440
+think it was it was these these were
+
+1256
+00:39:33,880 --> 00:39:37,480
+good choices. Depends on the business
+
+1257
+00:39:35,440 --> 00:39:38,920
+you're in, too. And then now today, you
+
+1258
+00:39:37,480 --> 00:39:40,960
+know, speaking of making things easier,
+
+1259
+00:39:38,920 --> 00:39:44,280
+the next kind of topics I wanted to
+
+1260
+00:39:40,960 --> 00:39:45,680
+discuss was AI-assisted development. I
+
+1261
+00:39:44,280 --> 00:39:47,320
+did want to kind of cage these two
+
+1262
+00:39:45,680 --> 00:39:49,560
+different things cuz I think they get
+
+1263
+00:39:47,320 --> 00:39:51,960
+blended a little bit. So, we'll talk
+
+1264
+00:39:49,560 --> 00:39:53,480
+first about what I'm calling AI-assisted
+
+1265
+00:39:51,960 --> 00:39:56,000
+app development where you're a
+
+1266
+00:39:53,480 --> 00:39:59,040
+programmer, you know what you're doing,
+
+1267
+00:39:56,000 --> 00:40:01,520
+and AI is accelerating things whether
+
+1268
+00:39:59,040 --> 00:40:03,160
+using React Native or not. And then you
+
+1269
+00:40:01,520 --> 00:40:04,720
+have the the kind of vibe coding of like
+
+1270
+00:40:03,160 --> 00:40:07,120
+I'm going to, you know, jump into Bolt
+
+1271
+00:40:04,720 --> 00:40:08,400
+or Replit and throw a few prompts in
+
+1272
+00:40:07,120 --> 00:40:10,000
+there and I don't really know how to
+
+1273
+00:40:08,400 --> 00:40:11,600
+code, but it's going to build an app.
+
+1274
+00:40:10,000 --> 00:40:14,080
+Let's talk first about what you're
+
+1275
+00:40:11,600 --> 00:40:16,440
+seeing in that AI-assisted app
+
+1276
+00:40:14,080 --> 00:40:19,680
+development loop of like really
+
+1277
+00:40:16,440 --> 00:40:21,800
+top-notch programmers using AI and React
+
+1278
+00:40:19,680 --> 00:40:23,960
+to just move quicker using things like
+
+1279
+00:40:21,800 --> 00:40:25,200
+Cursor and Windsurf and GitHub Copilot
+
+1280
+00:40:23,960 --> 00:40:26,800
+and Cloud Code and all these kind of
+
+1281
+00:40:25,200 --> 00:40:28,600
+tools to move faster. What are you
+
+1282
+00:40:26,800 --> 00:40:30,440
+seeing there? And also maybe like what
+
+1283
+00:40:28,600 --> 00:40:31,800
+Expo's like kind of a unique position
+
+1284
+00:40:30,440 --> 00:40:34,080
+right now in this world, which I think
+
+1285
+00:40:31,800 --> 00:40:36,320
+is interesting. For that kind of stuff,
+
+1286
+00:40:34,080 --> 00:40:38,120
+one thing that's really a big deal is
+
+1287
+00:40:36,320 --> 00:40:39,320
+like, how well trained are the models
+
+1288
+00:40:38,120 --> 00:40:41,800
+and the stuff that you're having it
+
+1289
+00:40:39,320 --> 00:40:44,320
+write. And one thing that's just good
+
+1290
+00:40:41,800 --> 00:40:46,280
+about React is just a ton of open-source
+
+1291
+00:40:44,320 --> 00:40:48,720
+example code out there. And people tend
+
+1292
+00:40:46,280 --> 00:40:50,520
+It's It's much more common to make like
+
+1293
+00:40:48,720 --> 00:40:52,840
+a React project open source than it is
+
+1294
+00:40:50,520 --> 00:40:53,800
+to make like a Swift project. These LLMs
+
+1295
+00:40:52,840 --> 00:40:56,480
+are actually pretty good at like
+
+1296
+00:40:53,800 --> 00:40:57,600
+figuring most things out to some degree,
+
+1297
+00:40:56,480 --> 00:40:59,240
+but just the more training data they
+
+1298
+00:40:57,600 --> 00:41:01,320
+have, the better they're going to be and
+
+1299
+00:40:59,240 --> 00:41:03,440
+whatnot. So like there's 1.2 million
+
+1300
+00:41:01,320 --> 00:41:05,720
+plus Expo products that are open source
+
+1301
+00:41:03,440 --> 00:41:06,680
+on GitHub right now. And some of those
+
+1302
+00:41:05,720 --> 00:41:08,280
+are old and out of date, and that can
+
+1303
+00:41:06,680 --> 00:41:10,560
+cause its own That's its own sort of
+
+1304
+00:41:08,280 --> 00:41:11,880
+niche problem or whatever. But a big
+
+1305
+00:41:10,560 --> 00:41:12,760
+part of it is just like, there's that.
+
+1306
+00:41:11,880 --> 00:41:14,760
+But then
+
+1307
+00:41:12,760 --> 00:41:16,040
+another thing that happens is that like,
+
+1308
+00:41:14,760 --> 00:41:17,840
+when you have this sort of AI-assisted
+
+1309
+00:41:16,040 --> 00:41:19,360
+coding in your developer,
+
+1310
+00:41:17,840 --> 00:41:21,440
+actually I was teaching a workshop the
+
+1311
+00:41:19,360 --> 00:41:24,520
+other day at a a college,
+
+1312
+00:41:21,440 --> 00:41:26,120
+and a few years ago when I would do
+
+1313
+00:41:24,520 --> 00:41:27,920
+that, a lot of the time I would spend in
+
+1314
+00:41:26,120 --> 00:41:29,680
+this when I was teaching a workshop
+
+1315
+00:41:27,920 --> 00:41:32,400
+making a basic app would just be me
+
+1316
+00:41:29,680 --> 00:41:34,960
+typing out line, you know, basic stuff
+
+1317
+00:41:32,400 --> 00:41:36,520
+of state management or, you know, going
+
+1318
+00:41:34,960 --> 00:41:38,280
+to our docs to look up the right, you
+
+1319
+00:41:36,520 --> 00:41:40,320
+know, thing to you know, the right
+
+1320
+00:41:38,280 --> 00:41:42,840
+incantation to import the camera module
+
+1321
+00:41:40,320 --> 00:41:45,280
+or things like that. And then I just was
+
+1322
+00:41:42,840 --> 00:41:47,320
+like, in 5 minutes I had sort of like
+
+1323
+00:41:45,280 --> 00:41:48,720
+built a whole to-do list app and added a
+
+1324
+00:41:47,320 --> 00:41:50,600
+couple features to it. And I was just
+
+1325
+00:41:48,720 --> 00:41:52,000
+sort of like, "Okay, class. I'm not
+
+1326
+00:41:50,600 --> 00:41:54,120
+going to have you watch me use Claude
+
+1327
+00:41:52,000 --> 00:41:55,440
+for the rest of this session. Just like
+
+1328
+00:41:54,120 --> 00:41:57,040
+come up to me if you have problems and
+
+1329
+00:41:55,440 --> 00:41:58,880
+I'll just talk to you guys." The time it
+
+1330
+00:41:57,040 --> 00:42:01,080
+takes to do basic stuff just goes way,
+
+1331
+00:41:58,880 --> 00:42:04,320
+way down. And so when that's happening,
+
+1332
+00:42:01,080 --> 00:42:06,520
+we start to get super sensitive to the
+
+1333
+00:42:04,320 --> 00:42:08,800
+things that start to take a lot of time
+
+1334
+00:42:06,520 --> 00:42:10,880
+and slow you down. And so, you know, I'm
+
+1335
+00:42:08,800 --> 00:42:13,400
+sure you guys have seen that famous XKCD
+
+1336
+00:42:10,880 --> 00:42:15,280
+comic where there's the the guy's like
+
+1337
+00:42:13,400 --> 00:42:16,440
+cardboard sword fighting in the in the
+
+1338
+00:42:15,280 --> 00:42:19,160
+spinny chairs where they're waiting for
+
+1339
+00:42:16,440 --> 00:42:21,000
+things to compile. And so like when it's
+
+1340
+00:42:19,160 --> 00:42:22,280
+taking you like a split second to write
+
+1341
+00:42:21,000 --> 00:42:25,200
+code and then all of a sudden you're
+
+1342
+00:42:22,280 --> 00:42:26,800
+spending a minute and 45 seconds as your
+
+1343
+00:42:25,200 --> 00:42:28,480
+app the
+
+1344
+00:42:26,800 --> 00:42:29,920
+sort of nasty thing about sort of
+
+1345
+00:42:28,480 --> 00:42:32,080
+compiled apps and stuff like that. They
+
+1346
+00:42:29,920 --> 00:42:33,800
+start off kind of like when you have
+
+1347
+00:42:32,080 --> 00:42:35,480
+a white screen with like one thing of
+
+1348
+00:42:33,800 --> 00:42:37,520
+black text on a that just says like
+
+1349
+00:42:35,480 --> 00:42:38,920
+hello, it's like compilation is pretty
+
+1350
+00:42:37,520 --> 00:42:41,000
+quick. But then you you when you get to
+
+1351
+00:42:38,920 --> 00:42:41,400
+start six seven screens that are pretty
+
+1352
+00:42:41,000 --> 00:42:43,960
+it's like
+
+1353
+00:42:41,400 --> 00:42:46,400
+Or get submodules, SPM, CocoaPods
+
+1354
+00:42:43,960 --> 00:42:48,240
+somehow both in the same project, yeah.
+
+1355
+00:42:46,400 --> 00:42:50,320
+Yeah, all of a sudden that's now 45
+
+1356
+00:42:48,240 --> 00:42:52,560
+seconds, a minute 45 and it just sort of
+
+1357
+00:42:50,320 --> 00:42:54,200
+big companies that have these huge
+
+1358
+00:42:52,560 --> 00:42:55,720
+sprawling apps like Uber if it like a
+
+1359
+00:42:54,200 --> 00:42:57,000
+huge chunk of the engineering and and
+
+1360
+00:42:55,720 --> 00:42:59,440
+stuff is like
+
+1361
+00:42:57,000 --> 00:43:00,960
+it takes 45 minutes plus to compile our
+
+1362
+00:42:59,440 --> 00:43:02,200
+app. And so people are going off and
+
+1363
+00:43:00,960 --> 00:43:03,600
+making new projects where they're
+
+1364
+00:43:02,200 --> 00:43:05,280
+building new UIs and then trying to sort
+
+1365
+00:43:03,600 --> 00:43:07,920
+of copy-paste them over as a crazy
+
+1366
+00:43:05,280 --> 00:43:09,760
+stuff. So anyway, tangent, but you can
+
+1367
+00:43:07,920 --> 00:43:11,280
+imagine that like waiting for stuff to
+
+1368
+00:43:09,760 --> 00:43:12,920
+compile when you're not really spending
+
+1369
+00:43:11,280 --> 00:43:14,600
+any time writing code just becomes super
+
+1370
+00:43:12,920 --> 00:43:16,360
+super painful. And so like the idea that
+
+1371
+00:43:14,600 --> 00:43:19,040
+you can just like make a quick change,
+
+1372
+00:43:16,360 --> 00:43:20,840
+you save it and that UI is now updated
+
+1373
+00:43:19,040 --> 00:43:22,680
+on your phone or or on your simulator or
+
+1374
+00:43:20,840 --> 00:43:24,840
+whatever right away, that just feels so
+
+1375
+00:43:22,680 --> 00:43:26,800
+much better. And that bottleneck is
+
+1376
+00:43:24,840 --> 00:43:28,080
+really exposed as it's you really
+
+1377
+00:43:26,800 --> 00:43:29,600
+ratchet down the amount of time that
+
+1378
+00:43:28,080 --> 00:43:31,440
+you're spending writing code. Sort of
+
+1379
+00:43:29,600 --> 00:43:33,040
+similar principle is happening with live
+
+1380
+00:43:31,440 --> 00:43:35,440
+coding as well where like models like
+
+1381
+00:43:33,040 --> 00:43:37,160
+Claude and Gemini or whatever are like
+
+1382
+00:43:35,440 --> 00:43:38,240
+decent at writing Swift code or
+
+1383
+00:43:37,160 --> 00:43:40,160
+whatever. That's actually kind of
+
+1384
+00:43:38,240 --> 00:43:41,120
+exciting for React Native because well,
+
+1385
+00:43:40,160 --> 00:43:42,320
+I was just talking to someone the other
+
+1386
+00:43:41,120 --> 00:43:44,360
+day who's a really good React Native
+
+1387
+00:43:42,320 --> 00:43:46,360
+developer. This guy Fernando who's the
+
+1388
+00:43:44,360 --> 00:43:48,720
+head of mobile at Vercel. He was saying
+
+1389
+00:43:46,360 --> 00:43:52,480
+a lot of what he's been doing lately is
+
+1390
+00:43:48,720 --> 00:43:53,760
+doing more stuff in Swift on iOS because
+
+1391
+00:43:52,480 --> 00:43:55,400
+he doesn't have to become a Swift
+
+1392
+00:43:53,760 --> 00:43:56,520
+expert. He can kind of like when he
+
+1393
+00:43:55,400 --> 00:43:59,040
+wants to go do something, he can just
+
+1394
+00:43:56,520 --> 00:44:00,200
+kind of like have AI
+
+1395
+00:43:59,040 --> 00:44:01,880
+point him in the right direction, clean
+
+1396
+00:44:00,200 --> 00:44:03,520
+up stuff and make it kind of make it
+
+1397
+00:44:01,880 --> 00:44:06,280
+work. And so he's able to write more
+
+1398
+00:44:03,520 --> 00:44:07,600
+stuff in native code. So like LLMs are
+
+1399
+00:44:06,280 --> 00:44:10,000
+actually decent at writing that stuff.
+
+1400
+00:44:07,600 --> 00:44:10,920
+But like, imagine you're a vibe coder
+
+1401
+00:44:10,000 --> 00:44:13,480
+and you're just like, "Hey, I want to
+
+1402
+00:44:10,920 --> 00:44:15,240
+try I heard that I can make stuff as a
+
+1403
+00:44:13,480 --> 00:44:17,080
+you know, just vibe coding now." And you
+
+1404
+00:44:15,240 --> 00:44:18,200
+decide you want to do that by writing
+
+1405
+00:44:17,080 --> 00:44:19,040
+some Swift code. And then it's like,
+
+1406
+00:44:18,200 --> 00:44:21,440
+"Okay, well, first of all, you need to
+
+1407
+00:44:19,040 --> 00:44:23,960
+have a Mac. Only what, 12% of computers
+
+1408
+00:44:21,440 --> 00:44:25,120
+globally are Macs?" Okay, so now a lot
+
+1409
+00:44:23,960 --> 00:44:26,240
+of people are just like stuck and they
+
+1410
+00:44:25,120 --> 00:44:27,720
+can't do anything. But let's say you do
+
+1411
+00:44:26,240 --> 00:44:28,960
+have a Mac and let's say it's a fast Mac
+
+1412
+00:44:27,720 --> 00:44:32,080
+or whatever. And it's kind of like,
+
+1413
+00:44:28,960 --> 00:44:34,400
+"Okay, now here's your next instruction
+
+1414
+00:44:32,080 --> 00:44:36,760
+is download Xcode." And that often takes
+
+1415
+00:44:34,400 --> 00:44:39,200
+like 45 minutes. And then setting it up
+
+1416
+00:44:36,760 --> 00:44:41,160
+is like another, you know, 45 minutes of
+
+1417
+00:44:39,200 --> 00:44:42,840
+$99 sign up to the Apple developer
+
+1418
+00:44:41,160 --> 00:44:44,160
+program. You need a DUNS number. No, you
+
+1419
+00:44:42,840 --> 00:44:45,280
+don't have to do that, but like
+
+1420
+00:44:44,160 --> 00:44:47,000
+need a DUNS number until you want to go
+
+1421
+00:44:45,280 --> 00:44:48,720
+to the App Store, but like, you know, it
+
+1422
+00:44:47,000 --> 00:44:50,360
+literally can take you 3 days before you
+
+1423
+00:44:48,720 --> 00:44:51,400
+get at your developer account approved.
+
+1424
+00:44:50,360 --> 00:44:52,840
+You don't need a developer account
+
+1425
+00:44:51,400 --> 00:44:54,640
+anymore to just put something on your
+
+1426
+00:44:52,840 --> 00:44:55,800
+own device. But like
+
+1427
+00:44:54,640 --> 00:44:58,040
+And not even the simulator actually on
+
+1428
+00:44:55,800 --> 00:44:59,320
+your end device. You can do it without.
+
+1429
+00:44:58,040 --> 00:45:01,200
+Yeah, you can If you plug your phone
+
+1430
+00:44:59,320 --> 00:45:02,760
+into your computer, it's pretty handy.
+
+1431
+00:45:01,200 --> 00:45:04,200
+It's capped in a lot of ways, but they
+
+1432
+00:45:02,760 --> 00:45:06,800
+they're a little bit more lax. Like the
+
+1433
+00:45:04,200 --> 00:45:09,400
+mindset just seems to be like, it's a
+
+1434
+00:45:06,800 --> 00:45:11,520
+privilege that you would be able to
+
+1435
+00:45:09,400 --> 00:45:13,840
+write any software on these devices that
+
+1436
+00:45:11,520 --> 00:45:15,360
+are are sort of pristine playgrounds. I
+
+1437
+00:45:13,840 --> 00:45:16,720
+mean, I won't do back in my day, but
+
+1438
+00:45:15,360 --> 00:45:17,880
+it's a heck of a lot easier now.
+
+1439
+00:45:16,720 --> 00:45:19,920
+It's gotten easier, but it's still not
+
+1440
+00:45:17,880 --> 00:45:21,040
+like actively easy. It's like you're
+
+1441
+00:45:19,920 --> 00:45:21,600
+there's just sort of a whole bunch of
+
+1442
+00:45:21,040 --> 00:45:24,160
+hurdles.
+
+1443
+00:45:21,600 --> 00:45:25,600
+Opening an HTML file in Chrome, you
+
+1444
+00:45:24,160 --> 00:45:26,720
+know, and you boom, you're running.
+
+1445
+00:45:25,600 --> 00:45:28,040
+Expo is just like a bunch of different
+
+1446
+00:45:26,720 --> 00:45:29,160
+tools and I like it'll take me a long
+
+1447
+00:45:28,040 --> 00:45:30,800
+time to explain all of them, but like
+
+1448
+00:45:29,160 --> 00:45:32,360
+one of them is this Expo Go app that you
+
+1449
+00:45:30,800 --> 00:45:33,560
+can download from the App Store. And
+
+1450
+00:45:32,360 --> 00:45:36,160
+that has
+
+1451
+00:45:33,560 --> 00:45:38,240
+basically just like most of the modules
+
+1452
+00:45:36,160 --> 00:45:39,760
+in the Expo SDK kind of baked into it
+
+1453
+00:45:38,240 --> 00:45:42,040
+already. And so if you just want to use
+
+1454
+00:45:39,760 --> 00:45:43,640
+the camera view or location or the
+
+1455
+00:45:42,040 --> 00:45:44,800
+gyroscope or any of the sort of basic
+
+1456
+00:45:43,640 --> 00:45:47,080
+things, those are already just like
+
+1457
+00:45:44,800 --> 00:45:48,920
+baked in natively. And so
+
+1458
+00:45:47,080 --> 00:45:51,920
+that covers a lot of ground for a lot of
+
+1459
+00:45:48,920 --> 00:45:53,160
+people. And so if you can write stuff
+
+1460
+00:45:51,920 --> 00:45:54,600
+that has you know, you can use any font
+
+1461
+00:45:53,160 --> 00:45:56,400
+you want. You can do any kind of styling
+
+1462
+00:45:54,600 --> 00:45:58,760
+you want. You can do any kind of things
+
+1463
+00:45:56,400 --> 00:46:00,360
+with even has React Native Skia built
+
+1464
+00:45:58,760 --> 00:46:03,080
+into it. And so you can do like pretty
+
+1465
+00:46:00,360 --> 00:46:04,840
+complex stuff with just this. And so a
+
+1466
+00:46:03,080 --> 00:46:05,840
+lot of the Vibe Coder stuff basically
+
+1467
+00:46:04,840 --> 00:46:07,680
+just is like, here here's your
+
+1468
+00:46:05,840 --> 00:46:09,240
+instructions. Download the Expo Go app
+
+1469
+00:46:07,680 --> 00:46:10,720
+from the App Store. We're popping a QR
+
+1470
+00:46:09,240 --> 00:46:12,120
+code up on your screen. Scan the QR
+
+1471
+00:46:10,720 --> 00:46:15,280
+code. Bam.
+
+1472
+00:46:12,120 --> 00:46:17,240
+In less than 30-40 seconds, you now have
+
+1473
+00:46:15,280 --> 00:46:18,920
+your app on your phone. As you make
+
+1474
+00:46:17,240 --> 00:46:21,200
+changes to it, you're and you're writing
+
+1475
+00:46:18,920 --> 00:46:23,560
+stuff, that's just happening. So, like I
+
+1476
+00:46:21,200 --> 00:46:25,200
+was just up in Seattle this place called
+
+1477
+00:46:23,560 --> 00:46:28,080
+like the AI It's sort of a complicated
+
+1478
+00:46:25,200 --> 00:46:30,280
+thing that's like a incubator plus event
+
+1479
+00:46:28,080 --> 00:46:32,440
+space plus co-working space. The person
+
+1480
+00:46:30,280 --> 00:46:34,360
+who runs the the sort of physical space
+
+1481
+00:46:32,440 --> 00:46:35,800
+there is telling me that they needed
+
+1482
+00:46:34,360 --> 00:46:37,480
+some sort of check-in You know, a lot of
+
+1483
+00:46:35,800 --> 00:46:39,440
+offices have like the sort of check-in
+
+1484
+00:46:37,480 --> 00:46:40,840
+step where you go up to the desk and
+
+1485
+00:46:39,440 --> 00:46:41,800
+they have an iPad and you sort of fill
+
+1486
+00:46:40,840 --> 00:46:44,120
+out your name and who you're going to
+
+1487
+00:46:41,800 --> 00:46:45,840
+visit and whatnot. And she was saying
+
+1488
+00:46:44,120 --> 00:46:47,400
+that like because they're the sort of
+
+1489
+00:46:45,840 --> 00:46:49,240
+hybrid of a uh you know, a couple
+
+1490
+00:46:47,400 --> 00:46:51,040
+different things all at once, none of
+
+1491
+00:46:49,240 --> 00:46:52,880
+the sort of off-the-shelf solutions were
+
+1492
+00:46:51,040 --> 00:46:54,560
+exactly what they needed. But, they also
+
+1493
+00:46:52,880 --> 00:46:56,480
+didn't need something like super crazy
+
+1494
+00:46:54,560 --> 00:46:57,680
+complicated cuz it's just like they
+
+1495
+00:46:56,480 --> 00:46:59,920
+don't have a hundred locations. They
+
+1496
+00:46:57,680 --> 00:47:02,040
+just have this like one space. She's not
+
+1497
+00:46:59,920 --> 00:47:04,160
+a uh you know, traditionally trained
+
+1498
+00:47:02,040 --> 00:47:06,760
+developer or anything. But, she was able
+
+1499
+00:47:04,160 --> 00:47:09,280
+to just fire up Bolt with Expo and like
+
+1500
+00:47:06,760 --> 00:47:10,440
+build an app just vibe coding that like,
+
+1501
+00:47:09,280 --> 00:47:11,960
+you know, has their whole list of
+
+1502
+00:47:10,440 --> 00:47:13,200
+experts connected to that database and
+
+1503
+00:47:11,960 --> 00:47:14,640
+then has a whole sign-up form and you
+
+1504
+00:47:13,200 --> 00:47:16,320
+can sign your name and then it submits
+
+1505
+00:47:14,640 --> 00:47:17,840
+it and it stores it in a you know, a
+
+1506
+00:47:16,320 --> 00:47:19,760
+Postgres database in the cloud using
+
+1507
+00:47:17,840 --> 00:47:20,960
+Supabase and they can you know, access
+
+1508
+00:47:19,760 --> 00:47:22,240
+it and
+
+1509
+00:47:20,960 --> 00:47:23,520
+she was able to do that in a couple of
+
+1510
+00:47:22,240 --> 00:47:26,400
+hours just sort of like, you know,
+
+1511
+00:47:23,520 --> 00:47:27,120
+repeatedly prompting, not editing any of
+
+1512
+00:47:26,400 --> 00:47:28,680
+the code.
+
+1513
+00:47:27,120 --> 00:47:30,320
+To which would like comparative even an
+
+1514
+00:47:28,680 --> 00:47:32,280
+expert developer that would take a week,
+
+1515
+00:47:30,320 --> 00:47:34,640
+you know, to make it work, right? Yeah,
+
+1516
+00:47:32,280 --> 00:47:37,440
+probably. That's actually like live now.
+
+1517
+00:47:34,640 --> 00:47:39,600
+Like it using some of the Expo tools to
+
+1518
+00:47:37,440 --> 00:47:40,760
+help get stuff into sort of TestFlight.
+
+1519
+00:47:39,600 --> 00:47:42,400
+Like a lot of what we actually do is
+
+1520
+00:47:40,760 --> 00:47:44,200
+just solving this distribution problem
+
+1521
+00:47:42,400 --> 00:47:45,960
+of like, hey, I want to I want to take
+
+1522
+00:47:44,200 --> 00:47:47,400
+this app and get it So, it's great that
+
+1523
+00:47:45,960 --> 00:47:49,200
+you get you can get up and running in
+
+1524
+00:47:47,400 --> 00:47:50,680
+the Go app. I mean, I I know you guys
+
+1525
+00:47:49,200 --> 00:47:52,160
+still do a lot. I think I think the
+
+1526
+00:47:50,680 --> 00:47:53,520
+thing that's made Expo one of the things
+
+1527
+00:47:52,160 --> 00:47:55,560
+that's made Expo so relevant all of a
+
+1528
+00:47:53,520 --> 00:47:57,840
+sudden for for all these people is like
+
+1529
+00:47:55,560 --> 00:47:59,320
+that last mile on mobile is so painful,
+
+1530
+00:47:57,840 --> 00:48:01,120
+right? So, it's great you can vibe code
+
+1531
+00:47:59,320 --> 00:48:02,440
+something up in a in it's in you know,
+
+1532
+00:48:01,120 --> 00:48:03,560
+it's basically running in a browser, but
+
+1533
+00:48:02,440 --> 00:48:06,080
+then like okay, you want to get on the
+
+1534
+00:48:03,560 --> 00:48:07,240
+App Store. Right. And so, a lot of what
+
+1535
+00:48:06,080 --> 00:48:09,080
+we've been working on the last year or
+
+1536
+00:48:07,240 --> 00:48:10,360
+two is stuff to like like we just
+
+1537
+00:48:09,080 --> 00:48:12,080
+released a module not that long ago
+
+1538
+00:48:10,360 --> 00:48:13,800
+called like NPM TestFlight where you can
+
+1539
+00:48:12,080 --> 00:48:15,440
+basically in an Xcode project run NPM
+
+1540
+00:48:13,800 --> 00:48:16,680
+TestFlight and it'll just like walk you
+
+1541
+00:48:15,440 --> 00:48:18,400
+through all the steps and put it in
+
+1542
+00:48:16,680 --> 00:48:19,560
+TestFlight and you don't have to like
+
+1543
+00:48:18,400 --> 00:48:20,880
+you're not thinking about provisioning
+
+1544
+00:48:19,560 --> 00:48:22,960
+profiles, you're not thinking about
+
+1545
+00:48:20,880 --> 00:48:24,320
+distribution certificates. All these
+
+1546
+00:48:22,960 --> 00:48:25,600
+things that are just like I feel like
+
+1547
+00:48:24,320 --> 00:48:27,480
+I've talked to so many people who are in
+
+1548
+00:48:25,600 --> 00:48:29,280
+the mobile world and if if you like sort
+
+1549
+00:48:27,480 --> 00:48:30,440
+of get them aside aside and you're like
+
+1550
+00:48:29,280 --> 00:48:32,160
+explain to me what a provisioning
+
+1551
+00:48:30,440 --> 00:48:33,920
+profile is, they're kind of like Oh,
+
+1552
+00:48:32,160 --> 00:48:35,200
+Charlie, I'm probably one of the few
+
+1553
+00:48:33,920 --> 00:48:37,600
+people that could actually do a really
+
+1554
+00:48:35,200 --> 00:48:39,320
+good job, but Right. I'm sure but like
+
+1555
+00:48:37,600 --> 00:48:41,840
+knowledge I would love to free up in my
+
+1556
+00:48:39,320 --> 00:48:43,520
+head. Trust me. Right. And there's a lot
+
+1557
+00:48:41,840 --> 00:48:45,320
+of people who are like I don't I just
+
+1558
+00:48:43,520 --> 00:48:47,280
+kind of like keep refreshing things or
+
+1559
+00:48:45,320 --> 00:48:49,320
+Googling things until it finally works.
+
+1560
+00:48:47,280 --> 00:48:51,360
+added at some point in X in Xcode, they
+
+1561
+00:48:49,320 --> 00:48:52,280
+added like a fix my provisioning profile
+
+1562
+00:48:51,360 --> 00:48:55,080
+button which
+
+1563
+00:48:52,280 --> 00:48:56,800
+worst. Like never click that button.
+
+1564
+00:48:55,080 --> 00:48:58,840
+Yeah, which is like actually like roll
+
+1565
+00:48:56,800 --> 00:49:01,000
+the dice and maybe nuke my own developer
+
+1566
+00:48:58,840 --> 00:49:02,240
+profile.
+
+1567
+00:49:01,000 --> 00:49:03,400
+There's still some sort of rough edges
+
+1568
+00:49:02,240 --> 00:49:04,800
+around there because Apple just like
+
+1569
+00:49:03,400 --> 00:49:05,800
+wants to stay in control of stuff and
+
+1570
+00:49:04,800 --> 00:49:07,880
+they it's hard to make something that's
+
+1571
+00:49:05,800 --> 00:49:09,840
+perfect. But we we put a lot of work
+
+1572
+00:49:07,880 --> 00:49:11,240
+into making it so that like getting up
+
+1573
+00:49:09,840 --> 00:49:12,320
+and running on the web because we added
+
+1574
+00:49:11,240 --> 00:49:13,320
+web hosting and stuff like that or
+
+1575
+00:49:12,320 --> 00:49:15,560
+getting up and running through
+
+1576
+00:49:13,320 --> 00:49:16,680
+TestFlight or the App Store or whatever.
+
+1577
+00:49:15,560 --> 00:49:17,960
+All these things have been a lot easier.
+
+1578
+00:49:16,680 --> 00:49:19,720
+Like a a really good flow that a lot of
+
+1579
+00:49:17,960 --> 00:49:21,000
+people like is we actually run Xcode and
+
+1580
+00:49:19,720 --> 00:49:22,320
+Android Studio in the cloud for people.
+
+1581
+00:49:21,000 --> 00:49:24,600
+That's sort of one of the main ways that
+
+1582
+00:49:22,320 --> 00:49:25,680
+we make money as a company. And if you
+
+1583
+00:49:24,600 --> 00:49:27,120
+don't have a Mac or you don't have a
+
+1584
+00:49:25,680 --> 00:49:28,720
+fast computer, that's just like pretty
+
+1585
+00:49:27,120 --> 00:49:30,400
+nice. But it also means that like you're
+
+1586
+00:49:28,720 --> 00:49:31,680
+not grinding your computer to a halt.
+
+1587
+00:49:30,400 --> 00:49:33,000
+Every time you do a check-in, it's easy
+
+1588
+00:49:31,680 --> 00:49:34,840
+to have a cloud build to kick off. But
+
+1589
+00:49:33,000 --> 00:49:36,440
+then we can also take that artifact and
+
+1590
+00:49:34,840 --> 00:49:39,000
+just submit it for you or put it in
+
+1591
+00:49:36,440 --> 00:49:40,920
+TestFlight or just do whatever wherever
+
+1592
+00:49:39,000 --> 00:49:42,320
+that artifact needs to go, we can sort
+
+1593
+00:49:40,920 --> 00:49:43,520
+of solve those problems for we can run a
+
+1594
+00:49:42,320 --> 00:49:45,600
+bunch you can have you know, a bunch of
+
+1595
+00:49:43,520 --> 00:49:47,320
+scripted tests run against it and then
+
+1596
+00:49:45,600 --> 00:49:49,240
+you know, a report generated whatnot.
+
+1597
+00:49:47,320 --> 00:49:50,360
+So, solving a lot of these problems is
+
+1598
+00:49:49,240 --> 00:49:52,280
+like a big part of what we've just kind
+
+1599
+00:49:50,360 --> 00:49:55,000
+of realized that people need to go from,
+
+1600
+00:49:52,280 --> 00:49:56,680
+you know, idea to living thing that's
+
+1601
+00:49:55,000 --> 00:49:58,320
+running, you know, in production the way
+
+1602
+00:49:56,680 --> 00:50:00,600
+they want it to be. You mentioned
+
+1603
+00:49:58,320 --> 00:50:02,600
+there's like Bolt and and Replit and
+
+1604
+00:50:00,600 --> 00:50:04,200
+Lovable and A0, there's a bunch of
+
+1605
+00:50:02,600 --> 00:50:06,080
+these, and most of them are going
+
+1606
+00:50:04,200 --> 00:50:07,720
+through you. Do you think that that's
+
+1607
+00:50:06,080 --> 00:50:09,560
+the way things are going to shake out?
+
+1608
+00:50:07,720 --> 00:50:11,160
+Like if I cuz I'm waiting for us as an
+
+1609
+00:50:09,560 --> 00:50:12,680
+infrastructure company, too, like
+
+1610
+00:50:11,160 --> 00:50:14,080
+depends on your belief in AGI, like
+
+1611
+00:50:12,680 --> 00:50:15,760
+whether or not you can be like build
+
+1612
+00:50:14,080 --> 00:50:17,200
+Expo, you know, as like a as like a
+
+1613
+00:50:15,760 --> 00:50:19,040
+command line thing. Do you think these
+
+1614
+00:50:17,200 --> 00:50:20,360
+companies continue to like run through a
+
+1615
+00:50:19,040 --> 00:50:21,400
+like centralized service provider or do
+
+1616
+00:50:20,360 --> 00:50:22,680
+you think they're going to need to own
+
+1617
+00:50:21,400 --> 00:50:24,280
+this? I guess it it's There comes out a
+
+1618
+00:50:22,680 --> 00:50:25,920
+question of like where the value accrues
+
+1619
+00:50:24,280 --> 00:50:27,560
+and stuff or or or maybe you can even
+
+1620
+00:50:25,920 --> 00:50:29,400
+say are are you guys thinking about just
+
+1621
+00:50:27,560 --> 00:50:31,080
+owning the the vibe coding layer? Like
+
+1622
+00:50:29,400 --> 00:50:32,640
+where do you think it goes? Developers
+
+1623
+00:50:31,080 --> 00:50:35,640
+want to do all kinds of things in all
+
+1624
+00:50:32,640 --> 00:50:37,280
+different ways. And so like if we
+
+1625
+00:50:35,640 --> 00:50:38,640
+were to just every time where we sort of
+
+1626
+00:50:37,280 --> 00:50:39,840
+said, "Well, we think that probably most
+
+1627
+00:50:38,640 --> 00:50:41,400
+people want to do this, so let's just
+
+1628
+00:50:39,840 --> 00:50:42,680
+sort of assume that and build everything
+
+1629
+00:50:41,400 --> 00:50:43,760
+around that." We end up with a whole
+
+1630
+00:50:42,680 --> 00:50:45,440
+bunch of people like, "Actually, I want
+
+1631
+00:50:43,760 --> 00:50:46,640
+to do something really weird and or I
+
+1632
+00:50:45,440 --> 00:50:48,600
+need to because I think there's just
+
+1633
+00:50:46,640 --> 00:50:50,720
+going to be actually a pretty wide
+
+1634
+00:50:48,600 --> 00:50:52,040
+variety of of different things. The
+
+1635
+00:50:50,720 --> 00:50:54,680
+other side of that coin is that like I
+
+1636
+00:50:52,040 --> 00:50:57,160
+think one thing that I've noticed about
+
+1637
+00:50:54,680 --> 00:50:59,320
+AI-generated code and whatnot is that it
+
+1638
+00:50:57,160 --> 00:51:01,160
+works better in general the more you
+
+1639
+00:50:59,320 --> 00:51:04,160
+kind of keep it on the rails.
+
+1640
+00:51:01,160 --> 00:51:05,480
+And so a big step forward for for Bolt
+
+1641
+00:51:04,160 --> 00:51:07,680
+and Lovable
+
+1642
+00:51:05,480 --> 00:51:10,240
+was when they both took Supabase and
+
+1643
+00:51:07,680 --> 00:51:11,720
+made that sort of the the sort of
+
+1644
+00:51:10,240 --> 00:51:13,600
+this is the way that we do a back end
+
+1645
+00:51:11,720 --> 00:51:15,600
+for you. And and sure part of that was
+
+1646
+00:51:13,600 --> 00:51:16,800
+just sort of like connecting Supabase
+
+1647
+00:51:15,600 --> 00:51:17,720
+and making it easy to set up an account,
+
+1648
+00:51:16,800 --> 00:51:19,320
+but I think another part of it is
+
+1649
+00:51:17,720 --> 00:51:21,560
+probably they were tweaking the sort of
+
+1650
+00:51:19,320 --> 00:51:23,840
+system prompts of of what they did is
+
+1651
+00:51:21,560 --> 00:51:25,640
+just saying, "When you do a back end,
+
+1652
+00:51:23,840 --> 00:51:27,840
+here's the rules. Like use Supabase,
+
+1653
+00:51:25,640 --> 00:51:30,360
+keep the Make sure that you don't leak
+
+1654
+00:51:27,840 --> 00:51:31,880
+the private key into the clients, you
+
+1655
+00:51:30,360 --> 00:51:35,240
+know, just like do these things in this
+
+1656
+00:51:31,880 --> 00:51:37,600
+way." And and so I think that makes it
+
+1657
+00:51:35,240 --> 00:51:40,840
+in a lot of ways like make more sense to
+
+1658
+00:51:37,600 --> 00:51:41,880
+rely on like a standard very popular
+
+1659
+00:51:40,840 --> 00:51:43,160
+provider because there's going to be
+
+1660
+00:51:41,880 --> 00:51:44,120
+good training data on that. It's going
+
+1661
+00:51:43,160 --> 00:51:45,920
+to Everyone's going to kind of know how
+
+1662
+00:51:44,120 --> 00:51:48,280
+to work with it and whatnot. I think
+
+1663
+00:51:45,920 --> 00:51:50,120
+that we're still in, you know, early
+
+1664
+00:51:48,280 --> 00:51:52,160
+days and whatnot, but I do think that
+
+1665
+00:51:50,120 --> 00:51:54,360
+like I think that we'll see a lot of
+
+1666
+00:51:52,160 --> 00:51:55,760
+winners win harder because like people
+
+1667
+00:51:54,360 --> 00:51:57,760
+will just like get started and not want
+
+1668
+00:51:55,760 --> 00:52:00,080
+to fight the AI that has just sort of
+
+1669
+00:51:57,760 --> 00:52:02,160
+been sort of trained to like, "Oh, use
+
+1670
+00:52:00,080 --> 00:52:04,280
+this solution." Or you like I mean, you
+
+1671
+00:52:02,160 --> 00:52:06,920
+could probably get it an AI to generate
+
+1672
+00:52:04,280 --> 00:52:08,960
+a Svelte website or or something like
+
+1673
+00:52:06,920 --> 00:52:10,720
+that these days. Like if you just said,
+
+1674
+00:52:08,960 --> 00:52:11,880
+"Please use Svelte." But like if you
+
+1675
+00:52:10,720 --> 00:52:13,760
+just sort of say like, "Go make me a
+
+1676
+00:52:11,880 --> 00:52:16,160
+website." Like almost every model is
+
+1677
+00:52:13,760 --> 00:52:17,320
+going to default to to doing React and
+
+1678
+00:52:16,160 --> 00:52:19,280
+sort of lean that direction.
+
+1679
+00:52:17,320 --> 00:52:20,200
+probably tell you to go to Expo, too,
+
+1680
+00:52:19,280 --> 00:52:21,920
+right? Like you're like, "How do I get
+
+1681
+00:52:20,200 --> 00:52:23,600
+this on my phone?" It's probably nine
+
+1682
+00:52:21,920 --> 00:52:25,240
+times out of 10 going to tell you like
+
+1683
+00:52:23,600 --> 00:52:26,240
+this we see a lot for RevenueCat. It's
+
+1684
+00:52:25,240 --> 00:52:28,320
+like, "How do I purchase this?" They're
+
+1685
+00:52:26,240 --> 00:52:30,400
+like, "Do all this or go to
+
+1686
+00:52:28,320 --> 00:52:32,040
+revenuecat.com, right?" Like that's an
+
+1687
+00:52:30,400 --> 00:52:34,040
+option. I think a lot of things that are
+
+1688
+00:52:32,040 --> 00:52:35,560
+just like easier and cut out the other
+
+1689
+00:52:34,040 --> 00:52:37,160
+annoying stuff like you're saying like,
+
+1690
+00:52:35,560 --> 00:52:38,360
+"Or go to revenuecat.com." And like a
+
+1691
+00:52:37,160 --> 00:52:40,560
+lot of the problems that you were going
+
+1692
+00:52:38,360 --> 00:52:42,160
+to face are just sort of go away or
+
+1693
+00:52:40,560 --> 00:52:44,000
+handled by this. People I think are just
+
+1694
+00:52:42,160 --> 00:52:45,960
+going to have a lot less patience for
+
+1695
+00:52:44,000 --> 00:52:47,960
+these sort of other steps or this sort
+
+1696
+00:52:45,960 --> 00:52:49,560
+of wandering in the forest trying to get
+
+1697
+00:52:47,960 --> 00:52:51,480
+some complicated thing to work. I sort
+
+1698
+00:52:49,560 --> 00:52:53,040
+of have like a an argument a gradient
+
+1699
+00:52:51,480 --> 00:52:55,240
+descent argument where like if the
+
+1700
+00:52:53,040 --> 00:52:57,400
+energy it requires to like send somebody
+
+1701
+00:52:55,240 --> 00:52:59,760
+to RevenueCat or Expo or whatever is
+
+1702
+00:52:57,400 --> 00:53:01,720
+always less than like the energy it
+
+1703
+00:52:59,760 --> 00:53:03,680
+would take to generate the tokens like
+
+1704
+00:53:01,720 --> 00:53:05,720
+the model should just optimize towards
+
+1705
+00:53:03,680 --> 00:53:07,200
+like that outcome, right? Which which is
+
+1706
+00:53:05,720 --> 00:53:08,160
+a fancy way of things basically saying
+
+1707
+00:53:07,200 --> 00:53:10,840
+what you're saying, which is like if
+
+1708
+00:53:08,160 --> 00:53:12,560
+it's already a relative minimum like
+
+1709
+00:53:10,840 --> 00:53:14,240
+it's going to like continue to reinforce
+
+1710
+00:53:12,560 --> 00:53:15,520
+that, right? Like using Superbase and
+
+1711
+00:53:14,240 --> 00:53:17,040
+and whatever versus like when it's
+
+1712
+00:53:15,520 --> 00:53:18,880
+exploring new space, which is what the
+
+1713
+00:53:17,040 --> 00:53:20,160
+vibe codes are actually building. That's
+
+1714
+00:53:18,880 --> 00:53:21,960
+where the model should be spending most
+
+1715
+00:53:20,160 --> 00:53:23,520
+of its energy. I also think there's
+
+1716
+00:53:21,960 --> 00:53:24,960
+stuff where like a lot of the people
+
+1717
+00:53:23,520 --> 00:53:27,240
+that are making these, you know,
+
+1718
+00:53:24,960 --> 00:53:29,240
+web-based fronts for AIs and whatnot
+
+1719
+00:53:27,240 --> 00:53:31,120
+like they don't want to get into the
+
+1720
+00:53:29,240 --> 00:53:32,800
+weeds on like some narrow slice of the
+
+1721
+00:53:31,120 --> 00:53:34,160
+problem that's like or some stuff that's
+
+1722
+00:53:32,800 --> 00:53:35,440
+even like I mean, I think our space is
+
+1723
+00:53:34,160 --> 00:53:37,160
+actually not very narrow. Part of the
+
+1724
+00:53:35,440 --> 00:53:38,760
+challenge of it is that there's so many
+
+1725
+00:53:37,160 --> 00:53:41,080
+things going on in mobile in such a huge
+
+1726
+00:53:38,760 --> 00:53:42,920
+service area and like you know, could
+
+1727
+00:53:41,080 --> 00:53:45,240
+you attempt to build all this stuff that
+
+1728
+00:53:42,920 --> 00:53:46,680
+we built? Like, yeah, you could with
+
+1729
+00:53:45,240 --> 00:53:48,120
+enough effort you could and you probably
+
+1730
+00:53:46,680 --> 00:53:49,000
+you probably be easier the second time
+
+1731
+00:53:48,120 --> 00:53:50,400
+around cuz you could just look at what
+
+1732
+00:53:49,000 --> 00:53:51,840
+we did in a lot of cases. Probably true
+
+1733
+00:53:50,400 --> 00:53:53,240
+for, you know, RevenueCat as well.
+
+1734
+00:53:51,840 --> 00:53:54,360
+There's like if you wanted to build
+
+1735
+00:53:53,240 --> 00:53:55,840
+something that was like RevenueCat, you
+
+1736
+00:53:54,360 --> 00:53:57,720
+could just look at it and copy but
+
+1737
+00:53:55,840 --> 00:54:00,440
+there's a lot of detail I'm sure there's
+
+1738
+00:53:57,720 --> 00:54:02,480
+a thousand details that were Yeah, that
+
+1739
+00:54:00,440 --> 00:54:04,120
+that LLMs actually aren't great at
+
+1740
+00:54:02,480 --> 00:54:04,520
+understanding, right? Necessarily,
+
+1741
+00:54:04,120 --> 00:54:06,760
+right?
+
+1742
+00:54:04,520 --> 00:54:08,640
+Yeah, and so a lot of I think a lot of
+
+1743
+00:54:06,760 --> 00:54:10,280
+these people like just want to offload
+
+1744
+00:54:08,640 --> 00:54:13,240
+things to pieces that they kind of know
+
+1745
+00:54:10,280 --> 00:54:14,640
+work and are well more than like try to
+
+1746
+00:54:13,240 --> 00:54:16,120
+compete with them
+
+1747
+00:54:14,640 --> 00:54:17,920
+necessarily. We'll see though how things
+
+1748
+00:54:16,120 --> 00:54:20,720
+play out. A developer friend I've worked
+
+1749
+00:54:17,920 --> 00:54:23,640
+with for for years who who was also a
+
+1750
+00:54:20,720 --> 00:54:25,280
+very kind of snooty native developer for
+
+1751
+00:54:23,640 --> 00:54:27,760
+a long time was telling me how much he
+
+1752
+00:54:25,280 --> 00:54:28,760
+enjoys working with LLMs and React
+
+1753
+00:54:27,760 --> 00:54:30,720
+Native
+
+1754
+00:54:28,760 --> 00:54:33,600
+because it closes the loop as well
+
+1755
+00:54:30,720 --> 00:54:36,520
+because the LLM can actually render it,
+
+1756
+00:54:33,600 --> 00:54:38,440
+test it, and close the loop on that.
+
+1757
+00:54:36,520 --> 00:54:40,080
+Have you been seeing that as a trend as
+
+1758
+00:54:38,440 --> 00:54:42,520
+well of like it just getting better and
+
+1759
+00:54:40,080 --> 00:54:43,920
+better at being so quick? It like you
+
+1760
+00:54:42,520 --> 00:54:45,920
+were saying, you don't want to have to
+
+1761
+00:54:43,920 --> 00:54:49,120
+compile an app, wait
+
+1762
+00:54:45,920 --> 00:54:52,200
+5 minutes to then test the code. Yeah,
+
+1763
+00:54:49,120 --> 00:54:54,080
+even like using Cursor or using ChatGPT
+
+1764
+00:54:52,200 --> 00:54:55,800
+alongside Xcode is just like a it's a
+
+1765
+00:54:54,080 --> 00:54:57,120
+substandard experience to using one of
+
+1766
+00:54:55,800 --> 00:54:58,680
+these five coding tools for that reason,
+
+1767
+00:54:57,120 --> 00:55:00,800
+right? Like the LLM can actually run the
+
+1768
+00:54:58,680 --> 00:55:03,480
+code which is a huge advantage.
+
+1769
+00:55:00,800 --> 00:55:05,080
+One thing I've heard is that one of the
+
+1770
+00:55:03,480 --> 00:55:06,760
+one of the reasons that
+
+1771
+00:55:05,080 --> 00:55:08,040
+these LLMs are quite good at writing
+
+1772
+00:55:06,760 --> 00:55:09,560
+code compared to a lot of other things
+
+1773
+00:55:08,040 --> 00:55:11,760
+is because
+
+1774
+00:55:09,560 --> 00:55:14,200
+they could like generate output and then
+
+1775
+00:55:11,760 --> 00:55:16,200
+run the code and tell if it like worked.
+
+1776
+00:55:14,200 --> 00:55:18,480
+And so they could a lot easier to like
+
+1777
+00:55:16,200 --> 00:55:19,080
+train on that versus like is this a good
+
+1778
+00:55:18,480 --> 00:55:20,400
+poem?
+
+1779
+00:55:19,080 --> 00:55:22,480
+When I ask it to come up with company
+
+1780
+00:55:20,400 --> 00:55:25,000
+strategy, it has no way to RL that back
+
+1781
+00:55:22,480 --> 00:55:26,560
+in for example. But then there's also
+
+1782
+00:55:25,000 --> 00:55:28,160
+this is maybe not quite what you're
+
+1783
+00:55:26,560 --> 00:55:29,880
+talking about but like that's sort of
+
+1784
+00:55:28,160 --> 00:55:31,840
+what you're talking about but
+
+1785
+00:55:29,880 --> 00:55:34,160
+a zoomed-out version to some extent
+
+1786
+00:55:31,840 --> 00:55:34,960
+where I was I used to work with a guy
+
+1787
+00:55:34,160 --> 00:55:36,480
+who was like a really good
+
+1788
+00:55:34,960 --> 00:55:37,840
+designer/Swift
+
+1789
+00:55:36,480 --> 00:55:39,560
+engineer.
+
+1790
+00:55:37,840 --> 00:55:41,720
+And he had started a new startup that
+
+1791
+00:55:39,560 --> 00:55:43,280
+was like a consumer product and they had
+
+1792
+00:55:41,720 --> 00:55:44,760
+built it in Swift for all the reasons
+
+1793
+00:55:43,280 --> 00:55:46,040
+that, you know,
+
+1794
+00:55:44,760 --> 00:55:47,160
+people who
+
+1795
+00:55:46,040 --> 00:55:48,400
+you know, oh, we have to get every
+
+1796
+00:55:47,160 --> 00:55:49,960
+interaction perfect. It's about, you
+
+1797
+00:55:48,400 --> 00:55:52,120
+know, we're we're consumer of things, so
+
+1798
+00:55:49,960 --> 00:55:53,000
+every little detail matters, blah, blah,
+
+1799
+00:55:52,120 --> 00:55:54,360
+And they'd been in this spot where they
+
+1800
+00:55:53,000 --> 00:55:56,320
+had something that people liked, but it
+
+1801
+00:55:54,360 --> 00:55:58,440
+just wasn't like quite at that point
+
+1802
+00:55:56,320 --> 00:56:00,160
+where it was like could raise like a
+
+1803
+00:55:58,440 --> 00:56:02,800
+series B or just was like really off to
+
+1804
+00:56:00,160 --> 00:56:04,400
+the races. And so they needed to kind of
+
+1805
+00:56:02,800 --> 00:56:06,360
+work on it, but also was like, you know,
+
+1806
+00:56:04,400 --> 00:56:09,000
+had some network effects. So they were
+
+1807
+00:56:06,360 --> 00:56:11,080
+kind of like, "Well, we kind of need to
+
+1808
+00:56:09,000 --> 00:56:13,240
+be on Android and web, but we also kind
+
+1809
+00:56:11,080 --> 00:56:14,480
+of need to be changing this product. And
+
+1810
+00:56:13,240 --> 00:56:15,640
+so like are we going to like freeze
+
+1811
+00:56:14,480 --> 00:56:16,480
+everything and go build an Android
+
+1812
+00:56:15,640 --> 00:56:18,080
+version, but then we're going to be
+
+1813
+00:56:16,480 --> 00:56:18,920
+stuck with two versions of the code and
+
+1814
+00:56:18,080 --> 00:56:20,840
+we're never going to be able to move
+
+1815
+00:56:18,920 --> 00:56:22,920
+forward. And like it also even if we
+
+1816
+00:56:20,840 --> 00:56:24,800
+were just sticking with iOS, like it
+
+1817
+00:56:22,920 --> 00:56:26,800
+takes us a long time to make even one
+
+1818
+00:56:24,800 --> 00:56:28,640
+new screen or
+
+1819
+00:56:26,800 --> 00:56:30,880
+whatever. And so his, you know, he's
+
+1820
+00:56:28,640 --> 00:56:31,920
+working on a new thing now and it's he's
+
+1821
+00:56:30,880 --> 00:56:34,280
+basically just sort of like, yeah, I'm
+
+1822
+00:56:31,920 --> 00:56:35,680
+like you just using Expo for it. The
+
+1823
+00:56:34,280 --> 00:56:37,160
+technology has come to the point where
+
+1824
+00:56:35,680 --> 00:56:38,160
+I've been able to make
+
+1825
+00:56:37,160 --> 00:56:40,160
+the things that I need to do and I can
+
+1826
+00:56:38,160 --> 00:56:42,080
+just tell so much more quickly whether I
+
+1827
+00:56:40,160 --> 00:56:43,480
+like something or not. And I can drop
+
+1828
+00:56:42,080 --> 00:56:44,800
+down into Swift when I need to, but I
+
+1829
+00:56:43,480 --> 00:56:46,480
+actually haven't really needed to at all
+
+1830
+00:56:44,800 --> 00:56:49,040
+yet. And so I think that like a lot of
+
+1831
+00:56:46,480 --> 00:56:50,560
+people are kind of like learning
+
+1832
+00:56:49,040 --> 00:56:52,360
+all their lessons about iteration the
+
+1833
+00:56:50,560 --> 00:56:53,400
+hard way or it's like you a lot of times
+
+1834
+00:56:52,360 --> 00:56:54,640
+you end up in this middle ground where
+
+1835
+00:56:53,400 --> 00:56:56,040
+you're like, this is kind of good, but
+
+1836
+00:56:54,640 --> 00:56:57,960
+it's not exactly what I want. And like
+
+1837
+00:56:56,040 --> 00:56:59,240
+if you if you can't like it just you
+
+1838
+00:56:57,960 --> 00:57:00,920
+have to really know what you want, I
+
+1839
+00:56:59,240 --> 00:57:03,520
+think when you're if if it's to make it
+
+1840
+00:57:00,920 --> 00:57:05,520
+worth it. Even if there is some relative
+
+1841
+00:57:03,520 --> 00:57:07,000
+difficulty working with the tools, like
+
+1842
+00:57:05,520 --> 00:57:08,800
+they can easily be wiped out by like a
+
+1843
+00:57:07,000 --> 00:57:10,440
+small increase in iteration speed,
+
+1844
+00:57:08,800 --> 00:57:12,320
+right? Yeah, Jacob and I were talking
+
+1845
+00:57:10,440 --> 00:57:13,760
+about this before we got on. Craigslist,
+
+1846
+00:57:12,320 --> 00:57:15,400
+I went and looked it up on the App Store
+
+1847
+00:57:13,760 --> 00:57:16,760
+cuz I I haven't used Craigslist in
+
+1848
+00:57:15,400 --> 00:57:18,840
+years. Actually, I hadn't even
+
+1849
+00:57:16,760 --> 00:57:21,400
+downloaded the app, surprisingly. But
+
+1850
+00:57:18,840 --> 00:57:24,640
+it's got like 450,000 reviews and an
+
+1851
+00:57:21,400 --> 00:57:26,680
+average of 4.8 stars. And you know, my
+
+1852
+00:57:24,640 --> 00:57:28,680
+reflection upon seeing that was that
+
+1853
+00:57:26,680 --> 00:57:30,240
+React Native app, by the way, or Expo
+
+1854
+00:57:28,680 --> 00:57:31,440
+Expo driven React Native app, by the
+
+1855
+00:57:30,240 --> 00:57:34,040
+way, which Charlie and I were talking on
+
+1856
+00:57:31,440 --> 00:57:35,520
+the call like my long story too much
+
+1857
+00:57:34,040 --> 00:57:37,600
+detail but my wife worked there back in
+
+1858
+00:57:35,520 --> 00:57:38,960
+2016-17 and this was like something I
+
+1859
+00:57:37,600 --> 00:57:40,960
+went in and talked to them about to help
+
+1860
+00:57:38,960 --> 00:57:43,000
+them. I'm probably breaking an NDA, I
+
+1861
+00:57:40,960 --> 00:57:44,320
+don't care. And apparently like this was
+
+1862
+00:57:43,000 --> 00:57:45,360
+I said, "Oh, you should check out Expo."
+
+1863
+00:57:44,320 --> 00:57:47,200
+And apparently it was one of the first
+
+1864
+00:57:45,360 --> 00:57:48,760
+like big companies or something or like
+
+1865
+00:57:47,200 --> 00:57:50,280
+sort of like shocking logos that you saw
+
+1866
+00:57:48,760 --> 00:57:51,520
+Charlie, which is pretty funny. They
+
+1867
+00:57:50,280 --> 00:57:52,760
+reached out to us and we're sort of
+
+1868
+00:57:51,520 --> 00:57:54,640
+like, "Hey, we're thinking about using
+
+1869
+00:57:52,760 --> 00:57:55,880
+you for a we didn't have any I think the
+
+1870
+00:57:54,640 --> 00:57:57,960
+biggest thing though with Expo at that
+
+1871
+00:57:55,880 --> 00:57:59,840
+point was like Urban Dictionary's.
+
+1872
+00:57:57,960 --> 00:58:01,320
+That's a kind of a big I mean That's
+
+1873
+00:57:59,840 --> 00:58:03,080
+cool. You're starting out the starting
+
+1874
+00:58:01,320 --> 00:58:04,440
+out the fringes of brand but like uh you
+
+1875
+00:58:03,080 --> 00:58:05,760
+know, that's a big step up. Well, yeah,
+
+1876
+00:58:04,440 --> 00:58:07,920
+yeah, I was just going to say upon
+
+1877
+00:58:05,760 --> 00:58:10,960
+seeing that it it really struck me that
+
+1878
+00:58:07,920 --> 00:58:15,080
+people review and they care about and
+
+1879
+00:58:10,960 --> 00:58:17,040
+they rate the the outcome. Is
+
+1880
+00:58:15,080 --> 00:58:20,760
+Craigslist helping me do what I set out
+
+1881
+00:58:17,040 --> 00:58:22,600
+to achieve? They're not rating every
+
+1882
+00:58:20,760 --> 00:58:24,800
+little interaction that you think needs
+
+1883
+00:58:22,600 --> 00:58:26,880
+to be perfect. And I mean just looking
+
+1884
+00:58:24,800 --> 00:58:29,720
+at the screenshots, you can tell that
+
+1885
+00:58:26,880 --> 00:58:31,800
+Craigslist app is as Craigslist website
+
+1886
+00:58:29,720 --> 00:58:33,600
+is. So, it's not this like incredibly
+
+1887
+00:58:31,800 --> 00:58:34,720
+polished like perfect experience.
+
+1888
+00:58:33,600 --> 00:58:36,160
+Yeah, you might you might be developing
+
+1889
+00:58:34,720 --> 00:58:37,600
+what's the actual constraining factor
+
+1890
+00:58:36,160 --> 00:58:39,480
+here like limiting factor. Maybe it's
+
+1891
+00:58:37,600 --> 00:58:40,920
+not Expo's polish or React Native's
+
+1892
+00:58:39,480 --> 00:58:42,320
+polish but maybe maybe Craigslist's
+
+1893
+00:58:40,920 --> 00:58:43,880
+design.
+
+1894
+00:58:42,320 --> 00:58:46,240
+Right, totally. But but the point being
+
+1895
+00:58:43,880 --> 00:58:48,400
+that people love the app, you know, 4.8
+
+1896
+00:58:46,240 --> 00:58:50,280
+stars, 450,000
+
+1897
+00:58:48,400 --> 00:58:51,800
+reviews. There's a lot of native apps
+
+1898
+00:58:50,280 --> 00:58:53,520
+out there that that that aren't anywhere
+
+1899
+00:58:51,800 --> 00:58:56,240
+close to that, right? One is it that the
+
+1900
+00:58:53,520 --> 00:58:57,280
+biggest user of React Native inside of
+
+1901
+00:58:56,240 --> 00:58:59,040
+Meta, I think is actually the
+
+1902
+00:58:57,280 --> 00:59:01,120
+Marketplace thing which gets you like a
+
+1903
+00:58:59,040 --> 00:59:03,120
+billion people using it every day. And
+
+1904
+00:59:01,120 --> 00:59:04,640
+so like both I guess Craigslist and also
+
+1905
+00:59:03,120 --> 00:59:06,040
+the thing that sort of replaced
+
+1906
+00:59:04,640 --> 00:59:07,560
+Craigslist for a lot of us are both and
+
+1907
+00:59:06,040 --> 00:59:08,000
+I think Marketplace is actually quite
+
+1908
+00:59:07,560 --> 00:59:09,320
+nice.
+
+1909
+00:59:08,000 --> 00:59:10,920
+I was telling David before this it's my
+
+1910
+00:59:09,320 --> 00:59:12,440
+favorite social network. I just love to
+
+1911
+00:59:10,920 --> 00:59:13,880
+go on there and browse and just it's
+
+1912
+00:59:12,440 --> 00:59:15,440
+entertaining. The algo is not
+
+1913
+00:59:13,880 --> 00:59:17,960
+aggressively trying to get my attention.
+
+1914
+00:59:15,440 --> 00:59:20,040
+It's awesome. Uh and it's very real. But
+
+1915
+00:59:17,960 --> 00:59:21,080
+then the other thing that reminded me of
+
+1916
+00:59:20,040 --> 00:59:22,400
+was like one of the things that's driven
+
+1917
+00:59:21,080 --> 00:59:24,120
+me crazy for years and part of the
+
+1918
+00:59:22,400 --> 00:59:26,000
+reason I work on this is that like when
+
+1919
+00:59:24,120 --> 00:59:29,160
+I look around and look Look how people I
+
+1920
+00:59:26,000 --> 00:59:31,640
+know and and even myself use software.
+
+1921
+00:59:29,160 --> 00:59:33,000
+I'm mostly on my mobile device. I'm
+
+1922
+00:59:31,640 --> 00:59:34,040
+somebody who's like my job is to sit at
+
+1923
+00:59:33,000 --> 00:59:36,080
+a computer all day. Like so I'm
+
+1924
+00:59:34,040 --> 00:59:37,480
+definitely not like anti-computer, but
+
+1925
+00:59:36,080 --> 00:59:38,760
+like most people
+
+1926
+00:59:37,480 --> 00:59:39,800
+don't have
+
+1927
+00:59:38,760 --> 00:59:41,400
+jobs where they sit in front of a
+
+1928
+00:59:39,800 --> 00:59:43,480
+computer all day. I think it's become
+
+1929
+00:59:41,400 --> 00:59:44,760
+much much less normal for like people
+
+1930
+00:59:43,480 --> 00:59:47,000
+who don't have computer jobs or
+
+1931
+00:59:44,760 --> 00:59:48,800
+enthusiasts to have a PC that they use
+
+1932
+00:59:47,000 --> 00:59:50,480
+regularly. But if you think about like
+
+1933
+00:59:48,800 --> 00:59:52,360
+what do developers work on? It's kind of
+
+1934
+00:59:50,480 --> 00:59:54,320
+like most people out there like web
+
+1935
+00:59:52,360 --> 00:59:56,520
+developers who make websites for people
+
+1936
+00:59:54,320 --> 00:59:57,760
+sitting at their computer. And like
+
+1937
+00:59:56,520 --> 00:59:59,120
+whereas in the way we're using software
+
+1938
+00:59:57,760 --> 01:00:00,960
+is like most people are just like using
+
+1939
+00:59:59,120 --> 01:00:02,120
+the app on their phone for whatever. And
+
+1940
+01:00:00,960 --> 01:00:03,400
+like this is getting more and more true
+
+1941
+01:00:02,120 --> 01:00:04,920
+where it used to be like, you know, I
+
+1942
+01:00:03,400 --> 01:00:06,040
+wouldn't write important emails on my
+
+1943
+01:00:04,920 --> 01:00:07,640
+phone. I would sit down on my And now
+
+1944
+01:00:06,040 --> 01:00:09,160
+like most of the important emails I
+
+1945
+01:00:07,640 --> 01:00:10,240
+write I write from my phone. And I would
+
+1946
+01:00:09,160 --> 01:00:12,200
+even say to people like, "Well,
+
+1947
+01:00:10,240 --> 01:00:13,520
+probably, you know, early days of Expo
+
+1948
+01:00:12,200 --> 01:00:14,600
+at some days I would point this out and
+
+1949
+01:00:13,520 --> 01:00:15,800
+I'd be like, you know, it's not like
+
+1950
+01:00:14,600 --> 01:00:17,640
+we're going to, you know, first-person
+
+1951
+01:00:15,800 --> 01:00:18,600
+shooter video games and video editing
+
+1952
+01:00:17,640 --> 01:00:20,360
+and stuff like that. That's probably,
+
+1953
+01:00:18,600 --> 01:00:22,400
+you know, not going to move to mobile."
+
+1954
+01:00:20,360 --> 01:00:24,400
+But now like TikTok probably has more
+
+1955
+01:00:22,400 --> 01:00:27,000
+minutes of video edited per day than the
+
+1956
+01:00:24,400 --> 01:00:28,480
+sum of you know, Final Cut and Premiere
+
+1957
+01:00:27,000 --> 01:00:30,920
+or whatever. And then, you know, I'm
+
+1958
+01:00:28,480 --> 01:00:32,560
+sure that the the sum total of minutes
+
+1959
+01:00:30,920 --> 01:00:34,160
+played on like, you know, first-person
+
+1960
+01:00:32,560 --> 01:00:37,080
+shooters on Android devices is bigger
+
+1961
+01:00:34,160 --> 01:00:38,000
+than PCs these days and whatnot. Yeah.
+
+1962
+01:00:37,080 --> 01:00:39,120
+How many people are playing
+
+1963
+01:00:38,000 --> 01:00:41,120
+Counter-Strike sitting down and playing
+
+1964
+01:00:39,120 --> 01:00:42,360
+Counter-Strike anymore, you know? All
+
+1965
+01:00:41,120 --> 01:00:43,480
+these things I was like, "Oh, well, I
+
+1966
+01:00:42,360 --> 01:00:45,640
+don't know if this will move over." They
+
+1967
+01:00:43,480 --> 01:00:47,400
+all basically have. And so like part of
+
+1968
+01:00:45,640 --> 01:00:49,800
+what I just want to solve with this
+
+1969
+01:00:47,400 --> 01:00:53,040
+like, how do you make it so that like
+
+1970
+01:00:49,800 --> 01:00:55,000
+it's easy enough to work on mobile stuff
+
+1971
+01:00:53,040 --> 01:00:57,080
+so that we can line up the like
+
+1972
+01:00:55,000 --> 01:00:58,880
+developer effort and energy with like
+
+1973
+01:00:57,080 --> 01:01:00,520
+how people are actually using software
+
+1974
+01:00:58,880 --> 01:01:02,800
+in the world because we should like I
+
+1975
+01:01:00,520 --> 01:01:03,720
+remember I was at a in Miami and I was
+
+1976
+01:01:02,800 --> 01:01:05,840
+sitting next to somebody who was telling
+
+1977
+01:01:03,720 --> 01:01:08,440
+me they were working on uh
+
+1978
+01:01:05,840 --> 01:01:10,240
+some one of these like weed buying
+
+1979
+01:01:08,440 --> 01:01:11,360
+startups or whatever. And they were they
+
+1980
+01:01:10,240 --> 01:01:13,880
+told me they had a they were working on
+
+1981
+01:01:11,360 --> 01:01:15,360
+a 20-person developer team.
+
+1982
+01:01:13,880 --> 01:01:16,280
+And it was like, "Oh, yeah, there's
+
+1983
+01:01:15,360 --> 01:01:18,120
+like,
+
+1984
+01:01:16,280 --> 01:01:19,560
+you know, I think we have me and
+
+1985
+01:01:18,120 --> 01:01:21,440
+sometimes this other person with like
+
+1986
+01:01:19,560 --> 01:01:23,120
+half of their time helps me on the app
+
+1987
+01:01:21,440 --> 01:01:24,840
+and we're using, you know, React Native
+
+1988
+01:01:23,120 --> 01:01:26,480
+for it. And then I was like, "Oh, okay."
+
+1989
+01:01:24,840 --> 01:01:27,600
+Like and he was like like and he was
+
+1990
+01:01:26,480 --> 01:01:29,240
+like, "Yeah, pretty much everybody else
+
+1991
+01:01:27,600 --> 01:01:31,280
+works on the website." And I was like,
+
+1992
+01:01:29,240 --> 01:01:33,840
+"Well, oh, so like the app must be some
+
+1993
+01:01:31,280 --> 01:01:35,720
+sort of like add-on here or, you know,
+
+1994
+01:01:33,840 --> 01:01:37,560
+not that important to your" And he was
+
+1995
+01:01:35,720 --> 01:01:39,280
+like, "No, no, 95% of our sales are
+
+1996
+01:01:37,560 --> 01:01:40,960
+through the app." But for whatever
+
+1997
+01:01:39,280 --> 01:01:43,080
+reason like, you know, you can hire web
+
+1998
+01:01:40,960 --> 01:01:44,000
+developers and so they just like that's,
+
+1999
+01:01:43,080 --> 01:01:45,320
+you know, they had all these people
+
+2000
+01:01:44,000 --> 01:01:47,440
+working on the website and they're just
+
+2001
+01:01:45,320 --> 01:01:49,720
+like I think a lot of the industry is in
+
+2002
+01:01:47,440 --> 01:01:51,600
+the state where it's like it's so much
+
+2003
+01:01:49,720 --> 01:01:53,200
+easier to write stuff and deploy stuff
+
+2004
+01:01:51,600 --> 01:01:54,520
+on the web and there's just such a a
+
+2005
+01:01:53,200 --> 01:01:56,160
+better development experience in history
+
+2006
+01:01:54,520 --> 01:01:58,240
+that we end up like gravitating that
+
+2007
+01:01:56,160 --> 01:02:00,160
+direction. These constraints like kind
+
+2008
+01:01:58,240 --> 01:02:02,000
+of echo and like they create like some
+
+2009
+01:02:00,160 --> 01:02:03,320
+sort of imbalances like, you know,
+
+2010
+01:02:02,000 --> 01:02:05,080
+accidentally. But I do think that some
+
+2011
+01:02:03,320 --> 01:02:06,640
+of these things are changing and getting
+
+2012
+01:02:05,080 --> 01:02:08,200
+a bit easier to deal with and and
+
+2013
+01:02:06,640 --> 01:02:10,800
+whatnot. And you know, some of the ways
+
+2014
+01:02:08,200 --> 01:02:11,840
+that some policies changing based on
+
+2015
+01:02:10,800 --> 01:02:13,120
+some of these lawsuits and whatnot. I
+
+2016
+01:02:11,840 --> 01:02:14,480
+think it's going to make
+
+2017
+01:02:13,120 --> 01:02:16,360
+potentially a distribution easier in
+
+2018
+01:02:14,480 --> 01:02:17,560
+some ways. I think I only expect it to
+
+2019
+01:02:16,360 --> 01:02:19,000
+get more liberalized, right? Like I
+
+2020
+01:02:17,560 --> 01:02:20,200
+don't expect Apple to get more, you
+
+2021
+01:02:19,000 --> 01:02:22,120
+know, I think the trend was likely to
+
+2022
+01:02:20,200 --> 01:02:23,840
+continue with and without lawsuits. I
+
+2023
+01:02:22,120 --> 01:02:25,440
+think there'll just be I think it's kind
+
+2024
+01:02:23,840 --> 01:02:26,680
+of the way I think of it sort of like,
+
+2025
+01:02:25,440 --> 01:02:27,600
+you know, when Uber first launched I
+
+2026
+01:02:26,680 --> 01:02:29,240
+think it was probably technically
+
+2027
+01:02:27,600 --> 01:02:30,480
+illegal in a lot of places, but it's
+
+2028
+01:02:29,240 --> 01:02:32,040
+just like at the end of the day like if
+
+2029
+01:02:30,480 --> 01:02:33,880
+something is really good where it's like
+
+2030
+01:02:32,040 --> 01:02:34,640
+it just gets if If the people demand it,
+
+2031
+01:02:33,880 --> 01:02:36,960
+it will happen.
+
+2032
+01:02:34,640 --> 01:02:38,920
+like eventually will sort of the the
+
+2033
+01:02:36,960 --> 01:02:40,840
+floodgates will kind of the dam will
+
+2034
+01:02:38,920 --> 01:02:43,000
+leak or burst or something. Well, I
+
+2035
+01:02:40,840 --> 01:02:44,640
+think that's a a great topic to wrap up
+
+2036
+01:02:43,000 --> 01:02:47,000
+on, you know, with the increase in
+
+2037
+01:02:44,640 --> 01:02:49,560
+tooling, with AI, with everything that's
+
+2038
+01:02:47,000 --> 01:02:51,600
+going on in the industry. It is just
+
+2039
+01:02:49,560 --> 01:02:54,080
+faster and easier to build software that
+
+2040
+01:02:51,600 --> 01:02:55,840
+helps people and that's really cool and
+
+2041
+01:02:54,080 --> 01:02:57,200
+it's exciting to be a part of it.
+
+2042
+01:02:55,840 --> 01:02:59,000
+Anything else you wanted to share as we
+
+2043
+01:02:57,200 --> 01:03:01,480
+were wrapping up? No, I feel like I got
+
+2044
+01:02:59,000 --> 01:03:03,160
+to shill our product for an hour. So,
+
+2045
+01:03:01,480 --> 01:03:04,280
+that's that's all right. As you say, you
+
+2046
+01:03:03,160 --> 01:03:05,320
+could go to you could go to Expo's
+
+2047
+01:03:04,280 --> 01:03:07,280
+website, but honestly people will
+
+2048
+01:03:05,320 --> 01:03:09,560
+probably just find you via Bolt, you
+
+2049
+01:03:07,280 --> 01:03:11,000
+know, like it'll just be LLMs will tell
+
+2050
+01:03:09,560 --> 01:03:11,840
+you to go there. But no, I think it's
+
+2051
+01:03:11,000 --> 01:03:13,360
+really cool what you guys are building.
+
+2052
+01:03:11,840 --> 01:03:14,880
+I think it's like a
+
+2053
+01:03:13,360 --> 01:03:16,320
+I don't know, you get me excited that,
+
+2054
+01:03:14,880 --> 01:03:18,160
+you You we're still early days on this
+
+2055
+01:03:16,320 --> 01:03:20,280
+like transition to mobile and like in
+
+2056
+01:03:18,160 --> 01:03:22,320
+fact like maybe much like e-com and
+
+2057
+01:03:20,280 --> 01:03:24,400
+Shopify, you know, opened up e-com for a
+
+2058
+01:03:22,320 --> 01:03:26,280
+lot of people. I still think like mobile
+
+2059
+01:03:24,400 --> 01:03:27,840
+development and development in general
+
+2060
+01:03:26,280 --> 01:03:29,360
+is now just finally getting opened up
+
+2061
+01:03:27,840 --> 01:03:31,360
+and Expo plays a big part of that. It's
+
+2062
+01:03:29,360 --> 01:03:32,800
+just really cool. So, Yeah, thanks for
+
+2063
+01:03:31,360 --> 01:03:34,400
+the work you're doing. All right, thanks
+
+2064
+01:03:32,800 --> 01:03:37,680
+Charlie. All right, have a great day
+
+2065
+01:03:34,400 --> 01:03:37,680
+David. Talk to you later Jacob.
+
+2066
+01:03:38,120 --> 01:03:42,040
+Thanks so much for listening.
+
+2067
+01:03:40,480 --> 01:03:44,720
+If you have a minute, please leave a
+
+2068
+01:03:42,040 --> 01:03:48,080
+review in your favorite podcast player.
+
+2069
+01:03:44,720 --> 01:03:51,720
+You can also stop by chat.subclub.com
+
+2070
+01:03:48,080 --> 01:03:51,720
+to join our private community.
+
