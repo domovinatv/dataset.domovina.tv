@@ -17,7 +17,7 @@ import { existsSync, readdirSync, statSync } from "node:fs";
 import { execSync } from "node:child_process";
 
 const DATA_DIR = new URL("./data/", import.meta.url).pathname;
-const DEFAULT_SOURCE = "/Volumes/DOMOVINA1TB/fetch_domovina_tv_output";
+const DEFAULT_SOURCE = "/Volumes/DOMOVINA2TB/fetch_domovina_tv_output";
 
 // --- Args ---
 const args = process.argv.slice(2);

@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-SOURCE_DIR="${1:-/Volumes/DOMOVINA1TB/fetch_domovina_tv_output}"
+SOURCE_DIR="${1:-/Volumes/DOMOVINA2TB/fetch_domovina_tv_output}"
 
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "❌ Source directory not found: $SOURCE_DIR"

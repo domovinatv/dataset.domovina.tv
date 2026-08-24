@@ -22,7 +22,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # --- Configuration ---
-DEFAULT_SOURCE="/Volumes/DOMOVINA1TB/fetch_domovina_tv_output"
+DEFAULT_SOURCE="/Volumes/DOMOVINA2TB/fetch_domovina_tv_output"
 DEFAULT_DEST="$SCRIPT_DIR/data"
 
 # --- Parse arguments ---
@@ -89,6 +89,8 @@ fi
 # --- Build rsync include/exclude rules ---
 RSYNC_FILTERS=()
 RSYNC_FILTERS+=(--exclude='._*')
+RSYNC_FILTERS+=(--exclude='_unlisted/')
+RSYNC_FILTERS+=(--exclude='_unlisted/***')
 RSYNC_FILTERS+=(--include='*/')
 for ext in "${INCLUDE_EXTENSIONS[@]}"; do
     RSYNC_FILTERS+=(--include="$ext")
@@ -142,8 +144,8 @@ STORAGE_CONF="${STORAGE_CONF:-$HOME/git/domovinatv/fetch.domovina.tv/storage.con
 if [ -f "$STORAGE_CONF" ]; then
     echo "   storage.conf: $STORAGE_CONF"
     while IFS='=' read -r channel cpath; do
-        # Skip comments, blanks, and DEFAULT (already covered by the main rsync above)
-        case "$channel" in ''|\#*|DEFAULT) continue ;; esac
+        # Skip comments, blanks, DEFAULT, and _unlisted (unlisted/private items stay off public repo)
+        case "$channel" in ''|\#*|DEFAULT|_unlisted) continue ;; esac
         cpath="${cpath%$'\r'}"            # strip any trailing CR
         if [ ! -d "$cpath" ]; then
             echo "   ⏭️  $channel: source not available (disk unmounted or not fetched)"
