@@ -19,7 +19,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # --- Konfiguracija ---
-DEFAULT_SOURCE="/Volumes/DOMOVINA1TB/fetch_domovina_tv_output"
+DEFAULT_SOURCE="/Volumes/DOMOVINA2TB/fetch_domovina_tv_output"
 # Promijeni ovo u naziv svog R2 bucketa
 BUCKET_NAME="domovina-tv-katalog" 
 # Promijeni ovo u svoj Cloudflare R2 Endpoint
