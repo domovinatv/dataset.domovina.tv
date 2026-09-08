@@ -87,10 +87,31 @@ if [ ! -d "$SOURCE" ]; then
 fi
 
 # --- Build rsync include/exclude rules ---
+# Top-level directories in the fetch output that are housekeeping, not dataset
+# content, and must never reach the public repo:
+#   _unlisted          — unlisted/private items
+#   _orphan_duplicates — files quarantined by the pipeline audit (see
+#                        fetch.domovina.tv/docs/2026-09-02-audit-nula-rupa.md);
+#                        laid out as <date>/<channel>/<file>, not <channel>/<file>
+SKIP_DIRS=(
+    "_unlisted"
+    "_orphan_duplicates"
+)
+
+is_skip_dir() {
+    local d
+    for d in "${SKIP_DIRS[@]}"; do
+        [ "$1" = "$d" ] && return 0
+    done
+    return 1
+}
+
 RSYNC_FILTERS=()
 RSYNC_FILTERS+=(--exclude='._*')
-RSYNC_FILTERS+=(--exclude='_unlisted/')
-RSYNC_FILTERS+=(--exclude='_unlisted/***')
+for d in "${SKIP_DIRS[@]}"; do
+    RSYNC_FILTERS+=(--exclude="$d/")
+    RSYNC_FILTERS+=(--exclude="$d/***")
+done
 RSYNC_FILTERS+=(--include='*/')
 for ext in "${INCLUDE_EXTENSIONS[@]}"; do
     RSYNC_FILTERS+=(--include="$ext")
@@ -144,8 +165,11 @@ STORAGE_CONF="${STORAGE_CONF:-$HOME/git/domovinatv/fetch.domovina.tv/storage.con
 if [ -f "$STORAGE_CONF" ]; then
     echo "   storage.conf: $STORAGE_CONF"
     while IFS='=' read -r channel cpath; do
-        # Skip comments, blanks, DEFAULT, and _unlisted (unlisted/private items stay off public repo)
-        case "$channel" in ''|\#*|DEFAULT|_unlisted) continue ;; esac
+        # Skip comments, blanks, DEFAULT, and the housekeeping dirs in SKIP_DIRS
+        case "$channel" in ''|\#*|DEFAULT) continue ;; esac
+        if is_skip_dir "$channel"; then
+            continue
+        fi
         cpath="${cpath%$'\r'}"            # strip any trailing CR
         if [ ! -d "$cpath" ]; then
             echo "   ⏭️  $channel: source not available (disk unmounted or not fetched)"
@@ -175,6 +199,11 @@ while IFS= read -r rel_path; do
     channel="${rel_path%%/*}"
     rest="${rel_path#*/}"
 
+    # Guard: a skipped dir can still sit in the staging cache from an earlier run
+    if is_skip_dir "$channel"; then
+        continue
+    fi
+
     if [[ "$rest" == */* ]]; then
         # File inside a subdirectory (e.g. _raw/): preserve subdir structure
         subdir="${rest%%/*}"
@@ -190,7 +219,10 @@ while IFS= read -r rel_path; do
         dest_dir="$DEST/$channel/$video_base"
     fi
 
-    mkdir -p "$dest_dir"
+    # $filename may itself contain a path (a file nested more than one level
+    # deep), so create the parent of the final target, not just $dest_dir —
+    # otherwise cp fails and `set -e` aborts the whole run before any commits.
+    mkdir -p "$(dirname "$dest_dir/$filename")"
     ln -f "$src" "$dest_dir/$filename" 2>/dev/null || cp -p "$src" "$dest_dir/$filename"
     echo "   $channel/$video_base/$filename"
     SYNC_COUNT=$((SYNC_COUNT + 1))
