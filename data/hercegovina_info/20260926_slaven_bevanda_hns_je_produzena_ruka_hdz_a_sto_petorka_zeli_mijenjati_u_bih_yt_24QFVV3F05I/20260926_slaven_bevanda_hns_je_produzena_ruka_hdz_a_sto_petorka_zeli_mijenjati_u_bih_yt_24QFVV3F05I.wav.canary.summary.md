@@ -1,0 +1,116 @@
+# SLAVEN BEVANDA: „HNS je produžena ruka HDZ-a“ | Što Petorka želi mijenjati u BiH?
+
+**Kanal:** hercegovina_info  
+**Datum:** 2026-09-26  
+**Trajanje:** 47 min  
+**Epizoda:** https://domovina.ai/v/24QFVV3F05I  
+**Izvornik:** youtube.com/watch?v=24QFVV3F05I  
+**Model:** claude-code:opus  
+
+## Sažetak
+
+U predizbornoj epizodi Hercegovina podcasta gost je Slaven Bevanda, mostarski odvjetnik, vijećnik HRS-a u Gradskom vijeću Mostara i kandidat Hrvatske petorke za Zastupnički dom Parlamentarne skupštine BiH. Govori o tome da zastupnici premalo koriste pravo predlaganja zakona. Zalaže se za usklađivanje propisa s EU, jedinstvene procesne zakone na razini BiH i zakone o jedinstvenom tržištu. Predlaže i fleksibilno smanjivanje PDV-a i trošarina pri naglom rastu cijena goriva. Kritizira HNS, koji smatra produženom rukom vladajuće stranke, te predstavlja prijedlog Petorke o preustroju Federacije. Razgovor završava mostarskim temama: Liska parkom, HNK Mostar, blokadom Gradskog vijeća i požarom na Uborku.
+
+## Ključne teme
+
+- izbori u bih i hrvatska petorka
+- zakonodavne inicijative i reforma pravosuđa
+- pdv, trošarine i jedinstveno tržište
+- hrvatski narodni sabor i hdz bih
+- državna imovina
+- reforma izbornog procesa
+- obrazovanje i oružane snage bih
+- komunalni i politički problemi mostara
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Nepoznato (uvodna špica) | sugovornik |
+| SPEAKER_01 | Voditelj | voditelj |
+| SPEAKER_02 | Slaven Bevanda | gost |
+
+## Ključni zaključci
+
+1. Bevanda ističe da svaki državni zastupnik ima pravo predlagati nove zakone i izmjene postojećih. Prema njegovim riječima, zastupnici, osobito oni iz hrvatskih stranaka, to rijetko čine i čekaju prijedloge iz ministarstava.
+2. Zalaže se za donošenje procesnih zakona (o parničnom, kaznenom i izvršnom postupku) na razini BiH umjesto sadašnja četiri različita zakona. Podržava i zakone koji bi uredili jedinstveno tržište, poput zakona o bankama, trgovačkim društvima i platnom prometu.
+3. Predlaže da Vijeće ministara pri naglom rastu cijena goriva privremeno smanjuje stopu PDV-a ili trošarine, kao što je to učinila Sjeverna Makedonija. Tvrdi da je vlast u izbornoj godini višak prihoda dijelila kroz subvencije kako bi kupila socijalni mir i političke bodove.
+4. Smatra da je HNS dobra ideja s dobrim planom, ali lošim izvođačem te da je postao produžena ruka vladajuće političke stranke. HRS je iz njega izašao zbog nepoštivanja osnovnih demokratskih procedura.
+5. Petorka nudi preustroj Federacije kroz formiranje dviju županija i triju distrikata. Po Bevandinim riječima, time bi se riješilo pitanje izbora člana Predsjedništva i Doma naroda.
+6. Problem državne imovine smatra izmišljenim i zalaže se za njezinu funkcionalnu podjelu. Blokadu čestice neperspektivne vojne imovine kod autoceste u Mostaru naziva hirom Željka Komšića.
+7. Kritizira šestomjesečni izborni proces i dugo formiranje vlasti te predlaže nove izbore ako se vlast ne formira u razumnom roku. Požar na Uborku smatra namjernom paljevinom i šteti za Mostar, a rješenje vidi u izmještanju i sanaciji Uborka te regionalnim deponijima.
+
+## Spomenute osobe
+
+- Slaven Bevanda
+- Zoran Buntić
+- Biljana (supruga Zorana Buntića)
+- Zdenko Lučić
+- Meliha Povlakić
+- Željko Komšić
+
+## Spomenuta mjesta
+
+- Mostar
+- Čitluk
+- Bosna i Hercegovina
+- Federacija Bosne i Hercegovine
+- Zapadnohercegovačka županija
+- Hercegovačko-neretvanska županija
+- Banjaluka
+- Istočno Sarajevo
+- Brčko
+- Tuzla
+- Hrvatska
+- Austrija
+- Sjeverna Makedonija
+- Srednjobosanska županija
+- Zeničko-dobojska županija
+- Uskoplje
+- Grude
+- Posavina
+- Livno
+- Hercegovina
+- Ravno
+- Zagreb
+- Sarajevo
+- Jugoslavija
+- Bijača
+- Svilaj
+- Velež
+- Liska park
+- Masline
+- Smrčenjaci
+- Uborak
+- Ljubuški
+- Široki
+- Zenica
+
+## Spomenute organizacije
+
+- Hrvatska republikanska stranka (HRS)
+- Hrvatska petorka
+- HDZ BiH
+- Hrvatski narodni sabor (HNS)
+- SNSD
+- Trojka
+- Parlamentarna skupština BiH
+- Gradsko vijeće Mostara
+- Visoko sudsko i tužiteljsko vijeće (VSTV)
+- Sud Bosne i Hercegovine
+- Ustavni sud
+- Uprava za neizravno oporezivanje
+- Vijeće ministara BiH
+- Europska unija
+- Središnje izborno povjerenstvo
+- Ministarstvo obrane BiH
+- Predsjedništvo BiH
+- Državna komisija za koncesije
+- SDA
+- HNK Mostar
+- Narodno pozorište Mostar
+- Kosača
+- Hercegovina.info
+
+---
+*Sentiment: mixed | Generirano: 2026-09-27T01:32:55.985Z*
