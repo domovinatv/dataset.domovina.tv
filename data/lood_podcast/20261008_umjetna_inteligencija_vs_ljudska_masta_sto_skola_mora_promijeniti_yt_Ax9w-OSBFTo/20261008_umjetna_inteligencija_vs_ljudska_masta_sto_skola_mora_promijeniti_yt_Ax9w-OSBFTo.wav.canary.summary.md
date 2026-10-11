@@ -1,0 +1,150 @@
+# Neurofiziolog tvrdi: Škola djecu priprema za svijet koji više ne postoji! (Umjetna inteligencija)
+
+**Kanal:** lood_podcast  
+**Datum:** 2026-10-08  
+**Trajanje:** 146 min  
+**Epizoda:** https://domovina.ai/v/Ax9w-OSBFTo  
+**Izvornik:** youtube.com/watch?v=Ax9w-OSBFTo  
+**Model:** claude-code:opus  
+
+## Sažetak
+
+U epizodi LOOD Podcasta voditelj razgovara s liječnikom Rankom Rajovićem, autorom NTC sustava učenja, o padu europskih rezultata na PISA testovima i o zaostajanju Europe za istočnom Azijom. Rajović tvrdi da se reproduktivno učenje napamet protivi načinu na koji mozak radi. Zalaže se za ranu stimulaciju, kretanje, učenje kroz igru, nelogične priče i divergentno mišljenje kako bi djeca razvila ono što računala i umjetna inteligencija ne mogu. Razgovor se bavi i štetnošću pametnih telefona, razvojem umjetne inteligencije, različitim ulogama oca i majke te prezaštićivanjem i ispunjavanjem svih želja, koji po njegovu mišljenju stvaraju generacije bez tolerancije na frustraciju. Zaključuje da su roditelji i učitelji ključni za brže promjene, jer službene reforme sporo napreduju.
+
+## Ključne teme
+
+- pisa testovi i pad obrazovnih rezultata
+- učenje napamet naspram funkcionalnog znanja
+- ntc sustav učenja i kreativnost
+- pametni telefoni i razvoj dječjeg mozga
+- umjetna inteligencija i budućnost rada
+- uloga oca i majke u odgoju
+- prezaštićivanje i tolerancija na frustraciju
+- kretanje i tjelesni razvoj djece
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Vinko | voditelj |
+| SPEAKER_01 | Ranko Rajović | gost |
+
+## Ključni zaključci
+
+1. Rajović navodi da je još 2009. i 2012. upozoravao na trend opadanja europskih rezultata na PISA testovima. Istočna Azija pritom stalno napreduje, a pad prema njegovim riječima nije posljedica korone, nego trenda koji traje više od dvadeset godina.
+2. Prema Rajoviću, pri učenju napamet aktivira se 2–3 % mozga, a pri povezivanju i razmišljanju oko 30 %. Zato zagovara metode koje nalikuju igri, kretanje u učionici i ukidanje domaćih zadaća.
+3. Ističe da djecu treba učiti ono što računala ne mogu: empatiju, kreativnost, nove ideje i timski rad. Kao primjer navodi nelogične priče, koje razvijaju kreativnost, a škola ih je izbacila iz nastave.
+4. Opisuje primjer učiteljice Dragice iz Radoboja, čiji su učenici uz podršku roditelja odustali od mobitela u zamjenu za ukidanje domaćih zadaća. Djeca su se zatim više igrala vani i počela čitati.
+5. Smatra da prefrontalni korteks, zadužen za donošenje odluka i procjenu rizika, završava razvoj tek nakon dvadesete godine. Zato djeca ne bi trebala sama donositi ključne životne odluke.
+6. Naglašava da otac i majka imaju različite, ali jednako važne uloge: majka štiti i grli, a otac kroz grublju igru i izazove gura dijete do granica. Zdravo dijete raste u ravnoteži tih dviju uloga.
+7. Upozorava da ispunjavanje svih želja i prezaštićivanje stvaraju djecu bez samopouzdanja i tolerancije na frustraciju. Roditeljima savjetuje da djeca sama rade sve što mogu, da se uvede popis želja i da se više kreću, jer mnoga više ne mogu ni nekoliko sekundi visjeti na šipci.
+
+## Spomenute osobe
+
+- Ranko Rajović
+- Katarina Aladrović Slovaček
+- Jean Piaget
+- Milan Matijević
+- Konstantin Ušinski
+- Ed Vincent
+- Dario Amodei
+- Elon Musk
+- Sam Altman
+- Donald Trump
+- Saša Arsovski
+- Massimo Recalcati
+- Oton Župančič
+- Josif Pančić
+- Lino Červar
+- Novak Đoković
+- Muhamed Ali
+- Michael Jordan
+- Leo Messi
+- Cristiano Ronaldo
+- Pelé
+- Maradona
+- Janica Kostelić
+- Luka Modrić
+- Blanka Vlašić
+- Angela Cavallo
+- Maria Montessori
+- Bruce Lee
+
+## Spomenuta mjesta
+
+- Hrvatska
+- Srbija
+- Slovenija
+- Bosna
+- Crna Gora
+- Europa
+- Istočna Azija
+- Kina
+- Hong Kong
+- Tajvan
+- Singapur
+- Makao
+- Japan
+- Finska
+- Njemačka
+- Francuska
+- Italija
+- Engleska
+- Austrija
+- Norveška
+- Rusija
+- Egipat
+- Amerika
+- Kanada
+- Australija
+- Indija
+- Sirija
+- Afganistan
+- Libanon
+- Zagreb
+- Rijeka
+- Split
+- Sarajevo
+- Beograd
+- Podgorica
+- Banja Luka
+- Krapina
+- Radoboj
+- Kopar
+- Ljubljana
+- Velenje
+- Portorož
+- Novi Sad
+- Pančevo
+- Crikvenica
+- Novi Vinodolski
+- Solun
+- Manchester
+- Leverkusen
+- Toronto
+- Vancouver
+- British Columbia
+- planina Tara
+
+## Spomenute organizacije
+
+- OECD
+- UNICEF
+- Mensa
+- Bayer
+- Anthropic
+- OpenAI
+- Apple
+- Samsung
+- Disney
+- Nokia
+- Erasmus
+- Pedagoški fakultet u Kopru
+- Ministarstvo obrazovanja Republike Hrvatske
+- Akademska knjiga
+- Fakultet za sport u Zagrebu
+- Fakultet za sport u Novom Sadu
+- LOOD Podcast
+
+---
+*Sentiment: mixed | Generirano: 2026-10-09T01:43:13.479Z*
