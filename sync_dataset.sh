@@ -93,12 +93,17 @@ fi
 #   _orphan_duplicates — files quarantined by the pipeline audit (see
 #                        fetch.domovina.tv/docs/2026-09-02-audit-nula-rupa.md);
 #                        laid out as <date>/<channel>/<file>, not <channel>/<file>
+#   _legacy            — old copies kept aside by the pipeline
+#   .reprocess_bak     — backups written before an episode is reprocessed
+# The pipeline keeps adding such dirs, so any top-level name starting with "_"
+# or "." is treated as housekeeping. Channel names never start with either.
 SKIP_DIRS=(
     "_unlisted"
     "_orphan_duplicates"
 )
 
 is_skip_dir() {
+    case "$1" in _*|.*) return 0 ;; esac
     local d
     for d in "${SKIP_DIRS[@]}"; do
         [ "$1" = "$d" ] && return 0
@@ -154,7 +159,11 @@ fi
 # Step 1: Fast bulk rsync from source(s) → staging cache
 # --out-format='%n' outputs only the relative paths of actually transferred files
 echo "   rsync: scanning source..."
+# The anchored excludes skip every top-level "_*" / ".*" dir (see is_skip_dir).
+# They only go on this rsync: on the storage.conf rsyncs below the transfer root
+# is a channel dir, where "_*" subdirs (e.g. _raw/) are real content.
 TRANSFERRED=$(rsync -a --prune-empty-dirs --out-format='%n' \
+    --exclude='/_*/' --exclude='/.*/' \
     "${RSYNC_FILTERS[@]}" "$SOURCE/" "$STAGING/")
 
 # Step 1b: Per-channel source overrides from the fetch pipeline's storage.conf.
