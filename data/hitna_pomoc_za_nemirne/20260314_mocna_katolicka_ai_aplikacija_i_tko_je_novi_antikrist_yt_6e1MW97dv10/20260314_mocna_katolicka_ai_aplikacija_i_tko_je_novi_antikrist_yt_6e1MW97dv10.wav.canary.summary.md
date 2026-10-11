@@ -1,64 +1,70 @@
 # Moćna katolička AI aplikacija (i tko je novi Antikrist)
 
-**Kanal:** hitna_pomoc_za_nemirne  
+**Kanal:** _unlisted  
 **Datum:** 2026-03-14  
 **Trajanje:** 16 min  
-**YouTube:** https://youtu.be/6e1MW97dv10  
-**Model:** gemini-2.5-flash  
+**Epizoda:** https://domovina.ai/v/6e1MW97dv10  
+**Izvornik:** youtube.com/watch?v=6e1MW97dv10  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-U ovoj epizodi, don Antun Nižetić predstavlja Magisterium AI, katoličku aplikaciju umjetne inteligencije dizajniranu za pružanje pouzdanih odgovora utemeljenih na katoličkoj tradiciji. Objašnjava kako se Magisterium AI razlikuje od općih AI alata poput ChatGPT-a, naglašavajući njegovu usklađenost s crkvenim naukom i pristup opsežnoj biblioteci katoličkih tekstova. Voditelj ističe praktičnu primjenu alata za produbljivanje vjere, razumijevanje moralnih pitanja i pripremu homilija, uz upozorenje da AI ne može zamijeniti osobni duhovni razgovor i sakramente. Također, raspravlja o potencijalnim opasnostima opće umjetne inteligencije, uspoređujući je s "antikristom" ako se zloupotrijebi, dok Magisterium AI vidi kao ograničen i koristan alat.
+Katolički svećenik don Antun Nižetić, domaćin kanala Hitna pomoć za nemirne, predstavlja Magisterium AI, katolički alat umjetne inteligencije koji se oslanja na oko 29.000 dokumenata Katoličke crkve. Objašnjava da se od ChatGPT-a i sličnih alata razlikuje po tome što je programiran davati pravovjerne odgovore u skladu s crkvenim naukom, a ne prilagođavati se korisniku. Na primjerima iz pastoralnog iskustva pokazuje kako alat mogu koristiti učenici, bračni parovi, studenti, svećenici pri pripremi homilije, pa i protivnici katoličkog nauka. Pritom naglašava da AI ne može zamijeniti razgovor, ispovijed ni duhovni susret. Na kraju razmatra može li AI biti 'novi antikrist': upozorava na opasnost pripisivanja božanskih osobina stvorenim stvarima i na to da je iza AI-ja uvijek čovjek, koji se može korumpirati.
 
 ## Ključne teme
 
-- katolička umjetna inteligencija
-- Magisterium AI
+- magisterium ai
+- umjetna inteligencija i vjera
 - katolički nauk
+- razlike između magisterium ai i chatgpt-a
 - moralna pitanja
-- umjetna inteligencija i etika
-- crkveno učiteljstvo
-- duhovnost
-- teologija
+- antikrist
+- opasnosti moći i tehnologije
+- pravovjernost crkvenog učenja
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_00 | Don Antun Nižetić | voditelj |
+| SPEAKER_00 | don Antun Nižetić | voditelj |
 
 ## Ključni zaključci
 
-1. Magisterium AI je katolički alat umjetne inteligencije programiran da daje pravovjerne odgovore utemeljene na više od 29.000 dokumenata katoličke tradicije, za razliku od općih AI alata koji sve informacije tretiraju jednako.
-2. Aplikacija je korisna za produbljivanje moralnih, filozofskih i teoloških pitanja, pronalaženje izvora i citata iz katoličke tradicije, te za razumijevanje crkvenog nauka čak i za one koji mu se protive.
-3. Iako je moćan alat za pristup informacijama, Magisterium AI, kao ni bilo koja knjiga, ne može zamijeniti osobni razgovor, ispovijed, molitvu ili sakramente.
-4. Opća umjetna inteligencija nosi rizik da postane 'antikrist' ako se zloupotrijebi zbog ljudske palosti i mogućnosti korumpiranog programiranja, dok je Magisterium AI ograničen na katolički nauk.
-5. Crkva ima dosljedan nauk kroz 2000 godina, što je vidljivo i u njezinim proročanskim enciklikama poput 'Rerum Novarum' i 'Humanae Vitae', koje su predvidjele posljedice određenih ideologija i praksi.
-6. Aplikacija je besplatna za osnovne funkcije i dostupna na Apple i Android uređajima, s opcijom plaćene pretplate za naprednije korisnike.
+1. Magisterium AI je katolički alat umjetne inteligencije koji ne crpi iz cijelog interneta, nego iz oko 29.000 dokumenata Katoličke crkve, i programiran je davati pravovjerne odgovore, dok se ChatGPT prilagođava korisniku.
+2. Alat komunicira na hrvatskom jeziku, iako su neki dijelovi, poput dnevnih misnih čitanja, još na engleskom. Osnovne funkcije su besplatne, a pretplata za dublje istraživanje stoji 3,99 dolara mjesečno.
+3. Alat mogu korisno upotrijebiti i protivnici katoličkog nauka jer je u debati važno poznavati stav druge strane. Kroz njega se može vidjeti da je katolički nauk konzistentan, logičan i razuman.
+4. AI, pa ni katolički AI, ne može zamijeniti razgovor, ispovijed i 'duhovnu kemiju' osobnog susreta, kao što to nikad nije mogla ni knjiga. Ipak, može biti put kroz koji može djelovati Duh Sveti.
+5. Svećenicima alat može pomoći u pripremi homilije, npr. za egzegezu i stavove crkvenih otaca, ali bi bilo loše da AI napiše homiliju umjesto svećenika.
+6. AI može postati antikrist ako mu pripisujemo božanske osobine i vjerujemo da je nepotkupljiv. Iza AI-ja uvijek stoji čovjek, koji se može korumpirati, a pitanje je i po kojem bi svjetonazoru AI odlučivao.
+7. Aplikacija je zasad pravovjerna, ali se ne zna što će biti u budućnosti. I sami autori upozoravaju da AI ne daje savršene odgovore i da u slučaju sumnje treba pitati ljudsko biće.
 
 ## Spomenute osobe
 
-- Don Antun Nižetić
-- Hitler
-- Leon XIII.
-- Pavao VI.
-- Augustin
+- Antun Nižetić
 - Toma Akvinski
+- Augustin
+- Hitler
+- Leon XIII. (Lav XIII.)
+- Pavao VI.
+- Isus Krist
 - Petar
 
 ## Spomenuta mjesta
 
-- Dubaj
 - Hrvatska
+- Dubai
+- skandinavske zemlje
 
 ## Spomenute organizacije
 
 - Katolička crkva
+- Magisterium AI
+- ChatGPT
+- Google
 - Apple
 - Android
 - WhatsApp
-- ChatGPT
-- Magisterium AI
+- Hitna pomoć za nemirne
 
 ---
-*Sentiment: mixed | Generirano: 2026-03-19T04:13:00.258Z*
+*Sentiment: positive | Generirano: 2026-10-08T22:12:48.374Z*
