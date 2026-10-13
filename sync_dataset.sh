@@ -196,6 +196,25 @@ if [ -f "$STORAGE_CONF" ]; then
     done < "$STORAGE_CONF"
 fi
 
+# Step 1c: Experiment outputs from the fetch repo (experiments/<name>/data/output/).
+# Laid out exactly like a channel dir (<channel>/<video_base>.<ext>), but kept OUT
+# of storage/output on purpose: the pipeline treats derived files as "step done"
+# and would publish them. File names carry their own namespace
+# (<video_base>.exp-YYYYMMDD.<tool>.<artifact>.<ext>), so they land next to the
+# production files of the same episode without overwriting any of them.
+FETCH_REPO="${FETCH_REPO:-$HOME/git/domovinatv/fetch.domovina.tv}"
+for exp_out in "$FETCH_REPO"/experiments/*/data/output; do
+    [ -d "$exp_out" ] || continue
+    echo "   rsync: experiment $(basename "$(dirname "$(dirname "$exp_out")")")"
+    extra=$(rsync -a --prune-empty-dirs --out-format='%n' \
+        --exclude='/_*/' --exclude='/.*/' \
+        "${RSYNC_FILTERS[@]}" "$exp_out/" "$STAGING/")
+    while IFS= read -r line; do
+        [ -z "$line" ] && continue
+        TRANSFERRED+=$'\n'"$line"
+    done <<< "$extra"
+done
+
 # Step 2: Organize only newly transferred files into per-video folders
 SYNC_COUNT=0
 
