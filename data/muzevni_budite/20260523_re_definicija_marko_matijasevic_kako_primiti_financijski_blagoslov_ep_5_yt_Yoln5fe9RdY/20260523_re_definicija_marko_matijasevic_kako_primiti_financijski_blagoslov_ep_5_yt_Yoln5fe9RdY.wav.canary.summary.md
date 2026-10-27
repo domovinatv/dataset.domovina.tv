@@ -3,67 +3,80 @@
 **Kanal:** muzevni_budite  
 **Datum:** 2026-05-23  
 **Trajanje:** 62 min  
-**YouTube:** https://youtu.be/Yoln5fe9RdY  
-**Model:** gemini-2.5-flash  
+**Epizoda:** https://domovina.ai/v/Yoln5fe9RdY  
+**Izvornik:** youtube.com/watch?v=Yoln5fe9RdY  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-U ovoj epizodi podcasta 'Redefinicija', gost Marko Matijašević, predsjednik udruge 'Eho', dijeli svoja iskustva o identitetu, liderstvu, partnerskim odnosima i financijama. Razgovor obuhvaća važnost kontinuiranog osobnog razvoja, izazove bračnog života i potrebu za iskrenom komunikacijom. Poseban naglasak stavljen je na mudro upravljanje novcem u braku i duhovni princip desetine kao puta do blagoslova, potičući slušatelje na preispitivanje vlastitih obrazaca ponašanja.
+U petoj epizodi podcasta Redefinicija voditelj Krunoslav razgovara s Markom Matijaševićem, predsjednikom udruge Eho, koja se bavi evangelizacijom i odgojem vjernika kroz brojne programe i konferencije. Marko opisuje sebe prvenstveno kao muža i oca te govori o liderstvu muškarca, strahu od odbacivanja i svom petogodišnjem osvajanju supruge Mirjane. Iskreno opisuje izazove bračnog života dvoje poduzetnika s malom djecom i ističe da je brak u Hrvatskoj u krizi, ali se o tome premalo otvoreno govori. Veći dio razgovora posvećen je financijama u braku, gdje zagovara transparentnost i zajedničko upravljanje novcem, te davanju desetine kao biblijskom putu prema Božjem blagoslovu. Epizoda završava blic pitanjima, izazovom za slušatelje da mjesec dana bilježe obrazac ponašanja koji žele promijeniti te isječkom iz najave sljedeće epizode.
 
 ## Ključne teme
 
-- identitet i osobni razvoj
-- muško liderstvo
-- udruga Eho i evangelizacija
-- partnerski odnosi i brak
+- udruga eho i evangelizacija
+- liderstvo muškarca
+- osvajanje žene i strah od odbacivanja
+- bračni život i partnerski odnosi
 - financije u braku
 - davanje desetine
-- duhovni blagoslovi
+- odgoj djece
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_02 | Voditelj | voditelj |
-| SPEAKER_01 | Marko Matijašević | gost |
+| SPEAKER_00 | Marko Matijašević | gost |
+| SPEAKER_01 | Krunoslav | voditelj |
+| SPEAKER_02 | Gost 2 | sugovornik (isječak iz najave sljedeće epizode) |
 
 ## Ključni zaključci
 
-1. Liderstvo zahtijeva neprestano educiranje i razvoj, a muškarci kao glave obitelji trebaju raditi na sebi jer djeca upijaju njihove obrasce ponašanja.
-2. Strah od odbijanja i preuzimanja odgovornosti često sprječava muškarce u pristupanju djevojkama i novim pothvatima.
-3. Brak otključava neočekivane izazove i obrasce ponašanja, stoga je ključno razumijevanje, podrška i otvorena komunikacija među supružnicima.
-4. Tajnost i razdvojene financije glavni su uzroci problema u braku, dok zajedničko upravljanje novcem i transparentnost doprinose zadovoljstvu u odnosu.
-5. Desetina je biblijski princip davanja za evangelizaciju i izgradnju 'hrama', a Bog poziva na kušanje Njegovog blagoslova kroz vjerno davanje.
-6. Odnos prema novcu test je vjernosti i pokazuje što nam je zaista važno, a ne treba brkati milostinju s desetinom.
-7. Preporučuje se prepoznavanje i mijenjanje neželjenih obrazaca ponašanja u svim aspektima života, od partnerskih odnosa do financija.
+1. Marko se predstavlja prije svega kao muž i otac, a tek zatim kao teolog i voditelj, upozoravajući na zamku poistovjećivanja vlastite vrijednosti s onim čime se netko bavi.
+2. Udruga Eho nastala je iz pet savjeta koje Tobit daje sinu Tobiji, a cilj joj je pomoći vjernicima da žive svoje uvjerenje u svakodnevnom životu. Eho konferencija održava se svake godine od 2014.
+3. Marko smatra da je temeljni problem muškaraca strah od odbacivanja i izbjegavanje odgovornosti. Ističe da ga najviše motiviraju sinovi, koji upijaju ono što on jest, a ne ono što govori.
+4. Brak je, prema njegovim riječima, u krizi u Hrvatskoj i među vjernicima, ali se o problemima šuti radi očuvanja slike idealne katoličke obitelji. Zato zagovara iskrenost i otvoreno govorenje o vlastitim slabostima.
+5. Najveći problemi s financijama u braku proizlaze iz tajnosti i razdvojenih financija. Ako je žena sposobnija upravljati novcem, treba joj to prepustiti, a u slučaju stalnih dugova nije sramota potražiti stručnu pomoć.
+6. Desetina je, prema Marku, namijenjena evangelizaciji i onima koji služe Bogu, a ne humanitarnim svrhama. Ljubav iz Novog zavjeta ne ukida zakon desetine, nego ide iznad njega.
+7. Za izazov u idućem mjesecu predlaže da slušatelji svaki dan zapisuju kad padnu u obrazac ponašanja koji žele promijeniti, jer se ne može ispraviti ono čega nismo svjesni.
 
 ## Spomenute osobe
 
 - Marko Matijašević
-- Mirena
+- Krunoslav
+- Mirjana
 - Jošua
-- Pavao
-- Juda
-- Duljak
-- Isus
-- Sveti Josip
-- Kralj David
+- Jan
+- Tobit
 - Tobija
+- Malahija
+- Hagaj
+- Pavao
+- Isus
+- Juda
+- Duvnjak
+- sveti Josip
+- kralj David
+- Marija
 
 ## Spomenuta mjesta
 
-- Italija
 - Hrvatska
+- Italija
+- Mozaik Event Centar
 - Korint
-- Filipi
-- Mozaik Ivent Centar
+- Zagreb
+- Sisak
+- Banovina
 
 ## Spomenute organizacije
 
-- Udruga EHO
-- Dobri pastir
-- Udruga Magnus
+- Udruga Eho (Eho projekt)
+- Eho Kids
+- Zajednica Dobri pastir
 - GLS
+- Zajednica bračnih susreta
+- Crkva
+- Patreon
 
 ---
-*Sentiment: positive | Generirano: 2026-05-26T21:46:59.576Z*
+*Sentiment: positive | Generirano: 2026-10-24T10:54:24.506Z*
