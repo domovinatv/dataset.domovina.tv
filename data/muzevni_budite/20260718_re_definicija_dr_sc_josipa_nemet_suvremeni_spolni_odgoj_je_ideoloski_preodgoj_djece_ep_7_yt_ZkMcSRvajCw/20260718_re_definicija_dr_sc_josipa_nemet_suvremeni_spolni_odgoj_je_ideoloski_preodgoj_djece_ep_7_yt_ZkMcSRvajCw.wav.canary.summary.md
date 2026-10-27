@@ -1,69 +1,79 @@
 # [re:DEFINICIJA] dr. sc. Josipa Nemet: Suvremeni spolni odgoj je ideološki preodgoj djece (ep. 7)
 
-**Kanal:** _unlisted  
+**Kanal:** muzevni_budite  
 **Datum:** 2026-07-18  
 **Trajanje:** 68 min  
-**YouTube:** https://youtu.be/ZkMcSRvajCw  
-**Model:** gemini-3.5-flash  
+**Epizoda:** https://domovina.ai/v/ZkMcSRvajCw  
+**Izvornik:** youtube.com/watch?v=ZkMcSRvajCw  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-U sedmoj epizodi podcasta re:DEFINICIJA, molekularna biologinja dr. sc. Josipa Nemet analizira uvođenje zdravstvenog odgoja u škole, kritizirajući ga kao ideološki preodgoj i rano seksualiziranje djece. Iz znanstvene i neurobiološke perspektive objašnjava zašto djeca nisu razvojno spremna za autonomiju u spolnosti te upozorava na štetnost kontracepcije i marginalizaciju uloge roditelja. Predstavlja rad udruge Članak 64. koja se bori za ustavna prava roditelja na odgoj djece te nudi savjete o zdravom pristupu dječjem razvoju i razgovoru o seksualnosti.
+U 7. epizodi podcasta Redefinicija gošća je dr. sc. Josipa Nemet, molekularna biologinja i majka petero djece, ujedno prva žena koja je gostovala u podcastu. Govori o kurikulumu zdravstvenog odgoja koji se kao izvannastavna aktivnost provodi u riječkim školama. Iz biološke i neurorazvojne perspektive tvrdi da kurikulum sadrži elemente rodne ideologije, naglašava spolni užitak i pristanak djeteta, površno obrađuje kontracepciju te zanemaruje ulogu roditelja. Predstavlja i svoj angažman u udruzi Članak 64, govori o krizi roditeljstva i važnosti granica i frustracije u odgoju te daje savjete kako s djecom razgovarati o seksualnosti. Zaključuje da je roditeljska budnost ključna za zaštitu djece.
 
 ## Ključne teme
 
-- zdravstveni odgoj
-- spolni odgoj
-- neurobiologija
+- zdravstveni odgoj u riječkim školama
 - rodna ideologija
-- roditeljstvo
-- kontracepcija
+- dječja neurobiologija
+- pobačaj i kontracepcija
 - udruga članak 64
-- odgoj djece
+- kriza roditeljstva
+- razgovor s djecom o seksualnosti
+- kritika suvremene psihologije
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_00 | dr. sc. Josipa Nemet | gost |
+| SPEAKER_00 | Josipa Nemet | gost |
 | SPEAKER_01 | Voditelj | voditelj |
-| SPEAKER_02 | Dario | gost u najavi |
+| SPEAKER_02 | Dario | sugovornik (isječak iz najave sljedeće epizode) |
 
 ## Ključni zaključci
 
-1. Zdravstveni odgoj koji se uvodi u škole, poput pilot-projekta u Rijeci, sadrži elemente rodne ideologije i rane seksualizacije koji zbunjuju djecu.
-2. Dječji mozak neurobiološki nije razvijen za donošenje zrelih odluka o spolnosti jer mu nedostaju razvijene strukture za samoregulaciju i procjenu dugoročnih posljedica.
-3. Koncept 'pristanka' u dječjoj dobi je problematičan i povijesno ukorijenjen u pedofilskom narativu koji djetetu daje neprimjerenu autonomiju.
-4. Moderna psihologija je degradirana jer je zanemarila biologiju i evolucijski razvoj čovjeka, fokusirajući se isključivo na trenutne osjećaje.
-5. Udruga Članak 64. osnovana je s ciljem zaštite ustavnog prava roditelja da samostalno odlučuju o odgoju i vrijednostima svoje djece.
-6. Zdrav odgoj zahtijeva prisutnost roditelja, postavljanje jasnih granica i dopuštanje blage frustracije poput dosade kako bi dijete razvilo samoregulaciju.
+1. Gošća navodi da je zdravstveni odgoj u Rijeci ušao u škole kao izvannastavna aktivnost kroz zakonsku mogućnost namijenjenu udrugama, iako međupredmetna tema Zdravlje u nacionalnom kurikulumu već pokriva spolno zdravlje.
+2. Prema njezinoj analizi, kurikulum djeci daje neprimjerenu autonomiju nad objektivnom istinom, sugerira da spol i rod mogu biti različiti ili nikakvi te naglašava spolni užitak i pristanak, za što djeca neurobiološki nisu zrela jer nemaju razvijene regulatorne strukture mozga.
+3. Tvrdi da kurikulum izostavlja odgodu spolnih odnosa do sposobnosti za trajnu i vjernu vezu, hitnu kontracepciju navodi kao kontracepcijsku metodu iako je smatra abortivnom, ne navodi štetne učinke kontracepcije, a pobačaj prikazuje kao jedno od rješenja bez upućivanja na savjetovanje s roditeljima.
+4. Smatra da je suvremena psihologija nanijela štetu jer je zanemarila biologiju te da bibliografija kurikuluma sadrži samo jedan znanstveni rad, koji pokazuje tek porast znanja djece, a ne promjenu ponašanja.
+5. Udruga Članak 64 nastala je iz inicijative Karte na stol i nazvana je po članku Ustava koji roditeljima jamči pravo odlučivanja o odgoju djece; udruga roditeljima pruža znanstvene informacije putem svoje web stranice i organizirala je konferenciju Bitka za djetinjstvo.
+6. Ističe da je današnja kriza djetinjstva prvenstveno kriza roditeljstva te da djeci trebaju prisutnost roditelja, granice, dosada i blaga frustracija kako bi razvila samoregulaciju i sposobnost žrtve za druge.
+7. Najvažnijim spolnim odgojem smatra odnos majke i oca koji dijete promatra od najranije dobi; roditelji trebaju odgovarati na pitanja koja dijete samo postavlja, a pri ulasku u spolnu zrelost pružiti informacije o fiziologiji i ljepoti komplementarnosti spolova.
 
 ## Spomenute osobe
 
 - Josipa Nemet
-- Papa Benedikt
+- Chesterton
+- papa Benedikt
+- sveti Pavao
 - Sokrat
+- Jung
+- Isus
+- Marija
+- sveti Josip
 - Dario
 
 ## Spomenuta mjesta
 
 - Rijeka
-- Zagreb
 - Hrvatska
 - Francuska
-- Amerika
 - Njemačka
 - Japan
-- Križevci
+- Amerika
+- Zagreb
 
 ## Spomenute organizacije
 
-- Udruga Magnus
+- Grad Rijeka
+- Grad Zagreb
+- udruga Članak 64
+- inicijativa Karte na stol
 - Hrvatsko katoličko sveučilište
-- Udruga Članak 64
-- Svjetska zdravstvena organizacija
-- EU
 - Filozofski fakultet
+- Svjetska zdravstvena organizacija
+- Europska unija
+- Patreon
 
 ---
-*Sentiment: mixed | Generirano: 2026-07-25T09:26:26.253Z*
+*Sentiment: mixed | Generirano: 2026-10-24T11:12:21.159Z*
