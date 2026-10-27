@@ -1,0 +1,85 @@
+# [re:DEFINICIJA] Fran Petar Reizl: Ako uspiješ u Hrvatskoj, možeš uspjeti bilo gdje (ep. 3)
+
+**Kanal:** muzevni_budite  
+**Datum:** 2026-03-13  
+**Trajanje:** 43 min  
+**Epizoda:** https://domovina.ai/v/1--IUSQILFA  
+**Izvornik:** youtube.com/watch?v=1--IUSQILFA  
+**Model:** claude-code:opus  
+
+## Sažetak
+
+U ovoj epizodi podcasta Redefinicija voditelj Kruno razgovara s Franom Petrom Reizlom, poduzetnikom, dizajnerom, glazbenikom, suprugom i ocem četvero djece. Reizl opisuje svoj poduzetnički put: od obiteljskog brenda Vrsna čokolada, pokrenutog uz pomoć europskih fondova, do vlastitog brenda Reizl Snacks, koji proizvodi voćne pločice s adaptogenima. Govori o usklađivanju obitelji i posla na temelju kršćanskih vrijednosti, o plaćanju poreza, muževnosti u poslovnom svijetu te o izazovima mladih poduzetnika u Hrvatskoj, poput visokog PDV-a i nedostatka kulture poticanja. Predstavlja i svoj glazbeni rad te istraživanje obiteljskog podrijetla, kojim je otkrio da su mu preci bili češki graničari u Slavoniji. Razgovor završava blic-pitanjima i porukom mladim muškarcima da se ne boje ostvariti svoje snove.
+
+## Ključne teme
+
+- poduzetništvo u hrvatskoj
+- ravnoteža obitelji i posla
+- kršćanske vrijednosti i vjera
+- muževnost i liderstvo
+- porezi i pdv
+- glazba
+- genealogija i obiteljsko podrijetlo
+- zdrava prehrana i dizajn proizvoda
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Kruno | voditelj |
+| SPEAKER_01 | Fran Petar Reizl | gost |
+
+## Ključni zaključci
+
+1. Reizl je s roditeljima pokrenuo obiteljski brend Vrsna čokolada uz pomoć europskih fondova. Nakon šest do sedam godina učenja o proizvodnji i poslovanju pokrenuo je vlastiti brend Reizl Snacks, koji danas proizvodi male voćne pločice s adaptogenima.
+2. U njegovoj obitelji muž radi, a supruga je više s djecom. Ističe da je takav raspored stvar dogovora i obostrane žrtve te da treba tražiti zlatnu sredinu između posla i obitelji.
+3. Plaćanje PDV-a smatra sastavnim dijelom računice i poštuje načelo 'caru carevo, Bogu Božje'. Priznaje i da mu je bila pogreška što je odmah osnovao d.o.o. u sustavu PDV-a.
+4. Prenosi izreku povratnika iz inozemstva da je onaj tko prođe test na hrvatskom tržištu spreman za bilo koje tržište.
+5. Kao glavne izazove mladih poduzetnika u Hrvatskoj navodi visok PDV, nedostatak kulture poticanja i ohrabrivanja te nedostatak dugoročnog fokusa. Smatra da Hrvatska uz bolje liderstvo može postati poput Švicarske.
+6. Poduzetnicima preporučuje da svoje ideje često raspravljaju s ljudima kojima vjeruju te da rano ustaju i razmišljaju u tišini.
+7. Istraživanjem obiteljskog podrijetla otkrio je da su mu preci bili češki graničari u Slavoniji. Zaključio je da su svi ljudi, kao djeca Boga Oca, braća i sestre.
+
+## Spomenute osobe
+
+- Damir Stojić
+- Vjenceslav Herout
+- Chesterton
+- Josemaría Escrivá
+- Ivan Pavao II.
+- Jelačić
+- Kornelija
+
+## Spomenuta mjesta
+
+- Hrvatska
+- Sesvete
+- Zagreb
+- Amerika
+- Australija
+- New York
+- Lovran
+- Slavonija
+- Lika
+- Dubrovnik
+- Bosna
+- Švicarska
+- Poklončićko prigorje
+
+## Spomenute organizacije
+
+- Reizl Snacks
+- Vrsna čokolada
+- Europska unija
+- Boeing
+- U2
+- salezijanci
+- Opus Dei
+- Konferencija katoličkih muškaraca
+- Sestre Halužan
+- Sestre Palić
+- Božja pobjeda
+- YouTube
+- Patreon
+
+---
+*Sentiment: positive | Generirano: 2026-10-25T16:39:27.612Z*
