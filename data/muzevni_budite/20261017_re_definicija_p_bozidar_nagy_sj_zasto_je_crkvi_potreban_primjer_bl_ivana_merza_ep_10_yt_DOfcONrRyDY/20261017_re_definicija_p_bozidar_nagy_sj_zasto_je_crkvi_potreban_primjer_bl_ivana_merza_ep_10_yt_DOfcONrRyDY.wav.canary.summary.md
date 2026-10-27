@@ -9,36 +9,36 @@
 
 ## Sažetak
 
-U 10. epizodi podcasta [re:DEFINICIJA] voditelj razgovara s p. Božidarom Nagyjem, isusovcem i donedavnim postulatorom kauze blaženog Ivana Merza, o njegovu životu i značenju. Gost opisuje Merzov životni put od rođenja u Banjoj Luci 1896., preko studija u Beču i Parizu te iskustva Prvog svjetskog rata, do profesorskog rada i smrti u Zagrebu. Ističe da je Merz prvi vjernik laik u Crkvi u Hrvata uzdignut na oltar te da je pokazao kako se svetost može ostvariti u svjetovnom zanimanju, povezujući vjeru, znanost i kulturu. Gost iznosi osobna iskustva iz postulature, opisuje kako je štovanje blaženika poraslo, osobito na Filipinima, i navodi da dokumentacija o čudu iz 2018. čeka obradu u Dikasteriju za kauze svetaca. Razgovor završava blic-pitanjima i Merzovim pogledom na javno svjedočenje vjere.
+U 10. epizodi podcasta [re:DEFINICIJA] gost je p. Božidar Nagy, isusovac i donedavni postulator kauze bl. Ivana Merza. Govori o Merzovu životu: od rođenja u Banjoj Luci 1896. i školovanja preko studija u Beču i Parizu do vojne službe na talijanskom bojištu, koja ga je duhovno preobrazila, te rada profesora u Zagrebu. Ističe da je Merz prvi vjernik laik u Crkvi u Hrvata uzdignut na oltar i da je povezivao vjeru, znanost i kulturu. Prepričava osobne doživljaje iz rada na kauzi, nagli porast štovanja na Filipinima te Merzov poziv na javno svjedočenje vjere. Govori i o čudu iz 2018. koje čeka obradu u Dikasteriju za kauze svetaca radi kanonizacije.
 
 ## Ključne teme
 
-- život blaženog ivana merza
-- svetost vjernika laika
-- utjecaj prvog svjetskog rata na merzovu duhovnost
-- povezivanje vjere, znanosti i kulture
-- širenje štovanja na filipinima
+- život bl. ivana merza
+- vjernik laik i svetost u svjetovnom zanimanju
+- povezanost vjere, znanosti i kulture
+- štovanje bl. ivana merza na filipinima
 - javno svjedočenje vjere i molitva krunice
 - postupak kanonizacije
-- isusovačka duhovnost
+- uslišanja po zagovoru bl. ivana merza
+- orlovska i križarska organizacija
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_00 | p. Božidar Nagy, SJ | gost |
+| SPEAKER_00 | p. Božidar Nagy | gost |
 | SPEAKER_01 | Voditelj | voditelj |
-| SPEAKER_02 | Gost 2 | sugovornik |
+| SPEAKER_02 | Gost sljedeće epizode (isječak iz najave) | sugovornik |
 
 ## Ključni zaključci
 
-1. Ivan Merz prvi je vjernik laik u povijesti Crkve u Hrvata proglašen blaženim. Pokazao je da se kao svjetovnjak sa svjetovnim zanimanjem, profesor francuskog i njemačkog jezika na Nadbiskupskoj gimnaziji, može postići svetost.
-2. Prema gostu, ratno razdoblje na talijanskom bojištu najviše je oblikovalo Merza. Sam je napisao da je njegov katolicizam prije rata bio 'estetski', a 5. veljače 1918. zapisao je svoje prve životne odluke, počevši rečenicom 'Boga nikad ne zaboraviti'.
-3. Gost tumači pet poruka sa slike Ante Mamuše: Merz kao laik u civilu, povezanost vjere, znanosti i kulture, crkvenost, djelovanje Duha Svetoga i euharistija kao središte njegove duhovnosti.
-4. Štovanje blaženika najprije se proširilo na Filipinima. Dave de la Cruz otkrio je Merza na internetu sa 18 godina i osnovao udrugu od oko dvjesto članova, a filipinski mladi prikupili su sedam tisuća potpisa za molbu Papi za proglašenje svetim.
-5. Gost prepričava kako je 1979. u blizini Pariza pronašao benediktinku Marie-Denise Chavialle, čije je oblačenje Merz opisao u dnevniku 1921. Navodi i dva događaja u kojima su se troškovi Merzova groba podmirili neočekivano: lutrijskom srećkom koju je pronašao Merzov otac i donacijom nepoznatog dobročinitelja.
-6. Merz se zalagao za javno svjedočenje vjere. U pismu Marakoviću kritizirao je katolike koji se skrivaju dok mole, a u Zagrebu je svakodnevno molio krunicu prolazeći Trgom bana Jelačića.
-7. Dokumentacija o čudu koje se dogodilo na Merzovu grobu 2018. predana je Dikasteriju za kauze svetaca i čeka obradu. Čudo mora proći liječničku, teološku te komisiju biskupa i kardinala prije izdavanja dekreta.
+1. Bl. Ivan Merz prvi je vjernik laik u povijesti Crkve u Hrvata proglašen blaženim. Pokazao je da se svetost može postići u svijetu i u svjetovnom zanimanju, kao profesor francuskog i njemačkog jezika na Nadbiskupskoj gimnaziji.
+2. Ratno razdoblje na talijanskom bojištu najviše je oblikovalo Merza. Sam je zapisao da je do rata njegov katolicizam bio 'estetski', a 5. veljače 1918. u dnevniku je zapisao prve životne odluke koje počinju riječima 'Boga nikad ne zaboraviti'.
+3. Gost iz slike Ante Mamuše iščitava pet poruka Merzova lika: život laika u svijetu, povezanost vjere, znanosti i kulture, crkvenost, djelovanje Duha Svetoga te euharistiju kao srž njegove duhovnosti.
+4. Štovanje bl. Ivana Merza najprije se proširilo na Filipinima, gdje je Dave de la Cruz osnovao udrugu s oko 200 članova i postao vicepostulator. Filipinska mladež prikupila je 7000 potpisa za molbu papi da Merza proglasi svetim.
+5. Gost prepričava dirljiv susret 1979. s benediktinkom Marie-Denise Chaville, čije je oblačenje Merz 1921. opisao u dnevniku. Spominje i dva neočekivana pokrića troškova groba: lutrijsku srećku iz 1928. i dar nepoznatog darovatelja 1977.
+6. Merz je zagovarao javno svjedočenje vjere. U pismu Marakoviću zamjera katolicima što se skrivaju dok mole, a u Zagrebu je svakodnevno molio krunicu prelazeći Trg bana Jelačića.
+7. Dokumentacija o čudu koje se dogodilo na Merzovu grobu 2018. predana je Dikasteriju za kauze svetaca. Čudo još mora proći liječničku, teološku i kardinalsko-biskupsku komisiju prije dekreta o kanonizaciji.
 
 ## Spomenute osobe
 
@@ -46,78 +46,70 @@ U 10. epizodi podcasta [re:DEFINICIJA] voditelj razgovara s p. Božidarom Nagyje
 - Božidar Nagy
 - Ljubomir Maraković
 - Kniewald
-- Dave de la Cruz
-- Miroslav Vanin
+- Miroslav Vanino
 - Vrbanek
 - Anto Mamuša
 - Dušan Žanko
 - Franjo Komarica
-- Marie-Denise Chavialle
+- Dave de la Cruz
+- Marie-Denise Chaville
 - Lozuk
 - Ivan Pavao II.
 - Alojzije Stepinac
 - Mišo Lukenda
-- Ignacije Lojolski
+- sveti Ignacije Lojolski
 - sveti Josip
-- sveti Alojzije
 
 ## Spomenuta mjesta
 
 - Banja Luka
 - Prijedor
-- Zagreb
 - Plzen
 - Češka
 - Mađarska
 - Velika Kaniža
-- Beč
+- Zagreb
 - Bečko Novo Mjesto
+- Beč
 - Graz
-- Italija
+- sjeverna Italija
 - Dolomiti
 - Pariz
-- Vanves
-- Lurd
 - Francuska
+- Lurd
 - Filipini
-- Hrvatska
-- Bosna
-- Novi Travnik
-- Rim
 - Mirogoj
 - Kaptol
 - Trg bana Jelačića
-- Starčevićev dom
 - Palmotićeva
 - Jordanovac
 - Sesvete
-- Beograd
-- Jugoslavija
+- Rim
+- Novi Travnik
+- Bosna
+- Hrvatska
+- Boileau-Nocaze
 
 ## Spomenute organizacije
 
-- Družba Isusova (isusovci)
+- Družba Isusova
 - Hrvatski katolički pokret
+- Nadbiskupska gimnazija
 - Hrvatska prosvjeta
 - La Croix
-- Nadbiskupska gimnazija
-- banjalučka Realka
-- Vojna akademija u Bečkom Novom Mjestu
-- Sveučilište u Zagrebu
-- Vitezovi Bezgrješnog Srca Marijina
-- Udruga blaženog Ivana Merza (Filipini)
-- dominikanski red
-- sestre benediktinke (samostan u Rue Monsieur)
-- Dikasterij za kauze svetaca
-- Kongregacija
+- Zagrebačko sveučilište
 - Bazilika Srca Isusova
+- Dikasterij za kauze svetaca
 - Radio Vatikan
 - Hrvatska katolička misija u Parizu
-- orlovska organizacija
+- Orlovska organizacija
 - Križarska organizacija
+- Vitezovi Bezgrešnog Srca Marijina
 - Nanovo rođeni
 - Mladi za domovinu
-- Patreon
+- dominikanski red
+- sestre benediktinke
+- Starčevićev dom
 
 ---
-*Sentiment: positive | Generirano: 2026-10-18T01:22:47.795Z*
+*Sentiment: positive | Generirano: 2026-10-24T11:34:37.078Z*
