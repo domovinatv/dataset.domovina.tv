@@ -3,117 +3,163 @@
 **Kanal:** muzevni_budite  
 **Datum:** 2026-08-15  
 **Trajanje:** 71 min  
-**YouTube:** https://youtu.be/h_6vqQEL2uc  
-**Model:** gemini-3.5-flash  
+**Epizoda:** https://domovina.ai/v/h_6vqQEL2uc  
+**Izvornik:** youtube.com/watch?v=h_6vqQEL2uc  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-U osmoj epizodi podcasta [re:DEFINICIJA], bivši haaški uznik i hrvatski branitelj Dario Kordić svjedoči o svom životnom putu, sudjelovanju u Domovinskom ratu i događajima u Središnjoj Bosni. Kordić detaljno opisuje svoje dragovoljno odlaženje u Haag, proces suđenja te duboko duhovno obraćenje i mistične susrete s Isusom Kristom koje je doživio u zatvoru u Scheveningenu i Grazu. Također govori o teškim trenucima koje je prolazila njegova obitelj, upisivanju studija teologije nakon oslobođenja, sudjelovanju u javnoj molitvi krunice te radu s potrebitim braniteljima kroz udrugu 'Brat branitelj'.
+U 8. epizodi podcasta [re:DEFINICIJA] gost je Dario Kordić, bivši dopredsjednik Hrvatske zajednice Herceg-Bosne i bivši haaški osuđenik. Govori o odrastanju u Žepču i Busovači, o braku sa suprugom Venerom, o političkoj ulozi tijekom rata u središnjoj Bosni te o svom viđenju događaja u Ahmićima. Najveći dio razgovora posvećen je njegovu odlasku u Haag 1997. godine, suđenju i kazni od 25 godina te duhovnim iskustvima u zatočeništvu, koja opisuje kao susret sa živim Bogom. Govori i o izdržavanju kazne u Grazu, izlasku na slobodu 2014. godine, studiju teologije, javnoj molitvi krunice i radu s braniteljima na rubu društva. Na kraju poručuje da Hrvatska ide u pravom smjeru ako je s Kristom.
 
 ## Ključne teme
 
-- domovinski rat
-- haaški sud
-- duhovno obraćenje
-- vjera
-- središnja bosna
-- ahmići
+- domovinski rat u bosni i hercegovini
+- ahmići i suđenje u haagu
+- zatočeništvo i duhovno obraćenje
 - molitva krunice
-- branitelji
+- obitelj i božja providnost
+- studij teologije
+- pomoć hrvatskim braniteljima
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_01 | Dario Kordić | gost |
-| SPEAKER_02 | Krunoslav | voditelj |
-| SPEAKER_00 | Gost (isječak na kraju) | sugovornik |
+| SPEAKER_00 | Dario Kordić | gost |
+| SPEAKER_01 | Krunoslav | voditelj |
+| SPEAKER_02 | Gost sljedeće epizode (ime nije navedeno) | sugovornik |
 
 ## Ključni zaključci
 
-1. Dario Kordić opisuje svoje djetinjstvo u Žepču i Busovači te rane dane Domovinskog rata kada je obnašao političke dužnosti i djelovao kao glasnogovornik i potpora hrvatskim braniteljima u Središnjoj Bosni.
-2. Osvrćući se na događaje u Ahmićima, Kordić ističe da je selo bilo vojni cilj te izražava žaljenje za svim žrtvama, ali osporava službene brojke stradalih iznesene u presudi.
-3. Tijekom boravka u haaškom pritvoru u Scheveningenu, Kordić je doživio mistično iskustvo i susret s Isusom Kristom, što je označilo početak njegove duboke duhovne obnove.
-4. Unatoč smanjenju optužbi u žalbenom postupku, potvrđena mu je kazna od 25 godina zatvora, nakon čega je premješten u zatvor Karlau u Grazu gdje je nastavio svjedočiti vjeru među zatvorenicima.
-5. Nakon odsluženja kazne i povratka u Hrvatsku 2014. godine, Kordić je ispunio zavjet i završio studij teologije te se aktivno uključio u javnu molitvu krunice i humanitarni rad s braniteljima kroz udrugu 'Brat branitelj'.
-6. Kordić pojašnjava kontroverznu izjavu da bi 'sve ponovio', naglašavajući da se to odnosi isključivo na zatvorsku patnju koja ga je dovela do susreta s Bogom, a ne na ratne strahote.
+1. Kordić je nakon demokratskih promjena bio predstojnik ureda obrane u Busovači, a zatim dopredsjednik Hrvatske zajednice Herceg-Bosne, utemeljene 18. 11. 1991. Ističe da nije bio u vojsci, nego je sebe doživljavao kao 'narodnog tribuna' i glas hrvatskih branitelja u središnjoj Bosni.
+2. O Ahmićima tvrdi da je selo bilo vojni cilj. Navodi da je u presudi spomenuto 76 poginulih, a da su njihove procjene oko 60, te upozorava na uveličavanje brojki uz poziv na poštivanje svih žrtava s obje strane.
+3. U Haag je otišao dobrovoljno 6. listopada 1997. Prvih 18 mjeseci opisuje kao duhovnu obnovu, a u noći prije prvog izlaska u sudnicu (12. 4. 1999.) doživio je svjetlo i čuo glas: 'Tvoju parnicu ću ja voditi.'
+4. U prvom stupnju 2001. osuđen je na 25 godina. U žalbenom postupku skinuto mu je sedam od 21 točke, ali je kazna ostala ista. Tvrdi da mu je nova hrvatska vlast uskratila financiranje obrane, a američki odvjetnici nastavili su ga braniti bez naknade.
+5. Nakon gotovo devet godina u Haagu kaznu je izdržavao u zatvoru Karlau u Grazu. Svjedoči da je cimer nakon dvije i pol godine njegove molitve sam uklonio sliku vraga i zamijenio je slikom Gospe. Za vrijeme izlaska u Mariazell čuo je u srcu da ide doma i pušten je 6. lipnja 2014.
+6. Supruga Venera je, prema njegovim riječima, sama odgajala troje djece i živjela od Božje providnosti. Zahvaljujući vlasniku tvrtke Alfa dobila je posao u izdavačkoj kući.
+7. Iz zavjeta je upisao i završio studij teologije u 60. godini. Sudjeluje u javnoj molitvi krunice, a kroz Udrugu Brat branitelj pomaže braniteljima koji su na rubu društva. Izjavu da bi 'sve ponovio' objašnjava time da bez tog puta ne bi susreo Krista.
 
 ## Spomenute osobe
 
-- Venera Kordić
-- Vladimir Kordić
-- Marija Kordić
-- Elizabeta Kordić
-- Charles Schroeder
+- Dario Kordić
+- Venera (supruga)
+- Vladimir (sin)
+- Elizabeta (kći)
+- Marija
+- Charles Shrader
 - Luka Mišetić
 - Ante Gotovina
-- Franjo Tuđman
-- Gojko Šušak
-- Faustina Kowalska
-- Ivan Pavao II.
+- predsjednik Tuđman
+- ministar Šušak
+- Gelbard
+- Marijo Čerkez
+- sveta Faustina Kowalska
+- papa Ivan Pavao II.
 - Ivan Merz
-- Mario Čerkez
-- Kuzma Kovačić
+- otac Gobbi
+- sveti Bernard
+- sveti Pavao
+- sveti Petar
+- fra Šimun Oreč
+- Riedl
 - Marinko Šušak
-- Ike Mandurić
-- Andrija Vrane
+- pater Miko Mandurić
+- Andrija Vrana
+- Ozana (urednica)
+- pater Ike
+- Kuzma Kovačić
+- Bin Laden
+- sveti Ante Padovanski
+- sveti Josip
 
 ## Spomenuta mjesta
 
 - Žepče
+- rijeka Bosna
 - Busovača
 - Vitez
 - Sarajevo
+- Vukovar
 - Dubrovnik
 - Slavonija
-- Vukovar
+- Ravno
 - Kupres
 - Posavina
 - Hercegovina
-- Središnja Bosna
-- Ravno
-- Zenica
+- središnja Bosna
+- Lašvanska dolina
+- Usora
 - Kakanj
 - Vareš
+- Zenica
+- Lepenička dolina
 - Kiseljak
+- Kreševo
 - Fojnica
-- Lašvanska dolina
-- Travnik
+- Vrbaska dolina
+- Jajce
 - Bugojno
 - Uskoplje
+- Travnik
+- Novi Travnik
 - Nova Bila
 - Ahmići
-- Haag
+- Jasenovac
 - Split
 - Nizozemska
+- Haag
 - Scheveningen
-- Banja Luka
-- Biokovo
-- Vepric
+- Trogir
+- Njemačka
 - Graz
 - Austrija
-- Karlau
 - Mariazell
 - Neuberg
 - Beč
+- Gunja
+- Drava
 - Zagreb
 - Trešnjevka
-- Afganistan
-- Alžir
+- Nova ves
+- Sveti Duh
+- Banja Luka
+- Biokovo
+- Veprić
+- Lurd
 - Pašman
 - Krapanj
+- Banovina
+- Dalmacija
+- Rijeka
+- Međugorje
+- Bosna i Hercegovina
+- Hrvatska
+- Amerika
+- Afganistan
+- Alžir
+- Europa
 
 ## Spomenute organizacije
 
-- Hrvatska zajednica Herceg-Bosna
 - HDZ
+- Hrvatska zajednica Herceg-Bosna
 - JNA
 - HVO
-- Međunarodni sud u Haagu
+- Ured obrane
+- brigada Ban Jelačić
+- UNPROFOR
+- NATO
+- Međunarodni sud u Haagu za bivšu Jugoslaviju
+- zatvor Karlau
+- Hercegovačka banka
 - Alfa
+- Bad Blue Boys
+- Crveni križ
+- Mreža instituta
+- Magis institut
+- Kursilo
 - Udruga Brat branitelj
 - Ministarstvo branitelja
-- Kožul d.o.o.
 
 ---
-*Sentiment: mixed | Generirano: 2026-08-17T19:50:19.511Z*
+*Sentiment: positive | Generirano: 2026-10-24T11:19:38.889Z*
