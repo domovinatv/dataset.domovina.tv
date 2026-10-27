@@ -3,86 +3,86 @@
 **Kanal:** muzevni_budite  
 **Datum:** 2026-09-12  
 **Trajanje:** 51 min  
-**YouTube:** https://youtu.be/f2HIRJPHHK4  
+**Epizoda:** https://domovina.ai/v/f2HIRJPHHK4  
+**Izvornik:** youtube.com/watch?v=f2HIRJPHHK4  
 **Model:** claude-code:opus  
 
 ## Sažetak
 
-U devetoj epizodi podcasta [re:DEFINICIJA] gost je Zlatko Krznarić, suprug, otac petero djece i profesionalni vozač, koji govori o svom putu od odbacivanja vjere u mladosti do dubokog obraćenja. Prekretnica je bila 2011. godina, kada je nakon financijske propasti i prijevare doživio prometnu nesreću u kojoj mu je amputirana lijeva noga, a u bolnici mu je supruga Sandra priopćila da je trudna s petim djetetom. Nakon predanja života Bogu u bolničkoj kapelici uslijedila je knjiga svjedočanstava "Ja tvoj svjedok" te niz iskustava Božje providnosti. Zlatko opisuje i svoj poziv na trajni đakonat, borbu s upisom teološkog fakulteta te hodočašće biciklom iz Čakovca u Međugorje. Razgovor završava porukama ohrabrenja onima koji razmišljaju o pozivu i blic pitanjima.
+U 9. epizodi podcasta Redefinicija gost je Zlatko Krznarić, katolički suprug, otac petero djece i vozač po zanimanju, koji studira teologiju kako bi postao trajni đakon. Opisuje svoj život prije obraćenja, ispovijed nakon koje se vratio vjeri te ponovni susret sa suprugom Sandrom, s kojom je u čistoći hodao tri godine prije braka. Govori o 2011. godini, kada je nakon prijevare pri ulaganju u nekretnine i stečaja doživio prometnu nesreću u kojoj mu je amputirana lijeva noga, te o tome kako je u bolničkoj kapelici predao život Bogu. Pripovijeda o nastanku knjige Ti si svjedok i o tome kako je, unatoč otporu, prihvatio poziv na trajni đakonat. Iznosi i niz iskustava s hodočašća biciklom u Međugorje i sa studija koja tumači kao znakove Božje providnosti.
 
 ## Ključne teme
 
 - obraćenje
+- prometna nesreća i amputacija
+- brak i čistoća
+- knjiga ti si svjedok
 - trajni đakonat
-- prometna nesreća i invaliditet
-- brak i obitelj
+- studij teologije
 - božja providnost
 - molitva i klanjanje
-- pisanje knjige svjedočanstava
-- studij teologije
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_01 | Zlatko Krznarić | gost |
-| SPEAKER_02 | Voditelj | voditelj |
-| SPEAKER_00 | Glas iz završne snimke | sugovornik |
+| SPEAKER_00 | Zlatko Krznarić | gost |
+| SPEAKER_01 | Voditelj | voditelj |
+| SPEAKER_02 | Gost 2 | sugovornik |
 
 ## Ključni zaključci
 
-1. Zlatko je 1993., u 21. godini, odbacio vjeru i okrenuo se svjetovnom životu, no nakon nekoliko mjeseci osjetio je prazninu; velika ispovijed kod svećenika Barišića bila je početak njegova novog života s Bogom.
-2. Nakon prekida veze sa Sandrom i povratka vjeri shvatio je da je ona prava osoba za njega; ponovno su započeli odnos, hodali tri godine u čistoći i vjenčali se 1998. godine.
-3. Godine 2011., nakon što su prijevarom izgubili uložen novac u nekretninu i doživjeli stečaj, doživio je prometnu nesreću na zaleđenom mostiću u kojoj mu je lijeva noga amputirana; ostao je bez zdravlja, s dugovima i kreditom u švicarskim francima.
-4. U bolnici mu je supruga rekla da je trudna s petim djetetom, Leom, i da bi ga rodila i u najvećem siromaštvu — što ga je ohrabrilo; bolnički kapelan Milan Lončarić rekao mu je da ga Bog poziva da mu preda život te da će pisati i svjedočiti.
-5. Knjiga "Ja tvoj svjedok", objavljena 2017., doživjela je četiri izdanja i tisuće prodanih primjeraka, a Zlatko ističe da je u njoj iskreno opisao vlastite slabosti, pri čemu je pisanju pružao otpor gotovo dvije godine.
-6. Poziv na trajni đakonat prihvatio je nakon dugog opiranja, hodočašća biciklom od Čakovca do Međugorja (oko 580 km) i razgovora s varaždinskim biskupom; danas je na četvrtoj godini teološkog studija na Jordanovcu, a nakon pet godina studija slijede još tri godine đakonske formacije.
-7. Zlatko poručuje da Bog ne bira prema obrazovanju ili položaju, nego gleda srce, te da je molitva "Bože, evo me" važnija od molitve "Bože, daj"; svaku subotu i nedjelju u šest ujutro ide na trajno klanjanje kod franjevaca u Varaždinu kao oblik male žrtve.
+1. Zlatko je 1993., u 21. godini, odbacio Boga i živio svjetovno, ali je osjećao prazninu. Nakon jednosatne ispovijedi kod fra Ante Barišića vratio se vjeri i nakon toga ponovno počeo hodati sa Sandrom, s kojom se oženio 1998.
+2. Godine 2011. prevaren je pri ulaganju u nekretnine i završio u stečaju, a dva do tri tjedna kasnije u prometnoj nesreći amputirana mu je lijeva noga. U bolnici mu je supruga rekla da je trudna s petim djetetom, Leom, i da će ga roditi bez obzira na siromaštvo.
+3. Bolnički kapelan, velečasni Milan Lončarić, rekao mu je da ga Bog zove da mu preda život te da će pisati i svjedočiti. Zlatko je nakon toga u bolničkoj kapelici predao život Bogu. Prema njegovim riječima, obitelj je uz Božju pomoć vratila sve dugove.
+4. Knjiga Ti si svjedok izašla je 2017. U njoj je iskreno opisao svoje slabosti, a dosad je imala četiri izdanja i prijevod.
+5. Poziv na trajni đakonat dugo je odbijao jer se smatrao nesposobnim za fakultet. Nakon hodočašća biciklom od Čakovca do Međugorja, razgovora sa svećenicima i susreta s biskupom Božom Radošem upisao je studij na Jordanovcu.
+6. Sada je na četvrtoj godini studija, nakon kojeg slijede još tri godine đakonske formacije. Objasnio je da đakon može obavljati sve osim pretvorbe, ispovijedi i bolesničkog pomazanja.
+7. Onima koji razmišljaju o pozivu poručuje da Bog ne gleda zanimanje ni obrazovanje, nego srce i vjernost, te da je čovjek to upotrebljiviji za Boga što je spremniji na žrtvu.
 
 ## Spomenute osobe
 
 - Zlatko Krznarić
-- Sandra Krznarić
-- Lea
-- Barišić
+- Sandra
+- Leo
+- fra Ante Barišić
 - Milan Lončarić
-- sveti Franjo
-- Bože Radoš
-- Zrinko
-- Robert Kavin
+- Alojzije Stepinac
+- Robert Rukavina
 - fra Petar Ljubičić
 - Aleks
-- Peračković
-- Alojzije Stepinac
+- velečasni Zrinko
+- Bože Radoš
+- Mijo Nikić
+- profesor Peračković
+- sveti Franjo
 
 ## Spomenuta mjesta
 
 - Pag
 - Krk
-- Međugorje
 - Čakovec
+- Međugorje
 - Karlovac
 - Krašić
 - Slunj
 - Plitvička jezera
+- Podbrdo
 - Zagreb
 - Jordanovac
-- Varaždin
 - Nedelišće
-- Hrvatska
-- Podbrdo
+- Varaždin
 
 ## Spomenute organizacije
 
-- Muževni budite
+- podcast Redefinicija
+- isusovački fakultet na Jordanovcu
 - 40 dana za život
-- Katolički bogoslovni fakultet na Jordanovcu
-- Varaždinska biskupija
-- Franjevci
-- Montfortanci
-- Distri
-- Udruga Magnus
+- monfortanci
+- franjevci u Varaždinu
+- policija
+- socijalna služba
 - Patreon
 
 ---
-*Sentiment: positive | Generirano: 2026-09-15T00:15:46.682Z*
+*Sentiment: positive | Generirano: 2026-10-24T11:28:55.057Z*
