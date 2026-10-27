@@ -1,0 +1,103 @@
+# Mijenja li se način na koji središnje banke komuniciraju?
+
+**Kanal:** hnb  
+**Datum:** 2026-10-21  
+**Trajanje:** 37 min  
+**Epizoda:** https://domovina.ai/v/PXsLKs2iQyk  
+**Izvornik:** youtube.com/watch?v=PXsLKs2iQyk  
+**Model:** claude-code:opus  
+
+## Sažetak
+
+Riječ je o prvom predavanju iz nove serije javnih predavanja Marka Škreba „Budućnost središnjeg bankarstva”, održanom u Moneterri 30. rujna 2026. i posvećenom promjenama u komunikaciji središnjih banaka. Škreb, bivši guverner HNB-a i konzultant u središnjem bankarstvu, opisuje razvoj komunikacije od razdoblja tajnovitosti, preko uvođenja ciljane inflacije, do današnje velike transparentnosti. Pritom upozorava da preopsežna i nestrukturirana komunikacija te davanje smjernica o budućoj politici (forward guidance) u uvjetima velike neizvjesnosti mogu biti kontraproduktivni. Ističe da su važni dosljedna priča iza brojki, prilagodba poruke različitoj publici, mjerenje stvarnog učinka komunikacije te neverbalna komunikacija, a govori i o prilikama i rizicima umjetne inteligencije. Na kraju postavlja pitanje ulazimo li u treću fazu komunikacije, u kojoj bi središnje banke trebale govoriti manje, jasnije i iskrenije, uključujući i o onome što ne znaju.
+
+## Ključne teme
+
+- komunikacija središnjih banaka
+- transparentnost i tajnovitost
+- forward guidance i neizvjesnost
+- naracija i povjerenje javnosti
+- mjerenje učinka komunikacije
+- neverbalna komunikacija
+- umjetna inteligencija i dezinformacije
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Marko Škreb (uvodni pozdrav na samom početku vjerojatno izgovara druga osoba iz organizacije, ali ju je diarizacija pripisala istom govorniku) | predavač |
+
+## Ključni zaključci
+
+1. Komunikacija središnjih banaka razvijala se od načela tajnovitosti „Never explain, never apologize”, koje se pripisuje guverneru Bank of England, prema transparentnosti. Prekretnica je bilo uvođenje ciljane inflacije na Novom Zelandu, kada su banke shvatile da očekivanja mogu oblikovati samo komunikacijom.
+2. Prema Škrebu, danas se više ne pita trebaju li središnje banke biti transparentne, nego komuniciraju li previše. Nestrukturirana i neciljana komunikacija može biti kontraproduktivna, a neke banke u regiji ponašaju se poput „influencera” koji skupljaju klikove.
+3. Uz veliku neizvjesnost i vanjske šokove forward guidance može narušiti vjerodostojnost središnje banke. Zato je bolje objašnjavati funkciju reakcije, odnosno kako će banka reagirati na promjene, nego davati konkretne brojke i obećanja.
+4. Andy Haldane prvotno je opisao da se središnje banke obraćaju samo tržištima, ekonomistima i medijima, a danas zagovara načelo tri E: objasniti, uključiti i obrazovati (explain, engage, educate). Publika je danas raznolika, pa poruka mora biti prilagođena svakoj skupini, ali dosljedna, i u danom trenutku i kroz vrijeme.
+5. Snaga riječi i naracije može utjecati na tržišta i bez promjene instrumenata, za što je primjer izjava „whatever it takes”. Škreb kao svoje privatno mišljenje navodi da je ECB izgubio narativ kada je inflacija nakon ruske invazije porasla na oko 10 % te da je s podizanjem kamatnih stopa zakasnio.
+6. Komunikaciju treba mjeriti po stvarnom ishodu (outcome), a ne samo po broju objava (input) i dosegu (output). Pritom vrijedi Goodhartov zakon: kada mjera postane cilj, prestaje biti dobra mjera. Škreb ističe i važnost neverbalne komunikacije, koja često ostaje izvan fokusa analiza.
+7. Umjetna inteligencija može ubrzati istraživanja i olakšati prilagodbu poruka različitoj publici. Ipak, što bude više umjetno generirane komunikacije, autentična ljudska komunikacija vrijedit će više, a deepfakeove i dezinformacije treba prepoznavati. Škreb zato postavlja pitanje ulazimo li u treću fazu, u kojoj treba govoriti manje, jasnije i iskrenije.
+
+## Spomenute osobe
+
+- Marko Škreb
+- Norman Montagu
+- France Arhar
+- Kevin Warsh
+- Tobias Adrian
+- Schnabel
+- Andy Haldane
+- Draghi
+- Robert Shiller
+- Philip Lane
+- Trump
+- Elon Musk
+- Greenspan
+- Melanija
+- Zuckerberg
+- Jay Powell
+- Charles Goodhart
+- Joel Mokyr
+- Ante Žigman
+- Ines
+- Veljko
+- Velimir
+- Vedran
+- Petra
+
+## Spomenuta mjesta
+
+- Novi Zeland
+- Basel
+- London
+- Irska
+- Hrvatska
+- Slovenija
+- Amerika
+- Ukrajina
+- Iran
+- Rusija
+- Kazahstan
+- Kina
+- Njemačka
+
+## Spomenute organizacije
+
+- Moneterra
+- Hrvatska narodna banka (HNB)
+- Bank of England
+- BIS
+- Fed
+- Europska središnja banka (ECB)
+- PBZ
+- Međunarodni monetarni fond (MCM odjel)
+- Financial Times
+- Sabor
+- Index
+- ZŠEM
+- LinkedIn
+- YouTube
+- Instagram
+- X (Twitter)
+
+---
+*Sentiment: mixed | Generirano: 2026-10-23T01:59:15.856Z*
