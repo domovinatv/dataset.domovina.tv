@@ -1,0 +1,2403 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_00] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+[SPEAKER_00] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_00] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android and the web.
+
+5
+00:00:33,600 --> 00:00:36,240
+[SPEAKER_00] You can learn more at revenucat.com.
+
+6
+00:00:37,280 --> 00:00:38,160
+[SPEAKER_00] Let's get into the show.
+
+7
+00:00:41,360 --> 00:00:54,480
+[SPEAKER_00] Hello, I'm your host, David Barnard, and my guest today is Eli Winderbaum, head of customer experience at Captions, an app that empowers anyone to tell better stories by generating and editing videos with AI.
+
+8
+00:00:54,800 --> 00:01:07,120
+[SPEAKER_00] On the podcast, I talk with Eli about effectively scaling support for an app, why time to first response is so important, and why you should treat support more like a concierge experience.
+
+9
+00:01:07,600 --> 00:01:10,240
+[SPEAKER_00] Hey, Ulah, thank you so much for joining me on the podcast today.
+
+10
+00:01:10,480 --> 00:01:11,280
+[SPEAKER_00] Thanks for having me.
+
+11
+00:01:11,680 --> 00:01:15,440
+[SPEAKER_00] Yeah, so we both just came back from App Growth Annual, it's good to see you in person.
+
+12
+00:01:16,000 --> 00:01:22,080
+[SPEAKER_01] Yeah, still a little jet lagged, but I'm enjoying my RevenueCat swag and water bottle.
+
+13
+00:01:22,560 --> 00:01:28,480
+[SPEAKER_01] I didn't submit for a shippy this year, but next year I hope to get one and bring one back for the team at Captions.
+
+14
+00:01:28,800 --> 00:01:30,160
+[SPEAKER_00] Yeah, Captions is fantastic.
+
+15
+00:01:30,320 --> 00:01:32,000
+[SPEAKER_00] Probably would have won if you had submitted.
+
+16
+00:01:33,680 --> 00:01:36,160
+[SPEAKER_01] Also, so cool that you had actual billboards.
+
+17
+00:01:36,480 --> 00:01:40,160
+[SPEAKER_01] Like when you displayed the winners of the Shippies, there were nine of them.
+
+18
+00:01:40,560 --> 00:01:45,040
+[SPEAKER_01] You showed a picture of an actual billboard in San Francisco, but I thought you had just photoshopped them.
+
+19
+00:01:45,280 --> 00:01:48,960
+[SPEAKER_01] And then as I was leaving the event, I saw one just across the street from the Ferry Building.
+
+20
+00:01:49,120 --> 00:01:55,440
+[SPEAKER_01] And I was like, damn, they actually bought these billboards for them, which was awesome, really unique and pretty cool to see.
+
+21
+00:01:55,680 --> 00:02:02,960
+[SPEAKER_00] Yeah, we've been doing that for some of our promotions and it's it's really cool to have like real billboards and then be able to go take pictures with them and whatnot.
+
+22
+00:02:03,200 --> 00:02:06,160
+[SPEAKER_00] We did a Times Square billboards as well, which was really cool.
+
+23
+00:02:06,480 --> 00:02:09,360
+[SPEAKER_01] Yeah, our whole team went there and took a picture together.
+
+24
+00:02:09,760 --> 00:02:10,400
+[SPEAKER_01] It was really funny.
+
+25
+00:02:10,560 --> 00:02:13,440
+[SPEAKER_01] One of our iOS engineers was a hero shout out to Rowell.
+
+26
+00:02:13,840 --> 00:02:19,040
+[SPEAKER_01] He was in the billboard and it was pretty cool to see him like like 40 feet tall.
+
+27
+00:02:19,360 --> 00:02:20,320
+[SPEAKER_01] Rowell was pretty cool.
+
+28
+00:02:20,480 --> 00:02:20,560
+[SPEAKER_01] Okay.
+
+29
+00:02:20,880 --> 00:02:40,480
+[SPEAKER_00] Well, I wanted to kick things off with something that you said when we were preparing for the podcast that really struck me because it's kind of a contrary take in, I think, not just the subscription app industry, but maybe just like tech more broadly is that you said, don't just reduce and deflect customer support.
+
+30
+00:02:40,640 --> 00:02:47,920
+[SPEAKER_00] And that's kind of the topic we're going to be talking about today is customer support, but I think that's like an important philosophy to maybe kick off this whole conversation.
+
+31
+00:02:48,240 --> 00:02:51,200
+[SPEAKER_00] Like, why not just automate as much as possible?
+
+32
+00:02:51,600 --> 00:02:53,360
+[SPEAKER_00] Like, it's just such a afterthought for most people.
+
+33
+00:02:53,520 --> 00:02:55,280
+[SPEAKER_00] So why do you think it'ss so important?
+
+34
+00:02:55,680 --> 00:03:00,480
+[SPEAKER_01] Yeah, I think especially when companies are just starting, there's no dedicated person to customer support.
+
+35
+00:03:00,800 --> 00:03:05,760
+[SPEAKER_01] So when I came to captions, one of our engineers was replying to customers from 6 a.m.
+
+36
+00:03:05,840 --> 00:03:06,480
+[SPEAKER_01] to 9 a.m.
+
+37
+00:03:06,640 --> 00:03:07,760
+[SPEAKER_01] and then at the end of her shift.
+
+38
+00:03:08,080 --> 00:03:10,240
+[SPEAKER_01] And so obviously this is something that you don't want to do.
+
+39
+00:03:10,400 --> 00:03:16,160
+[SPEAKER_01] But when you're finding product market fit, you want to hear from your customers as quickly, as efficiently as possible.
+
+40
+00:03:16,400 --> 00:03:17,440
+[SPEAKER_01] And that really worked for us.
+
+41
+00:03:17,840 --> 00:03:23,520
+[SPEAKER_01] She would see a problem in our intercom and she would immediately just fix it in the code because we were a four-person team.
+
+42
+00:03:24,160 --> 00:03:34,960
+[SPEAKER_01] But as you get bigger, you know, you start building out a team, you hear from your customers and you hear from customers both happy and unhappy as well as confused and a number of other feelings that they're feeling.
+
+43
+00:03:35,520 --> 00:03:39,040
+[SPEAKER_01] But ultimately the customers who reach out to you are the ones who care, right?
+
+44
+00:03:39,520 --> 00:03:46,480
+[SPEAKER_01] Customers who churn and cancel and never contact you, they don't care or rather, like you can't do anything to help those people.
+
+45
+00:03:46,800 --> 00:04:04,320
+[SPEAKER_01] So I always say, if a customer is going to reach out, my goal is that they had a improved experience even if we don't resolve their problem, even if we just have a great response time and build some rapport and let them know that we're not a person in someone's basement trying to, trying to steal all their data and money and, and rupture them off.
+
+46
+00:04:04,480 --> 00:04:11,200
+[SPEAKER_01] I mean, we're a 60-person team that cares about helping all these people who want to create great content.
+
+47
+00:04:11,520 --> 00:04:13,280
+[SPEAKER_01] So I like when people reach out to us.
+
+48
+00:04:13,600 --> 00:04:16,240
+[SPEAKER_01] Surely you want to deflect some customers, but not all.
+
+49
+00:04:16,640 --> 00:04:22,720
+[SPEAKER_00] How do you think about that kind of balance between the goal of customer support being creating that great experience.
+
+50
+00:04:22,880 --> 00:04:28,800
+[SPEAKER_00] So some amount of deflection, like getting their answer as quickly as possible through good support docs and stuff like that.
+
+51
+00:04:28,960 --> 00:04:36,080
+[SPEAKER_00] But like where do you think the balance is of like what things should be deflected and then what things can create a better experience connecting with a real human?
+
+52
+00:04:36,640 --> 00:04:48,240
+[SPEAKER_01] I think repetitive asks and by the way, if the app was perfect and had a great onboarding experience and tool tips and education, you know, there would be no need for some customer support.
+
+53
+00:04:48,880 --> 00:05:11,200
+[SPEAKER_01] But if a customer has any questi question of any kind, if that could be automated, whether it be with self help on our help center, with searching or browsing, or some sort of AI agent that can just answer those questions in thirty seconds, that frees up time for our other agents to actually build those connections with the customers who are unsure if they want to purchase, if they're, you know, fishing for pricing information and want to know.
+
+54
+00:05:11,520 --> 00:05:24,080
+[SPEAKER_01] I mean, don't forget, if a customer reaches out asking for, if you have good, better, best, and they're interested in good, a customer support agent can also be a little bit of sales and help them upgrade or upsell to a different tier that may be better for them.
+
+55
+00:05:24,400 --> 00:05:29,200
+[SPEAKER_01] So we like those kind of interactions and yeah, not not all of them are built equally.
+
+56
+00:05:29,520 --> 00:05:39,680
+[SPEAKER_00] I love this concept you were sharing with me about building customers for life and how customer support is like maybe one of the better ways to help kind of reinforce that.
+
+57
+00:05:39,840 --> 00:05:45,040
+[SPEAKER_00] Like you build a great product, but then actually interacting with the customer can be really meaningful.
+
+58
+00:05:45,600 --> 00:05:48,480
+[SPEAKER_01] I mean, you RevenueCat has tens of thousands of customers.
+
+59
+00:05:51,840 --> 00:05:53,600
+[SPEAKER_01] have competitors, including ourselves.
+
+60
+00:05:53,760 --> 00:05:54,560
+[SPEAKER_01] There's no shortage.
+
+61
+00:05:54,960 --> 00:05:59,680
+[SPEAKER_01] And the time it takes to actually become a competitor to us is getting shorter and shorter.
+
+62
+00:05:59,920 --> 00:06:08,080
+[SPEAKER_01] So I think it's actually customer support can be a mote in the sense that if someone reaches out and has a great experience, we're able to answer their question in two minutes.
+
+63
+00:06:08,320 --> 00:06:12,480
+[SPEAKER_01] They find a competitor and reach out to them and they don't hear back for 48 hours.
+
+64
+00:06:12,800 --> 00:06:14,720
+[SPEAKER_01] That says something about who they are as a company.
+
+65
+00:06:14,880 --> 00:06:19,200
+[SPEAKER_01] And I think people are demanding high quality answers basically immediately.
+
+66
+00:06:19,440 --> 00:06:25,760
+[SPEAKER_01] I know that when I call a 1800 number from my bank and, you know, your call is important to us, you know, I lose it.
+
+67
+00:06:25,920 --> 00:06:31,200
+[SPEAKER_01] I think customer attitudes have totally changed, but customer support could be our competitive advantage.
+
+68
+00:06:31,600 --> 00:06:42,240
+[SPEAKER_01] I guess a little bit more on the customer for life, the C four L, we have a Slack channel called C four L, and this was kind of inspired by Tony Shea, who was the CEO of Zappos.
+
+69
+00:06:42,480 --> 00:06:44,240
+[SPEAKER_01] He had this book called Delivering Happiness.
+
+70
+00:06:44,560 --> 00:06:46,240
+[SPEAKER_01] That was kind of a framework and a book that I read.
+
+71
+00:06:46,640 --> 00:06:48,560
+[SPEAKER_01] early that kind of changed how I think about support.
+
+72
+00:06:49,280 --> 00:06:53,840
+[SPEAKER_01] And this customer for life is really important with recurring subscriptions, recurring revenue.
+
+73
+00:06:54,400 --> 00:06:59,520
+[SPEAKER_01] I want to make sure, and every one of my team members, everyone at the company, how do we make a customer for life?
+
+74
+00:06:59,680 --> 00:07:05,200
+[SPEAKER_01] And we actually have a Slack channel where we post screenshots of customers who say your app changed my business.
+
+75
+00:07:06,000 --> 00:07:07,520
+[SPEAKER_01] I have more views on my TikTok.
+
+76
+00:07:07,760 --> 00:07:09,120
+[SPEAKER_01] I've been able to do this full time.
+
+77
+00:07:09,440 --> 00:07:14,800
+[SPEAKER_01] And we share those customer wins with the whole team so that they understand who they're building our app for.
+
+78
+00:07:15,040 --> 00:07:15,120
+[SPEAKER_01] Yeah.
+
+79
+00:07:15,280 --> 00:07:16,320
+[SPEAKER_01] Yeah, that's fantastic.
+
+80
+00:07:16,560 --> 00:07:26,560
+[SPEAKER_00] And you're right, like great customer support can be a competitive advantage, especially when, again, most of the industry thinks, how can I hire the fewest number of people?
+
+81
+00:07:26,800 --> 00:07:28,400
+[SPEAKER_00] How can I outsource as much as I can?
+
+82
+00:07:28,880 --> 00:07:32,240
+[SPEAKER_00] How do I shut up these customers who are bugging me?
+
+83
+00:07:32,720 --> 00:07:35,200
+[SPEAKER_00] You know, when you have that attitude, it comes across.
+
+84
+00:07:35,680 --> 00:07:36,160
+[SPEAKER_00] Absolutely.
+
+85
+00:07:36,880 --> 00:07:44,160
+[SPEAKER_00] How do you think about the difference between support and success when running customer success and support?
+
+86
+00:07:44,640 --> 00:07:45,520
+[SPEAKER_00] inside captions.
+
+87
+00:07:46,000 --> 00:07:51,040
+[SPEAKER_01] This term customer success has been thrown around a lot and I think the definition has changed.
+
+88
+00:07:51,360 --> 00:07:57,600
+[SPEAKER_01] I think it was originally coined in Salesforce and they were the first team to have a customer success manager, customer success team.
+
+89
+00:07:58,160 --> 00:08:12,640
+[SPEAKER_01] It was really meant for B2B products and I think depending on what kind of offering you're providing to your customers, there's low touch, high volume, which is what we have, and then there's high touch, low volume, which is usually more of a B2B business.
+
+90
+00:08:13,040 --> 00:08:26,800
+[SPEAKER_01] So I think, I don't know if it's exactly like a lever on customer support to customer success left to right, but if you're in a consumer and a prosumer usually low dollar value subscription, you're probably more focused on customer support.
+
+91
+00:08:27,120 --> 00:08:39,120
+[SPEAKER_01] If you're trying to build long lasting relationships with customers who are spending maybe twenty, fifty, a hundred thousand dollars a year on a large contract, I think customer success with a dedicated CSM is very different than customer support.
+
+92
+00:08:39,360 --> 00:08:42,720
+[SPEAKER_01] And those customers still need with a success manager, they still need to support.
+
+93
+00:08:43,040 --> 00:08:45,840
+[SPEAKER_01] So support and success need to really work in concert.
+
+94
+00:08:45,920 --> 00:08:50,640
+[SPEAKER_01] And that's at least what I call customer experience encompasses both the support and the success.
+
+95
+00:08:51,280 --> 00:08:51,440
+[SPEAKER_01] Right.
+
+96
+00:08:51,920 --> 00:08:52,000
+[SPEAKER_00] Yeah.
+
+97
+00:08:52,240 --> 00:08:56,320
+[SPEAKER_00] So I think a great way to think about it is let's just say there's you're running a hotel, right?
+
+98
+00:08:56,800 --> 00:09:02,800
+[SPEAKER_01] I think it's the marketer's job, the cofounder's job, VC job to build the hotel and get people through the front door.
+
+99
+00:09:03,200 --> 00:09:06,880
+[SPEAKER_01] And then once you're through the front door, that's where I feel like I'm the hotel manager.
+
+100
+00:09:07,200 --> 00:09:10,640
+[SPEAKER_01] And my team is the concierge, the bellhop, room service.
+
+101
+00:09:11,440 --> 00:09:17,120
+[SPEAKER_01] I mean, what we're trying to do is we're giving customers a three or seven day free stay right during their trial.
+
+102
+00:09:17,440 --> 00:09:20,960
+[SPEAKER_01] And what we want to do is turn them into an extended stay customer.
+
+103
+00:09:21,520 --> 00:09:25,760
+[SPEAKER_01] And during that time, some customers may come in and want self check in with a little iPad.
+
+104
+00:09:26,160 --> 00:09:28,320
+[SPEAKER_01] They may want to talk to someone and ask for a room upgrade.
+
+105
+00:09:28,560 --> 00:09:30,960
+[SPEAKER_01] When customers get to their room, a light bulb may be out.
+
+106
+00:09:31,440 --> 00:09:39,920
+[SPEAKER_01] And I think it's customer support and success job so that if a customer reaches out to us and asks, you know, for a new room, there's no hot water in my shower.
+
+107
+00:09:40,400 --> 00:09:44,400
+[SPEAKER_01] I need to empower my team to be able to upgrade them to a different room.
+
+108
+00:09:44,880 --> 00:09:52,880
+[SPEAKER_01] And I think that's what customer support and success is about, is not just like building the product, but also ensuring this customer has a really amazing experience.
+
+109
+00:09:53,120 --> 00:09:58,160
+[SPEAKER_01] And I'd say, David, when was the last time someone said to you, You gotta stay at this airport hotel?
+
+110
+00:09:58,400 --> 00:09:59,200
+[SPEAKER_01] It's so convenient.
+
+111
+00:10:00,080 --> 00:10:01,200
+[SPEAKER_01] Probably, probably never.
+
+112
+00:10:01,840 --> 00:10:05,360
+[SPEAKER_01] But how many times has someone said, You gotta stay at this boutique hotel?
+
+113
+00:10:05,840 --> 00:10:07,120
+[SPEAKER_01] I had such an amazing experience.
+
+114
+00:10:07,280 --> 00:10:08,160
+[SPEAKER_01] The staff was incredible.
+
+115
+00:10:08,400 --> 00:10:13,040
+[SPEAKER_01] We had dinner at a restaurant one night, the next day the same server remembered my kids' name.
+
+116
+00:10:13,520 --> 00:10:18,480
+[SPEAKER_01] Those are the sorts of experiences that you have where you're telling everyone you know you have to stay at this hotel.
+
+117
+00:10:18,640 --> 00:10:21,440
+[SPEAKER_01] And that's basically what I believe support and success is.
+
+118
+00:10:22,000 --> 00:10:31,600
+[SPEAKER_00] Gosh, I don't think I've ever heard anyone in tech support, big company, small company, analogize themselves to a concierge.
+
+119
+00:10:32,320 --> 00:10:33,280
+[SPEAKER_00] That's fantastic though.
+
+120
+00:10:33,440 --> 00:10:37,760
+[SPEAKER_00] I mean, that's a very customer centered approach, again, versus like.
+
+121
+00:10:38,160 --> 00:10:42,880
+[SPEAKER_00] so much of a tech, like you can't get in touch with anyone at Google if you're having problems with your Gmail account.
+
+122
+00:10:42,960 --> 00:10:53,280
+[SPEAKER_00] It's like so many people just brush it off, but to think about yourself and your customer success or customer support team as concierge that's going to create a better experience for your users.
+
+123
+00:10:53,600 --> 00:10:54,400
+[SPEAKER_00] It's just fantastic.
+
+124
+00:10:54,640 --> 00:11:02,640
+[SPEAKER_00] I love the analogy and just love your approach and do think it's ultimately a competitive advantage for teams that think about it in that way.
+
+125
+00:11:03,040 --> 00:11:06,800
+[SPEAKER_00] So thinking about it in that way is great, but you actually have to like hire a team.
+
+126
+00:11:07,440 --> 00:11:09,120
+[SPEAKER_00] and like developing processes.
+
+127
+00:11:09,440 --> 00:11:17,200
+[SPEAKER_00] And I know that's something you've been really focused on going from the four-person team you joined to now, I think you said like seventy people at the company.
+
+128
+00:11:17,760 --> 00:11:23,920
+[SPEAKER_00] How do you build a team and kind of instill that attitude and also like keeping it cost effective along the way?
+
+129
+00:11:24,320 --> 00:11:29,200
+[SPEAKER_01] Yeah, I think when I'm looking to hire someone, there's like three key things that I look for.
+
+130
+00:11:29,920 --> 00:11:31,440
+[SPEAKER_01] One is people who embrace change.
+
+131
+00:11:31,920 --> 00:11:35,200
+[SPEAKER_01] I think especially at a startup, a lot of companies that are moving quickly.
+
+132
+00:11:35,920 --> 00:11:37,760
+[SPEAKER_01] We just move so, so quickly.
+
+133
+00:11:38,160 --> 00:11:45,520
+[SPEAKER_01] It is one of my biggest challenges to even learn from engineers and product managers what's launching, when it's launching, how many people it's launching to.
+
+134
+00:11:45,680 --> 00:11:50,480
+[SPEAKER_01] And then I need to extend that out, update our documentation and our macros, and of course train my team.
+
+135
+00:11:50,960 --> 00:11:55,920
+[SPEAKER_01] So I think people that embrace the change and are not saying, Oh, I can't believe this, this feature is changing again.
+
+136
+00:11:56,400 --> 00:11:57,520
+[SPEAKER_01] This is an iterative process.
+
+137
+00:11:57,760 --> 00:12:02,880
+[SPEAKER_01] So I think I need people who enjoy that and look forward to say, Wow, we're moving so quickly.
+
+138
+00:12:03,040 --> 00:12:03,840
+[SPEAKER_01] This is, this is great.
+
+139
+00:12:04,080 --> 00:12:07,280
+[SPEAKER_01] And then I'd say curiosity shouldn't be overlooked.
+
+140
+00:12:07,360 --> 00:12:09,600
+[SPEAKER_01] I think, I mean, I was very lucky early in my career.
+
+141
+00:12:10,080 --> 00:12:16,560
+[SPEAKER_01] My mentor and CEO took me under his wing and said, well, for a little backstory, I just traveled around the world.
+
+142
+00:12:16,960 --> 00:12:18,320
+[SPEAKER_01] I left, I graduated college.
+
+143
+00:12:18,400 --> 00:12:20,960
+[SPEAKER_01] I traveled around the world for a year alone with a backpack.
+
+144
+00:12:21,280 --> 00:12:24,400
+[SPEAKER_01] And when I interviewed with this person, you know, he said, tell me about yourself.
+
+145
+00:12:24,480 --> 00:12:27,040
+[SPEAKER_01] And I said, well, I've just been, you know, traveling for a year.
+
+146
+00:12:27,360 --> 00:12:32,080
+[SPEAKER_01] And he said, the whole interview just turned into me telling him country by country, everywhere I went, everything I did.
+
+147
+00:12:32,560 --> 00:12:38,560
+[SPEAKER_01] And I was curious about the world and he basically hired me on that fact in that I figured it out.
+
+148
+00:12:38,880 --> 00:12:40,640
+[SPEAKER_01] I was curious about it and I figured it out.
+
+149
+00:12:40,880 --> 00:12:44,720
+[SPEAKER_01] I think you can train for your particular app.
+
+150
+00:12:44,960 --> 00:12:46,000
+[SPEAKER_01] We're a video editing app.
+
+151
+00:12:46,160 --> 00:12:46,800
+[SPEAKER_01] We can train on that.
+
+152
+00:12:46,960 --> 00:12:52,080
+[SPEAKER_01] Sure, it's great to have someone who was a video editor, but if you're curious, you'll figure it out.
+
+153
+00:12:52,320 --> 00:12:54,960
+[SPEAKER_01] And I think that really, again, should not be overlooked.
+
+154
+00:12:55,120 --> 00:13:01,200
+[SPEAKER_01] And then lastly, I have this kind of other saying that when I meet people, are these the kind of people that will push the trash down?
+
+155
+00:13:01,600 --> 00:13:02,640
+[SPEAKER_01] I know this is a little strange.
+
+156
+00:13:03,040 --> 00:13:14,160
+[SPEAKER_01] to think about, but have you ever been at your office or you've been at a party and you see the trash kind of overflow and people just drop by and put a little, a little thing right on top and move on with their life?
+
+157
+00:13:14,480 --> 00:13:18,880
+[SPEAKER_01] You know, I want people who are going to roll up their sleeves and push that trash down and make room for others.
+
+158
+00:13:19,200 --> 00:13:20,160
+[SPEAKER_01] It's not about them, right?
+
+159
+00:13:20,400 --> 00:13:22,080
+[SPEAKER_01] They could have put that on top and walked away.
+
+160
+00:13:22,400 --> 00:13:27,360
+[SPEAKER_01] They're thinking about the person after them who wants to throw away whatever they're going to throw away.
+
+161
+00:13:27,760 --> 00:13:31,600
+[SPEAKER_01] To me, that's like a huge indicator, although hiring virtually, it's very hard to test.
+
+162
+00:13:32,000 --> 00:13:33,920
+[SPEAKER_01] for this, but it's kind of a vibe check.
+
+163
+00:13:34,160 --> 00:13:35,440
+[SPEAKER_00] Yeah, no, that's great.
+
+164
+00:13:35,760 --> 00:13:44,880
+[SPEAKER_00] And then I think a lot of people today in 2024 will hear that and think, well, why not just use AI or AI is going to replace all those people anyway?
+
+165
+00:13:45,520 --> 00:13:50,960
+[SPEAKER_00] Why hire a big team, just train a bunch of agents, like work on your prompt engineering skills?
+
+166
+00:13:51,760 --> 00:13:59,920
+[SPEAKER_00] How are you thinking about the blend of people and AI and how to effectively use AI to provide that kind of concierge experience?
+
+167
+00:14:00,400 --> 00:14:02,560
+[SPEAKER_00] I think you used the exact right word, which is blend.
+
+168
+00:14:02,800 --> 00:14:08,720
+[SPEAKER_01] I don't think AI is necessarily replacing all human jobs, especially in customer support.
+
+169
+00:14:09,040 --> 00:14:16,640
+[SPEAKER_01] I will say, as an industry, I think customer support agents will be one of the most affected industries.
+
+170
+00:14:16,800 --> 00:14:22,240
+[SPEAKER_01] I mean, think about your bank or your airline or your IT company, even within where you work.
+
+171
+00:14:22,640 --> 00:14:29,440
+[SPEAKER_01] I mean, a lot of this is just knowledge gathering and regurgitation of what is already documented either internally or externally.
+
+172
+00:14:30,160 --> 00:14:44,320
+[SPEAKER_01] So I think for these repetitive tasks or maybe even easy actions, I think about it as a pyramid where at the bottom you've got, let's call it, eight agents and above them you've got maybe two escalation people and then maybe a manager and you yourself on top.
+
+173
+00:14:44,800 --> 00:14:55,680
+[SPEAKER_01] I think that bottom layer is already able to be replaced and the question is, are all those tier one agents going to be retrained to be able to become tier two agents or higher?
+
+174
+00:14:56,080 --> 00:14:59,520
+[SPEAKER_01] And so I don't think like the tier one customer support is going away.
+
+175
+00:15:00,000 --> 00:15:05,520
+[SPEAKER_01] I actually think this frees up my team to spend more time with the customers who need it.
+
+176
+00:15:06,240 --> 00:15:10,480
+[SPEAKER_01] So it's not that these agents are maybe being fully replaced.
+
+177
+00:15:10,640 --> 00:15:15,760
+[SPEAKER_01] I think they're serving a different function where they're not just trying to get through the queue and answer questions.
+
+178
+00:15:16,240 --> 00:15:24,080
+[SPEAKER_01] They have maybe two or three or four times as much time with each interaction to build rapport and maybe create a more of a human connection.
+
+179
+00:15:24,400 --> 00:15:27,120
+[SPEAKER_01] And then I think, I mean, all the conversations so far.
+
+180
+00:15:27,120 --> 00:15:37,680
+[SPEAKER_00] So far, even some of these characteristics that you discussed and how you hire a person is probably how you want to think about training that those tier one AI agents as well.
+
+181
+00:15:37,840 --> 00:15:51,680
+[SPEAKER_00] It's like whatever kind of preprompting that you're doing, whatever kind of scripts you're baking in there, you should be taking that concierge mindset to the AI agents because, I mean, what a crappy experience.
+
+182
+00:15:51,920 --> 00:15:55,120
+[SPEAKER_00] So many of these have been in the past, the phone trees and whatnot.
+
+183
+00:15:55,280 --> 00:16:00,240
+[SPEAKER_00] And like, yeah, it's finally gett getting better, but it can still be a really bad experience talking to AI.
+
+184
+00:16:00,960 --> 00:16:07,120
+[SPEAKER_00] So even that probably requires a lot of the kind of similar thinking of what you've been talking about so far.
+
+185
+00:16:07,520 --> 00:16:07,600
+[SPEAKER_00] Yeah.
+
+186
+00:16:08,080 --> 00:16:11,760
+[SPEAKER_01] I think there's been one tool that we've been really impressed with over the past couple of months.
+
+187
+00:16:11,840 --> 00:16:15,840
+[SPEAKER_01] I did a full evaluation of every single AI agent and chatbot that there is.
+
+188
+00:16:15,920 --> 00:16:17,600
+[SPEAKER_01] And actually, I think there's a slight distinction.
+
+189
+00:16:17,760 --> 00:16:26,000
+[SPEAKER_01] I think a lot of AI options out there are simply chatbots where they're telling you information and it's very very clear that they're a bot.
+
+190
+00:16:26,400 --> 00:16:36,800
+[SPEAKER_01] I think there's a whole new breed that is there will be a wave, is my prediction of true AI agents who can empathize and perform actions and do things like that.
+
+191
+00:16:37,200 --> 00:16:41,440
+[SPEAKER_01] So basically, I've gone through a full evaluation, found a really awesome company called ParaHelp.
+
+192
+00:16:41,600 --> 00:16:44,640
+[SPEAKER_01] They're actually just two guys from Denmark who were part of Y Combinator.
+
+193
+00:16:44,800 --> 00:16:58,080
+[SPEAKER_01] They just graduated this year, summer of 2024, and they've been amazing partners because they really understand who our customers are and the amount of empathyhy and smarts that this has really knocked me socks off.
+
+194
+00:16:58,160 --> 00:17:06,080
+[SPEAKER_01] And now this AI agent is working in concert with the rest of my team to basically tag team every single message that comes in.
+
+195
+00:17:06,320 --> 00:17:09,520
+[SPEAKER_01] If it's fairly easy to answer, it tries to answer it.
+
+196
+00:17:09,680 --> 00:17:11,600
+[SPEAKER_01] If it's too complicated, it can hand off.
+
+197
+00:17:11,840 --> 00:17:14,720
+[SPEAKER_01] And I think maybe I'll ask you a question for Chage David.
+
+198
+00:17:15,840 --> 00:17:21,520
+[SPEAKER_01] When you call your bank or you reach a chat agent online, I mean, probably half of them are bots now.
+
+199
+00:17:22,080 --> 00:17:26,000
+[SPEAKER_01] How many chances do you give the bot before you give up and ask to speak to a human?
+
+200
+00:17:26,400 --> 00:17:26,880
+[SPEAKER_01] Yeah, not many.
+
+201
+00:17:27,040 --> 00:17:28,720
+[SPEAKER_00] I mean, no, you know what I'm saying?
+
+202
+00:17:28,880 --> 00:17:32,480
+[SPEAKER_00] Like, it's, uh, yeah, as you said, they're not really agents.
+
+203
+00:17:32,960 --> 00:17:35,360
+[SPEAKER_00] This first wave of chatbots has been pretty rough.
+
+204
+00:17:35,600 --> 00:17:36,720
+[SPEAKER_00] It's tarnishing those brands.
+
+205
+00:17:36,880 --> 00:17:41,840
+[SPEAKER_00] So, like, to your points earlier, instead of like building a customer for life, you're kind of pissing people off.
+
+206
+00:17:42,080 --> 00:17:43,280
+[SPEAKER_00] And I, man, I feel that.
+
+207
+00:17:43,680 --> 00:17:47,440
+[SPEAKER_00] So, one hundred percent, it's been mostly bad experiences.
+
+208
+00:17:47,680 --> 00:17:51,360
+[SPEAKER_00] The few times I've had good experiences, it's when I have a clear question.
+
+209
+00:17:51,680 --> 00:18:02,880
+[SPEAKER_00] I ask that question and get the answer without having to like read a bunch of documents, but it's like a kind of glorified, you know, RAG agent where it's like it's just doing Google but better and faster.
+
+210
+00:18:03,280 --> 00:18:03,360
+[SPEAKER_01] Yeah.
+
+211
+00:18:03,600 --> 00:18:08,960
+[SPEAKER_01] I think there's also like a clearly not every customer who interacts with our AI agent ends with the AI agent.
+
+212
+00:18:09,280 --> 00:18:10,480
+[SPEAKER_01] They sometimes get escalated.
+
+213
+00:18:10,960 --> 00:18:14,800
+[SPEAKER_01] I think just as you know, I'm always trying to put myself in the shoes of the customer.
+
+214
+00:18:15,200 --> 00:18:23,040
+[SPEAKER_01] And so if I reach out to, again, my bank and I ask a question and the bot didn't understand it, they usually like, you know., I'm sorry, I'll connect to you with a human.
+
+215
+00:18:23,280 --> 00:18:26,400
+[SPEAKER_01] And then you're telling the human everything you told the agent all over again.
+
+216
+00:18:26,800 --> 00:18:28,960
+[SPEAKER_01] Now you're already like you were at zero, right?
+
+217
+00:18:29,120 --> 00:18:29,680
+[SPEAKER_01] You were neutral.
+
+218
+00:18:30,080 --> 00:18:30,880
+[SPEAKER_01] Now you're below.
+
+219
+00:18:31,120 --> 00:18:34,000
+[SPEAKER_01] So that agent has to do a lot of work to win back your trust.
+
+220
+00:18:34,480 --> 00:18:38,080
+[SPEAKER_01] I think the way that we have it set up is that AI agent is quite effective.
+
+221
+00:18:38,720 --> 00:18:44,720
+[SPEAKER_01] And if it doesn't understand or it can't answer or we've, you know, I think it's very important to program what not to answer, right?
+
+222
+00:18:44,960 --> 00:18:50,960
+[SPEAKER_01] You know, if someone says give me Captain's Max free for lifetime, it can't just, you know, it can''t just do that or.
+
+223
+00:18:52,320 --> 00:18:56,080
+[SPEAKER_01] Anyway, the escalation piece is great because this is a nice transfer.
+
+224
+00:18:56,320 --> 00:18:58,400
+[SPEAKER_01] And again, like, it's all about working in concert.
+
+225
+00:18:58,640 --> 00:19:12,800
+[SPEAKER_01] And at least if you get transferred to a human agent, the human agent has full knowledge of everything that was spoken and talked about before, and you've been escalated from a human to another human, essentially, as opposed to, oh, this didn't work out.
+
+226
+00:19:13,200 --> 00:19:15,840
+[SPEAKER_01] We tried to shoot you out the door, but you were, you were too smart for us.
+
+227
+00:19:16,000 --> 00:19:18,000
+[SPEAKER_01] Now we have to connect you to a expensive human.
+
+228
+00:19:18,240 --> 00:19:18,800
+[SPEAKER_01] I don't like that.
+
+229
+00:19:18,800 --> 00:19:20,160
+[SPEAKER_00] I don't like that flow.
+
+230
+00:19:20,880 --> 00:19:20,960
+[SPEAKER_00] Yeah.
+
+231
+00:19:21,200 --> 00:19:32,560
+[SPEAKER_00] I think there's a lot of brands burning consumer goodwill with these really bad flows that they think is saving them money, but it's not providing that concierge experience that we keep talking about.
+
+232
+00:19:32,880 --> 00:19:41,920
+[SPEAKER_00] As you've been building the team, integrating these AI agents and doing all those things, how do you think about scaling up to providing quick support?
+
+233
+00:19:42,320 --> 00:19:47,600
+[SPEAKER_00] And then if the tier one agent can't answer it, AI agent can't answer it immediately.
+
+234
+00:19:48,480 --> 00:19:50,400
+[SPEAKER_00] How quickly can you get a two agent on it?
+
+235
+00:19:50,720 --> 00:19:54,080
+[SPEAKER_00] How do you think about scaling that concierge experience?
+
+236
+00:19:54,640 --> 00:20:02,800
+[SPEAKER_01] Yeah, I mean, we have again, we have like a good, better, best scenario and we've got trials on App Store and Play Store, we're on our web, we've got Stripe.
+
+237
+00:20:03,200 --> 00:20:21,920
+[SPEAKER_01] I think what we have is a little bit more customization, so if a customer reaches out to us, we know whether they're in their trial, if they're a canceled trial, or if they're a premium customer, and we have rules where those customers can either skip to the front of the line or they can skip the AI agent completely and even get reconnected to the agent they last spoke with.
+
+238
+00:20:22,320 --> 00:20:24,880
+[SPEAKER_01] So I think it's a little bit moving into customer success.
+
+239
+00:20:25,040 --> 00:20:35,280
+[SPEAKER_01] It's kind of lightweight one to many, but there are definitely things that you can do to kind of impress your customers, especially those that are potentially paying more, you know, more revenue per year.
+
+240
+00:20:35,760 --> 00:20:37,600
+[SPEAKER_01] But yeah, scaling scaling is hard.
+
+241
+00:20:38,080 --> 00:20:41,840
+[SPEAKER_01] If it were not for AI, I think our team would be twice as big.
+
+242
+00:20:42,160 --> 00:20:45,520
+[SPEAKER_01] So I suppose, you know, what I was saying about taking jobs, I haven't had to let anyone go.
+
+243
+00:20:45,600 --> 00:20:46,240
+[SPEAKER_01] I think I've been doing it.
+
+244
+00:20:46,240 --> 00:20:49,040
+[SPEAKER_01] I think I always want at least one or two human agents at all.
+
+245
+00:20:49,440 --> 00:20:51,040
+[SPEAKER_01] Again, we do 24/7 support.
+
+246
+00:20:51,520 --> 00:20:52,240
+[SPEAKER_01] 24/7.
+
+247
+00:20:52,720 --> 00:20:52,800
+[SPEAKER_01] Yeah.
+
+248
+00:20:53,840 --> 00:20:57,600
+[SPEAKER_01] So yeah, I'm not sure how many regions there are in the App Store.
+
+249
+00:20:57,680 --> 00:20:59,200
+[SPEAKER_01] I think there's like 186.
+
+250
+00:20:59,520 --> 00:21:05,600
+[SPEAKER_01] Maybe you have that stat, but we have at least one customer in every country in the world, which also means language, right?
+
+251
+00:21:06,000 --> 00:21:09,840
+[SPEAKER_01] So we have an app that translates every customer's message into English.
+
+252
+00:21:10,080 --> 00:21:10,960
+[SPEAKER_01] We reply in English.
+
+253
+00:21:11,040 --> 00:21:12,400
+[SPEAKER_01] It translates back to their language.
+
+254
+00:21:12,640 --> 00:21:28,240
+[SPEAKER_01] And I think localization for those that ar are not just selling in the United States or North America, localization is something we have a really, really big effort on because you need localized App Store and Play Store, you need localized website, localized help center and localized app.
+
+255
+00:21:28,720 --> 00:21:30,720
+[SPEAKER_01] We just made a big improvement to our website.
+
+256
+00:21:31,040 --> 00:21:32,640
+[SPEAKER_01] Brazil is one of our biggest markets.
+
+257
+00:21:32,880 --> 00:21:38,640
+[SPEAKER_01] A couple months ago, when we launched the website in Portuguese, we saw a huge lift in installs in Brazil.
+
+258
+00:21:38,800 --> 00:21:40,560
+[SPEAKER_01] It really, really makes a difference.
+
+259
+00:21:40,880 --> 00:21:40,960
+[SPEAKER_01] Yeah.
+
+260
+00:21:41,200 --> 00:21:42,080
+[SPEAKER_01] So that's localization.
+
+261
+00:21:42,320 --> 00:21:44,480
+[SPEAKER_00] I think really about 24/7 support.
+
+262
+00:21:44,800 --> 00:21:48,880
+[SPEAKER_00] I think customers are demanding this even for an app that costs 9,99 a month.
+
+263
+00:21:49,280 --> 00:21:55,360
+[SPEAKER_01] I think a lot of our competitors don't offer any support or actually what's very common is discord support or discord support only.
+
+264
+00:21:55,920 --> 00:21:56,880
+[SPEAKER_01] I've tried discord.
+
+265
+00:21:57,360 --> 00:22:03,280
+[SPEAKER_01] I have my own issues with discord, but yeah, 24/7 support is for us is super important.
+
+266
+00:22:03,520 --> 00:22:21,120
+[SPEAKER_01] And if you're not there yet, at least what I can suggest is try and get to five days a week, you know, eight hours, five days a week, and then get to maybe ten hours, five days a week, add a little bit of Saturday and Sunday, and then try and get twelve hour support all seven days, and then eventually move this, uh, make the switch to 24/7.
+
+267
+00:22:21,520 --> 00:22:27,680
+[SPEAKER_01] I will say the only thing is once you start offering 24/7, especially if you market that, you have to keep your promise.
+
+268
+00:22:28,160 --> 00:22:35,680
+[SPEAKER_01] But that said, if on your website it says great customer support, customers will say, okay, maybe they have great customer support.
+
+269
+00:22:36,000 --> 00:22:40,800
+[SPEAKER_01] If you say 24/7 support and you market that, you put that on your paywall, you might get an uplift.
+
+270
+00:22:40,960 --> 00:22:52,720
+[SPEAKER_01] I mean, I would, I would argue that that companies that are exploring with your paywall feature change one word and just say support to 24/7 support and see if it gives you a lift on checkout.
+
+271
+00:22:52,800 --> 00:22:53,440
+[SPEAKER_01] I'd be very curious.
+
+272
+00:22:53,520 --> 00:23:00,320
+[SPEAKER_01] We haven't tested it because we already have 24/7 support, but if you're going to do that, contact David or me after and let us know what your results were.
+
+273
+00:23:01,280 --> 00:23:03,840
+[SPEAKER_01] But yeah, time to first response is super important.
+
+274
+00:23:04,160 --> 00:23:10,640
+[SPEAKER_01] Even if it's saying we got your response, we will escalate it to the team once we're back on normal.
+
+275
+00:23:12,320 --> 00:23:14,880
+[SPEAKER_01] And by the way, that's how we first launched our AI agent.
+
+276
+00:23:15,120 --> 00:23:27,760
+[SPEAKER_01] We kept our normal eight hour support seven days a week and we had our AI agent on on off hour support just so customers got a friendly message saying we received this and then when we came in the next day we would reply to them.
+
+277
+00:23:27,920 --> 00:23:35,600
+[SPEAKER_01] So if you're really afraid of AI or you're not sure what's right for you, try it for off hour support and you can market twenty four hours a day support right there.
+
+278
+00:23:35,680 --> 00:23:36,480
+[SPEAKER_01] It's a quick win.
+
+279
+00:23:36,800 --> 00:23:45,120
+[SPEAKER_00] Are you actually hiring around the world to cover those different typ time zones now that you are truly offering twenty four SEM support, how do you work that side of things?
+
+280
+00:23:45,520 --> 00:23:47,600
+[SPEAKER_00] There's a common term called follow the sum support.
+
+281
+00:23:47,840 --> 00:23:52,480
+[SPEAKER_01] And essentially, you just have one person in Americas, one person APAC, one in EMEA.
+
+282
+00:23:52,800 --> 00:23:54,080
+[SPEAKER_01] And that's how we have it set up too.
+
+283
+00:23:54,240 --> 00:23:56,000
+[SPEAKER_01] We have agents all across the country.
+
+284
+00:23:56,400 --> 00:23:59,920
+[SPEAKER_01] And actually, two of our agents we found in a really interesting way.
+
+285
+00:24:00,320 --> 00:24:08,720
+[SPEAKER_01] One of them was a customer who just kept on contacting us and telling us all the feature requests he wanted and also all the bugs that he found early on, which was very helpful.
+
+286
+00:24:09,200 --> 00:24:11,200
+[SPEAKER_01] And then we eventually said, you know, would you like a job?
+
+287
+00:24:11,440 --> 00:24:16,320
+[SPEAKER_01] And then we had another one of my agents who's been with us for almost as long as I've been here, a year and a half.
+
+288
+00:24:16,720 --> 00:24:24,080
+[SPEAKER_01] He was in our discord and he was super active and off hours, people, because he was in India, people would ask questions and we weren't awake.
+
+289
+00:24:24,480 --> 00:24:29,360
+[SPEAKER_01] He would answer them and he'd link to our help center and all of his answers were unbelievable.
+
+290
+00:24:29,520 --> 00:24:30,720
+[SPEAKER_01] We had no idea who this guy was.
+
+291
+00:24:30,880 --> 00:24:32,160
+[SPEAKER_01] After a week I DMed him.
+
+292
+00:24:32,320 --> 00:24:33,680
+[SPEAKER_01] I said, Who the hell are you?
+
+293
+00:24:35,680 --> 00:24:37,760
+[SPEAKER_00] And yeah, so I mean, yeah, shout out to.
+
+294
+00:24:38,080 --> 00:24:38,480
+[SPEAKER_00] Schredick.
+
+295
+00:24:38,720 --> 00:24:40,880
+[SPEAKER_01] And then we ended up hiring him and he's been amazing.
+
+296
+00:24:41,040 --> 00:24:44,080
+[SPEAKER_01] I mean, he really was a customer, so there was hardly any training to do.
+
+297
+00:24:44,240 --> 00:24:45,520
+[SPEAKER_01] He knew more about the app than I did.
+
+298
+00:24:45,680 --> 00:24:46,560
+[SPEAKER_01] He was a video editor.
+
+299
+00:24:46,800 --> 00:24:57,760
+[SPEAKER_01] So again, if you have a loyal customer base, you're looking to hire support, maybe I do have a piece of advice, reach out to your community, tweet we're hiring, go to your Discord and say we're opening this position.
+
+300
+00:24:58,080 --> 00:25:03,520
+[SPEAKER_01] I think you'll be surprised how many people come out and either apply or refer a friend for your job.
+
+301
+00:25:03,920 --> 00:25:05,760
+[SPEAKER_00] How do you blend that, the community aspect?
+
+302
+00:25:06,400 --> 00:25:12,160
+[SPEAKER_00] So is it a discord or do you have like QA, like public, like a forum kind of style?
+
+303
+00:25:12,480 --> 00:25:14,400
+[SPEAKER_00] Like how does that fit into that bigger picture?
+
+304
+00:25:14,800 --> 00:25:26,080
+[SPEAKER_01] I think if you're just launching and you need consistent feedback and you haven't found product market fit yet or you're launching so many features you need to keep finding product market fit, I think discord is amazing.
+
+305
+00:25:26,240 --> 00:25:40,480
+[SPEAKER_01] I think and again, it depends who your customers are, but at least for us, we found a lot of customers love discord, gave us feedback, added screenshots and early in the company when we were ten or tw less people, every single employee was in Discord and we would mention each other and answer.
+
+306
+00:25:40,640 --> 00:25:44,560
+[SPEAKER_01] Our CEO, Garev, would reply directly to customers and ask, what if we did this?
+
+307
+00:25:44,800 --> 00:25:46,000
+[SPEAKER_01] What if we added this feature?
+
+308
+00:25:46,480 --> 00:25:54,400
+[SPEAKER_01] And it's kind of this iterative customer research where you don't need to bother with surveys or or set up Google Meets or even pay people.
+
+309
+00:25:54,640 --> 00:25:57,680
+[SPEAKER_01] I mean, people are, I've had a lot of people say, you should build this.
+
+310
+00:25:57,840 --> 00:26:00,800
+[SPEAKER_01] I mean, there's no shortage of people that think they can build the app better than you.
+
+311
+00:26:01,120 --> 00:26:02,880
+[SPEAKER_01] So early on, I think this hoard is amazing.
+
+312
+00:26:03,040 --> 00:26:17,040
+[SPEAKER_01] I think as you get, as your product gro becomes more mature, it's much harder, especially as you have more customers because there's a lot of noise and there's more features or there's more that could go wrong or more that we didn't do exactly the way for their use case.
+
+313
+00:26:17,440 --> 00:26:21,440
+[SPEAKER_01] I mean, the very common question we get is, can you just make a button that does X?
+
+314
+00:26:22,960 --> 00:26:25,200
+[SPEAKER_01] And it's like, well, we have this whole strategy.
+
+315
+00:26:25,680 --> 00:26:26,960
+[SPEAKER_01] We have 70 employees.
+
+316
+00:26:27,600 --> 00:26:28,560
+[SPEAKER_01] We have a road map.
+
+317
+00:26:28,720 --> 00:26:30,320
+[SPEAKER_01] I mean, sure, we need some quick wins.
+
+318
+00:26:30,560 --> 00:26:33,680
+[SPEAKER_01] And I think actually that, again, should not be overlooked.
+
+319
+00:26:34,000 --> 00:26:40,000
+[SPEAKER_01] which is if customers are really loud about something and they are constantly talking about it and voting it.
+
+320
+00:26:40,400 --> 00:26:47,600
+[SPEAKER_01] If you just sneak in a little feature request or a quick win and the CEO goes and says, hey guys, we listened, this is fixed.
+
+321
+00:26:48,000 --> 00:26:52,000
+[SPEAKER_01] Talk about a C four L experience, those customers say, you actually listen to me.
+
+322
+00:26:52,160 --> 00:26:53,440
+[SPEAKER_01] I'm just, I'm a nobody.
+
+323
+00:26:53,520 --> 00:26:55,760
+[SPEAKER_01] I'm one of, I'm one of all your customers.
+
+324
+00:26:56,080 --> 00:27:01,680
+[SPEAKER_01] And to get that sort of direct access to leadership or product goes a really long way.
+
+325
+00:27:02,080 --> 00:27:06,640
+[SPEAKER_01] So yeah, again, that's a nice quick win that you can do and create customers for life.
+
+326
+00:27:07,040 --> 00:27:18,000
+[SPEAKER_00] At what point did you phase that out and then did anything replace it in the interim and then at your scale now with what, tens of millions of downloads, do you still have any kind of community aspect?
+
+327
+00:27:18,400 --> 00:27:18,560
+[SPEAKER_00] We do.
+
+328
+00:27:18,720 --> 00:27:20,000
+[SPEAKER_00] Our Discord is still active.
+
+329
+00:27:20,160 --> 00:27:28,080
+[SPEAKER_01] I think it's kind of changed from we were providing customer support before, but with our customer base, we've got iOS, Android, desktop.
+
+330
+00:27:28,240 --> 00:27:29,200
+[SPEAKER_01] We're launching features.
+
+331
+00:27:29,360 --> 00:27:30,320
+[SPEAKER_01] We do AB testing.
+
+332
+00:27:30,480 --> 00:27:35,600
+[SPEAKER_01] Every feature we launchch has a two week period where we test the variables and make sure it performs better.
+
+333
+00:27:35,840 --> 00:27:39,040
+[SPEAKER_01] So if we don't know who these customers are, it's very hard to support them.
+
+334
+00:27:39,280 --> 00:27:41,440
+[SPEAKER_01] So we encourage everyone to send us a message in the app.
+
+335
+00:27:41,840 --> 00:27:54,240
+[SPEAKER_01] So we basically tried to route all discord support inquiries directly to the app and take them offline because it could also become a little bit of a hatefest where people talk and talk, but we manage all that on our side with tagging and things like that.
+
+336
+00:27:54,560 --> 00:27:59,600
+[SPEAKER_01] So the discord is still active, but I think as you get bigger, you can also think about things like slack.
+
+337
+00:28:00,160 --> 00:28:01,680
+[SPEAKER_01] So I'm part of a really great community.
+
+338
+00:28:01,840 --> 00:28:04,640
+[SPEAKER_01] Our help center is built on this company called Mintlify.
+
+339
+00:28:04,880 --> 00:28:07,520
+[SPEAKER_01] They're more like B2B, but they have a Slack channel.
+
+340
+00:28:08,000 --> 00:28:20,240
+[SPEAKER_01] And I think because we're a business and I have Slack open all the time, they've built a really great community where all of their customers are sharing ways that they're launching their help center or design elements and things like that.
+
+341
+00:28:20,400 --> 00:28:27,200
+[SPEAKER_01] So I think early on Discord, as you become more mature, maybe take it offline and actually maybe newsletter.
+
+342
+00:28:27,360 --> 00:28:29,600
+[SPEAKER_01] I think newsletter might be a great way to keep customers up to date.
+
+343
+00:28:29,600 --> 00:28:30,640
+[SPEAKER_01] to keep customers up to date with what you're doing.
+
+344
+00:28:31,040 --> 00:28:34,960
+[SPEAKER_01] And then, of course, in app notifications, in app popups.
+
+345
+00:28:35,280 --> 00:28:42,720
+[SPEAKER_01] I can't remember which app it was particularly, but I opened up an app a couple of weeks ago and it said, Since you last logged in, here's what changed.
+
+346
+00:28:42,880 --> 00:28:47,120
+[SPEAKER_01] And that really, that really knocked me off because it wasn't just, here's what's new this month.
+
+347
+00:28:47,280 --> 00:28:48,720
+[SPEAKER_01] Here's what's new for you.
+
+348
+00:28:49,280 --> 00:28:51,200
+[SPEAKER_01] If you logged in a week ago, this one thing changed.
+
+349
+00:28:51,280 --> 00:28:53,840
+[SPEAKER_01] If you logged in three months ago, these ten things changed.
+
+350
+00:28:53,920 --> 00:28:57,120
+[SPEAKER_01] And I thought discoverability within your app is a challenge.
+
+351
+00:28:57,440 --> 00:29:04,480
+[SPEAKER_01] I know for a fact there are customers who have been using our app for a year and a half or two years and they haven't used half of our features because they don't even know they exist.
+
+352
+00:29:04,800 --> 00:29:13,440
+[SPEAKER_01] So that's something that we can definitely do a better job with, but anyone who is iterating so quickly, don't forget to market to your existing customers, not just new customers.
+
+353
+00:29:13,760 --> 00:29:13,840
+[SPEAKER_01] Yeah.
+
+354
+00:29:14,240 --> 00:29:16,400
+[SPEAKER_01] Where do docs fit into all this?
+
+355
+00:29:16,560 --> 00:29:20,400
+[SPEAKER_00] So we talked community and now you do have great 24 hour support.
+
+356
+00:29:20,720 --> 00:29:20,800
+[SPEAKER_00] Yeah.
+
+357
+00:29:21,120 --> 00:29:23,600
+[SPEAKER_00] What do you think about docs and who manages that internally?
+
+358
+00:29:24,000 --> 00:29:24,080
+[SPEAKER_00] Yeah.
+
+359
+00:29:24,320 --> 00:29:26,880
+[SPEAKER_00] Another struggle, especially with things moving so quickly.
+
+360
+00:29:27,280 --> 00:29:35,360
+[SPEAKER_01] So I'm ultimately responsible for documentation, but we moved to this great platform which offers a lot of translation services and localization.
+
+361
+00:29:35,680 --> 00:29:41,040
+[SPEAKER_01] So again, if we have customers who don't speak English, you just need to have it, all your content localized.
+
+362
+00:29:41,360 --> 00:29:44,640
+[SPEAKER_01] And I think another challenge is just keeping up with the sheer pace.
+
+363
+00:29:44,800 --> 00:29:50,560
+[SPEAKER_01] I mean, I'm always knocking on my product manager's shoulder saying, hey, has this feature gone out yet?
+
+364
+00:29:50,720 --> 00:29:52,400
+[SPEAKER_01] Or, you know, when is this feature going out?
+
+365
+00:29:52,560 --> 00:29:53,600
+[SPEAKER_01] Did we actually change the name of it?
+
+366
+00:29:53,760 --> 00:29:54,480
+[SPEAKER_01] It used to be called this.
+
+367
+00:29:54,640 --> 00:29:55,360
+[SPEAKER_01] Now it's called that.
+
+368
+00:29:55,760 --> 00:30:08,720
+[SPEAKER_01] It's really important and I think something that's changed in the twelve years that I've been in customer support is I've always written content for humans, maybe a little bit of SEO because that doesn't hurt, but basically human consumption.
+
+369
+00:30:09,040 --> 00:30:16,480
+[SPEAKER_01] But again, with AI chatbots and agents, our AI agent takes two sources when it responds to a customer.
+
+370
+00:30:16,640 --> 00:30:24,480
+[SPEAKER_01] It takes our help center documentation because that has to be up to date and it takes our most recent human agent responses and then crafts a response.
+
+371
+00:30:24,880 --> 00:30:36,480
+[SPEAKER_01] So it's kind of the best of both worlds where you have the source of truth, that is your help center and your documentation, and then you have your kind of human element of how would a human agent reply to this customer?
+
+372
+00:30:36,640 --> 00:30:39,760
+[SPEAKER_01] And it blends those two and gives a really solid answer.
+
+373
+00:30:40,320 --> 00:30:47,200
+[SPEAKER_01] And then one of the best things I heard is that one of the reasons AI agents are better than humans is that it has infinite patience.
+
+374
+00:30:49,840 --> 00:30:51,600
+[SPEAKER_00] And you know, I know David, you're a dad.
+
+375
+00:30:51,920 --> 00:30:53,280
+[SPEAKER_01] I don't think you have infinite patience.
+
+376
+00:30:54,160 --> 00:31:10,240
+[SPEAKER_01] And I'm sure you'd love Infinite Patients, but yeah, I mean, that really goes a long way in helping customers where you have all the time in the world to reply to these customers, but you've got to keep your documentation up to date, or else your AI agent won't be giving the right answers, nor will your team, right?
+
+377
+00:31:10,560 --> 00:31:15,360
+[SPEAKER_01] Because when human agents reply to customers, they're verifying on the help center that's up to date.
+
+378
+00:31:15,440 --> 00:31:28,240
+[SPEAKER_01] So it's really my job or someone that you can have on the team, you actually want to be a choke point between product and customer support because you need to have the information flowing both ways from product cross to us.
+
+379
+00:31:28,480 --> 00:31:37,200
+[SPEAKER_01] Here's what's updated, here's what's fixed, and then back the other way from customers reporting issues and you reporting issues back through linear or JIRA or talking to customers.
+
+380
+00:31:37,360 --> 00:31:39,680
+[SPEAKER_01] So it's really a two way street that has to happen.
+
+381
+00:31:40,000 --> 00:31:40,880
+[SPEAKER_01] That's where I see myself.
+
+382
+00:31:41,200 --> 00:31:41,200
+[UNKNOWN] Yeah.
+
+383
+00:31:41,360 --> 00:31:42,640
+[SPEAKER_01] How do you manage that side of things?
+
+384
+00:31:42,800 --> 00:31:44,080
+[SPEAKER_01] I've been meaning to get into that.
+
+385
+00:31:44,240 --> 00:31:51,360
+[SPEAKER_00] It's like not only is customer support about, you know, creating those great experiences for customers and being that concierge, but then.
+
+386
+00:31:51,440 --> 00:31:57,760
+[SPEAKER_00] And in building a product, some of that feedback from customers can be invaluable for building that next thing.
+
+387
+00:31:58,160 --> 00:32:01,360
+[SPEAKER_00] So early on it was Discord and you could just chat with the customer.
+
+388
+00:32:01,600 --> 00:32:16,320
+[SPEAKER_00] But now that you've scaled this, how do you think about kind of getting that feedback, tracking frequent issues, tracking frequent feature requests, and then surfacing that in a meaningful way to the product team or other teams within the organization?
+
+389
+00:32:16,960 --> 00:32:38,400
+[SPEAKER_01] Something I always try and advocate for within the company is we're seventy people, we're all in New York City, we work here five days a week, we're a very discreet group of people and we're providing an app for millions of people across the world from all demographics and ages and all different walks of life.
+
+390
+00:32:38,640 --> 00:32:43,200
+[SPEAKER_01] So I think reminding yourself that, oh, I wouldn't use this feature or I would use this feature.
+
+391
+00:32:43,760 --> 00:32:45,680
+[SPEAKER_01] The truth is you probably really don't know.
+
+392
+00:32:46,000 --> 00:32:49,760
+[SPEAKER_01] And so it's just really an important thing to remind yourself.
+
+393
+00:32:50,160 --> 00:32:59,360
+[SPEAKER_01] When you're building these products, you do need to continually get feedback from these customers because nothing a customer says is inherently wrong or bad.
+
+394
+00:32:59,920 --> 00:33:02,800
+[SPEAKER_01] I think you just need to determine who is your core customer.
+
+395
+00:33:03,200 --> 00:33:10,160
+[SPEAKER_01] If you're getting loud feedback from one group of people, but those are not the customers you actually care about, sure, you could ignore them.
+
+396
+00:33:10,400 --> 00:33:14,400
+[SPEAKER_01] I mean, hopefully a product will pop up that will serve their needs, but you do need to stay focused.
+
+397
+00:33:14,640 --> 00:33:19,120
+[SPEAKER_01] One thing I struggle with personally is, you know, early on my career, I wanted to solve everyone's problems.
+
+398
+00:33:19,520 --> 00:33:21,360
+[SPEAKER_01] And that probably went beyond just customer support.
+
+399
+00:33:21,520 --> 00:33:24,880
+[SPEAKER_01] I mean, you'd be surprised what people type and ad for.
+
+400
+00:33:25,040 --> 00:33:30,160
+[SPEAKER_01] I mean, some people just, you know, are, you know, want to talk to someone or, you know, they want to know that they're being heard.
+
+401
+00:33:30,640 --> 00:33:32,800
+[SPEAKER_01] Yeah, but all sorts of questions that come in.
+
+402
+00:33:32,960 --> 00:33:38,560
+[SPEAKER_01] I mean, you need to decide what is a priority and you just need to be aligned with your leadership team and your product team.
+
+403
+00:33:39,200 --> 00:33:41,760
+[SPEAKER_01] What information do you pass on and what do you keep to yourself?
+
+404
+00:33:41,920 --> 00:33:44,080
+[SPEAKER_01] A lot of times, it's a forcing function of itself.
+
+405
+00:33:44,560 --> 00:33:49,360
+[SPEAKER_01] Once something actually breaks or actually becomes so loud., then you share that with the team.
+
+406
+00:33:49,600 --> 00:33:54,640
+[SPEAKER_01] And something you have to be careful of as a customer support person is you can't be a the sky is falling person.
+
+407
+00:33:54,960 --> 00:33:56,400
+[SPEAKER_01] I was definitely that person in the past.
+
+408
+00:33:56,800 --> 00:34:00,800
+[SPEAKER_01] And every time you join a new company, there's a new chance to define yourself.
+
+409
+00:34:00,960 --> 00:34:06,640
+[SPEAKER_01] But that is definitely some hard lessons learned of thinking the app is completely broken, nothing works.
+
+410
+00:34:06,720 --> 00:34:08,560
+[SPEAKER_01] And it turns out like there were only three people.
+
+411
+00:34:09,440 --> 00:34:09,600
+[SPEAKER_01] Right.
+
+412
+00:34:11,440 --> 00:34:11,520
+[SPEAKER_00] Yeah.
+
+413
+00:34:12,000 --> 00:34:14,560
+[SPEAKER_00] Understanding the scale of the problem is important.
+
+414
+00:34:15,040 --> 00:34:15,120
+[SPEAKER_00] Yeah.
+
+415
+00:34:15,520 --> 00:34:20,560
+[SPEAKER_00] So we've been talking about what things to escalate or not escalate and how to look at those things.
+
+416
+00:34:20,720 --> 00:34:27,600
+[SPEAKER_00] But are there other specific metrics that you track and care about in running the customer support, customer success or?
+
+417
+00:34:27,840 --> 00:34:27,920
+[SPEAKER_00] Yeah.
+
+418
+00:34:28,160 --> 00:34:31,280
+[SPEAKER_00] I've hit on time to first response already, which is super important.
+
+419
+00:34:31,600 --> 00:34:37,360
+[SPEAKER_01] I've definitely spoken with colleagues who have 24 hour or 48 hour time to first response and touch.
+
+420
+00:34:37,680 --> 00:34:39,280
+[SPEAKER_01] Maybe in some industries that's okay.
+
+421
+00:34:39,760 --> 00:34:42,960
+[SPEAKER_01] But for us, we're currently at 58 seconds as time to first reply.
+
+422
+00:34:43,280 --> 00:34:51,360
+[SPEAKER_01] And again, that may just be, hey, we received your message or our AI agent gave an initial attempt at an answer, but I think that number really matters.
+
+423
+00:34:51,840 --> 00:35:00,560
+[SPEAKER_01] Another one that is interesting is contact rate, which is the percentage of customers, of subscribers who reach out in a given month.
+
+424
+00:35:00,960 --> 00:35:12,720
+[SPEAKER_01] So again, if you've got, you know, 100,000 customers and you've got a 3% reach out, that tells you something and also really helpful for understanding what your next month's inbound volume is going to be.
+
+425
+00:35:12,880 --> 00:35:14,640
+[SPEAKER_01] Again, can help you staff, can help you scale.
+
+426
+00:35:15,040 --> 00:35:22,000
+[SPEAKER_01] But right now we're at like three percent, which means three percent of all customers, subscribers reach out in a given month, which I think is a healthy number.
+
+427
+00:35:22,320 --> 00:35:29,680
+[SPEAKER_01] I think if they're complaining about the same kind of issues, sure you want to reduce that by passing it on to the product team and fixing bugs and things like that.
+
+428
+00:35:30,320 --> 00:35:36,720
+[SPEAKER_01] But yeah, if you're at a one in three or, you know, 40 percent, 50 percent, definitely a little bit scary.
+
+429
+00:35:37,360 --> 00:35:41,120
+[SPEAKER_01] But I think any fluctuation is actually probably more important to look at.
+
+430
+00:35:41,520 --> 00:35:45,680
+[SPEAKER_01] If one month you've gotve got a four percent.
+
+431
+00:35:46,000 --> 00:35:46,800
+[SPEAKER_01] You know, what happened?
+
+432
+00:35:47,280 --> 00:35:49,600
+[SPEAKER_01] Did you had a kind of failure of a release?
+
+433
+00:35:50,240 --> 00:35:51,120
+[SPEAKER_01] Was there a power outage?
+
+434
+00:35:51,680 --> 00:35:55,920
+[SPEAKER_01] Did your coupon and promotion campaign not work out exactly as expected?
+
+435
+00:35:56,320 --> 00:35:59,200
+[SPEAKER_01] And by the way, if you're going to do those things, that's fine.
+
+436
+00:35:59,680 --> 00:36:04,480
+[SPEAKER_01] But if you're not in customer support, listen to this, tell your customer support people you're going to do a promotion.
+
+437
+00:36:04,800 --> 00:36:14,800
+[SPEAKER_01] I can't like the worst, I mean, this is a common thing more in B to B sales, but in SaaS, which is sales gets the part party support gets the hangover.
+
+438
+00:36:16,160 --> 00:36:17,600
+[SPEAKER_01] And I think the same goes for marketing.
+
+439
+00:36:18,000 --> 00:36:29,280
+[SPEAKER_01] If we're going to run a campaign where we're going to put up a billboard in Times Square or an ad in the Subway or a Super Bowl commercial, for God's sake, like you got to tell your support team they may need to make changes.
+
+440
+00:36:29,440 --> 00:36:32,720
+[SPEAKER_01] They may need staff accordingly, may need temporary people to hire.
+
+441
+00:36:32,800 --> 00:36:34,080
+[SPEAKER_01] So that's super important.
+
+442
+00:36:34,800 --> 00:36:34,880
+[SPEAKER_01] Yeah.
+
+443
+00:36:35,200 --> 00:36:43,440
+[SPEAKER_00] Laugh you mentioned that because I'm actually currently doing support for my little side project up and when we do a big la big launch, like I'm the guy at the keyboard.
+
+444
+00:36:43,600 --> 00:36:52,400
+[SPEAKER_00] I mean, for us a big launch is I get like ten support emails and I can handle it in like thirty minutes, but still it's like that's time out of my week that I have to think about.
+
+445
+00:36:52,880 --> 00:36:58,880
+[SPEAKER_00] So whenever there's a big launch, I know that I'm kind of working on the marketing side of things and and going to be a little busier with that.
+
+446
+00:36:59,120 --> 00:37:02,080
+[SPEAKER_00] And then I know I'm going to get some customer support from that launch.
+
+447
+00:37:02,240 --> 00:37:10,800
+[SPEAKER_00] So I can't imagine, you know, I mean, we're just talking like thousands of new downloads when, when I do a little update to my side project app, but I can imagine.
+
+448
+00:37:11,520 --> 00:37:20,080
+[SPEAKER_00] big launches, big new campaigns, changes in promotion when you're at, you know, millions or tens of millions of downloads can really like dramatically swing things.
+
+449
+00:37:20,400 --> 00:37:22,560
+[SPEAKER_00] So yeah, definitely something to be keeping in mind.
+
+450
+00:37:22,960 --> 00:37:27,520
+[SPEAKER_00] Are there any other metrics that you track around like customer satisfaction or things like that?
+
+451
+00:37:27,840 --> 00:37:27,920
+[SPEAKER_00] Yeah.
+
+452
+00:37:28,080 --> 00:37:37,120
+[SPEAKER_01] So CSAT's a big one in our industry, also really helpful because you want to benchmark against other similar businesses, which is nice to do, but often, you know, a bit flawed.
+
+453
+00:37:37,360 --> 00:37:41,680
+[SPEAKER_01] We've had CSAT on for a period of months, off for a period of months, it really changes.
+
+454
+00:37:42,160 --> 00:37:43,200
+[SPEAKER_01] It depends on the workflow.
+
+455
+00:37:43,360 --> 00:37:47,040
+[SPEAKER_01] And I used to be a huge CSAT person, which is just customer satisfaction.
+
+456
+00:37:47,200 --> 00:37:52,160
+[SPEAKER_01] How would you rate your, you know, your customer support experience with the last agent you spoke with, one to five?
+
+457
+00:37:52,880 --> 00:37:55,200
+[SPEAKER_01] I actually don't care so much about that number.
+
+458
+00:37:55,520 --> 00:37:59,520
+[SPEAKER_01] I mean, sure you want it to be at least a four out of five or better.
+
+459
+00:38:00,400 --> 00:38:08,720
+[SPEAKER_01] What I looked for and what has been helpful for me is if you have a team of ten and everyone's consistently getting a four point five out of five.
+
+460
+00:38:08,720 --> 00:38:16,800
+[SPEAKER_01] 3.5 out of 5 and you have one person getting a 3.5, then that's actually an indicator for you as a manager to talk to that person and find out what's going on.
+
+461
+00:38:17,040 --> 00:38:18,240
+[SPEAKER_01] Do they not understand the product?
+
+462
+00:38:18,880 --> 00:38:19,920
+[SPEAKER_01] Are they feeling rushed?
+
+463
+00:38:20,160 --> 00:38:21,680
+[SPEAKER_01] Are there something going on in their personal life?
+
+464
+00:38:22,240 --> 00:38:27,520
+[SPEAKER_01] So while that number is really important to know, it may find its way on a board deck for your investors.
+
+465
+00:38:28,000 --> 00:38:36,160
+[SPEAKER_01] I think it's more, it's a better tool for me as a manager to have an early warning sign of what may not be working for a particular agent.
+
+466
+00:38:36,400 --> 00:38:37,440
+[SPEAKER_01] And I have found that in the past.
+
+467
+00:38:37,920 --> 00:38:41,760
+[SPEAKER_01] And sometimes you just find out there's something personal going on in their life and you say, Okay, great.
+
+468
+00:38:42,000 --> 00:38:42,400
+[SPEAKER_01] Now I know.
+
+469
+00:38:42,560 --> 00:38:43,920
+[SPEAKER_01] Like, what can we do to make this better?
+
+470
+00:38:44,160 --> 00:38:46,960
+[SPEAKER_01] Can we make, can we make changes to your work schedule, whatever it is?
+
+471
+00:38:47,200 --> 00:38:52,560
+[SPEAKER_01] So I actually think about that more as a comparative number to find out more about your team.
+
+472
+00:38:52,880 --> 00:38:53,760
+[SPEAKER_01] Yeah, that makes sense.
+
+473
+00:38:54,160 --> 00:38:59,360
+[SPEAKER_00] And then customer support is often kind of the last line of defense for churn.
+
+474
+00:38:59,760 --> 00:39:05,440
+[SPEAKER_00] Do you track that or how do you think about kind of helping prevent churn as a customer support team?
+
+475
+00:39:05,840 --> 00:39:10,320
+[SPEAKER_00] Cancellation and churn is obviously on everyone's mind, especially within these walls.
+
+476
+00:39:11,040 --> 00:39:18,160
+[SPEAKER_01] We want downloads, we want conversions, we want everyone to become a full subscriber, but ultimately it's not right for everyone.
+
+477
+00:39:18,320 --> 00:39:21,680
+[SPEAKER_01] Something may have gone wrong or again, like maybe just wasn't right for the customer.
+
+478
+00:39:22,000 --> 00:39:35,120
+[SPEAKER_01] I feel that cancellation and churn is on us, especially because I came from a customer success background where you can have a world where you have negative churn, which is essentially your customers are either renewing at a higher dollar value.
+
+479
+00:39:35,680 --> 00:39:38,240
+[SPEAKER_01] So it's actually more than 100% of revenue.
+
+480
+00:39:38,800 --> 00:39:47,600
+[SPEAKER_01] Or it's actually that you've lost some customers, but the overall customers have renewed at a higher rate, still resulting in negative churn.
+
+481
+00:39:47,840 --> 00:39:57,760
+[SPEAKER_01] So that's a really important number more for enterprise SaaS companies, but from a customer support perspective for a mobile app and desktop app, I really feel that we are the last line of defense.
+
+482
+00:39:58,320 --> 00:40:04,400
+[SPEAKER_01] We can have our own mini winback campaigns by having interactions with customers where maybe you can do a winback campaign.
+
+483
+00:40:04,720 --> 00:40:10,640
+[SPEAKER_01] with emails or I think App Store just came out with a new win back campaign right in the App Store listing, which we still haven't tested.
+
+484
+00:40:10,880 --> 00:40:12,000
+[SPEAKER_01] I just found it yesterday.
+
+485
+00:40:12,400 --> 00:40:17,200
+[SPEAKER_01] But yeah, we we can win back customers and I'm still trying to figure out a way where I could comp my team.
+
+486
+00:40:17,680 --> 00:40:26,080
+[SPEAKER_01] You know, I'd like to be able to reward my teammates who are not just providing customer support, but a little bit of sales, a little bit of customer success.
+
+487
+00:40:26,240 --> 00:40:36,320
+[SPEAKER_01] I think if you can tie that back in a meaningful way, it will also empower your agents to really feel like, okay, I need to help this customer become come back and yeah, why not?
+
+488
+00:40:36,640 --> 00:40:38,000
+[SPEAKER_01] I mean, it's a great experience.
+
+489
+00:40:38,240 --> 00:40:50,800
+[SPEAKER_00] Well, one thing I've done, I don't know if you're all doing this because it I mean, it could potentially be really impactful at scale, but anytime I have a good customer experience and support and again, it's just me doing it right now.
+
+490
+00:40:50,960 --> 00:40:54,800
+[SPEAKER_00] I did have it hired out, but the scale is just so small now that it doesn't make sense.
+
+491
+00:40:55,440 --> 00:41:03,200
+[SPEAKER_00] But after any good customer experience with support, I pretty much always ask for a rating and/or review and link people directly to it.
+
+492
+00:41:03,440 --> 00:41:04,640
+[SPEAKER_00] Is that something you'll do as well?
+
+493
+00:41:04,800 --> 00:41:05,920
+[SPEAKER_00] And do you see a lift from that?
+
+494
+00:41:06,480 --> 00:41:06,560
+[SPEAKER_00] Yes.
+
+495
+00:41:06,880 --> 00:41:27,440
+[SPEAKER_01] I definitely left that part out when I was talking before ratings and reviews could be the best thing in the world and the most annoying thing because I can't tell you how many customers say, if you don't fix this feature, I'm going to give you a one star or threaten us and say, if you don't fix this in, you know, in one minute or if you don't give me a free version, I'll give you one star review.
+
+496
+00:41:27,520 --> 00:41:28,560
+[SPEAKER_01] I mean, what do you say to that?
+
+497
+00:41:28,720 --> 00:41:41,040
+[SPEAKER_01] I mean, I think Yelp probably Yelp and TripAdvisor probably ruined the internet in terms of operators being able to really penalize a lot of the good people who are trying.
+
+498
+00:41:41,200 --> 00:41:42,160
+[SPEAKER_01] I'm like, we're trying.
+
+499
+00:41:42,320 --> 00:41:46,400
+[SPEAKER_01] We have, you know, we've got half a dozen people on support, like, we're here, we're trying.
+
+500
+00:41:46,720 --> 00:41:51,520
+[SPEAKER_01] But yes, I mean, asking customers to give us apps for reviews and place reviews is huge.
+
+501
+00:41:51,920 --> 00:41:59,920
+[SPEAKER_01] I always love it when we get an app for review and they shout out someone on our team, one of my agents, and they say, Carl did amazing job or Marion did.
+
+502
+00:42:00,480 --> 00:42:02,080
+[SPEAKER_01] amazing job or Metty did amazing job.
+
+503
+00:42:02,480 --> 00:42:06,320
+[SPEAKER_01] If that happens, screenshot right in C for L, make them feel really good.
+
+504
+00:42:06,640 --> 00:42:08,240
+[SPEAKER_01] It's just like it's a no brainer.
+
+505
+00:42:08,640 --> 00:42:14,880
+[SPEAKER_01] And if people start reading about great customer support, again, another reason why people might download the app in the first place.
+
+506
+00:42:15,200 --> 00:42:16,000
+[SPEAKER_01] So it goes a long way.
+
+507
+00:42:16,320 --> 00:42:27,520
+[SPEAKER_00] What better way to communicate how much you care about your customers and that kind of concierge mindset than to see a bunch of reviews talking about specific support people in the app store.
+
+508
+00:42:27,840 --> 00:42:28,480
+[SPEAKER_00] Like that's cool.
+
+509
+00:42:28,640 --> 00:42:32,880
+[SPEAKER_00] People write back and a month later they say, hey, can you connect me back to Medi?
+
+510
+00:42:33,920 --> 00:42:34,640
+[SPEAKER_01] I want to talk to him again.
+
+511
+00:42:35,520 --> 00:42:39,840
+[SPEAKER_01] People ask me by name to chat with people and that means my team did their job.
+
+512
+00:42:40,000 --> 00:42:42,800
+[SPEAKER_01] They built a report with this customer and I love to see that.
+
+513
+00:42:43,200 --> 00:42:49,120
+[SPEAKER_01] How do you split or do you split customer support by free versus paid?
+
+514
+00:42:49,600 --> 00:42:51,840
+[SPEAKER_00] Do you offer the same amount of support to free users?
+
+515
+00:42:52,240 --> 00:42:53,040
+[SPEAKER_00] This is a tricky one.
+
+516
+00:42:53,280 --> 00:42:54,160
+[SPEAKER_00] I've thought about it a lot.
+
+517
+00:42:54,480 --> 00:42:55,680
+[SPEAKER_00] We don't have a freemium product.
+
+518
+00:42:55,920 --> 00:42:56,720
+[SPEAKER_01] We have a minimum tier.
+
+519
+00:42:56,880 --> 00:42:57,920
+[SPEAKER_01] We have a three day trial.
+
+520
+00:42:58,240 --> 00:43:04,240
+[SPEAKER_01] We've tested seven day wasn't as good, even though I remember the report you put out last year said seven day did better, but not for us.
+
+521
+00:43:04,400 --> 00:43:04,880
+[SPEAKER_01] I don't know why.
+
+522
+00:43:05,280 --> 00:43:23,120
+[SPEAKER_01] But anyway, we actually don't have free customers, although you can consider our trial customers currently free or non revenue customers, but you never know when you're going to get a free customer upgrade to your to the lowest tier or you're going to have a middle tier customer upgrade to your highest tier or even downgrade to your lowest tier.
+
+523
+00:43:23,440 --> 00:43:25,760
+[SPEAKER_01] So we treat all customers basically the same.
+
+524
+00:43:26,000 --> 00:43:33,120
+[SPEAKER_01] I will say that if you you're in that experience where you've cancelled a trial or you've, or you've churned, we do bump you up to like the front of the queue.
+
+525
+00:43:33,280 --> 00:43:35,040
+[SPEAKER_01] But again, we reply to customers so quickly.
+
+526
+00:43:35,280 --> 00:43:36,640
+[SPEAKER_01] I don't know if it has a huge impact.
+
+527
+00:43:37,280 --> 00:43:42,880
+[SPEAKER_01] I think as we scale, if you ask me that question, two years from now, I think we will probably have to make some changes.
+
+528
+00:43:43,520 --> 00:43:46,880
+[SPEAKER_01] I think the really biggest difference are your enterprise customers.
+
+529
+00:43:47,040 --> 00:43:48,880
+[SPEAKER_01] And right now, we have consumer customers.
+
+530
+00:43:49,040 --> 00:43:52,960
+[SPEAKER_01] We have prosumer customers, and we're building out services for enterprise customers.
+
+531
+00:43:53,120 --> 00:43:59,440
+[SPEAKER_01] We've got an API that's launched where you can generate video., you know, programmatically via API and get to do some really cool stuff.
+
+532
+00:43:59,920 --> 00:44:04,640
+[SPEAKER_01] Those customers will definitely be treated differently because dollar value is way different.
+
+533
+00:44:05,040 --> 00:44:08,960
+[SPEAKER_01] But 99% of our customers, we basically treat exactly the same.
+
+534
+00:44:09,200 --> 00:44:11,840
+[SPEAKER_01] Well, next up, I did actually want to get into tooling.
+
+535
+00:44:12,000 --> 00:44:14,880
+[SPEAKER_00] So let's just kick that off with how do you tell?
+
+536
+00:44:15,200 --> 00:44:25,040
+[SPEAKER_00] Because you've kind of alluded to this several times in the conversation that you know when someone is in their free trial period, you know when they're in their free trial period and have already canceled, you know when they're.
+
+537
+00:44:25,360 --> 00:44:27,440
+[SPEAKER_00] an active subscriber but have already cancelled.
+
+538
+00:44:27,760 --> 00:44:28,480
+[SPEAKER_00] How are you doing that?
+
+539
+00:44:28,640 --> 00:44:30,640
+[SPEAKER_00] What tooling are you using to figure all that out?
+
+540
+00:44:30,880 --> 00:44:34,560
+[SPEAKER_00] I don't know if this was a setup, but one of my answers is revenue cap.
+
+541
+00:44:38,480 --> 00:44:39,280
+[SPEAKER_01] It wasn't a setup.
+
+542
+00:44:39,440 --> 00:44:41,120
+[UNKNOWN] I didn't think about that, but yeah, it makes sense.
+
+543
+00:44:41,120 --> 00:44:41,760
+[SPEAKER_00] It makes sense.
+
+544
+00:44:41,840 --> 00:44:42,960
+[SPEAKER_00] Yeah, and I'll explain why.
+
+545
+00:44:43,280 --> 00:44:45,200
+[SPEAKER_00] So there's a lot of customer support platforms out there.
+
+546
+00:44:45,360 --> 00:44:46,080
+[SPEAKER_01] We use Intercom.
+
+547
+00:44:46,720 --> 00:45:00,400
+[SPEAKER_01] One of the things that we get is that when we install the Intercom SDK on iOS, Android and desktop, it passes on information like their email address, what device they're on, iPhone 12 versus 14, how many times they've opened the app, what iOS version they're on.
+
+548
+00:45:00,560 --> 00:45:01,840
+[SPEAKER_01] So we can find out this information.
+
+549
+00:45:02,240 --> 00:45:05,520
+[SPEAKER_01] And if customers have problems, we need to know at least as much as they do.
+
+550
+00:45:05,680 --> 00:45:06,400
+[SPEAKER_01] We can't know less.
+
+551
+00:45:07,200 --> 00:45:09,040
+[SPEAKER_01] So we get that information from Intercom.
+
+552
+00:45:09,360 --> 00:45:19,440
+[SPEAKER_01] And then the other one that we look at every time a customer messages us on the right nav of the chat, there are three revenue cat fields that are sent automatically when a customer messages us.
+
+553
+00:45:19,920 --> 00:45:22,800
+[SPEAKER_01] It's the latest entitlement, which means what plan they're on.
+
+554
+00:45:23,520 --> 00:45:28,000
+[SPEAKER_01] It's their expiration date, which means when will their trial or their subscription expire?
+
+555
+00:45:28,240 --> 00:45:29,280
+[SPEAKER_01] And then what's their status?
+
+556
+00:45:29,520 --> 00:45:31,920
+[SPEAKER_01] Are they currently on auto renewal or have they cancelled?
+
+557
+00:45:32,320 --> 00:45:40,480
+[SPEAKER_01] And so those three things tell us a lot about our customers and we can kind of shift our responses and change our responses based on that information.
+
+558
+00:45:40,720 --> 00:45:45,760
+[SPEAKER_01] And of course, we have three answers, one for Apple, one for Google, one for Stripe, as it comes to all that.
+
+559
+00:45:46,400 --> 00:45:46,880
+[SPEAKER_01] That's really cool.
+
+560
+00:45:47,200 --> 00:45:49,600
+[SPEAKER_01] I actually didn't know that you had all that hooked up that way.
+
+561
+00:45:49,760 --> 00:45:54,640
+[SPEAKER_00] I think you and I talked about this maybe like two years ago., but I think we had to like build something for you all to get that done.
+
+562
+00:45:54,800 --> 00:45:56,880
+[SPEAKER_00] But I had totally forgotten that that was the case.
+
+563
+00:45:57,200 --> 00:46:03,440
+[SPEAKER_00] Well, this is a great callback, I guess, because it's an out of the box integration with Intercom and RevenueCat integrates with lots of other tools.
+
+564
+00:46:03,840 --> 00:46:10,480
+[SPEAKER_01] But I did suggest that third one that I mentioned of like, are they on auto renew or cancel that wasn't available, but your team actually did build it for us.
+
+565
+00:46:10,720 --> 00:46:11,280
+[SPEAKER_01] So thank you.
+
+566
+00:46:11,600 --> 00:46:11,920
+[SPEAKER_01] Very cool.
+
+567
+00:46:12,960 --> 00:46:13,920
+[SPEAKER_00] So use Intercom.
+
+568
+00:46:14,320 --> 00:46:20,080
+[SPEAKER_00] Any other tools that's super important to all of this for tracking for AI agents and everything else?
+
+569
+00:46:20,240 --> 00:46:20,320
+[SPEAKER_00] Yeah.
+
+570
+00:46:20,400 --> 00:46:26,640
+[SPEAKER_00] Yeah, I think our basically the three tools is like your core chat platform, which we're using Intercom and I think is great.
+
+571
+00:46:26,960 --> 00:46:33,200
+[SPEAKER_01] They're also doing a great job themselves with employing AI both as an agent copilot and they've got their own agents.
+
+572
+00:46:33,840 --> 00:46:37,520
+[SPEAKER_01] And then I think our AI agent that we use is called ParaHelp.
+
+573
+00:46:37,760 --> 00:46:41,360
+[SPEAKER_01] I've been super impressed with the team and what they've been able to do for us.
+
+574
+00:46:41,600 --> 00:46:53,040
+[SPEAKER_01] And then lastly, MIMIFI, this documentation tool, which is really meant for API docs and API references, the same way that RevenueCat has your API docscs, maybe I'll make a referral for you, but it's really clean.
+
+575
+00:46:53,280 --> 00:46:54,000
+[SPEAKER_01] It's really beautiful.
+
+576
+00:46:54,080 --> 00:46:55,120
+[SPEAKER_01] It's built on GitHub.
+
+577
+00:46:55,520 --> 00:46:56,400
+[SPEAKER_01] The team's really great.
+
+578
+00:46:56,880 --> 00:47:01,600
+[SPEAKER_01] And we have used that because we offer both consumer customer support and we now have API.
+
+579
+00:47:01,760 --> 00:47:03,600
+[SPEAKER_01] So now it's all in one place, which is really nice.
+
+580
+00:47:03,760 --> 00:47:09,920
+[SPEAKER_01] So if you want to see how our app, our documentation looked like, just go to help dot captions dot AI and you can check it out.
+
+581
+00:47:10,160 --> 00:47:24,080
+[SPEAKER_00] This has been such a fun conversation, starting from the philosophy of tech support and your kind of contrarian views on that all the way through talking about the tools that like makes that happen and hiring the folks and scaling the team and all that.
+
+582
+00:47:24,240 --> 00:47:27,200
+[SPEAKER_00] So a wealth of information for folks who are struggling with this.
+
+583
+00:47:27,440 --> 00:47:33,360
+[SPEAKER_00] But anything I missed, anything else you wanted to share as we wrap up just that it was great to see you last week at App Growth Annual.
+
+584
+00:47:33,520 --> 00:47:46,160
+[SPEAKER_01] I have my swag right here, great water bottle, but really it was amazing event and next year we will be submitting for the shippies and I hope that we'll be presented with a shippy but I I want to bring one home for the team.
+
+585
+00:47:46,400 --> 00:47:53,280
+[SPEAKER_01] I don't build this app engineers product that it takes like an entire team, but it would be very cool to reward everyone with some recognition.
+
+586
+00:47:53,600 --> 00:47:54,400
+[SPEAKER_01] We'll see what happens.
+
+587
+00:47:55,040 --> 00:48:00,080
+[SPEAKER_01] Well, it's a fantastic app and yeah, well, it's great to see you and so many other industry folks last week.
+
+588
+00:48:00,400 --> 00:48:02,000
+[SPEAKER_00] Definitely looking forward to next year.
+
+589
+00:48:02,400 --> 00:48:06,000
+[SPEAKER_00] We're going to link to captions and to your LinkedIn and other stuff.
+
+590
+00:48:06,240 --> 00:48:09,280
+[SPEAKER_00] Anything else you wanted to shout out for people who wanted to get in touch or otherwise?
+
+591
+00:48:09,600 --> 00:48:14,480
+[SPEAKER_00] Yeah, if you want to download the app and test out our customer support and send your thoughts to me, give it a try.
+
+592
+00:48:14,640 --> 00:48:18,400
+[SPEAKER_01] captions.ai and then you can always find me on on LinkedIn, UI Wonderbaum.
+
+593
+00:48:18,480 --> 00:48:19,120
+[SPEAKER_01] I'm the only one.
+
+594
+00:48:20,240 --> 00:48:20,560
+[SPEAKER_01] Awesome.
+
+595
+00:48:20,800 --> 00:48:22,320
+[SPEAKER_01] Well, so much fun talking to you today.
+
+596
+00:48:22,400 --> 00:48:22,720
+[SPEAKER_01] Thank you.
+
+597
+00:48:22,880 --> 00:48:23,280
+[SPEAKER_01] Thanks, David.
+
+598
+00:48:23,600 --> 00:48:24,080
+[UNKNOWN] Thanks so much.
+
+599
+00:48:26,960 --> 00:48:28,320
+[SPEAKER_01] Thanks so much for listening.
+
+600
+00:48:29,280 --> 00:48:32,640
+[SPEAKER_00] If you have a minute, please leave a review in your favorite podcast player.
+
+601
+00:48:33,520 --> 00:48:38,400
+[SPEAKER_00] You can also stop by chat dot subclub dot com to join our private community.
