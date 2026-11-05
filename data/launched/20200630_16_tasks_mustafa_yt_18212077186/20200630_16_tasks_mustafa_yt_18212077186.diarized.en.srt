@@ -1,0 +1,2607 @@
+1
+00:00:03,680 --> 00:00:04,560
+[SPEAKER_00] Welcome to Launched.
+
+2
+00:00:04,640 --> 00:00:10,400
+[SPEAKER_00] I'm Charlie Chapman, and today I'm excited to bring you the creator of the new iOS app Tasks, Mustafa.
+
+3
+00:00:23,840 --> 00:00:28,400
+[SPEAKER_00] So before we get started, I'd like to point out that we're recording this further in advance than usual right now.
+
+4
+00:00:29,120 --> 00:00:36,400
+[SPEAKER_00] WWDC hasn't happened, but this episode will come out after WWDC, so we're not aware of anything that.
+
+5
+00:00:36,640 --> 00:00:40,640
+[SPEAKER_00] that they've announced or any changes that have come to the App Store or whatever since then.
+
+6
+00:00:41,040 --> 00:00:50,960
+[SPEAKER_00] And also, it's worth noting that Mustafa's app tasks came out pretty recently, so I assume there might be some changes going on there in terms of stats or press or anything like that.
+
+7
+00:00:51,200 --> 00:00:57,680
+[SPEAKER_00] So just to get that out of the way, we are recording further in advance, so sorry if anything seems old.
+
+8
+00:00:58,400 --> 00:01:13,600
+[SPEAKER_00] Also, we're still currently in the middle of what I think is probably the biggest protest movement that I've ever seen in my life here in America and kind of spread around the world as well about police brutality and systemic racism in our country.
+
+9
+00:01:14,000 --> 00:01:23,200
+[SPEAKER_00] So I just want this to be a reminder to myself while I'm editing this in like three weeks that black lives still matter, racism is still a problem.
+
+10
+00:01:23,920 --> 00:01:33,760
+[SPEAKER_00] I know we're all coming off the post WWDC high and I don't want to forget that and we should still be pushing for change and I should definitely still be doing something myself.
+
+11
+00:01:33,920 --> 00:01:39,360
+[SPEAKER_00] So I want to make sure that that gets said and now we can move on to the actual show.
+
+12
+00:01:39,520 --> 00:01:41,680
+[SPEAKER_00] So Mustafa, thank you so much for being here.
+
+13
+00:01:42,080 --> 00:01:43,760
+[SPEAKER_01] Thank you so much Charlie to have me.
+
+14
+00:01:44,640 --> 00:01:47,520
+[SPEAKER_01] It's actually an honor being here following up all your other guests.
+
+15
+00:01:48,000 --> 00:01:52,000
+[SPEAKER_00] Oh, I've been following your tasks development for a while now.
+
+16
+00:01:52,160 --> 00:01:58,560
+[SPEAKER_00] So it's one, it's just really exciting to finally have it out there and in my hands, although I've had my hands on the beta for a little bit too.
+
+17
+00:01:58,960 --> 00:02:01,680
+[SPEAKER_00] But it's been really cool seeing how well it's been received.
+
+18
+00:02:01,760 --> 00:02:03,760
+[SPEAKER_00] So I'm pretty pumped to talk to you about that.
+
+19
+00:02:04,240 --> 00:02:09,360
+[SPEAKER_00] But before we get into that, I like to kick things off usually with an icebreaker question.
+
+20
+00:02:09,600 --> 00:02:15,760
+[SPEAKER_00] And normally this comes from a guest, but since we have a kind of weird scheduling situation this time, I thought we should take advantage of that.
+
+21
+00:02:15,920 --> 00:02:18,880
+[SPEAKER_00] So I'm going to ask you a slightly different question to break the ice here.
+
+22
+00:02:19,440 --> 00:02:21,840
+[SPEAKER_00] So we're recording before WWDC.
+
+23
+00:02:22,160 --> 00:02:24,800
+[SPEAKER_00] Everyone listening is listening after WWDC.
+
+24
+00:02:25,360 --> 00:02:37,440
+[SPEAKER_00] So I'm curious to know what are the things, uh, whenever guests are listening that you're kind of hoping that we're going to get out of this, that they'll know whether or not, uh, Apple actually gave us from WWDC.
+
+25
+00:02:37,840 --> 00:02:40,320
+[SPEAKER_01] Wow, that's a tough one and that's pretty interesting.
+
+26
+00:02:40,800 --> 00:02:43,360
+[SPEAKER_01] So this is kind of going to be my prediction episode, right?
+
+27
+00:02:43,600 --> 00:02:47,120
+[SPEAKER_00] Yeah, it's a prediction where everyone immediately knows if you're wrong or not.
+
+28
+00:02:48,080 --> 00:02:49,280
+[SPEAKER_00] Well, um, all right.
+
+29
+00:02:49,520 --> 00:02:50,880
+[SPEAKER_01] So playing it safe, right?
+
+30
+00:02:51,120 --> 00:03:27,920
+[SPEAKER_01] I'm assuming, uh, so I see a lot of Swift UI stuff coming up because now Swift UI has been with the Apple teams and all the people have come together in apple within and you know developed parts of it and improved on it so one of the things i really really required in swift ui and the reason tasks wasn't completely done in swift ui was because there was no collection views ah yeah so i really expect them to bring grids so i'm thinking something like edge grid v grid because they go with edge stack v stack So something like that would actually be really important because otherwise I wouldn't be able to do my Kanban board.
+
+31
+00:03:28,240 --> 00:03:30,960
+[SPEAKER_01] And I love Swift UI for a prototyping tool, right?
+
+32
+00:03:31,520 --> 00:03:36,160
+[SPEAKER_01] Apart from that, the other thing I'd really want is to see where they took their cloud kit.
+
+33
+00:03:36,160 --> 00:03:41,840
+[SPEAKER_01] CloudKit and Codata default implementation, which they announced at WWDC last year.
+
+34
+00:03:42,320 --> 00:03:44,480
+[SPEAKER_01] So did they take it up a notch or did they not?
+
+35
+00:03:44,640 --> 00:03:56,000
+[SPEAKER_01] So that's something I'm really excited about because sharing is something that is really important to people who use CloudKit and Codata or just CloudKit really, and I want to see how does that fit in.
+
+36
+00:03:56,560 --> 00:04:00,720
+[SPEAKER_00] Okay, yeah, yeah, both of those are definitely things that interest me.
+
+37
+00:04:01,600 --> 00:04:07,760
+[SPEAKER_00] CloudKit in particular is something that I'm wrestling with right now, as you know, because you've actually helped me out with that a little bit.
+
+38
+00:04:08,000 --> 00:04:55,040
+[SPEAKER_00] And then it's funny, Swift UI was the thing that I being a new iOS developer la last year was like it was like the biggest thing on my wish list but i didn't think was remotely a thing that would happen meaning a declarative ui framework of some sort and so the fact that we got that blew my mind but since then i actually haven't really been able to play with it a whole lot because it's not i don't want to say it's not production ready because that's obviously the wrong way to phrase that but i'm not able to do the stuff that i personally have been trying to do with it yet um so it'll be interesting to see i'm hoping that you know they got the initial release out the door and then they kept their foot on the gas and we're going to see a lot of improvements but yeah it'll be telling if what we get is just kind of minor upgrades, slight changes to the APIs, because I think that would be a bad sign.
+
+39
+00:04:56,160 --> 00:04:56,640
+[SPEAKER_01] Absolutely.
+
+40
+00:04:56,960 --> 00:05:12,880
+[SPEAKER_01] I feel what Swift did to Objective C developers, or sorry, what UIKit and Swift in production, right, did to Objective C developers where they had to, they came down to a playing field where everyone now was, you know, starting out at zero and fresh, right?
+
+41
+00:05:13,440 --> 00:05:16,000
+[SPEAKER_01] I think Swift UI is doing the same in some kind of way.
+
+42
+00:05:16,560 --> 00:05:24,320
+[SPEAKER_01] And if we don't pick up five years down the line, who knows, people might drop coding in Swift and UIKit and just move to Swift UI.
+
+43
+00:05:24,960 --> 00:05:29,200
+[SPEAKER_01] So that's something I've been dabbling in because I started out when Swift came out, right?
+
+44
+00:05:29,840 --> 00:05:31,520
+[SPEAKER_01] And I couldn't read objectives.
+
+45
+00:05:31,600 --> 00:05:33,280
+[SPEAKER_01] See, I found that really hard to begin with.
+
+46
+00:05:34,080 --> 00:05:39,360
+[SPEAKER_01] So just because I started learning Swift from and I got an advantage, right?
+
+47
+00:05:39,760 --> 00:05:45,920
+[SPEAKER_01] Because a lot of recent jobs and recent, you know, tech stacks are written in Swift and UI kit.
+
+48
+00:05:46,720 --> 00:05:50,400
+[SPEAKER_01] And hopefully maybe five years down the line, they'll be written in Swift UI.
+
+49
+00:05:50,720 --> 00:05:51,600
+[SPEAKER_01] Nobody really knows.
+
+50
+00:05:52,080 --> 00:05:52,160
+[SPEAKER_00] Yeah.
+
+51
+00:05:52,400 --> 00:05:52,480
+[SPEAKER_00] Yeah.
+
+52
+00:05:52,720 --> 00:05:54,160
+[SPEAKER_00] It'll be, it'll be really interesting.
+
+53
+00:05:54,320 --> 00:06:00,800
+[SPEAKER_00] I think everybody's sort of imagining it's going to be similar to the Swift transition where the first couple of versions were turbulent.
+
+54
+00:06:01,200 --> 00:06:02,400
+[SPEAKER_00] and then it sort of steadied out.
+
+55
+00:06:03,520 --> 00:06:05,600
+[SPEAKER_00] But yeah, it's all very exciting.
+
+56
+00:06:06,240 --> 00:06:10,720
+[SPEAKER_00] It's fun to see all this sort of creative energy happening with something so new.
+
+57
+00:06:11,520 --> 00:06:12,000
+[SPEAKER_00] Absolutely.
+
+58
+00:06:13,040 --> 00:06:21,520
+[SPEAKER_00] So if you have any questions that you'd like me to ask a guest on the show, you can tweet me at launch.m with the hashtag icebreaker and I may ask a future guest your question.
+
+59
+00:06:22,480 --> 00:06:26,640
+[SPEAKER_00] So before we get into your new app tasks, I want to give everyone a primer on who you are.
+
+60
+00:06:27,120 --> 00:06:29,520
+[SPEAKER_00] So the questions I ask everybody are where are you from?
+
+61
+00:06:30,000 --> 00:06:31,440
+[SPEAKER_00] Do you have any formal education?
+
+62
+00:06:31,920 --> 00:06:34,560
+[SPEAKER_00] And what was your career like pre tasks?
+
+63
+00:06:35,200 --> 00:06:35,280
+[SPEAKER_01] Okay.
+
+64
+00:06:36,160 --> 00:06:37,600
+[SPEAKER_01] So let me start with where I'm from.
+
+65
+00:06:37,840 --> 00:06:45,920
+[SPEAKER_01] So I'm from India, originally from Mumbai, and I settled down in Bangalore, which is what they call the Silicon Valley of India.
+
+66
+00:06:46,080 --> 00:06:46,560
+[SPEAKER_00] Yeah, yeah.
+
+67
+00:06:46,880 --> 00:06:57,440
+[SPEAKER_01] But due to this pandemic, right, I might be shifting back to Mumbai to be closer to family, so a lot of change is happening now, so that's happening.
+
+68
+00:06:58,240 --> 00:07:07,360
+[SPEAKER_01] And apart from that, of my formal education in India, parents take that really strictly, and they're like, you gotta study everything that there is.
+
+69
+00:07:08,160 --> 00:07:12,320
+[SPEAKER_01] And it has to be an engineer doctor here, so I got the engineer path.
+
+70
+00:07:13,040 --> 00:07:22,560
+[SPEAKER_01] And I went to school, I did high school and then I went to college or university where I actually pursued VTech in computer science.
+
+71
+00:07:22,640 --> 00:07:37,280
+[SPEAKER_01] So that's a bachelor's degree in computer science engineering, which I don't know if that brought a lot of fruit to my career or did not help my career, I'm not really sure, but it definitely sparked interest and it made me question things which no one normally would, right?
+
+72
+00:07:37,600 --> 00:07:40,800
+[SPEAKER_00] Yeah, it put your brain in a certain space.
+
+73
+00:07:41,520 --> 00:07:46,240
+[SPEAKER_00] Absolutely, because I don't think I would have ventured out, or maybe I would have.
+
+74
+00:07:46,560 --> 00:07:51,040
+[SPEAKER_01] Coding was a passion ever since I was in eighth standard where I started learning Java, right?
+
+75
+00:07:51,680 --> 00:07:54,480
+[SPEAKER_01] And we had these patterns we had to code.
+
+76
+00:07:54,720 --> 00:07:56,800
+[SPEAKER_01] So it was like make an asterisk pyramid.
+
+77
+00:07:57,200 --> 00:07:59,200
+[SPEAKER_01] And those kinds of questions really excited me.
+
+78
+00:07:59,360 --> 00:08:03,680
+[SPEAKER_01] And it was more of problem solving and using it in the creative mind.
+
+79
+00:08:03,920 --> 00:08:06,960
+[SPEAKER_01] And I think that was what got me into coding in the first place.
+
+80
+00:08:08,080 --> 00:08:10,480
+[SPEAKER_01] And my teachers were really helpful.
+
+81
+00:08:10,720 --> 00:08:13,040
+[SPEAKER_01] And it was surprising at eighth standard.
+
+82
+00:08:13,440 --> 00:08:17,200
+[SPEAKER_01] We were taught Oops with Java and we were asked to draw pyramids and draw structures.
+
+83
+00:08:18,000 --> 00:08:20,000
+[SPEAKER_01] But at the end of the day, it really helped me out.
+
+84
+00:08:20,320 --> 00:08:24,400
+[SPEAKER_01] And I think that was the turning point for me where I actually got drawn towards.
+
+85
+00:08:25,120 --> 00:08:25,920
+[SPEAKER_01] programming in general.
+
+86
+00:08:26,480 --> 00:08:27,680
+[SPEAKER_01] So that was pretty exciting.
+
+87
+00:08:28,240 --> 00:08:34,000
+[SPEAKER_01] And ever since that, after learning Java, went into C plus plus during my high school years.
+
+88
+00:08:34,800 --> 00:08:40,080
+[SPEAKER_01] And finally in college, that was again just doing C plus plus, and which we had already done earlier here.
+
+89
+00:08:40,640 --> 00:08:45,680
+[SPEAKER_01] And so college was really not that they weren't touching upon more recent topics.
+
+90
+00:08:45,760 --> 00:08:50,720
+[SPEAKER_01] They were just touching upon old topics because I think education in India at least is pretty old school.
+
+91
+00:08:51,280 --> 00:08:52,320
+[SPEAKER_01] So there was no Swift.
+
+92
+00:08:52,560 --> 00:08:54,640
+[SPEAKER_01] There was barely any Java taught.
+
+93
+00:08:55,760 --> 00:08:58,720
+[SPEAKER_01] Python was still not taught and all of these things.
+
+94
+00:08:59,280 --> 00:09:36,800
+[SPEAKER_01] So it's actually when I went to college and my parents asked me what are you going to do in college and I was like I'll study like every other person and my parents were like that's fine but what are you going to do to stand out because every year there are millions of engineers pouring out of colleges right and so they I just I don't know why I just told them I'd like to make apps for the Apple platform and I think it was because iPhone was that crazy thing that happened and the UI, the design and you know the experience of an iPhone or maybe it was just that it was so premium and apps were pretty cool on it.
+
+95
+00:09:38,000 --> 00:09:43,040
+[SPEAKER_01] So they trusted me and they took my word on it and I wasted a year in college not doing anything.
+
+96
+00:09:44,080 --> 00:09:45,760
+[SPEAKER_01] And after that they questioned me.
+
+97
+00:09:46,240 --> 00:09:50,480
+[SPEAKER_01] They after a year they actually just came up to me and they're like, so where did you progress on that?
+
+98
+00:09:50,640 --> 00:09:56,800
+[SPEAKER_01] And I was like, oh, I have been busy in college, which really wasn't the case because college is pretty laid back here.
+
+99
+00:09:57,520 --> 00:10:09,920
+[SPEAKER_01] And that's when, you know, I realized I couldn't do it because in my first year, remember opening up and trying to learn Objective C and all of that just flew right over my head and I was like, I can't do this.
+
+100
+00:10:10,480 --> 00:10:20,160
+[SPEAKER_01] And that's when, like, that's when Apple announced S Swift and I was like, oh, maybe this is my golden ticket to learning how to make apps for the iOS platform.
+
+101
+00:10:21,360 --> 00:10:23,200
+[SPEAKER_01] And boy, I was happy.
+
+102
+00:10:23,520 --> 00:10:27,680
+[SPEAKER_01] I just remember that was so exciting and the passion was there.
+
+103
+00:10:27,920 --> 00:10:31,520
+[SPEAKER_01] It just gave the spark to the passion and that took me to another level.
+
+104
+00:10:32,640 --> 00:10:48,480
+[SPEAKER_00] That's so cool because a lot of people have been making the same comparison with Swift UI being announced last year, where it's like, it opens the door for a whole new group of people who were intimidated by UI Kit in this case that's old.
+
+105
+00:10:49,040 --> 00:10:55,840
+[SPEAKER_00] I mean, old in relative terms, but it's a big mature platform that it's really hard to like sink your teeth into because it's like, where do you go?
+
+106
+00:10:56,080 --> 00:11:01,600
+[SPEAKER_00] And when something new comes out, it's so much more limited that you can kind of understand the full scope and then you can grow with it.
+
+107
+00:11:02,080 --> 00:11:09,120
+[SPEAKER_00] And it seems like you're part of that group, uh, before I even joined into this world that sort of grew up with Swift.
+
+108
+00:11:09,360 --> 00:11:12,800
+[SPEAKER_00] And because of that, you understand a lot of its nuances because you grew up with it.
+
+109
+00:11:13,360 --> 00:11:13,760
+[SPEAKER_01] Absolutely.
+
+110
+00:11:13,920 --> 00:11:19,840
+[SPEAKER_01] I remember those days when, uh, I think it was Swift 2 to Swift 2.3 or 2.3 to 3, right?
+
+111
+00:11:20,320 --> 00:11:28,240
+[SPEAKER_01] If you opened your project in the latest Xcode and it was not back.wards compatible, so you couldn't open your project with the previous version.
+
+112
+00:11:28,480 --> 00:11:30,560
+[SPEAKER_01] You had to, you know, continue with that.
+
+113
+00:11:30,880 --> 00:11:37,280
+[SPEAKER_01] There was so much, there was so many such, uh, really like, uh, migrations that messed you up, right?
+
+114
+00:11:37,520 --> 00:11:44,480
+[SPEAKER_01] And, uh, those were the times when we were actually learning and didn't know how to get past this and there was not enough documentation.
+
+115
+00:11:44,800 --> 00:11:46,080
+[SPEAKER_01] There was not enough help online.
+
+116
+00:11:46,880 --> 00:11:49,760
+[SPEAKER_01] And all of it was, it was really exciting, actually.
+
+117
+00:11:49,920 --> 00:11:56,560
+[SPEAKER_01] I'm, I'm really glad I went through that phase because since I've conquered that, I have confidence that I can conquer other stuff too.
+
+118
+00:11:56,960 --> 00:11:57,040
+[SPEAKER_00] Right.
+
+119
+00:11:57,360 --> 00:12:00,560
+[SPEAKER_00] You understand the underpinnings better than you would have because you.
+
+120
+00:12:00,560 --> 00:12:02,640
+[SPEAKER_00] Because you were sort of forced to dive into it.
+
+121
+00:12:03,040 --> 00:12:03,520
+[SPEAKER_00] Absolutely.
+
+122
+00:12:04,480 --> 00:12:07,520
+[SPEAKER_00] So you got into that and then graduated college.
+
+123
+00:12:07,760 --> 00:12:09,040
+[SPEAKER_00] And what happened after that?
+
+124
+00:12:10,160 --> 00:12:15,840
+[SPEAKER_01] So it was actually during the pre-final year, we started to look out for jobs.
+
+125
+00:12:16,000 --> 00:12:21,840
+[SPEAKER_01] And normally you have on campus placements, but none of them come for a role of software developer.
+
+126
+00:12:22,080 --> 00:12:23,760
+[SPEAKER_01] They more just come for a generic role.
+
+127
+00:12:24,640 --> 00:12:26,880
+[SPEAKER_01] We want someone who we can train to do our stuff.
+
+128
+00:12:27,360 --> 00:12:27,520
+[SPEAKER_00] Right.
+
+129
+00:12:28,160 --> 00:12:36,720
+[SPEAKER_01] So I had built a, I had built multiple labs in college and that was, that was where I had that advantage over other people.
+
+130
+00:12:37,360 --> 00:12:42,720
+[SPEAKER_01] So I went off campus and I applied to a lot of places, I think nearly two hundred places.
+
+131
+00:12:42,800 --> 00:12:43,360
+[SPEAKER_01] Oh, wow.
+
+132
+00:12:43,680 --> 00:12:45,120
+[SPEAKER_01] And I never got a reply.
+
+133
+00:12:45,440 --> 00:12:50,960
+[SPEAKER_01] Yeah, that's I applied to a lot of places and I never got a reply, but I could understand why.
+
+134
+00:12:51,120 --> 00:12:56,160
+[SPEAKER_01] I was just a new kid out of college and no one wants to trust me with their code base, right?
+
+135
+00:12:56,880 --> 00:13:04,480
+[SPEAKER_01] So after I think this was like after four to five months of hunting, finally I got callbacks from two companies.
+
+136
+00:13:04,800 --> 00:13:08,400
+[SPEAKER_01] One was there, one of them was based in Mumbai and the other was based in Bangalore.
+
+137
+00:13:08,720 --> 00:13:21,040
+[SPEAKER_01] And I had always been passionate about the education industry and the Bangalore baseded company, it was an education based startup which had one Google App of the Year in 2017, if I'm not mistaken.
+
+138
+00:13:21,200 --> 00:13:21,760
+[SPEAKER_00] Oh, wow.
+
+139
+00:13:22,240 --> 00:13:23,520
+[SPEAKER_01] They didn't have an iOS app.
+
+140
+00:13:23,840 --> 00:13:36,400
+[SPEAKER_01] And I was like, wow, this is my perfect opportunity because I get to work on the code base all by myself because that was something I think as a new person, you're more comfortable with than working, you know, with other people because you'd be afraid to do.
+
+141
+00:13:36,880 --> 00:13:36,960
+[SPEAKER_00] Yeah.
+
+142
+00:13:37,200 --> 00:13:37,280
+[SPEAKER_00] Yeah.
+
+143
+00:13:37,840 --> 00:13:38,880
+[SPEAKER_01] So that was pretty cool.
+
+144
+00:13:40,160 --> 00:13:44,720
+[SPEAKER_01] And they offered me the gig and I just jumped on it because it was Bangalore.
+
+145
+00:13:44,960 --> 00:13:47,200
+[SPEAKER_01] It was first of all away from, you know, Mumbai and family.
+
+146
+00:13:47,680 --> 00:13:48,960
+[SPEAKER_01] So it was more of freedom..
+
+147
+00:13:50,160 --> 00:13:52,640
+[SPEAKER_01] And that was my first gig.
+
+148
+00:13:53,040 --> 00:13:56,000
+[SPEAKER_01] And I spent a year and three months over there.
+
+149
+00:13:56,720 --> 00:13:59,440
+[SPEAKER_01] And the boy, and boy, the things I've learned over there.
+
+150
+00:14:00,240 --> 00:14:04,480
+[SPEAKER_01] I learned everything I should not do and some of the things I should do.
+
+151
+00:14:05,120 --> 00:14:07,200
+[SPEAKER_00] So classic startup experience.
+
+152
+00:14:08,480 --> 00:14:09,040
+[SPEAKER_01] Absolutely.
+
+153
+00:14:10,000 --> 00:14:19,280
+[SPEAKER_01] I think I learned a lot of things how not to do things because starting out writing your own code base, seeing the mistakes that you previously made during doing that code base.
+
+154
+00:14:19,600 --> 00:14:21,520
+[SPEAKER_01] So there were a lot of things I learned not to do.
+
+155
+00:14:22,160 --> 00:14:23,280
+[SPEAKER_00] And then you have to live with.
+
+156
+00:14:23,840 --> 00:14:24,240
+[SPEAKER_01] Absolutely.
+
+157
+00:14:24,960 --> 00:14:27,440
+[SPEAKER_01] That was something, you know, I had to live with it.
+
+158
+00:14:27,760 --> 00:14:35,440
+[SPEAKER_01] And sadly, the company, they shut down after a couple of months after I left.
+
+159
+00:14:36,080 --> 00:14:40,800
+[SPEAKER_01] So that guilt is not on me that it's some other person maintaining the app so much.
+
+160
+00:14:41,920 --> 00:14:42,320
+[SPEAKER_01] That's good.
+
+161
+00:14:43,360 --> 00:14:46,640
+[SPEAKER_01] Post that after leaving that, I joined this company Sineezy.
+
+162
+00:14:47,120 --> 00:14:52,560
+[SPEAKER_01] And Sineezy had been one of, you know, the most reputable iOS apps in India.
+
+163
+00:14:53,120 --> 00:14:54,240
+[SPEAKER_01] And it's a global product.
+
+164
+00:14:55,280 --> 00:15:00,000
+[SPEAKER_01] The founders founded it and it's based out of.
+
+165
+00:15:01,440 --> 00:15:05,520
+[SPEAKER_01] San Francisco, then they moved to Dallas, but the engineering team is here in India.
+
+166
+00:15:05,760 --> 00:15:05,840
+[SPEAKER_00] Okay.
+
+167
+00:15:06,400 --> 00:15:24,080
+[SPEAKER_01] And to work on a world class product with, you know, people and a team, that was a relatively better experience because then I learned the things that, you know, how old code bases and legacy code look like and how to work with, you know, other people and other people's code and how to learn to adjust.
+
+168
+00:15:24,640 --> 00:15:26,160
+[SPEAKER_01] So that was something really exciting.
+
+169
+00:15:26,480 --> 00:15:52,480
+[SPEAKER_00] Yeah, I feel like that's it's like a whole different skill set, understanding how to work with a team and, you know, a lot of the things that seem really dumb when it's a really tinyiny team of one or two people makes a lot more sense whenever you have like thirty people and you all have to work together because you just have to build your code in a very different way to make it digestible and maintainable by a whole lot of people trying to communicate together.
+
+170
+00:15:53,440 --> 00:15:53,840
+[SPEAKER_01] Exactly.
+
+171
+00:15:54,160 --> 00:15:59,840
+[SPEAKER_01] And the ex engineers from SignEasy, one of them is at Uber and other such companies.
+
+172
+00:16:00,320 --> 00:16:08,240
+[SPEAKER_01] So I know that these people have, you know, learned a lot in their life and, you know, they've put in all their learnings into this one app.
+
+173
+00:16:08,720 --> 00:16:12,560
+[SPEAKER_01] So to get a cut into learning everyone's experience all at once.
+
+174
+00:16:13,440 --> 00:16:20,560
+[SPEAKER_01] That's something that is really nice because I learned from all of the things that they did wrong and they have finally corrected it to some extent.
+
+175
+00:16:21,440 --> 00:16:23,520
+[SPEAKER_01] And it reflects in their work.
+
+176
+00:16:24,160 --> 00:16:26,240
+[SPEAKER_01] So that's something pretty cool at the end of the day.
+
+177
+00:16:26,880 --> 00:16:34,400
+[SPEAKER_00] And so then, is that where you're at now or how, how did you end up with where you are now and then tasks?
+
+178
+00:16:35,280 --> 00:16:46,160
+[SPEAKER_01] So I I have been working at SineeZ for over a year now and it's they've been very generous and they actually sent me out to WWDC last year.
+
+179
+00:16:46,400 --> 00:16:48,800
+[SPEAKER_01] So they sponsored the entire training.
+
+180
+00:16:48,800 --> 00:16:58,720
+[SPEAKER_01] uh, trip for me and that was a once in a once in a lifetime opportunity and I was glad to get that one just before, you know, the lockdown happened and now everything's moved virtually.
+
+181
+00:16:59,120 --> 00:16:59,200
+[SPEAKER_00] Yeah.
+
+182
+00:17:00,640 --> 00:17:00,720
+[SPEAKER_00] Yeah.
+
+183
+00:17:02,080 --> 00:17:02,160
+[SPEAKER_00] Yeah.
+
+184
+00:17:02,400 --> 00:17:03,840
+[SPEAKER_00] This was supposed to be my first year.
+
+185
+00:17:04,480 --> 00:17:16,320
+[SPEAKER_01] Uh, I I mean, I, I, it was the best thing because I gathered most of my inspiration, my experiences, met amazing people who actually inspired me.
+
+186
+00:17:17,360 --> 00:17:24,800
+[SPEAKER_01] And, uh, to I think one of the reasons I jumped into Codata and Cloud Kit was because I interacted with the engineers who are behind it.
+
+187
+00:17:26,080 --> 00:17:30,080
+[SPEAKER_01] And they actually put in so much love, care and effort into it.
+
+188
+00:17:30,480 --> 00:17:34,000
+[SPEAKER_01] And you can see that they're motivated to improve their tools over time, right?
+
+189
+00:17:35,200 --> 00:17:40,240
+[SPEAKER_01] And most of us just tend to take the easier way out by just including a dependency.
+
+190
+00:17:40,960 --> 00:17:46,480
+[SPEAKER_01] But what has happened is the teams at Apple are working so hard so that they get the best of features.
+
+191
+00:17:46,800 --> 00:17:56,000
+[SPEAKER_01] But it takes them a little longer because it's it's it's I mean, it's pretty hard to ship for the entire group of developers, right?
+
+192
+00:17:56,720 --> 00:18:00,160
+[SPEAKER_01] And I think that now the pace has picked up so much.
+
+193
+00:18:02,480 --> 00:18:08,800
+[SPEAKER_01] thought and effort and they have reached, they have given us features which are much better and much stronger than dependencies could have.
+
+194
+00:18:09,200 --> 00:18:16,160
+[SPEAKER_01] For example, people using Rx Swift right now that Combiners come in, it has just replaced that entire dependency.
+
+195
+00:18:16,480 --> 00:18:21,760
+[SPEAKER_00] Yeah, they're able to bring those new concepts directly into the frameworks.
+
+196
+00:18:22,240 --> 00:18:22,560
+[SPEAKER_01] Exactly.
+
+197
+00:18:22,800 --> 00:18:25,840
+[SPEAKER_01] And people hate codata and I understand why they hate it.
+
+198
+00:18:26,320 --> 00:18:29,040
+[SPEAKER_01] But now it's become very powerful and strong.
+
+199
+00:18:29,600 --> 00:18:32,960
+[SPEAKER_01] I honestly don't see any other alternative that I would need.
+
+200
+00:18:33,280 --> 00:18:45,600
+[SPEAKER_01] Yes, it has its pain points, but everything eventually has its pain points, but it made that checkbox approach for Mac Catalyst and a lot of things a whole lot easier because I didn't have to rely on something third party.
+
+201
+00:18:46,080 --> 00:18:47,760
+[SPEAKER_00] So let's get into tasks then.
+
+202
+00:18:48,000 --> 00:18:50,720
+[SPEAKER_00] So how did that come about?
+
+203
+00:18:51,280 --> 00:18:59,920
+[SPEAKER_00] You said you've put a bunch of different apps in the store, so is this just like it was just another one of these ideas and you just wanted to get something out there or is this one different?
+
+204
+00:19:00,640 --> 00:19:07,440
+[SPEAKER_01] This one's different because the way I got the idea, it wasn't more of my idea, it was more of the people's idea.
+
+205
+00:19:07,840 --> 00:19:12,160
+[SPEAKER_01] So they have these Slack channels where people are discussing what's the best.
+
+206
+00:19:12,400 --> 00:19:14,640
+[SPEAKER_01] best personal task management tool.
+
+207
+00:19:15,280 --> 00:19:17,840
+[SPEAKER_01] And it just turns into a debate each and every time.
+
+208
+00:19:18,080 --> 00:19:19,360
+[SPEAKER_01] No one has a definitive answer.
+
+209
+00:19:19,600 --> 00:19:20,000
+[SPEAKER_01] Oh yeah.
+
+210
+00:19:21,040 --> 00:19:41,760
+[SPEAKER_01] Someone's like GRAD, someone's like Clubhouse, someone's like Trello, someone's and everyone has their mixed opinions, but no one is really satisfied with what they have to offer because one of them is just too expensive, one of them is just too complex, some of them just don't have this feature and people just wish if everything just took the best pieces out and put it in.
+
+211
+00:19:42,800 --> 00:19:48,800
+[SPEAKER_01] And one of the best tools that people actually told were Radar.
+
+212
+00:19:49,760 --> 00:19:53,840
+[SPEAKER_01] And I don't think a lot of people know about Radar because I personally didn't know about Radar.
+
+213
+00:19:54,240 --> 00:19:57,360
+[SPEAKER_01] It's Apple's internal project management tool.
+
+214
+00:19:57,680 --> 00:20:01,600
+[SPEAKER_00] Yeah, this is where you file bugs and stuff, right, for betas.
+
+215
+00:20:02,080 --> 00:20:04,480
+[SPEAKER_01] I think that's different because Radar is what they use.
+
+216
+00:20:04,800 --> 00:20:07,200
+[SPEAKER_01] It's basically their Jira, if I'm not mistaken.
+
+217
+00:20:07,520 --> 00:20:16,160
+[SPEAKER_00] Oh, so they they use it for project management as well as for filing issues and stuff from the public side of things is you file a radar, right?
+
+218
+00:20:16,400 --> 00:20:18,240
+[SPEAKER_00] That's what you're always supposed to do if you find a bug.
+
+219
+00:20:19,040 --> 00:20:19,120
+[SPEAKER_01] Yes.
+
+220
+00:20:19,920 --> 00:20:32,880
+[SPEAKER_01] So I I had the opportunity, I spoke to some ex Apple engineers and asked them about, you know know, what's so cool about Radar and what is why is it why are you drawn to it and why do you still back it up after all these years, right?
+
+221
+00:20:33,200 --> 00:20:34,720
+[SPEAKER_01] And wish you had that support.
+
+222
+00:20:35,600 --> 00:20:40,160
+[SPEAKER_01] And they went on and on about it how it's so easy and it's so customizable.
+
+223
+00:20:40,640 --> 00:20:53,520
+[SPEAKER_01] And I think that's something that a lot of task management apps lacked because I personally wanted to use a task manager and I opened up Trello and I opened up a lot of things and they're all just so complicated to look at first.
+
+224
+00:20:53,840 --> 00:21:00,720
+[SPEAKER_01] It's just not an easy site to see these things because they have all their features coming at you when first it should just be.
+
+225
+00:21:01,360 --> 00:21:02,160
+[SPEAKER_01] a tool manager.
+
+226
+00:21:02,240 --> 00:21:07,440
+[SPEAKER_01] It just should be a simple task management with basic functionality.
+
+227
+00:21:07,680 --> 00:21:11,520
+[SPEAKER_01] And then you can add stuff on, but these people throw their features directly onto you, right?
+
+228
+00:21:11,840 --> 00:21:24,000
+[SPEAKER_00] Yeah, it's definitely that's definitely the feeling I always have with all the different, especially like all the kind of corporate Kanban board style apps is just there's a lot going on in the moment you look at it.
+
+229
+00:21:24,480 --> 00:21:31,680
+[SPEAKER_01] I personally love Jira, but I think that's because my company's already configured it and I just have to drag and drop, right?
+
+230
+00:21:32,000 --> 00:21:32,240
+[SPEAKER_01] Right.
+
+231
+00:21:32,560 --> 00:21:40,000
+[SPEAKER_01] And I I personally liked it because I onboarded right onto this part where, you know, my boards are set up for me and I just do my work.
+
+232
+00:21:40,640 --> 00:21:46,240
+[SPEAKER_01] I didn't have to go through the hassle of making sprints, making tags, making labels and all of those things.
+
+233
+00:21:47,120 --> 00:21:53,120
+[SPEAKER_01] So I over time, I just realized that, you know, maybe people don't want a complicated solution.
+
+234
+00:21:53,360 --> 00:21:58,720
+[SPEAKER_01] And then I started thinking like, what would Apple build if they would have built a task management app?
+
+235
+00:21:59,440 --> 00:22:00,800
+[SPEAKER_01] And what would their approach be?
+
+236
+00:22:01,040 --> 00:22:01,840
+[SPEAKER_01] Would they keep it simple?
+
+237
+00:22:02,160 --> 00:22:03,280
+[SPEAKER_01] Would they surface features?
+
+238
+00:22:03,440 --> 00:22:07,760
+[SPEAKER_01] Would they, you know, enable pro users to use their features whenever they discover it?
+
+239
+00:22:08,640 --> 00:22:12,800
+[SPEAKER_01] And that's entire that's the entire philosophy behind tasks app where.
+
+240
+00:22:13,440 --> 00:22:16,960
+[SPEAKER_01] I just want to be so simple that you never have to think about it.
+
+241
+00:22:17,440 --> 00:22:17,520
+[SPEAKER_00] Yeah.
+
+242
+00:22:17,760 --> 00:22:31,520
+[SPEAKER_00] And like, I feel like it really shows when you first open it up because it kind of just feels like a normal reminders app and you slowly sort of realize, or at least I slowly realize as I use it, oh, I can do XYZ thing.
+
+243
+00:22:31,760 --> 00:22:35,120
+[SPEAKER_00] Like what I thought I would have to bump over into Trello to do, I can do it right here.
+
+244
+00:22:35,600 --> 00:22:40,320
+[SPEAKER_00] And it sort of organically grows with you, or at least that's been my experience so far.
+
+245
+00:22:41,120 --> 00:22:42,880
+[SPEAKER_01] I think that's what most people like.
+
+246
+00:22:43,520 --> 00:22:47,520
+[SPEAKER_01] Once you start exploring, you should give them like those, oh, wow moments, right?
+
+247
+00:22:47,840 --> 00:22:52,320
+[SPEAKER_01] Once you give users that with every bump, they're more excited to try you out.
+
+248
+00:22:52,640 --> 00:22:57,600
+[SPEAKER_01] Because if you put up everything in front, then they don't have that excitement as they drill into your app.
+
+249
+00:22:57,920 --> 00:23:02,480
+[SPEAKER_01] Because you've already shown all you can do, but like what's more is left for them to discover.
+
+250
+00:23:03,360 --> 00:23:09,920
+[SPEAKER_01] And making the onboarding experience easy is the best thing that one can ever do and the simplest thing one can ever do.
+
+251
+00:23:10,480 --> 00:23:14,400
+[SPEAKER_01] And I think most of the popular apps out there, they should just make it seamless.
+
+252
+00:23:14,960 --> 00:23:18,480
+[SPEAKER_01] For example, not having a signing or sign up screen, right?
+
+253
+00:23:18,960 --> 00:23:24,000
+[SPEAKER_01] That just makes you onboard on so much easier than you would on these other platforms.
+
+254
+00:23:24,400 --> 00:23:24,480
+[SPEAKER_00] Yeah.
+
+255
+00:23:24,640 --> 00:24:07,360
+[SPEAKER_00] Yeah, that is part of what was so exciting whenever I first came across this app was while it was in beta was like I spent forever whenever I was starting Dark Noise looking for a good Kanban app because like there's a million iOS apps that are all very very good for tasks and to-dos and lists like and a lot of them are extremely good a lot of them are super native iOS experiences a lot of them are like bigger more multi-platform things but I've always kind of gravitated towards these simpler iOS apps that hopefully have a Mac app component to it, but it's like primarily its goal is to be like a native sort of Apple ecosystem app.
+
+256
+00:24:07,920 --> 00:24:13,200
+[SPEAKER_00] But I could never find that for Kanban and maybe that existed out there, but I always struggled to find it.
+
+257
+00:24:13,760 --> 00:24:17,840
+[SPEAKER_00] And so part of the reason for that is exactly what you just described.
+
+258
+00:24:18,000 --> 00:24:21,280
+[SPEAKER_00] I want to be able to open it and I don't sign in or anything.
+
+259
+00:24:21,520 --> 00:24:36,160
+[SPEAKER_00] It's just using my iCloud account to sync everything across all my devices and you can share through the natural CloudKit sharing stuff and like I never have to think about this account that I have to sort of manage in my brain as a thing.
+
+260
+00:24:37,440 --> 00:24:40,880
+[SPEAKER_00] And so it seems like that's exactly what you were going for here.
+
+261
+00:24:41,040 --> 00:24:46,640
+[SPEAKER_00] And I feel like that was what was really exciting whenever I saw that this was a thing that was about to come into the world.
+
+262
+00:24:47,200 --> 00:24:56,320
+[SPEAKER_01] I'm glad you enjoyed the beta experience and eventually the app coming out because it's honestly, it's not hard to make a simple UI.
+
+263
+00:24:56,640 --> 00:25:05,440
+[SPEAKER_01] I just have to I think following the human interface guidelines that Apple puts up, does eventually make you become that simple app for users.
+
+264
+00:25:06,080 --> 00:25:11,600
+[SPEAKER_01] And a lot of people think you have to give that custom look and you have to make it look, you have to animate things.
+
+265
+00:25:12,480 --> 00:25:22,560
+[SPEAKER_01] And eventually I realized that, you know, notes app has this a lot of people move their task management into notes app, which is, you know, those simple checklists you have.
+
+266
+00:25:23,200 --> 00:25:35,360
+[SPEAKER_01] So the whole point is to make the app so simple that a person who wants to do checklists like just the notes app can move on to this app without feeling, you know, without feeling was the right word for it intimidated.
+
+267
+00:25:35,760 --> 00:25:36,720
+[SPEAKER_00] Yeah, overwhelmed.
+
+268
+00:25:37,200 --> 00:25:37,760
+[SPEAKER_01] Overwhelmed.
+
+269
+00:25:37,920 --> 00:25:38,240
+[SPEAKER_01] Exactly.
+
+270
+00:25:38,880 --> 00:25:41,520
+[SPEAKER_01] That was it just has to be so easy on the eye.
+
+271
+00:25:42,160 --> 00:25:47,200
+[SPEAKER_01] And I've reiterated on that design so many different times trying to make it simple.
+
+272
+00:25:47,520 --> 00:25:48,720
+[SPEAKER_01] And then in the end it's.
+
+273
+00:25:49,120 --> 00:25:51,600
+[SPEAKER_01] just like, I don't need this, I don't need this, I don't need this.
+
+274
+00:25:51,920 --> 00:25:53,440
+[SPEAKER_01] I'll just keep this as it is.
+
+275
+00:25:53,760 --> 00:25:56,400
+[SPEAKER_00] So I was going to ask, so you designed all this yourself?
+
+276
+00:25:57,040 --> 00:25:59,440
+[SPEAKER_01] Yes, if you see there's not much to design though.
+
+277
+00:26:00,160 --> 00:26:06,960
+[SPEAKER_01] But yes, the little that there is that was made over a period of three months.
+
+278
+00:26:07,600 --> 00:26:08,880
+[SPEAKER_00] What did you, what did you use for that?
+
+279
+00:26:09,040 --> 00:26:12,000
+[SPEAKER_00] So you're not like a designer by trade necessarily, right?
+
+280
+00:26:12,480 --> 00:26:14,000
+[SPEAKER_00] No, not by trade, not at all.
+
+281
+00:26:14,400 --> 00:26:32,640
+[SPEAKER_00] So was that something that you've always sort of had as a skill that you've been building, or was there like some learning and some different tools that you used to help kind of as from a developer approach coming at this in trying to make this a well designed app that fits in the iOS ecosystem?
+
+282
+00:26:33,200 --> 00:26:45,440
+[SPEAKER_01] Honestly, from the very beginning, I have been looking and criticizing, like criticizing a lot of apps that are out there, so judging what they're doing right, what they're doing wrong.
+
+283
+00:26:45,600 --> 00:26:48,800
+[SPEAKER_01] And I think over time, accumulated some design sense.
+
+284
+00:26:49,440 --> 00:26:59,680
+[SPEAKER_01] And I have been a huge Pinterest fan and I go through a lot of these iOS designs on Pinterest and most of them are really pretty to use but not really usable.
+
+285
+00:26:59,920 --> 00:27:01,920
+[SPEAKER_01] And I learned that over a period of time, right?
+
+286
+00:27:02,160 --> 00:27:03,680
+[SPEAKER_01] I was like, wow, this looks fancy.
+
+287
+00:27:03,840 --> 00:27:04,960
+[SPEAKER_01] How about I implement this?
+
+288
+00:27:05,520 --> 00:27:09,040
+[SPEAKER_01] And as soon as you implement, you're like, this is not that usable, is it?
+
+289
+00:27:09,280 --> 00:27:09,360
+[SPEAKER_00] Yeah.
+
+290
+00:27:10,160 --> 00:27:11,520
+[SPEAKER_00] That's like the dribble effect.
+
+291
+00:27:12,240 --> 00:27:16,960
+[SPEAKER_00] A beautiful single screen that in the moment you try and think about how it is to use, you go, wait a second.
+
+292
+00:27:17,840 --> 00:27:17,920
+[SPEAKER_00] Yes.
+
+293
+00:27:18,800 --> 00:27:20,240
+[SPEAKER_01] Most of the designs aren't usable.
+
+294
+00:27:20,400 --> 00:27:21,280
+[SPEAKER_01] They're so good to look at.
+
+295
+00:27:21,440 --> 00:27:24,000
+[SPEAKER_01] And you're like, I wish I had thought of that.
+
+296
+00:27:24,080 --> 00:27:25,680
+[SPEAKER_01] And I should probably put that in my app.
+
+297
+00:27:26,400 --> 00:27:33,360
+[SPEAKER_01] And after four years, I finally learned my lesson that what looks good isn't good to use always.
+
+298
+00:27:33,680 --> 00:27:33,840
+[SPEAKER_01] Yeah.
+
+299
+00:27:35,600 --> 00:27:36,400
+[SPEAKER_00] What do you use for the design?
+
+300
+00:27:37,120 --> 00:27:39,120
+[SPEAKER_00] Do you build with a tool like Sketch or something?
+
+301
+00:27:39,280 --> 00:27:41,600
+[SPEAKER_00] Or do you do all your prototyping like in code?
+
+302
+00:27:42,160 --> 00:27:45,440
+[SPEAKER_01] So I find in code much faster and easier to do.
+
+303
+00:27:45,840 --> 00:27:51,920
+[SPEAKER_01] Eventually, initially, I just stick to standard cells without designing and have the competence right there.
+
+304
+00:27:52,480 --> 00:27:58,240
+[SPEAKER_01] And with time, I just start a prototyping on the cells and find out what's the best thing to do.
+
+305
+00:27:59,600 --> 00:28:08,400
+[SPEAKER_01] Otherwise, I use Sketch for boards, which I think, for screens, which I think I can't get my head around because shifting constraints a lot.
+
+306
+00:28:08,720 --> 00:28:10,400
+[SPEAKER_01] And I do them programmatically, right?
+
+307
+00:28:10,640 --> 00:28:12,480
+[SPEAKER_01] So shifting them a lot can be a pain.
+
+308
+00:28:12,960 --> 00:28:16,560
+[SPEAKER_01] So for things that might get complex, I shift to Sketch.
+
+309
+00:28:17,200 --> 00:28:17,280
+[SPEAKER_01] Okay.
+
+310
+00:28:18,000 --> 00:28:19,760
+[SPEAKER_01] And in most cases, I take notes.
+
+311
+00:28:20,240 --> 00:28:30,960
+[SPEAKER_01] I actually use, I just draw out freehand the screens and try to figure out which item can be placed where and all those prototypes and I just copy-paste them and make changes.
+
+312
+00:28:31,600 --> 00:28:37,440
+[SPEAKER_00] So I mentioned it earlier, but you had kind of a decent sized beta group, right?
+
+313
+00:28:38,240 --> 00:28:38,320
+[SPEAKER_00] Yes.
+
+314
+00:28:40,480 --> 00:28:41,920
+[SPEAKER_00] How did you kind of grow that?
+
+315
+00:28:42,240 --> 00:28:49,440
+[SPEAKER_00] Because at least the perspective from the outside was that you had a decent beta group that was kind of excitingited about it.
+
+316
+00:28:49,520 --> 00:28:54,240
+[SPEAKER_00] And so once it released, there was like all this kind of weight and energy behind that release.
+
+317
+00:28:55,280 --> 00:28:57,200
+[SPEAKER_00] So how did you how did you grow that beta group?
+
+318
+00:28:57,360 --> 00:28:59,600
+[SPEAKER_00] And also like, is that accurate?
+
+319
+00:29:00,240 --> 00:29:01,520
+[SPEAKER_00] Do you think that was helpful?
+
+320
+00:29:02,080 --> 00:29:13,840
+[SPEAKER_01] I think the beta group was really helpful because I think at least fifty people were super enthusiastic about the app because they found that as the missing piece in their daily life routine.
+
+321
+00:29:14,560 --> 00:29:16,000
+[SPEAKER_01] And that was really good to hear.
+
+322
+00:29:16,720 --> 00:29:23,920
+[SPEAKER_01] And these fifty people really, if you imagine if you get fifty retweets on a post, that's like reaching a lot of users.
+
+323
+00:29:24,560 --> 00:29:29,120
+[SPEAKER_01] And I think that definitely gave a push for momentum, a push of momentum.
+
+324
+00:29:29,440 --> 00:29:46,080
+[SPEAKER_01] And I think the way I grew my beta was just putting up something fancy what the people really wanted to see in a tasks app and putting it as, you know, just putting a simple catchphrase or click bait sort of thing where if you tell them it's notes meets reminders meets Jira or Trello.
+
+325
+00:29:46,560 --> 00:29:48,400
+[SPEAKER_01] When you put it like that, people are intrigued.
+
+326
+00:29:48,720 --> 00:29:50,480
+[SPEAKER_00] So you were sort of marketing the beta.
+
+327
+00:29:51,200 --> 00:29:51,280
+[SPEAKER_00] Yes.
+
+328
+00:29:52,880 --> 00:30:02,720
+[SPEAKER_00] I think a lot of people are, I know speaking for myself anyway, betas are like intimidating because you don't want people to see see your unfinished product.
+
+329
+00:30:04,800 --> 00:30:12,000
+[SPEAKER_00] But I think trying to get as many of those passionate users as you can makes such an incredible difference.
+
+330
+00:30:12,640 --> 00:30:25,680
+[SPEAKER_00] And I think that was the thing, like once I made my early version of Dark Noise public and got over that hump of like sort of embarrassment, then everyone I've talked to said the same thing.
+
+331
+00:30:25,840 --> 00:30:32,480
+[SPEAKER_00] Like probably like one percent of the beta users are going to really give you useful feedback.
+
+332
+00:30:33,040 --> 00:30:36,320
+[SPEAKER_00] But if you have a big enough group, that one percent can still be a couple of people.
+
+333
+00:30:36,480 --> 00:31:14,800
+[SPEAKER_00] people and if you can get a couple of those people who like one they're really excited about it and they are gonna help like promote everything you know just because they're excited about it but like they want to see this thing like succeed because they personally want it like it's obviously there's some altruism there but even selfishly i at least this is how i felt about your app is i was so excited about it because i personally want it to succeed because i personally want to use it if that makes sense and i want you to be able to keep adding to it and everything like that and so uh during the beta you know as a user it's like you feel like like you can have more of an influence on the development.
+
+334
+00:31:15,040 --> 00:31:19,120
+[SPEAKER_00] And so you're going to file a lot more feedback and give your ideas and everything like that.
+
+335
+00:31:19,280 --> 00:31:27,200
+[SPEAKER_00] And then once it comes out, you're going to kind of help promote it because you want everyone else to jump on this so that the developer succeeds and can continue to build it out.
+
+336
+00:31:28,000 --> 00:31:32,960
+[SPEAKER_00] And that's something that if you don't have a very big beta group, I don't feel like you're going to get very many of those people.
+
+337
+00:31:33,680 --> 00:31:35,440
+[SPEAKER_01] That's a really nice way of seeing it.
+
+338
+00:31:35,840 --> 00:31:37,120
+[SPEAKER_01] I never thought of it like that.
+
+339
+00:31:37,840 --> 00:31:42,960
+[SPEAKER_01] But yes, I think beta testers feel like they, you know, they're involved in the app somehow.
+
+340
+00:31:43,440 --> 00:31:52,800
+[SPEAKER_01] And to get the app to succeed would kind of make them feel better because for some reason., like they feel that they were part of the journey and being part of the journey is something beautiful, right?
+
+341
+00:31:53,200 --> 00:31:54,400
+[SPEAKER_00] Yeah, you're like invested.
+
+342
+00:31:55,040 --> 00:32:01,920
+[SPEAKER_01] Absolutely, you're invested and you feel you've seen this through with the developer and that's kind of a sense of accomplishment.
+
+343
+00:32:02,400 --> 00:32:07,440
+[SPEAKER_00] And I don't want to speak for you, but I know for me, I also felt that way about the beta testers.
+
+344
+00:32:07,760 --> 00:32:11,920
+[SPEAKER_00] Like at release time, it was kind of like, look at what we've done together, you know?
+
+345
+00:32:13,200 --> 00:32:17,440
+[SPEAKER_00] Because you can see, like there's still parts of my app that I'm really proud of that I know exactly.
+
+346
+00:32:18,160 --> 00:32:24,640
+[SPEAKER_00] I can remember reading the email from the from that person suggesting it and it clicking in my head like, oh, that.
+
+347
+00:32:25,120 --> 00:32:25,840
+[SPEAKER_00] makes so much sense.
+
+348
+00:32:26,080 --> 00:32:31,360
+[SPEAKER_00] And I still attribute that feature to that person, even if that person maybe doesn't even remember that they were the ones that suggested it.
+
+349
+00:32:31,920 --> 00:32:39,040
+[SPEAKER_01] A set of fresh eyes really can do the things that we probably wouldn't have done it because we're so used to seeing the same thing over and over again.
+
+350
+00:32:39,920 --> 00:32:40,640
+[SPEAKER_01] And I felt the same.
+
+351
+00:32:41,200 --> 00:32:47,920
+[SPEAKER_01] In fact, post launch I put a Telegram link into the app and a lot of users jumped on to that Telegram group.
+
+352
+00:32:48,400 --> 00:32:55,920
+[SPEAKER_01] And right now they're actually helping me so much with so many things that I would have, you know, never thought of.
+
+353
+00:32:56,160 --> 00:33:00,000
+[SPEAKER_01] And that's something really helpful because now these people are invested in the journey with me.
+
+354
+00:33:00,640 --> 00:33:14,640
+[SPEAKER_01] And to have them to take part with me and to actually have that support that, you know, your work is being appreciated and there are people who are out there really waiting for you, you know, and they're patiently waiting and they're very supportive.
+
+355
+00:33:15,040 --> 00:33:18,480
+[SPEAKER_01] So it's a very you feel like you've got friends with you now.
+
+356
+00:33:18,960 --> 00:33:19,600
+[SPEAKER_00] That's awesome.
+
+357
+00:33:19,920 --> 00:33:28,400
+[SPEAKER_00] It's interesting that you said Telegram because like we talked, I've talked a couple of times in the show about setting up like a Reddit, a subreddit for your app.
+
+358
+00:33:28,640 --> 00:33:31,360
+[SPEAKER_00] And I know for me that hasn't been really the most successful.
+
+359
+00:33:33,280 --> 00:33:38,720
+[SPEAKER_00] Mostly probably because of me, but like it just never really took off., but Twitter has always been sort of my place.
+
+360
+00:33:38,960 --> 00:33:42,880
+[SPEAKER_00] And maybe it's just because that's the place where I understand things the best and can market it the best.
+
+361
+00:33:43,200 --> 00:33:46,320
+[SPEAKER_00] But I haven't I haven't heard of anyone using Telegram.
+
+362
+00:33:46,480 --> 00:33:49,040
+[SPEAKER_00] So like you, you can set up like a group in Telegram.
+
+363
+00:33:49,920 --> 00:33:50,000
+[SPEAKER_01] Yes.
+
+364
+00:33:50,400 --> 00:33:55,680
+[SPEAKER_01] And I think the limit is, there's a very high limit around twenty thousand users or plus.
+
+365
+00:33:56,080 --> 00:33:56,400
+[SPEAKER_00] Oh man.
+
+366
+00:33:57,600 --> 00:33:59,440
+[SPEAKER_01] And the thing is, everyone can be anonymous.
+
+367
+00:33:59,600 --> 00:34:02,000
+[SPEAKER_01] You don't have to share your phone number or email or anything.
+
+368
+00:34:02,160 --> 00:34:06,320
+[SPEAKER_01] So it's basically you just having a username as a person on Reddit would.
+
+369
+00:34:06,960 --> 00:34:07,280
+[SPEAKER_01] Interesting.
+
+370
+00:34:07,680 --> 00:34:07,760
+[SPEAKER_00] Yeah.
+
+371
+00:34:08,000 --> 00:34:49,520
+[SPEAKER_00] I I feel like it's like discouraging whenever you set one of those up and it doesn't take off but i bet every app and every developer there's like a different thing that could possibly work for you like there's some developers that use slack and i know that's successful and some developers use discord and that can be successful it's probably like a combination of luck uh and the market that you happen to be talking to and you as a as a person developer what platform you're comfortable with um so it's probably worth trying out some of those things because From everybody I've talked to, when one of those things clicks, it can be so incredibly helpful to have that sort of direct line of feedback from people.
+
+372
+00:34:50,080 --> 00:34:51,040
+[SPEAKER_01] I completely agree.
+
+373
+00:34:52,080 --> 00:34:53,200
+[SPEAKER_01] They've helped me out a lot.
+
+374
+00:34:53,520 --> 00:34:57,040
+[SPEAKER_01] Recently, a person just helped me localize my entire page in Russian.
+
+375
+00:34:57,200 --> 00:34:57,760
+[SPEAKER_00] Oh, wow.
+
+376
+00:34:58,160 --> 00:35:00,880
+[SPEAKER_01] And not only the app, but also the app store page.
+
+377
+00:35:01,040 --> 00:35:11,280
+[SPEAKER_01] And just out of the pure help they, or just out of pure happiness because they really enjoyed the app and they wanted it to succeed.
+
+378
+00:35:12,240 --> 00:35:15,360
+[SPEAKER_01] And that was something really, really nice to do.
+
+379
+00:35:15,600 --> 00:35:18,000
+[SPEAKER_01] Because I wouldn't have expected that in a million years.
+
+380
+00:35:18,640 --> 00:35:18,720
+[SPEAKER_00] Yeah.
+
+381
+00:35:19,040 --> 00:35:35,440
+[SPEAKER_00] Sometimes I think we focus too much on the negative sides of putting your thing out into the public, but it really is cool whenever you get a user base that you can somehow get the people that are happy with it to talk to you.
+
+382
+00:35:35,600 --> 00:35:40,320
+[SPEAKER_00] Because oftentimes, you know, the angry people are much more they'll go out of their way to talk to you.
+
+383
+00:35:40,480 --> 00:35:47,520
+[SPEAKER_00] But if you can set something up where you can get feedback from people that do enjoy it, I think that does a lot for your mental health.
+
+384
+00:35:48,640 --> 00:35:49,680
+[SPEAKER_01] I agree on that point.
+
+385
+00:35:50,800 --> 00:36:00,720
+[SPEAKER_01] In fact, post launch, I got over, I think, around seventy emails from different users because I had kept a contact as page which would open up.
+
+386
+00:36:01,680 --> 00:36:07,600
+[SPEAKER_01] an email screen, a mail screen, and users were just so understanding.
+
+387
+00:36:08,560 --> 00:36:26,400
+[SPEAKER_01] And it was unbelievable because from my perception, working at other companies, I think when you're a company, people take to you more strictly, but these people somehow knew that it was a developer working and they're like, this is your first version on the App Store and, you know, it's, it's nearly there.
+
+388
+00:36:26,960 --> 00:36:28,480
+[SPEAKER_01] There are a few things that could make it better.
+
+389
+00:36:29,200 --> 00:36:31,280
+[SPEAKER_01] And if you could do these things over time, that'd be great.
+
+390
+00:36:31,520 --> 00:36:32,560
+[SPEAKER_01] But we're patient with you.
+
+391
+00:36:33,280 --> 00:36:36,720
+[SPEAKER_01] And that, that kind of, you know, empowers me.
+
+392
+00:36:37,120 --> 00:36:38,480
+[SPEAKER_01] and makes me feel better about my work.
+
+393
+00:36:39,280 --> 00:36:45,920
+[SPEAKER_01] And honestly, it's very soothing and calming that the users appreciate the app and they're waiting for it.
+
+394
+00:36:46,640 --> 00:36:48,000
+[SPEAKER_01] And they've not given up on it.
+
+395
+00:36:48,880 --> 00:36:52,080
+[SPEAKER_01] And people actually say that I've bought the lifetime version right now.
+
+396
+00:36:52,240 --> 00:36:56,640
+[SPEAKER_01] I won't I won't use it until you add this feature, but I'd like to see where this goes.
+
+397
+00:36:57,360 --> 00:36:59,600
+[SPEAKER_01] And those gestures are really nice.
+
+398
+00:36:59,760 --> 00:37:16,960
+[SPEAKER_01] And I feel like I feel like I should put in my time and effort and more into providing, you know, into giving these users exactly what they want because they've trusted me and they've, you know, actually taking their time and trying to be a part of the journey.
+
+399
+00:37:18,000 --> 00:37:19,520
+[SPEAKER_01] It's just incredible, the response.
+
+400
+00:37:20,240 --> 00:37:24,720
+[SPEAKER_00] Yeah, I definitely find the emails that say like, hey, really like the app.
+
+401
+00:37:25,360 --> 00:37:35,360
+[SPEAKER_00] If you could add this one feature that would make it, you know, killer or like that I wouldn't I can't actually use it because it doesn't have XYZ, but they're still like nice about it.
+
+402
+00:37:36,080 --> 00:37:42,320
+[SPEAKER_00] I find myself much more likely to see those and think, that's a potential customer that I want to try and go after.
+
+403
+00:37:42,640 --> 00:37:48,640
+[SPEAKER_00] And that will bump, you know, the likelihood of me prioritizing that feature up a lot higher than someone who just says, this thing is worthless.
+
+404
+00:37:49,120 --> 00:37:51,120
+[SPEAKER_00] because it doesn't have X and then nothing else.
+
+405
+00:37:51,360 --> 00:37:57,840
+[SPEAKER_00] And maybe that's, I don't know, maybe that's just an ego thing, but like, I definitely think it's worth thinking about if you're leaving feedback.
+
+406
+00:37:59,200 --> 00:38:04,160
+[SPEAKER_00] Especially, well, honestly, even if it's not, even if it is a company, it's still people at the end of the day.
+
+407
+00:38:04,640 --> 00:38:08,960
+[SPEAKER_00] And so, yeah, those types of emails are definitely more effective on me too.
+
+408
+00:38:10,000 --> 00:38:10,880
+[SPEAKER_01] Yes, agreed.
+
+409
+00:38:12,320 --> 00:38:15,280
+[SPEAKER_00] So, you mentioned lifetime version of the app.
+
+410
+00:38:15,520 --> 00:38:17,200
+[SPEAKER_00] So, let's talk about the business model.
+
+411
+00:38:19,120 --> 00:38:22,000
+[SPEAKER_00] What ideas did you have going into this and where did you eventually land?
+
+412
+00:38:22,960 --> 00:38:28,960
+[SPEAKER_01] So, while starting out, I just, you know, I just thought I'd have a simple lifetime version for the app.
+
+413
+00:38:30,000 --> 00:39:01,920
+[SPEAKER_01] I consulted some friends and I consulted some, you know, experienced people in the industry who've in the past had success and they all told me having lifetime having a lifetime version is fine initially starting out but if you don't have recording revenue you will never be able to support those users because eventually you know you never know when it may die out and having a subscription model in your app definitely helps because now you have some stability going forward because you know that you're going to get some amount into your bank at the end of the day.
+
+414
+00:39:02,560 --> 00:39:10,080
+[SPEAKER_00] And that, yeah, the episode we just, uh, I actually just released, uh, today as of we're recording, uh, was about slug line.
+
+415
+00:39:10,400 --> 00:39:17,760
+[SPEAKER_00] And that was one of the things that they talked about was like, you kind of have to do something really special to get a new wave of people to come in.
+
+416
+00:39:17,840 --> 00:39:20,240
+[SPEAKER_00] Otherwise, eventually, sales will start to drop off.
+
+417
+00:39:20,800 --> 00:39:21,120
+[SPEAKER_01] Exactly.
+
+418
+00:39:21,360 --> 00:39:25,120
+[SPEAKER_01] And you need the revenue to come in too, in order for you to support those features.
+
+419
+00:39:25,280 --> 00:39:27,680
+[SPEAKER_01] So it's, it's, it goes both ways.
+
+420
+00:39:28,560 --> 00:39:46,960
+[SPEAKER_01] And I have, uh, initially, the whole point of the app was to get it into the hands of more users, because I wanted a product, you know, I think everyone wants a product that is more widely used in people and it's better that people use it than people just avoid it or refrain from it because of its price or because of its pricing, right?
+
+421
+00:39:47,840 --> 00:39:58,160
+[SPEAKER_01] And looking at a lot of people in the market and a lot of companies, they charge basically their subscription would be my subscription per month where I placed it annually.
+
+422
+00:39:58,720 --> 00:40:08,000
+[SPEAKER_01] It's actually because I want to pursue this for a longer term and I actually want to make this gig my eventually my full-time gig.
+
+423
+00:40:08,880 --> 00:40:12,720
+[SPEAKER_01] And yeah, that's that's that was the idea.
+
+424
+00:40:13,200 --> 00:40:19,760
+[SPEAKER_01] behind pricing and I didn't want to keep it as a paid upfront app because that would restrict the amount of downloads I'd get.
+
+425
+00:40:20,240 --> 00:40:23,520
+[SPEAKER_01] And the whole point was to get the app out into the hands of more people.
+
+426
+00:40:23,920 --> 00:40:24,000
+[SPEAKER_00] Yeah.
+
+427
+00:40:24,240 --> 00:40:26,240
+[SPEAKER_00] And so it's not just a subscription though.
+
+428
+00:40:26,400 --> 00:40:29,200
+[SPEAKER_00] You do have a kind of free version as well, right?
+
+429
+00:40:29,760 --> 00:40:29,840
+[SPEAKER_01] Yeah.
+
+430
+00:40:30,080 --> 00:40:31,840
+[SPEAKER_01] The free version is pretty generous, I think.
+
+431
+00:40:32,160 --> 00:40:45,920
+[SPEAKER_01] So there are two free projects and other people, other users could actually share their or collaborate with you and you necessarily don't have to pay for that because someone else has purchased the premium version.
+
+432
+00:40:46,400 --> 00:40:47,920
+[SPEAKER_00] Sharing is a premium version.
+
+433
+00:40:48,720 --> 00:40:50,960
+[SPEAKER_00] So they can share it with you and you don't.
+
+434
+00:40:51,200 --> 00:41:00,800
+[SPEAKER_00] So the only time that you'd ever want to or ever have to upgrade to a premium user would be only when you want more than two projects.
+
+435
+00:41:01,920 --> 00:41:13,680
+[SPEAKER_00] Yeah, I feel like I was really excited whenever I saw your pricing model for that because it felt like obviously I don't know the numbers and I mean you probably don't completely either yet.
+
+436
+00:41:13,920 --> 00:41:33,200
+[SPEAKER_00] It'll be curious to see I'll be curious to see how this turns out long term but like I feel like you struck a really good balance for making it accessible to lots of people while all while also monetizing the group of people that have the means to pay for it, if that makes sense.
+
+437
+00:41:33,360 --> 00:41:42,960
+[SPEAKER_00] So like for a lot of people, if you just have like a personal project at home or whatever, this thing could work and you could just use it for your whole life or whatever and like it would just work fine.
+
+438
+00:41:43,760 --> 00:41:46,080
+[SPEAKER_00] But for a company or somebody who's sort of...
+
+439
+00:41:46,960 --> 00:42:07,760
+[SPEAKER_00] uh taking this seriously and has a team of people and wants to share it with lots of people or has a whole bunch of projects or whatever that's where that monetization strategy comes in and especially the way you did sharing where like you just said sharing isn't sharing, you have to upgrade or you have to pay the subscription for, but everyone you're sharing it with doesn't.
+
+440
+00:42:08,320 --> 00:42:16,080
+[SPEAKER_00] And so, like, for me personally, I know that I could pay for it and then I could use it for a team of people.
+
+441
+00:42:16,320 --> 00:42:20,400
+[SPEAKER_00] And I'm not expecting everybody I'm working with also has to pay for this app, right?
+
+442
+00:42:21,200 --> 00:42:25,200
+[SPEAKER_00] Everybody just kind of gets that for free because I'm the one sharing it with them.
+
+443
+00:42:25,360 --> 00:42:26,240
+[SPEAKER_00] And so, I don't know.
+
+444
+00:42:26,400 --> 00:42:27,920
+[SPEAKER_00] I feel like you struck a really cool balance.
+
+445
+00:42:28,080 --> 00:42:34,400
+[SPEAKER_00] I know subscriptions are really tricky, but you with this type of app, seem to have landed on something that makes a lot of sense.
+
+446
+00:42:35,200 --> 00:42:43,920
+[SPEAKER_01] Yeah, I'm just glad to have found the balance actually because a lot of people struggle with this event initially and you just don't know.
+
+447
+00:42:44,160 --> 00:42:56,000
+[SPEAKER_01] You might initially place it so low and you might get a high amount of downloads and people purchasing it, but then you realize this isn't enough for me to maintain it all year round.
+
+448
+00:42:56,720 --> 00:43:12,160
+[SPEAKER_01] And eventually it eventually fades the idea and that's that kind of damages your name in a way because people see you as that, oh, this developer made that app, but he let that be and no more enthusiastic about that.
+
+449
+00:43:12,960 --> 00:43:25,600
+[SPEAKER_01] And take if you take a premium pay, if you take a premium card from a user, which I think my current lifetime is $35, which I think is kind of a big amount for someone to put out for an app on the App Store.
+
+450
+00:43:26,400 --> 00:43:45,920
+[SPEAKER_01] So they'd expect you to continuously help maintain the app, listen to their take up their customer support and all of those things because now you've shifted into you've you're not just an app on the App Store, you're the app that people have started to rely on for their day to day tasks.
+
+451
+00:43:46,000 --> 00:43:46,240
+[SPEAKER_01] Right.
+
+452
+00:43:46,480 --> 00:43:47,840
+[SPEAKER_01] And migrating is a pain.
+
+453
+00:43:48,560 --> 00:43:54,960
+[SPEAKER_01] Because if I ask you if it stops working tomorrow and if you just decide to shift between tools, that's just hard.
+
+454
+00:43:55,280 --> 00:43:57,840
+[SPEAKER_01] And people are actually making a bet on it today.
+
+455
+00:43:58,160 --> 00:44:07,760
+[SPEAKER_01] Because they're like, okay, I can start today on this and I can continue to be on this till the end of time or till I scale up to, you know, I need something more advanced.
+
+456
+00:44:08,800 --> 00:44:09,920
+[SPEAKER_00] So what has been the reaction?
+
+457
+00:44:10,320 --> 00:44:14,640
+[SPEAKER_00] I know a lot of people get some pretty harsh words whenever they do subscriptions.
+
+458
+00:44:15,280 --> 00:44:19,600
+[SPEAKER_00] Have you run into anything of that or has it been pretty positive as far as reaction to the pricing model?
+
+459
+00:44:20,400 --> 00:44:24,000
+[SPEAKER_01] So not a single complaint as far as it's come to the pricing model.
+
+460
+00:44:24,400 --> 00:45:06,080
+[SPEAKER_01] model and that's pretty surprising there was a one though um the there was a review in brazil which mentioned that you know the pricing is really expensive for us over there and we cannot afford it and i understand that um and it was unfair of me to price everyone all over the globe the same level because you know um the income varies so i actually dropped down the price for people in brazil so that at least they could use the app and the the mindset is this that a user who would never purchase the app right um is a lost user but if you drop the price by say you know thirty percent and if you convert that user, it's some revenue from someone who was not going to give you any revenue initially.
+
+461
+00:45:06,560 --> 00:45:10,400
+[SPEAKER_00] Yeah, it's the, uh, I can't remember what that's called, but there's there's a whole name for that.
+
+462
+00:45:10,560 --> 00:45:13,600
+[SPEAKER_00] Like airlines are kind of the premier example of that, right?
+
+463
+00:45:13,920 --> 00:45:27,040
+[SPEAKER_00] Where everyone sitting in basically the same seats in an airline is actually paying a different price and they try really hard to extract the most amount of money out of each individual as they can, but there's no sense in having a seat be empty.
+
+464
+00:45:27,120 --> 00:45:36,400
+[SPEAKER_00] So as it gets closer to the time of the flight, they will keep lowering the price or I don't know how the algorithms all work, but their goal is.
+
+465
+00:45:36,640 --> 00:45:49,760
+[SPEAKER_00] is they want every seat filled even if that means selling it to someone for super cheap, but maximum amount of profits by, you know, making it something that everyone thinks is worth it or something like that.
+
+466
+00:45:49,920 --> 00:45:55,440
+[SPEAKER_00] I'm, I'm extraordinarily poorly phrased that, but it's, it's kind of the same concept.
+
+467
+00:45:56,240 --> 00:45:58,160
+[SPEAKER_01] I think I think I understand.
+
+468
+00:45:58,240 --> 00:45:59,600
+[SPEAKER_01] It's, it's, it's fairly simple.
+
+469
+00:45:59,840 --> 00:45:59,920
+[SPEAKER_01] Yeah.
+
+470
+00:46:00,320 --> 00:46:01,920
+[SPEAKER_01] It's basically nothing goes wasted.
+
+471
+00:46:02,480 --> 00:46:06,080
+[SPEAKER_01] At least make something on it rather than not having to make anything on it, right?
+
+472
+00:46:06,560 --> 00:46:06,640
+[SPEAKER_00] Yeah.
+
+473
+00:46:07,680 --> 00:46:07,760
+[SPEAKER_00] Yeah.
+
+474
+00:46:08,000 --> 00:46:21,040
+[SPEAKER_00] And I would imagine that the lifetime unlock helps with the negative feedback because it's hard to be upset that there's a subscription if you do have the option to get out of it.
+
+475
+00:46:21,280 --> 00:46:26,000
+[SPEAKER_00] Even if you're priced out of that, it's, you know, at least the option's there.
+
+476
+00:46:26,320 --> 00:46:36,080
+[SPEAKER_00] But I do know that a lot of people warn of lifetime subscriptions because eventually, you know, you could run into the same problem with those as you would run into otherwise.
+
+477
+00:46:36,400 --> 00:46:39,440
+[SPEAKER_00] Is that something you're concerned about or what do you think about that?
+
+478
+00:46:39,600 --> 00:46:42,480
+[SPEAKER_00] Do you think you priced it in a way where you're not really going to run into that problem?
+
+479
+00:46:43,280 --> 00:46:48,720
+[SPEAKER_01] So luckily I'm based out of India and our low cost of living is pretty low, right?
+
+480
+00:46:49,600 --> 00:46:54,560
+[SPEAKER_01] So 35 dollars over a year kind of makes a bigger impact than it would elsewhere.
+
+481
+00:46:55,600 --> 00:46:59,440
+[SPEAKER_01] But the whole point is this initial 35 dollars which people pay, right?
+
+482
+00:46:59,840 --> 00:47:01,120
+[SPEAKER_01] And I'm planning to bump it out.
+
+483
+00:47:01,280 --> 00:47:02,800
+[SPEAKER_01] So 35 was the promo period.
+
+484
+00:47:04,320 --> 00:47:11,200
+[SPEAKER_01] This was basically to get to understand if I've achieved product market fit and that I can continue working on this.
+
+485
+00:47:11,600 --> 00:47:14,960
+[SPEAKER_01] And it is that initial support that I need in order to go into this full time.
+
+486
+00:47:15,600 --> 00:47:18,080
+[SPEAKER_01] Because subscriptions initially are pricedly low.
+
+487
+00:47:18,880 --> 00:47:24,160
+[SPEAKER_01] So if I get enough people, like think of it as that Kickstarter project where you have to hit the minimum threshold, right?
+
+488
+00:47:25,040 --> 00:47:28,880
+[SPEAKER_01] Once you've reached the minimum threshold, you can actually go and start selling the product.
+
+489
+00:47:29,520 --> 00:47:29,760
+[SPEAKER_00] Interesting.
+
+490
+00:47:29,920 --> 00:47:34,400
+[SPEAKER_00] So do you think you would keep that lifetime in there always or eventually you would phase that out?
+
+491
+00:47:34,720 --> 00:47:36,960
+[SPEAKER_00] Not asking for, not saying you're committing to something.
+
+492
+00:47:37,200 --> 00:47:37,840
+[SPEAKER_00] I'm just curious.
+
+493
+00:47:38,160 --> 00:47:49,120
+[SPEAKER_01] Also, I have, I haven't thought so much into it, but I definitely see users complaining that if, you know, they specifically mention the review and thank God this app has a lifetime purchase.
+
+494
+00:47:49,680 --> 00:47:52,480
+[SPEAKER_01] So I think people really love a lifetime purchase.
+
+495
+00:47:52,800 --> 00:48:00,560
+[SPEAKER_01] I'm not sure to what extent you can push the pricing, but if you give them a really good comparison where they think, you know, oh, early seems.
+
+496
+00:48:01,120 --> 00:48:06,960
+[SPEAKER_01] very simple and it looks cheaper, so might as well move on to the early subscription.
+
+497
+00:48:07,600 --> 00:48:13,680
+[SPEAKER_01] That is maybe something I want to do in the future where I give you a compelling reason to move to the early subscription.
+
+498
+00:48:14,400 --> 00:48:26,320
+[SPEAKER_01] And yeah, that's I haven't given it much thought on removing the lifetime thing because it actually gives you a lot of income all at once and you know, you're comfortable with that.
+
+499
+00:48:26,960 --> 00:48:29,600
+[SPEAKER_01] It kind of allows you to work for it on longer periods.
+
+500
+00:48:29,920 --> 00:48:30,720
+[SPEAKER_00] Yeah, that's interesting.
+
+501
+00:48:31,040 --> 00:48:32,720
+[SPEAKER_01] But I haven't given it much thought though.
+
+502
+00:48:33,280 --> 00:48:35,600
+[SPEAKER_00] Now, obviously, this is not going to bear out long term.
+
+503
+00:48:36,000 --> 00:48:43,840
+[SPEAKER_00] But does it seem like more people, at least initially, have gone with the Lifetime or subscription or is it kind of even?
+
+504
+00:48:44,480 --> 00:48:48,320
+[SPEAKER_00] So on the day of launch, Lifetime was just going up, up, up, up.
+
+505
+00:48:48,560 --> 00:48:54,080
+[SPEAKER_00] And I was like, wow, it looks like I can move to, you know, being a full-time indie developer.
+
+506
+00:48:54,800 --> 00:49:01,120
+[SPEAKER_01] And then over a period of time, I think as the So initially it launched in the US time zone, right?
+
+507
+00:49:01,840 --> 00:49:06,240
+[SPEAKER_01] And people in the US time zone, they were all like, you know, let me just buy Lifetime, Lifetime.
+
+508
+00:49:06,320 --> 00:49:11,200
+[SPEAKER_01] And as soon as it progressed over, over all over the world, right?
+
+509
+00:49:11,600 --> 00:49:18,480
+[SPEAKER_01] As soon as it came to the Eastastern Hemisphere, I think more people opted for the subscription because it seems like a cheaper option, right?
+
+510
+00:49:19,280 --> 00:49:19,520
+[SPEAKER_00] Interesting.
+
+511
+00:49:20,320 --> 00:49:22,240
+[SPEAKER_01] I think that has something to play with it.
+
+512
+00:49:22,640 --> 00:49:24,240
+[SPEAKER_01] It's pretty interesting seeing the numbers.
+
+513
+00:49:24,560 --> 00:49:24,640
+[SPEAKER_00] Yeah.
+
+514
+00:49:25,200 --> 00:49:37,200
+[SPEAKER_01] And people with buying power, they just want to bully and they want to buy the lifetime one, although the subscription is kind of, you know, three fifths of the price, like it's ten versus thirty five.
+
+515
+00:49:37,840 --> 00:49:48,640
+[SPEAKER_01] So, but people in the US and UK and all of Australia, these people tend to buy the lifetime, whereas those in Asia, they tend to buy the yearly.
+
+516
+00:49:49,120 --> 00:49:49,600
+[SPEAKER_01] subscription.
+
+517
+00:49:50,080 --> 00:49:50,400
+[SPEAKER_00] Huh.
+
+518
+00:49:50,640 --> 00:49:51,760
+[SPEAKER_00] Yeah, that's very interesting.
+
+519
+00:49:51,920 --> 00:49:52,880
+[SPEAKER_00] I never would have thought of that.
+
+520
+00:49:52,960 --> 00:49:53,280
+[SPEAKER_00] Huh.
+
+521
+00:49:53,520 --> 00:49:55,760
+[SPEAKER_00] Luckily the launch was really nice.
+
+522
+00:49:55,920 --> 00:49:59,760
+[SPEAKER_01] I think got initial days were like 3000 downloads a day.
+
+523
+00:50:00,000 --> 00:50:02,160
+[SPEAKER_01] And then gradually now it's 1000 a day.
+
+524
+00:50:02,880 --> 00:50:04,160
+[SPEAKER_00] That's still pretty great.
+
+525
+00:50:04,960 --> 00:50:07,200
+[SPEAKER_01] I think it's just the ripple effect.
+
+526
+00:50:07,360 --> 00:50:13,680
+[SPEAKER_01] So once that drop drops on the lake and then it just starts rippling, the ripples eventually die out.
+
+527
+00:50:14,320 --> 00:50:15,760
+[SPEAKER_01] I just hope there's no die out.
+
+528
+00:50:16,320 --> 00:50:20,640
+[SPEAKER_00] Yeah, you're you're waiting to see what that background radiation looks like.
+
+529
+00:50:21,040 --> 00:50:21,360
+[SPEAKER_01] Absolutely.
+
+530
+00:50:21,680 --> 00:50:24,640
+[SPEAKER_01] Hopefully Apple picks it up and you know, I get that nice.
+
+531
+00:50:25,440 --> 00:50:32,560
+[SPEAKER_01] feature and it just puts a boulder into the lake instead of just a small febble, right?
+
+532
+00:50:33,120 --> 00:50:34,960
+[SPEAKER_01] And the ripples continue for longer.
+
+533
+00:50:35,760 --> 00:50:37,920
+[SPEAKER_01] So what kind of stuff have you done to market the app?
+
+534
+00:50:38,640 --> 00:50:41,840
+[SPEAKER_01] So far it's just mainly been Twitter and some press kit.
+
+535
+00:50:42,480 --> 00:50:45,920
+[SPEAKER_01] Luckily, nine to five Mac was very kind to feature the app.
+
+536
+00:50:47,040 --> 00:51:04,560
+[SPEAKER_01] And that actually gained, gave a lot of momentum and organically publications in Germany, Russia and people have been posting about it on a Medium article in their own native languages and I think that's incredibly cool.
+
+537
+00:51:05,280 --> 00:51:06,240
+[SPEAKER_00] Yeah, that's awesome.
+
+538
+00:51:06,640 --> 00:51:38,080
+[SPEAKER_01] I think finally it was that app and people are comparing it to the reminders app and initially my goal wasn't to compete with reminders app but just draw inspiration from their simple UI right and it's just that one screen which looks like the reminders app which is you know a project detail screen and a lot of people are calling it which is you know it's reminders but more and I was more of a you know a task management Kanban port but I think I finally figured out what the users want.
+
+539
+00:51:38,400 --> 00:51:42,320
+[SPEAKER_01] They want recurring tasks, which is basically what the reminders app is, right?
+
+540
+00:51:43,120 --> 00:51:49,600
+[SPEAKER_01] So now I'm slowly trying to find that product market fit and users have actually helped me get there.
+
+541
+00:51:50,320 --> 00:51:57,360
+[SPEAKER_01] And just before getting on this call, I made the release which actually gives the most requested features all at once.
+
+542
+00:51:58,720 --> 00:51:59,840
+[SPEAKER_00] That's really kind of interesting.
+
+543
+00:52:00,080 --> 00:52:16,160
+[SPEAKER_00] So because of the reaction being sort of like, this feels like reminders, you know, plus, you're almost shifting your, not like your whole app, but shifting your sort of priorities or whatever to lean into that.
+
+544
+00:52:17,280 --> 00:52:28,080
+[SPEAKER_00] As like, you know, if you really like the reminders app, but you just wish it did XYZ a little bit more, this app might be just like that upgrade, which makes sense from the design a lot.
+
+545
+00:52:28,640 --> 00:52:32,960
+[SPEAKER_01] So it's more like they like the task management app, but they want reminding capabilities.
+
+546
+00:52:33,280 --> 00:52:41,840
+[SPEAKER_01] So something I think the most requested feature is recording reminders, which is basically something a reminders app would do, right?
+
+547
+00:52:42,080 --> 00:52:43,360
+[SPEAKER_01] And not a task management app.
+
+548
+00:52:44,320 --> 00:53:33,920
+[SPEAKER_01] So to have recording tasks was kind of I never thought of that and that's where users come into play and there have been so many users who have been saying that if you just put recording tasks into this app right I will shift from things omni focus and to do this and I'm like whoa whoa whoa those are like three massive players and I I honestly love things and omni focus I found that way too expensive to even begin with and to do this again again I felt to do this was very crowded to begin with but a lot of people love those apps and to into something so simple, it just makes me realize one thing that users really don't want that much functionality, they just want simplicity.
+
+549
+00:53:34,400 --> 00:53:38,160
+[SPEAKER_00] Yeah, or if the functionality is there, it doesn't have to be obvious upfront.
+
+550
+00:53:38,800 --> 00:53:45,600
+[SPEAKER_01] Yeah, power users will discover it once and then they'll use it forever, so it's really not something to be worried about.
+
+551
+00:53:46,160 --> 00:53:57,280
+[SPEAKER_00] Yeah, it's it's really interesting and I I'm very excited to see where this goes because, like you said, recurring reminders in a Kanban board style project management app.
+
+552
+00:53:57,520 --> 00:53:58,880
+[SPEAKER_00] I'm sure there are other apps that do that.
+
+553
+00:53:58,960 --> 00:54:01,760
+[SPEAKER_00] I don't actually know, but that is not something I'veve ever thought of.
+
+554
+00:54:02,400 --> 00:54:07,360
+[SPEAKER_00] But I remember the first time you tweeted something about that, I was like, oh, interesting.
+
+555
+00:54:08,640 --> 00:54:10,800
+[SPEAKER_00] I wonder how that would work with XYZ thing.
+
+556
+00:54:10,960 --> 00:54:14,080
+[SPEAKER_00] And like, my brain started thinking of different use cases for that.
+
+557
+00:54:15,280 --> 00:54:17,280
+[SPEAKER_00] And there's a couple of other things that you've talked about.
+
+558
+00:54:17,520 --> 00:54:21,200
+[SPEAKER_00] Like, you mentioned, well, I won't say that because I don't know if you mentioned that publicly.
+
+559
+00:54:21,360 --> 00:54:22,960
+[SPEAKER_01] Well, you can go ahead.
+
+560
+00:54:23,680 --> 00:54:36,640
+[SPEAKER_00] Well, so you had mentioned, I think you mentioned this to me once when we were talking that you were working on a thing that you could hit a button and it would move everything that's in your done column back into your to do column or at the beginning.
+
+561
+00:54:37,120 --> 00:54:38,240
+[SPEAKER_00] of your Kanban board?
+
+562
+00:54:38,640 --> 00:54:47,600
+[SPEAKER_01] Yes, something like, yeah, so it's something like, I think a couple of users requested this where they'd want to repeat the project all over again.
+
+563
+00:54:47,840 --> 00:54:51,920
+[SPEAKER_01] And the example they did give was, you know, grocery shopping.
+
+564
+00:54:52,080 --> 00:54:56,560
+[SPEAKER_01] They do it every time and, you know, they keep buying things in their market done.
+
+565
+00:54:56,800 --> 00:55:01,600
+[SPEAKER_01] And then once the month, month stash is over, right, they want to go back again.
+
+566
+00:55:02,080 --> 00:55:06,640
+[SPEAKER_01] So they could just hit reset and add the new items and head on to, you know, their market.
+
+567
+00:55:07,760 --> 00:55:09,360
+[SPEAKER_00] Yeah, you mentioned that to me.
+
+568
+00:55:09,840 --> 00:55:13,120
+[SPEAKER_00] Is that in the release that you're about to do or is that coming sometime in the future.
+
+569
+00:55:13,360 --> 00:55:15,200
+[SPEAKER_01] Oh, that's coming sometime soon, hopefully.
+
+570
+00:55:15,600 --> 00:55:48,560
+[SPEAKER_00] Okay, because yeah, you mentioned that to me and immediately I thought of packing lists and there's a couple of other things that are like this because I know there's like reusable checklists are a big thing in I think omni focus and in different podcasts I've heard like super power user type people talking about this and none of the apps that I use, if they do have it, I don't know how to do it and so I've even come up with some like janky shortcuts to try and create this behavior because I like this conceptually.
+
+571
+00:55:49,040 --> 00:55:59,200
+[SPEAKER_00] And the moment you mentioned that, I was like, holy cow, I could have a project that's literally just my packing list or my, you know, whatever recurring checklist thing.
+
+572
+00:55:59,760 --> 00:56:03,280
+[SPEAKER_00] And I thought of a whole bunch of different use cases that I would have for that right off the bat.
+
+573
+00:56:03,680 --> 00:56:20,160
+[SPEAKER_00] And I've never in a million years thought, I wish Trello could do this, but I don't know, this you sort of landed in this weird in between spot for a traditional project management Kanban board app and a traditional task list reminders app.
+
+574
+00:56:20,640 --> 00:56:23,680
+[SPEAKER_00] And it's really interesting to see where these features end up leading you.
+
+575
+00:56:24,400 --> 00:56:28,800
+[SPEAKER_01] I just have to stay core to my initial thoughts while making the app, right?
+
+576
+00:56:29,840 --> 00:56:54,560
+[SPEAKER_01] No matter what I do, no matter how many features I add to the app, at the end of the day, the app should still be as simple as it is for you today, as it is for you next year when you know a person is just onboarding into the app, because that is something that is really dear to me to keep that initial experience really nice and not to make a user at any point feel like, Oh, this has just become what, you know, every other app is.
+
+577
+00:56:54,960 --> 00:57:00,160
+[SPEAKER_01] It should just be as simple and features should be left for you to explore as and when you need them.
+
+578
+00:57:00,960 --> 00:57:11,360
+[SPEAKER_00] Yeah, I think that's a really challenging thing, as most successful apps probably show is eventually they do get kind of that old thing, but some apps like Things 3 is an example I think of.
+
+579
+00:57:11,520 --> 00:57:25,200
+[SPEAKER_00] Like I know Things 3 is super powerful, but every time you open it, it feels basic and simple, and I think that's definitely something that your app feels like it makes sense as a sort of guiding light.
+
+580
+00:57:25,920 --> 00:57:28,240
+[SPEAKER_00] And so, yeah, that's exciting to hear you say that.
+
+581
+00:57:29,120 --> 00:57:33,040
+[SPEAKER_01] I just hope I follow in their footsteps and win the Athlean Design Award one day.
+
+582
+00:57:33,360 --> 00:57:34,240
+[SPEAKER_00] Hey, there you go.
+
+583
+00:57:36,480 --> 00:57:45,440
+[SPEAKER_00] So I'm going to wrap this up with the question that I ask everyone, which is who is a person or people out there that have inspired you and your work that you'd recommend other people to check out?
+
+584
+00:57:46,880 --> 00:58:00,080
+[SPEAKER_01] So initially in college, the reason I started into iOS app development was because there was this senior of mine, his name was Siddharth, he had built the college app and I really had no idea how to get into development.
+
+585
+00:58:00,480 --> 00:58:07,040
+[SPEAKER_01] I don't think he knows this, but I had come into his dorm room and I had asked him, you know, can you please help me get started?
+
+586
+00:58:07,200 --> 00:58:10,000
+[SPEAKER_01] I'm a big fan of the app you made and I was using it every day.
+
+587
+00:58:10,960 --> 00:58:24,800
+[SPEAKER_01] And he actually gave me a some, you know, some piece of advice and that actually started me on the right path and I kicked off from right there because that he gave me the right direction and I think that was really important for me.
+
+588
+00:58:25,120 --> 00:58:25,920
+[SPEAKER_01] And what was his name?
+
+589
+00:58:26,320 --> 00:58:26,880
+[SPEAKER_01] Siddhartha.
+
+590
+00:58:27,600 --> 00:58:28,320
+[SPEAKER_01] It's an Indian name.
+
+591
+00:58:28,800 --> 00:58:33,120
+[SPEAKER_00] And he made he made like an app for your college, is that what you're saying?
+
+592
+00:58:33,440 --> 00:58:33,520
+[SPEAKER_01] Yes.
+
+593
+00:58:33,920 --> 00:58:42,160
+[SPEAKER_01] So it would just basically show your marks, your attendance and you can figure out how many classes you can attend before you get debarred from the subject.
+
+594
+00:58:42,720 --> 00:58:42,800
+[SPEAKER_00] Okay.
+
+595
+00:58:43,280 --> 00:58:46,160
+[SPEAKER_01] Which is very neat and it was really cool back then.
+
+596
+00:58:46,560 --> 00:58:51,840
+[SPEAKER_01] And he gave me the inspiration to become., or he inspired me to become an IS developer.
+
+597
+00:58:52,400 --> 00:58:58,960
+[SPEAKER_01] And I think the other person who actually inspired me to become an MD developer was Widith.
+
+598
+00:59:00,080 --> 00:59:00,960
+[SPEAKER_01] You must know Widith.
+
+599
+00:59:01,200 --> 00:59:02,480
+[SPEAKER_00] Oh yeah, he was on the podcast.
+
+600
+00:59:03,040 --> 00:59:03,120
+[SPEAKER_01] Yes.
+
+601
+00:59:03,520 --> 00:59:09,760
+[SPEAKER_01] And he's this, he's been doing lookup for some years now.
+
+602
+00:59:10,000 --> 00:59:16,880
+[SPEAKER_01] And the dedication, the sincerity and to know that, you know, you can make a product which can be adopted worldwide.
+
+603
+00:59:17,600 --> 00:59:24,560
+[SPEAKER_01] I think I always probably thought that, but seeing his work actually inspired me to, you know, go ahead and make that app.
+
+604
+00:59:26,000 --> 00:59:28,560
+[SPEAKER_01] I'm not sure if he knows this, but he will know now.
+
+605
+00:59:29,520 --> 00:59:31,600
+[SPEAKER_00] Yeah, Vinette is awesome.
+
+606
+00:59:31,920 --> 00:59:45,360
+[SPEAKER_00] He is like an incredible designer and the way he thinks through, especially when he writes out those medium posts kind of explaining his thinking process, very influential on me, I can say that.
+
+607
+00:59:45,840 --> 00:59:47,200
+[SPEAKER_01] And he's very young.
+
+608
+00:59:47,600 --> 00:59:50,960
+[SPEAKER_01] He's incredibly young and so talented.
+
+609
+00:59:51,440 --> 00:59:52,640
+[SPEAKER_00] Yeah, no, that's awesome.
+
+610
+00:59:53,200 --> 00:59:53,760
+[SPEAKER_00] Those are really good.
+
+611
+00:59:54,080 --> 00:59:57,360
+[SPEAKER_00] And is the other person, is he on Twitter?
+
+612
+00:59:57,920 --> 00:59:58,480
+[SPEAKER_00] Yes, he is.
+
+613
+00:59:58,800 --> 00:59:59,680
+[SPEAKER_00] Okay, I'll get that from you.
+
+614
+01:00:00,000 --> 01:00:02,720
+[SPEAKER_00] I'll see you after this, so I can make sure that's in the show notes.
+
+615
+01:00:02,960 --> 01:00:03,040
+[SPEAKER_00] Yeah.
+
+616
+01:00:03,440 --> 01:00:03,840
+[SPEAKER_00] Awesome.
+
+617
+01:00:04,080 --> 01:00:07,120
+[SPEAKER_00] Well, thank you so much for coming on.
+
+618
+01:00:07,600 --> 01:00:11,520
+[SPEAKER_00] I'm extremely excited about Tasks and where it's going to go in the future.
+
+619
+01:00:12,000 --> 01:00:16,080
+[SPEAKER_00] And, and, and, honestly, I don't know if I mentioned it, but I owe you a big thanks.
+
+620
+01:00:16,240 --> 01:00:23,280
+[SPEAKER_00] You've been someone who's been helpful for me, especially for the last few months as I've been going into this CloudKit journey.
+
+621
+01:00:24,000 --> 01:00:25,840
+[SPEAKER_00] You've answered some questions, and I don't know.
+
+622
+01:00:26,000 --> 01:00:29,440
+[SPEAKER_00] You're just a very accessible, very kind person.
+
+623
+01:00:30,080 --> 01:00:37,200
+[SPEAKER_00] And then to see you also come out with something that is so polished and nice and fits something that I personally have been looking for for a long time.
+
+624
+01:00:37,840 --> 01:00:41,760
+[SPEAKER_00] It was very exciting and I'm so happy that you agreed to come on.
+
+625
+01:00:42,720 --> 01:00:51,520
+[SPEAKER_01] I'm really happy and the reason I am actually so easy to approach and all of that is just actually because of the community itself.
+
+626
+01:00:52,080 --> 01:00:56,320
+[SPEAKER_01] Because the IOS community has been so nurturing and so, so nurturing.
+
+627
+01:00:56,720 --> 01:00:59,760
+[SPEAKER_01] You can literally approach anyone and they're always there to help you.
+
+628
+01:01:00,240 --> 01:01:12,560
+[SPEAKER_01] I remember irritating Jordan about some problems I had with CloudKit and he would actually patiently reply and he was pretty busy back then because he was amidst his Finstack days, right?
+
+629
+01:01:14,560 --> 01:01:45,680
+[SPEAKER_01] anyone like actually from slack or twitter you can reach out to any of them and they're just always out there ready to help and actually take out valuable amount of time and just do things just uh very patiently and they'll explain it to you as though you're a kid yeah i i feel like there's a lot of uh a lot of paying it forward you know each generation of of ios developers coming in has been helped by the previous generation and then just sort of innately feels the need to sort of continue that on.
+
+630
+01:01:45,840 --> 01:01:53,360
+[SPEAKER_00] And so yeah, it's at least from my perspective, I can't speak for everybody, but it has definitely been a really awesome community to be a part of.
+
+631
+01:01:53,840 --> 01:01:56,000
+[SPEAKER_01] I 100% agree with you on that.
+
+632
+01:01:56,640 --> 01:01:59,920
+[SPEAKER_00] So where can people find you and where can people find tasks?
+
+633
+01:02:00,480 --> 01:02:06,000
+[SPEAKER_01] People can find me on the on me on Twitter and tasks, please find it in the App Store nowhere else.
+
+634
+01:02:06,400 --> 01:02:09,680
+[SPEAKER_01] But you can also reach out on Twitter because it has its page there.
+
+635
+01:02:11,040 --> 01:02:17,040
+[SPEAKER_01] And if you want to take part in the development journey, the Telegram group is always open and the link is right in the app.
+
+636
+01:02:17,360 --> 01:02:18,960
+[SPEAKER_00] Yeah, it's in the settings in the app, right?
+
+637
+01:02:19,440 --> 01:02:19,520
+[SPEAKER_00] Yes.
+
+638
+01:02:20,000 --> 01:02:20,160
+[SPEAKER_00] Cool.
+
+639
+01:02:20,560 --> 01:02:21,760
+[SPEAKER_00] And what's your Twitter handle?
+
+640
+01:02:21,920 --> 01:02:23,280
+[SPEAKER_00] It's Mofasa YC.
+
+641
+01:02:23,760 --> 01:02:23,840
+[SPEAKER_00] Okay.
+
+642
+01:02:24,240 --> 01:02:33,200
+[SPEAKER_00] Well, thanks again for coming on and everybody listening., hopefully now we will be back on a sort of more normal every two weeks pace.
+
+643
+01:02:34,480 --> 01:02:41,920
+[SPEAKER_00] With WWDC and a lot of the craziness going on, we've kind of got off track a little bit, but I think things will be normal going forward.
+
+644
+01:02:42,240 --> 01:02:42,960
+[SPEAKER_00] Well, we'll see.
+
+645
+01:02:43,360 --> 01:02:44,160
+[SPEAKER_00] It's 2020.
+
+646
+01:02:44,480 --> 01:02:46,960
+[SPEAKER_00] We've got a long, long, long year ahead of us.
+
+647
+01:02:47,680 --> 01:02:48,400
+[SPEAKER_00] Yes, we do.
+
+648
+01:02:51,920 --> 01:02:52,640
+[SPEAKER_00] Thanks for listening.
+
+649
+01:02:53,040 --> 01:02:59,440
+[SPEAKER_00] If you'd like to discuss the show, you can find me on Twitter at underscore chuck EC or tweet the show directly at launched.fm.
+
+650
+01:02:59,840 --> 01:03:06,880
+[SPEAKER_00] You can also discuss the episode with me, other listeners, and sometimes our guests on our dedicated subreddit r slash launchdefm.
+
+651
+01:03:07,520 --> 01:03:15,840
+[SPEAKER_00] If you like the show, I'd really appreciate a rating or review in Apple Podcasts, Overcast, Breaker, or whatever your podcast of choice happens to be.
+
+652
+01:03:16,400 --> 01:03:40,000
+[SPEAKER_00] And you can find show notes and more at launchdefm dot com dot
