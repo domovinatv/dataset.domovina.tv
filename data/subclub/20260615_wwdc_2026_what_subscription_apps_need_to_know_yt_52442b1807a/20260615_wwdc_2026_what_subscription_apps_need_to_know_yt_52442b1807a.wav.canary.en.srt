@@ -1,0 +1,4727 @@
+1
+00:00:01,120 --> 00:00:08,720
+Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:41,200 --> 00:00:45,600
+Hello everyone and welcome to this special edition of Subclub Live.
+
+7
+00:00:46,080 --> 00:00:49,760
+Normally we do these pretty much every Thursday, 9 a.m.
+
+8
+00:00:50,480 --> 00:00:53,200
+Pacific, 1800 Central European time.
+
+9
+00:00:53,760 --> 00:00:57,920
+Today's special edition we're doing it on Friday because WWDC.
+
+10
+00:00:58,160 --> 00:01:02,080
+So I was flying home yesterday when we would normally do these on Thursday.
+
+11
+00:01:02,960 --> 00:01:11,360
+But I was inside Apple Park Monday, Tuesday and I guess part of Wednesday I was at the Developer Center and Charlie was on the ground all week talking to folks.
+
+12
+00:01:11,520 --> 00:01:12,000
+We talked to Apple.
+
+13
+00:01:12,240 --> 00:01:18,720
+We talked to Apple, we talked to other developers, we watched sessions, we took notes, we had AI summarized things.
+
+14
+00:01:18,960 --> 00:01:20,480
+We've been busy this week.
+
+15
+00:01:20,720 --> 00:01:22,880
+So we've got a lot of really fun stuff to dive into.
+
+16
+00:01:23,440 --> 00:01:25,440
+So a couple of housekeeping items.
+
+17
+00:01:26,400 --> 00:01:28,240
+We had some really fun stuff coming up.
+
+18
+00:01:28,480 --> 00:01:38,960
+I vibe coded an app and launched it last week, and I have been working with Nick from the Noise UGC platform to do UGC promotion on my app.
+
+19
+00:01:39,440 --> 00:01:46,720
+Next week, we're going to reveal all the numbers, all the strategies behind using Noise as a UGC platform.
+
+20
+00:01:47,040 --> 00:01:48,320
+So that's going to be super fun.
+
+21
+00:01:49,680 --> 00:01:56,400
+And then the week after that, on the 25th, we're going to have Marcus Burke on to do a Meta Ads Masterclass.
+
+22
+00:01:56,960 --> 00:02:01,760
+So both of those should be pretty incredible, especially if you're looking to grow your app.
+
+23
+00:02:02,640 --> 00:02:14,880
+And today we have Charlie, my colleague and developer advocate at RevenueCat, and Thomas Petit, world renowned growth expert on the call.
+
+24
+00:02:16,240 --> 00:02:20,000
+And the topic today, of course, is the WWDC recap.
+
+25
+00:02:20,560 --> 00:02:23,840
+So we do have a bunch of notes because there was a lot to cover.
+
+26
+00:02:24,560 --> 00:02:29,600
+But let me give Charlie and Thomas a quick chance to introduce themselves before we dive into the chat.
+
+27
+00:02:30,000 --> 00:02:30,320
+Charlie?
+
+28
+00:02:30,800 --> 00:02:32,480
+Hey, yeah, I'm Charlie Chapman.
+
+29
+00:02:32,800 --> 00:02:35,440
+I'm a developer advocate at RevenueCat.
+
+30
+00:02:35,920 --> 00:02:40,480
+And yeah, I've been on the ground, still am on the ground here at WW.
+
+31
+00:02:40,800 --> 00:02:57,360
+And as if you know what my voice normally sounds like, you can hear, I have been talking quite a bit to a lot of people, developers, Apple engineers, and kind of getting the word on the street on everyone's reactions to everything.
+
+32
+00:02:58,240 --> 00:03:06,240
+And sneaking, of course, lots of session videos into any cracks in my time that I can to keep up with what's actually been announced.
+
+33
+00:03:06,480 --> 00:03:08,960
+So that's kind of the context I'm bringing to you here.
+
+34
+00:03:09,200 --> 00:03:09,680
+Awesome.
+
+35
+00:03:09,840 --> 00:03:10,160
+And Thomas?
+
+36
+00:03:11,280 --> 00:03:11,360
+Yeah.
+
+37
+00:03:11,600 --> 00:03:12,240
+Hi, everyone.
+
+38
+00:03:13,040 --> 00:03:29,360
+I've been following this kind of announcement for about twelve years, I think thirteen, about, and it's always exciting to, I mean, besides everything that's announced, like to try to pick on what new features we're going to be able to tap into for September onwards.
+
+39
+00:03:30,240 --> 00:03:35,040
+And sometimes some of those have like, let's say, a bonus for those who adopt early.
+
+40
+00:03:35,600 --> 00:03:36,320
+It doesn't always happen.
+
+41
+00:03:37,040 --> 00:03:43,360
+But it does happen sometimes that when you jump in very early on some new features, there's some really good benefit to do it before everyone.
+
+42
+00:03:43,760 --> 00:03:47,200
+So I hope today we're going to cover the potential of a few of those.
+
+43
+00:03:47,680 --> 00:03:47,920
+Nice.
+
+44
+00:03:48,560 --> 00:03:51,520
+So I wanted to kick things off with a bit of a spicy topic.
+
+45
+00:03:52,960 --> 00:04:06,080
+I, I, as I do now always, I take down my own notes and review as much information as I can, and then I throw it over to multiple AI agents and say, what did I miss?
+
+46
+00:04:06,560 --> 00:04:07,680
+What should I be thinking about?
+
+47
+00:04:08,320 --> 00:04:09,280
+How should I frame it?
+
+48
+00:04:09,920 --> 00:04:11,280
+Just to, you know, do better.
+
+49
+00:04:12,160 --> 00:04:14,960
+And so this time I threw it over to Fable 5.
+
+50
+00:04:15,600 --> 00:04:22,960
+And Fable 5 came up with a really interesting framing of today's discussion.
+
+51
+00:04:23,120 --> 00:04:46,160
+And that is that with the Epic ruling, so confusing now when which rule dropped, but I guess last year when we finally got kind of open season on external payment links, the way Fable framed this is like, hey, Apple is now competing for payments and look at everything they're doing to make the App Store payments better.
+
+52
+00:04:46,480 --> 00:04:48,320
+Now, and Charlie's making a face.
+
+53
+00:04:48,320 --> 00:04:52,160
+Anyway, personally, I think Apple was headed in this direction anyway.
+
+54
+00:04:52,560 --> 00:05:03,920
+But what's interesting to me though is that as they add more and more features that we're like what we're going to discuss today, app store payments do become more and more competitive to linking out.
+
+55
+00:05:04,160 --> 00:05:22,720
+So if you're currently finding success linking out to web payments, it may be worth a new AB test as these features start to drop because as Apple adds more and more options and flexibility in payments and everything else, it does become more effective to remain on the platform.
+
+56
+00:05:23,280 --> 00:05:24,560
+So any thoughts on that?
+
+57
+00:05:25,520 --> 00:05:26,880
+fables framing there?
+
+58
+00:05:27,120 --> 00:05:29,840
+I know Charlie, you were already kind of nodding your head.
+
+59
+00:05:30,720 --> 00:05:34,400
+Well, I guess maybe it depends on the specific ones you're talking about.
+
+60
+00:05:34,560 --> 00:05:38,480
+To me, one of the big ones, which I know we'll get into, is like seat based licensing.
+
+61
+00:05:38,720 --> 00:05:39,120
+Right.
+
+62
+00:05:39,840 --> 00:06:02,960
+And that's one where, you know, we've been following Apple for a very long time and it's a tale as old as time that there's a thing everybody has been begging for for years and years and years and then all of a sudden someone internally at Apple, in this case the Apple Creator Studio team, needed a way to sell things in seat based licensing and lo and behold., suddenly that's a feature on the App Store.
+
+63
+00:06:03,440 --> 00:06:09,040
+So I think a lot of times it's more of a kind of the dog fooding thing that drives some of these.
+
+64
+00:06:09,200 --> 00:06:12,800
+But of course, there's all sorts of external pressures that drive this too.
+
+65
+00:06:13,040 --> 00:06:16,000
+But yeah, we can dig in a little bit more on specifics.
+
+66
+00:06:16,240 --> 00:06:22,080
+But I definitely give a little side eye to that quick hot take from Fable.
+
+67
+00:06:22,800 --> 00:06:27,520
+Fable called it the carrot era that Apple is now offering more carrots.
+
+68
+00:06:28,000 --> 00:06:35,360
+But I mean, that's the thing is like every pretty much every year they've introduced new things throughout the history of the App Store.
+
+69
+00:06:35,520 --> 00:06:38,480
+Like the App Store first laununched, there were no in-app purchases.
+
+70
+00:06:38,960 --> 00:06:41,040
+That came, I think, a year and a half later.
+
+71
+00:06:42,240 --> 00:06:47,120
+And then from in-app purchases, then consumables and subscriptions and like Store Kit 2.
+
+72
+00:06:47,680 --> 00:06:58,720
+They have been progressively improving the App Store payment system for the full eighteen years of the App Store, so this is not some big new thing, but it does feel like they're moving faster, and that's exciting.
+
+73
+00:06:59,360 --> 00:07:00,080
+Yes, agreed.
+
+74
+00:07:00,320 --> 00:07:04,400
+This year, there was a lot more for us to talk about than normal years, I feel like.
+
+75
+00:07:05,120 --> 00:07:05,760
+Any thoughts, Thomas?
+
+76
+00:07:06,560 --> 00:07:08,000
+Well, it's the great part of competition.
+
+77
+00:07:08,720 --> 00:07:19,520
+I've tried both IAPs and non IAPs and the fact that it pushes Apple to be better, to be able to compete.
+
+78
+00:07:19,760 --> 00:07:33,600
+I do believe IAPs have like big pros and big cons, but it's very clear that it puts some pressure on Apple to like iterate on this, more flexibility on SKUs and a lot of things that you can't sometimes do outside of the store.
+
+79
+00:07:34,320 --> 00:07:43,600
+I'm not sure how much it's due to Epic and the opening because we have seen this figure add, but if it puts pressure to have more of them, I'll take it.
+
+80
+00:07:46,000 --> 00:07:47,360
+One quick hit on news.
+
+81
+00:07:47,600 --> 00:07:50,480
+Apple did not announce hardware, which I was really frustrated about.
+
+82
+00:07:51,920 --> 00:07:54,400
+But which one of you put that in the notes?
+
+83
+00:07:54,560 --> 00:07:55,600
+Because I thought that was a good one.
+
+84
+00:07:55,840 --> 00:07:58,240
+I'll let Thomas take that one.
+
+85
+00:07:58,560 --> 00:07:58,960
+It's me.
+
+86
+00:07:59,120 --> 00:08:10,160
+It was very clear this WWDC was going to be about software and a lot of AI, especially since there's been a lot of backlash to Apple in the last two years for a number of reasons.
+
+87
+00:08:10,800 --> 00:08:13,840
+I think they really wanted to center the stage on this, so it makes sense.
+
+88
+00:08:14,160 --> 00:08:21,200
+But I think there's another reason, which is the new CEO is taking office in September and is coming from the hardware side.
+
+89
+00:08:21,680 --> 00:08:31,600
+So it also makes sense to like if there is something very big coming on hardwareware to let him have the, I don't know, the possibility to bring that up when he's coming in.
+
+90
+00:08:31,840 --> 00:08:37,440
+So honestly, I think, yeah, if there's anything big on hardware, I think it's going to be after September, because of this reason.
+
+91
+00:08:38,000 --> 00:08:44,640
+I was disappointed because I thought WWC was the perfect place to drop M five and Mac mini and M five Mac Studio.
+
+92
+00:08:45,120 --> 00:08:47,200
+Because I'm actually, I've got the money now.
+
+93
+00:08:47,440 --> 00:08:49,680
+Grit Method has made like 1500 bucks.
+
+94
+00:08:50,000 --> 00:09:01,040
+I'm going to buy a nice Mac mini and it's going to sit here on my desk as my, like, dev machine, going to get a little KBM and, you know, be able to switch and have a dedicated vibe coding machineine.
+
+95
+00:09:01,360 --> 00:09:05,120
+So it was disappointing they didn't launch, but Charlie, you seem to have some thoughts.
+
+96
+00:09:05,760 --> 00:09:26,480
+Well, I just maybe I just follow the rumors too strongly, but it seemed like the ones you just said were like the M five Max were kind of the only ones maybe sort of ready, but given the supply chain constraints right now, it doesn't surprise me at all that they punted on that, at least for now.
+
+97
+00:09:26,960 --> 00:09:29,200
+I can't even buy a Mac mini right now, which is so frustrating.
+
+98
+00:09:29,360 --> 00:09:29,600
+Exactly.
+
+99
+00:09:29,760 --> 00:09:31,840
+It's like any of the ones they already have.
+
+100
+00:09:32,160 --> 00:09:32,960
+Yeah, exactly.
+
+101
+00:09:33,600 --> 00:09:34,240
+It's frustrating.
+
+102
+00:09:34,480 --> 00:09:36,800
+I was hoping that the inventory had run out dry in part two.
+
+103
+00:09:37,200 --> 00:09:42,960
+because they were about to launch the new ones, but I was just totally wrong there and I'm just going to have to wait.
+
+104
+00:09:44,080 --> 00:09:52,320
+You know, one more metapoint that Thomas reminded me of is the vibes were really good at WWDC this year.
+
+105
+00:09:52,640 --> 00:10:00,480
+Like it, it, and I I tweeted this out and I didn't get a chance because I finally slept last night for the first night of the week.
+
+106
+00:10:01,120 --> 00:10:02,080
+I'm looking forward to that.
+
+107
+00:10:02,720 --> 00:10:03,680
+Yes, very nice.
+
+108
+00:10:05,440 --> 00:10:15,440
+But I tweeted earlier this week that I thought it was the best WWDC in a long time and that it's not what Apple said in in the keynote, it's what the keynote says about Apple.
+
+109
+00:10:16,240 --> 00:10:25,120
+And what I meant by that is that it was almost a more humble, like, straightforward, authentic Apple than we've seen in a long time.
+
+110
+00:10:25,600 --> 00:10:27,920
+There were less like fancy video transitions.
+
+111
+00:10:28,240 --> 00:10:30,320
+The demos were real time instead of magic.
+
+112
+00:10:30,960 --> 00:10:40,160
+You know, progressively, the WWEC keynote has turned into what people jokingly say, like, why did I spend ninety minutes watching an Apple commercial?
+
+113
+00:10:40,400 --> 00:10:47,520
+Like, they're so polished, they're so perfected, they're so heavily edited that it feels like a ninety minute commercial.
+
+114
+00:10:48,720 --> 00:11:01,040
+This year, it really felt like that step back to like a more normal pre COVID WWDC where if you're on stage doing a live demo, you actually have to wait for a Siri to come up with the answer.
+
+115
+00:11:01,200 --> 00:11:03,280
+And like, uh, so I think that was part of it.
+
+116
+00:11:03,440 --> 00:11:13,920
+And then Charlie, maybe you can dive into, uh, uh, uh, uh, uh, John Gruber's Something's Rotten the State of the Cupertino and why they maybe did do more live demos this year.
+
+117
+00:11:14,560 --> 00:11:14,640
+Yeah.
+
+118
+00:11:14,960 --> 00:11:24,720
+I mean, I definitely think that, uh, you know, getting called out two years ago about not showing everything, uh, working, which was a signal that it wasn't working.
+
+119
+00:11:25,200 --> 00:11:29,040
+and obviously never able to deliver it until two years later at this point.
+
+120
+00:11:29,680 --> 00:11:34,400
+That definitely, I think, contributed to why they took the approach they took.
+
+121
+00:11:35,920 --> 00:11:45,120
+It was interesting to hear you say that the vibes were good because I feel like in the developer community, at least, it was a weird progression through the week.
+
+122
+00:11:46,160 --> 00:11:51,200
+I think post keynote and post state of the union, the vibes were the lowest I've seen in a long time.
+
+123
+00:11:51,760 --> 00:11:53,520
+It felt like it was very short.
+
+124
+00:11:53,760 --> 00:11:54,560
+There wasn't much there.
+
+125
+00:11:56,560 --> 00:12:05,440
+Intro with like we focused on bug fixes and improvements essentially., it feels like a signal of, okay, that's just the thing you say when you don't have anything else.
+
+126
+00:12:06,240 --> 00:12:09,600
+And then, of course, skepticism about the Siri stuff, which was the main headline.
+
+127
+00:12:10,240 --> 00:12:20,800
+And then talking to engineers throughout the Apple teams, I got the impression that, no, for real, this was actually everybody's top priority throughout the company.
+
+128
+00:12:21,520 --> 00:12:25,360
+And then as we got access to betas and they finished indexing, we could feel it.
+
+129
+00:12:25,520 --> 00:12:34,320
+Like, immediately, you can feel how much faster IOS 27 is compared to IOS 26, which is crazy for a beta one.
+
+130
+00:12:35,040 --> 00:12:36,720
+And then as people got access to Siri.
+
+131
+00:12:37,440 --> 00:12:42,960
+We've all just been standing around in circles testing it and trying this, trying that, taking a picture of this.
+
+132
+00:12:43,360 --> 00:12:48,320
+And I have to say, it's like really impressive, surprisingly impressive.
+
+133
+00:12:48,800 --> 00:12:56,480
+Yeah, maybe my vibes were different because I was so excited about all the App Store stuff and it felt like they were doing a lot on the App Store.
+
+134
+00:12:56,640 --> 00:13:03,520
+And then I talked to a bunch of Apple folks all Sunday and Monday and they just had a different energy to them than I've seen in years.
+
+135
+00:13:03,760 --> 00:13:11,280
+Like that they feel like things are really moving forward with the App Store and App Review and like all the things that we've been complaining about for years.
+
+136
+00:13:11,520 --> 00:13:16,800
+They have been slowly stepping away and chipping away at, but it's like this year was another big leap.
+
+137
+00:13:16,960 --> 00:13:26,480
+And so, yeah, maybe my vibes were a little because I'm more on the growth product side and app store optimization side than I'm the engineering side.
+
+138
+00:13:27,120 --> 00:13:29,520
+But man, I was on Cloud nine most of the week.
+
+139
+00:13:30,240 --> 00:13:34,320
+Thomas, any thoughts from you and the growth circles you run in?
+
+140
+00:13:35,120 --> 00:13:40,880
+So I wasn't on the, at the stage, so it's harder to feel the vibe.
+
+141
+00:13:41,760 --> 00:13:48,880
+There was a lot of reaction and some skepticism, some excitement, like a lot of excitement in particular around AI.
+
+142
+00:13:48,880 --> 00:13:54,960
+around like ASO and search ads practitioners because the new asset is something that has been frustrating.
+
+143
+00:13:55,280 --> 00:14:08,080
+But I think in the grand scheme of things, it's just we don't necessarily realize that they do bring a lot of like these small bits and they compound over time to make the store experience better for developer, for users and so on.
+
+144
+00:14:08,800 --> 00:14:11,520
+This one felt pretty normal to me from the distance.
+
+145
+00:14:11,840 --> 00:14:20,560
+But then again, I wasn't physically there and it's the lens of like the more store perception than anything.
+
+146
+00:14:21,280 --> 00:14:31,600
+I think a lot of the vibe that Charlie has felt, I and we will feel it when it's going to become live in September, October.
+
+147
+00:14:31,920 --> 00:14:37,120
+It's very hard to like, it's not very material for us yet until it happens.
+
+148
+00:14:37,360 --> 00:14:45,280
+Like even if you can have a little preview on the device and so on, like how it's going to translate for users is very hard to anticipate until it's really out.
+
+149
+00:14:45,440 --> 00:14:51,840
+So I think for me, the verdict of the excitement and the vibe is going to come third week of September.
+
+150
+00:14:52,400 --> 00:14:52,480
+Yeah.
+
+151
+00:14:53,040 --> 00:14:54,400
+You know, and that reminded me too.
+
+152
+00:14:54,560 --> 00:14:57,920
+I think my vibes are so good because this is exactly what I wanted this year.
+
+153
+00:14:58,320 --> 00:15:01,840
+Like I love liquid glass.
+
+154
+00:15:02,000 --> 00:15:02,800
+I think it's fantastic.
+
+155
+00:15:03,040 --> 00:15:03,520
+It's the future.
+
+156
+00:15:04,080 --> 00:15:13,280
+Logically, I stopped using my Android phone last year once because it felt like iOS 18 and Android were at least somewhat equivalent.
+
+157
+00:15:13,520 --> 00:15:16,480
+Like on Android, you know, the scrolling would be a little annoying or whatever.
+
+158
+00:15:16,800 --> 00:15:23,280
+But then once iOS 26 dropped, Android felt like from a decade ago all of a sudden.
+
+159
+00:15:24,480 --> 00:15:30,560
+And so I've just been loving iOS 26, but I definitely have felt the rugged edges, both visually, performance wise and everything else.
+
+160
+00:15:30,720 --> 00:15:41,600
+So like I guess I went into WWC like hoping that Apple wouldn't like a billion features, they would actually just really focus on making iOS 26 what it should have been.
+
+161
+00:15:41,920 --> 00:15:56,880
+Somebody joked, I think on Twitter or someone joked recently about like, the iOS 26 was like the alpha and like, now we're finally getting the beta of what it should have been last year at this time.
+
+162
+00:15:57,680 --> 00:16:00,000
+So yeah, my vibes are off the charts.
+
+163
+00:16:00,640 --> 00:16:02,400
+I'm super happy with everything that went down.
+
+164
+00:16:03,360 --> 00:16:04,880
+I don't have access to Siri yet.
+
+165
+00:16:05,040 --> 00:16:06,400
+Do you have access to Siri, Charlie?
+
+166
+00:16:07,040 --> 00:16:07,920
+I got Siri yesterday.
+
+167
+00:16:08,000 --> 00:16:09,280
+I got Siri yesterday.
+
+168
+00:16:09,360 --> 00:16:10,000
+And okay.
+
+169
+00:16:10,320 --> 00:16:13,200
+Like I said, it's genuinely, it's pr definitely pretty impressive.
+
+170
+00:16:13,440 --> 00:16:14,640
+Yeah, so let's dive into that.
+
+171
+00:16:15,360 --> 00:16:16,080
+What are your thoughts?
+
+172
+00:16:16,400 --> 00:16:18,000
+We have a standalone app now.
+
+173
+00:16:18,160 --> 00:16:25,280
+I haven't gotten to play with it, but do you think that's going to compete with ChatGPT, with Claude, with other AI experiences?
+
+174
+00:16:26,240 --> 00:16:27,120
+1000 percent.
+
+175
+00:16:27,680 --> 00:16:27,760
+Okay.
+
+176
+00:16:28,480 --> 00:16:31,920
+I wouldn't have answered that, you know, even before I got access.
+
+177
+00:16:34,400 --> 00:16:39,600
+We were watching the only break I took last night was to watch a World Cup match with a big group of people.
+
+178
+00:16:40,240 --> 00:16:44,560
+And we would be asking questions about, oh, who does this person play for?
+
+179
+00:16:45,040 --> 00:16:47,840
+And we realized we all just started using Siri.
+
+180
+00:16:48,400 --> 00:16:50,880
+Some people were talking to it because we were testing it.
+
+181
+00:16:51,280 --> 00:16:57,760
+But then, like, instead of opening Safari and typing a question, I would just pull down and actually just type in there.
+
+182
+00:16:58,240 --> 00:16:59,120
+And I got my answer.
+
+183
+00:16:59,360 --> 00:17:01,280
+And I just naturally was doing that.
+
+184
+00:17:01,680 --> 00:17:03,680
+Not even just like, I'm testing this at this point.
+
+185
+00:17:04,960 --> 00:17:17,840
+Very, very quickly, we got to where we trusted it at the same kind of level as Gemini or ChatGPT, where it's like, if it's a thing where, you know, I'm not measuring medicine or something where if it gets it wrong, it's a big deal.
+
+186
+00:17:18,560 --> 00:17:19,680
+I just went straight to that.
+
+187
+00:17:20,480 --> 00:17:24,800
+Which actually made me think, as soon as I realized that, I was like, I haven't used Google literally all night.
+
+188
+00:17:25,280 --> 00:17:25,680
+at Google.
+
+189
+00:17:25,920 --> 00:17:39,840
+And I was like, it's a very good thing from Google's perspective that they made this deal because I think they might be transferring over all this like Google search traffic money that they're getting from the iPhone straight into Gemini traffic money.
+
+190
+00:17:40,480 --> 00:17:45,360
+But I was very surprised how quickly that behavior kind of embedded itself.
+
+191
+00:17:46,160 --> 00:17:46,400
+Interesting.
+
+192
+00:17:46,640 --> 00:17:52,160
+And then one of the new features this year is that you can set Claude Gemini or ChatGPT as a fallback.
+
+193
+00:17:52,880 --> 00:17:55,280
+Did you ever have to rely on a fallback?
+
+194
+00:17:56,160 --> 00:17:58,160
+So we've been playing with that a lot.
+
+195
+00:17:59,360 --> 00:18:00,240
+It's kind of a weird thing.
+
+196
+00:18:00,800 --> 00:18:12,560
+So you can set Anthropic or OpenAI as the fallback for Apple Intelligence features, but I don't think you can set it as a fallback for Siri AI features.
+
+197
+00:18:13,360 --> 00:18:23,360
+So that would be like image generation, I think, is one where you can change it, but like your search that you're doing, maybe there is a way to change it.
+
+198
+00:18:23,520 --> 00:18:32,880
+Like I said, I just got access to it, but I can't explicitly vocally ask the way you have in the past of like ask ChatGPT this.
+
+199
+00:18:33,040 --> 00:18:43,360
+So like if you think something's like too complex for Siri or you want to get Ch, ChatGPT's perspective, maybe you can say, ask Claude, who plays for which team or whatever.
+
+200
+00:18:43,840 --> 00:18:45,200
+Yeah, that very well could be.
+
+201
+00:18:46,000 --> 00:19:05,440
+And on the same level of the model selecting, there's even parts of some of these features where that exists as well, like if you're doing the cleanup on Apple Photos to remove something from the background, it tries to automatically determine if you need to, if you can just use an on device version or go out to the cloud.
+
+202
+00:19:05,760 --> 00:19:09,360
+But you can actually in the UI manually select, like, does this one go out to the cloud?
+
+203
+00:19:09,520 --> 00:19:10,640
+Is it a high quality version?
+
+204
+00:19:10,800 --> 00:19:11,600
+They use different words.
+
+205
+00:19:12,880 --> 00:19:19,920
+They are kind of peppering this concept of choosing a model, again, in an Apple e way, throughout the system.
+
+206
+00:19:20,160 --> 00:19:25,200
+And I think over the next couple of years, we're going to see more and more of that in the OS.
+
+207
+00:19:25,440 --> 00:19:26,160
+It's very interesting.
+
+208
+00:19:27,200 --> 00:19:29,680
+Let me set something up for you, Thomas, and I want to get your take.
+
+209
+00:19:31,360 --> 00:19:45,280
+But again, this was actually Fable five wording, Sure Locking at OS scale that Apple did show off a lot of use cases that previously were app exclusive experiences.
+
+210
+00:19:45,600 --> 00:19:50,160
+For example, the camera mode, you take a picture of your food and you get nutritional insights.
+
+211
+00:19:50,240 --> 00:20:02,720
+Now it's not tracking your calories and everything like that, but that's part, you know, pseudo competing with the CalAI and nutrition and ladder and other apps that have adopted those kinds of technologies.
+
+212
+00:20:03,760 --> 00:20:08,080
+With writing, it proof, proofreads systemwide and it seems like it's going to be much better at that.
+
+213
+00:20:08,240 --> 00:20:11,840
+Grammarly and a bunch of other AI apps have helped with proofreading.
+
+214
+00:20:12,160 --> 00:20:21,520
+And kind of to your point, Charlie, I've relied heavily on Cloud for proofreading, where I actually go to the Cloud app and I wonder if now I'll do that less.
+
+215
+00:20:22,720 --> 00:20:24,480
+And then one of the big ones was.
+
+216
+00:20:24,720 --> 00:20:30,400
+was a natural language calendar entry, which is like directly competing with Fantastical.
+
+217
+00:20:30,800 --> 00:20:35,280
+And I will say, and I tweeted this out, that like my wife is going to go nuts for that.
+
+218
+00:20:35,440 --> 00:20:51,360
+Like that's the kind of practical improvement that's literally going to save her hours a month because we have four kids and like hundreds of events that she's scheduling and for her just being able to type in like repeating every two weeks, you know, soccer game, whatever, um, she's going to go nuts for that.
+
+219
+00:20:51,920 --> 00:20:53,440
+And it seems like Apple is delivering.
+
+220
+00:20:53,520 --> 00:20:56,960
+So I was going to say if Apple delivers on it, but it seems like Apple is delivering.
+
+221
+00:20:57,040 --> 00:21:02,480
+So I don't know that we should even question that and say she's going to go nuts for that feature in the fall when she gets it.
+
+222
+00:21:02,960 --> 00:21:07,840
+And then the last one is photo retouching and object removal and those kinds of things.
+
+223
+00:21:08,320 --> 00:21:11,760
+That was a huge use case for AI in third party apps.
+
+224
+00:21:11,920 --> 00:21:18,080
+So we've got a pretty wide range of like direct competition to kind of tangential competition.
+
+225
+00:21:18,480 --> 00:21:23,440
+What are your thoughts on how Siri AI is going to compete with third party apps, Thomas?
+
+226
+00:21:24,240 --> 00:21:34,800
+There's always been a lot of shellogging and in some cases it's been pretty bad, but in the majority of cases the apps that do something the system does have survived and even grown.
+
+227
+00:21:35,040 --> 00:21:43,520
+I don't know if it's because Apple expands the market by bringing it or it's because people want more advanced, like they don't want just the feed, like there's a bunch of things.
+
+228
+00:21:44,240 --> 00:21:45,600
+I think there's two use cases here.
+
+229
+00:21:45,760 --> 00:21:48,480
+It's what the very simple actions that you can straight do.
+
+230
+00:21:48,720 --> 00:21:52,960
+And I think those are the most at risk, like the calendar you mentioned.
+
+231
+00:21:53,280 --> 00:22:01,520
+But then you look and there's like alarm clock apps that are making half a million a month to date, like very basic features.
+
+232
+00:22:02,080 --> 00:22:05,600
+And those alarm clock, like it's not like they're really doing something different.
+
+233
+00:22:07,920 --> 00:22:13,520
+So for example, if you just like just remove an object in a picture, that might be a little bit bit of a threat.
+
+234
+00:22:13,840 --> 00:22:19,600
+But a lot of apps have a more complex suite of features that fits better the needs of people.
+
+235
+00:22:19,840 --> 00:22:23,120
+So I'm thinking, for example, for Kali, I don't think it's a big threat.
+
+236
+00:22:23,440 --> 00:22:31,680
+Or if we look at object removal, an app like PhotoRoom that has like 25 different features around it, I don't think it's particularly a threat.
+
+237
+00:22:31,920 --> 00:22:33,920
+Maybe it's even potentially, oh, I can't do that.
+
+238
+00:22:34,160 --> 00:22:35,200
+I want to do something else.
+
+239
+00:22:35,440 --> 00:22:37,920
+And then the native feature can't do it.
+
+240
+00:22:38,320 --> 00:22:45,200
+And that's why I'm saying in some cases the shell locking has actually expanded the market for the other apps in the space.
+
+241
+00:22:45,600 --> 00:22:47,680
+So I'm not particularly worried.
+
+242
+00:22:47,920 --> 00:23:04,320
+But it's true that the serial integration may change because it's not like, oh, they've released an app that does it, but like the integration and the habits, just like Charlie mentioned that we change the way we interact with the brother, with apps and so on.
+
+243
+00:23:04,800 --> 00:23:14,560
+I see this more of a threat than one particular feature, one particular app that Apple is sharing, but more like, oh, there's a complex change of habits.
+
+244
+00:23:14,960 --> 00:23:20,320
+And then suddenly my app is not there anymore because the habit has changed, not because the feature has been replaced.
+
+245
+00:23:20,480 --> 00:23:22,000
+I think this is a lot more of a threat.
+
+246
+00:23:22,320 --> 00:23:24,720
+And I want to dig into App Intense next because that's kind of.
+
+247
+00:23:25,280 --> 00:23:28,240
+like a guard against us in a way because you can integrate with Siri.
+
+248
+00:23:28,560 --> 00:23:33,920
+But you made a really good point too, Thomas, in the notes that there are verticals that Apple is not going to touch.
+
+249
+00:23:34,080 --> 00:23:36,640
+And the example you used was looks maxing.
+
+250
+00:23:37,040 --> 00:23:57,840
+And so that's, you know, something to definitely think about over the summer is that if you're in a vertical that is a little more directly touched by some of these changes from Apple, like maybe proofreading or, you know, things that may get taken over by Siri, pivoting more toward the kind of use cases they're not going to touch is a strategy to think about over the summer.
+
+251
+00:23:58,240 --> 00:24:03,040
+You're not going to move to a vertical because Apple is not going to do it, but it's true that it doesn't cover everything.
+
+252
+00:24:04,320 --> 00:24:07,440
+The threat is different depending on what you're doing is pretty obvious.
+
+253
+00:24:07,760 --> 00:24:12,400
+Okay, and then as an EU citizen, what are your thoughts about it not coming to the EU?
+
+254
+00:24:13,840 --> 00:24:27,600
+One of the things I didn't even think about is that it's also going to be a challenge for EU developers because they're going to have to like get a US account and it's going to be like a lot of hoops for them to jump through just to like enable the features for their worldwide customers.
+
+255
+00:24:28,480 --> 00:24:38,400
+Oh, I see beyond this is a problem not for developers to like access it because they'll find a way, but like maintaining a non parity version all the time.
+
+256
+00:24:38,800 --> 00:24:40,640
+Like, this is madness.
+
+257
+00:24:40,960 --> 00:24:43,360
+Like, this is something that we really try to avoid.
+
+258
+00:24:43,520 --> 00:24:54,800
+Like, I mean, in some cases you localize pricing and this and that, but like, co-feature, having to maintain, oh, the users can't do this here, and I'm pushing it very hard, and it's in the onboarding, that, that's a nightmare.
+
+259
+00:24:55,200 --> 00:24:58,160
+So I hope eventually, you will change it.
+
+260
+00:24:58,800 --> 00:25:07,840
+I felt when Charlie said, this is really revolutionary, that's not the words you use, but you say, I was really impressed and a thousand percent, it's going to change things.
+
+261
+00:25:08,400 --> 00:25:12,640
+I was both super excited and at the same time, ah, well, not going to have it.
+
+262
+00:25:13,040 --> 00:25:14,240
+Like, it's super frustrating.
+
+263
+00:25:14,800 --> 00:25:15,920
+Do you have a US account?
+
+264
+00:25:16,080 --> 00:25:19,680
+Are you potentially going to move to a US account more regularly?
+
+265
+00:25:20,160 --> 00:25:22,560
+I don't have a US account right now, but yeah.
+
+266
+00:25:23,680 --> 00:25:24,720
+I might move to one.
+
+267
+00:25:25,200 --> 00:25:36,080
+I mean, I use US accounts for some testing, but my personal account is still in Europe, so that's something I might work on, which is another nightmare that I'm going to have to migrate a bunch of things if they do.
+
+268
+00:25:36,320 --> 00:25:37,440
+So yeah.
+
+269
+00:25:37,760 --> 00:25:46,480
+I mean, I think it's not going to change super short term, but in the midterm, I think we'll see a reversal of that because it's too big to miss.
+
+270
+00:25:46,960 --> 00:25:48,880
+I guess the UE wanted to be cautious.
+
+271
+00:25:49,360 --> 00:25:55,920
+because things were moving a little bit too fast, but this kind of discrimination is going to be too big not to catch up.
+
+272
+00:25:56,080 --> 00:25:58,960
+So hopefully they move fast, which is not their speciality, but yeah.
+
+273
+00:25:59,280 --> 00:26:14,880
+There is an interesting, I don't know, potential path forward that isn't necessarily opening it up completely, and you can see that with the way that they did their private cloud compute version of, I guess, Apple Intelligence now.
+
+274
+00:26:15,360 --> 00:26:21,360
+So like you have developers have free access as long as they're under certain thresholds, like two million downloads.
+
+275
+00:26:21,840 --> 00:26:24,160
+We'll talk about that later because I found a bunch of caveats.
+
+276
+00:26:24,560 --> 00:26:25,280
+Okay, yeah, yeah.
+
+277
+00:26:25,680 --> 00:26:26,880
+And we can get more into that.
+
+278
+00:26:27,040 --> 00:26:44,480
+But specific to that, this discussion is the way that they design those APIs is in a way where once you get over that cap and you can no longer use this feature, you can just swap out the model but keep using Apple's APIs that they defined, and it'll actually use separate models.
+
+279
+00:26:45,200 --> 00:27:04,400
+You could imagine a version of that potentially being built for more of these features so that you don't really ever have to maintain separate versions for the EU compared to the US or elsewhere, even though they might not have access to like Apple's version of this stuff, but not this year.
+
+280
+00:27:04,960 --> 00:27:06,320
+Yeah, that's interesting.
+
+281
+00:27:06,640 --> 00:27:16,320
+But they would, yeah, but then they but they still won't get access to App Intense and Seria AI and all the things that will hopefully be heavily implemented in the fall.
+
+282
+00:27:17,760 --> 00:27:29,280
+The other limiting factor is that most of these features like Seria AI, for my understanding, maybe you can correct me, Charlie, but it requires an iPhone 15 Pro or newer.
+
+283
+00:27:29,840 --> 00:27:36,320
+So iPhone 15, 16 or 17 Pro, not even the iPhone 15 or 16 nonpro.
+
+284
+00:27:36,960 --> 00:27:42,720
+It's like there's a pretty big disparity on which ones get these features.
+
+285
+00:27:43,440 --> 00:27:43,920
+I missed that.
+
+286
+00:27:44,400 --> 00:27:47,440
+It's not the same ones as the existing Apple Intelligence.
+
+287
+00:27:47,760 --> 00:27:53,920
+Because the very first Apple Intelligence was limited to the Pros, but then the next year it came to all iPhones.
+
+288
+00:27:54,080 --> 00:28:00,320
+So the iPhone 16, I believe, the regular 16 had access, but it was the 15 that didn't.
+
+289
+00:28:00,480 --> 00:28:01,680
+But I could get you wrong about that.
+
+290
+00:28:01,840 --> 00:28:03,760
+Well, maybe it has expanded.
+
+291
+00:28:04,080 --> 00:28:11,680
+I didn't like getting a full breakdown of the list, and in my notes it is iPhone 15 Pro Plus, so maybe the 16 is included in that.
+
+292
+00:28:11,680 --> 00:28:16,240
+But either way, it's like the iPhone 14 is not getting it, like older devices.
+
+293
+00:28:16,480 --> 00:28:19,920
+So now we have another bifurcation like on a device level.
+
+294
+00:28:20,240 --> 00:28:35,200
+And so maybe to your point, Thomas, like as frustrating as it is that the EU doesn't have it, you probably gonna have to support that anyway because you're gonna have customers who don't have the latest phone and have to figure out how to serve them some equivalent experience.
+
+295
+00:28:35,840 --> 00:28:55,280
+Yeah, I had a very similar discussion right this morning about this topic actually on to what extent do I keep supporting like what what is the percentage threshold of users and revenue in which I keep supporting this feature and this, and not necessarily supporting a feature, but like keeping having branches because it's never like easy.
+
+296
+00:28:55,920 --> 00:29:00,560
+And I guess everyone will make their choice at which percentage mattered to them and what they would they want to support.
+
+297
+00:29:00,960 --> 00:29:08,400
+And there are use cases where you have to support very old device because the audience is very specific to that and it's a little bit painful.
+
+298
+00:29:08,960 --> 00:29:16,960
+But yeah, I can see where there's going to be branches of whether it's pro or not pro, like recent device and then EU and then this.
+
+299
+00:29:18,080 --> 00:29:20,560
+Yeah, the fun of being a developer on this platform.
+
+300
+00:29:21,680 --> 00:29:28,560
+And the current version of the plain iPad assuming it uses the same rules as the regular Apple Intelligence.
+
+301
+00:29:28,960 --> 00:29:30,480
+That one doesn't support Apple Intelligence.
+
+302
+00:29:30,720 --> 00:29:31,200
+So wow.
+
+303
+00:29:31,680 --> 00:29:36,480
+I would I assume the most popular iPad that exists out there doesn't support these.
+
+304
+00:29:36,800 --> 00:29:36,880
+Yeah.
+
+305
+00:29:37,280 --> 00:29:38,000
+That's actually good.
+
+306
+00:29:38,400 --> 00:29:45,600
+I'll have a test device at least because I upgraded my wife and two children and myself in the fall with all new devices.
+
+307
+00:29:46,400 --> 00:29:48,560
+And so I don't even have an iPhone.
+
+308
+00:29:49,280 --> 00:29:58,400
+I don't have a single iOS device now, not on iOS 26, but at least I do have some of my younger kids have the original iPad or like older iPads.
+
+309
+00:29:58,640 --> 00:30:00,160
+So I have test devices now.
+
+310
+00:30:00,320 --> 00:30:00,960
+Good to know..
+
+311
+00:30:01,840 --> 00:30:02,880
+You're going to say something, Thomas?
+
+312
+00:30:03,440 --> 00:30:12,640
+Now the iPad case is interesting because for most developers it's not a particularly big use case enough to care, but I do happen to have one case where it is fundamental usage.
+
+313
+00:30:12,960 --> 00:30:23,440
+And they have a lot of specificities, the iPad that most people don't realize, and one of them is that the device lives much longer and people don't upgrade as much as the system.
+
+314
+00:30:24,400 --> 00:30:33,200
+And we have a lot of like heavy users, payers, who are like on a super old version of iOS and they just never update the iPad.
+
+315
+00:30:37,600 --> 00:30:41,760
+is just there until they're forced to do it because Apple would make like a huge bump or whatever.
+
+316
+00:30:41,840 --> 00:30:44,160
+But yeah, the iPad sometimes can be a little bit.
+
+317
+00:30:44,480 --> 00:30:50,560
+But I think for most developers that's not particularly a concern because the focus is not there.
+
+318
+00:30:50,880 --> 00:30:52,800
+But yeah, they tend to be very different.
+
+319
+00:30:53,520 --> 00:30:58,480
+I hope we won't have too many AI features that get dropped from that.
+
+320
+00:30:58,880 --> 00:30:59,360
+But let's see.
+
+321
+00:30:59,760 --> 00:30:59,840
+Yeah.
+
+322
+00:31:00,240 --> 00:31:02,560
+Well, let's dive into App Intense next.
+
+323
+00:31:02,880 --> 00:31:10,400
+So as good as it sounds like Siri is, Charlie, and I'm hoping to get in that get off the waiting list here any minute.
+
+324
+00:31:11,680 --> 00:31:23,200
+But as good as it is., I would assume your thoughts as the week has progressed is like App Intense and going deep on Siri AI is kind of a non negotiable over the summer for most apps.
+
+325
+00:31:24,080 --> 00:31:25,040
+I assume so.
+
+326
+00:31:25,600 --> 00:31:34,480
+That's been the kind of weird story is like, it doesn't, because we've known this has been coming and the App Intense story has been happening over the years.
+
+327
+00:31:35,280 --> 00:31:40,240
+Most people I've talked to, we're all kind of looking at each other like, so there's nothing to do?
+
+328
+00:31:40,480 --> 00:31:41,600
+Like, it should just work.
+
+329
+00:31:42,080 --> 00:31:42,240
+Right.
+
+330
+00:31:42,800 --> 00:31:44,720
+Because you already supported App Intense, right?
+
+331
+00:31:45,360 --> 00:31:46,000
+Exactly, yeah.
+
+332
+00:31:46,240 --> 00:31:46,320
+Yeah.
+
+333
+00:31:47,280 --> 00:31:48,560
+They deprecated the old.
+
+334
+00:31:49,120 --> 00:31:52,800
+Siri intents if that's a thing that matters, but most people aren't using those anyway.
+
+335
+00:31:53,920 --> 00:31:56,560
+So for the most part, it seems like things should just work.
+
+336
+00:31:56,800 --> 00:32:08,800
+I think the big thing is going to be living with this and trying to understand, like, oh, actually, I should support this action that I never would have thought of before in a, you know, the old shortcuts mindset.
+
+337
+00:32:10,240 --> 00:32:11,840
+But quite frankly, I'm not sure.
+
+338
+00:32:12,080 --> 00:32:19,600
+I haven't had a lot of success using it with third party apps, surprisingly, but I haven't really figured that out yet.
+
+339
+00:32:20,000 --> 00:32:24,160
+At least in my experiments over the last like eight hours that I've had access to it.
+
+340
+00:32:24,400 --> 00:32:24,480
+Yeah.
+
+341
+00:32:24,640 --> 00:32:26,400
+Yeah, yeah, it'll be interesting to see.
+
+342
+00:32:26,960 --> 00:32:39,440
+I built a list of carrots and sticks related to App Intense because I think, you know, like with any new technology that Apple releases, they want as many developers to adopt it as possible.
+
+343
+00:32:40,320 --> 00:32:47,600
+And so from a carrot standpoint, like Apple, you know, famously features more apps when they adopt the newest technologies.
+
+344
+00:32:49,440 --> 00:32:53,280
+There's personalized collections in the App Store that we'll talk about in a little bit.
+
+345
+00:32:54,800 --> 00:32:56,400
+There are feature apps in the keynote.
+
+346
+00:32:56,560 --> 00:33:00,560
+You're more likely to get your icon on a wall in the keynote or even like your app.
+
+347
+00:33:01,280 --> 00:33:06,560
+just, you know, displayed in the fall keynote or future keynote, you're more likely to win an Apple Design Award.
+
+348
+00:33:07,520 --> 00:33:11,600
+But then also just like it has the potential to create such better app experiences.
+
+349
+00:33:11,840 --> 00:33:18,640
+And when you create a better app experience, it's better for your users, better for monetization, better for retention and all of those things.
+
+350
+00:33:18,960 --> 00:33:20,080
+So there's a lot of carrots.
+
+351
+00:33:20,800 --> 00:33:27,040
+And then the stick is that you'll be invisible if you don't adopt these things.
+
+352
+00:33:27,360 --> 00:33:36,640
+That if someone says, you know, like some sports related query and you're a sports app, if you don't adopt app intense, you may be.
+
+353
+00:33:37,360 --> 00:33:41,680
+completely invisible as Siri becomes a more primary user interface for the iPhone.
+
+354
+00:33:42,080 --> 00:33:42,800
+Any thoughts there?
+
+355
+00:33:43,840 --> 00:33:51,200
+Yeah, I mean, like the example you gave earlier of calendar apps or mail apps or something like that.
+
+356
+00:33:52,480 --> 00:34:06,400
+If your friend shows you, like, oh yeah, you can just ask Siri to tell you when your next flight is and it knows how to dig into these and find it, and then you try it and it doesn't work and you're like, oh, that's because I'm using this third-party app, you're just going to bail.
+
+357
+00:34:06,560 --> 00:34:09,840
+You're just going to switch back to the default because it's that good of an experience.
+
+358
+00:34:10,000 --> 00:34:10,160
+Yeah.
+
+359
+00:34:10,560 --> 00:34:22,160
+And so that's both app intense and I don't think we have've talked about it, but they have expanded some ways that you can integrate with Spotlight Index, which is just the way that search works across the OS.
+
+360
+00:34:22,640 --> 00:34:28,320
+And so it's like those are ones for certain types of apps where users are storing data inside the app.
+
+361
+00:34:28,960 --> 00:34:43,440
+I almost feel like it's going to be a total requirement that you get on board with those and find out how to integrate as well as you can, or people are going to abandon you just to get better access to it through Siri.
+
+362
+00:34:43,840 --> 00:34:48,560
+There was a little bit of that before already with reminders or something, but that experience we've all.
+
+363
+00:34:49,280 --> 00:34:52,080
+tried to ask Siri to remind us for things in the past.
+
+364
+00:34:52,400 --> 00:35:01,040
+It was bad enough that it wasn't that much of a stick, but at least in my, you know, eight hours of playing with this, I think it's going to be a lot more so now.
+
+365
+00:35:01,520 --> 00:35:01,600
+Yeah.
+
+366
+00:35:02,080 --> 00:35:08,400
+Apple's privacy protections actually do make this a lot easier to implement.
+
+367
+00:35:09,040 --> 00:35:24,960
+So like if you're like the burner app with chat, your WhatsApp and have chat, like all those kinds of apps are going to need to be indexed by Siri because when you want to ask a contextual question, like any of those JPEGs.
+
+368
+00:35:24,960 --> 00:35:32,400
+I can think it was Jacob who tweeted a screenshot showing he just asked, like, when was the last time I was at this restaurant or in this area?
+
+369
+00:35:33,040 --> 00:35:39,360
+And Siri found notes and email and iMessage and location and photos.
+
+370
+00:35:40,240 --> 00:35:44,080
+And it's looking across all these different contexts to answer the question.
+
+371
+00:35:44,800 --> 00:36:00,240
+And so not just data storage, but if you're a chat app or a email app or a calendar app or like anything where there is data that would be relevant potentially to these deeper Siri queries, if you don't do that spotlight indexing.
+
+372
+00:36:01,280 --> 00:36:03,840
+You're going to be left out of the context for that query.
+
+373
+00:36:04,000 --> 00:36:11,360
+And then to your point, Charlie, like people won't want to put as much data in there if Siri can't get access to it.
+
+374
+00:36:12,000 --> 00:36:14,240
+So that's another kind of like carrot and stick.
+
+375
+00:36:14,400 --> 00:36:25,200
+The carrot that is like hopefully data from your app will get surface more stick that if you don't adopt these things, you might just be invisible and like push users away from your app.
+
+376
+00:36:26,720 --> 00:36:29,920
+And then, Thomas, you want to jump in on your thoughts on all this?
+
+377
+00:36:30,320 --> 00:36:36,640
+No, it felt like I don't have a big hot take here, but I did have the feeling that this is going to become very big.
+
+378
+00:36:36,640 --> 00:36:38,000
+Very big and mandatory.
+
+379
+00:36:38,240 --> 00:36:40,880
+And it's true that there was a first version of the app intent.
+
+380
+00:36:41,120 --> 00:36:47,360
+And I don't know, I've only heard developers talk about it, but in practice it was a bit of it of nothing.
+
+381
+00:36:48,240 --> 00:36:56,720
+And this time it felt that maybe not in full because I feel like it's going to take a little while to like perfectly figure out how to integrate all these.
+
+382
+00:36:57,520 --> 00:37:06,080
+But I can definitely see how those interactions within one, two years for many users they matter so much that as a developer it's like you have to have this.
+
+383
+00:37:06,240 --> 00:37:08,640
+Like you can't not look into it.
+
+384
+00:37:08,880 --> 00:37:14,560
+Like which so far was pretty much it was like, well, yeah, I'll deal with this later and it had no consequences.
+
+385
+00:37:14,880 --> 00:37:21,200
+I think there will be very serious consequences for those who don't and probably some early opportunities for those who adopt very early.
+
+386
+00:37:21,840 --> 00:37:24,960
+But yeah, so it's not one feature in particular.
+
+387
+00:37:25,360 --> 00:37:32,240
+It's like how it's like a backbone of everything that kind of impressed me for the, but let's say for the midterm, like one, two years.
+
+388
+00:37:32,400 --> 00:37:33,760
+But I'm thinking user adoption here.
+
+389
+00:37:33,920 --> 00:37:35,440
+I'm not thinking developer adoption.
+
+390
+00:37:35,600 --> 00:37:39,840
+So definitely one to follow very closely, play around, follow what others are doing.
+
+391
+00:37:40,560 --> 00:37:42,080
+I believe it's going to be very, very big.
+
+392
+00:37:42,480 --> 00:37:42,560
+Yeah.
+
+393
+00:37:42,800 --> 00:37:53,120
+And I remembered what I was going to say is I was going to go back to the privacy angle and Apple kind of giving you cover to implement these things because I had this terrible experience with the group me app.
+
+394
+00:37:53,760 --> 00:38:30,640
+Um, group me like I'm in some like kid thing for my one of my kids schools and there's just like parents are just chatting all the time and like I had to turn off notifications and then I went in there and I assumed that the group me AI could just summarize and so I like at the AI like you know summarize the thread and then it just randomly like summarized the latest news and then I realized it was like public to the whole group chat and what I realized is like from a privacy angle group me didn'tt want to reveal all these private group chats to whatever random AI.
+
+395
+00:38:30,960 --> 00:38:40,080
+They didn't want the negative user perception of like my private group chats are being exposed to this AI that's going to store the data, learn from it or whatever.
+
+396
+00:38:40,640 --> 00:38:52,480
+And so that's kind of an interesting perspective on all Apple's privacy, which at times I've been frustrated with some of their messaging, but it's like that drum beat that they've been hitting on for the last decade.
+
+397
+00:38:53,120 --> 00:38:58,800
+Now that we're in this new AI era, I want an AI to be able to summarize my group chats.
+
+398
+00:38:58,960 --> 00:39:23,360
+I want to be able to go in WhatsApp and just say, and I don't want Facebook reading all my private messages, but Apple's been so clear about the local models, the private cloud compute, that it kind of gives us as developers ground cover to implement all these things and implement these cool AI features and be a part of Siri without users having to worry about privacy.
+
+399
+00:39:23,600 --> 00:39:25,520
+So I thought that angle is really interesting too.
+
+400
+00:39:26,080 --> 00:39:31,520
+It's super interesting from the privacy standpoint because it enables us to bring features that maybe we didn't.
+
+401
+00:39:32,160 --> 00:39:35,040
+I think it has a lot of implication besides this.
+
+402
+00:39:36,080 --> 00:39:41,200
+The cost is one, like the fact that you can run on the device and then it moves to the cloud.
+
+403
+00:39:41,360 --> 00:39:50,240
+And then, to be frank, for a lot of users, a lot of tasks that they run through AI, they don't need like a super advanced, the latest model.
+
+404
+00:39:51,280 --> 00:39:53,120
+They can be run with a very basic model.
+
+405
+00:39:53,840 --> 00:40:00,720
+And just like internally, sometimes we have to choose which model we use to do what, especially now that the price is rising.
+
+406
+00:40:01,200 --> 00:40:05,440
+It's interesting for this feature to think through, hey, this is a pretty basic thing.
+
+407
+00:40:05,680 --> 00:40:06,880
+I'm going to run it this way.
+
+408
+00:40:07,200 --> 00:40:11,680
+And these questions are pretty new, but they're very exciting.
+
+409
+00:40:12,320 --> 00:40:24,080
+And I think for most, yeah, for many features running locally will be just default choice because cost, simple privacy, like many, many reasons that make it viable this way.
+
+410
+00:40:24,480 --> 00:40:30,480
+And only for selection of features, I mean, the summary of the group chat, you probably don't need Fable 5 to do this.
+
+411
+00:40:32,320 --> 00:40:32,400
+Yeah.
+
+412
+00:40:33,360 --> 00:40:35,920
+I know you've worked with a lot of kids apps over the years, Thomas.
+
+413
+00:40:36,320 --> 00:40:46,240
+Does this kind of open the door to be, and like, have you read anything specific on, like, you know, kids apps, like, totally fine, completely using Apple's AI stuff?
+
+414
+00:40:46,720 --> 00:40:52,400
+Yeah, that's an interesting one because obviously the privacy angle is particularly acute there.
+
+415
+00:40:53,680 --> 00:41:02,560
+It doesn't solve everything because I mean when I guess under 13 like 6 to 13 it does open up a lot of alleys.
+
+416
+00:41:02,960 --> 00:41:32,400
+I work a lot in the under 6 when they can't write yet so there's not so much that you can expose to an AI because the kids they're just interacting like crazy with the with the device so it's not so much that but it doesn't solve the like some kind of safety nets in a way that you still have to really care what you expose users to especially like in KidsApp, all the like stories that you have bedtime stories and stuff like that that you make with AI is a little bit tricky to ensure that.
+
+417
+00:41:33,280 --> 00:41:38,880
+I mean, it's easy to ensure that they don't go to like weird topics, but it's hard to ensure that.
+
+418
+00:41:39,120 --> 00:41:48,880
+Is it going to be like, uh, and not safe, but like, uh, yeah, I don't know what's the word, but like perfect for my kids.
+
+419
+00:41:49,040 --> 00:41:49,360
+It's hard.
+
+420
+00:41:49,600 --> 00:41:51,520
+Some stuff are hard to do with AI there.
+
+421
+00:41:51,680 --> 00:41:53,360
+And I don't think that's going to be the solution.
+
+422
+00:41:53,520 --> 00:41:55,440
+But for some specific features, yeah, definitely.
+
+423
+00:41:55,520 --> 00:41:57,600
+If we can run locally, don't need to expose anything.
+
+424
+00:41:58,240 --> 00:42:00,720
+And I haven't read any update on like.
+
+425
+00:42:01,360 --> 00:42:12,400
+what legally we can do about that and what because obviously there's a lot like kids data that we can't send to any third party like whatsoever, even if it's feature fundamental.
+
+426
+00:42:13,200 --> 00:42:20,960
+But I guess in this case it's not it's not going to apply because it's a third party but it's the device it's not like it's your device it doesn't reach anyone.
+
+427
+00:42:21,280 --> 00:42:23,040
+Yeah, that's I didn't think about it.
+
+428
+00:42:23,120 --> 00:42:23,200
+Yeah.
+
+429
+00:42:23,520 --> 00:42:23,600
+Yeah.
+
+430
+00:42:24,480 --> 00:42:32,240
+It seems like Apple from like a privacy standpoint is treating their private cloud compute as if it's a local model as well.
+
+431
+00:42:32,560 --> 00:42:34,240
+Like that it's not a third party.
+
+432
+00:42:34,480 --> 00:42:36,880
+It's like it's just a device.
+
+433
+00:42:38,400 --> 00:42:39,760
+and nobody can ever see it.
+
+434
+00:42:39,920 --> 00:42:40,880
+It's not a third party.
+
+435
+00:42:40,960 --> 00:42:41,600
+So that's interesting.
+
+436
+00:42:41,680 --> 00:42:43,360
+But that was my biggest thing as well.
+
+437
+00:42:43,520 --> 00:42:45,440
+It's just it doesn't move to external models.
+
+438
+00:42:45,680 --> 00:42:46,000
+That's it.
+
+439
+00:42:46,560 --> 00:42:46,640
+Yeah.
+
+440
+00:42:47,040 --> 00:42:54,320
+But then it gets into all the complications around devices that support it and don't and your fallbacks and all those kinds of things, which is frustrating.
+
+441
+00:42:54,800 --> 00:43:08,400
+And in some ways, as with all things Apple, it's like they introduced a lot of things this year that, like, in three or four years, we'll be able to more fully rely on it as devices pass out and more and more devices support Apple Intelligence and stuff like that.
+
+442
+00:43:08,960 --> 00:43:10,880
+But I did want to jump to the Apple Foundation model.
+
+443
+00:43:11,280 --> 00:43:14,480
+I did dig into the caveats around the free private cloud compute.
+
+444
+00:43:14,720 --> 00:43:17,280
+It sounded amazing, like, oh, we're going to get free AI.
+
+445
+00:43:18,640 --> 00:43:22,320
+Less than two million first time downloads is the big thing.
+
+446
+00:43:23,040 --> 00:43:27,120
+But then I saw someone on Twitter post a message that they weren't eligible.
+
+447
+00:43:27,680 --> 00:43:35,600
+And the message that they got from Apple made it sound like if any app in your developer account has had over two million downloads, you're not eligible.
+
+448
+00:43:35,680 --> 00:43:36,720
+It's not an app per app.
+
+449
+00:43:37,600 --> 00:43:39,840
+You have to be part of the small business developer program.
+
+450
+00:43:40,080 --> 00:43:42,080
+So you still have to be under a million dollars a year.
+
+451
+00:43:44,000 --> 00:43:47,680
+It still only runs on Apple Intelligence compatible devices.
+
+452
+00:43:49,280 --> 00:43:55,440
+And then you still have daily usage limits per user where iCloud users get more daily usage limits.
+
+453
+00:43:55,600 --> 00:44:09,440
+And so once you start ticking off all these boxes, like the way I'm looking at it is that for devices and users where you can use it, and if you still fall under all of those, I don't even know if I'm eligible because I've had apps in the past do more than 2 million downloads.
+
+454
+00:44:09,520 --> 00:44:13,440
+I don't know if they're going to count like my historic apps or the ones that are only live right now.
+
+455
+00:44:13,600 --> 00:44:15,440
+And I don't even know where my weather app is.
+
+456
+00:44:15,520 --> 00:44:16,800
+It may be pushing 2 million.
+
+457
+00:44:18,800 --> 00:44:30,880
+But what I've been looking at is like it will reduce costs overall, but you're still going to have have to have the fallbacks and have other models running for devices that don't support it for when the user reaches their limits.
+
+458
+00:44:31,120 --> 00:44:36,800
+And so as exciting as it sounded on the surface, it's like there's enough caveats where it's really cool.
+
+459
+00:44:37,120 --> 00:44:38,320
+You're going to get some free stuff.
+
+460
+00:44:38,480 --> 00:44:47,360
+It's going to be privacy friendly and all that kind of stuff, but it's not kind of a panacea for small apps like, we can integrate all these AI features.
+
+461
+00:44:47,600 --> 00:44:52,320
+And then, like, model quality is something like we, you know, we'll take a while to figure out over the summer.
+
+462
+00:44:52,560 --> 00:45:05,840
+Like, is the cloud compute model anywhere near even a Sonnet 4.6 or a Gemini 3.5 flash or some of the like somewhat cheaper models, like will it compete with those or will it be terrible?
+
+463
+00:45:06,080 --> 00:45:14,880
+And then if you have a system prompt for one, we have to like create a whole different system prompt for the Apple AI because it responds differently.
+
+464
+00:45:15,520 --> 00:45:21,360
+So there's a lot that we'll have to figure out over the summer as to, you know, exactly how good this is going to be.
+
+465
+00:45:22,960 --> 00:45:24,400
+But there's a lot to dig into.
+
+466
+00:45:24,880 --> 00:45:31,680
+If you're excited about that, be excited because I think it is going to reduce costs and be useful, but there's a lot of caveats that you'll have to think about.
+
+467
+00:45:32,160 --> 00:45:32,880
+Any comments there?
+
+468
+00:45:33,680 --> 00:45:36,240
+I mean, at least from the developer sentiment side.
+
+469
+00:45:36,400 --> 00:45:50,240
+side, I think it's a bigger deal for very small indies or people trying to kind of get their foot in the door as a way to play around with like really no upfront, you know, investment cost.
+
+470
+00:45:51,280 --> 00:45:59,840
+I think of it similar to how WeatherKit a few years ago kind of reopened the door for people using weather apps as like a little playground.
+
+471
+00:46:00,560 --> 00:46:03,200
+Most of those apps didn't become like major businesses or anything.
+
+472
+00:46:03,360 --> 00:46:12,960
+And if you're once you if you did grow, you needed to obviously you needed to pay for it and also pull in maybe different weather data that's more accurate for different areas or whatever.
+
+473
+00:46:13,760 --> 00:46:19,040
+But as a way for people to kind of get their foot in the door and learn, it's really nice for that.
+
+474
+00:46:20,000 --> 00:46:24,400
+And that seems to be where most people were excited about it more than anything.
+
+475
+00:46:24,960 --> 00:46:25,040
+Yeah.
+
+476
+00:46:25,600 --> 00:46:26,080
+That makes sense.
+
+477
+00:46:26,240 --> 00:46:38,640
+And then it sounds like Apple's APIs are really well designed for those fallbacks and like it's going to make it really easy or they're trying to make it easy to implement knowing that you're going to have fallbacks and figure that kind of stuff out.
+
+478
+00:46:39,040 --> 00:46:39,200
+Cool.
+
+479
+00:46:39,520 --> 00:46:43,680
+The retention messaging API, I feel like that was one of the biggest, most exciting things.
+
+480
+00:46:44,560 --> 00:46:45,200
+We've known about it.
+
+481
+00:46:45,360 --> 00:46:48,000
+RevenueCat has a bunch of customers who are already using it.
+
+482
+00:46:48,560 --> 00:46:50,240
+We've seen that it can be very performing.
+
+483
+00:46:50,560 --> 00:46:52,400
+Apple announced some numbers.
+
+484
+00:46:53,200 --> 00:46:55,360
+Well, I guess let me just explain what it is.
+
+485
+00:46:55,600 --> 00:47:00,800
+So, you know, we've all wanted to have a cancellation flow and some of us have implemented the app.
+
+486
+00:47:01,040 --> 00:47:03,760
+RevenueCat has customer center that does a cancellation flow.
+
+487
+00:47:04,320 --> 00:47:17,600
+But now when somebody goes to the App Store to cancel and they hit cancel subscription, a page will pop up that you can potentially put a message on and potentially put an offer on.
+
+488
+00:47:17,760 --> 00:47:27,040
+Like there's all different and I don't know that we need to get into all the different permutations in this conversation, but there's a bunch of of different options and permutations of this.
+
+489
+00:47:28,480 --> 00:47:39,040
+And so right there inside the App Store, you're going to get a chance to give a message, a photo, a winback offer, a switch plans offer right inside the App Store flow.
+
+490
+00:47:39,280 --> 00:47:51,920
+And so this is something that we've never been able to touch before, is that it was a total black box that when somebody went to cancel inside the App Store, you had no way to offer them anything to say anything to them to do anything.
+
+491
+00:47:52,800 --> 00:47:54,240
+So this is really exciting.
+
+492
+00:47:54,560 --> 00:48:02,000
+And, you know, Apple said the average at Lift was 82 percent3.
+
+493
+00:48:02,720 --> 00:48:05,840
+The math on that, I'm not sure exactly how they're calculating it.
+
+494
+00:48:06,640 --> 00:48:13,120
+Apple always loves to go, you know, ten times faster than the original iPad from ten years ago.
+
+495
+00:48:13,760 --> 00:48:26,560
+So I'm not exactly sure what they meant, but inside RevenueCat, we've seen apps be very successful with this, and it's one of those things where, especially at scale, even if it's a few percentage lift, that can be a lot of money.
+
+496
+00:48:27,120 --> 00:48:28,960
+So it's something I'm super excited about.
+
+497
+00:48:29,360 --> 00:48:34,400
+Charlie, you want to dive into any of the details or fill out some of what I shared?
+
+498
+00:48:34,720 --> 00:48:34,800
+Yeah.
+
+499
+00:48:36,320 --> 00:48:45,760
+with the announcement is just that it's still happening, but the version that we had before had no UI in App Store Connect.
+
+500
+00:48:46,080 --> 00:48:51,360
+It all had to be configured through API calls and back-end talking with their services.
+
+501
+00:48:52,480 --> 00:48:56,640
+Tools like RevenueCat built that out so it was easy if you were a RevenueCat customer.
+
+502
+00:48:57,200 --> 00:49:06,560
+The thing that's coming later this fall, I think they said later this fall or early next year, I think was the actual wording, is that they would add it into App Store Connect with a UI.
+
+503
+00:49:07,120 --> 00:49:11,920
+The part I'm not clear on, and maybe you have, either of you have talked to people, have gotten an answer, is...
+
+504
+00:49:13,040 --> 00:49:19,040
+Is that later this fall or early next year referring to the UI and App Store Connect only?
+
+505
+00:49:19,360 --> 00:49:24,960
+Or does that mean we're going to have to wait for the stuff they announced last year to get pushed out to everyone until then?
+
+506
+00:49:25,920 --> 00:49:28,000
+As you said, it's still slowly rolling out.
+
+507
+00:49:28,480 --> 00:49:36,480
+Yeah, it seems like they're rolling it out faster and faster, and that's what they are accepting way more people into the beta.
+
+508
+00:49:37,280 --> 00:49:42,160
+So I would guess even late this year or early next year, it will roll out into general availability.
+
+509
+00:49:42,480 --> 00:49:47,520
+I mean, the reason they roll things out like this is that it's a whole new app review surface.
+
+510
+00:49:48,160 --> 00:49:54,640
+You know, they don't want you inside the App Store to be able to say whatever random thing you want to say.
+
+511
+00:49:54,880 --> 00:50:13,600
+And that was an interesting thing to note as I dove into the details is that you can't programmatically respond with a customized message to the user in the sense of you can't say you can't respond to their server request knowing which user it is and say, hey David, like, you know, this, that and the other.
+
+512
+00:50:14,320 --> 00:50:20,960
+You what you can do is have a pre-approved by Apple, like it has to go probably through an app review process.
+
+513
+00:50:21,520 --> 00:50:24,560
+You can have multiple snippets of text that maybe do talk about.
+
+514
+00:50:25,040 --> 00:50:26,880
+and they had a health and fitness app.
+
+515
+00:50:27,120 --> 00:50:28,800
+It was their example in a lot of the demos.
+
+516
+00:50:29,440 --> 00:50:36,560
+So you could have a retention message that focuses more on yoga, one that focuses more on walking, one that focuses more on running, whatever.
+
+517
+00:50:37,120 --> 00:50:44,480
+And then with a server request, you can then just say, Hey, this is a more yoga focused user, show the yoga version of the message.
+
+518
+00:50:44,960 --> 00:50:52,080
+And so I think the reason they've been slow rolling this is they're just having to figure out internally, like, what kind of images do we approve?
+
+519
+00:50:52,240 --> 00:50:53,600
+What kind of messages do we approve?
+
+520
+00:50:53,840 --> 00:50:59,040
+And it's a whole new, like, review pipeline that they're, like, figuring out and standing up currently.
+
+521
+00:50:59,920 --> 00:51:06,400
+But yeah, I get the impression that late this year, early next year, it will be general availability and like every single developer can take advantage of it.
+
+522
+00:51:06,560 --> 00:51:07,680
+You don't have to get approved.
+
+523
+00:51:08,720 --> 00:51:10,320
+And so yeah, super exciting.
+
+524
+00:51:10,640 --> 00:51:12,080
+Thomas, you haven't said anything yet.
+
+525
+00:51:12,160 --> 00:51:13,200
+What are your thoughts on all this?
+
+526
+00:51:13,600 --> 00:51:18,400
+I'm going to have to stop to call it the retention API then because it's in App Store, correct?
+
+527
+00:51:18,480 --> 00:51:25,360
+But yeah, there was a bit of frustration from people who couldn't get in because those who did get in did see an uplift.
+
+528
+00:51:25,520 --> 00:51:32,000
+So I haven't seen any plus eighty two percent or plus two hundred forty percent, but it was still a win.
+
+529
+00:51:32,240 --> 00:51:33,360
+And I know there was frustration.
+
+530
+00:51:33,520 --> 00:51:35,200
+So it's great that they're opening up to everyone.
+
+531
+00:51:35,360 --> 00:51:36,640
+What caught my eye with this is.
+
+532
+00:51:36,640 --> 00:51:58,320
+So what I'm trying to do with this is, is this the segments, the possibility that maybe I'm going to make a discount to that person, but maybe I'm going to switch plan to that person, not just like adapting the, let's say, yoga versus workouts versus this, but also that which, to my knowledge, was not possible in the current version, like I'm not able to, I have to propose something.
+
+533
+00:51:58,800 --> 00:52:03,440
+It's like, okay, discount for everybody or shorter period for everybody or whatever.
+
+534
+00:52:03,840 --> 00:52:11,680
+And I think this is really a good potential because not all users are susceptible to the same message when they're going to churn.
+
+535
+00:52:12,480 --> 00:52:14,240
+So really looking forward to that one.
+
+536
+00:52:14,400 --> 00:52:23,200
+So for those who don't have it to have it and for those who have it to have this new feature and the segment one I think is going to make a is going to create another uplift on top of the uplift.
+
+537
+00:52:23,600 --> 00:52:23,680
+Yeah.
+
+538
+00:52:24,240 --> 00:52:26,080
+One use case I'm really excited about.
+
+539
+00:52:26,240 --> 00:52:37,680
+And so you guys be thinking of use cases you're excited about, but I've always been a little iffy on weekly subscriptions, but I do hear a lot of people like, well, it's a cheap introduction to the app.
+
+540
+00:52:38,080 --> 00:52:42,720
+And then, you know, the theory is that if they like the app, they'll switch to an annual plan.
+
+541
+00:52:43,920 --> 00:52:49,680
+Whether or not that happens at scale, we've never dug into the data and revenue cat is one of those I've been meaning to do for years.
+
+542
+00:52:50,960 --> 00:52:52,560
+But I think that's actually a killer use case.
+
+543
+00:52:52,800 --> 00:53:14,000
+It's like, hey, you know, if that is a really easy onboarding five dollars a week, and then they go to cancel, and then you offer the $40 year plan, I think that for weekly and even monthly, where where people were just looking to get in at the lower price, but once they're figuring out they really like the app, then you can offer them the annual plan.
+
+544
+00:53:14,320 --> 00:53:22,960
+So I think that has a potential to save a lot of monthly and weekly cancelers by giving that discounted annual plan as an offer direct inside App Store Connect, which is super cool.
+
+545
+00:53:23,040 --> 00:53:27,120
+I mean, the App Store app and right in the main cancellation flow.
+
+546
+00:53:28,000 --> 00:53:29,280
+So super excited about that.
+
+547
+00:53:29,600 --> 00:53:36,640
+Now, the caveat is like, you still have to build a great app with a great experience that people actually want to keep using.
+
+548
+00:53:36,880 --> 00:53:46,960
+So this isn't some magic thing that's going to fix every weekly subscription app, because a lot of the weekly subscription apps, the point is that people are not staying around for years and years and years.
+
+549
+00:53:47,680 --> 00:53:57,520
+So it's not some pancée, but I think it will be potentially a way to more effectively use weekly subscriptions for an app that is generally more retentive.
+
+550
+00:53:58,480 --> 00:54:01,120
+Any use cases that two of you are especially excited about??
+
+551
+00:54:01,840 --> 00:54:03,520
+In this case, it's when people console.
+
+552
+00:54:03,680 --> 00:54:15,120
+So you might be right, but there's a lot of experimentation on how, when and how do I push those retained users who are on a expensive weekly plan and do I do it at all?
+
+553
+00:54:15,360 --> 00:54:19,200
+Because if they don't console, I'm happy to keep them on the weekly plan, which is bad.
+
+554
+00:54:20,880 --> 00:54:21,920
+But yeah, no, it is they.
+
+555
+00:54:22,400 --> 00:54:24,240
+And that's exactly why I want the segment.
+
+556
+00:54:24,800 --> 00:54:32,160
+Because that weekly retained user that goes to console, I'm not going to offer him the same than the yearly guy who hasn't opened the app in a month.
+
+557
+00:54:32,400 --> 00:54:42,640
+And that's exactly why the first version, I mean, it was great because it was the first time that that we could access the subscription part that is outside of our app.
+
+558
+00:54:43,280 --> 00:54:44,800
+I hope Apple keeps building on it.
+
+559
+00:54:46,160 --> 00:54:47,760
+So now it's in App Store Connect.
+
+560
+00:54:48,000 --> 00:54:48,800
+Now we have segments.
+
+561
+00:54:49,360 --> 00:54:50,320
+I'm like, okay, great.
+
+562
+00:54:50,560 --> 00:54:50,960
+What's next?
+
+563
+00:54:51,840 --> 00:54:53,440
+I hope they're going to iterate further on it.
+
+564
+00:54:53,600 --> 00:54:54,000
+It's great.
+
+565
+00:54:54,320 --> 00:54:54,400
+Yeah.
+
+566
+00:54:54,640 --> 00:54:56,320
+Any thoughts, Charlie, before we move on?
+
+567
+00:54:56,800 --> 00:54:57,360
+I mean, no.
+
+568
+00:54:57,840 --> 00:55:01,040
+Kind of like you said, it's more of a thing you can do.
+
+569
+00:55:01,280 --> 00:55:02,960
+It's not a use case specific thing.
+
+570
+00:55:03,200 --> 00:55:07,920
+More it's a thing you can do to improve things for an already existing kind of business.
+
+571
+00:55:08,160 --> 00:55:11,840
+But other than the weekly thing, that is an interesting observation I hadn't thought about.
+
+572
+00:55:12,400 --> 00:55:14,160
+I'll jump into the chat for a second.
+
+573
+00:55:14,400 --> 00:55:17,040
+Does RevenueCat offer handle switching plans now?
+
+574
+00:55:18,160 --> 00:55:26,720
+We do handle that and actually customer center, you can offer plans to switch to directly within the RevenueCat customer center.
+
+575
+00:55:27,200 --> 00:55:33,040
+And then if a user switches a plan through App Store Connect, that's already handled.
+
+576
+00:55:33,200 --> 00:55:39,680
+And then from the retention messaging API, that is not yet available to anyone from my understanding.
+
+577
+00:55:39,840 --> 00:55:42,080
+And that's that's part of what's like coming later.
+
+578
+00:55:42,720 --> 00:55:49,840
+So we will be working to support it as soon as the switch plan retention messaging API thing is available.
+
+579
+00:55:50,560 --> 00:55:58,880
+We'll probably support it day one once Apple releases it because we already have a ton of customers who did get into the retention messaging API beta.
+
+580
+00:55:59,200 --> 00:56:04,000
+So we've been working hard on that and implementing things as they come and fixing things.
+
+581
+00:56:04,480 --> 00:56:12,480
+And it's kind of a beta for us as well, figuring out exactly how Apple handles it, exactly how to show the data in our charts and things like that.
+
+582
+00:56:12,800 --> 00:56:14,800
+So I wanted to jump into that one.
+
+583
+00:56:15,120 --> 00:56:24,000
+Okay, Apple announced monthly build annual plans a couple of months ago, but kind of went into a little more detail at WWDC.
+
+584
+00:56:25,120 --> 00:56:28,560
+Charlie, you want to give us the details on that or you're super familiar?
+
+585
+00:56:29,440 --> 00:56:36,720
+I, yeah, I wrote our blog post about it, like, a couple of months ago or whatever, but I don't know exactly what new details they added.
+
+586
+00:56:36,960 --> 00:56:40,320
+As far as I could tell, it was just they kind of rehashing the promoting it, okay.
+
+587
+00:56:40,800 --> 00:56:43,920
+announcement, but there could be something there, but I didn't see anything.
+
+588
+00:56:44,400 --> 00:56:49,200
+For those who didn't see the news, what is the monthly build annual plans, Charlie?
+
+589
+00:56:49,600 --> 00:56:56,160
+I mean, I think the simple way to say it is it's a way to do an annual plan, but users only pay for it monthly.
+
+590
+00:56:56,720 --> 00:57:10,160
+So it's, you know, you can have your mont twelve month commitment plan that is discounted, but you still only pay monthly, but you're going to get charged for an entire year.
+
+591
+00:57:10,320 --> 00:57:13,120
+Even if you cancel, you'll keep getting charged until the end of that year.
+
+592
+00:57:13,520 --> 00:57:15,680
+This is a somewhat common practice on the web.
+
+593
+00:57:16,080 --> 00:57:20,800
+Adobe famously uses this, but yeah, it is a thing.
+
+594
+00:57:21,280 --> 00:57:24,320
+The big thing here is that it's not available for Apple.
+
+595
+00:57:24,800 --> 00:57:26,640
+It's not available in the US and Singapore.
+
+596
+00:57:26,800 --> 00:57:28,160
+I think are the only two countries.
+
+597
+00:57:28,560 --> 00:57:30,320
+But Google has had this for a little while.
+
+598
+00:57:30,720 --> 00:57:34,560
+And I believe the country, it's only supported in a couple of specific countries.
+
+599
+00:57:34,720 --> 00:57:35,920
+I think I pulled it up earlier.
+
+600
+00:57:36,000 --> 00:57:39,120
+I think it's Brazil, France, Italy and Spain.
+
+601
+00:57:40,160 --> 00:57:44,800
+And so whenever I was writing about this, like, I didn't have hard data.
+
+602
+00:57:45,040 --> 00:57:46,160
+I actually still don't have hard data.
+
+603
+00:57:46,400 --> 00:57:47,680
+I'm very curious if you have, Thomas.
+
+604
+00:57:48,720 --> 00:58:00,160
+But sort of our thought was maybe experiment with it specifically in the countries Google plays with it, because there must be some reason why they think this is effective there versus other places.
+
+605
+00:58:01,040 --> 00:58:02,080
+But we can go ahead, Thomas.
+
+606
+00:58:02,480 --> 00:58:03,040
+I was curious.
+
+607
+00:58:03,360 --> 00:58:05,920
+That's where Europeans have stuff you don't.
+
+608
+00:58:06,720 --> 00:58:07,600
+That's very rare.
+
+609
+00:58:10,720 --> 00:58:15,440
+But the first time I saw this., so it was a few months ago, I was like, ah, this is nothing.
+
+610
+00:58:15,680 --> 00:58:16,480
+I discarded it.
+
+611
+00:58:16,560 --> 00:58:24,880
+And then I realized I was wrong because for some users, it does really matter that they're not getting charged the whole 40 or 80 or whatever it is.
+
+612
+00:58:25,120 --> 00:58:26,960
+And so there, maybe I was wrong with that.
+
+613
+00:58:27,360 --> 00:58:29,440
+I haven't seen a lot of implementation yet.
+
+614
+00:58:30,480 --> 00:58:35,520
+Apps I work with, they've been shy to jump on that one because it didn't feel like a really big win.
+
+615
+00:58:36,000 --> 00:58:38,560
+And the geographic limitation was like, okay, no.
+
+616
+00:58:39,760 --> 00:58:43,200
+But I do have a personal hot take on this, which is completely hypothetical.
+
+617
+00:58:44,560 --> 00:58:47,040
+I'm not sure Apple introduced this to sell a lot of them.
+
+618
+00:58:47,600 --> 00:58:58,080
+I believe Apple introduced this to soon change the guidelines that when you sell a normal yearly subscription, you can't show the price equivalent monthly or weekly in your paywall.
+
+619
+00:58:58,480 --> 00:59:01,120
+And they've never been happy with that.
+
+620
+00:59:02,080 --> 00:59:03,600
+And the fact that people put it in big.
+
+621
+00:59:04,160 --> 00:59:08,640
+And so I have no idea what I'm, this is not coming from Apple, I don't have any ins or whatever.
+
+622
+00:59:09,120 --> 00:59:18,800
+But I know there's been a lot of like resistance around this and like negotiation on how big I can put it and can I put it on the left and at the bottom and stuff.
+
+623
+00:59:19,200 --> 00:59:31,440
+And it got me thinking, if they're really angry at this, then introducing that feature is perfect for introducing the guideline after, okay, if you want to show the monthly equivalent, you say this and you sell that product and that's it.
+
+624
+00:59:31,760 --> 00:59:43,200
+So I'd give it a low chance to happen, but it's not a zero percent chance in my opinion to get rid of the monthly equivalent or weekly equivalent price on payroll, which would be a great news.
+
+625
+00:59:43,840 --> 00:59:59,680
+Yeah, I was going to say I'll take the other side of that bet and guess that that they're going to litigate that with AppReview and that AppReview has already, you know, clamped down on that enough and we have a pretty good understanding that if you show the monthly or weekly equivalent, you just need to do it.
+
+626
+01:00:00,320 --> 01:00:08,480
+in smaller text than you say build annually at whatever number and that both numbers have to be prominently displayed.
+
+627
+01:00:09,760 --> 01:00:19,680
+So I kind of think that they're they've already kind of litigated that through app review and that I doubt they would do that but if it is an interesting take like you never know with Apple who knows.
+
+628
+01:00:21,600 --> 01:00:28,080
+The other thing around this that I wanted to bring up is the kind of user trust angle and making sure it's clear.
+
+629
+01:00:29,600 --> 01:00:33,680
+Adobe got in trouble with this but they got in trouble with this because they did not make it clear.
+
+630
+01:00:34,320 --> 01:00:37,920
+Like it was not very clearly explained.
+
+631
+01:00:38,640 --> 01:00:53,040
+So when you go to cancel your plan, like I had this happened and I tweeted angrily about it because I went to cancel my plan and my annual renewal that I didn't even know I was on the annual cycle, my annual renewal had just happened the week before.
+
+632
+01:00:53,680 --> 01:00:59,040
+And so I would like, they're like, hey, your cancellation fee is like hundreds of dollars.
+
+633
+01:00:59,360 --> 01:01:00,400
+And I was like, wait, what?
+
+634
+01:01:00,640 --> 01:01:02,080
+Like, I'm just, I'm canceling.
+
+635
+01:01:03,520 --> 01:01:05,120
+But my, I had just renewed.
+
+636
+01:01:05,200 --> 01:01:11,680
+And so it was the worst possible experience because when it had just renewed, I had just started the full year.
+
+637
+01:01:12,320 --> 01:01:14,800
+And so then I had to pay for the whole year to get out of it.
+
+638
+01:01:14,960 --> 01:01:22,080
+Now I contacted customer support and they, you know, I think they were getting more and more lenient as people were complaining about it.
+
+639
+01:01:23,280 --> 01:01:32,800
+But I do wonder, well, one is like the early people to implement this may have similar kind of user frustration, user trust issues if it's not super clear.
+
+640
+01:01:33,600 --> 01:01:45,520
+But then the second point here is that if Apple normalizes this and makes the language really clear and requires you to be really clear on the paywall and things like that, that it could be a really good opportunity.
+
+641
+01:01:46,080 --> 01:01:52,480
+You know, I mean, a great example of this, like I use the ladder app and it's thirty dollars a month or 130 dollars a year.
+
+642
+01:01:53,040 --> 01:01:53,840
+My wife uses it.
+
+643
+01:01:54,000 --> 01:01:54,720
+My daughter uses it.
+
+644
+01:01:55,200 --> 01:02:04,160
+So like if all three of us all subscribe to the annual plan at the same time, it's like almost $400 coming out of the monthly budget.
+
+645
+01:02:04,480 --> 01:02:11,360
+Whereas if they gave us the annual commitment at a monthly pricing, I would actually prefer to pay it that way.
+
+646
+01:02:11,680 --> 01:02:15,840
+And it's just like part of almost like a gym membership that the three of us pay on a monthly basis.
+
+647
+01:02:16,320 --> 01:02:18,160
+So I like it as a concept.
+
+648
+01:02:18,480 --> 01:02:20,400
+I'm not at all opposed to it as a concept.
+
+649
+01:02:21,280 --> 01:02:24,400
+But I think the confusion is why it's been problematic in the past.
+
+650
+01:02:24,800 --> 01:02:39,600
+And so I wonder if Apple adopting this and Google adopting this is going to normalize it in a way where it can be very clear to users.ers, they'll understand and it will over time not be a user trust issue or a frustration when they get a cancel.
+
+651
+01:02:40,080 --> 01:02:40,960
+That's a very good point.
+
+652
+01:02:42,000 --> 01:02:45,760
+I'm super curious how the renewal rates are going to compare to the normal yearly.
+
+653
+01:02:45,920 --> 01:02:49,200
+Obviously, nobody has data yet because the product is just a few months old.
+
+654
+01:02:49,840 --> 01:02:51,600
+But I have no take on that.
+
+655
+01:02:51,920 --> 01:02:54,080
+I'm very curious to see what it's going to look like.
+
+656
+01:02:54,560 --> 01:03:07,920
+It's possible that we're going to self-filter user who are, let's say, by selling the level of intent is going to be lower by nature because people don't want to ship at that much money.
+
+657
+01:03:08,240 --> 01:03:19,120
+So potentially the renewal rate would be lower not because the product drives the lower rate but because it is sold in the first place to users who are less likely to renew.
+
+658
+01:03:19,360 --> 01:03:20,560
+But that's just a hypothesis.
+
+659
+01:03:21,200 --> 01:03:22,080
+I'm just very curious.
+
+660
+01:03:22,720 --> 01:03:24,320
+I'm not sure it's going to be lower at all.
+
+661
+01:03:24,640 --> 01:03:25,840
+I'm just curious.
+
+662
+01:03:26,160 --> 01:03:34,000
+And then if the renewal rates are at least as high, then yeah, it makes for a pretty compelling reason to at least try it.
+
+663
+01:03:34,720 --> 01:03:37,120
+But at the moment, I haven't seen that on this.
+
+664
+01:03:37,360 --> 01:03:41,200
+Like, it's still very early and nobody seems to have some features.
+
+665
+01:03:41,520 --> 01:03:43,680
+Everybody jumps in as soon as they come out.
+
+666
+01:03:44,000 --> 01:03:47,200
+That one has been, let's consider it on the roadmap.
+
+667
+01:03:47,680 --> 01:03:47,840
+Okay.
+
+668
+01:03:48,080 --> 01:03:52,640
+Okay, so the next topic is cross developer bundle and suites.
+
+669
+01:03:53,120 --> 01:04:01,760
+So this is the opportunity to bundle not just across apps within your own App Store account, but to bundle with apps across the App Store account.
+
+670
+01:04:02,080 --> 01:04:06,000
+I was initially a little confused because I was like, wait, didn't they already introduce bundles?
+
+671
+01:04:06,800 --> 01:04:19,600
+But what they introduced at WWDC 23 was contingent pricing where, let's say, and like a great example of this today is Strava and Runna.
+
+672
+01:04:19,840 --> 01:04:39,120
+So Strava acquired the app Runna, and I don't know if you're going to go into their exactly how they've run that acquisition, but in the past they could have said, you know, if you're a Strava subscriber, you get Runa at a like a very steep discount, and that is contingent pricing.
+
+673
+01:04:39,680 --> 01:04:48,640
+You get pricing in one app, contingent upon being a subscriber in another app, and that was kind of the first step to these kind of cross app promos.
+
+674
+01:04:49,680 --> 01:05:03,040
+But what they're introducing today or what they introduced at WWC, and it sounds like this one's like later in 2026, so this is not like immediately available, but now you could say, here's a bundle subscription.
+
+675
+01:05:04,240 --> 01:05:11,360
+And, you know, a lot of apps have hacked around this with their own systems, but it requires logins and like a lot of complex back end logic to do this.
+
+676
+01:05:11,840 --> 01:05:24,640
+But now, as a system level feature, you could have the Strava run a bundle subscription and just offer it as its own SKU inside the app, and then it's maintained as its own SKU.
+
+677
+01:05:24,880 --> 01:05:26,320
+The data comes in as its own SKU.
+
+678
+01:05:26,480 --> 01:05:32,000
+And it's a lot kind of like simpler to manage because Apple supports it at a first party level.
+
+679
+01:05:32,880 --> 01:05:36,400
+And then my understanding is that up to ten apps can be in a bundle.
+
+680
+01:05:36,640 --> 01:05:42,560
+So this actually creates some interesting opportunities to potentially, you know, work with other indie app developers to create a little.
+
+681
+01:05:43,200 --> 01:05:50,400
+productivity bundle to, you know, if you have a suite of apps to do the to support this in a easier, more straightforward way.
+
+682
+01:05:50,560 --> 01:05:53,600
+Like if you avoided in the past because it was too complex.
+
+683
+01:05:53,760 --> 01:05:55,120
+Like this is really interesting.
+
+684
+01:05:55,440 --> 01:05:59,520
+So, yeah, any details to fill in there, Charlie?
+
+685
+01:06:00,320 --> 01:06:02,240
+I don't have a lot of specific details.
+
+686
+01:06:02,720 --> 01:06:10,800
+I know the contingent pricing one, when it was first rolled out, and maybe even still today, it was kind of like invite only and then application only.
+
+687
+01:06:11,120 --> 01:06:13,120
+And I don't even know if it was available to everybody.
+
+688
+01:06:13,840 --> 01:06:18,640
+I don't have a good sense of if that's going to be the case here or if it's going to be more generally available.
+
+689
+01:06:19,280 --> 01:06:25,280
+Obviously, I have a bunch of questions how this is technically going to work in terms of who owns the customer.
+
+690
+01:06:26,000 --> 01:06:30,000
+I mean, I know Apple owns the customer, but like, yeah, there's just a lot of weird things.
+
+691
+01:06:30,160 --> 01:06:57,360
+But I do think there's a lot of opportunities here, especially for, you know, if you make a specialized app tool that is your biggest competitor is part of a big suite, you know, you could like Adobe, for example, if you make like an image app that competes with Photoshop, and that's kind of your heads down focus, you can imagine kind of partnering up with sort of your indie brethren or whatever the equivalent is.
+
+692
+01:06:58,720 --> 01:07:03,280
+oftentimes there's these sort of online suites of like families of separate apps.
+
+693
+01:07:04,400 --> 01:07:13,600
+And I could see that being a way to kind of team up against like a bigger competitor in that way, which is sort of an interesting way to think about it.
+
+694
+01:07:14,160 --> 01:07:18,720
+But honestly, I'm not entirely sure outside of that use case who this is for.
+
+695
+01:07:18,960 --> 01:07:26,000
+I'm really curious if Thomas has customers that are excited about this or stories that I'm not really thinking about.
+
+696
+01:07:27,040 --> 01:07:54,800
+Part of the buzz at the mansion party, I did discuss this with a few people, and it was just the idea that bundle, part of the reason bundling works so well is that if you use any one thing in the bundle, like Amazon Prime now is kind of a bundle and that it really strongly drives retention because if you use any one thing in the bundle, you're going to be more likely to stay subscribed to the whole bundle versus like if you have five different apps and five different subscriptions, it's more to manage, more to think about, more opportunities to churn.
+
+697
+01:07:55,360 --> 01:08:06,240
+And so from a retention standpoint, I think bundles can be incredibly powerful, not just across different companies, but even within the same company offering a bundle if you have multiple apps.
+
+698
+01:08:06,720 --> 01:08:09,280
+But yeah, I'll pass it to you, Thomas, for any thoughts.
+
+699
+01:08:09,600 --> 01:08:15,600
+Yeah, I think they can be powerful, but they're hard to implement put into practice.
+
+700
+01:08:15,840 --> 01:08:20,800
+And so the cases I've had were not on the contention plan, but they were like outside of IAPs.
+
+701
+01:08:21,360 --> 01:08:29,280
+And all in all, I think the great part about this is that we see Apple is evolving the SKU towards more flexibility, more options and so on.
+
+702
+01:08:29,440 --> 01:08:30,240
+And I think that's great.
+
+703
+01:08:30,800 --> 01:08:36,080
+And they should keep doing it because outside of IAP, this is something that was possible before.
+
+704
+01:08:36,560 --> 01:08:40,400
+And sometimes it's frustrating when we can't do a bunch of things in IAP.
+
+705
+01:08:40,720 --> 01:08:42,560
+So I think it's going in the right direction.
+
+706
+01:08:42,880 --> 01:08:46,640
+That one in particular, yeah, if you manage to sell it, probably for retention is really good.
+
+707
+01:08:46,880 --> 01:08:52,560
+But they're typically hard to put into practice because unless you see like.
+
+708
+01:08:52,560 --> 01:08:59,200
+You see, like, I don't know, you said like in the productivity bundle, maybe you see it as every extra sale is incremental anyway.
+
+709
+01:08:59,600 --> 01:09:09,440
+But in slightly bigger organizations, there was always the discussion of, ah, yeah, but I'm bigger than you, so I'm not sure, like, I'm not sure I want to make this deal with you.
+
+710
+01:09:09,760 --> 01:09:14,320
+They're always the one, I'm the bigger one, others are benefiting from me.
+
+711
+01:09:14,800 --> 01:09:18,640
+And then there was a lot of shenanigans in the deal to happen.
+
+712
+01:09:20,320 --> 01:09:26,880
+There's clearly a lot of apps that have like adjacent use that make sense to bundle and are not competing.
+
+713
+01:09:27,680 --> 01:09:28,400
+So that's great.
+
+714
+01:09:28,720 --> 01:09:32,800
+But in my experience, they've been hard to put in into practice, at least at a certain scale.
+
+715
+01:09:33,040 --> 01:09:36,320
+So maybe if you're small, you see this as a, it comes on top, it's fine.
+
+716
+01:09:36,400 --> 01:09:38,240
+It's, it's not going to eat my sales now.
+
+717
+01:09:38,720 --> 01:09:42,240
+And if none of us has a big brand, we're just benefiting all.
+
+718
+01:09:42,800 --> 01:09:58,720
+But then as soon as we start having a bigger brand, like, so I can, I can understand it for Strava and Runner because now they're the same company, but let's say, a headway would make a bundle with, you know, like when you start having, like being really well known, then you care a lot more about who you're getting associated with here.
+
+719
+01:09:59,280 --> 01:10:03,280
+And I think that that might be a limit in how many of those we're going to see.
+
+720
+01:10:03,520 --> 01:10:04,800
+In any case, I'm super happy.
+
+721
+01:10:04,880 --> 01:10:08,880
+That means more options, more SKU, more message to Apple, hey, we want more flexibility.
+
+722
+01:10:09,120 --> 01:10:10,640
+with the IAP and that's what they're doing.
+
+723
+01:10:10,880 --> 01:10:14,400
+So even if that one isn't a game changer, I'm still happy that it happens.
+
+724
+01:10:15,440 --> 01:10:20,080
+In the same breath that they announced bundles, they also introduced suites.
+
+725
+01:10:20,880 --> 01:10:23,440
+I meant to dive into that this morning and didn't.
+
+726
+01:10:24,000 --> 01:10:25,920
+Charlie, did you dive into that at all?
+
+727
+01:10:26,160 --> 01:10:28,560
+Do you understand what the suites are compared to the bundles?
+
+728
+01:10:29,280 --> 01:10:34,560
+Well, so I'm not sure at the bundles side, more so on the group and volume price purchasing.
+
+729
+01:10:35,600 --> 01:10:37,120
+I'm talking specifically about suites.
+
+730
+01:10:37,440 --> 01:10:40,960
+I know, but I think this concept applies to both similarly.
+
+731
+01:10:41,680 --> 01:10:41,680
+Okay.
+
+732
+01:10:42,560 --> 01:11:04,960
+But it has to do with whether I'm guessing again, I haven'tt dug in on this one, but my assumption based on how it applies to group and volume pricing is that this has to do with the concept of something that's in a bundle, you can purchase each individually, whereas a suite is something where you can only purchase it as part of that broader suite.
+
+733
+01:11:06,720 --> 01:11:09,200
+That is how it works within the group and volume purchasing.
+
+734
+01:11:10,560 --> 01:11:14,960
+I'm not confident that that's how it works here, but that would be my guess considering they use the same word.
+
+735
+01:11:15,680 --> 01:11:16,640
+Yeah, no, no, no.
+
+736
+01:11:17,040 --> 01:11:20,720
+That actually aligns with the little research I did do yesterday.
+
+737
+01:11:21,040 --> 01:11:26,240
+And I watched the video on this and meant to like dive in because, you know, I was watching on the plane.
+
+738
+01:11:26,640 --> 01:11:27,280
+Two X.
+
+739
+01:11:27,440 --> 01:11:27,520
+Yeah.
+
+740
+01:11:28,160 --> 01:11:29,280
+It's a lot to take in.
+
+741
+01:11:29,760 --> 01:11:38,800
+But yes, I think you're right that it has to do with suites are essentially a bundle, but then where you can't individually purchase the other subscription.
+
+742
+01:11:39,120 --> 01:11:40,320
+And it's a weird name, suites.
+
+743
+01:11:40,480 --> 01:11:42,480
+And that's part of, I think, what's confusing me.
+
+744
+01:11:42,800 --> 01:11:42,800
+Yeah.
+
+745
+01:11:43,680 --> 01:11:44,720
+But that sounds right.
+
+746
+01:11:44,880 --> 01:11:45,200
+All right.
+
+747
+01:11:45,280 --> 01:11:48,160
+Well, let's move right on then to group and volume pricing.
+
+748
+01:11:48,400 --> 01:11:49,920
+And this is super exciting.
+
+749
+01:11:50,400 --> 01:11:57,360
+We have been at RevenueCat and just as a I think even before I joined RevenueCat, I was bugging Apple about this one.
+
+750
+01:11:57,600 --> 01:11:59,680
+Like there's so many great prosumer apps.
+
+751
+01:12:00,000 --> 01:12:02,720
+Like why why did it take them eighteen years?
+
+752
+01:12:03,440 --> 01:12:05,840
+to support seat based licensing.
+
+753
+01:12:06,880 --> 01:12:10,880
+Whatever the reason, I'm glad they now support seat based licensing.
+
+754
+01:12:11,280 --> 01:12:14,720
+So, Charlie, it seems like you've dug in a little bit to this.
+
+755
+01:12:15,040 --> 01:12:19,200
+What are your thoughts on, like, how it works and the logistics of it?
+
+756
+01:12:19,840 --> 01:12:23,840
+Yeah, so it's it kind of works the way I would hope that it works.
+
+757
+01:12:24,000 --> 01:12:26,240
+So, it's broken into two different categories.
+
+758
+01:12:27,120 --> 01:12:29,600
+So there's group purchases and volume purchases.
+
+759
+01:12:30,480 --> 01:12:40,720
+But essentially both of them are ways for you to buy seats for multiple people and then assign them to people based on their Apple ID.
+
+760
+01:12:41,440 --> 01:12:49,760
+The volume purchasing option is through the Apple Business program or the school manager.
+
+761
+01:12:50,320 --> 01:12:52,480
+So those are obviously kind of at the enterprise level.
+
+762
+01:12:52,880 --> 01:12:56,320
+But then there's also group purchases exist just outside of that as well.
+
+763
+01:12:56,640 --> 01:13:13,200
+So like I as a consumer can buy, you know, my favorite, like when MimeStream, well, when MimeStream comes out for iOS, the email client, I could theoretically buy, you know, five seats of that and then distribute it to my team that way.
+
+764
+01:13:13,360 --> 01:13:18,560
+And then all the sales are happening to me specifically, but they all get access.
+
+765
+01:13:19,120 --> 01:13:20,080
+through their Apple ID.
+
+766
+01:13:20,960 --> 01:13:24,080
+And then within that, you can do pricing tiers.
+
+767
+01:13:25,040 --> 01:13:27,360
+I believe the limit is there's five different tiers.
+
+768
+01:13:27,680 --> 01:13:39,520
+And the way that that works is, I'm not sure how customizable these are or if it's a hard, hard numbers that you have to set it at, but you can set a different price depending on how many of these seats are being purchased.
+
+769
+01:13:40,000 --> 01:13:40,960
+And it's graduating.
+
+770
+01:13:41,360 --> 01:13:46,320
+So the first five would be maybe at like a $20 price.
+
+771
+01:13:46,720 --> 01:13:51,280
+And then you can say the next ten are going to be at a $15 price.
+
+772
+01:13:51,360 --> 01:13:52,800
+And then the next ten are at this.
+
+773
+01:13:53,200 --> 01:13:57,920
+And so it's a way for you to do discounts for larger, you know,  amount of seats.
+
+774
+01:13:58,880 --> 01:14:01,360
+So, you know, the proof is in the pudding.
+
+775
+01:14:01,440 --> 01:14:05,200
+I'm sure there's going to be details once we really dig in that we're like, oh, why doesn't this?
+
+776
+01:14:05,360 --> 01:14:10,640
+But man, this is just like so many people have been asking for this so often.
+
+777
+01:14:11,760 --> 01:14:20,640
+And on the Mac especially, this is like the reason so many people stay out of the Mac store, Mac App Store is just very simply, people need this.
+
+778
+01:14:21,120 --> 01:14:23,680
+Even people I know who want to be in the Mac App Store.
+
+779
+01:14:24,080 --> 01:14:27,680
+And so this is, I think, a really big deal for a certain group of people.
+
+780
+01:14:28,000 --> 01:14:29,520
+But I think all of them know who they are.
+
+781
+01:14:30,000 --> 01:14:30,000
+Yeah.
+
+782
+01:14:30,240 --> 01:14:44,560
+And I mean, to my, to my example earlier, I hope the latter implements group pricing because then I could get my wife, myself and my daughter all on the ladder app under a bundle with a discount, which, which, you know, I've been a little frustrated.
+
+783
+01:14:44,720 --> 01:14:48,080
+They don't have a, like, family plan and they don't support family sharing.
+
+784
+01:14:49,440 --> 01:14:58,160
+So, yeah, this is exactly the kind of use case outside of, like, institutions and job, you know, work based stuff.
+
+785
+01:14:58,480 --> 01:15:05,440
+Like, that's a perfect example of just like being able to do a family plan where you don't have to call it the family plan.
+
+786
+01:15:05,760 --> 01:15:11,680
+It's just now like, hey, five people, and then each person gets it at a 30% discount or whatever.
+
+787
+01:15:12,640 --> 01:15:13,440
+What are your thoughts, Thomas?
+
+788
+01:15:14,080 --> 01:15:36,480
+Yeah, the Mac App Store is an obvious one I didn't think of because I'm not on the Mac App Store, but there's there's many apps that are not exclusively like end users and have like prosumer kind of middle ground and that was so frustrating in this use case because oh we could say like guys go to the web like we have no other ways to do it so yet another example of a desk that gets more flexible and I'm happy about it.
+
+789
+01:15:36,880 --> 01:15:53,120
+This one is common in some specific vertical I had it where for example suite of like prosumer types of clients that edit their videos together like small teams that are like two, three, four people who are like co editing something together.
+
+790
+01:15:54,000 --> 01:15:58,400
+So that really answers needs that existed for a long time and that was a frustration for a lot of people.
+
+791
+01:15:59,440 --> 01:16:11,040
+What I'm thinking next is how much we can build on top, like probably through the app intent or not, but like actually, oh, this group are together and I'm going to have features that groups can use together.
+
+792
+01:16:12,160 --> 01:16:24,480
+And so not just, oh, you can buy five seats, but like, hey, you and your four buddies who go to paddle, three buddies in this case, or you and your family in ladder, or you, like as a developer, what I can offer them to do.
+
+793
+01:16:24,720 --> 01:16:38,960
+And a lot of apps are still very much single player apps like with not so and moving to like full social environment can be complex and not make sense for a bunch of verticals, but having interaction was just, hey, this is my group of four.
+
+794
+01:16:39,360 --> 01:16:44,800
+So I'm very curious on the features we can build on top after we sell those seats together.
+
+795
+01:16:45,360 --> 01:16:56,640
+And there are APIs, I don't know the full extent of it, but there are APIs I think at the very least to make sure that you can manage your seats like within the app and see who those users are.
+
+796
+01:16:57,120 --> 01:17:02,160
+I would imagine that those can also be used to just kind of automatically treat them as a team, right?
+
+797
+01:17:02,400 --> 01:17:04,560
+And allow communication between each other or sharing.
+
+798
+01:17:05,680 --> 01:17:06,720
+That kind of open up.
+
+799
+01:17:07,360 --> 01:17:08,240
+features that are really cool.
+
+800
+01:17:08,480 --> 01:17:10,320
+Plus, you know, I just add them, that's it.
+
+801
+01:17:10,560 --> 01:17:11,040
+Don't let me.
+
+802
+01:17:11,600 --> 01:17:15,200
+Sometimes there's friction when you need to add people like this, it's not always the best.
+
+803
+01:17:15,600 --> 01:17:19,280
+So yeah, hopefully we're going to see stuff being built on top of that.
+
+804
+01:17:19,760 --> 01:17:19,840
+Yeah.
+
+805
+01:17:20,320 --> 01:17:22,800
+And then there's so many big apps in the App Store.
+
+806
+01:17:22,960 --> 01:17:33,360
+You know, Notion being a revenue cat customer and a perfect example of this is like, you know, they've been, if you need more than one subscription, go to the web and it's a hassle.
+
+807
+01:17:33,520 --> 01:17:40,720
+And Apple's kind of limited them what they can say pushing people to the web because of that, because of all the rules around IRP and stuff.
+
+808
+01:17:40,960 --> 01:17:43,200
+And so yeah, it just simplifies things.
+
+809
+01:17:43,360 --> 01:17:49,920
+So now Notion can just be like, hey, you know, you got a team and you want to pay through the app store, like buy your licenses right here.
+
+810
+01:17:50,160 --> 01:17:51,520
+And it just makes it so much easier.
+
+811
+01:17:51,760 --> 01:17:58,800
+Now with the six different, with the five tiers and the flexibility there, like maybe it still won't fit every use case.
+
+812
+01:17:59,120 --> 01:18:06,880
+Like maybe Notion has like, you know, enterprise plans where it's, you know, they're going to sell two thousand five at a certain price.
+
+813
+01:18:07,440 --> 01:18:22,800
+Um, but it at least, you know, covers the first use case and will probably cover a lot of use cases for a lot of apps being able to bring those B2B offerings back and make it easier for smaller groups and small companies and things like that to do seat-based licensing.
+
+814
+01:18:23,280 --> 01:18:25,760
+without having to go get an enterprise deal with the company.
+
+815
+01:18:25,920 --> 01:18:27,600
+So yeah, exciting.
+
+816
+01:18:27,920 --> 01:18:35,040
+Even outside, even outside of the enterprise, I think there's some really interesting stories even already enabled here.
+
+817
+01:18:35,280 --> 01:18:43,360
+I haven't heard of Apple specifically talking about it, but one of the thoughts that I had that I really want to kind of play with is the idea of gifting.
+
+818
+01:18:43,840 --> 01:18:47,520
+So like, if, you know, like, I love Flighty.
+
+819
+01:18:47,680 --> 01:18:48,720
+I use Flighty all the time.
+
+820
+01:18:49,600 --> 01:18:56,000
+I beg my mom to use Flighty whenever she's flying because I want to track where she's at.
+
+821
+01:18:56,160 --> 01:18:56,800
+Did she make it here?
+
+822
+01:18:56,960 --> 01:18:57,680
+Did she make it there?
+
+823
+01:18:58,640 --> 01:19:00,320
+And I want her to have the Pro version.
+
+824
+01:19:00,880 --> 01:19:04,000
+so that it's easier for her to pull in everything through her email and everything.
+
+825
+01:19:04,480 --> 01:19:10,160
+I would 100%, especially if I could get a little discount, just buy that for her, gift it to her.
+
+826
+01:19:10,320 --> 01:19:11,440
+I'm the one managing all that.
+
+827
+01:19:11,840 --> 01:19:14,960
+She never even has to think or care about it because it's just through her Apple ID.
+
+828
+01:19:15,440 --> 01:19:26,560
+I think there could be a lot of interesting stories there where it's outside of the normal family plan, but it's often within your family or friends or something because you're paying for it.
+
+829
+01:19:27,360 --> 01:19:35,840
+And then even extending it out into like, you could imagine Apple doing a referral type program thing where the other person pays for it, but they join your group.
+
+830
+01:19:36,000 --> 01:19:38,000
+And if you make a bigger group, everybody gets it cheaper.
+
+831
+01:19:38,240 --> 01:19:48,400
+And these are all kinds of schemes that exist in the web world that you could imagine it being really easy to do within Apple's system in the future.
+
+832
+01:19:48,800 --> 01:20:00,480
+So I'm personally, this is probably the thing I'm most excited about, at least as a RevenueCat employee, in terms of what I think we could do now and where I could see this maybe going kind of in the future.
+
+833
+01:20:01,120 --> 01:20:02,240
+Yeah, super excited.
+
+834
+01:20:02,320 --> 01:20:03,760
+And that's a great example with Flighty.
+
+835
+01:20:04,240 --> 01:20:12,640
+And the cool thing there is like that's that's a great way to increase ARPU per average revenue per user to pick up incremental.
+
+836
+01:20:12,880 --> 01:20:16,320
+Like you're not going to, like it's already complicated enough.
+
+837
+01:20:16,880 --> 01:20:17,680
+and full price?
+
+838
+01:20:17,920 --> 01:20:22,480
+Like, are you actually going to like buy a gift subscription for your mom and then have to manage that?
+
+839
+01:20:22,800 --> 01:20:29,440
+Like, they do offer gift subscription, like, Vlighty specifically does offer gift subscription, but it's only on the web.
+
+840
+01:20:29,680 --> 01:20:31,040
+It's not within the App Store.
+
+841
+01:20:31,520 --> 01:20:33,600
+It's like, harder to manage and that kind of thing.
+
+842
+01:20:33,840 --> 01:20:37,200
+And so, like, now it's like, they can pick up those incremental users.
+
+843
+01:20:37,440 --> 01:20:49,600
+I'll probably do the same, like, you know, add my wife and a couple of other people who don't quite have the, you know, fly enough to make it worth it, but at a discount, like, now I might have four people on my Vlighty plan.
+
+844
+01:20:50,000 --> 01:20:54,000
+So, yeah, I think it's a great point and super exciting.
+
+845
+01:20:55,200 --> 01:21:00,480
+Okay, the next topic is something we probably should have led with, to be honest, we're an hour and twenty five minutes in.
+
+846
+01:21:02,000 --> 01:21:26,000
+I was super excited and Charlie, I first learned about it from your tweet because apparently you watched the video before I did is that Apple introduced Creative Assets, you can now customize your header on the App Store with an image and/or video that can also be used in search instead of your standard screenshots.
+
+847
+01:21:26,960 --> 01:21:30,640
+So App Store Discovery is getting a massive upgrade this year.
+
+848
+01:21:32,000 --> 01:21:33,840
+And it's like, there's only upside here.
+
+849
+01:21:34,080 --> 01:21:36,320
+Like, yeah, it probably won't work perfectly for every app.
+
+850
+01:21:36,560 --> 01:21:37,680
+You're going to need to experiment.
+
+851
+01:21:38,640 --> 01:21:40,720
+But then Apple also made it really easy.
+
+852
+01:21:40,960 --> 01:21:43,600
+So like they changed the way app review works.
+
+853
+01:21:43,760 --> 01:21:47,040
+And I don't know if this is already rolled out or like coming in the fall, kinda thing.
+
+854
+01:21:48,240 --> 01:21:57,920
+But you will be able to upload a bunch of assets, new screenshots, these creative assets and headers and like all your kind of App Store metadata.
+
+855
+01:21:58,080 --> 01:22:09,360
+They've kind of broken it in a part now where you'll be able to submit a bundle of things at once without having to do a new SKU or a new version number to your app.
+
+856
+01:22:09,600 --> 01:22:22,000
+Like, it's been so annoying., having to increment your bundle, sorry, add a new version just to like change some description text in your metadata or whatever.
+
+857
+01:22:23,440 --> 01:22:39,040
+There's been a hack around that for screenshots now because with the custom product pages you can so this kind of the foreshadowing to this was that you could create a custom product page and submit that independently and then swap it in as your primary screenshot set.
+
+858
+01:22:39,440 --> 01:22:49,440
+So there's been a little bit of a hack around not having to increment your version and upload a new binary every single time you want to make a change, but this seems to be kind of like opening it wide.
+
+859
+01:22:49,600 --> 01:23:07,440
+So like in addition to like all the cool things you're going to be able to try on your product pages and in search, it's also kind of streamlining this whole process of being able to get assets and change assets without having to you still go through app preview but not having to upload a new binary.
+
+860
+01:23:08,000 --> 01:23:10,880
+Thomas, I imagine you're especially excited about this.
+
+861
+01:23:11,040 --> 01:23:11,600
+What are the thoughts?
+
+862
+01:23:11,760 --> 01:23:15,440
+And then I'm sure you've been talking to a lot of people in the community about this over the week.
+
+863
+01:23:15,920 --> 01:23:16,640
+What are your thoughts?
+
+864
+01:23:17,120 --> 01:23:24,400
+Well, the first one in the community is those who actually upload those assets like this, this library is really welcome because it's really painful.
+
+865
+01:23:24,640 --> 01:23:31,600
+Like all the objects are scattered around and then the promotional artwork is there and the cpp is there and this is there.
+
+866
+01:23:31,920 --> 01:23:35,200
+And so there was a little bit of a relief of, oh, I'm going to save time here.
+
+867
+01:23:35,440 --> 01:23:36,400
+So that's nice.
+
+868
+01:23:37,520 --> 01:23:40,720
+And it's all supported by the API now too, which is super exciting.
+
+869
+01:23:40,960 --> 01:23:45,120
+And then I've been using the App Store Connect CLI that somebody built.
+
+870
+01:23:46,240 --> 01:23:51,120
+So it's getting even easier with AI to be able to just like throw a folder at it and say upload all these.
+
+871
+01:23:51,760 --> 01:23:55,920
+Historically it's been very time consuming and this is not a high value task.
+
+872
+01:23:56,160 --> 01:24:07,040
+Like I'd rather have the people who are there who are doing that, like create more of these assets, look more at the data on these assets rather than just spending time uploading them and managing them.
+
+873
+01:24:07,200 --> 01:24:14,480
+And especially when you have a lot of them, like one app that I work with, we're always at the limit of the 70 CPPs.
+
+874
+01:24:14,560 --> 01:24:17,760
+And it's like there's a whole slot management going on there.
+
+875
+01:24:18,720 --> 01:24:20,000
+That's going to be a little bit easier.
+
+876
+01:24:20,640 --> 01:24:25,520
+Personally, I'm more excited on how these assets are going to perform for users.
+
+877
+01:24:26,000 --> 01:24:28,480
+So the two assets are a bit different, but they're both really interesting.
+
+878
+01:24:28,640 --> 01:24:34,960
+Like the first one is something that existed, but to my mind is completely new because the restriction has been lifted.
+
+879
+01:24:35,120 --> 01:24:38,800
+So historically the header was only for some apps, not everyone.
+
+880
+01:24:39,040 --> 01:24:39,600
+So it's great.
+
+881
+01:24:39,680 --> 01:24:40,400
+It's for everyone.
+
+882
+01:24:40,800 --> 01:24:41,680
+But it's not that.
+
+883
+01:24:42,000 --> 01:24:45,280
+The bad thing is that it was very restricted what you're allowed to put in there.
+
+884
+01:24:45,760 --> 01:24:50,320
+And if I make the story really short, basically you can put your logo and a bland color and that's it.
+
+885
+01:24:51,040 --> 01:24:52,800
+You couldn't be very creative with it.
+
+886
+01:24:53,440 --> 01:24:56,560
+And many apps actually have, like, hey, you know what?
+
+887
+01:24:56,800 --> 01:25:01,120
+Let's ask for the header to be removed because one, we can't put what we want.
+
+888
+01:25:01,680 --> 01:25:04,720
+Two, it pushes my screenshot down like under the fold.
+
+889
+01:25:04,800 --> 01:25:10,720
+And I'm actually losing visibility on the message that I want to express because I can't say anything in that message.
+
+890
+01:25:11,200 --> 01:25:13,440
+And three, I can't upload it.
+
+891
+01:25:13,520 --> 01:25:16,720
+Like, if I want to change it, I need to ping Apple, hey, can you change this header?
+
+892
+01:25:17,040 --> 01:25:18,720
+And sometimes that would take a very long time.
+
+893
+01:25:18,960 --> 01:25:20,240
+Like, like, so.
+
+894
+01:25:20,320 --> 01:25:29,280
+So for me, it's really interesting that now it's going to become like a proper asset because we can put a lot more like stuff that is a lot more creative.
+
+895
+01:25:29,600 --> 01:25:30,720
+So I'm excited about that.
+
+896
+01:25:31,280 --> 01:25:37,600
+And there's a there's a thing there which we can use the asset for the two day tab.
+
+897
+01:25:37,840 --> 01:25:43,520
+So the two day tab is the ad that you see just below the first feature when you open it.
+
+898
+01:25:43,760 --> 01:25:45,840
+So it's a like prime spot of the app store.
+
+899
+01:25:46,080 --> 01:25:47,760
+You open the app store and there's an ad there.
+
+900
+01:25:48,160 --> 01:25:52,320
+And historically it's been very frustrating because that placement is not meant for performance.
+
+901
+01:25:52,480 --> 01:25:55,040
+Like it's very hard to get profitable returns on it.
+
+902
+01:25:55,280 --> 01:25:56,640
+So it's meant for brand awareness.
+
+903
+01:25:56,800 --> 01:26:02,960
+But the thing when you run brand awareness campaigns, you want to give a message, there is something you want to say.
+
+904
+01:26:03,280 --> 01:26:06,720
+Like, it's not, hey, this is my icon, I'm that app.
+
+905
+01:26:07,040 --> 01:26:17,600
+Like, you want to say something about either something is new or maybe it's inspirational, maybe it's a feature, maybe it's a benefit, maybe it's a one time thing, an event or whatever.
+
+906
+01:26:18,000 --> 01:26:24,640
+And basically today, like, a lot of apps that I work with are like, oh, I'm not doing that until I can actually tell something to the users.
+
+907
+01:26:25,200 --> 01:26:36,320
+And so I think a bunch of apps that have completely discarded the Today tab as an option are going to reconsider it because it gives us the liberty to, yeah, to share something and be more creative.
+
+908
+01:26:36,640 --> 01:26:38,000
+And it's going to be more exciting.
+
+909
+01:26:38,480 --> 01:26:46,480
+The reverse of the coin is, let's see how Apple does review this asset because they clearly, and what I was thinking is, so this asset can also be a video.
+
+910
+01:26:47,600 --> 01:26:48,960
+It can be dynamic.
+
+911
+01:26:49,360 --> 01:26:50,320
+It is not static.
+
+912
+01:26:50,960 --> 01:27:02,240
+But then opening up the fact that people are going to put like some animated thing at the top of the App Store, I guess the review process is not going to be as easy as we will because of this connection with the two.
+
+913
+01:27:03,040 --> 01:27:10,000
+Even yours might be completely legit but gets rejected because Apple is like, ah, but what if they start using it as a two day tab ads, then it's not possible.
+
+914
+01:27:10,240 --> 01:27:13,680
+So let's see how they're going to get with the review, but it's super exciting to have it.
+
+915
+01:27:14,320 --> 01:27:22,720
+The one on search, I think is nice, maybe less of a game changer, but what's really nice is today you just have the choice between the three screenshots or the horizontal.
+
+916
+01:27:23,280 --> 01:27:32,000
+The problem with the horizontal one, which gives you a bit like you can express things a bit differently, is that it occupies less space vertically.
+
+917
+01:27:33,360 --> 01:27:38,800
+I've seen compelling data that I'm only using the three screenshots because it pushes the rest down.
+
+918
+01:27:39,440 --> 01:27:41,360
+I'm basically occupying more real estate.
+
+919
+01:27:42,320 --> 01:27:47,360
+By very nature, click rates are higher when I occupy more space, regardless what I put in this space.
+
+920
+01:27:47,920 --> 01:27:52,400
+This new asset rebalanced a bit that, okay, it's the same space as the screenshot, but you can.
+
+921
+01:27:53,200 --> 01:27:58,400
+express your message in a, like, you don't have this restriction that is three screenshots that are separated.
+
+922
+01:27:58,800 --> 01:28:00,480
+I don't think it's massive, massive.
+
+923
+01:28:00,960 --> 01:28:05,680
+But again, a nice add on and I'm really looking forward to testing it.
+
+924
+01:28:06,000 --> 01:28:09,120
+I think this one comes for iOS 27 users only, if I'm correct.
+
+925
+01:28:09,200 --> 01:28:10,160
+So that's going to be September.
+
+926
+01:28:10,400 --> 01:28:13,840
+Yeah, I think it's an update to the App Store app in iOS 27.
+
+927
+01:28:14,400 --> 01:28:14,480
+Yeah.
+
+928
+01:28:15,200 --> 01:28:23,440
+But I've already been starting brainstorming about what we can put on the header with two teams, like, because we're like, yeah, so far it's like, okay, great.
+
+929
+01:28:23,600 --> 01:28:24,720
+We've got the icon in there.
+
+930
+01:28:25,200 --> 01:28:29,280
+And yeah, I think we're going to see a lot of people go in different directions there.
+
+931
+01:28:29,920 --> 01:28:31,600
+What do I put as a content there?
+
+932
+01:28:32,240 --> 01:28:37,040
+Because what surprised me a lot is besides the creative, we can put text in there, like taglines.
+
+933
+01:28:37,200 --> 01:28:40,000
+And Apple's own example has text in there.
+
+934
+01:28:40,320 --> 01:28:48,000
+So I was like, oh wow, this is really big because there's very, very few assets in the store where you can express your message.
+
+935
+01:28:48,400 --> 01:28:53,600
+And typically the big one is the first screenshot because the rest, I mean, the icon is too small, the header is too fixed.
+
+936
+01:28:53,840 --> 01:29:00,000
+So this is really exciting to test taglines and stuff that like visuals, but also taglines.
+
+937
+01:29:00,080 --> 01:29:01,040
+So I'm looking forward to it.
+
+938
+01:29:01,520 --> 01:29:15,840
+I'm going to give that feedback to Apple that they should create an asset that's the same size as the three screenshots because you don't want to have to make that tradeoff between a horizontal image that's shorter.
+
+939
+01:29:16,320 --> 01:29:19,760
+So they should create like a four by five poster frame.
+
+940
+01:29:20,080 --> 01:29:20,640
+That one is there.
+
+941
+01:29:20,880 --> 01:29:21,360
+Oh, is it?
+
+942
+01:29:21,520 --> 01:29:21,920
+The new one is.
+
+943
+01:29:22,080 --> 01:29:23,040
+Yeah, yeah, yeah.
+
+944
+01:29:23,120 --> 01:29:23,760
+Okay, first.
+
+945
+01:29:24,480 --> 01:29:25,200
+There's the header.
+
+946
+01:29:26,080 --> 01:29:29,760
+And then there's this asset that can replace the screenshot.
+
+947
+01:29:30,240 --> 01:29:32,640
+And it's bigger than the horizontal screen.
+
+948
+01:29:32,880 --> 01:29:34,800
+It's like a bigger horizontal, if you want.
+
+949
+01:29:35,040 --> 01:29:38,160
+Like, I conflated the two topics, excuse me.
+
+950
+01:29:38,560 --> 01:29:43,200
+There's the header and the I don't even know what it's called, this new asset.
+
+951
+01:29:43,840 --> 01:29:44,720
+I forgot the name.
+
+952
+01:29:44,960 --> 01:29:46,320
+Like, but yeah, basically.
+
+953
+01:29:46,320 --> 01:29:48,720
+Basically, so that's why I was commenting on it.
+
+954
+01:29:49,200 --> 01:29:50,560
+Yeah, no, that's super exciting.
+
+955
+01:29:50,640 --> 01:29:50,880
+Good.
+
+956
+01:29:51,440 --> 01:29:53,040
+They already thought ahead on that one.
+
+957
+01:29:53,200 --> 01:29:55,200
+They probably had gotten that feedback for years already.
+
+958
+01:29:57,760 --> 01:30:01,280
+Any more thoughts from you, Charlie, before we move on to the next topic?
+
+959
+01:30:01,840 --> 01:30:12,320
+Just a quick question, which is I'm assuming, but I haven't heard confirmed or denied that this works with the same custom product page and AB testing that we have throughout the App Store?
+
+960
+01:30:12,800 --> 01:30:19,680
+So my initial thing was, oh, this is like on top of the CPP, but then I read the line, it was like, ah, no, no, no, not as easy as that.
+
+961
+01:30:19,920 --> 01:30:22,160
+So from what I understand, the header is just one for now.
+
+962
+01:30:22,400 --> 01:30:24,000
+We can't like fully go bland.
+
+963
+01:30:24,480 --> 01:30:28,800
+But I can imagine Apple will iterate on it because it's pretty natural to get there.
+
+964
+01:30:30,320 --> 01:30:31,600
+I read it wrong the first time.
+
+965
+01:30:31,920 --> 01:30:35,520
+The way I read it was like, a full liberty of applying this.
+
+966
+01:30:36,080 --> 01:30:42,640
+But they did mention that some stuff you can I wonder if it's going to work like the CPP on organic keywords and not on ads.
+
+967
+01:30:43,280 --> 01:30:44,560
+It was not fully explicit.
+
+968
+01:30:45,280 --> 01:30:48,080
+So it's not fully rigid, but it's not the full liberty we have now.
+
+969
+01:30:48,240 --> 01:30:49,040
+It's somewhere in between.
+
+970
+01:30:49,680 --> 01:30:50,560
+Let's see how it goes.
+
+971
+01:30:50,960 --> 01:30:51,440
+Yeah, yeah.
+
+972
+01:30:51,600 --> 01:30:53,280
+Because that's where the big thing is, right?
+
+973
+01:30:53,600 --> 01:30:55,600
+Is whether we can properly test this or not.
+
+974
+01:30:55,920 --> 01:30:58,720
+If it's not, I believe it's going to come in an iteration.
+
+975
+01:30:58,960 --> 01:30:59,840
+Like it does make sense.
+
+976
+01:31:00,000 --> 01:31:01,040
+It's not a lot of complexity.
+
+977
+01:31:01,360 --> 01:31:05,440
+And if they iterate on these assetsets is because they see it makes a difference by use case.
+
+978
+01:31:05,680 --> 01:31:09,200
+So I can see it's going to be going there not too long.
+
+979
+01:31:10,000 --> 01:31:15,280
+But you can use a different header image per custom product page, right?
+
+980
+01:31:15,760 --> 01:31:25,120
+So even if you can't test headers, you could potentially create two custom product pages that are exactly the same, just with a different header, and then test the different headers against each other.
+
+981
+01:31:26,000 --> 01:31:28,720
+I hope, but that wasn't entirely explicit to me.
+
+982
+01:31:29,040 --> 01:31:29,120
+Okay.
+
+983
+01:31:29,680 --> 01:31:29,760
+Okay.
+
+984
+01:31:30,000 --> 01:31:33,360
+Yeah, we'll have to dig more into the details of this.
+
+985
+01:31:34,000 --> 01:31:35,840
+But that's what I imagined the first time.
+
+986
+01:31:36,800 --> 01:31:38,000
+When I heard it, I was like, okay.
+
+987
+01:31:38,400 --> 01:31:40,320
+And then I went to look at it again.
+
+988
+01:31:40,800 --> 01:31:42,400
+And it's not super obvious to me.
+
+989
+01:31:42,480 --> 01:31:43,600
+So let's reconfirm.
+
+990
+01:31:43,680 --> 01:31:44,400
+Maybe I'm wrong.
+
+991
+01:31:44,560 --> 01:31:44,640
+Okay.
+
+992
+01:31:45,120 --> 01:31:51,440
+The penultimate topic I wanted to discuss was the App Store cleanup, because this is a fascinating one.
+
+993
+01:31:51,760 --> 01:32:06,480
+I mean, Apple has been cleaning up the App Store over the last, even, I think, a decade ago, there was a first big kind of roundup, but Apple being so explicit about it makes me think that this is going to, it's kind of the next evolution of this.
+
+994
+01:32:07,280 --> 01:32:21,840
+And I believe their exact wording was something like, you know, if your app is not finding success and not being updated, so if you're not getting very many many downloads and you're not updating the app regularly.
+
+995
+01:32:22,480 --> 01:32:25,200
+You're at more risk of being removed.
+
+996
+01:32:25,920 --> 01:32:28,400
+Fascinating that they're explicitly saying this.
+
+997
+01:32:28,560 --> 01:32:38,880
+And then they've already been more and more, I mean, with the rise of AI and the flood of apps, they've already been rejecting more kind of copycat apps and limited utility apps.
+
+998
+01:32:39,040 --> 01:32:45,200
+It's like they don't just because you can, they don't want like ten million timer apps.
+
+999
+01:32:45,280 --> 01:32:54,640
+Like they explicitly mention timers as one of the categories where apparently they must be seeing just a flood of that because it's like an easy, like hello world kind of project.
+
+1000
+01:32:55,200 --> 01:32:56,400
+And that's kind of the impression I get.
+
+1001
+01:32:56,960 --> 01:33:01,200
+is like one, they are trying to crack down on copycats.
+
+1002
+01:33:01,840 --> 01:33:10,640
+And then two, it's like you can send your Hello World app via Testflight to all your friends without putting it on the App Store.
+
+1003
+01:33:10,880 --> 01:33:16,240
+And it sounds like they don't want like ten million Hello World apps all over the App Store.
+
+1004
+01:33:17,280 --> 01:33:24,000
+And maybe they'll get even more flexible with, I mean, Testflight's pretty good now, where it's almost an App Store experience.
+
+1005
+01:33:24,240 --> 01:33:26,960
+You can send a link, people sign up for the Testflight.
+
+1006
+01:33:28,720 --> 01:33:40,880
+But maybe this, it feels like they need a little better outlet of like, hey., I'm a hobbyist, but it's just fun to get an app on the App Store.
+
+1007
+01:33:41,200 --> 01:33:55,440
+So that's where it's a little frustrating that, like, they've been rejecting all these apps where, like, if somebody's just playing around and wants to get it up and have a few of their friends download it, Testflight is kind of the release valve, but it's not a perfect release valve.
+
+1008
+01:33:55,600 --> 01:34:02,800
+So like, but overall, I think it's a good thing for them to continue cracking down and cleaning up the App Store.
+
+1009
+01:34:03,040 --> 01:34:04,880
+But any thoughts from the two of you?
+
+1010
+01:34:05,920 --> 01:34:12,640
+Yeah, I mean, from my perspective, it's like, I think, as you said, always the App Store needs.
+
+1011
+01:34:13,280 --> 01:34:27,600
+to be kind of kept cleaning up as someone who used to live in more Android world, it was noticeable the difference in those two platforms in terms of craft or things you had to kind of dig through to find quality apps.
+
+1012
+01:34:28,160 --> 01:34:29,680
+And so I appreciate that.
+
+1013
+01:34:30,160 --> 01:34:40,800
+I think some of the verbiage, you know, I'm sure it was to give them flexibility, but it said things like if you're not updating frequently or attracting new customers.
+
+1014
+01:34:41,040 --> 01:34:53,840
+And I'm guessing again that that's really just for it gives them flexibility, but I do hope that that's more like they take into account if you have a customer base of 100 people who use it regularly.
+
+1015
+01:34:54,160 --> 01:34:56,160
+Like that's not it, and it's not growing or anything.
+
+1016
+01:34:56,320 --> 01:34:57,840
+It's like, there's no reason to get rid of that.
+
+1017
+01:34:58,000 --> 01:34:58,560
+Like, right.
+
+1018
+01:34:59,600 --> 01:35:03,200
+So, you know, but I don't expect that that's really going to be the case.
+
+1019
+01:35:03,440 --> 01:35:15,840
+I think this is just them doing their regular tweaking of the rules to give them a little more flexibility to They need a stronger broom, given the amount of dust that's been pouring through the windows post AI.
+
+1020
+01:35:16,640 --> 01:35:17,520
+That's a great analogy.
+
+1021
+01:35:17,680 --> 01:35:18,080
+I love it.
+
+1022
+01:35:18,720 --> 01:35:19,680
+What are your thoughts, Thomas?
+
+1023
+01:35:20,160 --> 01:35:22,000
+No, Charlie put it really nicely.
+
+1024
+01:35:22,960 --> 01:35:30,400
+They need to clean up the store, and they always did, but this year more than ever., so it's pretty normal.
+
+1025
+01:35:30,880 --> 01:35:33,440
+I was also very surprised at the exact wording.
+
+1026
+01:35:33,680 --> 01:35:39,520
+So Apple always has very particular ways to express words in guidelines, so I'm not surprised about that.
+
+1027
+01:35:40,000 --> 01:35:48,480
+But the fact that they focus so much on it doesn't attract new users because there are apps that attract new users that should be cleaned out of the store, in my opinion.
+
+1028
+01:35:49,200 --> 01:35:50,480
+Yeah, that's a good point.
+
+1029
+01:35:52,160 --> 01:35:55,040
+It's not the only criteria to not attract users.
+
+1030
+01:35:55,200 --> 01:36:01,040
+Like they can be decent apps that don't attract new users, but they're also terrible apps that attract a lot of new users.
+
+1031
+01:36:01,520 --> 01:36:04,000
+And that's the one I would love to see cleaned up.
+
+1032
+01:36:04,320 --> 01:36:05,920
+But I guess it makes sense.
+
+1033
+01:36:06,000 --> 01:36:29,360
+And then to the fact that they're so vocal, like explicit about it, like we will clean up, I think it also should serve as a warning because, like, I don't blame anyone, it's normal to play around and all, but like with the AI, like, the average quality of a lot of apps is like really low and I don't think it's in Apple's interest to let it go.
+
+1034
+01:36:30,720 --> 01:36:35,520
+So yeah, I think it's pretty normal that they at least they say it, they could have done it without saying anything.
+
+1035
+01:36:35,760 --> 01:36:38,640
+So yeah, good on them to communicate on it.
+
+1036
+01:36:39,280 --> 01:36:44,880
+All right, we're going to move on to the last topic and that's your signal to just start flooding the chat with questions.
+
+1037
+01:36:46,160 --> 01:36:54,560
+on things we've discussed that you helped back, any questions on other WWDC announcements that you think were important that we missed, or any questions.
+
+1038
+01:36:54,960 --> 01:37:00,000
+And Charlie's way more technical than me, so maybe we can even get some technical questions in there.
+
+1039
+01:37:00,800 --> 01:37:05,760
+And of course, Thomas is the GOAT on all growth related topics.
+
+1040
+01:37:06,000 --> 01:37:18,480
+So start throwing all your questions in the chat and we'll get to them once we talk about SK Ad Network or now Ad Attribution Kit AC.
+
+1041
+01:37:20,720 --> 01:37:34,640
+Thomas, you brought this up as one of the things we should discuss that it was interesting to not get a single update, not a word, not a anything about Ad Attribution Kit.
+
+1042
+01:37:34,960 --> 01:37:36,640
+The last year there was always something new.
+
+1043
+01:37:36,880 --> 01:37:48,000
+Like it wasn't necessarily big, but I mean, it's been five years now that Apple, like six years from the announcement, but like five years that it's implemented that Apple has this solution from a German.
+
+1044
+01:37:48,560 --> 01:37:50,800
+And every year they're like, oh, there's a new version of it.
+
+1045
+01:37:50,960 --> 01:37:52,240
+And we heard your feedback.
+
+1046
+01:37:52,320 --> 01:37:53,440
+And we're adding view through.
+
+1047
+01:37:53,760 --> 01:37:54,720
+And we're adding whatever.
+
+1048
+01:37:56,480 --> 01:37:57,680
+And this year, nothing at all.
+
+1049
+01:37:58,000 --> 01:38:00,320
+And to me, it was quite telling that.
+
+1050
+01:38:00,320 --> 01:38:04,000
+I think that you look at the market situation and scan is not adopted at all.
+
+1051
+01:38:04,160 --> 01:38:05,200
+Like, nobody's using this.
+
+1052
+01:38:05,840 --> 01:38:08,240
+Or I'm exaggerating, it's not nobody.
+
+1053
+01:38:08,480 --> 01:38:13,600
+But everybody's using other ways than scan because it hasn't been very, very effective.
+
+1054
+01:38:13,920 --> 01:38:26,800
+And the fact that they don't even iterate on it was like, either they're going to drop the ball on this and come up with something completely different, which might be like a new apocalypse.
+
+1055
+01:38:28,720 --> 01:38:30,480
+Or they just decided to let it.
+
+1056
+01:38:30,560 --> 01:38:34,720
+It's very unclear, but it was very telling that they don't mention anything because there was always something.
+
+1057
+01:38:34,960 --> 01:38:36,800
+Like, it's the first time there's nothing about it.
+
+1058
+01:38:37,360 --> 01:38:37,520
+Yeah.
+
+1059
+01:38:38,480 --> 01:38:46,000
+I don't think Apple is very satisfied with the current situation and they obviously can't be satisfied that the product they released is not being adopted.
+
+1060
+01:38:46,320 --> 01:38:48,480
+But it made me really curious.
+
+1061
+01:38:48,960 --> 01:38:52,400
+I don't, maybe because the WWDC was not the place for this.
+
+1062
+01:38:54,480 --> 01:38:59,680
+There was speculation on, are they going to keep like another bomb for a different point of time.
+
+1063
+01:39:00,320 --> 01:39:00,800
+I don't think.
+
+1064
+01:39:01,200 --> 01:39:02,800
+Personally, I think nothing is going to happen.
+
+1065
+01:39:03,040 --> 01:39:21,600
+And we're, we're reaching a situation where Apple is not particularly happy, but the scan has failed and the most obvious alternative, which is widely used for replacing scan is not really an option.
+
+1066
+01:39:21,920 --> 01:39:24,480
+Like, it's important for some features.
+
+1067
+01:39:25,200 --> 01:39:29,360
+It would cost Apple a lot of money to do the private relay for apps.
+
+1068
+01:39:29,520 --> 01:39:30,560
+Like, that would be insane.
+
+1069
+01:39:34,080 --> 01:39:38,000
+And let's imagine they find a way to do it that doesn't cost them anything.
+
+1070
+01:39:39,200 --> 01:39:44,640
+The repercussions on the app economy would be so big that it's against their own interest, literally.
+
+1071
+01:39:45,280 --> 01:39:47,600
+I'm curious because I don't think it's the end of the story.
+
+1072
+01:39:47,920 --> 01:39:56,720
+I think we're in this status quo of, okay, the last four years there's been changes and then we reach a place and the future one is probably going to be different.
+
+1073
+01:39:57,200 --> 01:40:02,880
+But it looks like for a year at least we're going to as a marketer it's been tough the last year.
+
+1074
+01:40:03,280 --> 01:40:07,120
+Just not how worse it got, but that every six months it's different.
+
+1075
+01:40:07,680 --> 01:40:15,360
+And it's been a little bit maddening of not being able to build tools with the like long term vision and so on.
+
+1076
+01:40:16,560 --> 01:40:18,560
+I think a little bit of stability is good for now.
+
+1077
+01:40:18,880 --> 01:40:19,600
+So I'll take it.
+
+1078
+01:40:20,640 --> 01:40:32,640
+Yeah, it's tricky because technically, like by the letter of the law, Facebook, TikTok, Google, like MMPs, everyone.
+
+1079
+01:40:32,640 --> 01:40:34,720
+Everyone is fingerprinting.
+
+1080
+01:40:35,520 --> 01:40:36,480
+Probabilistic attribution.
+
+1081
+01:40:36,800 --> 01:40:38,000
+Probabilistic attribution.
+
+1082
+01:40:39,440 --> 01:40:48,960
+But the reality on the ground is that it's just mass fingerprinting across all these different services, which is worse than the IDFA.
+
+1083
+01:40:49,680 --> 01:40:51,280
+It's even worse because there's no opt out.
+
+1084
+01:40:51,520 --> 01:40:53,200
+You can't opt out, yeah, exactly.
+
+1085
+01:40:54,400 --> 01:41:12,000
+I think the worst abuses that ATT was trying to protect against, like the data brokers and things like that, where you could because fingerprinting while it works for like short term attribution and things like that.
+
+1086
+01:41:12,480 --> 01:41:28,000
+It's not as good at tracking an individual user across, you know, and like some of the worst abuses were, and as a weather app, I knew this intimately was that all these companies would ask to buy my weather data.
+
+1087
+01:41:28,400 --> 01:41:56,240
+And what they would do is I would, if I had implemented, which of course I didn't, but what they would do across all these other apps that did is that they would have the exact location of a user in real time, 24 hours a day, associated with the IDFA in a deterministic way that could then get populated out to all the different ad networks and data brokers and shady players and hedge funds and all that kind of stuff.
+
+1088
+01:41:56,640 --> 01:42:13,760
+And so those kind of worst abuses are at least thwarted by ATT without having the IDFA because fingerprinting is not reliable enough that once you go out of the house, you know, you get a different IP address, then your cellular IP address rolls over way more than your home IP address does.
+
+1089
+01:42:14,960 --> 01:42:22,400
+And then you do have private relay and other things that that make tracking harder and rotate IP addresses.
+
+1090
+01:42:23,360 --> 01:42:26,160
+So like there's a lot going on where fingerprinting is.
+
+1091
+01:42:26,240 --> 01:42:31,680
+is violating the letter of their law and even the spirit of their law in many ways.
+
+1092
+01:42:33,600 --> 01:42:39,040
+But it's also not nearly as bad as the kind of things that were going on when the IDFA was available.
+
+1093
+01:42:39,920 --> 01:42:48,320
+So it does feel like maybe we've kind of hit a stalemate where Apple is like, well, it's okay if Facebook is probabilistically making all these attributions.
+
+1094
+01:42:49,760 --> 01:42:54,800
+They are tracking users more than would be ideal from Apple's perspective.
+
+1095
+01:42:55,680 --> 01:42:59,840
+But it seems like they've just kind of made peace with that.
+
+1096
+01:43:00,160 --> 01:43:04,000
+So it's less bad, but the fact is that it's everybody.
+
+1097
+01:43:04,560 --> 01:43:08,560
+Like everyone who runs ads uses fingerprinting 100%.
+
+1098
+01:43:08,880 --> 01:43:11,280
+So that's why I'm saying, yeah, still can't.
+
+1099
+01:43:11,360 --> 01:43:12,240
+That's the way to say it.
+
+1100
+01:43:12,400 --> 01:43:16,240
+No, that stalemate is a very, like, because nobody really won here.
+
+1101
+01:43:16,640 --> 01:43:21,920
+Like, well, and I mean, ATT hurt Apple.
+
+1102
+01:43:22,480 --> 01:43:32,320
+I mean, you know, we we all saw it in the app store economy that that transition time, apps struggled to find new users, struggled to advertise cost effectively.
+
+1103
+01:43:32,480 --> 01:43:38,000
+And so the part of the stalemate is Apple doesn't want to drop a bomb again and impact the app store economy again.
+
+1104
+01:43:38,960 --> 01:43:49,440
+That's why I think the IP address is going to stay because that would be too big., like the consequences would be very big on for everybody, like for Apple, for us, for Facebook, for everybody.
+
+1105
+01:43:49,760 --> 01:43:49,840
+Yeah.
+
+1106
+01:43:50,080 --> 01:43:50,160
+Yeah.
+
+1107
+01:43:50,400 --> 01:43:50,640
+All right.
+
+1108
+01:43:50,800 --> 01:43:53,440
+We got a we got a question in and this is a good one for Charlie.
+
+1109
+01:43:54,800 --> 01:43:59,360
+Any plans for RevenueCat to build or add on a similar to AppStack?
+
+1110
+01:43:59,760 --> 01:44:02,320
+Asking because Adapti recently went in that direction.
+
+1111
+01:44:04,000 --> 01:44:04,880
+Not to my knowledge.
+
+1112
+01:44:05,200 --> 01:44:08,400
+I don't know if you're in conversations I'm not.
+
+1113
+01:44:09,920 --> 01:44:10,000
+Yeah.
+
+1114
+01:44:10,560 --> 01:44:15,040
+We do have a great integration now or it's about to launch with AppStack.
+
+1115
+01:44:15,360 --> 01:44:42,480
+And then part of the frustration I think for folks is that AppStack has been kind of in beta where they're you have to beg to get in and I've heard people say like, you know, they know Lucas the founder and he still isn't letting them in but you know they will be letting more people in over time and we have a great integration that's either already shipped or will be shipped soon so that that's kind of hopefully going to be a soft problem in the coming months.
+
+1116
+01:44:42,720 --> 01:45:02,240
+So as Charlie said, not that Charlie and I have seen that we're going to build this ourselves any time soon but but I know the integration is either launched or being worked on so and if you want have great engineers to send him, he's looking for engineers.
+
+1117
+01:45:03,040 --> 01:45:03,760
+Great little plug.
+
+1118
+01:45:04,400 --> 01:45:06,880
+Anything else top of mind for the two of you as we wrap up?
+
+1119
+01:45:07,200 --> 01:45:16,400
+Maybe more of an RC question, but why not provide a quick and easy way, UI or API, for users to be able to cancel subscriptions and reset free trial eligibility?
+
+1120
+01:45:16,800 --> 01:45:17,760
+You can only test once.
+
+1121
+01:45:18,480 --> 01:45:21,360
+So I mean, the big reason is because we can't.
+
+1122
+01:45:22,400 --> 01:45:24,240
+Apple doesn't let you do that.
+
+1123
+01:45:24,800 --> 01:45:27,600
+On Android, you actually can to some degree.
+
+1124
+01:45:27,840 --> 01:45:30,000
+And on the web, we have that also.
+
+1125
+01:45:30,400 --> 01:45:34,640
+So those do exist in RevenueCap where those APIs exist.
+
+1126
+01:45:34,880 --> 01:45:36,560
+But on Apple's end, they don't give you.
+
+1127
+01:45:37,120 --> 01:45:41,440
+the ability to manually cancel a subscription.
+
+1128
+01:45:42,320 --> 01:45:48,320
+They own that customer relationship and they don't really give us a whole lot of control to sort of tap in.
+
+1129
+01:45:48,560 --> 01:45:57,760
+So you just have to have that copy and paste email response that says go here in Apple settings to cancel it yourself.
+
+1130
+01:45:58,480 --> 01:46:07,120
+Or you can use our customer center, which has the links that will take you straight to the settings page where they can do that as well.
+
+1131
+01:46:07,600 --> 01:46:07,680
+Yeah.
+
+1132
+01:46:08,000 --> 01:46:11,680
+And there are hacks around the free trial eligibility as well.
+
+1133
+01:46:13,360 --> 01:46:22,400
+One is that you can use, I believe, promo offers instead of intro offers to offer a second of trial.
+
+1134
+01:46:23,040 --> 01:46:32,080
+So you can offer a seven day free and then convert to whatever and you can do that as a promo offer instead of an intro offer.
+
+1135
+01:46:32,640 --> 01:46:38,800
+The other hack around it is that the trial eligibility is per subscription group, I believe.
+
+1136
+01:46:39,280 --> 01:46:41,360
+And so you can create a second subscription group.
+
+1137
+01:46:42,080 --> 01:46:50,640
+It gets a little tough to manage multiple subscription groups and you can get in a situation where people can have multiple subscriptions simultaneously and that's the point of subscription groups.
+
+1138
+01:46:51,280 --> 01:46:56,320
+But there are kind of hack hacks around the free trial eligibility reset.
+
+1139
+01:46:56,480 --> 01:46:57,680
+This is actually, this is a good one.
+
+1140
+01:46:57,840 --> 01:47:13,760
+I'm going to note it down as feedback for Apple because, you know, I have heard on the podcast, I think LinkedIn does this, and I've heard from other huge apps that do this, it's like after six months, you know, you've, you know, improved the product a ton, you want to give someone a new free trial.
+
+1141
+01:47:14,320 --> 01:47:20,240
+So being able to programmatically reset the trial eligibility is a kind of thing that would make sense for Apple to do.
+
+1142
+01:47:21,200 --> 01:47:32,480
+The reason they don't provide an API for canceling, I'm very intimately aware of this because one of my tweets ended up in court documents because of this.
+
+1143
+01:47:34,400 --> 01:47:49,520
+The reason they don't is that they did used to have an API to cancel subscriptions and they were giving it to just the larger and maybe kind of rolling it out in that kind of private beta that they do with things sometimes.
+
+1144
+01:47:50,640 --> 01:48:02,000
+And Hulu used it to say, hey, go sign up on the web and get a discount and we'll automatically cancel your App Store subscription for you.
+
+1145
+01:48:02,720 --> 01:48:05,200
+I stumbled upon that, tweeted about it.
+
+1146
+01:48:05,680 --> 01:48:13,440
+It kicked off a whole conversation ins, including my tweet, ended up in court documents at one point.
+
+1147
+01:48:13,920 --> 01:48:20,960
+So blame Hulu for why we don't have an API to directly cancel.
+
+1148
+01:48:21,200 --> 01:48:23,200
+And as Charlie said, Google does have that.
+
+1149
+01:48:24,000 --> 01:48:27,920
+And I guess maybe they aren't seeing the abuse or aren't worried about it on that front.
+
+1150
+01:48:29,280 --> 01:48:31,200
+But the cancellation, that's the reason.
+
+1151
+01:48:31,840 --> 01:48:38,400
+The trial eligibility, that's actually a really good feature request that I will personally pass on to Apple because that's a good one.
+
+1152
+01:48:38,640 --> 01:48:39,520
+Well, I appreciate it.
+
+1153
+01:48:39,600 --> 01:48:40,480
+It was fun hanging out.
+
+1154
+01:48:40,720 --> 01:48:44,560
+And I'll see you back in the office next week virtually.
+
+1155
+01:48:45,920 --> 01:48:48,080
+See you on Slack and Zoom as always.
+
+1156
+01:48:48,880 --> 01:48:48,960
+Okay.
+
+1157
+01:48:49,280 --> 01:48:51,040
+And then Thomas, thank you so much for joining.
+
+1158
+01:48:51,600 --> 01:48:54,880
+It was great to have your input and this is always a blast.
+
+1159
+01:48:55,200 --> 01:48:55,680
+So thank you.
+
+1160
+01:48:56,160 --> 01:48:56,240
+Yeah.
+
+1161
+01:48:56,400 --> 01:48:57,120
+Thanks for the prep.
+
+1162
+01:48:57,440 --> 01:48:58,400
+You did a lot of the work here.
+
+1163
+01:48:58,560 --> 01:48:59,040
+It was a lot.
+
+1164
+01:48:59,200 --> 01:48:59,840
+So thank you.
+
+1165
+01:49:00,400 --> 01:49:06,000
+Hey, me and Fable, we got it done and you and I are like home watching all the WWEC videos.
+
+1166
+01:49:07,200 --> 01:49:08,000
+So, okay.
+
+1167
+01:49:08,400 --> 01:49:08,880
+Thank you so much.
+
+1168
+01:49:09,200 --> 01:49:10,480
+And thank you, everyone, for joining.
+
+1169
+01:49:10,640 --> 01:49:12,720
+This was a long one, but there was a lot to discuss.
+
+1170
+01:49:13,040 --> 01:49:14,640
+So, hopefully you found it valuable.
+
+1171
+01:49:14,880 --> 01:49:20,560
+And, you know, hopefully, you know, a lot of people come back and just watch this at 2x to to catch up on everything.
+
+1172
+01:49:20,800 --> 01:49:21,680
+Because a lot of nuance.
+
+1173
+01:49:21,920 --> 01:49:26,480
+I thought we shared some, some good insights and some, some things you might know not get if you just watch the videos.
+
+1174
+01:49:26,800 --> 01:49:28,320
+So I think it was valuable.
+
+1175
+01:49:28,400 --> 01:49:29,040
+So thank you Thomas.
+
+1176
+01:49:29,440 --> 01:49:30,080
+Thank you everyone.
+
+1177
+01:49:30,320 --> 01:49:33,440
+And we will see you next week, Thursday 9 a.m.
+
+1178
+01:49:34,560 --> 01:49:39,920
+Pacific 1800 Central European time with Nick from Noise.
+
+1179
+01:49:40,240 --> 01:49:41,200
+So bye everybody.
+
+1180
+01:49:43,920 --> 01:49:45,280
+Thanks so much for listening.
+
+1181
+01:49:46,160 --> 01:49:49,600
+If you have a minute, please leave a review in your favorite podcast player.
+
+1182
+01:49:50,480 --> 01:49:55,280
+You can also stop by chat dot subclub dot com to join our private community.
