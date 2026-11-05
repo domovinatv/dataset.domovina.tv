@@ -1,0 +1,2299 @@
+1
+00:00:01,120 --> 00:00:08,720
+Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:36,240
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue acrosscat.com.
+
+5
+00:00:37,360 --> 00:00:38,240
+Let's get into the show.
+
+6
+00:00:41,040 --> 00:00:51,360
+Hello, I'm your host, David Bernard, and my guest today is Adam Landis, founder and CEO of Adlibratus, a data platform for mobile apps.
+
+7
+00:00:52,080 --> 00:01:06,320
+Apps like CrossiRoad, TempleRun, and Audiomac use Adlibratus to collect app data from sources like Firebase, RevenueCat, MMPs, and Ad Networks, then analyze and influence user behavior.
+
+8
+00:01:07,360 --> 00:01:21,600
+On the podcast, I talk with Adam about when and why to use an MMP, which subscription events to track in your analytics, and why AB testing doesn't always work the way you think it works.
+
+9
+00:01:22,880 --> 00:01:25,600
+Hey Adam, thank you so much for joining me on the podcast today.
+
+10
+00:01:26,400 --> 00:01:27,440
+It's great to be here.
+
+11
+00:01:28,240 --> 00:01:33,600
+So I wanted to kick things off with your background in mobile apps because you've been around for a long time.
+
+12
+00:01:33,760 --> 00:01:37,840
+We've had this conversation before, but let's have it live here on the podcast.
+
+13
+00:01:38,240 --> 00:01:43,200
+Tell me where you got started in apps and then what led you to build AdliberTas?
+
+14
+00:01:44,240 --> 00:01:47,360
+Yeah, it was a OG when it comes to apps.
+
+15
+00:01:48,320 --> 00:01:57,600
+I was in enterprise software and a buddy of mine started a company which turned out to be an early SSP, like an early version of Mopub.
+
+16
+00:01:57,760 --> 00:02:10,960
+It wasn't Mopub, it was a precursor and he invited me in for lunch one day and he showed me kind of the whiteboard and how Google and Apple were fighting over ads and they sat in the middle and I was like, where do I sign?
+
+17
+00:02:11,200 --> 00:02:12,080
+I want to be involved.
+
+18
+00:02:12,160 --> 00:02:17,600
+So that was I think 2010, 2011, that was like, App Store was months old at that point.
+
+19
+00:02:17,840 --> 00:02:20,800
+So that's kind of where I got started, been around ever since.
+
+20
+00:02:21,200 --> 00:02:21,280
+Yeah.
+
+21
+00:02:21,520 --> 00:02:26,720
+And then when did you transition from there into deciding to found your own company in the space?
+
+22
+00:02:27,680 --> 00:02:28,240
+That's a good question.
+
+23
+00:02:28,560 --> 00:02:37,040
+Adliberta's is seven years old this month actually, and I've been in the ad business for the entire time.
+
+24
+00:02:37,520 --> 00:02:47,600
+And the reason I got that started with Adliberta's was because I realized there wasn't a lot of companies out there that were building specifically for the mobile apps.
+
+25
+00:02:48,000 --> 00:02:58,400
+They were building for the advertisers, especially on the ad side, they're looking for the advertisers and focusing on making margin between, but there weren't a lot of people trying to help the app developers make more money with ads.
+
+26
+00:02:58,960 --> 00:03:00,240
+And so we started doing that.
+
+27
+00:03:00,880 --> 00:03:11,360
+And after a while, as advertising started to mature as an industry, we realized there was less and less kind of need for this publisher specific product.
+
+28
+00:03:11,840 --> 00:03:15,440
+And so we sat down and we said, okay, what are customers struggling with?
+
+29
+00:03:15,600 --> 00:03:17,440
+What are our app customers struggling with?
+
+30
+00:03:17,760 --> 00:03:23,040
+And one of my good friends and long, long time customers was having a conversation that just kind of clicked with me.
+
+31
+00:03:23,280 --> 00:03:24,640
+He said, well, I really think.
+
+32
+00:03:25,280 --> 00:03:28,800
+that our users really like this aspect of our app.
+
+33
+00:03:29,280 --> 00:03:32,960
+And so I think that if I change this, they'll use it more often.
+
+34
+00:03:33,440 --> 00:03:36,160
+And then a month later, I asked him, he's like, yeah, I think it worked.
+
+35
+00:03:36,480 --> 00:03:40,160
+And so he's, he thinks this, he thinks he changed this, and he thinks it worked.
+
+36
+00:03:40,320 --> 00:03:43,760
+He's like, he, these people are guessing and then guessing and guessing.
+
+37
+00:03:44,320 --> 00:03:48,560
+And it's like, there's no way to run a business by guessing and without being able to check.
+
+38
+00:03:48,800 --> 00:03:50,640
+So how do, how can we fix that?
+
+39
+00:03:51,200 --> 00:03:55,440
+And really what it was was, how do you make sense of all this data that's coming out of the app?
+
+40
+00:03:55,680 --> 00:03:55,840
+Right.
+
+41
+00:03:56,000 --> 00:03:58,720
+How do you understand what, what users are doing?
+
+42
+00:03:59,440 --> 00:04:03,120
+and what is the impact and then like what is the outcome of the changes you make.
+
+43
+00:04:03,440 --> 00:04:03,520
+Yeah.
+
+44
+00:04:04,560 --> 00:04:06,880
+And then, so then what is Adley Burtis today?
+
+45
+00:04:07,040 --> 00:04:08,560
+Give me the 90 second pitch.
+
+46
+00:04:09,440 --> 00:04:09,520
+Yeah.
+
+47
+00:04:10,320 --> 00:04:25,200
+So we we sat down to solve that problem and then we built what essentially is this central repository for all the data that's spun off by your apps, your analytics, your marketing, your sales, your MMP, your product marketing, your ad impressions.
+
+48
+00:04:26,000 --> 00:04:31,040
+And when we put all this together and we're getting kind of signals like, hey, what are users doing?
+
+49
+00:04:31,280 --> 00:04:32,320
+What is what happens if they?
+
+50
+00:04:33,040 --> 00:04:36,000
+finish ten levels and what does that look like on LTV?
+
+51
+00:04:36,560 --> 00:04:37,840
+We started researching the market.
+
+52
+00:04:38,080 --> 00:04:38,400
+What is that?
+
+53
+00:04:38,560 --> 00:04:38,880
+What is that?
+
+54
+00:04:39,040 --> 00:04:40,640
+And we found out there's a defined term for that.
+
+55
+00:04:40,720 --> 00:04:45,360
+And it's called the data platform, which is a centralized repository for where all the data goes.
+
+56
+00:04:45,840 --> 00:04:56,000
+So we call ourselves a data platform for mobile apps, but really what we try to do is help you understand what your users are doing and understand the impact of changes and how to grow your app better.
+
+57
+00:04:56,560 --> 00:04:56,640
+Yeah.
+
+58
+00:04:56,800 --> 00:05:06,720
+And that's why I was so excited to have you on the podcast is that you work with a lot of different apps and you are working with them day in day out to figure out what's working, what's not, how to measure.
+
+59
+00:05:07,360 --> 00:05:09,280
+the results, how to think about these things.
+
+60
+00:05:10,000 --> 00:05:16,240
+So I wanted to kind of start digging into the progression of data sophistication.
+
+61
+00:05:16,560 --> 00:05:22,800
+And this is something we've talked about on the podcast before, but I feel like you're really uniquely qualified to go down this rabbit hole.
+
+62
+00:05:22,960 --> 00:05:26,720
+So I mean, we might end up spending the whole time just talking about this progression.
+
+63
+00:05:27,520 --> 00:05:36,960
+But I just see so many app developers where they haven't even launched the app and they're like, okay, we're going to get our MMP set up.
+
+64
+00:05:37,360 --> 00:05:38,480
+We need AB testing.
+
+65
+00:05:38,720 --> 00:05:39,280
+We need this.
+
+66
+00:05:40,000 --> 00:05:45,600
+They instrument their analytics for every possible user flow before they even launch the app.
+
+67
+00:05:46,240 --> 00:06:01,440
+I'm like, you know, you can get a pretty good sense of product market fit without like 3000 data points coming in from every user into your into Firebase or especially those who are like on Amplitude or Mixed Panel where it's super expensive.
+
+68
+00:06:02,080 --> 00:06:03,520
+And they're just bootstrapping.
+
+69
+00:06:03,760 --> 00:06:05,440
+It's like, wait a minute, what are you doing?
+
+70
+00:06:06,240 --> 00:06:14,880
+And so what I wanted to walk through with you with your kind of unique vantage point is what's this kind of progression?
+
+71
+00:06:14,880 --> 00:06:16,560
+of data sophistication?
+
+72
+00:06:16,960 --> 00:06:25,840
+So let's start with you're a you're a startup or bootstrap or whatever and you're preparing for that one point zero launch.
+
+73
+00:06:26,400 --> 00:06:33,760
+What do you really need to get to that one point zero and start getting a sense of product market fit?
+
+74
+00:06:34,880 --> 00:06:37,760
+I'll start by saying I've seen both sides of the coin work.
+
+75
+00:06:38,240 --> 00:06:47,600
+I've seen companies create a hit, like it goes viral, it becomes massive and then they struggle to kind of figure things out.
+
+76
+00:06:48,160 --> 00:06:55,040
+And then I've seen companies that build the infrastructure, massive amounts of infrastructure first and build it that way.
+
+77
+00:06:55,600 --> 00:06:58,480
+My COO has an interesting point of view.
+
+78
+00:06:58,640 --> 00:07:05,520
+He says, a mobile app is or content in general, mobile content is a data problem to be solved.
+
+79
+00:07:06,000 --> 00:07:09,120
+And so that is, it's a data company, it's not a content company.
+
+80
+00:07:09,600 --> 00:07:12,320
+And interesting way of kind of looking at it.
+
+81
+00:07:12,480 --> 00:07:18,160
+So I've seen both work and both might be successful and both have their downsides.
+
+82
+00:07:18,640 --> 00:07:27,280
+One aspect, like you said, you invest a ton of money, invest a bunch of research and then your your app goes out and it falls flat so it's all wasted.
+
+83
+00:07:27,440 --> 00:07:27,520
+Yeah.
+
+84
+00:07:27,920 --> 00:07:34,000
+The other side of the coin, you get a viral hit and then you're struggling to like, oh well, why was this a hit?
+
+85
+00:07:34,160 --> 00:07:34,640
+Right.
+
+86
+00:07:34,880 --> 00:07:36,080
+How do I monetize it?
+
+87
+00:07:36,320 --> 00:07:38,640
+How do I capture lightning in a bottle twice?
+
+88
+00:07:38,960 --> 00:07:41,360
+So they're both, you know, difficult problems.
+
+89
+00:07:41,520 --> 00:07:42,880
+One's better than the other to have.
+
+90
+00:07:43,120 --> 00:07:52,080
+But what we've seen is, is when you get product out there and you're struggling to find market fit, you need to iterate, right?
+
+91
+00:07:52,240 --> 00:07:54,400
+You need to iterate to to to to make the app better.
+
+92
+00:07:54,560 --> 00:08:02,080
+Either make the app better so you increase engagement monetateization and retention or iterate on your marketing to get more people into the app.
+
+93
+00:08:02,320 --> 00:08:04,400
+And there's, that's the two ways of growing the app.
+
+94
+00:08:04,720 --> 00:08:07,840
+It's kind of like either more users or make the product better.
+
+95
+00:08:08,080 --> 00:08:08,160
+Yeah.
+
+96
+00:08:08,800 --> 00:08:25,120
+And that's the, that's a struggle even beyond the cost is what I see a lot of folks doing is, you know, spending three months getting all this stuff instrumentated and dialed in when there's lacking features before they even know what customers are going to want, before they, you know, before they even launch.
+
+97
+00:08:25,520 --> 00:08:39,280
+And so it's, it's that balance of engineering time, you know, how much do you focus on the product and then in those early days, how much of that engineering time ends up being spent on product versus spending it on kind of infrastructure.
+
+98
+00:08:39,760 --> 00:08:51,120
+And so it's interesting to hear you say, you know, that and it probably depends a lot on kind of the goal and the kind of starting point for an app.
+
+99
+00:08:51,440 --> 00:09:11,120
+So if you're funded and you got, you know, a million dollars in T funding, you have a really experienced team, you know what you're doing, then building out that instrumentation and you know you're going to spend 200 K in the first month on ad spend, then there probably is a better argument to be made that you start some of that instrumentation.
+
+100
+00:09:12,160 --> 00:09:28,160
+But from a data stack perspective, what would you say are kind of the minimally viable and then the next steps for what you should be thinking about an MMP, CRM, AB testing infrastructure, product analytics?
+
+101
+00:09:28,320 --> 00:09:38,480
+I mean, it's easy to stack these things and end up, like I said, in three months of development time just to get this stuff instrumentated before you even launch and know whether anyone wants your app or not.
+
+102
+00:09:40,400 --> 00:09:48,000
+Well, a mistake I see a lot of people make is throwing a tool in there without actually having a, a, a, a, a understanding of what that will solve.
+
+103
+00:09:48,560 --> 00:09:56,640
+So wherever you are, like, small, medium, large, or kind of like, if you're just getting started, what, what is the goal of what you're trying to measure?
+
+104
+00:09:56,960 --> 00:10:04,640
+So if you're trying to, to, to make your product better, what are the tools you need to measure the iteration you have?
+
+105
+00:10:04,800 --> 00:10:11,600
+So the chances that your product goes out and it's perfect or it's viral day one is low.
+
+106
+00:10:12,000 --> 00:10:15,600
+And even if it is, what about it is viral and what is important?
+
+107
+00:10:15,840 --> 00:10:32,480
+So I would say that if your goal is to figure out how to make the product right, you need some type of signal, product analytics, maybe it's the Amplitude Free Plan, maybe it's just Firebase, understand what the users are doing because even if you fail, you're still going to fail or succeed.
+
+108
+00:10:32,640 --> 00:10:36,720
+You're still going to try to figure out what exactly is making it fail or work.
+
+109
+00:10:37,120 --> 00:10:43,920
+And that's going to require, you know, product analytics or require some type of insight of what the users are doing, how they're engaging with the app.
+
+110
+00:10:44,240 --> 00:10:57,040
+And then if your goal is to buy users and even if you're not funded or you want to start spending money under the faster you can go to understanding the output or the ROI on your campaign, the better you are.
+
+111
+00:10:57,200 --> 00:11:02,160
+So an MMP, like, yeah, you don't want to start with an MMP day one until you start buying traffic.
+
+112
+00:11:02,640 --> 00:11:04,480
+Buying traffic, what is the purpose of an MMP?
+
+113
+00:11:04,800 --> 00:11:10,640
+An MMP really is, well, it started out just understanding the outcome of a campaign.
+
+114
+00:11:10,960 --> 00:11:18,160
+So when you have a campaign, who's clicking on what, who's installing what, now it's morphed into understanding the ROI on your campaigns.
+
+115
+00:11:18,560 --> 00:11:21,520
+And so you don't need an MMP until you start buying traffffic.
+
+116
+00:11:21,760 --> 00:11:25,440
+So it depends on the goal of the company and the goal of what you want to actually do.
+
+117
+00:11:25,520 --> 00:11:28,080
+And then you work backwards towards the tool set and the stack that you have.
+
+118
+00:11:28,160 --> 00:11:28,880
+Does that make sense?
+
+119
+00:11:29,120 --> 00:11:29,680
+Yeah, totally.
+
+120
+00:11:30,160 --> 00:11:39,520
+And so then what's your thoughts in on early days when you're when you're trying to just get people into the app to then learn what is being successful and not.
+
+121
+00:11:40,320 --> 00:11:46,320
+It seems to me, and I've actually seen a lot of people be very successful with this, is that they don't start with an MMP.
+
+122
+00:11:46,560 --> 00:11:50,000
+They just start with a spreadsheet and they just do a blended ROAS.
+
+123
+00:11:50,560 --> 00:12:02,560
+And early on that gets enough people into the app to start iterating on product, finding that kind of product market fit, you know, getting your onboarding dialed in, starting to understand what retention looks like.
+
+124
+00:12:03,200 --> 00:12:26,720
+And so it seems like you would say the product analytics really are the the kind of absolutely like don't miss thing and then the MMP and measurement of that depends on your goal is that like if you need to figure out your ROAS immediately, uh, because you, you know, you have a bunch of dry tender and you need to scale, then doing that is maybe makes more sense.
+
+125
+00:12:27,280 --> 00:12:39,040
+But if you're just getting people in to find that product market fit to understand your users, then maybe a spreadsheet's fine until you really start ramping up with the goal of being able to scale that ad spin.
+
+126
+00:12:39,440 --> 00:12:41,440
+Is that maybe a good summary?
+
+127
+00:12:42,560 --> 00:12:48,720
+Yeah, I don't want to tell anyone like this is specifically how to go about doing it because I've seen all kinds of aspects work.
+
+128
+00:12:48,960 --> 00:12:57,600
+But Jake Moore, who's a constant kind of contributor to your podcasts, has this great tweet storm where he has like a hundred different tweets.
+
+129
+00:12:58,160 --> 00:13:03,600
+And one of the things he says is a subscription app is just a way to get paywallall in front of users.
+
+130
+00:13:03,840 --> 00:13:06,560
+Like that's the end goal of a subscription app.
+
+131
+00:13:06,880 --> 00:13:14,880
+And it's an interesting kind of concept of like, well, it doesn't matter, you know, everything after they subscribe, because all it matters is getting them to punch the subscribe button.
+
+132
+00:13:15,040 --> 00:13:18,800
+And of course, I think there's a there's he's being ironic to make a point.
+
+133
+00:13:19,520 --> 00:13:28,640
+But there's this today there's this differentiation between products and marketing where products is like all about the users and marketing is all about getting more users into the app.
+
+134
+00:13:28,880 --> 00:13:33,200
+And I've heard marketers say, Oh, I don't care about the value of a user.
+
+135
+00:13:33,440 --> 00:13:38,720
+That's products a mistake.
+
+136
+00:13:38,880 --> 00:13:54,400
+So if you're just starting, yeah, a blended spreadsheet on ROAS is great, but the minute you start, you know, doing apps, Apple search ads, and you start putting a dollar in, and then you start saying, okay, I've got ten users coming in on LTV of two dollars per user.
+
+137
+00:13:54,480 --> 00:13:57,440
+Okay, I'm going to start scaling once you run out of scale.
+
+138
+00:13:57,680 --> 00:14:01,760
+Okay, well, are the users you're buying part of those two dollar users or are those organic?
+
+139
+00:14:01,920 --> 00:14:02,080
+Right.
+
+140
+00:14:02,480 --> 00:14:03,520
+Where should you double down?
+
+141
+00:14:03,840 --> 00:14:05,440
+How should we know what keywords work?
+
+142
+00:14:05,840 --> 00:14:09,360
+So as soon as you start making that spreadsheet work, it's going to start growing in sophistication.
+
+143
+00:14:09,680 --> 00:14:14,800
+So it's going to get more and and more complicated, the more you try to grow and the more details you need.
+
+144
+00:14:14,960 --> 00:14:16,640
+So yeah, a spreadsheet's great to start.
+
+145
+00:14:16,880 --> 00:14:17,040
+Right.
+
+146
+00:14:17,600 --> 00:14:23,200
+But the minute you get it working, you're going to have a question about, well, what about this keyword?
+
+147
+00:14:23,360 --> 00:14:24,560
+Oh, what about this user?
+
+148
+00:14:24,880 --> 00:14:24,960
+Yeah.
+
+149
+00:14:25,200 --> 00:14:28,480
+So it's kind of like, yeah, it's great to start, but maybe not perfect long term.
+
+150
+00:14:28,960 --> 00:14:29,200
+All right.
+
+151
+00:14:29,360 --> 00:14:30,560
+Well, I'm going to come back to that.
+
+152
+00:14:30,800 --> 00:14:44,000
+But before we leave this kind of minimally viable, like what you should launch with one point zero, you were talking about product analytics kind of being the key for that one point zero to understand users and something I see a ton of questions about.
+
+153
+00:14:44,640 --> 00:14:59,280
+And I, you know, I I'm terrible at this myself with my apps is what are the what are the things that are most important to track to start understanding those user behaviors that do lead to the outcomes that you want?
+
+154
+00:15:00,320 --> 00:15:14,160
+Because I what you know, what I've done in my apps in the past is like, oh, there's, you know, fifty different actions and I just start like throwing tags on everything and then and then the analytics are just a mess and I'm I'm not able to find the signal in the noise.
+
+155
+00:15:14,320 --> 00:15:26,880
+So what are the key things you would recommend tracking is especially when you don't't have the sophistication early on to do a deeper analysis to run your own data warehouse to do super, you know, complex analysis.
+
+156
+00:15:28,160 --> 00:15:30,640
+That's an excellent question because...
+
+157
+00:15:31,920 --> 00:15:40,880
+Anyone who answers this event is wrong because every, every app is very, very unique.
+
+158
+00:15:41,200 --> 00:15:47,680
+And when it comes to KPIs, we originally tried it like, okay, we're going to automatically show you the important KPIs.
+
+159
+00:15:48,000 --> 00:15:50,160
+And then we failed objectively at that.
+
+160
+00:15:50,480 --> 00:15:52,400
+And we really leaned into this.
+
+161
+00:15:52,400 --> 00:16:29,360
+to this concept of these crazy KPIs these these apps would have like these different apps and different types of of business models even if they're like both runner apps or both puzzle apps they have incredibly different KPIs that are important to their business so for instance talking to a dating app and their key KPI their golden KPI was registrations per install because they don't care how many installs they have because campaigns go up and campaigns go down from a product perspective he wants to make sure that funnel coming through to a registration is the And if they don't register, then where are they going?
+
+162
+00:16:29,600 --> 00:16:31,440
+And he needs to track that day over day.
+
+163
+00:16:32,080 --> 00:16:40,320
+Talking to a runner app, they have this level mentality where they want to watch users come into the app and they want to watch how many levels they go through.
+
+164
+00:16:40,480 --> 00:16:48,640
+And if there's a fall off between nine and ten, we need to tweak the sophistication on level eight, make sure they don't fall off at nine, make sure they don't fall off at ten.
+
+165
+00:16:49,440 --> 00:16:53,520
+And then the hypercatsual apps, for them, their LTP curses are crazy.
+
+166
+00:16:53,680 --> 00:16:56,160
+They like they go two days and then they're flat.
+
+167
+00:16:56,400 --> 00:16:58,640
+So like you have to get maximum ROI out of two days.
+
+168
+00:16:59,280 --> 00:17:05,360
+And so what they're doing is they're looking at the seconds a user spends in the app per app version.
+
+169
+00:17:05,680 --> 00:17:16,160
+So they have this like crazy graph of every app version they're shipping three times a week of app versions and they're looking at the average seconds in the app of a user.
+
+170
+00:17:16,320 --> 00:17:19,680
+And if it falls off, something went wrong and they have to go back and change it.
+
+171
+00:17:19,920 --> 00:17:31,840
+So that is all to say that different KPIs for different businesses and the app who is asking about the important events probably has a much better idea than anyone else can tell them.
+
+172
+00:17:32,000 --> 00:17:34,320
+And they need to sit down and think about, okay, what.
+
+173
+00:17:34,480 --> 00:17:38,880
+What is my thought process of the important events as it goes?
+
+174
+00:17:39,200 --> 00:17:41,600
+And then, can I measure to prove that?
+
+175
+00:17:42,320 --> 00:17:46,320
+So, can I actually measure the impact between these two events?
+
+176
+00:17:46,640 --> 00:17:52,240
+And if that's the right KPI by measuring and proving it, then I can track it for me.
+
+177
+00:17:53,120 --> 00:17:55,440
+Yeah, that's a great way to think about it.
+
+178
+00:17:55,680 --> 00:18:03,600
+Or is there, you know, I mean, again, I'm gonna ask you the wrong question, but maybe there is a right answer to it.
+
+179
+00:18:05,120 --> 00:18:30,960
+Are there any key things that you would say every app should track, like, you know, track every screen and button in your onboarding or, you know, track, you know, when we talked about Jake, you know, one of the things I hadn't ever thought to track was the number of people who tap the call to action button for a subscription and then how many actually complete the subscription.
+
+180
+00:18:31,200 --> 00:18:31,360
+Right.
+
+181
+00:18:31,600 --> 00:18:33,600
+And it's not actually something we track in RevenueCat.
+
+182
+00:18:33,760 --> 00:18:38,240
+And after Jake opened my eyes to that, I'm going to push to get that tracked.
+
+183
+00:18:39,040 --> 00:18:43,680
+But there's like subtle things like that that like probably every subscription apps should be tracking that.
+
+184
+00:18:44,000 --> 00:19:02,080
+So if someone taps this, you know, start a free trial button and the Apple payment sheet comes up and they hit cancel on there, that's that's a very important signal for subscription apps that people are tapping this button but they're not completing the action and moving that needle is huge.
+
+185
+00:19:03,840 --> 00:19:16,240
+So subscription apps specifically, which you work with many, are there what would be your your go to like, okay, make sure these ten metrics are tracked and in these steps.
+
+186
+00:19:16,240 --> 00:19:16,560
+Steps?
+
+187
+00:19:17,440 --> 00:19:22,400
+Yeah, the generic answer is anything that's related to your monetization journey.
+
+188
+00:19:22,880 --> 00:19:24,720
+And that can extend beyond subscription apps.
+
+189
+00:19:24,800 --> 00:19:36,640
+But for a subscription app, any path that you think a user is going to take to see the monetization event or to monetize, and then you can kind of work backwards through the funnel to figure out what they actually are doing.
+
+190
+00:19:37,040 --> 00:19:49,840
+So a great example of one of our customers that did this, and bear with me because it's a it's pretty complicated, but it's a really good example of how sophisticated you can get from a high level view of your data.
+
+191
+00:19:50,000 --> 00:19:52,880
+But he was trying to drive subscriptions up.
+
+192
+00:19:53,120 --> 00:19:53,600
+Everyone is.
+
+193
+00:19:54,000 --> 00:19:58,000
+And so he's like, okay, where are the majority of my subscriptions coming from?
+
+194
+00:19:58,560 --> 00:20:10,640
+And so he found there was a very big fall off between people who viewed this one subscription event, like, okay, unlock for, in this case it was an animation app, so it was import video.
+
+195
+00:20:10,960 --> 00:20:16,080
+So a lot of people were looking at import video, but there's a huge fall off between import video and not.
+
+196
+00:20:16,720 --> 00:20:23,680
+So what he did is he said, okay, well, if I give that to them for free or behind a reward video.
+
+197
+00:20:25,120 --> 00:20:27,360
+Will that increase the amount of retention?
+
+198
+00:20:27,600 --> 00:20:29,840
+He's originally looking for just retention and engagement.
+
+199
+00:20:30,320 --> 00:20:36,800
+And so he found out there was this massive increase of engagement because people were getting this item for free that they had to pay for before.
+
+200
+00:20:37,520 --> 00:20:48,320
+And so he said, okay, well, and actually the engagement, the amount of time that people were using this reward, clicking this reward video and getting this item for free, turned the LTV curve.
+
+201
+00:20:48,400 --> 00:20:54,560
+So if you look at LTV curve like this, you know, it was a shallower LTV curve, but after two weeks, it actually surpassed it.
+
+202
+00:20:55,120 --> 00:21:03,680
+So they were the engagement and the reward video had changed the curve to actually increase the value past seven or fourteen days, but he wasn't done.
+
+203
+00:21:03,840 --> 00:21:04,240
+He wasn't.
+
+204
+00:21:04,400 --> 00:21:10,000
+He said, Okay, well, that's great because now I have users spending more time making more money from ads.
+
+205
+00:21:10,800 --> 00:21:19,440
+I want to go back and figure out who is the who are the people subscribing and when are they subscribing or towards those as events because they give it away.
+
+206
+00:21:19,520 --> 00:21:21,440
+You're going to you're going to lose a big portion of it.
+
+207
+00:21:21,840 --> 00:21:32,480
+So he started dividing up his traffic into geos and regions and he has age groups and he looked at an age group and he said, Okay, between eighteen and thirty five, they're.
+
+208
+00:21:33,200 --> 00:21:38,320
+90% of my subscribers for this one feature.
+
+209
+00:21:39,280 --> 00:21:44,160
+And he said, okay, and 90% of those all happen within the first four days.
+
+210
+00:21:45,200 --> 00:21:53,040
+So he just changed his app to say for that group of users, we're going to delay the reward video offer for four days.
+
+211
+00:21:54,960 --> 00:22:09,440
+So he's able to capture 90% or 90% of the actual in-up purchases or subscriptions and then get the increased engagement by delaying it for four days for the folks who did buy it and then for everyone else they got it for free right away.
+
+212
+00:22:10,080 --> 00:22:20,560
+So it's a complicated example, but it really wasn't that difficult provided you have kind of an overall view of your monetization journey and how you can kind of change that.
+
+213
+00:22:20,720 --> 00:22:26,560
+Now there's this whole other aspect of that which just requires the remote configuration, the ability to change it.
+
+214
+00:22:27,040 --> 00:22:40,000
+And I think that's an important aspect as well, it's like turning this data that you have, these actions you have into actions, I should say events, turning these events you have into action is difficult.
+
+215
+00:22:40,960 --> 00:22:46,080
+Data is a tool, but if you're not using the tool, it's completely worthless.
+
+216
+00:22:47,040 --> 00:22:47,120
+Yeah.
+
+217
+00:22:47,520 --> 00:22:48,320
+No, that's great.
+
+218
+00:22:48,640 --> 00:22:49,840
+One, one quick side note.
+
+219
+00:22:50,560 --> 00:23:05,520
+We haven't talked a ton about AdlibriTest as a data platform, but one of the things you all do really well and makes it actually a great complement to freemium apps who are also using RevenueCat is that you're actually measuring that ad revenue.
+
+220
+00:23:05,680 --> 00:23:14,560
+And that's a perfect example of a blind spot if you're only looking at subscribers, but you're using a freemium strategy.
+
+221
+00:23:15,200 --> 00:23:16,880
+What's going on with those freemium users?
+
+222
+00:23:16,960 --> 00:23:32,000
+And then especially if you're doing any kind of rewarded ads or any form of advertising, your subscription LTV leaves out this very important piece to understand how your free users are contributing to the monetization.
+
+223
+00:23:32,320 --> 00:23:41,280
+So can you speak to that just a little bit more of how you all measure that and then how you think about the kind of that that blend?
+
+224
+00:23:41,600 --> 00:23:56,400
+And I think this is one of those things that is probably going to be more and more important, especially like, you know, we're kind of in the August of 2022 on the precipice of a recession or not or whatever, but consumer budgets are tightening.
+
+225
+00:23:56,720 --> 00:24:03,120
+People are looking to use things for free and might tolerate the rewarded ad over having to pay.
+
+226
+00:24:04,320 --> 00:24:08,880
+And so getting that right blend of freemium and subscription is an art.
+
+227
+00:24:09,760 --> 00:24:14,720
+And if you have ads, measuring those against the subscriptions is so important.
+
+228
+00:24:15,040 --> 00:24:16,240
+So how do you think about that?
+
+229
+00:24:16,960 --> 00:24:19,360
+Well, I would say that even extending just ads.
+
+230
+00:24:19,760 --> 00:24:22,400
+So we see with ads a lot of people because it's complicated, right?
+
+231
+00:24:22,880 --> 00:24:36,800
+So I wrote an article about this where a subscription app, you have to track one event and it matters one out of a hundred, maybe if you're lucky one out of ten times that one event, that event is the monetization event.
+
+232
+00:24:37,520 --> 00:24:43,520
+With an ad, you have to track thousands of events because each one of those events is a monetization event.
+
+233
+00:24:43,840 --> 00:24:53,040
+And the amount of people that I see estimating, oh, an ad impression is worth an average of ten dollars CPM or five dollars CPM.
+
+234
+00:24:53,200 --> 00:24:56,160
+So I'm just going to use that as an indicator of success.
+
+235
+00:24:56,560 --> 00:25:02,960
+Well, being in the ad business as much as I have, I know that the average value has nothing to do with the absolute value.
+
+236
+00:25:03,120 --> 00:25:11,360
+You have this huge diminishing curve when it comes to users and where they're located very much changes the value of a user.
+
+237
+00:25:12,320 --> 00:25:20,240
+And even more than ads, I see a ton of customers who should be using RevenueCat who estimate subscriptions.
+
+238
+00:25:20,480 --> 00:25:21,280
+Like, oh, you know what?
+
+239
+00:25:22,080 --> 00:25:23,040
+There's a scription event.
+
+240
+00:25:23,280 --> 00:25:23,920
+They opted in.
+
+241
+00:25:24,320 --> 00:25:24,720
+Good enough.
+
+242
+00:25:25,040 --> 00:25:27,840
+Like, oh, yeah, there's some refunds.
+
+243
+00:25:28,000 --> 00:25:28,240
+Sure.
+
+244
+00:25:28,400 --> 00:25:29,680
+And whether they come back, I'm not.
+
+245
+00:25:29,920 --> 00:25:30,400
+I just know.
+
+246
+00:25:30,400 --> 00:25:37,840
+Just know the average user comes back 66% of the time, so I'm going to be able to track that as this amount of money.
+
+247
+00:25:38,480 --> 00:25:56,400
+That might work for that spreadsheet mentality that you're talking about, but if you want to get sophisticated and you want to start buying users, that's when the important is like you need to start understanding the real value of these users long term and where these sources you're buying are actually developing or returning ROI.
+
+248
+00:25:57,520 --> 00:25:57,600
+Yeah.
+
+249
+00:25:58,560 --> 00:26:00,720
+I do want to get back to this next step.
+
+250
+00:26:01,360 --> 00:26:04,160
+And you kind of brought us back around to the MMP.
+
+251
+00:26:05,120 --> 00:26:08,160
+At that stage where, okay, the spreadsheet's getting weird.
+
+252
+00:26:09,040 --> 00:26:16,960
+I'm spending, you know, twenty, forty, fifty K a month and I'm no longer just buying users to understand product market fit.
+
+253
+00:26:17,200 --> 00:26:20,000
+I'm, I'm trying to get that return on investment.
+
+254
+00:26:20,080 --> 00:26:26,160
+Now I'm trying to scale up my ad spend, you know, can I spend a dollar and get a dollar fifty back in a reasonable time frame?
+
+255
+00:26:26,960 --> 00:26:30,560
+Why get an MMP and then how do you use it?
+
+256
+00:26:31,520 --> 00:26:38,400
+And I see this question a lot from apps who, who, you know, they've, they've been working with app store search ads.
+
+257
+00:26:38,960 --> 00:26:41,200
+They get to 20, 40, 50 K.
+
+258
+00:26:41,680 --> 00:26:48,400
+Then they start doing Facebook ads and now, and that's when the spreadsheet starts breaking and then what ads are being effective, what are not.
+
+259
+00:26:48,720 --> 00:26:52,320
+And so that's where the MMP starts to become essential.
+
+260
+00:26:52,960 --> 00:26:56,400
+So, so yeah, tell me about getting that MMP stack right.
+
+261
+00:26:57,360 --> 00:27:04,800
+I would actually say that way before you're spending 40, 50 K a month, you should be looking at an MMP and way before.
+
+262
+00:27:05,840 --> 00:27:18,160
+It's funny because I've seen so many business models change because people were not measuring correctly.
+
+263
+00:27:18,240 --> 00:27:18,960
+I'll give you an example.
+
+264
+00:27:19,200 --> 00:27:21,040
+There's a very big audio app.
+
+265
+00:27:21,200 --> 00:27:23,040
+We don't work with them, but I've heard the story.
+
+266
+00:27:23,760 --> 00:27:34,800
+Very big audio app who found this really good source of US CPI traffic, and they started dumping hundreds of thousands of dollars a month into this low CPI US traffic.
+
+267
+00:27:34,880 --> 00:27:37,520
+And they're like, oh man, this is a, we got a great winner.
+
+268
+00:27:37,840 --> 00:27:38,320
+They engage.
+
+269
+00:27:38,800 --> 00:27:46,000
+It turns out that source was a VPN app where a bunch of Mexican users were using to get to the US for other content.
+
+270
+00:27:46,880 --> 00:27:50,560
+So they ended up with like half a million dollars of users in Mexico.
+
+271
+00:27:52,080 --> 00:27:59,360
+Well, these guys being, you know, entrepreneurs spawned the business and now they focus largely on Mexico and monetizing Mexico.
+
+272
+00:27:59,440 --> 00:28:01,280
+So they've it ended up changing their entire business.
+
+273
+00:28:01,680 --> 00:28:04,640
+But there's an old saying which is incentives drive behavior.
+
+274
+00:28:05,840 --> 00:28:17,920
+If you aren't measuring the outcome of your buys, you're going to basically default to the lowest incentive possible, which is the lowest CPI.
+
+275
+00:28:18,000 --> 00:28:21,600
+And there's a reason there's a low CPI in a lot of a lot of those cases.
+
+276
+00:28:21,920 --> 00:28:41,840
+So the purpose of an MMP is to understand where your users are coming from, which campaign, which creative, which source, which everything, you know, is it Facebook, is it Apple search ads, is it, is it Google at the very high level and the MMPs do a great job showing you where those users are coming from.
+
+277
+00:28:41,920 --> 00:28:47,280
+Now it's gotten a lot more complicated with scan on iOS, which we can talk about separately.
+
+278
+00:28:48,160 --> 00:28:54,560
+But the MMPs are starting to morph from, okay, where do my users come from to, okay, now you're sending.
+
+279
+00:28:55,120 --> 00:29:02,080
+your subscription events, you're sending your ad revenue, you're sending your monetization events, even sometimes your key events to the MMP.
+
+280
+00:29:02,240 --> 00:29:07,920
+And now the MMP is telling you, okay, the users you bought from Facebook in this campaign are worth X amount.
+
+281
+00:29:08,560 --> 00:29:19,200
+And when they're worth X amount, now you can calculate, you can start setting benchmarks of, okay, by day seven, you know, I'm getting a 50% ROI on my buy, start dumping money into that.
+
+282
+00:29:19,920 --> 00:29:24,880
+Or Google is not, Google's at 25%, I'm going to start scaling back.
+
+283
+00:29:25,360 --> 00:29:28,320
+I had a great conversation with a customer of ours who was saying.
+
+284
+00:29:29,120 --> 00:29:38,320
+a bad campaign means you have to go back and start parrying out the sources that aren't working, parrying out the places that aren't working.
+
+285
+00:29:38,400 --> 00:29:40,720
+It doesn't mean you stop it, it just means you start parrying it back.
+
+286
+00:29:41,360 --> 00:29:47,200
+A good campaign, you need to take action as soon as possible because you need to start buying more to increase your scale.
+
+287
+00:29:47,520 --> 00:29:47,600
+Yeah.
+
+288
+00:29:48,880 --> 00:29:50,720
+Yeah, that's a great, great way to think about it.
+
+289
+00:29:51,360 --> 00:29:54,800
+We could we could spend the next hour talking just about MMPs.
+
+290
+00:29:55,280 --> 00:30:02,880
+I find it so fascinating and one quick kind of follow up before we kind of move on from this subject is how much you can do.
+
+291
+00:30:02,880 --> 00:30:09,680
+How much has changed in the accuracy since Apple enacted the app tracking transparency?
+
+292
+00:30:09,840 --> 00:30:11,360
+So now we no longer have the IDFA.
+
+293
+00:30:11,920 --> 00:30:23,360
+The interesting thing that still kind of baffles me is in the US, a limit ad tracking got up to something like forty percent before ATT even was enacted.
+
+294
+00:30:24,080 --> 00:30:29,120
+So the MMPs were already having to deal with a lot more uncertainty.
+
+295
+00:30:29,360 --> 00:30:36,800
+There was never a hundred percent deterministic ad measurement even pre ATT.
+
+296
+00:30:37,200 --> 00:30:43,680
+And that's something I think a lot of people kind of miss is like there's this kind of assumption, oh, everybody had the IDFA, everything was tracked.
+
+297
+00:30:44,480 --> 00:30:56,160
+No, a significant portion of traffic, especially in the US, where a lot of companies are much more heavily weighted on their monetization, actually didn't have any deterministic tracking.
+
+298
+00:30:57,200 --> 00:31:04,720
+So I imagine that actually made the shift less of a big deal in some ways than it appeared on the surface.
+
+299
+00:31:04,960 --> 00:31:06,960
+But what have you seen change since ATT?
+
+300
+00:31:07,680 --> 00:31:10,560
+Is it kind of directionally correct, but still?
+
+301
+00:31:10,560 --> 00:31:15,120
+But still messy or yeah, what, what's the data quality from an MMP these days?
+
+302
+00:31:16,400 --> 00:31:26,320
+It's a dirty secret, I think, that a lot of people don't want to talk about, which is it's a mess and not many people have a great understanding of what's going on.
+
+303
+00:31:26,480 --> 00:31:40,160
+And there's a there's a webinar by Singular where they had Rovio come on talk about their findings and Rovio, the makers of Angry Birds, for the folks who don't know, huge giant app, a veritable name in the industry.
+
+304
+00:31:40,560 --> 00:31:44,560
+And they were talking and one of the things that struck me is they said, well, one of our.
+
+305
+00:31:45,120 --> 00:31:53,600
+keys to success was our UA team works very closely with our data science team, who works very closely with our product team, who then works with our UA product team.
+
+306
+00:31:54,320 --> 00:31:55,920
+And then we work with a BI team.
+
+307
+00:31:56,080 --> 00:31:59,360
+And those guys all working together have really been able to make scan work.
+
+308
+00:31:59,920 --> 00:32:06,000
+And I was thinking, five teams, not five people, five teams have all come together to make this work.
+
+309
+00:32:07,120 --> 00:32:10,960
+What is the chance that other organizations really have this understood?
+
+310
+00:32:11,200 --> 00:32:13,760
+And the reality is not a lot.
+
+311
+00:32:14,000 --> 00:32:18,960
+And I don't think a lot of people like talking about that because no one likes to appear like they don't really really know what's going on.
+
+312
+00:32:19,120 --> 00:32:22,880
+And I have people that don't really know what's going on, it's high.
+
+313
+00:32:23,200 --> 00:32:23,840
+It's pretty high.
+
+314
+00:32:24,400 --> 00:32:26,720
+And you talk about what are people looking for?
+
+315
+00:32:26,880 --> 00:32:34,480
+And they're looking for scan outputs, which is a kind of aggregated output of the scan reporting data and then your regular campaign data.
+
+316
+00:32:34,640 --> 00:32:36,160
+And those aren't really aligning.
+
+317
+00:32:36,480 --> 00:32:46,400
+So what people have started to do is just like, well, I'm going to go with an aggregate, just kind of the signal direction that I'm seeing and go for it.
+
+318
+00:32:46,960 --> 00:32:52,720
+And as a result, CPMs on Android are higher than IOS.
+
+319
+00:32:52,720 --> 00:32:54,000
+than iOS for the first time ever.
+
+320
+00:32:55,120 --> 00:32:58,240
+ROI on Android is usually higher because measurements better.
+
+321
+00:32:58,640 --> 00:33:00,560
+So it's a mess.
+
+322
+00:33:00,880 --> 00:33:05,200
+And I think that people shouldn't give themselves a hard time by not really, really understanding it.
+
+323
+00:33:05,520 --> 00:33:05,600
+Yeah.
+
+324
+00:33:06,000 --> 00:33:06,080
+Yeah.
+
+325
+00:33:06,880 --> 00:33:12,000
+And that gets back to the old saying, half my marketing is working, I just didn't know which half.
+
+326
+00:33:13,200 --> 00:33:13,520
+Exactly.
+
+327
+00:33:13,760 --> 00:33:14,320
+We're back to that.
+
+328
+00:33:14,720 --> 00:33:14,800
+Yeah.
+
+329
+00:33:15,200 --> 00:33:16,160
+Back to that in some ways.
+
+330
+00:33:16,560 --> 00:33:25,600
+But like you said, even though it's a mess, the point of an MMP is to at least get some directionally accurate information.
+
+331
+00:33:26,800 --> 00:33:28,240
+So that you make better bets.
+
+332
+00:33:28,480 --> 00:33:29,040
+It's still a bet.
+
+333
+00:33:29,440 --> 00:33:33,680
+You're still guessing, but you're making slightly more informed guesses.
+
+334
+00:33:34,640 --> 00:33:39,280
+And the more slightly informed guesses you can make, the better your ultimate trajectory.
+
+335
+00:33:39,840 --> 00:33:40,720
+That's data in general.
+
+336
+00:33:41,040 --> 00:33:45,680
+So you're getting better and better guesses, better and better direction to help growth.
+
+337
+00:33:46,000 --> 00:33:46,160
+Right.
+
+338
+00:33:46,400 --> 00:33:50,960
+And that was actually going to be the next thing I wanted to ask you about is AB testing.
+
+339
+00:33:51,840 --> 00:33:56,480
+You know, similar to everything we've been talking about, I see, you know, tons of folks.
+
+340
+00:33:56,880 --> 00:34:15,360
+They've got a hundred users coming into the app and they've got super sophisticated AB testing and everything is an AB test and they're running multiple simultaneously and they don't have five different teams like Rovio actually and don't have a data scientist on staff who really understands how to run an effective experiment.
+
+341
+00:34:16,320 --> 00:34:29,680
+What's that kind of progression of sophistication for testing when you're early and you have very few users and it's unlikely to even get statistical significance, are you just fooling yourself to even bother with AB testing?
+
+342
+00:34:30,080 --> 00:34:35,920
+And then when does that start to become more practical and actually more valuable as an educated guest.
+
+343
+00:34:36,960 --> 00:34:40,320
+Yeah, that there's a religion, an AB testing religion around this.
+
+344
+00:34:41,040 --> 00:34:46,400
+We have an advisor who is a data scientist for a very large one of those gaming conglomerates.
+
+345
+00:34:47,120 --> 00:34:54,560
+And he very early on said to me, if you're trying to measure the output of your AB test, you've already failed.
+
+346
+00:34:55,600 --> 00:34:58,480
+If it's not obvious, then your test has failed.
+
+347
+00:34:58,560 --> 00:35:04,160
+And it's much your your your output of an AB test is more likely to have no output than it is a winner.
+
+348
+00:35:04,480 --> 00:35:14,480
+So a loser in a lot of ways is better or having a losing AB test is better than having a losing AB test is better than having, uh, than the normal of just having, you know, no statistical significance.
+
+349
+00:35:14,880 --> 00:35:17,120
+And I think that is, that is difficult.
+
+350
+00:35:17,280 --> 00:35:20,880
+People are instinctively drawn towards, okay, I want this to be better.
+
+351
+00:35:21,120 --> 00:35:28,160
+So therefore, if, you know, ten more people have opted in, then of course it's better, but statistical significance on that is like one percent.
+
+352
+00:35:28,320 --> 00:35:29,840
+So it doesn't, doesn't make sense.
+
+353
+00:35:30,400 --> 00:35:37,760
+Um, the proper way to do an AB test is to not look at it during the test, set the boundary before.
+
+354
+00:35:38,240 --> 00:35:46,800
+So I need ten thousand people to have completed this event in order to make a decision, but then by 30 days you have, you know, 100 people that have done it.
+
+355
+00:35:47,040 --> 00:35:47,440
+It's tough.
+
+356
+00:35:47,920 --> 00:35:52,240
+It's tough to keep it going and not, you know, pull the rug out early and make a decision.
+
+357
+00:35:53,120 --> 00:35:54,560
+What would be your kind of minimum standard?
+
+358
+00:35:54,800 --> 00:36:16,560
+Like, and that's what I was trying to get at with the question is that at what point in an app's life and and traffic is really probably the determining factor is that, you know, how many people do you need to come into the and this part of this has to be determined by the app developer themselves, but you know, if you're running a a a b test.
+
+359
+00:36:16,560 --> 00:36:30,720
+an AB test on a price and you're only getting a hundred conversions a month, you're fooling yourself to think that you're getting a real outcome that's going to meaningfully move your business with a hundred events.
+
+360
+00:36:31,280 --> 00:36:42,320
+So I guess maybe what are what's that kind of minimum number you look for for it to be meaningful data that it is an educated guess and not just a guess?
+
+361
+00:36:42,960 --> 00:36:46,320
+And then do you see kind of moving things up the funnel actually impact?
+
+362
+00:36:46,720 --> 00:36:58,160
+Because of course, you know, if you do have, you know, 50,000 people coming into theing into the app and your onboarding is what you're AB testing, then you're more likely to get enough data to actually make better decisions.
+
+363
+00:36:58,640 --> 00:37:02,800
+But the deeper you get in the funnel, the harder it is to get enough traffic to make a good decision.
+
+364
+00:37:03,040 --> 00:37:10,160
+So yeah, what are kind of your boundaries for what makes sense to start thinking about AB testing?
+
+365
+00:37:10,960 --> 00:37:13,760
+We're pretty pragmatic and we deal with customers of all sizes.
+
+366
+00:37:14,080 --> 00:37:26,880
+We have people that have 300 million users a month and they can be a little bit more realistic about statistical significance.ance is an actual calculation.
+
+367
+00:37:29,120 --> 00:37:32,800
+So I would say that there isn't a set number.
+
+368
+00:37:33,920 --> 00:37:41,360
+I think it's up to the app developer to determine what's realistic, but I think they should do so before the test is started.
+
+369
+00:37:41,760 --> 00:37:50,880
+So if it's far down the funnel and you know that I've got a thousand people coming in a day and I want to get a thousand conversions, like to make a decision.
+
+370
+00:37:51,840 --> 00:37:53,120
+You've got to be realistic about that.
+
+371
+00:37:53,280 --> 00:37:59,680
+So you might be able to make the decision off of, you'll need to make the decision off of imperfect or incomplete data.
+
+372
+00:38:00,560 --> 00:38:03,440
+And the farther you move up, the better it will be.
+
+373
+00:38:03,920 --> 00:38:23,040
+So it kind of leads into a crutch that we highly recommend, which is if you can figure out inference between later funnel events and early funnel events, you can focus on where users are spending a lot more time and and more users are hitting and make changes that actually matter.
+
+374
+00:38:23,280 --> 00:38:28,080
+For instance, you're talking about conversions and you you know people coming in, maybe the trial.
+
+375
+00:38:28,400 --> 00:38:32,640
+If you have ten x the people doing the trial, maybe focus on getting people to start the trial.
+
+376
+00:38:37,920 --> 00:38:44,720
+So to answer your question, it's going to be up to the app developer because who am I to say what, what, how to run your business?
+
+377
+00:38:45,120 --> 00:38:53,840
+They may need to make decisions with incomplete data, but maybe move earlier into the funnel to get more signal to actually like make better decisions.
+
+378
+00:38:54,000 --> 00:38:59,520
+And that actually will help you with marketing in general because the faster you get signals, the faster you can turn around and make campaigns.
+
+379
+00:38:59,920 --> 00:39:05,360
+And also the faster you can send that signal back to the actual buyers, the Facebooks and the Google's to help optimize those campaigns.
+
+380
+00:39:05,680 --> 00:39:05,680
+Yeah.
+
+381
+00:39:06,320 --> 00:39:13,440
+And then the tough thing too about, okay, I set my minimum threshold of a thousand users need to complete this event before I'll get meaningful data.
+
+382
+00:39:14,240 --> 00:39:17,600
+Ideally it's probably more, but then it takes you sixty days to get there.
+
+383
+00:39:17,920 --> 00:39:26,640
+In the meantime, you've released four different updates, you're buying different traffic, Apple featured you, the traffic mix is different.
+
+384
+00:39:26,800 --> 00:39:39,200
+Like there's so many variables that by the time you extend the, the further you extend that window, probably the less meaning there is in the data that you're measuring there.
+
+385
+00:39:39,600 --> 00:39:40,720
+With that being a good way to think.
+
+386
+00:39:41,200 --> 00:39:41,840
+about it as well.
+
+387
+00:39:42,240 --> 00:39:49,600
+Yeah, that and if you're struggling to get a signal from the test, then maybe it's not a very good test.
+
+388
+00:39:50,640 --> 00:39:54,000
+Yeah, that's a great way to think about it.
+
+389
+00:39:54,720 --> 00:39:57,280
+So man, we could talk for another two hours.
+
+390
+00:39:58,640 --> 00:40:00,320
+I wanted to hit on CRM.
+
+391
+00:40:00,480 --> 00:40:01,680
+Do you deal with much CRM?
+
+392
+00:40:01,840 --> 00:40:02,640
+Feel free to pump.
+
+393
+00:40:02,800 --> 00:40:05,520
+We can move on to another question if it's not something you think about a lot.
+
+394
+00:40:06,560 --> 00:40:14,160
+We do in the sense that folks are trying to get a kind of re engage or engage their valuable users.
+
+395
+00:40:15,120 --> 00:40:23,120
+One thing that is really exciting that we recently released, which I think is should everyone should have, is the ability to segment users by overall value.
+
+396
+00:40:23,440 --> 00:40:39,760
+So it's probably easier with subscription apps, but ad whales is a lot more difficult, but comparing the actions of the very valuable users against the kind of generic users and where those users are coming from can help with better buying and better product changes.
+
+397
+00:40:40,240 --> 00:40:40,320
+Yeah.
+
+398
+00:40:41,040 --> 00:40:48,560
+The rabbit hole I was hoping to go down was the retention, reengagement, kind of strategies.
+
+399
+00:40:50,000 --> 00:41:01,760
+So for your subscription apps, customers specifically, what are kind of the first steps you talk through with them on, okay, we've collected an email into Braze.
+
+400
+00:41:02,720 --> 00:41:04,640
+Now, what does that mean?
+
+401
+00:41:04,800 --> 00:41:11,200
+And so many developers, you know, it's, it's, you know, their CRM campaign is really stale.
+
+402
+00:41:11,520 --> 00:41:20,000
+They're, they're, they're just triggering some really basic events and, and it's not really, you know, well tailored to to individual users and things like that.
+
+403
+00:41:20,240 --> 00:41:22,880
+So what is the low hanging fruit in your CRM?
+
+404
+00:41:22,880 --> 00:41:29,680
+in a reengagement campaign that you want to make sure your clients are at least kind of hitting the minimum basis on that?
+
+405
+00:41:31,120 --> 00:41:35,600
+I mean, you sound like you're a little bit more optimistic than I am on the engagement.
+
+406
+00:41:35,840 --> 00:41:42,800
+I think that the amount of apps out there that are actually getting email addresses is probably lower than we would hope.
+
+407
+00:41:43,200 --> 00:41:50,560
+I think getting contact information, getting the ability to reengage with these people is probably the most paramount thing.
+
+408
+00:41:51,280 --> 00:41:56,720
+And then from what I've heard and what I've seen successful is you don't give up on those those people.
+
+409
+00:41:56,800 --> 00:41:58,640
+It's kind of like a drip campaign from an email.
+
+410
+00:41:58,800 --> 00:42:02,160
+If you're trying to sell a SaaS product, for instance, you don't give up on them.
+
+411
+00:42:02,720 --> 00:42:05,200
+You keep them engaged and they're seeing you.
+
+412
+00:42:05,360 --> 00:42:12,160
+And so like, I think Headspace has a, maybe it's Calm as a case study about this is like engaging people over time.
+
+413
+00:42:12,800 --> 00:42:14,240
+They'll finally convert back to you.
+
+414
+00:42:14,400 --> 00:42:20,800
+So I think just getting their email address and then getting back in front of them, you're miles ahead of most people.
+
+415
+00:42:21,600 --> 00:42:22,800
+Especially post ATT.
+
+416
+00:42:22,960 --> 00:42:24,640
+That's the only way to re engage people.
+
+417
+00:42:25,040 --> 00:42:25,200
+Right.
+
+418
+00:42:25,600 --> 00:42:25,680
+Yeah.
+
+419
+00:42:26,400 --> 00:42:30,160
+And where would you kind of put that on the prioritization stack again?
+
+420
+00:42:30,160 --> 00:42:40,640
+Again, getting a CRM set up, writing these drip emails, getting the triggers connected so they just troubleshooting when the triggers go off the rails.
+
+421
+00:42:41,520 --> 00:42:47,200
+It's a big, big engineering and product and marketing task to get all this aligned.
+
+422
+00:42:47,920 --> 00:42:52,960
+So where would you kind of put it in your kind of priority stack of, okay, I'm measuring my marketing.
+
+423
+00:42:53,520 --> 00:42:56,240
+I've got some good product analytics set up.
+
+424
+00:42:56,960 --> 00:42:58,160
+Where do you prioritize that?
+
+425
+00:42:58,880 --> 00:43:00,080
+That's a great question.
+
+426
+00:43:00,480 --> 00:43:03,600
+And I think that when you're we kind of opened up with the spreadsheet, right?
+
+427
+00:43:03,680 --> 00:43:06,000
+So you're looking at rows in a spreadsheet.
+
+428
+00:43:06,240 --> 00:43:10,240
+I think that's where you really would get value out of like putting things in a spreadsheet.
+
+429
+00:43:10,400 --> 00:43:15,040
+So like what's a realistic response rate on a CRM campaign?
+
+430
+00:43:15,280 --> 00:43:16,080
+Is it 10%?
+
+431
+00:43:16,240 --> 00:43:17,120
+Is it 15%?
+
+432
+00:43:17,520 --> 00:43:18,880
+How many subscribers do you have?
+
+433
+00:43:18,960 --> 00:43:20,320
+How many email addresses do you have?
+
+434
+00:43:20,640 --> 00:43:25,280
+What's the ROI on my effort for actually getting the 15% coming back?
+
+435
+00:43:25,680 --> 00:43:28,320
+Okay, well, that's going to generate me, you know, x thousand dollars.
+
+436
+00:43:29,280 --> 00:43:30,160
+That's worth the effort.
+
+437
+00:43:30,320 --> 00:43:30,400
+Okay.
+
+438
+00:43:30,720 --> 00:43:38,320
+Or is it worth me starting to invest in buying users and then my ROI on the users and being able to kind of make the decision on...
+
+439
+00:43:38,640 --> 00:43:49,920
+on where am I spending my time as it's more effective to ROI in terms of the app, I think is probably a better use of the spreadsheet on kind of prioritizing your tasks.
+
+440
+00:43:50,320 --> 00:43:54,960
+That being said, it's very easy to fall into what you want to do.
+
+441
+00:43:55,120 --> 00:44:01,280
+And I've seen a lot of apps that I'm like, well, I really want to change the onboarding workflow because I think that there's a lot of aspects to that.
+
+442
+00:44:01,440 --> 00:44:08,880
+So yet, divorcing yourself from like what you want to work on towards what makes the most sense for the business, I think is probably the most difficult part of that.
+
+443
+00:44:09,280 --> 00:44:09,360
+Yeah.
+
+444
+00:44:10,000 --> 00:44:14,080
+And you know, this is, that's a, that was a really good great way to frame the answer.
+
+445
+00:44:15,680 --> 00:44:16,480
+Fantastic answer.
+
+446
+00:44:16,640 --> 00:44:28,000
+And it's not what I expected you to say, but it kind of reminds me, and we were just talking about this yesterday on a webinar, is that a lot of folks get really excited about referral programs.
+
+447
+00:44:28,480 --> 00:44:38,160
+And so it's, oh wow, if I can just get, you know, incentivize my users to share it with all their friends, this is going to solve my user acquisition problem.
+
+448
+00:44:38,400 --> 00:44:40,080
+I'm going to get this viral loop going.
+
+449
+00:44:40,640 --> 00:44:42,240
+My customers are going to buy all their friends.
+
+450
+00:44:42,400 --> 00:44:43,680
+All their friends are going to come on board.
+
+451
+00:44:43,760 --> 00:44:50,560
+And like this incentivized refer Referral Program is like the answer to my user acquisition problems.
+
+452
+00:44:50,960 --> 00:44:53,440
+And people get really excited about it.
+
+453
+00:44:54,080 --> 00:44:56,080
+And then I start talking through the math with them.
+
+454
+00:44:56,240 --> 00:44:58,240
+Okay, how many monthly active users do you have?
+
+455
+00:44:58,640 --> 00:45:00,160
+I've got ten thousand users.
+
+456
+00:45:00,320 --> 00:45:05,200
+Okay, where are you going to put the call to action to invite your friends?
+
+457
+00:45:05,360 --> 00:45:06,560
+Oh, we're going to put it in settings.
+
+458
+00:45:07,120 --> 00:45:08,960
+How many people go to settings every month?
+
+459
+00:45:10,160 --> 00:45:10,720
+A few thousand.
+
+460
+00:45:11,440 --> 00:45:11,520
+Okay.
+
+461
+00:45:12,160 --> 00:45:15,760
+What's your response rate to a call to action buried in settings?
+
+462
+00:45:16,000 --> 00:45:16,400
+Very low.
+
+463
+00:45:16,640 --> 00:45:16,800
+Right.
+
+464
+00:45:17,280 --> 00:45:22,000
+What will be the response rate to those who actually do share it, pretty low.
+
+465
+00:45:22,400 --> 00:45:31,600
+And so once you start doing the math, and so I hadn't thought about it quite that way from a re engagement perspective is that you need to start doing the same math.
+
+466
+00:45:31,840 --> 00:45:48,000
+Okay, if I've only got a thousand people currently subscribed to the app and another thousand that had started a free trial and turned out, what's the realistic response rate to those thousands who have already turned out of the app?
+
+467
+00:45:49,360 --> 00:45:50,160
+It's pretty low.
+
+468
+00:45:51,200 --> 00:45:54,880
+And then if my subscription price is only thirty dollars a year or whatever it is.
+
+469
+00:45:55,760 --> 00:45:59,840
+And my response rate is, like you said, ten percent is probably very generous.
+
+470
+00:46:00,000 --> 00:46:02,400
+Response rates really probably are low single digits.
+
+471
+00:46:03,120 --> 00:46:04,000
+We did an analysis.
+
+472
+00:46:04,160 --> 00:46:15,280
+We haven't published yet, but we were looking at, you know, users who start a free trial, what's the long term of them actually coming back and ever becoming a subscriber?
+
+473
+00:46:15,760 --> 00:46:21,680
+And across our entire user base, it was somewhere in the ballpark of five percent ever coming back.
+
+474
+00:46:22,000 --> 00:46:22,080
+Wow.
+
+475
+00:46:22,880 --> 00:46:22,960
+Yeah.
+
+476
+00:46:23,680 --> 00:46:26,640
+And so, you know, you think about all the effort that's put into it.
+
+477
+00:46:26,720 --> 00:46:31,040
+Now some, and this is what you've said the whole time,, right, is that it's going to depend.
+
+478
+00:46:31,280 --> 00:46:38,880
+So some apps are going to be way better at reengagement for specific product reasons, for specific business reasons.
+
+479
+00:46:39,520 --> 00:46:45,600
+But across our entire user base at RevenueCat, it's shockingly low.
+
+480
+00:46:46,240 --> 00:46:55,280
+And so when you're thinking about spending a month and that, okay, I've got I've got a thousand people who started a free trial.
+
+481
+00:46:56,000 --> 00:47:02,480
+And if I can tap into that and then you put it in a spreadsheet and you like do a realistic analysis.
+
+482
+00:47:03,360 --> 00:47:07,600
+And you're probably way better off focusing on the top of the funnel.
+
+483
+00:47:07,760 --> 00:47:08,960
+Like how do I bring them in?
+
+484
+00:47:09,360 --> 00:47:13,520
+How do I engage those new users versus trying to pick up those users who turned out?
+
+485
+00:47:14,080 --> 00:47:16,000
+That goes back to kind of do you focus on product?
+
+486
+00:47:16,240 --> 00:47:16,960
+Do you focus on marketing?
+
+487
+00:47:17,280 --> 00:47:22,480
+Like if you look at the biggest apps in the world today, they're not product machines, they're marketing machines.
+
+488
+00:47:22,640 --> 00:47:22,960
+Right.
+
+489
+00:47:23,280 --> 00:47:26,720
+And they're all about how do I get ROI off of buying these users?
+
+490
+00:47:27,280 --> 00:47:36,560
+And so if you were to sit down and look at that spreadsheet through the funnel, if I change a retention, if I rebuild my subscription offer wall and I increase.
+
+491
+00:47:37,120 --> 00:47:38,240
+subscriptions fifteen percent.
+
+492
+00:47:38,480 --> 00:47:39,920
+That would be a huge win for most people.
+
+493
+00:47:40,320 --> 00:47:40,560
+Right.
+
+494
+00:47:41,680 --> 00:47:43,920
+But what if I get 100 percent more people in the app?
+
+495
+00:47:44,480 --> 00:47:44,560
+Yeah.
+
+496
+00:47:44,720 --> 00:47:48,480
+I spend that month building up the market and get 100 percent more people in the app.
+
+497
+00:47:48,640 --> 00:47:48,720
+Yeah.
+
+498
+00:47:49,200 --> 00:47:52,320
+Then my percentage will likely be a lot higher than fifteen percent.
+
+499
+00:47:52,640 --> 00:47:52,800
+Right.
+
+500
+00:47:53,440 --> 00:47:58,800
+So it's, yes, it's where you can control, where you can, where you can control and what you can measure.
+
+501
+00:47:58,880 --> 00:47:58,960
+Yeah.
+
+502
+00:47:59,440 --> 00:48:14,160
+And then when you're calm and have, you know, hundreds of millions of email addresses from people who have registered and they do a good job of requiring registration and everything else, you know, as you get bigger that ROI starts to look a lot sweeter.
+
+503
+00:48:14,960 --> 00:48:38,880
+And that's where, again, I think a lot of early and mid stage apps get confused by looking at the biggest apps in the App Store and thinking, Oh, Calm has a whole team on re engagement, we need to have a whole team on user engagement, whereas really they probably should have put those resources back into, like you said, top of funnel, even on the product side and other places in the business.
+
+504
+00:48:39,440 --> 00:48:44,320
+And that's something I think every subscription app developer should be constantly reassessing as they go.
+
+505
+00:48:44,800 --> 00:48:46,800
+It's like, where are we really spending our time?
+
+506
+00:48:47,200 --> 00:48:50,480
+And this is where, I mean, we can pitch for a second here.
+
+507
+00:48:51,120 --> 00:48:56,240
+I mean, you know, we both work in a space where a lot of people think, oh, it's easy.
+
+508
+00:48:56,400 --> 00:48:58,960
+I'll do subscription infrastructure myself.
+
+509
+00:48:59,360 --> 00:49:01,360
+And I've had these conversations over and over again.
+
+510
+00:49:01,520 --> 00:49:04,640
+It's like, you should be spending your time elsewhere.
+
+511
+00:49:05,040 --> 00:49:08,880
+Like, you know, revenue cats really not even that expensive.
+
+512
+00:49:09,600 --> 00:49:18,240
+And even if you can build it out and it's, you know, quote, you know, not that hard to do and everything else, what it what's the.
+
+513
+00:49:19,040 --> 00:49:25,200
+What are you leaving on the table by spending all of these engineering cycles on just getting the infrastructure in place?
+
+514
+00:49:25,440 --> 00:49:44,560
+And so similar like Adlib Test, you know, you've built out this data platform so that, you know, if you're an early stage app and you need to look in a more sophisticated way at your data, you can hire a data scientist, spin up an entire team, you know, get your data into Looker.
+
+515
+00:49:45,680 --> 00:49:47,520
+And that's a huge project.
+
+516
+00:49:47,920 --> 00:49:52,320
+You know, and then the other thing I wanted to bring up too, relatedly, is that.
+
+517
+00:49:54,000 --> 00:49:55,360
+You've got one data scientist.
+
+518
+00:49:56,000 --> 00:49:58,480
+You've got one set of data that you're working with.
+
+519
+00:49:59,360 --> 00:50:01,040
+You're running these SQL queries.
+
+520
+00:50:01,200 --> 00:50:13,360
+You know, in the history of RevenueCat, we've found all sorts of bugs in our dashboards and other places, but we find that because we're pushing, you know, 1.5 billion dollars of revenue through our system every year.
+
+521
+00:50:13,840 --> 00:50:15,200
+We find those edge cases.
+
+522
+00:50:15,440 --> 00:50:24,320
+We see those issues that an individual data scientist working on a single app is not going to see when you're doing LTV calculations, predictions.
+
+523
+00:50:24,720 --> 00:50:26,640
+Those are so fundamental to your business.
+
+524
+00:50:27,680 --> 00:50:36,400
+And yes, they're, quote, not that hard, but a very small, minor mistake can shift tens or hundreds of thousands of dollars.
+
+525
+00:50:37,040 --> 00:50:49,760
+And that's where buying tools that do this day in, day out, that have teams, who know what they're doing, who are working across multiple apps can often be a lot cheaper than people think it is.
+
+526
+00:50:50,720 --> 00:51:00,480
+And I'd say that the biggest downside with a DIY originally is you start to lean on just estimations.
+
+527
+00:51:01,120 --> 00:51:12,160
+And then you end up back at where we started this whole podcast, which is you're guessing on behavior, you're guessing on, okay, well, if they clicked subscribe, they're likely a subscriber for life or at least fifty percent.
+
+528
+00:51:12,560 --> 00:51:36,800
+You start guessing and then you start guessing and you start guessing all of a sudden you're building your business off of just gut checks without any kind of confirmation and not having kind of a complete view of either the data or a complete view of user behavior with the subscription because you haven't the ability to actually build that out completely ends up making you back to where you started.
+
+529
+00:51:36,960 --> 00:51:40,080
+You might as well just continue working in a spreadsheet.
+
+530
+00:51:40,320 --> 00:51:40,400
+Yeah.
+
+531
+00:51:42,000 --> 00:51:42,400
+That's great.
+
+532
+00:51:42,720 --> 00:51:46,240
+So, Adam, where can people find you and add Libra to us?
+
+533
+00:51:46,720 --> 00:51:47,840
+Any kind of closing thoughts?
+
+534
+00:51:48,320 --> 00:51:51,360
+Feel free to pitch our listeners here.
+
+535
+00:51:51,600 --> 00:51:56,560
+I mean, you do work with subscription apps and I've been impressed with the work that you and your team are doing.
+
+536
+00:51:57,200 --> 00:51:57,840
+I appreciate it.
+
+537
+00:51:58,720 --> 00:52:00,560
+I love these conversations with customers.
+
+538
+00:52:00,720 --> 00:52:06,560
+Some of my favorite conversations actually come from engaging with our mutual customers and just saying, how would you solve this problem?
+
+539
+00:52:06,720 --> 00:52:08,240
+I get to armchair quarterback.
+
+540
+00:52:08,560 --> 00:52:12,080
+So I highly encourage people to look at us up on adlibertas.com.
+
+541
+00:52:13,040 --> 00:52:14,800
+Basically, all email addresses go to me.
+
+542
+00:52:14,960 --> 00:52:16,560
+So let's jump on a conversation.
+
+543
+00:52:16,800 --> 00:52:17,920
+Just high level advice.
+
+544
+00:52:18,400 --> 00:52:19,280
+Look at your spreadsheet.
+
+545
+00:52:19,440 --> 00:52:20,000
+Talk about the future.
+
+546
+00:52:20,240 --> 00:52:21,520
+I'd love to be a part of it.
+
+547
+00:52:22,000 --> 00:52:22,400
+Awesome.
+
+548
+00:52:22,800 --> 00:52:23,440
+Are you on Twitter?
+
+549
+00:52:25,280 --> 00:52:27,600
+I am Adlibertas, but like, I don't follow it.
+
+550
+00:52:27,760 --> 00:52:29,200
+LinkedIn is a better way to be.
+
+551
+00:52:29,680 --> 00:52:34,720
+It's funny because there's a lot of really smart people doing a lot of great work not on Twitter.
+
+552
+00:52:35,760 --> 00:52:39,680
+I over index on seeing what's going on on Twitter.
+
+553
+00:52:40,640 --> 00:52:53,600
+And I'm kind of impressed when I talk to someone who's not on Twitter because it's like, oh yeah, there's like really smart people doing really great work and they're not in my little bubble world that I've created for myself on Twitter.
+
+554
+00:52:54,720 --> 00:53:00,000
+So in some ways, yeah, good job not wasting time on that platform.
+
+555
+00:53:01,120 --> 00:53:02,160
+We've got enough to do.
+
+556
+00:53:02,560 --> 00:53:03,200
+Yeah, yeah.
+
+557
+00:53:03,600 --> 00:53:11,840
+No, and so actually part of the reason I had Adam on the podcast is that I have a queue of like ten of his blog posts that I want to read.
+
+558
+00:53:12,320 --> 00:53:15,680
+And so this was my chance to kind of get you to summarize some of the blog posts.
+
+559
+00:53:16,240 --> 00:53:20,560
+So that's another thing you should do is go read Adam's blog.
+
+560
+00:53:21,280 --> 00:53:23,760
+There's one, What is a Data Scientist?
+
+561
+00:53:24,160 --> 00:53:25,360
+We'll put some links in the show notes.
+
+562
+00:53:25,440 --> 00:53:28,320
+Like, what does a data scientist do in a mobile app?
+
+563
+00:53:29,520 --> 00:53:31,760
+I got the first paragraph and scanned part of that one.
+
+564
+00:53:31,920 --> 00:53:36,640
+It looked like a really great way to think about data in mobile apps.
+
+565
+00:53:36,960 --> 00:53:39,200
+And there's so many other great blog posts that you've written.
+
+566
+00:53:39,360 --> 00:53:46,560
+So that's another great starting point if you want to understand Adam's thinking on things and kind of an introduction to Adliberta.
+
+567
+00:53:46,800 --> 00:53:50,640
+So again, thank you so much, Adam, for being on the podcast and fascinating.
+
+568
+00:53:51,200 --> 00:53:51,360
+chat.
+
+569
+00:53:52,080 --> 00:53:56,560
+We really got into the nitty gritty in ways that I don't often get to.
+
+570
+00:53:57,760 --> 00:53:58,880
+So thank you so much for that.
+
+571
+00:53:59,440 --> 00:54:00,000
+Absolutely.
+
+572
+00:54:00,160 --> 00:54:00,800
+Happy to be here.
+
+573
+00:54:03,360 --> 00:54:04,720
+Thanks so much for listening.
+
+574
+00:54:05,600 --> 00:54:08,960
+If you have a minute, please leave a review in your favorite podcast player.
+
+575
+00:54:09,920 --> 00:54:14,720
+You can also stop by chat dot subclub dot com to join our private community.
