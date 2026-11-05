@@ -1,0 +1,807 @@
+1
+00:00:01,120 --> 00:00:08,720
+Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:37,680
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:41,760 --> 00:00:43,600
+Hello, I'm your host, David Bernard.
+
+7
+00:00:44,000 --> 00:00:49,920
+Today's conversation is shorter than usual and will be featured in RevenueCat's State of Subscription Apps report.
+
+8
+00:00:50,720 --> 00:00:57,920
+Each episode in this series will explore one crucial topic and share actionable insights from top subscription app operators.
+
+9
+00:00:58,560 --> 00:01:03,280
+With me today, Patrick Rills, Chief Product and Technology Officer at Lose It.
+
+10
+00:01:03,760 --> 00:01:10,880
+On the podcast, I talk with Patrick about testing prices from $5 all the way to $120 per year.
+
+11
+00:01:11,360 --> 00:01:20,400
+Why rising customer acquisition costs forced a pricing rethink and how raising the price allows them to discount more aggressively.
+
+12
+00:01:21,040 --> 00:01:23,520
+Hey Patrick, thank you so much for joining me on the podcast today.
+
+13
+00:01:23,920 --> 00:01:25,520
+Hey David, I'm glad to be on.
+
+14
+00:01:25,680 --> 00:01:29,200
+I think I've almost listened to every single episode of Subclub.
+
+15
+00:01:29,440 --> 00:01:35,760
+I think maybe there might be just a handful that I've never listened to, so this is a dream come true for me.
+
+16
+00:01:36,000 --> 00:01:36,560
+That's amazing.
+
+17
+00:01:36,720 --> 00:01:37,360
+I didn't even know that.
+
+18
+00:01:38,000 --> 00:01:38,720
+Thanks for saying that.
+
+19
+00:01:39,120 --> 00:01:43,360
+Well, I wanted to have you on because, you know, I've talked about Lose It before, Storied app.
+
+20
+00:01:43,840 --> 00:01:44,880
+I don't know if you know this.
+
+21
+00:01:45,280 --> 00:01:50,320
+I was actually building a health and wellness app in 2008 when Lose It was published.
+
+22
+00:01:50,400 --> 00:01:50,720
+Oh really?
+
+23
+00:01:51,040 --> 00:01:54,240
+So I've been following Lose It for what is that, 17 years now.
+
+24
+00:01:54,640 --> 00:01:56,160
+We are in our eighteenth year, yeah.
+
+25
+00:01:56,480 --> 00:01:57,360
+Yeah, exactly.
+
+26
+00:01:58,160 --> 00:02:03,120
+So this year, you all doubled the price, which is a big deal.
+
+27
+00:02:03,360 --> 00:02:15,120
+And I mean, you know, everyone's doing price testing and you've done a ton of price testing, but for a storied app like Lose It with so much momentum being part of a publicly traded company, doubling your price is a big deal.
+
+28
+00:02:15,200 --> 00:02:19,920
+This isn't the average like an indie app that was charging 10 bucks a year, doubling to 20.
+
+29
+00:02:20,320 --> 00:02:21,040
+This was a big deal.
+
+30
+00:02:21,120 --> 00:02:29,360
+So I wanted to start with kind of the thoughts behind it and some lessons that folks can take away from why you did it and what you're learning al along the way.
+
+31
+00:02:30,240 --> 00:02:30,720
+Yeah, sure.
+
+32
+00:02:31,520 --> 00:02:39,120
+We've had the same price since we launched the premium product in 2012, which is actually before I started at Lose It.
+
+33
+00:02:39,760 --> 00:02:45,120
+The original price for the premium product, the base price was always 39,99 per year.
+
+34
+00:02:45,920 --> 00:02:53,760
+Even before we implemented auto renewing subscriptions, the original product in the app was just a consumable in-app purchase.
+
+35
+00:02:53,920 --> 00:02:57,840
+And then we would have to like send out emails to beg people to renew.
+
+36
+00:02:58,320 --> 00:03:01,840
+Then when auto renewing subscriptions came out, that fundamentally changed our business.
+
+37
+00:03:02,880 --> 00:03:06,240
+But over those years, since we've held the price constant.
+
+38
+00:03:06,640 --> 00:03:08,400
+A lot has changed in the app economy.
+
+39
+00:03:09,280 --> 00:03:26,720
+Particularly, I'd say the biggest push for this has been the cost of acquisition has gone up, especially since CACs are going up on all channels because of increased competition and there's been some restrictions.
+
+40
+00:03:27,360 --> 00:03:33,520
+Meta recently restricted health and wellness apps how they can advertise on their platform.
+
+41
+00:03:34,560 --> 00:03:35,680
+It's driven up costs.
+
+42
+00:03:36,240 --> 00:03:42,640
+And so that's been the main driver besides just other things being more expensive than they were in 2012.
+
+43
+00:03:43,120 --> 00:03:50,560
+And that's kind of been a historical thing for Lusa as well, is that you had depended way more on organic search.
+
+44
+00:03:50,720 --> 00:04:08,480
+I mean, having been in the App Store eighteen years, you were really highly ranked for, you know, diet app and weight loss and like all these really big keywords, so historically the app did rely more on this organic push, but then in the last few years you have been pushing more into user acquisition, right?
+
+45
+00:04:08,880 --> 00:04:09,600
+That's right, yeah.
+
+46
+00:04:10,080 --> 00:04:19,680
+We had built up a moat since we had been in the App Store since November of 2008, and we had built up quite a moat with hundreds of thousands of five star ratings.
+
+47
+00:04:19,680 --> 00:04:23,520
+Five star reviews showing up in the top of the searches and that still happens.
+
+48
+00:04:24,160 --> 00:04:27,680
+But as competition grows, that's going to happen less and less.
+
+49
+00:04:28,080 --> 00:04:37,200
+So we are looking to really ramp up our paid acquisition and we need the economics for that to be a little bit better.
+
+50
+00:04:38,320 --> 00:04:46,080
+At a $40 price point, it's, you know, much harder than at a $80 price point to get the ROAS that you need.
+
+51
+00:04:46,640 --> 00:04:47,440
+Yeah, absolutely.
+
+52
+00:04:47,920 --> 00:04:50,400
+So I know you've done some price testing in the past.
+
+53
+00:04:51,120 --> 00:04:56,880
+Explain some of the price testing that led up to this kind of the lessons you learned as you tried these other pro prices?
+
+54
+00:04:57,600 --> 00:05:01,600
+We didn't come about keeping the price at $40 lightly over those years.
+
+55
+00:05:02,320 --> 00:05:05,840
+We have been testing constantly up and down the demand curve.
+
+56
+00:05:06,400 --> 00:05:11,840
+We've tested everything from over the years from $5 a year to $120 a year.
+
+57
+00:05:12,640 --> 00:05:20,880
+And usually what you find is that when you raise the price conversions go down and when you lower the price conversions go up, of course.
+
+58
+00:05:21,760 --> 00:05:23,920
+But usually it doesn't net out.
+
+59
+00:05:24,640 --> 00:05:32,640
+Like we felt like at $40 with the sale system that we had, we were at a pretty good equilibrium.
+
+60
+00:05:33,280 --> 00:05:39,200
+Like we couldn't figure out a pricing structure that could beat it consistently.
+
+61
+00:05:40,240 --> 00:05:55,280
+However, in late 2024, we started price testing again as phones are getting more expensive, our competitors are getting a lot more expensive, and so we decided to test it again, like maybe they're on to something.
+
+62
+00:05:55,920 --> 00:05:59,280
+And when we tested it for the first time, it broke even.
+
+63
+00:06:00,560 --> 00:06:03,520
+So I would say like the net, the net broke even.
+
+64
+00:06:04,240 --> 00:06:07,680
+That was quite a surprise for us because that had never happened before.
+
+65
+00:06:08,880 --> 00:06:10,240
+And so we tested it.
+
+66
+00:06:10,880 --> 00:06:20,800
+again on iOS and on Android on different cohorts of users, new users, existing users, reactivated users.
+
+67
+00:06:21,600 --> 00:06:23,280
+We kept getting similar results.
+
+68
+00:06:23,840 --> 00:06:28,240
+We felt pretty confident that raising the price, we were not going to lose any money.
+
+69
+00:06:28,800 --> 00:06:37,440
+If this is really going to unlock paid acquisition and some other things, such as the marginal cost of AI features for us, then why not do it?
+
+70
+00:06:37,840 --> 00:06:40,800
+It gives our marketing team so much more room to operate.
+
+71
+00:06:41,200 --> 00:06:47,920
+Since you did these experiments way back in 2024 and you didn't fully adopt that new price until 2026.
+
+72
+00:06:48,320 --> 00:06:51,120
+I imagine you have a lot of data to be able to look at retention.
+
+73
+00:06:51,840 --> 00:07:01,280
+One of the things about increasing price is that in revenue cat data that we share in the report, we do see higher retention at lower prices.
+
+74
+00:07:01,520 --> 00:07:03,040
+Now, that's not always going to be the case.
+
+75
+00:07:03,360 --> 00:07:08,640
+You know, sometimes higher priced products do retain better, but just in general, we do see that in the data.
+
+76
+00:07:09,040 --> 00:07:12,480
+And so I do think that's something a lot of apps do face.
+
+77
+00:07:13,120 --> 00:07:18,160
+And so have you found retention to at least break even as well?
+
+78
+00:07:18,560 --> 00:07:21,840
+Yeah, I'd say our retention is very stable.
+
+79
+00:07:22,480 --> 00:07:23,600
+And I think that's because.
+
+80
+00:07:23,600 --> 00:07:31,520
+Because even though we are getting less new premium users because of the higher price, our free product is amazing.
+
+81
+00:07:32,160 --> 00:07:36,640
+Since the beginning, we actually operated from 2008 to 2012 without a paid product.
+
+82
+00:07:37,040 --> 00:07:45,520
+So our product has always been a premium model and our free product has always been very useful to people.
+
+83
+00:07:46,240 --> 00:07:47,360
+We invest a lot in it.
+
+84
+00:07:48,160 --> 00:07:50,640
+We make sure that the free product is a great experience.
+
+85
+00:07:51,280 --> 00:07:53,280
+The premium product is just that much better.
+
+86
+00:07:54,160 --> 00:08:01,200
+I think, you know, if people are more motivated, they can get the premium features and that helps them out.
+
+87
+00:08:01,760 --> 00:08:06,480
+a lot, but you can do everything you need to do to lose weight in the free product, and we're very proud of that.
+
+88
+00:08:06,880 --> 00:08:13,680
+You've talked about a couple of things being huge unlocks for raising the price, you know, being able to tolerate higher CAC.
+
+89
+00:08:13,840 --> 00:08:22,640
+You've talked about the AI features where, you know, the incremental cost of serving these users is getting higher as you increase the cost of servicing some of these features.
+
+90
+00:08:23,040 --> 00:08:27,440
+What other unlocks have you seen from being able to raise the price?
+
+91
+00:08:28,000 --> 00:08:39,040
+Yeah, over the years, we've built quite a life cycle sale mechanism, and it's a homegrown system that we built into the app and refined over the years..
+
+92
+00:08:39,440 --> 00:08:46,560
+So how much of a discount a user gets at a certain point in their journey is completely built into the experience.
+
+93
+00:08:47,440 --> 00:09:06,480
+And the higher price point allows us to offer more discounts to more users and try to get more area under the curve there because from zero to 40, there's not as much room to do, you know, 50, 25 percent, 75 percent discounts.
+
+94
+00:09:06,800 --> 00:09:10,320
+But at $80, we can do more steep discounting.
+
+95
+00:09:10,640 --> 00:09:21,760
+And everyone knows about the sale psychology, you know, the bigger the percent percentage, usually the higher the conversion, even in absolute dollars, the price is higher.
+
+96
+00:09:22,080 --> 00:09:25,840
+How did the product team react to the increase in price?
+
+97
+00:09:26,000 --> 00:09:38,480
+Because I know there can sometimes be a tension between the revenue and monetization optimization from the product people, maybe have a more kind of purity mindset of like, oh, we want to make it a good deal for the users and stuff.
+
+98
+00:09:38,720 --> 00:09:43,120
+Yeah, the product team was fully on board and they were actually pushing for it.
+
+99
+00:09:43,520 --> 00:09:46,000
+They did everything they could to enable this.
+
+100
+00:09:46,640 --> 00:09:53,040
+Because I think the way they look at it is that all of our main competitors are around the $80 price point.
+
+101
+00:09:53,520 --> 00:09:59,520
+And not to disparage any of our competitors, but we believe our product is just as good as theirs.
+
+102
+00:10:00,480 --> 00:10:03,680
+However, our price didn't really reflect that.
+
+103
+00:10:04,320 --> 00:10:13,280
+They felt like they were doing work that was just as valuable to users as our other competitors' work, but it wasn't being reflected in the price.
+
+104
+00:10:13,440 --> 00:10:17,360
+And what are prices if not information about how something valuable is?
+
+105
+00:10:18,240 --> 00:10:31,280
+I was just talking to somebody about pricing and how in the app space, it's not like a shelf at a grocery store where people are looking at the like Campbell's soup and then the store brand soup and doing the math and like picking based on price.
+
+106
+00:10:31,360 --> 00:10:36,480
+You know, people are coming in from ads and so they don't necessarily have that like frame of reference anyway.
+
+107
+00:10:36,960 --> 00:10:53,440
+And so even when you think about a lower price being a differentiator, it's not necessarily because people aren't necessarily price shopping in that same way, especially once you're pushing deeper into paid user acquisition, you're probably getting less of that price comparison anyway.
+
+108
+00:10:53,840 --> 00:10:54,240
+That's true.
+
+109
+00:10:54,880 --> 00:11:03,120
+I will say that with the caveat of that, our lower price points did help us, I think, during the early stages of the pandemic.
+
+110
+00:11:03,680 --> 00:11:03,840
+Right.
+
+111
+00:11:04,320 --> 00:11:05,360
+When people were.
+
+112
+00:11:05,440 --> 00:11:14,480
+were trapped in their houses unsure how they were going to meet their health and fitness goals, but also unsure of their financial situation.
+
+113
+00:11:15,040 --> 00:11:24,080
+Because I know we don't like to go back and remember what it was like in March and April of 2020, but we had no idea what was going to happen.
+
+114
+00:11:24,560 --> 00:11:28,800
+And so I think being a low cost option really benefited us then.
+
+115
+00:11:29,680 --> 00:11:31,920
+But since, I think you're absolutely right.
+
+116
+00:11:32,240 --> 00:11:39,280
+Like we haven't seen any, I don't think there's too much comparison shopping going on either, which is what another reason why this is working.
+
+117
+00:11:39,600 --> 00:11:47,920
+I'm wondering if you did consider a higher tier of price versus raising the price for everybody and why you decided against doing that?
+
+118
+00:11:48,640 --> 00:11:50,160
+We're considering all options.
+
+119
+00:11:51,440 --> 00:11:53,600
+Higher tier is not off the table.
+
+120
+00:11:54,160 --> 00:11:59,360
+We've since implemented, you know, ad based monetization in the free product.
+
+121
+00:12:00,080 --> 00:12:02,720
+We're looking to monetize in all sorts of ways.
+
+122
+00:12:03,280 --> 00:12:06,560
+We've added in-app purchases, one-off in-app purchases in the app.
+
+123
+00:12:06,960 --> 00:12:10,960
+We've added partnerships in the app, you know, affiliate revenue.
+
+124
+00:12:11,200 --> 00:12:12,560
+So nothing's off the table.
+
+125
+00:12:12,640 --> 00:12:14,960
+I would say we have not decided against it.
+
+126
+00:12:15,840 --> 00:12:18,160
+We're always open to new ideas to monetize.
+
+127
+00:12:18,560 --> 00:12:19,840
+But the decision was to raise the.
+
+128
+00:12:20,800 --> 00:12:29,920
+the floor, raise the main primary subscription price, and that still leaves the opportunity to add tiers on top and explore other monetization.
+
+129
+00:12:30,800 --> 00:12:31,520
+Exactly, yeah.
+
+130
+00:12:31,840 --> 00:12:34,720
+We have such a loyal user base.
+
+131
+00:12:35,840 --> 00:12:45,120
+We love our users and they love us, and there's a subset of users who want the very best Luzit has to offer.
+
+132
+00:12:45,920 --> 00:12:55,680
+If we work really hard and create a product that generates a lot of value, we have a lot of great users who are totally on board with that.
+
+133
+00:12:56,000 --> 00:12:56,560
+That's awesome.
+
+134
+00:12:56,960 --> 00:13:02,800
+And one thing you didn't do was raise prices on existing users, which is always such a tough decision.
+
+135
+00:13:03,040 --> 00:13:04,000
+I've heard it go both ways.
+
+136
+00:13:04,240 --> 00:13:08,880
+I've heard some people say they doubled prices and it was just and they didn't grandfather users.
+
+137
+00:13:09,280 --> 00:13:20,160
+And because their customer base was so loyal, they just made way more money and they saw some churn, but it was significantly offset by the increase of the price.
+
+138
+00:13:20,640 --> 00:13:22,080
+Why did you choose not to?
+
+139
+00:13:22,960 --> 00:13:25,040
+Yeah, there were a few reasons why.
+
+140
+00:13:25,680 --> 00:13:36,480
+So the way that you have to increase the price on existing subscriptions in the App Store, I feel like the UX is confusing and cumbersome.
+
+141
+00:13:37,040 --> 00:13:47,600
+I think you get like a notification that says when you renew, you know, the price is going to go up and then they have to go to the app store and either opt in or not opt in.
+
+142
+00:13:48,240 --> 00:13:50,800
+I didn't feel like that was a good experience for our users.
+
+143
+00:13:51,360 --> 00:13:53,200
+For us, it was impossible to AB test.
+
+144
+00:13:53,600 --> 00:13:53,680
+Yeah.
+
+145
+00:13:54,160 --> 00:13:57,760
+It was a huge risk for us that we felt like we couldn't take on.
+
+146
+00:13:58,240 --> 00:14:02,480
+Like what is the attrition rate when you raise the price of an existing subscription?
+
+147
+00:14:02,720 --> 00:14:03,120
+I don't know.
+
+148
+00:14:03,600 --> 00:14:05,760
+That might be in the state of the subscription apps report.
+
+149
+00:14:05,840 --> 00:14:06,400
+I don't know.
+
+150
+00:14:06,480 --> 00:14:08,480
+But to us, it's like we couldn't risk it.
+
+151
+00:14:08,640 --> 00:14:09,760
+Like, is it 75 percent?
+
+152
+00:14:10,000 --> 00:14:11,040
+Is it 25 percent?.
+
+153
+00:14:11,200 --> 00:14:13,360
+It was just too big of an unknown for us.
+
+154
+00:14:14,320 --> 00:14:23,200
+And also, we've always had a history of whenever we've made policy or product changes over the years to grandfather in our loyal users.
+
+155
+00:14:23,520 --> 00:14:37,200
+When we were at the App Growth Annual in October, our growth person and one of our product managers, Danielle and Burton, presented on how we moved the Parcode scanner from behind the paywall.
+
+156
+00:14:37,680 --> 00:14:41,120
+When we actually made that change, we grandfathered in free users to that change.
+
+157
+00:14:41,360 --> 00:14:44,080
+And that change was only for new users as well.
+
+158
+00:14:44,880 --> 00:14:58,080
+We've always had just a tradition of doing that just because, again, we love our users and we feel like whatever bargain they entered into whenever they came to us, we try to keep as much as possible.
+
+159
+00:14:58,640 --> 00:14:58,720
+Yeah.
+
+160
+00:14:59,200 --> 00:15:00,320
+I mean, there is that incentive.
+
+161
+00:15:00,640 --> 00:15:02,400
+I've talked about this on the podcast before.
+
+162
+00:15:02,960 --> 00:15:09,680
+I got into some special deal with Headspace where it was, I think, I was paying like three dollars a month or something.
+
+163
+00:15:10,000 --> 00:15:14,160
+And then at that time the price had gone up to twelve dollars a month or sixty dollars a year.
+
+164
+00:15:14,960 --> 00:15:19,760
+And I knew if I canceled when I resubscribed, I would have to pay a lot more.
+
+165
+00:15:20,400 --> 00:15:24,640
+And so I stayed with that subscription even though I wasn't even using the app much at the time because.
+
+166
+00:15:24,880 --> 00:15:26,720
+because there was that incentive to stay around.
+
+167
+00:15:26,880 --> 00:15:29,840
+So I think there is a little bit of that too with your grandfathered users.
+
+168
+00:15:30,240 --> 00:15:36,480
+And then I would assume that if they do churn and come back to the app, then they're going to see that new price and have to pay that higher price, right?
+
+169
+00:15:36,800 --> 00:15:36,960
+Right.
+
+170
+00:15:37,120 --> 00:15:40,480
+So I think that's an interesting experiment we can run right off the bat, right?
+
+171
+00:15:40,800 --> 00:15:48,640
+Like if someone has marked a cheaper subscription to not renew, you know, we can have an intervention there that is like, are you sure?
+
+172
+00:15:48,800 --> 00:15:50,640
+Because it's going to be different.
+
+173
+00:15:51,200 --> 00:15:54,960
+You've had about a month of rolling out this new price to everyone.
+
+174
+00:15:55,280 --> 00:15:58,800
+And it was like the most important month for a health and fitness app.
+
+175
+00:15:59,040 --> 00:16:04,400
+So what are the early signs of having rolled this out across the entire user base?
+
+176
+00:16:05,200 --> 00:16:11,680
+I would say, so far, the results have been exactly our experiment results, which hardly ever happens, right?
+
+177
+00:16:12,000 --> 00:16:25,600
+Like usually, usually when you release something out in the wild, it's like a little bit different, but so far it has held up to our experiment results and that is a credit to our growth marketing team and our product team.
+
+178
+00:16:25,920 --> 00:16:29,680
+They really tested this rigorously, really analyzed the data.
+
+179
+00:16:30,560 --> 00:16:33,920
+And so, so far, it's been holding up very, very well.
+
+180
+00:16:34,560 --> 00:16:35,680
+We're very excited about it.
+
+181
+00:16:36,000 --> 00:16:36,320
+Awesome.
+
+182
+00:16:36,800 --> 00:16:38,640
+Well, I think it's a great place to wrap up.
+
+183
+00:16:39,200 --> 00:16:40,880
+Anything you wanted to share as we wrap up?
+
+184
+00:16:41,280 --> 00:16:48,400
+I'll put a link to Lose It and your LinkedIn in the show notes, but anything else you wanted to shout out as we wrap up?
+
+185
+00:16:48,800 --> 00:16:50,960
+Yeah, we need iOS developers.
+
+186
+00:16:51,280 --> 00:16:57,360
+So if you are an iOS developer, please, please seek me out on LinkedIn.
+
+187
+00:16:57,680 --> 00:16:58,320
+We're trying to grow.
+
+188
+00:16:58,560 --> 00:16:59,760
+We're trying to do a lot of things.
+
+189
+00:17:00,400 --> 00:17:00,880
+We need people.
+
+190
+00:17:01,360 --> 00:17:02,560
+Yeah, it's a really cool team.
+
+191
+00:17:02,720 --> 00:17:06,640
+I've met a lot of folks behind Lose It and they like everyone I've talked to.
+
+192
+00:17:06,880 --> 00:17:08,480
+So yeah, it's been great.
+
+193
+00:17:08,720 --> 00:17:14,080
+You know, the app growth annual has been a really fun place to to to meet folks from the industry.
+
+194
+00:17:14,240 --> 00:17:20,160
+And so over I think I've met six or eight people now from the Lose It team between App Growth Annual and other events and stuff.
+
+195
+00:17:20,320 --> 00:17:21,040
+So great team.
+
+196
+00:17:21,280 --> 00:17:23,200
+If you are an IOS developer, I know a good one.
+
+197
+00:17:23,840 --> 00:17:25,440
+I can say it's good people.
+
+198
+00:17:25,680 --> 00:17:26,640
+Good people and a cool product.
+
+199
+00:17:27,120 --> 00:17:28,080
+Well, thank you very much.
+
+200
+00:17:31,040 --> 00:17:32,320
+Thanks so much for listening.
+
+201
+00:17:33,280 --> 00:17:36,720
+If you have a minute, please leave a review in your favorite podcast player.
+
+202
+00:17:37,520 --> 00:17:42,400
+You can also stop by chat dot subclub dot com to join our private community.
