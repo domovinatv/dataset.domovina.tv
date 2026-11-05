@@ -1,0 +1,3711 @@
+1
+00:00:00,400 --> 00:00:03,520
+Live from Chicago, it's Josh Holtz.
+
+2
+00:00:04,000 --> 00:00:05,120
+I can't even get through it.
+
+3
+00:00:08,720 --> 00:00:09,600
+Welcome to Launched.
+
+4
+00:00:09,840 --> 00:00:18,480
+I'm Charlie Chapman, and today I'm excited to bring you the lead maintainer of Fastlane, co-founder of Rock and Cat, and Indie IOS app developer, Josh Holtz.
+
+5
+00:00:31,360 --> 00:00:32,560
+Josh, welcome to the show.
+
+6
+00:00:32,720 --> 00:00:34,000
+Hey, thanks for having me.
+
+7
+00:00:34,400 --> 00:00:37,840
+I, uh, so I have a confession to make to you right off the bat here.
+
+8
+00:00:38,000 --> 00:00:38,080
+Okay.
+
+9
+00:00:38,240 --> 00:00:40,080
+I probably have a confession or two to make to you as well.
+
+10
+00:00:40,160 --> 00:00:40,480
+Oh, wow.
+
+11
+00:00:40,560 --> 00:00:40,640
+Okay.
+
+12
+00:00:40,880 --> 00:00:42,480
+This is going to get right to the heart very quickly.
+
+13
+00:00:43,280 --> 00:00:43,760
+Here we are.
+
+14
+00:00:44,000 --> 00:00:46,560
+So you've been on my list from the beginning.
+
+15
+00:00:47,120 --> 00:00:55,920
+I think at some point, whenever I was entering this world, you followed me on Twitter and I was like, kind of, you know, crying a little, like, oh my gosh, the maintainer of Fastlane.
+
+16
+00:00:56,560 --> 00:00:58,480
+This is this is a thing I use at work.
+
+17
+00:00:58,640 --> 00:01:00,240
+This is like a real, you know, I don't know.
+
+18
+00:01:00,800 --> 00:01:06,960
+It felt like this big moment and because you followed me, I thought maybe I can convince him to come on my podcast here.
+
+19
+00:01:07,920 --> 00:01:10,000
+And then we kind of we kind of became friends.
+
+20
+00:01:10,320 --> 00:01:11,920
+I don't want to put it I would say so.
+
+21
+00:01:12,000 --> 00:01:12,560
+I would say so.
+
+22
+00:01:12,800 --> 00:01:13,760
+Okay, I think that's fair.
+
+23
+00:01:13,920 --> 00:01:26,080
+We talk frequently, and I feel like I put you in a little bucket that maybe is unfair to you of I can ask him last minute and won't be as embarrassed if I need to.
+
+24
+00:01:26,320 --> 00:01:29,680
+So you've kind of been in this little holding cell as this like buffer that I had?
+
+25
+00:01:30,080 --> 00:01:35,440
+I mean, to be fair, I kind of put you in the same bucket there as well for Indie Dev Monday.
+
+26
+00:01:35,600 --> 00:01:38,080
+Oh, okay, yes, your newsletter, which we'll definitely talk about.
+
+27
+00:01:38,240 --> 00:01:38,640
+Yeah, yeah.
+
+28
+00:01:38,800 --> 00:01:41,200
+So we were in the same kinds of buckets but different buckets.
+
+29
+00:01:41,440 --> 00:01:44,000
+Okay, so we both put each other in reserve apparently.
+
+30
+00:01:45,520 --> 00:01:48,880
+So yeah, I let myself get way behind because I get nervous.
+
+31
+00:01:49,280 --> 00:01:50,480
+to ask people if they'll come on.
+
+32
+00:01:50,880 --> 00:01:53,600
+And I got way behind for this one.
+
+33
+00:01:53,840 --> 00:01:54,480
+I get that feeling.
+
+34
+00:01:54,880 --> 00:02:00,800
+So much so that we're going to have to record on a Friday, right before the Tuesday that these normally come out.
+
+35
+00:02:00,960 --> 00:02:02,240
+Why aren't we just streaming this live?
+
+36
+00:02:02,560 --> 00:02:07,200
+Yeah, well, because I don't want anybody to have to hear the amounts of stumbling I do in real life.
+
+37
+00:02:07,440 --> 00:02:08,160
+Oh, that's fair.
+
+38
+00:02:08,480 --> 00:02:16,160
+But, if anybody listening who may be wondering, probably nobody noticed, but we're actually, this episode is coming out a whole week late.
+
+39
+00:02:16,560 --> 00:02:26,480
+The reason is not because I forgot, it's because I set you up to record this very last minute and then the night before we were supposed to record., my son got very sick.
+
+40
+00:02:27,440 --> 00:02:29,520
+Not like, oh no, is he okay sick?
+
+41
+00:02:29,680 --> 00:02:31,600
+Just like, a lot of throwing up and no sleeping.
+
+42
+00:02:31,760 --> 00:02:33,600
+And so, so we ended up pushing this back a week.
+
+43
+00:02:33,920 --> 00:02:34,400
+That's rough.
+
+44
+00:02:34,800 --> 00:02:38,240
+I mean, I feel like time is already in a very weird spot right now.
+
+45
+00:02:38,320 --> 00:02:38,400
+Yeah.
+
+46
+00:02:38,640 --> 00:02:45,600
+Where like, I'm pretty sure it was last Thursday, like two weeks ago or something, like, I'm just, I don't even know when time is any more.
+
+47
+00:02:45,840 --> 00:02:45,920
+Yeah.
+
+48
+00:02:46,640 --> 00:02:55,920
+I thought about doing the whole, you know, announcing on Twitter, hey, this episode is going to be late and, you know, whatever, the thing you do if you're like a proper channel or something.
+
+49
+00:02:56,400 --> 00:02:56,480
+Yeah.
+
+50
+00:02:57,040 --> 00:02:59,200
+And then I thought, I bet you, nobody will notice.
+
+51
+00:02:59,520 --> 00:03:03,200
+If it was every week, that would be different, but if it's every other week, I'm not sure.
+
+52
+00:03:03,440 --> 00:03:09,440
+I mean, you kind of need like a rest week, like just to kind of like let the brain relax a little bit.
+
+53
+00:03:09,840 --> 00:03:10,160
+Exactly.
+
+54
+00:03:10,800 --> 00:03:12,880
+So anyway, so let's actually get to the show here.
+
+55
+00:03:13,040 --> 00:03:21,840
+So before we get into Fastlane and all of your interesting projects that you have going on, let's give everyone a background on who you are.
+
+56
+00:03:22,160 --> 00:03:25,040
+So the three questions I ask everybody are, where are you from?
+
+57
+00:03:25,520 --> 00:03:27,840
+Do you have a formal education related to what you do?
+
+58
+00:03:28,240 --> 00:03:32,640
+And then, what was your career like, let's say, leading up to Fastlane itself?
+
+59
+00:03:33,200 --> 00:03:34,240
+Okay, sounds good.
+
+60
+00:03:34,480 --> 00:03:34,800
+All right.
+
+61
+00:03:36,160 --> 00:03:41,120
+Currently living in Chicago, Illinois, originally from Milwaukee, Wisconsin.
+
+62
+00:03:41,680 --> 00:03:47,600
+It's just like an hour and a half north, pretty similar region still, but from Chicago, that was the first question.
+
+63
+00:03:48,160 --> 00:03:50,400
+Oh, it's Friday afternoon, what was the second question?
+
+64
+00:03:50,800 --> 00:03:52,800
+Do you have a formal education related to what you do?
+
+65
+00:03:53,200 --> 00:03:59,680
+Formal education, there we go, yeah, so I went to the Milwaukee School of Engineering where I studied software engineering.
+
+66
+00:04:00,080 --> 00:04:02,480
+And I also took some programming classes in high school as well.
+
+67
+00:04:02,640 --> 00:04:07,760
+So I had three years of programming going into Milwaukee School of Engineering.
+
+68
+00:04:08,000 --> 00:04:09,680
+I did a lot of Java.
+
+69
+00:04:10,960 --> 00:04:16,400
+So I kind of have a formal education in what I do these days.
+
+70
+00:04:16,800 --> 00:04:27,520
+I mean, the stuff I do these days, I didn't learn in school at all, but school helped build me up into being able to learn the stuff that I need to learn to do what I do today.
+
+71
+00:04:28,080 --> 00:04:28,480
+Yes, right.
+
+72
+00:04:28,640 --> 00:04:29,280
+Did I nail it?
+
+73
+00:04:29,440 --> 00:04:30,800
+Yes, yep, yep, nailed it.
+
+74
+00:04:30,800 --> 00:04:33,200
+You, yeah, I will give you an A plus on that question.
+
+75
+00:04:33,520 --> 00:04:34,080
+You got it right.
+
+76
+00:04:35,440 --> 00:04:36,560
+Okay, third question.
+
+77
+00:04:36,960 --> 00:04:37,440
+Third question.
+
+78
+00:04:38,560 --> 00:04:43,040
+So I guess let's just say from you, you graduated, I'm assuming.
+
+79
+00:04:43,200 --> 00:04:43,280
+Yes.
+
+80
+00:04:44,640 --> 00:05:26,880
+From graduation to Fastlane, what is the what is the TLDR what is the path that we took to get there it was actually a really weird path so going into my senior year of college i ended up taking a software engineering job at rockwell collins in cedar rapids iowa i had a few offers and like three were the same kind of like things what my internship was just like enterprise software and i kind of wanted to try something new and rockwell collins i was going to be doing like military contracts for aircraft i was going to be on a team that did like low level graphics for displays in aircraft more specifically and i was like cool, cool, I'm young, we'll try something fun.
+
+81
+00:05:27,760 --> 00:05:37,280
+But at the same time, me and some of my current colleagues entered a 24 hour hackathon, which is insane to think about these days anymore.
+
+82
+00:05:38,080 --> 00:05:55,520
+I can't even think about code for 24 hours straight, and we ended up making this whole platform web front end back end and an Android app that allowed you to create and give virtual tours in a town, kind of what Airbnb has today.
+
+83
+00:05:55,680 --> 00:05:56,240
+Oh, wow.
+
+84
+00:05:56,400 --> 00:06:00,960
+Yeah, it was actually really cool, but the hackathon, the price was really high.
+
+85
+00:06:00,960 --> 00:06:08,960
+The prizes or how things were graded, I don't know what the word is, scored were actually more like a business modelathon.
+
+86
+00:06:09,680 --> 00:06:11,840
+So, needless to say, we did not get first.
+
+87
+00:06:12,800 --> 00:06:20,400
+And first was entrance to a local incubator where you got like 20k in seed funding for your thing.
+
+88
+00:06:21,760 --> 00:06:28,560
+But the people that ran were running it actually really liked what we created in the short amount of time.
+
+89
+00:06:29,360 --> 00:06:33,040
+So we actually ended up getting into the incubator still with this idea.
+
+90
+00:06:33,360 --> 00:06:36,720
+The name was called Untoured at first because you were getting.
+
+91
+00:06:37,280 --> 00:06:39,520
+a tour but you didn't have a tour guide.
+
+92
+00:06:39,840 --> 00:06:41,760
+So it was like an untour.
+
+93
+00:06:43,360 --> 00:06:46,000
+We shortly got a cease and desist from someone in the UK.
+
+94
+00:06:47,520 --> 00:06:54,640
+And we ended up changing our name to Jaunt, spelt J A W N T, which we actually ended up liking better.
+
+95
+00:06:56,080 --> 00:07:02,720
+So this was going on the summer post graduation along with my new job.
+
+96
+00:07:03,520 --> 00:07:06,560
+And so I was working remote in Cedar Rapids, Iowa.
+
+97
+00:07:07,440 --> 00:07:08,480
+This story has a point.
+
+98
+00:07:08,960 --> 00:07:14,160
+I was doing the job during the day and I was moonlighting this startup at was so much fun.
+
+99
+00:07:14,400 --> 00:07:20,000
+Like I was doing Android a lot of fast pace stuff, like cool design, like actually creating stuff.
+
+100
+00:07:20,160 --> 00:07:23,680
+And then at my day job, they ended up changing teams on me.
+
+101
+00:07:24,480 --> 00:07:28,080
+And I was on the Blackhawk team, but they were in a four year testing phase.
+
+102
+00:07:28,480 --> 00:07:28,480
+Yeah.
+
+103
+00:07:29,200 --> 00:07:35,040
+So I was just checking boxes in a giant binder, not even on a computer, in a paper binder.
+
+104
+00:07:35,360 --> 00:07:36,000
+Oh my goodness.
+
+105
+00:07:36,560 --> 00:07:37,600
+It was miserable.
+
+106
+00:07:38,240 --> 00:07:43,680
+Just and I was like in this big like warehouse thing and like I didn't see daylight.
+
+107
+00:07:43,840 --> 00:07:46,960
+I would come home for lunch and just dump during the day because I just hated it.
+
+108
+00:07:47,280 --> 00:07:48,560
+And because you were staying up all night.
+
+109
+00:07:49,120 --> 00:07:49,600
+moonlighting.
+
+110
+00:07:49,760 --> 00:07:50,720
+Well, yeah, but that was fun.
+
+111
+00:07:50,800 --> 00:07:50,960
+So I.
+
+112
+00:07:51,200 --> 00:07:51,600
+Right, right.
+
+113
+00:07:52,560 --> 00:07:57,360
+If I enjoyed my day job, I probably would have, like, actually put more towards it.
+
+114
+00:07:57,680 --> 00:07:59,760
+But anyway, I quit after two months.
+
+115
+00:08:00,960 --> 00:08:09,680
+And my manager's like, well, the day that I actually quit was the same day as our presentation, um, in front of like a whole bunch of investors in Madison, Wisconsin.
+
+116
+00:08:09,920 --> 00:08:10,240
+Ah, okay.
+
+117
+00:08:10,560 --> 00:08:14,320
+Or I guess it was the day after the presentation, because I drove during the night to get back for my last day.
+
+118
+00:08:14,880 --> 00:08:18,800
+And the guy who, well, I didn't even have a manager, because my manager also quit.
+
+119
+00:08:18,960 --> 00:08:26,080
+So like my manager was like, No one quits here.
+
+120
+00:08:26,240 --> 00:08:27,920
+And I'm like, What does that mean?
+
+121
+00:08:28,560 --> 00:08:29,520
+Is that a threat?
+
+122
+00:08:29,840 --> 00:08:30,080
+I am.
+
+123
+00:08:30,720 --> 00:08:34,080
+Because apparently people like it and like the benefits and all that stuff.
+
+124
+00:08:34,240 --> 00:08:37,360
+And I'm just like, I'm out.
+
+125
+00:08:38,480 --> 00:08:44,080
+And instead I was going to burn a bridge and I'm like, I don't like what I do.
+
+126
+00:08:45,040 --> 00:08:52,400
+So during the same time we had offers for follow-on investment, but we didn't actually like running a travel business because we were young.
+
+127
+00:08:52,560 --> 00:08:53,280
+We didn't travel much.
+
+128
+00:08:53,440 --> 00:08:54,320
+It just didn't really fit.
+
+129
+00:08:55,040 --> 00:08:56,320
+But we liked creating cool things.
+
+130
+00:08:56,880 --> 00:09:02,640
+So we decided to all start a software consulting company, Rock and Cat, which is the one I'm still at right now.
+
+131
+00:09:03,200 --> 00:09:06,640
+And I was the first one to go full time because I just YOLO quit my job.
+
+132
+00:09:08,000 --> 00:09:13,280
+And over over a year, there were four engineers and a designer that we all got to work full time.
+
+133
+00:09:13,600 --> 00:09:16,640
+So when I was full of work, one guy would work at night.
+
+134
+00:09:16,960 --> 00:09:21,120
+And then when he was like full of night work, he quit his job and then joined full time from there.
+
+135
+00:09:21,680 --> 00:09:23,840
+And just dominoed into five of us working full time.
+
+136
+00:09:24,400 --> 00:09:42,000
+So that's, that's kind of how Rock and Cat got started from this weird combination of I hated my postgrad job along with being in an incubator and actually not liking having a product company at the the time, but so Rock and Cat is now, uh, be nine or ten years old this September.
+
+137
+00:09:42,160 --> 00:09:42,240
+Wow.
+
+138
+00:09:42,960 --> 00:09:45,280
+And I did a lot of, I did a lot of mobile.
+
+139
+00:09:45,440 --> 00:09:46,720
+Yeah, that's what I was going to ask.
+
+140
+00:09:47,200 --> 00:09:55,360
+Was it basically whatever work you could find or were you kind of at first, yeah, at first it was whatever work we could find.
+
+141
+00:09:57,840 --> 00:09:59,200
+I've done a lot of back end stuff.
+
+142
+00:10:00,080 --> 00:10:03,280
+I've done some really bad front end web stuff, but I did find a lot of mobile.
+
+143
+00:10:04,080 --> 00:10:08,000
+And what I mean, Fastlane was I had a lot of mobile projects for a lot of small clients.
+
+144
+00:10:08,480 --> 00:10:11,840
+And when you say mobile, is this Android, iOS or both?
+
+145
+00:10:12,240 --> 00:10:12,960
+iOS and Android.
+
+146
+00:10:12,960 --> 00:10:12,960
+Both.
+
+147
+00:10:12,960 --> 00:10:13,840
+IOS and Android, both.
+
+148
+00:10:14,080 --> 00:10:14,160
+Okay.
+
+149
+00:10:14,480 --> 00:10:14,640
+Both.
+
+150
+00:10:15,200 --> 00:10:21,280
+So I had a lot of things I was releasing and like test builds and app store stuff and like it was taking a lot of my time.
+
+151
+00:10:22,080 --> 00:10:26,800
+And then at that time, Felix was just, just getting into the scene.
+
+152
+00:10:27,120 --> 00:10:31,520
+And this is Felix Krauss, the original creator of Fastlane, right?
+
+153
+00:10:31,840 --> 00:10:32,400
+Yes, correct.
+
+154
+00:10:32,480 --> 00:10:32,960
+Yeah, yeah.
+
+155
+00:10:33,440 --> 00:10:34,560
+And I'm like, this looks cool.
+
+156
+00:10:34,800 --> 00:10:36,080
+I feel like this tool could help me.
+
+157
+00:10:36,400 --> 00:10:39,920
+And I downloaded, installed it.
+
+158
+00:10:40,000 --> 00:10:40,800
+I did some automation.
+
+159
+00:10:40,960 --> 00:10:41,280
+It was great.
+
+160
+00:10:41,520 --> 00:10:42,160
+Find some errors.
+
+161
+00:10:42,800 --> 00:10:43,600
+Made some PRs.
+
+162
+00:10:43,760 --> 00:10:44,720
+Felix liked what I did.
+
+163
+00:10:45,520 --> 00:10:48,400
+And I was on the core team within like a month.
+
+164
+00:10:49,120 --> 00:11:04,320
+And just to back up a little bit too, Fastlane is for anyone who's not familiar, it's an open source project for letting you, I guess initially it was like letting you create screenshots automatically for app store submissions?
+
+165
+00:11:04,800 --> 00:11:09,120
+Yeah, there were like a few small tools at first and it was mainly and it was just iOS.
+
+166
+00:11:10,080 --> 00:11:23,200
+So you could take screenshots, upload like app store descriptions, all that stuff across different localizations and then building things easier, uploading the app to iTunes Connect at the time.
+
+167
+00:11:23,360 --> 00:11:26,240
+There were a lot of separate to tools that just automated all the different processes.
+
+168
+00:11:26,640 --> 00:11:27,040
+Okay, cool.
+
+169
+00:11:27,520 --> 00:11:37,520
+So you were using this because these tools made it easier for you because you were just having to repeatedly do the same things over and over again for all these different clients.
+
+170
+00:11:37,840 --> 00:11:39,040
+Over and over again, yep.
+
+171
+00:11:39,440 --> 00:11:48,000
+And since it's an open source project, you could just create some pull requests that made a tweak or a change to a tool that made it work a little bit better.
+
+172
+00:11:49,200 --> 00:11:49,520
+Correct.
+
+173
+00:11:50,320 --> 00:11:57,040
+You making these pull requests got the attention of Felix enough so that you kind of got on as one of the core contributors.
+
+174
+00:11:57,360 --> 00:11:57,920
+Yeah, yeah.
+
+175
+00:11:58,000 --> 00:11:59,680
+That was January 2015.
+
+176
+00:12:00,400 --> 00:12:02,560
+I think he announced it like December of 2014.
+
+177
+00:12:02,880 --> 00:12:03,040
+Yep.
+
+178
+00:12:03,200 --> 00:12:03,280
+Yeah.
+
+179
+00:12:03,520 --> 00:12:03,600
+Yeah.
+
+180
+00:12:03,840 --> 00:12:05,680
+2014 is when he started it, I think.
+
+181
+00:12:06,240 --> 00:12:06,320
+Yeah.
+
+182
+00:12:06,800 --> 00:12:09,120
+And yeah, that's kind of how I got into Fastlane.
+
+183
+00:12:09,200 --> 00:12:14,000
+And then I just kept using it over the years in the consulting business and I just started doing consulting for it itself.
+
+184
+00:12:14,400 --> 00:12:19,600
+So like there were clients that needed their processes cleaned up, automated, all that kind of stuff.
+
+185
+00:12:19,680 --> 00:12:21,360
+So I actually did that for them.
+
+186
+00:12:21,920 --> 00:12:24,560
+And I became Fastlane lead maintainer in 2018.
+
+187
+00:12:25,120 --> 00:12:25,200
+Yeah.
+
+188
+00:12:25,520 --> 00:12:34,320
+And the quick, like, journey of Fastlane, because it started out as this open source project, Felix sold it to Did he sell it directly to Twitter?
+
+189
+00:12:34,720 --> 00:12:36,320
+I know it was like part of Fabric at one point.
+
+190
+00:12:36,800 --> 00:12:48,480
+Yeah, yeah, so like him and Fastlane got like acquired slash hired by Twitter with the stipulation that it would remain open source.
+
+191
+00:12:48,960 --> 00:12:49,040
+Okay.
+
+192
+00:12:49,520 --> 00:12:52,640
+one hundred percent for infinity time.
+
+193
+00:12:54,480 --> 00:13:02,080
+And then Twitter eventually sold all of their different fabric tools of which Fastlane was kind of bundled in to Google.
+
+194
+00:13:02,640 --> 00:13:04,000
+And that was in 2017, right?
+
+195
+00:13:04,480 --> 00:13:06,000
+I believe that was 2017.
+
+196
+00:13:06,240 --> 00:13:06,320
+Okay.
+
+197
+00:13:06,960 --> 00:13:09,040
+And along with those tools came Felix, I believe.
+
+198
+00:13:09,360 --> 00:13:12,400
+So he was a Google employee and lead maintainer of Fastlane.
+
+199
+00:13:12,560 --> 00:13:12,720
+Yep.
+
+200
+00:13:13,280 --> 00:13:19,120
+And then he left Fastlane and Google, I guess, at the same time in 2019?
+
+201
+00:13:19,760 --> 00:13:35,680
+That was so he handed over Fastlane lead maintainer to me in 2018 because they were focusing on something else internally around Fastlane and Fastlane needed a little more help and I had quite a bit of experience.
+
+202
+00:13:36,720 --> 00:13:38,480
+So I was a pretty good choice for that.
+
+203
+00:13:38,880 --> 00:13:43,600
+But then yeah, he left in the summer of 2018, I believe.
+
+204
+00:13:44,160 --> 00:13:44,240
+Okay.
+
+205
+00:13:44,880 --> 00:13:48,480
+And so part of what I'm curious about is that handoff.
+
+206
+00:13:48,960 --> 00:13:49,920
+So it kind of makes sense.
+
+207
+00:13:50,240 --> 00:14:00,480
+You know, Felix created the thing and obviously it sort of became a I don't want to call it a business tool, but it got him a job at Twitter and then that was his actual job.
+
+208
+00:14:01,280 --> 00:14:16,400
+You, at least up until this point, you were basically doing PRs out of the goodness of your heart sort of slash selfishly because it's a tool that you use all the time and it ended up becoming kind of a business for you as becoming an expert at Fastlane.
+
+209
+00:14:17,360 --> 00:14:22,320
+But what was the process of becoming the lead maintainer?
+
+210
+00:14:22,880 --> 00:14:24,640
+Because that's kind of a lot of responsibility, right?
+
+211
+00:14:25,120 --> 00:14:28,240
+Yeah, it's still quite a bit of responsibility.
+
+212
+00:14:28,400 --> 00:14:31,920
+And I don't think I knew exactly what was all involved while doing it.
+
+213
+00:14:33,600 --> 00:14:40,800
+But I wouldn't have made another choice because having this role was also kind of my dream.
+
+214
+00:14:41,760 --> 00:14:49,040
+I had a few other open source projects that I maintained that I created a few years before then.
+
+215
+00:14:49,280 --> 00:14:52,160
+And I really enjoyed doing open source work.
+
+216
+00:14:52,960 --> 00:15:06,880
+And when we do a lot of our consulting, a lot of it is based upon open source work, which we always do wanted to give back to open source because that's kind of what made our consulting life easier.
+
+217
+00:15:07,200 --> 00:15:07,360
+Right.
+
+218
+00:15:08,000 --> 00:15:10,640
+So that's kind of how I found this passion for open source.
+
+219
+00:15:11,040 --> 00:15:20,240
+So being able to lead a tool that was both open source and a community that was just super awesome was kind of like, heck yes, I'm going to do it.
+
+220
+00:15:20,560 --> 00:15:20,880
+Let's go.
+
+221
+00:15:21,120 --> 00:15:32,000
+And like I'm sure you have more data or like actual numbers around this, but it seems like Fastlane is just the tool that basically everybody uses like everywhere.
+
+222
+00:15:32,880 --> 00:15:33,680
+Yeah, it's ours.
+
+223
+00:15:33,680 --> 00:15:34,320
+It's ours.
+
+224
+00:15:35,040 --> 00:15:36,480
+A huge part of the.
+
+225
+00:15:37,120 --> 00:15:39,840
+especially iOS developer ecosystem.
+
+226
+00:15:40,160 --> 00:15:45,600
+Yeah, it's pretty much industry standard in the iOS, Apple ecosystem.
+
+227
+00:15:46,480 --> 00:15:51,120
+A lot of big companies do use it, GitHub, Uber, Shopify.
+
+228
+00:15:51,440 --> 00:16:01,440
+A lot of small companies use it, a lot of indie developers use it, a lot of CI services and tools that do app store submissions for you use it.
+
+229
+00:16:01,680 --> 00:16:05,280
+So it is kind of, it is pretty much everywhere except for probably in Facebook.
+
+230
+00:16:05,840 --> 00:16:12,480
+Does that feel like, is there like a strange pressure to that knowing that, you know, especially because.
+
+231
+00:16:12,960 --> 00:16:19,440
+Apple isn't exactly known for deeply ahead of time telegraphing all of the things that they're going to do.
+
+232
+00:16:19,680 --> 00:16:20,800
+We'll put it that way.
+
+233
+00:16:21,040 --> 00:16:23,360
+And so I'm not going to agree or disagree with that.
+
+234
+00:16:23,600 --> 00:16:24,080
+Right, yeah.
+
+235
+00:16:24,880 --> 00:16:34,480
+So the point being there can sometimes be situations sprung upon you or sprung upon the Fastlane team that need to be resolved pretty quickly.
+
+236
+00:16:34,880 --> 00:16:40,960
+And while they're not resolved, they affect not just you and some amount of users or whatever.
+
+237
+00:16:41,120 --> 00:16:50,080
+It's like, basically, the entire IOS developer ecosystem can't run their automation tools for some period of time.
+
+238
+00:16:50,400 --> 00:16:54,080
+Are those Yeah, like that must be a lot of weight during those moments.
+
+239
+00:16:54,480 --> 00:16:56,720
+It's it's very weird.
+
+240
+00:16:56,960 --> 00:17:12,800
+Like it's pretty terrifying how many things do end up relying on like those quick fixes, but at the same time fast lane isn't the only like the only solution to do those things.
+
+241
+00:17:13,040 --> 00:17:16,240
+Like if you need to do it, you can manually submit your stuff.
+
+242
+00:17:16,480 --> 00:17:16,800
+It's fine.
+
+243
+00:17:17,200 --> 00:17:21,040
+Like people might hate me for saying that, but you can probably do it for a day.
+
+244
+00:17:21,280 --> 00:17:24,240
+I don't want you to have to do it for a day if it was up to me.
+
+245
+00:17:24,320 --> 00:18:01,440
+me but like if it's a thing that that might take a day or two weeks to fix like it did this past July I mean there there are there are ways around it and usually when things break it's not like entire fast lane just different parts so like some parts may work some parts may not the nice thing is we can iterate pretty quickly so we can fix like the most important thing like up up uploading your binary to the app store but then like metadata might be broken and then we fix that and then we fix screenshots so like we can we can move pretty quickly.
+
+246
+00:18:02,400 --> 00:18:11,200
+And it being a pretty developer redeveloper tool, we don't have to make official releases when those fixes happen.
+
+247
+00:18:11,360 --> 00:18:13,520
+Like, I can just push to a branch and people can download it.
+
+248
+00:18:13,680 --> 00:18:13,760
+Yeah.
+
+249
+00:18:14,080 --> 00:18:15,360
+And run that.
+
+250
+00:18:15,600 --> 00:18:23,520
+So, like, it can get a little Wild West feeling, but that's probably not like the biggest pressure is like those situations.
+
+251
+00:18:23,680 --> 00:18:24,640
+Those I kind of find fun.
+
+252
+00:18:25,760 --> 00:18:28,720
+It's like if I want to take a vacation for a week or two.
+
+253
+00:18:30,000 --> 00:18:30,880
+That's the bigger pressure.
+
+254
+00:18:31,280 --> 00:18:41,280
+Yeah, because, I mean, so I don't know how much you need to like not divulge or whatever, but you do have some sort of a financial incentive to to maintain this, right?
+
+255
+00:18:41,600 --> 00:18:43,280
+There's some sort of a deal there.
+
+256
+00:18:44,000 --> 00:18:45,120
+But you're the only one, right?
+
+257
+00:18:45,440 --> 00:18:49,200
+I'm the, yeah, I'm the only paid full-time maintainer.
+
+258
+00:18:49,760 --> 00:19:08,240
+So if you want to go on vacation or as we might talk about a little bit, if you have a baby and you want to do the right thing as a dad and take that time off and spend time with your family, you know, there's there's probably a lot you have to do to kind of set the world up so that you can do that.
+
+259
+00:19:08,640 --> 00:19:16,320
+What, like whenever you took some time off after having had having a child, like, how did you set yourself up so you could do that?
+
+260
+00:19:17,120 --> 00:19:29,280
+Yeah, so we do have a pretty good core team of people that that do contribute pretty regularly and everyone that is on the core team does have like a specific area where they like to maintain.
+
+261
+00:19:30,480 --> 00:19:38,400
+Some are like in the docs, some are in like the Apple API stuff, some are more in like the deliver tool.
+
+262
+00:19:39,680 --> 00:19:54,880
+So when I need to like take a break or go away for a while or something, I kind of just like, hey, like I need, I need two weeks or well, in this case., I'm like, I need like the month of January slash half December to like focus on life.
+
+263
+00:19:55,200 --> 00:19:57,200
+If anything major comes up, ping me.
+
+264
+00:19:57,440 --> 00:20:06,480
+If not, I'll like, slowly look at PRs, merge important ones, get releases out, um, and then try and super catch up when I come back.
+
+265
+00:20:07,360 --> 00:20:18,320
+Uh, so it's it's not like no one's looking at it, but it definitely doesn't, it doesn't get the full, full attention like I, I would want when, when I'm off.
+
+266
+00:20:18,800 --> 00:20:18,960
+Right.
+
+267
+00:20:19,440 --> 00:20:24,640
+But also, like, it, it doesn't necessarily like, need that full attention all the time.
+
+268
+00:20:26,160 --> 00:20:27,760
+It's a very mature and stable tool.
+
+269
+00:20:27,920 --> 00:20:34,320
+So it can last two weeks without updates if there's no regressions or anything major coming in.
+
+270
+00:20:35,120 --> 00:20:40,640
+And there are plugins people can do to add their own functions if they want something.
+
+271
+00:20:40,960 --> 00:20:44,160
+So it hopefully is not blocking a ton of people.
+
+272
+00:20:44,800 --> 00:20:45,120
+Hopefully.
+
+273
+00:20:45,600 --> 00:20:53,760
+Yeah, you kind of touched on it a little bit there, but one of the things I'm curious about is like what exactly do like how do you bucket out your roles?
+
+274
+00:20:54,080 --> 00:20:59,600
+Because I feel like Fastlane is a decently big tool, like we said, used by a lot of people.
+
+275
+00:21:00,240 --> 00:21:11,600
+So on one hand, you have all of these people committing or pushing PRs that need to get reviewed or like need to there's like this steady drip of things that need to happen.
+
+276
+00:21:12,240 --> 00:21:18,960
+But then there's also like traditional product role where you're kind of project planning and thinking about the future.
+
+277
+00:21:19,920 --> 00:21:27,920
+And then also there's these sort of cataclysmic events where one of the pieces that you're plugged into changes and you know, you have to update that.
+
+278
+00:21:28,240 --> 00:21:31,440
+So like is kind of all of that kind of running through you?
+
+279
+00:21:31,680 --> 00:21:34,560
+And what do you see yourself more or less as?
+
+280
+00:21:34,720 --> 00:21:38,480
+Is it kind of like a CEO role where you're kind of taking on a certain thing at a certain time?
+
+281
+00:21:38,960 --> 00:21:43,760
+Oh, I mean, it feels very much like an indie dev role, I guess.
+
+282
+00:21:44,160 --> 00:21:44,240
+Okay.
+
+283
+00:21:44,800 --> 00:21:45,040
+Interesting.
+
+284
+00:21:45,360 --> 00:21:46,080
+At some points.
+
+285
+00:21:47,680 --> 00:21:53,760
+I mean, the good thing is Fastlane is a pretty mature tool at this point, so there's not like a ton of new features that need to be added all the time.
+
+286
+00:21:54,960 --> 00:22:04,800
+The new features are mainly around like when Apple releases something new and we have to build a tool around that or Android has something new we need to build around that.
+
+287
+00:22:05,920 --> 00:22:12,880
+That's kind of where the main features are driven from, at least right now, along with like other cross-platform tools.
+
+288
+00:22:13,600 --> 00:22:26,640
+So like if you want to add support for like Flutter or RN, that's kind of where the new features are coming from these days, especially because we added a plugin system a few years back.
+
+289
+00:22:26,960 --> 00:22:36,800
+So any like external service that needs to get done, it should really be a plugin that like that company maintains or like someone who's really passionate about that that can maintain.
+
+290
+00:22:37,680 --> 00:22:38,240
+That makes sense.
+
+291
+00:22:38,640 --> 00:22:41,840
+A lot of those external services no longer actually live within FastLinks.
+
+292
+00:22:42,000 --> 00:22:44,880
+It did make maintaining a lot harder.
+
+293
+00:22:46,000 --> 00:22:48,400
+We do still have some, but like.
+
+294
+00:22:48,560 --> 00:22:58,960
+Like, Hockey app was an internal Fastlane action, but then Hockey app got moved over to App Center, and now Microsoft maintains the App Center plugin.
+
+295
+00:23:00,640 --> 00:23:08,480
+So that's kind of where a lot of Fastlane power and new features lie are in those, those, those, those plugins that anyone can create and install.
+
+296
+00:23:08,800 --> 00:23:11,120
+Yeah, that sounds like that was a huge win.
+
+297
+00:23:11,440 --> 00:23:21,360
+Really beneficial investment to make to set up that plugin architecture, because yeah, it would get completely weirdly without a huge staff to kind of maintain all those different tools.
+
+298
+00:23:21,840 --> 00:24:04,160
+Going back to your question, it's not really like a ton of new features except for things that like pop up that have to get integrated into like the native tools a lot of it is more like on the PR side issue side I'm reworking the documentation page right now because it is highly out of highly out of date in the build tools that it used to do its thing which kind of prevented it from getting all of the like love and stuff it needs so like this this month I'm really focusing on making sure like docs are like new bunch of new stuff added a lot of tutorials examples uh spaceship docs which are which is like the Apple API module that we have.
+
+299
+00:24:05,280 --> 00:24:09,200
+Because a lot of people do like to use the Apple API directly.
+
+300
+00:24:09,680 --> 00:24:12,480
+And we don't really have docs for that necessarily.
+
+301
+00:24:12,720 --> 00:24:23,440
+So like, I want to like the best thing we can do right now to make users even more happier is just to do documentation like just full, full overhaul.
+
+302
+00:24:23,840 --> 00:24:29,200
+So it's kind of like the big new feature that I'm working on, even though it's not really a new feature.
+
+303
+00:24:29,680 --> 00:24:36,800
+And then on the, like you mentioned PR, I mean, there's an element of, I don't want to say public relations, but you know what I mean?
+
+304
+00:24:37,840 --> 00:24:40,800
+Everything's a little different because you're interacting so much with developers.
+
+305
+00:24:41,040 --> 00:24:43,440
+Like it's a very different kind of relationship, I understand.
+
+306
+00:24:44,000 --> 00:24:46,320
+But I mean, you still have like a kind of a slick website.
+
+307
+00:24:47,440 --> 00:24:53,440
+There's presumably like a Twitter account that when something goes wrong, you're notifying people.
+
+308
+00:24:53,840 --> 00:24:57,360
+Is that pretty much all like sort of run and managed by you then?
+
+309
+00:24:58,080 --> 00:24:58,160
+Yeah.
+
+310
+00:25:02,320 --> 00:25:02,400
+Yeah.
+
+311
+00:25:03,280 --> 00:25:04,080
+There's a lot of things.
+
+312
+00:25:05,360 --> 00:25:11,600
+I mean, we also have more than one repository as well, which needs to be looked at.
+
+313
+00:25:11,840 --> 00:25:22,400
+So my indeed devness, I created a new dashboard monitoring tool that I needed to monitor all the different repositories and have different rules.
+
+314
+00:25:23,280 --> 00:25:25,200
+I never released it because I didn't want to support it.
+
+315
+00:25:26,560 --> 00:25:42,720
+But I wanted to, I've been wanting this product and I've been wanting it on my own, so I just made it and it's actually helped me a ton, like find regressions that I missed or repositories that weren't getting attention that GitHub wasn't showing me in the GitHub dashboard views.
+
+316
+00:25:43,040 --> 00:25:48,400
+So it's my attention is spread out, not just across.
+
+317
+00:25:49,200 --> 00:25:56,080
+like one tool in the different aspects around that tool, but also a lot of other tools that Fastlink kind of embodies.
+
+318
+00:25:56,560 --> 00:25:58,960
+And all your stuff lives in GitHub, right?
+
+319
+00:25:59,520 --> 00:25:59,600
+Yes.
+
+320
+00:26:00,080 --> 00:26:02,400
+Yeah, everything is open source 100%.
+
+321
+00:26:02,880 --> 00:26:03,680
+We have two organizations.
+
+322
+00:26:03,920 --> 00:26:07,200
+There's a Fastlink community organization, Fastlink Dash community.
+
+323
+00:26:08,240 --> 00:26:15,840
+And that's kind of like a home for like Fastlink plugins and dependencies that no longer get maintained but are core to the Fastlink ecosystem.
+
+324
+00:26:16,160 --> 00:26:24,560
+Like people still use and like I have knowledge to maintain but don't need super maintaining this to them, but we still want control over them.
+
+325
+00:26:25,680 --> 00:26:26,400
+There's a lot there.
+
+326
+00:26:27,760 --> 00:26:28,560
+Cries a little bit.
+
+327
+00:26:30,880 --> 00:26:40,480
+So I guess the other thing is, you know, like, you're not a company, like we said, you're one person, but there is a bunch of human beings involved in this.
+
+328
+00:26:40,640 --> 00:26:49,040
+You have a bunch of core contributors, there's also just a whole bunch of other contributors that are, you know, they need a thing and so they just build it and then submit a PR or whatever.
+
+329
+00:26:50,080 --> 00:26:50,160
+Yeah.
+
+330
+00:26:50,560 --> 00:26:56,560
+So there's also like a community manager kind of role to what you would have to do, I would think too, right?
+
+331
+00:26:57,040 --> 00:27:00,960
+Like, do you ever have to deal with people disputes or, uh, problems?
+
+332
+00:27:00,960 --> 00:27:07,920
+or trying to encourage people or, you know, the types of things that you think of a leader of a big company having to do.
+
+333
+00:27:08,720 --> 00:27:11,040
+There's, I guess, an element of that with what you do too, right?
+
+334
+00:27:11,440 --> 00:27:11,520
+Yeah.
+
+335
+00:27:11,920 --> 00:27:23,360
+I mean, there's a huge community and we do try and keep this, like, positive, positive community vibe, like, no, no negativity, no anger, no harsh words.
+
+336
+00:27:23,840 --> 00:27:26,160
+That comes out of dealing with build systems already.
+
+337
+00:27:27,360 --> 00:27:27,440
+Yes.
+
+338
+00:27:27,920 --> 00:27:28,000
+Yeah.
+
+339
+00:27:28,720 --> 00:27:32,000
+So, like, you can imagine, like, people, like, could easily get angry.
+
+340
+00:27:32,480 --> 00:27:36,880
+But, like, Fastlane isn't this, isn't this really weird, weird developer tool.
+
+341
+00:28:12,000 --> 00:28:14,160
+If someone needs a thing, you can be like, Awesome.
+
+342
+00:28:14,800 --> 00:28:17,920
+Here's where you can go fix that and then submit a PR and I'll look at it.
+
+343
+00:28:18,320 --> 00:28:18,640
+Exactly.
+
+344
+00:28:18,880 --> 00:28:18,960
+Yeah.
+
+345
+00:28:19,360 --> 00:28:23,440
+It's a little bit harder to get angry whenever you could do the thing yourself to help.
+
+346
+00:28:23,920 --> 00:28:24,000
+Yeah.
+
+347
+00:28:24,640 --> 00:28:28,080
+And like, I'm totally willing to go help people with PRs if they go create them.
+
+348
+00:28:28,320 --> 00:28:33,600
+Like, a lot of our, I'm gonna say like, half the PRs that come in are probably first time contributors.
+
+349
+00:28:34,000 --> 00:28:34,080
+Yeah.
+
+350
+00:28:34,640 --> 00:28:36,240
+That was actually a question I had.
+
+351
+00:28:36,800 --> 00:28:38,320
+Yeah, which is super cool.
+
+352
+00:28:38,560 --> 00:28:40,640
+And like, some people don't even have Ruby experience.
+
+353
+00:28:42,000 --> 00:28:43,360
+And they'll be like, I did this thing.
+
+354
+00:28:43,520 --> 00:28:43,920
+I'm not sure.
+
+355
+00:28:44,000 --> 00:28:46,960
+And I'm like, I was like, you're super close and I love what you did.
+
+356
+00:28:47,040 --> 00:28:47,680
+I'll come in here.
+
+357
+00:28:47,840 --> 00:28:55,440
+Like, I would change this around, I would add this, and if they have a problem, I'll add some commits to it to fix things, and they're like, oh, that's really cool.
+
+358
+00:28:55,600 --> 00:29:00,320
+And I'm just like, it's really cool to work with people who actually want to learn and contribute.
+
+359
+00:29:00,880 --> 00:29:02,560
+Yeah, that's really cool.
+
+360
+00:29:02,800 --> 00:29:08,240
+Like, because there's definitely a reputation with some open source projects that it's like hostile.
+
+361
+00:29:09,040 --> 00:29:09,760
+And yeah.
+
+362
+00:29:10,400 --> 00:29:16,720
+I mean, I'm not like deeply embedded in any of these, but the impression I've always got with Fastlane is that it's kind of the opposite of that.
+
+363
+00:29:16,880 --> 00:29:17,920
+It's very friendly.
+
+364
+00:29:18,640 --> 00:29:28,000
+Probably because of the nature of what it is, you do get a lot of people that this is their first time contribututing because they're at a job where they have to make this thing work.
+
+365
+00:29:28,480 --> 00:29:33,360
+And the way to make it work is that they basically just have to go in and change how Fastlane works a little bit.
+
+366
+00:29:33,600 --> 00:29:35,760
+And then, okay, I'll go ahead and submit that as a PR.
+
+367
+00:29:35,920 --> 00:29:42,000
+And so it's probably organically a lot of people's sort of first experience with this, this open source world.
+
+368
+00:29:42,480 --> 00:29:45,040
+Yeah, yeah, yeah, I agree with that.
+
+369
+00:29:45,600 --> 00:30:00,800
+And like the cool thing is like, if we do ship a regression, which I'm not going to say doesn't happen because it totally happens because software is software, you can just like downgrade a version or not upgrade or like wait to upgrade like every month or so.
+
+370
+00:30:01,200 --> 00:30:05,280
+if you need to, like there are ways around the regression.
+
+371
+00:30:05,680 --> 00:30:09,920
+So sometimes something slips in, just don't upgrade.
+
+372
+00:30:10,800 --> 00:30:16,480
+Usually don't need to unless something internally is super broken and that next upgrade fixes it.
+
+373
+00:30:16,800 --> 00:30:17,520
+That's awesome.
+
+374
+00:30:18,000 --> 00:30:28,800
+Which does keep a lot of pressure off, because it's not like an app that gets released on an app store and like everyone's using it and they can't choose which version of that app on the app store they actually want to use.
+
+375
+00:30:29,360 --> 00:30:31,360
+So there is that added benefit.
+
+376
+00:30:32,160 --> 00:30:36,320
+So if somebody wanted to get involved in open source because.
+
+377
+00:30:36,320 --> 00:30:44,080
+Because, you know, especially people looking for their first job in software development or whatever, that's often a pretty good way to do that, right?
+
+378
+00:30:44,320 --> 00:30:48,880
+It's learning and it's kind of a little bit of a reputation builder.
+
+379
+00:30:49,280 --> 00:30:52,960
+What, like, do you have any advice for people that are wanting to do this for the first time?
+
+380
+00:30:54,400 --> 00:31:06,000
+That is always a very hard question because I haven't had my first time in open source in a long time where I can give like actually good concrete advice.
+
+381
+00:31:07,680 --> 00:31:11,360
+We do have like getting started docs, docs on how to contribute.
+
+382
+00:31:12,960 --> 00:31:17,840
+And I would just say, just create a PR and I'll see it and I'll work with you on it.
+
+383
+00:31:18,160 --> 00:31:22,960
+Like, I don't care if it's a bad PR, like if it looks bad, if the tests don't work.
+
+384
+00:31:23,360 --> 00:31:33,200
+I mean, I I I create my own that PRs don't like, don't pass tests and just fully break stuff, like it happens, it's part of being a software developer.
+
+385
+00:31:33,600 --> 00:31:35,120
+Just create it and we'll fix it together.
+
+386
+00:31:35,920 --> 00:31:36,080
+Cool.
+
+387
+00:31:36,960 --> 00:31:46,960
+So I guess moving on from Fastlane then, there's a whole bunch of other, you know, projects and you've kind of alluded to a couple of them that you sort of do on the side.
+
+388
+00:31:47,280 --> 00:31:53,520
+Knowing you personally, I know that one of the biggest struggles in your life is not hitting file new project.
+
+389
+00:31:53,840 --> 00:31:57,040
+So I think it's just part of your life is creating new things.
+
+390
+00:31:58,000 --> 00:32:12,880
+But it seemed like last year there was, I think it was last year, there was sort of a change in tone where you sort of very intentionally sort of pushed yourself into the sort of indie IOS developer community world.
+
+391
+00:32:13,440 --> 00:32:14,080
+Is that accurate?
+
+392
+00:32:14,240 --> 00:32:16,960
+Like, was that on purpose or am I just imagining that?
+
+393
+00:32:17,360 --> 00:32:19,040
+Yeah, this is where my confession comes in.
+
+394
+00:32:19,200 --> 00:32:20,880
+Like, that's your confession.
+
+395
+00:32:21,040 --> 00:32:21,680
+That's on you.
+
+396
+00:32:22,480 --> 00:32:25,760
+Like, I listened to your first episode and I'm like., I feel this.
+
+397
+00:32:25,920 --> 00:32:35,760
+Like, that's like this indie dev life creating, creating new things and like having people be excited about the new things and just kind of like, Oh, this show.
+
+398
+00:32:36,080 --> 00:32:36,640
+This show, yeah.
+
+399
+00:32:36,720 --> 00:32:37,440
+This show.
+
+400
+00:32:37,680 --> 00:32:37,920
+This show.
+
+401
+00:32:38,800 --> 00:32:43,920
+Your first episode, I was like, I want to create something and I want to be on that show.
+
+402
+00:32:44,560 --> 00:32:45,680
+Like, look at that.
+
+403
+00:32:46,160 --> 00:32:50,640
+I've, I've always been about creating things, like, of my own.
+
+404
+00:32:50,960 --> 00:32:59,600
+I mean, I've had apps in the App Store before, like in like 2013, but they weren't like serious, like, money making apps.
+
+405
+00:32:59,680 --> 00:33:07,040
+They're just like, oh, I built this thing, I'm just going to upload to the App Store because that's the next action that I do, and then I'm done.
+
+406
+00:33:07,760 --> 00:33:22,000
+But actually, listening to your show, I'm like, wow, there's actually a way to make money off Indie apps, and like, people are successful and enjoying it, and like, people love hearing about it, and I'm like, that seems like super dope.
+
+407
+00:33:22,240 --> 00:33:23,040
+I want to be in on that.
+
+408
+00:33:23,760 --> 00:33:34,960
+So like, I knew like, Indie devs were a thing before this show, but I didn't actually like, know what an Indie dev actually was, the Indie dev lifestyle, and that this community actually, like, existed.
+
+409
+00:33:35,360 --> 00:33:36,960
+So, yeah.
+
+410
+00:34:15,280 --> 00:34:22,160
+And when I first listened to it, it was actually like at the start of, well, my goal for this was like, I think, beginning of 2019.
+
+411
+00:34:22,400 --> 00:34:22,480
+Okay.
+
+412
+00:34:22,800 --> 00:34:24,160
+No, wait, what year are we?
+
+413
+00:34:25,600 --> 00:34:27,840
+No, it would have been 2020, because I started it in 2020.
+
+414
+00:34:28,080 --> 00:34:29,360
+There we go, like that didn't sound right.
+
+415
+00:34:30,240 --> 00:34:33,040
+2019 is when Dark Noise came out, so that was before I was even in this world.
+
+416
+00:34:33,200 --> 00:34:34,640
+Yeah, I was like, no, that's not right.
+
+417
+00:34:35,280 --> 00:34:42,880
+Beginning of 2020, my goal was like, I want to get into like the, like, underground, like, conference speaking circuit.
+
+418
+00:34:43,040 --> 00:34:53,920
+I don't know if that's what it's called, but like, that is exactly what I've said before, was that was one of my goals for 2020.
+
+419
+00:34:54,000 --> 00:34:55,280
+Oh yeah, that's right, that's right.
+
+420
+00:34:55,520 --> 00:34:58,640
+I bought luggage, I'm going to travel, you know, I had all these Yeah.
+
+421
+00:34:58,960 --> 00:34:59,040
+Yeah.
+
+422
+00:34:59,920 --> 00:35:24,000
+I had a full list of things like I was going to submit talks to, and it was all going to be like Fastlane related, but like at the same time, I'm like, going up to that year, I felt, I don't know if this, this phrase is getting overused, I don't even know if it actually is imposter syndrome, but like being involved in Fastlane, like I'm part of the iOS community, but I don't actually do a lot of iOS development.
+
+423
+00:35:25,040 --> 00:35:29,360
+So, like, I was there, but I never felt like I actually belonged in this really weird way.
+
+424
+00:35:29,760 --> 00:35:29,920
+Why?
+
+425
+00:35:30,320 --> 00:35:35,360
+No, I can see that because you you kind of spend most of your time at that point in RWBY probably.
+
+426
+00:35:35,600 --> 00:35:35,680
+Yeah.
+
+427
+00:35:36,160 --> 00:35:40,960
+It's like there's a house party in the inside and I'm looking outside but providing everybody with drinks in the inside.
+
+428
+00:35:42,960 --> 00:35:45,680
+Yeah, you're like serving drinks as people walk into the party.
+
+429
+00:35:46,240 --> 00:35:46,640
+Yeah, yeah.
+
+430
+00:35:46,720 --> 00:35:49,920
+So it's kind of felt like, and like, I don't mind because that's interesting.
+
+431
+00:35:50,080 --> 00:35:51,440
+I like serving drinks apparently.
+
+432
+00:35:52,000 --> 00:35:54,160
+But like, I also wanted to be at the party.
+
+433
+00:35:54,800 --> 00:35:59,280
+And I really didn't like, I couldn't do cool things with AppKit.
+
+434
+00:35:59,520 --> 00:36:00,240
+Like, I couldn't.
+
+435
+00:36:00,720 --> 00:36:03,360
+So like, part of it was also Swift UI.
+
+436
+00:36:03,600 --> 00:36:04,560
+Like, mm, yeah.
+
+437
+00:36:04,880 --> 00:36:05,840
+I'm like, this is cool.
+
+438
+00:36:06,160 --> 00:36:10,000
+Like, I really like how easy it is to, like, just quickly make something.
+
+439
+00:36:10,480 --> 00:36:11,840
+It has a lot of good defaults and things.
+
+440
+00:36:12,080 --> 00:36:12,880
+I'm not great at it.
+
+441
+00:36:12,960 --> 00:36:16,640
+So I can build something useful pretty easily, easily in quotes.
+
+442
+00:36:18,640 --> 00:36:19,680
+80% of the way there.
+
+443
+00:36:19,840 --> 00:36:20,400
+Yeah, exactly.
+
+444
+00:36:20,640 --> 00:36:24,000
+So like, I started doing some experimenting with Swift UI once like lockdown started.
+
+445
+00:36:24,080 --> 00:36:25,040
+Because I'm like, what else?
+
+446
+00:36:25,280 --> 00:36:26,320
+I don't know what else to do.
+
+447
+00:36:26,960 --> 00:36:34,640
+So like, I started doing like some, not really like making, making the apps, but just like kind of like building, building things, I guess.
+
+448
+00:36:35,200 --> 00:36:36,640
+And like, one of my, one of my.
+
+449
+00:36:37,040 --> 00:36:41,680
+thoughts too was like the next app I wanted to make, I didn't want to have a back end in it.
+
+450
+00:36:41,920 --> 00:36:47,440
+I needed to have to be like a standalone, standalone iOS app, because I don't want to support a back end.
+
+451
+00:36:47,680 --> 00:36:50,080
+That's just, I just don't have the brain for that.
+
+452
+00:36:50,400 --> 00:36:50,560
+Right.
+
+453
+00:36:50,800 --> 00:36:50,880
+Yeah.
+
+454
+00:36:51,120 --> 00:36:51,760
+I know that feeling.
+
+455
+00:36:52,000 --> 00:36:52,080
+Yeah.
+
+456
+00:36:52,320 --> 00:36:56,720
+It took me a while to find the idea that I wanted, and that was an app called Y'all Trippin'.
+
+457
+00:36:56,960 --> 00:36:58,480
+I don't know if I've ever talked to you about this one.
+
+458
+00:36:59,040 --> 00:36:59,680
+I remember the name.
+
+459
+00:36:59,840 --> 00:37:01,120
+I can't remember what it did though.
+
+460
+00:37:02,320 --> 00:37:05,920
+So this was also like the start of the pandemic, we're like, it's gonna end soon.
+
+461
+00:37:06,240 --> 00:37:12,240
+And it was an app where you could create like bag, travel bag templates.
+
+462
+00:37:14,240 --> 00:37:25,840
+So, you're going on a short weekend trip, you select your short bag, your wife's short bag, the dog bag, the boat bag, and then it gives you the full list of everything that you need.
+
+463
+00:37:26,160 --> 00:37:30,160
+You check to make sure you have everything, and then when you pack to come back home, you decheck everything.
+
+464
+00:37:30,480 --> 00:37:41,760
+So, like, because I'm notorious for just forgetting, like, toothbrushes, and then, like, I buy a new toothbrush, and, like, two years later, I'd have, like, $100 of just, like, extra stuff I don't even need.
+
+465
+00:37:42,560 --> 00:37:44,720
+Just piles of toothbrushes in your, yeah.
+
+466
+00:37:44,880 --> 00:37:45,520
+in your bathroom.
+
+467
+00:37:45,680 --> 00:37:45,680
+Yeah.
+
+468
+00:37:46,320 --> 00:37:46,400
+Yeah.
+
+469
+00:37:46,960 --> 00:37:47,600
+Essentially that.
+
+470
+00:37:48,160 --> 00:37:50,080
+So, like, that's what I started creating.
+
+471
+00:37:50,560 --> 00:37:57,920
+And then when I was creating that, I realized I was looking at a lot of blogs that I wanted to remember.
+
+472
+00:37:58,480 --> 00:38:05,680
+And I knew like RSS was a thing and I could never find an RSS reader that I actually liked that just synced over iCloud.
+
+473
+00:38:05,760 --> 00:38:09,360
+I didn't want to pay for the service that everybody uses, Feedly.
+
+474
+00:38:09,680 --> 00:38:09,840
+Right.
+
+475
+00:38:10,640 --> 00:38:12,640
+Because like, I wasn't a hardcore user.
+
+476
+00:38:13,280 --> 00:38:22,720
+So then from y'all trippin, I made an odd RSS, which was just supposed to be for me at first, like fuggly like list that synced over iCloud.
+
+477
+00:38:22,800 --> 00:38:23,280
+That's all I wanted.
+
+478
+00:38:23,360 --> 00:38:26,000
+I swear, it's unfair how good good you are at names though.
+
+479
+00:38:27,600 --> 00:38:29,360
+I don't start a project until I have a name.
+
+480
+00:38:30,320 --> 00:38:39,120
+And I don't know if it's coming across in us saying it, but it is Anne Space Otter as in the animal, the cute animal, RSS.
+
+481
+00:38:39,840 --> 00:38:41,920
+But obviously, it's not Otter RSS.
+
+482
+00:38:42,160 --> 00:38:47,120
+I guess the joke there was that there's a whole bunch of RSS readers, and so this is another one.
+
+483
+00:38:48,000 --> 00:38:48,640
+It is another one.
+
+484
+00:38:48,800 --> 00:38:52,560
+And I just wanted, so yeah, and like, I wasn't planning to actually release it.
+
+485
+00:38:53,600 --> 00:38:58,400
+And then like, I tweeted it and then Test Flight, and then people loved it, and I was like, ah, dang it.
+
+486
+00:38:58,800 --> 00:39:00,800
+So I kind of continued on with that.
+
+487
+00:39:00,800 --> 00:39:06,000
+I wanted to add shortcuts to it, but I didn't want to mess up my project to add shortcuts.
+
+488
+00:39:06,640 --> 00:39:11,040
+So I created a new project, just supposed to be a sample project.
+
+489
+00:39:12,320 --> 00:39:18,480
+I was like, what can I do to create shortcuts for something that I know the domain of, so I can just like work on the tech part?
+
+490
+00:39:18,960 --> 00:39:21,680
+And what is it that, what API are you an expert at?
+
+491
+00:39:22,560 --> 00:39:23,120
+Ah, right.
+
+492
+00:39:23,920 --> 00:39:25,680
+I think it has to be App Store Connect.
+
+493
+00:39:26,640 --> 00:39:30,240
+You're probably the lead user of App Store Connect in the world.
+
+494
+00:39:30,960 --> 00:39:31,520
+Oh, for sure.
+
+495
+00:39:31,760 --> 00:39:31,840
+Yeah.
+
+496
+00:39:32,720 --> 00:39:34,720
+I think, yeah, it's the API, I mean.
+
+497
+00:39:34,880 --> 00:39:35,680
+Yeah, yeah, yeah.
+
+498
+00:39:36,320 --> 00:39:39,040
+I don't I don't use the actual website, not unless I have to.
+
+499
+00:39:40,080 --> 00:39:59,920
+So I I created that Connect Kit app where you would put in your like your API key secret and with then shortcuts to make any app store connect API call and I added some helpers for additional in app payment tip, I think is what I called it.
+
+500
+00:40:00,080 --> 00:40:01,040
+I don't know what I called it.
+
+501
+00:40:02,080 --> 00:40:05,520
+And that was like I was like, well, this is like an easy quick app to release.
+
+502
+00:40:05,600 --> 00:40:08,000
+This is going to be my first like indie app that I want to release.
+
+503
+00:40:09,680 --> 00:40:12,320
+So like that, that all started from me all tripping.
+
+504
+00:40:12,560 --> 00:40:19,920
+I went from this like triplist to a peer shortcuts app that interacted with the App Store Connect API.
+
+505
+00:40:20,240 --> 00:40:28,960
+And that one, so Connect Kit was your first app in this sort of period, I guess, of your developer career.
+
+506
+00:40:28,960 --> 00:40:31,760
+That was the first one that you released and kind of gave it your full push.
+
+507
+00:40:32,000 --> 00:40:34,480
+Yeah, the first app that I was serious about.
+
+508
+00:40:34,720 --> 00:40:35,200
+Yeah, yeah.
+
+509
+00:40:36,160 --> 00:40:44,000
+My first app, my first personal app in the App Store was a, it was like Instagram, but you had stickers where you put dinosaurs on them that I drew.
+
+510
+00:40:45,040 --> 00:40:46,320
+Dinogram was the name.
+
+511
+00:40:47,680 --> 00:40:49,200
+I'm thinking of re releasing that.
+
+512
+00:40:49,600 --> 00:40:51,360
+Yeah, that one needs to see the light of day.
+
+513
+00:40:52,240 --> 00:40:52,320
+Yeah.
+
+514
+00:40:52,560 --> 00:40:53,440
+So that was the first one.
+
+515
+00:40:53,600 --> 00:40:54,560
+That one wasn't serious.
+
+516
+00:40:55,360 --> 00:40:56,480
+Now, now it might be.
+
+517
+00:40:56,800 --> 00:41:04,000
+But this is when I was like, I think I actually like, I like, I want to like, try the whole like marketing aspect and things like that.
+
+518
+00:41:04,240 --> 00:41:08,480
+And when I like, did this, this was like post Indie Dev Monday.
+
+519
+00:41:08,880 --> 00:41:09,920
+So that was after.
+
+520
+00:41:10,400 --> 00:41:14,480
+So Indie Dev Monday, your newsletter that started before you released Connect Kit.
+
+521
+00:41:14,880 --> 00:41:21,520
+It was, I think, right after I started working on Y'all Trippin' and before, before an Otter RSS.
+
+522
+00:41:21,840 --> 00:41:24,720
+Man, see, I this is, this is the problem with doing the show.
+
+523
+00:41:24,960 --> 00:41:34,160
+show with someone I'm friends with, because I knew about a lot of these because you'd be talking to me about them, and you kind of did the work on it in public thing on Twitter.
+
+524
+00:41:35,280 --> 00:41:35,360
+Yeah.
+
+525
+00:41:35,680 --> 00:41:38,960
+And so you had test flights for a lot of these pretty far ahead of time too.
+
+526
+00:41:39,200 --> 00:41:46,480
+So I think you all trip and never had a test flight, because that one is probably like 10% done, but I still have it out there.
+
+527
+00:41:46,720 --> 00:41:54,800
+So we'll get to Indie Dev Monday in a little bit, but just the quickness of it, if it's relevant to what you're about to say, is that it's a newsletter, you know, interviewing.
+
+528
+00:41:54,960 --> 00:41:58,320
+It's basically this show in a newsletter form and more often.
+
+529
+00:41:58,640 --> 00:41:58,720
+Yeah.
+
+530
+00:42:00,480 --> 00:42:12,560
+I got a lot of inspiration from the Indie devs that I featured or spotlighted and kind of like what they did for marketing, press releases, stuff like that.
+
+531
+00:42:12,640 --> 00:42:14,240
+So I kind of wanted to do that with ConnectKit.
+
+532
+00:42:14,400 --> 00:42:15,360
+And I had it all set.
+
+533
+00:42:15,920 --> 00:42:26,480
+And then ConnectKit stayed in review in the App Store for, I think it was at eight days before I started questioning anything.
+
+534
+00:42:27,360 --> 00:42:36,960
+And then I sent one of those email things to them and then it got rejected for something and it was in review again, not waiting for review.
+
+535
+00:42:37,520 --> 00:42:42,400
+in review for like another like 14 days and then 8 days and 4 days.
+
+536
+00:42:43,200 --> 00:42:50,560
+It ended up taking 34 days to get approved with very minimal like actual rejections that I had to fix.
+
+537
+00:42:51,040 --> 00:42:55,280
+And the vast majority of that is just sitting there in review with no feedback.
+
+538
+00:42:55,600 --> 00:42:55,680
+Yes.
+
+539
+00:42:56,560 --> 00:43:17,600
+And I'm pretty certain is because I was the first app that actually used the App Store Connect API keys and they didn't know how to handle it because shortly after I released it, there were other apps that were also using the App Store Con Knight API that got approved relatively quickly, but still like in that same cycle.
+
+540
+00:43:17,840 --> 00:43:24,080
+You were the one running it up the chain through legal and whatever other areas inside the spaceship.
+
+541
+00:43:24,400 --> 00:43:24,480
+Yeah.
+
+542
+00:43:25,040 --> 00:43:35,040
+So like I had the whole, like I had a marketing plan like the day I submitted it, and then during this time I actually went harder on marketing, which was actually good.
+
+543
+00:43:35,280 --> 00:43:40,960
+Like I'm glad it didn't get approved because it probably wouldn't have been as quickly successful.
+
+544
+00:43:41,360 --> 00:43:42,400
+I don't want to say successful.
+
+545
+00:43:42,720 --> 00:43:45,360
+There's a very small market for people that actually want to use this app.
+
+546
+00:43:46,320 --> 00:43:48,960
+But I feel like it was successful for the company.
+
+547
+00:43:49,760 --> 00:43:52,080
+And what were all the marketing things that you did then?
+
+548
+00:43:52,640 --> 00:44:13,360
+I actually created a legit website and like I had a two minute long video that I created that kind of like showed everything it did, created in iMovie and then I teased that and then I had like a press kit and then what else did I do?
+
+549
+00:44:13,680 --> 00:44:26,240
+And then I mean there was the saga of it being in reviews for so long was probably a nice little build up to the release, like building up some hy some hype and stuff, weirdly.
+
+550
+00:44:26,640 --> 00:44:40,320
+Yeah, it was, yeah, there was a lot of, I don't want to go hype or and or like necessarily complaining on Twitter, because I don't, I don't like coming out as complaining, but all that confusion on like, why hasn't it been approved yet?
+
+551
+00:44:40,800 --> 00:44:40,960
+Right.
+
+552
+00:44:41,760 --> 00:44:49,520
+But I did have like a pretty confusion ranty tweet, and then it was released twelve hours later.
+
+553
+00:44:50,080 --> 00:44:57,040
+So I feel like someone saw it internally and was like, okay, like this needs to go, because it was just a little too coincidental.
+
+554
+00:44:58,000 --> 00:44:59,920
+So during this time then.
+
+555
+00:45:00,000 --> 00:45:08,240
+And then you weren't just working on marketing materials and stuff, you kind of redoubled down to another RSS reader, right?
+
+556
+00:45:08,480 --> 00:45:10,000
+Yeah, because I needed something else to do.
+
+557
+00:45:11,600 --> 00:45:27,600
+And that one, I actually the reason I did it was because the test flight build was expiring and people were still using it, and I didn't want to just have to keep pushing test flight builds because they expired.
+
+558
+00:45:28,560 --> 00:45:34,160
+So I was like, I might as well just release it so people can just keep using it.
+
+559
+00:45:35,040 --> 00:45:36,400
+And so I did.
+
+560
+00:45:36,400 --> 00:45:43,120
+So I went ham on fixing that and then before releasing it, I was like, I'm just going to add max support too, because why not?
+
+561
+00:45:43,280 --> 00:45:49,920
+So I spent like three days adding max support, which was mainly clicking a checkbox but fixing a few small things.
+
+562
+00:45:51,200 --> 00:46:01,120
+And at this time, like, my son was also born, so I didn't have a ton of time to focus on the dev.
+
+563
+00:46:02,080 --> 00:46:13,520
+So I spent like two weeks in between like walking him and when I got to be awake to focus on marketing because I could think about code stuff.
+
+564
+00:46:14,240 --> 00:46:24,480
+So I did the same kind of marketing for an Otter RSS as I did ConnectKit, but I think it did a little more somehow.
+
+565
+00:46:24,640 --> 00:46:25,840
+I don't exactly know.
+
+566
+00:46:26,320 --> 00:46:34,000
+Well, for one, it has the most adorable icon of any app ever that probably did a lot of heavy lifting on its own.
+
+567
+00:46:34,640 --> 00:46:44,400
+Yeah, I didn't want to release it without like I knew like the thing with the thing with an Otter RSS is my tagline is like it's the most okayist RSS reader.
+
+568
+00:46:44,720 --> 00:46:50,080
+Like there are better ones that are more powerful ones that definitely have less bugs.
+
+569
+00:46:50,720 --> 00:46:53,360
+I just wanted an okay one that had iCloud syncing.
+
+570
+00:46:53,680 --> 00:46:59,200
+So that's how I marketed it as was like an adorable slash okay RSS reader.
+
+571
+00:46:59,920 --> 00:47:02,800
+And apparently people enjoy that.
+
+572
+00:47:03,200 --> 00:47:10,960
+And like I, in that first day of release, like I got on nine to five Mac, which was one of my goals.
+
+573
+00:47:12,240 --> 00:47:20,720
+I was on iMore and in a Mac Stories club thing and then a whole bunch of other things and on some German site that I had to translate in Google Chrome.
+
+574
+00:47:21,280 --> 00:47:30,480
+And I left a comment on there that then somebody appreciated that I I really appreciated that I tried to respond, I think, properly.
+
+575
+00:47:30,880 --> 00:47:36,880
+So, like, it was, it was really fun to like have that like post launch excitement.
+
+576
+00:47:37,200 --> 00:47:45,840
+And that was what I wanted from listening to your first episode way back in the day, which way back in the day was almost a year ago.
+
+577
+00:47:46,400 --> 00:47:52,800
+Yeah, like, Otter is definitely, I mean, RSS is niche to a degree, right?
+
+578
+00:47:52,960 --> 00:47:57,600
+And it's it's sort of a nerdy thing, but it's definitely way more, way broader of a market.
+
+579
+00:47:58,240 --> 00:48:00,480
+And I don't know if I've said it here before, but.
+
+580
+00:48:00,560 --> 00:48:15,680
+But I feel like RSS readers are one of those weird things that the scope of how much they need to do isn't that big, but it feels like everyone has intensely strong personal tastes surrounding them.
+
+581
+00:48:15,840 --> 00:48:26,880
+It's kind of similar to the podcasts or podcast players, where it's like, it doesn't feel like it feels like you could write down, you know, the feature set and they should all look almost the same.
+
+582
+00:48:27,200 --> 00:48:29,440
+And on the surface they almost all do look the same.
+
+583
+00:48:30,000 --> 00:48:31,600
+But they behave completely differently.
+
+584
+00:48:31,920 --> 00:48:34,000
+Yes, especially on mobile.
+
+585
+00:48:34,480 --> 00:48:37,280
+I learned that podcast is actually RSS by, by the way.
+
+586
+00:48:37,600 --> 00:48:38,960
+Well, right, yeah, that's a good point.
+
+587
+00:48:39,120 --> 00:48:41,920
+I didn't know that and I learned that along the way, which was super awesome.
+
+588
+00:48:42,240 --> 00:48:52,960
+Yeah, I foolishly in an early podcast venture, like, built my own dumb network because I didn't want to pay for hosting and I got way too in the weeds on that.
+
+589
+00:48:54,080 --> 00:48:56,880
+But that sounds like a very developer thing though.
+
+590
+00:48:57,120 --> 00:49:06,320
+Yeah, well, actually the little preview episode that you'll get, or well, most guests get, but you might not because we're on a very short time schedule.
+
+591
+00:49:06,560 --> 00:49:06,880
+That's fine.
+
+592
+00:49:07,840 --> 00:49:16,640
+That actually is like hosted on my dumb little network that I manually build with this Electron app I built a long time ago.
+
+593
+00:49:16,880 --> 00:49:20,000
+And it's we can talk about it another day, but that's a whole dumb thing.
+
+594
+00:49:20,240 --> 00:49:25,040
+The point is I did get into the weeds a little bit on RSS and it is kind of fascinating.
+
+595
+00:49:25,200 --> 00:49:33,920
+Yeah, like it's simple, but then like there's like a really bunch of weird use cases or not that we're really weird edge cases in the RSS themselves.
+
+596
+00:49:34,080 --> 00:49:36,400
+There's like three slash four different formats.
+
+597
+00:49:36,720 --> 00:49:36,800
+Yeah.
+
+598
+00:49:37,680 --> 00:49:42,080
+And then like not every website will do them one hundred percent correctly.
+
+599
+00:49:43,440 --> 00:49:47,200
+So like things then things can get like really weird.
+
+600
+00:49:47,360 --> 00:49:48,640
+So like with an Autor RSS.
+
+601
+00:49:48,640 --> 00:49:57,680
+With an AutoRSS, I was like, I'm not actually going to like most RSS readers store the actual like website content and like display it in like a really nice reader format.
+
+602
+00:49:57,920 --> 00:50:00,800
+And I'm like, uh uh, I'm going super lazy here.
+
+603
+00:50:01,840 --> 00:50:08,080
+And I'm getting the title, description, URL, and we're going to use Safari's own reader view.
+
+604
+00:50:08,480 --> 00:50:16,960
+Because I'm not in it for the actual like consistent, like, very specific reader look to it.
+
+605
+00:50:17,920 --> 00:50:19,920
+I want it for the iCloud syncing.
+
+606
+00:50:20,000 --> 00:50:21,200
+So I didn't care how it read.
+
+607
+00:50:21,360 --> 00:50:21,600
+Right.
+
+608
+00:50:21,840 --> 00:50:22,880
+That's why I created it for me.
+
+609
+00:50:23,040 --> 00:50:26,160
+It's like a really lightweight wrapper around a specific use case.
+
+610
+00:50:26,720 --> 00:50:37,840
+And like, you alone are probably not going to be able to compete on, you know, the amount of time that you want to give this with all these other companies and all this stuff.
+
+611
+00:50:38,080 --> 00:50:46,480
+But by making it kind of specifically for yourself, it can kind of strike a chord with other people who might want the, like, exact same, you know, sort of sliver.
+
+612
+00:50:46,880 --> 00:50:46,960
+Yeah.
+
+613
+00:50:47,280 --> 00:50:50,960
+Everything I build is just for me and I share it because I can.
+
+614
+00:50:51,920 --> 00:50:59,680
+And so you said you got a decent amount of press with that, but as far as users, what do you think kind of resonated with people that use it?
+
+615
+00:51:00,240 --> 00:51:01,760
+A lot of people love the icon.
+
+616
+00:51:03,120 --> 00:51:03,200
+Yeah.
+
+617
+00:51:03,440 --> 00:51:04,960
+But the icon is so good.
+
+618
+00:51:06,000 --> 00:51:06,400
+It is.
+
+619
+00:51:07,040 --> 00:51:22,880
+But besides that, I've gotten a lot of feedback on people have, like, they tried Reader 4, they've tried other ones and they couldn't, like, they couldn't understand how to onboard or how RSS worked or like how to add a feed and like what a feed actually like how it was represented.
+
+620
+00:51:23,360 --> 00:51:28,080
+And to be honest, that's also why I never used other RSS apps.
+
+621
+00:51:28,320 --> 00:51:29,680
+Like, I just couldn't understand it.
+
+622
+00:51:30,160 --> 00:51:35,040
+Things were laid out in a weird way that my brain didn't understand and it just felt weird.
+
+623
+00:51:35,520 --> 00:51:42,720
+So I created this in a way that I understood RSS for both reading, listing and adding feeds.
+
+624
+00:51:43,200 --> 00:51:51,040
+And I think that's probably what caught on, is that I'm capturing that market that also couldn't understand how the other apps worked, why they worked.
+
+625
+00:51:51,520 --> 00:51:59,600
+And like, if I use those other apps now, like, I'd probably be totally fine, but that's not the reason why I created it.
+
+626
+00:51:59,760 --> 00:52:01,200
+Right, yeah, no, that makes sense.
+
+627
+00:52:01,840 --> 00:52:07,440
+And you mentioned, like, during this process is when your son was born.
+
+628
+00:52:07,680 --> 00:52:07,760
+Yes.
+
+629
+00:52:08,240 --> 00:52:12,240
+And one of the things that I really appreciate about you online is that I feel like you are.
+
+630
+00:52:12,400 --> 00:52:52,160
+are very vocal about taking time off and spending time with your kid and like just I don't know super like I feel like a lot of people and I'm one of them like I almost shy away from it because I'm I don't know I don't I actually don't know the reason why it just feels like yeah this is this thing that I talk about here and then I don't want to like burden people with something that's outside of my normal scope here I honestly I saying it out loud I don't know the reason for it but I like deeply appreciate that you do that because I think it's putting out a good way of structuring your life to the world, if that makes sense.
+
+631
+00:52:52,480 --> 00:53:00,480
+Yeah, so yeah, so the reason that I'm, like, my social presence is it's pretty personal without going into personal details.
+
+632
+00:53:01,040 --> 00:53:10,800
+I'm pretty like, not like, not like, not like, raw with my, like, emotions or what I'm doing or, like, ashamed of what I do, but like, I'll keep it like, good vibes and like, PG, but still be pretty real.
+
+633
+00:53:11,440 --> 00:53:16,960
+And the reason is, like, I've had a stutter since I was in, like, second grade.
+
+634
+00:53:17,520 --> 00:53:27,200
+So, like, it's very hard for me in real life to actually, like, say I can't actually say it.
+
+635
+00:53:28,240 --> 00:53:32,960
+When I'm talking about stuff like this, I can just keep talking because like, it's words that come easily.
+
+636
+00:53:33,040 --> 00:53:40,640
+But like, if I'm talking about something that's like, 100% serious, like how I feel and stuff like that, it's very hard for me to like physically say it.
+
+637
+00:53:40,960 --> 00:53:48,880
+So that's kind of why it comes out easier through like Twitter, because that's my medium of like getting that stuff out.
+
+638
+00:53:49,600 --> 00:53:57,520
+And I know if I feel that way, there are probably a bunch of others that also feel that way that appreciate hearing the things that I want to talk about like that.
+
+639
+00:53:57,920 --> 00:53:58,000
+Yeah.
+
+640
+00:53:58,240 --> 00:54:00,480
+And like, that's another one is your.
+
+641
+00:54:00,480 --> 00:54:15,760
+Is your, like you have a lot of stuff in your earlier blog posts about your stutter and how like Twitter and this sort of online world allows you to express yourself a lot more freely feeling, I guess so to speak.
+
+642
+00:54:15,920 --> 00:54:16,000
+Yeah.
+
+643
+00:54:16,320 --> 00:54:26,800
+But it is really fascinating and inspiring to me that like you sort of set this goal for yourself last year of doing more speaking and like conference talks and stuff like that.
+
+644
+00:54:27,120 --> 00:54:31,200
+And unlike me, you've actually been doing that over the year, virtually.
+
+645
+00:54:31,520 --> 00:54:31,600
+Yeah.
+
+646
+00:54:32,720 --> 00:54:36,800
+I like accomplished my goal of doing one little like meetup talk thing.
+
+647
+00:54:36,960 --> 00:54:38,720
+And then I was like, okay, I'm gonna count that.
+
+648
+00:54:39,040 --> 00:54:42,240
+I'll wait till next year so we can all fly somewhere together.
+
+649
+00:54:42,800 --> 00:54:46,080
+But I'm just interested to hear, like, about that process.
+
+650
+00:54:46,720 --> 00:54:54,160
+Is it, like, is it more nerve-racking to do a talk because of this and you just kind of power through it or like, Yes and no.
+
+651
+00:54:54,640 --> 00:55:01,680
+So I have a better time or like a better at being fluent the more often that I talk.
+
+652
+00:55:02,240 --> 00:55:02,320
+Okay.
+
+653
+00:55:03,040 --> 00:55:04,480
+So lockdown was hard.
+
+654
+00:55:05,440 --> 00:55:12,400
+Like being stuck inside and like not talking to anyone else for like the hard lockdown, like three, four months.
+
+655
+00:55:48,000 --> 00:55:49,840
+The more like, the less I'll struggle.
+
+656
+00:55:50,160 --> 00:55:50,240
+Right.
+
+657
+00:55:50,880 --> 00:55:56,160
+And talking in person is the easiest form of physical talking.
+
+658
+00:55:56,320 --> 00:55:57,600
+Phone calls will just always suck.
+
+659
+00:55:58,480 --> 00:56:00,320
+Video calls suck less than phone calls.
+
+660
+00:56:01,440 --> 00:56:02,400
+What about podcasting?
+
+661
+00:56:03,360 --> 00:56:15,200
+Podcasting is actually not bad if I am talking about myself, which not to sound like conceited, but like, because that's not where that's coming from.
+
+662
+00:56:15,840 --> 00:56:23,920
+But it's hard for me to ask people questions because there's not really other ways for me to phrase those questions.
+
+663
+00:56:24,640 --> 00:56:26,720
+So if I mess up, I'm just like stuck in the water.
+
+664
+00:56:27,280 --> 00:56:27,440
+Right.
+
+665
+00:56:27,680 --> 00:56:34,080
+Where if I'm talking about myself, there's a lot, like, a lot of different, like, paths I can go through which then makes me more relaxed, which then I can talk easier.
+
+666
+00:56:34,480 --> 00:56:35,120
+That makes sense.
+
+667
+00:56:35,520 --> 00:56:37,520
+So like, the hardest thing for me to say is my name.
+
+668
+00:56:37,760 --> 00:56:46,640
+Like, I can't say my first name to anyone, like, phone calls, anyone else, like, meetups, any introduction is just like super tough.
+
+669
+00:56:47,040 --> 00:56:53,680
+So I'm like, if I go to a conference and I speak, people know who I am, so I don't have to introduce myself.
+
+670
+00:56:54,000 --> 00:56:54,240
+Right.
+
+671
+00:56:54,720 --> 00:56:58,880
+Which is like the most overengineered way of introducing myself.
+
+672
+00:57:00,240 --> 00:57:00,320
+Yeah.
+
+673
+00:57:01,280 --> 00:57:07,040
+Work your way up a big open source project enough that somebody will introduce you as you walk on stage.
+
+674
+00:57:07,440 --> 00:57:10,640
+And honestly, that's kind of, that's kind of it.
+
+675
+00:57:10,960 --> 00:57:20,800
+Like, I mean, not necessarily, but like, it's, I don't know, it's, it's, it's, it's, it's, it's so weird having a stutter because it's not like one of those disabilities that, like, can, like, really stop me in its tracks.
+
+676
+00:57:21,440 --> 00:57:26,320
+But, like, it's always 100% in my mind when I talk.
+
+677
+00:57:27,120 --> 00:57:28,160
+It just gets exhausting.
+
+678
+00:57:28,480 --> 00:57:31,040
+But, like, if I keep talking, then I think about it less.
+
+679
+00:57:31,920 --> 00:57:37,840
+So going to talks and doing talks more often, I think about it less, think about it less, and just generally things feel better.
+
+680
+00:57:38,640 --> 00:57:52,480
+Well, I obviously can't speak for other people, but I would imagine that it's pretty inspiring for anybody else who has a similar disability or speeching, what's the word I'm looking for?
+
+681
+00:57:52,640 --> 00:57:53,120
+Impediment.
+
+682
+00:57:53,280 --> 00:57:54,960
+Yeah, there you go, speech impediment or something like that.
+
+683
+00:57:55,120 --> 00:57:58,640
+It's also a really hard word to say with a stutter.
+
+684
+00:57:58,720 --> 00:58:01,120
+Yeah, that seems like a cruelly named word.
+
+685
+00:58:02,080 --> 00:58:02,160
+Yeah.
+
+686
+00:58:02,720 --> 00:58:04,400
+But I definitely think it's really cool.
+
+687
+00:58:04,800 --> 00:58:15,520
+One, it's inspiring that you push through it and you can still, you know, not can still, but that you do speak and do all this, but also just that you talk about it so openly.
+
+688
+00:58:15,840 --> 00:58:17,760
+It took me a long time to get to that point though.
+
+689
+00:58:17,920 --> 00:58:18,000
+Yeah.
+
+690
+00:58:18,240 --> 00:58:21,200
+It was like a lot of years of shame and trying to hide it.
+
+691
+00:58:21,360 --> 00:58:22,560
+And then I was like, you know what?
+
+692
+00:58:23,040 --> 00:58:24,640
+I'm kind of tired of that.
+
+693
+00:58:24,960 --> 00:58:27,040
+Like, it is what it is and it made me who I am.
+
+694
+00:58:27,200 --> 00:58:28,320
+So let's just embrace it.
+
+695
+00:58:28,960 --> 00:58:37,520
+And like, an interesting parallel in a smaller scale, but like, did it mean much to you whenever, like, Joe Biden became president?
+
+696
+00:58:38,080 --> 00:58:38,480
+Oh my God.
+
+697
+00:58:38,800 --> 00:58:41,040
+I, yeah, it was huge, huge.
+
+698
+00:58:41,360 --> 00:58:43,680
+Like, probably like, tears in my eyes.
+
+699
+00:58:44,000 --> 00:58:47,600
+Because, like, yeah, I mean, there are political things that I obviously don't disagree with.
+
+700
+00:58:47,840 --> 00:58:48,320
+Some that I do.
+
+701
+00:58:49,120 --> 00:58:50,960
+No one's going to make you one hundred percent happy.
+
+702
+00:58:51,120 --> 00:58:51,280
+Sure.
+
+703
+00:58:52,320 --> 00:58:54,960
+Unless, like, you became president, that that'd be amazing.
+
+704
+00:58:57,200 --> 00:59:07,600
+But, like, just like knowing, like, the stuff that, like, he went through and, like, just like, seeing him on stage speak, like, I get mad anxiety when he speaks, but it's also, like, really inspiring.
+
+705
+00:59:08,160 --> 00:59:08,800
+That's, yeah.
+
+706
+00:59:08,960 --> 00:59:16,800
+I mean, and from his perspective, he's just playing the long con to have, you know, the Speaker of the House introduce him so he doesn't have to say hi, Joe.
+
+707
+00:59:18,000 --> 00:59:18,640
+That's exactly it.
+
+708
+00:59:18,880 --> 00:59:19,440
+That's exactly it.
+
+709
+00:59:19,680 --> 00:59:20,000
+Done deal.
+
+710
+00:59:20,560 --> 00:59:45,760
+But I think there's probably, like, I mean, this audience here isn't necessarily the same this gigantic audience, but when you're speaking, when you're doing this stuff, there's probably people out there that, uh, hearing you do that, it's like shows that there's this path that, okay, this is a thing that, like, I can do, I can talk about it, and you have a, like, sort of, I don't know, you're, like, blazing a trail, so to speak, um, and showing what can be done.
+
+711
+00:59:45,920 --> 00:59:47,360
+And I think, I just think that's really cool.
+
+712
+00:59:47,680 --> 00:59:55,360
+Yeah, it's kind of what, kind of what I hope for, because I, uh, I subscribe to the R slash stuttering subreddit, I think it is.
+
+713
+00:59:55,760 --> 00:59:59,280
+And, uh, it is, it's kind of a, uh, dark place.
+
+714
+01:00:00,080 --> 01:00:02,640
+Like there's a lot of people who have worse stutter than I do.
+
+715
+01:00:02,960 --> 01:00:13,680
+So like I'm very fortunate to have one that is like not like there 100% all the time, but like it's also someone inspiring to like hear some of the success stories.
+
+716
+01:00:13,920 --> 01:00:22,960
+And like I kind of want to like I know like I'm not in the same boat as most of those people, but if it can like provide any sort of help, that'd be amazing.
+
+717
+01:00:23,520 --> 01:00:23,600
+Yeah.
+
+718
+01:00:24,400 --> 01:00:28,480
+No, I I think, I mean, that's the case with all people, right?
+
+719
+01:00:28,720 --> 01:00:29,600
+But like, yeah.
+
+720
+01:00:30,880 --> 01:00:48,560
+It's kind of the it's why it's exciting when anybody who's not represented all the time, you know, like white male from America, having someone that looks like you, acts like you, has gone through a similar life experience that you that can show sort of what is possible.
+
+721
+01:00:49,280 --> 01:00:52,560
+Even if you intellectually know that, seeing it is so different, I feel like.
+
+722
+01:00:53,040 --> 01:00:53,520
+Yeah, it is.
+
+723
+01:00:53,760 --> 01:01:03,440
+Like seeing Grandpa Joe speak, that's kind of how I imagine him, because he's just like a super loving, caring, feeling guy.
+
+724
+01:01:04,000 --> 01:01:16,640
+But like seeing him speak is just like after he won presidential, I don't know if one is the correct word, but like that speech was just like, it's for real, like one of us is up there kind of thing.
+
+725
+01:01:17,280 --> 01:01:17,840
+Yeah, yeah.
+
+726
+01:01:18,320 --> 01:01:20,080
+No, that's really cool.
+
+727
+01:01:20,800 --> 01:01:22,000
+And thank you for talking about it.
+
+728
+01:01:23,760 --> 01:01:30,880
+I also think it's helpful for people who don't have setters to hear from people who do just have more empathy, you know what I mean?
+
+729
+01:01:30,960 --> 01:01:32,160
+Or be more understanding.
+
+730
+01:01:32,880 --> 01:01:37,520
+Yeah, because it is kind of a disability that you can't see.
+
+731
+01:01:38,240 --> 01:01:45,840
+And then, so when people do hear it, they tend, you get either two crazy reactions.
+
+732
+01:01:46,080 --> 01:01:54,480
+Either people that said they had one as a kid, which I'm always like, I don't want to not believe, but I'm like, ah, I kind of wish mine was just gone.
+
+733
+01:01:54,720 --> 01:01:55,280
+Right.
+
+734
+01:01:55,440 --> 01:01:55,520
+Yeah.
+
+735
+01:01:56,080 --> 01:01:58,960
+People who like, who kind of like make fun of you.
+
+736
+01:01:59,520 --> 01:02:03,680
+Like, oh, you can't say your name or you forgot like your mom's name or something like that.
+
+737
+01:02:03,840 --> 01:02:06,080
+I'm like, no, I didn't forget and I'm not an idiot.
+
+738
+01:02:06,240 --> 01:02:08,320
+I just literally can't say it.
+
+739
+01:02:08,880 --> 01:02:14,080
+So like, it's like two extremes of like how people react.
+
+740
+01:02:14,320 --> 01:02:22,720
+So like, having more awareness for it would be easier for people with stutterers because a lot of it is the anxiety of people not knowing that you have one.
+
+741
+01:02:23,040 --> 01:02:23,200
+Right.
+
+742
+01:02:23,680 --> 01:02:29,040
+So in all of my talks, that's my third slide is, hey, I have a stutter.
+
+743
+01:02:29,360 --> 01:02:33,360
+I have this giant fear of public speaking, but here I am, YOLO.
+
+744
+01:02:33,600 --> 01:02:33,920
+Let's do this.
+
+745
+01:02:34,160 --> 01:02:34,560
+Let's have fun.
+
+746
+01:02:34,880 --> 01:02:34,880
+Yeah.
+
+747
+01:02:35,200 --> 01:02:35,760
+That's awesome.
+
+748
+01:02:36,000 --> 01:02:39,600
+I think it sort of breaks through some of that anxiety, probably.
+
+749
+01:02:40,080 --> 01:02:40,720
+Breaks ice.
+
+750
+01:02:41,200 --> 01:02:41,280
+Yeah.
+
+751
+01:02:41,840 --> 01:02:42,400
+Yeah, it does.
+
+752
+01:02:42,800 --> 01:02:43,360
+That's awesome.
+
+753
+01:02:43,520 --> 01:02:47,680
+Well, I did want to talk about Indie Dev Monday, but I know we're a little short on time.
+
+754
+01:02:48,480 --> 01:02:49,040
+We can go along.
+
+755
+01:02:49,200 --> 01:02:49,520
+That's fine.
+
+756
+01:02:50,560 --> 01:02:57,520
+So really quickly, Indie Dev Monday, like we said earlier, it's a weekly still newsletter.
+
+757
+01:02:57,760 --> 01:02:57,840
+Yes.
+
+758
+01:02:58,400 --> 01:03:04,240
+Where you interview different Indie developers and you ask them a bunch of questions.
+
+759
+01:03:05,440 --> 01:03:18,240
+and you post it weekly and whenever you started out it was two people in a uh an episode a uh issue i guess that was what you call it issue yeah yeah yeah yeah but i think now you're down down to one, but still, that's quite a clip.
+
+760
+01:03:19,360 --> 01:03:20,560
+What got you started doing that?
+
+761
+01:03:21,120 --> 01:03:24,960
+So this was, half this credit is actually you, again.
+
+762
+01:03:25,920 --> 01:03:27,360
+The other half is Christian.
+
+763
+01:03:28,240 --> 01:03:29,280
+Have you had Christian on your show?
+
+764
+01:03:29,520 --> 01:03:30,000
+See you later.
+
+765
+01:03:30,320 --> 01:03:31,760
+I think he was my second guest.
+
+766
+01:03:32,480 --> 01:03:33,040
+Yeah, yeah.
+
+767
+01:03:33,280 --> 01:03:38,080
+So that, I guess it probably makes sense that you two were the ones that were kind of starting it.
+
+768
+01:03:38,560 --> 01:03:39,920
+Well, start it for me.
+
+769
+01:03:40,240 --> 01:03:45,040
+But I think that was, is it like July 17th?
+
+770
+01:03:45,280 --> 01:03:48,480
+Was that the day when it was his birthday?
+
+771
+01:03:48,960 --> 01:03:49,520
+Oh yeah.
+
+772
+01:03:50,480 --> 01:04:01,200
+And your launch of Dark Noise 2 on the exact same day and he was having a lot of like his big animal donation animal shelter.
+
+773
+01:04:01,920 --> 01:04:03,120
+Yeah, thing going on.
+
+774
+01:04:03,600 --> 01:04:10,720
+And then you had your big Dark Noise 2 launch and there was just a lot like indie dev hype in Twitter and I'm like, this is this is it.
+
+775
+01:04:11,120 --> 01:04:13,280
+Like, this is what I want to see every day.
+
+776
+01:04:13,920 --> 01:04:19,120
+And then I joked in a tweet, I mean like something like that that I was like, I want this like every week.
+
+777
+01:04:19,600 --> 01:04:23,680
+And I'm like, I could I could probably make this happen every week somehow.
+
+778
+01:04:24,640 --> 01:04:29,360
+And Monday was a day I picked because I believe your launch and like that whole day was a Monday.
+
+779
+01:04:29,680 --> 01:04:31,440
+So I was like, let's just do this next Monday.
+
+780
+01:04:31,760 --> 01:04:33,360
+So I, uh, okay.
+
+781
+01:04:33,360 --> 01:04:43,200
+I came up with the idea for this indie interviewer style newsletter because I didn't really know what else to talk about in the indie dev community because I wasn't really in it.
+
+782
+01:04:43,360 --> 01:04:46,400
+I didn't have any apps, but I wanted to get into it.
+
+783
+01:04:47,360 --> 01:04:52,480
+So I think I actually DMed you as like, hey, is this like an actual idea?
+
+784
+01:04:52,800 --> 01:04:53,840
+Because I didn't know.
+
+785
+01:04:54,160 --> 01:04:56,960
+And I think you loved it, but you're like, be careful.
+
+786
+01:04:57,120 --> 01:05:00,320
+Don't like interview too many people at once because you'll burn out.
+
+787
+01:05:01,120 --> 01:05:03,280
+And I was like, nah, that's not going to happen.
+
+788
+01:05:05,120 --> 01:05:55,600
+Well, now I'm at one because I stopped when Hudson was born doing two because it was a lot to handle and I want to make sure that I kept going every week but like I wanted to like have this set of like questions that repeated for each dev and then like app specific questions um so like the first five questions are like where are you from what got you into dev what do you do for your daytime job uh how do you balance your time because that's the hardest thing as an indie dev unless you're fully indie dev but then that's also a hard time um and then I got like into app specific questions like oh like what got you into making this or why did you do this decision or what was the hardest thing you did about this app um and like I wanted to actually like get kind of personal with both the dev and the app because that's kind of what indie dev is.
+
+789
+01:05:55,760 --> 01:05:56,720
+It's not just about the app.
+
+790
+01:05:56,960 --> 01:05:57,920
+It's not just about the dev.
+
+791
+01:05:58,240 --> 01:06:01,040
+It's about the combination of both because that's why that app is created.
+
+792
+01:06:01,360 --> 01:06:01,520
+Right.
+
+793
+01:06:02,000 --> 01:06:03,280
+Which is why you have this show.
+
+794
+01:06:04,560 --> 01:06:10,560
+But you go into a lot, like, deeper details with people and I don't have the attention span for that.
+
+795
+01:06:11,120 --> 01:06:19,440
+I also couldn't do a podcast because that's that would be like my stuttering nightmare and I'd probably cancel every meeting with everybody who I've scheduled.
+
+796
+01:06:20,080 --> 01:06:22,400
+But I was like, I can do a text thing and just email.
+
+797
+01:06:22,560 --> 01:06:23,520
+Like, this is totally fine.
+
+798
+01:06:23,840 --> 01:06:25,280
+And that's kind of what it started off as.
+
+799
+01:06:25,520 --> 01:06:39,600
+So I emailed or I DMed like two people on Twitter for the first issue that like I knew had apps that they were not like super well-known in DDoS but like I didn't want to just be about like the big names.
+
+800
+01:06:40,400 --> 01:06:42,480
+I wanted everybody to kind of be represented.
+
+801
+01:06:44,320 --> 01:06:50,880
+So I got the first two, sent them questions and I was like, I kind of need this back within like 24, 48 hours if you can.
+
+802
+01:06:51,760 --> 01:06:52,480
+Luckily they did.
+
+803
+01:06:52,720 --> 01:06:54,880
+And then that's kind of how the first one started.
+
+804
+01:06:55,120 --> 01:07:03,280
+And the reason I didn't ask like you right away was because I wanted to make sure that I could keep it going with people that I didn't, that were like outside of my friend group.
+
+805
+01:07:03,520 --> 01:07:03,600
+Right.
+
+806
+01:07:04,000 --> 01:07:06,960
+So that I could kind of keep growing the circle and adding more to it.
+
+807
+01:07:07,600 --> 01:07:35,920
+And like in each issue, I wanted to pair.ir like one like more well-known indie dev with a lesser known one so that like the lesser known one can piggyback off of the other one's like social network right um and that that seemed to work out pretty well for uh when I was doing uh two two per issue um I'm gonna get back to two per issue once I can like stack a whole bunch of people up and find like a full day just to like send out questions to like 20 people.
+
+808
+01:07:37,280 --> 01:07:41,600
+But yeah, it's just kind of been going along with that ever since.
+
+809
+01:07:41,840 --> 01:07:44,560
+And we're on, I think next week's issue is 39.
+
+810
+01:07:44,720 --> 01:07:45,040
+Oh man.
+
+811
+01:07:45,360 --> 01:07:47,600
+I've never been this consistent in anything else in my life.
+
+812
+01:07:50,640 --> 01:07:52,720
+I mean, I think I'm at 30.
+
+813
+01:07:53,440 --> 01:07:53,920
+No, 30.
+
+814
+01:07:54,240 --> 01:07:55,040
+You'll be 31.
+
+815
+01:07:55,360 --> 01:07:56,720
+So yeah, you're well past me now.
+
+816
+01:07:57,280 --> 01:08:01,680
+I mean, your issues are, not issues, episodes are a lot longer.
+
+817
+01:08:02,080 --> 01:08:02,160
+Yeah.
+
+818
+01:08:02,400 --> 01:08:02,880
+Well, yeah.
+
+819
+01:08:03,680 --> 01:08:04,720
+It's definitely a different thing.
+
+820
+01:08:04,960 --> 01:08:12,480
+But honestly though, like, I feel like for me, for this show, one of the hardest things is...
+
+821
+01:08:13,840 --> 01:08:17,040
+Bucking up the courage to ask somebody if they'll come on.
+
+822
+01:08:17,840 --> 01:08:17,920
+Yeah.
+
+823
+01:08:18,640 --> 01:08:30,960
+Like, it's like the amount of time I will spend thinking about, like, I've already landed on who I'm going to ask, and then I'll just be like, well, will they, would they really care to come on this?
+
+824
+01:08:31,120 --> 01:08:33,040
+And like, how do you ask?
+
+825
+01:08:33,280 --> 01:08:37,600
+I'll type it out like thirty times, but I'm trying to keep it really short because I don't want to waste any of their time.
+
+826
+01:08:37,920 --> 01:08:44,240
+Yeah, I think my spookyest that I've asked for the newsletter was James Thompson.
+
+827
+01:08:44,720 --> 01:08:44,800
+Yeah.
+
+828
+01:08:45,440 --> 01:08:48,480
+And he was like, right away, heck yes.
+
+829
+01:08:48,560 --> 01:08:50,000
+And I think one of the fastest responders.
+
+830
+01:08:50,160 --> 01:08:51,600
+And I'm like, why was I so scared?
+
+831
+01:08:51,840 --> 01:08:53,440
+Like, the nicest guy of all time.
+
+832
+01:08:53,840 --> 01:09:04,960
+I got lucky with him because when I like, originally announced that I was going to do the show, someone responded with, James Thompson, you should get James Thompson and like tagged him.
+
+833
+01:09:05,120 --> 01:09:07,120
+And he was just like, yeah, sure, hit me off.
+
+834
+01:09:07,200 --> 01:09:08,560
+And I was like, oh, what?
+
+835
+01:09:09,840 --> 01:09:10,800
+Easy, easy.
+
+836
+01:09:12,000 --> 01:09:16,160
+And he was, he, no, Christian was the first one I recorded.
+
+837
+01:09:16,480 --> 01:09:18,720
+He wasn't the first episode, but he was the first one I recorded.
+
+838
+01:09:18,800 --> 01:09:24,800
+But I think that same day I recorded James Thompson, because I did, I bundled up a whole bunch for the very beginning.
+
+839
+01:09:24,960 --> 01:09:25,360
+That's a day.
+
+840
+01:09:25,760 --> 01:09:28,800
+And he really, I mean, amazing person.
+
+841
+01:09:29,360 --> 01:09:29,440
+Yeah.
+
+842
+01:09:29,840 --> 01:09:31,360
+One of the kindest people ever.
+
+843
+01:09:32,800 --> 01:09:39,440
+And he just like stayed on after we recorded and we talked a little bit and he really made me feel welcome as part of this community.
+
+844
+01:09:39,680 --> 01:09:49,760
+And yeah, that was a big moment, I feel like, for me in giving me confidence that it was okay to ask for what to me were like these Titans in this sort of space.
+
+845
+01:09:50,160 --> 01:09:51,840
+Yeah, I I totally get that.
+
+846
+01:09:52,080 --> 01:09:58,320
+And like, I'm still I'm still frightened and because I'm like, oh, like, I don't want to take up your time for this newsletter that's mine.
+
+847
+01:09:58,480 --> 01:10:06,800
+But I'm like, it's kind of what Indie Dev Life is though, it's just like, take advantage of like all these like Indie Dev community bits that you can to grow you and your product.
+
+848
+01:10:07,600 --> 01:10:11,760
+So like, it's just part of like Indie Dev Life to be a part of things like this.
+
+849
+01:10:12,080 --> 01:10:12,160
+Yeah.
+
+850
+01:10:12,560 --> 01:10:12,800
+I think.
+
+851
+01:10:13,200 --> 01:10:13,680
+I don't know.
+
+852
+01:10:14,560 --> 01:10:16,960
+I'm just grateful that everybody seems like they're so kind.
+
+853
+01:10:17,280 --> 01:10:17,920
+Well, yeah.
+
+854
+01:10:18,240 --> 01:10:22,080
+I mean, this like, whole IOS community is just kind in general.
+
+855
+01:10:22,240 --> 01:10:57,280
+I feel like, like, there are other dev communities that like i mean i don't want to specifically shame some but there's some that have been in that are like oof like uh i don't even want to say anything so i'm going to get burned for like the smallest mistake but like this ios community is just so like helpful and forgiving and like builds each other up that it's it's really easy to ask people to like help with things because they're just like heck yeah let's do it let's go i'm free in two hours you want to talk then yeah No, I was really excited whenever we got that going and it's been, it's the only newsletter I really keep up with.
+
+856
+01:10:57,360 --> 01:11:02,720
+I've subscribed to a couple and I try to read them, but I'm generally bad at reading like.
+
+857
+01:11:03,040 --> 01:11:11,520
+like newsletter kind of things for whatever reason, but when I add them to my RSS reader, ironically, I do try to keep up and yours is one that I'm always looking forward to.
+
+858
+01:11:12,240 --> 01:11:15,280
+Obviously, there's like a shared interest with indie devs.
+
+859
+01:11:16,640 --> 01:11:19,840
+It's generally a pretty easy read, which is nice.
+
+860
+01:11:20,000 --> 01:11:22,880
+Like there's not things you have to really think about.
+
+861
+01:11:23,280 --> 01:11:24,560
+You can just kind of do it casually.
+
+862
+01:11:24,880 --> 01:11:24,960
+Yeah.
+
+863
+01:11:26,560 --> 01:11:40,880
+So I guess in the same vein of, you know, the kindness and inspirationalness of the iOS community and, you know, our indie community at large, I guess, I guess I can wrap things up by asking the question that I ask everybody.
+
+864
+01:11:41,440 --> 01:11:52,400
+And I've learned everyone kind of dreads and is scared of this question, which is what is a person or people out there that have inspired you that you recommend others to check out?
+
+865
+01:11:52,560 --> 01:11:54,720
+I didn't, I didn't want to say dread.
+
+866
+01:11:54,960 --> 01:12:07,120
+It was, I couldn't figure out who to pick because with the newsletter, there's so many people that I look up to now that I could easily choose.
+
+867
+01:12:07,680 --> 01:12:11,200
+So like, I could probably give you five, but that's not really the point of this.
+
+868
+01:12:11,840 --> 01:12:16,640
+So, I hope I don't butcher the last name, but Michael Tigus.
+
+869
+01:12:17,280 --> 01:12:18,160
+Oh, yeah, yeah.
+
+870
+01:12:18,320 --> 01:12:20,480
+I also don't know if that's pronounced right, but yeah.
+
+871
+01:12:21,200 --> 01:12:23,680
+He makes focused work.
+
+872
+01:12:24,080 --> 01:12:34,880
+And it's, I've used the app myself a lot, and it's just like this really, like, elegantly simple, like, focused timer, like Pomodoro kind of thing.
+
+873
+01:12:35,040 --> 01:12:35,920
+But there's more on top of that.
+
+874
+01:12:36,080 --> 01:12:38,000
+That's not just that one, because that one didn't work for me ever.
+
+875
+01:12:39,040 --> 01:12:44,400
+That, like, keeps you, like, focused on your work with the different, like, session lengths and stuff like that.
+
+876
+01:12:44,720 --> 01:12:47,280
+And it's not just, like, the app that's, like, really great about him.
+
+877
+01:12:47,440 --> 01:12:53,760
+He's very, very open in his, like, full, indie dev, uh, process.
+
+878
+01:12:54,240 --> 01:12:59,920
+He has this, this, like, great blog series from when he started making the app to everything he's continually doing.
+
+879
+01:13:00,960 --> 01:13:02,720
+And he builds the app completely in the open too.
+
+880
+01:13:02,880 --> 01:13:11,200
+Like he's currently working on the Mac version, which you might be interested in checking out if you haven't seen his stuff on that.
+
+881
+01:13:11,520 --> 01:13:13,920
+But I think that's also a whole thing.
+
+882
+01:13:14,080 --> 01:13:18,560
+But he's he's enjoying it and kind of learning all the fun stuff along the way.
+
+883
+01:13:19,760 --> 01:13:30,800
+But like he's really embracing like the indie dev spirit by building out in the open, being honest about his path and just enjoying it.
+
+884
+01:13:31,200 --> 01:13:32,560
+That is, that is a really good one.
+
+885
+01:13:33,040 --> 01:13:36,240
+So if you need somebody for your show, I kind of want to hear more about him.
+
+886
+01:13:36,880 --> 01:13:39,280
+I'll, I think he's already on my list actually actually.
+
+887
+01:13:39,680 --> 01:13:40,000
+Is he?
+
+888
+01:13:40,160 --> 01:13:40,400
+Oh, perfect.
+
+889
+01:13:40,640 --> 01:13:41,600
+Do you want me to ask him for you?
+
+890
+01:13:41,760 --> 01:13:48,720
+Well, let's see, because I've never had this happen before, but there's a chance that he listens, and if he is, reach out, and we'll set up a time.
+
+891
+01:13:49,040 --> 01:13:49,520
+How about that?
+
+892
+01:13:49,760 --> 01:13:49,840
+Yeah.
+
+893
+01:13:50,000 --> 01:13:51,360
+And if not, I'll like that.
+
+894
+01:13:51,520 --> 01:13:52,080
+I'll reach out.
+
+895
+01:13:52,960 --> 01:13:54,080
+Yeah, sounds good.
+
+896
+01:13:54,480 --> 01:13:54,960
+Awesome.
+
+897
+01:13:55,280 --> 01:13:59,600
+Okay, well, we're a little bit over time, but we're not doing too bad here.
+
+898
+01:14:00,240 --> 01:14:01,840
+I mean, we started a little bit late, didn't we?
+
+899
+01:14:02,480 --> 01:14:06,720
+Well, we did, and we have an extra week in there, so we have to make up for that content.
+
+900
+01:14:07,040 --> 01:14:07,520
+That's true.
+
+901
+01:14:07,760 --> 01:14:07,840
+Yes.
+
+902
+01:14:08,960 --> 01:14:13,840
+This is a week and a half, or, yeah, two, three weeks instead of two weeks worth of content.
+
+903
+01:14:14,720 --> 01:14:17,120
+Because we're consistent here at Launch CFM.
+
+904
+01:14:20,960 --> 01:14:25,280
+This is late Friday recording, maybe it wasn't the best idea either.
+
+905
+01:14:25,600 --> 01:14:26,960
+Late Friday, a little bit loopy.
+
+906
+01:14:28,560 --> 01:14:31,120
+I've been up since I think two for Swift Heroes.
+
+907
+01:14:31,360 --> 01:14:31,680
+Oh man.
+
+908
+01:14:32,560 --> 01:14:36,560
+So yeah, I'm getting ready for bed here.
+
+909
+01:14:37,120 --> 01:14:44,800
+Okay, well, before I let you go, where can people find you and your work, which I guess there's like ten places for the second part?
+
+910
+01:14:45,360 --> 01:14:48,320
+Well, I'm very much on Twitter at Josh D.
+
+911
+01:14:48,560 --> 01:14:48,960
+Holtz.
+
+912
+01:14:50,160 --> 01:14:59,440
+You can probably find pretty much everything from there, website, GitHub, all the things I work on, Fastlane, ConnectKit, and OtterRSFS, Rock and Cat, Anytime Monday.
+
+913
+01:14:59,760 --> 01:15:01,440
+Everything is pretty much linked from my bio.
+
+914
+01:15:01,920 --> 01:15:03,760
+So Twitter at Josh DeHoltz.
+
+915
+01:15:03,840 --> 01:15:07,280
+Even if you don't use Twitter, you can just go to it and then click things around and perfect.
+
+916
+01:15:07,760 --> 01:15:08,160
+That I do.
+
+917
+01:15:08,560 --> 01:15:08,960
+Awesome.
+
+918
+01:15:09,120 --> 01:15:12,720
+Well, thank you for joining me and thank you for hanging out.
+
+919
+01:15:13,280 --> 01:15:20,480
+Thanks for having me and starting this whole launched podcast because if it wasn't for this, who knows what I'd be working on right now.
+
+920
+01:15:20,800 --> 01:15:21,520
+Probably nothing cool.
+
+921
+01:15:21,920 --> 01:15:23,360
+No, probably like a hundred things.
+
+922
+01:15:23,600 --> 01:15:24,480
+It just would be different things.
+
+923
+01:15:24,800 --> 01:15:29,760
+Fastlane related, but probably nothing that is actually like out there in Sirius.
+
+924
+01:15:30,080 --> 01:15:31,680
+So thank you for starting this podcast.
+
+925
+01:15:33,600 --> 01:15:34,240
+Thanks for listening.
+
+926
+01:15:34,400 --> 01:15:41,040
+If you'd like to discuss the show, you can find me on Twitter at underscore chuck EC or tweet the show directly at launchedfm.
+
+927
+01:15:41,520 --> 01:15:48,800
+I'd really appreciate a rating or review in Apple Podcasts, Overcast, Breaker or whatever your podcast of choice happens to be.
+
+928
+01:15:49,120 --> 01:15:54,800
+And you can find show notes and more at launchedfm dot com dot
