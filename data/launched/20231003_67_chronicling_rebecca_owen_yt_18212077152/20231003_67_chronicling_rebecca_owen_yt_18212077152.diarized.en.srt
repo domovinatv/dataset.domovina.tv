@@ -1,0 +1,3527 @@
+1
+00:00:02,480 --> 00:00:03,360
+[SPEAKER_01] Welcome to Launched.
+
+2
+00:00:03,600 --> 00:00:10,160
+[SPEAKER_01] I'm Charlie Chapman, and today I'm excited to bring you the developer behind the event tracking app Chronicling, Rebecca Owen.
+
+3
+00:00:23,920 --> 00:00:25,120
+[SPEAKER_01] Rebecca, welcome to the show.
+
+4
+00:00:25,600 --> 00:00:26,160
+[SPEAKER_00] Hi, Charlie.
+
+5
+00:00:26,320 --> 00:00:27,280
+[SPEAKER_00] Thank you very much for having me.
+
+6
+00:00:27,520 --> 00:00:29,200
+[SPEAKER_01] I am, I'm really excited about this one.
+
+7
+00:00:30,720 --> 00:00:36,800
+[SPEAKER_01] I feel like this show, the original concept of the show, hence the name, was that it was going to be about apps launching.
+
+8
+00:00:37,680 --> 00:00:42,560
+[SPEAKER_01] I feel like I've tended to bring more and more people on that have had an app out for a while.
+
+9
+00:00:43,280 --> 00:00:49,280
+[SPEAKER_01] And so it's nice every now and then when I can get a real new app that's recently launched, although recently it's still a couple of months.
+
+10
+00:00:49,440 --> 00:00:52,320
+[SPEAKER_01] But, you know, on my schedule, this is about as good as I can get.
+
+11
+00:00:53,600 --> 00:00:54,800
+[SPEAKER_00] It feels pretty recently to me.
+
+12
+00:00:55,200 --> 00:00:59,120
+[SPEAKER_00] And yeah, I've been listening to launch for several years and learned so much from it.
+
+13
+00:00:59,280 --> 00:01:01,120
+[SPEAKER_00] So it's it's really exciting to to be here.
+
+14
+00:01:01,440 --> 00:01:01,760
+[SPEAKER_01] Oh man.
+
+15
+00:01:02,000 --> 00:01:02,080
+[SPEAKER_01] Okay.
+
+16
+00:01:02,320 --> 00:01:02,720
+[SPEAKER_01] That's cool.
+
+17
+00:01:03,040 --> 00:01:09,040
+[SPEAKER_01] So before we get into chronicling itself and that launch, I want to give everyone an introduction into who you are.
+
+18
+00:01:09,280 --> 00:01:13,280
+[SPEAKER_01] So the three questions I always ask to introduce people is where are you from.
+
+19
+00:01:13,680 --> 00:01:16,240
+[SPEAKER_01] Do you have a formal education related to what you do?
+
+20
+00:01:16,560 --> 00:01:20,320
+[SPEAKER_01] And then we can talk about what your career was leading up to chronicling.
+
+21
+00:01:20,880 --> 00:01:21,040
+[SPEAKER_00] Cool.
+
+22
+00:01:21,200 --> 00:01:26,720
+[SPEAKER_00] So I'm from the UK and I've moved around a little bit, but not very far in American terms at least.
+
+23
+00:01:26,880 --> 00:01:28,480
+[SPEAKER_00] So I grew up in Norfolk.
+
+24
+00:01:29,920 --> 00:01:33,280
+[SPEAKER_00] I spent about ten years in Oxford and I now live near Cambridge.
+
+25
+00:01:34,400 --> 00:01:36,160
+[SPEAKER_00] So yeah, south of England.
+
+26
+00:01:37,200 --> 00:01:40,240
+[SPEAKER_00] Formal education, I don't really know, not quite.
+
+27
+00:01:41,200 --> 00:01:44,480
+[SPEAKER_00] So I guess programming has always been somewhere there.
+
+28
+00:01:44,880 --> 00:01:51,600
+[SPEAKER_00] So I remember my first experience was using a kind of basic like language on my Texas Instruments calculator at school.
+
+29
+00:01:52,240 --> 00:01:54,080
+[SPEAKER_01] So I knew that was where you were going.
+
+30
+00:01:54,400 --> 00:01:55,040
+[SPEAKER_01] That was me too.
+
+31
+00:01:56,320 --> 00:02:02,000
+[SPEAKER_01] Making programs that can do my chemistry equations for me.
+
+32
+00:02:03,440 --> 00:02:05,520
+[SPEAKER_01] That was like literally how it started, I think, for me.
+
+33
+00:02:06,240 --> 00:02:09,840
+[SPEAKER_00] I think it kind of very tediously typing it in and you couldn't save it.
+
+34
+00:02:10,560 --> 00:02:14,080
+[SPEAKER_00] Zeller's algorithm, I remember being taught and being absolutely astounded.
+
+35
+00:02:14,720 --> 00:02:17,600
+[SPEAKER_00] So for some reason that kind of didn't stick.
+
+36
+00:02:18,320 --> 00:02:20,000
+[SPEAKER_00] I went to university for geology.
+
+37
+00:02:20,720 --> 00:02:24,880
+[SPEAKER_00] So a lot of rockhammers and field trips and stuff like that.
+
+38
+00:02:25,520 --> 00:02:29,200
+[SPEAKER_00] A little bit of MATLAB, but that was the extent really of the programming.
+
+39
+00:02:29,840 --> 00:02:32,320
+[SPEAKER_00] But I did then what's MATLAB?
+
+40
+00:02:32,720 --> 00:02:36,240
+[SPEAKER_00] Oh, MATLAB is, uh, it's kind of, oh, how would I describe it?
+
+41
+00:02:36,720 --> 00:02:43,440
+[SPEAKER_00] It's mostly used for scripting and mathematical modeling of, uh, sciencey stuff, I guess.
+
+42
+00:02:43,840 --> 00:02:45,440
+[SPEAKER_00] It's very big in UK universities.
+
+43
+00:02:45,680 --> 00:02:48,080
+[SPEAKER_00] I don't know about further than that.
+
+44
+00:02:49,760 --> 00:02:53,040
+[SPEAKER_00] So, uh, it's, it's, uh, we did a lot of statistics courses and things.
+
+45
+00:02:53,520 --> 00:02:58,960
+[SPEAKER_00] Um, and then from there, I kind of, uh, during my PhD, I did a little bit of FORTRAN.
+
+46
+00:02:59,040 --> 00:03:00,320
+[SPEAKER_00] We got very Oh, wow.
+
+47
+00:03:00,480 --> 00:03:01,040
+[SPEAKER_00] It's cool.
+
+48
+00:03:01,360 --> 00:03:01,440
+[SPEAKER_01] Yeah.
+
+49
+00:03:01,840 --> 00:03:02,480
+[SPEAKER_00] And a bit of C.
+
+50
+00:03:03,040 --> 00:03:13,920
+[SPEAKER_00] So it started to get a bit, um, a bit broader and eventually got to Python and, uh, things that are more modern and, and, I guess, um, closer to Yeah.
+
+51
+00:03:14,160 --> 00:03:20,880
+[SPEAKER_01] Python is where my brain goes when it, when I hear like researcher or like science, computer science kind of mixtures.
+
+52
+00:03:21,680 --> 00:03:21,760
+[SPEAKER_00] Yeah.
+
+53
+00:03:22,080 --> 00:03:22,800
+[SPEAKER_00] Yeah, absolutely.
+
+54
+00:03:22,960 --> 00:03:28,560
+[SPEAKER_00] And, and I think, uh, used it to do silly things like little videos of my models and stuff like that.
+
+55
+00:03:28,880 --> 00:03:30,400
+[SPEAKER_00] So, uh, that was fun.
+
+56
+00:03:30,880 --> 00:03:34,240
+[SPEAKER_00] I still didn't get particularly close to anything resembling iOS development.
+
+57
+00:03:34,640 --> 00:03:38,400
+[SPEAKER_00] Beyond the PhD, uh, I did start a career in software engineering.
+
+58
+00:03:38,640 --> 00:03:44,640
+[SPEAKER_00] So I worked for a small consultancy which was acquired by Cisco a few months after I joined.
+
+59
+00:03:45,360 --> 00:03:48,080
+[SPEAKER_00] I've now worked for Cisco for the last five years.
+
+60
+00:03:48,720 --> 00:03:49,360
+[SPEAKER_01] So how did that happen?
+
+61
+00:03:49,600 --> 00:03:53,280
+[SPEAKER_01] So you're getting your PhD in was that in geology then as well?
+
+62
+00:03:53,840 --> 00:03:55,440
+[SPEAKER_00] Yeah, geology, geophysics.
+
+63
+00:03:55,600 --> 00:03:55,680
+[SPEAKER_01] Yeah.
+
+64
+00:03:55,920 --> 00:03:56,000
+[SPEAKER_01] Okay.
+
+65
+00:03:56,720 --> 00:03:59,840
+[SPEAKER_01] You're doing that, but I guess you need a side job or whatever.
+
+66
+00:04:00,240 --> 00:04:05,120
+[SPEAKER_01] And you somehow get into software engineering, despite you saying basically you'd only kind of dabbled before?
+
+67
+00:04:05,760 --> 00:04:10,240
+[SPEAKER_00] To be honest, the job was taken without any expectation of experience.
+
+68
+00:04:10,960 --> 00:04:12,320
+[SPEAKER_00] So it's a good gig.
+
+69
+00:04:12,880 --> 00:04:13,360
+[SPEAKER_01] if you can get it.
+
+70
+00:04:13,760 --> 00:04:14,240
+[SPEAKER_00] Yeah, yeah.
+
+71
+00:04:14,640 --> 00:04:19,840
+[SPEAKER_00] They kind of recruit people based on hypothetical potential and then hope that, hope it works out.
+
+72
+00:04:21,040 --> 00:04:27,120
+[SPEAKER_00] So they offered all the training and my dabbling was sufficient, I guess, to get me, get me started.
+
+73
+00:04:27,440 --> 00:04:29,200
+[SPEAKER_01] And so what was that primarily doing then?
+
+74
+00:04:30,000 --> 00:04:34,000
+[SPEAKER_00] So I work on, it's very confusingly named if you're in an Apple world.
+
+75
+00:04:34,240 --> 00:04:36,560
+[SPEAKER_00] So the operating system is called IOS XR.
+
+76
+00:04:37,040 --> 00:04:37,440
+[SPEAKER_01] Oh no.
+
+77
+00:04:40,240 --> 00:04:40,880
+[SPEAKER_00] That's a free world.
+
+78
+00:04:41,760 --> 00:04:41,840
+[SPEAKER_00] Yeah.
+
+79
+00:04:43,520 --> 00:04:44,400
+[SPEAKER_00] IOS XR.
+
+80
+00:04:44,640 --> 00:04:44,720
+[SPEAKER_01] Yeah.
+
+81
+00:04:44,880 --> 00:04:48,640
+[SPEAKER_01] You need a couple more Apple acronyms just kind of thrown in there, don't you?
+
+82
+00:04:49,040 --> 00:04:49,600
+[SPEAKER_01] That's amazing.
+
+83
+00:04:49,840 --> 00:04:50,240
+[SPEAKER_00] Absolutely.
+
+84
+00:04:51,760 --> 00:04:53,680
+[SPEAKER_00] So this runs on kind of carrier grade routers.
+
+85
+00:04:53,840 --> 00:04:58,720
+[SPEAKER_00] If you think the kind of service provider would have historically been the size of a fridge freezer type thing.
+
+86
+00:05:00,320 --> 00:05:06,080
+[SPEAKER_00] So that's the kind of day job and a very different world to iOS development.
+
+87
+00:05:06,640 --> 00:05:07,440
+[SPEAKER_01] That's really interesting.
+
+88
+00:05:07,680 --> 00:05:07,760
+[SPEAKER_01] Okay.
+
+89
+00:05:09,200 --> 00:05:16,960
+[SPEAKER_01] So you're building software that's what it's specifically for like hardware then for like networking hardware.
+
+90
+00:05:17,200 --> 00:05:17,760
+[SPEAKER_00] Yeah, exactly.
+
+91
+00:05:17,920 --> 00:05:25,280
+[SPEAKER_00] So it's I work on the operating system and things like the protocols and upgrade systems and that kind of thing of thing.
+
+92
+00:05:25,600 --> 00:05:27,280
+[SPEAKER_01] So a lot of heavy UI work then?
+
+93
+00:05:27,840 --> 00:05:29,600
+[SPEAKER_00] Actually, more, but more kind of lower levels.
+
+94
+00:05:30,000 --> 00:05:31,040
+[SPEAKER_01] Oh, yeah, joking.
+
+95
+00:05:31,360 --> 00:05:40,480
+[SPEAKER_01] I was just networking gear, typically, uh, yeah, not exactly the most, uh, visually extravagant, uh, software and design skills.
+
+96
+00:05:40,800 --> 00:05:42,160
+[SPEAKER_00] Not, not a skill that came through.
+
+97
+00:05:43,520 --> 00:05:44,720
+[SPEAKER_00] Um, but, but yeah.
+
+98
+00:05:44,880 --> 00:05:50,720
+[SPEAKER_00] So I think a command line interface is the, the extent of my professional, uh, visual experience.
+
+99
+00:05:51,120 --> 00:05:51,200
+[SPEAKER_01] Okay.
+
+100
+00:05:51,440 --> 00:05:52,400
+[SPEAKER_01] So then, yeah.
+
+101
+00:05:52,560 --> 00:05:55,760
+[SPEAKER_01] So then where does, uh, where does iOS development come into this then?
+
+102
+00:05:56,000 --> 00:05:57,680
+[SPEAKER_01] Or how does iOS development come into this?
+
+103
+00:05:58,160 --> 00:05:58,640
+[SPEAKER_00] It's a good question.
+
+104
+00:05:58,960 --> 00:06:00,480
+[SPEAKER_00] I guess I've always been, um, an Apple.
+
+105
+00:06:01,280 --> 00:06:03,760
+[SPEAKER_00] fan, a lot of, a lot of Apple hardware in the house.
+
+106
+00:06:04,080 --> 00:06:07,120
+[SPEAKER_00] And it was while I was on maternity leave, actually.
+
+107
+00:06:07,360 --> 00:06:11,760
+[SPEAKER_00] So in the UK we get up to a year of maternity leave.
+
+108
+00:06:11,840 --> 00:06:12,480
+[SPEAKER_00] So nice.
+
+109
+00:06:13,200 --> 00:06:19,120
+[SPEAKER_00] I was off with my, with my son and wanted to keep the technical side of my brain ticking over a little bit.
+
+110
+00:06:19,440 --> 00:06:26,560
+[SPEAKER_00] So just started watching, watching videos really and learning about Swift and Swift UI and things like that.
+
+111
+00:06:26,960 --> 00:06:28,560
+[SPEAKER_01] Like tutorial videos, you mean?
+
+112
+00:06:28,880 --> 00:06:34,480
+[SPEAKER_00] Yeah, a little bit of the kind of the classic hacking with Swift, Paul Hudson's amazing resources.
+
+113
+00:06:35,520 --> 00:06:36,480
+[SPEAKER_00] And also just watching.
+
+114
+00:06:36,960 --> 00:06:44,800
+[SPEAKER_00] WWDC videos, just kind of immersing in, uh, just picking random ones really, what's kind of interesting and new.
+
+115
+00:06:45,760 --> 00:06:54,640
+[SPEAKER_00] Um, so that was, that was the way in just without, um, doing much hands on at that time because I was often walking a buggy to keep him asleep.
+
+116
+00:06:55,120 --> 00:06:55,360
+[SPEAKER_01] Interesting.
+
+117
+00:06:55,600 --> 00:07:02,240
+[SPEAKER_01] So that was, so that was the like, it wasn't necessarily like, I want to do this as a professional career.
+
+118
+00:07:02,400 --> 00:07:06,800
+[SPEAKER_01] It was more like, I'm trying to stay awake while rocking this kid to sleep.
+
+119
+00:07:07,360 --> 00:07:21,360
+[SPEAKER_01] Uh, and I, I've been there before where I remember, I remember my wife, especially, being very into there was like a giraffe that was pregnant and I think it was a giraffe and was going to give birth.
+
+120
+00:07:22,160 --> 00:07:22,800
+[SPEAKER_01] It's weird, right?
+
+121
+00:07:23,520 --> 00:07:26,720
+[SPEAKER_01] During these times when you have a newborn, you do weird things.
+
+122
+00:07:26,960 --> 00:07:32,800
+[SPEAKER_01] And I just remember being very into random live streams of things because it's midnight and your brain can't work.
+
+123
+00:07:33,520 --> 00:07:43,680
+[SPEAKER_01] So we're watching, you know, giraffes giving birth and you're learning a brand new, a brand new language and career kind of move, I guess.
+
+124
+00:07:44,640 --> 00:07:51,840
+[SPEAKER_00] Yeah, I think it'm not gonna say I didn't watch some terrible Netflix in the middle of the morning.
+
+125
+00:07:54,000 --> 00:07:57,200
+[SPEAKER_00] I think when I had the energy, something a little different.
+
+126
+00:07:58,400 --> 00:08:11,520
+[SPEAKER_00] I guess it also came from I'm a big fan of shortcuts and I ended up with some enormous, unwieldy shortcuts that it got to the point where the kind of the software engineer in me was like, this really needs to mature into an app.
+
+127
+00:08:11,840 --> 00:08:12,720
+[SPEAKER_00] This isn't the stable.
+
+128
+00:08:14,640 --> 00:08:18,320
+[SPEAKER_00] So that was the driver, I guess, of thinking it would be nice to learn how to do this properly.
+
+129
+00:08:18,720 --> 00:08:19,360
+[SPEAKER_01] Oh, interesting.
+
+130
+00:08:19,520 --> 00:08:19,600
+[SPEAKER_01] Okay.
+
+131
+00:08:19,920 --> 00:08:23,680
+[SPEAKER_01] So you were heavy into shortcuts use just as a regular user.
+
+132
+00:08:24,240 --> 00:08:25,840
+[SPEAKER_01] Well, let's dive into that a little bit.
+
+133
+00:08:26,000 --> 00:08:30,560
+[SPEAKER_01] Like, what, what got you into shortcuts and what kind of shortcuts are you building or were you building?
+
+134
+00:08:31,040 --> 00:08:35,520
+[SPEAKER_00] I think it just really appealed to the programmer and me.
+
+135
+00:08:35,680 --> 00:08:46,720
+[SPEAKER_00] I guess the power you have with things that people, I don't think many kind of, unquote, normal iPhone users realize how much you can do with shortcuts.
+
+136
+00:08:47,040 --> 00:08:50,880
+[SPEAKER_00] And so I think I started playing with it back in the workflow days.
+
+137
+00:08:51,680 --> 00:08:57,040
+[SPEAKER_00] And then I'm also big into kind of quantified self and that kind of stuff.
+
+138
+00:08:57,280 --> 00:09:00,480
+[SPEAKER_00] So any kind of tracking and quantified self?
+
+139
+00:09:01,440 --> 00:09:13,840
+[SPEAKER_00] I'm not sure if this is a kind of term I stunned years ago, but any kind of monitoring of health or I don't know, this kind of journaling, I guess it encompasses those kinds of things and then location and diary.
+
+140
+00:09:14,080 --> 00:09:23,760
+[SPEAKER_01] Yeah, I mean, this is a lot of what I feel like the Apple Watch and a lot of these kinds of fitness trackers have turned a lot of people into, but it's obviously been a thing for a long time.
+
+141
+00:09:23,920 --> 00:09:26,560
+[SPEAKER_01] I don't know if I had heard that term before, but I mean, that makes sense.
+
+142
+00:09:26,640 --> 00:09:36,000
+[SPEAKER_01] So this is just like tracking things about your health and the way that you behave and then presumably using that data for something.
+
+143
+00:09:38,080 --> 00:09:41,120
+[SPEAKER_00] I think it's the using bit that became more apparent.
+
+144
+00:09:41,840 --> 00:09:49,680
+[SPEAKER_00] So I think a relatively obscure example would be when I was pregnant, you have to think about how frequently the baby moves.
+
+145
+00:09:49,840 --> 00:09:50,400
+[SPEAKER_00] And yeah.
+
+146
+00:09:51,280 --> 00:10:01,360
+[SPEAKER_00] So I got very, the kind of programmer brain way to fix this was I had a complication on my watch which logged things into the app data jar.
+
+147
+00:10:01,920 --> 00:10:03,280
+[SPEAKER_00] Another Oh yeah, yeah.
+
+148
+00:10:04,320 --> 00:10:05,280
+[SPEAKER_00] And then, yeah.
+
+149
+00:10:05,520 --> 00:10:07,600
+[SPEAKER_00] And then I made little graphs with Charity.
+
+150
+00:10:08,000 --> 00:10:13,520
+[SPEAKER_00] So that's kind of you, you can definitely see the origin of chronicling in those two things.
+
+151
+00:10:13,920 --> 00:10:16,800
+[SPEAKER_00] Uh, so, and that was how I I kept track of that.
+
+152
+00:10:16,960 --> 00:10:18,160
+[SPEAKER_00] And then it kind of grew from there.
+
+153
+00:10:18,400 --> 00:10:28,640
+[SPEAKER_00] It was baby kicks to medication to hospital visits and, and these kinds of things that, um, you're not well equipped to remember when you're not sleeping very well, but it's really important.
+
+154
+00:10:29,520 --> 00:10:29,600
+[SPEAKER_01] Yes.
+
+155
+00:10:29,920 --> 00:10:39,760
+[SPEAKER_01] And that dovetails right into once the baby's born and you're tracking everything and every kid has a unique, uh, thing that needs to be tracked.
+
+156
+00:10:40,240 --> 00:10:45,040
+[SPEAKER_01] And, you know, some that everyone's tracking, like, you know, poop color and all those exciting things.
+
+157
+00:10:45,600 --> 00:10:46,320
+[SPEAKER_01] Uh, okay.
+
+158
+00:10:46,560 --> 00:10:46,640
+[SPEAKER_01] Yeah.
+
+159
+00:10:46,800 --> 00:10:47,520
+[SPEAKER_01] So that makes sense.
+
+160
+00:10:47,680 --> 00:10:48,640
+[SPEAKER_01] So you have a bunch of.
+
+161
+00:10:49,120 --> 00:10:50,880
+[SPEAKER_01] really complicated shortcuts.
+
+162
+00:10:51,600 --> 00:10:56,960
+[SPEAKER_01] It sounds like you're using some of these advanced shortcut tools like DataJar, Charity.
+
+163
+00:10:57,680 --> 00:11:00,160
+[SPEAKER_01] You're not sleeping and finding things to entertain yourself with.
+
+164
+00:11:00,240 --> 00:11:04,320
+[SPEAKER_01] And the way you're doing that is literally learning Swift and IOS development, I guess.
+
+165
+00:11:05,920 --> 00:11:13,360
+[SPEAKER_01] So I guess you already have the idea swirling in your head of what kind of app you might make if you're going to make one.
+
+166
+00:11:14,480 --> 00:11:17,120
+[SPEAKER_01] Where is the jump to starting to actually make one?
+
+167
+00:11:17,280 --> 00:11:18,320
+[SPEAKER_01] Like, what's the story there?
+
+168
+00:11:19,120 --> 00:11:23,840
+[SPEAKER_00] I think I was keeping a list of kind of app ideas, which I guess a lot of people do.
+
+169
+00:11:24,240 --> 00:11:31,920
+[SPEAKER_00] And also looking for something that had a relatively limited scope as a kind of, this is, this is my first app.
+
+170
+00:11:32,560 --> 00:11:42,000
+[SPEAKER_00] And so I was looking for something that felt manageable, but also represented a good opportunity to learn the kind of technologies that looked interesting.
+
+171
+00:11:42,160 --> 00:11:45,920
+[SPEAKER_00] So things like the app intense framework and widget kit and those kinds of things.
+
+172
+00:11:47,360 --> 00:12:02,560
+[SPEAKER_00] And I noticed that several of the ideas I was following, things like this, like doing chores or symptom tracking or whatever else you can think of, started to condense into one thing that was fairly lightweight and flexible.
+
+173
+00:12:02,640 --> 00:12:05,280
+[SPEAKER_00] And I guess that's where chronicling started.
+
+174
+00:12:05,840 --> 00:12:13,600
+[SPEAKER_01] Ah, so your your app list idea was a bunch of different things you'd like to track as separate apps.
+
+175
+00:12:14,160 --> 00:12:19,680
+[SPEAKER_01] And then you started realizing, wait a minute, you know, this is this is this is one device.
+
+176
+00:12:21,520 --> 00:12:22,880
+[SPEAKER_01] Uh, this was your iPhone moment.
+
+177
+00:12:23,200 --> 00:12:25,760
+[SPEAKER_01] Um, that's really not quite so magical.
+
+178
+00:12:26,000 --> 00:12:40,080
+[SPEAKER_00] But yeah, and then a jack of all trades, jack of all trades, master of none approach, I suppose is, uh, I think there's obviously much more advanced apps for any one of these purposes, but to have everything in one place was what I wanted to have, I suppose.
+
+179
+00:12:40,480 --> 00:12:40,560
+[SPEAKER_01] Yeah.
+
+180
+00:12:40,880 --> 00:12:49,120
+[SPEAKER_01] Well, I mean, you know, you already talked about DataJar and and Charlie and some of these other like general purpose shortcutsy apps, I guess.
+
+181
+00:12:49,440 --> 00:13:00,640
+[SPEAKER_01] Like part of what makes them so appealing is they are general purpose, like they're a they're a very basic tool that does that tool very well and solidly.
+
+182
+00:13:01,200 --> 00:13:12,960
+[SPEAKER_01] And then it can be used by so many people in so many different ways, which as a develop the developer side of me that terrifies me because, you know, I make a white noise app and everybody using it is using it to play white noise.
+
+183
+00:13:13,440 --> 00:13:15,840
+[SPEAKER_01] So I pretty much know how everybody's going to use that thing.
+
+184
+00:13:17,120 --> 00:13:26,160
+[SPEAKER_01] A general purpose app, and we'll get into this once we get to the actual release, but I bet there's a lot of varied use cases for this thing.
+
+185
+00:13:26,480 --> 00:13:28,080
+[SPEAKER_01] So that's really interesting.
+
+186
+00:13:28,640 --> 00:13:31,120
+[SPEAKER_01] Okay, so you, so it collapsed down to this one idea.
+
+187
+00:13:31,840 --> 00:13:38,880
+[SPEAKER_01] Like the hardest thing with any side project like this, when you're doing something totally new for most people is getting started.
+
+188
+00:13:39,200 --> 00:13:42,240
+[SPEAKER_01] So what was what was the sort of catalyst for actually getting started?
+
+189
+00:13:42,400 --> 00:13:48,000
+[SPEAKER_01] How did you how did you actually sit down and open up, you know, a new Xcode project for the first time?
+
+190
+00:13:49,440 --> 00:13:52,240
+[SPEAKER_00] I think it wasn't the first kind of bold start.
+
+191
+00:13:52,640 --> 00:13:55,920
+[SPEAKER_00] There were a couple of false starts in things that really didn't get very far.
+
+192
+00:13:56,880 --> 00:14:10,880
+[SPEAKER_00] And then I guess I'd tinker with each one until I either felt like this had this had room to grow or it was either just it's not kind of it's too complex or it's it's just not not it doesn't have a market or whatever.
+
+193
+00:14:11,040 --> 00:14:14,560
+[SPEAKER_01] And trying to These are different ideas, like not saying okay.
+
+194
+00:14:14,960 --> 00:14:15,040
+[SPEAKER_00] Yeah.
+
+195
+00:14:15,200 --> 00:14:22,800
+[SPEAKER_00] And I think I suppose it's also I'm sure you know this when you're a parent, whenever you get five minutes you have this panic sets in.
+
+196
+00:14:22,880 --> 00:14:25,600
+[SPEAKER_00] It's like, you know, should I, I don't know, learn Italian or go for a break.
+
+197
+00:14:26,160 --> 00:14:26,640
+[SPEAKER_00] Oh my gosh.
+
+198
+00:14:26,720 --> 00:14:26,800
+[SPEAKER_00] Yeah.
+
+199
+00:14:27,680 --> 00:14:28,480
+[SPEAKER_00] Do something amazing.
+
+200
+00:14:28,640 --> 00:14:44,880
+[SPEAKER_01] This is, I mean, so your story is very similar in some ways to Dark Noise's origin because Dark Noise was fueled heavily by the kids were old enough that my brain was kind of back, but we had nap times and it was this, it was that feeling.
+
+201
+00:14:45,120 --> 00:15:03,200
+[SPEAKER_01] And once once I had the thing, once I got the ball rolling a little bit, then when you had that one hour, you know, of nap time, beautiful, beautiful nap time, uh, that's the most productive I think I've ever been in my entire life because of that panic feeling of like, you gotta use this, you gotta use this, this is your only time, you know?
+
+202
+00:15:04,240 --> 00:15:04,560
+[SPEAKER_00] Absolutely.
+
+203
+00:15:04,960 --> 00:15:10,400
+[SPEAKER_00] I think I don't, I don't want to sound like one of those people who say, oh, the people who don't have kids must have infinite free time.
+
+204
+00:15:10,560 --> 00:15:15,760
+[SPEAKER_01] I know that's not true, but I very much understand that feeling.
+
+205
+00:15:16,320 --> 00:15:23,440
+[SPEAKER_00] I think it did, it did get to the point where my son did nap without my active, two-handed involvement of pushing a buggy.
+
+206
+00:15:23,520 --> 00:15:26,720
+[SPEAKER_00] So I could type while he slept, which was a key, key skill.
+
+207
+00:15:27,840 --> 00:15:35,840
+[SPEAKER_00] But yeah, I think it was that point of I think it also gave me the kind of it sounds silly, but it gave me the confidence and motivation to actually do it.
+
+208
+00:15:36,240 --> 00:15:43,120
+[SPEAKER_00] I think before I probably would have thought about it and I don't know, decided that it was for another day.
+
+209
+00:15:44,560 --> 00:15:49,040
+[SPEAKER_00] But I got to the stage in life where I just wanted to try it and see where it went.
+
+210
+00:15:49,360 --> 00:15:55,840
+[SPEAKER_00] And yeah, so I think all those circumstances came together to, and this was about six months before launch, I guess, was the first commit.
+
+211
+00:15:56,800 --> 00:16:02,080
+[SPEAKER_00] And then it spent a long time as just me and me and my husband and my dad using it for.
+
+212
+00:16:02,480 --> 00:16:04,000
+[SPEAKER_01] Yeah, that's what I was going to ask next.
+
+213
+00:16:04,160 --> 00:16:09,520
+[SPEAKER_01] It's like, obviously there's the initial stages of getting something set up, figuring out how databases work, yada yada.
+
+214
+00:16:10,000 --> 00:16:12,240
+[SPEAKER_01] But once you have a somewhat usable app.
+
+215
+00:16:12,400 --> 00:16:13,840
+[SPEAKER_01] app, were you using it?
+
+216
+00:16:14,080 --> 00:16:17,040
+[SPEAKER_01] Sounds like you already had a kind of a group of people that were then using it.
+
+217
+00:16:17,360 --> 00:16:18,880
+[SPEAKER_00] Yeah, it was a fairly small group.
+
+218
+00:16:19,360 --> 00:16:20,240
+[SPEAKER_00] I wanted to keep it.
+
+219
+00:16:21,200 --> 00:16:31,280
+[SPEAKER_00] Obviously, I didn't have really anyone to, it's not like I had this huge audience I was keeping it from, but I did have just some family testing it really while it was maturing.
+
+220
+00:16:31,760 --> 00:16:37,040
+[SPEAKER_00] I didn't want to have anyone using it who might be broken by some future data model change.
+
+221
+00:16:37,280 --> 00:16:37,760
+[SPEAKER_00] So yeah.
+
+222
+00:16:38,560 --> 00:16:46,800
+[SPEAKER_00] I think that was the I kept it very small and warned heavily that this was something you shouldn't rely on until it was ready.
+
+223
+00:16:47,360 --> 00:16:48,960
+[SPEAKER_00] But it was quite useful because it was a very good thing.
+
+224
+00:16:48,960 --> 00:16:53,360
+[SPEAKER_00] It was quite useful because my husband's very techie, so he obviously looks at things in a similar way.
+
+225
+00:16:53,680 --> 00:16:56,640
+[SPEAKER_00] But my dad is a different user, I guess.
+
+226
+00:16:57,200 --> 00:16:59,280
+[SPEAKER_00] And I did what I wanted.
+
+227
+00:16:59,600 --> 00:17:08,240
+[SPEAKER_00] I wanted ideally Chronicling to appeal also to people who are not going to install shortcuts and, you know, modify the settings and whatever.
+
+228
+00:17:08,480 --> 00:17:09,280
+[SPEAKER_00] So it could be used.
+
+229
+00:17:09,840 --> 00:17:13,920
+[SPEAKER_00] But both ends of the user spectrum, I suppose, is what I was hoping to achieve.
+
+230
+00:17:14,240 --> 00:17:14,320
+[SPEAKER_01] Yeah.
+
+231
+00:17:15,120 --> 00:17:31,440
+[SPEAKER_01] I mean, we haven't fully described the app yet, but like, we've kind of given the impression the way we're talking that it's in the same category as these sort of shortcuts extension apps because it kind of has that feeling to it and definitely appeals to a similar crowd, but it is very much its own standalone app.
+
+232
+00:17:31,680 --> 00:17:34,160
+[SPEAKER_01] It's not like it's dependent on shortcuts at all, right?
+
+233
+00:17:34,560 --> 00:17:46,640
+[SPEAKER_00] Oh yeah, I think you could use it just through particularly I'm not sure when this is going to air, but when interactive widgets and things come in a few weeks time, you could easily use the app without ever really opening it.
+
+234
+00:17:47,680 --> 00:17:56,720
+[SPEAKER_00] But equally, the intention is that you can open the app and have a couple of views that represent a couple of different ways of looking at the data together.
+
+235
+00:17:58,000 --> 00:18:02,560
+[SPEAKER_00] So, so yeah, it's it's meant to it's meant to achieveieve both things, ideally.
+
+236
+00:18:03,040 --> 00:18:03,120
+[SPEAKER_01] Okay.
+
+237
+00:18:03,360 --> 00:18:12,880
+[SPEAKER_01] So you have a group, you're getting feedback, it sounds like, uh, from kind of different, uh, segments of the market, uh, even with the, the small group that you have.
+
+238
+00:18:13,360 --> 00:18:16,640
+[SPEAKER_01] And I guess that is feeding into your development then.
+
+239
+00:18:16,800 --> 00:18:28,640
+[SPEAKER_01] And like, uh, did you get that kind of cycle where someone would give you feedback, which gives you an idea, and you'd implement that and send it back out and kind of get in that nice cycle of, uh, improvement at that stage?
+
+240
+00:18:29,200 --> 00:18:29,600
+[SPEAKER_00] Uh, yeah.
+
+241
+00:18:29,760 --> 00:18:36,720
+[SPEAKER_00] I think it was, it was really helpful to get, um, both feedback in terms of feature ideas as such, but also bugs.
+
+242
+00:18:37,360 --> 00:18:42,320
+[SPEAKER_00] and not just obvious bugs, but just things like if you've used it for a few months, the scale grows.
+
+243
+00:18:42,560 --> 00:18:50,800
+[SPEAKER_00] And it's quite, it's an app that, yeah, it's, it's some things you may only find when you've used it hundreds or thousands of times.
+
+244
+00:18:52,000 --> 00:18:56,960
+[SPEAKER_00] So it was quite helpful to just have, have that scale with me personally.
+
+245
+00:18:57,120 --> 00:19:01,360
+[SPEAKER_00] I remember setting up, kind of, whenever an app is launched, type automations.
+
+246
+00:19:01,760 --> 00:19:06,080
+[SPEAKER_00] So with quite a few data points, depending on which app I chose.
+
+247
+00:19:06,720 --> 00:19:08,720
+[SPEAKER_01] Those are the ones that I have set up as well.
+
+248
+00:19:10,400 --> 00:19:10,800
+[SPEAKER_01] So okay.
+
+249
+00:19:11,040 --> 00:19:11,360
+[SPEAKER_01] So then.
+
+250
+00:19:13,280 --> 00:19:16,960
+[SPEAKER_01] What was the lead up to the actual launch then?
+
+251
+00:19:18,240 --> 00:19:21,200
+[SPEAKER_01] I guess there's a couple of different questions sort of buried in here.
+
+252
+00:19:21,360 --> 00:19:28,480
+[SPEAKER_01] So one is like, did you expand the test flight, you know, the beta group at all?
+
+253
+00:19:30,160 --> 00:19:34,240
+[SPEAKER_01] And then how did you like decide when, you know, when go live was going to be?
+
+254
+00:19:35,600 --> 00:19:35,680
+[SPEAKER_00] Yeah.
+
+255
+00:19:35,920 --> 00:19:41,920
+[SPEAKER_00] So I did expand the test flight onto a very I announced a test flight on on Mastodon.
+
+256
+00:19:42,320 --> 00:19:50,000
+[SPEAKER_00] I think it was an interesting time because the service formerly known as Twitter had obviously kind of imploded relatively recently.
+
+257
+00:19:50,640 --> 00:19:54,960
+[SPEAKER_00] And then Reddit as well was, shall we say, undergoing changes.
+
+258
+00:19:56,080 --> 00:20:00,560
+[SPEAKER_00] So, so there were this kind of audience was very different.
+
+259
+00:20:01,760 --> 00:20:08,240
+[SPEAKER_00] But in some ways I found that beneficial because I actually really appreciated the smaller but more focused community on Mastodon.
+
+260
+00:20:08,560 --> 00:20:23,200
+[SPEAKER_00] So, I, you know, I used I used a couple of the SwiftUI hashtags and I found I managed to find kind of, I think, a couple of dozen beta testers who were extremely helpful in providing some more feedback.
+
+261
+00:20:23,600 --> 00:20:24,960
+[SPEAKER_00] And so that's it.
+
+262
+00:20:24,960 --> 00:20:27,520
+[SPEAKER_00] So that happened over the kind of spring and early summer.
+
+263
+00:20:28,800 --> 00:20:38,400
+[SPEAKER_00] As for actual launch, I didn't really have a defined set of features, but I was trying to target, um, July kind of after WTC basically.
+
+264
+00:20:38,720 --> 00:20:49,120
+[SPEAKER_00] Um, so I was doing my just trying to get through as much as I could before that stage, um, and aiming for that, that window of time, I guess, in the, in the Apple calendar.
+
+265
+00:20:49,920 --> 00:20:56,880
+[SPEAKER_01] I think that's a really helpful way to approach, you know, first time apps is like targeting a date.
+
+266
+00:20:57,040 --> 00:21:02,160
+[SPEAKER_01] It's hard when it's an a couple of different things.
+
+267
+00:21:02,400 --> 00:21:07,920
+[SPEAKER_01] There's one, it's like, it's hard to define, like, where is the V one line?
+
+268
+00:21:09,200 --> 00:21:11,680
+[SPEAKER_01] And there's this feeling that this is like your one shot.
+
+269
+00:21:12,000 --> 00:21:13,760
+[SPEAKER_01] And so you don't want to blow it, right?
+
+270
+00:21:14,800 --> 00:21:25,200
+[SPEAKER_01] And so I think, I think by setting a date, it forces you to actually figure out, like, okay, if I'm going to cut off at this time, what has to be in here?
+
+271
+00:21:25,520 --> 00:21:26,960
+[SPEAKER_01] Or I'm going to be so embarrassed.
+
+272
+00:21:27,200 --> 00:21:28,560
+[SPEAKER_01] I can't possibly release this.
+
+273
+00:21:28,960 --> 00:21:32,720
+[SPEAKER_01] And it kind of forces you to, like, work backwards from that date to where you are.
+
+274
+00:21:33,360 --> 00:21:38,720
+[SPEAKER_01] And the reality is you get, you know, 90% of that work done in the couple of weeks up to that date.
+
+275
+00:21:39,040 --> 00:21:40,000
+[SPEAKER_01] But I don't know.
+
+276
+00:21:40,240 --> 00:21:41,920
+[SPEAKER_01] It feels like that's a really good way to do it.
+
+277
+00:21:42,080 --> 00:21:47,200
+[SPEAKER_01] I I did actually it's very, it's very weird how many parallels there are to dark noise here, but I did the same thing.
+
+278
+00:21:47,360 --> 00:21:59,520
+[SPEAKER_01] I was trying to like thread the needle between, uh, between WWDC and the actual iPhone event, um, because that felt like it was a little bit of a lull time for a lot of things.
+
+279
+00:22:00,320 --> 00:22:07,920
+[SPEAKER_01] Um, and it gives you, I wasn't thinking about it this strategically, but it gives you a nice secondary bump with the iOS release.
+
+280
+00:22:08,000 --> 00:22:12,800
+[SPEAKER_01] So you kind of get two new cycles to play in and some natural features you can add to the app afterwards.
+
+281
+00:22:13,200 --> 00:22:14,640
+[SPEAKER_01] So that's pretty cool.
+
+282
+00:22:14,800 --> 00:22:17,600
+[SPEAKER_01] Okay, so you picked the date in July.
+
+283
+00:22:18,400 --> 00:22:25,840
+[SPEAKER_01] You had, you know, some personal people in a beta, and then that grew, that grew as you sort of marketed it online.
+
+284
+00:22:26,320 --> 00:22:26,800
+[SPEAKER_01] Oh, yeah.
+
+285
+00:22:26,960 --> 00:22:46,880
+[SPEAKER_01] And to that point about Mastodon, I think it's, there's a really, it's a really scary thing for people who are established whenever a social network, a club, a coffee house, I don't know, whatever it is in the real life parallel, when something like that that's outside of your control starts kind of collapsing, it's scary if you have something established.
+
+286
+00:22:47,040 --> 00:22:51,120
+[SPEAKER_01] Like how do you, how do you move this growth that you made to another area?
+
+287
+00:22:51,680 --> 00:23:04,240
+[SPEAKER_01] But if you aren't already established, it's like a huge opportunity because I know for me, there's a lot of people I started following on Mastodon that have been in the Twitter sphere, successful.
+
+288
+00:23:04,480 --> 00:23:06,640
+[SPEAKER_01] Somehow, they just weren't on my radar for a long time.
+
+289
+00:23:06,960 --> 00:23:11,600
+[SPEAKER_01] But whenever you jump over to a new platform, you're just like looking around for people that are interesting.
+
+290
+00:23:11,760 --> 00:23:13,120
+[SPEAKER_01] And so it's kind of a good opportunity.
+
+291
+00:23:14,480 --> 00:23:19,440
+[SPEAKER_01] I think right now, if threads is the thing that's going to take off, people are doing the same thing there.
+
+292
+00:23:19,600 --> 00:23:22,720
+[SPEAKER_01] They're trying to fill up their feed with interesting people.
+
+293
+00:23:23,040 --> 00:23:25,040
+[SPEAKER_01] And so I do think there's something.
+
+294
+00:23:25,840 --> 00:23:32,160
+[SPEAKER_01] I think there's going to be a lot of people whose origin stories start with, you know, these kind of transitions that happen.
+
+295
+00:23:33,120 --> 00:23:34,960
+[SPEAKER_01] So, yeah, I think that's I think that's cool.
+
+296
+00:23:35,680 --> 00:23:35,760
+[SPEAKER_01] Okay.
+
+297
+00:23:35,920 --> 00:23:37,600
+[SPEAKER_01] So we're leading up to the launch.
+
+298
+00:23:38,240 --> 00:23:41,840
+[SPEAKER_01] What were you doing to try and make this launch a success?
+
+299
+00:23:42,080 --> 00:23:49,840
+[SPEAKER_01] I mean, from my perspective, the launch seemed like it was a huge success, but I'm curious, were you doing like marketing pushes leading up to it?
+
+300
+00:23:50,240 --> 00:23:52,800
+[SPEAKER_01] Uh, were you mostly leveraging sort of your beta group?
+
+301
+00:23:53,120 --> 00:23:56,240
+[SPEAKER_01] Like, how were you kind of making this, this day, uh, a big thing?
+
+302
+00:23:56,720 --> 00:24:12,720
+[SPEAKER_00] Uh, I think the line in the sand date as such, which was really helpful because, particularly as a first time, an indie developer without professional experience, realizing quite a lot of work comes beyond the technical, was slowly dawning on me.
+
+303
+00:24:12,880 --> 00:24:20,640
+[SPEAKER_00] Things like the extent of the App Store submission, preparing marketing assets and a basket, and that was all very new to me.
+
+304
+00:24:21,040 --> 00:24:29,040
+[SPEAKER_00] So that was a big part of the process to learn and learn a huge amount from previous people and launched on this.
+
+305
+00:24:29,200 --> 00:24:36,640
+[SPEAKER_00] Actually, hearing people like Sean Hickman talk about and his excellent YouTube channel talk about their kind of process was really helpful.
+
+306
+00:24:38,480 --> 00:24:45,440
+[SPEAKER_00] And then I think getting towards the day itself, I did reach out to a few people in the press.
+
+307
+00:24:46,400 --> 00:24:53,920
+[SPEAKER_00] I think it's extremely daunting to do that, sending emails to people you've been following for a long time.
+
+308
+00:24:54,480 --> 00:24:54,800
+[SPEAKER_00] Oh yeah.
+
+309
+00:24:55,440 --> 00:25:04,080
+[SPEAKER_00] But I think it's just one of the things I had to kind of decide if I'm going to do this, then I need to push through the perceived awkwardness of that.
+
+310
+00:25:04,560 --> 00:25:04,640
+[SPEAKER_01] Yeah.
+
+311
+00:25:04,880 --> 00:25:12,960
+[SPEAKER_01] Well, the episode that, as we're recording, aired yesterday, I think, was with Chance Miller, the nine to five MAC editor and chief.
+
+312
+00:25:13,280 --> 00:25:17,840
+[SPEAKER_01] And like we talked about that where it's like from our perspective, we all hate email.
+
+313
+00:25:18,320 --> 00:25:23,680
+[SPEAKER_01] It feels like this horrible thing to do to someone to put an email, add an email to their inbox.
+
+314
+00:25:24,560 --> 00:25:26,000
+[SPEAKER_01] But he talked about from his perspective.
+
+315
+00:25:26,160 --> 00:25:31,760
+[SPEAKER_01] It's like, yeah, they get a lot and they can't keep up with all of it, but also that's just necessary for their jobs.
+
+316
+00:25:32,000 --> 00:25:34,000
+[SPEAKER_01] Like they want to be getting that from people.
+
+317
+00:25:34,240 --> 00:25:40,000
+[SPEAKER_01] And so, yeah, I try to keep that in mind when I'm doing the same thing where I'm like, yeah, it just feels like spammy.
+
+318
+00:25:41,520 --> 00:25:48,160
+[SPEAKER_00] So, yeah, I did, I did send those, I sent a few emails, and I continued to share some screenshots and things like that on Mastodon.
+
+319
+00:25:48,720 --> 00:25:57,120
+[SPEAKER_00] I did also open a pre-order, which also feels a bit strange for a free app, but it seems to be something that sometimes people do.
+
+320
+00:25:57,360 --> 00:26:14,240
+[SPEAKER_00] So once the app was approved, I think I set about a week in advance for the actual release date and started to share that link again on Mastodon, and that generated quite a bit of mini buzz in the mini iOS circle, I guess.
+
+321
+00:26:15,440 --> 00:26:16,080
+[SPEAKER_01] So yeah.
+
+322
+00:26:16,720 --> 00:26:21,520
+[SPEAKER_01] Okay, that's interesting because to be honest with you, I kind of forgot about the pre-order thing.
+
+323
+00:26:22,160 --> 00:26:27,840
+[SPEAKER_01] I did that with Dark Noise and I remember I think I even wrote about, like, I recommend people do this, but I was a paid up front app.
+
+324
+00:26:28,160 --> 00:26:30,400
+[SPEAKER_01] So it's kind of a different whole ordeal.
+
+325
+00:26:31,280 --> 00:26:39,280
+[SPEAKER_01] But that's, that's an interesting idea because, yeah, it gives, it gives people a call to action throughout that week while you're building Buzz.
+
+326
+00:26:39,760 --> 00:26:47,040
+[SPEAKER_01] And then all of those, it's almost like you're giving everybody, like, sign up for my newsletter because they're going to get a notification on the day it actually comes out.
+
+327
+00:26:47,520 --> 00:26:49,680
+[SPEAKER_01] So you feel like that, that worked out pretty well?
+
+328
+00:26:50,880 --> 00:26:51,280
+[SPEAKER_00] I think so.
+
+329
+00:26:51,440 --> 00:26:51,520
+[SPEAKER_00] Yeah.
+
+330
+00:26:51,840 --> 00:26:55,760
+[SPEAKER_00] I haven't kind of deeply analyzed the numbers, um, but there certainly were some pre orders.
+
+331
+00:26:56,000 --> 00:26:59,200
+[SPEAKER_00] And, uh, I guess it gives you two shots at the launch almost.
+
+332
+00:26:59,280 --> 00:26:59,360
+[SPEAKER_00] Yeah.
+
+333
+00:26:59,600 --> 00:27:02,640
+[SPEAKER_00] So kind of announcing the pre order and then the actual launch itself.
+
+334
+00:27:03,440 --> 00:27:07,760
+[SPEAKER_00] It also alerted me to a slight issue with the inappe purchase pricing.
+
+335
+00:27:08,000 --> 00:27:15,760
+[SPEAKER_00] So I don't know quite why this happened, but I'd set the prices in British sterling and then set the automated currency conversion.
+
+336
+00:27:15,920 --> 00:27:16,000
+[SPEAKER_01] Yeah.
+
+337
+00:27:16,480 --> 00:27:26,240
+[SPEAKER_00] And for whatever reason, the annual price in certain territories had worked out more expensive than the monthly times twelve price, which obviously was not my intention.
+
+338
+00:27:27,200 --> 00:27:30,080
+[SPEAKER_00] I've heard I've heard of people saying that that happens.
+
+339
+00:27:30,240 --> 00:27:30,320
+[SPEAKER_01] Yeah.
+
+340
+00:27:30,560 --> 00:27:33,680
+[SPEAKER_01] And I don't I don't remember what the deal is with that.
+
+341
+00:27:34,000 --> 00:27:36,640
+[SPEAKER_01] I work for an inappe purchase subscription company.
+
+342
+00:27:37,200 --> 00:27:38,880
+[SPEAKER_01] I should probably know the answer to this, but I don't.
+
+343
+00:27:39,280 --> 00:27:41,840
+[SPEAKER_01] I know I've heard this story actually, maybe it was you talking about it.
+
+344
+00:27:42,320 --> 00:27:43,920
+[SPEAKER_01] I know I've heard this story before though.
+
+345
+00:27:44,720 --> 00:27:46,560
+[SPEAKER_01] I don't remember what the reason is for that.
+
+346
+00:27:47,280 --> 00:27:57,120
+[SPEAKER_01] And it might just literally be, I know the conversion rates are weird for certain countries for reasons that I don't really understand, so maybe it's just something specific with that.
+
+347
+00:27:57,440 --> 00:27:58,960
+[SPEAKER_01] Maybe Dark Sound has that same problem.
+
+348
+00:27:59,200 --> 00:27:59,600
+[SPEAKER_01] I don't know.
+
+349
+00:28:00,400 --> 00:28:01,680
+[SPEAKER_01] But I haven't heard anything about that.
+
+350
+00:28:01,760 --> 00:28:02,880
+[SPEAKER_01] Yeah, that's interesting.
+
+351
+00:28:03,520 --> 00:28:06,880
+[SPEAKER_01] So you heard about it because people reached out and told you basically.
+
+352
+00:28:07,440 --> 00:28:10,880
+[SPEAKER_00] Yeah, someone sent me a message, I think, from Sweden where this had happened.
+
+353
+00:28:11,360 --> 00:28:16,640
+[SPEAKER_00] And it gave me an opportunity to to go and download the spreadsheet of all the prices and double check each one.
+
+354
+00:28:16,960 --> 00:28:24,880
+[SPEAKER_00] So I think it's I read somewhere that it was about the currency conversion is handled differently for a kind of a small versus a large amount or something like that.
+
+355
+00:28:26,480 --> 00:28:32,960
+[SPEAKER_00] But yeah, it was certainly an unintended byproduct of the pre order meant that I didn't end up with some very strange subscription.
+
+356
+00:28:33,360 --> 00:28:33,440
+[SPEAKER_01] Yeah.
+
+357
+00:28:33,920 --> 00:28:41,760
+[SPEAKER_01] Well, I mean, I know they're not it's not like it's a direct conversion because, you know, they set the pricing based on optimization of some kind, right?
+
+358
+00:28:42,000 --> 00:28:48,480
+[SPEAKER_01] Like you want it to be 99 cents and then you don't necessarily want it to be 1,200.
+
+359
+00:28:50,400 --> 00:28:50,960
+[SPEAKER_01] It's not sense.
+
+360
+00:28:51,120 --> 00:28:51,920
+[SPEAKER_01] You know what I'm saying?
+
+361
+00:28:52,160 --> 00:28:58,080
+[SPEAKER_01] Like, they want it to be at a certain, you know, digit number just for marketing reasons.
+
+362
+00:28:58,960 --> 00:29:00,560
+[SPEAKER_01] And they're trying to automatically do that for you.
+
+363
+00:29:00,640 --> 00:29:02,240
+[SPEAKER_01] So maybe it's something related to that.
+
+364
+00:29:02,400 --> 00:29:02,800
+[SPEAKER_01] I don't know.
+
+365
+00:29:03,280 --> 00:29:03,920
+[SPEAKER_01] That's interesting.
+
+366
+00:29:05,120 --> 00:29:07,920
+[SPEAKER_01] This episode of Launched is brought to you by Happy Scale.
+
+367
+00:29:08,400 --> 00:29:18,400
+[SPEAKER_01] Happy Scale is the iOS app that helps you navigate the emotional side of weight loss by surfacing insights into your own data so you can stay consistent and focus on the big picture.
+
+368
+00:29:19,040 --> 00:29:28,560
+[SPEAKER_01] The app is built by a small team led by a former guest on this very show, Russ Shanahan, who's committed to creating an excellent customer experience and refining the app for years to come.
+
+369
+00:29:28,960 --> 00:29:36,640
+[SPEAKER_01] Happy Scale automatically syncs with Apple Health, so it only takes a moment to download the app, pull in your health data, and poke around and see if the app works for you.
+
+370
+00:29:37,040 --> 00:29:42,400
+[SPEAKER_01] I can tell you as a very happy happy scale user for years now that it's fantastic.
+
+371
+00:29:42,960 --> 00:29:52,640
+[SPEAKER_01] I use a cheap basic smart scale for measuring my weight every morning that requires me to use their, let's just say, not super great app to import my weight from the scale.
+
+372
+00:29:53,040 --> 00:29:59,360
+[SPEAKER_01] But it syncs with Apple Health, and Happy Scale happily sucks that in and displays my data really wonderfully in its app.
+
+373
+00:29:59,680 --> 00:30:07,760
+[SPEAKER_01] I personally love the way it normalizes your weight on the main graph, so day to day fluctuations don't look so scary, but the trends are still really clear.
+
+374
+00:30:08,560 --> 00:30:14,320
+[SPEAKER_01] So download HappyScale today to see for yourself why it has a average rating of four point nine stars on the App Store.
+
+375
+00:30:14,720 --> 00:30:19,360
+[SPEAKER_01] Thank you so much to HappyScale and Russ for supporting this episode of Launched.
+
+376
+00:30:20,800 --> 00:30:32,240
+[SPEAKER_01] Okay, so you reached out to the press, you had a pre-order going, you had a decent, you know, a decent little like beta group that had already been using the app, and so there was some buzz there.
+
+377
+00:30:32,720 --> 00:30:36,000
+[SPEAKER_01] So then you have your actual, oh, did you, you had a press kit?
+
+378
+00:30:36,240 --> 00:30:38,720
+[SPEAKER_01] I heard you say those words, that is something that you built.
+
+379
+00:30:39,920 --> 00:30:40,000
+[SPEAKER_00] Yes.
+
+380
+00:30:40,320 --> 00:30:40,400
+[SPEAKER_00] Yeah.
+
+381
+00:30:40,560 --> 00:30:49,120
+[SPEAKER_00] I looked at other apps that I enjoy myself and I get a dark noise was definitely on the list and to see what the norm was there.
+
+382
+00:30:49,520 --> 00:31:00,480
+[SPEAKER_00] So I had kind of some screenshots, some unframed screenshots, some kind of composed hero images, a little feature table, just kind of a grab bag of things.
+
+383
+00:31:01,920 --> 00:31:07,600
+[SPEAKER_00] And that was just on a, I'm, as we've discussed, not a professional web developer by any stretch.
+
+384
+00:31:07,920 --> 00:31:21,840
+[SPEAKER_00] So I kept things simple with a WordPress site to try and focus energy on the app itself, because I think a past me might have got distracted by the latest, greatest technology of, I don't know, hosting my own thing.
+
+385
+00:31:22,320 --> 00:31:24,640
+[SPEAKER_00] Oh, I've never done that kind of thing before.
+
+386
+00:31:26,320 --> 00:31:27,840
+[SPEAKER_00] And then never actually launched the app.
+
+387
+00:31:28,160 --> 00:31:30,640
+[SPEAKER_01] So I think that's a smart play.
+
+388
+00:31:31,760 --> 00:31:33,760
+[SPEAKER_01] Do you have, like, much design experience?
+
+389
+00:31:34,000 --> 00:31:36,560
+[SPEAKER_01] How are you creating all these assets and stuff?
+
+390
+00:31:37,920 --> 00:31:39,840
+[SPEAKER_00] No, I haven't is the short answer.
+
+391
+00:31:40,160 --> 00:31:47,920
+[SPEAKER_00] I guess the limit of my, like, illustrator like experience would be making figures for my, for my PhD thesis.
+
+392
+00:31:48,160 --> 00:31:48,240
+[SPEAKER_00] So.
+
+393
+00:31:48,240 --> 00:31:51,360
+[SPEAKER_00] So, so a very different angle on this.
+
+394
+00:31:52,480 --> 00:31:56,160
+[SPEAKER_00] So it was, it was definitely a different challenge.
+
+395
+00:31:56,560 --> 00:31:59,600
+[SPEAKER_00] So I tried to keep things relatively simple and clean.
+
+396
+00:32:00,480 --> 00:32:04,480
+[SPEAKER_00] But, but yeah, that's coming at it from a very different angle, I guess.
+
+397
+00:32:04,960 --> 00:32:06,480
+[SPEAKER_01] What did you, what did you use for it then?
+
+398
+00:32:07,120 --> 00:32:10,480
+[SPEAKER_00] I think I've, I've used Affinity products for a while.
+
+399
+00:32:11,040 --> 00:32:12,080
+[SPEAKER_00] So Affinity Designer.
+
+400
+00:32:12,800 --> 00:32:17,040
+[SPEAKER_00] I think I also played with Figma a bit, because that seems to be what people do these days.
+
+401
+00:32:17,680 --> 00:32:17,920
+[SPEAKER_01] Right.
+
+402
+00:32:18,000 --> 00:32:18,320
+[SPEAKER_00] Hotness.
+
+403
+00:32:18,800 --> 00:32:18,880
+[SPEAKER_00] Yeah.
+
+404
+00:32:20,160 --> 00:32:27,120
+[SPEAKER_00] But it was, it did feel a little like, um, kind of rushing for a homework deadline towards the end evening.
+
+405
+00:32:27,360 --> 00:32:28,240
+[SPEAKER_00] There was no actual deadline.
+
+406
+00:32:28,800 --> 00:32:29,520
+[SPEAKER_00] It was in my head.
+
+407
+00:32:29,760 --> 00:32:31,280
+[SPEAKER_00] That was the kind of mindset we were at.
+
+408
+00:32:31,440 --> 00:32:35,280
+[SPEAKER_00] So it was get things working, if not perfect on the, those kind of things.
+
+409
+00:32:35,760 --> 00:32:36,000
+[SPEAKER_01] Nice.
+
+410
+00:32:36,160 --> 00:32:42,160
+[SPEAKER_01] What what do you use for, like, the hero images for having them inside, uh, frames and stuff like that?
+
+411
+00:32:42,480 --> 00:32:45,680
+[SPEAKER_00] Uh, so I use, uh, Federico Vetici's shortcut to, to do this.
+
+412
+00:32:46,880 --> 00:32:47,760
+[SPEAKER_01] That's what I do for everything.
+
+413
+00:32:48,160 --> 00:32:49,120
+[SPEAKER_01] I know there's other ways.
+
+414
+00:32:49,920 --> 00:32:58,400
+[SPEAKER_01] Like, I've I keep thinking like, there must be a better way because I will literally like, I mean, sometimes the shortcuts don't work the best on my Mac.
+
+415
+00:32:58,720 --> 00:33:04,000
+[SPEAKER_01] And so I will sometimes literally airdrop them to my phone just so I can add frames and then airdrop them back to the Mac.
+
+416
+00:33:06,320 --> 00:33:09,840
+[SPEAKER_01] It's crazy how nice the experience is.
+
+417
+00:33:10,080 --> 00:33:11,680
+[SPEAKER_01] We'll have a link in the show notes for that.
+
+418
+00:33:11,760 --> 00:33:20,880
+[SPEAKER_01] But yeah, Federico Vetici has that Apple Frames shortcut for just like stupidly easily adding device frames around your screenshots.
+
+419
+00:33:21,360 --> 00:33:22,800
+[SPEAKER_01] And it is chef's kiss.
+
+420
+00:33:23,040 --> 00:33:25,200
+[SPEAKER_01] It's just so it makes everything so much easier.
+
+421
+00:33:26,320 --> 00:33:26,560
+[SPEAKER_00] It does.
+
+422
+00:33:27,040 --> 00:33:28,640
+[SPEAKER_00] And working on Apple Watch as well.
+
+423
+00:33:28,720 --> 00:33:36,640
+[SPEAKER_00] I didn't realize I've recently been working on a watch app for Watchwest X and I didn't I didn't know if it would work but throwing them at it as well, you get.
+
+424
+00:33:38,080 --> 00:33:44,160
+[SPEAKER_00] So it's excellent and very helpful to quickly add things to a kind of a Mastodon post about what you're working on right now.
+
+425
+00:33:44,880 --> 00:33:45,200
+[SPEAKER_01] Exactly.
+
+426
+00:33:45,840 --> 00:33:46,480
+[SPEAKER_01] That's awesome.
+
+427
+00:33:46,720 --> 00:33:46,800
+[SPEAKER_01] Okay.
+
+428
+00:33:47,120 --> 00:33:50,240
+[SPEAKER_01] So we've done all this pre work leading up to the launch.
+
+429
+00:33:50,320 --> 00:33:52,960
+[SPEAKER_01] You've picked a day you've been talking about the day you did the pre order.
+
+430
+00:33:53,760 --> 00:33:55,200
+[SPEAKER_01] How was the launch day itself?
+
+431
+00:33:55,520 --> 00:33:58,240
+[SPEAKER_01] Like what was the what was the experience of that day?
+
+432
+00:33:58,560 --> 00:33:59,440
+[SPEAKER_01] Did you take the day off?
+
+433
+00:33:59,600 --> 00:34:00,240
+[SPEAKER_01] Were you working?
+
+434
+00:34:01,520 --> 00:34:12,160
+[SPEAKER_00] It was so I'm currently working part time being mom half the time and mom working, oh, you're always mom but actively mom half the time and working the other days of the week.
+
+435
+00:34:12,720 --> 00:34:15,200
+[SPEAKER_00] So I did it for my day off with my son.
+
+436
+00:34:15,600 --> 00:34:22,160
+[SPEAKER_00] And so it was kind of half looking at my phone, but mostly, mostly doing kids stuff, the park and whatever.
+
+437
+00:34:22,960 --> 00:34:23,680
+[SPEAKER_00] So it was nice.
+
+438
+00:34:23,840 --> 00:34:45,280
+[SPEAKER_00] And about halfway through the day, I saw that John Voorhees had written it up for Max Stories, which was just absolutely mind going, really, having followed that blog for many years to see, to see it there and slowly reading it when my son was doing things over the course of the day was really, really kind of a life goals, I think.
+
+439
+00:34:46,960 --> 00:34:48,400
+[SPEAKER_00] So, yeah, that was, that was a massive.
+
+440
+00:34:49,360 --> 00:34:52,640
+[SPEAKER_00] unexpected kind of perk of launch day for me.
+
+441
+00:34:52,960 --> 00:34:55,200
+[SPEAKER_01] Those Mac Stories articles too.
+
+442
+00:34:55,520 --> 00:35:01,280
+[SPEAKER_01] It's like, it's not just exciting because a lot of people are going to see it or whatever.
+
+443
+00:35:01,440 --> 00:35:08,000
+[SPEAKER_01] Like in its own right, they, they write long form, it's their own screenshots.
+
+444
+00:35:08,160 --> 00:35:12,240
+[SPEAKER_01] So you're seeing like someone else using your app.
+
+445
+00:35:13,520 --> 00:35:18,480
+[SPEAKER_01] And then, and then they explaining how they're using it and everything and like kind of diving into those details.
+
+446
+00:35:19,600 --> 00:35:26,720
+[SPEAKER_01] It's a really special site, but yeah, having having your app written, written up there, feels like this big moment.
+
+447
+00:35:27,280 --> 00:35:44,960
+[SPEAKER_01] And I know that feeling you're talking about where you're with your kids and everything around you is exceptionally normal and you're just like your heart's like pumping and you're like you're kind of almost just like sipping through the article, like taking in little moments and just enjoying it as it comes through.
+
+448
+00:35:45,440 --> 00:35:46,080
+[SPEAKER_01] That's awesome.
+
+449
+00:35:46,800 --> 00:35:48,480
+[SPEAKER_00] Yeah, it was a really, really fun day.
+
+450
+00:35:49,120 --> 00:35:53,040
+[SPEAKER_00] And I really appreciated things like spoting some of the gestures and things like that.
+
+451
+00:35:53,280 --> 00:35:53,360
+[SPEAKER_00] Yeah.
+
+452
+00:35:54,400 --> 00:35:59,840
+[SPEAKER_00] I remember a tip from Under the Radar of never having an action only on a gesture.
+
+453
+00:36:00,000 --> 00:36:05,600
+[SPEAKER_00] So I had this kind of mantra while I was designing the app, but there are quite a few gestures in there.
+
+454
+00:36:05,840 --> 00:36:13,200
+[SPEAKER_00] And so John mentioning things like that, little details that he spotted was really kind of encouraging.
+
+455
+00:36:14,640 --> 00:36:26,160
+[SPEAKER_00] I think the other thing that was really special about Launch Day for me was getting some emails and messages from people who were using it for all sorts of, not intended, but unexpected purposes, I guess.
+
+456
+00:36:27,360 --> 00:36:33,520
+[SPEAKER_00] Things like helping them manage certain health conditions or look after particularly exotic pets, all sorts of things.
+
+457
+00:36:34,800 --> 00:36:36,960
+[SPEAKER_00] What's the most exotic vehicle you've heard about.
+
+458
+00:36:38,000 --> 00:36:39,200
+[SPEAKER_00] I've heard about snakes.
+
+459
+00:36:39,760 --> 00:36:41,680
+[SPEAKER_00] I guess that's reasonably exciting for me.
+
+460
+00:36:43,040 --> 00:36:48,800
+[SPEAKER_00] But, but, yeah, I think it's, it's something that appeals, I hope, for, for different reasons.
+
+461
+00:36:49,040 --> 00:36:54,400
+[SPEAKER_00] And I, I want to try and keep it flexible so that it can be used in many different ways, I suppose.
+
+462
+00:36:54,800 --> 00:36:54,800
+[SPEAKER_00] Yeah.
+
+463
+00:36:54,960 --> 00:37:02,880
+[SPEAKER_01] I mean, it kind of has that feeling of like a, there's a joke somewhere about like, every app is really just a wrapper around a spreadsheet.
+
+464
+00:37:02,960 --> 00:37:04,640
+[SPEAKER_01] But like, it really is.
+
+465
+00:37:05,360 --> 00:37:08,640
+[SPEAKER_01] Like, the more wrapping you add, the more specialized it is.
+
+466
+00:37:08,720 --> 00:37:08,960
+[SPEAKER_01] Right.
+
+467
+00:37:09,040 --> 00:37:21,040
+[SPEAKER_01] And like, Chronicling feels like it's closer to that spreadsheet in the sense that it can be, it can mean so many different things, which is part of what makes it so, so cool.
+
+468
+00:37:21,760 --> 00:37:21,840
+[SPEAKER_01] Okay.
+
+469
+00:37:22,080 --> 00:37:26,000
+[SPEAKER_01] So you had that article written, but like, how was the launch more generally?
+
+470
+00:37:26,240 --> 00:37:26,480
+[SPEAKER_01] Was it?
+
+471
+00:37:26,800 --> 00:37:28,640
+[SPEAKER_01] It sounds like you were getting feedback from people.
+
+472
+00:37:28,800 --> 00:37:35,760
+[SPEAKER_01] So there was getting some sort of user base was, was there more people than you were expecting using it, less people than you were expecting using it?
+
+473
+00:37:35,920 --> 00:37:38,480
+[SPEAKER_01] Like, how was that launch and launch week kind of, how did that go?
+
+474
+00:37:39,440 --> 00:37:44,000
+[SPEAKER_00] I think, to be honest, in terms of numbers, I found it very difficult to have an expectation.
+
+475
+00:37:44,640 --> 00:37:50,560
+[SPEAKER_00] I think it's, uh, it's not some people in the community are really good at sharing those kinds of things.
+
+476
+00:37:52,160 --> 00:37:58,960
+[SPEAKER_00] And so I wasn't really sure what to expect, but it was certainly reaching some people.
+
+477
+00:37:59,200 --> 00:38:18,640
+[SPEAKER_00] And as I got some support emails, some feedback, and I tried to add to a kind of FAQ on the website relatively promptly as things came in to try and again, yeah, just kind of trying to be as efficient as possible with time and put that time into the app itself.
+
+478
+00:38:19,920 --> 00:38:26,880
+[SPEAKER_00] But yeah, it was definitely a very big, well, not very big, relative to the baseline there was an initial bump on launch date.
+
+479
+00:38:28,400 --> 00:38:31,680
+[SPEAKER_00] I imagine strongly facilitated by the Max Stories article.
+
+480
+00:38:32,960 --> 00:38:39,600
+[SPEAKER_00] And since then, my focus has really been on iOS 17, particularly with interactive widgets.
+
+481
+00:38:39,920 --> 00:38:51,920
+[SPEAKER_00] And I did originally plan to have a watch OS app at launch, but I can't it when I saw of WWDC and decided to focus instead on making it as much watch OS 10.
+
+482
+00:38:52,160 --> 00:38:54,800
+[SPEAKER_00] Yeah, that was probably the smartest language possible.
+
+483
+00:38:55,440 --> 00:39:03,280
+[SPEAKER_01] And I want to get into like future plans here in a second, but before we get into that, one thing we haven't tal talked about yet is the business model itself.
+
+484
+00:39:04,000 --> 00:39:11,440
+[SPEAKER_01] So it is a free app with an in-app or with a subscription for like a premium tier, right?
+
+485
+00:39:11,920 --> 00:39:13,600
+[SPEAKER_01] How did you what made you land on that?
+
+486
+00:39:13,840 --> 00:39:19,600
+[SPEAKER_01] And then also, like, how did you figure out where to draw the line on what's premium and what's free?
+
+487
+00:39:21,200 --> 00:39:22,160
+[SPEAKER_00] I found this really difficult.
+
+488
+00:39:22,720 --> 00:39:39,040
+[SPEAKER_00] I think I wanted to have some way of making money from this in order to sustain the kind of effort because as much as I enjoy it with the best people in the world, with a family, I can't continue to put the kind of time into it without some kind of kickback, I guess.
+
+489
+00:39:39,680 --> 00:39:48,720
+[SPEAKER_00] But equally, I wanted to make something that held together as a free product that had enough functionality that people could use it in that way.
+
+490
+00:39:49,600 --> 00:40:00,240
+[SPEAKER_00] But equally, I get subscription fatigue, but what I felt was hopefully a reasonably priced subscription if you wanted to get a bit more from the app and support what I'm doing.
+
+491
+00:40:01,840 --> 00:40:04,720
+[SPEAKER_00] So it feels like subscriptions as...
+
+492
+00:40:05,600 --> 00:40:07,680
+[SPEAKER_00] everyone a lot of people are moving towards them.
+
+493
+00:40:07,920 --> 00:40:13,600
+[SPEAKER_00] I thought it would be easier to start with one and take that on the chin as such instead of having to add one in future.
+
+494
+00:40:15,680 --> 00:40:23,840
+[SPEAKER_00] So that's where it came from, I think, is deciding to have that right at launch and build up that tier and through time.
+
+495
+00:40:24,160 --> 00:40:28,480
+[SPEAKER_00] So at launch it was a limited kind of scale for the free products.
+
+496
+00:40:28,640 --> 00:40:32,480
+[SPEAKER_00] You can have three categories and with the premium subscription you could have as many as you want.
+
+497
+00:40:33,760 --> 00:40:36,240
+[SPEAKER_00] But the launch widgets were all there for the free product.
+
+498
+00:40:37,280 --> 00:40:44,160
+[SPEAKER_00] I'm adding some new widgets that will be premium while also extending the existing ones to have interactivity with iOS 17.
+
+499
+00:40:44,480 --> 00:40:47,840
+[SPEAKER_00] So I think to some extent it will be an evolving line.
+
+500
+00:40:48,480 --> 00:40:51,120
+[SPEAKER_00] But the mindset is a free product that can work.
+
+501
+00:40:51,360 --> 00:41:03,520
+[SPEAKER_00] It's not just kind of a demonstration with a premium tier that adds kind of so-called power user features as such, I suppose, and just kind of, yeah, helps me keep it going for as long as I can.
+
+502
+00:41:04,160 --> 00:41:04,320
+[SPEAKER_01] Nice.
+
+503
+00:41:04,480 --> 00:41:07,760
+[SPEAKER_01] And how was the process of getting a subscription added?
+
+504
+00:41:07,920 --> 00:41:13,200
+[SPEAKER_01] Like, I know a lot of the reason the reason I started with paid upfront is because it was a lot easier.
+
+505
+00:41:14,000 --> 00:41:24,720
+[SPEAKER_01] Was it like was it, I guess that's just added to the pile of brand new things that you had to figure out with the App Store and everything in terms of adding in a subscription?
+
+506
+00:41:25,760 --> 00:41:26,240
+[SPEAKER_00] Yeah, I did.
+
+507
+00:41:26,480 --> 00:41:29,360
+[SPEAKER_00] I did initially try and use Storkit directly.
+
+508
+00:41:29,760 --> 00:41:33,680
+[SPEAKER_00] And then I remember I had a day off from work to work on the app.
+
+509
+00:41:34,000 --> 00:41:35,360
+[SPEAKER_00] I think it was the only time I did this.
+
+510
+00:41:35,760 --> 00:41:40,480
+[SPEAKER_00] I had to have a whole day and decided to use RevenueCat.
+
+511
+00:41:40,640 --> 00:41:47,040
+[SPEAKER_00] So I did tear out everything and go with RevenueCat and I'm very glad to have made that decision.
+
+512
+00:41:47,760 --> 00:41:54,800
+[SPEAKER_00] So yeah, I'm managing the subscription through RevenueCat and that's been, yeah, it was extremely straightforward to set up.
+
+513
+00:41:54,960 --> 00:41:56,720
+[SPEAKER_00] There's a lot of excellent help material.
+
+514
+00:41:57,680 --> 00:41:59,360
+[SPEAKER_00] And so yeah, very happy to have made that switch.
+
+515
+00:41:59,600 --> 00:42:02,080
+[SPEAKER_00] I'm very excited to look at RevenueCat payables soon.
+
+516
+00:42:02,960 --> 00:42:06,960
+[SPEAKER_01] I'm I'm doing everything in my power not to just go on a sales pitch here.
+
+517
+00:42:07,200 --> 00:42:08,560
+[SPEAKER_01] So I'll just leave it at that.
+
+518
+00:42:08,960 --> 00:42:11,200
+[SPEAKER_01] You did a good you did you did plenty there.
+
+519
+00:42:11,840 --> 00:42:12,800
+[SPEAKER_01] So we'll move on.
+
+520
+00:42:13,040 --> 00:42:14,320
+[SPEAKER_01] But subscriptions cool.
+
+521
+00:42:14,640 --> 00:42:15,520
+[SPEAKER_01] RevenueCat great.
+
+522
+00:42:15,920 --> 00:42:16,480
+[SPEAKER_01] You should use it.
+
+523
+00:42:16,640 --> 00:42:16,800
+[SPEAKER_01] Yeah.
+
+524
+00:42:17,440 --> 00:42:17,840
+[UNKNOWN] Absolutely.
+
+525
+00:42:18,640 --> 00:42:18,640
+[SPEAKER_01] Okay.
+
+526
+00:42:19,680 --> 00:42:20,640
+[SPEAKER_01] So launch went well.
+
+527
+00:42:21,040 --> 00:42:22,000
+[SPEAKER_01] You have the app out there.
+
+528
+00:42:22,240 --> 00:42:23,360
+[SPEAKER_01] This was in July, right?
+
+529
+00:42:24,000 --> 00:42:26,320
+[SPEAKER_01] So it's been a couple months since then.
+
+530
+00:42:27,520 --> 00:42:30,160
+[SPEAKER_01] And WWDC had already happened.
+
+531
+00:42:30,320 --> 00:42:33,040
+[SPEAKER_01] So you kind of had a bunch of features laid out.
+
+532
+00:42:33,920 --> 00:42:36,800
+[SPEAKER_01] Interactive widgets obviously being a big one here.
+
+533
+00:42:37,760 --> 00:42:41,520
+[SPEAKER_01] What was the first thing, you know, after release that you kind of focused on?
+
+534
+00:42:41,680 --> 00:42:48,560
+[SPEAKER_01] Were you getting a bunch of feedback and you like trying to get some updates in before starting your iOS 17 work?
+
+535
+00:42:48,880 --> 00:42:52,320
+[SPEAKER_01] Or was it kind of, all right, let's get right into the iOS 17 stuff.
+
+536
+00:42:53,120 --> 00:43:06,800
+[SPEAKER_00] So I had a couple of minor updates, just adding some little features like changing the time format on events, for example, which is something that I don't know, I didn't realize that military time at 24 hour time in the US is less common.
+
+537
+00:43:06,960 --> 00:43:10,000
+[SPEAKER_00] So I think that was a bit of a short sighted thing on my part.
+
+538
+00:43:10,480 --> 00:43:14,080
+[SPEAKER_00] So there were a couple of really tiny features of that scale.
+
+539
+00:43:14,960 --> 00:43:23,360
+[SPEAKER_00] I did intend to have a 1.1 release of more significant features between now and iOS 17, but that's somewhat fallen by the wayside.
+
+540
+00:43:23,600 --> 00:43:36,080
+[SPEAKER_00] So the focus is certainly on interactive widgets, adding a watch app, and I'm excited to find out what they offer with the journal APIs in future, because I think that could be something that works really well.
+
+541
+00:43:36,480 --> 00:43:38,720
+[SPEAKER_00] Oh yeah, that's like I forgot about that.
+
+542
+00:43:38,960 --> 00:43:49,120
+[SPEAKER_01] If you don't already know, like not you, audience, they announced that, yeah, there's a journaling app coming during iOS 17, but it's not going to be out out at launch.
+
+543
+00:43:49,280 --> 00:43:50,640
+[SPEAKER_01] So none of us have seen it yet.
+
+544
+00:43:50,800 --> 00:43:55,920
+[SPEAKER_01] Still, but presumably there's some sort of API for adding data into that app.
+
+545
+00:43:56,160 --> 00:43:59,920
+[SPEAKER_01] And yeah, that feels extremely in line with what Chronicling is, is offering.
+
+546
+00:44:00,160 --> 00:44:01,760
+[SPEAKER_01] So that would be really interesting.
+
+547
+00:44:02,400 --> 00:44:06,800
+[SPEAKER_01] What, what are, um, obviously, watch app, pretty straightforward.
+
+548
+00:44:07,200 --> 00:44:08,960
+[SPEAKER_01] What's your thinking for interactive widgets?
+
+549
+00:44:09,120 --> 00:44:11,360
+[SPEAKER_01] Like, how is that, uh, coming into play for you?
+
+550
+00:44:12,000 --> 00:44:13,360
+[SPEAKER_00] Uh, I think it's really exciting.
+
+551
+00:44:13,520 --> 00:44:22,480
+[SPEAKER_00] And it's so, it's so cool to see what people are doing with it, um, particularly on Mastodon and iOS community, um, which, which just in general is so supportive and, and wonderful.
+
+552
+00:44:22,800 --> 00:44:27,760
+[SPEAKER_00] I don't think I've ever seen an online community that's so welcoming and helpful.
+
+553
+00:44:28,880 --> 00:44:32,320
+[SPEAKER_00] It's really amazing to kind of come in as a new person.
+
+554
+00:44:32,720 --> 00:44:40,000
+[SPEAKER_00] But for chronicling, there's the kind of very, very clear need for adding an event right now.
+
+555
+00:44:40,160 --> 00:44:42,480
+[SPEAKER_00] So a plus button basically on the existing widget.
+
+556
+00:44:44,080 --> 00:44:46,480
+[SPEAKER_00] But I think there's so much more you can do with it.
+
+557
+00:44:46,720 --> 00:44:50,320
+[SPEAKER_00] I think kind of Joe Fritbar of Timery has been doing some amazing things.
+
+558
+00:44:52,000 --> 00:44:55,280
+[SPEAKER_00] So I've got a little bit of extra things.
+
+559
+00:44:55,600 --> 00:45:08,320
+[SPEAKER_00] So kind of paging through what you've I have this thing I call the dot chart., I need a better name, but basically dots for every hour of the day or day of the week or month, depending on what period you're interested in.
+
+560
+00:45:08,560 --> 00:45:13,760
+[SPEAKER_00] And kind of it, it lights up the right color if you've done the thing in that period of time.
+
+561
+00:45:14,160 --> 00:45:15,600
+[SPEAKER_01] I've done a horrible job hosting here.
+
+562
+00:45:15,760 --> 00:45:20,320
+[SPEAKER_01] We haven't really described the app that well, other than, you know, it's a way for tracking events.
+
+563
+00:45:20,560 --> 00:45:30,960
+[SPEAKER_01] But yeah, I feel like one of the big things with Chronicling is, you know, the input mechanism is easy, the shortcut support for that being outstanding, uh, as you'd expect based on your story.
+
+564
+00:45:31,200 --> 00:45:40,800
+[SPEAKER_01] But the other side of it is the visual aspects, lots of charts, um, for seeing that data and the view you're describing where it's dots is phenomenal.
+
+565
+00:45:41,120 --> 00:45:48,640
+[SPEAKER_01] And what what it really feels like to me is like if anybody uses GitHub and they, you know, the, you got the green squares.
+
+566
+00:45:48,800 --> 00:45:49,360
+[SPEAKER_01] Oh, is it really?
+
+567
+00:45:49,440 --> 00:45:49,520
+[SPEAKER_01] Okay.
+
+568
+00:45:49,680 --> 00:45:51,440
+[SPEAKER_01] Because it's, I mean, it's definitely different.
+
+569
+00:45:51,920 --> 00:45:55,600
+[SPEAKER_01] Like it's not like it doesn't even seem like it's cribbing the design at all.
+
+570
+00:45:56,160 --> 00:45:58,560
+[SPEAKER_01] It's just, it has that same feel of it.
+
+571
+00:45:58,720 --> 00:46:04,480
+[SPEAKER_01] Like I can see, you know, within my group, all of the different, uh, all the different events I have.
+
+572
+00:46:04,640 --> 00:46:50,400
+[SPEAKER_01] And then you see different colored dots of different varying degrees of, uh, opacity, I guess, for letting you know, you know, at a quick glance uh what the events look like and i that's a wonderful view that i really i think is really cool oh thank you i think it that's coming to a widget and i was 17 and and so one of the things i've done very interactivity is is buttons to switch between different periods uh that's the extent for now i'm keen to see how things kind of settle out as such once it's released um i'm a bit nervous to add much more before i've seen how things perform um uh beyond the beta period so uh yeah we're in that and i say we literally i mean me and you because everybody listening is on the other side of the Rubicon, is that the word?
+
+573
+00:46:50,720 --> 00:46:55,440
+[SPEAKER_01] Uh, like, by the time people are listening to this, I was 17, I think, will be out already.
+
+574
+00:46:56,080 --> 00:47:00,080
+[SPEAKER_01] Uh, but where we're sitting right now, it's extremely exciting.
+
+575
+00:47:00,320 --> 00:47:06,480
+[SPEAKER_01] It looks the way the community has been playing with, uh, interactive widgets over the beta period has been really cool.
+
+576
+00:47:06,960 --> 00:47:09,760
+[SPEAKER_01] There's probably ideas that people are keeping secrets still.
+
+577
+00:47:10,320 --> 00:47:13,920
+[SPEAKER_01] I don't think David Smith has, like, publicly shown his test flight.
+
+578
+00:47:14,080 --> 00:47:16,720
+[SPEAKER_01] I keep hearing whispers that he's doing some crazy stuff.
+
+579
+00:47:17,120 --> 00:47:30,480
+[SPEAKER_01] Uh, so there's something coming on the other end of this, and none of us really knows if this is going to be a time we look back on it's like, man, we were all so, you know, childlike wonder eyes, but nothing really panned out.
+
+580
+00:47:30,640 --> 00:47:36,720
+[SPEAKER_01] Or if it's going to be like, this was another iOS 14 initial widgets moment where these are really popular.
+
+581
+00:47:37,280 --> 00:47:41,600
+[SPEAKER_01] So yeah, I can understand that hesitation, because it is kind of like we're in a weird spot.
+
+582
+00:47:42,400 --> 00:47:51,760
+[SPEAKER_00] Yeah, so I'm really keen to see, not just for ChronoCling, but yeah, what widgetsmith has in store and various other apps and things like standby as well.
+
+583
+00:47:51,920 --> 00:47:57,680
+[SPEAKER_00] It's not something I've used tons myself, but I think there's going to be a lot of ways in which this is different.
+
+584
+00:47:58,480 --> 00:48:00,720
+[SPEAKER_00] Also macOS Sonoma bringing widgets.
+
+585
+00:48:01,040 --> 00:48:04,560
+[SPEAKER_00] to the desktop is not something I've personally played with because I only have one Mac.
+
+586
+00:48:05,040 --> 00:48:08,000
+[SPEAKER_00] I'm too scared to install the beta, but yeah.
+
+587
+00:48:08,400 --> 00:48:08,480
+[SPEAKER_01] Yeah.
+
+588
+00:48:09,040 --> 00:48:20,800
+[SPEAKER_01] I think, uh, and for those of you who don't already know on Sonoma, you can add you've always been able to add widgets to mac oh, not always, but with the new widget system, you've been able to add them to your sidebar for a while.
+
+589
+00:48:21,200 --> 00:48:23,520
+[SPEAKER_01] They're adding it so you can add them to your desktop as well.
+
+590
+00:48:23,680 --> 00:48:31,840
+[SPEAKER_01] But the the really wild thing is your iPhone widgets can now just automatically show on your Mac.
+
+591
+00:48:32,720 --> 00:48:45,120
+[SPEAKER_01] So for Chronicling, theoretically, this is really cool because., uh, like you could just have your button to say I did a thing and it's an even easier input mechanism if you're already on your Mac.
+
+592
+00:48:46,640 --> 00:48:53,520
+[SPEAKER_01] For dark noise, you know, my widgets, what they're doing is playing audio and I haven't actually played with it yet.
+
+593
+00:48:53,760 --> 00:49:02,480
+[SPEAKER_01] Luckily, this is where the fact that the macOS release is usually delayed from iOS, uh, that'll give me some time to take the plunge and actually download it and play with it.
+
+594
+00:49:02,640 --> 00:49:11,040
+[SPEAKER_01] But it's like, if I have one of my dark noise widgets on a Mac and I hit play, like, what is it going to do?
+
+595
+00:49:11,280 --> 00:49:16,400
+[SPEAKER_01] Is it going to start playing audio out of my phone, but my phone might be connected to a home pod.
+
+596
+00:49:16,560 --> 00:49:17,520
+[SPEAKER_01] And so maybe that's fine.
+
+597
+00:49:17,680 --> 00:49:22,960
+[SPEAKER_01] It's like a really interconnected Apple ecosystem can sometimes create some weird scenarios.
+
+598
+00:49:23,040 --> 00:49:24,000
+[SPEAKER_01] So I have to figure that out.
+
+599
+00:49:24,160 --> 00:49:30,160
+[SPEAKER_01] But I think for Chronicling, that's going to be just like a no brainer plus one really nice kind of thing.
+
+600
+00:49:30,640 --> 00:49:32,160
+[SPEAKER_00] Yeah, I'm excited to try it.
+
+601
+00:49:32,800 --> 00:49:40,640
+[SPEAKER_00] At the moment, we have an iPad app that I do tick the box to be available on M series Max, but there's no native Mac app.
+
+602
+00:49:41,280 --> 00:49:42,480
+[SPEAKER_00] Yeah, that was what I was going to ask.
+
+603
+00:49:42,640 --> 00:49:47,040
+[SPEAKER_01] I think those apps do allow widgets.
+
+604
+00:49:48,000 --> 00:49:59,120
+[SPEAKER_01] I could be wrong about that, but I think like if you have that boxed and you download from the App Store the iPad version on your Mac, I believe those widgets will then show like native widgets on the Mac.
+
+605
+00:49:59,920 --> 00:50:01,120
+[SPEAKER_01] I could be wrong about that though.
+
+606
+00:50:01,840 --> 00:50:02,400
+[SPEAKER_00] I should try this.
+
+607
+00:50:02,480 --> 00:50:02,560
+[SPEAKER_00] Yeah.
+
+608
+00:50:02,800 --> 00:50:06,000
+[SPEAKER_01] Yeah, it's definitely it's worth a shot trying, but it's interesting.
+
+609
+00:50:06,160 --> 00:50:09,120
+[SPEAKER_01] Are you doing iCloud syncing for your data?
+
+610
+00:50:10,320 --> 00:50:10,880
+[SPEAKER_00] Yeah, yeah.
+
+611
+00:50:11,280 --> 00:50:15,280
+[SPEAKER_00] ICloud sync between is also how the Watchforce app will be working.
+
+612
+00:50:15,760 --> 00:50:15,920
+[SPEAKER_00] Right.
+
+613
+00:50:16,160 --> 00:50:16,720
+[SPEAKER_00] So, yeah.
+
+614
+00:50:17,120 --> 00:50:17,200
+[SPEAKER_00] Yeah.
+
+615
+00:50:17,520 --> 00:50:21,200
+[SPEAKER_01] So really, either way, you know, it should work for you then.
+
+616
+00:50:22,000 --> 00:50:23,280
+[SPEAKER_01] How was the iCloud integration?
+
+617
+00:50:23,520 --> 00:50:30,640
+[SPEAKER_01] Was that another one of those?, I mean, another thing piled on the list of new frameworks and technologies you had to learn as part of this?
+
+618
+00:50:31,440 --> 00:50:32,240
+[SPEAKER_00] Yes, definitely.
+
+619
+00:50:32,640 --> 00:50:38,800
+[SPEAKER_00] I think it's something that I learned a huge amount from hacking with Swift again is where I learned a lot about this.
+
+620
+00:50:39,360 --> 00:50:55,920
+[SPEAKER_00] So because it is a little, yes, a little obfuscated, shall we say, documentation and things like not, I can't remember now, there are certain restrictions on the data model that are different between using a CloudKit container and a core data container.
+
+621
+00:50:56,560 --> 00:51:02,640
+[SPEAKER_00] I think it was some things had to change, but I guess fortunately., I did this quite early in the process.
+
+622
+00:51:03,280 --> 00:51:09,120
+[SPEAKER_00] So, uh, it felt like a more manageable, uh, manageable hurdle, I guess, than, than adding it later.
+
+623
+00:51:09,440 --> 00:51:14,560
+[SPEAKER_01] You could like grow on top of that, as opposed to taking an existing app and then adding it to it.
+
+624
+00:51:14,960 --> 00:51:15,040
+[SPEAKER_00] Yeah.
+
+625
+00:51:15,520 --> 00:51:21,760
+[SPEAKER_00] I think, uh, weirdly, the thing that was quite, uh, difficult to add, um, was very late was focus filters.
+
+626
+00:51:21,920 --> 00:51:27,280
+[SPEAKER_00] It's something that I know is probably not going to be used by many people, but, uh, I was keen to try and get it into the app.
+
+627
+00:51:27,600 --> 00:51:30,560
+[SPEAKER_00] Uh, so it was, it was really difficult to test.
+
+628
+00:51:31,120 --> 00:51:37,840
+[SPEAKER_00] Um, but, uh, yeah, that was, that was an extra little challenge that, um, probably not many people use., but it's there.
+
+629
+00:51:38,160 --> 00:51:42,240
+[SPEAKER_00] And I quite enjoy experimenting with different niche APIs, I guess.
+
+630
+00:51:42,640 --> 00:51:44,560
+[SPEAKER_01] And what do the focus filters enable?
+
+631
+00:51:44,720 --> 00:51:51,760
+[SPEAKER_01] I know that was something called out by Max Stories, is they enjoying, but I don't remember off the top of my head what that does for your app.
+
+632
+00:51:52,800 --> 00:52:00,080
+[SPEAKER_00] It allows you to, I can't remember if it's show or hide at this point, but it based on the group of categories, basically.
+
+633
+00:52:00,240 --> 00:52:05,040
+[SPEAKER_00] So you could have, say, a group of home chores that would be hidden while you were in your work focus or.
+
+634
+00:52:06,080 --> 00:52:06,160
+[SPEAKER_00] Okay.
+
+635
+00:52:07,120 --> 00:52:09,680
+[SPEAKER_01] Yeah, that's the focus filters are really interesting.
+
+636
+00:52:10,640 --> 00:52:18,080
+[SPEAKER_01] It's one of those like there's a bun bunch of apps I wish had it, but then like when I look at my apps, I'm like, ah, I don't know, would anyone really care about this?
+
+637
+00:52:18,560 --> 00:52:23,120
+[SPEAKER_01] But it is nice, like based on your, is it called a focus filter?
+
+638
+00:52:23,280 --> 00:52:24,640
+[SPEAKER_01] What is it called in iOS itself?
+
+639
+00:52:25,040 --> 00:52:25,840
+[SPEAKER_00] Just focus, I think.
+
+640
+00:52:26,080 --> 00:52:26,560
+[SPEAKER_00] I'm not sure.
+
+641
+00:52:26,720 --> 00:52:27,360
+[SPEAKER_00] Uh, yeah.
+
+642
+00:52:27,840 --> 00:52:28,320
+[SPEAKER_01] Your focus.
+
+643
+00:52:28,480 --> 00:52:40,720
+[SPEAKER_01] Yeah, your focus based on your focus, if you're in like a work focus or sleep focus or whatever, uh, not only can it change things like dark mode and whatever your iPhone settings are, but the apps themselves can be tweaked by that.
+
+644
+00:52:41,920 --> 00:52:46,240
+[SPEAKER_01] It is nice on things like Fantastic, like a calendaring app or something like that, for sure.
+
+645
+00:52:46,800 --> 00:52:53,920
+[SPEAKER_01] Yeah, but in your case, it definitely seems like it it makes sense because so much of your app is like trying to make it easy to add an event.
+
+646
+00:52:54,160 --> 00:52:55,280
+[SPEAKER_01] Like that's the hardest thing.
+
+647
+00:52:55,760 --> 00:52:58,560
+[SPEAKER_01] I feel like to get somebody to do it well, somebody like me, especially.
+
+648
+00:52:58,720 --> 00:53:04,320
+[SPEAKER_01] I'm I'm one of those people who like setting things up, but I do not like doing anything regularly over time.
+
+649
+00:53:04,960 --> 00:53:08,240
+[SPEAKER_01] Uh, and so anything that makes that process easier.
+
+650
+00:53:08,480 --> 00:53:10,400
+[SPEAKER_01] I think interactive widgets are going to be huge for that.
+
+651
+00:53:10,560 --> 00:53:24,480
+[SPEAKER_01] I you mentioned it earlier, but I think the biggest thing is, uh, shortcut support is by far the biggest thing for me because what that means is I can set up shortcuts, automations that just do the thing automatically like the one that I have that.
+
+652
+00:53:24,560 --> 00:53:25,600
+[SPEAKER_01] I like looking at.
+
+653
+00:53:25,760 --> 00:53:30,000
+[SPEAKER_01] I don't know how really usable this is, but I'm on all the social media platforms.
+
+654
+00:53:30,080 --> 00:53:33,680
+[SPEAKER_01] Like we talked about, the whole our whole world is in a bizarre state.
+
+655
+00:53:33,920 --> 00:53:37,360
+[SPEAKER_01] And now my job is sort of in marketing, so it matters even more.
+
+656
+00:53:37,920 --> 00:53:59,040
+[SPEAKER_01] So I I set up a Chronicling set group that has all the different social media platforms and it just tracks every time I open each one, which is triggered by shortcuts automation more or less just because I'm curious, you know, I could kind of use screen time for that, but screen time is definitely different, let's say in terms of what it's tracking and how it's tracking it.
+
+657
+00:53:59,040 --> 00:54:03,040
+[SPEAKER_01] So I kind of like just having this simple view and this is where I really like seeing that.
+
+658
+00:54:03,360 --> 00:54:04,960
+[SPEAKER_01] Uh, what did you call it?
+
+659
+00:54:05,040 --> 00:54:06,080
+[SPEAKER_01] The dot, the dot graph?
+
+660
+00:54:06,400 --> 00:54:07,600
+[SPEAKER_00] I called it the dot chart.
+
+661
+00:54:08,000 --> 00:54:09,360
+[SPEAKER_00] The dot needs a better name.
+
+662
+00:54:09,680 --> 00:54:09,760
+[SPEAKER_00] Yeah.
+
+663
+00:54:10,640 --> 00:54:12,560
+[SPEAKER_01] Yeah, you need to go to some marketing.
+
+664
+00:54:13,040 --> 00:54:16,800
+[SPEAKER_01] Yeah, Apple E-style, you know, hyper fancy marketing name.
+
+665
+00:54:17,520 --> 00:54:18,000
+[SPEAKER_00] Uh, yeah.
+
+666
+00:54:18,400 --> 00:54:21,120
+[SPEAKER_01] Yeah, it's real I think it's really cool seeing those there.
+
+667
+00:54:21,680 --> 00:54:30,160
+[SPEAKER_00] Yeah, I guess automation in general is something that I, I, I use predominantly automated triggers and I think there's more coming with iOS 17.
+
+668
+00:54:30,320 --> 00:54:32,880
+[SPEAKER_00] So particularly the transaction stuff, I think, could be really fun.
+
+669
+00:54:33,040 --> 00:54:36,800
+[SPEAKER_00] So I say fun thinking about when you spend money is not the most fun thing in the world.
+
+670
+00:54:37,280 --> 00:54:40,400
+[SPEAKER_00] But there's transaction automations in iOS 17.
+
+671
+00:54:40,560 --> 00:54:41,120
+[SPEAKER_01] I didn't know that.
+
+672
+00:54:42,000 --> 00:54:43,200
+[SPEAKER_00] Oh, interesting.
+
+673
+00:54:43,760 --> 00:54:43,840
+[SPEAKER_00] Yeah.
+
+674
+00:54:44,720 --> 00:54:45,600
+[SPEAKER_00] That's really interesting.
+
+675
+00:54:46,000 --> 00:54:46,640
+[SPEAKER_00] That could be fun.
+
+676
+00:54:46,880 --> 00:54:49,200
+[SPEAKER_00] Uh, I think with public transport potentially as well.
+
+677
+00:54:49,280 --> 00:54:53,760
+[SPEAKER_00] This isn't something I don't, I don't live in an area where we have such high technology things.
+
+678
+00:54:54,000 --> 00:54:55,520
+[SPEAKER_00] So, I played with it myself.
+
+679
+00:54:55,760 --> 00:54:56,480
+[SPEAKER_01] I live in America.
+
+680
+00:54:56,720 --> 00:54:57,920
+[SPEAKER_01] We have barely public transport.
+
+681
+00:54:59,600 --> 00:55:06,160
+[SPEAKER_01] I was just in, uh, the UK and very much taking advantage of, uh, at least in London, the London Underground.
+
+682
+00:55:06,320 --> 00:55:09,520
+[SPEAKER_01] And so, I can imagine that being, uh, nice.
+
+683
+00:55:09,600 --> 00:55:12,880
+[SPEAKER_01] Because, yeah, we used our phone for, you know, scanning in and out all the time.
+
+684
+00:55:13,840 --> 00:55:16,800
+[SPEAKER_01] I'm excited to see where Chronicling goes from here.
+
+685
+00:55:17,040 --> 00:55:26,880
+[SPEAKER_01] It definitely feels like there's a lot of potential and the really cool thing is there's people using it and so it can kind of grow based on the people's needs at the very least.
+
+686
+00:55:27,200 --> 00:55:29,280
+[SPEAKER_00] Yeah, there's so much more I want to do with it.
+
+687
+00:55:29,520 --> 00:55:33,200
+[SPEAKER_00] I think there's things like calendar integration, health integration.
+
+688
+00:55:34,080 --> 00:55:34,960
+[SPEAKER_00] Well, I don't want to.
+
+689
+00:55:35,280 --> 00:55:42,640
+[SPEAKER_00] I have a long list basically of things that I'd like to add to the app in time beyond just focusing on the latest and greatest iOS features.
+
+690
+00:55:42,960 --> 00:55:47,680
+[SPEAKER_00] So yeah, I'm looking forward to keep growing it as much as I can.
+
+691
+00:55:47,840 --> 00:55:49,120
+[SPEAKER_01] Does it feel cool?
+
+692
+00:55:49,360 --> 00:56:01,600
+[SPEAKER_01] It sounds like the way you were talking earlier, it sounds like you've been kind of in this community, reading Mac Stories, listening to, you know, podcasts, like existing in this space for a while.
+
+693
+00:56:02,800 --> 00:56:06,960
+[SPEAKER_01] Does it just feel really cool to sort of be on the other side?
+
+694
+00:56:07,280 --> 00:56:11,040
+[SPEAKER_01] Like you have an app in the store when people talk about X, Y, Z event.
+
+695
+00:56:11,760 --> 00:56:13,920
+[SPEAKER_01] You have like a context now that you didn't have before.
+
+696
+00:56:14,320 --> 00:56:16,160
+[SPEAKER_01] Isn't that just fun?
+
+697
+00:56:17,040 --> 00:56:17,920
+[SPEAKER_00] Yeah, it's awesome.
+
+698
+00:56:18,080 --> 00:56:26,640
+[SPEAKER_00] I think it's I guess it's kind of weird because nobody in my quote unquote normal life really knows if that makes sense.
+
+699
+00:56:26,800 --> 00:56:29,600
+[SPEAKER_01] It's kind of like a Oh, I know that feeling very much.
+
+700
+00:56:29,840 --> 00:56:29,920
+[SPEAKER_01] Yes.
+
+701
+00:56:31,520 --> 00:56:32,160
+[SPEAKER_00] What is an app?
+
+702
+00:56:32,720 --> 00:56:41,440
+[SPEAKER_00] But yeah, I think it's So it's like this alternate existence and it's extremely I have to pinch myself sometimes at how quickly it's all happened.
+
+703
+00:56:41,680 --> 00:56:42,480
+[SPEAKER_00] It's really exciting.
+
+704
+00:56:43,440 --> 00:57:00,560
+[SPEAKER_00] And yeah, I think it's it's something I have been excited to try for a long time but never, never quite had the I don't know, it's like we talked about earlier having the combination of circumstances that meant I just opened Xcode and.
+
+705
+00:57:01,120 --> 00:57:02,240
+[SPEAKER_00] committed to sticking with something.
+
+706
+00:57:02,880 --> 00:57:03,360
+[SPEAKER_00] That's the thing.
+
+707
+00:57:03,600 --> 00:57:11,040
+[SPEAKER_00] That's what's so hard is like, because I mean, it sounds like you were similar, but like, I've had a list of app ideas for forever.
+
+708
+00:57:11,680 --> 00:57:19,840
+[SPEAKER_00] I've talked about it here before, but like, I've made apps for like Windows phone in the past and dabbled in Android development.
+
+709
+00:57:20,000 --> 00:57:33,920
+[SPEAKER_01] And so it's not like I've never pulled the trigger on something, but like a really full, hearted like, I'm going to make this thing and really push it through to the end for whatever reason just didn't happen.
+
+710
+00:57:34,000 --> 00:57:43,520
+[SPEAKER_01] And like for me, the big snow.ball effect was really like some people, for some reason, jumped onto the test flight and like giving me feedback.
+
+711
+00:57:43,920 --> 00:57:49,120
+[SPEAKER_01] And that's what really started that momentum that led to me actually pushing through to the end.
+
+712
+00:57:49,600 --> 00:57:52,080
+[SPEAKER_01] But once you have it, it's like an addictive feeling.
+
+713
+00:57:52,240 --> 00:57:58,080
+[SPEAKER_01] And I feel like you're in the stage still now where it's like it's like addictive fun to add stuff.
+
+714
+00:57:58,240 --> 00:57:59,520
+[SPEAKER_01] Is that, do you feel that way?
+
+715
+00:58:00,000 --> 00:58:00,400
+[SPEAKER_00] It really is.
+
+716
+00:58:00,560 --> 00:58:00,640
+[SPEAKER_00] Yeah.
+
+717
+00:58:00,800 --> 00:58:10,640
+[SPEAKER_00] I think the moment you see someone who's not you or someone you've kind of reasonably forced to install a test flight using it, it's like, let me borrow your phone.
+
+718
+00:58:10,720 --> 00:58:11,840
+[SPEAKER_00] I'll just press a few buttons.
+
+719
+00:58:12,480 --> 00:58:25,840
+[SPEAKER_00] But, but yeah, it's and hearing how they're using it and that they would actually like to have a feature suggestion to to have enough investment in it to think of something is it's it's it's a really, uh, really nice boost for me, I guess.
+
+720
+00:58:26,000 --> 00:58:52,960
+[SPEAKER_00] And I guess that's uh, uh, that this all probably sounds very small for I to established people, but uh, I guess coming from it's been, uh, while I do have a job as a software engineer, it's so far removed from my day to day experience in terms of things like just whether the emphasis on, uh, releasing regularly, say for, for an indie app, you you wouldn't always have time to test everything exhaustively and yeah.
+
+721
+00:58:53,440 --> 00:58:53,920
+[SPEAKER_00] That kind of thing.
+
+722
+00:58:54,080 --> 00:59:02,080
+[SPEAKER_00] And so it's a very different mindset that initially was quite daunting to think, oh, have you got 100% code coverage and automated testing?
+
+723
+00:59:02,160 --> 00:59:04,240
+[SPEAKER_00] And this kind of the answer is clearly no.
+
+724
+00:59:06,800 --> 00:59:09,200
+[SPEAKER_00] But, but yeah, so it's, it's really exciting.
+
+725
+00:59:09,600 --> 00:59:20,960
+[SPEAKER_00] And just having the ability to make something that people are finding helpful is a really, it feels great to know that I can contribute something, I guess.
+
+726
+00:59:21,600 --> 00:59:21,680
+[SPEAKER_00] Yeah.
+
+727
+00:59:22,240 --> 00:59:44,160
+[SPEAKER_01] Yeah, I've always I've said it, I've probably said it here a million times too, but I still, even to this day, I still get like a little ping of excitement when someone sends me a bug report that I didn't already know about, especially because it kind of is like you care, like you care, like for me, like we kind of talked about sending an email is such a costly feeling to me.
+
+728
+00:59:44,800 --> 00:59:50,640
+[SPEAKER_01] So someone not only ran into this bug and it mattered to them, but it mattered to them enough to actually tell me about it.
+
+729
+00:59:50,720 --> 00:59:55,280
+[SPEAKER_01] And it's like, it's almost like, yeah, it makes everything feel more real.
+
+730
+00:59:55,920 --> 00:59:56,160
+[SPEAKER_00] It does.
+
+731
+00:59:56,400 --> 00:59:56,480
+[SPEAKER_00] Yeah.
+
+732
+00:59:56,640 --> 00:59:59,840
+[SPEAKER_00] I think that's seeing kind of numbers tick up slowly.
+
+733
+01:00:00,320 --> 01:00:01,840
+[SPEAKER_00] is great, but actually hearing from people.
+
+734
+01:00:02,080 --> 01:00:02,160
+[SPEAKER_00] Yeah.
+
+735
+01:00:02,800 --> 01:00:03,280
+[SPEAKER_00] is wonderful.
+
+736
+01:00:03,600 --> 01:00:08,480
+[SPEAKER_00] Um, and it's been a, yeah, it's been a really nice, nice experience to, to do that.
+
+737
+01:00:09,200 --> 01:00:33,360
+[SPEAKER_01] I'll say this, uh, I don't want to say this as advice because it's like, I'm sure everyone's experience is different, but I know I and I've talked to some other people who've had a similar experience to this, but like there will be a point possibly for me, it was after the IOS 13 release because I did kind of the same thing you did, where it kind of all came crashing down in terms of like, uh, it was so exciting.
+
+738
+01:00:33,520 --> 01:00:35,280
+[SPEAKER_01] And then I was so excited to work on the next thing.
+
+739
+01:00:35,680 --> 01:00:37,920
+[SPEAKER_01] And I had a long list of things I wanted to do.
+
+740
+01:00:38,080 --> 01:00:41,200
+[SPEAKER_01] For me, it was like I wanted to add mix, mix audio mixes.
+
+741
+01:00:42,480 --> 01:00:45,280
+[SPEAKER_01] And so after I was 13, then that's going to be the next thing I do.
+
+742
+01:00:45,440 --> 01:00:56,400
+[SPEAKER_01] And then I was like, I'm going to take a short break because I was, I didn't think I was that burnt out necessarily, but I was definitely very excited and constantly working on it.
+
+743
+01:00:56,960 --> 01:01:06,160
+[SPEAKER_01] And getting back into it after that like mental health break sort of was very hard, which makes sense.
+
+744
+01:01:06,320 --> 01:01:08,240
+[SPEAKER_01] Like the level of excitement's not the same.
+
+745
+01:01:08,640 --> 01:01:12,640
+[SPEAKER_01] But the thing that was the hardest by far is the feeling of.
+
+746
+01:01:13,680 --> 01:01:24,160
+[SPEAKER_01] guilt, like, like you kind of mentioned when you have a, a moment where the kids let you, you know, be human and think and do, do a hobby.
+
+747
+01:01:24,720 --> 01:01:28,320
+[SPEAKER_01] Uh, right now you're excited about the thing you're working on and you have momentum.
+
+748
+01:01:28,480 --> 01:01:31,120
+[SPEAKER_01] And so you can just like dive into it.
+
+749
+01:01:31,280 --> 01:01:35,680
+[SPEAKER_01] And in that 30-minute span or hour span, if you're really lucky, you get like all this stuff done.
+
+750
+01:01:36,160 --> 01:01:51,600
+[SPEAKER_01] Uh, and what I found was after the sort of high of these first couple releases and things settling into a more normal state, I would have one of those sessions and I just didn't have it in me that day night, but I still I felt like I had to get this thing done.
+
+751
+01:01:52,000 --> 01:01:54,080
+[SPEAKER_01] And I wouldn't get that much done during that session.
+
+752
+01:01:54,560 --> 01:01:56,800
+[SPEAKER_01] I would just I would just feel horrible.
+
+753
+01:01:57,040 --> 01:01:58,000
+[SPEAKER_01] And not intellectually.
+
+754
+01:01:58,240 --> 01:02:02,880
+[SPEAKER_01] I know this is a hobby, like it's fine, but you just feel like you've wasted this precious moment.
+
+755
+01:02:03,120 --> 01:02:11,520
+[SPEAKER_01] And it kind of created a not great, you know, cycle of just feeling like I've lost it.
+
+756
+01:02:11,680 --> 01:02:13,200
+[SPEAKER_01] Like I lost this momentum.
+
+757
+01:02:13,760 --> 01:02:16,080
+[SPEAKER_01] So this is an actionable advice.
+
+758
+01:02:17,440 --> 01:02:23,520
+[SPEAKER_01] Just if you feel that way, just know that there are lots of us that definitely Yeah, maybe that's the advice.
+
+759
+01:02:23,600 --> 01:02:24,000
+[SPEAKER_01] I don't know.
+
+760
+01:02:24,000 --> 01:02:26,080
+[SPEAKER_01] I've never actually tried that yet.
+
+761
+01:02:26,560 --> 01:02:27,840
+[SPEAKER_01] Maybe that's what I should be doing.
+
+762
+01:02:28,960 --> 01:02:40,800
+[SPEAKER_00] I just I think it's definitely finding balance is something I'm, yeah, I'm, I know I need to at some point achieve because at the moment is, yeah, as soon as my son is asleep, it's kind of, what's next?
+
+763
+01:02:41,120 --> 01:02:52,160
+[SPEAKER_00] And I guess I try and track if I have an idea just during the day, I write it down immediately because it will leave my brain very quickly.
+
+764
+01:02:52,480 --> 01:03:00,320
+[SPEAKER_00] So I always have kind of drafts ready to go and then trying to prioritize those so that when I do get those moments.
+
+765
+01:03:01,280 --> 01:03:05,120
+[SPEAKER_00] I'm trying to work on the thing that hopefully is going to have the most impact.
+
+766
+01:03:07,440 --> 01:03:24,160
+[SPEAKER_00] But also, yeah, choosing those nights when I actually don't work on the app is something that, yeah, I know I definitely have that feeling of, yeah, guilt, I guess, particularly when you know that there's something to work on or there's a release coming or there's people using it, that kind of thing.
+
+767
+01:03:24,400 --> 01:03:25,760
+[SPEAKER_00] It's, it can be difficult.
+
+768
+01:03:26,640 --> 01:03:26,720
+[SPEAKER_01] Yeah.
+
+769
+01:03:27,120 --> 01:03:29,760
+[SPEAKER_01] It's, uh, this has been a very fun conversation.
+
+770
+01:03:30,240 --> 01:03:40,480
+[SPEAKER_01] It's just like reminding me of that, that specific time period, which was, I don'll never forget, like, so much of that's like really burned in my memory.
+
+771
+01:03:41,120 --> 01:03:47,840
+[SPEAKER_01] And it's cool to think that there's people listening now that are at a different stage in that process.
+
+772
+01:03:48,800 --> 01:03:52,480
+[SPEAKER_01] And so it really is just like extremely fun.
+
+773
+01:03:52,800 --> 01:03:54,640
+[SPEAKER_01] It's like, there's a lot of cool things.
+
+774
+01:03:54,800 --> 01:03:58,400
+[SPEAKER_01] I've talked to lots of cool people, you know, in this space that have made this their career.
+
+775
+01:03:58,480 --> 01:04:00,960
+[SPEAKER_01] It's kind of like the dream, right, is being full indie.
+
+776
+01:04:01,520 --> 01:04:12,720
+[SPEAKER_01] But there's something really special about the, uh, passionate side project app that like the stress level is not the same because you're not.
+
+777
+01:04:12,720 --> 01:04:14,640
+[SPEAKER_01] It's not the same because you're not feeding your family with it, right?
+
+778
+01:04:15,360 --> 01:04:15,440
+[UNKNOWN] Yeah.
+
+779
+01:04:16,480 --> 01:04:20,000
+[SPEAKER_01] And you can kind of pour your heart into it in a different way.
+
+780
+01:04:21,040 --> 01:04:26,800
+[SPEAKER_01] And then you just get to like play being a company without the same levels of stress.
+
+781
+01:04:27,040 --> 01:04:32,400
+[SPEAKER_01] And I I at least have deeply enjoyed it and watching you from afar has been really fun.
+
+782
+01:04:33,040 --> 01:04:35,520
+[SPEAKER_01] And definitely hearing about it is bringing back a lot of memories.
+
+783
+01:04:36,320 --> 01:04:38,400
+[SPEAKER_00] No, it's been a great experience.
+
+784
+01:04:38,560 --> 01:04:43,440
+[SPEAKER_00] And I know there's going to be, I hope there's going to be so much more to learn and experience in the future with it.
+
+785
+01:04:44,000 --> 01:04:59,120
+[SPEAKER_00] But it's it's exciting and trying on all the different hats that come with being an indie., the designer hat, the marketing hat, some of them really don't fit very well, but you do your best and learn different things that just wouldn't happen in a kind of regular job.
+
+786
+01:04:59,840 --> 01:05:02,480
+[SPEAKER_00] No individual would ever be given so many responsibilities.
+
+787
+01:05:03,600 --> 01:05:08,160
+[SPEAKER_00] So yeah, that's been really fun and I think it helps.
+
+788
+01:05:08,320 --> 01:05:12,480
+[SPEAKER_00] I've learned stuff that I'm sure helped me in other ways as well.
+
+789
+01:05:12,800 --> 01:05:12,880
+[SPEAKER_00] So.
+
+790
+01:05:13,680 --> 01:05:13,760
+[SPEAKER_01] Okay.
+
+791
+01:05:14,160 --> 01:05:23,680
+[SPEAKER_01] Well, before I let you go, I'll ask you the question I ask everyone that in the show, which is what's a person or people out there that have inspired you that you would recommend others to check out?
+
+792
+01:05:24,240 --> 01:05:34,480
+[SPEAKER_00] So I have a couple and I think I'm trying to there are so many people within the iOS community, you know, basically everyone who's ever been on this podcast, I've learned something from.
+
+793
+01:05:34,800 --> 01:05:48,720
+[SPEAKER_00] So, but trying to think of something a little outside the box, I guess, Julia Evans, who has an excellent blog and makes brilliant designs on computer science, kind of fundamentals and tooling.
+
+794
+01:05:49,040 --> 01:05:49,520
+[SPEAKER_00] Design.
+
+795
+01:05:49,680 --> 01:05:50,080
+[SPEAKER_00] I don't know.
+
+796
+01:05:50,640 --> 01:05:52,320
+[SPEAKER_01] I haven't heard that phrase in a while.
+
+797
+01:05:52,560 --> 01:05:58,000
+[SPEAKER_01] Like they're actually like the old school, like almost like a can be printed version of PDFs.
+
+798
+01:05:58,480 --> 01:05:59,200
+[SPEAKER_01] Julia Evans.
+
+799
+01:05:59,360 --> 01:05:59,840
+[SPEAKER_01] I know this name.
+
+800
+01:06:00,400 --> 01:06:03,840
+[SPEAKER_00] I can I can I can I can't remember the URL offhand but I'm just trying.
+
+801
+01:06:04,080 --> 01:06:06,240
+[SPEAKER_00] Jvns.ca looks like.
+
+802
+01:06:06,480 --> 01:06:07,040
+[SPEAKER_00] That sounds right.
+
+803
+01:06:07,200 --> 01:06:07,280
+[SPEAKER_00] Yeah.
+
+804
+01:06:07,520 --> 01:06:07,600
+[SPEAKER_00] Yeah.
+
+805
+01:06:07,840 --> 01:06:10,160
+[SPEAKER_01] I see the word signs on this page, so wow.
+
+806
+01:06:10,320 --> 01:06:11,600
+[SPEAKER_01] That's kind of a blast from the past.
+
+807
+01:06:12,320 --> 01:06:21,920
+[SPEAKER_00] And she just has excellent advice on things like debugging and asking questions and both being a manager and having a manager as well as more technical topics.
+
+808
+01:06:22,400 --> 01:06:24,240
+[SPEAKER_00] And I find that extremely helpful.
+
+809
+01:06:24,640 --> 01:06:25,200
+[SPEAKER_00] Oh my goodness.
+
+810
+01:06:25,440 --> 01:06:27,280
+[SPEAKER_00] This website is fantastic.
+
+811
+01:06:28,560 --> 01:06:36,000
+[SPEAKER_01] It looks like very old and then like you hover over something and it kind of has this 3D effect on it that is very satisfying.
+
+812
+01:06:36,240 --> 01:06:36,320
+[SPEAKER_01] Wow.
+
+813
+01:06:36,640 --> 01:06:38,400
+[SPEAKER_01] Wow, this is this is very cool.
+
+814
+01:06:38,720 --> 01:06:40,320
+[SPEAKER_01] I don't know how I didn't know this existed.
+
+815
+01:06:41,040 --> 01:06:43,040
+[SPEAKER_00] So I think she's definitely on the list.
+
+816
+01:06:43,920 --> 01:06:51,280
+[SPEAKER_00] Mike Hurley, who is cofounder of Relay, he did an excellent podcast mentorship scheme a few years ago that I was lucky enough to be a part of.
+
+817
+01:06:51,680 --> 01:07:00,080
+[SPEAKER_00] Unfortunately, having a baby kind of got in the way of any imminent intentions of actually having a podcast, but maybe one day.
+
+818
+01:07:00,720 --> 01:07:04,400
+[SPEAKER_00] So really grateful for how much I learned from him.
+
+819
+01:07:04,720 --> 01:07:06,320
+[SPEAKER_01] Ah, very interesting.
+
+820
+01:07:07,040 --> 01:07:08,000
+[SPEAKER_01] This explains the mic.
+
+821
+01:07:08,720 --> 01:07:09,520
+[SPEAKER_01] Yes, the unused mic.
+
+822
+01:07:10,000 --> 01:07:11,040
+[SPEAKER_01] Not Mike Hurley though.
+
+823
+01:07:16,400 --> 01:07:22,400
+[SPEAKER_00] So, yeah, and also I really appreciate his discussion of things like his experience with the Vision Pro.
+
+824
+01:07:22,640 --> 01:07:27,840
+[SPEAKER_00] I think coming at it from a not hearing from a non developer using these things is really interesting.
+
+825
+01:07:28,320 --> 01:07:31,760
+[SPEAKER_00] And, and finally, Cable Sasso, who I think has been mentioned before of Panic.
+
+826
+01:07:32,080 --> 01:07:44,000
+[SPEAKER_00] I've followed his blog since I was a teenager, I think, and I just I appreciate his passion for things and passion for things should be the slogan under his bio.
+
+827
+01:07:44,720 --> 01:07:46,800
+[SPEAKER_01] Because that is, that is Cable in a nutshell.
+
+828
+01:07:48,000 --> 01:07:58,960
+[SPEAKER_01] I think what he brings is just like this level of excitement and passion for things, just everything, which makes me feel that way about random things.
+
+829
+01:07:59,200 --> 01:08:04,960
+[SPEAKER_01] I don't look at cereal boxes, you know, the same way I did before, you know, following cable.
+
+830
+01:08:05,200 --> 01:08:09,120
+[SPEAKER_00] Oh yeah, and benches at Disneyland and whatever is the most recent thing.
+
+831
+01:08:09,280 --> 01:08:14,080
+[SPEAKER_00] I think it's just a really cool blog and everything he does with Panic.
+
+832
+01:08:14,240 --> 01:08:17,200
+[SPEAKER_00] I'm really waiting my playtime any day now, hopefully.
+
+833
+01:08:17,840 --> 01:08:19,840
+[SPEAKER_01] Oh man, still on the list.
+
+834
+01:08:20,000 --> 01:08:21,680
+[SPEAKER_01] I have mine sitting right over here.
+
+835
+01:08:21,840 --> 01:08:24,000
+[SPEAKER_01] I think it's in my backpack from the last time I traveled still.
+
+836
+01:08:24,560 --> 01:08:27,760
+[SPEAKER_01] Uh, yeah, what a what a crazy cool company.
+
+837
+01:08:28,080 --> 01:08:37,280
+[SPEAKER_01] And like we've mentioned a couple of different times, you talking about people opening up, not just about numbers, but just about their process of running a company and everything.
+
+838
+01:08:37,600 --> 01:08:48,400
+[SPEAKER_01] And that company, I think, it's it almost became a running joke for a while that it was like mentioned in every episode somehow, but that's because they're like so influential in our community.
+
+839
+01:08:48,720 --> 01:09:00,960
+[SPEAKER_01] That's part of the vibe of our community being kind and helpful and excited about the small details, uh, comes from that sort of delicious generation and people like the Panic Factor.
+
+840
+01:09:00,960 --> 01:09:04,000
+[SPEAKER_01] Like the panic folks are a major part of that.
+
+841
+01:09:04,240 --> 01:09:05,440
+[SPEAKER_01] So yeah, that's cool.
+
+842
+01:09:05,680 --> 01:09:09,200
+[SPEAKER_01] Cable's cable's still on my, you know, it's been on my list.
+
+843
+01:09:10,000 --> 01:09:15,200
+[SPEAKER_01] I have people that have been on my list forever that I'm way too nervous to, you know, actually reach out to.
+
+844
+01:09:15,520 --> 01:09:16,640
+[SPEAKER_01] And so cable's still on there.
+
+845
+01:09:16,800 --> 01:09:24,320
+[SPEAKER_01] So I was going to say cable if you're listening, but I have no idea in my head that he's listening, but maybe, maybe one of these days.
+
+846
+01:09:24,880 --> 01:09:27,200
+[SPEAKER_00] Yeah, I think they were in an excellent documentary.
+
+847
+01:09:27,360 --> 01:09:28,240
+[SPEAKER_00] I can't remember the name now.
+
+848
+01:09:28,480 --> 01:09:29,280
+[SPEAKER_00] It's a few years old.
+
+849
+01:09:30,960 --> 01:09:32,160
+[SPEAKER_01] The Human Story, I believe is the name.
+
+850
+01:09:33,040 --> 01:09:33,600
+[SPEAKER_01] The Human Story.
+
+851
+01:09:33,680 --> 01:09:33,680
+[UNKNOWN] Yeah.
+
+852
+01:09:34,000 --> 01:09:38,480
+[SPEAKER_01] So that the lead up., we were talking about preorders.
+
+853
+01:09:38,720 --> 01:09:42,080
+[SPEAKER_01] This is me like going back and having nostalgia, I guess.
+
+854
+01:09:42,320 --> 01:09:51,600
+[SPEAKER_01] But I had opened up the preorder for Dark Noise and I actually snuck in a couple of features that ended up being kind of a big deal during that preorder time because people were giving me feedback still.
+
+855
+01:09:52,080 --> 01:09:55,920
+[SPEAKER_01] But I gave myself one night off because I knew it was going to be crazy afterwards.
+
+856
+01:09:56,320 --> 01:09:59,760
+[SPEAKER_01] And the thing I did during that night off is I watched that documentary.
+
+857
+01:10:00,000 --> 01:10:00,560
+[SPEAKER_00] Oh, wow.
+
+858
+01:10:00,720 --> 01:10:00,800
+[SPEAKER_00] Yeah.
+
+859
+01:10:02,320 --> 01:10:06,000
+[SPEAKER_01] That's where I first learned about Ish Shabaz, who's been on this show.
+
+860
+01:10:06,880 --> 01:10:11,840
+[SPEAKER_01] That's where I first learned about a couple of other major people in our community just because.
+
+861
+01:10:12,800 --> 01:10:22,000
+[SPEAKER_01] I hadn't been in it as a developer, you know, my involvement in the community was more through, like, tech podcasts and some blogs and stuff like that.
+
+862
+01:10:23,120 --> 01:10:26,160
+[SPEAKER_01] And so, yeah, that I'll link to it in the show notes if you haven't seen it.
+
+863
+01:10:26,320 --> 01:10:37,280
+[SPEAKER_01] That is a wonderful documentary and a cool sort of exposé, I guess, nah, maybe not exposé, but like lens to view some of the people in our community visually, which we don't necessarily get very often.
+
+864
+01:10:38,640 --> 01:10:45,040
+[SPEAKER_00] Yeah, I think it really fleshes out people who you read about and hear about and seeing the kind of processes.
+
+865
+01:10:45,600 --> 01:10:47,920
+[SPEAKER_00] It was really interesting and the kind of panics.
+
+866
+01:10:48,960 --> 01:10:50,080
+[SPEAKER_00] I loved that iPad app.
+
+867
+01:10:50,240 --> 01:10:52,960
+[SPEAKER_00] I've forgotten what it was called now, but status board was it?
+
+868
+01:10:53,120 --> 01:10:53,360
+[SPEAKER_00] Status.
+
+869
+01:10:53,520 --> 01:10:55,280
+[SPEAKER_01] Yeah, was it called status board?
+
+870
+01:10:55,920 --> 01:10:58,480
+[SPEAKER_01] Yeah, the one that was like a status board.
+
+871
+01:11:00,240 --> 01:11:01,840
+[SPEAKER_00] Their launched experience as well.
+
+872
+01:11:02,080 --> 01:11:02,560
+[SPEAKER_00] So yeah.
+
+873
+01:11:03,600 --> 01:11:05,120
+[SPEAKER_01] Well, those are great.
+
+874
+01:11:05,440 --> 01:11:06,640
+[SPEAKER_01] This was this was really fun.
+
+875
+01:11:07,280 --> 01:11:08,560
+[SPEAKER_01] Thank you so much for coming on.
+
+876
+01:11:09,280 --> 01:11:10,480
+[SPEAKER_01] I really enjoyed this conversation.
+
+877
+01:11:11,280 --> 01:11:12,080
+[SPEAKER_00] Thank you for having me.
+
+878
+01:11:12,560 --> 01:11:13,360
+[SPEAKER_00] I've enjoyed it too.
+
+879
+01:11:15,600 --> 01:11:16,400
+[SPEAKER_01] Thanks for listening.
+
+880
+01:11:16,880 --> 01:11:18,960
+[SPEAKER_01] This episode was edited by Jonathan Ruiz.
+
+881
+01:11:19,280 --> 01:11:26,960
+[SPEAKER_01] If you'd like to discuss the show, you can find me on Twitter, Mastodon, threads, or whatever the social media app of the show day is at charlie mchapman.me.
+
+882
+01:11:27,520 --> 01:11:34,720
+[SPEAKER_01] We'd really appreciate a rating or review on your podcast app of choice, and you can find show notes and more at launchdefm.com.
