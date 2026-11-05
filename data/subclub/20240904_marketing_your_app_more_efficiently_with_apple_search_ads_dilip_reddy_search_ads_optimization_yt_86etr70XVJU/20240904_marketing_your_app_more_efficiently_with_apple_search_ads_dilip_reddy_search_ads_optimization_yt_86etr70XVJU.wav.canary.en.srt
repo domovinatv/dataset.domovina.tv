@@ -1,0 +1,2163 @@
+1
+00:00:01,120 --> 00:00:08,800
+Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,560
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:41,360 --> 00:00:51,680
+Hello, I'm your host, David Barnard, and my guest today is Dilip Ready, a data engineer turned marketer working on an Apple Search Ads platform called Search Ads Optimization.
+
+7
+00:00:52,800 --> 00:01:04,800
+On the podcast, I talk with Dilip about the impact of Apple Search Ads on organic search, how to save money on brand defense, and why roads shouldn't be the only thing you optimize for.
+
+8
+00:01:05,920 --> 00:01:08,480
+Hey Dilip, thanks so much for joining me on the podcast today.
+
+9
+00:01:09,200 --> 00:01:19,840
+Yeah, I've been meaning to do an episode on Apple Search Ads for a long time and there's so many different frames of reference to talk about.
+
+10
+00:01:20,160 --> 00:01:27,200
+And so there's a few people I've talked to that I probably will still have on, but a little more like kind of growth hacky, more kind of marketer focused.
+
+11
+00:01:27,600 --> 00:01:36,560
+But one thing I'm excited to talk to you about search ads is that you're a data guy and you kind of stumbled into marketing as a data guy.
+
+12
+00:01:36,880 --> 00:01:38,800
+So let's just kick it off with that story.
+
+13
+00:01:39,040 --> 00:01:43,600
+Like how did you get into Apple Search Ads as a data scientist?
+
+14
+00:01:44,320 --> 00:01:48,720
+The reason is I did computer science and like, um, always did is.
+
+15
+00:01:48,720 --> 00:02:30,320
+data is my go-to like this what fascinates me and i started bank of america there's no like app thing at all but over time like i joined like um unicorn app companies like in 2016 and that's when the apple searchers came in um it's because i'm a data architect as well so i manage all data sources and design architectures i notice apple searchers is different in a way that it gives like so many data points so much of data that extreme granular including high intent keywords, how their users are reacting, and it just was great.
+
+16
+00:02:30,720 --> 00:02:45,680
+And also, I created my own hobby apps that don't solve any real problem, but I started tinkering with Apple Search Ads and in a strange way, that's kind of my on and off, I've been like developing algorithms and all this stuff, and that's how I ended up and yeah.
+
+17
+00:02:46,240 --> 00:02:59,040
+Yeah, and then you told me at one point that one of the things that really fascinated you about Apple Search Ads was that you were digging through the data one time and saw some like really high bids and some high cost per acquisition.
+
+18
+00:02:59,680 --> 00:03:00,720
+Yeah, so tell me about that.
+
+19
+00:03:01,360 --> 00:03:03,040
+Yeah, I mean, there are some categories, right?
+
+20
+00:03:03,200 --> 00:03:04,640
+Like finance, health and fitness.
+
+21
+00:03:05,520 --> 00:03:10,560
+The bits are like can be like go crazy for some markets, some keywords.
+
+22
+00:03:11,520 --> 00:03:14,000
+But they also bring in high revenue.
+
+23
+00:03:14,480 --> 00:03:22,720
+That's what is interesting because if you look at, you know, spray and pray networks like meta, everything is usually like constant.
+
+24
+00:03:22,960 --> 00:03:27,760
+You expect this and like the same revenue performance because this is not intent based.
+
+25
+00:03:27,920 --> 00:03:32,720
+It's just shooting creative across millions and hoping some will fall for it.
+
+26
+00:03:33,280 --> 00:03:36,000
+But I would suggest that even the CPS is high.
+
+27
+00:03:36,320 --> 00:03:49,920
+I find it like, you know, there's something we can tinker with and like experiment with because we can't stop just because it's high CPA because they're the high intent and in a way it's a limited inventory demand and supply.
+
+28
+00:03:50,560 --> 00:03:55,920
+So it depends on the app, it depends on what keywords we're targeting and what kind of users we're looking for.
+
+29
+00:03:56,320 --> 00:04:01,280
+And especially for very high competitive, like finance is one thing, health and fitness.
+
+30
+00:04:01,840 --> 00:04:07,360
+Yeah, we may see bids go really high up and CPA can go high in USA.
+
+31
+00:04:08,320 --> 00:04:11,600
+USA is one of the most expensive storefront.
+
+32
+00:04:12,000 --> 00:04:14,080
+And that's the interesting thing about search ads.
+
+33
+00:04:14,400 --> 00:04:17,840
+I mean, it's why Google is a trillion plus dollar company.
+
+34
+00:04:18,480 --> 00:04:26,000
+It's that when people go search for a specific term, they're very clearly demonstrating intent.
+
+35
+00:04:26,800 --> 00:04:33,200
+And, you know, I don't remember all the different categories, but there are things like, you know, searching for divorce lawyer on Google.
+
+36
+00:04:33,680 --> 00:04:36,160
+Whereas, like, the bids are just seem insane.
+
+37
+00:04:36,960 --> 00:04:41,360
+But if you're searching for divorce lawyer, you know, something's going on in your life.
+
+38
+00:04:41,920 --> 00:04:46,400
+And it's a lot of, you know, the lawyers make a lot of money on divorce settlements.
+
+39
+00:04:46,560 --> 00:05:02,560
+And so it's like they kind of similar market dynamics at play in the app store where for things like finance and health and fitness where there's high intent, there's high willingness to pay, it makes sense in kind of a competitive bid environment that some of the keywords will get bid up.
+
+40
+00:05:02,960 --> 00:05:10,000
+And it's kind of cool that part of what got you into Apple search ads was seeing those high bids and be like, wait a minute, this data must be wrong.
+
+41
+00:05:10,560 --> 00:05:12,800
+But no, it's like actually the data was correct.
+
+42
+00:05:12,960 --> 00:05:21,360
+It's just that you can have a return on ad spend with like a $50 CPA if it's the right keyword and the right app and the right monetization.
+
+43
+00:05:21,920 --> 00:05:23,200
+So that's really interesting.
+
+44
+00:05:23,840 --> 00:05:23,920
+Yeah.
+
+45
+00:05:24,080 --> 00:05:30,000
+Yeah, and yeah, the good thing about it is we can control each and every aspect at granular level.
+
+46
+00:05:30,480 --> 00:05:34,160
+I mean, you can also like stop some keywords like bid really low.
+
+47
+00:05:34,400 --> 00:05:45,280
+So either forcing Apple to stop giving us impressions or give more installs for the same, not more installs but similar installs with a lesser CPA.
+
+48
+00:05:45,680 --> 00:05:46,480
+That's the best part.
+
+49
+00:05:46,720 --> 00:05:48,160
+We can, we have control of everything.
+
+50
+00:05:48,400 --> 00:05:49,680
+It's not like meta, right?
+
+51
+00:05:49,840 --> 00:05:53,440
+Like, we don't know why the CPA's going high and I can't do anything about it.
+
+52
+00:05:54,000 --> 00:05:58,000
+Yeah, a lot of granular control and a lot of data to understand what's going on.
+
+53
+00:05:58,320 --> 00:05:58,400
+Yeah.
+
+54
+00:05:58,800 --> 00:05:59,840
+It's a double edge sport.
+
+55
+00:06:00,000 --> 00:06:09,440
+It can get overwhelming, especially if a company is running, you know, all 60 countries and 70 countries like thousands of keywords for each country.
+
+56
+00:06:09,920 --> 00:06:11,520
+I mean, we have some solutions for that.
+
+57
+00:06:11,680 --> 00:06:15,200
+And there's some kind of campaign structure you can set up to make it.
+
+58
+00:06:15,680 --> 00:06:16,960
+The mental overload much better.
+
+59
+00:06:17,440 --> 00:06:20,800
+I wanted to kind of kick things off talking about trends for 2024.
+
+60
+00:06:20,960 --> 00:06:22,000
+I mean, things are always changing.
+
+61
+00:06:22,160 --> 00:06:27,520
+You know, Apple introduced the brand or not, I guess not brand, but like the inventory on search.
+
+62
+00:06:27,600 --> 00:06:30,560
+And they've kind of been expanding inventory over the last few years.
+
+63
+00:06:31,120 --> 00:06:38,080
+Anything especially interesting in 2024 that they that is changing in App Store search ads that people folks should be paying attention to?
+
+64
+00:06:38,800 --> 00:06:48,720
+A lot of apps now, usually it used to be like we just run in tier one like you know, US, UK, like Germany, France, and forget the rest of the world.
+
+65
+00:06:48,960 --> 00:06:58,800
+But now I'm noticing the trend of adding as many countries as possible because if you think about it, there's only like five, six localizations that we have to.
+
+66
+00:06:59,120 --> 00:07:09,600
+Like, for example, if there's Spanish, you can maybe have an entire Latin America, not entire, but most of the Latin America with the same kind of keywords.
+
+67
+00:07:09,920 --> 00:07:12,000
+Same with Portuguese, German, France.
+
+68
+00:07:12,480 --> 00:07:21,200
+The way is like we identify the keyword builder building for these localizations, but you can expand to pretty much every country in the world.
+
+69
+00:07:21,440 --> 00:07:32,240
+And for extreme local language that we cannot support, Apple defaults to English anyway, so expanding to more countries is what I'm noticing.
+
+70
+00:07:33,040 --> 00:07:36,720
+And Apple introduced new geographies this year, right?
+
+71
+00:07:36,960 --> 00:07:46,480
+Yeah, yeah, Brazil and I think six other Latin countries, so yeah, this is the best way and people are seeing some surprising results.
+
+72
+00:07:48,240 --> 00:07:55,280
+So my advice is test these countries because we can't just assume, oh, because this country is this, we should not run it there.
+
+73
+00:07:55,600 --> 00:07:58,160
+Especially the effort is pretty much the same.
+
+74
+00:07:59,040 --> 00:08:03,280
+It takes maybe a few minutes to just copy and paste the campaigns right.
+
+75
+00:08:04,320 --> 00:08:06,800
+But you don't want to just copy and paste the campaigns, right?
+
+76
+00:08:07,120 --> 00:08:15,520
+You want to copy and paste and then spend a little time kind of hone it in for that market and then check your CPAs and your return on ad spend and stuff like that.
+
+77
+00:08:15,920 --> 00:08:16,000
+Yeah.
+
+78
+00:08:16,160 --> 00:08:23,840
+Whenever there's a news tool friend, my go to is start with bids like too stupidly low that will never get impressions, but that's fine.
+
+79
+00:08:24,000 --> 00:08:25,360
+We can always increase it.
+
+80
+00:08:25,920 --> 00:08:29,360
+If you start bids high for a new country, we don't know what the base is.
+
+81
+00:08:29,440 --> 00:08:30,480
+I can start with $10.
+
+82
+00:08:31,120 --> 00:08:38,880
+Apple happily gives me $10 bids, but maybe I can get the same number of installs or 90 percent of installs if I bid half, right?
+
+83
+00:08:39,840 --> 00:08:43,760
+And also the trend is I'm noticing is the CPS going a bit higher.
+
+84
+00:08:44,720 --> 00:08:56,720
+And I'm assuming it's also across all ad channels because I don't deal with other ad channels, but the data suggest CPS are going a bit higher year by year.
+
+85
+00:08:57,360 --> 00:08:58,800
+So we're dealing with that.
+
+86
+00:08:59,360 --> 00:09:00,400
+Yeah, it kind of makes sense.
+
+87
+00:09:00,960 --> 00:09:08,800
+because as apps become more sophisticated about monetization and really get their monetization dialed in, then they can spend more.
+
+88
+00:09:08,960 --> 00:09:26,320
+And so like the market dynamics is like as consumers get more comfortable spending, as inflation causes higher prices to make more sense, you know, as apps work on their funnels and paywalls and all the things like we talk about on the podcast, it's like we're kind of creating the problem.
+
+89
+00:09:26,640 --> 00:09:34,320
+Like as more apps become more sophisticated, then they can bid higher because they're going to still get a return on ad spin even with that higher CPA.
+
+90
+00:09:34,480 --> 00:09:36,720
+So it kind of makes sense that there's this kind of rising.
+
+91
+00:09:37,680 --> 00:09:41,680
+CPAs, especially with the most high intent search ads.
+
+92
+00:09:42,240 --> 00:09:42,320
+Yeah.
+
+93
+00:09:42,640 --> 00:09:46,480
+I think there is also a trend of I call these apps hyperscalers.
+
+94
+00:09:47,360 --> 00:09:48,400
+It's like Temu, right?
+
+95
+00:09:48,640 --> 00:09:51,680
+Like they bid on 100,000 keywords for some reason.
+
+96
+00:09:52,320 --> 00:09:57,200
+But the reason is maybe I don't know why, but they must have like billions of marketing, right?
+
+97
+00:09:57,520 --> 00:09:59,920
+So unfortunately it will raise up.
+
+98
+00:10:00,480 --> 00:10:04,240
+It's like a wave lifting up all the boards kind of thing, right?
+
+99
+00:10:04,480 --> 00:10:14,080
+So because Temu is bidding for every and every possible English character, I mean English letter and word in the dictionary, it may mean that, you know, the CPA may be going high.
+
+100
+00:10:15,280 --> 00:10:18,960
+I'm not saying this is the reason exactly, but this is a trend I'm noticing as well.
+
+101
+00:10:19,200 --> 00:10:20,960
+Yeah, it probably contributes to it, for sure.
+
+102
+00:10:21,280 --> 00:10:21,360
+Yeah.
+
+103
+00:10:22,000 --> 00:10:30,240
+And there's a new search inventory came in that didn't exist before ChatGPT is the AI, everything AI, yoga AI, right?
+
+104
+00:10:30,480 --> 00:10:34,960
+Like, it's pretty much there's like an entire new generation of search terms come in.
+
+105
+00:10:35,920 --> 00:10:37,440
+So the inventory went up as well.
+
+106
+00:10:38,000 --> 00:10:42,240
+So it's not like all like high CPA for the same inventory.
+
+107
+00:10:42,640 --> 00:10:46,480
+But also the apps, like skyrocketed number of apps released.
+
+108
+00:10:46,720 --> 00:10:51,280
+Ironically, AI is making it easier to create one, many apps at scale as well.
+
+109
+00:10:51,520 --> 00:10:53,680
+So yeah, this is the trends so far.
+
+110
+00:10:53,920 --> 00:10:55,120
+Yeah, yeah, that's really interesting.
+
+111
+00:10:55,280 --> 00:10:57,120
+And the explosion of apps thing is interesting.
+
+112
+00:10:57,200 --> 00:11:18,480
+I mean, it does seem like AI has kind of accelerated that is that, you know, like you said, for every, for every major category you might want to bid on, there's probably somebody who, who it's either built like a more really sophisticated app or rebranded an existing app to like say it's the AI version of it.
+
+113
+00:11:18,720 --> 00:11:26,880
+And then, you know, people are looking for more apps because they're thinking, well, hey, I've been using this productivity to-do list.
+
+114
+00:11:27,200 --> 00:11:30,880
+Is there like a better AI version of a to-do list that's going to make me more productive?
+
+115
+00:11:31,040 --> 00:11:39,600
+And then they go back and search, whereas like maybe they weren't searching some of those terms before because they kind of had their the app that they used.
+
+116
+00:11:40,320 --> 00:11:47,520
+It would be interesting to see the iOS new version with the built-in AI, how it's going to impact a lot of apps.
+
+117
+00:11:48,080 --> 00:11:50,080
+Yeah, let's see how it goes with the AI.
+
+118
+00:11:50,560 --> 00:11:54,800
+So one of the hotter topics I wanted to get your take on is brand defense.
+
+119
+00:11:55,360 --> 00:11:58,800
+So you have some people say never do brand defense.
+
+120
+00:11:59,040 --> 00:12:04,960
+You're just like it's extortion from the Apple and Google to force you to do brand defense on SEO and ASO.
+
+121
+00:12:05,920 --> 00:12:06,880
+But what are your thoughts?
+
+122
+00:12:07,040 --> 00:12:07,920
+Like, can it work?
+
+123
+00:12:08,240 --> 00:12:09,040
+Can it be profitable?
+
+124
+00:12:09,440 --> 00:12:11,040
+How should you structure it if you do it?
+
+125
+00:12:11,200 --> 00:12:14,480
+Like, how do you think about brand defense on apps or search ads?
+
+126
+00:12:14,800 --> 00:12:16,480
+Yeah, obviously it's a touching subject.
+
+127
+00:12:16,960 --> 00:12:24,800
+I have some opinions, but what I would do is like, I asked an inquired company, what is your, like, what is your plan?
+
+128
+00:12:25,040 --> 00:12:26,560
+Like, what do you think of this?
+
+129
+00:12:26,800 --> 00:12:28,720
+Because it depends on each and every company.
+
+130
+00:12:29,120 --> 00:12:31,360
+On a surface level, this is what I would suggest.
+
+131
+00:12:31,840 --> 00:12:36,880
+If your app is easily replaced by a computer app, you have to run B back.
+
+132
+00:12:37,280 --> 00:12:44,160
+The unfortunate situation here is that if we lose impression share, that we can't measure that because it's a lost opportunity.
+
+133
+00:12:44,960 --> 00:12:50,960
+We can only measure something, I mean, incrementality, but it's a loss of revenue, right?
+
+134
+00:12:51,440 --> 00:13:02,960
+If you think about it, let's say a company is running Facebook, TikTok, brand awareness, all that touch points made that user come to the App Store just before downloading.
+
+135
+00:13:03,360 --> 00:13:08,000
+If a computer solved the exact same problem, it's a really huge risk, right?
+
+136
+00:13:08,320 --> 00:13:11,680
+Like we did all the hard work and now the competitors are benefiting from it.
+
+137
+00:13:11,920 --> 00:13:19,760
+There are some apps like with apps with network effects and like we know these apps cannot be replaced with other apps.
+
+138
+00:13:20,000 --> 00:13:22,560
+They do not need to run, you know, brand.
+
+139
+00:13:23,440 --> 00:13:25,360
+For example, maybe Bank of America app.
+
+140
+00:13:25,680 --> 00:13:30,960
+No one creates an online application, but there's an opportunity for like fintech apps, right?
+
+141
+00:13:31,440 --> 00:13:32,480
+Because that's their opportunity.
+
+142
+00:13:32,640 --> 00:13:37,360
+Bank of America doesn't need that, but fintech can capitalize on that opportunity.
+
+143
+00:13:37,840 --> 00:13:44,560
+My suggestion is test with bidding lower for the brand keywords.
+
+144
+00:13:45,200 --> 00:13:46,000
+You'll be surprised.
+
+145
+00:13:46,240 --> 00:13:46,960
+You may be paying.
+
+146
+00:13:47,280 --> 00:13:47,840
+Let's take one example.
+
+147
+00:13:48,000 --> 00:13:51,360
+An app is getting 100% impression share.
+
+148
+00:13:51,520 --> 00:13:55,200
+To be honest, it's not 100% because there's never 100% impression share.
+
+149
+00:13:55,440 --> 00:13:57,200
+Let's say 90% impression share.
+
+150
+00:13:57,680 --> 00:14:03,840
+Is there a way to measure that incrementality testing or does Apple actually like show you this impression share?
+
+151
+00:14:04,320 --> 00:14:04,960
+This is the best part.
+
+152
+00:14:05,360 --> 00:14:09,600
+Apple does give us impression share per search term per country.
+
+153
+00:14:10,480 --> 00:14:12,320
+So that's one thing we can keep track of.
+
+154
+00:14:12,480 --> 00:14:19,360
+That this reason why it allows us to conduct this test is bid lower for brand and test it out.
+
+155
+00:14:19,600 --> 00:14:25,760
+And if you retain the same impression share, you essentially have the cost still getting the same impression share.
+
+156
+00:14:26,000 --> 00:14:36,240
+It is a test because we don't know how impression share can take a hit and maybe some companies are okay with 70% impression share if it reduces cost by 70%.
+
+157
+00:14:36,560 --> 00:14:37,760
+So it's a nice trade-off.
+
+158
+00:14:37,920 --> 00:14:38,960
+He's still returning.
+
+159
+00:14:39,520 --> 00:14:48,720
+We're still letting go of our impressions for other computers, but we can use that budget for generic high intent and these are actual new users, right?
+
+160
+00:14:49,520 --> 00:14:54,080
+And regarding Apple extracting, I mean, it's not unique to Apple, right?
+
+161
+00:14:54,240 --> 00:14:55,840
+Like, I mean, it's every i channel.
+
+162
+00:14:56,000 --> 00:14:58,000
+There's no trademark on search terms.
+
+163
+00:14:58,240 --> 00:15:00,720
+So yeah, it's a unfortunate reality of everyone has to.
+
+164
+00:15:00,720 --> 00:15:02,880
+I don't know if everyone has to do it, but it's also an opportunity, right?
+
+165
+00:15:03,280 --> 00:15:07,280
+The impression share is an interesting way to approach it though, because you're right.
+
+166
+00:15:07,440 --> 00:15:24,560
+It's like if you can spend half as much money and get ninety percent impression share versus twice as much money to get it to one hundred percent, that extra ten percent is probably not incrementally better than just spending less and getting the ninety percent.
+
+167
+00:15:24,880 --> 00:16:22,880
+And then something you and I were talking about was how the search ad algorithm does tend to prefer the actual branded app where you could potentially even bid a lot lower than your competitors and still win the bid because Apple's not just going with the highest bid there is some amount of like them trying to fit the best app right yeah it's because of one mechanism is that cost per tap model Apple only charges an app company if someone taps on it if you if you get a million impressions with zero taps you basically got all this free one million impressions so if that's the case right like if Apple just takes highest bid like Temo will be showing off for every search term but it's not the reason is imagine like if I'm a yoga app, a famous yoga app, and someone is searching for the yoga app of my brand, a competitor may not get the same level of engagement.
+
+168
+00:16:23,200 --> 00:16:26,800
+A lot of users may see the ad and, oh, you know what, I don't care about it.
+
+169
+00:16:27,040 --> 00:16:28,960
+I heard about this app, so I'm going to download that.
+
+170
+00:16:29,200 --> 00:16:32,480
+Apple is losing too, and it's also not great user experience, right?
+
+171
+00:16:33,440 --> 00:16:40,240
+If a user is typing for yoga brand of XYZ, they're expecting to see XYZ not.
+
+172
+00:16:40,960 --> 00:16:50,880
+So eventually Apple may shift the terms to brand, even if you're bidding, let's say, half some calculations.
+
+173
+00:16:52,080 --> 00:16:55,600
+It's also a test because it's not guaranteed outcome.
+
+174
+00:16:56,080 --> 00:17:04,800
+Imagine I'm a just generic yoga app and the computer has better, way better screenshots, way better messaging, way better ratings.
+
+175
+00:17:06,080 --> 00:17:12,800
+I may lose that and Apple may think, you know what, this computer app is actually working better, more than this brand.
+
+176
+00:17:13,200 --> 00:17:15,280
+So Apple may give the impression share.
+
+177
+00:17:15,840 --> 00:17:24,720
+So it's a bit of a test, but that's where it's ideal to monitor the impression share and make sure we're not tanking.
+
+178
+00:17:25,280 --> 00:17:25,840
+Yeah, yeah.
+
+179
+00:17:26,480 --> 00:17:27,200
+That makes a lot of sense.
+
+180
+00:17:27,280 --> 00:17:28,480
+Because, like, yeah, you're right.
+
+181
+00:17:28,560 --> 00:17:30,880
+It's like, and your example earlier, I think is maybe even better.
+
+182
+00:17:31,040 --> 00:17:36,240
+It's like, if someone's searching Bank of America, they're probably not going to tap on an ad for Chase Bank.
+
+183
+00:17:36,880 --> 00:17:46,560
+And so Apple doesn't make money when someone's searching Bank of America and they show Chase because people are looking for the Bank of America app because they bank at Bank of America.
+
+184
+00:17:46,800 --> 00:17:49,360
+They're not searching Bank of America because they're looking for a bank.
+
+185
+00:17:49,840 --> 00:17:50,720
+They're looking for the app.
+
+186
+00:17:51,200 --> 00:17:54,400
+And so, I mean, it's probably the exact opposite on SEO.
+
+187
+00:17:54,640 --> 00:18:02,000
+It's like, you know, if someone's searching Bank of America online or like, you know, other kinds of keywordsords, it might make more sense.
+
+188
+00:18:02,240 --> 00:18:10,240
+But on the App Store specifically, when someone's looking for a very specific app, Apple's is not making money if people are having to scroll past the ad.
+
+189
+00:18:10,640 --> 00:18:12,080
+So yeah, it makes a lot of sense.
+
+190
+00:18:12,560 --> 00:18:25,680
+So on brand defense, you just really experiment and try and bid as low as possible to maintain as much impression share as you're comfortable with to make sure you're not kind of losing out on the opportunities.
+
+191
+00:18:26,000 --> 00:18:36,560
+Man, I bet, I mean, that advice alone, I don't know how it does seem like a lot of companies, you know, they just kind of throw money at App Store search ads.
+
+192
+00:18:36,960 --> 00:18:39,200
+and don't operate in a very sophisticated way.
+
+193
+00:18:40,160 --> 00:18:47,280
+And of course, tons of them, you know, hire consultants or have internal people who are really good or have agencies working on it who know these kind of things.
+
+194
+00:18:47,840 --> 00:18:59,360
+There's probably folks listening to this podcast who don't know that and and are not, you know, paying close enough attention and you may have just saved them like tens of thousands of dollars just going there and lowering your bid and watching Impression Share.
+
+195
+00:19:00,000 --> 00:19:04,320
+I mean, there's one more thing about the ROIs and case studies.
+
+196
+00:19:04,560 --> 00:19:09,520
+And like, one thing I notice is a lot of case studies don't mention if it's generic or brand.
+
+197
+00:19:10,160 --> 00:19:55,600
+This brand usually has the highest ROIs of any kind of think about it right like that's what we we made the user come to App Store and their highest intent possible so when we see the revenue always I would consider brand as its own entity we treat it as we do not compare brand with any other high intent generic keywords or computer keywords or like broad match keywords I would treat it as two different things I do not even mix up the data as an entire like apple such a strategy yeah yeah that makes a lot of sense yeah because if your overall ROI looks amazing, yes, because you're cannibalizing, but if you can pay half, your ROI will look even better.
+
+198
+00:19:56,160 --> 00:19:57,120
+So that's great.
+
+199
+00:19:58,720 --> 00:20:04,960
+We already kind of talked a little bit about the trend in CPAs going up, up, up, but I wanted to dig into that a little bit.
+
+200
+00:20:05,520 --> 00:20:12,800
+So we kind of talked about some of the high CPAs, like finance and health and fitness and some of these categories that are going high.
+
+201
+00:20:14,000 --> 00:20:16,880
+What about low CPAs?
+
+202
+00:20:17,120 --> 00:20:24,400
+Are there some categories that are opportunities, some arbitrage available in the App Store in certain categories?
+
+203
+00:20:25,360 --> 00:20:30,720
+Yeah, even with the high competition categories, like we can have some CPA.
+
+204
+00:20:31,760 --> 00:20:37,920
+We can improve CPA better by just expanding high intent and low intent keywords and bid accordingly.
+
+205
+00:20:38,480 --> 00:20:39,600
+For example, yoga.
+
+206
+00:20:40,320 --> 00:20:40,960
+I know yoga.
+
+207
+00:20:41,120 --> 00:20:43,600
+If someone is typing yoga, yoga is high intent for my app.
+
+208
+00:20:44,160 --> 00:20:47,360
+I'm talking about yoga because it's such a generic app.
+
+209
+00:20:48,240 --> 00:20:54,000
+But I also know if someone is doing pilotes or some kind of, like maybe there's a low intent.
+
+210
+00:20:54,400 --> 00:22:14,240
+They may not be interested in my app, but it's still like some if someone is looking for health and fitness and pilotes, maybe they're.re low intent but i won't bid the same as i would bid for yoga so i classify that as low intent that way you can expand keywords a lot and also keywords we can think of it as a it's very that's where the night and day difference of performance can occur in application chats if i'm choosing bad keywords like have 10 keywords that are not relevant to app i'm bidding 10 dollars each um we're gonna have some troubles this is a human thing right like we know much better you can use ai chat gpt to have some ideas but the final say should be yours of okay we are using this keyword because it's low intent and we'll bid lower in hopes that we get more suggestions and the best part about apple search chats is there are two types of keywords exat is not 100% exat but it's more like yoga for women for example is that if I'm bidding as exat keyword that's fine but there's another keyword type called broad match what it means is any variations can also we can or you can all right automatically show something.
+
+211
+00:22:15,120 --> 00:22:42,000
+For me, if yoga for women is the same intent as yoga for women in thirties, I know it's a long tale, but yoga for women, I don't care what the following search terms are because I already know yoga for women and these keywords usually are dynamic because if you look at the app store app, if you type yoga, you'll see app will suggest some search terms and these change very often.
+
+212
+00:22:43,200 --> 00:22:52,240
+So the competition would may not exist for some of the search terms and that's a low hanging fruitit run the broad but obviously bid lower.
+
+213
+00:22:52,480 --> 00:22:58,320
+I'm a big fan of classifying keywords and bidding different for each based on their group, like brand.
+
+214
+00:22:58,800 --> 00:23:01,360
+And regarding low, it's also very dynamic.
+
+215
+00:23:02,080 --> 00:23:08,640
+Even with high competition, some keywords may not have any competition at all and there's like think of stock market.
+
+216
+00:23:09,280 --> 00:23:14,320
+There's like so many, so many people trying to buy stocks and we can't predict what's going to happen.
+
+217
+00:23:14,560 --> 00:23:22,640
+So this is where we try to have as many as relevant keywords and we expect some may go down in impression share, some may go up.
+
+218
+00:23:22,960 --> 00:23:24,960
+Overall, we just see an improvement in performance.
+
+219
+00:24:00,160 --> 00:24:09,440
+for like yoga for women, will it broad match anything related to yoga for women or does it still have to have like yoga and women in the search terms?
+
+220
+00:24:10,080 --> 00:24:12,400
+Like how dangerous is it to set a broad match?
+
+221
+00:24:12,640 --> 00:24:15,440
+Will it just like pull any random stuff in there?
+
+222
+00:24:16,320 --> 00:24:26,080
+There, Apple, yes, it just because we said yo yoga for women, it doesn't mean that Apple may, Apple may show for truly unrelated.
+
+223
+00:24:26,480 --> 00:24:36,800
+If it thinks that, if Apple algorithm thinks, for example, Peloton, if Apple thinks Peloton is related to yoga for women, our ad, we may be paying for Peloton keyword.
+
+224
+00:24:37,280 --> 00:24:39,280
+But the good thing is we can even track this.
+
+225
+00:24:39,600 --> 00:24:41,680
+There's a report called SearchTurms Report.
+
+226
+00:24:42,000 --> 00:24:49,200
+It's better to occasionally check, you know, this report and make sure, okay, all our spending is going to the right kind of keywords.
+
+227
+00:24:49,440 --> 00:24:51,440
+Usually the search terms are not perfect.
+
+228
+00:24:51,920 --> 00:24:56,320
+Apple only shows search terms if they're if we spend enough and if we get enough impressions.
+
+229
+00:24:56,720 --> 00:24:57,200
+But that's fine.
+
+230
+00:24:57,440 --> 00:24:58,640
+That's what we want anyway, right?
+
+231
+00:24:58,800 --> 00:25:01,920
+We don't need like thousands of search terms report.
+
+232
+00:25:02,240 --> 00:25:12,640
+So then in this case, like if you have a yoga app and you see in the report that it's bidding for Peloton and it's a high bid and you're not getting a good ROI, do you go in there?
+
+233
+00:25:13,120 --> 00:25:16,000
+and then specifically say don't bid on Peloton?
+
+234
+00:25:16,560 --> 00:25:24,160
+So the good thing about that is we can track which keyword is causing Peloton to cause our app to show up for Peloton.
+
+235
+00:25:24,480 --> 00:25:28,080
+Usually I just go in there and tone it down to really stupidly low.
+
+236
+00:25:28,800 --> 00:25:34,400
+Either we get really, really cheap installs or we force Apple to not show our ad.
+
+237
+00:25:34,560 --> 00:25:37,120
+I'm not a big fan of removing keywords too often.
+
+238
+00:25:38,240 --> 00:25:39,280
+These are dynamic trends, right?
+
+239
+00:25:39,520 --> 00:25:45,040
+Let's say I have a yoga format and Apple is showing Peloton search terms for this for my app this week.
+
+240
+00:25:45,680 --> 00:25:48,000
+It doesn't mean that it's going to keep doing that forever, right?
+
+241
+00:25:48,320 --> 00:25:52,240
+Like maybe next month, that might be my most profitable keyword.
+
+242
+00:25:52,560 --> 00:25:56,880
+If I just remove that keyword, I just lost my opportunity forever.
+
+243
+00:25:57,680 --> 00:26:05,440
+But if I bid low and I can retry later, two, three months, and see how is it performing.
+
+244
+00:26:06,080 --> 00:26:12,000
+I think Yoga for Women is not a great example for Broad, but you can think of it as, let's take weather since your app.
+
+245
+00:26:12,480 --> 00:26:14,880
+Hopefully I'm not giving away weather app secrets.
+
+246
+00:26:15,200 --> 00:26:16,160
+Imagine we are bidding.
+
+247
+00:26:16,640 --> 00:26:20,480
+We just don't know anything about apps such as S, but we know our app is about weather.
+
+248
+00:26:21,040 --> 00:26:23,200
+So you can run on weather as except.
+
+249
+00:26:23,600 --> 00:26:28,240
+It means that any variation weather like we show the ad and we pay high for that.
+
+250
+00:26:28,880 --> 00:26:32,720
+Let's assume we did not do any keyword research, we don't have any keyword list.
+
+251
+00:26:34,080 --> 00:26:39,200
+If you also bid on broad of the same, so we are running two keywords basically.
+
+252
+00:26:39,840 --> 00:26:43,840
+Apple may show weather map, weather information, weather alerts.
+
+253
+00:26:45,200 --> 00:26:48,560
+As far as we're concerned, those are also relevant for us, right?
+
+254
+00:26:48,880 --> 00:26:51,920
+So, and you can go to the multiple levels.
+
+255
+00:26:52,800 --> 00:26:59,040
+Now, weather alerts, we can bid on weather alerts because Apple showed, oh, there's a weather alerts keyword.
+
+256
+00:27:01,200 --> 00:27:05,200
+We add weather alerts as except and also broad.
+
+257
+00:27:05,520 --> 00:27:12,480
+And our hope is that if someone is searching for weather alerts Philadelphia, it's still relevant because Mac is still relevant.
+
+258
+00:27:12,720 --> 00:27:16,800
+And if someone is searching for weather alerts Los Angeles, same thing.
+
+259
+00:27:17,200 --> 00:27:28,000
+So that way, like you can, that's why I'm a big fan of maintaining a relevant keyword list because this is a one time action, right?
+
+260
+00:27:28,160 --> 00:27:35,680
+Like once we add weather alerts, we're not going to unless the app changes the entire business model and the name and the functionality.
+
+261
+00:27:36,000 --> 00:27:39,840
+It's really rare that the keyword is going to be applicable forever.
+
+262
+00:27:40,000 --> 00:27:41,120
+No, that's a good point though.
+
+263
+00:27:41,200 --> 00:27:43,120
+Because like for my app, it would actually be the opposite.
+
+264
+00:27:43,440 --> 00:27:51,360
+So we would start with weather as a broad match and we would probably see that weather alerts is a very low intent keyword because we actually don't have alerts in the app.
+
+265
+00:27:51,840 --> 00:27:53,760
+It's something we actually want to add to the app.
+
+266
+00:27:54,240 --> 00:28:09,280
+So then what you're saying is what we would do then is put weather as broad match when we see weather alerts come in and it's not creating a great ROI, even if maybe it is driving downloads because people don't realize the app doesn't do it, but then they get into the app, it doesn't do it.
+
+267
+00:28:09,360 --> 00:28:12,800
+They leave a bad review, they don't buy or they cancel the free.
+
+268
+00:28:13,200 --> 00:28:13,920
+trial or whatever.
+
+269
+00:28:14,720 --> 00:28:27,520
+So then we make weather alerts an exact match and then we bid really low because maybe we still get impressions and maybe we still make some money, but we want that specific keyword to be super low priced.
+
+270
+00:28:27,760 --> 00:28:32,880
+But then when I add the feature, then we already have some relevancy for it and then I can pump the bids back up, right?
+
+271
+00:28:33,440 --> 00:28:43,520
+In this case, like when we are sure this particular keyword is really badly performing and it's consistent over and over again, you can actually add it as a negative keyword.
+
+272
+00:28:44,160 --> 00:28:48,640
+Basically what we're saying to Apple is anything that says weather alerts, yeah, take me.
+
+273
+00:28:49,120 --> 00:28:49,200
+out.
+
+274
+00:28:49,920 --> 00:28:50,640
+I'm not in the game.
+
+275
+00:28:50,880 --> 00:28:52,560
+So this is actually much better.
+
+276
+00:28:53,200 --> 00:28:58,400
+But we need to be absolutely sure that this keyword is not going to be a good fit.
+
+277
+00:28:59,600 --> 00:29:07,440
+I noticed some advice that, yeah, just remove negative any keywords that don't generate revenue in the first week.
+
+278
+00:29:07,840 --> 00:29:08,800
+That is really not great.
+
+279
+00:29:09,280 --> 00:29:13,040
+A strategy in my opinion because everything is dynamic, right?
+
+280
+00:29:13,280 --> 00:29:16,080
+Like some competitors may be bidding high this week.
+
+281
+00:29:16,480 --> 00:29:17,600
+They may not drop off tomorrow.
+
+282
+00:29:17,760 --> 00:29:18,560
+It's all dynamic.
+
+283
+00:29:18,640 --> 00:29:20,560
+That's why I'm a big fan of Apple suggests.
+
+284
+00:29:20,880 --> 00:29:25,040
+It gives us a lot of data to validate and test our hypothesis.is.
+
+285
+00:29:25,840 --> 00:29:35,600
+Yeah, in this case, if you know this keyword is a bad news, yeah, we just added it as a negative keyword, one time thing, and we never have to worry about it again.
+
+286
+00:29:36,080 --> 00:29:40,000
+So is that how exact and broad match work?
+
+287
+00:29:40,320 --> 00:29:47,680
+So I mean, a lot of people who like work in the industry and are constantly managing these things will know that, but I'm sure there's a lot of people listening who don't.
+
+288
+00:29:48,000 --> 00:29:59,600
+And then, honestly, even the people who work in this day and day out could probably learn some of the intricacies about how it does and doesn't work from you as much as you've managed this and like worked with so many different folks over the years.
+
+289
+00:30:00,800 --> 00:30:03,680
+So yeah, how does Broad Match work?
+
+290
+00:30:04,640 --> 00:30:14,720
+Yeah, the goal for us when we are using Broad Match is to capture like an exponential number of search terms that are still relevant to our app.
+
+291
+00:30:15,600 --> 00:30:23,280
+And added benefit is usually for these keywords, because these are so dynamic, they change every week, they may be low in popularity.
+
+292
+00:30:24,240 --> 00:30:27,280
+So they won't, our competitors may not be bidding really.
+
+293
+00:30:28,160 --> 00:30:33,200
+So we've talked a bit about fluctuation, but one of the biggest fluctuations is seasonality.
+
+294
+00:30:33,360 --> 00:30:36,880
+It's like, you know, I'm sure January 1, all the search terms.
+
+295
+00:30:37,360 --> 00:30:41,200
+related to health and fitness are bid to crazy and that's to be expected.
+
+296
+00:30:42,080 --> 00:31:07,680
+But any other things you think people should be watching out for seasonality wise or how does that impact CPAs and how should you be preparing and structuring your campaigns for seasonality so you don't end up, you know, paying too much, but also so you don't miss out on the opportunities when there may be higher ROI searches when maybe you're bidding lower even when there are higher intent people coming in.
+
+297
+00:31:08,160 --> 00:31:14,240
+Yeah, I mean, for you as a store friend, like the Thanksgiving is usually the highest competitive space.
+
+298
+00:31:14,560 --> 00:31:19,200
+It's the same similar phenomenon like a wave lifting up all the books kind of thing.
+
+299
+00:31:19,440 --> 00:31:26,400
+So even if it's nothing, even if our app it has nothing to do with shopping, we may see our CPA going up a bit high.
+
+300
+00:31:26,880 --> 00:31:37,200
+Even summer time is like usually for like it depends on kind of apps like for some categories, the summer is actually the cheapest CPA for some reason.
+
+301
+00:31:37,520 --> 00:31:40,560
+You can think of this as a cool if I'm education app.
+
+302
+00:31:41,680 --> 00:31:53,760
+And usually the best time period to test any new app is, I mean, if you're if someone is thinking of trying out Apple Search Sessions during February till summer.
+
+303
+00:31:54,800 --> 00:32:08,080
+This is kind of a weirdly low energy in the competition computerspace because the January high is gone and now things are coming back.
+
+304
+00:32:09,280 --> 00:32:10,720
+But it depends on the app too, right?
+
+305
+00:32:10,880 --> 00:32:24,240
+Like if my app is dealing with something with, for example, flights, like flight tracker, obviously like I can benefit much because this is not peak travel season.
+
+306
+00:32:24,240 --> 00:32:24,320
+season?
+
+307
+00:32:25,680 --> 00:32:28,320
+Yeah, those are the seasonality trends.
+
+308
+00:32:28,960 --> 00:32:30,480
+And some of them are counterintuitive too.
+
+309
+00:32:30,640 --> 00:32:46,320
+Like I was actually talking to Ryan Jones from Flighty recently, and he was saying how surprised he was that holiday travel is such a like I thought I I think the conversation was related to me saying, Oh, you must do like really good business in the summer.
+
+310
+00:32:46,400 --> 00:32:48,480
+He's like, No, actually like the summer's fine.
+
+311
+00:32:49,360 --> 00:32:56,480
+But the holidays is where people are like way higher intent, like traveling more, care more about delays and stuff like that.
+
+312
+00:32:56,720 --> 00:33:47,840
+And so some of these like seasonal trends are probably counterintuitive and like even you're running your app thinking oh you know let's take all trails for example it's like oh well the summer is gonna be peak season maybe but are there are ways like that that you kind of i mean pretty much you just need to be watching week in week out are there but are there specific ways that you track these campaigns to make sure that that you're not missing out on either potentially bidding lower kind of when when CPAs maybe drift lower or bidding higher when there's actually higher intent people coming in how do you manage that on a day in day out basis it depends on the like how our app category, how the competition is for some apps, like it depends on what our competitors are doing because when I say competitors, I'm not talking about exact close competitors.
+
+313
+00:33:48,080 --> 00:33:55,200
+I'm talking about any app that are bidding heavily and for a long time for our primary keywords, high intent keywords.
+
+314
+00:33:55,680 --> 00:33:56,400
+It depends on that.
+
+315
+00:33:56,640 --> 00:33:58,800
+For day in day out, usually we should not.
+
+316
+00:33:59,840 --> 00:34:03,840
+We just keep in mind that, hey, this is expected and we can look over.
+
+317
+00:34:04,480 --> 00:34:08,240
+The good thing is it should correlate with organic traffic as well.
+
+318
+00:34:08,720 --> 00:34:13,200
+So we can just come back to AppSureConnect and check last two years, what's our tra trend?
+
+319
+00:34:13,680 --> 00:34:16,160
+And we can expect similar in application shares.
+
+320
+00:34:16,240 --> 00:34:22,400
+I'm not a big fan of changing bits by the seasonality because, like I said, it's like stock market, right?
+
+321
+00:34:22,560 --> 00:34:29,840
+Like, if everything is dynamic, we cannot predict that we'll get impression share of this keyword, but we can see the results and act on it.
+
+322
+00:34:30,000 --> 00:34:32,400
+I mean, this is a piss thing about data, right?
+
+323
+00:34:32,720 --> 00:34:34,880
+Like, we don't have to make any assumptions.
+
+324
+00:34:35,120 --> 00:34:37,360
+We can see the data and act accordingly.
+
+325
+00:34:38,000 --> 00:34:41,520
+So, what you're saying is the better tactic is just to watch the keywords.
+
+326
+00:34:41,680 --> 00:35:01,520
+And so, if you're getting a higher ROI on a specific keyword, no matter the seasonality, that's when you would experiment with increasing the bid and then if you see ROI drop, then that's when you experiment with lowering the bid and you kind of like you should just be doing this as like standard practice anyway, not necessarily focused on the seasonality.
+
+327
+00:35:01,760 --> 00:35:05,920
+Even as a watch keywords means it's like constant process, right?
+
+328
+00:35:06,160 --> 00:35:18,080
+Like imagine I'm running an Apple search charge campaigns for my company and I just go in every day, every week once in a while and I just bid according to what I'm seeing.
+
+329
+00:35:18,640 --> 00:35:19,280
+It doesn't matter.
+
+330
+00:35:19,440 --> 00:35:22,720
+Maybe Germany is the least performing campaign.
+
+331
+00:35:23,200 --> 00:35:24,400
+It doesn't matter what season, right?
+
+332
+00:35:24,400 --> 00:36:05,040
+season right i just yeah you know what i'm not going to spend too much budget so let me bid lower for the entire ad group maybe um us is least performing but germany is best performing in december for some reason i don't know because these are all external factors we cannot analyze like why it happened we can just react what we're saying based on like past 15 days or past seven days so and speaking of roi how how do you think about roi because you know you're not always going to be able to get i mean the met the magic is like uh i plug in a keyword and like 150 roi in seven days and then you spend a million dollars a month and you're just making money hand and foot, but that's not how it actually works in the real world.
+
+333
+00:36:06,160 --> 00:36:11,520
+So how do you first measure ROI and then how do you think about ROI?
+
+334
+00:36:12,640 --> 00:36:12,720
+Yeah.
+
+335
+00:36:13,600 --> 00:36:23,360
+Imagine we'll take an example of a regular generic app, seven day free trial and some Let's talk about my app.
+
+336
+00:36:23,600 --> 00:36:28,880
+So if I start running, because I am going to start running weather apps, app store search ads on different weather terms.
+
+337
+00:36:29,040 --> 00:36:34,160
+And so I'll probably be talking about this over time on the podcast of like, you know, what's worked and what hasn't for me.
+
+338
+00:36:34,320 --> 00:36:35,360
+So yeah, a weather app.
+
+339
+00:36:35,520 --> 00:36:37,440
+So I start running ads for my weather app.
+
+340
+00:36:37,760 --> 00:36:39,600
+So we'll use that as a hypothetical.
+
+341
+00:36:40,000 --> 00:36:40,800
+What is the free trial?
+
+342
+00:36:40,960 --> 00:36:41,680
+Is there free trial?
+
+343
+00:36:41,840 --> 00:36:42,240
+Seven days.
+
+344
+00:36:42,480 --> 00:36:43,120
+Seven days, perfect.
+
+345
+00:36:43,760 --> 00:36:47,200
+Here's the thing about revenue in Apple Suggest.
+
+346
+00:36:47,440 --> 00:36:54,240
+Apple Suggest by default doesn't give revenue, doesn't show revenue like unlike Meta, you know, Google Ads.
+
+347
+00:36:55,600 --> 00:37:01,760
+But there's some ways that you can use MMPs, like other platforms, and get the information and link it up.
+
+348
+00:37:01,920 --> 00:37:02,640
+And RevenueCat.
+
+349
+00:37:02,960 --> 00:37:03,520
+Yes, yeah.
+
+350
+00:37:03,680 --> 00:37:10,320
+RevenueCat does a great job like linking up keywords and ad groups, and you can use that information to analyze.
+
+351
+00:37:10,960 --> 00:37:17,840
+My recommendation is like, do not go in there expecting a hard number as revenue goal.
+
+352
+00:37:18,000 --> 00:37:26,400
+And if it doesn't hit, take the entire channel down because these are really dynamic and there are so many things that we can improve on.
+
+353
+00:37:27,760 --> 00:37:31,920
+For example, like, it's totally different off revenue.
+
+354
+00:37:32,720 --> 00:37:35,120
+If I google right now, what is a good ROI?
+
+355
+00:37:36,080 --> 00:37:38,480
+The usual wisdom is 400%.
+
+356
+00:37:39,200 --> 00:37:44,160
+What they mean is like, okay, if you spend $100, you expect $400 coming back.
+
+357
+00:37:45,360 --> 00:37:47,360
+But that is not for app.
+
+358
+00:37:51,360 --> 00:37:55,120
+marketing because for a simple reason we have subscriptions, right?
+
+359
+00:37:56,160 --> 00:38:10,960
+And also all this 400% ORS golden metric is for, for example, if I'm selling T-shirts, yeah, there's a metric I can follow on, but because if I'm a person who buys my T-shirt, will never buy the same T-shirt next month.
+
+360
+00:38:12,240 --> 00:38:17,760
+But app, there's an important metric called time to break even.
+
+361
+00:38:18,960 --> 00:38:24,240
+What it means is it's fine even if you don't get 100% ORS in the first week.
+
+362
+00:38:24,720 --> 00:38:26,960
+I mean, obviously, if we get that, that's good.
+
+363
+00:38:27,280 --> 00:38:37,840
+But even if you get like 40% or 50% or is, it's actually not bad result because we can still improve on, add more keywords, we can fine tune.
+
+364
+00:38:38,320 --> 00:38:42,480
+And also, there is a we can sit check our LTV, right?
+
+365
+00:38:42,960 --> 00:38:49,040
+And because we are bidding for high intent, we know that these users are perfect users of our app.
+
+366
+00:38:50,000 --> 00:38:58,880
+So we can expect we can improve like in app like experience to make sure they don't churn and they if you have a monthly subscription, hopefully.
+
+367
+00:38:59,600 --> 00:39:10,560
+Because if you think about it, cohorted always means we only spend that, let's say we spend three dollars for that install for that user who started this free trial and they did convert.
+
+368
+00:39:10,960 --> 00:39:14,640
+In that case, we only spent three dollars one time for that user and that's it.
+
+369
+00:39:15,280 --> 00:39:21,120
+But the revenue is like, hopefully our app is better and like, not like, there's not huge turn.
+
+370
+00:39:21,840 --> 00:39:24,400
+We can keep on, the revenue is keep coming in.
+
+371
+00:39:24,640 --> 00:39:27,360
+So, there is a time delay.
+
+372
+00:39:28,160 --> 00:39:29,440
+We just have to keep track of it.
+
+373
+00:39:30,240 --> 00:39:35,920
+And so then every app developer has to kind of decide from a cash flow perspective, from a long term business perspective.
+
+374
+00:39:36,480 --> 00:39:43,360
+I mean, I was talking to one person who, you know, because you you hear so much in the industry of, oh, you know, what's your seven day ROAS?
+
+375
+00:39:43,520 --> 00:39:44,640
+What's your thirty day ROAS?
+
+376
+00:39:44,880 --> 00:39:47,280
+You know, are you getting ROAS positive in ninety days?
+
+377
+00:39:47,440 --> 00:39:48,560
+Like, what's a metric?
+
+378
+00:39:48,800 --> 00:39:59,440
+And I was talking to someone who has, like, really great organic traffic, so their business is just spinning off cash, and so their metric was 365 day ROAS.
+
+379
+00:39:59,760 --> 00:40:10,480
+So their metric was, can I spend today and at least get to 100% by the first annual renewal?
+
+380
+00:40:10,880 --> 00:40:12,880
+And for a lot of businesses, that can make sense.
+
+381
+00:40:13,120 --> 00:40:16,640
+Like if the cash flow makes sense, if you're wanting to like really grow.
+
+382
+00:40:17,120 --> 00:40:26,720
+And then the cool thing, like you're saying, is like those people who renewed that first year, you get to ROAS positive in 365 days, which again, it's crazy.
+
+383
+00:40:26,880 --> 00:40:35,360
+It's hard to float that if, if, you know, for a lot of companies, but then like a bunch of those people are going to renew the next year and the next year after that.
+
+384
+00:40:35,600 --> 00:40:39,040
+And so it's an arbitrage opportunity to grow faster now.
+
+385
+00:40:39,360 --> 00:40:46,800
+If you have the cash and you have some level of confidence in those renewals, that you're going to start stacking those cohorts sooner or sooner.
+
+386
+00:40:47,040 --> 00:40:50,480
+That's actually why I want to start advertising for my weather app as soon as possible.
+
+387
+00:40:50,880 --> 00:40:53,040
+And I'm kind of kicking myself for not starting.
+
+388
+00:40:53,440 --> 00:40:56,000
+It's like I should at least be picking up the low hanging fruit.
+
+389
+00:40:56,080 --> 00:41:13,280
+And maybe this is kind of the message for those of you who aren't currently doing it, even for those of you who are and maybe could even spend more than you currently are, is that, I mean, this is magic of the subscription app model is that that LTV is not capped.
+
+390
+00:41:13,600 --> 00:41:24,880
+Even if you have an average LTV for most apps who are reasonably retentive, whatever average you calculate today is likely to just keep going up year after year after year.
+
+391
+00:41:24,880 --> 00:41:25,600
+after year after year.
+
+392
+00:41:26,080 --> 00:41:35,120
+I mean, I was looking at my own app and seven years in, I still have twenty percent of people who subscribed within the first month.
+
+393
+00:41:35,520 --> 00:41:38,160
+So seven years still have twenty percent of people.
+
+394
+00:41:38,560 --> 00:41:53,200
+And so if I can stack more of those cohorts now versus stacking them later, even if I'm not getting one hundred percent ROAS on day seven, if I can afford the cash to do that and expand the business, it's going to pay dividends in the long run.
+
+395
+00:41:53,360 --> 00:41:57,920
+But you just have to make sure you have some level of retention and confidence in that.
+
+396
+00:41:58,160 --> 00:42:02,880
+And then you have the cash and the risk tolerance to go ahead and invest more heavily.
+
+397
+00:42:03,440 --> 00:42:08,960
+Yeah, obviously the caveat is that we have all the basics sorted out.
+
+398
+00:42:09,280 --> 00:42:16,160
+What I mean is the install to free trial ratio, the free trial to conversion ratio, but this is nothing to do with Apple CHS, right?
+
+399
+00:42:16,640 --> 00:42:19,680
+The goal of Apple CHS is bring in new users.
+
+400
+00:42:20,720 --> 00:42:27,040
+We have to like improve those in-app conversion rates anyway ourselves, regardless if you run ASA or not.
+
+401
+00:42:27,440 --> 00:42:31,920
+And one more thing about ROS is ROS should not be the primary metric.
+
+402
+00:42:32,640 --> 00:42:35,280
+It should be a combination of revenue and ROS.
+
+403
+00:42:35,920 --> 00:42:38,560
+For example, we can think of two apps.
+
+404
+00:42:38,880 --> 00:42:39,920
+Let's take Meditation.
+
+405
+00:42:40,560 --> 00:42:42,000
+Let's take Hitspace and Calm.
+
+406
+00:42:42,160 --> 00:42:44,800
+These are imaginary numbers, so don't sue me.
+
+407
+00:42:44,960 --> 00:43:02,800
+Imagine Hitspace and Calm both are running apps at shares and Hitspace is spending, let's say, a million dollars and their ROS is 75% ROS, but Calm is spending two million dollars with 65% ROS.
+
+408
+00:43:03,360 --> 00:43:06,160
+On the paper, it looks like Hitspace is doing much better, right?
+
+409
+00:43:06,320 --> 00:43:10,880
+Like because it's getting 70% ROS within like first 30 days or whatever.
+
+410
+00:43:11,040 --> 00:43:12,400
+But in the long term, the Calm is actually.
+
+411
+00:43:12,960 --> 00:43:52,400
+better positioned to lead because at the end of the one year they both are going to have 100% rs anyway according to their lttv metrics but com generated double the amount of revenue that headspace even though there is a rs is not great for the com so it is a combination of revenue and rs and if we don't consider revenue our competitor will and they will eventually like bid higher of whatever the rs we're getting currently is going to suffer because now they're going to bid higher for their our positive rs keywords so yeah revenue is the one of the major numbers as well because this is what we want, right?
+
+412
+00:43:53,040 --> 00:44:04,320
+Well, and the other thing that revenue takes into account that you that's hard to factor in is that there is some organic lift when you're running ASO.
+
+413
+00:44:04,640 --> 00:44:13,040
+I know this is another kind of controversial topic and I know you have some hypotheses around the impact, but the reality is there's some impact.
+
+414
+00:44:13,840 --> 00:44:22,240
+Whether your hypothesis is correct or, you know, tons of people in the industry are like, Oh, it's going to be magic, like run ASA and then your ASO is going to be amazing.
+
+415
+00:44:22,480 --> 00:44:26,640
+But so what's your hypothesisis on the impact of ASA on ASO?
+
+416
+00:44:27,200 --> 00:44:28,800
+I would call it conspiracy theory.
+
+417
+00:44:29,520 --> 00:44:34,720
+I would not even call it a hypothesis because that's just such a take it with grain of bucket of salt.
+
+418
+00:44:34,880 --> 00:44:40,960
+This is why I love having you on versus like a growth hacker because a growth hacker would have just been like, oh yeah, one hundred percent, this is how it works.
+
+419
+00:44:41,200 --> 00:44:48,320
+You're like, you see the data day in and day out, you're like, this is even a hypothesis because you want to have a level of confidence in the answer.
+
+420
+00:44:48,480 --> 00:44:49,760
+But yeah, what do you think?
+
+421
+00:44:49,920 --> 00:44:56,960
+Because honestly, you probably, your conspiracy theory is probably better than a lot of folks who speak confidently about this.
+
+422
+00:44:57,680 --> 00:45:02,000
+My theory is that download volume correlates with organic ranking.
+
+423
+00:45:02,480 --> 00:45:08,560
+It's one of those trends that it doesn't matter which app, it always correlates with such a strong efficiency.
+
+424
+00:45:08,880 --> 00:45:12,240
+The second factor I think is this where the conspiracy theory comes in.
+
+425
+00:45:12,480 --> 00:45:24,720
+Even at the keyword level, imagine we have we have the same amount of downloads, there's not much huge change in the donor volume, but you start running for a weather app, Apple search ads.
+
+426
+00:45:25,520 --> 00:45:29,600
+Let's say weather radar maybe is one of the features of your app.
+
+427
+00:45:30,000 --> 00:45:31,600
+Yep, that's a great keyword for my app.
+
+428
+00:45:31,760 --> 00:45:31,840
+Yeah.
+
+429
+00:45:32,240 --> 00:45:37,360
+So weather radar, you imagine your current organic ranking is maybe 70 or something.
+
+430
+00:45:37,760 --> 00:45:52,080
+As soon as you start running Apple Search S for that particular weather radar search term and our app generates some installs, you may see the organic ranking go really high, maybe even reaching top 10 or top 20.
+
+431
+00:45:53,200 --> 00:45:56,320
+Just the skyrocketing within but the download volume is the same.
+
+432
+00:45:57,280 --> 00:46:04,560
+That's my conspiracy theory that maybe App Store considers Apple Search as keyword as part of App Store.
+
+433
+00:46:05,520 --> 00:46:17,200
+And now even the App Store algorithm can see that, oh, you know what, this weather app is totally relevant to weather radar because you users are clicking on it and using it and downloading it.
+
+434
+00:46:17,840 --> 00:46:19,680
+But then why wouldn't it change the download volume?
+
+435
+00:46:19,840 --> 00:46:35,840
+If you go from, like, if I start advertising for weather radar and I go from, I'm probably like 200 in that search currently, so I go from 200 to 20, why would download volume not change?
+
+436
+00:46:36,560 --> 00:46:38,400
+I'm only talking about that particular keyword.
+
+437
+00:46:38,640 --> 00:46:42,800
+It's an imaginary hypothesis that we are running Apple searchers for only that keyword.
+
+438
+00:46:43,200 --> 00:46:48,640
+Let's assume our daily download is like 100 units in US and we started.
+
+439
+00:46:49,360 --> 00:46:51,440
+running that keyword for two installs a day.
+
+440
+00:46:51,680 --> 00:46:52,560
+I'm giving an example.
+
+441
+00:46:53,280 --> 00:46:59,600
+Maybe at the end of the week, the download volume is not that high, like 100 versus 102 installs.
+
+442
+00:47:00,320 --> 00:47:03,840
+But the organic ranking for every other keyword may remain the same.
+
+443
+00:47:04,160 --> 00:47:11,280
+But for this particular keyword, what we're running in the opposite chats, we may see a kind of organic ranking uplift.
+
+444
+00:47:11,440 --> 00:47:13,440
+But like I said, take it with a buckle of salt.
+
+445
+00:47:13,760 --> 00:47:14,480
+It may not happen.
+
+446
+00:47:15,040 --> 00:47:21,280
+I don't recommend spending a lot of budget just for that purpose because it may happen, it may not happen.
+
+447
+00:47:22,000 --> 00:48:05,280
+Yeah, it does seem like Apple's search algorithm although still frustrating it doesn't feel like they're still especially great at it um but it does seem like it's gotten more and more sophisticated over the years so the people who who think there's going to be a one-to-one response in taking a certain action might be surprised and like you said yeah it's a lot of money to put on the line with when any kind of algorithm like this there's not a level of certainty on it while we're on the topic the dollar volume arguing rank uh the theory is that it is kind of like a chicken and egg issue for especially for new apps or apps that are actually best in the class, better than all the competitors, but the competitors will always be number one.
+
+448
+00:48:06,480 --> 00:48:27,760
+In that case, don't treat Apple searches as a like a there's a channel we should never run on because this may be the better option because as long as your app is better than computers and they're ranking number one, even then you can actually get high intent as long as we talked about the basic or in app conversion ratios are basic.
+
+449
+00:48:28,640 --> 00:48:29,280
+This is all great.
+
+450
+00:48:29,840 --> 00:48:35,200
+If that's the case, like you don't even need to run a million install campaigns.
+
+451
+00:48:35,360 --> 00:48:41,440
+You can just target those high intent, we're not going to get quantity, but we'll get the quality users.
+
+452
+00:48:41,680 --> 00:48:46,960
+And as long as we're scaling over revenue, why does it matter how much if we're ranking number one or not?
+
+453
+00:48:47,120 --> 00:48:48,480
+I'm talking about apps at charts.
+
+454
+00:48:48,640 --> 00:48:55,440
+Obviously, it matters that if you rank number one, but sometimes it's actually impossible for some keywords, we can never rank number one, right?
+
+455
+00:48:56,080 --> 00:48:57,200
+Yeah, no, that makes sense.
+
+456
+00:48:57,680 --> 00:49:00,560
+And speaking of scaling, that's actually something I wanted to talk to you about.
+
+457
+00:49:01,280 --> 00:50:18,320
+And that's kind of the challenge with App Store search ads is that even though it can be an incredible source of really high intent downloads, the kind of what everybody in the industry talks about it's like well that's great but it's not scalable so how do you think about scalability in app store search ads scalability i mean obviously it cannot we cannot compare apple search ads with meta campaigns or tiktok campaigns because it's app um it's apples versus oranges um we are looking quality versus quantity um in my opinion the best way to scale is to adding more keywords high intent low intent like segmented by it and adding broad match keywords that will literally be exponentially increasing our awareness and more countries by default that's a easy way to scale and just monitor campaigns and employ some kind of a workflow like campaign structure should be in a such a way that it's easy to maintain them I'm not a big fan of like creating hundreds of campaigns for one country because you only have one competitor set of keywords, right?
+
+458
+00:50:18,560 --> 00:50:20,640
+Like we cannot have multiple competitors.
+
+459
+00:50:21,360 --> 00:50:23,600
+We don't need to run different different ad groups.
+
+460
+00:50:25,120 --> 00:50:31,680
+Yeah, the bottom line is adding more keywords, relevant keywords, the more relevant the better they are.
+
+461
+00:50:32,560 --> 00:50:36,240
+And adding more, there's always computer share that we can improve.
+
+462
+00:50:36,960 --> 00:50:39,680
+And brand is something, as we talked about.
+
+463
+00:50:40,480 --> 00:50:41,360
+It is its own thing.
+
+464
+00:50:41,920 --> 00:50:46,880
+We do not consider brand as our, because brand is kind of steady flow, right?
+
+465
+00:50:47,120 --> 00:50:51,440
+Like, I mean, it's a good thing that brand impressions go up, but that's how I scale.
+
+466
+00:50:52,400 --> 00:50:52,480
+Yeah.
+
+467
+00:50:52,880 --> 00:50:57,520
+But then what are they, I mean, do you see, I guess it's just going to be so contextual, right?
+
+468
+00:50:57,680 --> 00:51:00,640
+It's like for a health and fitness app, it's like if they're willing to spend the...
+
+469
+00:51:00,640 --> 00:51:06,240
+It's like if they're willing to spend the money, it can be a massive channel because there's a ton of high-intent people coming and searching relevant keywords.
+
+470
+00:51:06,480 --> 00:51:14,640
+But then if you're in a niche, a really small niche where you're really only relevant to a very small number of searches, then you're going to hit the wall sooner, right?
+
+471
+00:51:14,880 --> 00:51:26,080
+So it's just very contextual of when you're going to hit the wall, but then you don't know that you've really hit the wall until you've done the experiments with Broadmatch and experimented with the bidding and tried stuff, right?
+
+472
+00:51:26,640 --> 00:51:26,720
+Yeah.
+
+473
+00:51:27,280 --> 00:51:34,320
+And Apple search is one of those things where the computers are kind of can dictate what we can do next.
+
+474
+00:51:35,040 --> 00:51:36,000
+For example, imagine...
+
+475
+00:51:36,080 --> 00:51:45,120
+Imagine there's a weather app and imagine there's for some weird reason there's no weather app in Apple Searchers ever running Apple Searchers.
+
+476
+00:51:46,240 --> 00:51:48,480
+Your app is the only one that has Apple Searchers.
+
+477
+00:51:48,640 --> 00:51:52,640
+In that case, your CPA will be like probably in cents in US.
+
+478
+00:51:53,440 --> 00:51:56,960
+Your RS can skyrocket, but that's like a dream scenario.
+
+479
+00:51:57,280 --> 00:52:02,800
+But imagine you're like you have like 25 weather computers, weather app computers in the United States.
+
+480
+00:52:03,440 --> 00:52:09,040
+Unfortunately, it means that for the same number of installs, your CPA probably is like 10 times now.
+
+481
+00:52:09,360 --> 00:52:16,000
+But the good thing is computers also dynamic just because they're biddinging for a keyword doesn't mean that Apple considers them relevant.
+
+482
+00:52:16,560 --> 00:52:18,480
+Same phenomenal brand as well.
+
+483
+00:52:19,440 --> 00:52:33,920
+If your competitor running same weather radar keyword and for some reason your app is performing better and Apple can see that, even if you're bidding half of your competitor, Apple will still prefer your ad because Apple has to make money too, right?
+
+484
+00:52:34,400 --> 00:52:38,720
+They can't just show the other app if it's not getting too much of traction.
+
+485
+00:52:39,120 --> 00:52:39,200
+Yeah.
+
+486
+00:52:39,680 --> 00:52:40,560
+Yeah, that's interesting.
+
+487
+00:52:41,040 --> 00:52:49,920
+And so then, part of what you're saying is like, even if you are super niche and you're like, oh, it's going gonna tap me out really quick.
+
+488
+00:52:50,240 --> 00:52:52,400
+Go get those keywords because they're gonna be so cheap.
+
+489
+00:52:52,560 --> 00:53:06,960
+So if you're in a niche and you're not running Apple search ads, you're probably leaving money on the table because there probably are some high intent, low traffic keywords that still you're just printing money if you can pick those up.
+
+490
+00:53:07,520 --> 00:53:09,760
+Yeah, we just need to adjust our expectations.
+
+491
+00:53:10,000 --> 00:53:15,280
+Like we can have like a million dollar day event, you know, meta, meta kind of, you know, blitz.
+
+492
+00:53:16,320 --> 00:53:19,840
+But if we have our expectations set and yeah.
+
+493
+00:53:20,400 --> 00:53:23,680
+And the interesting thing too is like even though meta you can.
+
+494
+00:53:24,160 --> 00:53:27,680
+and theoretically scale even for a niche app.
+
+495
+00:53:28,240 --> 00:53:31,440
+You'll saturate that kind of ideal customer profile.
+
+496
+00:53:32,000 --> 00:53:38,640
+And so, yeah, you can scale near infinite on Meta, but you might not scale profitably near infinite because it's similar.
+
+497
+00:53:39,200 --> 00:53:49,760
+As you start bidding higher and higher, as you start saturating your market and those high intent users that you're going to be able to get to, then your costs there will go up too.
+
+498
+00:53:49,920 --> 00:53:54,480
+Because now you're now you're ending up with medium intent people and then low intent people.
+
+499
+00:53:54,720 --> 00:54:09,760
+So like nothing is truly infinitely scalable unless you're, I mean, like I guess these like TMU and stuff like that, like when anybody is truly a potential customer, there are, like you can scale to a level that a lot of apps can't, but most apps aren't that.
+
+500
+00:54:11,200 --> 00:54:24,400
+And one of the interesting things is that how ad channels can behave differently for the same app, obviously that any mature app company will be using multiple ad channels at the same time, Meta and Apple Search S and Google whatnot.
+
+501
+00:54:25,440 --> 00:54:30,000
+The difference is that Apple Search S is a relatively easier channel to maintain.
+
+502
+00:54:30,640 --> 00:54:48,960
+The reason is we don't have to create these influencer videos, make it quirky, like, and there's a thing called fatigue., imagine you probably notice that if you're using Instagram and you see the same ad every day, like it it something will set in and will never like it's actually create may create a version to the app.
+
+503
+00:54:50,160 --> 00:54:52,080
+But Apple searchers, we don't have that problem, right?
+
+504
+00:54:52,240 --> 00:54:56,800
+Because we are targeting new users looking exactly for that keyword.
+
+505
+00:54:57,200 --> 00:54:59,600
+So the ad fitigue is not a really huge thing.
+
+506
+00:55:00,400 --> 00:55:04,960
+There are some display formats like search tabs or today tabs.
+
+507
+00:55:05,920 --> 00:55:52,560
+But it's not like that extent of Instagram where we see like ten ads of the same app in the row and it's not that great experience and it's easier to scale because we're not dealing with creatives apple search as creatives is our whatever the screenshots we have metadata right so and the keywords we don't change keywords right like it's always the same keywords we may add it we may i mean we may pause them or we may bid lower but a weather radar until your app exists in the app store the weather radar is always be relevant we don't need to think creatively and it's great for people like us who are developers because we don't have to worry about creative videos that catch people's attention.
+
+508
+00:55:52,960 --> 00:56:16,880
+Yeah, speaking of creative and app store screenshots and stuff, though, how has product pages and being able to send specific keywords to specific product pages started to change the game because there is a certain level now where you can experiment a little more with quote unquote creative on the app store because you can create a separate product page for these different kind of use cases.
+
+509
+00:56:18,000 --> 00:56:23,520
+Have you seen that help accounts scale and get to better robots?
+
+510
+00:56:23,920 --> 00:56:34,160
+Those are good problems to have because if you're considering a keyword specific custom product pages, it means that we already maximized what are the impression share and we are reaching.
+
+511
+00:56:34,640 --> 00:56:42,480
+Let's assume like there's a shopping app and they maximized 80% of your impression share for all generic terms.
+
+512
+00:56:44,000 --> 00:56:55,600
+Where custom product pages can move the needle is let's assume there's a Timo is running a ad for Thanksgiving and it's like a month-long feature, right?
+
+513
+00:56:56,640 --> 00:57:08,880
+But Timo won't say Thanksgiving in the title and subtitle and screenshots, but they can create its entire custom product page just for Thanksgiving and have Thanksgiving all across only for United States.
+
+514
+00:57:09,200 --> 00:57:16,080
+And they can use that to scale up those Thanksgiving people who are creating, I'm saying Thanksgiving, it should be Black Friday, right?
+
+515
+00:57:16,320 --> 00:57:27,520
+Black Friday to use and yeah, that way, like, you know, Timothy can scale up those keywords and in a indirect way, I have also like custom product pages for AB testing.
+
+516
+00:57:27,840 --> 00:57:49,520
+There's a one easy way to like simply implement AB testing and see and you can even use similar search terms like, for example, bid for half the United States states for our default product page and use utilize the new custom product page we want to test and see which one performs better and just compare each.
+
+517
+00:57:50,640 --> 00:58:13,120
+There shouldn't be much difference between East Coast and West Coast anyway or you can also try ad scheduling which means during the first half of the day you can use that but I'm not a big fan because the time of the day may dictate for example like if I'm a yoga app I may be looking in the morning right so the geographical separation might be a good place to test.
+
+518
+00:58:14,240 --> 00:58:15,120
+Yeah, interesting.
+
+519
+00:58:15,520 --> 00:58:18,880
+All right, well, it's been so fun chatting today, but we do need to wrap up.
+
+520
+00:58:19,440 --> 00:58:23,920
+As we do, is there anything else you want to share or anything you want to tell the audience?
+
+521
+00:58:24,720 --> 00:58:31,760
+Yeah, for new apps, use Apple Search SS kind of customer discovery thing.
+
+522
+00:58:32,160 --> 00:58:36,080
+And you can, I mean, you don't have to spend daily budgets like hundreds of dollars.
+
+523
+00:58:36,320 --> 00:58:40,240
+You can even get five, six installs a day spending 10, 20 dollars.
+
+524
+00:58:40,960 --> 00:58:47,200
+But use that as high intent and use them as because you want to target high intent users and improve your app.
+
+525
+00:58:47,520 --> 00:58:48,320
+And check us out.
+
+526
+00:58:48,320 --> 00:58:52,800
+Once out, our platform is designed to scale Apple Search Ads profitably.
+
+527
+00:58:53,440 --> 00:58:58,480
+Scale Search Ads optimization dot com and find me on LinkedIn and ask me any questions.
+
+528
+00:58:59,360 --> 00:59:01,760
+I'm always happy to talk about Apple Search Ads.
+
+529
+00:59:02,240 --> 00:59:02,560
+Awesome.
+
+530
+00:59:02,720 --> 00:59:13,440
+And as I've kind of been wrapping up these podcasts too, if you have specific questions, instead of hitting them up on LinkedIn where only the two of you can talk, feel free to do it on the subclub community.
+
+531
+00:59:13,600 --> 00:59:16,560
+So we'll post this podcast on the subclub community.
+
+532
+00:59:17,280 --> 00:59:26,560
+You can respond to that or just tag Dilip so that your questions can be beneficial to the rest of the community as well.
+
+533
+00:59:26,800 --> 00:59:34,240
+But yeah, I was checking out your company and again, it's really cool that you started this from a data perspective.
+
+534
+00:59:35,440 --> 00:59:49,600
+And, and, you know, it's clear that you've, you know, built these algorithms to make it so much easier for folks to, um, do a lot of things that we talked about today, um, to manage those bids, to automate some of that as well.
+
+535
+00:59:50,320 --> 00:59:54,560
+So yeah, it looks like a really cool platform and, uh, something I'm going to be checking out myself.
+
+536
+00:59:54,720 --> 00:59:55,760
+Yeah, sounds great.
+
+537
+00:59:56,320 --> 00:59:56,720
+Awesome.
+
+538
+00:59:56,880 --> 00:59:59,840
+Thanks for joining me and, uh, thanks for sharing all these great nuggets with folks.
+
+539
+01:00:02,640 --> 01:00:03,920
+Thanks so much for listening.
+
+540
+01:00:04,880 --> 01:00:08,320
+If you have a minute, please leave a review in your favorite podcast player.
+
+541
+01:00:09,200 --> 01:00:14,000
+You can also stop by chat dot subclub dot com to join our private community.
