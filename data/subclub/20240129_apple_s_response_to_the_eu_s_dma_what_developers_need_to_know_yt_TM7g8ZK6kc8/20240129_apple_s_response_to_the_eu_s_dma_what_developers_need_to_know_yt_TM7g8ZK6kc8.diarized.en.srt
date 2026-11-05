@@ -1,0 +1,3783 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_00] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_00] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_00] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_00] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,560 --> 00:00:50,640
+[SPEAKER_00] Hello, everyone, and welcome to this improvised panel of experts on the 24 hours of DMA compliance with Apple.
+
+7
+00:00:51,200 --> 00:00:53,840
+[SPEAKER_00] I haven't slept much, so please excuse any.
+
+8
+00:00:54,400 --> 00:00:58,320
+[SPEAKER_02] Yeah, David, regulatory capture doesn't help you sleep at night like it does me.
+
+9
+00:01:01,440 --> 00:01:11,200
+[SPEAKER_00] So those of you listening on the Subclub podcast, this is a live recording Friday less than 24 hours from the announcement of Apple's compliance with the DMA.
+
+10
+00:01:11,520 --> 00:01:13,440
+[SPEAKER_00] So let's do a quick ro round of intros.
+
+11
+00:01:13,680 --> 00:01:15,040
+[SPEAKER_00] Let's start it off with Gabriel.
+
+12
+00:01:15,200 --> 00:01:21,440
+[SPEAKER_00] I actually don't know Gabriel, so happy to learn a bit about Gabriel and Runway ML real quick.
+
+13
+00:01:21,840 --> 00:01:22,080
+[SPEAKER_01] For sure.
+
+14
+00:01:22,240 --> 00:01:26,720
+[SPEAKER_01] So Gabriel, one of the founders of Runway, we are a mobile release management platform.
+
+15
+00:01:27,440 --> 00:01:30,160
+[SPEAKER_01] We work with medium to larger size mobile teams.
+
+16
+00:01:30,240 --> 00:01:34,800
+[SPEAKER_01] So I think a bit of an interesting perspective here and excited to chat with you all.
+
+17
+00:01:34,880 --> 00:01:35,600
+[SPEAKER_01] Thanks for having me.
+
+18
+00:01:35,840 --> 00:01:36,240
+[SPEAKER_00] Awesome.
+
+19
+00:01:36,400 --> 00:01:37,600
+[SPEAKER_03] Nico, I'm Nico.
+
+20
+00:01:37,760 --> 00:01:42,720
+[SPEAKER_03] I'm the founder of adjacent, which is an early stage fund focused on the mobile ecosystem.
+
+21
+00:01:43,280 --> 00:01:49,600
+[SPEAKER_03] So I invest in a lot of consumer subscription companies, prosumer subscription companies and incredible infrastructure companies that support them.
+
+22
+00:01:52,000 --> 00:01:52,320
+[SPEAKER_02] Jacob?
+
+23
+00:01:52,960 --> 00:01:55,120
+[SPEAKER_02] I'm the chief poster here at RevenueCat.
+
+24
+00:01:55,200 --> 00:01:56,320
+[SPEAKER_02] I've the biggest beard.
+
+25
+00:01:56,720 --> 00:01:57,680
+[SPEAKER_02] I think by a mile.
+
+26
+00:01:57,920 --> 00:02:01,280
+[SPEAKER_02] And I achieved it all without regulation, which is really what's important.
+
+27
+00:02:02,080 --> 00:02:07,360
+[SPEAKER_02] I'm excited to use the research of other people to add hot takes to what happened.
+
+28
+00:02:07,920 --> 00:02:11,520
+[SPEAKER_00] I think everyone knows what RevenueCat does at this point, but give us ten seconds.
+
+29
+00:02:12,720 --> 00:02:14,160
+[SPEAKER_02] We help developers make more money.
+
+30
+00:02:14,640 --> 00:02:23,600
+[SPEAKER_02] And so Jens, who is just a second, David and everybody internally have been ramping the last 24 hours or whatever to figure out how and if developers can make more money with these changes.
+
+31
+00:02:23,680 --> 00:02:24,640
+[SPEAKER_02] But we make infrastructure.
+
+32
+00:02:25,680 --> 00:02:28,240
+[SPEAKER_02] for processing payments on app stores and beyond.
+
+33
+00:02:28,400 --> 00:02:31,040
+[SPEAKER_02] So it's been an interesting 24 hours for us.
+
+34
+00:02:32,240 --> 00:02:32,800
+[SPEAKER_04] And Jens.
+
+35
+00:02:33,360 --> 00:02:36,880
+[SPEAKER_04] Yeah, I'm Head of Product at RevenueCat and Jacob stole all my thunder.
+
+36
+00:02:37,040 --> 00:02:38,160
+[SPEAKER_04] That's what we've been thinking about.
+
+37
+00:02:39,040 --> 00:02:45,840
+[SPEAKER_04] What does this mean for RevenueCat, the product, but then also, again, all of our customers, because in the end, that's what we're here for, helping developers make more money.
+
+38
+00:02:46,320 --> 00:02:47,440
+[SPEAKER_04] Jens did spreadsheets.
+
+39
+00:02:47,680 --> 00:02:48,720
+[SPEAKER_04] Nico did equations.
+
+40
+00:02:49,280 --> 00:02:53,040
+[SPEAKER_02] So between David and I, we just have to do hot takes.
+
+41
+00:02:53,600 --> 00:02:55,520
+[SPEAKER_02] It's going to be a fully informed session.
+
+42
+00:02:56,000 --> 00:02:56,000
+[SPEAKER_00] Okay.
+
+43
+00:02:56,400 --> 00:02:59,280
+[SPEAKER_00] And then I'm David Bernard, growth advocate at RevenueCat.
+
+44
+00:02:59,360 --> 00:03:11,200
+[SPEAKER_00] So I host a subclub podcast run the community and do a bunch of just random stuff like staying up all night reading European regulations to help our developers make more money and understand what's going on.
+
+45
+00:03:11,600 --> 00:03:11,680
+[SPEAKER_00] Okay.
+
+46
+00:03:12,000 --> 00:03:14,960
+[SPEAKER_00] So I wanted to kick it off with what is the DMA.
+
+47
+00:03:15,200 --> 00:03:20,720
+[SPEAKER_00] So I'm going to just read a couple of highlights and we'll go around the horn to kind of fill in any details I missed.
+
+48
+00:03:20,960 --> 00:03:33,920
+[SPEAKER_00] But essentially the Digital Markets Act, the DMA designates certain large tech services as, quote, gatekeepers, which must comply with the new obligations and rules by March 2024.
+
+49
+00:03:34,000 --> 00:03:46,240
+[SPEAKER_00] So that's why we're hearing the news yesterday is because compliance was mandated as of March, but the gatekeepers were only announced six months ago, although most of the gatekeepers probably knew that they were going to be announced as gatekeepers.
+
+50
+00:03:46,480 --> 00:03:51,840
+[SPEAKER_00] And then just to give folks a taste, I'm going to read one of the provisions, a short one from the DMA.
+
+51
+00:03:52,240 --> 00:03:56,480
+[SPEAKER_00] So this is on the provision for alternate in-app purchases and out-of-app payments.
+
+52
+00:03:56,800 --> 00:04:22,160
+[SPEAKER_00] The gatekeeper shall not require end users to use or business users to use, to offer or to interpolate with an identification service, a web browser engine or payment service or technical services that support the provision of payment services such as payment systems for in-app purchases of that gatekeeper in the context of services provided by the business users using that gatekeeper's core platform of services.
+
+53
+00:04:22,960 --> 00:04:24,400
+[SPEAKER_02] I've already stopped making apps.
+
+54
+00:04:26,480 --> 00:04:26,960
+[SPEAKER_00] Hot takes.
+
+55
+00:04:27,120 --> 00:04:27,840
+[SPEAKER_00] Let's go around the room.
+
+56
+00:04:28,080 --> 00:04:28,960
+[SPEAKER_00] Like, what is a DMA?
+
+57
+00:04:29,200 --> 00:04:30,480
+[SPEAKER_00] Give it to us in simpler terms.
+
+58
+00:04:30,640 --> 00:04:33,440
+[SPEAKER_00] Jacob, you start because I know yours can be the spicyest take.
+
+59
+00:04:33,840 --> 00:04:34,160
+[SPEAKER_02] Well, okay.
+
+60
+00:04:34,400 --> 00:04:35,680
+[SPEAKER_02] So I forget when was this passed?
+
+61
+00:04:35,760 --> 00:04:36,800
+[SPEAKER_02] This was like 2022.
+
+62
+00:04:36,880 --> 00:04:38,720
+[SPEAKER_02] 2022.
+
+63
+00:04:39,280 --> 00:04:41,440
+[SPEAKER_02] I still don't understand how the laws work in Europe.
+
+64
+00:04:41,680 --> 00:04:44,560
+[SPEAKER_02] I ask every time I'm with a European person and it doesn't usually help.
+
+65
+00:04:45,280 --> 00:04:50,240
+[SPEAKER_02] But this is an EU law, meaning it was passed in Brussels at the European Union level to regulate.
+
+66
+00:04:50,720 --> 00:04:52,640
+[SPEAKER_02] I guess it's because the EU regulates commerce.
+
+67
+00:04:52,800 --> 00:04:54,240
+[SPEAKER_02] Don't ask me about the politics of it.
+
+68
+00:04:54,320 --> 00:04:55,200
+[SPEAKER_02] I don't really understand that.
+
+69
+00:04:55,440 --> 00:05:03,360
+[SPEAKER_02] But essentially, this was a regulatory move to essentially limit the power of a handful of mostly American companies.
+
+70
+00:05:03,760 --> 00:05:08,960
+[SPEAKER_02] And folks on the list are like Meta, Google, Apple, ByteDance, I believe, made the list.
+
+71
+00:05:09,120 --> 00:05:09,920
+[SPEAKER_02] And there's a couple of others.
+
+72
+00:05:10,400 --> 00:05:13,040
+[SPEAKER_02] And it has a bunch of stuff across different verticals.
+
+73
+00:05:13,120 --> 00:05:26,640
+[SPEAKER_02] But in specifically, there were provisions here that were meant to hit Apple's earned monopoly on the app stores, which there's been agitation from folks like Tim Sweeney at Epic and others that the 30% Spotify, especially Spotify.
+
+74
+00:05:26,720 --> 00:05:27,520
+[SPEAKER_02] Yeah, I guess in the EU.
+
+75
+00:05:27,680 --> 00:05:27,920
+[SPEAKER_02] In the EU.
+
+76
+00:05:28,240 --> 00:05:32,000
+[SPEAKER_02] Constituents, they're probably the biggest one that's complained that this is just highway robbery.
+
+77
+00:05:32,160 --> 00:05:32,800
+[SPEAKER_02] It's unfair.
+
+78
+00:05:33,200 --> 00:05:39,920
+[SPEAKER_02] We need the government to come in and make, you know, Apple's not being forced by the markets to compete at a fair number here.
+
+79
+00:05:40,160 --> 00:05:44,560
+[SPEAKER_02] And so my understanding is that the DMA was meant to force Apple to respond to market debate.
+
+80
+00:05:44,720 --> 00:05:45,360
+[SPEAKER_02] Well, I don't know.
+
+81
+00:05:45,760 --> 00:05:46,160
+[SPEAKER_02] Respond to what?
+
+82
+00:05:46,320 --> 00:05:48,640
+[SPEAKER_02] I guess respond to what European regulators wanted.
+
+83
+00:05:49,280 --> 00:05:50,240
+[SPEAKER_02] So that's my take.
+
+84
+00:05:50,720 --> 00:05:53,360
+[SPEAKER_02] Jens, can you give a slightly more balanced take on it?
+
+85
+00:05:53,520 --> 00:05:53,920
+[SPEAKER_02] I don't know.
+
+86
+00:05:54,320 --> 00:05:56,000
+[SPEAKER_00] As a European, you're a Yeah, right.
+
+87
+00:05:56,240 --> 00:05:56,640
+[SPEAKER_00] Yeah, yeah.
+
+88
+00:05:57,040 --> 00:06:04,560
+[SPEAKER_04] As a, you're the closest geographically to Brussels, I believe my representatives had a say in this.
+
+89
+00:06:04,880 --> 00:06:04,960
+[SPEAKER_04] Yeah.
+
+90
+00:06:05,120 --> 00:06:06,320
+[SPEAKER_04] Why did you vote for this, Jens?
+
+91
+00:06:06,560 --> 00:06:07,120
+[SPEAKER_04] Please explain.
+
+92
+00:06:08,080 --> 00:06:08,160
+[SPEAKER_04] No.
+
+93
+00:06:08,800 --> 00:06:20,240
+[SPEAKER_04] So I think the positive take of this is obviously like instilling competition, fostering competition in the payment space where you can basically say, well, if you want an iPhone, you have to go through Apple.
+
+94
+00:06:20,720 --> 00:06:32,000
+[SPEAKER_04] And then the question is kind of like back in the day with Windows and the Internet Explorer, is there some kind of unfair tying going on of the store and the device and the platform?
+
+95
+00:06:32,320 --> 00:06:32,480
+[SPEAKER_04] Right.
+
+96
+00:06:32,640 --> 00:06:34,480
+[SPEAKER_04] So I think that's kind of the intention.
+
+97
+00:06:34,720 --> 00:06:34,880
+[SPEAKER_04] Right.
+
+98
+00:06:35,040 --> 00:06:36,480
+[SPEAKER_04] The intention is just more competition.
+
+99
+00:06:37,280 --> 00:06:44,160
+[SPEAKER_04] provide alternative options so that there's some real choice going on where right now, if you want to be on iOS, you have to be on the App Store.
+
+100
+00:06:44,240 --> 00:06:46,320
+[SPEAKER_04] If you want to be on the App Store, you have to use Inner Payment.
+
+101
+00:06:46,400 --> 00:06:47,760
+[SPEAKER_04] So that is, I think, like the positive spin.
+
+102
+00:06:48,400 --> 00:06:50,000
+[SPEAKER_02] To create a market within iOS, right?
+
+103
+00:06:50,160 --> 00:06:50,480
+[SPEAKER_02] Within it.
+
+104
+00:06:50,720 --> 00:06:51,360
+[SPEAKER_02] Exactly, exactly.
+
+105
+00:06:51,520 --> 00:06:54,480
+[SPEAKER_04] Because obviously there is a market between iOS and Android, right?
+
+106
+00:06:54,800 --> 00:07:06,640
+[SPEAKER_04] And also, if you look at iOS versus Android, Android has always had a bit of a different rule set, even though Google over time has tried to, I guess, make Google play more of the only avenue and kind of gotten closer to Apple's regulations.
+
+107
+00:07:06,880 --> 00:07:09,680
+[SPEAKER_04] But certainly iOS is still the more lockdown environment, right?
+
+108
+00:07:09,920 --> 00:07:16,320
+[SPEAKER_04] So I think that's kind of the positive spin on the regulation itself, at least the intent of the regulation, let's put it that way.
+
+109
+00:07:16,560 --> 00:07:22,000
+[SPEAKER_00] Nico, Gabriel, anything to add to that summary of the intent and other provisions of the DMA?
+
+110
+00:07:22,720 --> 00:07:25,120
+[SPEAKER_01] I would personally leave the payment stuff to the experts.
+
+111
+00:07:25,360 --> 00:07:36,240
+[SPEAKER_01] From our perspective, we're moving from a place where Apple has monopolized the paperwork and the extra kind of information you need to supply when you're submitting, releasing your apps, and that continues.
+
+112
+00:07:36,560 --> 00:07:37,280
+[SPEAKER_01] There's just more of it.
+
+113
+00:07:37,600 --> 00:07:43,040
+[SPEAKER_01] So it seems like with the installation sheets, the labeling that has to happen, it's still very much controlled by Apple.
+
+114
+00:07:43,440 --> 00:07:48,320
+[SPEAKER_01] There's more, hopefully, on the other side of all that extra work that you get out of it, but it still comes with headaches.
+
+115
+00:07:48,880 --> 00:07:51,200
+[SPEAKER_01] and it's still very much controlled by Apple.
+
+116
+00:07:51,920 --> 00:07:58,880
+[SPEAKER_01] So we view it from that perspective, more work, more hassle, more paperwork and not fun stuff that comes with getting your apps out the door.
+
+117
+00:07:59,760 --> 00:08:10,960
+[SPEAKER_03] I guess my overarching comment would be that I do believe that the EU likes to regulate and you can judge that one way or another, but I think in this case specifically it does come with more options.
+
+118
+00:08:11,920 --> 00:08:24,400
+[SPEAKER_03] So you can default to the status quo, which means it doesn't harm if you just consider where we are today, but then it opens up an alternative and I'm sure we're going to talk about that a lot and how good or bad it is.
+
+119
+00:08:24,800 --> 00:08:27,280
+[SPEAKER_03] and when it actually makes sense to opt for that.
+
+120
+00:08:27,840 --> 00:08:33,360
+[SPEAKER_03] But I do believe that in this case, actually, there will be innovation coming from it, which is weird, right?
+
+121
+00:08:33,680 --> 00:08:36,400
+[SPEAKER_03] Because usually EU regulation is maybe counter to that.
+
+122
+00:08:37,040 --> 00:08:43,520
+[SPEAKER_03] And I think that in this case, we will actually see some new things that are not possible today.
+
+123
+00:08:44,000 --> 00:08:45,360
+[SPEAKER_03] And I think that is a positive.
+
+124
+00:08:46,160 --> 00:08:50,800
+[SPEAKER_00] We all probably agree the intent behind the DMA is good.
+
+125
+00:08:51,760 --> 00:08:58,960
+[SPEAKER_00] I think a lot of our hot takes on the DMA being bad is more just the bureaucracy of it all.
+
+126
+00:08:59,360 --> 00:09:00,000
+[SPEAKER_00] I mean, personally.
+
+127
+00:09:00,080 --> 00:09:04,560
+[SPEAKER_00] Personally and even professionally, I wish for more competition and more openness and everything else.
+
+128
+00:09:04,800 --> 00:09:06,960
+[SPEAKER_00] And I think that was the intent of the DMA.
+
+129
+00:09:07,280 --> 00:09:13,520
+[SPEAKER_00] But part of the reason I read that excerpt is that whenever you do regulate, it's such dense wording.
+
+130
+00:09:13,840 --> 00:09:16,640
+[SPEAKER_00] You're trying to cover cases you can't predict and otherwise.
+
+131
+00:09:17,200 --> 00:09:25,600
+[SPEAKER_00] But I do think this opens a door and I think Denis' point and one thing to recognize too is like this is the start of negotiations, this is not the end of negotiations.
+
+132
+00:09:26,000 --> 00:09:35,840
+[SPEAKER_00] So as we talk through the details here, like the EU is going to have a chance to say, no, Apple, actually, we're going to fine you two billion dollars if you don't change it in this way based on third party compass.
+
+133
+00:09:36,160 --> 00:09:40,640
+[SPEAKER_00] Now that's going to be litigated over months and years, but this is a starting point, not the end point.
+
+134
+00:09:41,040 --> 00:09:44,880
+[SPEAKER_02] I kind of skipped over summarizing what actually impacts the DMA.
+
+135
+00:09:44,960 --> 00:09:47,840
+[SPEAKER_02] Like Gabriel was kind of alluding to, there's kind of multiple parts of this.
+
+136
+00:09:48,000 --> 00:09:55,200
+[SPEAKER_02] Like one is there's a whole new mechanism for deploying apps, essentially sideloading, but it's very regulated, it's very controlled.
+
+137
+00:09:55,680 --> 00:10:00,240
+[SPEAKER_02] It's not like enterprise distribution where you could just download an app that's signed with some kind of certificate.
+
+138
+00:10:00,400 --> 00:10:04,480
+[SPEAKER_02] There has to be this, there's this intermediary marketplace thing that they created, which requires all these.
+
+139
+00:10:04,720 --> 00:10:07,840
+[SPEAKER_02] We could do a whole podcast just on what it takes to create the marketplace.
+
+140
+00:10:08,320 --> 00:10:14,400
+[SPEAKER_02] Then there's, I think, the second big pillar that's probably also up for debate.
+
+141
+00:10:14,480 --> 00:10:24,160
+[SPEAKER_02] And then I guess, like, thirdly, there's, which would probably be my most exciting thing to talk about would be the metagame of what's going to happen and the metastrategy of the EU versus Apple versus Epic, et cetera.
+
+142
+00:10:24,480 --> 00:10:25,520
+[SPEAKER_00] So we've got an overview.
+
+143
+00:10:25,680 --> 00:10:31,200
+[SPEAKER_00] The DMA, big European regulation, well intentioned is going to absolutely change some things.
+
+144
+00:10:31,680 --> 00:10:32,560
+[SPEAKER_00] This is a starting point.
+
+145
+00:10:32,960 --> 00:10:41,360
+[SPEAKER_00] So now let's talk about Apple's response to the DMA, because that is exactly how it's going to play out, is how Apple responded to the DMA.
+
+146
+00:10:41,760 --> 00:10:48,880
+[SPEAKER_00] And then I think we can also twine some opportunities where the EU may actually force some changes that will create even more opportunities.
+
+147
+00:10:49,680 --> 00:10:52,480
+[SPEAKER_00] So yes, let's start with at a high level, those three things.
+
+148
+00:10:52,640 --> 00:10:54,560
+[SPEAKER_00] Like what are the big changes with marketplace?
+
+149
+00:10:54,640 --> 00:10:55,840
+[SPEAKER_00] What are the big changes with fees?
+
+150
+00:10:55,920 --> 00:10:57,680
+[SPEAKER_00] And what are the other big changes that it enables?
+
+151
+00:10:58,080 --> 00:11:00,720
+[SPEAKER_00] Let's start with the simplest one then, is the fees.
+
+152
+00:11:00,880 --> 00:11:01,920
+[SPEAKER_00] And Jacob, you started that.
+
+153
+00:11:02,000 --> 00:11:03,600
+[SPEAKER_00] So you can choose your own adventure.
+
+154
+00:11:03,920 --> 00:11:04,000
+[SPEAKER_02] Yeah.
+
+155
+00:11:05,120 --> 00:11:07,280
+[SPEAKER_02] Choose your own adventure in the European Union by Tim Apple.
+
+156
+00:11:07,760 --> 00:11:08,240
+[SPEAKER_02] Can't wait.
+
+157
+00:11:08,640 --> 00:11:14,080
+[SPEAKER_00] You can choose these new capabilities or you can default to the status quo.
+
+158
+00:11:14,720 --> 00:11:15,920
+[SPEAKER_02] There's two new business models.
+
+159
+00:11:16,320 --> 00:11:18,400
+[SPEAKER_02] There's the old business model and then there's the new business model.
+
+160
+00:11:19,040 --> 00:11:24,240
+[SPEAKER_02] If you want to be distributed in one of these third party stores, you have to use the new business model, I think.
+
+161
+00:11:24,240 --> 00:11:24,240
+[SPEAKER_02] model.
+
+162
+00:11:24,320 --> 00:11:25,680
+[SPEAKER_02] I think, correct me if I'm wrong.
+
+163
+00:11:27,360 --> 00:11:30,960
+[SPEAKER_02] However, you can't use a third party store and still use the new business model.
+
+164
+00:11:31,600 --> 00:11:32,960
+[SPEAKER_00] Decision tree step one.
+
+165
+00:11:33,280 --> 00:11:33,360
+[SPEAKER_04] Yeah.
+
+166
+00:11:33,760 --> 00:11:35,600
+[SPEAKER_04] So every developer gets to make this choice.
+
+167
+00:11:35,920 --> 00:11:38,960
+[SPEAKER_02] Do I choose the new business model or do I stay on the old business model?
+
+168
+00:11:39,520 --> 00:11:42,160
+[SPEAKER_02] Apple has not indicated that this is a two-way door.
+
+169
+00:11:42,640 --> 00:11:47,200
+[SPEAKER_02] David's got some rumors he's heard that maybe it's a two-way door, but like we haven't heard anything.
+
+170
+00:11:47,680 --> 00:11:52,240
+[SPEAKER_02] And so that's, I think, the first thing is what is this new deal and is it good for developers or not?
+
+171
+00:11:52,720 --> 00:11:53,840
+[SPEAKER_03] We've talked about this before.
+
+172
+00:11:54,080 --> 00:12:04,960
+[SPEAKER_03] Also, I think at different points that there's already been a trend of mobile first companies starting to move some of their conversions online to circumvent the Apple Cut.
+
+173
+00:12:05,360 --> 00:12:06,560
+[SPEAKER_03] And that is a natural motion.
+
+174
+00:12:06,720 --> 00:12:08,800
+[SPEAKER_03] There's been sweetheart deals with some of the bigger companies.
+
+175
+00:12:08,960 --> 00:12:11,040
+[SPEAKER_03] So I think that this has been a long time coming.
+
+176
+00:12:11,280 --> 00:12:13,600
+[SPEAKER_03] And to me, it opens up a lot of doors.
+
+177
+00:12:13,840 --> 00:12:20,880
+[SPEAKER_03] You can stick with what is there, but you can also opt into your own payment methods, which means a lot of payment companies will come after this.
+
+178
+00:12:21,120 --> 00:12:23,120
+[SPEAKER_03] RevenueCat will have some kind of role in it.
+
+179
+00:12:23,520 --> 00:12:31,600
+[SPEAKER_03] And I think it is going to be interesting to understand what other options it opens up that were not suited for the existing Apple Store payments.
+
+180
+00:12:31,760 --> 00:12:42,880
+[SPEAKER_03] And specifically because I've been working with a few companies that are prosumer and have somewhere consumer applications distributed to the apps, but then also have team functionality or B2B and parts of their product.
+
+181
+00:12:43,520 --> 00:12:49,280
+[SPEAKER_03] And for those, it's always been really hard to move from a solo product to a real multiplayer product.
+
+182
+00:12:49,920 --> 00:13:07,040
+[SPEAKER_03] And I think specifically for that, this could be a game changer, because if you can start adding seats and use your company's credit card on mobile to create company accounts, it is very different than having to do it with your Apple ID where you have your personal credit card and things like that.
+
+183
+00:13:07,440 --> 00:13:10,000
+[SPEAKER_03] So I think it just opens up different alternatives.
+
+184
+00:13:10,240 --> 00:13:11,360
+[SPEAKER_03] It won't make sense for everyone.
+
+185
+00:13:11,600 --> 00:13:12,720
+[SPEAKER_03] And I think the tricky part is.
+
+186
+00:13:13,200 --> 00:13:14,880
+[SPEAKER_03] actually finding out for whom it makes sense.
+
+187
+00:13:15,440 --> 00:13:24,880
+[SPEAKER_03] But I do believe more options in this specific area are a good thing that will lead to innovation in terms of the types of products that we can charge for and how we can charge for them.
+
+188
+00:13:25,200 --> 00:13:26,000
+[SPEAKER_03] I'm excited about it.
+
+189
+00:13:26,400 --> 00:13:26,480
+[SPEAKER_04] Yeah.
+
+190
+00:13:26,640 --> 00:13:31,520
+[SPEAKER_04] So maybe it will be worth summarizing the new fee structure first at first glance.
+
+191
+00:13:32,000 --> 00:13:44,560
+[SPEAKER_04] It kind of looks attractive because the numbers that you see first when you read through Apple's documentation are ten percent and seventeen percent that basically replace the fifteen and thirty percent typical Apple cut.
+
+192
+00:13:45,200 --> 00:13:48,720
+[SPEAKER_04] However, then when you read the fine print, it actually starts to get a little bit better.
+
+193
+00:13:50,240 --> 00:13:54,400
+[SPEAKER_04] So firstly, for the payment itself, Apple now charges three percent.
+
+194
+00:13:54,800 --> 00:13:57,840
+[SPEAKER_04] So that means you end up at thirteen and twenty percent.
+
+195
+00:13:58,000 --> 00:13:59,440
+[SPEAKER_02] So if you're using IAP.
+
+196
+00:13:59,760 --> 00:14:00,400
+[SPEAKER_04] Yeah, exactly.
+
+197
+00:14:00,560 --> 00:14:01,440
+[SPEAKER_04] If you're using an AirPort.
+
+198
+00:14:01,760 --> 00:14:04,160
+[SPEAKER_02] Which in the area that Nico was describing wouldn't be the case.
+
+199
+00:14:04,480 --> 00:14:05,280
+[SPEAKER_02] Yeah, yeah, right, right.
+
+200
+00:14:05,440 --> 00:14:15,120
+[SPEAKER_00] Let's take one step back because I think forming it as this decision tree is actually really helpful because then it separates all the different kinds of models that you can blend and then we can go through the details of each of those models.
+
+201
+00:14:15,520 --> 00:14:19,600
+[SPEAKER_00] So the first decision tree, as Jacob said, was you can stay with the old or you can switch to the new.
+
+202
+00:14:20,000 --> 00:14:22,960
+[SPEAKER_00] But when you switch to the new, there's actually four separate models.
+
+203
+00:14:23,040 --> 00:14:24,960
+[SPEAKER_00] And so let's start with the overview of those four models.
+
+204
+00:14:24,960 --> 00:14:27,520
+[SPEAKER_00] I'll give you an overview of those four models and then we'll dig into the details of each of those four models.
+
+205
+00:14:27,840 --> 00:14:33,840
+[SPEAKER_00] So the first model is that you stay distributed through the App Store and you keep billing with Apple.
+
+206
+00:14:34,240 --> 00:14:35,680
+[SPEAKER_00] And that's what Jens was alluding to.
+
+207
+00:14:35,840 --> 00:14:38,240
+[SPEAKER_00] So that one we'll get into the details, but that's an option.
+
+208
+00:14:38,560 --> 00:14:42,960
+[SPEAKER_00] The second option is you can be on the App Store and use alternative payments.
+
+209
+00:14:43,600 --> 00:14:51,600
+[SPEAKER_00] The third option is that you can be in a marketplace with third party payments and the marketplace app.
+
+210
+00:14:51,920 --> 00:14:56,320
+[SPEAKER_00] We need to dig into that, but marketplace app has all these different regulations and everything else.
+
+211
+00:14:56,880 --> 00:15:04,160
+[SPEAKER_00] The fourth option is that you can actually be both in the App Store and in the App Store and be on a marketplace app.
+
+212
+00:15:04,560 --> 00:15:06,400
+[SPEAKER_00] And so it becomes really complex.
+
+213
+00:15:06,800 --> 00:15:20,080
+[SPEAKER_00] And this is the part that I think is going to be maybe most helpful for the listeners today is breaking down these four different options and the benefits and drawbacks of each, because this is the decision developers are specifically going to have to make.
+
+214
+00:15:20,320 --> 00:15:24,640
+[SPEAKER_00] It's like, okay, if I accept the new terms, there's four choose your own adventures.
+
+215
+00:15:25,200 --> 00:15:31,760
+[SPEAKER_00] What are the things that happen in each of these four so I can make an informed decision on whether this could potentially be good for my business.
+
+216
+00:15:32,160 --> 00:15:35,280
+[SPEAKER_02] Those are not like formal choices, though, like they are with choosing the business model.
+
+217
+00:15:35,360 --> 00:15:36,880
+[SPEAKER_00] That's like, I'm going to have to select.
+
+218
+00:15:37,360 --> 00:15:41,200
+[SPEAKER_02] And then the other four, these are like four things you can float between different techniques.
+
+219
+00:15:41,520 --> 00:15:41,600
+[SPEAKER_00] Yeah.
+
+220
+00:15:41,760 --> 00:15:43,040
+[SPEAKER_00] So then let's start with that first one.
+
+221
+00:15:43,120 --> 00:15:52,320
+[SPEAKER_00] And Jens, that's where you were kind of at is that the very first option is that you accept these new terms, you stick with the App Store, you stick with App Store billing.
+
+222
+00:15:52,640 --> 00:15:59,680
+[SPEAKER_00] So then what's the deal that you get by accepting these new terms but staying in the App Store and staying with App Store billing?
+
+223
+00:15:59,920 --> 00:16:08,880
+[SPEAKER_04] If you do the math, you see that it's going to be basically the 30 and 15 percent that Apple standard rates dropped to 20 and 13 percent.
+
+224
+00:16:09,280 --> 00:16:21,280
+[SPEAKER_04] So that means 20 percent instead of 30 percent for big apps and subscriptions in their first year and 13 percent instead of 15 percent for developers in the small business program and subscriptions from their second year.
+
+225
+00:16:22,400 --> 00:16:27,200
+[SPEAKER_04] However, and that's kind of where a lot of the questions I guess come in.
+
+226
+00:16:27,760 --> 00:16:40,240
+[SPEAKER_04] In all of these options, this core technology fee comes in and this core technology fee is 50 euro cents per first annual install per year once you've hit a million installs threshold.
+
+227
+00:16:40,800 --> 00:16:48,800
+[SPEAKER_04] And the interesting thing there that's very easy to miss if you're just reading how this metric is called is that this includes not only.
+
+228
+00:16:49,680 --> 00:16:54,000
+[SPEAKER_04] I tap the button in the App Store to install, it also includes app updates.
+
+229
+00:16:54,320 --> 00:17:03,280
+[SPEAKER_04] So basically for any app that continuously ships app updates, you can kind of think about this as the number of people in the EU that have the app on your iOS phone, right?
+
+230
+00:17:03,520 --> 00:17:06,160
+[SPEAKER_04] I mean, that's basically what will count against this metric there, right?
+
+231
+00:17:06,400 --> 00:17:13,760
+[SPEAKER_04] So obviously, like if you're a small developer who is not even close to reaching a million in downloads, basically you can ignore that.
+
+232
+00:17:14,560 --> 00:17:22,160
+[SPEAKER_04] But as soon as you cross that threshold, it can become very expensive very quickly, because again, that's a 50 euro cents for every install.
+
+233
+00:17:22,320 --> 00:17:29,360
+[SPEAKER_02] Then after that threshold, you put some scale numbers on this yen in a dock, like how many EU iPhone users are there?
+
+234
+00:17:29,920 --> 00:17:33,440
+[SPEAKER_04] I mean, certainly between 100 and 200 million, probably something of that order.
+
+235
+00:17:33,920 --> 00:17:39,280
+[SPEAKER_02] So if you're an app that's beyond one or two percent penetration into the market, you're going to be in this range.
+
+236
+00:17:39,600 --> 00:17:39,920
+[SPEAKER_04] Exactly.
+
+237
+00:17:40,160 --> 00:17:44,480
+[SPEAKER_04] It's certainly not your like average Indie app, but there's definitely enough apps.
+
+238
+00:17:44,720 --> 00:17:53,280
+[SPEAKER_04] And I think this core technology fee, you know, you can clearly read this as trying to dissuade bigger companies to go on this new model, right?
+
+239
+00:17:53,440 --> 00:17:56,400
+[SPEAKER_04] Because for bigger companies it's going to get really expensive really quickly.
+
+240
+00:17:57,200 --> 00:18:05,920
+[SPEAKER_04] And that is, I think, a little bit of the poison pill in this whole arrangement because that's just going to mean whatever it is like going on a third party app store.
+
+241
+00:18:06,080 --> 00:18:10,640
+[SPEAKER_04] It's probably just not going to be attractive for a big app because it's going to be really, really expensive to accept those new terms.
+
+242
+00:18:11,200 --> 00:18:15,120
+[SPEAKER_04] And then any third party app marketplace won't have big apps.
+
+243
+00:18:15,280 --> 00:18:16,800
+[SPEAKER_04] So therefore, does that doom them already?
+
+244
+00:18:16,960 --> 00:18:24,880
+[SPEAKER_04] But okay, you know, maybe I'm kind of going too far into the interpretation and we should like zoom back out and look at the other three models that David well, yeah.
+
+245
+00:18:25,040 --> 00:18:28,880
+[SPEAKER_00] But before we move on to that one and we talked about this a lot internally yesterday.
+
+246
+00:18:29,600 --> 00:18:36,320
+[SPEAKER_00] And so Jacob, I want your take on this is that even if you're an indie accepting these new terms in the hope of.
+
+247
+00:18:36,560 --> 00:18:39,760
+[SPEAKER_00] of saving some money on Apple's fees.
+
+248
+00:18:40,480 --> 00:18:42,000
+[SPEAKER_00] Yeah, you save two percent.
+
+249
+00:18:42,480 --> 00:18:43,920
+[SPEAKER_00] You do open yourself up to risk.
+
+250
+00:18:44,160 --> 00:19:04,880
+[SPEAKER_00] And I think that's the biggest thing for folks thinking about this is that offside chance, but if your app goes viral for some reason, Apple features it, if you get a lot of press or whatever, by signing up to these new terms, you risk that if you do grow your business, if something happens, you introduce a hot new feature, whatever happens, you're taking a lot of risk.
+
+251
+00:19:05,520 --> 00:19:11,680
+[SPEAKER_02] We had a very interesting discussion yesterday about something I think it discussed a lot in society, it's like how do you quantify and deal with tail risk, right?
+
+252
+00:19:12,080 --> 00:19:12,240
+[SPEAKER_02] Right?
+
+253
+00:19:12,320 --> 00:19:20,800
+[SPEAKER_02] Like how do you as a developer enter into a debate of, well, I can have two percent discount, which relative to Apple's two percent of fifteen is not insubstantial.
+
+254
+00:19:20,960 --> 00:19:25,200
+[SPEAKER_02] It's like maybe twelve percent or something of the whole amount of fees reduction.
+
+255
+00:19:25,440 --> 00:19:33,520
+[SPEAKER_02] But like with now you're accepting this, this potentially catastrophic risk that if your app goes viral, which your apps won't go viral.
+
+256
+00:19:33,680 --> 00:19:34,880
+[SPEAKER_02] I can tell you that I love you.
+
+257
+00:19:35,040 --> 00:19:36,160
+[SPEAKER_02] I want you to be successful.
+
+258
+00:19:36,320 --> 00:19:38,720
+[SPEAKER_02] But I can say to everyone, your apps won't go viral.
+
+259
+00:19:38,800 --> 00:19:41,440
+[SPEAKER_02] And I'll be right 999 times out of 1000.
+
+260
+00:19:41,520 --> 00:19:41,680
+[SPEAKER_02] Right?
+
+261
+00:19:42,000 --> 00:19:45,040
+[SPEAKER_02] But everybody's temporarily embarrassed by rot millionaire.
+
+262
+00:19:45,200 --> 00:19:45,360
+[SPEAKER_02] Right?
+
+263
+00:19:45,600 --> 00:19:48,480
+[SPEAKER_02] So it's not very easy to like think about this risk.
+
+264
+00:19:49,200 --> 00:19:50,160
+[SPEAKER_02] We see a lot of apps here.
+
+265
+00:19:50,400 --> 00:19:57,040
+[SPEAKER_02] There are apps that we've done case studies with, if you want to look for them that have gone viral that monetization wasn't their biggest thing.
+
+266
+00:19:57,200 --> 00:20:01,280
+[SPEAKER_02] So they have a relatively low LTV, tons of downloads.
+
+267
+00:20:01,840 --> 00:20:03,120
+[SPEAKER_02] This was the beauty of the old models.
+
+268
+00:20:03,360 --> 00:20:04,640
+[SPEAKER_02] Apple bore all the costs.
+
+269
+00:20:05,120 --> 00:20:06,000
+[SPEAKER_02] They took care of everything.
+
+270
+00:20:06,800 --> 00:20:14,800
+[SPEAKER_02] This developer just shared their revenue at 15%, maybe 30%, and it was all upside for them under this new model that could literally sink.
+
+271
+00:20:15,040 --> 00:20:18,400
+[SPEAKER_02] Like I ran some analysis on situations like this with some customers in ours.
+
+272
+00:20:18,640 --> 00:20:23,840
+[SPEAKER_02] There are customers, millions of dollars in the hole on CTF on the core technology fee.
+
+273
+00:20:24,000 --> 00:20:27,600
+[SPEAKER_02] I have to imagine Apple is not going to come take your company, right?
+
+274
+00:20:27,840 --> 00:20:32,480
+[SPEAKER_02] Like I imagine they're probably going to have a like, okay, this was beyond your control, whatever.
+
+275
+00:20:32,640 --> 00:20:34,880
+[SPEAKER_02] But like as a developer, it's going to happen.
+
+276
+00:20:35,120 --> 00:20:36,800
+[SPEAKER_02] Like someone is going to accept these terms.
+
+277
+00:20:37,040 --> 00:20:43,840
+[SPEAKER_02] Someone is going to end up becoming a viral hit and then they're going to owe Apple millions of dollars and I'm sure Apple is going to let them out the back door.
+
+278
+00:20:44,320 --> 00:20:45,360
+[SPEAKER_02] I hope maybe.
+
+279
+00:20:46,080 --> 00:20:50,160
+[SPEAKER_02] But it does create this really, you know, and this is the whole reason we liked the RevShare model.
+
+280
+00:20:50,480 --> 00:20:54,240
+[SPEAKER_02] Just developers just had basically no risk and now you're introducing risk.
+
+281
+00:20:54,880 --> 00:20:56,320
+[SPEAKER_02] Honestly, I don't know how to think about it.
+
+282
+00:20:56,480 --> 00:20:59,040
+[SPEAKER_02] It's really hard to underwrite tail risk events like that.
+
+283
+00:20:59,360 --> 00:21:01,840
+[SPEAKER_00] Nick, what's your perspective on that this specific?
+
+284
+00:21:02,080 --> 00:21:16,240
+[SPEAKER_00] I know you're kind of bullish on alternate payments and sideloading and things like that, but as a venture capitalist who wants to see your portfolio companies succeed at a high level, do you see any of those portfolio companies taking this deal?
+
+285
+00:21:16,480 --> 00:21:20,320
+[SPEAKER_00] And we'll talk about the other deals later, but what do you think about this deal specifically?
+
+286
+00:21:20,960 --> 00:21:28,240
+[SPEAKER_03] I think what I tried to do yesterday with the formulas is figure out because the way I think about it is, if you're upset about it, stick with the status quo.
+
+287
+00:21:28,560 --> 00:21:33,680
+[SPEAKER_03] For most companies, this is the right choice, especially if it's big volume, low average revenue per user.
+
+288
+00:21:33,920 --> 00:21:34,720
+[SPEAKER_03] It doesn't make sense.
+
+289
+00:21:36,880 --> 00:21:45,600
+[SPEAKER_03] for those that convert users to a high degree and then have a high yearly plan and don't have that many free users that retain after the first year.
+
+290
+00:21:46,000 --> 00:21:47,200
+[SPEAKER_03] That is basically what comes out of it.
+
+291
+00:21:47,360 --> 00:21:55,200
+[SPEAKER_03] And we don't have to be specific about it, but basically, if you have a yearly plan and the conversion rate and you multiply both and it's bigger than five, then it makes sense.
+
+292
+00:21:55,600 --> 00:21:56,720
+[SPEAKER_03] This is what the numbers say.
+
+293
+00:21:56,880 --> 00:22:02,320
+[SPEAKER_03] And then for the second year renewals, it's basically 25 euros per user that remains.
+
+294
+00:22:02,400 --> 00:22:07,920
+[SPEAKER_03] And this includes the free and the paid users that you have to have in the annual sub, the same or more to benefit from it.
+
+295
+00:22:08,240 --> 00:22:16,240
+[SPEAKER_03] And what that means is like there's a small percentage of companies that have really high conversion that have almost no free users or a hard paywall with none.
+
+296
+00:22:16,800 --> 00:22:21,200
+[SPEAKER_03] And for those companies, they can save five plus percent of their margins, which is a lot, right?
+
+297
+00:22:21,440 --> 00:22:22,880
+[SPEAKER_03] Like it can be a big benefit.
+
+298
+00:22:23,120 --> 00:22:33,760
+[SPEAKER_03] Plus, there's one last thing that I want to say to this is you have a considerable unknown, which is if we do have new app stores emerging, which is it's going to take time.
+
+299
+00:22:33,920 --> 00:22:35,120
+[SPEAKER_03] It's a chicken and egg problem.
+
+300
+00:22:35,280 --> 00:22:37,760
+[SPEAKER_03] Nobody's going to want to do it initially because there's no distribution.
+
+301
+00:22:38,400 --> 00:22:49,520
+[SPEAKER_03] Lowly some of the pioneers will do it and it will create something that will offer the developers the ability to distribute with lower fees, which is another added benefit that it's really hard to foreseesee at the moment.
+
+302
+00:22:50,000 --> 00:22:58,560
+[SPEAKER_03] This small universe of high conversion, high subscription companies, which is the majority of the companies I'm working with, they can benefit from it, but you have to really look at the numbers.
+
+303
+00:22:58,720 --> 00:23:03,280
+[SPEAKER_03] As long as there's a really significant free component to the app, it becomes more difficult.
+
+304
+00:23:03,600 --> 00:23:06,640
+[SPEAKER_03] But I do believe that this will also lead us to think about this in a new way.
+
+305
+00:23:06,960 --> 00:23:12,160
+[SPEAKER_03] How much value do you really get from the free users that stay with you for longer than a year if they don't convert, right?
+
+306
+00:23:12,400 --> 00:23:19,360
+[SPEAKER_03] And we can look into this, we can dig into this, we can look at the numbers, and it might need some violence to like how we use the paywall and adjust features.
+
+307
+00:23:20,000 --> 00:23:22,720
+[SPEAKER_03] But I think there will be companies that will benefit from it.
+
+308
+00:23:22,960 --> 00:23:24,000
+[SPEAKER_03] It's going to be a small cohort.
+
+309
+00:23:24,480 --> 00:23:29,920
+[SPEAKER_02] Something you said there, Nico, which we were talking about this morning on Twitter, and this is the unknown is you can put up a hard paywall.
+
+310
+00:23:30,160 --> 00:23:32,560
+[SPEAKER_02] You can discourage users from using one free.
+
+311
+00:23:32,800 --> 00:23:36,720
+[SPEAKER_02] You can eliminate your free plan, but you can't make them delete the app.
+
+312
+00:23:36,960 --> 00:23:40,160
+[SPEAKER_02] You can't, this app will self-destruct if you don't convert in ten days.
+
+313
+00:23:40,800 --> 00:23:45,440
+[SPEAKER_02] And so that's the big unknown on how many people actually are going to delete their apps.
+
+314
+00:23:45,680 --> 00:23:46,160
+[SPEAKER_02] It's not zero.
+
+315
+00:23:46,560 --> 00:23:47,600
+[SPEAKER_02] It's probably a majority.
+
+316
+00:23:47,840 --> 00:23:50,160
+[SPEAKER_02] The decay rate of people deleting apps, I don't know.
+
+317
+00:23:50,240 --> 00:23:52,800
+[SPEAKER_03] Somebody maybe Gabriel knows, like, I don't know.
+
+318
+00:23:53,040 --> 00:23:53,360
+[SPEAKER_02] I agree.
+
+319
+00:23:53,600 --> 00:23:57,680
+[SPEAKER_02] And maybe it doesn't compound to much, but I think that's the thing I'm having a hard time quantifying.
+
+320
+00:23:57,920 --> 00:23:58,000
+[SPEAKER_03] Yeah.
+
+321
+00:23:58,480 --> 00:23:58,800
+[SPEAKER_03] Agreed.
+
+322
+00:23:59,040 --> 00:23:59,200
+[SPEAKER_00] Yeah.
+
+323
+00:23:59,360 --> 00:24:06,560
+[SPEAKER_00] And I actually just launched O a hard paywall in my app yesterday and could tell you it would not be a very good opportunity for me.
+
+324
+00:24:06,800 --> 00:24:16,000
+[SPEAKER_00] I mean, even on the high end, you're talking like a 25 percent, I think is what I'm landing at for my app over the last 24 hours of a trial start rate.
+
+325
+00:24:16,160 --> 00:24:22,720
+[SPEAKER_00] So that means 75 out of every 100 people, I'm paying 50 cents for them to install and they don't even start a free trial.
+
+326
+00:24:23,040 --> 00:24:28,240
+[SPEAKER_00] So like the math on this does start to get difficult when you're a free app to download.
+
+327
+00:24:28,480 --> 00:24:52,160
+[SPEAKER_00] Nico, how are you thinking about the risk of even these very high performing, high monetization apps who are a free download where you're doing a lot of user acquisitions through paid ads and you have very tight control of purchasing very high intent users and then converting those users well, there's still that risk because you're a free app that you could just have a ton of downloads from low intent users.
+
+328
+00:24:52,320 --> 00:24:55,600
+[SPEAKER_00] So that's like a risk even for like highly monetized apps.
+
+329
+00:24:56,080 --> 00:24:59,120
+[SPEAKER_01] Revenue cat and your product should be insurance, no, against.
+
+330
+00:24:59,840 --> 00:25:04,720
+[SPEAKER_02] Yeah, I was just thinking, I honestly think this is something, someone should sell a policy against, right?
+
+331
+00:25:04,960 --> 00:25:12,640
+[SPEAKER_03] I'm not sure who's going to have the data to underwrite it, but I dare to think that even there must be some protection mechanism from Apple for this, not maybe for the case.
+
+332
+00:25:13,040 --> 00:25:20,800
+[SPEAKER_03] of a well funded, well monetizing company that has the resources, but they don't want a small developer going viral and then going bankrupt.
+
+333
+00:25:20,880 --> 00:25:21,680
+[SPEAKER_03] That is anti-development.
+
+334
+00:25:21,920 --> 00:25:22,400
+[SPEAKER_03] Take your house.
+
+335
+00:25:22,720 --> 00:25:22,880
+[SPEAKER_03] Right.
+
+336
+00:25:23,520 --> 00:25:24,720
+[SPEAKER_03] That's not what they want to get out of it.
+
+337
+00:25:24,880 --> 00:25:27,200
+[SPEAKER_03] So there's going to be some protection, I'm positive.
+
+338
+00:25:27,760 --> 00:25:32,320
+[SPEAKER_03] Maybe it's going to be difficult to understand it at first, but I would be very surprised if that isn't the case.
+
+339
+00:25:32,880 --> 00:25:34,080
+[SPEAKER_03] There are cases where it's not clear.
+
+340
+00:25:34,320 --> 00:25:36,960
+[SPEAKER_04] I won't say that after 24 hours I have a perfect view on it.
+
+341
+00:25:37,440 --> 00:25:40,240
+[SPEAKER_03] I just have the view of, like, for these companies, it does make sense.
+
+342
+00:25:40,800 --> 00:25:44,000
+[SPEAKER_03] And for some companies, that's a big question mark because we have to understand the data better.
+
+343
+00:25:44,160 --> 00:25:44,320
+[SPEAKER_03] Right?
+
+344
+00:25:44,480 --> 00:25:48,720
+[SPEAKER_03] So, like, understanding how many free users are still around after a year, understanding the conversion rates.
+
+345
+00:25:49,200 --> 00:25:51,360
+[SPEAKER_03] better, making sure that we have the right pricing and such.
+
+346
+00:25:51,760 --> 00:25:53,600
+[SPEAKER_03] I don't have the perfect answer for it yet.
+
+347
+00:25:53,760 --> 00:25:56,080
+[SPEAKER_03] We just need to dig into it to see if it does make sense.
+
+348
+00:25:56,560 --> 00:25:58,640
+[SPEAKER_03] And it might not make sense initially, and that's okay.
+
+349
+00:25:59,040 --> 00:26:01,520
+[SPEAKER_03] And the question is like, does it make sense at a later point in time?
+
+350
+00:26:01,680 --> 00:26:03,360
+[SPEAKER_03] And under what circumstances does it make sense?
+
+351
+00:26:03,520 --> 00:26:04,800
+[SPEAKER_03] And could it make the business better?
+
+352
+00:26:05,360 --> 00:26:11,920
+[SPEAKER_03] And that's a question that as a result of the iOS changes on paid acquisition, there was like a year or two where people struggled a lot.
+
+353
+00:26:12,160 --> 00:26:14,800
+[SPEAKER_03] But a lot of the companies that I work with came out much stronger.
+
+354
+00:26:15,120 --> 00:26:17,040
+[SPEAKER_03] There's a higher organic growth component.
+
+355
+00:26:17,200 --> 00:26:18,640
+[SPEAKER_03] They found more creative ways to do marketing.
+
+356
+00:26:19,040 --> 00:26:23,040
+[SPEAKER_03] We're not pouring money into meta, although that is still part of the strategy for many of them.
+
+357
+00:26:23,280 --> 00:26:24,960
+[SPEAKER_03] But it's just not as important as it is.
+
+358
+00:26:26,080 --> 00:26:28,560
+[SPEAKER_03] And I think that here there will be a similar education.
+
+359
+00:26:29,040 --> 00:26:36,320
+[SPEAKER_03] We will just have to learn what are the criteria that gives us an advantage if we adopt a new model and really understanding those levers.
+
+360
+00:26:36,640 --> 00:26:41,760
+[SPEAKER_03] And I think there will be a big, big grey area and there will be an even bigger, like, it doesn't make sense area.
+
+361
+00:26:42,080 --> 00:26:45,280
+[SPEAKER_03] And in the grey area, I think it probably the default is you don't do it.
+
+362
+00:26:45,600 --> 00:26:53,120
+[SPEAKER_02] The case you mentioned, Nico, that to me seems like I would take a risk on as an entrepreneur is the multi seat mode discussion.
+
+363
+00:26:53,360 --> 00:27:04,240
+[SPEAKER_02] So like if you use Notion as an example or something like this where you're a multiplayer SaaS app and your whole thing is pred predicated on seats, and there's really no reason to go viral.
+
+364
+00:27:04,480 --> 00:27:06,480
+[SPEAKER_02] There's really no consumer motion to it.
+
+365
+00:27:06,800 --> 00:27:12,800
+[SPEAKER_02] I think that might actually matter where you're paying maybe your customer LTV is thirty dollars a month or something like this.
+
+366
+00:27:12,960 --> 00:27:15,040
+[SPEAKER_02] You can really easily bear that fifty cents a year.
+
+367
+00:27:15,520 --> 00:27:21,120
+[SPEAKER_02] You can even argue that for some of those companies, the mobile first consumer motion is actually a top of funnel for the enterprise motion.
+
+368
+00:27:21,360 --> 00:27:22,960
+[SPEAKER_02] And from that perspective, it can make sense, right?
+
+369
+00:27:23,360 --> 00:27:24,400
+[SPEAKER_03] Even part of the acquisition costs.
+
+370
+00:27:26,320 --> 00:27:26,560
+[SPEAKER_02] Exactly.
+
+371
+00:27:27,520 --> 00:27:28,320
+[SPEAKER_03] So that's an unknown.
+
+372
+00:27:28,480 --> 00:27:29,120
+[SPEAKER_03] It's also a new model.
+
+373
+00:27:29,280 --> 00:27:31,040
+[SPEAKER_03] Like, we'll have to see more, but I believe in that.
+
+374
+00:27:31,280 --> 00:27:36,240
+[SPEAKER_03] And then the second part I mentioned just quickly, right now we assume there won't be any other marketplaces.
+
+375
+00:27:36,800 --> 00:27:40,560
+[SPEAKER_03] because it's going to be super hard to get it kickstarted, but someone is going to build it.
+
+376
+00:27:40,800 --> 00:27:42,960
+[SPEAKER_03] And some people are going to, Fortnite is a good example, right?
+
+377
+00:27:43,120 --> 00:27:44,000
+[SPEAKER_03] Epic is going to do it.
+
+378
+00:27:44,240 --> 00:27:47,840
+[SPEAKER_03] They're going to start experimenting and from that there will be more audience.
+
+379
+00:27:48,080 --> 00:27:52,080
+[SPEAKER_03] And once there's alternative marketplaces with a big audience, the math changes again.
+
+380
+00:27:52,320 --> 00:27:57,520
+[SPEAKER_03] Because yes, you still have the same cost on the App Store, but you have lower cost on the new App Store.
+
+381
+00:27:57,840 --> 00:28:00,640
+[SPEAKER_03] And so it nets again more positively for the business.
+
+382
+00:28:01,280 --> 00:28:02,880
+[SPEAKER_03] It's just a more long term consideration.
+
+383
+00:28:03,440 --> 00:28:05,120
+[SPEAKER_00] Let's wrap this section with Gabe.
+
+384
+00:28:05,520 --> 00:28:08,240
+[SPEAKER_00] And then we'll do step number two on the Choose Your Own Adventure.
+
+385
+00:28:08,320 --> 00:28:11,840
+[SPEAKER_00] And then step number three will be marketplaces where we can dive deep on what that could mean.
+
+386
+00:28:12,000 --> 00:28:16,800
+[SPEAKER_00] So Gabe, any thoughts on sticking with the App Store but just getting lower fees?
+
+387
+00:28:17,040 --> 00:28:18,320
+[SPEAKER_01] Yeah, I mean you said wrap up.
+
+388
+00:28:18,400 --> 00:28:20,240
+[SPEAKER_01] Hopefully this doesn't open cans of worms.
+
+389
+00:28:20,480 --> 00:28:26,240
+[SPEAKER_01] My question for everyone is, are there any parallels to draw from the Android side?
+
+390
+00:28:26,400 --> 00:28:27,360
+[SPEAKER_01] And I hate bringing that up.
+
+391
+00:28:27,520 --> 00:28:29,520
+[SPEAKER_01] I know we have an iOS leading crew here, myself.
+
+392
+00:28:29,920 --> 00:28:31,840
+[SPEAKER_01] No, we're equal opportunity app store people.
+
+393
+00:28:32,000 --> 00:28:32,480
+[SPEAKER_01] We love both.
+
+394
+00:28:32,880 --> 00:28:36,640
+[SPEAKER_01] But, you know, like things have been a little more in this direction on the Android side for a while.
+
+395
+00:28:37,120 --> 00:28:38,160
+[SPEAKER_01] Is there something to learn there?
+
+396
+00:28:38,320 --> 00:28:40,320
+[SPEAKER_01] Do you all have opinions from that side of the house?
+
+397
+00:28:40,720 --> 00:28:46,800
+[SPEAKER_02] My opinion would be that if you were to just draw out, like, what does the ability to have alternative stores on Android mean for iOS?
+
+398
+00:28:47,040 --> 00:28:47,920
+[SPEAKER_02] The answer is very little.
+
+399
+00:28:49,360 --> 00:28:52,560
+[SPEAKER_02] Like, I think that's the answer, as optimistic as I am.
+
+400
+00:28:53,200 --> 00:28:59,040
+[SPEAKER_02] And I think my take for the last like 24 hours has been like, Apple didn't get this monopoly by cajoling the government.
+
+401
+00:28:59,440 --> 00:29:05,760
+[SPEAKER_02] They didn't get this by having a monopoly on some finite resource like railroads or cables under the sea.
+
+402
+00:29:06,400 --> 00:29:12,240
+[SPEAKER_02] They got this by building the best phone and everybody buying it and nobody wanting to buy anything else.
+
+403
+00:29:12,640 --> 00:29:12,800
+[SPEAKER_02] Right.
+
+404
+00:29:13,040 --> 00:29:20,320
+[SPEAKER_02] And so it's going to be very, very hard to force people to do something when I think consumers have in many ways voted.
+
+405
+00:29:20,480 --> 00:29:34,160
+[SPEAKER_02] It's not a perfectly free market, but I think people have this like sense that Apple is unkillable, that the only way that the iPhone is ever going to be toppled, that the app store is ever going to be toppled, is if the government or like we force them to through regulation or whatever.
+
+406
+00:29:34,640 --> 00:29:36,080
+[SPEAKER_02] But it's historically not been the case.
+
+407
+00:29:36,240 --> 00:29:38,240
+[SPEAKER_02] Like technology has not lasted that long.
+
+408
+00:29:38,560 --> 00:29:42,480
+[SPEAKER_02] Nokia and RIM ruled the world and eventually people were like, this sucks.
+
+409
+00:29:42,800 --> 00:29:45,040
+[SPEAKER_02] Apple was like, what about we do it less sucky?
+
+410
+00:29:45,360 --> 00:29:47,680
+[SPEAKER_02] And ten years later, those two companies are gone.
+
+411
+00:29:48,240 --> 00:29:50,400
+[SPEAKER_02] I don't think there's any reason that won't happen.
+
+412
+00:29:50,560 --> 00:29:51,840
+[SPEAKER_02] And maybe this just opens that up.
+
+413
+00:29:51,920 --> 00:29:55,920
+[SPEAKER_02] So what Nico is saying is like, maybe Epic Store does rock and everyone wants to use it.
+
+414
+00:29:56,400 --> 00:29:57,920
+[SPEAKER_02] Okay, then maybe I'll take my words back.
+
+415
+00:29:58,000 --> 00:30:00,240
+[SPEAKER_02] And the DMA was really important for like opening up that light.
+
+416
+00:30:00,880 --> 00:30:06,080
+[SPEAKER_02] Maybe it's undue burden to expect a competitor to build the phone, then build the app store.
+
+417
+00:30:06,560 --> 00:30:07,840
+[SPEAKER_02] Maybe that's the world it should be.
+
+418
+00:30:08,000 --> 00:30:11,120
+[SPEAKER_02] But again, like, why didn't Epic just build an Android device?
+
+419
+00:30:11,520 --> 00:30:14,560
+[SPEAKER_02] You could just buy one and make it the Fortnite phone and all that stuff.
+
+420
+00:30:14,720 --> 00:30:20,240
+[SPEAKER_02] And the answer is because most of the money is on the iPhone and with iPhone users and it's the best device, right?
+
+421
+00:30:20,400 --> 00:30:21,360
+[SPEAKER_02] Like, that's why.
+
+422
+00:30:21,760 --> 00:30:22,560
+[SPEAKER_02] This is getting into the meta.
+
+423
+00:30:23,120 --> 00:30:24,480
+[SPEAKER_02] I don't want to get too ranty on that.
+
+424
+00:30:24,800 --> 00:30:24,880
+[SPEAKER_04] Yeah.
+
+425
+00:30:25,040 --> 00:30:33,040
+[SPEAKER_04] And then maybe to add on even, there's a certain aspect of people buying iPhones because the experience is more controlled, right?
+
+426
+00:30:33,280 --> 00:30:36,960
+[SPEAKER_04] And there's maybe fewer degrees of freedom, but also less graphics.
+
+427
+00:30:37,120 --> 00:30:38,160
+[SPEAKER_02] So, you know, that's the only thing.
+
+428
+00:30:38,400 --> 00:30:39,120
+[SPEAKER_02] There are options, right?
+
+429
+00:30:39,360 --> 00:30:42,560
+[SPEAKER_02] Like you can go and buy an Android phone and do all kinds of crazy stuff.
+
+430
+00:30:42,640 --> 00:30:43,920
+[SPEAKER_02] You can get your emulators on there.
+
+431
+00:30:44,160 --> 00:30:47,280
+[SPEAKER_02] You can like do your piracy or whatever else stuff you want to do.
+
+432
+00:30:47,440 --> 00:30:49,120
+[SPEAKER_02] You can get the like Epic Sideloader.
+
+433
+00:30:49,440 --> 00:30:52,800
+[SPEAKER_02] It exists, but it's not successful because the experience isn't there.
+
+434
+00:30:52,960 --> 00:30:55,520
+[SPEAKER_02] And you can blame Apple or you can't blame Apple for that.
+
+435
+00:30:55,600 --> 00:31:00,240
+[SPEAKER_02] I don't even think you can blame Google for that because the scare modeling for sideloading on Android is pretty minimal.
+
+436
+00:31:00,400 --> 00:31:02,400
+[SPEAKER_02] It's pretty like, oh yeah, then be careful, right?
+
+437
+00:31:02,640 --> 00:31:03,120
+[SPEAKER_02] But that's it.
+
+438
+00:31:03,520 --> 00:31:04,640
+[SPEAKER_02] And it still hasn't taken off.
+
+439
+00:31:04,880 --> 00:31:12,000
+[SPEAKER_03] So I think what the reason for that is there was a question in the chat asking why hasn't any of the alternative app stores on Android taken off?
+
+440
+00:31:12,160 --> 00:31:17,520
+[SPEAKER_03] And I think it's just a question of incentives for some of the players that are able to pull this off, right?
+
+441
+00:31:17,760 --> 00:31:23,760
+[SPEAKER_03] Because for most of the companies I work with, even if they're cross platform, they have maybe twenty percent of their revenue coming from Android.
+
+442
+00:31:24,080 --> 00:31:28,000
+[SPEAKER_03] And oftentimes it's even from geos that have lower subscription pricing and revenue per user.
+
+443
+00:31:28,320 --> 00:31:36,080
+[SPEAKER_03] I think it's a very different incentive at this point to figure out an app store that works on Apple than it was to do it on Android.
+
+444
+00:31:36,240 --> 00:31:38,560
+[SPEAKER_03] And I think there's going to be a lot more resources put behind it.
+
+445
+00:31:39,040 --> 00:31:39,120
+[SPEAKER_02] Yeah.
+
+446
+00:31:39,440 --> 00:31:42,560
+[SPEAKER_02] It's twenty percent of, so it's five times more revenue.
+
+447
+00:31:42,720 --> 00:31:44,720
+[SPEAKER_02] It's not like five hundred times more revenue.
+
+448
+00:31:45,040 --> 00:31:46,480
+[SPEAKER_02] So like, I have to think there's enough.
+
+449
+00:31:46,720 --> 00:31:51,280
+[SPEAKER_02] There should be enough there to get something started and it hasn't seemed like that's the case, but I don't know.
+
+450
+00:31:51,440 --> 00:31:52,080
+[SPEAKER_02] Yeah, I don't know.
+
+451
+00:31:52,560 --> 00:31:55,760
+[SPEAKER_00] Well, let's skip over Choose Your Own Adventure two because this one is.
+
+452
+00:31:56,240 --> 00:31:57,760
+[SPEAKER_02] We'll have a blog post that explains everything.
+
+453
+00:31:58,000 --> 00:31:58,080
+[SPEAKER_02] Yeah.
+
+454
+00:31:58,800 --> 00:31:58,880
+[UNKNOWN] Yeah.
+
+455
+00:31:59,120 --> 00:32:02,240
+[SPEAKER_00] Check the blog post because it'll explain all this in depth, but Choose Your Own Adventure.
+
+456
+00:32:02,320 --> 00:32:05,920
+[SPEAKER_00] Number two would be to stick with the App Store but use alternative payments.
+
+457
+00:32:06,480 --> 00:32:10,160
+[SPEAKER_00] You can either do in app alternative payments or you can link out to the web.
+
+458
+00:32:10,640 --> 00:32:13,760
+[SPEAKER_00] The payment terms are very similar to sticking with the App Store.
+
+459
+00:32:14,400 --> 00:32:18,880
+[SPEAKER_00] You still pay a commission and then you still have the core technology fee and everything else.
+
+460
+00:32:19,040 --> 00:32:21,920
+[SPEAKER_00] So that's kind of a spin on what we've already been talking about.
+
+461
+00:32:22,160 --> 00:32:24,640
+[SPEAKER_00] But yeah, let's jump ahead to these marketplaces because I do think.
+
+462
+00:32:25,200 --> 00:32:27,680
+[SPEAKER_00] this is a really important part of this regulation.
+
+463
+00:32:28,480 --> 00:32:36,400
+[SPEAKER_00] And like you all were saying, it is the long term, maybe the biggest crack that's going to form because of the DMA.
+
+464
+00:32:36,880 --> 00:32:50,480
+[SPEAKER_00] But the first thing to understand about marketplaces, there's going to be so many caveats along the way, but the first thing to understand about these marketplaces is one, Apple has to approve any marketplace and the marketplaces are the only place that you can sideload.
+
+465
+00:32:50,640 --> 00:32:58,400
+[SPEAKER_00] So this is not opening up sideloading where any random app can be hosting that random app on their random website and you can just download it.
+
+466
+00:33:00,160 --> 00:33:03,360
+[SPEAKER_00] has to come through approved third party marketplace apps.
+
+467
+00:33:03,840 --> 00:33:32,000
+[SPEAKER_00] Those marketplace apps have to put up a million dollar line of credit with Apple that Apple is saying is a way to ensure that consumers are protected, that it's not some fly by night company launching this marketplace app, but someone with some amount of resources to support the developers and support this marketplace app so that if consumers get scammed, if there's problems, there's some level of recourse versus like a fly by night marketplace app that just scams a bunch of people.
+
+468
+00:33:32,320 --> 00:33:40,800
+[SPEAKER_00] There's been a lot of condemnation of that, but that part of it I do think it's actually very much like Apple protecting consumers in the EU.
+
+469
+00:33:41,600 --> 00:33:43,600
+[SPEAKER_00] Now, you can debate, do they need that protection?
+
+470
+00:33:43,840 --> 00:33:46,400
+[SPEAKER_00] Should it just be total open side loading like the Mac, whatever?
+
+471
+00:33:46,800 --> 00:33:55,600
+[SPEAKER_00] But that's how Apple has defined this next opportunity in the Choose Your Own Adventure is that a big company like Fortnite can create this marketplace.
+
+472
+00:33:56,000 --> 00:33:59,280
+[SPEAKER_00] You as a developer can then choose to participate in that marketplace.
+
+473
+00:33:59,600 --> 00:34:03,520
+[SPEAKER_00] A couple more caveats before we open up to discussion in the fine print.
+
+474
+00:34:03,680 --> 00:34:05,200
+[SPEAKER_00] We found all sorts of other gotchas.
+
+475
+00:34:05,600 --> 00:34:10,400
+[SPEAKER_00] One is that the marketplace itself has to play the core technology fee.
+
+476
+00:34:10,560 --> 00:34:14,640
+[SPEAKER_00] So if all Epic did was create a marketplace app and only sell Fortnite.
+
+477
+00:34:15,200 --> 00:34:23,040
+[SPEAKER_00] Every download of the marketplace incurs a core technology fee and every update of the marketplace app incurs a technology fee.
+
+478
+00:34:23,280 --> 00:34:28,800
+[SPEAKER_00] And then every install and subsequent annual update of Fortnite incurs a core technology fee.
+
+479
+00:34:29,440 --> 00:34:31,200
+[SPEAKER_00] This is going to be very expensive.
+
+480
+00:34:31,520 --> 00:34:33,600
+[SPEAKER_02] It prevents a fake store, right, with one app in it.
+
+481
+00:34:33,760 --> 00:34:34,960
+[SPEAKER_02] That's the intent of that, I think.
+
+482
+00:34:35,520 --> 00:34:46,720
+[SPEAKER_00] This is maybe the, again, the more interesting thing to talk about here because there could be marketplaces that limit installs to not incur the technology fee.
+
+483
+00:34:46,880 --> 00:34:48,720
+[SPEAKER_00] Maybe there's some pre-weck us at Steven.
+
+484
+00:34:48,720 --> 00:34:50,400
+[SPEAKER_00] Free Weka said Stephen, get into this marketplace app.
+
+485
+00:34:50,800 --> 00:35:02,560
+[SPEAKER_00] And so this is maybe the less risky way to take advantage of the DMA is to set up a marketplace that protects against this core technology fee sinking your business.
+
+486
+00:35:02,880 --> 00:35:03,600
+[SPEAKER_00] So let's talk about this.
+
+487
+00:35:03,760 --> 00:35:12,560
+[SPEAKER_00] The last thing on the core technology fee and then actually, again, if you want to jump in with any details I missed before we do our punditry all around, but core technology fee is the only fee that you pay.
+
+488
+00:35:13,360 --> 00:35:17,280
+[SPEAKER_00] So inside those marketplaces, you can use any payment provider you want.
+
+489
+00:35:17,760 --> 00:35:19,280
+[SPEAKER_00] You don't pay Apple any commission.
+
+490
+00:35:19,520 --> 00:35:21,520
+[SPEAKER_00] You don't pay Apple any billing fee.
+
+491
+00:35:22,000 --> 00:35:26,400
+[SPEAKER_00] The only thing you pay Apple in these marketplaces is the core technology fee.
+
+492
+00:35:26,640 --> 00:35:28,880
+[SPEAKER_02] I'm missing And if you use IAP, right?
+
+493
+00:35:29,120 --> 00:35:32,720
+[SPEAKER_02] Like you can't Well, you can't use IA, no, you can't use from ACAS.
+
+494
+00:35:33,440 --> 00:35:34,240
+[SPEAKER_04] No, no IAP.
+
+495
+00:35:34,480 --> 00:35:35,040
+[SPEAKER_04] No IAP.
+
+496
+00:35:36,480 --> 00:35:37,680
+[SPEAKER_04] And they're not charging commission.
+
+497
+00:35:37,760 --> 00:35:39,360
+[SPEAKER_04] So they're not taking the commission.
+
+498
+00:35:39,600 --> 00:35:41,920
+[SPEAKER_04] No, they're only taking the core technology fee in that case.
+
+499
+00:35:42,320 --> 00:35:45,600
+[SPEAKER_03] Did you say that we cannot do in-purchases in the No, you can't.
+
+500
+00:35:45,760 --> 00:35:47,520
+[SPEAKER_02] You cannot do in not using apples.
+
+501
+00:35:48,480 --> 00:35:54,720
+[SPEAKER_00] But in the third party marketplace store, you can use Apple Pay to pay with your face process via Stripe and Revenkat.
+
+502
+00:35:55,760 --> 00:35:56,640
+[SPEAKER_03] That's, yeah, exactly.
+
+503
+00:35:56,720 --> 00:35:58,320
+[SPEAKER_03] I mean, that's, it doesn't matter really, right?
+
+504
+00:35:58,560 --> 00:35:58,960
+[SPEAKER_04] Yeah, yeah.
+
+505
+00:35:59,280 --> 00:36:00,480
+[SPEAKER_04] And so this is, this is, by the way.
+
+506
+00:36:00,480 --> 00:36:04,240
+[SPEAKER_04] This is interesting that this is explicitly allowed to use Apple Pay.
+
+507
+00:36:04,400 --> 00:36:11,760
+[SPEAKER_04] I was kind of surprised when I saw this in the documents that they explicitly talk about using Apple Pay and how you have to use Apple Pay, but it didn't seem like prohibitive.
+
+508
+00:36:12,640 --> 00:36:15,200
+[SPEAKER_04] Yeah, like they would make a weird rule like, Oh, yeah, yeah, yeah.
+
+509
+00:36:15,440 --> 00:36:16,960
+[SPEAKER_04] Apps can't use Apple Pay, right?
+
+510
+00:36:17,200 --> 00:36:18,640
+[SPEAKER_04] It would seem like a dumb thing they would add.
+
+511
+00:36:18,960 --> 00:36:19,440
+[SPEAKER_04] Yeah, yeah.
+
+512
+00:36:19,520 --> 00:36:26,000
+[SPEAKER_00] I guess one more minutiae is that there will be at least two scare sheets in these steps.
+
+513
+00:36:26,320 --> 00:36:28,880
+[SPEAKER_00] So you see the scare sheet for downloading this marketplace app.
+
+514
+00:36:29,200 --> 00:36:36,800
+[SPEAKER_00] And then through the notarization process, from what I understand, Apple is going to kind of document some things and there will be a second scare sheet.
+
+515
+00:36:37,440 --> 00:36:46,800
+[SPEAKER_00] when you're installing an app from this third party marketplace that is kind of an Apple system sheet that tells you about what's happening in the app.
+
+516
+00:36:47,200 --> 00:36:51,760
+[SPEAKER_00] But all in all, it's kind of like what you were saying, Jacob, is like, is that fairly reasonable to prompt?
+
+517
+00:36:52,080 --> 00:37:03,120
+[SPEAKER_00] I mean, Apple, the wording of it, the design of it is maybe over top, but it's two hurdles to get to a completely free and open ecosystem on iOS.
+
+518
+00:37:03,840 --> 00:37:07,920
+[SPEAKER_00] One scare sheet to download the marketplace app, one scare sheet to download the app itself.
+
+519
+00:37:08,320 --> 00:37:13,840
+[SPEAKER_00] And then you can do pretty much anything that's allowed via these notarized apps.
+
+520
+00:37:14,240 --> 00:37:14,960
+[SPEAKER_00] So what do we think?
+
+521
+00:37:15,680 --> 00:37:16,560
+[SPEAKER_00] There's a lot of angles here.
+
+522
+00:37:16,800 --> 00:37:19,120
+[SPEAKER_01] And again, I would leave the payment stuff to the experts.
+
+523
+00:37:19,280 --> 00:37:24,880
+[SPEAKER_01] I think going back a little bit, one of the most interesting things for us is all those rules around setting up the new marketplaces.
+
+524
+00:37:25,120 --> 00:37:33,920
+[SPEAKER_01] And one of the results of that being that a lot of these big names that might be interested in distributing more directly to their users really can.
+
+525
+00:37:34,240 --> 00:37:39,600
+[SPEAKER_01] You need to set up a marketplace that is designed as an outlet, not just for your own app, but others.
+
+526
+00:37:40,240 --> 00:37:48,480
+[SPEAKER_01] And there would be potentially this big shift in larger teams and companies to distribute directly to their users if they already have sites that have a lot of traffic, that kind of thing.
+
+527
+00:37:49,040 --> 00:37:51,280
+[SPEAKER_01] just make it super easy to get more folks onto mobile.
+
+528
+00:37:51,840 --> 00:37:52,160
+[SPEAKER_01] Not possible.
+
+529
+00:37:52,640 --> 00:37:57,680
+[SPEAKER_01] So to make this all happen in a big way, we talked about someone in the comments like a Netflix or Spotify.
+
+530
+00:37:58,080 --> 00:38:02,560
+[SPEAKER_01] There are some big names there that could do a kind of niche or vertical specific, maybe marketplace.
+
+531
+00:38:02,880 --> 00:38:10,880
+[SPEAKER_01] But when you look at a broader scope for large companies, it's hard to see how they would expand beyond more traditional ways of distributing.
+
+532
+00:38:11,120 --> 00:38:12,480
+[SPEAKER_01] I think that's how we view it right now.
+
+533
+00:38:12,880 --> 00:38:20,400
+[SPEAKER_01] There's just so many guardrails on this that I think eventually things will expand and get there, but it will be extra slow, I think, because of some of the bureaucracy.
+
+534
+00:38:20,560 --> 00:38:24,640
+[SPEAKER_02] Of course, yeah, Netflix is an interesting one because Netflix has a real COGS problem.
+
+535
+00:38:24,640 --> 00:38:25,120
+[SPEAKER_02] Cogs problem, right?
+
+536
+00:38:25,360 --> 00:38:31,760
+[SPEAKER_02] Like they can't charge 999 or whatever on IP because they have to pay a bunch of fees for their licensing of content.
+
+537
+00:38:32,080 --> 00:38:34,480
+[SPEAKER_02] They can always just jack the price up, but they don't like to do that either.
+
+538
+00:38:34,560 --> 00:38:35,680
+[SPEAKER_02] So they've just said, forget it.
+
+539
+00:38:35,760 --> 00:38:36,640
+[SPEAKER_02] We drive enough traffic.
+
+540
+00:38:36,800 --> 00:38:40,640
+[SPEAKER_02] You could see a world where they're like, okay, let's build the Netflix app store, which like TBD.
+
+541
+00:38:40,960 --> 00:38:45,040
+[SPEAKER_02] I wonder how strict Apple is going to be and be like, all right, the Netflix app store is just for Netflix.
+
+542
+00:38:45,120 --> 00:38:46,080
+[SPEAKER_02] We're not going to allow this, right?
+
+543
+00:38:46,320 --> 00:38:48,000
+[SPEAKER_02] Like this is not really an app store, right?
+
+544
+00:38:48,240 --> 00:38:52,240
+[SPEAKER_02] This is just a special thing for Netflix, but Netflix also is doing app distribution.
+
+545
+00:38:52,400 --> 00:38:53,680
+[SPEAKER_02] They have games now and stuff like this.
+
+546
+00:38:53,840 --> 00:38:55,360
+[SPEAKER_02] So they're kind of already playing in this space.
+
+547
+00:38:55,840 --> 00:38:57,040
+[SPEAKER_02] So you could see them building this.
+
+548
+00:38:57,600 --> 00:39:03,920
+[SPEAKER_02] The question for Netflix would be, are all of those steps going to compete compound to thirty percent that you're losing already.
+
+549
+00:39:04,240 --> 00:39:06,240
+[SPEAKER_02] And I'm like thirty percent comes at you real fast.
+
+550
+00:39:06,560 --> 00:39:07,760
+[SPEAKER_02] You compound a couple gates.
+
+551
+00:39:08,000 --> 00:39:10,480
+[SPEAKER_02] You have this crazy install thing, which like, okay.
+
+552
+00:39:10,720 --> 00:39:22,000
+[SPEAKER_02] So just think about like when you're doing consumer anything, every click you're losing ten percent of your users, especially if I'm doing this targeted to install Netflix, like I have to install Netflix's App Store, get a big scary sheet.
+
+553
+00:39:22,080 --> 00:39:23,840
+[SPEAKER_02] And I'm like, okay, I'm a normie.
+
+554
+00:39:24,000 --> 00:39:25,840
+[SPEAKER_02] Like, I don't know what this is, but it looks scary.
+
+555
+00:39:26,240 --> 00:39:29,120
+[SPEAKER_02] And then you have to navigate inside their thing and you have to click again.
+
+556
+00:39:29,280 --> 00:39:30,800
+[SPEAKER_02] And it's like another big scary sheet.
+
+557
+00:39:31,120 --> 00:39:32,960
+[SPEAKER_02] And Netflix has to be like, no, it's okay.
+
+558
+00:39:33,040 --> 00:39:33,360
+[SPEAKER_02] It's cool.
+
+559
+00:39:33,520 --> 00:39:34,560
+[SPEAKER_02] It's Netflix's virus.
+
+560
+00:39:34,720 --> 00:39:35,280
+[SPEAKER_02] Like, it's fine.
+
+561
+00:39:35,520 --> 00:39:36,880
+[SPEAKER_02] And by the time you get to the end of the app.
+
+562
+00:39:36,880 --> 00:39:41,680
+[SPEAKER_02] By the time you get to the end of this chain, it's again, it's like Netflix could do this now on Android.
+
+563
+00:39:41,920 --> 00:39:42,560
+[SPEAKER_02] I don't think they have.
+
+564
+00:39:42,800 --> 00:39:47,680
+[SPEAKER_02] And maybe Nico's point about it just being one fifth of the revenue, that's just not enough incentive for them to do this.
+
+565
+00:39:48,160 --> 00:39:52,240
+[SPEAKER_02] As a developer, I'm just thinking, God, I have to make this stupid App Store work.
+
+566
+00:39:52,480 --> 00:39:53,280
+[SPEAKER_02] I have to do all this.
+
+567
+00:39:53,440 --> 00:39:54,640
+[SPEAKER_02] I have to maintain all this crap.
+
+568
+00:39:54,800 --> 00:39:55,840
+[SPEAKER_02] I have to do all this billing.
+
+569
+00:39:56,000 --> 00:39:59,600
+[SPEAKER_02] Now we got this exposure to the CTF and all this crap for what?
+
+570
+00:39:59,920 --> 00:40:04,240
+[SPEAKER_02] So we can charge 999 instead of 13 dollars on the App Store, right?
+
+571
+00:40:04,480 --> 00:40:06,640
+[SPEAKER_02] Netflix is doing fine without charging the payments at all.
+
+572
+00:40:06,720 --> 00:40:10,000
+[SPEAKER_02] I guess this gets into the meta of like, I think that was Apple's point.
+
+573
+00:40:10,960 --> 00:40:12,320
+[SPEAKER_02] I think that was the purpose.
+
+574
+00:40:12,960 --> 00:40:26,640
+[SPEAKER_02] of the way they've complied was that to induce maximum pain while staying as close within the regulations as they can because, frankly, they've got a monopoly on their users' time and dollars and they don't want to let that go.
+
+575
+00:40:26,960 --> 00:40:40,640
+[SPEAKER_00] And that's where I think this as a starting point for negotiations is really interesting because maybe the most straightforward thing for the EU to do to make the DMA more impactful is say, Apple, you can't charge fifty cents.
+
+576
+00:40:40,800 --> 00:40:42,320
+[SPEAKER_00] That's not a fair and reasonable fee.
+
+577
+00:40:42,640 --> 00:40:44,000
+[SPEAKER_00] You can only charge ten cents.
+
+578
+00:40:44,400 --> 00:40:49,840
+[SPEAKER_00] And if that's the case, then the calculus of how all this works out looks really interest really different.
+
+579
+00:40:50,400 --> 00:40:54,640
+[SPEAKER_00] I'm going to go full Milton Friedman here and just be like, that's what markets are for.
+
+580
+00:40:55,120 --> 00:41:05,360
+[SPEAKER_02] Basically, we now have a duopoly of the EU and Apple, which are probably similarly sized and market cap, being like, being like, no one.
+
+581
+00:41:05,680 --> 00:41:06,240
+[SPEAKER_02] It's the same thing.
+
+582
+00:41:06,480 --> 00:41:09,040
+[SPEAKER_02] They're both corporations of people trying to like achieve something.
+
+583
+00:41:09,360 --> 00:41:18,560
+[SPEAKER_02] What we're trending, and this is where I'm going to really put on my tinfo hat is we have created a perfect trap for regulatory capture because what's going to happen is Apple is going to like dance to use dance.
+
+584
+00:41:18,720 --> 00:41:19,440
+[SPEAKER_02] They're going to make it work.
+
+585
+00:41:19,600 --> 00:41:20,480
+[SPEAKER_02] They're going to do all this work.
+
+586
+00:41:20,640 --> 00:41:24,720
+[SPEAKER_02] They're going to build this super complex thing that they alone can fly.
+
+587
+00:41:25,120 --> 00:41:26,880
+[SPEAKER_02] with that's built for them to be alive.
+
+588
+00:41:27,280 --> 00:41:31,360
+[SPEAKER_02] While yes, we've now created space for new entrants at the low end.
+
+589
+00:41:31,920 --> 00:41:38,320
+[SPEAKER_02] Anyone who gets anywhere close to this gatekeeper thing will have the ceiling that they can't penetrate because now they have to be a gatekeeper as well.
+
+590
+00:41:38,560 --> 00:41:40,480
+[SPEAKER_02] Like Meta is already considered a gatekeeper.
+
+591
+00:41:40,960 --> 00:41:48,240
+[SPEAKER_02] It's this gatekeeper law inception where like if Meta has an app store, now their app store also has to allow extra app stores or something like this.
+
+592
+00:41:49,760 --> 00:41:57,520
+[SPEAKER_03] The things that we don't know yet, which makes it a bit harder to really understand the opportunity or the possibility of new marketplaces is like what is that burden actually?
+
+593
+00:41:57,680 --> 00:41:59,840
+[SPEAKER_03] I know we know at a high level what new marketplaces have to do.
+
+594
+00:41:59,920 --> 00:42:04,320
+[SPEAKER_03] They have to have the million, there's like specific checks that they have to do before they distribute software.
+
+595
+00:42:04,640 --> 00:42:08,400
+[SPEAKER_03] We have to understand how costly that is for them to understand if it could make sense.
+
+596
+00:42:08,720 --> 00:42:13,520
+[SPEAKER_03] And then there's also some questions around these scare sheets, how aggressively are they actually being pushed in the user's face?
+
+597
+00:42:13,760 --> 00:42:16,480
+[SPEAKER_03] Is there some ability to adjust that in some way in your own language?
+
+598
+00:42:16,640 --> 00:42:21,040
+[SPEAKER_03] So I think there's like some things that are not 100% defined, so it's hard to understand.
+
+599
+00:42:21,680 --> 00:42:27,760
+[SPEAKER_03] I spent time with Maneet talking about this yesterday, the founder of Backbone, the mobile marketplace, the controller and the software piece of it.
+
+600
+00:42:28,320 --> 00:42:32,480
+[SPEAKER_03] And I think there's like specific examples again where this makes a lot of sense, right?
+
+601
+00:42:32,640 --> 00:42:38,960
+[SPEAKER_03] Like there's full price games that are now being released on the iPhone, Death Stranding now, for example., it's coming to iPhone, it's $20, right?
+
+602
+00:42:39,280 --> 00:42:49,520
+[SPEAKER_03] It's not like high volume yet, these types of games on the app stores, but you already have a significant number of users that are using the backbone to play games and they have the software layer that already downloads a lot of apps with that, right?
+
+603
+00:42:49,760 --> 00:43:04,880
+[SPEAKER_03] Is there a world where you say, look guys, we can offer you higher margins, we make our margins on it, as long as the costs are somewhat under control, it is for us very well possible to have a marketplace on top of our existing user base that actually enables gaming distribution.
+
+604
+00:43:05,200 --> 00:43:10,720
+[SPEAKER_03] And I think there are some people that are specifically positioned already in that they can take advantage of this potentially.
+
+605
+00:43:11,040 --> 00:43:16,320
+[SPEAKER_03] And then there's some of the bigger players like Apple Epic that just do it because it's ideologically what they think should be done.
+
+606
+00:43:16,800 --> 00:43:25,280
+[SPEAKER_03] But as soon as we have marketplaces that do get to scale and offer a real alternative to the App Store for a specific niche, then the calculus becomes much more attractive.
+
+607
+00:43:25,680 --> 00:43:29,440
+[SPEAKER_02] Then we get what we want, which is like the App Store to actually concede some things, right?
+
+608
+00:43:29,680 --> 00:43:35,200
+[SPEAKER_02] Then I'll be happy, then I will, you know what, I'll move to Brussels, I'll wear my little blue shirt with a ring.
+
+609
+00:43:35,520 --> 00:43:36,400
+[SPEAKER_02] I would go full EU.
+
+610
+00:43:36,800 --> 00:43:38,080
+[SPEAKER_02] Congratulations, it worked.
+
+611
+00:43:38,560 --> 00:43:41,040
+[SPEAKER_02] I'm just like, how long are these cycles going to take?
+
+612
+00:43:41,280 --> 00:43:42,720
+[SPEAKER_02] It's been years for us to get anything.
+
+613
+00:43:42,960 --> 00:43:47,360
+[SPEAKER_02] And so now we go back to the Entmoot again and like we have to like do another cycle.
+
+614
+00:43:47,520 --> 00:43:53,920
+[SPEAKER_02] And then literally, I think what.'s going to happen is Sam Altman or someone's going to build an iPhone that's going to obsolete the iPhone.
+
+615
+00:43:54,160 --> 00:43:57,040
+[SPEAKER_02] And then this is going to be like the biggest waste of energy of all time.
+
+616
+00:43:57,120 --> 00:44:00,320
+[SPEAKER_02] You know, obviously, I wake up in cold sweatshots at night thinking our apps are going away.
+
+617
+00:44:00,640 --> 00:44:01,680
+[SPEAKER_02] Is the iPhone going away?
+
+618
+00:44:02,000 --> 00:44:08,160
+[SPEAKER_02] And I don't think I see an immediate path to that, but it would be naive to think that this model exists forever.
+
+619
+00:44:08,720 --> 00:44:13,760
+[SPEAKER_02] And I think stuff like the DMA, what's happening now called an incitement, like to use that term.
+
+620
+00:44:14,000 --> 00:44:16,480
+[SPEAKER_02] It's like we're seeing the incitement of the app store.
+
+621
+00:44:17,040 --> 00:44:20,880
+[SPEAKER_02] The unintentional positive here is that this will create, I think, hopefully, opportunity.
+
+622
+00:44:21,040 --> 00:44:24,560
+[SPEAKER_02] Maybe a company with an already present base like Backbone then can then.
+
+623
+00:44:24,560 --> 00:44:29,440
+[SPEAKER_02] Then can lever that into a store, which then can maybe lever that into a device, because it could be the same case for Epic.
+
+624
+00:44:29,680 --> 00:44:33,280
+[SPEAKER_02] And that's what actually breaks Apple's monopoly, but like a lot of bank shots.
+
+625
+00:44:33,840 --> 00:44:45,360
+[SPEAKER_00] I want to pull on two threads that Nika brought up, one earlier and one just now is that these third party marketplaces probably make the most sense in two specific cases out of the gate, right?
+
+626
+00:44:45,680 --> 00:44:48,400
+[SPEAKER_00] Like evolving over time, maybe things change, whatever.
+
+627
+00:44:48,480 --> 00:44:57,040
+[SPEAKER_00] But like out of the gate, so far, I'm seeing two things based on Nika's comments is one is that if you're an AAA game and you charge up front.
+
+628
+00:44:57,360 --> 00:45:03,520
+[SPEAKER_00] So like I can visually under these rules, an AAA game store launching as a third party marketplace.
+
+629
+00:45:04,080 --> 00:45:06,880
+[SPEAKER_00] You pay fifty dollars advance for your AAA game.
+
+630
+00:45:07,440 --> 00:45:14,800
+[SPEAKER_00] Nintendo could launch the Switch store with Backbone as a controller and you pay thirty dollars advance for the game.
+
+631
+00:45:15,040 --> 00:45:22,480
+[SPEAKER_00] Now that gives you, I mean, a decade of your fifty cents a year is five bucks, that's still lower than they say marketplaces can be paid advance.
+
+632
+00:45:22,720 --> 00:45:23,920
+[SPEAKER_02] And that's like a weird copy.
+
+633
+00:45:24,000 --> 00:45:24,080
+[SPEAKER_00] Yeah.
+
+634
+00:45:24,320 --> 00:45:25,200
+[SPEAKER_00] No, it's totally free.
+
+635
+00:45:25,280 --> 00:45:26,160
+[SPEAKER_00] It's like the marketplace.
+
+636
+00:45:26,320 --> 00:45:29,120
+[SPEAKER_00] I know, but how do you enforce the download on that?
+
+637
+00:45:29,280 --> 00:45:33,680
+[SPEAKER_02] I guess this is the only reason to download it is because you've paid thirty dollars or something like this, right?
+
+638
+00:45:34,240 --> 00:45:34,320
+[SPEAKER_00] Yeah.
+
+639
+00:45:34,560 --> 00:45:36,720
+[SPEAKER_00] Like you can only download the app if you've paid the.
+
+640
+00:45:37,120 --> 00:45:46,960
+[SPEAKER_00] thirty dollars in this because the marketplace, I mean, from my understanding, again, maybe there are other details, but my understanding is like the marketplace has like full control over the business model within the marketplace.
+
+641
+00:45:47,120 --> 00:45:50,640
+[SPEAKER_00] So Nintendo could come along with the Nintendo Switch marketplace app.
+
+642
+00:45:51,200 --> 00:45:56,720
+[SPEAKER_00] It could all be paid upfront, their premium games, sixty dollars for the series of the kingdom.
+
+643
+00:45:57,440 --> 00:46:05,040
+[SPEAKER_00] And with a sixty dollar upfront payment, that fifty cent platform core technology fee, even if you have to pay it recurring, is a tiny little fee.
+
+644
+00:46:05,280 --> 00:46:07,440
+[SPEAKER_00] But you also have to bear a little lucky lose though.
+
+645
+00:46:07,600 --> 00:46:10,000
+[SPEAKER_02] You had to pay for everyone's CTF for the marketplace download.
+
+646
+00:46:10,000 --> 00:46:11,200
+[SPEAKER_02] But for the marketplace download.
+
+647
+00:46:12,160 --> 00:46:12,800
+[SPEAKER_00] Yeah, the marketplace.
+
+648
+00:46:13,120 --> 00:46:17,600
+[SPEAKER_00] has to be the free download, but then subsequent downloads can be limited.
+
+649
+00:46:17,840 --> 00:46:26,400
+[SPEAKER_00] So that's, I think, a really interesting opportunity created by the DMA that could be done immediately under the current rules with the current fee structure.
+
+650
+00:46:27,040 --> 00:46:44,880
+[SPEAKER_00] The second one that I think Nico kind of alluded to is a more B2B marketplace where when you know you're going to have a much higher LTV and you can design the store around those kinds of limits, maybe you have to sign in with your corporate account before you can download an app.
+
+651
+00:46:45,040 --> 00:47:04,480
+[SPEAKER_00] Maybe there's some other hurdle to enforce the not download unless you already have an account with that provider, whatever, there could potentially be this opportunity for high LTV, especially B2B, but maybe even high LTV consumer marketplace where there's some other kind of gate to protect against that core technology fee.
+
+652
+00:47:04,640 --> 00:47:16,720
+[SPEAKER_00] And again, with some limits on the look you lose downloading and starting a free trial and never paying you a penny, there's potential for these high LTV apps to join a marketplace where there are some limitations in place.
+
+653
+00:47:16,960 --> 00:47:21,040
+[SPEAKER_00] And that could happen today even with all the fees and hurdles you have to jump through.
+
+654
+00:47:21,600 --> 00:47:22,000
+[SPEAKER_00] We'll see.
+
+655
+00:47:22,240 --> 00:47:23,680
+[SPEAKER_00] No comments from the gallery.
+
+656
+00:47:26,240 --> 00:47:33,280
+[SPEAKER_02] As Miguel and I were talking about yesterday, it's like they made it just too confusing for any one human brain to really like wrap their heads around.
+
+657
+00:47:33,680 --> 00:47:34,640
+[SPEAKER_02] And I think that was the point.
+
+658
+00:47:34,960 --> 00:47:37,120
+[SPEAKER_02] 15, 30 percent, I can get that.
+
+659
+00:47:37,360 --> 00:47:37,920
+[SPEAKER_02] That I understand.
+
+660
+00:47:38,480 --> 00:47:39,680
+[SPEAKER_02] There's one too many variables.
+
+661
+00:47:39,840 --> 00:47:42,160
+[SPEAKER_02] There's too many nonlinear relationships between things.
+
+662
+00:47:42,640 --> 00:47:43,920
+[SPEAKER_03] I think that's made it very difficult.
+
+663
+00:47:44,320 --> 00:47:48,080
+[SPEAKER_02] I will stand up and say that everyone on this call, do not switch to the new business model.
+
+664
+00:47:48,720 --> 00:47:49,200
+[SPEAKER_02] I do not.
+
+665
+00:47:50,240 --> 00:47:54,080
+[SPEAKER_02] It is at best a bad idea, at worst like a huge distraction.
+
+666
+00:47:54,400 --> 00:47:56,160
+[SPEAKER_02] At least wait, let someone else do it.
+
+667
+00:47:56,320 --> 00:48:00,480
+[SPEAKER_02] Because like Nico is talking about a lot of companies that are like these very specific cases.
+
+668
+00:48:01,040 --> 00:48:05,440
+[SPEAKER_02] They know who they are, and they're going to be able to test this in an appropriate way.
+
+669
+00:48:05,760 --> 00:48:14,400
+[SPEAKER_02] If you're like our legion of indie app developers and Apple's right, 99% of developers don't get like lured by the two percent because I don't know if you'll be able to switch back.
+
+670
+00:48:14,800 --> 00:48:16,640
+[SPEAKER_02] I don't think it's a worthwhile trade.
+
+671
+00:48:17,280 --> 00:48:26,960
+[SPEAKER_02] If you're in this phase, or Niko's talking about where like certain companies are kind of screwed by the current terms, it prins them doing certain things, then it might be worthwhile doing the math on.
+
+672
+00:48:27,520 --> 00:48:29,280
+[SPEAKER_02] But again, I think it's a pretty risky bet.
+
+673
+00:48:29,600 --> 00:48:31,760
+[SPEAKER_02] I wouldn't be the first company to stick my neck out on it.
+
+674
+00:48:31,840 --> 00:48:32,560
+[SPEAKER_02] Let's put it that way.
+
+675
+00:48:32,720 --> 00:48:34,320
+[SPEAKER_02] I'd like to figure out how it plays out.
+
+676
+00:48:34,960 --> 00:48:35,040
+[SPEAKER_00] Yeah.
+
+677
+00:48:35,200 --> 00:48:35,360
+[SPEAKER_00] I would.
+
+678
+00:48:36,000 --> 00:48:39,760
+[SPEAKER_00] The meta we haven't discussed yet is that we're also just talking about the EU.
+
+679
+00:48:40,160 --> 00:48:49,040
+[SPEAKER_00] So we pulled revenue cat numbers and from all of our customers, app store specific, EU specific, revenue is twelve percent.
+
+680
+00:48:49,760 --> 00:48:59,760
+[SPEAKER_00] So even Nintendo coming out with a Switch store, that's a lot of work to build the marketplace, to do all that kind of stuff, to maybe move the needle on twelve percent of your revenue.
+
+681
+00:48:59,920 --> 00:49:05,840
+[SPEAKER_00] And then of course with Switch, they're selling hardware and probably making some profits on that at this point in the console evolution and all that.
+
+682
+00:49:06,080 --> 00:49:07,760
+[SPEAKER_00] So it's like a million different caveats.
+
+683
+00:49:08,000 --> 00:49:14,000
+[SPEAKER_00] But yeah, I think it's interesting that you also have to filter to the views of like this is not a global thing.
+
+684
+00:49:14,240 --> 00:49:18,320
+[SPEAKER_00] We're only talking about five to fifteen percent of the total revenue.
+
+685
+00:49:18,480 --> 00:49:24,560
+[SPEAKER_00] And then you're talking about all these hurdles to jump through all the new code and other things you have to do to be able to do these things.
+
+686
+00:49:25,040 --> 00:49:26,160
+[SPEAKER_01] Jens, you were going to say something.
+
+687
+00:49:26,320 --> 00:49:29,120
+[SPEAKER_04] Yeah, I was just going to comment both Jacob's and your comment.
+
+688
+00:49:29,360 --> 00:49:32,720
+[SPEAKER_04] So I think on Jacob's comment, I would completely agree with what Jacob said.
+
+689
+00:49:33,120 --> 00:49:39,440
+[SPEAKER_04] I think the big wild card there is the third party app stores, third party app marketplaces or whatever.
+
+690
+00:49:39,680 --> 00:49:42,320
+[SPEAKER_04] I think that's the only thing that could really change the game.
+
+691
+00:49:43,040 --> 00:49:48,240
+[SPEAKER_04] But I also think the likelihood of that happening and happening quickly are relatively low.
+
+692
+00:49:48,880 --> 00:49:50,720
+[SPEAKER_04] Maybe Epic is going to launch the Fortnite store.
+
+693
+00:49:50,880 --> 00:49:52,240
+[SPEAKER_04] So like, we'll see what happens with that.
+
+694
+00:49:52,400 --> 00:49:55,680
+[SPEAKER_04] I mean, I've run some numbers and it doesn't seem like a very attractive proposition.
+
+695
+00:49:56,080 --> 00:49:58,560
+[SPEAKER_00] Hey, they already spent 100 billion dollars finding Apple.
+
+696
+00:49:59,040 --> 00:49:59,600
+[SPEAKER_00] Yeah, exactly.
+
+697
+00:49:59,760 --> 00:50:03,920
+[SPEAKER_04] They blow another 100 billion just to make the point ideological more than anything.
+
+698
+00:50:04,240 --> 00:50:04,960
+[SPEAKER_04] So that's going to happen.
+
+699
+00:50:05,520 --> 00:50:06,240
+[SPEAKER_04] That's one aspect.
+
+700
+00:50:06,640 --> 00:50:10,400
+[SPEAKER_04] I also think some of this will be litigated in one way or another, right?
+
+701
+00:50:10,640 --> 00:50:17,280
+[SPEAKER_04] I mean, you know, of course, Tim Sweeney is already cursing over Twitter about this and might take Apple to court over this.
+
+702
+00:50:17,760 --> 00:50:19,600
+[SPEAKER_04] I'm sure Spotify is going to do the same.
+
+703
+00:50:19,760 --> 00:50:21,040
+[SPEAKER_04] So I think that's the second aspect.
+
+704
+00:50:21,520 --> 00:50:30,640
+[SPEAKER_04] I think there, David, what you said, I mean, yes, it's EU only, but I bet that a bunch of regulators across the world are also basically watching this phase and kind of seeing what happens, right?
+
+705
+00:50:30,960 --> 00:50:33,680
+[SPEAKER_04] And seeing like, is this experiment successful or not?
+
+706
+00:50:34,080 --> 00:50:41,760
+[SPEAKER_04] And learn from that because maybe not so much in the US because obviously, I mean, for one thing, Apple is a US company, but the world is big outside of the US as well.
+
+707
+00:50:41,920 --> 00:50:42,800
+[SPEAKER_04] So we'll see what happens.
+
+708
+00:50:42,960 --> 00:50:44,640
+[SPEAKER_04] I think that's really the metameter.
+
+709
+00:50:44,880 --> 00:50:47,840
+[SPEAKER_02] Yeah, you have to presume this is the response model they'll use.
+
+710
+00:50:48,160 --> 00:50:51,840
+[SPEAKER_02] You know, there was an open market act in the US that was kind of very similar.
+
+711
+00:50:52,080 --> 00:50:54,640
+[SPEAKER_02] It didn't get a lot of traction, but if it ever did, yeah.
+
+712
+00:50:54,720 --> 00:50:55,040
+[SPEAKER_02] They would be.
+
+713
+00:50:55,760 --> 00:51:04,640
+[SPEAKER_04] And I mean, I think that has become very, very evident over the last two or so years.
+
+714
+00:51:05,040 --> 00:51:19,680
+[SPEAKER_04] It's a little bit of a shame because in the end, probably the worst thing is that we end up with business models that are completely fixed and fixed by regulatory bodies with no ability to have any flexibility, but we'll see what happens.
+
+715
+00:51:19,840 --> 00:51:26,880
+[SPEAKER_04] Again, I think there's probably a few more moves to watch here before, I mean, there doesn't seem to be a first move advantage here to try and take advantage of this.
+
+716
+00:51:27,360 --> 00:51:32,000
+[SPEAKER_00] Yeah, this is probably a good place to wrap up all the conversation and tie it in a nice little bow.
+
+717
+00:51:32,400 --> 00:51:36,800
+[SPEAKER_00] I think it was a good point, Jens, is that this is again just one more step.
+
+718
+00:51:37,440 --> 00:51:47,200
+[SPEAKER_00] in like a multiyear multi battlefield war that's going on between Apple and developers and consumers and regulators.
+
+719
+00:51:47,600 --> 00:51:48,800
+[SPEAKER_00] But it's the end game for Apple.
+
+720
+00:51:49,040 --> 00:52:00,720
+[SPEAKER_00] And this is what's so frustrating to me is just that Gruber had a good line in one of his posts recently said, the last thing you want to do if you're a sports team in a high stakes sporting event is piss off the refs.
+
+721
+00:52:01,520 --> 00:52:03,120
+[SPEAKER_00] And like, that's what Apple's doing.
+
+722
+00:52:03,280 --> 00:52:05,920
+[SPEAKER_00] It's like they're just inviting more regulation.
+
+723
+00:52:06,640 --> 00:52:16,480
+[SPEAKER_00] South Korea has already responded to Apple's quote compliance in South Korea saying that they don't think Apple's actually complying and are threatening to fine them.
+
+724
+00:52:16,960 --> 00:52:18,960
+[SPEAKER_00] Like Apple's pissing off a lot of people.
+
+725
+00:52:19,120 --> 00:52:20,960
+[SPEAKER_00] Like they're squandering developers goodwill.
+
+726
+00:52:21,200 --> 00:52:22,400
+[SPEAKER_00] They're pissing off regulators.
+
+727
+00:52:22,640 --> 00:52:25,040
+[SPEAKER_00] Consumers are starting to hear that it's super tenable.
+
+728
+00:52:25,120 --> 00:52:26,160
+[SPEAKER_02] Did you see the screenshot I showed?
+
+729
+00:52:26,640 --> 00:52:30,640
+[SPEAKER_00] My 14-year-old son is like, Apple sucks because he just sees all the YouTubers complaining.
+
+730
+00:52:30,800 --> 00:52:32,640
+[SPEAKER_00] So I keep saying, like, he wants an Android phone.
+
+731
+00:52:32,880 --> 00:52:34,640
+[SPEAKER_02] Tim Sweeney responded on my tweet today.
+
+732
+00:52:34,880 --> 00:52:35,840
+[SPEAKER_02] Well, why not build a new phone?
+
+733
+00:52:35,920 --> 00:52:37,360
+[SPEAKER_02] He says it costs 300 billion dollars.
+
+734
+00:52:37,520 --> 00:52:39,120
+[SPEAKER_02] I'm like, Apple's worth 3 trillion.
+
+735
+00:52:39,360 --> 00:52:40,560
+[SPEAKER_02] That's a 10x return.
+
+736
+00:52:40,960 --> 00:52:42,720
+[SPEAKER_02] Build a new phone for 300 billion dollars.
+
+737
+00:52:43,040 --> 00:52:44,720
+[SPEAKER_02] I think that's the natural cycle of it, right?
+
+738
+00:52:45,040 --> 00:52:48,560
+[SPEAKER_02] Platform takes over, earns a monopoly, becomes shitty and unresponsive.
+
+739
+00:52:48,560 --> 00:52:52,320
+[SPEAKER_02] Among other things, someone goes like, okay, there must be a better way.
+
+740
+00:52:52,480 --> 00:52:54,000
+[SPEAKER_02] And then someone mentions the better way.
+
+741
+00:52:54,160 --> 00:52:56,000
+[SPEAKER_02] And then we continue on into the future.
+
+742
+00:52:56,400 --> 00:52:56,800
+[SPEAKER_02] And it's great.
+
+743
+00:52:57,760 --> 00:52:58,640
+[SPEAKER_03] Can I add two less things?
+
+744
+00:52:58,880 --> 00:52:58,960
+[SPEAKER_03] Yeah.
+
+745
+00:53:00,080 --> 00:53:01,840
+[SPEAKER_03] That I think may be interesting to hear.
+
+746
+00:53:02,080 --> 00:53:04,800
+[SPEAKER_03] The one is like another opportunity that we haven't touched upon.
+
+747
+00:53:04,800 --> 00:53:09,440
+[SPEAKER_03] And this is just, I guess, my mind, but I'm thinking, okay, since we have the status quo and we know Apple is cheeky.
+
+748
+00:53:09,600 --> 00:53:14,240
+[SPEAKER_03] Like, it's really interesting because I had a lot of developers being really upset with Apple about this.
+
+749
+00:53:14,560 --> 00:53:17,520
+[SPEAKER_03] And I understand it, but like, it's clear what Apple's incentives are, right?
+
+750
+00:53:17,760 --> 00:53:22,000
+[SPEAKER_03] And of course, they're trying to, as much as possible, avoid losing revenue.
+
+751
+00:53:22,640 --> 00:53:24,560
+[SPEAKER_03] And this is a way that they can comply, but also.
+
+752
+00:53:25,040 --> 00:53:25,920
+[SPEAKER_03] like make it very difficult.
+
+753
+00:53:26,080 --> 00:53:28,560
+[SPEAKER_03] And so we have to find our way to take opportunities out of it.
+
+754
+00:53:28,960 --> 00:53:37,040
+[SPEAKER_03] Other than the ones that we discussed, I think there is one here, which is the 600 new APIs that are being released, which I think is like something not to be dismissed, right?
+
+755
+00:53:37,200 --> 00:53:43,920
+[SPEAKER_03] And I don't know exactly what the innovation from that will be, but I'm sure there's gonna be entrepreneurs out there that will figure that out and I think that's gonna be quite interesting.
+
+756
+00:53:44,160 --> 00:53:46,000
+[SPEAKER_03] It also will be good for your businesses.
+
+757
+00:53:46,320 --> 00:53:58,800
+[SPEAKER_03] And I think on the marketplace aspect is something I think because yes, it's really hard and we will have to kickstart it from some position of power and it could either be existing players, big players that just do it ideologically, but also this is where venture can be very helpful, right?
+
+758
+00:53:58,960 --> 00:54:08,160
+[SPEAKER_03] These are the types of things that you can actually fund with venture capital where it may be very hard economically for the first four, five, ten years to actually get to a place where you can have the scale.
+
+759
+00:54:08,640 --> 00:54:10,480
+[SPEAKER_03] But that is something that venture could enable.
+
+760
+00:54:10,640 --> 00:54:12,240
+[SPEAKER_03] And I would love to talk to people that are building.
+
+761
+00:54:12,480 --> 00:54:14,320
+[SPEAKER_02] Yeah, I mean, the billion dollar swings, right?
+
+762
+00:54:14,560 --> 00:54:16,640
+[SPEAKER_02] There are many billion dollar swings, right?
+
+763
+00:54:16,960 --> 00:54:16,960
+[UNKNOWN] Yes.
+
+764
+00:54:18,080 --> 00:54:22,880
+[SPEAKER_01] The API call is a good one, it's sort of an area we didn't get to touch on too much for my closing take.
+
+765
+00:54:23,280 --> 00:54:26,720
+[SPEAKER_01] It was cool to see Apple announce so many new APIs under the hood here.
+
+766
+00:54:27,200 --> 00:54:30,960
+[SPEAKER_01] That kind of bodes well for us and what we're building collectively, us, not just Runway.
+
+767
+00:54:31,120 --> 00:54:36,480
+[SPEAKER_01] But then zooming out to the meta, I think this singularity event, the iPhone coming into existence that Jacob talked about before.
+
+768
+00:54:36,960 --> 00:54:43,840
+[SPEAKER_01] Like a lot of this does feel like just shuffling things around, some different numbers to distract everyone and figure out where to move, but it's little steps.
+
+769
+00:54:44,000 --> 00:54:45,840
+[SPEAKER_01] And I think that's one of the things we take home for us so far.
+
+770
+00:54:46,080 --> 00:54:47,040
+[SPEAKER_01] It's not a big shift yet.
+
+771
+00:54:47,120 --> 00:54:54,080
+[SPEAKER_01] It's a move in a direction, but for the really big stuff, I think there might be a bigger singularity event that's on the horizon.
+
+772
+00:54:54,160 --> 00:54:55,680
+[SPEAKER_02] So getting my AI brain chip.
+
+773
+00:54:56,320 --> 00:54:57,360
+[SPEAKER_02] I'm already preordered.
+
+774
+00:54:57,920 --> 00:54:58,800
+[SPEAKER_02] It doesn't even have it.
+
+775
+00:54:59,760 --> 00:55:11,040
+[SPEAKER_00] Jens, for the benefit of the listeners on the Subclub podcast and people who are watching this on YouTube after the fact, you've been answering a lot of great questions in the QA.
+
+776
+00:55:11,520 --> 00:55:24,800
+[SPEAKER_00] Are there any that you feel like are particularly salient that we kind of didn't hit or maybe questions folks who are not live and don't have access to the chat that would be especially interesting to kind of answer live or maybe even kick around as we wrap up?
+
+777
+00:55:25,200 --> 00:55:27,040
+[SPEAKER_04] There's a bunch of questions around what we will do.
+
+778
+00:55:27,200 --> 00:55:28,240
+[SPEAKER_04] So I'll get to those later.
+
+779
+00:55:28,640 --> 00:55:33,520
+[SPEAKER_04] There's a bunch of people asking whether this business model is per app or per developer account.
+
+780
+00:55:34,080 --> 00:55:40,400
+[SPEAKER_04] My understanding from reading this is that because it's an amendment to the developer agreement that is probably per developer.
+
+781
+00:55:40,960 --> 00:55:44,640
+[SPEAKER_04] So you can't like opt in some of your apps, opt out some of the other apps.
+
+782
+00:55:44,720 --> 00:55:47,040
+[SPEAKER_04] There were more questions around is this reversible or not.
+
+783
+00:55:47,360 --> 00:55:54,560
+[SPEAKER_04] So here we said earlier, maybe it might eventually be reversible, but right now the documents that Apple released say it's a one-way decision.
+
+784
+00:55:55,280 --> 00:55:56,640
+[SPEAKER_02] I think they can't make it reversible, right?
+
+785
+00:55:56,800 --> 00:55:59,120
+[SPEAKER_02] It's like insurance, like you can't buy insurance after the fact.
+
+786
+00:55:59,440 --> 00:55:59,920
+[SPEAKER_02] You know what I mean?
+
+787
+00:56:00,160 --> 00:56:15,120
+[SPEAKER_00] Like I heard rumors that it will be reversible, but then thinking through, even if Apple did by the letter of the law to comply to the EU or whatever, make it reversible, the business implications of making it reversible are pretty deadly.
+
+788
+00:56:15,520 --> 00:56:24,720
+[SPEAKER_00] Again, one of the fine print I haven't found in the fine print, but someone told me that if you're installed from a marketplace, the app store can't overwrite that app.
+
+789
+00:56:25,200 --> 00:56:28,560
+[SPEAKER_00] And if you're installed from the App Store, the Marketplace app cannot overwrite that app.
+
+790
+00:56:28,880 --> 00:56:46,320
+[SPEAKER_00] So if you're trying to move someone from Marketplace to the App Store or from the App Store to the Marketplace, you have to specifically say please go delete the App Store version and then you have to have some like data loss prevention mechanism in place there and then say go to the Marketplace and download it.
+
+791
+00:56:46,480 --> 00:56:51,440
+[SPEAKER_00] So like even if it were reversible, like the business implications of trying to reverse this decision are pretty daunting.
+
+792
+00:56:51,760 --> 00:56:56,480
+[SPEAKER_02] Here's a question that I think might be easy to hit, but do we think Google Play will change its rules in a similar manner?
+
+793
+00:56:56,720 --> 00:56:58,720
+[SPEAKER_02] They fall under the gatekeeper restrictions, right?
+
+794
+00:56:59,040 --> 00:57:03,120
+[SPEAKER_02] Do they need to do anything in addition to what they already do to come into compliance?
+
+795
+00:57:03,600 --> 00:57:18,640
+[SPEAKER_00] Eric Suffer had a really good post on this and was talking about how because they already do allow side loading and actually are way less restrictive about how they do the side loading, there are things that apply, but a lot of what we talked about today doesn't apply because they're already open in those ways.
+
+796
+00:57:18,960 --> 00:57:20,400
+[SPEAKER_00] So again, I know you read that post.
+
+797
+00:57:20,640 --> 00:57:22,240
+[SPEAKER_00] Is there something specific you wanted to call out?
+
+798
+00:57:22,560 --> 00:57:28,240
+[SPEAKER_04] Yeah, I'm not one hundred percent sure, but my guess is that they will probably have to allow alternative in-app payments as well.
+
+799
+00:57:28,800 --> 00:57:30,960
+[SPEAKER_00] But they're already doing that with billing choice.
+
+800
+00:57:31,120 --> 00:57:32,160
+[SPEAKER_02] Yeah, exactly, exactly.
+
+801
+00:57:32,240 --> 00:57:33,040
+[SPEAKER_02] So that's basically that.
+
+802
+00:57:33,040 --> 00:57:36,480
+[SPEAKER_02] So that's how does Google look like the ones who didn't make a big mess of this, right?
+
+803
+00:57:36,880 --> 00:57:38,640
+[SPEAKER_02] Like you said, that stuff's like complicated.
+
+804
+00:57:39,200 --> 00:57:42,080
+[SPEAKER_00] I actually I think Google's actually doing some really smart stuff.
+
+805
+00:57:42,240 --> 00:57:44,560
+[SPEAKER_00] Like they're going to trade in my iPhone, y'all.
+
+806
+00:57:44,640 --> 00:57:45,760
+[SPEAKER_02] I'm going to get on anywhere.
+
+807
+00:57:46,880 --> 00:57:56,240
+[SPEAKER_00] This is what I was kind of hoping Apple would do to comply with the DMA was actually following Google's footsteps because with billing choice, Google is saying, and maybe I'm going to get the details wrong.
+
+808
+00:57:56,320 --> 00:58:01,840
+[SPEAKER_00] Yens, you may have dug a little deeper into this, but they're saying, okay, you can have alternate in app purchases.
+
+809
+00:58:02,000 --> 00:58:03,520
+[SPEAKER_00] You can use third party credit cards.
+
+810
+00:58:03,680 --> 00:58:05,120
+[SPEAKER_00] You can do whatever payments you want.
+
+811
+00:58:05,440 --> 00:58:12,800
+[SPEAKER_00] All we're going to say is that on the paywall, you have to have both Google Play billing and your third party billing and let users pick.
+
+812
+00:58:13,520 --> 00:58:17,280
+[SPEAKER_00] And then they do also still charge, I think, a commission on third party billing.
+
+813
+00:58:17,680 --> 00:58:28,640
+[SPEAKER_00] But that is complying even more so with the letter of the law and also creates user choice, but is also still kind of good for Google because a lot of users are going to just pick Google billing.
+
+814
+00:58:28,960 --> 00:58:31,360
+[SPEAKER_00] Anything else to add on Google billing choice, Jens?
+
+815
+00:58:31,760 --> 00:58:32,640
+[SPEAKER_04] No, I think that's it.
+
+816
+00:58:32,880 --> 00:58:48,400
+[SPEAKER_04] And what's been established there, and I think that just won't change unless a regulator steps in, is that both Apple and Google basically say, well, if you're using our App Store for everything except payments, we'll basically take over a very small percentage of our commission, right?
+
+817
+00:58:48,880 --> 00:59:00,800
+[SPEAKER_04] So for Apple here it's three percent, for Google it's been four percent, I think, which just means like economically speaking, for the most part, it doesn't make much sense for developers unless they have specific reasons.
+
+818
+00:59:01,040 --> 00:59:09,920
+[SPEAKER_04] Let's say, for example, you use a third party payment provider that provides alternative payment methods that are very important for your user base or whatever, right?
+
+819
+00:59:10,160 --> 00:59:11,600
+[SPEAKER_04] Then that is something to consider.
+
+820
+00:59:11,920 --> 00:59:17,600
+[SPEAKER_04] But in most cases, like Apple and Google actually have a pretty wide range of different payment methods in different countries now, right?
+
+821
+00:59:17,840 --> 00:59:20,560
+[SPEAKER_04] So that it's unclear, but I mean, there's certainly choice there.
+
+822
+00:59:20,880 --> 00:59:21,680
+[SPEAKER_04] I would agree with that.
+
+823
+00:59:22,160 --> 00:59:29,600
+[SPEAKER_02] I'm just going to tag on to the wrap up here and just say, I posted yesterday a poll as to what people would choose old model or new model.
+
+824
+00:59:30,320 --> 00:59:33,120
+[SPEAKER_02] It was like 80-20 people old model new model.
+
+825
+00:59:33,680 --> 00:59:36,080
+[SPEAKER_02] I just ran a new poll and I posted it in the chat.
+
+826
+00:59:36,240 --> 00:59:46,480
+[SPEAKER_02] So everyone that attended the webinar here, after hearing my official recommendation, I just want to know how much weight that carries and I'm curious what people think after learning a bit more about the rules.
+
+827
+00:59:46,640 --> 00:59:48,160
+[SPEAKER_02] They're excited about the new model, the old model.
+
+828
+00:59:48,320 --> 00:59:49,840
+[SPEAKER_02] So links on my Twitter for the poll.
+
+829
+00:59:50,080 --> 00:59:50,320
+[SPEAKER_00] Nice.
+
+830
+00:59:50,480 --> 00:59:50,560
+[SPEAKER_00] Yeah.
+
+831
+00:59:50,720 --> 00:59:52,320
+[SPEAKER_00] And any other pressing, uh, Yeah.
+
+832
+00:59:53,600 --> 00:59:57,920
+[SPEAKER_04] So just from the questions panel that because they have a bunch of questions around like what will revenue cat do?
+
+833
+00:59:58,000 --> 00:59:59,680
+[SPEAKER_04] Will revenue cat launch consistent apps?
+
+834
+01:00:00,000 --> 01:00:02,720
+[SPEAKER_04] So will revenue cat support alternative app stores?
+
+835
+01:00:03,200 --> 01:00:06,160
+[SPEAKER_04] Will revenue cat support alternative payments in app?
+
+836
+01:00:06,640 --> 01:00:09,120
+[SPEAKER_04] So I think certainly we're discussing all of those.
+
+837
+01:00:09,440 --> 01:00:22,160
+[SPEAKER_04] I think us launching an alternative app store is probably the one that is least likely supporting alternative app stores to the extent that it's possible and to the extent that they become relevant, I think that's all absolutely going to be on the agenda, right?
+
+838
+01:00:22,400 --> 01:00:28,080
+[SPEAKER_04] So like maybe not the Epic store because we're focusing more on subscription apps than games per se.
+
+839
+01:00:28,800 --> 01:00:35,360
+[SPEAKER_04] But if there's any feasible alternative app stores, then we will definitely do our best to support those alternative in app payments.
+
+840
+01:00:35,840 --> 01:00:43,840
+[SPEAKER_04] I think right now they don't look super attractive, but we are working on it some things that, you know, just for more flexible billing across platforms.
+
+841
+01:00:44,000 --> 01:00:50,160
+[SPEAKER_04] So that's something that's very much top of mind and where we should be able to move quickly as well to the extent it becomes relevant.
+
+842
+01:00:50,480 --> 01:00:50,560
+[SPEAKER_04] Yeah.
+
+843
+01:00:50,800 --> 01:00:54,800
+[SPEAKER_04] Those were kind of, I guess, the three very, very big questions about like what will revenue cat do?
+
+844
+01:00:54,960 --> 01:00:56,800
+[SPEAKER_02] So I have a more straightforward answer.
+
+845
+01:00:57,200 --> 01:00:58,800
+[SPEAKER_02] We're going to help developers make more money.
+
+846
+01:00:59,360 --> 01:00:59,440
+[SPEAKER_04] Yes.
+
+847
+01:01:00,000 --> 01:01:00,720
+[SPEAKER_02] Whatever it takes.
+
+848
+01:01:01,120 --> 01:01:01,920
+[SPEAKER_04] Whatever it takes.
+
+849
+01:01:02,480 --> 01:01:03,760
+[SPEAKER_04] Prevent them from making less money.
+
+850
+01:01:04,240 --> 01:01:04,320
+[SPEAKER_04] Yeah.
+
+851
+01:01:04,560 --> 01:01:05,360
+[SPEAKER_04] That's the whole goal.
+
+852
+01:01:06,720 --> 01:01:06,800
+[SPEAKER_00] Yeah.
+
+853
+01:01:06,960 --> 01:01:08,080
+[SPEAKER_00] That's a good way to frame it.
+
+854
+01:01:08,240 --> 01:01:17,440
+[SPEAKER_00] Like if we think it's going to make developers make less money, we probably won't go through all the effort to support a random store that we don't think is actually going to benefit developers.
+
+855
+01:01:17,680 --> 01:01:22,080
+[SPEAKER_00] But if you see opportunities that really will help developers make more money, we're going to be working on it.
+
+856
+01:01:22,240 --> 01:01:27,200
+[SPEAKER_02] My biggest failure in life will be if I cling to an existing business model to the point that I'm regulated by the EU.
+
+857
+01:01:27,600 --> 01:01:32,320
+[SPEAKER_02] So make sure that we adapt to the changing market and respond to consumers.
+
+858
+01:01:32,800 --> 01:01:32,800
+[SPEAKER_00] Okay.
+
+859
+01:01:33,120 --> 01:01:37,040
+[SPEAKER_00] Well, let's just go around the horn one last time and just kind of wrap up.
+
+860
+01:01:37,200 --> 01:01:40,960
+[SPEAKER_00] Nico, what are your closing thoughts on this mess?
+
+861
+01:01:43,120 --> 01:01:47,520
+[SPEAKER_03] My brain is wide in the way that I always try to understand, like, what is the opportunity here?
+
+862
+01:01:48,240 --> 01:01:54,400
+[SPEAKER_03] And so I think, yes, I agree with Jacob that no one should rush and it has to be understood well what this means.
+
+863
+01:01:54,960 --> 01:01:56,720
+[SPEAKER_03] And even we don't understand it yet, right?
+
+864
+01:01:56,960 --> 01:01:58,560
+[SPEAKER_03] There's a lot of nuances still to be defined.
+
+865
+01:01:58,800 --> 01:02:02,560
+[SPEAKER_03] There's also still probably negotiations around the actual final terms.
+
+866
+01:02:02,880 --> 01:02:03,920
+[SPEAKER_03] And so I think let's wait.
+
+867
+01:02:04,160 --> 01:02:06,800
+[SPEAKER_03] But I do believe that every time there's change, there's opportunity.
+
+868
+01:02:07,120 --> 01:02:11,280
+[SPEAKER_03] And there's going to be smart entrepreneurs or existing companies that will take those opportunities.
+
+869
+01:02:11,680 --> 01:02:12,640
+[SPEAKER_03] And I'm excited about it.
+
+870
+01:02:12,800 --> 01:02:14,480
+[SPEAKER_03] I think it really plays into the thesis.
+
+871
+01:02:14,720 --> 01:02:17,600
+[SPEAKER_03] I think some companies will just remain the way it is.
+
+872
+01:02:17,840 --> 01:02:30,880
+[SPEAKER_03] But I think for others, new marketplaces, prosumer high converting apps that also want to do team accounts and potential emergence of new marketplaces are things that I, for me, those are new themes that I will be looking into.
+
+873
+01:02:31,360 --> 01:02:38,240
+[SPEAKER_03] And so I'm cautiously optimistic that there's going to be some benefits from this and also that the final results will be better than what we know today.
+
+874
+01:02:38,960 --> 01:02:39,200
+[SPEAKER_01] Gabe?
+
+875
+01:02:39,920 --> 01:02:45,600
+[SPEAKER_01] I think highest level, not as much of a massive shift as it might seem, but a move in that direction.
+
+876
+01:02:45,680 --> 01:02:51,680
+[SPEAKER_01] Like I said, I think maybe lower level, maybe nearer term extra work and kind of headache figuring this out for folks.
+
+877
+01:02:52,080 --> 01:02:56,240
+[SPEAKER_01] I think that's an interesting challenge to think about that from the other side and how you can help folks with these changes.
+
+878
+01:02:56,720 --> 01:02:57,040
+[SPEAKER_04] Awesome.
+
+879
+01:02:57,200 --> 01:02:57,440
+[SPEAKER_04] Jens?
+
+880
+01:02:58,080 --> 01:02:58,560
+[SPEAKER_04] It's interesting.
+
+881
+01:02:58,800 --> 01:02:59,520
+[SPEAKER_04] Never a dull day.
+
+882
+01:02:59,840 --> 01:03:02,000
+[SPEAKER_04] I think that's that's kind of who would have thought.
+
+883
+01:03:02,240 --> 01:03:02,320
+[SPEAKER_04] Yeah.
+
+884
+01:03:03,280 --> 01:03:03,920
+[SPEAKER_04] Who would have thought?
+
+885
+01:03:04,160 --> 01:03:04,240
+[SPEAKER_04] Yeah.
+
+886
+01:03:04,480 --> 01:03:06,320
+[SPEAKER_04] No, I mean, I think that's kind of it to me.
+
+887
+01:03:06,560 --> 01:03:10,560
+[SPEAKER_04] But my advice for app developers would be, I mean, definitely keep up to date, but there's probably no need.
+
+888
+01:03:10,960 --> 01:03:12,160
+[SPEAKER_04] to rush to make any decisions.
+
+889
+01:03:12,240 --> 01:03:19,600
+[SPEAKER_04] And it's certainly not the first move in this chain of events that has been unfolding for like the last, at least, two and a half years.
+
+890
+01:03:20,240 --> 01:03:25,760
+[SPEAKER_04] It is an important step, a significant step, but more steps are going to come and this game is far from over yet.
+
+891
+01:03:25,920 --> 01:03:31,280
+[SPEAKER_04] So that's my take here and we'll see what happens in this space, especially I think on the alternative app marketplace.
+
+892
+01:03:31,440 --> 01:03:32,880
+[SPEAKER_04] That's what I think is the most interesting.
+
+893
+01:03:33,120 --> 01:03:36,160
+[SPEAKER_04] Is there going to be anything that really makes a material difference there?
+
+894
+01:03:36,800 --> 01:03:39,840
+[SPEAKER_00] And Jacob saved you for last so you could rant.
+
+895
+01:03:40,160 --> 01:03:43,360
+[SPEAKER_00] My boy, they've butchered my beautiful boy, the app store.
+
+896
+01:03:43,680 --> 01:03:44,720
+[SPEAKER_02] I'm all for competition.
+
+897
+01:03:45,040 --> 01:03:46,720
+[SPEAKER_02] I want better deals for developers.
+
+898
+01:03:47,040 --> 01:03:48,560
+[SPEAKER_02] I want Tim Sweeney to be able to.
+
+899
+01:03:48,560 --> 01:03:51,040
+[SPEAKER_02] to be able to do whatever he wants and make all the money he wants.
+
+900
+01:03:51,200 --> 01:04:04,960
+[SPEAKER_02] Like I want everyone to be happy, obviously, but I can't help but be a little sad that we had kind of a pretty simple, kind of a pretty decent little deal and it helped a ton of people and it created this whole app economy.
+
+901
+01:04:05,920 --> 01:04:09,520
+[SPEAKER_02] And I don't see immediately that what's happening is good for that.
+
+902
+01:04:09,840 --> 01:04:11,840
+[SPEAKER_02] What I see happening is creating more complexity.
+
+903
+01:04:12,240 --> 01:04:18,160
+[SPEAKER_02] I see it risking the whole space and I don't know, maybe it's the maturing of it, the incidification, whatever you want to call it.
+
+904
+01:04:18,640 --> 01:04:22,000
+[SPEAKER_02] And maybe it's for the best and this will create the next thing and all that's good.
+
+905
+01:04:22,000 --> 01:04:38,720
+[SPEAKER_02] But I can't help lamenting a little bit the simplicity we might be losing with this model that's worked pretty well for a decade, even if, you know, not everyone is happy and whatever, you can't debate that it has created more wealth and more value and more software than anything we had ever tried before.
+
+906
+01:04:39,280 --> 01:04:42,800
+[SPEAKER_02] And then to just like murder it over two percent feels a little shortsighted.
+
+907
+01:04:42,960 --> 01:04:48,480
+[SPEAKER_02] I don't know, but maybe that's just being sentimental, onwards into the future, and we'll be here for the next thing too.
+
+908
+01:04:48,800 --> 01:04:53,120
+[SPEAKER_02] I don't think any of us wants to spend our time like predicting about European regulation, right?
+
+909
+01:04:53,280 --> 01:04:54,400
+[SPEAKER_02] Like we just want to make apps.
+
+910
+01:04:54,560 --> 01:04:56,720
+[SPEAKER_02] So like the sooner we can get back to that, the better.
+
+911
+01:04:57,200 --> 01:04:57,280
+[SPEAKER_00] Okay.
+
+912
+01:04:57,600 --> 01:04:59,360
+[SPEAKER_00] Well, I'm going to wrap up with my hot take.
+
+913
+01:05:00,400 --> 01:05:02,560
+[SPEAKER_00] Since I'm the host, I get to close it all out.
+
+914
+01:05:02,880 --> 01:05:04,560
+[SPEAKER_00] But Jacob, I think your take is valid.
+
+915
+01:05:05,120 --> 01:05:09,280
+[SPEAKER_00] And I'm on the same page, but with a slightly different spin.
+
+916
+01:05:09,760 --> 01:05:17,200
+[SPEAKER_00] So I started my career as an Indie developer who exactly as you said, like capitalized on this incredible business opportunity.
+
+917
+01:05:17,520 --> 01:05:28,720
+[SPEAKER_00] Like sitting in my little condo in San Marcos, Texas in 2008, I shipped apps to the world and saw people buy in Saudi Arabia, in India, and all over the world.
+
+918
+01:05:28,960 --> 01:05:34,000
+[SPEAKER_00] And it was so simple for me to build that business and to build this career on the App Store.
+
+919
+01:05:34,240 --> 01:05:44,560
+[SPEAKER_00] And so like personally as a kind of long time Apple fanboy that's struggling with my fanboysm, but then also like as a long time developer who's made millions of dollars downloads on the App Store.
+
+920
+01:05:45,040 --> 01:05:45,920
+[SPEAKER_00] I'm sad too.
+
+921
+01:05:46,560 --> 01:05:53,920
+[SPEAKER_00] But while you've spun it back to the EU and to the regulation, I'm personally a lot more frustrated with Apple.
+
+922
+01:05:54,400 --> 01:06:01,200
+[SPEAKER_00] I don't think we would have gotten to this point had Apple made more concessions to make it a better place, more opportunity.
+
+923
+01:06:01,840 --> 01:06:04,640
+[SPEAKER_00] And again, Google's already kind of leading on this front.
+
+924
+01:06:05,280 --> 01:06:08,080
+[SPEAKER_00] They dropped the fee for subscription apps to 15%.
+
+925
+01:06:08,320 --> 01:06:13,360
+[SPEAKER_00] That's actually probably a pretty good deal for most apps to not even worry about billing.
+
+926
+01:06:13,760 --> 01:06:22,080
+[SPEAKER_00] Apple's obstinacy in sticking to this 30% is part of what's creating that incitement.
+
+927
+01:06:22,480 --> 01:06:32,080
+[SPEAKER_00] And so much as the EU laws are complex and hard to parse and all that kind of stuff, and we're regulating things into the ground, like Apple had a choice here.
+
+928
+01:06:32,560 --> 01:06:35,760
+[SPEAKER_00] And I personally think they're making the wrong choice.
+
+929
+01:06:35,920 --> 01:06:43,280
+[SPEAKER_00] They're pissing off developers, they're pissing off regulators, and it's bleeding over into sentiment from consumers like my 14-year-old son.
+
+930
+01:06:43,600 --> 01:06:48,400
+[SPEAKER_00] And I think that's, like you said, sad for the platform that we all actually kind of care about.
+
+931
+01:06:50,880 --> 01:06:52,000
+[SPEAKER_00] I'm going to start a phone company.
+
+932
+01:06:52,240 --> 01:06:52,560
+[SPEAKER_02] It's time.
+
+933
+01:06:52,960 --> 01:06:53,360
+[SPEAKER_02] It's the moment.
+
+934
+01:06:54,000 --> 01:06:54,640
+[SPEAKER_00] It's been fun.
+
+935
+01:06:55,040 --> 01:06:57,040
+[SPEAKER_00] Thank you for people who got this far on the podcast.
+
+936
+01:06:57,200 --> 01:06:59,760
+[SPEAKER_00] Thank you Gabe for joining.
+
+937
+01:06:59,840 --> 01:07:01,760
+[SPEAKER_00] Thank you Jens and Jacob for being here.
+
+938
+01:07:02,320 --> 01:07:08,480
+[SPEAKER_00] And to be determined, this will probably not be the last webinar, probably not the last podcast where we discuss all the implications.
+
+939
+01:07:08,960 --> 01:07:10,800
+[SPEAKER_00] And let's see what the EU says.
+
+940
+01:07:10,880 --> 01:07:11,840
+[SPEAKER_00] Let's see what Apple does.
+
+941
+01:07:12,000 --> 01:07:13,440
+[SPEAKER_00] Let's see what Tim Sweeney does.
+
+942
+01:07:13,760 --> 01:07:15,920
+[SPEAKER_00] And we'll talk to all of you again soon.
+
+943
+01:07:16,320 --> 01:07:16,480
+[SPEAKER_00] Thank you.
+
+944
+01:07:19,120 --> 01:07:20,480
+[SPEAKER_00] Thank you so much for listening.
+
+945
+01:07:21,440 --> 01:07:24,800
+[SPEAKER_00] If you have a minute, please leave a review in your favorite podcast player.
+
+946
+01:07:25,680 --> 01:07:30,480
+[SPEAKER_00] You can also stop by chat dot subclub dot com to join our private community.
