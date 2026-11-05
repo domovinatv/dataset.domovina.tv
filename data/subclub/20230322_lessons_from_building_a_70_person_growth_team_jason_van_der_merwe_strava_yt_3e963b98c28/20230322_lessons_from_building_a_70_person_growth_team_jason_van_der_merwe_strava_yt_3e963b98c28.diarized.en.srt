@@ -1,0 +1,2583 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_02] Welcome to the Subclub podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+[SPEAKER_02] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_02] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_02] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_02] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,800 --> 00:00:46,000
+[SPEAKER_02] Hello, I'm your host, David Barnard, and with me today, RevenueCat CEO, Jacob Biding.
+
+7
+00:00:47,040 --> 00:00:51,840
+[SPEAKER_02] Our guest today is Jason Vandemerva, Director of Growth Engineering at Strava.
+
+8
+00:00:52,560 --> 00:01:01,360
+[SPEAKER_02] Jason helped found the Growth team and has been integral in evolving it to where it is today, with five cross-functional teams totaling over seventy people.
+
+9
+00:01:02,400 --> 00:01:14,560
+[SPEAKER_02] On the podcast, we talk with Jason about some of Strava's big growth wins, the importance of feature education, and whether or not all product teams should actually be growth teams.
+
+10
+00:01:16,000 --> 00:01:18,720
+[SPEAKER_02] Hey, Jason, thank you so much for joining us today on the podcast.
+
+11
+00:01:19,360 --> 00:01:20,080
+[SPEAKER_00] It's great to be here.
+
+12
+00:01:20,240 --> 00:01:21,120
+[SPEAKER_00] Thanks for inviting me.
+
+13
+00:01:21,760 --> 00:01:23,840
+[SPEAKER_02] And Jacob, always nice to chat with you.
+
+14
+00:01:24,160 --> 00:01:24,960
+[SPEAKER_01] Let's talk about apps.
+
+15
+00:01:25,040 --> 00:01:26,080
+[SPEAKER_01] I'm here to talk about apps.
+
+16
+00:01:26,240 --> 00:01:32,160
+[SPEAKER_01] I'm here to talk about crushing KOMs as it is for the Strava heads out there.
+
+17
+00:01:33,360 --> 00:01:33,680
+[SPEAKER_02] All right.
+
+18
+00:01:34,080 --> 00:01:39,520
+[SPEAKER_02] So, Jason, I wanted to ask you about your role as a growth engineer.
+
+19
+00:01:40,160 --> 00:01:53,120
+[SPEAKER_02] You know, I think a lot of people who don't work at bigger companies probably don't really fully understand what a role like that looks like, especially at an app company, because, you know, how many app companies are there now with growth engineersers and growth engineering teams.
+
+20
+00:01:53,760 --> 00:01:57,280
+[SPEAKER_02] So tell me a little bit about your role as a growth engineer.
+
+21
+00:01:58,080 --> 00:02:02,640
+[SPEAKER_00] I think a lot of it comes down to the goal and the mindset of the work you're doing.
+
+22
+00:02:03,280 --> 00:02:10,560
+[SPEAKER_00] I always say growth teams, their goal is to connect users with the value of your product and to continue to expand that value.
+
+23
+00:02:11,200 --> 00:02:21,040
+[SPEAKER_00] And so that requires an orientation on user and business impact at the end of the day versus perhaps just delivering something you were told to deliver.
+
+24
+00:02:21,520 --> 00:02:27,760
+[SPEAKER_00] And I think that orientation is really important because in order to understand and get to that impact, you have to do a lot of learning.
+
+25
+00:02:29,040 --> 00:02:30,720
+[SPEAKER_00] comes in all different shapes and sizes, right?
+
+26
+00:02:30,880 --> 00:02:49,600
+[SPEAKER_00] There's like the small optimization, like how can we improve this flow or reduce friction to this flow or how do we build something massive to really change the game for our business, but you're building something massive not because you want to build something for the sake of it, but because there's a goal in mind, kind of a business and user outcome in mind.
+
+27
+00:02:49,920 --> 00:02:56,640
+[SPEAKER_00] And so it's really, it's a little bit of a mindset shift and a willingness to sometimes go faster than is comfortable within engineering.
+
+28
+00:02:56,880 --> 00:03:06,560
+[SPEAKER_00] Sometimes you do things that are super hacky in the short term so that you get that learning to determine if you do the bigger investment and a willingness to kind of almost break the rules at times.
+
+29
+00:03:07,600 --> 00:03:12,240
+[SPEAKER_00] Growth engineers are not the best engineers to run your kind of infrastructure teams.
+
+30
+00:03:13,280 --> 00:03:14,240
+[SPEAKER_00] So it's a little bit different.
+
+31
+00:03:14,560 --> 00:03:20,320
+[SPEAKER_00] And I think engineers who are very user focused are great growth engineers.
+
+32
+00:03:20,560 --> 00:03:24,880
+[SPEAKER_00] Engineers who think of themselves as maybe I want to be a product manager some day is really great.
+
+33
+00:03:25,120 --> 00:03:31,200
+[SPEAKER_00] So I often say I want our engineers to think like product managers, thinking about that user problem they're trying to solve.
+
+34
+00:03:32,000 --> 00:03:33,040
+[SPEAKER_02] Yeah, that's fantastic.
+
+35
+00:03:33,520 --> 00:03:39,280
+[SPEAKER_02] So you've been at Strava for almost eight years and Strava is almost sixteen years old.
+
+36
+00:03:39,440 --> 00:03:53,440
+[SPEAKER_02] So you've been there almost half the life of the company., which is really cool because there's a lot of kind of water under the bridge before you joined, but then you've had a lot of impact and seen a lot of change as the app has grown and the company has grown over the years.
+
+37
+00:03:54,240 --> 00:04:02,640
+[SPEAKER_02] So I'm curious what marketing was like before and growth was like at Stravo as you joined.
+
+38
+00:04:03,200 --> 00:04:06,960
+[SPEAKER_02] And then I know you were kind of foundational in forming the growth team.
+
+39
+00:04:07,200 --> 00:04:09,760
+[SPEAKER_02] So I'll want to talk a little bit more about that as well.
+
+40
+00:04:10,480 --> 00:04:11,440
+[SPEAKER_00] Yeah, it's a great question.
+
+41
+00:04:11,840 --> 00:04:17,920
+[SPEAKER_00] I mean, and Jacob, you kind of alluded to this at the beginning when you talked about KOMs and you referenced our brand.
+
+42
+00:04:18,240 --> 00:04:26,320
+[SPEAKER_00] And I think that's one of the coolest parts about Strava is we've had we've become part of the zeitgeist for first cyclists and then runners.
+
+43
+00:04:27,280 --> 00:04:34,400
+[SPEAKER_00] And now we're trying to broaden to the zeitgeist of everyone who's trying to be active, regardless of your sport.
+
+44
+00:04:35,040 --> 00:04:42,320
+[SPEAKER_00] And so when we got to Strava, really, you know, we were really big in the cycling community and then the running piece we were picking up a lot of steam on.
+
+45
+00:04:42,960 --> 00:04:47,760
+[SPEAKER_00] And so then and even now, most of Strava's growth is word of mouth.
+
+46
+00:04:48,480 --> 00:04:49,520
+[SPEAKER_00] People love Strava.
+
+47
+00:04:49,680 --> 00:04:53,600
+[SPEAKER_00] There's a phrase that the community uses that if it's not on Strava, it didn't happen.
+
+48
+00:04:54,000 --> 00:04:55,360
+[SPEAKER_00] And that's not something we came up with.
+
+49
+00:04:55,600 --> 00:04:56,080
+[SPEAKER_00] They came up with that.
+
+50
+00:04:56,560 --> 00:04:59,040
+[SPEAKER_00] And so that's amazing, right?
+
+51
+00:04:59,280 --> 00:05:06,000
+[SPEAKER_00] It's an amazing position to be in where your growth is word of mouth and organic and you're not having to depend on paid dollars for growth.
+
+52
+00:05:06,320 --> 00:05:09,760
+[SPEAKER_00] Obviously, we do those aspects, but the organic piece is huge.
+
+53
+00:05:09,920 --> 00:05:12,640
+[SPEAKER_00] So then you're thinking, okay, what's the point of a growth team?
+
+54
+00:05:13,280 --> 00:05:21,920
+[SPEAKER_00] And a lot of it is looking at our experiences, looking at our funnels and reducing friction and finding new, novel ways to cancel more growth.
+
+55
+00:05:22,400 --> 00:05:27,280
+[SPEAKER_00] You know, when we started, I joined Strava and two weeks later they were like, hey, we're going to make a growth team.
+
+56
+00:05:27,920 --> 00:05:28,880
+[SPEAKER_00] We have no idea what this means.
+
+57
+00:05:29,040 --> 00:05:29,520
+[SPEAKER_00] Oh, wow.
+
+58
+00:05:29,600 --> 00:05:31,040
+[SPEAKER_01] So eight years ago, let me do the math.
+
+59
+00:05:31,040 --> 00:05:33,600
+[SPEAKER_01] That's like, what, what, what, twenty two, twenty five?
+
+60
+00:05:33,680 --> 00:05:34,720
+[SPEAKER_01] 2015, something like that.
+
+61
+00:05:34,800 --> 00:05:35,440
+[SPEAKER_00] 2015, yeah.
+
+62
+00:05:35,760 --> 00:05:36,000
+[SPEAKER_00] Around there.
+
+63
+00:05:36,160 --> 00:05:37,120
+[SPEAKER_01] Yeah, so early.
+
+64
+00:05:37,600 --> 00:05:39,920
+[SPEAKER_01] Just to center me, like when were you guys on the App Store?
+
+65
+00:05:40,400 --> 00:05:42,400
+[SPEAKER_01] Because sixteen years ago precedes the App Store.
+
+66
+00:05:42,560 --> 00:05:44,640
+[SPEAKER_01] And then what was the product before the App Store?
+
+67
+00:05:44,800 --> 00:05:45,760
+[SPEAKER_01] There was a before the App Store.
+
+68
+00:05:46,640 --> 00:05:47,440
+[SPEAKER_00] There was a web app, yeah.
+
+69
+00:05:47,680 --> 00:05:48,800
+[SPEAKER_00] So, a web app, interesting.
+
+70
+00:05:49,440 --> 00:05:57,600
+[SPEAKER_00] The product started with kind of this insight from some of our founders of our two main co founders, Mark and Michael, were Harvard Rovers together.
+
+71
+00:05:57,840 --> 00:06:04,160
+[SPEAKER_00] They'd run a business together and they were like, they wanted to recreate the locker room camaraderie digitally, right?
+
+72
+00:06:04,480 --> 00:06:09,840
+[SPEAKER_00] So they had this idea and then they met this guy named Davey who had, was starting to buy the Garmin devices.
+
+73
+00:06:11,600 --> 00:06:14,480
+[SPEAKER_00] And he was trying all these crazy things with this Garmin device.
+
+74
+00:06:14,640 --> 00:06:16,080
+[SPEAKER_00] And it was like, okay, what do we do with this data?
+
+75
+00:06:16,240 --> 00:06:17,440
+[SPEAKER_00] Like, this data is so cool.
+
+76
+00:06:18,240 --> 00:06:19,520
+[SPEAKER_00] And then there was web app.
+
+77
+00:06:19,760 --> 00:06:23,520
+[SPEAKER_00] And so the way it started was they would take a van and they'd go to local cycling races.
+
+78
+00:06:24,240 --> 00:06:31,760
+[SPEAKER_00] And then they would get all the cyclists to come over and upload, literally plug in their Garmin devices and they would upload to Strava for them.
+
+79
+00:06:32,000 --> 00:06:36,560
+[SPEAKER_01] Oh, I guess that was, yeah, because that was right when bike computers were becoming like an accessible thing.
+
+80
+00:06:36,720 --> 00:06:40,800
+[SPEAKER_01] That was probably the only real personal GPS device that was mass market at that point.
+
+81
+00:06:41,120 --> 00:06:41,360
+[SPEAKER_01] Exactly.
+
+82
+00:06:41,440 --> 00:06:42,960
+[SPEAKER_01] Because phones didn't have it yet, right?
+
+83
+00:06:43,200 --> 00:06:43,280
+[SPEAKER_01] No.
+
+84
+00:06:43,520 --> 00:06:46,080
+[SPEAKER_01] And so I, our app started in 2011.
+
+85
+00:06:46,320 --> 00:06:51,840
+[SPEAKER_01] So a little bit after, you know, the, the, the, the, the rise of the, the iPhone and the App Store.
+
+86
+00:06:52,000 --> 00:06:55,200
+[SPEAKER_01] Well, but the iPhone didn't have great, like, location ability before that.
+
+87
+00:06:55,360 --> 00:06:59,520
+[SPEAKER_01] It was all sky hook and like sub, sub GPS until maybe 2010, 2011.
+
+88
+00:06:59,600 --> 00:07:00,320
+[SPEAKER_01] So it makes sense.
+
+89
+00:07:00,400 --> 00:07:00,560
+[SPEAKER_01] Right.
+
+90
+00:07:00,720 --> 00:07:07,680
+[SPEAKER_00] And it wasn't a great experience anyway, but it was, and, and there's also the cultural piece of, don't want to carry a phone when I'm running.
+
+91
+00:07:08,080 --> 00:07:15,120
+[SPEAKER_00] You know, nowadays we don't, people for the most part don't seem to care, but there was kind of this interesting, I'm not going to carry my phone with me when I, when I run.
+
+92
+00:07:15,760 --> 00:07:17,440
+[SPEAKER_00] So 2011 in the App Store.
+
+93
+00:07:17,600 --> 00:07:20,560
+[SPEAKER_00] Um, so yeah, we were in the App Store for a few years when I joined.
+
+94
+00:07:20,800 --> 00:07:25,360
+[SPEAKER_00] And I, when I joined actually, we had, we had just combined our run app and our ride app.
+
+95
+00:07:25,680 --> 00:07:29,520
+[SPEAKER_00] So when we expanded into running, we made a Strava run app right.
+
+96
+00:07:29,760 --> 00:07:32,560
+[SPEAKER_00] The day there was Nike run, there's still Nike run, but there's Nike run.
+
+97
+00:07:33,120 --> 00:07:34,160
+[SPEAKER_00] Fantastic run keeper.
+
+98
+00:07:34,480 --> 00:07:35,520
+[SPEAKER_00] So we made the run app.
+
+99
+00:07:36,160 --> 00:07:41,600
+[SPEAKER_00] I think that helped a lot with the communication to runners and the broading to runners.
+
+100
+00:07:42,320 --> 00:07:44,080
+[SPEAKER_02] So, so again, back to the question though.
+
+101
+00:07:44,400 --> 00:07:51,680
+[SPEAKER_02] Um, was there a marketing team and is there still kind of a separate marketing team that's completely separate from the growth team?
+
+102
+00:07:52,560 --> 00:07:52,640
+[SPEAKER_00] Yeah.
+
+103
+00:07:52,880 --> 00:07:53,280
+[SPEAKER_00] Great question.
+
+104
+00:07:53,680 --> 00:08:06,160
+[SPEAKER_00] So back then there was, um, there was a marketing team that was kind of, you know, all kinds of marketing, but kind of your classic grow local communities, go to events, develop relationships with professionals.
+
+105
+00:08:06,320 --> 00:08:14,720
+[SPEAKER_00] I think that's one of the things that makes Strava so unique is, you know, every, you know, the major running and cycling professionals like Chris Froome or Molly Sydal are on Strava.
+
+106
+00:08:15,040 --> 00:08:17,440
+[SPEAKER_01] You can go, you can go to compare your wattage with theirs.
+
+107
+00:08:17,600 --> 00:08:18,240
+[SPEAKER_01] It's amazing.
+
+108
+00:08:18,400 --> 00:08:21,680
+[SPEAKER_00] And you can see their, see their, just, you know, obviously, we're not like them.
+
+109
+00:08:21,920 --> 00:08:25,360
+[SPEAKER_00] Um, but it's really inspiring to see the reminder.
+
+110
+00:08:25,840 --> 00:08:26,000
+[SPEAKER_00] Right.
+
+111
+00:08:26,880 --> 00:08:31,440
+[SPEAKER_00] And it's a great way for them to, you know, connect in a very organic way with their fans.
+
+112
+00:08:31,680 --> 00:08:31,840
+[SPEAKER_00] Right.
+
+113
+00:08:32,080 --> 00:08:43,600
+[SPEAKER_00] Um, and so our marketing org has done a lot of that and just generally supporting the world of sport and helping people become more active.
+
+114
+00:08:44,080 --> 00:08:47,680
+[SPEAKER_00] When we started the growth team, it was very cross functional and it's always been cross functional.
+
+115
+00:08:47,840 --> 00:08:52,640
+[SPEAKER_00] So when we say we're a product team, we're the most broad definition of that possible.
+
+116
+00:08:52,880 --> 00:09:00,720
+[SPEAKER_00] Like we have growth marketing functions where those ladder up to from a reporting perspective is kind of irrelevant.
+
+117
+00:09:01,200 --> 00:09:05,440
+[SPEAKER_00] Our teams have always had growth marketers on the team, product marketers on the team.
+
+118
+00:09:05,920 --> 00:09:09,920
+[SPEAKER_00] We've always seen ourselves as very horizontal versus vertical of a model.
+
+119
+00:09:10,960 --> 00:09:13,600
+[SPEAKER_01] So it's interesting, I guess.
+
+120
+00:09:15,280 --> 00:09:25,600
+[SPEAKER_01] You see this a lot with apps that break out like Strava that it doesn't necessarily follow the pattern we hear a lot in apps where it's like, you know, get a decent LTV CAC and try to scale that way.
+
+121
+00:09:25,840 --> 00:09:27,920
+[SPEAKER_01] You have some for you, it's organic.
+
+122
+00:09:28,080 --> 00:09:39,920
+[SPEAKER_01] And because you have organic things like, you know, taking a van and going to a race, kind of scale because you get five people on board that's going to turn into potentially, you know, five more, et cetera, et cetera.
+
+123
+00:09:40,800 --> 00:09:42,400
+[SPEAKER_01] And that's a really good place to start.
+
+124
+00:09:42,560 --> 00:09:45,200
+[SPEAKER_01] And that's always just downstream of having a good product.
+
+125
+00:09:45,520 --> 00:09:51,200
+[SPEAKER_01] And so I'm curious, like, how much of like the growth team's work?
+
+126
+00:09:51,680 --> 00:09:56,160
+[SPEAKER_01] Because I imagine as a growth team, you're touching, you know, top to bottom, sort of everything.
+
+127
+00:09:57,200 --> 00:10:09,040
+[SPEAKER_01] Like, how does that influence in the, like, the road map, you know, from when you started to, to, because obviously there's like product folks who want to build, oh, we're talking to customers and they want X.
+
+128
+00:10:09,360 --> 00:10:13,280
+[SPEAKER_01] And then there's like growth, which is, yeah, the customer is important.
+
+129
+00:10:13,840 --> 00:10:21,360
+[SPEAKER_01] Uh, you obviously if you're not building stuff, they want, but then there's also this goal of, you know, increasing adoption and things like this.
+
+130
+00:10:21,680 --> 00:10:24,080
+[SPEAKER_01] So how do you guys, how do you guys work that tension?
+
+131
+00:10:24,240 --> 00:10:30,320
+[SPEAKER_01] And was there, was there resistance, uh, when you came in to be like, oh, we're going to be a team that's focused on numbers, you know?
+
+132
+00:10:30,880 --> 00:10:30,960
+[SPEAKER_01] Yeah.
+
+133
+00:10:31,280 --> 00:10:33,680
+[SPEAKER_00] It was definitely, it was definitely hard at the beginning.
+
+134
+00:10:33,760 --> 00:10:37,120
+[SPEAKER_00] I mean, we we kind of started this team and to be fair, we didn't know what we were doing.
+
+135
+00:10:37,520 --> 00:10:42,240
+[SPEAKER_00] We were told, I think we were told, kind of, by the board, like, hey, you know, top companies have growth teams.
+
+136
+00:10:42,320 --> 00:10:42,960
+[SPEAKER_00] Go figure it out.
+
+137
+00:10:43,280 --> 00:10:44,480
+[SPEAKER_00] I read this in the RevFlight magazine.
+
+138
+00:10:44,640 --> 00:10:45,600
+[SPEAKER_00] You guys needed growth teams.
+
+139
+00:10:45,760 --> 00:10:46,800
+[SPEAKER_00] And we're okay, cool.
+
+140
+00:10:47,120 --> 00:10:53,120
+[SPEAKER_00] So the first, the first experiment we ever ran was adding the ability to add your profile photo to the onboarding flow.
+
+141
+00:10:53,840 --> 00:10:54,400
+[SPEAKER_00] I remember that.
+
+142
+00:10:54,960 --> 00:10:55,280
+[SPEAKER_00] Classic.
+
+143
+00:10:55,440 --> 00:10:56,240
+[SPEAKER_00] Classic growth hack.
+
+144
+00:10:56,640 --> 00:10:57,440
+[SPEAKER_00] Classic 2015.
+
+145
+00:10:57,680 --> 00:11:01,680
+[SPEAKER_00] You know, and then of course later on removed it because we realized like it adds too much friction, right?
+
+146
+00:11:02,320 --> 00:11:12,800
+[SPEAKER_00] But we ran and I think a lot for people out there, like when you're starting growth teams., don't over index on the impact slash importance of specific tests.
+
+147
+00:11:13,280 --> 00:11:20,240
+[SPEAKER_00] Like there are times in the growth journey where we have new people joining or a new team joining where the first few months, I'm like, just run AB tests.
+
+148
+00:11:20,560 --> 00:11:25,840
+[SPEAKER_00] Like figure out as a team how to go from idea, hypothesis, running the test, evaluation, determining.
+
+149
+00:11:26,000 --> 00:11:32,160
+[SPEAKER_00] Like it's okay if you didn't knock the ball out of the park or the metric you were pushing for wasn't that important.
+
+150
+00:11:32,560 --> 00:11:37,760
+[SPEAKER_00] What matters more is you have a metric you're going for, you're thinking about it, your brain's storming, you know, that piece.
+
+151
+00:11:37,920 --> 00:11:40,240
+[SPEAKER_00] So at the beginning we were definitely kind of like, what do we do?
+
+152
+00:11:40,480 --> 00:11:46,080
+[SPEAKER_00] But one of the great pieces, um, I think that the beginning was the inclusion of user research on our team.
+
+153
+00:11:46,800 --> 00:11:55,360
+[SPEAKER_00] And we would run, we didn't have a big team, so we would run tests using usertesting dot com and we would watch them as a team, small team.
+
+154
+00:11:56,080 --> 00:12:04,000
+[SPEAKER_00] And one of the things we had looked at, our product analyst had found this insight of, you know, the most important thing for a new user is to upload.
+
+155
+00:12:04,640 --> 00:12:06,560
+[SPEAKER_00] Yet we see a big drop off.
+
+156
+00:12:07,040 --> 00:12:08,720
+[SPEAKER_00] We did a funnel analysis, big drop off.
+
+157
+00:12:08,960 --> 00:12:14,400
+[SPEAKER_00] So we did a bunch of user testing to say, you know, give a bunch of people the ability to go through the onboarding flow.
+
+158
+00:12:14,640 --> 00:12:15,600
+[SPEAKER_00] And we watched it as a team.
+
+159
+00:12:15,920 --> 00:12:17,040
+[SPEAKER_00] Very important to do that.
+
+160
+00:12:17,200 --> 00:12:18,800
+[SPEAKER_00] Everyone should be watching user interviews.
+
+161
+00:12:18,960 --> 00:12:22,800
+[SPEAKER_00] And we saw people would get to the record screen and say, what is this?
+
+162
+00:12:23,280 --> 00:12:24,240
+[SPEAKER_00] What am I supposed to tap?
+
+163
+00:12:24,880 --> 00:12:28,400
+[SPEAKER_00] And the problem there was skeuromorphism was really big.
+
+164
+00:12:28,800 --> 00:12:38,800
+[SPEAKER_00] And so all the buttons on our record screen, like where you like, you know, record your bike or run were, um, had taken homage from a real remote from a TV.
+
+165
+00:12:39,280 --> 00:12:43,280
+[SPEAKER_00] So it had the record button was round with a little red button in it, right?
+
+166
+00:12:43,760 --> 00:12:45,840
+[SPEAKER_00] And the stop button was literally like a square, right?
+
+167
+00:12:46,160 --> 00:12:50,160
+[SPEAKER_00] Things that you would find on your DVD remote, but users didn't know what to do with that.
+
+168
+00:12:50,320 --> 00:12:51,600
+[SPEAKER_00] So we were like, what are we going to do?
+
+169
+00:12:51,680 --> 00:12:53,120
+[SPEAKER_00] We're going to put text on every button.
+
+170
+00:12:53,200 --> 00:12:54,800
+[SPEAKER_00] We're going to make it so obvious how to use it.
+
+171
+00:12:55,040 --> 00:12:55,200
+[SPEAKER_00] Oh, okay.
+
+172
+00:12:55,440 --> 00:12:55,520
+[SPEAKER_00] Yeah.
+
+173
+00:12:55,680 --> 00:12:55,760
+[SPEAKER_01] Yeah.
+
+174
+00:12:55,920 --> 00:12:56,400
+[SPEAKER_01] That's the thing.
+
+175
+00:12:56,480 --> 00:13:07,120
+[SPEAKER_01] I was like, well, I think round is still pretty usual, but if you don't have labels, I fought, you know, designer I've fought with over the years, because it's like, it's not going to hurt.
+
+176
+00:13:07,280 --> 00:13:10,240
+[SPEAKER_01] I know it makes your design look bad, but it's necessary.
+
+177
+00:13:11,200 --> 00:13:11,360
+[SPEAKER_01] Right.
+
+178
+00:13:11,520 --> 00:13:12,160
+[SPEAKER_01] It's so funny.
+
+179
+00:13:12,400 --> 00:13:20,720
+[SPEAKER_00] And we went back and forth on like, where do we, where do we put the text on the label buttons and how do you localize copy to go into a small button?
+
+180
+00:13:20,880 --> 00:13:27,440
+[SPEAKER_00] It turns out you can say go, you know, geo in many languages that are in English and they still, you know, that works very well.
+
+181
+00:13:27,680 --> 00:13:36,880
+[SPEAKER_00] So we did that and that was one of the biggest wins we've ever had in reducing the friction to upload, increasing upload rate for new users and that results in a huge increase in retention for new users.
+
+182
+00:13:37,760 --> 00:13:44,080
+[SPEAKER_00] And so since then we've kind of So a lot of our work has been kind of reducing friction to that first kind of upload moment.
+
+183
+00:13:44,320 --> 00:13:51,200
+[SPEAKER_01] Yeah, because then after you've recorded your first thing, you've got data in Strava now and you you're starting it's building value as a repository.
+
+184
+00:13:51,440 --> 00:13:59,360
+[SPEAKER_01] And I mean, I think that's a one of the, again, those things that create take a take an app and make it something that becomes sticky forever.
+
+185
+00:14:00,160 --> 00:14:03,360
+[SPEAKER_01] It's building lock in through data and Strava does this so well, right?
+
+186
+00:14:03,680 --> 00:14:13,040
+[SPEAKER_01] You build history, you have all this, you know, not only like you have the data points of each ride, but within the rides, you have like all kinds depending on what kind of sensors you're running.
+
+187
+00:14:13,360 --> 00:14:16,640
+[SPEAKER_01] But even now with just the phone, you get a lot, right?
+
+188
+00:14:16,960 --> 00:14:20,880
+[SPEAKER_01] Just from the GPS and maybe like a watch or something like this.
+
+189
+00:14:21,760 --> 00:14:23,520
+[SPEAKER_01] And so I can see why.
+
+190
+00:14:24,560 --> 00:14:31,600
+[SPEAKER_01] It's interesting that you found that the bottleneck was the user interface and not just the friction of I download the app.
+
+191
+00:14:31,920 --> 00:14:34,800
+[SPEAKER_01] Am I like ready to go for a run right now or a ride?
+
+192
+00:14:35,440 --> 00:14:37,040
+[SPEAKER_01] Which I'm sure has its own challenges.
+
+193
+00:14:38,240 --> 00:14:38,320
+[UNKNOWN] Yeah.
+
+194
+00:14:38,640 --> 00:14:44,960
+[SPEAKER_00] I mean, that's one of like our activation metric is getting you to upload once and follow one person in your first seven days.
+
+195
+00:14:45,680 --> 00:14:49,600
+[SPEAKER_00] And it's a tough activation metric because we need you to go outside.
+
+196
+00:14:49,760 --> 00:14:49,840
+[SPEAKER_00] Yeah.
+
+197
+00:14:50,080 --> 00:14:52,800
+[SPEAKER_00] And our metric actually shows that nobody wants to do that.
+
+198
+00:14:53,360 --> 00:14:53,520
+[SPEAKER_00] Right.
+
+199
+00:14:53,680 --> 00:14:57,040
+[SPEAKER_00] And we actually have a minimum distance of an activity that we also look at.
+
+200
+00:14:57,200 --> 00:14:57,600
+[SPEAKER_00] Oh, wow.
+
+201
+00:14:57,840 --> 00:14:58,880
+[SPEAKER_01] Because we want to make sure like you were.
+
+202
+00:14:59,200 --> 00:15:00,240
+[SPEAKER_00] So you can always just hit it, right?
+
+203
+00:15:00,400 --> 00:15:01,040
+[SPEAKER_01] And then test it.
+
+204
+00:15:01,440 --> 00:15:02,720
+[SPEAKER_01] And then you're like, okay.
+
+205
+00:15:04,240 --> 00:15:12,160
+[SPEAKER_00] And it's a bit challenging because, you know, when you compare to, like, other companies' activation metrics, they're like, well, you can, you know, you can set your profile up in bed.
+
+206
+00:15:12,480 --> 00:15:13,360
+[SPEAKER_00] You know, you're just lying there.
+
+207
+00:15:13,440 --> 00:15:15,040
+[SPEAKER_00] You're using the app for the first time.
+
+208
+00:15:15,200 --> 00:15:19,520
+[SPEAKER_01] You can make free videos, add a friend, you know, all those things you can do from your, from your seat.
+
+209
+00:15:20,560 --> 00:15:22,080
+[SPEAKER_00] But for us, it's amazing.
+
+210
+00:15:22,320 --> 00:15:24,400
+[SPEAKER_00] Like, our users download the product.
+
+211
+00:15:25,120 --> 00:15:27,920
+[SPEAKER_00] About half of them are ready to go right now and go outside.
+
+212
+00:15:28,080 --> 00:15:31,120
+[SPEAKER_01] It's like a it's like an impulse thing or like, oh, I need I'm gonna run.
+
+213
+00:15:31,360 --> 00:15:31,760
+[SPEAKER_01] I need an app.
+
+214
+00:15:32,320 --> 00:15:32,640
+[SPEAKER_01] Exactly.
+
+215
+00:15:32,960 --> 00:15:33,760
+[SPEAKER_01] And that kind of makes it.
+
+216
+00:15:33,840 --> 00:15:37,120
+[SPEAKER_01] Thanks to the app store for making that even a possibility, right?
+
+217
+00:15:37,440 --> 00:15:44,960
+[SPEAKER_01] The fact that you can be like just in time need for software and then you can find it, uh, that's that's pretty cool, but that's crazy.
+
+218
+00:15:45,040 --> 00:15:46,640
+[SPEAKER_01] It's half, but that's good.
+
+219
+00:15:46,880 --> 00:15:47,680
+[SPEAKER_01] That's great for you, right?
+
+220
+00:15:47,920 --> 00:15:53,520
+[SPEAKER_01] Like you have a you have a user who's like completely prime to buy, like when they when they open the app for the first time.
+
+221
+00:15:53,840 --> 00:15:54,160
+[SPEAKER_01] That's great.
+
+222
+00:15:54,880 --> 00:16:12,240
+[SPEAKER_02] So Jason stepping back to the the growth team, uh, I I still wanted to understand how how you went from, hey, we should probably have a growth team to now five separate multidisciplinary teams with over seventy people.
+
+223
+00:16:12,720 --> 00:16:13,840
+[SPEAKER_02] That's that's, oh wow.
+
+224
+00:16:14,240 --> 00:16:14,960
+[SPEAKER_02] Pretty incredible.
+
+225
+00:16:15,760 --> 00:16:17,920
+[SPEAKER_02] And I would have just never, you know, guessed that.
+
+226
+00:16:18,160 --> 00:16:24,880
+[SPEAKER_02] So I'd love to hear a little bit about that kind of evolution and then what those, those teams and functions look like today at Strava.
+
+227
+00:16:25,360 --> 00:16:25,440
+[SPEAKER_02] Yeah.
+
+228
+00:16:26,080 --> 00:16:29,360
+[SPEAKER_00] So the first team for a while, we were just called the growth team, right?
+
+229
+00:16:30,000 --> 00:16:33,680
+[SPEAKER_00] But if you looked at the work we were doing, you would classify it as an activation team.
+
+230
+00:16:33,840 --> 00:16:35,200
+[SPEAKER_00] So new user activation.
+
+231
+00:16:35,680 --> 00:16:46,960
+[SPEAKER_00] And I think for the majority of other companies and organizations that I talk to, that news or kind of optimization tends to be the place where you can get the most wins from early and like a very important place.
+
+232
+00:16:47,120 --> 00:16:52,480
+[SPEAKER_00] And, you know, it's connecting your people that have shown intent to come to your product, you know, with the value of your product.
+
+233
+00:16:52,880 --> 00:16:54,560
+[SPEAKER_00] And if you don't have that, then you're in trouble.
+
+234
+00:16:55,360 --> 00:16:59,360
+[SPEAKER_00] From there, we kind of expanded to news or acquisition.
+
+235
+00:17:00,160 --> 00:17:01,840
+[SPEAKER_00] And so we would like to support paid.
+
+236
+00:17:02,000 --> 00:17:08,000
+[SPEAKER_00] We would also do kind of referral loops through activity sharing mainly, but basically UGC sharing.
+
+237
+00:17:08,640 --> 00:17:15,840
+[SPEAKER_00] And so we kind of expanded saying, okay, we want to, we had this insight of we have, you know, the ability to share a link from an account.
+
+238
+00:17:15,840 --> 00:17:19,200
+[SPEAKER_00] from activities that generates several hundred thousand shares a month.
+
+239
+00:17:19,440 --> 00:17:22,080
+[SPEAKER_00] Let's try to bump that number up and then convert on the other side.
+
+240
+00:17:22,560 --> 00:17:29,680
+[SPEAKER_00] And so I think early on we were, because we didn't have a strict definition of what a team, we could bounce around from different areas.
+
+241
+00:17:29,920 --> 00:17:36,320
+[SPEAKER_00] And our head of growth, who is actually the CTO, founder of Strava, he decided to one day, he just came and sat next to me.
+
+242
+00:17:36,400 --> 00:17:37,920
+[SPEAKER_00] He's like, I am now the head of growth.
+
+243
+00:17:39,040 --> 00:17:43,200
+[SPEAKER_00] And he really created the ability for us to try things out in different areas.
+
+244
+00:17:43,360 --> 00:17:44,960
+[SPEAKER_00] And so we're like, okay, social sharing.
+
+245
+00:17:45,120 --> 00:17:45,680
+[SPEAKER_00] Let's try this out.
+
+246
+00:17:45,840 --> 00:17:47,040
+[SPEAKER_00] Oh, it's driving new reg.
+
+247
+00:17:47,840 --> 00:17:48,560
+[SPEAKER_00] Let's work on this.
+
+248
+00:17:49,280 --> 00:17:52,080
+[SPEAKER_00] And so we kind of expanded to like activation and acquisition.
+
+249
+00:17:52,720 --> 00:17:58,320
+[SPEAKER_00] And then while the whole that was happening, we had our business model was subscriptions mainly, right?
+
+250
+00:17:58,480 --> 00:18:01,200
+[SPEAKER_00] We mainly make our money through a subscription model.
+
+251
+00:18:02,080 --> 00:18:04,000
+[SPEAKER_00] And that was considered separate to growth.
+
+252
+00:18:04,480 --> 00:18:12,160
+[SPEAKER_00] But really for a long time that was it wasn't growth focused, it was more built features for subscription.
+
+253
+00:18:13,040 --> 00:18:25,200
+[SPEAKER_00] And then eventually, we kind of that became a little bit more growth focused on like, okay, let's increase the value of our up, you know, the conversion of our upsells and let's look at friction and then kind of start to grow work.
+
+254
+00:18:25,360 --> 00:18:40,640
+[SPEAKER_00] So over time, that kind of shifted into the growth org and became a classic kind of growth monetization team, growth subscriptions team through kind of like because of the success we had in the other areas of the business with the growth team of reducing friction, increasing conversion, expanding value.
+
+255
+00:18:41,120 --> 00:18:43,040
+[SPEAKER_00] And so those are kind of like the three main areas.
+
+256
+00:18:43,600 --> 00:18:48,560
+[SPEAKER_00] The two other areas in growth were comms, like we call it the communications and personalization team.
+
+257
+00:18:49,280 --> 00:19:00,000
+[SPEAKER_00] And that was, again, a way to invest in the notification and email and in app messaging life cycle, knowing that that was an important area that we could improve on.
+
+258
+00:19:00,560 --> 00:19:05,200
+[SPEAKER_00] And a lot of benefit, a lot of inspiration here came from Pinterest and their growth comms team.
+
+259
+00:19:05,440 --> 00:19:12,800
+[SPEAKER_00] And again, like a lot of times, these areas start off as one person trying a bunch of experiments in an area and us being like, wow, that's working.
+
+260
+00:19:13,520 --> 00:19:14,480
+[SPEAKER_00] Let's invest more in here.
+
+261
+00:19:14,960 --> 00:19:21,680
+[SPEAKER_00] And then also while we're doing all this, Strava is still having crazy success, right, and growing and reaching more and more users.
+
+262
+00:19:22,080 --> 00:19:29,520
+[SPEAKER_00] And so naturally, the teams start to get a little bit bigger as you need to build the growth tooling infrastructure to be able to do it.
+
+263
+00:19:30,080 --> 00:19:34,960
+[SPEAKER_00] And so it's not as I kind of tell people who join now, like back in the day, I was an IOS engineer.
+
+264
+00:19:35,040 --> 00:19:39,440
+[SPEAKER_00] I could just basically write a whole bunch of tests without really wondering about the scale of it.
+
+265
+00:19:39,760 --> 00:19:44,400
+[SPEAKER_00] And now we have to think about, oh, is this test I'm going to do is going to scale, do I need tools?
+
+266
+00:19:45,360 --> 00:19:47,040
+[SPEAKER_00] You know, what's going to happen when we launch this?
+
+267
+00:19:47,280 --> 00:19:48,640
+[SPEAKER_00] Like, those kind of things necessity.
+
+268
+00:19:48,960 --> 00:19:49,280
+[SPEAKER_00] How does that?
+
+269
+00:19:50,400 --> 00:19:59,040
+[SPEAKER_01] I mean, part of the, you know, the cell of, you know, you were describing what a good growth engineer looks like and somebody kind of who could be a PM is like very fast.
+
+270
+00:19:59,360 --> 00:20:02,560
+[SPEAKER_01] This sounds very, to me like very early startup person, right?
+
+271
+00:20:02,640 --> 00:20:07,600
+[SPEAKER_01] Like someone who's like rapidly iterating to find a good engineer to hire in your first like five or ten, right?
+
+272
+00:20:07,840 --> 00:20:11,200
+[SPEAKER_01] Someone who's, who can move independently and very quickly.
+
+273
+00:20:12,240 --> 00:20:19,600
+[SPEAKER_01] But how does that, you know, you go from one little scrappy team of five to seventy people with multiple teams and things like this?
+
+274
+00:20:19,920 --> 00:20:26,000
+[SPEAKER_01] Like, I imagine in the microcosm of a growth organization, you probably still have some of those scaling issues, right?
+
+275
+00:20:26,240 --> 00:20:29,600
+[SPEAKER_01] Where, suddenly, like, teams are conflicting on tests and stuff like that.
+
+276
+00:20:29,760 --> 00:20:32,800
+[SPEAKER_01] Did you have, was there like a crossing the gap as you spread these?
+
+277
+00:20:33,200 --> 00:20:34,880
+[SPEAKER_01] And then, yeah, and I have a follow up question.
+
+278
+00:20:35,040 --> 00:20:36,320
+[SPEAKER_01] So I'll answer that one first.
+
+279
+00:20:37,440 --> 00:20:38,320
+[SPEAKER_01] Yeah, no, totally.
+
+280
+00:20:39,120 --> 00:20:42,320
+[SPEAKER_00] I mean, I think people ask me, why have I been at Strava for so long?
+
+281
+00:20:42,400 --> 00:20:44,560
+[SPEAKER_00] And I kind of say, every year, it feels like a new job.
+
+282
+00:20:44,880 --> 00:20:46,960
+[SPEAKER_00] So I don't have to go somewhere else for a new experience.
+
+283
+00:20:47,040 --> 00:20:51,280
+[SPEAKER_00] Like, as you're growing, there's also new people coming in and new people, you know, people leaving.
+
+284
+00:20:51,520 --> 00:20:57,360
+[SPEAKER_00] And so there's a little bit of that life cycle of teams that allow you to change as key.
+
+285
+00:20:57,760 --> 00:21:04,800
+[SPEAKER_00] people leave, you can kind of make shifts that, you know, that maybe were just easier when you have someone new coming in to a new role.
+
+286
+00:21:05,120 --> 00:21:06,640
+[SPEAKER_00] But yeah, there's definitely been growing pain.
+
+287
+00:21:06,800 --> 00:21:10,880
+[SPEAKER_00] I mean, I think in terms of like, how much do you know about what the other teams are working on?
+
+288
+00:21:11,360 --> 00:21:14,480
+[SPEAKER_00] How are, you know, product managers interacting, collaborating?
+
+289
+00:21:14,880 --> 00:21:17,200
+[SPEAKER_00] What are the overhead of some of the meetings and stuff we've had?
+
+290
+00:21:17,360 --> 00:21:24,560
+[SPEAKER_00] So instance, for one, one way we're still working through right now is this meeting or this process we call experiments weekly.
+
+291
+00:21:25,040 --> 00:21:32,480
+[SPEAKER_00] So forever since the beginning of Strava, which is on like my journey at Strava and the growth team at Strava, we've had this meeting once a week called experiments weekly.
+
+292
+00:21:32,640 --> 00:21:37,840
+[SPEAKER_00] We represent all the experiments that the growth org team has run and amazing meeting.
+
+293
+00:21:37,920 --> 00:21:40,480
+[SPEAKER_00] And early on, it's, you know, five people and you get to debate.
+
+294
+00:21:40,880 --> 00:21:41,440
+[SPEAKER_00] Why did this happen?
+
+295
+00:21:41,600 --> 00:21:42,160
+[SPEAKER_00] Oh, this happens.
+
+296
+00:21:42,320 --> 00:21:42,720
+[SPEAKER_00] Here's my thing.
+
+297
+00:21:42,800 --> 00:21:43,520
+[SPEAKER_00] Here's the follow-up.
+
+298
+00:21:43,600 --> 00:21:45,760
+[SPEAKER_00] And then, like, you know, within two days, you have another one running.
+
+299
+00:21:46,320 --> 00:21:48,560
+[SPEAKER_00] As you grow, it becomes a bigger meeting, right?
+
+300
+00:21:49,040 --> 00:21:54,000
+[SPEAKER_00] And you have a lot of people like me being bureaucrats now, um, as I kind of call myself in the meeting.
+
+301
+00:21:54,160 --> 00:22:02,800
+[SPEAKER_00] And you have someone who's, you know, me eight years ago, new to the role, not really wanting to speak up and be like, oh, I disagree with that hypothesis, right?
+
+302
+00:22:03,040 --> 00:22:05,440
+[SPEAKER_00] So then you're like, hmm, okay, what do we do?
+
+303
+00:22:05,600 --> 00:22:12,960
+[SPEAKER_00] And so we got to the point where we had like seventy people on this invite last year and the only people that were speaking were, you know, leads of leads kind of thing, right?
+
+304
+00:22:13,120 --> 00:22:20,000
+[SPEAKER_00] So I, you know, oversee growth, the old growth teams, you know, we have a head of analytics who supports all of growth, the other growth teams.
+
+305
+00:22:20,160 --> 00:22:21,920
+[SPEAKER_00] And like we were talking but no one else was.
+
+306
+00:22:22,480 --> 00:22:31,280
+[SPEAKER_00] And so we started seeing one of the growth teams had started the exact same meeting on their own and they were having so much success with brainstorming and everyone being together and in the weeds.
+
+307
+00:22:31,840 --> 00:22:32,720
+[SPEAKER_00] So we're like, huh?
+
+308
+00:22:32,880 --> 00:22:33,840
+[SPEAKER_00] Okay, what do we do about this?
+
+309
+00:22:34,080 --> 00:22:37,280
+[SPEAKER_00] So we canceled the big meetings that all the small teams have their own meetings.
+
+310
+00:22:37,680 --> 00:22:39,440
+[SPEAKER_00] And that's been great, apart from for people like me.
+
+311
+00:22:39,520 --> 00:22:41,280
+[SPEAKER_00] And I'm like, what's the bigger learning?
+
+312
+00:22:41,360 --> 00:22:41,920
+[SPEAKER_00] How are we talking?
+
+313
+00:22:42,080 --> 00:22:45,200
+[SPEAKER_00] You know, and so we're still trying to figure this out and like, what's the right process?
+
+314
+00:22:45,520 --> 00:22:46,160
+[SPEAKER_00] Meetings are tough.
+
+315
+00:22:46,240 --> 00:22:47,120
+[SPEAKER_00] I now live in Ireland.
+
+316
+00:22:47,440 --> 00:22:48,400
+[SPEAKER_00] So time zones are tough.
+
+317
+00:22:49,760 --> 00:22:57,520
+[SPEAKER_00] And yeah, it's tough, you know, it's how do you how do you create that, that narrative or figure out that narrative of learning that matters?
+
+318
+00:22:57,600 --> 00:23:00,160
+[SPEAKER_00] And yeah, you know, especially on a growth team, right?
+
+319
+00:23:00,320 --> 00:23:05,360
+[SPEAKER_01] Where it's by definition, it's rapidity and testing and experimentation.
+
+320
+00:23:05,920 --> 00:23:09,600
+[SPEAKER_00] And I think there's benefit, and I don't think everyone agrees with me on this, which is good.
+
+321
+00:23:10,080 --> 00:23:18,000
+[SPEAKER_00] But I think there's benefit to a team being laser focused on a specific set of areas and almost not wondering about the world around them and getting to move fast.
+
+322
+00:23:18,480 --> 00:23:20,560
+[SPEAKER_00] But then you need to have someone who's pulling out those threads.
+
+323
+00:23:20,880 --> 00:23:27,200
+[SPEAKER_01] Yeah, because I imagine there's collisions and things sometimes where two teams are testing in different directions that don't work well and stuff like this.
+
+324
+00:23:27,440 --> 00:23:32,480
+[SPEAKER_00] Or yeah, and it's like, hey, this learning here and this learning here together, that's a pretty huge insight, right?
+
+325
+00:23:33,280 --> 00:23:34,400
+[SPEAKER_00] And like, how did you do that?
+
+326
+00:23:34,640 --> 00:23:36,960
+[SPEAKER_00] And that's something that we haven't figured out fully.
+
+327
+00:23:37,600 --> 00:23:39,920
+[SPEAKER_00] I see it as part, part of my job, I get to do that.
+
+328
+00:23:40,080 --> 00:23:46,640
+[SPEAKER_00] So I've, I fly a lot for work and I pull up all the experiments that we've run recently before my flights.
+
+329
+00:23:46,800 --> 00:23:49,120
+[SPEAKER_00] And so on my flights, I'm just like reading through experiments.
+
+330
+00:23:49,280 --> 00:23:54,320
+[SPEAKER_00] And so the poor, poor people in my team, you know, I land and I just, I know, tons of Slack.
+
+331
+00:23:54,400 --> 00:23:57,200
+[SPEAKER_00] I pre-write Slack and I just, I'm hammering them with like, why this?
+
+332
+00:23:57,360 --> 00:23:58,160
+[SPEAKER_00] I disagree with this learning.
+
+333
+00:23:58,160 --> 00:23:58,640
+[SPEAKER_00] What about this?
+
+334
+00:23:58,720 --> 00:23:59,040
+[SPEAKER_00] This is cool.
+
+335
+00:23:59,120 --> 00:24:00,320
+[SPEAKER_00] Why are we, you know, let's talk about this.
+
+336
+00:24:00,400 --> 00:24:00,960
+[SPEAKER_00] Let's celebrate this.
+
+337
+00:24:01,040 --> 00:24:04,400
+[SPEAKER_00] Like, did you know this is one of of the best, like, best results I've ever seen?
+
+338
+00:24:04,720 --> 00:24:08,000
+[SPEAKER_00] Like, why wasn't you running around screaming about this test?
+
+339
+00:24:08,240 --> 00:24:08,880
+[SPEAKER_00] This was awesome.
+
+340
+00:24:09,040 --> 00:24:10,560
+[SPEAKER_00] And you know, it's getting overwhelmed.
+
+341
+00:24:10,640 --> 00:24:13,440
+[SPEAKER_00] So I think that's one kind of, like, good problem to have.
+
+342
+00:24:13,840 --> 00:24:14,000
+[SPEAKER_00] Sure.
+
+343
+00:24:14,320 --> 00:24:23,120
+[SPEAKER_00] I would say another one is in the tools that we've built for a while, we didn't have people doing feature education, teams doing feature education.
+
+344
+00:24:23,520 --> 00:24:28,640
+[SPEAKER_00] Teams were very much focused on like the core user, the engaged user with their features.
+
+345
+00:24:28,880 --> 00:24:35,280
+[SPEAKER_00] And so the new user experience or the winback experience resurrection, if you call them those instead, are similar, right?
+
+346
+00:24:35,440 --> 00:24:38,480
+[SPEAKER_00] It's like someone's coming back to teach them about how to use this thing.
+
+347
+00:24:39,200 --> 00:24:44,480
+[SPEAKER_00] And so we and I write about this in my blog, which you can you can read later.
+
+348
+00:24:45,200 --> 00:24:49,680
+[SPEAKER_00] We built the service for this growth team, for this growth product we had to do.
+
+349
+00:24:49,760 --> 00:24:50,720
+[SPEAKER_00] We were working on the feed.
+
+350
+00:24:50,960 --> 00:24:53,200
+[SPEAKER_00] So we built the service to allow us to do feature education.
+
+351
+00:24:53,680 --> 00:24:57,840
+[SPEAKER_00] And for a few years, but probably two years, no one really used it apart from growth team.
+
+352
+00:24:58,000 --> 00:25:02,480
+[SPEAKER_00] So we would add coach marks and feature education popups and tool tips and kind of do things around the product.
+
+353
+00:25:02,720 --> 00:25:03,120
+[SPEAKER_00] And it was great.
+
+354
+00:25:03,440 --> 00:25:09,840
+[SPEAKER_00] And then teams, for many, you know, cultural reasons, different product managers, different focuses, everyone started being like, this is important.
+
+355
+00:25:10,080 --> 00:25:12,320
+[SPEAKER_00] We're going to do more feature education.
+
+356
+00:25:12,800 --> 00:25:16,080
+[SPEAKER_00] And now it's funny because I was just in a like a road map review.
+
+357
+00:25:16,560 --> 00:25:28,880
+[SPEAKER_00] and one of the teams, one of the active, our activation team, their test is to remove all of the feature education in a test, you know, we call those negative tests to see, you know, what is the overall impact of something?
+
+358
+00:25:29,200 --> 00:25:30,160
+[SPEAKER_00] Do we need to take a step back?
+
+359
+00:25:30,480 --> 00:25:34,800
+[SPEAKER_00] And it was so wild to me because I was like, I tried for so long to get people to do feature education.
+
+360
+00:25:35,280 --> 00:25:38,400
+[SPEAKER_00] Now we have too much feature education and we need to take a step back.
+
+361
+00:25:38,640 --> 00:25:49,760
+[SPEAKER_01] I mean, this is a, this is a classic, like, not say a late stage, but you always hear this joke about Facebook and things like this about how, you know, like, um, there are certain real estate and apps that become super overcrowded, right?
+
+362
+00:25:49,840 --> 00:25:52,240
+[SPEAKER_01] And I especially imagine when you have federation is good.
+
+363
+00:25:52,880 --> 00:25:59,680
+[SPEAKER_01] But then at some point, you know, you talk about they don't see the small teams might not see the externalities of the competition they're having.
+
+364
+00:25:59,760 --> 00:26:00,240
+[SPEAKER_01] And it's good.
+
+365
+00:26:00,320 --> 00:26:02,480
+[SPEAKER_01] I mean, it's great that you guys have a culture where you can test that.
+
+366
+00:26:02,720 --> 00:26:09,280
+[SPEAKER_01] I was going to ask, and this is kind of related, but my follow-on question was, are there any just normal product teams left at Strava?
+
+367
+00:26:09,840 --> 00:26:14,000
+[SPEAKER_01] Is it just like all because I'm like thinking, I'm like, yeah, you just kind of named all the parts of your app.
+
+368
+00:26:14,240 --> 00:26:18,400
+[SPEAKER_01] I don't know what there's left to do, which, which actually, if that's true, is fascinating.
+
+369
+00:26:18,560 --> 00:26:20,080
+[SPEAKER_01] Just say, like, yeah, we don't have product teams.
+
+370
+00:26:20,160 --> 00:26:24,320
+[SPEAKER_01] We just have growth teams that focus on different parts, which probably for a startup is what you should mostly be doing.
+
+371
+00:26:24,640 --> 00:26:24,720
+[SPEAKER_01] So.
+
+372
+00:26:25,360 --> 00:26:25,520
+[SPEAKER_01] Yeah.
+
+373
+00:26:25,920 --> 00:26:26,320
+[SPEAKER_01] Uh, no.
+
+374
+00:26:26,560 --> 00:26:27,600
+[SPEAKER_00] And it's good that we don't.
+
+375
+00:26:27,680 --> 00:26:34,320
+[SPEAKER_00] You know, there's always that core value that you need to be investing in right and that's I don't think that's the growth team's necessarily job.
+
+376
+00:26:34,640 --> 00:26:41,040
+[SPEAKER_00] I think we can sometimes find ways to expand core value or extract more value, but I don't think it's necessarily expanding it.
+
+377
+00:26:41,440 --> 00:26:48,640
+[SPEAKER_00] So we have like the activities team that's focusing on like the core now in Strava, which is the activity and all the features and analysis around that.
+
+378
+00:26:49,280 --> 00:26:54,080
+[SPEAKER_00] We have the geo team, which is focusing on RAF recommendations, exploring the world around you.
+
+379
+00:26:55,360 --> 00:27:01,920
+[SPEAKER_00] Mapping a big acquisition of Snapmap, which is a great company that has amazing software and amazing user experiences.
+
+380
+00:27:02,240 --> 00:27:11,600
+[SPEAKER_00] And then we have another team that's focused on more of the social experiences, which right now is a lot of around just, yeah, the social experiences, clubs, challenges of that kind of things.
+
+381
+00:27:11,840 --> 00:27:19,600
+[SPEAKER_00] And so a lot of like how we're thinking about this, and this is definitely not something we're perfect at, but a lot of the teams think of themselves as platforms.
+
+382
+00:27:20,080 --> 00:27:29,120
+[SPEAKER_00] Like we're creating the ability to use the activity, the club, the follow, the route in many places in the product, right?
+
+383
+00:27:29,360 --> 00:27:33,040
+[SPEAKER_00] We want to be able to surface this through an email, through a push notification, through the feed.
+
+384
+00:27:33,280 --> 00:27:36,720
+[SPEAKER_00] We want to be able to really modularize our, our, our, our product.
+
+385
+00:27:37,760 --> 00:27:44,160
+[SPEAKER_00] And so a lot of the work we do is just to kind of view ourselves and view teams through themselves as platform creative products.
+
+386
+00:27:44,160 --> 00:27:48,080
+[SPEAKER_00] platform, create a platform and then use that platform to optimize and deliver a user experience.
+
+387
+00:27:48,880 --> 00:27:52,800
+[SPEAKER_02] We kind of went down this rabbit hole talking about feature education.
+
+388
+00:27:53,760 --> 00:27:55,520
+[SPEAKER_02] What does that look like tactically?
+
+389
+00:27:55,840 --> 00:28:01,440
+[SPEAKER_02] Like little pop-ups in the app, like what does the feature education discipline look like?
+
+390
+00:28:01,680 --> 00:28:10,160
+[SPEAKER_02] Because this is something I think from onboarding to all sorts of parts of the app, I think a lot of developers miss some of these kind of fundamentals.
+
+391
+00:28:10,800 --> 00:28:10,880
+[SPEAKER_02] Yeah.
+
+392
+00:28:11,520 --> 00:28:22,160
+[SPEAKER_00] And one of the blessings and curses of Strava in a way is that everyone, you know, most employees use the product every day, which is great, but you're not using the product from the perspective of a new user, right?
+
+393
+00:28:22,400 --> 00:28:31,120
+[SPEAKER_00] Or a way back, or someone who uses it once a week, twice a week, like an average person, you know, not everyone is running and cycling every day, um, et cetera.
+
+394
+00:28:31,280 --> 00:28:33,360
+[SPEAKER_00] And so that kind of empathy is tough.
+
+395
+00:28:33,600 --> 00:28:35,760
+[SPEAKER_00] Um, we have some things that we've built to help with that.
+
+396
+00:28:35,920 --> 00:28:41,600
+[SPEAKER_00] Like we have a switch that you can just make your whole profile free and most of our subscriptions teams just sit in that mode.
+
+397
+00:28:42,000 --> 00:28:53,200
+[SPEAKER_00] So for feature education from us, it's tool tips, kind of coach marks, it's in app, you know, little units of saying like this is how to work, it's push notifications, it's emails, it's all so many different channels.
+
+398
+00:28:53,440 --> 00:28:56,480
+[SPEAKER_00] And of course, the next question you might ask is how do you manage all those channels?
+
+399
+00:28:56,560 --> 00:28:58,400
+[SPEAKER_00] And the question is, we don't do that very very well.
+
+400
+00:28:59,200 --> 00:29:02,400
+[SPEAKER_00] You know, we just hired a new Chief Design Officer.
+
+401
+00:29:02,640 --> 00:29:03,280
+[SPEAKER_00] She's fantastic.
+
+402
+00:29:03,360 --> 00:29:04,480
+[SPEAKER_00] Her name is Anita from Twitter.
+
+403
+00:29:04,720 --> 00:29:08,640
+[SPEAKER_00] And she's asking all these questions about, can I have the user mapping and can I just see the user journey?
+
+404
+00:29:09,120 --> 00:29:11,120
+[SPEAKER_00] And we're like, we'd love to see that too.
+
+405
+00:29:12,960 --> 00:29:21,760
+[SPEAKER_00] And, you know, I think here, I'm like, you know, I I probably think a lot of people feel relieved when they hear that there's always chaos, right?
+
+406
+00:29:22,000 --> 00:29:24,240
+[SPEAKER_00] There's always a little bit of chaos with it internally.
+
+407
+00:29:24,480 --> 00:29:27,760
+[SPEAKER_00] And it's easy for people to look at Strava and be like, oh, they have their stuff together, right?
+
+408
+00:29:27,920 --> 00:29:29,040
+[SPEAKER_00] Clearly, they know what they're doing.
+
+409
+00:29:29,120 --> 00:29:33,840
+[SPEAKER_00] And it's like internally, it's like, man, like sometimes we don't even know, you know, exactly what every user is seeing at any time.
+
+410
+00:29:34,160 --> 00:29:35,360
+[SPEAKER_00] Observability is hard.
+
+411
+00:29:35,920 --> 00:29:36,560
+[SPEAKER_00] That's a hard problem.
+
+412
+00:29:37,040 --> 00:29:44,240
+[SPEAKER_00] And I think I appreciate the people around me being willing to still move forward and still make decisions even if we don't have that perfect observability.
+
+413
+00:29:44,400 --> 00:29:46,720
+[SPEAKER_00] And, you know, it's it's something we're trying to solve for.
+
+414
+00:29:47,200 --> 00:29:50,240
+[SPEAKER_00] But, and this is, you know, depends on your entegram or your personality.
+
+415
+00:29:50,400 --> 00:29:53,280
+[SPEAKER_00] I, I like to live in a world of, like, managed chaos.
+
+416
+00:29:53,920 --> 00:30:05,200
+[SPEAKER_00] And it's this, this management philosophy by Eric Schmidt, where it's like, let people do their job and like, maintain just enough order in the chaos so that you can still make decisions, but be okay with chaos.
+
+417
+00:30:05,520 --> 00:30:05,600
+[SPEAKER_00] Yeah.
+
+418
+00:30:05,840 --> 00:30:13,280
+[SPEAKER_01] I mean, if you spend as a leader or, you know, a team leader or whatever, your whole time, like, trying to make sure every everyone's coloring within the lines.
+
+419
+00:30:13,520 --> 00:30:19,760
+[SPEAKER_01] Like you're just going to end up spending your whole time trying to cut off downside and and miss a whole bunch of upside opportunity, right?
+
+420
+00:30:20,000 --> 00:30:23,760
+[SPEAKER_01] Versus, like you were saying, I'm sure this has happened many times over the last eight years.
+
+421
+00:30:24,000 --> 00:30:27,680
+[SPEAKER_01] Like someone ships something that does something they don't expect is bad.
+
+422
+00:30:28,560 --> 00:30:31,040
+[SPEAKER_01] My experience is you often catch it pretty quick, right?
+
+423
+00:30:31,360 --> 00:30:34,480
+[SPEAKER_01] Like if it's that bad, customers will tell you, you'll find it.
+
+424
+00:30:34,720 --> 00:30:36,000
+[SPEAKER_01] You can roll it back really quickly.
+
+425
+00:30:36,240 --> 00:30:43,360
+[SPEAKER_01] Ideally, you have that infrastructure in place where you can roll it back really quickly and a culture and you've built some tools that allow you to roll it back really quickly.
+
+426
+00:30:43,600 --> 00:30:48,560
+[SPEAKER_01] But you can think of it like, you know, as a microcosm of how the greater economy organizes itself, right?
+
+427
+00:30:49,120 --> 00:30:52,560
+[SPEAKER_01] which is through like chaos and competition and stuff like this.
+
+428
+00:30:52,960 --> 00:31:16,960
+[SPEAKER_01] It's not similar to how, you know, when you guys reach a scale, you know, obviously you guys have, you know, seventy people just on the growth side, you can do this, but if you don't preserve that, you end up with, yeah, the opposite, which is waterfall top down bureaucracy, slow behemoth, never innovating, you know, at the cost of never upsetting anyone, which I just don't think works, you know, works maybe if you're Oracle, doesn't work if you're Strava.
+
+429
+00:31:17,600 --> 00:31:17,760
+[SPEAKER_00] Right.
+
+430
+00:31:18,080 --> 00:31:20,240
+[SPEAKER_00] And I, yeah, I mean, that's so, that's so key.
+
+431
+00:31:20,720 --> 00:31:24,320
+[SPEAKER_00] And also something I have to learn and remind myself every day.
+
+432
+00:31:24,400 --> 00:31:26,560
+[SPEAKER_00] I, you know, I was, I was a bureaucrat.
+
+433
+00:31:26,640 --> 00:31:27,360
+[SPEAKER_00] You're like, what is it?
+
+434
+00:31:27,440 --> 00:31:28,880
+[SPEAKER_00] What's a bureaucrat's job in this world?
+
+435
+00:31:29,360 --> 00:31:33,920
+[SPEAKER_00] And it's funny because I remember being the guy that was just running tons of tests.
+
+436
+00:31:34,000 --> 00:31:40,640
+[SPEAKER_00] Like I was looking back at the spreadsheet of tests I ran, you know, almost eight years ago now, just, you know, from that year, like, what did I run?
+
+437
+00:31:40,800 --> 00:31:41,280
+[SPEAKER_00] What do we do?
+
+438
+00:31:41,760 --> 00:31:45,440
+[SPEAKER_00] And just remembering how fun it was just like churn out test after test after test.
+
+439
+00:31:45,840 --> 00:31:54,160
+[SPEAKER_00] And so many of the tests were just my ideas and my ideas worked and the bureaucrat, you know, maybe the ideas didn't work because they weren't as close to the problem or thinking about it night and day.
+
+440
+00:31:54,480 --> 00:32:05,440
+[SPEAKER_00] And now I have to think to myself, like, I have all this context and I have all these opinions, but they don't necessarily like, I'm so far away from it now that I need to trust the teams to do their job.
+
+441
+00:32:05,920 --> 00:32:09,600
+[SPEAKER_00] Even when it looks like chaos, I need to remember, like, what amount is okay?
+
+442
+00:32:10,240 --> 00:32:14,160
+[SPEAKER_00] Am I just making people's lives harder by the questions I'm asking?
+
+443
+00:32:14,320 --> 00:32:17,120
+[SPEAKER_00] How do I empower them to do their job really well?
+
+444
+00:32:17,440 --> 00:32:22,320
+[SPEAKER_00] Because the people on these teams become the experts and they become, you know, they want to do their job really well.
+
+445
+00:32:22,560 --> 00:32:23,920
+[SPEAKER_00] They want to see business impact.
+
+446
+00:32:24,960 --> 00:32:29,840
+[SPEAKER_00] And my job is to kind of, you know, help them do their job really well versus tell them what to do.
+
+447
+00:32:30,000 --> 00:32:38,640
+[SPEAKER_00] And that's why I mean, engineers thinking like product managers, some of our best wins have come from engineers six months out of college, a year out of college, who was like, I want to try this.
+
+448
+00:32:38,960 --> 00:32:40,720
+[SPEAKER_00] And we actually did we used to do this thing.
+
+449
+00:32:40,880 --> 00:32:52,960
+[SPEAKER_00] We haven't done as much recently, but we used to especially when we were in person, all in person, we used to do this thing called experiments day, where like once a quarter there was a day where the team was allowed to run whatever experiments they wanted.
+
+450
+00:32:53,280 --> 00:32:59,760
+[SPEAKER_00] There were some rules like, don't take away a subscription upsell and don't crash the app kind of thing, and it has to be only ten percent of users.
+
+451
+00:33:00,080 --> 00:33:06,160
+[SPEAKER_00] But there was no, there was no necessary buy in needed from an engineering manager, a product manager.
+
+452
+00:33:06,880 --> 00:33:12,400
+[SPEAKER_00] And of course, the risk averse folks would see that as, oh, they're just going to chip whatever they want.
+
+453
+00:33:12,560 --> 00:33:13,360
+[SPEAKER_00] It's going to be hacky.
+
+454
+00:33:13,440 --> 00:33:14,080
+[SPEAKER_00] It's going to be bad.
+
+455
+00:33:14,160 --> 00:33:15,120
+[SPEAKER_00] They're not going to collaborate.
+
+456
+00:33:15,280 --> 00:33:17,920
+[SPEAKER_00] You know, we just took a step back and the team still worked together.
+
+457
+00:33:18,080 --> 00:33:22,560
+[SPEAKER_00] Like they all worked, literally every single person still worked together, design, analytics, engineering.
+
+458
+00:33:22,960 --> 00:33:33,280
+[SPEAKER_00] They came out with the ideas and a lot of the ideas were things that we had not prioritized because the data said probably not a lot of juice in that squeeze.
+
+459
+00:33:33,680 --> 00:33:38,160
+[SPEAKER_00] So an instance here, and shout out to Annie who worked on the growth team for a long time at Strava.
+
+460
+00:33:38,800 --> 00:33:44,080
+[SPEAKER_00] She really wanted to run a test where if someone followed you and you saw their profile anywhere, it said follow back.
+
+461
+00:33:44,960 --> 00:33:48,800
+[SPEAKER_00] And the data said the majority of relationships in Strava were reciprocal.
+
+462
+00:33:49,120 --> 00:33:49,840
+[SPEAKER_00] So what's the point?
+
+463
+00:33:50,400 --> 00:33:52,880
+[SPEAKER_00] But she was like, okay, I'm going to run this on experiments day.
+
+464
+00:33:53,120 --> 00:33:59,840
+[SPEAKER_00] And she ran it and resulted in the most, the biggest increase in follow rate that we've ever, that we've ever seen.
+
+465
+00:34:00,640 --> 00:34:04,400
+[SPEAKER_00] And again, it was small, reduced friction, the simple insight, nothing mindful.
+
+466
+00:34:04,960 --> 00:34:06,160
+[SPEAKER_00] Do you remember what the myth was on that?
+
+467
+00:34:06,320 --> 00:34:09,920
+[SPEAKER_00] Like, I mean, because I was just, you know, he shows people a button, they're going to push it, right?
+
+468
+00:34:10,160 --> 00:34:13,600
+[SPEAKER_01] So, you, I mean, might be long time gone now.
+
+469
+00:34:13,920 --> 00:34:15,920
+[SPEAKER_01] But I, I mean, I see that can happen all the time.
+
+470
+00:34:16,080 --> 00:34:23,440
+[SPEAKER_01] You just, organizationally, you, I always like to say a whisper becomes a myth, becomes a legend, becomes like just the truth, right?
+
+471
+00:34:23,760 --> 00:34:24,480
+[SPEAKER_01] This happens all the time.
+
+472
+00:34:24,640 --> 00:34:30,480
+[SPEAKER_00] And like, you can see how someone ran a half experiment five years ago and it failed, and then it just becomes knowledge.
+
+473
+00:34:31,120 --> 00:34:34,320
+[SPEAKER_00] Like, yeah, I don't know if if if you're having to remember for that case.
+
+474
+00:34:35,520 --> 00:34:36,640
+[SPEAKER_01] I don't remember exactly.
+
+475
+00:34:36,800 --> 00:34:45,680
+[SPEAKER_00] I, I, you know, it's one of those things that was so simple and so low cost to do that you think of yourself like, why did we ever, why did we even talk about that?
+
+476
+00:34:45,840 --> 00:34:53,040
+[SPEAKER_01] I think that's the thing that probably I try to do the most now is where are we talking about something more than it would cost to just build it?
+
+477
+00:34:53,280 --> 00:34:54,400
+[SPEAKER_00] Yeah, yeah, yeah, yeah.
+
+478
+00:34:54,960 --> 00:35:09,200
+[SPEAKER_00] And I think, you know, that's ultimately probably what my philosophy, I think my role is at Strava is to make it, make it easy enough to test any and every idea, rather than us having to self select here of the five designs you have as a designs you have as a designer, here's the one you think is the most effective.
+
+479
+00:35:09,440 --> 00:35:13,440
+[SPEAKER_00] Just reduce debate by making debate the more energy consuming thing.
+
+480
+00:35:13,680 --> 00:35:14,560
+[SPEAKER_00] Like just testing.
+
+481
+00:35:14,640 --> 00:35:15,920
+[SPEAKER_00] I think it's more inclusive, right?
+
+482
+00:35:16,080 --> 00:35:27,200
+[SPEAKER_00] I think because you are, if you move fast and you're able to test a lot of things in a very scientific way, you remove the bias of someone, you know, someone, the loudest voice in the room, right?
+
+483
+00:35:27,520 --> 00:35:28,720
+[SPEAKER_00] Becoming the person who, yeah.
+
+484
+00:35:29,200 --> 00:35:29,360
+[SPEAKER_00] Right.
+
+485
+00:35:29,440 --> 00:35:33,120
+[SPEAKER_00] And you instead say, we want everyone's ideas and we're going to test every idea possible.
+
+486
+00:35:33,360 --> 00:35:34,640
+[SPEAKER_00] And obviously there's a limit to that.
+
+487
+00:35:34,720 --> 00:35:38,160
+[SPEAKER_00] But we would like, we want to test things and we want to create safe spaces to do that.
+
+488
+00:35:38,640 --> 00:35:40,720
+[SPEAKER_00] And some amazing stuff comes out of that.
+
+489
+00:35:41,520 --> 00:35:43,920
+[SPEAKER_00] Do you guys, and I imagine the answer is going to be yes.
+
+490
+00:35:43,920 --> 00:35:46,080
+[SPEAKER_01] Yes, in some form, but did you design?
+
+491
+00:35:47,200 --> 00:36:00,480
+[SPEAKER_01] I can remember looking at these old, like, user models from Twitter back in the when they're really growing a lot and stuff where you have sort of like a, you know, it's maybe not a perfect model, but you have some sort of activation tied to retention tied to all those things.
+
+492
+00:36:00,880 --> 00:36:07,840
+[SPEAKER_01] You have a mathematical model that you sort of run your tests on top of, like some set of core metrics that you think are interrelated in certain ways.
+
+493
+00:36:08,160 --> 00:36:08,960
+[SPEAKER_01] Did you build that first?
+
+494
+00:36:09,200 --> 00:36:09,920
+[SPEAKER_01] Did you arrive at that?
+
+495
+00:36:10,080 --> 00:36:10,560
+[SPEAKER_01] Do you have that?
+
+496
+00:36:11,600 --> 00:36:13,280
+[SPEAKER_01] You know, that's always a work in progress.
+
+497
+00:36:14,000 --> 00:36:14,160
+[SPEAKER_00] Sure.
+
+498
+00:36:14,720 --> 00:36:20,880
+[SPEAKER_00] We early days, the product analyst on the team, Dave, shout out to Dave was.
+
+499
+00:36:20,880 --> 00:36:23,840
+[SPEAKER_00] was basically running the same SQL query over and over for tests.
+
+500
+00:36:24,000 --> 00:36:28,720
+[SPEAKER_00] And we had a very, we were very always, I think we've always been pretty good about a very small subset of metrics to run after.
+
+501
+00:36:29,680 --> 00:36:41,280
+[SPEAKER_00] And again, we got a lot of help from the early growth people at Facebook and other companies and Pinterest who came in and helped us say, like, this is what an activation metric is, this is what an output metric is, teams should have clear metrics, right?
+
+502
+00:36:41,520 --> 00:36:42,400
+[SPEAKER_00] And so we always had that.
+
+503
+00:36:42,640 --> 00:36:50,000
+[SPEAKER_00] And then my teammates Dave built our internal reporting, experiment reporting framework called One Ring.
+
+504
+00:36:50,560 --> 00:36:53,520
+[SPEAKER_00] And it's an ode to Lord of the Rings, One Ring to rule them all.
+
+505
+00:36:53,600 --> 00:36:55,360
+[SPEAKER_00] So it's like one SQL query to rule them all.
+
+506
+00:36:55,440 --> 00:36:56,320
+[SPEAKER_00] And there's always building stuff.
+
+507
+00:36:56,480 --> 00:36:58,720
+[SPEAKER_00] It's always named after Star Wars and Lord of the Rings.ing.
+
+508
+00:36:59,120 --> 00:36:59,440
+[SPEAKER_00] It's great.
+
+509
+00:37:00,160 --> 00:37:00,960
+[SPEAKER_00] It's still called that.
+
+510
+00:37:01,040 --> 00:37:03,040
+[SPEAKER_00] It still has a little ring in the Tableau dashboard.
+
+511
+00:37:03,280 --> 00:37:05,440
+[SPEAKER_00] And that allowed us that became like the source of truth.
+
+512
+00:37:05,680 --> 00:37:09,600
+[SPEAKER_00] Every experiment, for the most part, obviously, exceptions, has metrics in there.
+
+513
+00:37:09,760 --> 00:37:19,360
+[SPEAKER_00] And now we have, I think, so many metrics that our data engineering team, it's like, we got to stop like these, you know, the jobs to run the experimental analyses overnight are taking forever.
+
+514
+00:37:19,840 --> 00:37:26,160
+[SPEAKER_00] But for the most part, we've been pretty static in terms of like measured outcomes, not modeled outcomes.
+
+515
+00:37:26,720 --> 00:37:30,560
+[SPEAKER_00] We have now we're now trying to do a better job.
+
+516
+00:37:30,640 --> 00:37:37,360
+[SPEAKER_00] And we've been doing, we've done this all of last year of when you move a certain output metric, typically for us, it's week to retention in many cases.
+
+517
+00:37:37,920 --> 00:37:43,120
+[SPEAKER_00] What is the impact on wow over the course of a whole year or whole twelve months?
+
+518
+00:37:43,280 --> 00:37:52,960
+[SPEAKER_00] And so there's like decay built in, is modeling built into, you know, if we increase week to retention for a winback today, what does that actually mean in the course of twelve months?
+
+519
+00:37:53,040 --> 00:37:55,840
+[SPEAKER_00] How many more wow are we going to see in the product?
+
+520
+00:37:56,080 --> 00:38:01,520
+[SPEAKER_01] So you're actually looking in some ways at like leverage of certain metrics versus like they're just face values.
+
+521
+00:38:02,320 --> 00:38:02,400
+[SPEAKER_01] Yeah.
+
+522
+00:38:02,880 --> 00:38:09,840
+[SPEAKER_00] And we're trying, like we have a long, I think, a long way to go to keep doing that with ideally our error amplify as well, right?
+
+523
+00:38:10,080 --> 00:38:11,600
+[SPEAKER_00] When you, when you start to model out.
+
+524
+00:38:12,080 --> 00:38:12,160
+[SPEAKER_01] Yeah.
+
+525
+00:38:12,240 --> 00:38:20,560
+[SPEAKER_00] Yeah, I always get a little nervous on too much reliance on modeling because to create the model you build it on data that you had.
+
+526
+00:38:20,800 --> 00:38:26,640
+[SPEAKER_00] And after a certain while, the data you have was generated by the model you created.
+
+527
+00:38:26,720 --> 00:38:33,200
+[SPEAKER_00] So there's definitely a balance and I think things like hold out groups, long term hold outs can help you with the source of truth.
+
+528
+00:38:33,680 --> 00:38:34,800
+[SPEAKER_00] Yeah, and being simple, right?
+
+529
+00:38:35,120 --> 00:38:35,600
+[SPEAKER_00] Remaining simple.
+
+530
+00:38:35,840 --> 00:38:48,560
+[SPEAKER_01] And I think when you talk to think about the folks listening to this podcast who probably don't have seventy full FTEs sitting around ready to put onto a growth organization, it's like in the early days, like define a few really core key ones.
+
+531
+00:38:49,280 --> 00:38:50,320
+[SPEAKER_01] And don't go test crazy.
+
+532
+00:38:50,480 --> 00:39:08,320
+[SPEAKER_01] I think I've made the mistake in the past during experiment design of wanting to design measurements as close to the experiment as possible when I think that's, you know, be like, okay, well, we're going to change this button, let's specifically change the measure this convergent rate of the button and that's the only thing we can really attribute.
+
+533
+00:39:08,720 --> 00:39:15,040
+[SPEAKER_01] And maybe there's some value in that, but really what you should probably be tracking is how does this affect the overall output?
+
+534
+00:39:15,280 --> 00:39:18,960
+[SPEAKER_01] And if it's not measurable, then it probably doesn't matter.
+
+535
+00:39:20,800 --> 00:39:38,240
+[SPEAKER_02] One of the things I wanted to dive into before we have to wrap up is a couple of tacticalal things, and one of them is that we just haven't talked about this enough on the podcast, and I know you've thought a lot about this on the growth team at Strava, but the App Store is such a black box.
+
+536
+00:39:38,800 --> 00:39:59,120
+[SPEAKER_02] How do you think about that inside Strava from a, and thankfully the App Store has evolved now with custom product pages and stuff like that, but you have to send this person who got a referral, not to something you have control of, but to the black box at the App Store with screenshots and a title and icon and all this.
+
+537
+00:40:00,000 --> 00:40:05,920
+[SPEAKER_02] How do you think about the App Store black box as part of your kind of growth journey?
+
+538
+00:40:06,960 --> 00:40:07,760
+[SPEAKER_02] It's a great question.
+
+539
+00:40:08,160 --> 00:40:09,520
+[SPEAKER_02] Definitely not my foretaste.
+
+540
+00:40:10,000 --> 00:40:14,240
+[SPEAKER_00] I'll answer as much as I can to represent the growth marketing folks in my team well.
+
+541
+00:40:14,720 --> 00:40:17,680
+[SPEAKER_00] You know, there's always optimization, App Store optimization, right?
+
+542
+00:40:17,920 --> 00:40:18,720
+[SPEAKER_00] Classic ASO.
+
+543
+00:40:19,840 --> 00:40:23,520
+[SPEAKER_00] If you've written ASO in articles and still don't know what it means, it's App Store optimization.
+
+544
+00:40:23,680 --> 00:40:25,120
+[SPEAKER_00] I feel like there's a lot of that in growth, right?
+
+545
+00:40:25,280 --> 00:40:29,040
+[SPEAKER_00] There's like a lot of acronyms that get never defined.
+
+546
+00:40:30,160 --> 00:40:30,640
+[SPEAKER_00] It's just like that.
+
+547
+00:40:31,600 --> 00:40:35,360
+[SPEAKER_00] It's changing your App Store photos and images and testing that.
+
+548
+00:40:35,440 --> 00:40:36,960
+[SPEAKER_00] Now that you can actually test, right?
+
+549
+00:40:37,360 --> 00:40:39,920
+[SPEAKER_00] For most time, you couldn't test that.
+
+550
+00:40:41,360 --> 00:40:42,560
+[SPEAKER_00] functionality on the App Store.
+
+551
+00:40:42,720 --> 00:40:46,160
+[SPEAKER_00] And so we tended not to really change it too much because it was hard to attribute.
+
+552
+00:40:46,480 --> 00:40:50,320
+[SPEAKER_00] And is it worth spending time on things that you can't measure?
+
+553
+00:40:50,880 --> 00:40:52,480
+[SPEAKER_00] So now you can, so that's a little better.
+
+554
+00:40:52,720 --> 00:40:54,640
+[SPEAKER_00] The problem there is novelty effect, right?
+
+555
+00:40:54,880 --> 00:41:00,560
+[SPEAKER_00] Whenever you change something, as you said, like with a button earlier, like it can, you know, works the first time, but what about in two months?
+
+556
+00:41:01,360 --> 00:41:02,080
+[SPEAKER_00] It's hard to do that.
+
+557
+00:41:02,880 --> 00:41:17,040
+[SPEAKER_00] I think we've we've tried things in the past where you have, you know, some companies can provide services where you create a fake App Store facade and then you optimize that a bunch and it's really just a web page and you just optimize that a bunch of things and then you take the win of that there.
+
+558
+00:41:17,440 --> 00:41:19,120
+[SPEAKER_00] It's a lot of it's a lot of work.
+
+559
+00:41:19,760 --> 00:41:26,640
+[SPEAKER_00] And, you know, so I think what we've really stuck with is like app store ads, making it very clear what you're, what you're doing on Strava videos.
+
+560
+00:41:27,200 --> 00:41:28,240
+[SPEAKER_00] Videos really helped us.
+
+561
+00:41:28,640 --> 00:41:29,600
+[SPEAKER_00] And then app reviews.
+
+562
+00:41:29,840 --> 00:41:37,280
+[SPEAKER_00] Apple really takes into account how many five star ratings you have in terms of how well they'll rank you.
+
+563
+00:41:37,840 --> 00:41:40,000
+[SPEAKER_00] And so we've really two things.
+
+564
+00:41:40,400 --> 00:41:41,600
+[SPEAKER_00] One, try to have a great app.
+
+565
+00:41:42,000 --> 00:41:51,680
+[SPEAKER_00] So when it comes to like foundational metrics, you know, we always go for four nines, four nines of crash free sessions, four nines of availability from our services, and that helps a lot.
+
+566
+00:41:52,160 --> 00:41:55,040
+[SPEAKER_00] And then also prompting our users to rate the app.
+
+567
+00:41:55,520 --> 00:42:02,480
+[SPEAKER_00] Apple has nice functionality and Google has nice functionality to tell you, hey, you're using the product, why don't you rate us in the App Store?
+
+568
+00:42:02,640 --> 00:42:06,880
+[SPEAKER_00] So we've tried to do things like that, kind of to be good citizens around our App Store presence.
+
+569
+00:42:07,120 --> 00:42:19,840
+[SPEAKER_00] I don't necessarily know if I, again, with Strava being a big organic growth engine, I don't know how much I would give advice to other people based on that because we, people are often searching, you know, just the brand it searches for.
+
+570
+00:42:20,160 --> 00:42:27,200
+[SPEAKER_01] If you're a Strava brand and you have, yeah, channels that are not dependent on it, that's the best App Store optimization advice you can give is like, don't depend on it, right?
+
+571
+00:42:27,840 --> 00:42:30,240
+[SPEAKER_01] Just make it a small multiplier into what you're doing.
+
+572
+00:42:30,880 --> 00:42:33,920
+[SPEAKER_01] I'm sure you guys get some amount of like organic discovery and features.
+
+573
+00:42:34,240 --> 00:42:40,880
+[SPEAKER_01] Have you been successful with, I'm sure you have, like over the years with partnering with Apple and just working the App Store as a growth channel?
+
+574
+00:42:41,440 --> 00:42:49,760
+[SPEAKER_00] We definitely benefit from having features with it with Strava, uh, I was sorry, with Apple, um, in different, especially different countries.
+
+575
+00:42:49,920 --> 00:42:53,440
+[SPEAKER_00] So we often get, hey, we're going to do a feature for you in, you know, Germany.
+
+576
+00:42:53,600 --> 00:42:55,120
+[SPEAKER_00] Can you provide us special assets?
+
+577
+00:42:55,920 --> 00:43:04,880
+[SPEAKER_00] The one interesting thing, I think you can actually learn a little bit from your logged out pages, both on web and mobile, in terms of just what we call Strava the front doors.
+
+578
+00:43:05,200 --> 00:43:07,600
+[SPEAKER_00] So before you've entered the Strava ecosystem, what works?
+
+579
+00:43:08,160 --> 00:43:14,800
+[SPEAKER_00] One of the early tests we did on the activation team was changing the photos that you would see kind of the welcome experience before you signed up.
+
+580
+00:43:15,600 --> 00:43:19,280
+[SPEAKER_00] And we discovered that back then Strava was very much cycling or running.
+
+581
+00:43:19,360 --> 00:43:22,080
+[SPEAKER_00] So we used to ask you, are you a cyclist or are you a runner?
+
+582
+00:43:22,800 --> 00:43:23,680
+[SPEAKER_00] We don't do that anymore.
+
+583
+00:43:25,440 --> 00:43:28,720
+[SPEAKER_00] But that was really interesting because we ran tests where we had for the most part cyclists.
+
+584
+00:43:28,800 --> 00:43:30,240
+[SPEAKER_00] We showed a lot of cycling photos.
+
+585
+00:43:30,560 --> 00:43:32,560
+[SPEAKER_00] And we tested cycling versus running photos.
+
+586
+00:43:32,720 --> 00:43:38,480
+[SPEAKER_00] And we discovered that runners were put off by photos when the splash screen was a cyclist.
+
+587
+00:43:38,880 --> 00:43:41,760
+[SPEAKER_00] Cyclists didn't really care about seeing a runner.
+
+588
+00:43:42,480 --> 00:43:46,640
+[SPEAKER_00] And then obviously men didn't mind seeing men or women and women prefer to see women.
+
+589
+00:43:47,120 --> 00:43:51,360
+[SPEAKER_00] And so that was a very interesting kind of realization of like, we're trying to expand who we serve.
+
+590
+00:43:51,440 --> 00:43:52,400
+[SPEAKER_00] We're trying to serve runners.
+
+591
+00:43:52,560 --> 00:43:55,600
+[SPEAKER_00] We're trying to expand the brand around Strava, not just be cycling.
+
+592
+00:43:56,240 --> 00:43:59,440
+[SPEAKER_00] Maybe we shouldn't lead with cycling photos, um, everywhere.
+
+593
+00:43:59,760 --> 00:44:08,480
+[SPEAKER_00] And so, you know, simple things that you can test either on your website, um, or on your mobile app that then you take those insights into the black box of, of app stores.
+
+594
+00:44:09,200 --> 00:44:13,440
+[SPEAKER_00] And for better for worse, hope that those learnings persist.
+
+595
+00:44:13,680 --> 00:44:13,760
+[SPEAKER_00] Yeah.
+
+596
+00:44:13,920 --> 00:44:18,720
+[SPEAKER_00] I was going to say, I mean, that, that, that little nugget right there, for better for worse, you hope that learnings extend.
+
+597
+00:44:18,880 --> 00:44:21,200
+[SPEAKER_01] Because I feel like that's something that growth team gender is doing a lot, right?
+
+598
+00:44:21,440 --> 00:44:25,600
+[SPEAKER_01] You test something and then you get a result, but then it's still up to you what you want to do.
+
+599
+00:44:26,400 --> 00:44:31,360
+[SPEAKER_01] You can even override a potentially neutral result or like, how do you think about that?
+
+600
+00:44:31,520 --> 00:44:38,320
+[SPEAKER_01] Like, how do you think about applying beyond just data, like applying gut experience, like just one, two things?
+
+601
+00:44:39,120 --> 00:44:41,680
+[SPEAKER_00] Yeah, I mean, we have an amazing brand and marketing team, right?
+
+602
+00:44:41,840 --> 00:44:46,560
+[SPEAKER_00] Who are experts at, you know, telling the story of now, but also the story of tomorrow.
+
+603
+00:44:47,040 --> 00:44:56,480
+[SPEAKER_00] And I think that's something that I, very data driven person, I want to optimize for the user of the now that I know, that I know the data of.
+
+604
+00:44:56,960 --> 00:44:58,640
+[SPEAKER_00] And there, the tension there is, what about?
+
+605
+00:44:59,120 --> 00:45:03,440
+[SPEAKER_00] the user that isn't here yet or the one that is here but we're not really serving them yet?
+
+606
+00:45:03,840 --> 00:45:05,520
+[SPEAKER_00] And can we make Strava feel like for them?
+
+607
+00:45:05,680 --> 00:45:15,360
+[SPEAKER_00] And so there's an aspect of that tension, which I think is really healthy with everything from like, you know, brand images to the copy you write, you know, that welcoming experience.
+
+608
+00:45:15,680 --> 00:45:17,200
+[SPEAKER_00] It sounds like you can inform and help them, right?
+
+609
+00:45:17,360 --> 00:45:23,040
+[SPEAKER_01] Like you've done tests on how these different images, but then you let your brand team know, like, hey, like, here's how these different things perform.
+
+610
+00:45:23,200 --> 00:45:30,720
+[SPEAKER_01] And then they can go and decide, like, okay, what do we want to weigh in and things like that, which Yeah, we've had a great partnership with like the power of copy.
+
+611
+00:45:31,120 --> 00:45:33,120
+[SPEAKER_00] Like the power of copy is huge.
+
+612
+00:45:34,000 --> 00:45:44,480
+[SPEAKER_00] Often, yeah, for us, copy has been hu been huge and sometimes images actually distract or distract users, especially like we have amazing brand photography that is really useful in many places.
+
+613
+00:45:44,960 --> 00:45:53,680
+[SPEAKER_00] But often when we have brand images in product settings, it lowers conversion rate and the theory is like it kind of maybe feels like an ad or it's distracting.
+
+614
+00:45:54,000 --> 00:46:02,960
+[SPEAKER_00] And so there are times where that brand, that brand image is so powerful, but the copy, no matter where it is, has a huge impact.
+
+615
+00:46:03,920 --> 00:46:09,200
+[SPEAKER_00] Like the difference between continue with versus sign up with on your login buttons.
+
+616
+00:46:09,280 --> 00:46:09,360
+[SPEAKER_00] Yeah.
+
+617
+00:46:09,520 --> 00:46:10,000
+[SPEAKER_00] That's fascinating.
+
+618
+00:46:10,080 --> 00:46:10,720
+[SPEAKER_00] So that's really cool.
+
+619
+00:46:10,720 --> 00:46:16,880
+[SPEAKER_00] So that's, and that's really fun with the copy team to run copy tests and see those impact and they can be huge.
+
+620
+00:46:17,280 --> 00:46:20,240
+[SPEAKER_00] Yes, I wish we had a consumer company, David sometimes.
+
+621
+00:46:20,400 --> 00:46:21,200
+[SPEAKER_01] Like, it sucks.
+
+622
+00:46:21,360 --> 00:46:23,040
+[SPEAKER_01] We only get so many signups a day.
+
+623
+00:46:23,680 --> 00:46:30,800
+[SPEAKER_01] We have almost enough now to do more testing stuff, but it's so much harder to do with RevenueCat than it would be with Strava.
+
+624
+00:46:32,000 --> 00:46:38,960
+[SPEAKER_02] Well, that was that was such a great nugget and unfortunately I wish we had like three more hours to talk, but we're going to have to wrap up there.
+
+625
+00:46:39,760 --> 00:46:45,680
+[SPEAKER_02] As we are wrapping up though, we're going to include links to, of course, Strava and your Twitter, LinkedIn.
+
+626
+00:46:46,400 --> 00:46:48,800
+[SPEAKER_02] But anything else you wanted to share as we were wrapping up?
+
+627
+00:46:49,360 --> 00:46:53,760
+[SPEAKER_02] Any job posts you're especially excited about hiring or anything else?
+
+628
+00:46:54,640 --> 00:47:04,480
+[SPEAKER_00] We're hiring a robotics, we're hiring a server engineer for our communications and personalization team, which also happens to own our experimentation platform that we've built internally.
+
+629
+00:47:05,200 --> 00:47:07,920
+[SPEAKER_00] So if you're into anything like that, it's you want the one ring.
+
+630
+00:47:08,320 --> 00:47:08,960
+[SPEAKER_00] It's one ring.
+
+631
+00:47:09,200 --> 00:47:09,280
+[SPEAKER_00] Yeah.
+
+632
+00:47:09,440 --> 00:47:28,480
+[SPEAKER_00] And it's really cool, I think, because it's user facing, like actually external user facing, you're touching like communications and push notifications, but it's a scale and data problem, which, you know, a lot of engineers really love, because we're dealing with over a hundred million athletes and they're uploading, you know, we get over forty activities uploaded every second.
+
+633
+00:47:28,960 --> 00:47:50,240
+[SPEAKER_00] And so the volume of notifications and emails and that whole system and the number of analytics that we're piping into our machine learning algorithms, like the scale of things is unbelievable, but you're also directly impacting both internally from a shared platform perspective, but also to the user in how we're kind of scheduling notifications or feature education.
+
+634
+00:47:50,480 --> 00:47:55,840
+[SPEAKER_00] I think it's a cool place, but yeah, it's a cool place to work.
+
+635
+00:47:56,160 --> 00:47:57,920
+[SPEAKER_00] Yeah, that sounds like a super fun role.
+
+636
+00:47:58,320 --> 00:48:03,840
+[SPEAKER_02] I'll make sure to get that link from you and include it in the show notes for people and then include the Strava's code.
+
+637
+00:48:03,840 --> 00:48:04,720
+[SPEAKER_02] We'll include the Strava's career page as well.
+
+638
+00:48:05,040 --> 00:48:06,320
+[SPEAKER_02] But Jason, thank you so much.
+
+639
+00:48:06,560 --> 00:48:09,120
+[SPEAKER_02] This was fascinating and learned so much chatting.
+
+640
+00:48:09,280 --> 00:48:10,720
+[SPEAKER_02] So thank you for being on the podcast today.
+
+641
+00:48:10,880 --> 00:48:12,000
+[SPEAKER_02] Yeah, thank you for inviting me.
+
+642
+00:48:12,080 --> 00:48:13,600
+[SPEAKER_02] I love talking about growth.
+
+643
+00:48:13,920 --> 00:48:15,680
+[SPEAKER_02] So this was a this was a fun hour.
+
+644
+00:48:18,320 --> 00:48:19,520
+[SPEAKER_02] Thank you so much for listening.
+
+645
+00:48:20,560 --> 00:48:24,000
+[SPEAKER_02] If you have a minute, please leave a review in your favorite podcast player.
+
+646
+00:48:24,880 --> 00:48:29,680
+[SPEAKER_02] You can also stop by chat dot subclub dot com to join our private community.
