@@ -1,0 +1,4035 @@
+1
+00:00:01,200 --> 00:00:08,800
+Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,560 --> 00:00:22,560
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,400 --> 00:00:45,040
+Hello, I'm your host, David Barnard, and with me today, RevenueCat CEO, Jacob Heiding.
+
+7
+00:00:45,440 --> 00:00:53,280
+Our guest today is Christian Selig, the indie developer behind the late great Apollo app for Reddit, currently working on PixelPals and Juno.
+
+8
+00:00:53,680 --> 00:01:07,040
+On the podcast, we talk with Christian about the benefits of building something you personally care about, how to balance user feedback with product intuition, and why process, frameworks, and outside advice are often worth ignoring.
+
+9
+00:01:07,440 --> 00:01:09,920
+Hey, Christian, thank you so much for being on the podcast today.
+
+10
+00:01:10,320 --> 00:01:11,360
+I'm really excited to be here.
+
+11
+00:01:11,600 --> 00:01:13,520
+Yeah, it's been a long time coming.
+
+12
+00:01:13,840 --> 00:01:14,560
+Yeah, I think so.
+
+13
+00:01:14,800 --> 00:01:18,320
+I think we've all talked in some capacity over the years, so it's nice to formalize it.
+
+14
+00:01:18,640 --> 00:01:26,160
+I learned from the notes that I was the one that suggested or I talked to you about getting Apollo on subscriptions, and I'm vaguely remembering that conversation.
+
+15
+00:01:26,400 --> 00:01:28,080
+There might have been a Twitter DM or something.
+
+16
+00:01:28,640 --> 00:01:30,960
+I think it was like an email back when emails were a big thing.
+
+17
+00:01:31,120 --> 00:01:31,600
+Yeah, yeah.
+
+18
+00:01:31,840 --> 00:01:34,240
+I think you were like, there's the subscription thing that's coming out.
+
+19
+00:01:34,320 --> 00:01:34,400
+Yeah.
+
+20
+00:01:34,880 --> 00:01:36,000
+I don't know if you've heard of it.
+
+21
+00:01:36,240 --> 00:01:39,600
+And I think back then I was still kind of chicken shit where everyone was kind of getting roasted for it.
+
+22
+00:01:39,680 --> 00:01:42,080
+And I was like, I don't know, I don't know what this guy's talking about.
+
+23
+00:01:42,240 --> 00:01:43,440
+But you were ahead of your time.
+
+24
+00:01:43,760 --> 00:01:44,960
+Vaguely remember, vaguely remember.
+
+25
+00:01:45,040 --> 00:01:45,600
+It's pretty cool.
+
+26
+00:01:45,680 --> 00:01:46,320
+It's pretty cool.
+
+27
+00:01:46,400 --> 00:01:47,600
+Well, we can get more into that in a bit.
+
+28
+00:01:47,680 --> 00:01:48,800
+I did just want to start things off.
+
+29
+00:01:49,040 --> 00:01:51,440
+off talking about how you got into Indie development.
+
+30
+00:01:51,520 --> 00:01:58,800
+Like you actually I went to your LinkedIn page before this podcast to be like looking for you to write your bio and stuff.
+
+31
+00:01:59,120 --> 00:02:01,920
+No, and it's like the perfect kind of LinkedIn page.
+
+32
+00:02:02,080 --> 00:02:05,680
+It was like you were at Apple for a little bit and then like you just didn't update it ever again.
+
+33
+00:02:06,240 --> 00:02:09,120
+Like the perfect Indie LinkedIn, like I don't even care.
+
+34
+00:02:09,680 --> 00:02:12,000
+I don't know if I've ever logged in since then.
+
+35
+00:02:12,240 --> 00:02:15,440
+Yeah, I get a DM once in a while that they're like, I sent you a message on LinkedIn.
+
+36
+00:02:15,520 --> 00:02:16,480
+And I'm like, oh well.
+
+37
+00:02:18,960 --> 00:02:22,880
+Our one mutual Christian I think is the same Apple recruiter that must have recruited us.
+
+38
+00:02:23,520 --> 00:02:24,480
+Oh, was it Mike?
+
+39
+00:02:25,120 --> 00:02:26,240
+No, it was this guy Joshua.
+
+40
+00:02:26,640 --> 00:02:28,080
+Oh, maybe that sounds familiar.
+
+41
+00:02:28,240 --> 00:02:29,280
+Okay, okay, fair enough.
+
+42
+00:02:29,440 --> 00:02:30,720
+It wasn't that far off that I was there.
+
+43
+00:02:30,880 --> 00:02:35,040
+I was there a few years before you, but So you were at Apple and what happened after that?
+
+44
+00:02:36,240 --> 00:02:37,840
+Because the trail goes dark.
+
+45
+00:02:38,560 --> 00:02:39,920
+Yeah, I like to be mysterious.
+
+46
+00:02:40,320 --> 00:02:47,440
+I was there for a summer internship during university and pretty much after that I kind of got that fire in your belly that you often do when you work somewhere really cool.
+
+47
+00:02:48,080 --> 00:02:50,480
+And I was like, okay, I want to build something.
+
+48
+00:02:51,280 --> 00:02:52,720
+And Reddit was really big at the time.
+
+49
+00:02:53,040 --> 00:02:56,720
+Still is obviously, but it was like really, really big, especially like where I was at university.
+
+50
+00:02:57,280 --> 00:03:02,880
+And there was Alien Blue, but there wasn't really any like really iOS first app that really I loved.
+
+51
+00:03:03,040 --> 00:03:04,320
+So I was like, you know, screw it.
+
+52
+00:03:04,560 --> 00:03:07,040
+This could be a fun project to kind of get my beak wet with.
+
+53
+00:03:07,280 --> 00:03:12,640
+So I started playing with that and it came along really nicely and I ended up posting it in like the Apple subreddit, I think.
+
+54
+00:03:13,040 --> 00:03:16,080
+And it really took off in a big way and people were really interested in beta testing it.
+
+55
+00:03:16,240 --> 00:03:19,920
+So it kind of got to that point where I was like, oh, like this might have some legs.
+
+56
+00:03:20,240 --> 00:03:21,680
+I'm graduating in a few months.
+
+57
+00:03:21,840 --> 00:03:28,080
+Like, should I go get the big boy job, go back to Apple or something or kind of see if this has legs and try it over a bit.
+
+58
+00:03:28,160 --> 00:03:34,000
+And I ended up trying it over a bit burning through all the savings I got at Apple and it ended up working out pretty well.
+
+59
+00:03:34,000 --> 00:03:36,640
+So it kind of accidental in a way but also just kind of.
+
+60
+00:03:37,200 --> 00:03:38,560
+happened organically, I suppose.
+
+61
+00:03:38,880 --> 00:03:41,360
+Had you built apps or anything else before Apollo?
+
+62
+00:03:41,840 --> 00:03:45,680
+Yeah, I had an app called Syllable that was kind of like a speed reading app.
+
+63
+00:03:45,840 --> 00:03:50,400
+It helped you, like one of those that flashed a word at a time and tried to help you learn to read a little faster.
+
+64
+00:03:50,480 --> 00:03:57,360
+And it was great because it made like a few hundred bucks over the course of like a year during university, which like, you know, as a university student is incredible.
+
+65
+00:03:57,440 --> 00:03:58,720
+Yeah, yeah, like that's amazing.
+
+66
+00:03:58,960 --> 00:04:02,080
+And I think that really like, that was back when there was like, oh, there's an app for that.
+
+67
+00:04:02,160 --> 00:04:03,040
+Commercials were everywhere.
+
+68
+00:04:03,280 --> 00:04:06,880
+So there was this big, like apps were such a novel new concept.
+
+69
+00:04:07,120 --> 00:04:11,040
+So like I was still like, it was so hyped to be working on something like that.
+
+70
+00:04:11,200 --> 00:04:12,400
+So it was.
+
+71
+00:04:12,880 --> 00:04:12,960
+Yeah.
+
+72
+00:04:12,960 --> 00:04:17,520
+And you could, there were a few enough apps at the time still, you could push an app and like get a reasonable amount of traffic just by being on the App Store.
+
+73
+00:04:17,600 --> 00:04:19,760
+Oh yeah, TechCrunch should be like, there's a new app out today.
+
+74
+00:04:22,320 --> 00:04:23,760
+Which you don't see a lot of anymore.
+
+75
+00:04:24,080 --> 00:04:24,800
+What year was that?
+
+76
+00:04:25,520 --> 00:04:29,520
+Probably like twenty twelve, twenty thirteen, I want to say, something like that.
+
+77
+00:04:29,840 --> 00:04:31,920
+And then when did you start working on Apollo?
+
+78
+00:04:32,240 --> 00:04:37,840
+So I finished Apple in twenty fourteen, so I think it would have been, yeah, like the fall of twenty fourteen is when I started working on it.
+
+79
+00:04:38,000 --> 00:04:40,960
+Yeah, yeah, so it's, yeah, wow, coming up ten years.
+
+80
+00:04:41,440 --> 00:04:47,840
+So what were the like frameworks and process you used to build Apollo?
+
+81
+00:04:48,400 --> 00:04:48,480
+Yeah.
+
+82
+00:04:48,560 --> 00:05:07,200
+Yeah, that not so Especially like it got a little better as time went maybe, but like especially at the beginning, like it was like I was a kid at a university, so I like I guess a lot of developers have like, you know, years in the trenches working at like a big startup or a formalized tech company where they develop these like really great practices and I really had nothing of that.
+
+83
+00:05:07,440 --> 00:05:12,000
+Like my school was very like computer science theory based, so like apps were not even taught.
+
+84
+00:05:12,160 --> 00:05:24,960
+So it was kind of a lot of feeling around in the dark and yeah, Apollo I was just working on here and there like all the time I had and just kind of putting it together and I remember like it took like I posted it I want to say like I posted it.
+
+85
+00:05:24,960 --> 00:05:31,040
+I want to say like January after that fall and it was like maybe a year and a half or two years later that I actually like fully released it.
+
+86
+00:05:31,360 --> 00:05:35,440
+So it took a long time of just kind of fuddling around and feeling in the dark to even get there.
+
+87
+00:05:35,520 --> 00:05:39,840
+And there was a lot of like from the beta testers, there was a lot of like, can you just freaking release this thing?
+
+88
+00:05:40,000 --> 00:05:47,120
+Like it's it's your I think I fell into every like developer trope where there was like feature creep and there was working on like too many features instead of bugs.
+
+89
+00:05:47,440 --> 00:05:51,440
+And yeah, and it was by some stroke of luck, it came together and released.
+
+90
+00:05:51,760 --> 00:05:52,560
+I mean, you kept building.
+
+91
+00:05:52,640 --> 00:05:53,200
+You wrote something.
+
+92
+00:05:53,440 --> 00:05:54,240
+You were writing code.
+
+93
+00:05:54,560 --> 00:05:55,360
+Yeah, yeah, I was.
+
+94
+00:05:55,840 --> 00:05:57,040
+It just wasn't very structured.
+
+95
+00:05:57,280 --> 00:06:01,280
+Like it was like, I need to get to California from New York and I know like it's where West.
+
+96
+00:06:02,080 --> 00:06:05,760
+And that was pretty much as far organized as I was.
+
+97
+00:06:05,920 --> 00:06:07,600
+So your subreddit has always been very active.
+
+98
+00:06:07,760 --> 00:06:11,040
+So is that where you would get most like customer feedback and stuff like that?
+
+99
+00:06:11,280 --> 00:06:11,840
+Sure, yeah.
+
+100
+00:06:12,080 --> 00:06:15,680
+It kind of made it easy because you could like the feedback loop was so close by.
+
+101
+00:06:16,080 --> 00:06:19,760
+It was like, you know, you were in the app, you could just poke over here to kind of give some feedback.
+
+102
+00:06:20,080 --> 00:06:22,560
+And that made it really nice because there was no friction.
+
+103
+00:06:22,720 --> 00:06:23,840
+People always gave really good feedback.
+
+104
+00:06:23,920 --> 00:06:28,480
+And especially during the beta process, like that really helped shape the app for the better because I kind of had a core idea of what I wanted.
+
+105
+00:06:28,880 --> 00:06:35,520
+But the feedback people gave over the years really shaped it into something that I think became more than just like my ideal of what a Reddit client was.
+
+106
+00:06:35,680 --> 00:06:44,720
+It kind of got shaped into this what the perfect thing for a community would be, and like a lot of voices kind of shaped it like a driftwood going through the ocean where it kind of gets worn down in nice ways.
+
+107
+00:06:44,960 --> 00:06:47,120
+Oh, but I think that's how all like most great products.
+
+108
+00:06:47,360 --> 00:06:50,560
+Well, there's very many different ways to make a product, but I think that's one way, right?
+
+109
+00:06:50,880 --> 00:07:00,560
+You have a lot of feedback and usage and people and a community that cares, and then I do think you have an author, like you have an editor somewhere who's like making some decisions about like what gets put in and what not.
+
+110
+00:07:00,880 --> 00:07:01,760
+That's a job's thing, right?
+
+111
+00:07:01,920 --> 00:07:03,680
+Like good products are made with friction, right?
+
+112
+00:07:03,840 --> 00:07:08,960
+He used to say that, like wearing things down and like working on it until it's that's very Apple, right?
+
+113
+00:07:09,200 --> 00:07:11,200
+Like they would just grind and grind on stuff.
+
+114
+00:07:11,600 --> 00:07:13,280
+No, I think this was uniquequely me.
+
+115
+00:07:14,480 --> 00:07:17,040
+This is the key man theory of history.
+
+116
+00:07:17,200 --> 00:07:18,000
+Yeah, yeah, yeah.
+
+117
+00:07:18,400 --> 00:07:19,120
+I think I was the first.
+
+118
+00:07:20,320 --> 00:07:25,520
+When did you like, decide or realize or make, like at some point it became a commercial thing.
+
+119
+00:07:25,760 --> 00:07:33,680
+Was that always like, I mean, not that it was like making money, maybe wasn't the number one thing, but at some point you were like, well, I have to eat and maybe this like Reddit client can be how I eat.
+
+120
+00:07:34,000 --> 00:07:36,880
+Yeah, that was kind of like always like the goal on the horizon.
+
+121
+00:07:37,120 --> 00:07:40,880
+Like Apple paid pretty well even as an intern and I was living with like six other friends.
+
+122
+00:07:41,120 --> 00:07:46,000
+So like life was pretty cheap and I was kind of just like slowly chewing through that, but I knew like a microcosm of a startup.
+
+123
+00:07:46,160 --> 00:07:48,960
+Like I had like this fund and I had almost like a burning burn rate.
+
+124
+00:07:49,280 --> 00:07:52,560
+And I knew by a certain date I had to get this out, otherwise it would be kind of troublesome.
+
+125
+00:07:52,640 --> 00:07:58,640
+So I kind of had that in the horizon and I knew back then I had this novel idea of just like, you know, 299, a one time fee.
+
+126
+00:07:58,880 --> 00:08:00,400
+Economics were a lot simpler back then.
+
+127
+00:08:00,720 --> 00:08:03,760
+And I, and I figured I'll just put that out and it'll hopefully take care of itself.
+
+128
+00:08:04,000 --> 00:08:08,480
+That was like the extent of which I thought through the monetization, but it worked out pretty well by the end.
+
+129
+00:08:08,640 --> 00:08:14,400
+Like the first day, like it got a ton of downloads because there was a lot of pent up demand from people who saw the beta but it was full and couldn't get in.
+
+130
+00:08:14,480 --> 00:08:16,720
+So there are a lot of people who just jumped on the pro version immediately.
+
+131
+00:08:16,880 --> 00:08:23,520
+So pretty it was like financially viable from day one of the actual release, but it was a lot of burning through funds in order to get there.
+
+132
+00:08:23,680 --> 00:08:23,840
+Yeah.
+
+133
+00:08:24,160 --> 00:08:27,840
+Yeah, I mean, it's financially viable when it's one young person living.
+
+134
+00:08:28,160 --> 00:08:28,480
+Exactly.
+
+135
+00:08:28,560 --> 00:08:30,480
+You know, with six other five other people, right?
+
+136
+00:08:30,720 --> 00:08:31,760
+Like, which is fine.
+
+137
+00:08:32,000 --> 00:08:33,920
+Like, that's how you should start, you know?
+
+138
+00:08:34,240 --> 00:08:34,640
+Yeah, yeah.
+
+139
+00:08:34,800 --> 00:08:35,760
+It definitely helped a lot.
+
+140
+00:08:36,080 --> 00:08:36,160
+Yeah.
+
+141
+00:08:36,400 --> 00:08:38,080
+It's like, you can do a lot of things.
+
+142
+00:08:38,480 --> 00:08:42,960
+Your costs do directly kind of affect like what you can try and the risk you can take and stuff like that.
+
+143
+00:08:43,360 --> 00:08:45,280
+And then you can compound later on, right?
+
+144
+00:08:45,440 --> 00:08:47,520
+You can build more revenue or figure it out later.
+
+145
+00:08:47,920 --> 00:08:53,280
+But yeah, that Sam Altman used to talk about this more when he wasn't the richest, most famous AI person in the world.
+
+146
+00:08:53,440 --> 00:08:59,280
+But like, to just say like, your personal burn rate is probably like your number one, can be your number one hindrance to risk taking.
+
+147
+00:08:59,360 --> 00:09:01,200
+Like, is you increase your personal burn rate.
+
+148
+00:09:01,360 --> 00:09:06,720
+It just like lowers the opportunities that you can take because you have, you know, there's a lot of reasons.
+
+149
+00:09:06,960 --> 00:09:14,640
+Somebody's burn rate might not have been intentionally chosen that way, but like it's a huge input to the amount of risk and things you can try and stuff like this.
+
+150
+00:09:14,800 --> 00:09:18,960
+And I think we take, I mean, I'm not saying you're lucky, but I think we're all lucky in some ways.
+
+151
+00:09:19,360 --> 00:09:27,440
+Like you were young, had the skills, had the time, had the like financial runway, and then, you know, of course, like had the vision to build something for a community.
+
+152
+00:09:27,760 --> 00:09:31,600
+But like I think lowering the denominator on this makes a big difference.
+
+153
+00:09:31,840 --> 00:09:36,960
+Oh, it's brutal because I'll get like Twitter DMs where people will be like, oh, like, how should I get into how did you do that?
+
+154
+00:09:36,960 --> 00:09:37,280
+How did I get into how did you get into this?
+
+155
+00:09:37,440 --> 00:09:38,720
+Like, would you recommend a similar path?
+
+156
+00:09:38,800 --> 00:09:45,680
+And it's like, no, like the kind of like you said the stairs lined, people with like, you know, three kids and a family and like, you know, ten hours a week of free time.
+
+157
+00:09:46,000 --> 00:09:47,120
+Like, that's not a formula.
+
+158
+00:09:47,280 --> 00:09:50,080
+I would have really been able to like create what I created within.
+
+159
+00:09:50,640 --> 00:09:52,960
+So I was very fortunate, I guess, to have the circumstance.
+
+160
+00:09:53,200 --> 00:09:55,360
+Yeah, it makes the device not super transferable, right?
+
+161
+00:09:55,600 --> 00:09:57,760
+It's not like going indie is impossible at that stage.
+
+162
+00:09:58,000 --> 00:10:00,160
+It's just like your baseline is going to be a lot higher, right?
+
+163
+00:10:00,320 --> 00:10:01,200
+And it's going to be harder.
+
+164
+00:10:01,280 --> 00:10:03,280
+It's going to be more challenging maybe to get off the ground.
+
+165
+00:10:03,680 --> 00:10:12,480
+But that is what's great about the indie hackers scene and the ability in software to have side projects and have a full time job and you can build something.
+
+166
+00:10:13,040 --> 00:10:14,160
+cool in just ten hours a week.
+
+167
+00:10:14,400 --> 00:10:17,600
+Like you can't follow the Apollo playbook to do that.
+
+168
+00:10:18,080 --> 00:10:20,960
+Yeah, how much were you probably working on that, Christian, like in that time?
+
+169
+00:10:21,360 --> 00:10:22,080
+And on Godly.
+
+170
+00:10:22,320 --> 00:10:31,600
+Because it's like a trans it's like that hobby slash work barrier that's like, it's really dangerous where you're like, oh, like I'm working on this feature and it's a ton of fun and it's like 10 p.m.
+
+171
+00:10:31,680 --> 00:10:34,400
+and you were like, I think they call that your life's work, I think is what that's called.
+
+172
+00:10:34,640 --> 00:10:38,800
+I guess, but it like you slowly like, don't have like work hours anymore, I guess.
+
+173
+00:10:38,960 --> 00:10:44,960
+Which is awesome in some ways, but in others like those few hours a night someone might recharge in some capacity, you're like, still just plugging away.
+
+174
+00:10:45,280 --> 00:10:50,240
+I think there is this like, I won't necessarily accuse the indie community of having this myth be bigger in their world.
+
+175
+00:10:50,480 --> 00:10:54,800
+But I think there's sort of generally a myth that you can attain like outsized rewards.
+
+176
+00:10:54,960 --> 00:10:58,560
+I think David DHH and thirty seven Sex List guys have made this worse.
+
+177
+00:10:59,040 --> 00:11:07,600
+But like to think that you're going to be able to achieve maybe you can, but like most like great outcomes came through at least some period of like intense investment, right?
+
+178
+00:11:07,840 --> 00:11:08,880
+And it might not have been that bad, right?
+
+179
+00:11:09,120 --> 00:11:17,040
+Like it might have been something you were perfectly happy to do, but you had again it was like the time of your life where you didn't have commitments that you had to do.
+
+180
+00:11:17,280 --> 00:11:18,800
+Like it was fun, right?
+
+181
+00:11:19,040 --> 00:11:21,680
+And you have this intensity where you build and build and build and build.
+
+182
+00:11:22,160 --> 00:11:24,000
+I feel like there's a movement where that's like shun.
+
+183
+00:11:24,320 --> 00:11:28,160
+That's like bad., you know, like, oh, like you're not balanced and like all this stuff.
+
+184
+00:11:28,240 --> 00:11:30,640
+And you're like, yeah, but like, I don't know.
+
+185
+00:11:30,960 --> 00:11:32,160
+I was, I wanted to.
+
+186
+00:11:33,120 --> 00:11:33,920
+Yeah, yeah, yeah.
+
+187
+00:11:34,000 --> 00:11:35,520
+No, no one was holding a gun to my head.
+
+188
+00:11:35,600 --> 00:11:45,520
+And it was like a lot of fun, but it was just one of the, like, you look back at it and you're like, yeah, there was inherently like balance wasn't a word I would use for that, but it was like just in terms of like trying to replicate that for someone else.
+
+189
+00:11:45,600 --> 00:11:49,600
+Like, it's hard to say, like, oh, just work on it for, you know, eighty hours a week.
+
+190
+00:11:49,760 --> 00:11:50,960
+Like, that's all you have to do.
+
+191
+00:11:51,040 --> 00:11:51,840
+And they're like, okay.
+
+192
+00:11:53,840 --> 00:11:54,720
+I mean, it might be.
+
+193
+00:11:55,040 --> 00:11:58,560
+I will pose it that that might be, you know, maybe it's not the only thing that matters.
+
+194
+00:11:58,720 --> 00:12:02,800
+And again, like, I haven't worked eighty hoursurs a week on revenue cap probably since the first year.
+
+195
+00:12:03,200 --> 00:12:05,520
+You know, maybe there were spits and spurts of it here and there.
+
+196
+00:12:05,760 --> 00:12:13,840
+But I definitely think when you're in that, when you're in that nucleation phase, like when you're going from zero to one, I think it's hard to think it wouldn't be part of the equation, right?
+
+197
+00:12:14,160 --> 00:12:17,200
+Or at least if it's not necessary, it's certainly correlated, right?
+
+198
+00:12:17,520 --> 00:12:19,120
+I think folks like get things off the ground.
+
+199
+00:12:19,520 --> 00:12:23,680
+That was the whole setup and joke of me kicking this off with the framework side of it.
+
+200
+00:12:24,000 --> 00:12:26,000
+Like, Christian, what frameworks did you use?
+
+201
+00:12:26,240 --> 00:12:26,560
+What process?
+
+202
+00:12:27,280 --> 00:12:36,000
+But I think the truth is, and Jacob said this earlier, it's like different products are built in different ways and different people have different temperaments and different time availability.
+
+203
+00:12:36,880 --> 00:12:39,280
+And your path is a path.
+
+204
+00:12:39,680 --> 00:12:51,520
+If you only have ten hours a week and you've got three kids, you probably do need to like think more and plan more and kind of have more of a process and do some market research and that kind of thing.
+
+205
+00:12:51,760 --> 00:13:12,880
+But I think a lot of great things come out of exactly what you did, even if it's ten hours a week or twenty hours a week or you get carried away and do spend forty hours a week on it for a few weeks when you're still working forty hours a week in your day job, you're just passionate about it and you just have to build that thing versus like I do think it can get overly formulaic where you're just building this thing because you think it's going to make you better.
+
+206
+00:13:12,880 --> 00:13:14,240
+Because you think it's going to make you money, but you don't even care.
+
+207
+00:13:14,560 --> 00:13:15,840
+And that's a grind.
+
+208
+00:13:16,240 --> 00:13:20,000
+Yeah, that's I don't think I would have it to the end anywhere close if that was the case.
+
+209
+00:13:20,240 --> 00:13:21,440
+Because I was using the shit out of it.
+
+210
+00:13:21,600 --> 00:13:23,520
+So it was like, this was something I had to see as a consumer.
+
+211
+00:13:23,600 --> 00:13:25,760
+I mean, that's super underrated, right?
+
+212
+00:13:26,160 --> 00:13:27,360
+Being a consumer of your own product.
+
+213
+00:13:27,920 --> 00:13:28,080
+Right.
+
+214
+00:13:28,480 --> 00:13:41,200
+But that process of having people using it, interacting with them, and then being the tip of the spear, the person who can actually build and deploy, that's going to outperform any sort of framework or process or like whatever.
+
+215
+00:13:41,760 --> 00:13:42,560
+In my experience, I think.
+
+216
+00:13:42,880 --> 00:13:43,280
+That's interesting.
+
+217
+00:13:43,360 --> 00:13:44,880
+I didn't ever, I never thought about it like that.
+
+218
+00:13:44,960 --> 00:13:45,040
+Yeah.
+
+219
+00:13:46,240 --> 00:13:51,840
+Just how close you were to the consumer, the user and then you could actually just fix their thing instantly if you wanted.
+
+220
+00:13:52,400 --> 00:13:54,080
+It's almost a framework in itself.
+
+221
+00:13:54,240 --> 00:13:54,320
+Yeah.
+
+222
+00:13:55,680 --> 00:13:58,960
+In absence of framework, it's just gasoline and oxygen or whatever.
+
+223
+00:13:59,120 --> 00:14:12,880
+It's like just put the two and it will kind of, which is kind of like, I don't know, I think as I've we were talking about founder mode, it's founder mode week when we're recording this for people who are terminally online, but Christian was asking me about it and I think that's kind of one of my learnings.
+
+224
+00:14:16,320 --> 00:14:16,560
+Sorry.
+
+225
+00:14:17,440 --> 00:14:17,760
+Sorry.
+
+226
+00:14:18,240 --> 00:14:19,200
+No, no, please.
+
+227
+00:14:19,600 --> 00:14:21,040
+There's a lot of synergy in this conversation.
+
+228
+00:14:21,360 --> 00:14:22,560
+I know, David, I know.
+
+229
+00:14:23,040 --> 00:14:23,840
+It's ruined me.
+
+230
+00:14:24,560 --> 00:14:37,200
+But I think one of my realizations over the last few years has been that I do think that the core ingredients being there sort of trumps all process or whatever.
+
+231
+00:14:37,600 --> 00:14:43,840
+And that those core ingredients being like people who can build stuff, people who have a need, and then just energy, right?
+
+232
+00:14:44,160 --> 00:14:50,400
+Just like talking to them, seeing what their problems are and using very basic reasoning to be like, okay, what's next?
+
+233
+00:14:50,880 --> 00:14:59,200
+Now I say that with however many years of software building experience behind me and all this stuff that I can like synthesize and like understand what's possible and what's not and all that.
+
+234
+00:14:59,360 --> 00:15:13,280
+So it's maybe an oversersimplification, but I do think that, like, yeah, I think there's like a desire to over systematize a lot of these things which should just be like organic and sort of like artistic.
+
+235
+00:15:13,920 --> 00:15:14,640
+Such a good word for it.
+
+236
+00:15:14,800 --> 00:15:26,160
+Like, it's like you always see those like old guy billionaires writing the books on like, here's how you do what I did when it's like, I don't know if those steps are inherently repeatable or it was just kind of you struck while the iron was hot.
+
+237
+00:15:26,480 --> 00:15:27,920
+Yeah, or there's even any causality at all.
+
+238
+00:15:28,000 --> 00:15:34,720
+Like, it's like, I was doing this and this is what I was doing when I like, found a gold mine.
+
+239
+00:15:35,040 --> 00:15:35,280
+Right.
+
+240
+00:15:35,520 --> 00:15:36,960
+You're just like, oh, I'm gonna say it.
+
+241
+00:15:37,600 --> 00:15:38,240
+with such conviction.
+
+242
+00:15:38,400 --> 00:15:40,800
+Like, you read the book and you're like, Dang, I can do this too.
+
+243
+00:15:40,880 --> 00:15:51,440
+And it's like, it scares me so much when someone asks for advice to kind of accidentally go down that path where you're like, This worked for me in this hyper specific case that like, I'll prescribe this to you as something that will work in your case too.
+
+244
+00:15:51,600 --> 00:16:02,160
+Whereas, like, I think like you said, kind of having the more organic approach of like having the right ingredients, you know, in the cauldron, I think is a lot more helpful than some inherent formula or framework.
+
+245
+00:16:02,720 --> 00:16:05,600
+The tragic part is, you can have all the ingredients, they still not work, right?
+
+246
+00:16:05,760 --> 00:16:08,160
+Like, that's that, and it most likely won't.
+
+247
+00:16:08,320 --> 00:16:14,640
+If you have enough at bats, and if you can keep in the game long enough, and you can keep trying, like, eventually you'llll have something, I think, that will work.
+
+248
+00:16:15,200 --> 00:16:17,600
+Which is also, I think, something that people are challenged with.
+
+249
+00:16:17,760 --> 00:16:22,880
+People all the time cutting their losses, you know, on a project that's not going anywhere and deciding when's enough.
+
+250
+00:16:23,040 --> 00:16:29,280
+Christian, did you ever have something where you worked on and you were just like, ah, like I think I need to drop this because it's just not worth the squeeze anymore?
+
+251
+00:16:29,440 --> 00:16:33,120
+No, like, I don't know, like, Batman 100, this guy, or Batman 1000.
+
+252
+00:16:33,280 --> 00:16:40,640
+It's less that and it's more so, like, I don't think I start working on something unless I'm like, I'm really confident in it being something I care about.
+
+253
+00:16:40,960 --> 00:16:41,520
+Which is interesting.
+
+254
+00:16:41,760 --> 00:16:43,360
+It's not something you're really confident about working.
+
+255
+00:16:43,520 --> 00:16:45,680
+It's something you're really confident that you care about, right?
+
+256
+00:16:46,000 --> 00:16:46,560
+Yeah, exactly.
+
+257
+00:16:46,640 --> 00:16:49,920
+And to the extent that, like, if I release this and I'm the only one who likes it.
+
+258
+00:16:50,000 --> 00:16:51,680
+Like, in some cases, that's good enough for me.
+
+259
+00:16:51,840 --> 00:16:57,680
+Whereas, like, I almost envy some people who are kind of just like, they just got a random idea using the bathroom and they're like, I'm going to build that this week.
+
+260
+00:16:57,840 --> 00:16:58,960
+And like, that sounds like a lot of fun.
+
+261
+00:16:59,120 --> 00:17:03,360
+But, like, to me, I kind of, I sit on it a little bit and I'm like, where would I take this?
+
+262
+00:17:03,600 --> 00:17:06,160
+Like, kind of, what are, what are the, what kind of legs would it have?
+
+263
+00:17:06,480 --> 00:17:08,160
+And that's kind of when I invest the time in it.
+
+264
+00:17:08,400 --> 00:17:15,280
+And then at that point, I feel like I'm confident enough and I've put enough time into it that, like, not releasing it is kind of feeling wasteful to me.
+
+265
+00:17:15,680 --> 00:17:18,400
+Like, I get to a certain extent, like, cutting your losses.
+
+266
+00:17:18,480 --> 00:17:21,840
+But to me, at a certain extent, it's like, I thought this had legs at some point.
+
+267
+00:17:22,480 --> 00:17:26,480
+I kind of wanted to see this through to see if that had any basis in reality.
+
+268
+00:17:26,880 --> 00:17:32,720
+And I haven't had so many apps that I'm sure eventually it's going to be a terrible formula, but I've only had like three apps or something.
+
+269
+00:17:32,880 --> 00:17:34,160
+And it's worked out pretty well so far.
+
+270
+00:17:34,480 --> 00:17:45,680
+It's funny you use the word care because that's exactly what I was going to say, is that even if it's not a financial success, if it's something you care about, it can be incredibly rewarding.
+
+271
+00:17:46,400 --> 00:17:57,360
+And if you're building it only to be a financial success, maybe you need to, and if it has to be a financial success, like you're burning your life savings to build it, then maybe you do.
+
+272
+00:17:57,680 --> 00:18:00,960
+But like, I mean, even for me, my whether it's a financial success or not.
+
+273
+00:18:00,960 --> 00:18:02,800
+My weather up app, it's not been super successful.
+
+274
+00:18:02,960 --> 00:18:13,280
+I mean, it's made a couple of hundred grand over the last five years and it's done awesome this year, but like, it's super fulfilling to me, even though, like, it's probably never going to pay the bills or.
+
+275
+00:18:13,680 --> 00:18:16,160
+David's the most into weather apps of anyone I've ever met.
+
+276
+00:18:16,480 --> 00:18:20,880
+Like, I have one and it came with the phone and I think it offends him a little that I'm like, that's fine.
+
+277
+00:18:20,960 --> 00:18:22,000
+Actually, that's not true.
+
+278
+00:18:22,080 --> 00:18:23,360
+I have some special weather apps, but.
+
+279
+00:18:23,760 --> 00:18:36,240
+And the thing is, I really don't care because, like, we had a storm come through a couple of weeks ago and we had got the beta into this weird state with a data corruption thing where I couldn't use my own app.
+
+280
+00:18:37,040 --> 00:18:41,600
+And then so I went to the app store and I downloaded twenty different weather apps and I didn't like them.
+
+281
+00:18:42,000 --> 00:18:48,160
+And it was so incredibly personally fulfilling to be like, I just want my weather app.
+
+282
+00:18:48,720 --> 00:18:51,120
+And so like, is it ever going to make a million bucks?
+
+283
+00:18:51,360 --> 00:18:51,760
+I don't know.
+
+284
+00:18:51,920 --> 00:18:58,560
+Maybe I'm going to keep plugging away at it, but like, I get an incredible amount of personal fulfillment in building this thing.
+
+285
+00:18:58,880 --> 00:19:01,040
+And I get to build it with my cousin, which is a lot of fun.
+
+286
+00:19:01,520 --> 00:19:04,880
+Like, it's so, so in my case, you know, I work full time at RevenueCat.
+
+287
+00:19:05,040 --> 00:19:05,840
+It's a side project.
+
+288
+00:19:06,240 --> 00:19:08,560
+I don't even put ten hours a week into it most weeks.
+
+289
+00:19:08,720 --> 00:19:11,200
+Like, you know, with big updates, I put more time into it.
+
+290
+00:19:11,360 --> 00:19:17,920
+But like, it's pretty cool that I I can tinker on this thing that I really care about and get that fulfillment, even if it's not making millions of dollars.
+
+291
+00:19:18,480 --> 00:19:23,920
+Yeah, and I almost think like if the financial aspect is the only thing motivating you, like I don't know how sustainable long term that is.
+
+292
+00:19:24,080 --> 00:19:25,760
+Like I feel like you'd burn out pretty quickly.
+
+293
+00:19:26,240 --> 00:19:31,600
+Being in YC, like just name drop that, just make sure I'm not here, but like, like, why Combinator?
+
+294
+00:19:31,760 --> 00:19:33,520
+Well, you had a lot of people in your bash that you saw.
+
+295
+00:19:33,920 --> 00:19:34,880
+You see a lot of people come through.
+
+296
+00:19:35,120 --> 00:19:37,360
+And I guess I just I've met a lot of people who are like early.
+
+297
+00:19:37,440 --> 00:19:38,640
+It's probably like you, Christian.
+
+298
+00:19:38,720 --> 00:19:40,400
+Like you have indie hackers like when you get into it.
+
+299
+00:19:40,480 --> 00:19:45,680
+I get a lot of people reaching out like early stage venture funded path, like trying, looking for advice and stuff.
+
+300
+00:19:46,720 --> 00:20:00,720
+And I can definitely tell the psychological difference in somebody who's doing it because it's something that's burning inside them versus somebody who wants to do a startup for the check box and maybe the money and stuff like that.
+
+301
+00:20:01,200 --> 00:20:01,760
+Those are good too.
+
+302
+00:20:02,080 --> 00:20:03,200
+You sniff that out immediately?
+
+303
+00:20:03,600 --> 00:20:04,320
+There's a few tells.
+
+304
+00:20:04,640 --> 00:20:10,160
+Like if somebody talks about selling the company one day, like they're talking about flipping it, I'm like, you've already checked out.
+
+305
+00:20:10,240 --> 00:20:12,240
+Like I know you're gonna try less hard, right?
+
+306
+00:20:12,640 --> 00:20:19,120
+There's certain tells that are minor, but yeah, I honestly think that if you could know in somebody's heart, and I think most people don't actually know themselves, right?
+
+307
+00:20:19,440 --> 00:20:19,920
+At some level.
+
+308
+00:20:20,400 --> 00:20:26,720
+But if you could know that, like I think if you' had a perfect sense of that, I think you would.
+
+309
+00:20:27,120 --> 00:20:33,760
+Because it's the people who like are doing it for the care of the craft, like the personal reasons, right?
+
+310
+00:20:34,080 --> 00:20:35,600
+The spiritual reasons, like whatever.
+
+311
+00:20:35,840 --> 00:20:43,200
+Those are, I think, the folks that will try harder, they'll push harder, they'll have a little bit of a burning, burning the boats mentality, right?
+
+312
+00:20:43,360 --> 00:20:45,120
+Where they go like, there's no, there's no way back.
+
+313
+00:20:45,360 --> 00:20:47,120
+Like, I'm not turning around, right?
+
+314
+00:20:47,360 --> 00:20:52,160
+So do you think you have a good enough batting average that you'd ever get into that angel investing area?
+
+315
+00:20:53,680 --> 00:20:55,920
+No, I have done a little bit.
+
+316
+00:20:56,720 --> 00:20:58,240
+I think I'm pretty underperforming.
+
+317
+00:20:59,200 --> 00:20:59,600
+Fair enough.
+
+318
+00:20:59,680 --> 00:21:00,400
+Yeah, I don't know.
+
+319
+00:21:00,720 --> 00:21:01,520
+We could talk about venture.
+
+320
+00:21:01,680 --> 00:21:12,720
+It's super interesting because I think in indie, in indie world, the only difference, the only difference between, well, not the only, there's a lot of like second order differences that come when you're doing a venture back company versus like an indie.
+
+321
+00:21:13,120 --> 00:21:16,800
+But really, it's just like, it's funding and a financial thing.
+
+322
+00:21:17,360 --> 00:21:19,520
+Like, you know, we have all the same problems, right?
+
+323
+00:21:19,760 --> 00:21:28,320
+You have users, you need to get product market fit, you need to have like a good culture like within your, you know, if it's a company of one, it's easier to maintain that culture, right?
+
+324
+00:21:28,480 --> 00:21:32,240
+But like, but yeah, but I mean, your culture just becomes your personal mental state, right?
+
+325
+00:21:32,400 --> 00:21:33,360
+And your personal behaviors, right?
+
+326
+00:21:33,680 --> 00:21:34,000
+Which matter.
+
+327
+00:21:34,560 --> 00:21:38,240
+And so I think it's a lot more similar than people think.
+
+328
+00:21:38,800 --> 00:21:47,920
+I just think the difference and maybe we've been talking about we talked a little bit before the call about founder mode, which is like this thing that SA Paul Graham wrote.
+
+329
+00:21:48,320 --> 00:21:49,520
+Yeah, you're a big proponent.
+
+330
+00:21:50,800 --> 00:21:51,600
+I mean, I don't know.
+
+331
+00:21:51,920 --> 00:21:53,760
+I've never heard someone so gassed up about it.
+
+332
+00:21:54,960 --> 00:22:02,080
+I think everybody, everybody should just, you know, I don't believe in isms as my friend Ferris Bueller once said, but I think everyone should believe in themselves.
+
+333
+00:22:02,480 --> 00:22:07,840
+And so like if it resonates with you, I still, I mean, I still love that from a movie, but like, I think if it resonates with you, you should do it.
+
+334
+00:22:08,000 --> 00:22:14,080
+But I think the process of trusting yourself, believing in what you're building.
+
+335
+00:22:14,560 --> 00:22:24,800
+I think all these things sort of trump like how you're funded or if you're not funded, like having a purpose to what you're doing, doing things that make sense to you, like the builder of a thing.
+
+336
+00:22:25,120 --> 00:22:32,240
+And I think this actually applies to people not even necessarily founders of things or like owners of things, like even your own work.
+
+337
+00:22:32,560 --> 00:22:38,160
+I think if we constantly try to like cargo cult, which I don't know if that does that land on anyone cargo culting?
+
+338
+00:22:38,480 --> 00:22:38,560
+Yeah.
+
+339
+00:22:39,120 --> 00:22:39,520
+Oh yeah.
+
+340
+00:22:39,840 --> 00:22:39,920
+Yeah.
+
+341
+00:22:40,400 --> 00:22:44,880
+I think we constantly try to cargo cult these like processes from like other successful companies and places.
+
+342
+00:22:45,680 --> 00:22:48,800
+And it goes back to your point, Christian, about like the book from the billionaire.
+
+343
+00:22:48,800 --> 00:22:50,240
+Like the book from the billionaire and their retirement years.
+
+344
+00:22:50,480 --> 00:22:55,680
+It's like, there's really like you can copy that, but it's probably not the thing that made that magical.
+
+345
+00:22:56,000 --> 00:22:58,480
+I think this is true for a lot of us in Indie land.
+
+346
+00:22:58,720 --> 00:22:59,440
+We copy Steve.
+
+347
+00:23:00,000 --> 00:23:04,480
+And I think there's some things he said and felt and did that were core to their success.
+
+348
+00:23:04,800 --> 00:23:06,320
+But if you copy Steve Harvey?
+
+349
+00:23:06,480 --> 00:23:07,920
+Yeah, Steve Harvey, yeah, exactly.
+
+350
+00:23:08,080 --> 00:23:09,040
+Yeah, family cue.
+
+351
+00:23:09,200 --> 00:23:13,600
+But if you copy everything Apple does, I think you might end up with a really broken company, right?
+
+352
+00:23:14,560 --> 00:23:15,920
+Yeah, oh yeah, yeah, for sure.
+
+353
+00:23:16,480 --> 00:23:19,120
+There's a lot of stuff in there that's not actually related to their success.
+
+354
+00:23:19,520 --> 00:23:21,520
+But yeah, I'm big on, big on Founder Mode.
+
+355
+00:23:21,600 --> 00:23:22,560
+I'm Founder Mode number one.
+
+356
+00:23:22,720 --> 00:23:23,680
+Founder number one, that's me.
+
+357
+00:23:23,840 --> 00:23:24,880
+Yeah, you even changed your shirt.
+
+358
+00:23:25,200 --> 00:23:27,280
+It said the Yeah, yeah, yeah, I have it on right here.
+
+359
+00:23:27,520 --> 00:23:34,960
+No, it's interesting, like, humans seem to love, like, I don't know if it's a shortcut or we just seem to love trying to find our process to do something better.
+
+360
+00:23:35,200 --> 00:23:43,600
+And I don't know if that's like an evolutionary technique or something, but like, it's wild how there's almost, we love prescribing, like, if you do X, result Y will occur.
+
+361
+00:23:43,840 --> 00:23:51,440
+I think we have this, like, desire to map a system of a predictable system on, like, essentially chaotic data.
+
+362
+00:23:52,000 --> 00:23:55,760
+Like, we're always trying to, like, find the underlying physics and properties.
+
+363
+00:23:56,000 --> 00:23:57,360
+And sometimes it works, right?
+
+364
+00:23:57,600 --> 00:24:05,440
+And we learn how to swim and jump and, like, all these, like, really complexlicated physical properties and things, and we've either learned it evolutionarily or not.
+
+365
+00:24:05,920 --> 00:24:07,280
+Like, why can humans drive?
+
+366
+00:24:07,520 --> 00:24:08,640
+How did we figure that out, right?
+
+367
+00:24:08,880 --> 00:24:11,920
+Like, it's just like we can map to these insane systems.
+
+368
+00:24:12,480 --> 00:24:15,760
+But then there are some systems which are just inherently chaotic.
+
+369
+00:24:15,920 --> 00:24:23,600
+And I think most systems in the world, and I think products and how they interact with people and whether or not businesses make money or not, I think are pretty chaotic systems.
+
+370
+00:24:23,840 --> 00:24:36,000
+And so we're like constantly trying to like, oh, if you just do OKRs and you just do this and you just do that, that's the underlying physics of the system, and you'll be able to manipulate and control that system.
+
+371
+00:24:36,880 --> 00:24:40,560
+And I think essentially they're just they're always going to be very chaotic.
+
+372
+00:24:41,120 --> 00:24:52,320
+And I almost think that just adapting to that chaos, kind of organic, going back to organic, whatever that means, like, yeah, that word of just being like, just focusing on very basic things, right?
+
+373
+00:24:52,640 --> 00:24:57,120
+And you can adapt to the chaos and not try to tame it necessarily, maybe is better.
+
+374
+00:24:57,360 --> 00:25:01,680
+But yeah, we love, we love to try to put complex things into boxes that don't really matter.
+
+375
+00:25:02,480 --> 00:25:04,240
+And then we go, like, why does nothing make sense?
+
+376
+00:25:05,040 --> 00:25:09,040
+Sounds like chaos is kind of how you built Apollo.
+
+377
+00:25:09,360 --> 00:25:14,960
+It's like you just followed the users, you followed your own Christian trying to decide if that's an insult or a compliment.
+
+378
+00:25:15,280 --> 00:25:16,080
+No, no, no, no.
+
+379
+00:25:16,320 --> 00:25:22,800
+No, I was saying that's a very romantic way to put what didn't feel so it felt like a compliment and I'm not sure it's deserved, but I appreciate it.
+
+380
+00:25:22,960 --> 00:25:35,600
+So I did want to get back to kind of building this business that started as this kind of crazy passion project that you hope would make some money and then you launch it, you launch it and it's you said 299 in advance?
+
+381
+00:25:35,840 --> 00:25:37,840
+It might even have been 199 for like the first week.
+
+382
+00:25:38,480 --> 00:25:46,720
+It was one of those things where, yeah, it was in hindsight not great because I don't know, like the difference between 199 and 299 or even maybe 399, like it's if you're probably debated that a lot.
+
+383
+00:25:46,800 --> 00:25:47,840
+Or not, actually, I'm curious.
+
+384
+00:25:48,160 --> 00:25:51,840
+Some people sit and wring their hands over a price choice forever.
+
+385
+00:25:52,080 --> 00:25:55,440
+And it's, I'm always just like, just pick a price and then you can change it later.
+
+386
+00:25:55,760 --> 00:25:56,240
+It's fine.
+
+387
+00:25:56,560 --> 00:25:57,440
+I don't think I put that much.
+
+388
+00:25:57,840 --> 00:25:59,920
+I think like Alien Blue was like 299 or something.
+
+389
+00:26:00,000 --> 00:26:05,600
+And I was like, that kind of seems like maybe at the time that was like what seemed reasonable to charge for a Reddit app.
+
+390
+00:26:05,920 --> 00:26:19,680
+But in hindsight, it's one of those things where I think I did the same thing with like lifetime pricing once I finally followed Jacob's advice and had subscriptions where it was like 1999 for like the first year, which was like bonkers price when I think it was like 10 dollars a year for the actual subscription.
+
+391
+00:26:19,760 --> 00:26:20,880
+So it's like, it pays for.
+
+392
+00:26:21,200 --> 00:26:25,120
+And it was like, I ended up increasing it to like 30 or 40 dollars and like the take rate didn't change change at all.
+
+393
+00:26:25,200 --> 00:26:26,800
+And it's like one of those things you're like, shit.
+
+394
+00:26:27,120 --> 00:26:29,760
+So you had surplus uncaptured demand right there.
+
+395
+00:26:30,240 --> 00:26:30,720
+100%.
+
+396
+00:26:30,880 --> 00:26:30,960
+Yeah.
+
+397
+00:26:31,120 --> 00:26:31,200
+Yeah.
+
+398
+00:26:31,360 --> 00:26:31,440
+Yeah.
+
+399
+00:26:31,840 --> 00:26:32,720
+It's a lot of chaos.
+
+400
+00:26:32,960 --> 00:26:36,480
+But yeah, it was just a lot of chaos over the years, I think, where it was good chaos.
+
+401
+00:26:36,640 --> 00:26:39,520
+And like the subreddit served almost like a continual North Star.
+
+402
+00:26:39,680 --> 00:26:40,640
+Like you got too off base.
+
+403
+00:26:40,960 --> 00:26:44,880
+It was like you worked on the wrong function for too long and you start to hear from people kind of thing.
+
+404
+00:26:45,040 --> 00:26:46,000
+Yeah, they start yelling at you.
+
+405
+00:26:46,160 --> 00:26:46,720
+This is me and Twitter.
+
+406
+00:26:46,960 --> 00:26:49,360
+Like, whenever I'm not building what I need to be building, I'll know.
+
+407
+00:26:49,600 --> 00:26:50,320
+Oh, 100%.
+
+408
+00:26:50,480 --> 00:26:51,200
+Well, yeah, yeah.
+
+409
+00:26:51,520 --> 00:26:53,520
+And it's great because it serves as like that North Star.
+
+410
+00:26:53,840 --> 00:26:57,600
+So there was a kind of like a shepherd of the chaos in that capacity.
+
+411
+00:26:58,000 --> 00:27:00,880
+So it wasn't, I guess, as chaotic as working completely alone.
+
+412
+00:27:00,880 --> 00:27:01,200
+I think it was a bit like working completely alone.
+
+413
+00:27:02,400 --> 00:27:04,560
+I likened it to a team almost in some ways.
+
+414
+00:27:05,120 --> 00:27:06,480
+Oh, like your community.
+
+415
+00:27:06,880 --> 00:27:08,800
+Yeah, yeah, because they managed you in some ways.
+
+416
+00:27:08,960 --> 00:27:10,160
+They always gave feedback.
+
+417
+00:27:10,480 --> 00:27:12,400
+If they didn't like something, they would be very vocal about it.
+
+418
+00:27:12,720 --> 00:27:14,080
+So it kind of helped in that way.
+
+419
+00:27:14,240 --> 00:27:20,000
+But over the years, yeah, it was a lot of just kind of hearing the squeakiest wheel gets the grease or whatever the saying is.
+
+420
+00:27:20,240 --> 00:27:23,920
+Whatever they're yelling about that month is probably something I'll put on the road map, work on that.
+
+421
+00:27:24,000 --> 00:27:26,480
+And it was kind of like rinse, repeat for years and years and years.
+
+422
+00:27:26,880 --> 00:27:27,600
+And it worked pretty well.
+
+423
+00:27:27,760 --> 00:27:34,960
+We maintain road maps here, but I think if it was up to me, it would only be the road map would be what we're working on and then maybe the next thing.
+
+424
+00:27:35,600 --> 00:27:35,920
+That's it.
+
+425
+00:27:36,160 --> 00:27:38,560
+Because like, is that David's thing then?
+
+426
+00:27:39,520 --> 00:27:41,040
+Whatever he wants, yeah, basically.
+
+427
+00:27:41,600 --> 00:27:43,680
+Oh, I fight really hard internally for things.
+
+428
+00:27:44,560 --> 00:27:51,680
+We finally got our subscription auto renew chart back in RevenueCat after like two years of me bitching and moaning about it.
+
+429
+00:27:52,240 --> 00:27:55,360
+And it was popular, so, you know, maybe you should listen to it more.
+
+430
+00:27:55,600 --> 00:28:03,200
+Actually, that might be a good example of like, something where like, you know, we have our like customer interview process and we kind of tried some things and whatever.
+
+431
+00:28:03,280 --> 00:28:08,320
+And it was, it didn't seem that hot and it kind of got back prioritizing, but went a tremendous amount of work.
+
+432
+00:28:08,960 --> 00:28:32,960
+But like, if someone's yelling at us about it, like we should probably just try to build something build something pretty quickly because like that will be the best way that we learn if it's really worth it versus like you can put a lot of pre work in to like oh is this gonna people gonna you should put a little pre work in but like I've just seen we maintained like a longer, more complex road map in the past and I don't know it just always felt demoralizing and it always felt very like it would Do you feel shackled?
+
+433
+00:28:33,200 --> 00:28:33,760
+Yeah, exactly.
+
+434
+00:28:33,920 --> 00:28:36,640
+Like we would just feel like well, I did like want to say this thing.
+
+435
+00:28:36,800 --> 00:28:40,000
+I'm just like at some point you're just like, just don't maintain it.
+
+436
+00:28:40,240 --> 00:28:42,400
+If it's important enough, it will keep coming up.
+
+437
+00:28:42,640 --> 00:28:44,320
+Like customers will keep complaining about it.
+
+438
+00:28:44,480 --> 00:28:45,520
+Like we'll keep hearing it.
+
+439
+00:28:45,920 --> 00:28:46,720
+And I think it's been better.
+
+440
+00:28:46,800 --> 00:28:51,920
+I think it's been like we're not fully, fully reactive, but like we've been kind of trying to push more reactive.
+
+441
+00:28:52,320 --> 00:28:53,520
+Yeah, there's a sweet spot there.
+
+442
+00:28:53,840 --> 00:29:00,160
+Yeah, I mean, you can't just like not have any sort of like sense and you need that like that like editorial, right?
+
+443
+00:29:00,400 --> 00:29:04,320
+Like you have some sort of idea of like what a finished Apollo looks like, right?
+
+444
+00:29:04,480 --> 00:29:06,640
+Or like what the product as a total looks like.
+
+445
+00:29:06,960 --> 00:29:08,160
+Well, it's pretty finished now.
+
+446
+00:29:08,560 --> 00:29:08,640
+Yeah.
+
+447
+00:29:14,800 --> 00:29:15,520
+It's pretty good.
+
+448
+00:29:18,320 --> 00:29:29,120
+But whatever you're working on, you have like some idea of like where it might go and you can decide even if you're getting yelled at, like I say yelled at that in a loving way, but like, oh yeah, it's an affectionate feedback from customers.
+
+449
+00:29:29,360 --> 00:29:33,040
+You can, some things you'll be like, yeah, I hear that, but like, that's just not the way we're going to go.
+
+450
+00:29:33,120 --> 00:29:34,080
+And you get to make that decision.
+
+451
+00:29:34,240 --> 00:29:34,720
+That's still important.
+
+452
+00:29:34,960 --> 00:29:35,280
+Oh yeah.
+
+453
+00:29:35,440 --> 00:29:46,480
+And I think depending on how you articulate that, like, there's like, I remember if a customer had like, or customers even had a relatively popular idea and it wasn't something I kind of jived with, like, I was always afraid of being like, no.
+
+454
+00:29:46,880 --> 00:29:53,680
+But like, it came to the point where like, the first time I did it, I think I just kind of explained my reasons why I didn't think this was a great idea, because maybe they don't have the full picture.
+
+455
+00:29:53,760 --> 00:29:56,320
+And like, the responses were like, oh shit, yeah, that's a good point.
+
+456
+00:29:56,480 --> 00:29:56,560
+Okay.
+
+457
+00:29:56,720 --> 00:29:57,920
+And I was like, oh shit, okay.
+
+458
+00:29:58,000 --> 00:29:58,960
+I'm not going to yell that.
+
+459
+00:29:59,040 --> 00:29:59,200
+Yeah.
+
+460
+00:29:59,520 --> 00:30:02,240
+My move would be to let me add it to the roadmap that doesn't exist.
+
+461
+00:30:02,880 --> 00:30:03,280
+That's right.
+
+462
+00:30:05,120 --> 00:30:05,920
+It's on our radar.
+
+463
+00:30:06,080 --> 00:30:06,800
+That's what I tell people.
+
+464
+00:30:06,960 --> 00:30:09,200
+That's what I tell people on Twitter when they suggest something wacky.
+
+465
+00:30:09,600 --> 00:30:11,920
+It's almost, and I'd be curious if you felt the same way.
+
+466
+00:30:12,160 --> 00:30:13,600
+Like they always, there's a real problem.
+
+467
+00:30:13,920 --> 00:30:15,680
+Like they always have a real issue.
+
+468
+00:30:16,480 --> 00:30:20,320
+And then they would suggest something I'd be like, that's maybe the dumbest solution I've ever heard.
+
+469
+00:30:20,560 --> 00:30:21,280
+Right, right.
+
+470
+00:30:21,760 --> 00:30:23,600
+Or not that, you know, I'm being facetious.
+
+471
+00:30:23,680 --> 00:30:26,240
+But like that's not going to work for a number of reasons.
+
+472
+00:30:26,880 --> 00:30:28,800
+And sometimes I find they just don't have that whole picture.
+
+473
+00:30:28,960 --> 00:30:34,160
+Like a common one for Apollo is like there'd be these services that like continually scrape Reddit, which is a whole different story.
+
+474
+00:30:34,320 --> 00:30:36,240
+But as a result, they kind of have a cache of every comment.
+
+475
+00:30:36,640 --> 00:30:40,160
+So if someone deleted a really juicy comment, you could theoretically go back and restore it.
+
+476
+00:30:40,320 --> 00:30:42,400
+And that was like a common request, like add that to Apollo.
+
+477
+00:30:42,560 --> 00:30:43,600
+I want to see what they deleted.
+
+478
+00:30:43,760 --> 00:30:54,800
+And it was like, I see on the surface why you think that would be something you would want, but like you get into all these safety issues that they're like maybe they doxed themselves and people should probably have the right to delete a comment that they want to rescind.
+
+479
+00:30:55,120 --> 00:30:58,320
+And you're kind of getting into this jelly area of like, that's kind of sketchy.
+
+480
+00:30:58,400 --> 00:31:02,160
+And like as soon as you explain that, they'll be like, Oh shit, like, yeah, I didn't, I didn't think about that aspect of it.
+
+481
+00:31:02,240 --> 00:31:03,680
+Yeah, like, it kind of gets dysfunny.
+
+482
+00:31:03,840 --> 00:31:08,400
+And I think sometimes, like, the founder, the creator, you have a lot more, you know, marbles than everyone else does.
+
+483
+00:31:08,640 --> 00:31:09,200
+Yeah, there you go.
+
+484
+00:31:09,360 --> 00:31:10,960
+Christian's endorsing founder mode right there.
+
+485
+00:31:11,040 --> 00:31:12,000
+Yeah, yeah, yeah, no.
+
+486
+00:31:12,000 --> 00:31:13,840
+I've been trying to get you guys on board.
+
+487
+00:31:14,880 --> 00:31:26,560
+It's fun, I mean, I'm not going to bring it back to Founder Mode again, but like, I do feel like there's this tension with like VC backed companies and I don't think, we'll use anyone, but I don't know, I think there's, well, I don't know.
+
+488
+00:31:26,720 --> 00:31:29,440
+Part of it, I think, is like grass is greenerism both ways.
+
+489
+00:31:29,920 --> 00:31:33,840
+I think I look sometimes at indie folks and go like, God damn, you're just yourself.
+
+490
+00:31:34,160 --> 00:31:37,360
+You don't have like all this debt, like debt, i.e.
+
+491
+00:31:37,440 --> 00:31:39,360
+like capital you have to return.
+
+492
+00:31:39,680 --> 00:31:41,360
+You know, you kind of get just to do what you want.
+
+493
+00:31:41,680 --> 00:31:42,720
+So you have to return that.
+
+494
+00:31:43,040 --> 00:31:43,280
+The capital?
+
+495
+00:31:43,760 --> 00:31:48,400
+Yeah, it's not just I mean, we could do it, we should do a Venture Capital one on one, one on one, maybe episode, David.
+
+496
+00:31:48,560 --> 00:31:51,600
+David, but like, well, I mean, they own part of the company, right?
+
+497
+00:31:51,920 --> 00:31:53,840
+So like, it's not just like free money.
+
+498
+00:31:54,720 --> 00:31:54,800
+Yeah.
+
+499
+00:31:55,920 --> 00:31:59,120
+Okay, so this is actually this is like a common misconception.
+
+500
+00:31:59,280 --> 00:32:02,000
+I think it goes, I think people misconceive this in both directions.
+
+501
+00:32:02,640 --> 00:32:08,880
+One direction, people go like, oh my God, the investors don't expect anything, whatever, you get the money and you just build and then whatever.
+
+502
+00:32:09,440 --> 00:32:16,000
+And there are, I think, some founders who kind of have that mindset of like, whatever, it's stupid money, I'll take their check and then, you know, I'll just build whatever I want.
+
+503
+00:32:16,160 --> 00:32:17,360
+And like, you can't do that.
+
+504
+00:32:17,440 --> 00:32:18,480
+You've got to have some.
+
+505
+00:32:18,800 --> 00:32:26,240
+And then I think people have the opposite perception of like, once you've taken their money, like, you're owned and like, you can't keep do anything anymore.
+
+506
+00:32:26,640 --> 00:32:28,560
+That's also not very far from the truth, right?
+
+507
+00:32:29,120 --> 00:32:35,360
+But there is an expectation that they're going to give you a dollar and they would very much like something slightly more than a dollar back, right?
+
+508
+00:32:35,680 --> 00:32:36,960
+And like eventually.
+
+509
+00:32:37,360 --> 00:32:39,760
+They expect a lot of their dollars to go to zero, right?
+
+510
+00:32:40,080 --> 00:32:44,800
+And they make their money when not a dollar goes to a dollar and twenty, they make money when a dollar goes to ten dollars.
+
+511
+00:32:45,280 --> 00:32:45,840
+Oh, interesting.
+
+512
+00:32:46,160 --> 00:32:54,720
+And that's the misalignment is like, you know, they invest in ten companies, five of them go to zero, four of them return two dollars, and then one of them return to ten.
+
+513
+00:32:55,120 --> 00:32:55,840
+That's how they make money.
+
+514
+00:32:56,000 --> 00:32:58,000
+They're not like bunting, they're swinging for the fences.
+
+515
+00:32:58,480 --> 00:32:58,960
+No, exactly.
+
+516
+00:32:59,360 --> 00:32:59,920
+Oh, interesting.
+
+517
+00:33:00,000 --> 00:33:00,160
+Okay.
+
+518
+00:33:00,480 --> 00:33:06,800
+Exactly, and that becomes the mismatch because as a founder, often a bunt is a pretty good deal for you as a person, right?
+
+519
+00:33:07,040 --> 00:33:12,000
+Like you get to build what you want to build, you can make a lot of money on that if that's your motivation and stuff like that.
+
+520
+00:33:12,320 --> 00:33:24,880
+And I'll admit, like I don't think I fully appreciated it when I went into it, but that's the thing that, like, before people totally cast the venture route versus the indie route, you just have to understand what their business is.
+
+521
+00:33:25,040 --> 00:33:30,320
+If you understand their business and you're okay with that, like, it can be really a good choice, right?
+
+522
+00:33:30,560 --> 00:33:33,680
+And this is me justifying now that I'm like permanently committed to this.
+
+523
+00:33:34,000 --> 00:33:35,840
+Knowing what you know now, would you have done anything different?
+
+524
+00:33:36,240 --> 00:33:37,520
+different, you know, years and years ago?
+
+525
+00:33:37,680 --> 00:33:43,600
+Oh, I mean, I'm sure there's like branch points where I said, like, oh, no, you know, of course it's like, oh, I could have waited to raise that round.
+
+526
+00:33:43,840 --> 00:33:49,680
+Like if I were starting from scratch, would I do RevenueCat, like Indie Hacker mode versus not?
+
+527
+00:33:50,400 --> 00:34:02,400
+I think the reality is, and this is different depending on what you're building, I think if you're building an app, this is not one hundred percent true, but generally my advice is like, don't raise money if you're building an app, like a subscription app.
+
+528
+00:34:02,720 --> 00:34:07,040
+Or at least like bootstrap it to a point where it's like it's working and like it's really working.
+
+529
+00:34:07,680 --> 00:34:12,640
+Or be ready to shut it down, raise very little money and be ready to shut it down and expect that it's going to be a hit or not a hit.
+
+530
+00:34:13,120 --> 00:34:16,080
+I think apps getting venture returns is very, very difficult.
+
+531
+00:34:16,400 --> 00:34:18,960
+I would imagine they're hard to get the money in the first place too.
+
+532
+00:34:19,200 --> 00:34:20,800
+Yeah, well, that's why, right?
+
+533
+00:34:21,040 --> 00:34:24,960
+Because the people have looked at historical data and there have been winners there, but they're very rare.
+
+534
+00:34:25,200 --> 00:34:37,040
+It's not like in B2B SaaS, it's like, as long as you have product market fit, the way that the pricing works and all that stuff, you can kind of stumble your way, which has been basically my path, it's just been stumbling my way up the revenue scale.
+
+535
+00:34:37,520 --> 00:34:44,000
+To answer your question, like going back, I think for a product like RevenueCat, like it's so broad and there's so much we can build.
+
+536
+00:34:44,720 --> 00:34:48,560
+And I think there's a real advantage to having a product.
+
+537
+00:34:48,560 --> 00:34:59,200
+to reaching some level of complexity very quickly so that we can, like, service this industry and become a leader and all that stuff, that doing it bootstrapped would have been very challenging, right?
+
+538
+00:34:59,360 --> 00:35:09,440
+Because you're like, you're constantly hand to mouth, you're like, oh, I want to build a thing, but like, all my money is going to pay my people, and like, maybe there's a little bit tight, I want to build the next thing, but like, I have to wait or whatever.
+
+539
+00:35:09,600 --> 00:35:21,360
+And as it stands for us, the only real bandwidth, the only real constraint is like, can we hire, like, can we find people that will work well with us, and can we scale our team and processes and stuff, and like, do we have enough mental bandwidth to, like, take that on?
+
+540
+00:35:21,680 --> 00:35:22,720
+Those are our constraints.
+
+541
+00:35:22,960 --> 00:35:23,840
+Cash is not a constraint.
+
+542
+00:35:24,400 --> 00:35:26,080
+You haven't felt that pressure to ten X?
+
+543
+00:35:26,240 --> 00:35:26,640
+Oh, of course.
+
+544
+00:35:26,800 --> 00:35:27,440
+Yeah, yeah.
+
+545
+00:35:28,320 --> 00:35:30,640
+I mean, you probably have from 2017 or whatever.
+
+546
+00:35:30,720 --> 00:35:34,560
+Yeah, I mean, I've played my investors have hit, they're in the money, so to speak, right?
+
+547
+00:35:34,800 --> 00:35:38,640
+And I think that's also, you talk about decisions, like what I do differently.
+
+548
+00:35:38,800 --> 00:35:50,880
+There's some micro choices there where it's like, okay, I probably took on too much money at too high a number that I wasn't confident enough at the time, and I think that put me under pressure, and I felt sort of like, oh God, I'm not going to be able to do this.
+
+549
+00:35:51,440 --> 00:35:59,600
+And so I think there are points there where I would have liked, and this is one of those non intuitive things where it's like actually saying your company's value is less is very good for you.
+
+550
+00:35:59,840 --> 00:36:00,640
+Right, right.
+
+551
+00:36:01,040 --> 00:36:01,840
+Set your expectations.
+
+552
+00:36:02,000 --> 00:36:02,960
+There's a big mismatch.
+
+553
+00:36:03,040 --> 00:36:08,720
+Like, people's egos want the numbers to be as big as possible, but like, really, being them smaller, your future self will thank you.
+
+554
+00:36:09,040 --> 00:36:10,560
+Under promise, over deliver, right?
+
+555
+00:36:10,880 --> 00:36:13,520
+And so there's some decisions there.
+
+556
+00:36:13,920 --> 00:36:24,560
+I will say, like, I think you can maybe say this is a benefit or a write or a downside, it depends on sort of how you look at it, but I think it kind of forced me to be like, yeah, I have to build something massive.
+
+557
+00:36:25,200 --> 00:36:28,960
+Which I think I could say I'm happy about because I think it's working, knock on wood.
+
+558
+00:36:29,040 --> 00:36:31,280
+Like, we're on that path and that's really cool.
+
+559
+00:36:31,440 --> 00:36:33,680
+Like, I'll be able to look back and be like, geez, I built something.
+
+560
+00:36:34,320 --> 00:36:38,560
+There's no way I could have built this, like, without taking that path, I don't think, right?
+
+561
+00:36:38,800 --> 00:36:38,960
+And so.
+
+562
+00:36:39,600 --> 00:36:41,200
+That's a pretty definitive answer then, yeah.
+
+563
+00:36:42,000 --> 00:36:42,080
+Yeah.
+
+564
+00:36:42,240 --> 00:36:43,600
+And hindsight is like, yeah.
+
+565
+00:36:43,840 --> 00:36:48,720
+I think like, if I hadn't, there might have been a world where I would have been like, oh, this is really hard.
+
+566
+00:36:49,120 --> 00:36:52,160
+Maybe I should like take off the gas a little bit, maybe go a little slower.
+
+567
+00:36:52,240 --> 00:36:53,520
+And then I don't know where we would be, right?
+
+568
+00:36:53,680 --> 00:36:55,600
+Like, maybe we wouldn't be in the position we are, so.
+
+569
+00:36:55,920 --> 00:36:57,360
+And that's a hard game to play, yeah.
+
+570
+00:36:57,600 --> 00:36:57,680
+Yeah.
+
+571
+00:36:58,240 --> 00:36:59,280
+It's hard to like go back.
+
+572
+00:36:59,360 --> 00:37:00,480
+And there's really almost no point.
+
+573
+00:37:00,880 --> 00:37:10,880
+I'll say there was this one conversation with a family member a few years in when we had like first started seeing some success and raised some money and stuff, where he was like, oh, just expecting me to be like, enthusiastically yes.
+
+574
+00:37:11,040 --> 00:37:12,800
+He's like, oh, would you do it all again??
+
+575
+00:37:12,960 --> 00:37:15,840
+And I'm just like, I don't know.
+
+576
+00:37:16,000 --> 00:37:17,600
+I don't think that's a simple answer, right?
+
+577
+00:37:17,840 --> 00:37:19,520
+There was a lot, there was a lot of sacrifice.
+
+578
+00:37:20,080 --> 00:37:28,640
+I'll ask you that question, like with Apollo, especially now seeing how it all wound up and everything, like, would you, knowing what you know about the journey, like, would you have done it, would you do it again?
+
+579
+00:37:28,800 --> 00:37:31,120
+Oh my gosh, in a heartbeat, like, yeah, yeah.
+
+580
+00:37:31,360 --> 00:37:36,000
+Okay, see, I've made the wrong choice then in life because I go, like, oh man, I don't know.
+
+581
+00:37:36,160 --> 00:37:37,280
+It was pretty tough there for a few.
+
+582
+00:37:38,480 --> 00:37:40,400
+Well, let's give a little context real quick.
+
+583
+00:37:40,480 --> 00:37:42,720
+I don't know that everyone listening will know the full context.
+
+584
+00:37:43,280 --> 00:37:44,720
+So, Christian built out Apollo.
+
+585
+00:37:45,040 --> 00:37:46,480
+It became very successful.
+
+586
+00:37:46,800 --> 00:37:52,320
+I don't know if you ever did the indie h Hacker share numbers thing, but it seems like it was very successful.
+
+587
+00:37:52,560 --> 00:37:57,280
+I think it was the most liked and incredibly loved, a lot of very passionate users.
+
+588
+00:37:58,000 --> 00:38:00,240
+And then Reddit basically shut it down.
+
+589
+00:38:00,400 --> 00:38:06,240
+Like, it was going to charge a ridiculous fee for API access, which was untenable.
+
+590
+00:38:06,800 --> 00:38:11,520
+And yeah, we don't need to get into all that, but you had to like completely pull the plug.
+
+591
+00:38:11,840 --> 00:38:13,440
+So yeah, would you do it again?
+
+592
+00:38:14,080 --> 00:38:19,600
+Yeah, it's one of those things where it's like, it's easy to look at it and be like that last June, like there was a lot of strife.
+
+593
+00:38:19,680 --> 00:38:24,960
+Like that was probably like Apollo was, you mentioned a lot of sacrifices and a lot of like, you know, probably mental hardships over the years.
+
+594
+00:38:25,520 --> 00:38:26,960
+But like for Apollo, it was pretty smooth.
+
+595
+00:38:27,040 --> 00:38:28,880
+Like how fortunate I was is not lost in me.
+
+596
+00:38:29,200 --> 00:38:30,560
+It was very smooth for like the whole time.
+
+597
+00:38:30,720 --> 00:38:34,720
+And I think I kind of got the black hole dying star of strife all at once.
+
+598
+00:38:35,360 --> 00:38:43,760
+And that was rough, but it's one of those things where it's like, I don't know, I kind of think of it like a TV show where if you have a TV show you really like and it gets like nine seasons, you're like, holy shit.
+
+599
+00:38:44,800 --> 00:38:46,720
+And it actually has like kind of an exciting ending.
+
+600
+00:38:46,960 --> 00:38:47,920
+Right, right, exactly.
+
+601
+00:38:48,080 --> 00:38:51,120
+And so it's hard to be like, oh man, we only got nine seasons.
+
+602
+00:38:51,360 --> 00:38:53,440
+Like, no, that's freaking awesome.
+
+603
+00:38:53,520 --> 00:38:54,560
+Like it was a great run.
+
+604
+00:38:54,880 --> 00:38:56,560
+I had a ton of time, ton of fun doing it.
+
+605
+00:38:56,720 --> 00:38:56,880
+Yeah.
+
+606
+00:38:57,040 --> 00:39:00,400
+And it's like, yeah, I just feel really fortunate that it was, it lasted as long as it did.
+
+607
+00:39:00,720 --> 00:39:00,800
+did.
+
+608
+00:39:01,040 --> 00:39:03,440
+And I got to build something so cool that influenced so many people.
+
+609
+00:39:03,520 --> 00:39:14,080
+And I got to meet so many different people like you folks and doing it that it's that it's hard to be grumpy about it would feel almost like insincere or lack of gratitude for, you know, kind of the cards that I was given.
+
+610
+00:39:14,400 --> 00:39:14,480
+Yeah.
+
+611
+00:39:15,040 --> 00:39:15,920
+Was there a part of you?
+
+612
+00:39:16,480 --> 00:39:18,480
+Sometimes, I mean, this is very joke.
+
+613
+00:39:18,640 --> 00:39:24,160
+I think anyone who works on something for a long time, you're just like, God damn, I wish I could go do something else some days.
+
+614
+00:39:24,560 --> 00:39:24,720
+Right?
+
+615
+00:39:24,880 --> 00:39:28,880
+Was there a part of you that was kind of relieved like, okay, I got a good clean out on this thing.
+
+616
+00:39:29,040 --> 00:39:30,640
+I don't do Reddit clients my whole life.
+
+617
+00:39:31,920 --> 00:39:45,760
+Honestly, like, it's a complex answer because I think when I was in the trenches with Apollo, like maybe through the chaos, I had like zero burnout just because like if I didn't want to work on it for a few days and just wanted to screw it off, like I didn't have any employees, like I could just do that.
+
+618
+00:39:45,840 --> 00:39:52,160
+And as a result of that freedom, Apollo still felt fresh to me like nine years in, and I was still having a ton of fun doing it.
+
+619
+00:39:52,320 --> 00:39:57,280
+So like I guess if you'd ask me when I was still maintaining it, I would have been like, no, like I could do this forever, like keep it coming.
+
+620
+00:39:57,440 --> 00:40:01,680
+But it was kind of one of those things where after it ended, I mean, I was suddenly able to do some like freed up some time.
+
+621
+00:40:01,840 --> 00:40:07,600
+I was able to work on some different projects that I had kind of had in the back of my head that I was like, oh, this kind of is nice in some ways.
+
+622
+00:40:07,760 --> 00:40:12,960
+Like I wasn't like hoping it would end, but like when it did, it definitely had some positives and some negatives.
+
+623
+00:40:12,960 --> 00:40:14,560
+positive and freed some stuff up in a fun way.
+
+624
+00:40:14,720 --> 00:40:25,200
+I mean, and not to constantly be bringing it back to venture world, but like because your basis was like your time and years and whatever, and you generally felt like those were well spent and you enjoyed it, you were clearly in the money, right?
+
+625
+00:40:25,440 --> 00:40:35,920
+Like the year and one investor had gotten a great return on the investment, and like so everybody, you know, it sucks for people who use app and maybe whatever, but, you know, everybody made money as they say.
+
+626
+00:40:36,240 --> 00:40:36,560
+Oh no.
+
+627
+00:40:36,800 --> 00:40:37,760
+And it sucks for me too.
+
+628
+00:40:37,840 --> 00:40:40,400
+Like it was like in financial ways and like.
+
+629
+00:40:40,800 --> 00:40:42,640
+It's not how you want to spend your time, right?
+
+630
+00:40:42,960 --> 00:40:44,160
+Dealing with No, no, no.
+
+631
+00:40:44,320 --> 00:40:46,240
+And I was having it like I'm trying to be appreciative.
+
+632
+00:40:46,400 --> 00:40:52,960
+Like it objectively sucks, but like it's one of those things where where it's like you had such a good run that it's hard to only look at the sock.
+
+633
+00:40:53,120 --> 00:40:58,400
+Like you had such Yeah, and then there's a question, I mean, like what's the long term ownership?
+
+634
+00:40:58,560 --> 00:41:01,360
+I think every business founder, indie person has to think about this.
+
+635
+00:41:01,520 --> 00:41:09,120
+I think if your inputs are low and whatever and it's just you, it's like, well, you can just shut it down, it's fine, or maybe you can sell it to someone, that's fine.
+
+636
+00:41:09,520 --> 00:41:11,600
+In some businesses, though, it gets more complicated, right?
+
+637
+00:41:11,840 --> 00:41:23,680
+Like, as it gets bigger, I think that's maybe the revenue cat thing and the venture back thing, I think probably more generally, is like your outcomes become, like just shutting it down because like, oh, we lost our main thing and whatever.
+
+638
+00:41:27,120 --> 00:41:28,160
+Yeah, there's probably a few more.
+
+639
+00:41:28,320 --> 00:41:28,400
+Yeah.
+
+640
+00:41:28,560 --> 00:41:30,320
+Probably like, okay, we have to figure this out.
+
+641
+00:41:30,400 --> 00:41:31,520
+Like, I have to do something different.
+
+642
+00:41:31,680 --> 00:41:36,240
+And maybe, you know, maybe the better option for the people would be just to, like, you know, take your chips and go home.
+
+643
+00:41:36,480 --> 00:41:38,720
+And I don't think people always make the rational decision there.
+
+644
+00:41:39,120 --> 00:41:41,920
+Or maybe rational for the investors, but not rational for the people involved.
+
+645
+00:41:42,240 --> 00:41:44,400
+So there's some amount of blessing and a clean ending.
+
+646
+00:41:44,480 --> 00:41:45,280
+And, uh, and, uh, yeah.
+
+647
+00:41:45,440 --> 00:41:47,760
+Like the final season, season finale was really intense.
+
+648
+00:41:48,240 --> 00:41:49,040
+It was, yeah, yeah.
+
+649
+00:41:49,280 --> 00:41:51,280
+On Rotten Tomatoes, it's like strong all the way through.
+
+650
+00:41:51,360 --> 00:41:52,480
+So, like, That's true.
+
+651
+00:41:52,880 --> 00:41:53,840
+Yeah, no, I'll take that.
+
+652
+00:41:54,000 --> 00:41:54,480
+I'll take that.
+
+653
+00:41:54,800 --> 00:42:00,800
+One of the things I've always been curious about since last year, and you and I haven't talked about this, maybe you've talked about this on another podcast.
+
+654
+00:42:01,360 --> 00:42:15,280
+or something, but with the subscription model, you could have potentially raised the price to a point and lowered your API call, like being more stingy with the API calls to maybe find the right balance.
+
+655
+00:42:15,520 --> 00:42:26,240
+Like, did you go through that process in that whatever it was, like two months of kind of back and forth with Reddit of like, can I actually make this thing work under this new paradigm?
+
+656
+00:42:26,720 --> 00:42:27,280
+Yeah, for sure.
+
+657
+00:42:27,440 --> 00:42:32,720
+Like, and I talked to like so many people in the community, like giving numbers and kind of being like, how do we see a path forward here?
+
+658
+00:42:33,040 --> 00:42:43,520
+And it was kind of one of those things where like the biggest thing that I think put everything in the shitter was that they basically gave 30 days from the day they announced the pricing to when you would start incurring fees.
+
+659
+00:42:43,840 --> 00:42:50,080
+And in Apollo's case, it was in the realm of like 20 million dollars a year, which was like far beyond anything Apollo was making.
+
+660
+00:42:50,320 --> 00:42:56,800
+It was very much like, these costs are going to hit a brick very, very soon, so like, what do I do about that?
+
+661
+00:42:57,120 --> 00:43:06,240
+And there was the aspect of like, I have a certain amount of existing subscribers that have a locked in fee that I can increase because inherently how subscriptions work.
+
+662
+00:43:06,560 --> 00:43:16,160
+There was a lot of calculus around that, and it ultimately came down to maybe if there was more time, something I could have maybe steered the ship in a different direction and made something work.
+
+663
+00:43:16,560 --> 00:43:19,120
+But just the speed at which they forced everything to happen.
+
+664
+00:43:19,760 --> 00:43:24,320
+I think about how when Apple bought Dark Sky, I think they gave like eighteen months before the API was turned off.
+
+665
+00:43:24,480 --> 00:43:26,320
+And I think they extended like six months beyond that.
+
+666
+00:43:26,480 --> 00:43:27,840
+So it was like having thirty days.
+
+667
+00:43:28,160 --> 00:43:33,040
+And it wasn't only switching out like your weather API source, it was like switching out like the API source.
+
+668
+00:43:33,360 --> 00:43:34,400
+It was very aggressive.
+
+669
+00:43:34,640 --> 00:43:43,280
+But like it's one of those things where even if I was like hibernated Apollo for like a few months, sort out all the things and then like resurrected it with like a new pricing model.
+
+670
+00:43:43,680 --> 00:43:47,040
+It's one of those things where like even playing that back, like the math just didn't make sense.
+
+671
+00:43:47,040 --> 00:43:48,720
+Yeah, I mean you get this twenty dollar E twenty.
+
+672
+00:43:48,720 --> 00:43:51,360
+This $20 million, $20 million a year base expense, right?
+
+673
+00:43:51,520 --> 00:43:53,280
+Like, so like you get, okay, great.
+
+674
+00:43:53,440 --> 00:43:54,400
+You get everybody to cover that.
+
+675
+00:43:54,560 --> 00:43:55,440
+What's left for Christian?
+
+676
+00:43:55,600 --> 00:43:56,880
+Like, what's left to like invest?
+
+677
+00:43:57,280 --> 00:44:07,680
+It was like I would have these astronomical costs that, by the way, like one of the discussions I was having with Reddit was like, are you able to like, could we sign a contract where like these costs would be fixed at least for a year or two period?
+
+678
+00:44:08,160 --> 00:44:15,440
+Just so, like, say, I make this work and six months down the road, you don't go, Oh shit, like our clandestine attempt to kill these apps didn't work.
+
+679
+00:44:15,600 --> 00:44:16,720
+Let's double the prices again.
+
+680
+00:44:16,880 --> 00:44:17,920
+Like, so that wouldn't happen.
+
+681
+00:44:18,160 --> 00:44:19,440
+They couldn't guarantee anything like that.
+
+682
+00:44:19,760 --> 00:44:30,080
+So there was this, like, the financials just didn't really make sense where I'd be like, having to charge far beyond what I felt a Reddit app was worth, only to get like pennies back on the dollar for my work there.
+
+683
+00:44:30,720 --> 00:44:38,720
+And at the same time building on this incredibly scraggy foundation of it really seems like they don't want developers on their platform anymore.
+
+684
+00:44:38,960 --> 00:44:44,960
+You're kind of in there in like a renter squatting where you're like you're legally maybe entitled to it, but nobody wants you there.
+
+685
+00:44:45,200 --> 00:44:48,880
+And like that feels like a very shaky foundation to build a long term product on.
+
+686
+00:44:49,120 --> 00:44:54,000
+Were you convinced like that was the goal was just to shake off all the clients, like the third party clients?
+
+687
+00:44:54,240 --> 00:44:55,360
+Yeah, one hundred percent.
+
+688
+00:44:55,600 --> 00:45:01,760
+I don't know anything, but I'm just curious why they didn't just say like, hey, we're just shutting down all third party clients because it's required for our business.
+
+689
+00:45:02,000 --> 00:45:05,360
+Do you think they would just have a bigger uprising from the greater Reddit first?
+
+690
+00:45:06,560 --> 00:45:21,520
+I want to say it was like this big they thought it through a lot but it genuinely didn't seem like that because like one of the things that was the weirdest about it was like this all happened in like May and like the January I had like an annual call with Reddit and they were like no, everything's great with the API.
+
+691
+00:45:21,600 --> 00:45:27,440
+We're hoping to make some changes to like maybe what's available but we're like no really big changes to the API this year that we have like planned in any capacity.
+
+692
+00:45:27,600 --> 00:45:30,640
+And it was like three months later and they're like actually it's going to be twenty million dollars a year.
+
+693
+00:45:30,720 --> 00:45:32,640
+And I was like whoa that's like a big change from January.
+
+694
+00:45:32,880 --> 00:45:34,960
+Sounds like someone's running founder mode inside that company.
+
+695
+00:45:35,200 --> 00:45:36,240
+Yeah, yeah, yeah, exactly.
+
+696
+00:45:37,360 --> 00:45:41,200
+In my head, they were like, we can't just say we're shutting down all the apps because pandemonia will break out.
+
+697
+00:45:41,280 --> 00:45:44,960
+So we're gonna have this kind of like, maybe if we just wrap it up like we're just choking them to death.
+
+698
+00:45:46,400 --> 00:45:47,440
+Maybe that will go over better.
+
+699
+00:45:47,840 --> 00:45:48,320
+I hope not.
+
+700
+00:45:48,640 --> 00:45:56,480
+If I had to do that for a business reason, and maybe I would, maybe this will probably be tested on this at some point, I'd hope I would just be like, yo, this is what we're doing.
+
+701
+00:45:56,640 --> 00:45:57,760
+We're going to IPO this year.
+
+702
+00:45:57,920 --> 00:46:00,000
+We don't want anyone viewing Reddit, not on Reddit.
+
+703
+00:46:00,160 --> 00:46:02,640
+So we're going to be, we're going to be, this is why we're doing this.
+
+704
+00:46:02,800 --> 00:46:02,880
+So.
+
+705
+00:46:03,360 --> 00:46:08,400
+And I genuinely think myself and everyone else would have kind of appreciated that a little bit more because it would have been more genuine.
+
+706
+00:46:08,480 --> 00:46:08,560
+Yeah.
+
+707
+00:46:09,280 --> 00:46:11,040
+If you're going to screw someone, just tell them why.
+
+708
+00:46:11,280 --> 00:46:14,640
+You just tell them, well, one, okay., so don't even tell them why, just tell them you're screwing them.
+
+709
+00:46:14,720 --> 00:46:16,160
+Yeah, guess I'm doing this to screw you.
+
+710
+00:46:16,240 --> 00:46:17,040
+Okay, cool.
+
+711
+00:46:17,520 --> 00:46:17,840
+Yeah, we know.
+
+712
+00:46:18,160 --> 00:46:19,360
+Yeah, at least being safe for it.
+
+713
+00:46:19,760 --> 00:46:21,120
+We could save a lot of phone calls.
+
+714
+00:46:21,280 --> 00:46:22,400
+Right, right, exactly.
+
+715
+00:46:22,720 --> 00:46:28,320
+And it was even like the stringing along throughout the phone calls, kind of like, Oh, no, no, no, we have your best interests in mind.
+
+716
+00:46:28,480 --> 00:46:29,520
+Like, this is all well.
+
+717
+00:46:29,840 --> 00:46:35,840
+Sorry to keep bringing it back to FounderMode stuff, but I do feel like employees at a company just don't necessarily feel empowered to say that, right?
+
+718
+00:46:36,160 --> 00:46:38,560
+Like they might know, maybe there wasn't a directive.
+
+719
+00:46:38,720 --> 00:46:46,000
+They might know that that's the strategy, whatever, but like it's just hard to say stuff like that when you're not, you know, and the bug doesn't stop with you, you know?
+
+720
+00:46:46,320 --> 00:46:50,160
+And then when you and then when there's an asymmetry where it's like like, you're the whole guy, you're the whole thing.
+
+721
+00:46:50,240 --> 00:46:54,480
+You can say and do, you can act as Apollo with unanimity, but they can't, right?
+
+722
+00:46:54,720 --> 00:46:58,080
+So there's like this real agency asymmetry when you're dealing with folks.
+
+723
+00:46:58,640 --> 00:47:10,880
+I don't know if it was that removed though, because like in normal cases, sure, but the guy I was talking to was like right below CEO level and was like the CEO was like cced in a lot of the emails and was like very private to the conversation.
+
+724
+00:47:11,040 --> 00:47:14,320
+So it wasn't like, I don't think there was really any disconnect there.
+
+725
+00:47:14,640 --> 00:47:23,040
+Like if I had to guess again, this is just guessing, but like from it seemed like there was like they're IPOing and there was like a kind of like a quick rush out the door to kind of wrap up these loose ends.
+
+726
+00:47:23,200 --> 00:47:26,400
+Yeah, there's a lot going on at a company when you're getting ready to IPO.
+
+727
+00:47:26,480 --> 00:47:26,960
+It's crazy.
+
+728
+00:47:27,120 --> 00:47:27,200
+Yeah.
+
+729
+00:47:27,440 --> 00:47:29,040
+And they were like, okay, we've got this loose end.
+
+730
+00:47:29,200 --> 00:47:29,840
+We need to tie it up.
+
+731
+00:47:30,000 --> 00:47:31,040
+Like, who has an idea?
+
+732
+00:47:31,440 --> 00:47:32,720
+And maybe the idea wasn't.
+
+733
+00:47:34,640 --> 00:47:35,760
+They can't all be hits.
+
+734
+00:47:36,000 --> 00:47:36,800
+No, no, no.
+
+735
+00:47:36,960 --> 00:47:38,080
+And you can't blame them for that.
+
+736
+00:47:38,240 --> 00:47:39,040
+And I guess it worked.
+
+737
+00:47:39,280 --> 00:47:41,760
+Are there any extant like Reddit third party clients?
+
+738
+00:47:42,080 --> 00:47:46,480
+I think there's like a few, but from I don't hear much about them and I don't think they're necessarily doing well.
+
+739
+00:47:46,640 --> 00:47:56,880
+It's one of those things where and it's tricky because even if you look at like the revenue numbers of a company, it's like when ninety percent of your revenue goes towards paying the bills, it's like Yeah, it's like it's not a great business, right?
+
+740
+00:47:57,040 --> 00:48:01,120
+Were you like a substantial number of their DAUs that they would even that it even made a difference??
+
+741
+00:48:01,520 --> 00:48:04,400
+Apollo was the biggest third party app.
+
+742
+00:48:04,640 --> 00:48:05,360
+I knew that much.
+
+743
+00:48:05,760 --> 00:48:07,520
+But I imagine their first party was still bigger.
+
+744
+00:48:07,840 --> 00:48:08,640
+Oh, 100%.
+
+745
+00:48:09,040 --> 00:48:10,400
+Like probably like order of magic.
+
+746
+00:48:10,640 --> 00:48:12,480
+That was one of the funniest things of one of the phone calls.
+
+747
+00:48:12,560 --> 00:48:15,680
+They were like, Do you know what percentage of our users you are?
+
+748
+00:48:15,920 --> 00:48:18,640
+And I was like, No, like I wouldn't know that.
+
+749
+00:48:19,520 --> 00:48:20,320
+And I was like, Yeah.
+
+750
+00:48:20,560 --> 00:48:22,160
+And I was like, No, like what percentage?
+
+751
+00:48:22,240 --> 00:48:23,680
+And they were like, Oh, no, we're not sure.
+
+752
+00:48:23,920 --> 00:48:25,200
+I was like, I have the numerator.
+
+753
+00:48:25,440 --> 00:48:26,320
+I don't have the denominator.
+
+754
+00:48:26,640 --> 00:48:27,280
+Right, right, right.
+
+755
+00:48:27,440 --> 00:48:31,920
+And I was like, What a weird question to ask where like, obviously I don't know, but seemingly you don't have the.
+
+756
+00:48:32,560 --> 00:48:36,320
+For all the venture back companies out there that are worried that you'll never get to IPO, Reddit got there.
+
+757
+00:48:36,480 --> 00:48:37,600
+They did it through all of it.
+
+758
+00:48:37,840 --> 00:48:38,640
+They figured it out.
+
+759
+00:48:38,880 --> 00:48:40,160
+You can do it too, you know?
+
+760
+00:48:40,560 --> 00:48:41,440
+Just a lot of chaos.
+
+761
+00:48:41,920 --> 00:48:43,200
+Twenty years or whatever it was.
+
+762
+00:48:43,360 --> 00:48:44,640
+You know, it might take you a few.
+
+763
+00:48:44,880 --> 00:48:46,320
+It might take you a few, but you'll get there.
+
+764
+00:48:46,400 --> 00:48:47,360
+There's hope for all of us.
+
+765
+00:48:47,840 --> 00:48:51,280
+Well, I did want to talk about some of your projects post Apollo.
+
+766
+00:48:52,000 --> 00:48:54,480
+Starting a farm, moving, moving, moving, moving, moving.
+
+767
+00:48:54,480 --> 00:48:56,240
+I've heard some mixed reports about that.
+
+768
+00:48:56,800 --> 00:48:57,520
+A lot of wasps.
+
+769
+00:48:57,920 --> 00:49:04,000
+Because I'm an avid user of one of your current projects, which is Juno on the Apple Vision Pro.
+
+770
+00:49:04,560 --> 00:49:05,280
+How has that gone?
+
+771
+00:49:05,440 --> 00:49:07,040
+I think a lot of people, I'm curious.
+
+772
+00:49:07,600 --> 00:49:12,960
+I think I'm especially curious why you didn't make it a subscription after, because I don't know what I'm thinking.
+
+773
+00:49:12,960 --> 00:49:16,160
+Because, like, I don't know what I paid, what, the five bucks up front like in January?
+
+774
+00:49:16,480 --> 00:49:20,080
+And it's pretty much the only app I use on Vision Pro.
+
+775
+00:49:21,280 --> 00:49:24,800
+And I, and I use it like, you know, on a weekly basis.
+
+776
+00:49:25,040 --> 00:49:28,640
+I would say most of my ideas don't come from a place of logic inherently.
+
+777
+00:49:30,800 --> 00:49:37,840
+I think it was one of those things where it was like, it was very much like, I think like the week before the Vision Pro came out, YouTube was like, eh, we're not going to do it.
+
+778
+00:49:38,000 --> 00:49:43,840
+And I was like, oh, I have all this like code from Apollo for handling like YouTube embeds that I could probably like spin off into an app really quickly.
+
+779
+00:49:43,920 --> 00:49:47,680
+Like, and again, the same thing where I'm like, if only like, I want to watch YouTube on the Vision Pro.
+
+780
+00:49:47,920 --> 00:49:49,840
+If I'm the only person who uses this app, fine.
+
+781
+00:49:49,920 --> 00:49:51,280
+So I was like, oh, I'll build it.
+
+782
+00:49:51,360 --> 00:49:53,520
+And I was like, oh, like, and again, it was a very short period of time.
+
+783
+00:49:53,600 --> 00:49:55,760
+So I was like, I'll just throw like five bucks on it.
+
+784
+00:49:55,840 --> 00:49:59,680
+That seems like if you paid three grand for a headset, like you can afford five bucks.
+
+785
+00:50:00,000 --> 00:50:01,920
+It wasn't like a grand plan.
+
+786
+00:50:02,480 --> 00:50:08,800
+You're underestimating your grand strategy there, but you saw that YouTube wasn't going to take their property, like they weren't going to claim their right, right?
+
+787
+00:50:09,040 --> 00:50:10,240
+And you were like, ah, great.
+
+788
+00:50:10,480 --> 00:50:11,840
+There's a Christian shape hole right here.
+
+789
+00:50:12,400 --> 00:50:12,720
+Exactly.
+
+790
+00:50:13,040 --> 00:50:26,000
+Because it was like they have this excellent, like, full documentation on, like, this YouTube embedding capability because, like, it's so common that you want to do it in, like, apps, for instance, like Twitter or something where, like, someone posts a YouTube video and you're like, how do I play that without k throwing them out to Safari or YouTube.
+
+791
+00:50:26,560 --> 00:50:30,320
+So they have this, it's basically just like an iframe where you can just play the YouTube video there.
+
+792
+00:50:30,400 --> 00:50:31,040
+And I'm like, great.
+
+793
+00:50:31,200 --> 00:50:32,240
+I used that in Apollo for years.
+
+794
+00:50:32,640 --> 00:50:33,760
+I'll just play the video there.
+
+795
+00:50:34,080 --> 00:50:39,920
+And since it's just an iframe and they give you some level of controls, I can manipulate it a little bit to make it look a little bit more Vision OS.
+
+796
+00:50:40,640 --> 00:50:41,600
+And it's been a lot of fun.
+
+797
+00:50:41,760 --> 00:50:47,920
+Like it was it was such a fun rush again to be like, oh shit, I got a week to build this or like two weeks or whatever it was.
+
+798
+00:50:48,080 --> 00:50:49,600
+And just like, what features are important?
+
+799
+00:50:49,920 --> 00:50:50,640
+Like, what can I build?
+
+800
+00:50:50,800 --> 00:50:54,320
+And I really went back into that like early Apollo mode of just scrambling it out the door.
+
+801
+00:50:54,560 --> 00:50:56,880
+And I remember like we didn't get the Vision Pro in Canada.
+
+802
+00:50:57,040 --> 00:50:59,280
+So I ended up like driving down to New Hampshire to get it.
+
+803
+00:50:59,520 --> 00:51:03,600
+And I remember like, chargering at a supercharger and like, seeing on my phone like, Oh, it's been approved.
+
+804
+00:51:03,760 --> 00:51:04,560
+I'm like, Oh, sick.
+
+805
+00:51:04,560 --> 00:51:04,960
+Okay, good.
+
+806
+00:51:05,120 --> 00:51:06,960
+The whole trip wasn't like worth, worthless.
+
+807
+00:51:07,600 --> 00:51:12,080
+So it was like, it was like that last minute that it was like launching the next morning and I like, finally got that approval.
+
+808
+00:51:12,160 --> 00:51:12,720
+It was a lot of fun.
+
+809
+00:51:12,960 --> 00:51:21,280
+It was one of those things where it's like, Yeah, even if the trip was so fun that like I didn't, especially with it being such a expensive headset, I didn't have like, Oh my God, this is going to be my next Apollo.
+
+810
+00:51:21,440 --> 00:51:22,640
+Like, this is going to make a ton of money.
+
+811
+00:51:22,720 --> 00:51:24,400
+It was kind of just like, I'm going to enjoy this.
+
+812
+00:51:24,480 --> 00:51:27,280
+Hopefully, it will be beneficial to other people who wanted to watch YouTube.
+
+813
+00:51:28,160 --> 00:51:35,680
+I think the positioning of the good media app experience, like, and it might not always be only YouTube, right?
+
+814
+00:51:36,160 --> 00:51:40,400
+Like you could you could imagine a world and like we're getting that foothold was definitely worth your two weeks.
+
+815
+00:51:40,560 --> 00:51:41,280
+And then you'll see.
+
+816
+00:51:41,360 --> 00:51:44,080
+It probably depends mostly on how the AVP plays out, right?
+
+817
+00:51:44,480 --> 00:51:45,200
+I'm curious about that.
+
+818
+00:51:45,280 --> 00:51:47,760
+Like have sales trickled to like almost nothing?
+
+819
+00:51:48,400 --> 00:51:49,040
+No, weirdly.
+
+820
+00:51:49,200 --> 00:51:55,360
+Like they've it's obviously like it's very much like Vision Pearl came out high point, like launch in other countries high point, but it didn't go to zero.
+
+821
+00:51:55,520 --> 00:51:58,080
+It still makes like, you know, like 100 bucks a day some days.
+
+822
+00:51:58,240 --> 00:52:01,200
+Like it's decent for like Yeah, it's a core utility, really.
+
+823
+00:52:01,520 --> 00:52:02,640
+I mean, it should be built in.
+
+824
+00:52:02,880 --> 00:52:03,200
+Exactly.
+
+825
+00:52:03,280 --> 00:52:03,840
+And that's the thing.
+
+826
+00:52:04,000 --> 00:52:12,000
+And I'm kind of like, I'm looking forward almost the day where like YouTube does come out with something because they can do so many things that I can't as like through the facilities I'm using.
+
+827
+00:52:12,400 --> 00:52:16,560
+It would be cool to see like a full fledged app that you can get really down to the nits and grits with.
+
+828
+00:52:16,880 --> 00:52:23,040
+Do you have any user analytics or I guess maybe even just app store to like understand what the use of the Vision Pro is?
+
+829
+00:52:23,200 --> 00:52:28,480
+It's kind of like this weird platform for Apple that's kind of like on the shelf a little bit.
+
+830
+00:52:28,960 --> 00:52:31,680
+Like, is it going to like totally flop?
+
+831
+00:52:31,920 --> 00:52:38,960
+Is it going to kind of, I mean, like I said, in my very limited time I have to use the Vision Pro, it's pretty much all I use in the Vision Pro.
+
+832
+00:52:39,200 --> 00:52:41,600
+It's like a kickback, put the Vision Pro on, watch a little YouTube.
+
+833
+00:52:41,920 --> 00:52:42,960
+It's like my wind down time.
+
+834
+00:52:43,280 --> 00:52:47,680
+It's honestly, like the Vision Pro, like not even my app specifically, but the Vision Pro is a great way to watch video.
+
+835
+00:52:47,920 --> 00:52:48,880
+Like, it really excels.
+
+836
+00:52:48,960 --> 00:52:49,200
+in that.
+
+837
+00:52:49,440 --> 00:52:50,560
+So it's like, I hear you.
+
+838
+00:52:50,720 --> 00:52:52,640
+Numbers wise, I don't have any like analytics.
+
+839
+00:52:52,880 --> 00:52:54,560
+I probably could check like App Store Connect.
+
+840
+00:52:54,720 --> 00:52:55,200
+I don't.
+
+841
+00:52:56,000 --> 00:52:58,480
+It's really hard because you don't have, you don't know the opt-in rate really.
+
+842
+00:52:58,640 --> 00:53:01,520
+So it's like getting absolute numbers is really tricky.
+
+843
+00:53:02,000 --> 00:53:02,400
+Exactly.
+
+844
+00:53:02,720 --> 00:53:10,160
+And it's one of those things where it's like, yeah, it's done well enough and people seem to be downloading it that it's never, it hasn't really mattered too much to me.
+
+845
+00:53:10,320 --> 00:53:17,040
+Like, if I had to guess, like, personally, I haven't, like, my Vision Pro usage has declined over the months and like, I don't use it as much as I used to.
+
+846
+00:53:17,200 --> 00:53:22,800
+And it wouldn't surprise me if that's reflected in the numbers where people try it, enjoy it, maybe put it in the closet and don't.
+
+847
+00:53:23,040 --> 00:53:27,280
+But it's cool that for a lot of people it, it seems like when they get the Vision Pro, it's an app they want to check out.
+
+848
+00:53:27,440 --> 00:53:27,520
+Yeah.
+
+849
+00:53:27,840 --> 00:53:29,280
+See, you have two big projects now, right?
+
+850
+00:53:29,440 --> 00:53:30,160
+That you're working on?
+
+851
+00:53:30,400 --> 00:53:31,600
+Yeah, that and Pixel Files.
+
+852
+00:53:31,760 --> 00:53:31,840
+Yeah.
+
+853
+00:53:32,400 --> 00:53:34,320
+I guess most of your time is spent on Pixel Files?
+
+854
+00:53:34,480 --> 00:53:36,240
+Well, or most of your time is on paddleboarding.
+
+855
+00:53:38,080 --> 00:53:39,760
+Oh man, I'm terrible at paddleboarding.
+
+856
+00:53:39,920 --> 00:53:40,800
+That's something I need to work on.
+
+857
+00:53:40,960 --> 00:53:44,480
+I'm just trying to pick a stereotypical, like Nova Scotia activity, if you like.
+
+858
+00:53:44,720 --> 00:53:46,160
+Yeah, ice skating, I think.
+
+859
+00:53:46,320 --> 00:53:48,080
+But no, no, no, I can't do that very well either.
+
+860
+00:53:48,480 --> 00:53:49,200
+I need a good example.
+
+861
+00:53:49,600 --> 00:53:52,960
+But no, like it comes back to me not being the best at like logic and business.
+
+862
+00:53:53,680 --> 00:53:59,840
+Pixel Files does very well and it makes like an order of magnitude more than Juno does, the YouTube Vision Pro app.
+
+863
+00:54:00,400 --> 00:54:05,440
+But it's like I was so enchanted by Division Pro for like three or four months that I just worked on that a ton.
+
+864
+00:54:05,600 --> 00:54:07,360
+You got nerd sniped, is what they call.
+
+865
+00:54:07,600 --> 00:54:07,920
+Basically.
+
+866
+00:54:08,080 --> 00:54:08,960
+Yeah, yeah, exactly.
+
+867
+00:54:09,120 --> 00:54:15,840
+I was just so enchanted by, like, even though the numbers were like, made nul sense to focus on that versus the other thing, it was just a lot of fun to work on.
+
+868
+00:54:16,000 --> 00:54:20,400
+So I ended up doing that for months and months and months, and I'm working on Pixel Pals a lot more this summer.
+
+869
+00:54:20,560 --> 00:54:26,320
+But yeah, I kind of got lost in the sauce a little there for a few months on what would be the most beneficial to work on.
+
+870
+00:54:26,480 --> 00:54:27,600
+But it was a lot of fun at least.
+
+871
+00:54:27,760 --> 00:54:37,840
+Pixel Pals is, I think, is really interesting as a project because I think most indie devs, they usually stay in utilities or like whatever, and it's kind of at an intersection of games and utilities, maybe, right?
+
+872
+00:54:38,480 --> 00:54:40,160
+And games are freaking lucrative.
+
+873
+00:54:40,320 --> 00:54:42,960
+Like, look at the app store games are still dominating.
+
+874
+00:54:43,040 --> 00:54:45,920
+Actually, actually, is it maybe its apps now are maybe fifty percent?
+
+875
+00:54:46,080 --> 00:54:46,800
+It's maybe equal.
+
+876
+00:54:47,040 --> 00:54:47,760
+But yeah, no point.
+
+877
+00:54:48,080 --> 00:54:56,080
+And it's a lot, like, it's kind of like the Vision Pro where it's like, yeah, we stay in the utilities lane so long that having something that's like, not at all in that area is kind of like you're stretching different muscles.
+
+878
+00:54:56,320 --> 00:54:56,400
+Yeah.
+
+879
+00:54:56,560 --> 00:54:58,560
+And there's just like more creative surface area.
+
+880
+00:54:58,720 --> 00:55:02,480
+Like, nothing, you don't have to do stuff because people ask for a purpose, right?
+
+881
+00:55:02,720 --> 00:55:05,200
+You can just like build cool things because they're cute.
+
+882
+00:55:05,280 --> 00:55:06,880
+Like, and it's fully for the art, you know?
+
+883
+00:55:07,200 --> 00:55:07,840
+It's a lot of fun.
+
+884
+00:55:08,000 --> 00:55:09,360
+And you get to work like with Apollo.
+
+885
+00:55:09,600 --> 00:55:12,960
+Like, the extent I would work with the designers normally is to get custom app icons done.
+
+886
+00:55:13,280 --> 00:55:16,560
+But with PixelPouse, you can get a lot of pixel art done by some really talented people.
+
+887
+00:55:17,120 --> 00:55:19,840
+Because I was going to ask the next is like, are you doing the creative fully or?
+
+888
+00:55:20,240 --> 00:55:24,800
+No, I'd love if I could do that because pixel art is like, I don't know, it's so nostalgic.
+
+889
+00:55:25,120 --> 00:55:26,400
+That would be a really cool art form to get into.
+
+890
+00:55:26,640 --> 00:55:31,840
+It's one of those things where I think I would, Dunning Kruger myself, and be like, oh, it's just squares, right?
+
+891
+00:55:32,000 --> 00:55:34,640
+Like I could just draw squares and then you're like, no, I absolutely can't do this.
+
+892
+00:55:34,720 --> 00:55:40,160
+No, no, it's like a cross stitching and all that stuff where it's like, it seems simple at the surface, but there's definitely an art to it.
+
+893
+00:55:40,240 --> 00:55:47,840
+And it frees up a lot of time where, like, I don't know, with engineering where you iterate until a point where you're like, it's fast enough, it works well enough, you know, ship it.
+
+894
+00:55:48,080 --> 00:55:58,720
+Where it's like the few times I've attempted pixel art, like you shift a pixel right and then left and up and down and you're like, ah, ah, ah, like there's no definitive like this is done and you can kind of get lost in the weeds there.
+
+895
+00:55:58,800 --> 00:56:01,520
+It just, it becomes easier to like let the professional handle that.
+
+896
+00:56:01,920 --> 00:56:08,320
+That might be a hallmark of good artists is like they can just know when it's done, you know, like just know like, oh, it's good enough.
+
+897
+00:56:08,560 --> 00:56:09,600
+You know, like I can ship this.
+
+898
+00:56:09,680 --> 00:56:11,760
+I've seen enough things I can ship and this is on the level.
+
+899
+00:56:12,320 --> 00:56:14,720
+But even that, I think peer reviews and stuff like that is helpful.
+
+900
+00:56:14,960 --> 00:56:27,280
+I worked on an iPhone game for a little while and definitely when you had a couple of artists versus one, like it was a much better process because like the artists could then review and like cross check, criticize each other's work, which is true for programming too.
+
+901
+00:56:27,360 --> 00:56:33,840
+I think in a lot of cases, have you ever, I mean, I've mentioned Apple, but have you ever, like, worked with other programmers, like, had your code criticized and stuff?
+
+902
+00:56:34,320 --> 00:56:35,920
+Not since like university.
+
+903
+00:56:36,160 --> 00:56:37,360
+No, I don't think so.
+
+904
+00:56:37,680 --> 00:56:39,280
+You're like one of those untouched tribes.
+
+905
+00:56:39,680 --> 00:56:42,800
+Like your code is probably just like, oh, it's mayhem.
+
+906
+00:56:42,960 --> 00:56:51,760
+There's, oh yeah, there were some, there were some files in Apollo that were like, I'm sure broke like the Geneva Convention in terms of like, what you what you were allowed to be doing.
+
+907
+00:56:52,160 --> 00:56:53,440
+There's a real freedom in it though.
+
+908
+00:56:53,600 --> 00:56:54,640
+There's a real freedom in it.
+
+909
+00:56:54,960 --> 00:56:55,680
+And I understood it.
+
+910
+00:56:55,760 --> 00:56:56,720
+So that's coding.
+
+911
+00:56:56,960 --> 00:56:57,360
+Founder mode.
+
+912
+00:56:57,520 --> 00:56:59,040
+We're going to keep bringing it back to founder mode.
+
+913
+00:56:59,200 --> 00:57:00,800
+It's like just just just just do what you have to do.
+
+914
+00:57:00,800 --> 00:57:01,280
+Just do what you have to do.
+
+915
+00:57:01,760 --> 00:57:04,800
+You could probably move really fast and it's debt you took and you don't care.
+
+916
+00:57:05,040 --> 00:57:05,840
+It might not even be debt.
+
+917
+00:57:06,000 --> 00:57:08,320
+It's only debt if it prevents you from doing something in the future, right?
+
+918
+00:57:08,480 --> 00:57:10,000
+Otherwise, it's just free money, right?
+
+919
+00:57:10,320 --> 00:57:13,440
+And a lot of the time it was like debt in terms of like, I think this is a good way to do it.
+
+920
+00:57:13,520 --> 00:57:16,320
+And then like, you know, a year or two goes by and you become a better programmer.
+
+921
+00:57:16,640 --> 00:57:20,480
+That's the worst, honestly, those are the worst debts that you take when you don't even realize it's a debt.
+
+922
+00:57:20,720 --> 00:57:32,400
+You're like, I'm just doing this because I think this is like the right architecture and you do a half decent job and then you realize later like there's so many things in revenue cat that Miguel and I made decisions on in 2017, 2018 where I'm like, why are we still having this bug?
+
+923
+00:57:32,560 --> 00:57:36,800
+And it's like, well sir, because in 2017 you decided to make this all one SQL table.
+
+924
+00:57:37,120 --> 00:57:38,400
+And I'm like, fair enough.
+
+925
+00:57:38,720 --> 00:57:38,800
+Yeah.
+
+926
+00:57:39,280 --> 00:57:39,840
+Get lame.
+
+927
+00:57:40,240 --> 00:57:40,320
+Yeah.
+
+928
+00:57:40,960 --> 00:57:41,040
+No.
+
+929
+00:57:41,520 --> 00:57:52,160
+But it's like when you're not maybe at such a big company in some ways, it's kind of fun to like look back on those things with new, better eyes and be like, Oh my God, like that was such a dumb way to tackle that.
+
+930
+00:57:52,320 --> 00:57:55,440
+Like I can do that in half the lines of code with half the bugs.
+
+931
+00:57:55,680 --> 00:58:00,640
+Like it's like going back to and playing soccer against like your elementary school team.
+
+932
+00:58:00,880 --> 00:58:02,000
+It's like, yeah, this is easy.
+
+933
+00:58:02,160 --> 00:58:03,040
+Like these kids suck.
+
+934
+00:58:03,200 --> 00:58:05,440
+Like where there's a certain fun to that sometimes.
+
+935
+00:58:05,680 --> 00:58:09,600
+But yeah, it becomes like anything where if there's too much of it, it kind of bugs down the whole project.
+
+936
+00:58:09,840 --> 00:58:09,920
+Yeah.
+
+937
+00:58:10,240 --> 00:58:12,160
+But you know, but you don't necessarily need to address it.
+
+938
+00:58:12,640 --> 00:58:15,920
+I think this was one thing Miguel and I, I think, debated.
+
+939
+00:58:16,080 --> 00:58:21,600
+And then I think in the past I've worked in places where we were much more delicate with like our architecture and all this stuff.
+
+940
+00:58:21,680 --> 00:58:22,800
+We never wanted to create debt.
+
+941
+00:58:23,040 --> 00:58:32,000
+And I think one of the things we did well at RevenueCat was being like, we're going to consciously create some debt and just know that like some of it's going to get thrown away, but be judicious with where we do it.
+
+942
+00:58:32,160 --> 00:58:33,040
+And that's been huge.
+
+943
+00:58:33,200 --> 00:58:33,920
+We take debt all the time.
+
+944
+00:58:34,320 --> 00:58:35,520
+Well, you're VC funded.
+
+945
+00:58:35,920 --> 00:58:36,000
+Yeah.
+
+946
+00:58:37,680 --> 00:58:38,640
+Okay, equity and debt.
+
+947
+00:58:38,800 --> 00:58:44,400
+David, we need to do a one hundred one because like these are things like equity and debt, totally different vehicles and they have different consequences.
+
+948
+00:58:44,640 --> 00:58:45,840
+And also people do take debt.
+
+949
+00:58:46,000 --> 00:58:47,520
+It's called venture debt and it's super.
+
+950
+00:58:47,920 --> 00:58:51,520
+That's actually the dangerous stuff in some cases, but we'll do a whole podcast on it.
+
+951
+00:58:51,840 --> 00:58:52,800
+I don't honestly enjoy that.
+
+952
+00:58:52,960 --> 00:58:57,120
+Next time I'm having a debate with people on Twitter about it, everyone can be informed.
+
+953
+00:58:57,200 --> 00:58:57,920
+Oh yeah, yeah.
+
+954
+00:58:58,000 --> 00:59:00,640
+I'm sure that will make Twitter debates more enjoyable for you.
+
+955
+00:59:02,480 --> 00:59:03,440
+Go listen to my podcasts.
+
+956
+00:59:03,840 --> 00:59:05,360
+Aren't changing the world with our podcasts.
+
+957
+00:59:05,680 --> 00:59:09,200
+I'm saying your tweets change the world and your podcasts are kind of like a separate thing.
+
+958
+00:59:09,360 --> 00:59:11,280
+Yeah, you know, that's what I'm here for.
+
+959
+00:59:11,360 --> 00:59:18,320
+So, well, Christian, it's been so much fun chatting about all this and we did kind of wind around, but should we talk about founder mode one more time?
+
+960
+00:59:18,480 --> 00:59:20,560
+I think maybe a little light on that.
+
+961
+00:59:22,000 --> 00:59:30,160
+I think for a lot of folks, hopefully, this is going to be a freereeing conversation of, hey, I don't have to have all my shit together to go build something.
+
+962
+00:59:30,640 --> 00:59:31,360
+Just look at this mess.
+
+963
+00:59:31,600 --> 00:59:32,560
+Look how successful that's.
+
+964
+00:59:32,640 --> 00:59:33,440
+Yeah, yeah.
+
+965
+00:59:33,920 --> 00:59:35,680
+Hey, someone finally said it.
+
+966
+00:59:38,000 --> 00:59:45,280
+But like, ultimately, I think the takeaway from this conversation is like, users are what matter and like creating value for them.
+
+967
+00:59:45,520 --> 00:59:58,800
+And what you did incredibly well without process because you were very passionate and found a community and what people need to do even if, even if they can't, you know, form a subreddit of passionate people who are going to kind of, I like what you said.
+
+968
+01:00:01,120 --> 01:00:02,640
+Your subreddit kind of managed you.
+
+969
+01:00:03,120 --> 01:00:07,520
+Even if you can't build that kind of community around your app, you need to be talking to users.
+
+970
+01:00:07,600 --> 01:00:15,520
+I mean, something we do a ton at RevenueCat, which I deeply appreciate about our culture, is that you can't let the users drive the ship.
+
+971
+01:00:16,000 --> 01:00:21,680
+But if you're going to build a ship that people are going to get on, you have to make sure that they're going to find something valuable.
+
+972
+01:00:21,840 --> 01:00:22,880
+It's a trip they want to take.
+
+973
+01:00:23,280 --> 01:00:28,560
+I think that's something you've done incredibly well without all the fluff and the process and the BS.
+
+974
+01:00:29,040 --> 01:00:31,440
+It's like you did it your way and you were successful at it.
+
+975
+01:00:31,680 --> 01:00:32,720
+And like I said, you're what?
+
+976
+01:00:33,200 --> 01:00:33,680
+Three for four.
+
+977
+01:00:33,920 --> 01:00:36,000
+Like three of your apps are incredibly loved.
+
+978
+01:00:36,480 --> 01:00:50,560
+I mean, again, I'm a Juno user, even though it was like this side project you just tossed out in a week, it fulfilled a need and like is a genuinely great experience on the Apple Vision Pro that I wouldn't be having in the Safari YouTube experience.
+
+979
+01:00:50,880 --> 01:00:51,520
+I totally agree.
+
+980
+01:00:51,760 --> 01:00:59,920
+I feel like our industry, like one of the worst, like not even like gatekeepy, but accidentally gatekeepy things is I think we make it seem like we're like wizards over here or something.
+
+981
+01:01:00,240 --> 01:01:04,080
+And it's like people are like, Oh my God, like I could never do programming or I could never build an app.
+
+982
+01:01:04,320 --> 01:01:05,520
+That's like crazy stuff.
+
+983
+01:01:05,680 --> 01:01:06,880
+But it's like, it's really not.
+
+984
+01:01:06,960 --> 01:01:08,640
+Like, you don't need a lot of processes.
+
+985
+01:01:08,720 --> 01:01:11,680
+You just need a good idea and like the conviction to want to see it come to fruition.
+
+986
+01:01:11,680 --> 01:01:17,440
+But like, you look at, like, Colonel Sanders, like, you know, you just had a good recipe and you just wanted to make some chicken and like, it works.
+
+987
+01:01:17,520 --> 01:01:20,640
+Like, you just have to have a good idea and you want to, you've got to want to see it happen.
+
+988
+01:01:20,720 --> 01:01:21,200
+But yeah, yeah.
+
+989
+01:01:21,360 --> 01:01:29,440
+I just mean, it's, yeah, there's a lot of processes that I think, like, for people from the outside, look very intimidating that I think you can break down a lot of those walls and it's, it's not as bad as it looks.
+
+990
+01:01:29,760 --> 01:01:32,880
+Okay, anything you want to share as we wrap up, I guess people can follow you on Twitter.
+
+991
+01:01:33,200 --> 01:01:35,040
+You've got a bursting YouTube career.
+
+992
+01:01:35,200 --> 01:01:39,200
+I actually freaking loved your YouTube video on building your own keyboard.
+
+993
+01:01:39,440 --> 01:01:40,400
+It was incredible.
+
+994
+01:01:40,560 --> 01:01:41,200
+Watch the whole thing.
+
+995
+01:01:41,440 --> 01:01:42,160
+Send it to my son.
+
+996
+01:01:42,480 --> 01:01:44,560
+We're both like, a little bit of keyboard nerd.
+
+997
+01:01:44,640 --> 01:01:46,000
+So, oh, that's awesome.
+
+998
+01:01:46,160 --> 01:01:46,560
+You're my people.
+
+999
+01:01:46,640 --> 01:01:48,000
+Yeah, no, it's, it's like anything.
+
+1000
+01:01:48,000 --> 01:01:51,520
+It's just you want to do something and you put it out in the world and hope people enjoy it too.
+
+1001
+01:01:51,680 --> 01:01:53,840
+But yeah, I'm Christian everywhere pretty much.
+
+1002
+01:01:54,160 --> 01:01:56,880
+I keep the consistent name so it's easy to find me.
+
+1003
+01:01:56,960 --> 01:01:58,400
+All right, well, thank you so much for joining us.
+
+1004
+01:01:58,720 --> 01:01:59,920
+This was a really fun conversation.
+
+1005
+01:02:00,080 --> 01:02:01,440
+Oh, no, the pleasures are all mine.
+
+1006
+01:02:01,600 --> 01:02:03,040
+I hope there was something valuable in there.
+
+1007
+01:02:05,600 --> 01:02:06,960
+Thanks so much for listening.
+
+1008
+01:02:07,920 --> 01:02:11,280
+If you have a minute, please leave a review in your favorite podcast player.
+
+1009
+01:02:12,160 --> 01:02:16,960
+You can also stop by chat dot subclub dot com to join our private community.
