@@ -1,0 +1,3351 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_02] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_02] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_02] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_02] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_02] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,480 --> 00:00:47,440
+[SPEAKER_01] Hello, I'm your guest host, Charlie Chapman, a developer advocate at RevenueCap, and with me today is RevenueCap CEO, Jacob Eiting.
+
+7
+00:00:47,840 --> 00:00:49,520
+[SPEAKER_01] Our guest today is David Barnard.
+
+8
+00:00:49,920 --> 00:00:59,280
+[SPEAKER_01] You know him as the host of this very fine podcast, but he's also a long time indie developer with his company Contrast and a growth advocate, and my colleague, at RevenueCap.
+
+9
+00:00:59,520 --> 00:01:10,000
+[SPEAKER_01] On the podcast, we talk with David about the many failures of his recent app launch, the surprising results of his first ever AB test, and the many reasons why you shouldn't plan a big app launch.
+
+10
+00:01:10,400 --> 00:01:11,520
+[SPEAKER_01] All right, hello, David.
+
+11
+00:01:11,840 --> 00:01:13,600
+[SPEAKER_01] Welcome to your show.
+
+12
+00:01:14,400 --> 00:01:16,640
+[SPEAKER_02] Longtime host, first time caller.
+
+13
+00:01:18,720 --> 00:01:19,120
+[SPEAKER_01] That's great.
+
+14
+00:01:19,440 --> 00:01:20,400
+[SPEAKER_01] So I'm Charlie.
+
+15
+00:01:20,880 --> 00:01:24,560
+[SPEAKER_01] This is David, the longtime host of this podcast, first time guest.
+
+16
+00:01:24,880 --> 00:01:29,200
+[SPEAKER_01] And with us as well is Jacob Eiting, my boss and CEO of RevenueCap.
+
+17
+00:01:29,440 --> 00:01:32,800
+[SPEAKER_00] Yeah, I like the way you did it in the pre show, which was, and Jacob's here too.
+
+18
+00:01:33,040 --> 00:01:33,120
+[SPEAKER_00] Yeah.
+
+19
+00:01:36,400 --> 00:01:52,800
+[SPEAKER_01] The reason I am in the host seat and David's in the guest seat is because David just released a really big update to one of his apps and he has some learnings to use a corporate phrase here, I guess, to kind of share some things that he learned as as part of this launch process, and we thought it would be interesting to kind of walk through that.
+
+20
+00:01:53,040 --> 00:01:56,880
+[SPEAKER_01] And so I'm here to try and fill David's shoes to walk us through that update.
+
+21
+00:01:57,600 --> 00:02:05,360
+[SPEAKER_00] And I think we're liberated here, Charlie, to be a little more direct than we typically are with a guest that we've invited and, you know, on good terms to bring on here.
+
+22
+00:02:05,600 --> 00:02:09,680
+[SPEAKER_00] But in this case, David's kind of if he wants his show back, I think he's going to have to.
+
+23
+00:02:10,000 --> 00:02:10,880
+[SPEAKER_00] Oh, I'm taking it.
+
+24
+00:02:11,040 --> 00:02:12,000
+[SPEAKER_00] Is this a hostile takeover?
+
+25
+00:02:12,240 --> 00:02:12,880
+[SPEAKER_00] Well, I don't know.
+
+26
+00:02:13,040 --> 00:02:14,400
+[SPEAKER_00] You are sitting in the host chair.
+
+27
+00:02:14,560 --> 00:02:17,440
+[SPEAKER_00] So I think you have squatter's rights.
+
+28
+00:02:18,640 --> 00:02:22,240
+[SPEAKER_02] I'm an open book, looking forward to sharing whatever you want to ask.
+
+29
+00:02:22,880 --> 00:02:24,000
+[SPEAKER_01] Dangerous way to start this out.
+
+30
+00:02:24,640 --> 00:02:34,800
+[SPEAKER_01] Before we get into WeatherUp 3.0, which is the update that we want to talk about, I want to give everyone a primer of your background as app developer, not as growth advocate of RevenueCat.
+
+31
+00:02:35,360 --> 00:02:41,600
+[SPEAKER_01] So what is your story as an iOS app developer leading up to this WeatherUp 3.0 launch?
+
+32
+00:02:42,320 --> 00:02:53,360
+[SPEAKER_02] I was a struggling independent recording engineer in 2008 and not seeing my wife because I was working like 2 pm to 2 am and she was working 9 to 5.
+
+33
+00:02:53,920 --> 00:03:00,400
+[SPEAKER_02] And when rumors of the iPhone SDK started circulating, which I saw because I was an Uber Mac nerd working in a recording studio.
+
+34
+00:03:00,960 --> 00:03:03,440
+[SPEAKER_02] I started thinking, hey, this could be a really good opportunity.
+
+35
+00:03:03,840 --> 00:03:23,360
+[SPEAKER_02] So within days of Steve Jobs announcing the iPhone SDK, it wasn't even called iOS back then, I started a company and I initially intended to code all the apps and start learning how to code and got like three weeks into that and thought, to ship something in the summer, I should probably find a professional.
+
+36
+00:03:23,600 --> 00:03:35,040
+[SPEAKER_02] So I hired a contractor and started building apps and I've launched some twenty apps on the App Store, seen close to ten million downloads and millions of dollars in revenue.
+
+37
+00:03:35,360 --> 00:03:38,480
+[SPEAKER_02] So I've been at it a long, long time., sixteen years now.
+
+38
+00:03:39,120 --> 00:03:46,080
+[SPEAKER_01] Starting from the beginning, you've gone through many different business model iterations of the App Store, and I assume your apps have also.
+
+39
+00:03:46,800 --> 00:03:46,880
+[SPEAKER_02] Yeah.
+
+40
+00:03:47,440 --> 00:03:54,240
+[SPEAKER_02] It's funny to me talking to developers these days who don't know the full history of the App Store and the fact that in that purchase didn't even exist.
+
+41
+00:03:54,800 --> 00:03:57,360
+[SPEAKER_02] So early on, we did all sorts of crazy stuff.
+
+42
+00:03:57,520 --> 00:04:05,040
+[SPEAKER_02] Like a popular pattern for a long time was a free quote unquote light version of the app, kind of what freemium exists today.
+
+43
+00:04:05,200 --> 00:04:06,800
+[SPEAKER_02] And it's almost like your free trial.
+
+44
+00:04:07,280 --> 00:04:09,920
+[SPEAKER_02] And then you push people to the paid version of the app.
+
+45
+00:04:10,320 --> 00:04:11,520
+[SPEAKER_01] Which was always HD, right?
+
+46
+00:04:11,680 --> 00:04:13,360
+[SPEAKER_01] Or was that when the app iPad came along?
+
+47
+00:04:13,520 --> 00:04:14,080
+[SPEAKER_02] That was iPad.
+
+48
+00:04:14,240 --> 00:04:14,800
+[SPEAKER_02] That was iPad.
+
+49
+00:04:14,880 --> 00:04:14,960
+[SPEAKER_02] Yeah.
+
+50
+00:04:15,040 --> 00:04:15,120
+[SPEAKER_02] Okay.
+
+51
+00:04:15,440 --> 00:04:15,520
+[SPEAKER_01] Yeah.
+
+52
+00:04:15,680 --> 00:04:19,120
+[SPEAKER_01] I guess a little context for me too, just so you understand my weird references.
+
+53
+00:04:19,360 --> 00:04:21,680
+[SPEAKER_01] I came into the iOS game a little later.
+
+54
+00:04:21,920 --> 00:04:25,120
+[SPEAKER_01] I became an iOS developer and started building stuff in 2019.
+
+55
+00:04:25,520 --> 00:04:28,080
+[SPEAKER_01] And I was actually Android until like 2016.
+
+56
+00:04:28,320 --> 00:04:32,720
+[SPEAKER_01] So I learned most of my history through podcasts like this before I was an employee here.
+
+57
+00:04:33,120 --> 00:04:36,560
+[SPEAKER_01] So yeah, most of that is like me getting that second hand as well.
+
+58
+00:04:37,120 --> 00:04:37,200
+[SPEAKER_02] Yeah.
+
+59
+00:04:37,680 --> 00:04:44,720
+[SPEAKER_02] Then I did the whole like free version with a ton of in-app purchases to like try and increase the average revenue per user.
+
+60
+00:04:44,960 --> 00:04:46,000
+[SPEAKER_02] The craziest experiment there.
+
+61
+00:04:46,240 --> 00:04:50,160
+[SPEAKER_02] I launched a timer app and it was like 99 centss and it was doing fine.
+
+62
+00:04:50,480 --> 00:04:55,040
+[SPEAKER_02] And then I relaunched it as a free app with a ton of in-app purchases, like, oh, you want this theme.
+
+63
+00:04:55,120 --> 00:04:56,000
+[SPEAKER_02] It's 99 cents.
+
+64
+00:04:56,160 --> 00:04:56,800
+[SPEAKER_02] You want that theme.
+
+65
+00:04:57,200 --> 00:05:03,360
+[SPEAKER_02] And in the app was a quote unquote ultimate bundle, which I think was 10 bucks, which at the time, it seemed totally ridiculous.
+
+66
+00:05:03,520 --> 00:05:08,880
+[SPEAKER_02] 10 bucks for a timer app, but people bought the freaking ultimate bundle because they just wanted everything.
+
+67
+00:05:09,280 --> 00:05:11,440
+[SPEAKER_02] And so I was making that was the better deal, David.
+
+68
+00:05:11,680 --> 00:05:14,240
+[SPEAKER_00] You'd be stupid to take the better deal, you know?
+
+69
+00:05:14,800 --> 00:05:15,280
+[SPEAKER_02] It was great.
+
+70
+00:05:15,680 --> 00:05:20,000
+[SPEAKER_02] And that was 2010, 2011 or something, just experimenting with business models.
+
+71
+00:05:20,160 --> 00:05:25,600
+[SPEAKER_02] And then I started switching my apps to subscription in 2017 after Apple opened things up.
+
+72
+00:05:25,760 --> 00:05:40,800
+[SPEAKER_02] And I mean, that's how I ended up at RevenueCat and Subclub Podcast and everything else was trying to switch my apps to subscription and it being such a huge pain in the ass where we were spending way more time on the subscription app code and infrastructure than we were building a product.
+
+73
+00:05:41,360 --> 00:05:41,760
+[SPEAKER_02] So, yeah.
+
+74
+00:05:42,080 --> 00:05:47,200
+[SPEAKER_00] So, when did the first weather app version, like of those twenty apps, you remember, like when you first were like, I'm going to make a weather app.
+
+75
+00:05:47,440 --> 00:05:50,080
+[SPEAKER_00] Was it your first weather app technically my third weather app.
+
+76
+00:05:50,480 --> 00:05:55,520
+[SPEAKER_02] So Perfect Weather was the first weather app I did, but it was like 2010, 2011.
+
+77
+00:05:55,680 --> 00:06:05,200
+[SPEAKER_02] So I've been building weather apps for over a decade now and then launched a whole brand new SKU, new app as Weather Atlas in 2017 ish.
+
+78
+00:06:05,760 --> 00:06:09,120
+[SPEAKER_02] And then Weather Atlas got rebranded as Weather Up.
+
+79
+00:06:09,440 --> 00:06:11,600
+[SPEAKER_01] Was Weather Atlas basically a rebrand then?
+
+80
+00:06:11,680 --> 00:06:12,640
+[SPEAKER_01] You said it was a new SKU.
+
+81
+00:06:12,880 --> 00:06:14,480
+[SPEAKER_02] No, no, no, it was a new SKU, everything.
+
+82
+00:06:14,880 --> 00:06:17,600
+[SPEAKER_02] It was just we wanted to switch to subscription.
+
+83
+00:06:18,080 --> 00:06:23,360
+[SPEAKER_02] It was just such a brand new take, it's like file new project, take everything I learned from perfect weather.
+
+84
+00:06:23,600 --> 00:06:24,240
+[SPEAKER_02] It was a new partner.
+
+85
+00:06:24,960 --> 00:06:27,200
+[SPEAKER_02] That's another thing since I don't code.
+
+86
+00:06:27,440 --> 00:06:34,640
+[SPEAKER_02] I've had this weird mix of working with contractors that I pay and then some combination of pay and do a rev share.
+
+87
+00:06:35,040 --> 00:06:40,480
+[SPEAKER_02] I started doing the partnership thing back in 2010, 2011, after two projects went sideways.
+
+88
+00:06:40,800 --> 00:06:42,960
+[SPEAKER_02] So each of those projects, I lost fifty grand.
+
+89
+00:06:43,440 --> 00:06:44,960
+[SPEAKER_02] So I was working with developers.
+
+90
+00:06:45,200 --> 00:06:49,840
+[SPEAKER_02] They made all the promises in the world, but I was paying them hourly and the projects just dragged on and on and on.
+
+91
+00:06:50,160 --> 00:06:51,760
+[SPEAKER_02] I realized like these are not going to shift.
+
+92
+00:06:51,840 --> 00:06:56,560
+[SPEAKER_02] Stop throwing good money after bad and I just wrote off a hundred thousand dollars that I'd paid out.
+
+93
+00:06:56,960 --> 00:07:00,400
+[SPEAKER_02] That's when I started thinking, okay, I need to work with someone who's got a little bit more skin in the game.
+
+94
+00:07:00,480 --> 00:07:01,200
+[SPEAKER_02] Yeah, yeah, yeah.
+
+95
+00:07:01,360 --> 00:07:02,480
+[SPEAKER_00] Developers without downside risk.
+
+96
+00:07:02,800 --> 00:07:03,920
+[SPEAKER_00] There's nothing worse in the world.
+
+97
+00:07:04,400 --> 00:07:04,480
+[SPEAKER_02] Yeah.
+
+98
+00:07:05,920 --> 00:07:07,360
+[SPEAKER_02] But then that has its own challenges.
+
+99
+00:07:07,600 --> 00:07:10,880
+[SPEAKER_02] When someone's working on it as a side project, they can get busy with their jobs.
+
+100
+00:07:11,040 --> 00:07:13,440
+[SPEAKER_02] And so it's been a struggle to work with developers that model.
+
+101
+00:07:14,080 --> 00:07:25,520
+[SPEAKER_01] So I don't want to spend too much time on the history, but I think one other thing that is probably related to the 3.0 launch for WeatherUp is what was your marketing strategy for all these apps then?
+
+102
+00:07:25,840 --> 00:07:30,160
+[SPEAKER_01] You presumably didn't have a huge advertising budget or something, at least initially.
+
+103
+00:07:30,640 --> 00:07:33,280
+[SPEAKER_01] How has that kind of evolved over time with all your apps?
+
+104
+00:07:33,680 --> 00:07:34,720
+[SPEAKER_02] Yeah, it depends on the app.
+
+105
+00:07:35,120 --> 00:07:37,440
+[SPEAKER_02] I've relied very heavily on organic channels.
+
+106
+00:07:37,520 --> 00:07:38,960
+[SPEAKER_02] I've done very little paid advertising.
+
+107
+00:07:39,040 --> 00:07:43,360
+[SPEAKER_02] Early in the App Store, I actually did spend thousands of dollars trying to make it work.
+
+108
+00:07:43,520 --> 00:07:46,720
+[SPEAKER_02] And like with paid apps, it was just a total money losing proposition.
+
+109
+00:07:46,960 --> 00:07:55,120
+[SPEAKER_02] But mostly I've relied on getting attention., Apple's attention, press attention, and then ASO has been really big for my apps generally.
+
+110
+00:07:55,280 --> 00:08:00,080
+[SPEAKER_02] Like Launch Center Pro was the top result for a bunch of like Launcher and other kinds of terms.
+
+111
+00:08:00,400 --> 00:08:02,160
+[SPEAKER_02] So it got a lot of browse traffic.
+
+112
+00:08:02,480 --> 00:08:07,680
+[SPEAKER_02] That's actually one of the things that we'll get to with a weather app, trying to get any kind of organic traffic.
+
+113
+00:08:08,240 --> 00:08:11,360
+[SPEAKER_02] Those keywords are just so crowded, which makes it really hard.
+
+114
+00:08:11,520 --> 00:08:14,160
+[SPEAKER_02] But one of my most successful apps was a mirror app.
+
+115
+00:08:14,560 --> 00:08:21,280
+[SPEAKER_02] And go figure, at its peak something like ten or twenty thousand people searched the app store for mirror every day.
+
+116
+00:08:21,840 --> 00:08:24,560
+[SPEAKER_02] And I was capturing six, eight thousand of those.
+
+117
+00:08:24,560 --> 00:08:25,600
+[SPEAKER_00] 8,000 of those every single day.
+
+118
+00:08:26,000 --> 00:08:30,320
+[SPEAKER_00] As an ignorant person, what does a mirror app provide that like the camera doesn't?
+
+119
+00:08:31,760 --> 00:08:33,680
+[SPEAKER_02] So it's genuinely a good app.
+
+120
+00:08:34,000 --> 00:08:35,440
+[SPEAKER_02] And I made an embarrassing mistake.
+
+121
+00:08:35,680 --> 00:08:36,800
+[SPEAKER_02] I didn't imply it wasn't, David.
+
+122
+00:08:38,880 --> 00:08:45,680
+[SPEAKER_02] One of the main things is that the front facing camera, if you just launch the camera app, it's in a little window with all the chrome around it.
+
+123
+00:08:45,840 --> 00:08:47,920
+[SPEAKER_02] So this launches to like a full screen mirror.
+
+124
+00:08:48,160 --> 00:08:48,880
+[SPEAKER_02] You can zoom in.
+
+125
+00:08:49,440 --> 00:08:50,400
+[SPEAKER_02] We did some really cool stuff.
+
+126
+00:08:50,560 --> 00:09:00,560
+[SPEAKER_02] Like you tap a little flashlight button and it puts white around the edges of the screen and turns the brightness up to 100% so that in dark or weak light situations it's actually.
+
+127
+00:09:01,200 --> 00:09:03,680
+[SPEAKER_02] really helpful, like one of those lighted mirrors and stuff.
+
+128
+00:09:04,000 --> 00:09:08,960
+[SPEAKER_02] And then we had a really cool way where you tap the screen to like freeze the frame and then you can save that as a photo.
+
+129
+00:09:09,120 --> 00:09:14,000
+[SPEAKER_02] So it's a kind of cool way to preview your selfie before you save it, little things like that.
+
+130
+00:09:14,160 --> 00:09:15,040
+[SPEAKER_02] But people love that app.
+
+131
+00:09:15,520 --> 00:09:17,920
+[SPEAKER_00] I guess it becomes a thing you know to search for, right?
+
+132
+00:09:18,240 --> 00:09:22,880
+[SPEAKER_00] It's interesting the different kinds of niches will inform your strategy, like how you can acquire users.
+
+133
+00:09:23,200 --> 00:09:24,160
+[SPEAKER_01] I think it's almost the opposite.
+
+134
+00:09:24,320 --> 00:09:28,160
+[SPEAKER_01] I think it's like, I need to check to see if my lipstick looks right.
+
+135
+00:09:28,800 --> 00:09:31,040
+[SPEAKER_01] And they don't even think, I can open the camera app.
+
+136
+00:09:31,280 --> 00:09:32,880
+[SPEAKER_01] They're just like, is there like a mirror thing?
+
+137
+00:09:33,040 --> 00:09:34,240
+[SPEAKER_01] And then you just search for it.
+
+138
+00:09:34,720 --> 00:10:16,320
+[SPEAKER_01] You're trying to solve a problem and you go to the app store if the app store is your default search engine uh it can drive a surprising amount of creating that loop you know what i mean like convincing people with normal human people problems to look for software let's just think about how magical that is for a moment yeah i'm always surprised when i look at my app figures aso tab and see that i'm ranking well and getting downloads from full sentences like i want a green noise i make a white noise app a green noise for free or something like that and it's like people are just typing full-blown search queries but yeah i ask that because in the earlylier era, getting attention, if that's kind of your big marketing strategy.
+
+139
+00:10:16,560 --> 00:10:22,320
+[SPEAKER_01] I don't necessarily want to say it's easier, but it's definitely different because like Apple features in the early years, it was way easier.
+
+140
+00:10:22,400 --> 00:10:23,680
+[SPEAKER_00] How many apps are there now, David?
+
+141
+00:10:24,240 --> 00:10:26,480
+[SPEAKER_00] Like, there's millions and millions.
+
+142
+00:10:26,560 --> 00:10:31,920
+[SPEAKER_00] There were like when I launched my first app, there were 270 apps on the App Store, you didn't need attention.
+
+143
+00:10:32,080 --> 00:10:33,920
+[SPEAKER_00] There were 270 apps on the App Store.
+
+144
+00:10:34,080 --> 00:10:34,160
+[SPEAKER_01] Yeah.
+
+145
+00:10:34,400 --> 00:10:34,480
+[SPEAKER_01] Yeah.
+
+146
+00:10:34,640 --> 00:10:38,400
+[SPEAKER_01] I guess there's always people talk about literally scrolling the list of apps.
+
+147
+00:10:38,720 --> 00:10:38,800
+[SPEAKER_00] Yeah.
+
+148
+00:10:39,040 --> 00:10:40,640
+[SPEAKER_00] You could look at every single app, right?
+
+149
+00:10:41,040 --> 00:10:47,600
+[SPEAKER_00] And by 2011 or 2012, I mean, it was different, but it still we were talking probably an order of magnitude fewer apps than there are today.
+
+150
+00:10:47,680 --> 00:10:57,040
+[SPEAKER_00] And it's still to some degree., like getting attention, especially in the early teens, you know, 2010, 2011, 2012, 2013 was like the most predictable thing you could do, right?
+
+151
+00:10:57,280 --> 00:10:58,240
+[SPEAKER_00] And to some degree it is.
+
+152
+00:10:58,320 --> 00:11:03,600
+[SPEAKER_00] And I think it's probably one of the better, more predictable ways to try to break through the noise if you know how to do it.
+
+153
+00:11:03,760 --> 00:11:04,800
+[SPEAKER_00] But yeah, we should talk about it.
+
+154
+00:11:04,960 --> 00:11:07,680
+[SPEAKER_01] Yeah, yeah, especially if you don't have any marketing budget.
+
+155
+00:11:07,840 --> 00:11:09,680
+[SPEAKER_01] So yeah, let's talk about WeatherUp then.
+
+156
+00:11:09,920 --> 00:11:17,600
+[SPEAKER_01] And like you mentioned earlier, WeatherUp was a rebrand of Weather Atlas, you said, and there have been multiple versions of it over time.
+
+157
+00:11:18,000 --> 00:11:23,520
+[SPEAKER_01] So when it came time to this WeatherUp 3.0 launch, what was the state of WeatherUp at that time?
+
+158
+00:11:23,840 --> 00:11:27,200
+[SPEAKER_01] Well, I mean, weather Up 3.0 has been a long time in the making.
+
+159
+00:11:27,360 --> 00:11:33,200
+[SPEAKER_02] As I mentioned, you know, working with App Partner, my cousin, he was busy with other stuff and had a lot going on.
+
+160
+00:11:33,360 --> 00:11:35,680
+[SPEAKER_02] And so this has been a very long, slow.
+
+161
+00:11:36,000 --> 00:11:38,960
+[SPEAKER_02] It started in 2019, actually, like the designs for the widget.
+
+162
+00:11:39,280 --> 00:11:40,800
+[SPEAKER_02] That's when Charlie started doing apps.
+
+163
+00:11:40,960 --> 00:11:41,600
+[SPEAKER_02] Yeah, actually, yeah.
+
+164
+00:11:41,920 --> 00:11:42,000
+[SPEAKER_01] Yeah.
+
+165
+00:11:42,320 --> 00:11:44,560
+[SPEAKER_01] So when I first opened Xcode for real.
+
+166
+00:11:45,440 --> 00:11:57,680
+[SPEAKER_02] What kind of kept happening was we would get deep enough into one specific feature and then just kind of realized, oh, well, to get attention, we really should be doing X and we finished Y.
+
+167
+00:11:58,160 --> 00:12:00,720
+[SPEAKER_02] And I mean, at this point, I actually regret not just shipping.
+
+168
+00:12:01,120 --> 00:12:02,880
+[SPEAKER_02] So like we were pretty far off with that.
+
+169
+00:12:03,600 --> 00:12:04,480
+[SPEAKER_02] Apple Watch app.
+
+170
+00:12:04,800 --> 00:12:05,600
+[SPEAKER_02] Yeah, just ship.
+
+171
+00:12:05,920 --> 00:12:12,480
+[SPEAKER_02] Like we should have shipped the Apple Watch app in 2020, probably when that was ready, but that was when widgets got really big.
+
+172
+00:12:12,640 --> 00:12:14,400
+[SPEAKER_02] And so we're like, now we got to build a widget.
+
+173
+00:12:14,640 --> 00:12:19,360
+[SPEAKER_02] So at WWC 2020, we're like, okay, we got to build a widget.
+
+174
+00:12:19,520 --> 00:12:22,000
+[SPEAKER_02] We can't just launch the Apple Watch app.
+
+175
+00:12:22,560 --> 00:12:27,440
+[SPEAKER_02] Then we were so close to launching the widget and then Apple announced interactive widgets.
+
+176
+00:12:27,520 --> 00:12:31,840
+[SPEAKER_02] And it's like, we can't just launch a widget when everybody else is launching interactive widgets.
+
+177
+00:12:32,160 --> 00:12:34,880
+[SPEAKER_02] And so we should have just launched, but we held off.
+
+178
+00:12:35,360 --> 00:12:36,800
+[SPEAKER_02] The tough thing about getting attention.
+
+179
+00:12:37,440 --> 00:12:39,680
+[SPEAKER_02] is that you do have to do something unique.
+
+180
+00:12:39,920 --> 00:12:48,800
+[SPEAKER_02] Well, widgets were really cool and unique in 2020 when they first were homescreen widgets, but 2021, that's not enough to get attention.
+
+181
+00:12:49,040 --> 00:12:52,640
+[SPEAKER_02] Apple Watch apps, complications like all these things, and that's a trade-off.
+
+182
+00:12:52,960 --> 00:12:57,680
+[SPEAKER_02] The calculus for me was, well, let's wait and try to make a big splash with all these things.
+
+183
+00:12:58,320 --> 00:13:04,960
+[SPEAKER_02] But really like at this point, we could have already launched the widget and just adding interaction at the level we did would have gotten attention.
+
+184
+00:13:05,360 --> 00:13:07,120
+[SPEAKER_02] You'd be on WeatherUp 7.0.
+
+185
+00:13:07,600 --> 00:13:08,560
+[SPEAKER_02] Yeah, exactly.
+
+186
+00:13:09,200 --> 00:13:15,120
+[SPEAKER_01] So presumably then that long of an amount of time without major ne new features was impacting the business then?
+
+187
+00:13:15,520 --> 00:13:17,520
+[SPEAKER_01] Or were downloads pretty much just swimming along?
+
+188
+00:13:17,840 --> 00:13:19,520
+[SPEAKER_02] Yeah, I mean, that's one of the big regrets.
+
+189
+00:13:19,600 --> 00:13:41,200
+[SPEAKER_02] I was actually just looking at Appfigures recently and downloads were pretty consistently good and we had some nice spikes from getting attention or being part of big launches with new iOS features and stuff like that all the way up until about 2019 when things went on hiatus and we were working towards this bigger update and things really dropped off the map.
+
+190
+00:13:41,440 --> 00:13:44,480
+[SPEAKER_02] Like Apple stopped featuring the app because it hadn't been updated for a while.
+
+191
+00:13:44,960 --> 00:13:48,400
+[SPEAKER_02] We stopped getting any kind of bumps from these new updates and things like that.
+
+192
+00:13:49,040 --> 00:13:58,400
+[SPEAKER_02] So coming into the Weather App 3.0, I mean, it's almost like launching a whole new app because downloads were at low double digits a day, like 15 downloads a day.
+
+193
+00:13:58,640 --> 00:14:04,160
+[SPEAKER_02] I mean, I guess for some independent apps, that's a lot, but it's hard to build a business and make any money on that.
+
+194
+00:14:04,320 --> 00:14:05,280
+[SPEAKER_02] So the revenue was down.
+
+195
+00:14:05,520 --> 00:14:07,760
+[SPEAKER_02] I've actually been losing money on the app for like 18 months.
+
+196
+00:14:07,840 --> 00:14:10,800
+[SPEAKER_02] I've been funding it out of my investing in the future, David.
+
+197
+00:14:11,200 --> 00:14:12,480
+[SPEAKER_02] Investing in the future, yes.
+
+198
+00:14:12,880 --> 00:14:14,400
+[SPEAKER_02] And again, I think that was one of the mistakes.
+
+199
+00:14:14,640 --> 00:14:26,240
+[SPEAKER_02] And that's the beauty of subscription apps too, is that except for getting attention, there's no incentive to hold back features like launching a big 3.0 where you're doing a paid update where everyone's paying for the features.
+
+200
+00:14:26,400 --> 00:14:30,320
+[SPEAKER_02] Well, nobody was going to pay me any more because I launched those features.
+
+201
+00:14:30,480 --> 00:14:32,400
+[SPEAKER_02] So I should have just launched them and kept moving.
+
+202
+00:14:32,720 --> 00:14:45,600
+[SPEAKER_01] Yeah, because even a really massive, big, splashy launch amortized over the time between big launches, that time in between big launches is arguably much more important than how splashy the launch itself is.
+
+203
+00:14:45,920 --> 00:14:51,440
+[SPEAKER_01] Unless you're just starting out, that's where it can make a really big difference to start from a big stepping stone.
+
+204
+00:14:52,000 --> 00:14:55,920
+[SPEAKER_00] I think the big launch philosophy has been one of the great mistakes of my career.
+
+205
+00:14:56,240 --> 00:15:03,280
+[SPEAKER_00] There's so many incentives to be like, oh yeah, we're just going to roll this together into a big thing or like we're going to put this all together in the fall.
+
+206
+00:15:03,760 --> 00:15:06,400
+[SPEAKER_00] You're honestly justifying not shipping, right?
+
+207
+00:15:06,640 --> 00:15:09,200
+[SPEAKER_00] You're being like, I'm not lazy or I'm not afraid.
+
+208
+00:15:09,360 --> 00:15:10,320
+[SPEAKER_00] This is strategy, right?
+
+209
+00:15:10,480 --> 00:15:12,560
+[SPEAKER_01] And it's Yeah, for me, it's definitely fear, right?
+
+210
+00:15:12,720 --> 00:15:13,760
+[SPEAKER_01] It's like, Yeah, exactly.
+
+211
+00:15:14,400 --> 00:15:20,560
+[SPEAKER_01] I don't want to like, I'm not going to show this to the world because I need this one little extra thing, otherwise people are going to ignore me.
+
+212
+00:15:21,040 --> 00:15:24,240
+[SPEAKER_02] I do think it's a legacy of Box Software, really though.
+
+213
+00:15:24,560 --> 00:15:32,720
+[SPEAKER_02] The mindset and it did work before subscriptions when especially paid upfront apps, it works really well.
+
+214
+00:15:32,960 --> 00:15:38,800
+[SPEAKER_02] Like launching a pro would get massive spikes in revenue where you'd make like 60 K in a week.
+
+215
+00:15:39,360 --> 00:15:43,200
+[SPEAKER_02] Then we'd go along making, you know, hundreds of dollars a day, hundreds of dollars a day.
+
+216
+00:15:43,360 --> 00:15:45,360
+[SPEAKER_02] And then we'd have another big launch and they'd go up.
+
+217
+00:15:45,440 --> 00:15:48,240
+[SPEAKER_02] But I mean, why is it even called WeatherUp 3.0?
+
+218
+00:15:48,560 --> 00:15:49,600
+[SPEAKER_02] Like, what's the 3.0?
+
+219
+00:15:49,840 --> 00:15:50,640
+[SPEAKER_00] It's like, yeah.
+
+220
+00:15:50,960 --> 00:15:55,440
+[SPEAKER_00] And prior to that, Minecraft, I think a bit too, it was like, all about building and packaging these big updates.
+
+221
+00:15:55,680 --> 00:15:59,920
+[SPEAKER_00] And then talking about leveraging that into love from Apple and the press, right?
+
+222
+00:16:00,160 --> 00:16:02,160
+[SPEAKER_00] So there were like a bunch of these compounding things.
+
+223
+00:16:03,040 --> 00:16:07,680
+[SPEAKER_00] But I think you're right that if you reamortize that over the time of value delivered, right?
+
+224
+00:16:08,000 --> 00:16:13,520
+[SPEAKER_00] Those features that you withheld for four months are not compounding or four years or whatever are not compounding over that period.
+
+225
+00:16:13,760 --> 00:16:15,680
+[SPEAKER_00] And I think it's really easy for that to overcome.
+
+226
+00:16:15,920 --> 00:16:21,440
+[SPEAKER_00] And then, of course, there's always, I think, just the psychosocial aspect of it is that if you're not shipping, you're not shipping.
+
+227
+00:16:21,680 --> 00:16:26,240
+[SPEAKER_00] And if you're not shipping, every day you're not shipping, your probability of never shipping goes up.
+
+228
+00:16:26,480 --> 00:16:26,560
+[SPEAKER_00] Yeah.
+
+229
+00:16:26,800 --> 00:16:26,960
+[SPEAKER_00] Right?
+
+230
+00:16:27,280 --> 00:16:27,360
+[SPEAKER_00] Yeah.
+
+231
+00:16:28,000 --> 00:16:36,400
+[SPEAKER_01] I think we're especially in the sort of Apple sphere, I think a lot of us have a tendency to think of our marketing like Apple's marketing.
+
+232
+00:16:36,640 --> 00:16:40,080
+[SPEAKER_01] And it's like Tim Cook can sneeze and that can be like a news story.
+
+233
+00:16:40,560 --> 00:16:41,600
+[SPEAKER_01] We're not that.
+
+234
+00:16:41,840 --> 00:16:43,760
+[SPEAKER_00] And so, do you have a Phil Schiller?
+
+235
+00:16:44,240 --> 00:16:44,720
+[SPEAKER_00] You should get one.
+
+236
+00:16:44,960 --> 00:16:45,040
+[SPEAKER_00] Yeah.
+
+237
+00:16:45,360 --> 00:16:46,240
+[SPEAKER_00] Then you could be out.
+
+238
+00:16:46,480 --> 00:16:46,560
+[SPEAKER_00] Yeah.
+
+239
+00:16:46,800 --> 00:16:48,000
+[SPEAKER_00] But you don't have a Phil Schiller, right?
+
+240
+00:16:48,560 --> 00:16:51,280
+[SPEAKER_00] Like, Apple's marketing is world class and they're professional, right?
+
+241
+00:16:51,440 --> 00:16:52,480
+[SPEAKER_00] And it's not just built on.
+
+242
+00:16:54,880 --> 00:16:56,080
+[SPEAKER_01] Yeah, they know the cadences.
+
+243
+00:16:56,320 --> 00:16:57,600
+[SPEAKER_00] They know how to control the narrative.
+
+244
+00:16:57,760 --> 00:16:58,880
+[SPEAKER_00] They know how, you know what I mean?
+
+245
+00:16:59,600 --> 00:17:01,040
+[SPEAKER_02] And they are doing paid updates though.
+
+246
+00:17:01,200 --> 00:17:05,680
+[SPEAKER_02] That's the thing, is like, a lot of their launches are convincing you to get a new iPhone.
+
+247
+00:17:05,840 --> 00:17:08,480
+[SPEAKER_02] And so it's like, save it up, save it up, save it up, and then do it again.
+
+248
+00:17:08,640 --> 00:17:10,000
+[SPEAKER_00] Yeah, they have hardware to deal with.
+
+249
+00:17:10,160 --> 00:17:10,240
+[SPEAKER_02] Yeah.
+
+250
+00:17:10,640 --> 00:17:12,800
+[SPEAKER_02] And when it was box software, that was part of the deal.
+
+251
+00:17:13,040 --> 00:17:15,520
+[SPEAKER_02] You had to hold back those features.
+
+252
+00:17:15,840 --> 00:17:22,880
+[SPEAKER_02] And early in the App Store, you would release a new SKU as a paid update because there was no way to monetize that user base over time.
+
+253
+00:17:23,360 --> 00:17:40,000
+[SPEAKER_02] I think a lot of what you're just saying, I keep thinking, yes, because subscription business model allows you to accrue that value over time and make it compound versus the old model of paid apps and paid updates didn't allow you to do that.
+
+254
+00:17:40,320 --> 00:17:45,520
+[SPEAKER_02] Point taken, like, nobody cares about those things anymore, and so don't hold off on shipping.
+
+255
+00:17:45,680 --> 00:17:55,040
+[SPEAKER_02] And that was a mistake I made, was for the last four years kind of getting caught in that old mindset that did work in the past for me, but no longer works the same way, because that's not how I run my business.
+
+256
+00:17:55,680 --> 00:18:06,400
+[SPEAKER_01] I think each small update is an opportunity to reach for attention and maybe not like sending an email to your press contact or whatever because that you can oversaturate.
+
+257
+00:18:06,960 --> 00:18:16,800
+[SPEAKER_01] But if you're constantly making small updates and each time you can make a little video or something of that update, every single one of those is a chance to catch somebody's news attention.
+
+258
+00:18:17,280 --> 00:18:21,520
+[SPEAKER_01] And oftentimes, what they're going to see is an old feature that just happens to be part of your demo.
+
+259
+00:18:22,000 --> 00:18:25,040
+[SPEAKER_01] You're like cashing in on an old feature or something each one of those times.
+
+260
+00:18:25,200 --> 00:18:30,080
+[SPEAKER_01] Like most people aren't getting tired of you tweeting too often because most people don't see it in the first place.
+
+261
+00:18:30,480 --> 00:18:36,560
+[SPEAKER_01] And then, like you said earlier, one of you two is if you're constantly tweeting to the point of almost being annoying, it also kind of.
+
+262
+00:18:37,120 --> 00:18:39,280
+[SPEAKER_01] signals I get this with RevenueCat stuff.
+
+263
+00:18:39,440 --> 00:18:43,840
+[SPEAKER_01] You guys are pushing so much stuff out, I can barely keep up, which kind of shows that I'm on top of things.
+
+264
+00:18:44,080 --> 00:18:45,600
+[SPEAKER_01] We're constantly coming out with new stuff.
+
+265
+00:18:46,000 --> 00:18:50,800
+[SPEAKER_01] Even if you don't use it, that signal adds value, perceived value anyway to your product.
+
+266
+00:18:51,440 --> 00:19:00,880
+[SPEAKER_00] And for a weather app like this, I mean, I'm sure a lot of it's the mass market, but for getting a start, for getting anything written about it or whatever, you have to at least appeal to the connoisseur of apps, right?
+
+267
+00:19:01,040 --> 00:19:07,520
+[SPEAKER_00] And somebody's going to check how many updates there were and like, so yeah, let's get to the actual launch itself then.
+
+268
+00:19:08,000 --> 00:19:11,200
+[SPEAKER_01] So what was your, I guess, strategy going into that launch?
+
+269
+00:19:11,280 --> 00:19:15,200
+[SPEAKER_01] We already talked about the actual update., it was interactive widgets and the watch app, right?
+
+270
+00:19:15,760 --> 00:19:17,600
+[SPEAKER_01] But what was your plan for getting attention?
+
+271
+00:19:18,160 --> 00:19:30,960
+[SPEAKER_02] Press and, you know, hoping to get featured by Apple, we'll get into mistakes, but I kind of did the same playbook I have for years was I know if I do something innovative, I can get some attention for that innovation.
+
+272
+00:19:31,760 --> 00:19:41,840
+[SPEAKER_02] And then typically when you do something really innovative with a feature like interactive widgets that Apple has been really pushing heavily and was a big new kind of part of the OS update, you can get attention.
+
+273
+00:19:42,080 --> 00:19:52,320
+[SPEAKER_02] So my goal for the launch was to get as much attention as I could from press, from Apple, from others, make some money and then take that and start experimenting with Apple search ads.
+
+274
+00:19:52,480 --> 00:19:55,360
+[SPEAKER_02] And then if that went well, start expanding marketing beyond that.
+
+275
+00:19:56,000 --> 00:19:58,640
+[SPEAKER_02] But that's not how things went, which we'll get to.
+
+276
+00:19:58,960 --> 00:19:59,040
+[SPEAKER_02] Yeah.
+
+277
+00:19:59,360 --> 00:20:01,360
+[SPEAKER_02] How were you trying to get that attention?
+
+278
+00:20:01,760 --> 00:20:02,240
+[SPEAKER_01] I know you.
+
+279
+00:20:02,400 --> 00:20:03,520
+[SPEAKER_01] Most people listening know you.
+
+280
+00:20:03,600 --> 00:20:04,320
+[SPEAKER_01] You have a lot of context.
+
+281
+00:20:04,640 --> 00:20:08,480
+[SPEAKER_01] What was your general strategy to try and get those press articles and Apple features?
+
+282
+00:20:08,960 --> 00:20:12,400
+[SPEAKER_02] People say, Oh, well, you know people and that's how you get featured.
+
+283
+00:20:12,640 --> 00:20:14,240
+[SPEAKER_02] But I don't think that's totally true.
+
+284
+00:20:14,560 --> 00:20:14,960
+[SPEAKER_02] It helps.
+
+285
+00:20:15,280 --> 00:20:19,920
+[SPEAKER_02] They will at least scan my email or at least see that I DM them.
+
+286
+00:20:20,160 --> 00:20:26,160
+[SPEAKER_02] And maybe I have like a tiny bit of baked in credibility because they know me or have known me for a while or whatever.
+
+287
+00:20:26,480 --> 00:20:33,600
+[SPEAKER_02] But at the end of the day, and I think about this all the time, is that I'm not actually going to capture their attention unless I do something that they care about.
+
+288
+00:20:34,240 --> 00:20:47,040
+[SPEAKER_02] And so for me, thinking about reaching out to all my press contacts, I would be embarrassed to send them, whether up three point zero point one update with like one tiny little feature that's not even interesting.
+
+289
+00:20:47,520 --> 00:20:54,320
+[SPEAKER_02] I still feel a ton of pressure to do something that's actually interesting in the market that they're going to be willing to write about.
+
+290
+00:20:54,480 --> 00:20:59,040
+[SPEAKER_02] Because I'm not going to push someone to write about something that's not actually interesting.
+
+291
+00:20:59,040 --> 00:21:05,440
+[SPEAKER_02] And that's where for this particular case update, I worked on a video that demonstrated the features.
+
+292
+00:21:05,920 --> 00:21:15,360
+[SPEAKER_02] Logically, Jake Moore, who we've had on the podcast a ton and done a ton of stuff with, the CEO of Superwall, has been talking about for years how impactful videos are for paywalls.
+
+293
+00:21:16,000 --> 00:21:20,800
+[SPEAKER_02] And with this interactive widget, it felt like it was just something so visual that it needed a video.
+
+294
+00:21:21,040 --> 00:21:27,440
+[SPEAKER_02] So I was working on the video for the paywall primarily, and it turned out so good that it ended up being my press pitch.
+
+295
+00:21:27,680 --> 00:21:32,400
+[SPEAKER_02] So instead of hundreds of words, I mean, you just have so little time to capture someone's attention.
+
+296
+00:21:32,720 --> 00:21:39,680
+[SPEAKER_02] So the main way I pitched it was like a DM on Twitter and like, hey, I'm working on some really cool interactivity for widgets and weather.
+
+297
+00:21:39,920 --> 00:21:41,040
+[SPEAKER_02] I think this is really interesting.
+
+298
+00:21:41,280 --> 00:21:48,000
+[SPEAKER_02] And I got quite a few people who were like, yeah, I don't really cover apps anymore or, you know, I wouldn't really cover an app.
+
+299
+00:21:49,600 --> 00:21:52,240
+[SPEAKER_02] But they saw the video and were like, wow, that looks really cool.
+
+300
+00:21:52,800 --> 00:21:59,520
+[SPEAKER_02] So I think whether or not you have a relationship with someone because a lot of the people I pitched, I didn't know and they didn't know me.
+
+301
+00:22:00,080 --> 00:22:06,160
+[SPEAKER_02] But it's all about communicating that value and it being something that's actually worth it to write about.
+
+302
+00:22:06,400 --> 00:22:08,000
+[SPEAKER_02] And that video really helped.
+
+303
+00:22:08,320 --> 00:22:10,960
+[SPEAKER_01] Yeah, because it's not just value to the user.
+
+304
+00:22:11,520 --> 00:22:12,800
+[SPEAKER_01] It's also interesting.
+
+305
+00:22:13,040 --> 00:22:15,600
+[SPEAKER_01] interest for a story which are slightly different.
+
+306
+00:22:16,240 --> 00:22:18,480
+[SPEAKER_01] You have to help them get their story written for the week, right?
+
+307
+00:22:18,720 --> 00:22:21,920
+[SPEAKER_00] Like they have a job, they have a quota, they have a number of things you have to produce.
+
+308
+00:22:22,080 --> 00:22:28,240
+[SPEAKER_00] And if you want them, help them do their job and find something mutually beneficial for all three parties, right?
+
+309
+00:22:28,480 --> 00:22:36,880
+[SPEAKER_00] The reader, the journalist, and you, if I was to say any sort of distillation of how to do PR, it's that, like build something that's mutually beneficial to all parties.
+
+310
+00:22:37,200 --> 00:22:37,680
+[SPEAKER_00] And it's hard.
+
+311
+00:22:37,840 --> 00:22:39,600
+[SPEAKER_00] You have to find something they're interested in, right?
+
+312
+00:22:39,840 --> 00:22:42,320
+[SPEAKER_00] You read about what they do, you learn about, you know, whatever.
+
+313
+00:22:42,480 --> 00:22:48,720
+[SPEAKER_00] Well, I mean, this is February of 2024, which like every tech and otherwise online outlet in journalism.
+
+314
+00:22:49,200 --> 00:22:51,280
+[SPEAKER_00] is disappearing right now, like on the daily.
+
+315
+00:22:51,440 --> 00:22:56,000
+[SPEAKER_00] So maybe you're like the last one to get this in before writing about apps just doesn't exist anymore.
+
+316
+00:22:56,240 --> 00:23:01,520
+[SPEAKER_00] If you needed any more signs that this model of launching is no longer, that might be it.
+
+317
+00:23:02,000 --> 00:23:05,840
+[SPEAKER_01] To the same point, it's not just is it interesting, but is it interesting currently?
+
+318
+00:23:06,400 --> 00:23:07,840
+[SPEAKER_01] You had a little bit of a uphill battle.
+
+319
+00:23:07,920 --> 00:23:19,840
+[SPEAKER_01] Well, you had a huge uphill battle, which we'll get into a second, but even ignoring what happened on your launch day, you weren't launching this when iOS 17 was coming out with these interactive widgets, where huge regret.
+
+320
+00:23:20,320 --> 00:23:24,160
+[SPEAKER_01] People in the press were literally begging, please send me your interactive widgets.
+
+321
+00:23:24,240 --> 00:23:24,720
+[SPEAKER_01] Yeah, I need some.
+
+322
+00:23:24,720 --> 00:23:25,200
+[SPEAKER_01] I needed something.
+
+323
+00:23:25,600 --> 00:23:26,000
+[SPEAKER_01] They needed it.
+
+324
+00:23:26,960 --> 00:23:29,040
+[SPEAKER_00] And I don't want to just copy Apple's press release, right?
+
+325
+00:23:29,360 --> 00:23:29,520
+[SPEAKER_01] Right.
+
+326
+00:23:29,680 --> 00:23:34,000
+[SPEAKER_01] You had to pitch them on it in was this January when you were starting to kind of reach out?
+
+327
+00:23:34,160 --> 00:23:34,240
+[SPEAKER_01] Yeah.
+
+328
+00:23:34,560 --> 00:23:34,640
+[SPEAKER_01] Yeah.
+
+329
+00:23:35,120 --> 00:23:45,440
+[SPEAKER_01] So like, not only did you need it to be compelling in its own right as a story that they already want to write, but you had to make them want to write it well after the readers are demanding this anyway.
+
+330
+00:23:45,920 --> 00:23:49,440
+[SPEAKER_01] Let's move to the actual launch because this is where things get pretty interesting.
+
+331
+00:23:49,680 --> 00:23:52,960
+[SPEAKER_01] So I guess I'll just let you take it away, but how was your launch day itself?
+
+332
+00:23:53,520 --> 00:23:53,920
+[SPEAKER_02] Terrible.
+
+333
+00:23:56,320 --> 00:23:57,200
+[SPEAKER_02] Really, really bad.
+
+334
+00:23:57,840 --> 00:23:58,480
+[SPEAKER_02] At least you didn't.
+
+335
+00:23:58,800 --> 00:24:00,320
+[SPEAKER_00] At least you didn't wait four years for it.
+
+336
+00:24:00,400 --> 00:24:00,880
+[SPEAKER_00] So that's good.
+
+337
+00:24:01,360 --> 00:24:01,840
+[SPEAKER_02] Yeah, I know.
+
+338
+00:24:02,160 --> 00:24:10,240
+[SPEAKER_02] After four years of hard work of all the things to happen, I had scheduled the launch, put it on my press page.
+
+339
+00:24:10,320 --> 00:24:20,720
+[SPEAKER_02] So if you go to press dot contrast dot co, we'll link it in the show notes, but I create a press page for every release that I'm trying to get a little press for, and on there I put the launch date and time.
+
+340
+00:24:20,960 --> 00:24:22,240
+[SPEAKER_02] So it's kind of the embargo time.
+
+341
+00:24:22,480 --> 00:24:35,200
+[SPEAKER_02] So I did talk to a few journalists and I had set this time and it turned out that at the exact same moment Apple was planning to announce their DMA compliance.
+
+342
+00:24:35,520 --> 00:24:39,840
+[SPEAKER_02] And so someone from the press was reached out and said, Hey, there's big news coming an hour from now.
+
+343
+00:24:40,080 --> 00:24:40,880
+[SPEAKER_02] Can I just publish now?
+
+344
+00:24:41,040 --> 00:24:43,520
+[SPEAKER_01] And I was like, Oh, yeah, that's not a good sign.
+
+345
+00:24:44,080 --> 00:24:45,600
+[SPEAKER_02] It's like, All right, just go for it.
+
+346
+00:24:45,920 --> 00:24:50,240
+[SPEAKER_02] Then I reached out to other folks that I thought might be writing about it and told them, like, go ahead and write about it.
+
+347
+00:24:50,320 --> 00:24:54,480
+[SPEAKER_02] And then even like 9 to 5 Mac was like, Hey, I think we should just wait till tomorrow.
+
+348
+00:24:55,200 --> 00:24:56,720
+[SPEAKER_02] They didn't even publish till the next day.
+
+349
+00:24:57,120 --> 00:25:02,800
+[SPEAKER_02] And then several of the people I was talking to got so distracted with the DMA news that they didn't even write about it.
+
+350
+00:25:03,040 --> 00:25:10,720
+[SPEAKER_02] So there was like layers there of one, it didn't get written about by as many outlets as would have likely written about it had it not.
+
+351
+00:25:11,600 --> 00:25:11,920
+[SPEAKER_02] Then two.
+
+352
+00:25:12,160 --> 00:25:17,680
+[SPEAKER_02] Two, there wasn't any kind of social halo because the air was sucked out of the room.
+
+353
+00:25:18,000 --> 00:25:22,560
+[SPEAKER_02] So people who may have seen it and may have otherwise tweeted about it or said, Hey, this is cool.
+
+354
+00:25:22,880 --> 00:25:28,000
+[SPEAKER_02] Or other journalists see TechCrunch write about it and they write their own story.
+
+355
+00:25:28,160 --> 00:25:29,760
+[SPEAKER_02] Instead, everyone was like super busy.
+
+356
+00:25:30,080 --> 00:25:32,480
+[SPEAKER_00] I did the DM launch that day, David, to be honest.
+
+357
+00:25:32,640 --> 00:25:33,600
+[SPEAKER_00] Like I was so busy.
+
+358
+00:25:33,840 --> 00:25:35,040
+[SPEAKER_01] Like I think on a normal day.
+
+359
+00:25:35,680 --> 00:25:37,440
+[SPEAKER_01] I was going to say, even including you, David.
+
+360
+00:25:37,760 --> 00:25:43,360
+[SPEAKER_01] Like people on that day, you are one of the people that people go to Twitter or whatever to find.
+
+361
+00:25:43,760 --> 00:25:47,600
+[SPEAKER_01] So it's like they go to your Twitter and they might see like, Hey, I launched this new thing.
+
+362
+00:25:47,680 --> 00:25:56,320
+[SPEAKER_00] And they're just scrolling to find your take on this new thing because just why I don't discourage side apps explicitly because the world just discourages side hustles all the time.
+
+363
+00:25:57,200 --> 00:26:01,760
+[SPEAKER_00] Like your main gig will always destroy anything you try to do.
+
+364
+00:26:02,560 --> 00:26:02,640
+[SPEAKER_02] Yeah.
+
+365
+00:26:02,880 --> 00:26:16,400
+[SPEAKER_02] So like an hour into my app launch and I didn't know what the news would be, but an hour into the launch before I even had a chance to like tweet it from the company account before even some of my own launch day plans were finished.
+
+366
+00:26:16,720 --> 00:26:17,680
+[SPEAKER_02] Apple announced that.
+
+367
+00:26:17,920 --> 00:26:29,440
+[SPEAKER_02] And then I was like all hands on deck with you and Jacob and everybody else at RevenueCat trying to figure it out and then scheduling a we webinar for the very next day and like reading through all the documents and chatting about it internally.
+
+368
+00:26:29,600 --> 00:26:39,040
+[SPEAKER_02] And so what would have been maybe otherwise a lighter revenue cat day where I take a little personal time to celebrate my app launch was just complete decimate.
+
+369
+00:26:39,200 --> 00:26:46,480
+[SPEAKER_02] So instead I was up till like two hours a day reading the fine print of European regulation to host a webinar the very next day.
+
+370
+00:26:47,120 --> 00:26:54,880
+[SPEAKER_02] It was just about as big of a disaster as you could possibly have when your plan is to get attention.
+
+371
+00:26:55,120 --> 00:27:00,160
+[SPEAKER_02] Apple still hasn't featured and I'm not totally sure why, but I have a feeling it's that well two things.
+
+372
+00:27:00,720 --> 00:27:09,920
+[SPEAKER_02] And this is a regret that I have now, looking back, is I was trying to squeeze it in ahead of Vision Pro, and I thought so much air was going to be sucked out of the room from Vision Pro.
+
+373
+00:27:10,640 --> 00:27:23,680
+[SPEAKER_02] What I didn't know was Apple was distracted with the DMA, but the whole editorial team was, I'm sure, so busy with the launch of the Vision Pro, I never could have known that the DMA would be such a big deal and would be launched on that day.
+
+374
+00:27:24,400 --> 00:27:29,040
+[SPEAKER_02] But I should have known that the App Store editorial team would be super busy with the Vision Pro.
+
+375
+00:27:29,440 --> 00:27:38,480
+[SPEAKER_02] And the reason I was trying to get it out was to launch, was to like actually ship versus, oh, now we need to build a V Vision Pro app before we can ship.
+
+376
+00:27:38,640 --> 00:27:43,360
+[SPEAKER_02] And so I was trying to get out before the Vision Pro so that people were not asking, Well, where is your Vision Pro app or whatever?
+
+377
+00:27:43,440 --> 00:27:47,840
+[SPEAKER_02] Well, it turns out a month later, I don't think anyone would ask for a Vision Pro app anyway.
+
+378
+00:27:48,640 --> 00:27:54,800
+[SPEAKER_00] So, hindsight 2020, I should have just waited a month and let the Vision Pro stuff blow over before launching.
+
+379
+00:27:54,960 --> 00:28:00,800
+[SPEAKER_00] But that's a top tip, subclub listeners, if you're going to launch your app, don't do it on the day that Apple announces the DMA.
+
+380
+00:28:01,200 --> 00:28:03,360
+[SPEAKER_00] So take that one, write that one down in your mailbox.
+
+381
+00:28:03,520 --> 00:28:04,800
+[SPEAKER_01] This is really actionable.
+
+382
+00:28:05,120 --> 00:28:06,480
+[SPEAKER_01] This applies to all businesses.
+
+383
+00:28:07,040 --> 00:28:07,600
+[SPEAKER_00] You'll do better.
+
+384
+00:28:07,920 --> 00:28:08,000
+[SPEAKER_00] Yeah.
+
+385
+00:28:08,400 --> 00:28:11,840
+[SPEAKER_00] If you choose a different day than the day that the App Store melts down in Europe.
+
+386
+00:28:12,000 --> 00:28:14,640
+[SPEAKER_00] But it's another side effect of the big launch.
+
+387
+00:28:14,960 --> 00:28:19,600
+[SPEAKER_00] If you put all your eggs into one big launch basket, you're sometimes you're just going to catch a lost track.
+
+388
+00:28:19,840 --> 00:28:21,200
+[SPEAKER_00] Some big news articles are going to come out.
+
+389
+00:28:21,200 --> 00:28:22,480
+[SPEAKER_00] It happens with fundraisings too.
+
+390
+00:28:22,640 --> 00:28:25,360
+[SPEAKER_00] Like companies put big, like, efforts behind their fundraising announcement.
+
+391
+00:28:25,520 --> 00:28:32,160
+[SPEAKER_00] And then that morning, whatever company, applies for bankruptcy and the entire, like, startup news scape is, like, covered with that, right?
+
+392
+00:28:32,400 --> 00:28:35,520
+[SPEAKER_00] And nobody cares or some other company raises more or whatever.
+
+393
+00:28:35,920 --> 00:28:36,480
+[SPEAKER_00] That's just a risk.
+
+394
+00:28:36,640 --> 00:28:40,080
+[SPEAKER_00] And there's sometimes a little bit you can do to, like, derisk that.
+
+395
+00:28:40,320 --> 00:28:44,400
+[SPEAKER_00] Maybe you have a friendly contact in the press that tells you, hey, there's already an embargo news drop that day.
+
+396
+00:28:44,560 --> 00:28:46,000
+[SPEAKER_00] But like, you're not usually that lucky.
+
+397
+00:28:46,320 --> 00:28:52,320
+[SPEAKER_00] But if you're launching more often, you have a little more even., you know, you de-risk your launch plans by having many small launches.
+
+398
+00:28:52,560 --> 00:28:53,760
+[SPEAKER_00] You can always try to do both, right?
+
+399
+00:28:54,080 --> 00:28:56,640
+[SPEAKER_00] Why can't you just have many small launches and big launch too, right?
+
+400
+00:28:56,800 --> 00:28:57,360
+[SPEAKER_00] I think you can kind of.
+
+401
+00:28:57,760 --> 00:28:59,040
+[SPEAKER_00] No, and that's what I should have done.
+
+402
+00:28:59,200 --> 00:28:59,840
+[SPEAKER_00] I could have done that.
+
+403
+00:28:59,920 --> 00:29:02,880
+[SPEAKER_00] We could have launched the Apple Watch app and it would have been just launch it quietly.
+
+404
+00:29:04,320 --> 00:29:05,840
+[SPEAKER_00] And then be like, this is where they're up three oh.
+
+405
+00:29:06,000 --> 00:29:06,640
+[SPEAKER_00] They've never seen it.
+
+406
+00:29:06,800 --> 00:29:07,680
+[SPEAKER_01] These journalists have never seen it.
+
+407
+00:29:07,840 --> 00:29:11,440
+[SPEAKER_01] Like, you can always say, you're saying the big launch.
+
+408
+00:29:11,600 --> 00:29:13,840
+[SPEAKER_01] And I think big launch maybe has two meanings.
+
+409
+00:29:14,000 --> 00:29:19,280
+[SPEAKER_01] There's like the big launch in the sense of you're holding a bunch of stuff for this one big launch.
+
+410
+00:29:19,760 --> 00:29:24,000
+[SPEAKER_01] But there's also the meaning of like making your launch big, like going for just being loud and everything.
+
+411
+00:29:24,240 --> 00:29:25,920
+[SPEAKER_01] And you can be loud once a month.
+
+412
+00:29:26,160 --> 00:29:27,440
+[SPEAKER_00] I mean, this is the YC advice.
+
+413
+00:29:27,520 --> 00:29:29,840
+[SPEAKER_00] If you have a launch that goes badly, just launch again.
+
+414
+00:29:30,160 --> 00:29:32,160
+[SPEAKER_00] The definition of a bad launch is nobody sees it.
+
+415
+00:29:32,320 --> 00:29:33,840
+[SPEAKER_00] So nobody's going to see you do it again, right?
+
+416
+00:29:34,720 --> 00:29:35,440
+[SPEAKER_00] RevenueCat did that?
+
+417
+00:29:35,520 --> 00:29:36,080
+[SPEAKER_00] I think so.
+
+418
+00:29:36,480 --> 00:29:37,760
+[SPEAKER_00] I mean, like, stage somewhere.
+
+419
+00:29:37,840 --> 00:29:40,800
+[SPEAKER_00] So, like, yeah, we posted on Reddit and it kind of got some steam.
+
+420
+00:29:40,960 --> 00:29:42,080
+[SPEAKER_00] And then we launched a beta.
+
+421
+00:29:42,240 --> 00:29:46,720
+[SPEAKER_00] Like, every time we fundraising, we're like, RevenueCat's launching out of, bro, bro, we make some stuff up.
+
+422
+00:29:46,960 --> 00:29:48,640
+[SPEAKER_00] And it's a little bit of a wink and a knot.
+
+423
+00:29:48,800 --> 00:29:50,080
+[SPEAKER_00] Like, we're always doing stuff, right?
+
+424
+00:29:50,320 --> 00:29:54,880
+[SPEAKER_00] Yeah, I guess it's a little bit of showmanship just to, like, put a narrative to the building you've been doing.
+
+425
+00:29:55,200 --> 00:29:57,280
+[SPEAKER_00] And you can kind of do, but I mean, look at Tesla.
+
+426
+00:29:57,360 --> 00:30:02,880
+[SPEAKER_00] Like, every big company juices up stuff they've been working, you know, they dress it up, they push it.
+
+427
+00:30:03,040 --> 00:30:11,840
+[SPEAKER_01] That's what marketing I mean, every Apple keynote starts with a bunch of things that sound like launches that only all the super nerd is like, we've heard this before, right?
+
+428
+00:30:12,080 --> 00:30:13,840
+[SPEAKER_01] But most people watching it are like, this is new.
+
+429
+00:30:14,000 --> 00:30:14,560
+[SPEAKER_01] Like, this is okay.
+
+430
+00:30:15,120 --> 00:30:18,080
+[SPEAKER_00] You're going to see who are watching, which is probably who it's for.
+
+431
+00:30:18,320 --> 00:30:20,480
+[SPEAKER_00] But yeah, I mean, it's the power of narrative control, right?
+
+432
+00:30:20,720 --> 00:30:22,240
+[SPEAKER_00] Like, you can really kind of drive the narrative.
+
+433
+00:30:22,400 --> 00:30:24,800
+[SPEAKER_00] And I was telling you guys before that started podcasts, it's all made up.
+
+434
+00:30:24,880 --> 00:30:25,440
+[SPEAKER_00] Everybody has to.
+
+435
+00:30:25,600 --> 00:30:26,320
+[SPEAKER_00] Oh, it's made up.
+
+436
+00:30:26,480 --> 00:30:28,080
+[SPEAKER_00] You can just contrast is made up.
+
+437
+00:30:28,240 --> 00:30:31,760
+[SPEAKER_00] But yeah, nothing you can do to control for like just dumb luck.
+
+438
+00:30:32,000 --> 00:30:36,240
+[SPEAKER_01] And it feels like in this particular case, kind of the mistake.
+
+439
+00:30:36,480 --> 00:30:58,880
+[SPEAKER_01] If, if you were to say that, would be you made a lot right on this one event, and then things that are outside of your control can go wrong, and you gave up on all of the smaller events that could have happened over the last three years or whatever, and put it all into kind of all your quivers behind, or I don't know the phrase, something with a bow and arrow and putting everything behind the one bow or arrow.
+
+440
+00:30:59,120 --> 00:31:00,080
+[SPEAKER_02] All my eggs in one bag.
+
+441
+00:31:00,400 --> 00:31:00,880
+[SPEAKER_01] Yeah, yeah.
+
+442
+00:31:01,200 --> 00:31:04,000
+[SPEAKER_01] And so that maybe is like the mistake that happened here.
+
+443
+00:31:04,240 --> 00:31:07,600
+[SPEAKER_01] But I guess maybe the more interesting thing then is what now?
+
+444
+00:31:07,840 --> 00:31:08,480
+[SPEAKER_01] What are you going to do?
+
+445
+00:31:08,560 --> 00:31:09,680
+[SPEAKER_01] Are you going to do like Jacob said?
+
+446
+00:31:09,920 --> 00:31:11,040
+[SPEAKER_01] Are you going to try and relaunch?
+
+447
+00:31:11,360 --> 00:31:12,240
+[SPEAKER_02] Short answer, yes.
+
+448
+00:31:12,240 --> 00:31:15,200
+[SPEAKER_02] Yes, I wanted to actually go through more of the failures.
+
+449
+00:31:15,360 --> 00:31:15,920
+[SPEAKER_02] Oh, yeah.
+
+450
+00:31:16,800 --> 00:31:33,280
+[SPEAKER_02] And to give the audience a little bit of context, Jacob and I were chatting Friday and I was like, we're talking about the podcast broadly and we've had some really great guests on, but one of the things I want to do more is talk to people who have failed and talk about even those who have succeeded about all the failures leading up to the success.
+
+451
+00:31:33,680 --> 00:31:36,400
+[SPEAKER_01] And I was like, yeah, I failed so bad with WeatherApp.
+
+452
+00:31:36,480 --> 00:31:38,560
+[SPEAKER_02] And Jacob was like, well, let's talk about it.
+
+453
+00:31:39,280 --> 00:31:44,000
+[SPEAKER_02] If we're going to get other people on the podcast to talk about failures, why don't you lead by example?
+
+454
+00:31:44,400 --> 00:31:47,680
+[SPEAKER_02] And so this is Monday, like three days later, and that's exactly what we're doing.
+
+455
+00:31:48,080 --> 00:32:00,160
+[SPEAKER_02] So I actually want to talk through more of the things I think really failed at the launch before we get to how I hope to potentially recover from this failed launch, because I think it's really instructive.
+
+456
+00:32:00,320 --> 00:32:05,360
+[SPEAKER_02] And then for me, doing all this stuff, it informs the questions I ask on the podcast.
+
+457
+00:32:05,600 --> 00:32:07,680
+[SPEAKER_02] You know, I'm using RevenueCat experiments in the app.
+
+458
+00:32:07,920 --> 00:32:11,200
+[SPEAKER_02] It informs how I talk to my colleagues about our product internally.
+
+459
+00:32:11,760 --> 00:32:13,680
+[SPEAKER_02] I give tons of advice on subclub.
+
+460
+00:32:13,760 --> 00:32:15,280
+[SPEAKER_02] I get tons of advice on subclub.
+
+461
+00:32:15,360 --> 00:32:17,360
+[SPEAKER_02] Apparently, I didn't take all the advice.
+
+462
+00:32:18,720 --> 00:32:22,000
+[SPEAKER_02] I think one of the other big failures I wanted to discuss was pricing.
+
+463
+00:32:22,640 --> 00:32:30,480
+[SPEAKER_02] And specifically because we talk so much about it pricing and I kind of just failed at every level of the typical advice that we give.
+
+464
+00:32:31,200 --> 00:32:40,800
+[SPEAKER_02] So one of them is pricing is not as important as you might think and it's probably better to launch with a lower price and just get more people using the app and get more subscribers.
+
+465
+00:32:41,200 --> 00:32:49,040
+[SPEAKER_02] And I launched with what is probably the highest ticket weather app subscription at $4 a month was fine, but the $40 a year.
+
+466
+00:32:49,760 --> 00:32:56,720
+[SPEAKER_02] But interestingly, my biggest regret is not the $40 a year, it's that I didn't do a sale on launch.
+
+467
+00:32:56,960 --> 00:33:07,280
+[SPEAKER_02] So this is the advice I would have if you are going to do a big attention grabbing thing, do it with some kind of discount, 25% off, 50% off, whatever.
+
+468
+00:33:07,520 --> 00:33:13,040
+[SPEAKER_02] Because all that attention I did get, most of the people who wrote about it listed the price.
+
+469
+00:33:13,520 --> 00:33:22,720
+[SPEAKER_02] A lot of people who maybe even read the TechCrunch article, read it on nine to five, Mac, read it on MacRimors or whatever, Boy Genius Report, they all saw $40 and were like, yeah, no way.
+
+470
+00:33:23,120 --> 00:33:28,320
+[SPEAKER_02] But if they had seen $40, but 50% off, I think we would have done it much better.
+
+471
+00:33:28,800 --> 00:33:30,000
+[SPEAKER_01] It creates like a yes agency.
+
+472
+00:33:30,320 --> 00:33:32,320
+[SPEAKER_01] Like take action now, don't just wait.
+
+473
+00:33:32,880 --> 00:33:44,560
+[SPEAKER_02] Part of the reason I wanted to push the envelope is that I talk to so many folks many folks here on this podcast and we talked to so many people inside RevenueCat where they have what seems like unreasonably high prices.
+
+474
+00:33:45,040 --> 00:33:50,960
+[SPEAKER_02] And my theory now is that, well, one, this is a weather app, it's a commodity good.
+
+475
+00:33:51,200 --> 00:33:56,800
+[SPEAKER_02] I should have really better understood like willingness to pay, I should have looked at what other apps are charging and everything.
+
+476
+00:33:57,600 --> 00:34:00,640
+[SPEAKER_02] But the other thing is like the source of attention matters a lot.
+
+477
+00:34:01,280 --> 00:34:11,680
+[SPEAKER_02] So the apps that are charging a higher rate, they're either creating a lot of demand through paid advertising where there's not a lot of expectation going into it versus getting press.
+
+478
+00:34:12,480 --> 00:34:18,320
+[SPEAKER_02] Like the attention you get, I think makes a difference to that willingness to pay and the type of people you attract.
+
+479
+00:34:18,560 --> 00:34:21,600
+[SPEAKER_02] And then especially apps that are really big with search.
+
+480
+00:34:21,840 --> 00:34:31,920
+[SPEAKER_02] If someone is searching for a weather app and is looking for a solution, that's a really different audience than people just seeing it in the press and wanting to check it out.
+
+481
+00:34:32,560 --> 00:34:36,560
+[SPEAKER_02] So there's like a different kind of intent, a different kind of user, all those things.
+
+482
+00:34:36,800 --> 00:34:40,320
+[SPEAKER_02] And so I think it was a bad move pricing it at 40 bucks.
+
+483
+00:34:40,560 --> 00:34:45,040
+[SPEAKER_02] I think we probably should have done 30 and then done a discount to 1999 for the launch.
+
+484
+00:34:45,360 --> 00:34:46,320
+[SPEAKER_01] Yeah, it's interesting.
+
+485
+00:34:46,560 --> 00:34:48,640
+[SPEAKER_01] Almost definitely, this thought is coming from me.
+
+486
+00:34:49,120 --> 00:35:03,520
+[SPEAKER_01] listening to this podcast, but like the idea that the journey that the user has taken at the point when they see the paywall being super important, which oftentimes is when you're talking about the onboarding experience, but it's also the attribution as well.
+
+487
+00:35:04,080 --> 00:35:18,720
+[SPEAKER_01] It's interesting to think that, yeah, like whether that person came through a splashy launch or press versus the high intent they were searching for it, or they saw an ad on Facebook or whatever, that should also drive what offering you're showing them on that paywall.
+
+488
+00:35:18,960 --> 00:35:24,000
+[SPEAKER_01] I don't know if I've ever seen this before, but it would be interesting to, I guess I have on a launch itself.
+
+489
+00:35:24,720 --> 00:35:34,640
+[SPEAKER_01] All the press people that you're trying to get to write an article include a link that has the attribution so that that discount only applies if they get it through their article.
+
+490
+00:35:35,280 --> 00:35:42,240
+[SPEAKER_00] If you're launching an otherwise unknown app with a day of press, you can pretty much guarantee that anyone who buys it on that day is coming from the press, right?
+
+491
+00:35:42,480 --> 00:35:54,720
+[SPEAKER_01] Yeah, but even if 100% of users, that's the case, from the person writing the article story, they being able to say, just tell them that nine to five readers are the only well, that's true.
+
+492
+00:35:54,880 --> 00:35:55,360
+[SPEAKER_01] You could just say that.
+
+493
+00:35:56,480 --> 00:35:57,680
+[SPEAKER_01] Am I coming out scrupulous?
+
+494
+00:35:59,040 --> 00:35:59,840
+[SPEAKER_00] Nobody's going to mind.
+
+495
+00:36:00,000 --> 00:36:00,800
+[SPEAKER_00] It's literally true.
+
+496
+00:36:01,120 --> 00:36:02,640
+[SPEAKER_00] If they click, they'll get the discount.
+
+497
+00:36:03,120 --> 00:36:04,640
+[SPEAKER_01] Maybe everyone else gets the discount too.
+
+498
+00:36:04,880 --> 00:36:07,040
+[SPEAKER_01] But I think that's something that could live on though, right?
+
+499
+00:36:07,280 --> 00:36:29,840
+[SPEAKER_01] Like one of the things for me that I do see in the data and also it's in my head that this is a thing is like a lot of these journalists for some of the bigger press junkets, they spend a lot of time on SEO, they make these big listics because they know that one, they'll get a lot of attention on that day, but then they'll get attention for the next six months when someone buys their new iPhone and they're like, Okay, what are these new widgets?
+
+500
+00:36:30,080 --> 00:36:32,560
+[SPEAKER_01] Because that's probably when they actually update their phone at the same time.
+
+501
+00:36:32,880 --> 00:36:36,000
+[SPEAKER_01] That's a driver of traffic over time for your app as well.
+
+502
+00:36:36,480 --> 00:36:41,760
+[SPEAKER_01] Each one of these articles that they write, that deal kind of can live there as well.
+
+503
+00:36:42,560 --> 00:36:46,160
+[SPEAKER_01] That's also part of that narrative, that user journey all the way to your paywall.
+
+504
+00:36:46,320 --> 00:36:56,960
+[SPEAKER_01] So like theoretically, those could even live on there and show a different offering to someone that came from an article versus someone who came from searching, I need to know the weather or whatever in the app store.
+
+505
+00:36:57,280 --> 00:37:12,960
+[SPEAKER_02] One other thing I did want to mention on pricing is that I priced based on things that I knew and based on my thinking of the value of Weather Up and my costs in servicing Weather Up, not on the customer pricing.
+
+506
+00:37:15,120 --> 00:37:18,880
+[SPEAKER_02] I think that's a huge thing that founders can get themselves tied up in knots about.
+
+507
+00:37:19,040 --> 00:37:26,080
+[SPEAKER_02] And I succumbed to it myself is that one of the features that we were leading with that I don't think many people are even using.
+
+508
+00:37:26,400 --> 00:37:36,720
+[SPEAKER_02] People didn't even talk about it much, but I was personally so excited about it because this is how I use it is that with WeatherUp 3.0 you can set a different weather source per widget.
+
+509
+00:37:37,280 --> 00:37:41,760
+[SPEAKER_02] And so I have a whole home screen dedicated on my iPhone with three widgets.
+
+510
+00:37:42,160 --> 00:37:46,960
+[SPEAKER_02] And it's Apple Weather as a source, Eris Weather as a source, and AccuWeather as a source.
+
+511
+00:37:48,480 --> 00:37:52,560
+[SPEAKER_02] I can see whether any of the forecasts are showing rain coming.
+
+512
+00:37:52,960 --> 00:37:55,520
+[SPEAKER_02] I can see the differences in the forecast and everything like that.
+
+513
+00:37:55,840 --> 00:37:57,360
+[SPEAKER_02] Super, uber, nerdy feature.
+
+514
+00:37:57,600 --> 00:38:19,200
+[SPEAKER_02] Well, it's also very expensive to do that because every 15 minutes or whatever, it's hitting the server not one time to one weather data provider and the weather data is why I had been losing money on the app leading up to this launch was that it's just really expensive to provide weather data and the widgets and complications are especially expensive because they're constantly updating in the background.
+
+515
+00:38:19,680 --> 00:38:25,680
+[SPEAKER_02] So I got myself all twisted in knots thinking, okay, we need to make sure there's a level of profitabilability here.
+
+516
+00:38:26,000 --> 00:38:35,760
+[SPEAKER_02] And if a bunch of people start putting five widgets on their home screen with different locations and different sources and everything else, it's going to get really expensive for us to serve these customers.
+
+517
+00:38:36,560 --> 00:38:44,160
+[SPEAKER_02] It's really hard to educate customers on how expensive weather data is and then the fact that it's even more expensive because it's like, give me my car.
+
+518
+00:38:44,320 --> 00:38:44,560
+[SPEAKER_00] Exactly.
+
+519
+00:38:44,640 --> 00:38:45,200
+[SPEAKER_00] I'm a weather man.
+
+520
+00:38:45,280 --> 00:38:47,360
+[SPEAKER_02] Like, I don't tell me about your business model.
+
+521
+00:38:47,600 --> 00:38:48,240
+[SPEAKER_02] I don't want to know.
+
+522
+00:38:48,720 --> 00:38:55,040
+[SPEAKER_02] And so I was pricing based on my knowledge of that and my own thinking the feature was going to get super hyped.
+
+523
+00:38:55,360 --> 00:38:56,880
+[SPEAKER_01] And you only have the one tier, right?
+
+524
+00:38:57,200 --> 00:38:59,040
+[SPEAKER_01] It's not like you have a more expensive plan.
+
+525
+00:38:59,520 --> 00:39:00,400
+[SPEAKER_01] I didn't have multiple tier.
+
+526
+00:39:01,280 --> 00:39:04,640
+[SPEAKER_01] So you had to model it in, like, some percentage of users are going to be doing all this.
+
+527
+00:39:05,280 --> 00:39:05,360
+[SPEAKER_00] Yeah.
+
+528
+00:39:05,680 --> 00:39:06,000
+[SPEAKER_00] Exactly.
+
+529
+00:39:06,160 --> 00:39:06,800
+[SPEAKER_00] I'll call back.
+
+530
+00:39:06,960 --> 00:39:09,360
+[SPEAKER_00] I don't think we talked about, but you didn't put any product analytics.
+
+531
+00:39:09,680 --> 00:39:21,760
+[SPEAKER_00] Two causes of death there were one, you didn't have product analytics to tell you how many users are doing this, which we could probably look at the API calls to see, like, the relative now, you know, the percentages, which then I'm going to bust you for that's another symptom of not launching.
+
+532
+00:39:21,840 --> 00:39:27,920
+[SPEAKER_00] If you had launched this as a standalone thing, you could have, like, not touched anything, just measured how many people are doing what.
+
+533
+00:39:28,160 --> 00:39:34,640
+[SPEAKER_00] And then you would have some idea of, like, okay, actually, as long as we charge X, we're going to be able to cover costs, because not that many people actually use this feature.
+
+534
+00:39:35,040 --> 00:39:36,000
+[SPEAKER_00] There's some risk there, but.
+
+535
+00:39:36,240 --> 00:39:36,320
+[SPEAKER_02] Yeah.
+
+536
+00:39:36,480 --> 00:39:38,560
+[SPEAKER_02] Yeah, and this is why we talk about all this stuff.
+
+537
+00:39:38,720 --> 00:39:40,480
+[SPEAKER_02] Like, I should have surveyed some users.
+
+538
+00:39:40,560 --> 00:39:42,160
+[SPEAKER_00] I should have value based pricing.
+
+539
+00:39:42,640 --> 00:39:44,720
+[SPEAKER_00] Value based pricing is typically helpful.
+
+540
+00:39:44,880 --> 00:39:48,880
+[SPEAKER_00] I think actually in this case, David, value based pricing is hurtful for your bottom line potentially.
+
+541
+00:39:49,120 --> 00:39:53,680
+[SPEAKER_00] Actually not, because I think if you're closer to the perceived value of the product, you'll get a better optimum.
+
+542
+00:39:53,840 --> 00:40:04,480
+[SPEAKER_00] In value based pricing, you want to set your pricing to the perceived value for some aggregate of users, as opposed to cost based pricing where you're saying it cost me x dollars to deliver, I'm going to charge x plus five percent profit or whatever.
+
+543
+00:40:04,880 --> 00:40:09,200
+[SPEAKER_00] In SaaS and stuff, it's really important because the cost to deliver is often very, very low.
+
+544
+00:40:09,520 --> 00:40:12,160
+[SPEAKER_00] If you price just to your cost, you're giving away too much.
+
+545
+00:40:12,720 --> 00:40:18,640
+[SPEAKER_00] And often, especially in SaaS where you're like, as a developer, having to ask for $100,000 a year, right?
+
+546
+00:40:19,840 --> 00:40:22,160
+[SPEAKER_00] You really have to be like, gosh, that's so much money for software.
+
+547
+00:40:22,320 --> 00:40:29,280
+[SPEAKER_00] But then you go, well, if I'm replacing a developer or if I'm replacing some amount of headcount or some amount of whatever, now I see the value, right?
+
+548
+00:40:29,520 --> 00:40:31,680
+[SPEAKER_00] The value is there and therefore, you know, you feel it.
+
+549
+00:40:32,000 --> 00:40:39,040
+[SPEAKER_00] But you could be on either side of that price curve in the sense that like, you're pricing way above the perceived value, the demand is going to drop off again.
+
+550
+00:40:39,200 --> 00:40:41,680
+[SPEAKER_00] So value-based pricing doesn't necessarily mean charge more.
+
+551
+00:40:42,240 --> 00:40:48,480
+[SPEAKER_00] It just means like charge the perceived value because the costs are only something really the provider of the service cares of the company.
+
+552
+00:40:48,560 --> 00:40:52,480
+[SPEAKER_01] Well, they're highly variable based on the number of users, which is weird too.
+
+553
+00:40:52,640 --> 00:40:52,800
+[SPEAKER_00] Yeah.
+
+554
+00:40:53,120 --> 00:41:03,360
+[SPEAKER_00] And also like at this stage, like there's some fundamental costs that you can never get below potentially, but like you should really, I mean, when RevenueCat launched, like our cost structures were really brutal in the early days, right?
+
+555
+00:41:03,600 --> 00:41:09,600
+[SPEAKER_00] But it was like, it's okay, because eventually we're going to have a team that's going to focus on making everything efficient and driving down costs and whatever.
+
+556
+00:41:09,760 --> 00:41:12,640
+[SPEAKER_00] But in the early days, it was just like turn up the database dial, right?
+
+557
+00:41:12,880 --> 00:41:14,080
+[SPEAKER_02] Like just keep earning money.
+
+558
+00:41:14,640 --> 00:41:19,600
+[SPEAKER_00] Um, but obviously a different thing where you have APIs, you have a more fixed cost.
+
+559
+00:41:19,760 --> 00:41:22,560
+[SPEAKER_00] But I think the worst way to do this is to be like, how much did it cost me to build this?
+
+560
+00:41:22,880 --> 00:41:22,960
+[SPEAKER_00] Yeah.
+
+561
+00:41:23,200 --> 00:41:24,240
+[SPEAKER_00] And then they divide it into that.
+
+562
+00:41:24,320 --> 00:41:26,000
+[SPEAKER_00] It's like, no, don't do that.
+
+563
+00:41:26,160 --> 00:41:26,720
+[SPEAKER_00] Don't do that.
+
+564
+00:41:26,880 --> 00:41:28,160
+[SPEAKER_00] That's not going to end well for you.
+
+565
+00:41:28,560 --> 00:41:44,880
+[SPEAKER_02] And then the bigger problem for me too was on the value-based pricing front is that people have expectations coming into a weather app, like understanding my market as weather nerd, like who's going to put this widget on their home screen, weather nerd, weather nerd already have five other weather apps.
+
+566
+00:41:45,040 --> 00:41:47,040
+[SPEAKER_02] They're probably subscribed to two other weather apps.
+
+567
+00:41:47,440 --> 00:41:50,080
+[SPEAKER_02] So they have a sense of like what a weather app should cost.
+
+568
+00:41:50,480 --> 00:42:03,520
+[SPEAKER_02] And one of the ones I got compared to which I know Brian, the developer of Carrot Weather, and that's when I got called out against was like, well, Carrot Weather has more features and is only 30$30 a year on their like most premium tier.
+
+569
+00:42:04,000 --> 00:42:04,640
+[SPEAKER_02] And it's true.
+
+570
+00:42:05,200 --> 00:42:12,080
+[SPEAKER_02] If I had thought more about who I was marketing to, I would have realized that they already had that price comparison in mind.
+
+571
+00:42:12,480 --> 00:42:18,480
+[SPEAKER_00] And yeah, it's a real thing to assume the market is already somewhat in equilibrium, especially for something where you have a lot of products.
+
+572
+00:42:18,800 --> 00:42:22,720
+[SPEAKER_00] I don't think looking at your competitors, you know, if you're building something truly new, it's harder.
+
+573
+00:42:23,120 --> 00:42:29,280
+[SPEAKER_00] But if you're building something that's like, I want to say a commodity, but think of car companies, like car companies are super precise in their pricing, right?
+
+574
+00:42:29,520 --> 00:42:31,040
+[SPEAKER_00] Because most cars are commodities, right?
+
+575
+00:42:31,200 --> 00:42:32,720
+[SPEAKER_00] There's like slightly differentiated.
+
+576
+00:42:33,200 --> 00:42:36,560
+[SPEAKER_00] And so they have to be laser tight with where the market is and they know they.
+
+577
+00:42:36,560 --> 00:42:39,360
+[SPEAKER_00] And they know they won't sell them if their cost is more than this and stuff like that.
+
+578
+00:42:39,520 --> 00:42:39,600
+[SPEAKER_00] Yeah.
+
+579
+00:42:40,080 --> 00:42:40,160
+[SPEAKER_02] Yeah.
+
+580
+00:42:40,320 --> 00:42:42,480
+[SPEAKER_02] And you have to price in that differentiation too, right?
+
+581
+00:42:42,800 --> 00:42:47,200
+[SPEAKER_02] I think that was a little bit of where I was hoping that this was differentiated enough and valuable enough.
+
+582
+00:42:47,680 --> 00:42:50,080
+[SPEAKER_02] We got thousands of subscribers at this launch.
+
+583
+00:42:50,240 --> 00:42:51,360
+[SPEAKER_02] It wasn't a complete failure.
+
+584
+00:42:51,840 --> 00:43:02,160
+[SPEAKER_02] So, I mean, I did kind of prove that a certain number of people were willing to pay a premium for what they perceived to be a premium feature and a premium experience.
+
+585
+00:43:02,400 --> 00:43:03,600
+[SPEAKER_02] Now I have the opportunity to experiment.
+
+586
+00:43:03,920 --> 00:43:06,000
+[SPEAKER_02] You had asked earlier about, you know, where do I go from here?
+
+587
+00:43:06,240 --> 00:43:07,520
+[SPEAKER_02] And we kind of already covered it.
+
+588
+00:43:07,680 --> 00:43:09,200
+[SPEAKER_02] It's like, I'm going to launch again.
+
+589
+00:43:09,680 --> 00:43:11,200
+[SPEAKER_02] Am I going to get as much press this time?
+
+590
+00:43:11,360 --> 00:43:11,920
+[SPEAKER_02] Probably no.
+
+591
+00:43:12,000 --> 00:43:24,640
+[SPEAKER_02] So, but like you said, I'm going to create one or two features, nothing massive, but one or two features that I think are interesting enough to get some more attention and bundle those up and do a little relaunch.
+
+592
+00:43:24,800 --> 00:43:26,800
+[SPEAKER_02] And so people will be seeing it for the first time.
+
+593
+00:43:27,440 --> 00:43:28,480
+[SPEAKER_02] And I'm going to put it on sale.
+
+594
+00:43:28,800 --> 00:43:29,840
+[SPEAKER_02] Exactly, exactly.
+
+595
+00:43:30,320 --> 00:43:35,200
+[SPEAKER_02] And then from there, then I can like experiment more with pricing and win back offers and things like that.
+
+596
+00:43:35,360 --> 00:43:39,200
+[SPEAKER_00] So you ran, I want to shell here for a minute because you used a bunch of RevenueCat stuff, right?
+
+597
+00:43:39,360 --> 00:43:40,160
+[SPEAKER_00] You ran and I did.
+
+598
+00:43:41,200 --> 00:43:41,920
+[SPEAKER_00] Well, how did that stuff go?
+
+599
+00:43:42,080 --> 00:43:45,040
+[SPEAKER_00] Because like, that's probably more than most folks do on a launch, but I'm curious.
+
+600
+00:43:45,200 --> 00:43:45,680
+[SPEAKER_00] What did you set up?
+
+601
+00:43:45,840 --> 00:43:46,240
+[SPEAKER_00] What did you use?
+
+602
+00:43:46,320 --> 00:43:47,040
+[SPEAKER_00] And like, how did that go?
+
+603
+00:43:47,280 --> 00:43:47,360
+[SPEAKER_02] Yeah.
+
+604
+00:43:47,520 --> 00:43:48,720
+[SPEAKER_02] I mean, I guess as a guest, I get.
+
+605
+00:43:48,720 --> 00:43:50,000
+[SPEAKER_02] I guess as a guest I get to show RevenueCat.
+
+606
+00:43:50,640 --> 00:43:52,560
+[SPEAKER_00] I want an honest customer testimonial.
+
+607
+00:43:54,480 --> 00:43:56,960
+[SPEAKER_02] Paywalls went way better than I expected.
+
+608
+00:43:57,280 --> 00:44:09,040
+[SPEAKER_02] So we used the RevenueCat footer view where we built a custom Swift UI paywall behind where we were able to do the video, do a lot of like custom fancy stuff which probably wouldn't have made that much more money.
+
+609
+00:44:09,360 --> 00:44:11,440
+[SPEAKER_02] We'd just used one of the RevenueCat templates.
+
+610
+00:44:12,000 --> 00:44:14,560
+[SPEAKER_02] But I wanted to do the video on the playwall and everything else.
+
+611
+00:44:15,120 --> 00:44:21,040
+[SPEAKER_02] But it was really nice to be able to let RevenueCat just do all the logic behind purchases and everything else.
+
+612
+00:44:21,040 --> 00:44:22,160
+[SPEAKER_02] So it saved us a ton of time.
+
+613
+00:44:22,240 --> 00:44:27,520
+[SPEAKER_02] I think Brock who did the development, I think he said the super fancy Swift UI paywall took less than a day.
+
+614
+00:44:28,000 --> 00:44:30,400
+[SPEAKER_02] And then all the logic and everything else.
+
+615
+00:44:30,800 --> 00:44:38,880
+[SPEAKER_01] For context, if people don't know, like we have a paywalls feature at RevenueCat where we can render everything for you and it's all driven by the back end and you can change things.
+
+616
+00:44:39,280 --> 00:44:46,640
+[SPEAKER_01] But there's a version of it where the only UI we render is the actual hard part, which is the prices and the CTA at the bottom and that stuff.
+
+617
+00:44:47,040 --> 00:44:52,800
+[SPEAKER_01] And then you can build your own super customized fancy animated marketing view behind it.
+
+618
+00:44:53,040 --> 00:44:54,000
+[SPEAKER_01] And so that's what you do.
+
+619
+00:44:54,240 --> 00:44:59,840
+[SPEAKER_00] It's a great solution for the developer that wants to like still own the paywall, but you also want to save a bunch of time.
+
+620
+00:45:00,160 --> 00:45:00,400
+[SPEAKER_00] Right.
+
+621
+00:45:00,880 --> 00:45:10,240
+[SPEAKER_01] Well, and selfishly, from our perspective, it also means that we do support any bespoke feature that we haven't built yet ourselves into our Yeah.
+
+622
+00:45:10,720 --> 00:45:18,800
+[SPEAKER_01] So like at the beginning, we didn't have like videos or if you have certain types of slideshows, even if it's not super complicated, if we haven't built it yet, it is possible.
+
+623
+00:45:19,680 --> 00:45:27,760
+[SPEAKER_02] I don't think he had to do anything, Brock, code wise, because once we were using paywalls to power it, I was able to kick off an experiment.
+
+624
+00:45:28,560 --> 00:45:38,400
+[SPEAKER_02] So at launch, I scheduled it, which is a new feature scheduling experiments, but I scheduled the experiment to start like midnight the day of launch or 12:01 a.m.
+
+625
+00:45:38,560 --> 00:45:41,200
+[SPEAKER_02] the day of launch and the experiment I launched with it.
+
+626
+00:45:41,280 --> 00:45:45,600
+[SPEAKER_02] And it was so fascinating because RevenueCat shipped experiments eighteen months two years ago.
+
+627
+00:45:45,840 --> 00:45:47,760
+[SPEAKER_02] And I've talked to people who have launched experiments.
+
+628
+00:45:47,920 --> 00:45:50,160
+[SPEAKER_02] Charlie, you wrote a blog post about using experiments.
+
+629
+00:45:50,320 --> 00:46:02,480
+[SPEAKER_02] Like a lot of people have talked about experiments, but launching an experiment that I conceived up, implementing it myself, it was just such a different experience of like dog fooding, RevenueCat.
+
+630
+00:46:02,720 --> 00:46:07,040
+[SPEAKER_02] And then also again, the podcasts and the advice I give and what experiments to run and all those kinds of things.
+
+631
+00:46:07,600 --> 00:46:12,800
+[SPEAKER_02] It was so fascinating to set up an experiment myself, run it, look at the results, analyze the results.
+
+632
+00:46:13,040 --> 00:46:14,240
+[SPEAKER_00] Real skin and what I do too, right?
+
+633
+00:46:14,400 --> 00:46:18,480
+[SPEAKER_00] It's easy to talk about someone else's decisions and tests and be like, oh, you should do more of that.
+
+634
+00:46:18,560 --> 00:46:19,360
+[SPEAKER_00] That's what I do all day.
+
+635
+00:46:19,440 --> 00:46:22,480
+[SPEAKER_00] But yeah, when it's your money and you're like, I'm actually testing this, it's different.
+
+636
+00:46:22,640 --> 00:46:22,800
+[SPEAKER_00] Yep.
+
+637
+00:46:23,120 --> 00:46:24,000
+[SPEAKER_00] So it just worked though.
+
+638
+00:46:24,160 --> 00:46:24,640
+[SPEAKER_00] That's pretty cool.
+
+639
+00:46:24,720 --> 00:46:25,360
+[SPEAKER_00] Like, which it should.
+
+640
+00:46:25,520 --> 00:46:25,600
+[SPEAKER_00] Yeah.
+
+641
+00:46:25,840 --> 00:46:32,800
+[SPEAKER_00] I say, unless you're putting something embedded in the behind the footer view and the like custom view, like, the footer will just automatically adapt to the offering.
+
+642
+00:46:33,440 --> 00:46:41,920
+[SPEAKER_00] Even just customizing a paywall for having two different offerings pre without using our stuff, which is just, it's not insurmountable, but it's days of trudge, you know?
+
+643
+00:46:42,400 --> 00:46:49,200
+[SPEAKER_02] So this is the first AB test I've ever run in sixteen years of building apps because it was always such a hasslele.
+
+644
+00:46:49,440 --> 00:46:52,480
+[SPEAKER_02] I didn't want to pay for SAS to run AB tests.
+
+645
+00:46:52,800 --> 00:46:57,280
+[SPEAKER_02] I didn't want the developer to spend months building out some spoke system.
+
+646
+00:46:57,760 --> 00:47:10,880
+[SPEAKER_02] So the only way I've tested in the past, which we talk about testing on the podcast, I think is a valid way to test is you launch and you look at the numbers and then a week later you update the app with something very different and then you look at the numbers that week.
+
+647
+00:47:11,200 --> 00:47:12,400
+[SPEAKER_02] And that's a valid way to do it.
+
+648
+00:47:12,560 --> 00:47:16,240
+[SPEAKER_02] But this is the first time I've ever done a real AB test because it was so easy to do.
+
+649
+00:47:16,480 --> 00:47:24,960
+[SPEAKER_02] And so the test I did was default to annual being the preselected option on the paywall versus monthly being the preselected option.
+
+650
+00:47:26,400 --> 00:47:28,160
+[SPEAKER_00] So it wasn't even like that price.
+
+651
+00:47:28,240 --> 00:47:31,920
+[SPEAKER_00] You were just like subtle UX difference, which you can test with RevenueCat Pay one.
+
+652
+00:47:33,760 --> 00:47:34,960
+[SPEAKER_02] So just what's the default?
+
+653
+00:47:35,200 --> 00:47:50,160
+[SPEAKER_02] And part of the reason I did that is that I was considering just making the monthly the default always, because we've talked to folks here on the podcast about how monthly shortens that feedback loop of like people who are staying engaged with the app and churning quickly and everything like that.
+
+654
+00:47:50,720 --> 00:47:57,280
+[SPEAKER_02] And then I also wanted to get some monthly recurring revenue built up because we have monthly recurring costs.
+
+655
+00:47:57,360 --> 00:48:00,640
+[SPEAKER_02] And so do we do a big launch where we get a bunch of annual and then we need to.
+
+656
+00:48:01,200 --> 00:48:09,760
+[SPEAKER_02] budget that over time to make sure that we can keep the weather API bill paid, or do we try to get more monthly revenue where it's more consistent over time?
+
+657
+00:48:10,400 --> 00:48:29,360
+[SPEAKER_02] So the results were fascinating and I'm looking at the results right now, but the headline is that realized LTV less than a month in, so I don't have renewals yet on the first renewal month, but realized LTV is sixty percent lower on the people who saw monthly.
+
+658
+00:48:29,760 --> 00:48:48,640
+[SPEAKER_02] That makes sense because a lot of the people who saw monthly just stuck with monthly, but I was running some numbers with my colleague Dan, and this is something it would be really fun for us to model at some point, but assuming a normal level of churn, I'm unlikely for the realized LTV to cross before the year mark.
+
+659
+00:48:49,040 --> 00:48:54,320
+[SPEAKER_02] And then at the year mark, those annual renewals will kick in and the realized LTV will shoot back up.
+
+660
+00:48:54,800 --> 00:48:58,320
+[SPEAKER_02] And so basically I just made less money by launching with this.
+
+661
+00:48:58,720 --> 00:49:01,600
+[SPEAKER_00] Well, no, you learned about something that definitely doesn't work, right?
+
+662
+00:49:01,760 --> 00:49:03,760
+[SPEAKER_00] Like you mapped out exactly, you mapped out probably.
+
+663
+00:49:05,440 --> 00:49:12,880
+[SPEAKER_01] I think the interesting thing here is when you stop this experiment, you'll still be able to track these cohorts for the next, I think, 400 days or something.
+
+664
+00:49:13,360 --> 00:49:26,400
+[SPEAKER_01] I would go back and look at these results after that year mark when your annuals have actually started renewing and then look at your actual lifetime value, not over thirty days but over that full period.
+
+665
+00:49:27,120 --> 00:49:27,200
+[SPEAKER_02] Yeah.
+
+666
+00:49:27,520 --> 00:49:31,600
+[SPEAKER_02] 366 day of lifetime value instead of Yes, the first year.
+
+667
+00:49:31,840 --> 00:49:39,680
+[SPEAKER_01] Because that's something that like you can make a lot of inferences based on other people you know and what their annual churn rate looks like versus monthly.
+
+668
+00:49:39,840 --> 00:49:43,120
+[SPEAKER_01] But at the end of the day, you don't really know until you see what your own looks like.
+
+669
+00:49:43,280 --> 00:49:43,360
+[SPEAKER_02] Yeah.
+
+670
+00:49:43,680 --> 00:49:46,640
+[SPEAKER_02] The monthly renewals will start coming in this Thursday, actually.
+
+671
+00:49:47,040 --> 00:49:57,200
+[SPEAKER_02] And so I'll be able to see pretty quicklyickly, but in revenuecat dot com you can go into the subscriber retention and see the number or percentage of people who have turned off auto renew already.
+
+672
+00:49:57,680 --> 00:50:03,200
+[SPEAKER_02] And so I already know that my churn in this first month is already going to be above thirty percent.
+
+673
+00:50:03,360 --> 00:50:10,480
+[SPEAKER_02] So I'm going to retain somewhere around seventy percent of users, probably not higher because thirty percent have already turned off auto renew.
+
+674
+00:50:11,120 --> 00:50:16,240
+[SPEAKER_02] And so by looking at that, I already kind of know I'm going to retain probably less than seventy percent.
+
+675
+00:50:16,480 --> 00:50:24,000
+[SPEAKER_02] And so then you run some quick math on like even as that churn declines over time because month two it will hopefully be less and month three it will be less and less.
+
+676
+00:50:24,320 --> 00:50:30,560
+[SPEAKER_02] Like fewer and fewer users will turn and more people stick around, but like the math is not looking good for those two lines to cross.
+
+677
+00:50:30,880 --> 00:50:35,760
+[SPEAKER_00] I'm interested in David, so just preselecting drove that much difference in behavior.
+
+678
+00:50:36,000 --> 00:50:38,720
+[SPEAKER_00] Like how many people on the A still ended up buying monthly?
+
+679
+00:50:38,960 --> 00:50:40,480
+[SPEAKER_00] Like did it make a significant difference?
+
+680
+00:50:41,280 --> 00:50:41,360
+[SPEAKER_02] Yeah.
+
+681
+00:50:41,840 --> 00:50:41,920
+[SPEAKER_02] Okay.
+
+682
+00:50:42,160 --> 00:50:42,800
+[SPEAKER_02] So here are the numbers.
+
+683
+00:50:43,120 --> 00:50:48,320
+[SPEAKER_02] I'll round them up to just make it easy for listeners since we're not going to have a screen share or anything.
+
+684
+00:50:49,040 --> 00:50:58,320
+[SPEAKER_02] Of the people who saw the annual as a default, around 800 of them went with annual, but almost 400 selected monthly.
+
+685
+00:50:59,200 --> 00:51:02,560
+[SPEAKER_02] So a lot of people who saw annualal did switch to monthly.
+
+686
+00:51:02,720 --> 00:51:07,120
+[SPEAKER_02] So like 33% of people chose monthly, even though they saw annual as a default.
+
+687
+00:51:07,840 --> 00:51:14,400
+[SPEAKER_02] On the opposite end, the people who saw monthly, there were almost 1100 people, and this was an even split.
+
+688
+00:51:14,480 --> 00:51:16,800
+[SPEAKER_02] So 1100 people selected monthly.
+
+689
+00:51:17,120 --> 00:51:22,960
+[SPEAKER_02] So there was actually a 4.5% increase in people converting to monthly.
+
+690
+00:51:23,360 --> 00:51:28,880
+[SPEAKER_02] So when they saw the $4, more people did start that free trial than people who saw $40.
+
+691
+00:51:29,600 --> 00:51:34,400
+[SPEAKER_02] And side note, I am using Apple's new pricing where it is actually just $40.
+
+692
+00:51:34,880 --> 00:51:39,120
+[SPEAKER_02] And that's a whole other experiment I'm actually running currently is the $40 versus $39.
+
+693
+00:51:39,520 --> 00:51:41,680
+[SPEAKER_02] We're actually running with the side by side.
+
+694
+00:51:42,080 --> 00:51:43,520
+[SPEAKER_02] That's my second content.
+
+695
+00:51:43,680 --> 00:51:47,920
+[SPEAKER_02] I'm going to have great content in 2024 because David, I don't I don't have enough traffic right now.
+
+696
+00:51:48,160 --> 00:51:49,040
+[SPEAKER_02] Somebody help me out.
+
+697
+00:51:49,200 --> 00:51:50,560
+[SPEAKER_00] Let's get some traffic going.
+
+698
+00:51:53,680 --> 00:51:56,480
+[SPEAKER_02] Yeah, but anyway, so it was $40 or $4 a month.
+
+699
+00:51:56,720 --> 00:52:08,640
+[SPEAKER_02] And that's another thing is I was kind of experimenting with making the price differential not quite as attractive, but that's another experiment I'd like to run is like making the monthly a little more expensive to drive annual.
+
+700
+00:52:08,720 --> 00:52:11,680
+[SPEAKER_02] But in this case, I was kind of like, I want some monthly revenue.
+
+701
+00:52:11,920 --> 00:52:14,000
+[SPEAKER_02] And so I wanted it to balance out a little bit.
+
+702
+00:52:14,240 --> 00:52:24,960
+[SPEAKER_02] And so I did the 44, which is not a crazy deal for annual, where typically people who are pushing annual would make it like 50% off, 60% off to do the annual because they're trying to get that money up front.
+
+703
+00:52:25,360 --> 00:52:32,960
+[SPEAKER_02] So people who saw the monthly as a default, it was 1100 stuck with the monthly and only 100 switched to annual.
+
+704
+00:52:33,360 --> 00:52:38,080
+[SPEAKER_02] So way more people who saw annual switched to monthly and almost no one like 100%.
+
+705
+00:52:39,040 --> 00:52:39,680
+[SPEAKER_00] That's really interesting.
+
+706
+00:52:39,760 --> 00:52:44,000
+[SPEAKER_00] Yeah, I mean, that's probably going to wipe out your results just there because it sounds like the total number of conversions is similar.
+
+707
+00:52:44,000 --> 00:52:46,160
+[SPEAKER_00] It's like 1100, 1200, something like this.
+
+708
+00:52:46,240 --> 00:52:46,320
+[SPEAKER_00] Yes.
+
+709
+00:52:46,800 --> 00:52:47,600
+[SPEAKER_00] Yeah, yeah, yeah.
+
+710
+00:52:47,680 --> 00:52:48,480
+[SPEAKER_00] Oh, that's fascinating.
+
+711
+00:52:48,960 --> 00:52:52,560
+[SPEAKER_00] So just priming people on annual is going to make a huge difference.
+
+712
+00:52:53,040 --> 00:52:53,440
+[SPEAKER_00] That's interesting.
+
+713
+00:52:53,600 --> 00:53:00,480
+[SPEAKER_00] Especially, I mean, I wonder, I mean, relatively, forty is not the lowest for weather apps, but it's also like some apps are for a year, it's 100.
+
+714
+00:53:00,800 --> 00:53:03,600
+[SPEAKER_00] So it's already kind of on the low end, but that's really interesting.
+
+715
+00:53:04,160 --> 00:53:08,640
+[SPEAKER_00] So ten percent more people converted on the monthly.
+
+716
+00:53:09,120 --> 00:53:12,160
+[SPEAKER_00] Oh, you mean on the annual primed, more people converted on monthly.
+
+717
+00:53:12,480 --> 00:53:17,600
+[SPEAKER_02] No, people who saw the monthly as a default, more of them converted by ten percent.
+
+718
+00:53:17,920 --> 00:53:22,640
+[SPEAKER_02] Ten percent more people became subscribers when they saw four dollars versus seeing forty.
+
+719
+00:53:23,040 --> 00:53:24,640
+[SPEAKER_02] But, and again, we can revisit.
+
+720
+00:53:25,120 --> 00:53:25,520
+[SPEAKER_02] these numbers.
+
+721
+00:53:25,760 --> 00:53:27,520
+[SPEAKER_02] Actually, a little shout out to the community here.
+
+722
+00:53:27,680 --> 00:53:33,040
+[SPEAKER_02] I've actually been sharing charts and the actual results from this in the subclub community.
+
+723
+00:53:33,200 --> 00:53:34,720
+[SPEAKER_02] And there's been a great discussion on that.
+
+724
+00:53:34,880 --> 00:53:42,240
+[SPEAKER_02] So if you're not already in the subclub community, go to chat dot subclub dot com, and then there's a join link there to join the community.
+
+725
+00:53:42,400 --> 00:53:44,400
+[SPEAKER_02] I shared it in the private area of the community.
+
+726
+00:53:44,880 --> 00:53:50,160
+[SPEAKER_02] But yeah, ten percent more people converted to become subscribers who saw the four dollars instead of the forty.
+
+727
+00:53:50,800 --> 00:54:06,080
+[SPEAKER_02] But still, when you start doing the math on the churn on the monthly and everything else, like, I'll probably still end up making quite a bit less money on the people who saw monthly and stuck with monthly because get money in advance versus like giving them twelve opportunities to try it out.
+
+728
+00:54:06,320 --> 00:54:08,560
+[SPEAKER_00] Also, also you have to consider the time cost of money, right?
+
+729
+00:54:08,880 --> 00:54:11,840
+[SPEAKER_00] That money now is literally worth more value perspective, right?
+
+730
+00:54:12,080 --> 00:54:12,400
+[SPEAKER_00] Than it is.
+
+731
+00:54:13,360 --> 00:54:35,280
+[SPEAKER_01] One question to both of you guys, I guess related to this is when running an experiment like this right around a launch, is that data not that it's invalid, but isn't that a very different cohort than the people who for the vast majority of the time are going to be finding your app through certainly learning more about the preferences of an interesting user base than you are.
+
+732
+00:54:36,000 --> 00:54:37,040
+[SPEAKER_00] Which is super valuable stuff.
+
+733
+00:54:38,160 --> 00:54:48,800
+[SPEAKER_01] Especially if you're going for big launches as your strategy, because it's good to know how to optimize those cohorts, but that's going to be different than a month from now, all the people who are finding your app through just search.
+
+734
+00:54:49,360 --> 00:54:55,840
+[SPEAKER_00] And definitely just the volume, you already alluded to it, David, is like as you're running subsequent tests, your tests, that's a very subtle test split.
+
+735
+00:54:55,920 --> 00:54:58,880
+[SPEAKER_00] I mean, I'm interested in that there's any sort of perceptible result there.
+
+736
+00:54:59,120 --> 00:55:04,640
+[SPEAKER_00] And actually, I would love to run it for longer to see if that disappeared, because you're talking five, six percent, like, that could be noise.
+
+737
+00:55:05,120 --> 00:55:06,720
+[SPEAKER_02] It was statistically significant though.
+
+738
+00:55:06,960 --> 00:55:17,920
+[SPEAKER_00] Yeah, I'd be interested to run those tests on, like, yeah, as Charlie was saying, like run rate, like sort of downs, but you'll have to take bigger swings because the volume of people going to that funnel is going to be a lot lower.
+
+739
+00:55:18,080 --> 00:55:30,080
+[SPEAKER_00] So to get statistical significance, you don't want to be testing like green button, blue button, you're going to be testing like $1,000 and $3, you know, like, or you're going to be testing like the widest versus this completely different.
+
+740
+00:55:30,480 --> 00:55:34,320
+[SPEAKER_00] Yeah, like you're trying to do gradient descent like a machine learning algorithm trains, right?
+
+741
+00:55:34,480 --> 00:55:42,400
+[SPEAKER_00] Like where you want to just create tests that are big enough to determine if it's too cheap or too high or whatever, like the bigger differences you take, they'll be notionally correct, right?
+
+742
+00:55:42,640 --> 00:55:47,040
+[SPEAKER_00] So like the bigger swings you take, if it's like, oh, actually there's a little more value in the higher side.
+
+743
+00:55:47,200 --> 00:55:53,120
+[SPEAKER_00] So like maybe don't make that a or that B your actual number, then like find a new number that's closer and then test that again as well.
+
+744
+00:55:53,360 --> 00:56:08,400
+[SPEAKER_00] It's really awesome, David, that you now have a for a limited time only, no, for a limited amount of effort, you got a paywall set up that you can remote configure, especially for a developer like in your position where like you know, you have to loop someone else in and you've got other bugs and features and things to be working on.
+
+745
+00:56:08,720 --> 00:56:16,400
+[SPEAKER_00] Like now as the business oriented partner, you can pretty much on your own be running these experiments, analyzing the data and all that stuff.
+
+746
+00:56:16,560 --> 00:56:20,480
+[SPEAKER_02] And I think it's something that Yeah, I didn't even have to talk to Brock to launch that second experiment.
+
+747
+00:56:20,720 --> 00:56:22,480
+[SPEAKER_02] I changed the price on App Store Connect.
+
+748
+00:56:22,720 --> 00:56:23,680
+[SPEAKER_02] I already had two SKUs.
+
+749
+00:56:23,920 --> 00:56:27,520
+[SPEAKER_02] And so I changed the other annual skew to 39,99.
+
+750
+00:56:27,920 --> 00:56:37,840
+[SPEAKER_02] I left the existing skew at 40 and I set it all up in RevenueCat to run the subsequent experiment without touching code, without updating the app, without even talking to Brock.
+
+751
+00:56:38,000 --> 00:56:44,240
+[SPEAKER_00] Actually, did you test it at all like in a sandbox context or anything like this, like, no, just go for it, YOLO.
+
+752
+00:56:44,960 --> 00:56:45,280
+[SPEAKER_00] It's good.
+
+753
+00:56:45,520 --> 00:56:49,680
+[SPEAKER_00] I mean, you should be able to like, it should be fine, especially if the products are already approved and everything.
+
+754
+00:56:50,000 --> 00:56:50,560
+[SPEAKER_00] It's really cool.
+
+755
+00:56:50,720 --> 00:57:02,080
+[SPEAKER_00] I think this is one thing on RevenueCat side that we've just kind of started to cobble all these tools together, but like we haven't yet and talk about RevenueCat thinking about what's a launch for us, right?
+
+756
+00:57:02,240 --> 00:57:05,200
+[SPEAKER_00] Like we've been shipping these little features for the last year and a half.
+
+757
+00:57:06,000 --> 00:57:10,800
+[SPEAKER_00] And when you see them all start to interact and play together, now like we have a thing.
+
+758
+00:57:11,040 --> 00:57:13,200
+[SPEAKER_00] And now it's like having people go through the whole flow.
+
+759
+00:57:13,440 --> 00:57:19,680
+[SPEAKER_00] We need to like spread the word on like how to run these tests like all inside RevenueCat, how to design plans, how to do it all in one place.
+
+760
+00:57:20,320 --> 00:57:26,000
+[SPEAKER_00] Because I think, like you said, David, like you never, twenty years in or whatever many years the apps were in, you've never done this before.
+
+761
+00:57:26,240 --> 00:57:28,000
+[SPEAKER_00] And that's crazy because it works, right?
+
+762
+00:57:28,320 --> 00:57:30,960
+[SPEAKER_00] So I'm excited to see more and more developers do this.
+
+763
+00:57:31,200 --> 00:57:35,200
+[SPEAKER_00] And even developers that were already doing it, doing it easier, focusing on other things and things like this.
+
+764
+00:57:35,280 --> 00:57:37,040
+[SPEAKER_01] So anyway, revenuecat dot com dot Yeah.
+
+765
+00:57:37,520 --> 00:57:40,560
+[SPEAKER_01] Before we land this plane, is there anything else with this launch?
+
+766
+00:57:40,800 --> 00:57:44,560
+[SPEAKER_01] Either things that you're going to try going forward or were there other failures I missed that you wanted to cover?
+
+767
+00:57:45,200 --> 00:57:48,160
+[SPEAKER_01] Another huge failure was just me getting my expectations up.
+
+768
+00:57:48,640 --> 00:57:52,800
+[SPEAKER_02] We talk about it on this podcast about product channel fit and all the different things.
+
+769
+00:57:53,440 --> 00:57:56,240
+[SPEAKER_02] You know, it got mentioned in TechCrunch, which is a big deal.
+
+770
+00:57:56,720 --> 00:58:00,720
+[SPEAKER_02] And I was in nine to five Mac and Mac Rumors and Boy Jr.'s report.
+
+771
+00:58:00,880 --> 00:58:02,080
+[SPEAKER_02] You know, it got a lot of attention.
+
+772
+00:58:02,720 --> 00:58:06,320
+[SPEAKER_02] Again, if the DMA hadn't happened, maybe there would have been a little more momentum going.
+
+773
+00:58:06,720 --> 00:58:11,520
+[SPEAKER_02] But whenever you're launching an app, you have to think like, okay, where am I getting attention?
+
+774
+00:58:11,600 --> 00:58:16,560
+[SPEAKER_02] And then what's the overlalap of the attention I'm getting and my ideal customer profile?
+
+775
+00:58:16,880 --> 00:58:33,360
+[SPEAKER_02] And then the reality is, no matter how much you want to convince yourself otherwise, is that of those maybe thirty thousand people across all the different press mentions I got, let's say thirty thousand people, one hundred thousand people probably saw the headline, Oh, another weather app, I don't care.
+
+776
+00:58:33,680 --> 00:58:42,160
+[SPEAKER_02] Even if they were potentially even my ideal customer profile, they already have three weather app subscriptions and they don't even get beyond the headline because they just don't even care.
+
+777
+00:58:42,880 --> 00:58:48,000
+[SPEAKER_02] And then they see the app and they see the video, they see whatever, and it just whittles it down further and further and further.
+
+778
+00:58:48,640 --> 00:59:04,960
+[SPEAKER_02] And so like the real overlap of people who are actually care enough to go click a link and go buy my stupid little app is so small that even when you can get a lot of attention, again, if that attention isn't a huge overlap of your ideal customer profile, it just won't be as impactful as you think.
+
+779
+00:59:05,360 --> 00:59:21,520
+[SPEAKER_02] And so back to maybe this whole strategy has played out, unless you're Apple and are launching these massive consumer friendly apps that genuinely everyone is part of your potential customer base, then it won't be as impactful as you would hope and assume it would be.
+
+780
+00:59:21,840 --> 00:59:22,640
+[SPEAKER_02] So another big lesson.
+
+781
+00:59:23,040 --> 00:59:27,040
+[SPEAKER_01] I think maybe the thing there is it's un unreliable, not necessarily unimpactful.
+
+782
+00:59:27,520 --> 00:59:44,480
+[SPEAKER_01] Because sometimes you can have, like, I limped along an update for iOS 17 to get interactive widgets for my app, and it just so happened that for whatever reason editorial picked it to be in one of their lists and it was the first one in the list, and that was just massively impactful, right?
+
+783
+00:59:44,640 --> 00:59:52,240
+[SPEAKER_01] And I've had other ones where I've even gotten on lists, but it was lower down, or it wasn't one that they pushed as hard, or whatever reason, and it didn't have those numbers.
+
+784
+00:59:52,800 --> 00:59:57,040
+[SPEAKER_01] If you keep swinging on those, some of them will be hits and some of them won't.
+
+785
+00:59:57,280 --> 00:59:58,560
+[SPEAKER_01] You just have to launch over and over, right?
+
+786
+00:59:58,640 --> 00:59:59,600
+[SPEAKER_00] You have to launch over and over.
+
+787
+01:00:00,000 --> 01:00:00,720
+[SPEAKER_01] Launch, launch.
+
+788
+01:00:00,800 --> 01:00:02,240
+[SPEAKER_01] Somebody should make a podcast with that name.
+
+789
+01:00:02,560 --> 01:00:04,560
+[SPEAKER_00] But yeah, especially if you have a podcast about launch.
+
+790
+01:00:04,640 --> 01:00:04,800
+[SPEAKER_00] Yeah.
+
+791
+01:00:06,000 --> 01:00:06,320
+[SPEAKER_00] Great idea.
+
+792
+01:00:06,640 --> 01:00:13,280
+[SPEAKER_02] Yeah, for those who don't know, Charlie runs a podcast called Launched where he talks mostly to indie developers about launching and running their app businesses.
+
+793
+01:00:13,520 --> 01:00:14,720
+[SPEAKER_02] But yeah, I have it in the notes.
+
+794
+01:00:14,880 --> 01:00:16,000
+[SPEAKER_02] Like, where do I go from here?
+
+795
+01:00:16,240 --> 01:00:19,680
+[SPEAKER_02] It's launch, get feedback, iterate, update, get feedback, launch.
+
+796
+01:00:20,160 --> 01:00:28,000
+[SPEAKER_02] From here, it's ship, ship, ship, and then keep doing these experiments and keep trying new things, keep taking swings, and there's the episode title.
+
+797
+01:00:28,160 --> 01:00:29,280
+[SPEAKER_01] We don't do that for this one, do we?
+
+798
+01:00:29,440 --> 01:00:30,720
+[SPEAKER_01] But it should be ship, ship, ship.
+
+799
+01:00:30,960 --> 01:00:31,040
+[SPEAKER_01] Okay.
+
+800
+01:00:31,360 --> 01:00:34,560
+[SPEAKER_01] Well, David, it was a pleasure having you on your own podcast.
+
+801
+01:00:35,040 --> 01:00:36,480
+[SPEAKER_01] Thank you for joining yourself.
+
+802
+01:00:37,120 --> 01:00:38,800
+[SPEAKER_01] Where can people find you and your work?
+
+803
+01:00:39,200 --> 01:00:40,640
+[SPEAKER_00] I think we should plug Charlie's work.
+
+804
+01:00:40,880 --> 01:00:43,200
+[SPEAKER_00] I think where can people find you, Charlie?
+
+805
+01:00:43,760 --> 01:00:46,400
+[SPEAKER_01] revenuecat dot com dot I write articles on the vlog.
+
+806
+01:00:46,640 --> 01:00:49,280
+[SPEAKER_01] No, I I'm on all the different social media things.
+
+807
+01:00:49,600 --> 01:00:50,960
+[SPEAKER_01] Most places it's Charlie M.
+
+808
+01:00:51,200 --> 01:00:53,760
+[SPEAKER_01] Chapman on Twitter, which is what I will still call it.
+
+809
+01:00:53,920 --> 01:00:55,760
+[SPEAKER_01] It is underscore Chuck E.
+
+810
+01:00:55,920 --> 01:00:57,360
+[SPEAKER_01] C., I think is my handle there.
+
+811
+01:00:57,760 --> 01:01:05,600
+[SPEAKER_01] And then I have an app called Dark Noise, which is a white noise app, which provides a lot of fodder for good revenuecat content as well as a podcast.
+
+812
+01:01:06,080 --> 01:01:07,440
+[SPEAKER_00] We'll have you on after a failed one.
+
+813
+01:01:07,680 --> 01:01:08,400
+[SPEAKER_01] Yeah, perfect, perfect.
+
+814
+01:01:10,000 --> 01:01:11,680
+[SPEAKER_00] And I guess David, you don't really plug contrast.
+
+815
+01:01:11,920 --> 01:01:13,600
+[SPEAKER_00] So it's contrast.co, right?
+
+816
+01:01:13,920 --> 01:01:15,360
+[SPEAKER_00] is where you can find all your apps.
+
+817
+01:01:16,000 --> 01:01:16,080
+[SPEAKER_00] Yeah.
+
+818
+01:01:16,320 --> 01:01:16,400
+[SPEAKER_01] Yeah.
+
+819
+01:01:16,880 --> 01:01:18,880
+[SPEAKER_01] And the links, of course, will be all in the show notes.
+
+820
+01:01:19,040 --> 01:01:20,800
+[SPEAKER_01] And I'm actually not the one who has to put them there.
+
+821
+01:01:20,960 --> 01:01:22,000
+[SPEAKER_01] So I'm excited about that.
+
+822
+01:01:24,480 --> 01:01:24,960
+[SPEAKER_02] It's nice.
+
+823
+01:01:25,280 --> 01:01:32,960
+[SPEAKER_02] But yeah, anyone else willing to share stories of failed launches and failed product updates and screw ups and everything else, get in touch.
+
+824
+01:01:33,120 --> 01:01:36,480
+[SPEAKER_02] David at revenuecat dot com dot I want to hear more stories like this.
+
+825
+01:01:36,640 --> 01:01:41,920
+[SPEAKER_02] Hopefully, I broke the ice a little bit being really open and honest about some of my failures with this launch.
+
+826
+01:01:42,240 --> 01:01:44,480
+[SPEAKER_02] And the thing is, like, the story is not written, right?
+
+827
+01:01:44,720 --> 01:01:53,600
+[SPEAKER_02] Like we talked about, this launch was a disappointment, but there's still huge opportunity opportunity and hey, I got close to two thousand people to pay forty bucks a year for my stupid little weather.
+
+828
+01:01:53,760 --> 01:01:55,200
+[SPEAKER_02] I was like, I don't know where the failed is.
+
+829
+01:01:55,280 --> 01:01:55,760
+[SPEAKER_00] It's pretty cool.
+
+830
+01:01:56,960 --> 01:01:59,040
+[SPEAKER_00] I think that's an unqualified dub in my mind.
+
+831
+01:01:59,280 --> 01:01:59,360
+[SPEAKER_00] So.
+
+832
+01:01:59,680 --> 01:01:59,760
+[SPEAKER_02] Okay.
+
+833
+01:02:00,080 --> 01:02:01,600
+[SPEAKER_02] Well, it was super fun talking to you guys.
+
+834
+01:02:01,840 --> 01:02:03,200
+[SPEAKER_02] Thanks for having me on.
+
+835
+01:02:03,680 --> 01:02:04,000
+[SPEAKER_01] Thank you.
+
+836
+01:02:06,480 --> 01:02:07,920
+[SPEAKER_02] Thanks so much for listening.
+
+837
+01:02:08,880 --> 01:02:12,240
+[SPEAKER_02] If you have a minute, please leave a review in your favorite podcast player.
+
+838
+01:02:13,120 --> 01:02:17,920
+[SPEAKER_02] You can also stop by chat dot subclub dot com to join our private community.
