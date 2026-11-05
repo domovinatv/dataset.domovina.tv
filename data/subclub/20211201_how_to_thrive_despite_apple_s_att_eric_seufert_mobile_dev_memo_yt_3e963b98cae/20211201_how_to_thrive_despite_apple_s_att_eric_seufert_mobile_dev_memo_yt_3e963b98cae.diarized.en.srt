@@ -1,0 +1,2923 @@
+1
+00:00:03,200 --> 00:00:10,240
+[SPEAKER_00] Hey, you're listening to the Subclub Podcast, a show dedicated to the best practices for building and growing subscription app businesses.
+
+2
+00:00:10,720 --> 00:00:14,560
+[SPEAKER_00] We'll share insider secrets from the top subscription apps on the app stores.
+
+3
+00:00:15,040 --> 00:00:15,840
+[SPEAKER_00] Let's get into the show.
+
+4
+00:00:17,360 --> 00:00:19,200
+[SPEAKER_01] Hello, I'm your host, David Bernard.
+
+5
+00:00:19,600 --> 00:00:21,920
+[SPEAKER_01] For the first time ever, I'm flying solo today.
+
+6
+00:00:22,160 --> 00:00:25,680
+[SPEAKER_01] RevenueCat CEO, Jacob Iding, is busy CEOing.
+
+7
+00:00:26,720 --> 00:00:28,400
+[SPEAKER_01] My guest today is Eric Sufer.
+
+8
+00:00:28,960 --> 00:00:38,240
+[SPEAKER_01] Having worked in growth and strategy roles at consumer tech companies such as Wooga and Rovio, Eric has a depth and breadth of experience with mobile appile apps and games that few can match.
+
+9
+00:00:38,880 --> 00:00:47,040
+[SPEAKER_01] He also founded and sold marketing business intelligence company Agamemnon and is an active investor in the mobile gaming and ad tech categories.
+
+10
+00:00:47,840 --> 00:00:55,360
+[SPEAKER_01] Over the past year, Eric has written extensively about app tracking transparency and the future of mobile advertising on his trade blog Mobile Dev Memo.
+
+11
+00:00:56,080 --> 00:01:07,200
+[SPEAKER_01] On the podcast, I talk with Eric about the value destruction of app tracking transparency, the limitations of SK Ad Network, and how to thrive as an app developer in this new paradigm.
+
+12
+00:01:07,600 --> 00:01:09,280
+[SPEAKER_01] Hey Eric, thanks for being on the podcast.
+
+13
+00:01:09,920 --> 00:01:11,600
+[SPEAKER_02] David, thanks for having me on the podcast.
+
+14
+00:01:12,240 --> 00:01:22,640
+[SPEAKER_01] So we're going to start off with a bit of a dead horse that's been beaten over and over again, Apple's motivation in enacting app tracking transparency.
+
+15
+00:01:23,520 --> 00:01:26,320
+[SPEAKER_01] But I did want to take a kind of a different perspective on it.
+
+16
+00:01:28,320 --> 00:01:49,760
+[SPEAKER_01] The most interesting thing to me personally about Apple's motivation with app tracking transparency is what it says about what they are going to do in the future is, you know, did they build SK Ad Network purposely handicapped or did they not really understand how handicapped it was.
+
+17
+00:01:50,080 --> 00:01:56,000
+[SPEAKER_01] You know, were they really trying to kill Facebook or was that a kind of, uh, a side benefit?
+
+18
+00:01:56,960 --> 00:02:08,000
+[SPEAKER_01] And I think that their motivation is important because it kind of forecasts, um, what changes they may or not make moving forward as they start to see the impact.
+
+19
+00:02:08,480 --> 00:02:24,880
+[SPEAKER_01] So I think the first thing I wanted to ask you was, how do you see Apple's reaction and maybe, um, how they perceive ATT to be going now that we're seeing snap drop twenty five percent after quarterly earnings.
+
+20
+00:02:25,440 --> 00:02:34,560
+[SPEAKER_01] report and see more of the disruption that you and others were predicting, but maybe Apple didn't quite see coming.
+
+21
+00:02:34,880 --> 00:02:37,760
+[SPEAKER_01] So how do you how do you think Apple sees this going currently?
+
+22
+00:02:37,840 --> 00:02:41,760
+[SPEAKER_01] And what does that say about the future of privacy on iOS?
+
+23
+00:02:42,320 --> 00:02:42,480
+[SPEAKER_01] Right.
+
+24
+00:02:42,800 --> 00:02:51,360
+[SPEAKER_02] So I think that Apple's primary motivation was not to capture mobile advertising market share.
+
+25
+00:02:51,760 --> 00:02:53,360
+[SPEAKER_02] I don't think that was a primary motivation.
+
+26
+00:02:53,600 --> 00:02:55,440
+[SPEAKER_02] I think that's happened.
+
+27
+00:02:56,320 --> 00:02:58,320
+[SPEAKER_02] And I think that they expected that to happen.
+
+28
+00:02:59,360 --> 00:03:03,840
+[SPEAKER_02] But I don't I don't think that was the kind of primary driver of this decision.
+
+29
+00:03:04,560 --> 00:03:12,400
+[SPEAKER_02] What I think they wanted to do was there's kind of like a big picture idea here and then sort of like an immediate consequence idea.
+
+30
+00:03:12,560 --> 00:03:20,000
+[SPEAKER_02] I think what they didn't like, I think what Apple didn't like was that they had kind of lost control over content discovery on the iPhone, right?
+
+31
+00:03:20,240 --> 00:03:24,640
+[SPEAKER_02] So when the App Store was first launched, I mean, that was how you discovered apps, right?
+
+32
+00:03:25,120 --> 00:03:35,360
+[SPEAKER_02] It was through going to the App Store and some small part search, but then in large part just like the editorial curation that Apple exposes there, right?
+
+33
+00:03:37,040 --> 00:03:50,640
+[SPEAKER_02] And that changed over the years and, and, you know, up until kind of the, the announcement or, or the, the enactment of ATT, the way that people discovered apps, um, was through advertising, right?
+
+34
+00:03:50,880 --> 00:03:52,800
+[SPEAKER_02] And primarily Facebook advertising.
+
+35
+00:03:53,280 --> 00:03:56,080
+[SPEAKER_02] And so, you know, Apple totally lost control.
+
+36
+00:03:56,320 --> 00:04:09,680
+[SPEAKER_02] It's, it's, you know, the sort of the, the, the, the, the content that people interacted with on their phones was, was not the result of any sort of like deliberate decision on Apple's part or sort of like deliberate consideration, right?
+
+37
+00:04:09,920 --> 00:04:12,400
+[SPEAKER_02] It just so happened to be whatever.
+
+38
+00:04:12,960 --> 00:04:15,040
+[SPEAKER_02] could scale ads, you know, the best, right?
+
+39
+00:04:15,200 --> 00:04:25,200
+[SPEAKER_02] Like whatever could scale, whatever content, whatever companies could scale their ads most efficiently, that's what, you know, people interacted with and that's what, you know, became dominant on the platform and Apple really had no say in that, right?
+
+40
+00:04:25,760 --> 00:04:30,240
+[SPEAKER_02] And so my, my sense is that's kind of like short term, sort of like, kind of narrow aperture view of this.
+
+41
+00:04:30,400 --> 00:04:32,240
+[SPEAKER_02] It's like, well, they just wanted to regain control of that.
+
+42
+00:04:32,480 --> 00:04:34,240
+[SPEAKER_02] They wanted to be the kingmakers.
+
+43
+00:04:34,400 --> 00:04:41,040
+[SPEAKER_02] They wanted to be the taste makers, the people that decided, the party that decided, like, what became popular on the iPhone, how the iPhone was used, right?
+
+44
+00:04:41,920 --> 00:04:58,400
+[SPEAKER_02] And I mean, that's it's, I think if you've worked in gaming, especially, but if you've worked in mobile apps at all and you've ever had to go and go through the whole process of like pitching your app to Apple and sort of like pleading for featuring, you know that that's what they want.
+
+45
+00:04:58,960 --> 00:05:09,120
+[SPEAKER_02] They liked having that control because that allowed them to sort of percolate their new iOS features into the app community through just sort of like horse trading.
+
+46
+00:05:09,280 --> 00:05:14,240
+[SPEAKER_02] It's like, well, okay, you want featuring, we'd be happy to give you featuring, but you've got to integrate XYZ thing into your app.
+
+47
+00:05:14,560 --> 00:05:16,400
+[SPEAKER_02] And once you do that, we're happy to feature you, right?
+
+48
+00:05:17,520 --> 00:05:20,960
+[SPEAKER_02] That was sort of the, that was sort of the negotiating process, right?
+
+49
+00:05:21,280 --> 00:05:24,800
+[SPEAKER_02] And like, you know, that process, even that process itself.
+
+50
+00:05:25,360 --> 00:05:28,880
+[SPEAKER_02] became less important and less prominent in the life of a developer over the last few years.
+
+51
+00:05:29,040 --> 00:05:31,840
+[SPEAKER_02] Like in 2012 to 2015, that's what you did.
+
+52
+00:05:32,000 --> 00:05:42,800
+[SPEAKER_02] Every time you were launching a new app or even if you were doing like a major update, you flew to San Francisco, you went to Cupertino, you went into a conference room at Apple HQ and you pitched someone, right?
+
+53
+00:05:42,960 --> 00:05:45,280
+[SPEAKER_02] And like that just stopped being something that people did.
+
+54
+00:05:45,520 --> 00:05:50,640
+[SPEAKER_02] Like just people kind of realized that even if we get featuring, it won't be that meaningful for our business.
+
+55
+00:05:50,960 --> 00:06:00,800
+[SPEAKER_02] What we really need to be able to nail what we, what we have to do, our success depends on our ability to scale the product with paid advertising, you know, and explicitly, you know, specifically through Facebook, right?
+
+56
+00:06:01,600 --> 00:06:04,320
+[SPEAKER_02] So, I think that was the primary motivation to regain that control right now.
+
+57
+00:06:04,400 --> 00:06:06,000
+[SPEAKER_02] I think there's a bigger picture idea here.
+
+58
+00:06:06,160 --> 00:06:23,120
+[SPEAKER_02] There's like a bigger picture motivation or like a projection here, which is that, you know, we're moving into a paradigm where, you know, the phone that you have, the device that you have that you consume content with is like totally unconstrained, um, in terms of what it accesses, right?
+
+59
+00:06:23,360 --> 00:06:25,200
+[SPEAKER_02] Like, and, and how it accesses content.
+
+60
+00:06:25,360 --> 00:06:31,520
+[SPEAKER_02] And that's what, that's the sort of, that's the sort of behavioral, um, norm that, that people are moving into, right?
+
+61
+00:06:31,680 --> 00:06:36,960
+[SPEAKER_02] It's like they just expect their favorite stuff to be available from whatever device they have in their hand at that time.
+
+62
+00:06:37,280 --> 00:06:47,040
+[SPEAKER_02] As long as it's connected to the internet, they expect to be able to connect to Disney Plus, to Hulu, to Netflix, to Facebook, to anything that they use every day.
+
+63
+00:06:47,360 --> 00:07:02,880
+[SPEAKER_02] And like you get to a point where, you know, if you run this kind of gatekeeping platform, right, like at the App Store or Google Play or whatever, if, if, if users have leapfrogged that kind of paradigm into like, no, my favorite content is always available.
+
+64
+00:07:03,040 --> 00:07:12,640
+[SPEAKER_02] It's, it's, you know, sort of like, um, just, just persistent in the cloud and I should be able to access it however I want at any given point in time, um, then you've lost control.
+
+65
+00:07:13,440 --> 00:07:16,080
+[SPEAKER_02] of that sort of of that gatekeeper positioning.
+
+66
+00:07:16,480 --> 00:07:29,200
+[SPEAKER_02] And I feel like what Apple wanted to do is like they they know that that's inevitable, like we'll get there, but they wanted to like prolong the sort of dominance and the sort of prominence of the app store in terms of the consumer relationship, right?
+
+67
+00:07:29,360 --> 00:07:32,080
+[SPEAKER_02] Like that's the first stop you have to go through them to get to the content.
+
+68
+00:07:32,960 --> 00:07:40,640
+[SPEAKER_02] Because then that also like that also like provides them with some sort of leverage over the over the developer, right?
+
+69
+00:07:40,800 --> 00:07:45,520
+[SPEAKER_02] And I think we've I think we've probably accelerated past that, but but maybe not.
+
+70
+00:07:45,680 --> 00:07:48,480
+[SPEAKER_02] Maybe this, maybe this, you know, buys two to three more years of.
+
+71
+00:07:48,560 --> 00:07:52,800
+[SPEAKER_02] of okay, well, I have an iPhone, that means I go through the App Store to get content, right?
+
+72
+00:07:52,960 --> 00:07:55,840
+[SPEAKER_02] Or I have an Android, maybe that means I go through Google Play to get to content.
+
+73
+00:07:56,000 --> 00:07:58,000
+[SPEAKER_02] Not that, like, it doesn't really matter what device I'm using.
+
+74
+00:07:58,160 --> 00:08:05,360
+[SPEAKER_02] I'm using my Samsung TV or my iPhone or my iPad or my Facebook portal or whatever or my, my, uh, Amazon, uh, Echo.
+
+75
+00:08:05,680 --> 00:08:10,800
+[SPEAKER_02] I want to get to the content that I have, you know, available to me in a persistent way in the cloud, right?
+
+76
+00:08:11,040 --> 00:08:17,520
+[SPEAKER_02] And so I think that was, that was also the primary motivation or that was part of the primary motivation, but that was like sort of like the bigger picture consequence of it.
+
+77
+00:08:18,080 --> 00:08:18,240
+[SPEAKER_01] Right.
+
+78
+00:08:18,560 --> 00:08:24,960
+[SPEAKER_01] Where, I mean, where do you put Apple's kind of stated motivation of privacy in this hierarchy of, of privacy?
+
+79
+00:08:24,960 --> 00:08:36,400
+[SPEAKER_01] of motivations and outcomes because, you know, a lot of people have said, Oh, well, Apple was clearly acting anti competitive to favor their own ad business and crush these other ad businesses.
+
+80
+00:08:36,640 --> 00:08:41,680
+[SPEAKER_01] It was, you know, primarily driven by the greed to expand their ad revenue.
+
+81
+00:08:42,160 --> 00:08:45,360
+[SPEAKER_01] And then I think yours is really interesting as far as like the control.
+
+82
+00:08:46,000 --> 00:08:55,760
+[SPEAKER_01] But then, of course, Apple goes and just said in the quarterly results recently and has stated over and over again that it was one hundred percent privacy motivated.
+
+83
+00:08:57,040 --> 00:08:58,000
+[SPEAKER_01] Do you just not buy that?
+
+84
+00:08:58,640 --> 00:08:59,200
+[SPEAKER_02] No, not at all.
+
+85
+00:08:59,280 --> 00:09:09,840
+[SPEAKER_02] And I don't, I don't necessarily even think at this moment that consumer privacy has been benefited or protected as a result of this, right?
+
+86
+00:09:10,000 --> 00:09:15,280
+[SPEAKER_02] And we can get into that in a second, but I've been publishing a lot about they're still allowing fingerprinting.
+
+87
+00:09:15,440 --> 00:09:16,240
+[SPEAKER_02] They said they wouldn't.
+
+88
+00:09:16,640 --> 00:09:17,920
+[SPEAKER_02] That's in the policy, right?
+
+89
+00:09:18,160 --> 00:09:22,480
+[SPEAKER_02] It's explicit, like there's no ambiguity there and they're allowing for it, right?
+
+90
+00:09:22,720 --> 00:09:25,120
+[SPEAKER_02] And they're not polising and they could because they've done in the past.
+
+91
+00:09:25,760 --> 00:09:33,520
+[SPEAKER_02] And so I think if you wanted to be protective of privacy, that would be one of the things that you would prioritize is preventing that from happening.
+
+92
+00:09:33,920 --> 00:09:50,000
+[SPEAKER_01] But you don't think that not that I mean, diving into fingerprinting real quick, do you think that it's potentially that they're just delaying the enforcement to kind of smooth some of the disruption that app tracking transparency has already caused?
+
+93
+00:09:51,120 --> 00:09:55,600
+[SPEAKER_01] Because they're not enforcing it immediately doesn't mean they're not going to enforce it.
+
+94
+00:09:56,720 --> 00:09:59,360
+[SPEAKER_01] But I find it baffling as well that they're not.
+
+95
+00:09:59,760 --> 00:10:08,640
+[SPEAKER_01] So do you see them enforcing it soon or do you think that this really is an indication that they don't actually care about privacy and that it's not ever going to be enforced?
+
+96
+00:10:08,880 --> 00:10:10,000
+[SPEAKER_02] They could enforce it at some point.
+
+97
+00:10:10,160 --> 00:10:17,840
+[SPEAKER_02] And like there, there, there was like I think kind of a widespread belief that in the developer community that there was going to be a grace period, right?
+
+98
+00:10:18,000 --> 00:10:30,160
+[SPEAKER_02] They would introduce ATT, but they're going to allow for fingerprinting for some amount of time because you, you know, if you just, you know, made this very radical change and it was like absolute from day one, the impact would have been even more severe than, than what we saw.
+
+99
+00:10:30,800 --> 00:10:36,160
+[SPEAKER_02] Um, so I there was a belief that there would be a grace period, but, you know, we're going on like four months now, right?
+
+100
+00:10:36,480 --> 00:10:46,000
+[SPEAKER_02] And, and the thing is, you know, my, my sense was when, as soon as they, because they, you know, they talked about private relay at WWDC this year, I was like, oh, okay, that's how they do it, right?
+
+101
+00:10:46,320 --> 00:10:48,720
+[SPEAKER_02] Because, and I've talked a bunch of about how it would be clumsy.
+
+102
+00:10:49,280 --> 00:10:54,160
+[SPEAKER_02] to police fingerprinting through app store review, the app store review process, right?
+
+103
+00:10:54,320 --> 00:11:01,200
+[SPEAKER_02] I talked about that in a piece I just wrote two weeks ago or last week, and it would be clumsy, but they could have introduced this in private relay.
+
+104
+00:11:01,440 --> 00:11:08,720
+[SPEAKER_02] I thought that's what they were going to do, or at the very least they would roll private relay out because it applies to, you know, Safari traffic now.
+
+105
+00:11:08,880 --> 00:11:14,400
+[SPEAKER_02] And they would say, look, well, we have to reach parity on our treatment of the web and our treatment of in-app traffic.
+
+106
+00:11:14,560 --> 00:11:22,400
+[SPEAKER_02] And so therefore, you know, maybe for whatever technical reason, we can't, uh, we can't, uh, obscure the IP address of in-app traffic.
+
+107
+00:11:22,480 --> 00:11:25,760
+[SPEAKER_02] It would be too expensive or it's, it's a technical ch challenge that we haven't solved yet.
+
+108
+00:11:25,920 --> 00:11:30,800
+[SPEAKER_02] But like this is the moment, you know, ad tech, when you must stop fingerprinting.
+
+109
+00:11:30,960 --> 00:11:34,400
+[SPEAKER_02] And I think if they said that, you know, these ad tech companies would, right?
+
+110
+00:11:34,640 --> 00:11:38,720
+[SPEAKER_02] Because the way that they've kind of implemented this in a lot of these solutions is it's like an option, right?
+
+111
+00:11:38,960 --> 00:11:41,440
+[SPEAKER_02] Like they say, you can turn it off if you want, right?
+
+112
+00:11:41,600 --> 00:11:43,680
+[SPEAKER_02] Because I think these ad tech companies are surprised.
+
+113
+00:11:43,920 --> 00:11:50,880
+[SPEAKER_02] They thought fingerprinting was going to be prevented or polished early on, maybe not on day one, but you'd get like two weeks a month.
+
+114
+00:11:51,120 --> 00:11:51,280
+[SPEAKER_02] Right.
+
+115
+00:11:51,760 --> 00:11:54,320
+[SPEAKER_02] And so they kind of introduced this as like an optional feature, right?
+
+116
+00:11:54,480 --> 00:11:58,000
+[SPEAKER_02] And then, you know, they presented it as like, hey, it's a feature for developers if they want it.
+
+117
+00:11:58,400 --> 00:12:00,480
+[SPEAKER_02] And so, you know, it's something that they could switch off.
+
+118
+00:12:00,880 --> 00:12:02,640
+[SPEAKER_02] and they they're ready to switch off, I think.
+
+119
+00:12:02,880 --> 00:12:14,960
+[SPEAKER_02] So I think even if Apple just kind of like, you know, kind of pantomimed those motions, people would stop doing it because, okay, it's it's actually, uh, you know, it's it's kind of like actually against policy now versus just before where it was like ignored.
+
+120
+00:12:15,440 --> 00:12:22,960
+[SPEAKER_02] But, you know, I I thought they were going to introduce an iOS 15 for that reason or at least again, like just make the, go through the motions of saying that it's, it's not allowed.
+
+121
+00:12:23,200 --> 00:12:28,640
+[SPEAKER_02] But, but, so just back, back to the question about like where does privacy sit in the, in the, in the sort of list of motivations?
+
+122
+00:12:28,880 --> 00:12:36,000
+[SPEAKER_02] I think it's probably so my, my, the hard, the hard time that I have with like reconciling this idea that like, and you hear this a lot.
+
+123
+00:12:36,480 --> 00:12:37,760
+[SPEAKER_02] Like Apple cares about policy.
+
+124
+00:12:37,840 --> 00:12:39,120
+[SPEAKER_02] Like people say that privacy.
+
+125
+00:12:39,200 --> 00:12:40,080
+[SPEAKER_02] Apple cares about privacy.
+
+126
+00:12:40,240 --> 00:12:40,560
+[SPEAKER_02] How could Apple?
+
+127
+00:12:40,800 --> 00:12:41,520
+[SPEAKER_02] Apple is not a person.
+
+128
+00:12:42,800 --> 00:12:44,320
+[SPEAKER_02] Apple is a corporate structure.
+
+129
+00:12:44,400 --> 00:12:46,240
+[SPEAKER_02] There's, there's however many employees at Apple.
+
+130
+00:12:46,560 --> 00:12:47,920
+[SPEAKER_02] They don't all agree on things, right?
+
+131
+00:12:48,480 --> 00:12:49,840
+[SPEAKER_02] And Tim Cook is not a dictator.
+
+132
+00:12:50,000 --> 00:12:51,200
+[SPEAKER_02] He can't just run the company like that.
+
+133
+00:12:51,360 --> 00:12:55,360
+[SPEAKER_02] Apple shareholders, you know, have some control, his board has some control, right?
+
+134
+00:12:55,920 --> 00:12:58,240
+[SPEAKER_02] And so, you know, or at least they have influence.
+
+135
+00:12:58,400 --> 00:13:04,080
+[SPEAKER_02] And so like Apple has, it can't have, it doesn't have like a monolithic opinion about stuff.
+
+136
+00:13:04,240 --> 00:13:05,840
+[SPEAKER_02] It's not an entity in its own right.
+
+137
+00:13:06,240 --> 00:13:11,360
+[SPEAKER_02] And so like, I just don't buy this idea that a company can care about some abstract concept, right?
+
+138
+00:13:11,520 --> 00:13:12,880
+[SPEAKER_02] Like, here's another question for you..
+
+139
+00:13:13,040 --> 00:13:14,800
+[SPEAKER_02] Like Apple makes the Apple Watch, right?
+
+140
+00:13:15,120 --> 00:13:15,920
+[SPEAKER_02] It's a health tracker.
+
+141
+00:13:16,080 --> 00:13:17,280
+[SPEAKER_02] Does Apple care about your health?
+
+142
+00:13:18,480 --> 00:13:19,440
+[SPEAKER_02] Are they really concerned?
+
+143
+00:13:19,600 --> 00:13:23,360
+[SPEAKER_02] Are they genuinely, you know, invested in your health, right?
+
+144
+00:13:23,600 --> 00:13:24,800
+[SPEAKER_02] Or they want to sell something, right?
+
+145
+00:13:25,040 --> 00:13:37,760
+[SPEAKER_02] And so I think the idea with privacy is okay, it gives us an opportunity to strike a juxtaposition against Android, which, you know, is kind of perceived, I believe, as like less, like, privacy safe.
+
+146
+00:13:38,400 --> 00:13:43,040
+[SPEAKER_02] But even Android has gone to great lengths, or Google has gone to great lengths to kind of bring privacy to the forefront on Android.
+
+147
+00:13:43,120 --> 00:13:48,320
+[SPEAKER_02] A lot of it's just about informing consumers about their data that are being accessed, but it's, you know, still they've done some things, right?
+
+148
+00:13:48,640 --> 00:13:53,360
+[SPEAKER_02] So anyway, I just I don't believe that a company, a corporate entity can care about an abstract concept, right?
+
+149
+00:13:53,520 --> 00:13:55,360
+[SPEAKER_02] So putting that aside, what does privacy buy them?
+
+150
+00:13:55,440 --> 00:13:58,800
+[SPEAKER_02] It buys them that juxtaposition and then it buys them cover, right?
+
+151
+00:13:59,200 --> 00:14:02,080
+[SPEAKER_02] It buys them cover to do all this other stuff, right?
+
+152
+00:14:02,400 --> 00:14:06,400
+[SPEAKER_02] And then to, and then to spin up this big narrative that probably helps to sell iPhones, right?
+
+153
+00:14:06,480 --> 00:14:07,360
+[SPEAKER_02] Because, you know what I mean?
+
+154
+00:14:07,440 --> 00:14:22,800
+[SPEAKER_01] Or future AR glasses or, you know, I mean, I think in some ways positioning themselves, they care about privacy insofar as it's an incredible marketing tool for them and in it, it gives them cover for future devices.
+
+155
+00:14:23,040 --> 00:14:24,720
+[SPEAKER_01] They become more and more and more and more private.
+
+156
+00:14:25,040 --> 00:14:39,280
+[SPEAKER_01] I mean, this thing that you wear on your rest, you know, biometric sensors and tracking your sleep and everything else, you know, customers are going to feel more comfortable wearing AR glasses that have cameras on them when it's Apple branded than when it's Facebook branded.
+
+157
+00:14:39,360 --> 00:14:43,200
+[SPEAKER_01] I mean, there's been backlash with the Ray Ban glasses from Facebook.
+
+158
+00:14:43,680 --> 00:15:00,800
+[SPEAKER_01] So, so yeah, I mean, I I get you, you know, they don't, you know, the Apple fanboy in me wants to believe that, you know, Apple, you know, wants to do good in the world, but I've, I've since lost my Apple religion and but I, but I do think to a certain extent that they carry on.
+
+159
+00:15:00,800 --> 00:15:09,200
+[SPEAKER_01] They care about, they do care about privacy, and whether or not any of that is motivated by goodwill or otherwise, it's incredible marketing for them.
+
+160
+00:15:09,360 --> 00:15:20,080
+[SPEAKER_01] And so, that being the case, you know, and this is where maybe our opinions diverge or at least how we interpret some of what's been going on.
+
+161
+00:15:21,040 --> 00:15:36,240
+[SPEAKER_01] I still am of the opinion, as naive as it may be, that privacy was the primary motivation for them, whether altruistic or marketing or whatever other reasons they have to be, to be positioning themselves this way.
+
+162
+00:15:37,280 --> 00:15:48,560
+[SPEAKER_01] I still think that that was primary and that, and I don't know that they even fully understood or expected some of the things that have been happening.
+
+163
+00:15:48,960 --> 00:16:20,640
+[SPEAKER_01] I think they thought SKN Network was a better solution than it actually is, and I don't know that they expected to see a company like Snap that is actually fairly aligned with them, at least, you know, again in marketing and a public perception as being a more privacy focused company, and to see this company that has been kind of rooting and talking positively about app tracking transparency and see them drop 25% in a single day because and then say specifically it's because SK Ad Network isn't delivering.
+
+164
+00:16:21,040 --> 00:16:33,040
+[SPEAKER_01] I mean, I still think personally that this has more to do with Apple not understanding and not listening to the industry, which we've just seen for decades, right?
+
+165
+00:16:33,360 --> 00:16:34,960
+[SPEAKER_01] Like Apple doesn't listen.
+
+166
+00:16:35,280 --> 00:16:42,160
+[SPEAKER_01] They're not good at like receiving outside feedback on roadmaps, on their APIs, on anything else.
+
+167
+00:16:42,640 --> 00:16:50,800
+[SPEAKER_01] They think they know what to do and they think as a product company, they can just build this product and bring it to the world and it's going to be the best thing since Lice bred.
+
+168
+00:16:51,120 --> 00:17:00,080
+[SPEAKER_01] And SK Ad Network is just another example of them trying that approach and then just falling flat on their face.
+
+169
+00:17:01,040 --> 00:17:28,800
+[SPEAKER_01] And I think this is important because if that is the case and if they really if the primary motivation really was privacy, then maybe we do see an SK Ad Network 3.0 that's way better than this current one after they realize they've destroyed tens of billions of dollars of value and also potentially handicap their own platform because as ad efficiiciency goes down and as apps struggle to gain traction, they lose too.
+
+170
+00:17:29,520 --> 00:17:36,800
+[SPEAKER_01] So yeah, I guess I'd love to hear your kind of response to that because I know we probably disagree on this a bit.
+
+171
+00:17:37,120 --> 00:17:38,160
+[SPEAKER_02] I guess it doesn't really matter.
+
+172
+00:17:38,320 --> 00:17:45,760
+[SPEAKER_02] Like, you know, if we, I don't know, at this point it kind of seems like semantics a little bit because it's like, well, they care about privacy because privacy is a good marketing message.
+
+173
+00:17:45,920 --> 00:17:52,000
+[SPEAKER_02] Like my point is like, I don't think they generally care whether people's data is being accessed by advertising networks.
+
+174
+00:17:52,400 --> 00:17:57,040
+[SPEAKER_02] I don't think they cared about that to the degree that it didn't impact.
+
+175
+00:17:57,360 --> 00:18:00,240
+[SPEAKER_02] It was, it was, it was happening kind of unaware, right?
+
+176
+00:18:00,720 --> 00:18:02,960
+[SPEAKER_02] Like, or, you know, that these users were like sort of unawares.
+
+177
+00:18:03,120 --> 00:18:22,640
+[SPEAKER_02] Once it became like a, like a sort of social rallying cry around, you know, Facebook and, you know, it's the congressional testimony and you're listening on our devices and then, and like once it became something that I think that they could, you know, exploit, then sure, then maybe they care about it because it's a differentiator for the products and they can help them sell more products, right?
+
+178
+00:18:23,040 --> 00:18:26,160
+[SPEAKER_02] But, but I think, so first of all, so we are on SKNR 3.0.
+
+179
+00:18:26,400 --> 00:18:27,360
+[SPEAKER_02] They released 3.0.
+
+180
+00:18:27,440 --> 00:18:29,280
+[SPEAKER_02] 3.0 is just like a minor improvement.
+
+181
+00:18:29,440 --> 00:18:33,360
+[SPEAKER_02] So 3.0 added view through attribution and I think it added one more thing.
+
+182
+00:18:33,600 --> 00:18:36,720
+[SPEAKER_02] And then also with iOS 15, they allowed the postpacks to be sent.
+
+183
+00:18:37,200 --> 00:18:39,120
+[SPEAKER_02] directly to the advertiser, not just the network.
+
+184
+00:18:39,360 --> 00:18:43,600
+[SPEAKER_02] So I mean, those are improvements, but I don't see them continuing to develop SK Ad Network.
+
+185
+00:18:43,920 --> 00:18:44,640
+[SPEAKER_02] I just don't see that.
+
+186
+00:18:44,880 --> 00:18:52,000
+[SPEAKER_02] But I think I do, I agree with you that they didn't understand how consequential that would be to the advertising.
+
+187
+00:18:52,480 --> 00:18:55,680
+[SPEAKER_02] I think it's an example of like the left hand not talking to the right hand.
+
+188
+00:18:55,840 --> 00:19:00,000
+[SPEAKER_02] Apple is like a super secretive organization, not just to the outside world, right?
+
+189
+00:19:00,400 --> 00:19:02,960
+[SPEAKER_02] Internally, Apple teams are very secretive, right?
+
+190
+00:19:03,360 --> 00:19:08,240
+[SPEAKER_02] And, um, you know, I I don't know that the App Store team was talking to the iTunes team.
+
+191
+00:19:08,720 --> 00:19:14,080
+[SPEAKER_02] Um, I mean, I don't even really know how that, how, how the sort of corporate structurecture separates those two teams.
+
+192
+00:19:14,480 --> 00:19:20,400
+[SPEAKER_02] But my sense is that like the App Store team, the people that work with developers, weren't aware of this.
+
+193
+00:19:20,800 --> 00:19:21,920
+[SPEAKER_02] And I've been told that.
+
+194
+00:19:22,080 --> 00:19:25,680
+[SPEAKER_02] I've been told that they learned about it at WWDC two years ago.
+
+195
+00:19:26,080 --> 00:19:26,240
+[SPEAKER_02] Right?
+
+196
+00:19:26,400 --> 00:19:29,200
+[SPEAKER_02] And then they got up, they had to field a bunch of angry emails and phone calls.
+
+197
+00:19:29,360 --> 00:19:29,520
+[SPEAKER_02] Right?
+
+198
+00:19:30,160 --> 00:19:35,840
+[SPEAKER_02] You know, I think there wasn't a whole lot of consensus internally around what the impact of this would be.
+
+199
+00:19:35,920 --> 00:19:37,360
+[SPEAKER_02] I think the impact was underestimated.
+
+200
+00:19:37,680 --> 00:19:44,960
+[SPEAKER_02] And to be honest, I don't think they would have released something if they knew that it was going to wipe out, you know, just annihilate a quarter of Snap's market cap in a day.
+
+201
+00:19:45,280 --> 00:19:45,360
+[SPEAKER_02] Right?
+
+202
+00:19:45,600 --> 00:19:51,440
+[SPEAKER_02] I don't think they would have released something if they knew it was going to annihilate a fifth of Zynga's market cap in a day last quarter.
+
+203
+00:19:51,680 --> 00:19:52,240
+[SPEAKER_02] You know what I mean?
+
+204
+00:19:52,560 --> 00:20:02,960
+[SPEAKER_02] I don't think they, you know, and what we saw with Facebook was that there's like this kind of slow erosion of market cap, you know, from, from, like the, you know, all time high a couple months ago.
+
+205
+00:20:03,280 --> 00:20:19,200
+[SPEAKER_02] But, you know, the damage hasn't been just in terms of stock price hasn't been as severe to Facebook as it has to some of these other companies, you know, who weren't really doing the things that Apple wanted, you know, to sort of mitigate, right?
+
+206
+00:20:19,600 --> 00:20:19,760
+[SPEAKER_02] Right.
+
+207
+00:20:20,000 --> 00:20:26,880
+[SPEAKER_02] So I don't think that they fully, you know, first of all they didn't, you know, workshop this with advertisers, like I know that to be true.
+
+208
+00:20:27,360 --> 00:20:27,520
+[SPEAKER_02] Right.
+
+209
+00:20:28,240 --> 00:20:32,480
+[SPEAKER_02] Or I believe that to be true, unless some people did it in, like, you know, deep secret and they've never revealed it.
+
+210
+00:20:32,560 --> 00:20:34,080
+[SPEAKER_02] But I don't think they, I don't think that's true.
+
+211
+00:20:34,160 --> 00:20:35,520
+[SPEAKER_02] Because I've talked to a lot of people.
+
+212
+00:20:35,680 --> 00:20:38,640
+[SPEAKER_02] No one, no one was consulted about this that I've spoken with.
+
+213
+00:20:39,440 --> 00:20:49,680
+[SPEAKER_02] You know, I don't think that they really, truly grasped how sort of like fundamental performance advertising was or is to a lot of these businesses, right?
+
+214
+00:20:50,000 --> 00:20:54,640
+[SPEAKER_02] In in terms of their just their their sort of, you know, operational success, right?
+
+215
+00:20:55,040 --> 00:21:12,400
+[SPEAKER_02] And so I think because of that sort of differential between I think what they thought was going to be the result of this and what the actual result was, you know, I feel like that does call into question, you know, not only the wisdom of this, but, you know, how well they can defend it, right?
+
+216
+00:21:12,640 --> 00:21:28,160
+[SPEAKER_02] When they, you know, against maybe some, some, some lines of inquiry, um, you know, that, that are, that are sort of like, you know, kind of more powerful and sort of socially instrumental than, than ours, than mine or than, than, than, than app advertisers or app developers, right?
+
+217
+00:21:28,400 --> 00:21:35,520
+[SPEAKER_02] I think they've, they've invited a lot of questions about this through, through the severity of the impact that we've witnessed over the last couple of weeks and months.
+
+218
+00:21:35,840 --> 00:21:36,560
+[SPEAKER_02] And, and that's where.
+
+219
+00:21:37,680 --> 00:21:38,720
+[SPEAKER_01] I totally agree with that.
+
+220
+00:21:39,120 --> 00:21:40,560
+[SPEAKER_01] And that's been my perception as well.
+
+221
+00:21:40,640 --> 00:21:46,960
+[SPEAKER_01] And I talk to folks as well is that Apple didn't fully understand the implications.
+
+222
+00:21:47,840 --> 00:22:10,320
+[SPEAKER_01] And if there were people inside Apple who had a better understanding of what might play out, they didn't have enough of a seat at the table and that a lot of this was just ivory tower thinking was Apple building SKI network thinking, oh, this is going to be a great solution without, like you said, workshopping it with the people who would actually have to use it and then coming up with a better solution.
+
+223
+00:22:10,480 --> 00:22:12,400
+[SPEAKER_01] So then my question to you is, okay.
+
+224
+00:22:12,400 --> 00:22:14,960
+[SPEAKER_01] is okay, you were kind of chicken little for a year.
+
+225
+00:22:15,120 --> 00:22:17,440
+[SPEAKER_01] The sky's gonna fall, the sky's gonna fall, the sky's gonna fall.
+
+226
+00:22:17,600 --> 00:22:22,560
+[SPEAKER_01] I mean, you've been really one of the most vocal people about how big these impacts were going to be.
+
+227
+00:22:22,960 --> 00:22:26,320
+[SPEAKER_01] And you had a lot of people in the industry saying, Oh, it's not going to be that bad.
+
+228
+00:22:26,480 --> 00:22:27,520
+[SPEAKER_01] It's not going to be that bad.
+
+229
+00:22:27,840 --> 00:22:28,800
+[SPEAKER_01] Well, now the sky fell.
+
+230
+00:22:29,120 --> 00:22:40,160
+[SPEAKER_01] I mean, you know, a public company having 25% of its market value wiped out in a day due to one specific policy from a platform, like the sky's falling.
+
+231
+00:22:40,400 --> 00:22:40,880
+[SPEAKER_01] You were right.
+
+232
+00:22:41,760 --> 00:22:43,680
+[SPEAKER_01] But then so now Apple sees it.
+
+233
+00:22:43,920 --> 00:22:46,320
+[SPEAKER_01] They can't they can't avoid seeing it.
+
+234
+00:22:47,360 --> 00:22:48,560
+[SPEAKER_01] What do they do from here?
+
+235
+00:22:49,120 --> 00:22:51,520
+[SPEAKER_01] You said they're not going to make SKA network better.
+
+236
+00:22:52,560 --> 00:22:57,040
+[SPEAKER_01] Are they not going to police fingerprinting to continue to soften the blow?
+
+237
+00:22:57,360 --> 00:22:57,920
+[SPEAKER_01] Where does it go?
+
+238
+00:22:58,480 --> 00:23:13,040
+[SPEAKER_01] That's what's so interesting to me about, okay, whatever their motivation, what they do in the future in reaction to what's actually happening now that we're seeing actual results matters to the tune of hundreds of billions of dollars.
+
+239
+00:23:13,760 --> 00:23:20,000
+[SPEAKER_01] And one of the things that I put in the notes to talk about is a lot of this value that's being destroyed is not accruing to Apple.
+
+240
+00:23:20,480 --> 00:23:27,280
+[SPEAKER_01] It's not as if 100 billion dollars of market cap washed out of Facebook and Google and Snap and other folks.
+
+241
+00:23:27,440 --> 00:23:32,080
+[SPEAKER_01] It's not like Apple is actually capturing that because they don't they don't have to add inventory.
+
+242
+00:23:32,240 --> 00:23:34,720
+[SPEAKER_01] They don't they're not a big player in the space.
+
+243
+00:23:34,960 --> 00:23:36,960
+[SPEAKER_01] So yeah, where does Apple go from here?
+
+244
+00:23:37,120 --> 00:23:38,720
+[SPEAKER_01] Have they painted themselves in a corner?
+
+245
+00:23:39,200 --> 00:23:39,440
+[SPEAKER_02] Maybe.
+
+246
+00:23:39,680 --> 00:23:46,880
+[SPEAKER_02] I mean, I think what I would, you know, if I was an Apple, I'd be worried about, you know, they've got a lot there's already they're already under a lot of scrutiny, right?
+
+247
+00:23:47,040 --> 00:23:57,680
+[SPEAKER_02] Like, you know, what the DOJ, what just three days ago decided to reopen the investigation into Apple related to the way they operate the App Store.
+
+248
+00:23:58,000 --> 00:24:06,960
+[SPEAKER_02] I just think it's really tough to to maintain this line on one front while you're obviously having to lose ground on another front, right?
+
+249
+00:24:07,280 --> 00:24:23,440
+[SPEAKER_02] Because as we've seen, there's just been this steady trickle of them ceding ground to developers or giving up a lot of the sort of exclusivity and preferential treatment they have with App Store operation, right?
+
+250
+00:24:23,680 --> 00:24:35,280
+[SPEAKER_02] Like it just feels like maybe it's maybe it's they felt like, well, that will expand one area of that preferential treatment while we're sort of like forced to abandon other areas of preferential treatment.
+
+251
+00:24:35,360 --> 00:24:43,680
+[SPEAKER_02] But I don't know that they were., I don't, but that would only make sense if they actually understood how dramatic the consequences of HTT would be, which I don't think they did.
+
+252
+00:24:44,080 --> 00:24:44,800
+[SPEAKER_02] You know, I don't know.
+
+253
+00:24:44,960 --> 00:24:46,400
+[SPEAKER_02] Maybe they have painted themselves in a corner.
+
+254
+00:24:46,480 --> 00:24:47,280
+[SPEAKER_02] I mean, I don't know.
+
+255
+00:24:47,600 --> 00:24:58,720
+[SPEAKER_02] So the thing about SKI Network is like the way it was designed, it has a lot of features that on their own would be smart, you know, tech progressive, privacy protective, you know, mechanisms, right?
+
+256
+00:24:59,280 --> 00:25:04,640
+[SPEAKER_02] But in combination just renders this thing like totally dysfunctional.
+
+257
+00:25:05,120 --> 00:25:11,360
+[SPEAKER_02] And that's the problem because now if they go back and they get rid of any of these given features, so like, or not features but restrictions, right?
+
+258
+00:25:11,600 --> 00:25:16,800
+[SPEAKER_02] So let's say they say, okay., so first of all, I mean, and I'm assuming most people listening are at least familiar with this.
+
+259
+00:25:16,960 --> 00:25:49,600
+[SPEAKER_02] I don't want, I won't, I won't go into the whole thing, you know, description of SKA network from zero, but let's say they give up on the privacy threshold, which would be weird because there's a privacy threshold for Apple search ads to be fair, but let's say they gave that up, right, then, then, okay, you move a little bit towards, you know, something that, that is, is functional and helpful, but you've, you've, you've, you've made a pretty, a sort of like very public facing, kind of miakalpa decision, which I don't, you know, or announcement, right, which I don't know that is in Apple's DNA to do that kind of thing.
+
+260
+00:25:50,240 --> 00:25:55,680
+[SPEAKER_01] And giving up the privacy threshold would actually allow tracking, which is what they're saying they're trying to prevent.
+
+261
+00:25:56,000 --> 00:26:01,600
+[SPEAKER_01] So that's the other problem with giving much ground on some of these things with SKI network.
+
+262
+00:26:01,840 --> 00:26:02,400
+[SPEAKER_02] Well, it could.
+
+263
+00:26:02,640 --> 00:26:02,880
+[SPEAKER_02] It could.
+
+264
+00:26:03,360 --> 00:26:07,600
+[SPEAKER_01] And that's kind of the broader question is like, can SKI network even be saved?
+
+265
+00:26:08,560 --> 00:26:12,640
+[SPEAKER_01] And, you know, let's say regulators did come in and say this was completely anti competitive.
+
+266
+00:26:12,880 --> 00:26:13,520
+[SPEAKER_01] What's the solution?
+
+267
+00:26:13,840 --> 00:26:22,480
+[SPEAKER_01] I mean, if you roll back and give unique identifiers to every app, you're going to have all the same unintended consequences that came with the IDFA.
+
+268
+00:26:22,800 --> 00:26:31,600
+[SPEAKER_01] So yeah, I mean, that's like four questions rolled rolled into a statement, but can SCA network actually be saved while maintaining some level of privacy?
+
+269
+00:26:32,320 --> 00:26:34,320
+[SPEAKER_02] Maybe, but I so I don't know that you do give up.
+
+270
+00:26:34,800 --> 00:26:38,240
+[SPEAKER_02] So I don't I don't think you totally enable tracking if you give up the privacy threshold.
+
+271
+00:26:38,400 --> 00:26:48,320
+[SPEAKER_02] What you would enable would be the advertiser would be able to link the specific campaign to an individual user in their data environment.
+
+272
+00:26:48,400 --> 00:26:54,560
+[SPEAKER_02] Now, if they chose to share that with a third party platform or ad platform, I guess that that would be their decision.
+
+273
+00:26:54,720 --> 00:26:59,200
+[SPEAKER_02] I don't think by default it would sort of instantly, you know, make that trackable, right?
+
+274
+00:27:00,640 --> 00:27:08,800
+[SPEAKER_02] is adding a little bit more context to every postback versus just some because you already get I mean, if you get rid of the privacy threshold, that just means those nulls go away, right?
+
+275
+00:27:09,040 --> 00:27:15,600
+[SPEAKER_02] And so you're able to get a little you're able to track you you're able to sort of observe the less frequent transactions, right?
+
+276
+00:27:15,760 --> 00:27:16,640
+[SPEAKER_02] Or just tell me what it is.
+
+277
+00:27:16,800 --> 00:27:19,840
+[SPEAKER_02] If you tell me what it is, then I can design around that, right?
+
+278
+00:27:20,160 --> 00:27:21,600
+[SPEAKER_02] But we don't even know if it's dynamic.
+
+279
+00:27:22,000 --> 00:27:25,440
+[SPEAKER_02] They've they've apparently changed it like without telling anyone.
+
+280
+00:27:25,600 --> 00:27:28,960
+[SPEAKER_02] And so all of a sudden, the number of null conversion values exploded, right?
+
+281
+00:27:29,200 --> 00:27:29,920
+[SPEAKER_02] I mean, that's the thing.
+
+282
+00:27:30,080 --> 00:27:32,880
+[SPEAKER_02] Just make it public because if you do that, then I'm going to say, you know what?
+
+283
+00:27:33,040 --> 00:27:36,720
+[SPEAKER_02] Okay, I'm going to design my app such that like the people I care about.
+
+284
+00:27:37,120 --> 00:27:38,160
+[SPEAKER_02] are going to trigger this or not, right?
+
+285
+00:27:38,240 --> 00:27:40,080
+[SPEAKER_02] It's not something that's in its early funnel.
+
+286
+00:27:40,240 --> 00:27:41,680
+[SPEAKER_02] It's something that will happen.
+
+287
+00:27:42,080 --> 00:27:55,840
+[SPEAKER_02] You know, I can build my I can kind of intuit it, you know, just through like statistical modeling, what where I need to place this in order for it to trigger the number of people that satisfies the privacy threshold, so that I get the data that I really need to make decisions.
+
+288
+00:27:55,920 --> 00:27:57,120
+[SPEAKER_02] Because right now, you have no idea.
+
+289
+00:27:57,360 --> 00:27:59,040
+[SPEAKER_02] And you know, I have no idea where to place that.
+
+290
+00:27:59,360 --> 00:27:59,680
+[SPEAKER_02] What is that?
+
+291
+00:27:59,920 --> 00:28:01,600
+[SPEAKER_02] Unless you just experiment a bunch of times.
+
+292
+00:28:02,080 --> 00:28:09,360
+[SPEAKER_02] But even then, it's the broader environment is too variable because the campaign could go up and down in terms of like DAU or DNU every day.
+
+293
+00:28:09,600 --> 00:28:10,160
+[SPEAKER_02] You know what I mean?
+
+294
+00:28:10,320 --> 00:28:14,240
+[SPEAKER_01] And then if they change it, then there's like a totally unknoknown exhaustionist variable there, right?
+
+295
+00:28:14,480 --> 00:28:19,200
+[SPEAKER_02] So it's impossible to tune your app such that you say, okay, look, I get it.
+
+296
+00:28:19,760 --> 00:28:24,960
+[SPEAKER_02] You're not going to let me have a conversion value if fewer than twenty five people did it.
+
+297
+00:28:25,040 --> 00:28:27,680
+[SPEAKER_02] Well, I know how much traffic I'm driving through all these campaigns every day.
+
+298
+00:28:28,000 --> 00:28:39,360
+[SPEAKER_02] So I need to consolidate my campaign such that each one drives 400 new installs every day because I know that, you know, a eighth of the installs will trigger that thing, but those will be the users I really care about, right?
+
+299
+00:28:39,600 --> 00:28:43,680
+[SPEAKER_02] And if you did that, then at least I know and I can design everything around that, but I don't even know.
+
+300
+00:28:44,000 --> 00:28:47,280
+[SPEAKER_02] I don't even know if that changes over time relative to the number of installs I'm driving.
+
+301
+00:28:47,600 --> 00:28:53,920
+[SPEAKER_02] I don't know if you're changing on the back end without telling me, like it's just you can't operate in with that kind of opacity.
+
+302
+00:28:54,080 --> 00:28:55,360
+[SPEAKER_02] It's just it's just not functional.
+
+303
+00:28:55,520 --> 00:28:57,680
+[SPEAKER_02] And then you've got the hundred campaign ID limit.
+
+304
+00:28:57,920 --> 00:29:01,680
+[SPEAKER_02] You know, you don't have any creative parameters in the postback.
+
+305
+00:29:01,920 --> 00:29:03,520
+[SPEAKER_02] Like you just can't do anything with this.
+
+306
+00:29:04,080 --> 00:29:04,160
+[SPEAKER_01] Yeah.
+
+307
+00:29:04,640 --> 00:29:08,400
+[SPEAKER_01] I mean, that's where it does seem like this was designed as an academic exercise.
+
+308
+00:29:08,640 --> 00:29:08,800
+[SPEAKER_01] Right.
+
+309
+00:29:09,040 --> 00:29:18,240
+[SPEAKER_01] How do we prevent any unique identification of any individual ever from being even remotely possible?
+
+310
+00:29:19,120 --> 00:29:21,600
+[SPEAKER_01] And it was an academic exercise that they played out.
+
+311
+00:29:21,680 --> 00:29:30,080
+[SPEAKER_01] Whereas if they had workshopped it with the people who actually have to use it and had thought through the kind of business use cases.
+
+312
+00:29:31,280 --> 00:29:33,040
+[SPEAKER_01] And you made a valid point earlier.
+
+313
+00:29:33,200 --> 00:29:38,240
+[SPEAKER_01] You don't automatically enable tracking by reducing the privacy threshold.
+
+314
+00:29:38,880 --> 00:29:47,920
+[SPEAKER_01] But I think, you know, Apple should kind of rethink some of the priorities around this so that you get better business metrics, even if one or two.
+
+315
+00:29:48,800 --> 00:29:52,560
+[SPEAKER_01] people can slip through the cracks of being able to be uniquely identified.
+
+316
+00:29:53,200 --> 00:29:56,000
+[SPEAKER_01] And I think the argument there is like, it doesn't matter at scale.
+
+317
+00:29:56,400 --> 00:30:07,360
+[SPEAKER_01] Like if one person slips through the cracks, Facebook is not going to build technology around finding that person here and there that slips through the cracks because it doesn't matter to their business to find one or two.
+
+318
+00:30:07,520 --> 00:30:10,560
+[SPEAKER_01] It matters to have more data on everyone.
+
+319
+00:30:10,960 --> 00:30:20,000
+[SPEAKER_01] So the campaign ID limit, the creative ID, like all of these seem very ivory tower thinking that just is not going to play out in the real world.
+
+320
+00:30:20,320 --> 00:30:27,920
+[SPEAKER_01] So a few minutes ago, you were saying you don't think Apple will improve SK ad network, but now we're talking about how they could.
+
+321
+00:30:28,480 --> 00:30:29,920
+[SPEAKER_01] Where does the rubber meet the road?
+
+322
+00:30:30,080 --> 00:30:30,720
+[SPEAKER_01] What's going to happen?
+
+323
+00:30:30,960 --> 00:30:34,480
+[SPEAKER_02] I mean, I don't because I mean, the thing is like, you know, we're just kind of riffing right now.
+
+324
+00:30:34,640 --> 00:30:34,720
+[SPEAKER_02] Yeah.
+
+325
+00:30:34,960 --> 00:30:44,720
+[SPEAKER_02] I think if we sat down with a cho whiteboard or something, you know, because we I I wrote an article a couple months back, or it was actually it was like right after this was announced.
+
+326
+00:30:44,880 --> 00:30:46,320
+[SPEAKER_02] And I I kind of like, here's some suggestions.
+
+327
+00:30:46,400 --> 00:30:49,600
+[SPEAKER_02] Here, here, here's what you could do to make SKI network more helpful.
+
+328
+00:30:50,000 --> 00:31:03,200
+[SPEAKER_02] And, you know, some really smart people on the mobile dev memo slack pointed out holes in my analysis and said, no, if you do this, I can, if we had enough postbacks going, I could kind of encode the IDFV over enough of the postbacks.
+
+329
+00:31:03,360 --> 00:31:07,120
+[SPEAKER_02] Like if I had enough postbacks, I could put like one character from the IDFV in every single one.
+
+330
+00:31:07,440 --> 00:31:08,240
+[SPEAKER_02] I could get the users.
+
+331
+00:31:08,720 --> 00:31:11,200
+[SPEAKER_02] So that's why you can only have one postback per install, right?
+
+332
+00:31:11,360 --> 00:31:13,920
+[SPEAKER_02] Because if you did fifty or like, so that makes sense.
+
+333
+00:31:14,000 --> 00:31:20,480
+[SPEAKER_02] So I mean, the thing is like, if I'm just ripping, what I do believe, though, is like, you could either have the privacy threshold or the random timer, right?
+
+334
+00:31:20,720 --> 00:31:24,080
+[SPEAKER_02] Because I need to, so like, ramp the privacy threshold up to a million.
+
+335
+00:31:24,320 --> 00:31:24,720
+[SPEAKER_02] I don't care.
+
+336
+00:31:25,120 --> 00:31:30,080
+[SPEAKER_02] But let me have real time install accounting because without that, I can't do anything, right?
+
+337
+00:31:30,240 --> 00:31:36,320
+[SPEAKER_02] If you, if I, if you're obscurcating even the date of install, then that, I can't, I can't do install accounting.
+
+338
+00:31:36,400 --> 00:31:44,480
+[SPEAKER_02] I can't, I can't, I can't assess the economics of my campaigns because I don't even know when the installs are produced and I can't make changes to campaigns, right?
+
+339
+00:31:44,720 --> 00:31:48,880
+[SPEAKER_02] Without having to shut the whole thing down and wait to reuse that one precious campaign.
+
+340
+00:31:49,200 --> 00:31:52,400
+[SPEAKER_02] ID within the within the sort of like constraint of 100, right?
+
+341
+00:31:52,560 --> 00:32:04,240
+[SPEAKER_02] So I mean, like, my sense is that like, if you just solved for that, allow that, allow real-time install accounting and then do whatever after that you have to do to prevent me from figuring out who those people are.
+
+342
+00:32:04,640 --> 00:32:06,000
+[SPEAKER_02] Um, okay, that's fine.
+
+343
+00:32:06,160 --> 00:32:09,600
+[SPEAKER_02] But at least then I know this campaign drove this many installs today.
+
+344
+00:32:10,080 --> 00:32:11,280
+[SPEAKER_02] These were the targeting parameters.
+
+345
+00:32:11,440 --> 00:32:12,560
+[SPEAKER_02] This was the audience I was reaching.
+
+346
+00:32:12,640 --> 00:32:13,920
+[SPEAKER_02] This is how much I spent, right?
+
+347
+00:32:14,160 --> 00:32:25,440
+[SPEAKER_02] And like, even if we just went, because I don't think you would lose a lot if you just went back, because right, you know, the frontier that we reached was like, we're, you know, especially on Facebook, I'm optimizing for value.
+
+348
+00:32:25,600 --> 00:32:27,120
+[SPEAKER_02] I'm optimizing for ROAS, right?
+
+349
+00:32:27,360 --> 00:32:33,360
+[SPEAKER_02] And that was like the sort of the final form of, of, of mobile advertising measurement.
+
+350
+00:32:33,600 --> 00:32:37,120
+[SPEAKER_02] It's like I'm telling Facebook, give me 110 percent ROAS on day seven.
+
+351
+00:32:37,520 --> 00:32:45,760
+[SPEAKER_02] If you do that, I don't care how you target, who you target, um, you know, how much the CPIs are, how much the CPI is irrelevant.
+
+352
+00:32:45,920 --> 00:32:53,280
+[SPEAKER_02] I've got unlimited funds, you know, from a, from a sort of like practical standpoint on any given day, spend as much as you can, but just make sure we get the 110 percent.
+
+353
+00:32:53,440 --> 00:32:54,000
+[SPEAKER_02] That was the final form.
+
+354
+00:32:54,160 --> 00:33:03,840
+[SPEAKER_02] And I think even if we sort of like retreated from there back to just like CPI, the average LTV of this campaign is X and the average, you know, the CPI was Y.
+
+355
+00:33:04,080 --> 00:33:05,360
+[SPEAKER_02] And so therefore I'm making money.
+
+356
+00:33:05,840 --> 00:33:08,640
+[SPEAKER_02] That would be much less efficient, but still, like, it's workable.
+
+357
+00:33:08,720 --> 00:33:10,080
+[SPEAKER_02] Right now, what we have is not workable.
+
+358
+00:33:10,400 --> 00:33:10,480
+[SPEAKER_01] Yeah.
+
+359
+00:33:10,960 --> 00:33:26,560
+[SPEAKER_01] Well, um, I think you and I could riff on all this wonky stuff for another couple of hours and, um, I hope Apple's listening and actually going to make some changes and listen better now that they're starting to see some of this stuff.
+
+360
+00:33:26,960 --> 00:33:37,600
+[SPEAKER_01] But I did, I did want to change gears and kind of start talking through what this means for developers and specifically, you know, subclub podcasts, what it means for subscription app developers.
+
+361
+00:33:38,560 --> 00:33:45,280
+[SPEAKER_01] And what you were just talking about, I think is actually a really important topic that not a lot of people fully understand.
+
+362
+00:33:45,840 --> 00:33:54,640
+[SPEAKER_01] You've written about it in the past, but I think it's still somewhat abstract enough that I wanted to kind of have you describe it in more concrete terms.
+
+363
+00:33:54,960 --> 00:34:14,240
+[SPEAKER_01] And that's the fact that with these, you know, day seven ROAS campaigns and value optimization and event optimization campaigns, Facebook with all of its data and AI and incredible targeting efficiency has kind of in some ways been doing the job of developers.
+
+364
+00:34:14,640 --> 00:34:23,280
+[SPEAKER_01] It's been finding those unique profiles, user profiles of who's actually going to spend money, who's actually going to enjoy the app.
+
+365
+00:34:24,320 --> 00:34:39,840
+[SPEAKER_01] And it's like in some ways they became this really efficient black box of user profiling and understanding users that developers had kind of in the past done and then maybe now need to get good at again in the future.
+
+366
+00:34:40,880 --> 00:34:48,000
+[SPEAKER_01] Again, you've written about this before, but just describe that process maybe a little better of how amazing Facebook really was.
+
+367
+00:34:48,160 --> 00:34:51,520
+[SPEAKER_01] was at finding the best users for an app.
+
+368
+00:34:52,000 --> 00:34:56,400
+[SPEAKER_02] Well, they were very, you know, as you said, very, very good at it, right?
+
+369
+00:34:56,720 --> 00:35:01,360
+[SPEAKER_02] So, you know, it was based on like an approach that is, was very simplistic, right?
+
+370
+00:35:01,520 --> 00:35:12,720
+[SPEAKER_02] I mean, I just gonna, I mean, I'm gonna, if I can observe everything, then I know everything about this user and I can just target most relevant ads to them because I know everything about what they interact with, right?
+
+371
+00:35:12,960 --> 00:35:13,600
+[SPEAKER_02] And I know what they like.
+
+372
+00:35:14,320 --> 00:35:23,360
+[SPEAKER_02] And, you know, it gets to a point where that, that, that ability to observe is so pervasive that I, I do agree, like that, that had gone too far.
+
+373
+00:35:23,600 --> 00:35:26,240
+[SPEAKER_02] Like the pendulum had swungung too far in that direction.
+
+374
+00:35:26,400 --> 00:35:39,360
+[SPEAKER_02] Like it is not, I find it unsavory to think that literally everything I do on my phone is observed and instrumentated and ingested as a data point by one company, right?
+
+375
+00:35:39,600 --> 00:35:41,280
+[SPEAKER_02] Like that's I'm uncomfortable with that.
+
+376
+00:35:41,520 --> 00:35:47,680
+[SPEAKER_02] So, you know, and but, but like I think, you know, to your point, like going, you know, if you go back to when UAC was introduced, right?
+
+377
+00:35:47,920 --> 00:35:52,640
+[SPEAKER_02] So Google, their mobile product UAC is that they describe it.
+
+378
+00:35:52,800 --> 00:35:56,240
+[SPEAKER_02] I think they themselves describe it as a black box as like a selling point, right?
+
+379
+00:35:56,880 --> 00:36:00,160
+[SPEAKER_02] Because it's like, look, don't worry about anything of that.
+
+380
+00:36:00,640 --> 00:36:04,160
+[SPEAKER_02] You will handle all this difficult analysis for you.
+
+381
+00:36:04,320 --> 00:36:05,760
+[SPEAKER_02] We'll find the best users for you.
+
+382
+00:36:05,920 --> 00:36:14,560
+[SPEAKER_02] You don't have to iterate across audience, uh, definitions or even creative, you know, and do all that experimentation yourself.
+
+383
+00:36:14,720 --> 00:36:17,200
+[SPEAKER_02] We'll do that on your behalf with our superior tools.
+
+384
+00:36:17,360 --> 00:36:24,880
+[SPEAKER_02] And when they announced it, there was a lot of, um, you know, disquietude in the in the developer community because people are like, look, we we built this.
+
+385
+00:36:25,040 --> 00:36:25,600
+[SPEAKER_02] We want to do it.
+
+386
+00:36:25,760 --> 00:36:26,640
+[SPEAKER_02] I don't trust you to do it.
+
+387
+00:36:26,800 --> 00:36:30,560
+[SPEAKER_02] I trust you to do it well, but I also trust you to do it to your advantage, right?
+
+388
+00:36:30,720 --> 00:36:30,960
+[SPEAKER_02] Right?
+
+389
+00:36:31,440 --> 00:36:34,240
+[SPEAKER_02] In to to to in pursuit of your best interests, not not necessarily mine.
+
+390
+00:36:34,560 --> 00:36:35,280
+[SPEAKER_02] What I think you'll do.
+
+391
+00:36:35,360 --> 00:36:47,360
+[SPEAKER_02] So this is and this is exactly what these people platforms do, is they take whatever boundary you set or whatever standard you set around efficiency and they they reach that, but no more, right?
+
+392
+00:36:48,320 --> 00:36:58,560
+[SPEAKER_02] They'll get you to exactly what you say is like the sort of quality threshold or the efficiency threshold for your campaigns to keep spending money, but they won't give you no more than that, right?
+
+393
+00:36:58,800 --> 00:37:02,320
+[SPEAKER_02] So they could blow out your campaigns and get you 400 percent ROAS.
+
+394
+00:37:02,800 --> 00:37:06,960
+[SPEAKER_02] But if you told them you only need 110 by day seven, that's what they that's what you're going to get.
+
+395
+00:37:07,360 --> 00:37:15,040
+[SPEAKER_02] And if they get you to that 400, then they're going to buy you a bunch of crappy traffic that brings the sort of average down until it hits that one hundred and ten, right?
+
+396
+00:37:15,520 --> 00:37:51,440
+[SPEAKER_02] And so, you know, that's the power that they had, which, you know, to be fair, it's like they were really good at that and they're probably and and and they being really good at it and then and then present and provide that as a product and productizing that and making that available to everyone meant that anyone could spin up a Facebook campaign, you know, any any Shopify retailer, any Shopify merchant, any small time app developer and spend money and grow their product, grow their audience, right versus going back to 2012 and like, you know, the best UA teams won and and and a lot of times these were like big teams, big companies that raised a lot of money.
+
+397
+00:37:52,000 --> 00:37:55,680
+[SPEAKER_02] You know, now it is way more egalitarian to open it up to anyone.
+
+398
+00:37:55,840 --> 00:38:05,600
+[SPEAKER_02] You know, the small shop owner in, I don't know, the middle of Kentucky or whatever could have access to this world class machine learning infrastructure to grow their business, right?
+
+399
+00:38:05,840 --> 00:38:10,560
+[SPEAKER_02] And then they only really had to compete on the quality of their product and not the quality of their user acquisition infrastructure.
+
+400
+00:38:10,720 --> 00:38:15,200
+[SPEAKER_02] So in a way, it was, I mean, it was a giant gift to these SMBs.
+
+401
+00:38:15,920 --> 00:38:21,360
+[SPEAKER_02] And if the proof is in the pudding, look at Facebook's advertiser mix, ten million advertisers, vast majority SMBs, right?
+
+402
+00:38:21,600 --> 00:38:23,040
+[SPEAKER_02] ten million advertisers, right?
+
+403
+00:38:23,280 --> 00:38:24,960
+[SPEAKER_02] Think about any company that has ten million people.
+
+404
+00:38:25,280 --> 00:38:25,600
+[SPEAKER_02] customers.
+
+405
+00:38:25,840 --> 00:38:29,760
+[SPEAKER_02] That's just an absurd scale, right?
+
+406
+00:38:30,080 --> 00:38:32,800
+[SPEAKER_02] And these are people spending, you know, in aggregate, tons of money on Facebook.
+
+407
+00:38:33,120 --> 00:38:39,200
+[SPEAKER_02] So like, it made sense, but, but, you know, there was a lot of pushback when UAC announced that because developers like, look, we, that was our competitive advantage.
+
+408
+00:38:39,280 --> 00:38:40,320
+[SPEAKER_02] Like, well, should it be?
+
+409
+00:38:40,640 --> 00:38:49,600
+[SPEAKER_02] If we go back to basics and everyone has access to the same quality of infrastructure and the same quality of, like, you know, marketing tools, then you can be on the basis of your product.
+
+410
+00:38:50,080 --> 00:38:52,320
+[SPEAKER_01] So then are we kind of going back to that world?
+
+411
+00:38:52,560 --> 00:39:03,840
+[SPEAKER_01] I mean, app tracking transparency is going to degrade Facebook's targeting efficiency because they're not going to have that pervasive tracking where they know everything that's going on on your smartphone.
+
+412
+00:39:04,560 --> 00:39:10,160
+[SPEAKER_01] So where do we go from here as far as what developers need to be thinking about?
+
+413
+00:39:10,960 --> 00:39:25,840
+[SPEAKER_01] And I forget exactly when you wrote this post, but I really appreciated you kind of talked through some tactics even around developers needing to get better at capturing intent about potentially kind of bifurcating experience in the app.
+
+414
+00:39:26,400 --> 00:39:34,960
+[SPEAKER_01] Is that where developers should be headed of okay, now Facebook can't bring me the perfect user for my app as it exists today.
+
+415
+00:39:36,160 --> 00:39:45,840
+[SPEAKER_01] And instead, developers need to get back to the basics of understanding their user base and kind of building out those user profiles and understanding who they should be going after.
+
+416
+00:39:46,720 --> 00:39:47,680
+[SPEAKER_01] Is that where we're headed?
+
+417
+00:39:48,080 --> 00:39:48,480
+[SPEAKER_02] I think so.
+
+418
+00:39:48,560 --> 00:39:50,880
+[SPEAKER_02] I mean, I think we talked about this last time I was on this podcast.
+
+419
+00:39:51,040 --> 00:39:55,360
+[SPEAKER_02] But like, you know, so when I wrote my book, Freemium Economics, I mean, this was like 2013, right?
+
+420
+00:39:55,520 --> 00:39:57,360
+[SPEAKER_02] And so this AEO didn't exist yet.
+
+421
+00:39:57,600 --> 00:39:59,440
+[SPEAKER_02] You know, VO didn't exist yet.
+
+422
+00:39:59,680 --> 00:40:01,200
+[SPEAKER_02] This was you bought installed, right?
+
+423
+00:40:01,680 --> 00:40:06,800
+[SPEAKER_02] And the idea of freemium or my, my sort of thesis with freemium is that it gives you the ultimate power to personalize.
+
+424
+00:40:07,280 --> 00:40:12,480
+[SPEAKER_02] And so you need some minimum scale because you need a minimum amount of people to experiment with.
+
+425
+00:40:13,600 --> 00:40:18,400
+[SPEAKER_02] to make, you know, some small percentage of people that do monetize meaningful to you.
+
+426
+00:40:19,120 --> 00:40:24,000
+[SPEAKER_02] But to do that, you need like a sort of like very large surface area for experimentation, right?
+
+427
+00:40:24,160 --> 00:40:30,640
+[SPEAKER_02] You need a lot of content to be able to test against people and make sure that you expose to them the exact perfect thing that they want.
+
+428
+00:40:30,960 --> 00:40:32,320
+[SPEAKER_02] And to do that, you need a lot.
+
+429
+00:40:33,040 --> 00:40:40,240
+[SPEAKER_02] And so what ended up happening was that idea flipped and it became less about doing that in the product and more about doing that with the creative, right?
+
+430
+00:40:40,480 --> 00:40:43,600
+[SPEAKER_02] And allowing Facebook to do that for you on your behalf with the creative.
+
+431
+00:40:43,840 --> 00:40:48,160
+[SPEAKER_02] Then they found the perfect user and you didn't need to do any personalization in the app because they brought you the perfect user.
+
+432
+00:40:48,240 --> 00:40:48,720
+[SPEAKER_02] Just make the app.
+
+433
+00:40:49,360 --> 00:40:52,480
+[SPEAKER_02] for the perfect user, that individual profile, that one profile, the perfect app.
+
+434
+00:40:52,800 --> 00:40:58,640
+[SPEAKER_02] You make that app, Facebook will find those people through mass, you know, wide scale experimentation with creativity.
+
+435
+00:40:58,800 --> 00:40:59,840
+[SPEAKER_02] Well, now it's flipped again.
+
+436
+00:41:00,080 --> 00:41:03,040
+[SPEAKER_02] And so, you know, when someone comes into your app, you don't know who they are.
+
+437
+00:41:03,200 --> 00:41:15,360
+[SPEAKER_02] You don't know how qualified they are because the targeting has been degraded to the point where, you know, there's not a whole lot of, of, like, a priori, you know, relevancy that you can intuit there.
+
+438
+00:41:15,600 --> 00:41:18,160
+[SPEAKER_02] And so you've got to parse that out from their behavior.
+
+439
+00:41:18,320 --> 00:41:19,920
+[SPEAKER_02] Show them something, see how they react to it.
+
+440
+00:41:20,240 --> 00:41:22,320
+[SPEAKER_02] If they react positively to it, show them more of that.
+
+441
+00:41:22,480 --> 00:41:24,000
+[SPEAKER_02] And if they don't, show them more of something else.
+
+442
+00:41:24,720 --> 00:41:27,040
+[SPEAKER_02] And that kind of personalization, though, I mean, it's very powerful.
+
+443
+00:41:27,280 --> 00:41:31,040
+[SPEAKER_02] And I talked and I wrote a whole book about it, but it's hard to do.
+
+444
+00:41:31,280 --> 00:41:31,920
+[SPEAKER_02] You need a big team.
+
+445
+00:41:32,160 --> 00:41:33,200
+[SPEAKER_02] You need data infrastructure.
+
+446
+00:41:33,360 --> 00:41:34,880
+[SPEAKER_02] You need that's the thing.
+
+447
+00:41:35,120 --> 00:41:38,160
+[SPEAKER_02] Then you revert back to, well, only big developers can do this, right?
+
+448
+00:41:38,400 --> 00:41:48,320
+[SPEAKER_02] And so you kind of just edged out the small guy, you know, the developers that are just like a couple of people and they got to just whiff or they got to take a flyer on some idea and they better hope that it works, right?
+
+449
+00:41:48,560 --> 00:41:56,000
+[SPEAKER_02] Versus being able to kind of iterate into that and provide one app that gives like personalized experiences to kind of everyone that comes through.
+
+450
+00:41:56,480 --> 00:41:56,560
+[SPEAKER_01] Yeah.
+
+451
+00:41:56,880 --> 00:42:06,320
+[SPEAKER_01] So then those, I mean, what would your advice be today knowing that you can't just throw 100,000 at Facebook and let them figure out who your perfect user.
+
+452
+00:42:08,800 --> 00:42:17,520
+[SPEAKER_01] If you're building an app today from scratch, or let's say you're at $20,000 or $30,000 in MRR and you want to make that leap and really grow, what do you do?
+
+453
+00:42:18,080 --> 00:42:28,720
+[SPEAKER_02] Well, I think so in that post, I mean, the one thing that is, you know, it's a worthwhile exercise, but is trying to instrument these signals with the conversion values for SK Ad Network.
+
+454
+00:42:28,880 --> 00:42:37,520
+[SPEAKER_02] Now the problem with that was, you know, going into this before ATT was launched, and I worked, you know, I worked with some companies to do this, and it's like a data sci science exercise, right?
+
+455
+00:42:37,680 --> 00:42:50,800
+[SPEAKER_02] You just run these, you know, you go back and you have like look back models and you find out what the commonality was among people that ended up being good users and you try to surface that in the app and you code that as a signal for SKI Network.
+
+456
+00:42:51,120 --> 00:42:56,080
+[SPEAKER_02] The problem is going into that exercise thinking that SKI Network was like a good faith solution.
+
+457
+00:42:57,040 --> 00:43:05,200
+[SPEAKER_02] It made sense, but now we realize, well, we don't even know when they're going to, how many of these we need to trigger before they even start reporting them to us, right?
+
+458
+00:43:05,360 --> 00:43:07,600
+[SPEAKER_02] And so it's like, okay, well, that's not really an option.
+
+459
+00:43:07,760 --> 00:43:12,240
+[SPEAKER_02] You know, I think the other thing is, you know, you approach this as more of a product marketing, you know, project.
+
+460
+00:43:12,800 --> 00:43:14,640
+[SPEAKER_02] And just trying to figure out who your audience is, right?
+
+461
+00:43:15,200 --> 00:43:16,480
+[SPEAKER_02] And then that's like going back to basics.
+
+462
+00:43:16,560 --> 00:43:20,720
+[SPEAKER_02] That's saying, okay, like what are the demo features of the groups that like this type of product?
+
+463
+00:43:21,040 --> 00:43:23,040
+[SPEAKER_02] And that's what I have to target against, right?
+
+464
+00:43:23,440 --> 00:43:29,200
+[SPEAKER_02] And then just, and then trying to get, you know, because you can't do mass creative testing anymore, at least not on iOS.
+
+465
+00:43:29,360 --> 00:43:42,960
+[SPEAKER_02] And so, you know, trying to work out some pipeline of like we try concepts on Android where we can still do kind of mass testing and then we promote the, the conceptual winners to iOS, but then we've got, you know, fewer variants to test there.
+
+466
+00:43:43,200 --> 00:43:46,000
+[SPEAKER_02] So we've got to kind of adapt that for the iOS environment.
+
+467
+00:43:46,240 --> 00:44:02,960
+[SPEAKER_02] Like it's just you lose a lot of there's very little lossy that each time you you sort of transfer some sort of component of understanding from a totally separate platform to iOS and then from iOS to like different environments to to other environments on iOS, you just you lose signal there.
+
+468
+00:44:03,200 --> 00:44:04,240
+[SPEAKER_02] You lose precision.
+
+469
+00:44:05,120 --> 00:44:07,200
+[SPEAKER_02] So I mean, it's it's but that's it.
+
+470
+00:44:07,360 --> 00:44:07,520
+[SPEAKER_02] Right.
+
+471
+00:44:07,680 --> 00:44:08,960
+[SPEAKER_02] And then, you know, trying to get away.
+
+472
+00:44:09,360 --> 00:44:14,640
+[SPEAKER_02] So I think another thing is that, you know, you talk to some of these companies and Facebook had become like a kind of a drug for them.
+
+473
+00:44:14,800 --> 00:44:19,120
+[SPEAKER_02] I mean, it's just like they were addicted to it and it was just so easy to only use Facebook.
+
+474
+00:44:19,600 --> 00:44:19,760
+[SPEAKER_02] Right.
+
+475
+00:44:20,000 --> 00:44:20,160
+[SPEAKER_02] Right.
+
+476
+00:44:20,320 --> 00:44:22,240
+[SPEAKER_02] Because you could accomplish pretty much everything you wanted to.
+
+477
+00:44:22,400 --> 00:44:24,720
+[SPEAKER_02] But, you know, that's a classic, you know, sort of.
+
+478
+00:44:26,080 --> 00:44:29,440
+[SPEAKER_02] that that's a classic sort of blunder from a from a just commercial perspective.
+
+479
+00:44:29,600 --> 00:44:38,640
+[SPEAKER_02] You never want to be totally dependent on another platform, you know, and now Facebook didn't make this decision Apple did, but you know, nevertheless, you know, you're sort of devastated by it, right?
+
+480
+00:44:38,800 --> 00:44:39,600
+[SPEAKER_02] Because of that dependency.
+
+481
+00:44:39,680 --> 00:44:46,080
+[SPEAKER_02] So I think, you know, the other, the other piece of this is just trying to is doing, doing the work you should have done a long time ago, which is diversify your traffic mix, right?
+
+482
+00:44:46,320 --> 00:44:57,280
+[SPEAKER_02] And that's actually kind of difficult, like because Facebook, again, they did all that creative exploration for you, you know, they have such a broad user base that you could find all these different groups in scale, right?
+
+483
+00:44:57,520 --> 00:45:07,840
+[SPEAKER_02] At to to scale, like even niche audiences, niche audiences, niche look, any sort of niche forex strategy game, you'd find enough people to build out a big DAU base.
+
+484
+00:45:08,320 --> 00:45:10,160
+[SPEAKER_02] And that's not true on all these other platforms, right?
+
+485
+00:45:10,320 --> 00:45:13,120
+[SPEAKER_02] And you've got to really nail the form factor for those.
+
+486
+00:45:13,440 --> 00:45:14,560
+[SPEAKER_02] Like Snap, it's totally different.
+
+487
+00:45:14,720 --> 00:45:16,480
+[SPEAKER_02] Like the way to approach Snap is totally different than Facebook.
+
+488
+00:45:16,800 --> 00:45:19,280
+[SPEAKER_02] The way to approach TikTok is totally different than Snap, right?
+
+489
+00:45:19,600 --> 00:45:22,480
+[SPEAKER_02] The way to approach Outbrand, Tabula, totally different than any of those.
+
+490
+00:45:23,040 --> 00:45:24,560
+[SPEAKER_02] The way to approach YouTube is even different.
+
+491
+00:45:24,800 --> 00:45:35,840
+[SPEAKER_02] Like all these, these are very particular, unique channels, and the way that the ads are exposed in the products is different across them.
+
+492
+00:45:36,240 --> 00:45:39,120
+[SPEAKER_02] And so you've got to go through the work and the investment.
+
+493
+00:45:39,280 --> 00:45:43,040
+[SPEAKER_02] It's you're investing in the data and and and sort of institutional knowledge.
+
+494
+00:45:43,520 --> 00:45:46,480
+[SPEAKER_02] And a lot of people just never went through that exercise because it's like I can just spin up.
+
+495
+00:45:46,640 --> 00:45:47,440
+[SPEAKER_02] I can spin more on Facebook.
+
+496
+00:45:47,920 --> 00:45:48,000
+[SPEAKER_01] Yeah.
+
+497
+00:45:48,320 --> 00:45:53,360
+[SPEAKER_01] And where do you think organics fall into this mix?
+
+498
+00:45:53,760 --> 00:46:05,200
+[SPEAKER_01] I know like we talked to all trails on the on the episode before this and not only are they a unicorn app likely in valuation but in in their success with organics.
+
+499
+00:46:05,440 --> 00:46:12,800
+[SPEAKER_01] I mean, there are apps that just find incredible success with that right kind of search option.
+
+500
+00:46:12,800 --> 00:46:18,400
+[SPEAKER_01] Search optimization or finding that right niche that really drives organic installs.
+
+501
+00:46:20,480 --> 00:46:35,280
+[SPEAKER_01] Where do you think the average app should be placing organic and how much focus should they be putting on trying to get some of this free attention and build, you know, user generated content and links and things like that?
+
+502
+00:46:35,760 --> 00:46:37,760
+[SPEAKER_02] I mean, do it to the extent that you can.
+
+503
+00:46:37,920 --> 00:46:38,560
+[SPEAKER_02] I mean, why not?
+
+504
+00:46:39,280 --> 00:46:42,720
+[SPEAKER_02] You know, I don't think you have to choose one or the other, right?
+
+505
+00:46:43,040 --> 00:46:47,360
+[SPEAKER_02] I mean, you should be ideally maximizing the effect of both of these strategies.
+
+506
+00:46:47,680 --> 00:46:50,960
+[SPEAKER_02] But I will say one thing, it's that you always have to turn on paid UA.
+
+507
+00:46:51,360 --> 00:46:52,560
+[SPEAKER_02] You always have to turn on paid marketing.
+
+508
+00:46:52,960 --> 00:46:59,280
+[SPEAKER_02] There's varying, you know, sort of time lines, you know, over which you have to confront that reality, but it is a reality.
+
+509
+00:46:59,360 --> 00:47:00,320
+[SPEAKER_02] You've always have to turn it on.
+
+510
+00:47:00,480 --> 00:47:13,600
+[SPEAKER_02] And like, I've done enough like advisory for like private equity funds and just big companies that are looking to buy other companies, and it's always the reason they bring me on is because I'm going to say we could triple this business if you did paid UA.
+
+511
+00:47:14,240 --> 00:47:14,400
+[SPEAKER_01] Right?
+
+512
+00:47:14,480 --> 00:47:15,360
+[SPEAKER_02] We could quadruple this.
+
+513
+00:47:15,520 --> 00:47:18,320
+[SPEAKER_02] Like, how much bigger could this get, right?
+
+514
+00:47:18,800 --> 00:47:18,960
+[SPEAKER_02] Right.
+
+515
+00:47:19,280 --> 00:47:20,000
+[SPEAKER_02] And you know what I mean?
+
+516
+00:47:20,320 --> 00:47:22,320
+[SPEAKER_02] Like, there's always a point where they've capped out.
+
+517
+00:47:22,480 --> 00:47:24,800
+[SPEAKER_02] They never develop this, you know, expertise.
+
+518
+00:47:26,080 --> 00:47:26,880
+[SPEAKER_02] internally, right?
+
+519
+00:47:27,120 --> 00:47:30,080
+[SPEAKER_02] It never became like domain knowledge that they possessed.
+
+520
+00:47:30,800 --> 00:47:37,760
+[SPEAKER_02] And for that reason, there have been a lot of false starts because it's like, well, we can always kind of lean back on organic and it's going to take time to spin up paid.
+
+521
+00:47:37,840 --> 00:47:43,600
+[SPEAKER_02] And they bring someone in and within two months, they haven't really materially improved the business and they spend a bunch of money.
+
+522
+00:47:43,840 --> 00:47:47,200
+[SPEAKER_02] So they get fired or, you know, they get the budget cut and they quit.
+
+523
+00:47:47,600 --> 00:47:51,280
+[SPEAKER_02] And then they do that three more times and then they realize we're stalled out in growth.
+
+524
+00:47:52,240 --> 00:48:17,760
+[SPEAKER_02] And no one wants to come work to be our CMO because like it's pretty obvious that they're not going to get, you know, the full purpose of that cycle is to have the company get acquired, right, by a private equity fund is going to say, yeah, we're going to bring in a CMO and, you know, these managements kind of went or they're gone, but they can stay, but they have to play ball with the new, you know, the new execs and, um, and we're just going to spin up paid marketing and that's, and that's how we grow this asset and that's how we make our money.
+
+525
+00:48:18,080 --> 00:48:28,400
+[SPEAKER_02] Um, so I've just been on enough of those deals where you always turn on paid UA, even if you, even if you think you never will, uh, it happens, uh, you know, outside of your, uh, approval.
+
+526
+00:48:28,800 --> 00:48:34,400
+[SPEAKER_01] Yeah, and I didn't mean to phrase a question in any way that, that made it a black or white that you had to choose one over the other.
+
+527
+00:48:34,880 --> 00:49:09,280
+[SPEAKER_01] And actually, I was, I was trying to, to throw a softball at you because I think your thinking on this is great in that the sooner you do spin up some level of paid marketing, the sooner you can understand the different audiences that are going to be coming into the app, and that's something you've talked a lot about that I think is really fascinating is that, yeah, if you can find a good organic channel, go for it and bring traffic in, but know that when you spin up ads, that traffic will look different.
+
+528
+00:49:09,520 --> 00:49:10,560
+[SPEAKER_01] They're going to convert differently.
+
+529
+00:49:10,640 --> 00:49:12,000
+[SPEAKER_01] They're going to be interested in different things.
+
+530
+00:49:12,720 --> 00:49:15,840
+[SPEAKER_01] And if you Yeah, I'm stealing your, your kind of playbook.
+
+531
+00:49:16,560 --> 00:49:34,960
+[SPEAKER_01] So yeah, tell me why you think, even if you do have a very successful organic channel, and maybe that's the strategy you kind of get from ten K a month to 100, 300 K a month, but to get from there to the millions a month, you're going to have to spin it up.
+
+532
+00:49:35,200 --> 00:49:43,600
+[SPEAKER_01] So what's the playbook for, for, for building that expertise in house, and when do you start, when do you have to start ramping it up?
+
+533
+00:49:44,000 --> 00:49:47,040
+[SPEAKER_02] So thank you for reminding me of my imposter.
+
+534
+00:49:48,800 --> 00:49:52,160
+[SPEAKER_02] The idea there is like organic's never going to be the ultimate scale channel, right?
+
+535
+00:49:52,320 --> 00:49:57,760
+[SPEAKER_02] Like it's going to, it's going to, it's going to, you're going to reach some sort of asymptote with growth there and it's going to flatten out.
+
+536
+00:49:58,080 --> 00:50:05,680
+[SPEAKER_02] And probably at, you know, if you kind of close your eyes and you pictured your app at the sort of greatest potential, right?
+
+537
+00:50:06,080 --> 00:50:12,160
+[SPEAKER_02] The sort of like greatest sort of like intrinsic potential paid is eighty percent of daily, you know, new users, right?
+
+538
+00:50:12,720 --> 00:50:14,640
+[SPEAKER_02] Or sixty or whatever, but it's the majority.
+
+539
+00:50:14,880 --> 00:50:52,560
+[SPEAKER_02] And so if you've only, you know, grown via, you know, just sort of like organic traction and organic like magnetism and you've, you've gone through through like many sort of cycles of app or product iteration to sort of optimize the product for that group of people that do look distinct, that will look distinct from people that have responded to some kind of stimulus, right, and have some sort of intent, sort of like, you know, driving their, their adoption of your product, then you've optimized for the group that's that at the greatest potential scale of your, of your product is a minority, right?
+
+540
+00:50:52,720 --> 00:50:52,960
+[SPEAKER_02] Right.
+
+541
+00:50:53,280 --> 00:50:59,360
+[SPEAKER_02] And what you really want to do is you want to optimize the product for the majority, that where all the growth, where the growth can be, right?
+
+542
+00:51:00,000 --> 00:51:08,320
+[SPEAKER_02] And so that, you know, if you delay laying in paid traffic and you delay, then you delay understanding what they want out of your product.
+
+543
+00:51:08,720 --> 00:51:14,240
+[SPEAKER_02] And the sooner you bring that in, the sooner you can sort of optimize the product for them, the more efficient your paid traction will be.
+
+544
+00:51:14,800 --> 00:51:17,520
+[SPEAKER_02] And you'll get an organic halo effect from that, right?
+
+545
+00:51:18,000 --> 00:51:25,200
+[SPEAKER_02] And so it's like, well, the sooner you do that, the faster that you sort of reach that, that sort of, you reach that potential on the organic side.
+
+546
+00:51:25,520 --> 00:51:32,640
+[SPEAKER_02] So it's more about, you think about, like, an exercise that I always love to do is just like pause and think about, like, what would success look like?
+
+547
+00:51:32,720 --> 00:51:36,400
+[SPEAKER_02] And for most apps, success looks like, yeah, we're spending a ton of money on paid UA.
+
+548
+00:51:36,800 --> 00:51:42,080
+[SPEAKER_02] And there's a lot of organic too, because that's just a function of being a successful app that a lot of people know about.
+
+549
+00:51:42,640 --> 00:51:44,560
+[SPEAKER_02] But we're spending a ton on UA, and that's a good thing.
+
+550
+00:51:44,720 --> 00:51:45,360
+[SPEAKER_02] That's not a bad thing.
+
+551
+00:51:45,600 --> 00:51:46,160
+[SPEAKER_02] That's a great thing.
+
+552
+00:51:48,080 --> 00:51:50,320
+[SPEAKER_02] But the majority of our users came in through Paid UA.
+
+553
+00:51:50,640 --> 00:51:52,800
+[SPEAKER_02] And so we've optimized the app for them.
+
+554
+00:51:53,920 --> 00:51:57,280
+[SPEAKER_02] And so we've made the economics better over time.
+
+555
+00:51:58,080 --> 00:52:04,800
+[SPEAKER_02] And then the other piece is like, and I've talked about this a lot too, it's like you've got to change that over the life cycle of your app.
+
+556
+00:52:05,200 --> 00:52:09,600
+[SPEAKER_02] Because, you know, a lot of times what you see is, you know, you see an app that's new and they've got like explosive growth, right?
+
+557
+00:52:09,680 --> 00:52:12,880
+[SPEAKER_02] And you look at just like a kind of stacked UA.
+
+558
+00:52:12,880 --> 00:52:22,640
+[SPEAKER_02] uh, bar chart of the cohorts by age and it's like, well, on any given day, the vast majority of users are new or they're less than a month old, right?
+
+559
+00:52:22,880 --> 00:52:33,040
+[SPEAKER_02] And then like you go, you fast forward two years or three years and a really good app that will be flipped because you've retained people, the the vast majority of people that use your product every day are old.
+
+560
+00:52:33,360 --> 00:52:38,560
+[SPEAKER_02] I mean, in terms of like when they adopted your product because it's sticky because it's retentive, right?
+
+561
+00:52:38,720 --> 00:52:45,280
+[SPEAKER_02] And that's a that's a great place to be, but that that you've got to change the way that you think about product optimization at that point.
+
+562
+00:52:45,360 --> 00:52:48,160
+[SPEAKER_02] Like when you're going through the product iteration process.
+
+563
+00:52:48,240 --> 00:52:52,000
+[SPEAKER_02] process, like, well, you're not optimizing for the newbies anymore because there's way fewer of them.
+
+564
+00:52:52,160 --> 00:52:56,080
+[SPEAKER_02] You have to keep the old timers involved and engaged and happy, right?
+
+565
+00:52:56,320 --> 00:53:00,320
+[SPEAKER_02] Because, you know, that's just where the vast majority of your, your revenue is coming from, right?
+
+566
+00:53:00,720 --> 00:53:09,520
+[SPEAKER_02] And, and, you know, and at that point you've probably reached, you know, some proportion of your TAM, and so you might not even be doing new user acquisition as such anymore.
+
+567
+00:53:09,680 --> 00:53:11,680
+[SPEAKER_02] You might be doing a lot of retargeting, reengagement.
+
+568
+00:53:11,840 --> 00:53:20,480
+[SPEAKER_02] And so it's just like, you've got to be very conscious of, like, the life cycle of the app, what the, what the user base looks like in terms of composition by age and like all that kind of stuff.
+
+569
+00:53:20,560 --> 00:53:22,400
+[SPEAKER_02] And it just, it just takes a lot of consideration.
+
+570
+00:53:22,560 --> 00:53:24,720
+[SPEAKER_02] And it's, it's, you know, and if you get to any point.
+
+571
+00:53:25,200 --> 00:53:33,040
+[SPEAKER_02] where any of those, any of those distributions is skewed to an extreme, uh, to an extreme one direction or the other, you probably have a problem.
+
+572
+00:53:33,200 --> 00:53:35,920
+[SPEAKER_02] Like if you're all organic, you're not, you're leaving money on the table.
+
+573
+00:53:36,080 --> 00:53:38,400
+[SPEAKER_02] If you're all old timers, well, you're not growing anymore.
+
+574
+00:53:38,560 --> 00:53:40,640
+[SPEAKER_02] If you're all newbies, you're not retaining enough, right?
+
+575
+00:53:40,960 --> 00:53:45,040
+[SPEAKER_02] It's like all these different levers that you have to pull to make sure that you hit the optimal sort of combination.
+
+576
+00:53:45,520 --> 00:53:46,640
+[SPEAKER_01] Yeah, that's great stuff.
+
+577
+00:53:46,800 --> 00:53:47,840
+[SPEAKER_01] I love the way you put that too.
+
+578
+00:53:48,400 --> 00:53:54,800
+[SPEAKER_01] I think there is some level of kind of magical thinking that if I have just the right app, I never have to do marketing.
+
+579
+00:53:55,280 --> 00:53:56,400
+[SPEAKER_01] Marketing is a dirty word.
+
+580
+00:53:57,040 --> 00:54:05,360
+[SPEAKER_01] Spending money on marketing is wasteful or only companies with bad products have to do marketing and like that's just not true.
+
+581
+00:54:05,840 --> 00:54:12,160
+[SPEAKER_01] And what's especially funny is like, you know, a lot of these folks are like, or like, indeed developers who hold up Apple to be the end all be all.
+
+582
+00:54:12,400 --> 00:54:14,400
+[SPEAKER_01] Apple spends tens of billions of dollars on marketing.
+
+583
+00:54:15,040 --> 00:54:20,960
+[SPEAKER_01] Apple measures that marketing while at the same time, you know, enacting ATT.
+
+584
+00:54:21,760 --> 00:54:29,200
+[SPEAKER_01] So it's funny the kind of dichotomy of and the magical thinking of like, I shouldn't have to pay for users.
+
+585
+00:54:29,440 --> 00:54:31,120
+[SPEAKER_01] My product should be good enough or whatever.
+
+586
+00:54:31,280 --> 00:54:33,840
+[SPEAKER_01] Like it really is just magical thinking.
+
+587
+00:54:34,400 --> 00:54:38,080
+[SPEAKER_01] And ultimately, you know, spending money on marketing on marketing is a good thing, not a bad thing.
+
+588
+00:54:38,560 --> 00:54:39,600
+[SPEAKER_01] I love that perspective.
+
+589
+00:54:40,080 --> 00:54:40,160
+[SPEAKER_02] Yeah.
+
+590
+00:54:41,280 --> 00:54:47,120
+[SPEAKER_02] We had a Halloween party for my son and his, his, like, classmates and he's he's very young.
+
+591
+00:54:47,360 --> 00:54:51,840
+[SPEAKER_02] And he was, he, he liked, he did this thing where, you know, he wanted to be two things for Halloween.
+
+592
+00:54:52,000 --> 00:54:58,480
+[SPEAKER_02] So they had like, you know, a parade at their school and then we had, you know, we just Halloween day, come trick or treating and stuff.
+
+593
+00:54:58,560 --> 00:55:02,240
+[SPEAKER_02] Anyway, so he wanted to be a dinosaur and then he decided he wanted to be a vampire for the Halloween day.
+
+594
+00:55:02,720 --> 00:55:04,480
+[SPEAKER_02] And so we had to get him in a second costume.
+
+595
+00:55:04,720 --> 00:55:11,200
+[SPEAKER_02] He was a vampire and, and, and, you know, we're having this party and someone was like, Oh, you look like such a scary vampire.
+
+596
+00:55:11,680 --> 00:55:14,640
+[SPEAKER_02] And I was like, Oh, no, I work in digital advertising.
+
+597
+00:55:14,800 --> 00:55:16,240
+[SPEAKER_02] I'll show you what a vampire looks like.
+
+598
+00:55:17,840 --> 00:55:22,080
+[SPEAKER_02] But like, it's just this idea that like digital advertising, oh man, it's so disgusting.
+
+599
+00:55:22,640 --> 00:55:23,440
+[SPEAKER_02] It's so gross.
+
+600
+00:55:24,080 --> 00:55:24,320
+[SPEAKER_02] Gross.
+
+601
+00:55:24,560 --> 00:55:25,280
+[SPEAKER_02] You're spending money.
+
+602
+00:55:25,520 --> 00:55:27,360
+[SPEAKER_02] You had to spend money to acquire a user.
+
+603
+00:55:28,320 --> 00:55:31,120
+[SPEAKER_02] That's, that's, that's, that's, that's so vulgar.
+
+604
+00:55:31,280 --> 00:55:33,760
+[SPEAKER_02] But like, in reality, it's like, well, you're leaving money on the table.
+
+605
+00:55:33,840 --> 00:55:35,040
+[SPEAKER_02] If you could be doing it and you're not.
+
+606
+00:55:35,680 --> 00:55:35,840
+[SPEAKER_01] Right.
+
+607
+00:55:36,000 --> 00:55:36,800
+[SPEAKER_02] Like, that's not good.
+
+608
+00:55:37,280 --> 00:55:37,920
+[SPEAKER_01] Yeah, totally.
+
+609
+00:55:38,240 --> 00:55:41,440
+[SPEAKER_01] So, so, that's actually a great place to wrap up.
+
+610
+00:55:41,600 --> 00:55:43,360
+[SPEAKER_01] Like, where, where do we go from here?
+
+611
+00:55:43,760 --> 00:55:46,000
+[SPEAKER_01] So ATT is what it is.
+
+612
+00:55:46,240 --> 00:55:47,840
+[SPEAKER_01] We don't know what Apple is going to do.
+
+613
+00:55:48,000 --> 00:55:53,200
+[SPEAKER_01] We hope they make things better, but what is the future of app install ads?
+
+614
+00:55:53,440 --> 00:55:57,040
+[SPEAKER_01] What is the future of marketing your app successfully?
+
+615
+00:55:57,680 --> 00:56:03,280
+[SPEAKER_02] I, you know, it's funny because like I, I've been the biggest crypto skeptic since day one.
+
+616
+00:56:03,760 --> 00:56:08,800
+[SPEAKER_02] And I remember like people were telling me about Bitcoin in like 2011, I was like, this is a joke.
+
+617
+00:56:08,960 --> 00:56:10,960
+[SPEAKER_02] Like this is a, there's no need for this.
+
+618
+00:56:11,200 --> 00:56:12,320
+[SPEAKER_02] There's no use case for this.
+
+619
+00:56:12,720 --> 00:56:23,360
+[SPEAKER_02] And I still kind of feel that way, but like it's gotten to a point where I feel like it's actually inculcating new behaviors where this is just crypto in general is probably the thing that introduces us to these ideas.
+
+620
+00:56:24,160 --> 00:56:28,800
+[SPEAKER_02] And it's like a kind of imperfect way to implement them, but it kind of makes us think about them.
+
+621
+00:56:28,960 --> 00:56:36,400
+[SPEAKER_02] And then there's going to be a solution that follows like the structure of crypto that is actually like the better way to implement these ideas.
+
+622
+00:56:36,720 --> 00:56:39,360
+[SPEAKER_02] But I've worked with a number of like Web 3 gaming companies, right?
+
+623
+00:56:39,680 --> 00:56:42,080
+[SPEAKER_02] And like their challenge is they can't be on the App Store, right?
+
+624
+00:56:42,240 --> 00:56:43,760
+[SPEAKER_02] So they're running like web properties.
+
+625
+00:56:44,080 --> 00:56:45,040
+[SPEAKER_02] And how do you promote that?
+
+626
+00:56:45,360 --> 00:56:51,920
+[SPEAKER_02] And well, the thing is like if you're running it on the web, you can access it from your mobile device, right?
+
+627
+00:56:52,240 --> 00:56:56,400
+[SPEAKER_02] I mean, I can access these games from my mobile, my device is just not on the App Store.
+
+628
+00:56:56,480 --> 00:57:00,800
+[SPEAKER_02] And I think like if you get one of these that blows up, you get the halo.
+
+629
+00:57:01,360 --> 00:57:02,640
+[SPEAKER_02] of web 3 games, right?
+
+630
+00:57:02,960 --> 00:57:08,400
+[SPEAKER_02] You get the, you know, just hit game that creates the space for this category to thrive.
+
+631
+00:57:09,200 --> 00:57:19,760
+[SPEAKER_02] Then maybe it just becomes, uh, you know, acknowledged that, well, yeah, we can go through the App Store if we want specific types of games, but if we want these other types of games, we just go straight to the browser.
+
+632
+00:57:20,160 --> 00:57:23,280
+[SPEAKER_02] Now my big question is, why did Apple do private relay in the first place?
+
+633
+00:57:23,920 --> 00:57:27,680
+[SPEAKER_02] And maybe it was to actually route everything through the App Store, right?
+
+634
+00:57:27,840 --> 00:57:30,320
+[SPEAKER_02] That would be the cynical kind of conspiratorial take, right?
+
+635
+00:57:30,800 --> 00:57:35,040
+[SPEAKER_02] It's just that they want to prevent your access to the open web or they want to gatekeep it.
+
+636
+00:57:35,040 --> 00:57:36,800
+[SPEAKER_02] And so they're going to decide what you're able to access, right?
+
+637
+00:57:37,440 --> 00:57:39,920
+[SPEAKER_02] But anyway, so there's a lot of web 3 companies thinking about this right now.
+
+638
+00:57:40,080 --> 00:57:41,520
+[SPEAKER_02] Like they can't go to the app store, right?
+
+639
+00:57:41,600 --> 00:57:43,360
+[SPEAKER_02] So there's no app install ads for them.
+
+640
+00:57:43,520 --> 00:57:44,640
+[SPEAKER_02] It's all web based.
+
+641
+00:57:45,920 --> 00:57:52,800
+[SPEAKER_02] And also, you know, they've done a great, a lot of these web 3 companies have done a great job of fostering community driven marketing, right?
+
+642
+00:57:53,120 --> 00:57:56,480
+[SPEAKER_02] Getting a discord server with twenty thousand, one hundred thousand people in it.
+
+643
+00:57:56,640 --> 00:57:58,960
+[SPEAKER_02] And that's where you advertise, right?
+
+644
+00:57:59,120 --> 00:58:00,880
+[SPEAKER_02] And you drive people, you never have to pay for anything.
+
+645
+00:58:00,960 --> 00:58:03,280
+[SPEAKER_02] And now, that's a first mover kind of thing.
+
+646
+00:58:03,360 --> 00:58:07,440
+[SPEAKER_02] And I think that kind of declines as more people get into the space, right?
+
+647
+00:58:07,600 --> 00:58:12,880
+[SPEAKER_01] And there's just, you know, there's just too many of these, these kinds of games to kind of replace.
+
+648
+00:58:13,600 --> 00:58:15,360
+[SPEAKER_01] But a lot of companies are thinking about that right now.
+
+649
+00:58:15,440 --> 00:58:17,840
+[SPEAKER_01] How do we drive people to the web to do acquisition, right?
+
+650
+00:58:18,080 --> 00:58:22,640
+[SPEAKER_01] A lot of, you know, as you know, a lot of subscription companies have been doing that for a long time, right?
+
+651
+00:58:22,880 --> 00:58:25,600
+[SPEAKER_01] There are well-warned strategies for doing this, right?
+
+652
+00:58:25,840 --> 00:58:28,000
+[SPEAKER_01] And they've been monetizing that way for a long time too.
+
+653
+00:58:28,320 --> 00:58:30,080
+[SPEAKER_01] They haven't been screaming about it, right?
+
+654
+00:58:30,320 --> 00:58:37,280
+[SPEAKER_02] But they've been doing it and, you know, now that, well, okay, now that's probably that's that's a policy that's allowed to you're allowed to do that.
+
+655
+00:58:37,440 --> 00:58:38,160
+[SPEAKER_02] Apple blesses.
+
+656
+00:58:38,240 --> 00:58:40,640
+[SPEAKER_02] Well, they don't they anyway, they say we can't stop you.
+
+657
+00:58:40,720 --> 00:58:40,800
+[SPEAKER_02] Yeah.
+
+658
+00:58:41,440 --> 00:58:44,960
+[SPEAKER_02] And so maybe a consequence of this whole thing is that it just moves people into the browser, right?
+
+659
+00:58:45,040 --> 00:58:49,760
+[SPEAKER_02] And, and, you know, there's the web 3 piece of it, which who knows, maybe that is a dud, maybe it's a g dud, maybe it's a gigantic category.
+
+660
+00:58:49,840 --> 00:58:51,680
+[SPEAKER_02] I think I'm not convinced either way yet.
+
+661
+00:58:52,080 --> 00:58:55,440
+[SPEAKER_02] But like, you know, you've got people that are saying, I'm going to set up web shops.
+
+662
+00:58:55,920 --> 00:59:03,840
+[SPEAKER_02] And, you know, I made the point that, like, look, I don't think that, you know, there's systematic reasons why that probably doesn't become a mass scale solution.
+
+663
+00:59:04,480 --> 00:59:07,280
+[SPEAKER_02] And a lot of people are doing that anyway, a lot of games are doing that anyway.
+
+664
+00:59:07,600 --> 00:59:09,040
+[SPEAKER_02] That's the other sort of dirty little secret.
+
+665
+00:59:09,600 --> 00:59:12,320
+[SPEAKER_02] A lot of gaming companies were sending emails saying, hey, you know what?
+
+666
+00:59:12,480 --> 00:59:16,960
+[SPEAKER_02] Don't buy these IAPs in the app because if you go to our website, it's twenty percent off or whatever.
+
+667
+00:59:17,120 --> 00:59:17,760
+[SPEAKER_02] They're already doing it.
+
+668
+00:59:17,920 --> 00:59:19,120
+[SPEAKER_02] They already had web shops set up.
+
+669
+00:59:19,520 --> 00:59:28,320
+[SPEAKER_02] And, you know, but, but anyway, you know, I think maybe that Apple then clamps down harder and they say, no, private relay, we're blocking that.
+
+670
+00:59:28,640 --> 00:59:31,680
+[SPEAKER_02] Maybe they did that for web 3, maybe they did that for whatever, to protect people.
+
+671
+00:59:32,080 --> 00:59:32,480
+[SPEAKER_02] Who knows?
+
+672
+00:59:32,880 --> 00:59:36,400
+[SPEAKER_02] But I think like there's that idea, like let's just move people to the web.
+
+673
+00:59:36,640 --> 00:59:37,520
+[SPEAKER_02] We've got more control there.
+
+674
+00:59:37,760 --> 00:59:39,520
+[SPEAKER_02] It's just, it's just a better storefront, right?
+
+675
+00:59:39,680 --> 00:59:43,680
+[SPEAKER_02] Like I talked about that on the, on the strategy podcast, it's a better storefront.
+
+676
+00:59:43,760 --> 00:59:46,720
+[SPEAKER_02] It's your, you have way more opportunity to do cool things there.
+
+677
+00:59:47,120 --> 00:59:54,560
+[SPEAKER_02] Personalization, like real-time optimization, things that you just can't do with the, with the App Store because it's, you know, limited in the number of SQUs and all that.
+
+678
+00:59:55,360 --> 00:59:59,840
+[SPEAKER_02] And then, but then maybe the other thing is just like, well, we just fundamentally change the way we think about the app.
+
+679
+01:00:00,000 --> 01:00:00,960
+[SPEAKER_02] It's all about measurement, right?
+
+680
+01:00:01,040 --> 01:00:02,080
+[SPEAKER_02] It's all about incrementality.
+
+681
+01:00:02,240 --> 01:00:03,520
+[SPEAKER_02] It's all about MediaMix models.
+
+682
+01:00:03,680 --> 01:00:05,920
+[SPEAKER_02] It's all about sort of like statistical probabilistic thinking.
+
+683
+01:00:06,320 --> 01:00:10,960
+[SPEAKER_02] And that's probably a good thing too, because like, you know, that's you can make that work.
+
+684
+01:00:11,840 --> 01:00:16,320
+[SPEAKER_01] At scale, but it does still leave the smaller folks struggling to get to scale.
+
+685
+01:00:16,960 --> 01:00:17,120
+[SPEAKER_02] Right.
+
+686
+01:00:17,280 --> 01:00:17,520
+[SPEAKER_02] It does.
+
+687
+01:00:18,320 --> 01:00:21,600
+[SPEAKER_02] But you can make that work at scale and there's no privacy concerns, right?
+
+688
+01:00:22,080 --> 01:00:22,160
+[SPEAKER_01] Yeah.
+
+689
+01:00:22,400 --> 01:00:22,960
+[SPEAKER_01] That's interesting.
+
+690
+01:00:23,280 --> 01:00:27,040
+[SPEAKER_01] I didn't know where you were going with the whole Web 3 thing, but I think you landed that well.
+
+691
+01:00:27,840 --> 01:00:47,040
+[SPEAKER_01] And I think you're right that, you know, it does feel like this, you know, Apple, it's the old, you know, the tighter you hold on to something, the more it struggles to get free and the more Apple continues clamping down on the App Store, the more they're pushing developers to think outside of the App Store.
+
+692
+01:00:47,600 --> 01:00:55,360
+[SPEAKER_01] And, you know, we've seen a lot of our revenue cat customers build out web onboarding and experiment with more and more stuff on the web because of this.
+
+693
+01:00:55,600 --> 01:00:57,920
+[SPEAKER_01] So yeah, I think that's really interesting.
+
+694
+01:00:59,680 --> 01:01:09,440
+[SPEAKER_01] And then seeing what, you know, the Facebooks of the world can do with this new paradigm of, you know, they can still collect a lot of first party data.
+
+695
+01:01:10,000 --> 01:01:16,800
+[SPEAKER_01] Some of their signaling is gone, but it's going to be interesting to see, you know, the kind of solutions they build in the coming years.
+
+696
+01:01:17,440 --> 01:01:19,360
+[SPEAKER_01] to kind of bridge some of that gap.
+
+697
+01:01:19,840 --> 01:01:23,920
+[SPEAKER_01] And I think, yeah, probabilistic and incrementality and all that's going to play big.
+
+698
+01:01:24,240 --> 01:01:24,480
+[SPEAKER_01] All right.
+
+699
+01:01:24,640 --> 01:01:26,400
+[SPEAKER_01] Well, let's, uh, let's wrap it up then.
+
+700
+01:01:26,640 --> 01:01:37,040
+[SPEAKER_01] Um, anything else you wanted to share and uh, we're going to link to your, uh, LinkedIn and to Mobile Dev Memo and your Twitter, uh, in the show notes, but anything else you wanted to share before we wrap up?
+
+701
+01:01:37,440 --> 01:01:41,360
+[SPEAKER_02] No, I mean, I just I'm, I'm hoping that, you know, 2022.
+
+702
+01:01:42,720 --> 01:01:44,240
+[SPEAKER_02] I don't talk about HTT at all.
+
+703
+01:01:45,360 --> 01:01:45,840
+[SPEAKER_02] I would love it.
+
+704
+01:01:46,080 --> 01:01:56,240
+[SPEAKER_02] I would love it if, you know, I could get back to just talking about stuff that I think is more evergreen and conceptual versus just like very specific policy level.
+
+705
+01:01:57,680 --> 01:02:04,720
+[SPEAKER_02] I don't know, we'll see Apple, maybe they really back in and they do something else that is extreme or egregious.
+
+706
+01:02:04,880 --> 01:02:05,680
+[SPEAKER_02] But I don't know.
+
+707
+01:02:05,760 --> 01:02:08,240
+[SPEAKER_02] I just I think it's, you know, it happened.
+
+708
+01:02:08,400 --> 01:02:10,480
+[SPEAKER_02] I wrote a post the other day and I was like, look, this happened.
+
+709
+01:02:10,800 --> 01:02:14,400
+[SPEAKER_02] It's had a massive impact, probably not going to go away.
+
+710
+01:02:14,560 --> 01:02:15,920
+[SPEAKER_02] I don't think there's going to be a reversal.
+
+711
+01:02:16,000 --> 01:02:17,760
+[SPEAKER_02] So you got to live, you got to learn to live with it.
+
+712
+01:02:19,520 --> 01:02:23,360
+[SPEAKER_02] And that's, you know, and ultimately I think, you know, companies will do that.
+
+713
+01:02:24,000 --> 01:02:25,920
+[SPEAKER_02] And it's also just like a really exciting time.
+
+714
+01:02:26,000 --> 01:02:32,640
+[SPEAKER_02] Like this is like, this is probably like the start of a new era of like marketing science.
+
+715
+01:02:33,040 --> 01:02:39,280
+[SPEAKER_02] and thinking about measurement and thinking about how to bridge that with product design and product development in really cool ways.
+
+716
+01:02:39,840 --> 01:02:44,240
+[SPEAKER_02] So there's a lot of org design stuff that that's going to get changed as a result of this.
+
+717
+01:02:44,320 --> 01:02:48,640
+[SPEAKER_02] I don't know if you have like a standalone marketing team or like an UA team as such, right?
+
+718
+01:02:48,800 --> 01:02:51,920
+[SPEAKER_02] Like if you're thinking about media mix models, like what's your UA team?
+
+719
+01:02:53,280 --> 01:02:58,800
+[SPEAKER_02] And so, you know, I think, you know, it's just a lot of change and a lot of exciting change, a lot of opportunity.
+
+720
+01:02:59,040 --> 01:03:00,160
+[SPEAKER_02] There's always opportunity and change.
+
+721
+01:03:00,880 --> 01:03:02,080
+[SPEAKER_01] That's a great place to leave it.
+
+722
+01:03:02,720 --> 01:03:04,000
+[SPEAKER_01] Opportunity all across the board.
+
+723
+01:03:04,240 --> 01:03:12,880
+[SPEAKER_01] I think, yeah, there's opportunity for apps to find new ways to find users and opportunities to fill those gaps in the tooling as well.
+
+724
+01:03:13,200 --> 01:03:20,800
+[SPEAKER_01] So, well, Eric, thank you so much for being on the podcast and yeah, hopefully we can have you on in 2022 and not talk about UTT.
+
+725
+01:03:21,760 --> 01:03:22,640
+[SPEAKER_01] We'll make that a goal.
+
+726
+01:03:22,960 --> 01:03:23,600
+[SPEAKER_02] Fingers crossed.
+
+727
+01:03:24,320 --> 01:03:25,200
+[SPEAKER_02] All right, thank you, Eric.
+
+728
+01:03:25,360 --> 01:03:26,320
+[SPEAKER_02] All right, take care, buddy.
+
+729
+01:03:27,120 --> 01:03:31,600
+[SPEAKER_00] To make sure you never miss an episode, subscribe to the show on your favorite podcast player.
+
+730
+01:03:32,000 --> 01:03:33,040
+[SPEAKER_00] Thanks so much for listening.
+
+731
+01:03:33,520 --> 01:03:34,240
+[SPEAKER_00] Until next time.
