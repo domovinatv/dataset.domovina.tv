@@ -1,0 +1,105 @@
+# 122. Milosrđe Božje - Što je značenje sve opreme Božje?
+
+**Kanal:** ora_et_labora  
+**Datum:** 2026-10-28  
+**Trajanje:** 74 min  
+**Epizoda:** https://domovina.ai/v/Pgfd0KKPXFg  
+**Izvornik:** youtube.com/watch?v=Pgfd0KKPXFg  
+**Model:** claude-code:opus  
+
+## Sažetak
+
+Epizoda medija Ora et Labora ima molitveno-katehetski karakter. Počinje molitvom oslobođenja, posvetnim molitvama, Krunicom Božjega milosrđa s litanijama te Gospinom krunicom s otajstvima svjetla. U središnjem dijelu govornik tumači odlomak iz Poslanice Efežanima o 'svoj opremi Božjoj' (istina, oklop pravednosti, spremnost za evanđelje mira, štit vjere, kaciga spasenja i mač duha). Pritom posebno naglašava povjerenje u Boga i u bližnje te sumnju kao glavno đavlovo oružje. Zatim tumači evanđelje dana (Lk 13,31-35) o Isusovoj neustrašivosti pred Herodom i ustrajnosti u vršenju volje Božje te ga primjenjuje na današnje stanje u Hrvatskoj. Epizoda završava najavama promocija knjige i domoljubne inicijative Ora et Labora po gradovima, svjedočanstvom o ozdravljenju i pozivom na javnu molitvu krunice na trgovima.
+
+## Ključne teme
+
+- molitva oslobođenja i krunica božjeg milosrđa
+- sva oprema božja prema poslanici efežanima
+- povjerenje i sumnja u vjeri i zajednici
+- vršenje volje božje i spremnost
+- tumačenje evanđelja lk 13,31-35
+- istina naspram onoga što je istinito
+- domoljubna inicijativa ora et labora
+- svjedočanstvo ozdravljenja
+
+## Govornici
+
+| ID | Ime | Uloga |
+|----|-----|-------|
+| SPEAKER_00 | Voditelj (prema metapodacima epizodu je pripremio dr. sc. Vladimir Grebenar, bacc. theol.) | voditelj |
+
+## Ključni zaključci
+
+1. Govornik prema svetom Pavlu ističe da se vjernici ne bore protiv ljudi, nego protiv zlih duhova. Prema njegovim riječima, onoga tko je pod vlašću zloga može se prepoznati po tome što progoni ljude koji donose plodove za kraljevstvo Božje.
+2. Govornik razlikuje 'istinito' od 'istine': ljudi iznose istinite argumente koji im odgovaraju, a istina je samo jedna. 'Opasati bedra istinom' znači tumačiti događaje kroz riječ Božju.
+3. Oklop pravednosti tumači kao vršenje volje Božje, koje je teško, ali donosi Božju zaštitu. Taj oklop čovjek ne može sam obući, nego mu ga Bog mora dati.
+4. Štit vjere opisuje kao povjerenje u Boga i u ljude s kojima se nešto gradi. Sumnju naziva najjačim đavlovim oružjem koje vodi do izdaje, a izdaju naziva najtežim grijehom.
+5. Kacigu spasenja tumači kao podređivanje razuma srcu i svijest o smrti i posljednjem sudu. Mač duha tumači kao riječ Božju i proroštvo te naglašava da onaj tko tvrdi da je sigurno nešto primio od Boga time pokazuje da nije od Boga.
+6. U tumačenju evanđelja govornik ističe da se Isus nije bojao Heroda, nazvao ga je lisicom i nastavio vršiti volju Očevu. Isusov plač nad Jeruzalemom primjenjuje na Hrvatsku, gdje se, kako kaže, Gospa ukazuje 45 godina, a umjesto jedinstva vladaju podjele i zavist.
+7. Svjedočanstvo slušateljice Branke govori o zacjeljenju rane na suprugovu ramenu nakon molitve i polaganja ruke. Govornik to povezuje s porukom koju je, kako kaže, primio u molitvi da supruga treba polagati ruke na muža.
+
+## Spomenute osobe
+
+- Isus Krist
+- Djevica Marija
+- sveti Mihael (Mihovil) arkanđeo
+- Poncije Pilat
+- sveti Pavao
+- Vučić
+- Kirk
+- Hitler
+- sveti Ignacije
+- Dante
+- Adam
+- Eva
+- David
+- Herod
+- Jona
+- sveti Josip
+- Branka
+- Duško Dugouško
+
+## Spomenuta mjesta
+
+- Jeruzalem
+- Francuska
+- Srbija
+- Amerika
+- Bosna i Hercegovina
+- Hrvatska
+- Hercegovina
+- Međugorje
+- rijeka Jordan
+- Kana
+- gora Tabor
+- Ninive
+- Sinj
+- Knin
+- Drniš
+- Ljubuški
+- Prozor-Rama
+- Biograd na Moru
+- Solin
+- Imotski
+- Istra
+- Slavonija
+- Njemačka
+- Austrija
+- Zagreb
+
+## Spomenute organizacije
+
+- Ora et Labora (medij i domoljubna inicijativa)
+- Katolička Crkva
+- Torcida
+- YouTube
+- hotel Alkar (Sinj)
+- hotel Bigeste (Ljubuški)
+- hidroelektrana Rama
+- hotel Ilirija (Biograd na Moru)
+- hotel President (Solin)
+- Pučko otvoreno učilište Imotski
+- Međunarodni edukacijski centar Kraljica Mira (Međugorje)
+
+---
+*Sentiment: mixed | Generirano: 2026-10-29T02:13:20.972Z*
