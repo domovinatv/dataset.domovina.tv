@@ -1,60 +1,62 @@
-# Zadruge i budućnost bankarstva - Goran Jeras (ZEF i EEB)
+# #002 - Zadruge i budućnost bankarstva - Goran Jeras (ZEF i EEB) i Matija S.
 
-**Kanal:** domovina_tv  
+**Kanal:** _unlisted  
 **Datum:** 2026-03-26  
 **Trajanje:** 160 min  
-**YouTube:** https://youtu.be/b-nls1ck8EE  
-**Model:** gemini-2.5-flash  
+**Epizoda:** https://domovina.ai/v/b-nls1ck8EE  
+**Izvornik:** youtube.com/watch?v=b-nls1ck8EE  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-Podcast istražuje nedostatke postojećeg bankarskog sustava i predstavlja zadružni model kao etičnu alternativu. Goran Jeras, upravitelj Zadruge za etično financiranje (ZEF) i CEO tvrtke ECHOES koja osniva Europsku etičnu banku (EEB), objašnjava kako komercijalne banke kreiraju novac i iscrpljuju lokalne zajednice. Razgovor naglašava demokratske principe zadruga, njihov fokus na opće dobro i planove EEB-a za financiranje priuštivog stanovanja, zelene energije i lokalnog razvoja, s ciljem zadržavanja vrijednosti unutar zajednice.
+U epizodi Domovina TV-a voditelj Matija Stepanić razgovara s Goranom Jerasom, upraviteljem Zadruge za etično financiranje (ZEF) i CEO-om tvrtke ECHOES, preko koje se osniva Europska etična banka (EEB). Razgovor objašnjava kako komercijalne banke kreditnom ekspanzijom stvaraju novac, kako novac lokalnih zajednica odlazi na globalna financijska tržišta (primjer općine Lovinac) i po čemu se zadruge kao društva osoba razlikuju od trgovačkih društava. Gost predstavlja kreditnu politiku EEB-a usmjerenu na priuštivo stanovanje kroz stambene zadruge, obnovljive izvore energije (ESCO model) i predfinanciranje ribara te inovacije poput transparentnog objavljivanja kredita i modela 'banking as a service'. Raspravlja se i o Franjinoj ekonomiji, steward ownership modelu, stanju zadrugarstva u Hrvatskoj, neizdavanju novih bankarskih licenci od strane HNB-a i o krhkosti globalnog financijskog sustava. Zaključak je da ZEF kroz EEB, koja se osniva u Litvi, nikad nije bio bliže cilju osnivanja etične banke u vlasništvu građana.
 
 ## Ključne teme
 
-- etično bankarstvo
-- zadrugarstvo
-- financijski sustav
-- kreiranje novca
-- priuštivo stanovanje
-- zelena energija
-- lokalni razvoj
-- franjina ekonomija
+- kreiranje novca i kreditna ekspanzija
+- zadruge i zadružni model poslovanja
+- europska etična banka
+- priuštivo stanovanje i stambene zadruge
+- zelena energija i esco model
+- financiranje ribara
+- franjina ekonomija i steward ownership
+- kritika globalnog financijskog sustava
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_01 | Matija Stepanić | voditelj |
-| SPEAKER_00 | Goran Jeras | gost |
+| SPEAKER_00 | Matija Stepanić | voditelj |
+| SPEAKER_01 | Goran Jeras | gost |
 
 ## Ključni zaključci
 
-1. Zadruga za etično financiranje (ZEF) osnovana je prije dvanaest godina s ciljem osnivanja Hrvatske etične banke koja bi služila općem dobru i razvoju lokalne ekonomije, suprotno ekstrakcijskom bankarskom modelu.
-2. Komercijalne banke kreiraju novac kroz kreditnu ekspanziju, stvarajući virtualni novac bez stvarne podloge, što dovodi do povećanja nejednakosti i iscrpljivanja lokalnih resursa.
-3. Zadruge su društva osoba, a ne kapitala, funkcioniraju po demokratskom principu 'jedan član, jedan glas' i cilj im je akumulacija kapitala za zajedničku ekonomsku i društvenu infrastrukturu, zadržavajući stvorenu vrijednost u zajednici.
-4. Primjer općine Lovinac ilustrira kako lokalna štednja završava na globalnim financijskim tržištima umjesto da se koristi za razvoj lokalne infrastrukture zbog nedostatka adekvatne financijske infrastrukture.
-5. Kreditna politika buduće Europske etične banke (EEB) fokusirat će se na nespekulativnu proizvodnju i projekte poput priuštivog stanovanja i obnovljivih izvora energije, s ciljem podizanja kvalitete života lokalnih zajednica.
-6. EEB će biti transparentna, javno objavljivati sve poslovne kredite i omogućiti klijentima da usmjere svoj novac prema projektima koji su u skladu s njihovim vrijednostima, nudeći fleksibilnost i inovativne usluge poput 'bank as a service'.
-7. Koncept 'steward ownership' i Franjina ekonomija promiču ideju da poduzeća trebaju služiti općem dobru i zaštiti planeta, a ne samo profitu, što je slično zadružnom modelu i nudi put prema održivijoj ekonomiji.
+1. Banke nisu samo posrednici između štediša i dužnika: kroz bankarski multiplikator i međusobno posuđivanje mogu kreirati velike količine kreditnog novca, a obavezne rezerve mogu zaobići pomoću raznih financijskih instrumenata.
+2. Banke mogu višak novca deponirati kod centralne banke uz prinos od oko 2%, a klijentima na pasivne depozite plaćaju simboličnu kamatu i ne pitaju ih u što ulažu njihov novac.
+3. Zadruge su društva osoba, a ne kapitala, nemaju vlasnika i upravljaju se po načelu 'jedan član, jedan glas', s ciljem da stvorena vrijednost ostane u zajednici koja ju je stvorila.
+4. Primjer općine Lovinac pokazuje da i siromašne zajednice imaju znatnu štednju (oko 18 milijuna eura), ali zbog nedostatka lokalne infrastrukture taj novac odlazi drugdje, uključujući Wall Street.
+5. Kreditna politika EEB-a izbjegava potrošačke kredite, a fokusira se na priuštivo stanovanje, obnovljive izvore energije (uključujući ESCO model), proizvodnju hrane i prilagođene kredite poput onih za poljoprivredu.
+6. ZEF već sada predfinancira ribare koji čekaju povrat sredstava iz Fonda za ribarstvo; krediti su beskamatni za članove ZEF-a, a do sada ih je iskoristilo oko 17 ribara.
+7. HNB je 2019. dao do znanja da takav model banke neće dobiti licencu u Hrvatskoj, pa se banka osniva na europskoj razini, a ZEF je zbog toga i pandemije izgubio gotovo pola od nekadašnjih 1486 članova, dok sada članstvo ponovno raste.
 
 ## Spomenute osobe
 
-- Goran Jeras
 - Matija Stepanić
-- Franjo Asiški
-- Papa Franjo
+- Goran Jeras
 - Richard Werner
 - Bruno Petrušić
+- papa Franjo
+- Franjo Asiški
+- Vujičić
+- Ačkar
 - Domagoj Rožić
 - Neven Vidaković
-- Vujčić
-- Vukojama
+- Trump
+- Fukuyama
 
 ## Spomenuta mjesta
 
 - Hrvatska
-- Wall Street
 - Lovinac
 - Hvar
 - Zadar
@@ -63,93 +65,131 @@ Podcast istražuje nedostatke postojećeg bankarskog sustava i predstavlja zadru
 - Zagreb
 - Sisak
 - Sisačko-moslavačka županija
-- EU
-- Sjedinjene Američke Države
-- Kalifornija
-- Velika Britanija
-- Poljska
+- Velika Gorica
+- Križevci
+- Pula
+- Ludbreg
+- Duga Resa
+- Podstrana
+- Varaždin
+- Krapanj
+- Slavonija
+- Dalmacija
+- Nizozemska
+- Litva
+- Milano
 - Italija
+- Španjolska
+- Poljska
+- Gljivice
 - Portugal
 - Cipar
 - Mediteran
-- Kina
-- Varaždin
-- Križevci
-- Ludbreg
-- Dugaresa
+- Sjedinjene Američke Države
+- Kalifornija
+- Velika Britanija
+- Engleska
+- Njemačka
+- Austrija
 - Beč
-- Krapanj
-- Milano
-- Lichtenstein
-- Nizozemska
+- Belgija
+- Mađarska
+- Liechtenstein
+- Rusija
+- Ukrajina
+- Japan
+- Kina
+- Kolumbija
+- Latinska Amerika
+- Afrika
+- New York
 - Amsterdam
 - London
-- New York
-- Austrija
-- Njemačka
-- Ukrajina
-- Afrika
-- Azija
-- Japan
-- Kolumbija
 
 ## Spomenute organizacije
 
 - Zadruga za etično financiranje (ZEF)
-- ECHOES
 - Europska etična banka (EEB)
+- ECHOES
 - Domovina TV
+- McKinsey & Company
 - Udruga Franak
-- McKinsey Company
-- HPB (Hrvatska poštanska banka)
-- HBOR (Hrvatska banka za obnovu i razvitak)
+- Hrvatska narodna banka (HNB)
+- Hrvatska poštanska banka (HPB)
+- Centralna banka Engleske
 - Fond za zaštitu okoliša i energetsku učinkovitost
+- HBOR
 - Fond za ribarstvo i akvakulturu
+- Porezna uprava
+- HEP
+- Agencija za promet nekretninama (APN)
+- Zelena energetska zadruga (ZEZ)
+- Hrvatski savez zadruga
+- Centar za razvoj zadružnog poduzetništva
+- Ministarstvo poduzetništva
+- Trgovački sud
 - Hrvatska udruga poslodavaca
 - Gospodarska komora
 - Obrtnička komora
-- Hrvatski savez zadruga
-- Centar za razvoj zadružnog poduzetništva
-- APN (Agencija za promet nekretninama)
 - Solvis
 - Farmex
 - BT Solar
-- Dok-Ing
-- Ryanair Metal
-- Sedam odjela
+- Docking
+- Rheinmetall
+- Sedmi odjel
 - Podatkovni centar Križ
-- Canal Service
-- OPG Đakula
-- Zadružna pivovara Brlog
+- Kanal Servis
 - Hotel Split
-- Rabobank
-- Rabobank Nederland
-- Rabobank International
+- OPG Đakula
+- Pivovara Brlog
+- Zadruga Glas poduzetnika
+- Revolut
+- Wise
+- Paysera
+- ZABA
+- UniCredit
+- PBZ
+- Intesa Sanpaolo
 - Erste
+- Erste Stiftung
 - Raiffeisen
 - OTP
-- PBZ
-- Zaba
-- Sberbank
-- Volksbank
-- Tesla banka
-- Imex banka
-- Samoborska banka
-- Minka
-- Apple
+- MOL
+- INA
+- HT
 - BlackRock
 - Vanguard
-- MOL
-- UN
-- Vatikan
-- Climate KIK
-- Europski institut tehnologije
+- Sparkasse
+- Rabobank
+- Samoborska banka
+- Imex banka
+- Tesla štedna banka
+- Volksbank
+- Sberbank
+- Euroclear
 - World Systemic Foundation
-- Obitelj Hilti
 - Catalytic Capital Consortium
 - New Venture Fund
 - MacArthur Foundation
 - Patagonia
+- Hilti
+- Climate KIC
+- Europski institut za tehnologiju
+- Europska investicijska banka
+- Europska unija
+- UN
+- Vatikan
+- BRICS
+- Franjina ekonomija
+- Minka
+- Infobip
+- FER
+- HRT
+- Riverside FM
+- Apple
+- Pevex
+- Impact Days
+- Money Motion
 
 ---
-*Sentiment: mixed | Generirano: 2026-03-27T11:21:37.441Z*
+*Sentiment: mixed | Generirano: 2026-11-05T10:41:42.591Z*
