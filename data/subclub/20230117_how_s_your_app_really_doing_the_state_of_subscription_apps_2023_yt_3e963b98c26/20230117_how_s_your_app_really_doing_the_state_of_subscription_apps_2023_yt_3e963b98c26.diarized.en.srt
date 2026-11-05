@@ -1,0 +1,4123 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_00] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+[SPEAKER_00] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_00] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_00] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,960 --> 00:00:46,320
+[SPEAKER_00] Hello, I'm your host, David Barnard, and with me today, RevenueCat CEO, Jacob Biding.
+
+7
+00:00:47,120 --> 00:01:01,040
+[SPEAKER_00] On the podcast, we talk about RevenueCat's state of subscription apps report, all the nuance that didn't make it into the report, and why your app landing in the bottom quartile of some metrics might not be as bad as it seems.
+
+8
+00:01:02,960 --> 00:01:07,840
+[SPEAKER_00] Hey, Jacob, looking forward to chatting on this special episode of the Subclub podcast.
+
+9
+00:01:08,400 --> 00:01:10,000
+[SPEAKER_01] It's always special when it's only me and you, David.
+
+10
+00:01:10,320 --> 00:01:14,720
+[SPEAKER_01] No offense to our guests, but it's just a different., it got a different feel, got a different vibe.
+
+11
+00:01:15,120 --> 00:01:26,400
+[SPEAKER_00] So by the time this podcast is released, which we're recording early, of course, there will be a landmark report released in the land of subscriptions.
+
+12
+00:01:27,600 --> 00:01:35,840
+[SPEAKER_00] So we've put together a massive report with all sorts of comments from industry folks and never before seen benchmarks.
+
+13
+00:01:36,560 --> 00:01:38,560
+[SPEAKER_00] But but but but truly, this is actually exciting.
+
+14
+00:01:38,720 --> 00:01:42,880
+[SPEAKER_01] I mean, when I started a dream, it's it's the culmination of a many year dream, David.
+
+15
+00:01:43,280 --> 00:01:44,320
+[SPEAKER_00] It's a dream come true.
+
+16
+00:01:44,480 --> 00:01:48,800
+[SPEAKER_00] When I started in RevenueCat in 2019, you and I talked about all these data projects.
+
+17
+00:01:49,200 --> 00:01:51,920
+[SPEAKER_01] I'm pretty sure that's half or more of the reason you joined.
+
+18
+00:01:52,240 --> 00:01:54,320
+[SPEAKER_01] You were just like, I just want to log in the data.
+
+19
+00:01:56,480 --> 00:01:58,800
+[SPEAKER_01] And then once you got in, you're like, oh, well, I have it.
+
+20
+00:01:58,960 --> 00:02:00,640
+[SPEAKER_01] So what's the motivation to get it out there?
+
+21
+00:02:00,880 --> 00:02:01,760
+[SPEAKER_00] But we finally did, right?
+
+22
+00:02:02,000 --> 00:02:02,560
+[SPEAKER_01] We finally did.
+
+23
+00:02:02,800 --> 00:02:03,040
+[SPEAKER_00] Finally.
+
+24
+00:02:03,200 --> 00:02:03,280
+[SPEAKER_00] Yeah.
+
+25
+00:02:04,000 --> 00:02:11,200
+[SPEAKER_01] I remember years of us debating this and and my my biggest thing were two things and we'll talk about some of that, how this dataset came together.
+
+26
+00:02:11,520 --> 00:02:13,200
+[SPEAKER_01] But one was we didn't have enough apps.
+
+27
+00:02:13,680 --> 00:02:22,560
+[SPEAKER_01] So I was always like, eh, like we have we don't really, really, really, really want to be careful to make sure that data is like well anonymized and you really can't back into anything.
+
+28
+00:02:22,800 --> 00:02:25,440
+[SPEAKER_01] And we've maybe had that for a couple couple of years now.
+
+29
+00:02:25,760 --> 00:02:28,480
+[SPEAKER_01] So that part didn't last very long where we didn't have enough data.
+
+30
+00:02:29,040 --> 00:02:32,080
+[SPEAKER_01] But the second part was just like doing a good job.
+
+31
+00:02:32,640 --> 00:02:42,640
+[SPEAKER_01] Like we were just, it's so easy to pull a dataset and just be like, oh, take column A divided by column B, look at this result and be like, and then share it.
+
+32
+00:02:43,120 --> 00:02:45,840
+[SPEAKER_01] And like, honestly, a lot of reports get away with that, right?
+
+33
+00:02:46,960 --> 00:02:52,000
+[SPEAKER_01] Because you don't have the methodology, you don't have a dataset, it's really hard to verify and it all works as marketing, right?
+
+34
+00:02:52,560 --> 00:02:57,040
+[SPEAKER_01] And maybe to our own detriment, I wasn't happy with that.
+
+35
+00:02:57,360 --> 00:03:00,480
+[SPEAKER_01] So instead of releasing a report, we waited, right?
+
+36
+00:03:01,040 --> 00:03:14,240
+[SPEAKER_01] And I think we've finally gotten to the point where we can strike a balance between, you know, obviously there's some level of rigor that's reasonable for us in all these, on all these insights, whatever we want to call them.
+
+37
+00:03:15,760 --> 00:03:19,440
+[SPEAKER_01] But I think we've done a good job and I think we finally were able to this year, so I'm excited.
+
+38
+00:03:19,680 --> 00:03:23,280
+[SPEAKER_00] We skipped ahead of my first question, why release these benchmark report and why now?
+
+39
+00:03:23,440 --> 00:03:24,480
+[SPEAKER_00] So you got the why now part.
+
+40
+00:03:24,640 --> 00:03:25,680
+[SPEAKER_00] Oh, okay, so why release?
+
+41
+00:03:26,400 --> 00:03:28,960
+[SPEAKER_00] But now, yeah, why a benchmark report?
+
+42
+00:03:29,200 --> 00:03:31,680
+[SPEAKER_00] So, you know, marketing, you called that out already.
+
+43
+00:03:31,760 --> 00:03:34,240
+[SPEAKER_00] I mean, yeah, obviously, there's some for us.
+
+44
+00:03:34,400 --> 00:03:36,960
+[SPEAKER_01] But I mean, this was a good question.
+
+45
+00:03:36,960 --> 00:04:08,480
+[SPEAKER_01] This was something I knew at the very beginning of RevenueCat is that we were going to be the only place, maybe, aside from Apple, where, you know, developers, we were going to have visibility across the app ecosystem and, um, and this goes beyond, you know, there's tools like Sensor Tower and AppFigures and things like this, but there's certain, there's certain parts of the subscription life cycle that only RevenueCat can really measure.
+
+46
+00:04:09,040 --> 00:04:10,560
+[SPEAKER_01] And so, um, yeah.
+
+47
+00:04:10,960 --> 00:04:11,600
+[SPEAKER_01] Why is that?
+
+48
+00:04:11,680 --> 00:04:12,960
+[SPEAKER_01] Just to start audio talking.
+
+49
+00:04:13,920 --> 00:04:42,480
+[SPEAKER_01] Yeah, just because things like Sensor Tower use some combination of SDK integration plus like app store listings to like derive their data, things like app figures to get product, but they use app store reports, which also don't, there's certain things that aren't accessible through that dataset, and we are on the device tracking receipts, which gives us the 100% visibility into the life cycle of individual users, which then from there, you can build up into basically any aggregate you want.
+
+50
+00:04:43,360 --> 00:04:48,560
+[SPEAKER_01] And so that's why this is a unique dataset that's never really been compiled before, certainly not at this scale.
+
+51
+00:04:49,520 --> 00:04:53,840
+[SPEAKER_01] And by the way, I'll add that if anyone hearing this is like, I don't want my data in this report, just let us know.
+
+52
+00:04:53,920 --> 00:04:58,880
+[SPEAKER_01] Like, we have a little switch we can flip if you're like, you know, it's not going to affect the data one way or the other.
+
+53
+00:04:59,040 --> 00:05:01,680
+[SPEAKER_01] It's very well anonymized, but if it's weird to you, just let us know.
+
+54
+00:05:02,880 --> 00:05:06,000
+[SPEAKER_00] But yeah, it's so well anonymized that you wouldn't even know.
+
+55
+00:05:06,240 --> 00:05:09,840
+[SPEAKER_01] And I mean, I fought for years to make sure it was going to be perfect.
+
+56
+00:05:10,160 --> 00:05:10,880
+[SPEAKER_01] Yeah, it's totally.
+
+57
+00:05:11,200 --> 00:05:17,360
+[SPEAKER_00] You wouldn't let me share, what, what's that kind of plot where you, where you see the actual Oh yeah, individualized plots.
+
+58
+00:05:17,440 --> 00:05:18,880
+[SPEAKER_00] Yeah, like dots that were anonymous.
+
+59
+00:05:19,680 --> 00:05:21,840
+[SPEAKER_00] Like, let me share a scanner plot or something.
+
+60
+00:05:24,560 --> 00:05:28,960
+[SPEAKER_00] Each of those dots was an app and was disclosing their individual data.
+
+61
+00:05:29,280 --> 00:05:31,520
+[SPEAKER_00] And so we don't share scatter plots for that reason.
+
+62
+00:05:31,760 --> 00:05:36,400
+[SPEAKER_01] Yeah, we, everything has to be averaged together and above a certain threshold and all this stuff.
+
+63
+00:05:36,640 --> 00:05:50,640
+[SPEAKER_01] Um, and, and, and, yeah, I'm very confident in what we're releasing is, you know, there's no, there's no data, but, but, you know, I'm, I'm even willing to do this even if it's a little bit maybe like outside of our mandate because I'm doing this for you.
+
+64
+00:05:51,040 --> 00:05:52,640
+[SPEAKER_01] I'm doing this for the community, right?
+
+65
+00:05:52,880 --> 00:06:04,640
+[SPEAKER_01] Like there's the marketing aspect of it, it's true, but like I, I've had this, we've tried to build in the product, but it's hard that we've had these questions foreverever, like since we started, what's a good subscription rate?
+
+66
+00:06:04,880 --> 00:06:05,760
+[SPEAKER_00] What's a good renewal rate?
+
+67
+00:06:05,840 --> 00:06:07,840
+[SPEAKER_00] What's a good, how's it?
+
+68
+00:06:08,080 --> 00:06:08,400
+[SPEAKER_01] How's it?
+
+69
+00:06:09,200 --> 00:06:11,440
+[SPEAKER_01] And I'm always like, I can't ever answer that.
+
+70
+00:06:11,600 --> 00:06:14,080
+[SPEAKER_01] Like, I'm not a human insights machine.
+
+71
+00:06:14,320 --> 00:06:15,120
+[SPEAKER_01] Like, I don't have everything.
+
+72
+00:06:15,520 --> 00:06:20,560
+[SPEAKER_01] I have some ideas, but it's always shifting and it's always changing and it's complicated.
+
+73
+00:06:20,800 --> 00:06:21,920
+[SPEAKER_01] I think we'll get into that today.
+
+74
+00:06:22,080 --> 00:06:26,800
+[SPEAKER_01] Like, all these data points are complicated, have caveats, power in relationships with other data points.
+
+75
+00:06:27,360 --> 00:06:36,320
+[SPEAKER_01] And so I was always a little hesitant to share it, but it was clear that folks in our user base, our customer base, like, want this data.
+
+76
+00:06:37,600 --> 00:06:39,520
+[SPEAKER_01] And can use it to make good decisions.
+
+77
+00:06:40,800 --> 00:06:42,080
+[SPEAKER_01] And so, yeah, that's why.
+
+78
+00:06:42,400 --> 00:06:47,520
+[SPEAKER_01] Like, I think, I think it's outside of having this integrated into the product, which we may do in the future.
+
+79
+00:06:48,400 --> 00:06:52,240
+[SPEAKER_01] I think this is like the next, a PDF is kind of a pretty good product in that sense.
+
+80
+00:06:52,320 --> 00:06:53,520
+[SPEAKER_01] It's like, hey, here it is.
+
+81
+00:06:53,760 --> 00:06:53,920
+[SPEAKER_01] Bang.
+
+82
+00:06:54,160 --> 00:06:59,680
+[SPEAKER_01] Like, you're probably going to find ninety percent of what you want in this dock and we'll update it over time, ideally, and things like this.
+
+83
+00:06:59,920 --> 00:07:00,640
+[SPEAKER_01] So, yeah.
+
+84
+00:07:01,760 --> 00:07:04,800
+[SPEAKER_00] And our mission at RevenueCat is to help developers make more money.
+
+85
+00:07:05,680 --> 00:07:12,000
+[SPEAKER_00] And if developers can use benchmark data, and we'll talk about all the caveats of how to use and not use benchmark data.
+
+86
+00:07:12,480 --> 00:07:17,040
+[SPEAKER_00] But if they can use the benchmarks data to make more money, that is directly fulfilling our mission.
+
+87
+00:07:17,280 --> 00:07:17,360
+[SPEAKER_00] Yeah.
+
+88
+00:07:17,840 --> 00:07:19,200
+[SPEAKER_01] I mean, we just we just want to be helpful.
+
+89
+00:07:19,280 --> 00:07:19,920
+[SPEAKER_01] We're just here to help.
+
+90
+00:07:20,080 --> 00:07:20,400
+[SPEAKER_01] That's it.
+
+91
+00:07:20,560 --> 00:07:21,280
+[SPEAKER_00] Just to help.
+
+92
+00:07:23,600 --> 00:07:23,680
+[SPEAKER_00] Yeah.
+
+93
+00:07:24,000 --> 00:07:34,880
+[SPEAKER_00] And then back to what you said earlier, I think it is important to recognize that we are at a stage as a company where our data is fairly representative of the broader market.
+
+94
+00:07:36,480 --> 00:07:38,640
+[SPEAKER_01] And that definitely wasn't the case in the early days, right?
+
+95
+00:07:38,720 --> 00:07:40,320
+[SPEAKER_00] Like we were very specific in the early days.
+
+96
+00:07:40,480 --> 00:07:46,720
+[SPEAKER_01] We were like all YC companies and like a few of my friends and like, and then some like a concentric expanding circle from there.
+
+97
+00:07:47,040 --> 00:07:51,360
+[SPEAKER_01] But now it's a much closerer to the general population of the App Store.
+
+98
+00:07:52,400 --> 00:07:59,840
+[SPEAKER_00] And as we talk through that, our data, I think it's especially interesting to know that it is relatively representative.
+
+99
+00:08:00,000 --> 00:08:09,680
+[SPEAKER_00] So when we talk top quartiles and bottom quartiles and median and stuff like that, you know, this is spanning some of the top apps in the App Store all the way down to, you know, indie apps that are struggling.
+
+100
+00:08:09,760 --> 00:08:15,680
+[SPEAKER_00] Like my own apps, like I'm in the bottom quartile and like pretty much every day is fine.
+
+101
+00:08:15,760 --> 00:08:17,280
+[SPEAKER_01] It's just to get something to work on, you know?
+
+102
+00:08:17,520 --> 00:08:17,760
+[SPEAKER_00] I do.
+
+103
+00:08:17,920 --> 00:08:18,000
+[SPEAKER_00] Yeah.
+
+104
+00:08:18,240 --> 00:08:19,440
+[SPEAKER_00] Well, if I weren't so busy.
+
+105
+00:08:22,880 --> 00:08:27,360
+[SPEAKER_00] So next thing I wanted to do discuss is kind of the methodology in our data.
+
+106
+00:08:28,480 --> 00:08:51,360
+[SPEAKER_00] So I'll rattle off and then you can give a little nuance, but the data that we used to put together this report encompasses 180 million subscribers, 180 million more subscribers, 17,000 plus developers over the last, what is it, five years, four years now since RevenueCat was launched in 2005?
+
+107
+00:08:51,680 --> 00:08:53,680
+[SPEAKER_01] Almost exactly five years since we tracked our first dollar.
+
+108
+00:08:55,040 --> 00:08:56,720
+[SPEAKER_01] It was like New Year's 2018.
+
+109
+00:08:57,280 --> 00:09:00,800
+[SPEAKER_00] So we've now tracked in aggregate over four billion dollars.
+
+110
+00:09:01,760 --> 00:09:06,960
+[SPEAKER_00] in revenue across the App Store, Play Store, Stripe, now the Amazon Store.
+
+111
+00:09:08,000 --> 00:09:16,320
+[SPEAKER_00] And I think some people even do integrations where they're using other web payment providers where we get their data, even if it's not Stripe.
+
+112
+00:09:17,920 --> 00:09:20,640
+[SPEAKER_00] So we track 22,000 plus apps.
+
+113
+00:09:22,320 --> 00:09:25,280
+[SPEAKER_00] And as you said before, the data is completely anonymized.
+
+114
+00:09:25,440 --> 00:09:27,600
+[SPEAKER_00] So pretty broad.
+
+115
+00:09:28,160 --> 00:09:28,720
+[SPEAKER_00] Big numbers.
+
+116
+00:09:28,960 --> 00:09:29,040
+[SPEAKER_00] Yeah.
+
+117
+00:09:29,200 --> 00:09:29,680
+[SPEAKER_00] Big numbers.
+
+118
+00:09:29,840 --> 00:09:31,360
+[SPEAKER_01] $4 billion tracked revenue.
+
+119
+00:09:31,600 --> 00:09:35,040
+[SPEAKER_01] I can afford to give every person on the planet $1,000 in tracked revenue.
+
+120
+00:09:35,360 --> 00:09:37,120
+[SPEAKER_01] I think that's how that's a how that's a joke.
+
+121
+00:09:37,280 --> 00:09:39,040
+[SPEAKER_01] That's a Twitter meme I brought into the podcast.
+
+122
+00:09:41,920 --> 00:09:47,600
+[SPEAKER_00] Yeah, so again, just, you know, fairly representative of the App Store generally.
+
+123
+00:09:48,240 --> 00:09:57,280
+[SPEAKER_00] And then as you were getting at, so we have a data scientist that worked on this who's super sharp, been in the subscription app industry for a long time.
+
+124
+00:09:57,920 --> 00:10:04,560
+[SPEAKER_00] Huge shout out to Tracy on our business team who's just a genius at numbers and business analysis.
+
+125
+00:10:05,280 --> 00:10:06,000
+[SPEAKER_00] It took a village.
+
+126
+00:10:06,320 --> 00:10:08,160
+[SPEAKER_00] It took a village to bring this together.
+
+127
+00:10:08,640 --> 00:10:13,520
+[SPEAKER_01] I was a CEO who gets very confused by graphs and goes like, oh, I got this.
+
+128
+00:10:13,760 --> 00:10:14,720
+[SPEAKER_00] Make this make more sense.
+
+129
+00:10:15,600 --> 00:10:38,720
+[SPEAKER_00] But, but yeah, so this was not just like one random person, as you said, and that's why I think this and I'm going on and on because I think it's important to explain that this wasn't just one random person grabbing column A, column B, you know, generating these like big grand hypotheses around the app store.
+
+130
+00:10:39,040 --> 00:10:41,600
+[SPEAKER_00] It was a huge team of really smart people coming together.
+
+131
+00:10:41,680 --> 00:10:43,920
+[SPEAKER_00] It's a very smart, artisanal PDF.
+
+132
+00:10:44,000 --> 00:10:45,920
+[SPEAKER_01] It's one of the best PDFs I've ever made.
+
+133
+00:10:46,560 --> 00:10:49,360
+[SPEAKER_01] With a, with a, with a, with a bunch of help, right?
+
+134
+00:10:49,600 --> 00:10:50,240
+[SPEAKER_00] So it is.
+
+135
+00:10:50,800 --> 00:10:52,000
+[SPEAKER_00] So everything is not perfect.
+
+136
+00:10:52,320 --> 00:10:57,200
+[SPEAKER_00] I mean, data has limitations, but it was very thoughtfully considered along the whole process.
+
+137
+00:10:58,240 --> 00:11:03,760
+[SPEAKER_00] Huge amounts of data backing it, and then a huge amount of effort and thought went into compiling it.
+
+138
+00:11:04,960 --> 00:11:15,520
+[SPEAKER_00] So while it's not perfect and no data is, there's definitely a certain amount of trust I think people can have in some of the conclusions that we draw.
+
+139
+00:11:15,920 --> 00:11:19,920
+[SPEAKER_01] We were talking about this before, but like, you know, I think it's like models.
+
+140
+00:11:20,000 --> 00:11:23,840
+[SPEAKER_01] Like people talk about like models about a system or like, you know, theories or whatever.
+
+141
+00:11:24,160 --> 00:11:25,600
+[SPEAKER_01] They're not often not correct.
+
+142
+00:11:25,760 --> 00:11:27,840
+[SPEAKER_01] And I won't say that all this data here is correct.
+
+143
+00:11:27,920 --> 00:11:32,480
+[SPEAKER_01] It's not even like a term you can necessarily use, but it doesn't make them not useful, right?
+
+144
+00:11:34,400 --> 00:11:46,080
+[SPEAKER_01] Like Newton's theory of motion is not correct because it doesn't account for quantum mechanics and relativity and things like this, but it is extremely useful, right, because it applies for a broad range of conditions.
+
+145
+00:11:46,720 --> 00:11:49,040
+[SPEAKER_01] And I think that's true for a lot of the insights here.
+
+146
+00:11:49,200 --> 00:11:56,640
+[SPEAKER_01] Like there's, there's, and I think as people go through it, you want to make sure you're looking at things in context.
+
+147
+00:11:56,880 --> 00:12:05,760
+[SPEAKER_01] Make sure you're balancing your specific situation and the realities of your app.
+
+148
+00:12:06,240 --> 00:12:11,680
+[SPEAKER_01] Because while and I guess, yeah, I mean, I guess now is a good time to talk about it.
+
+149
+00:12:11,840 --> 00:12:18,320
+[SPEAKER_01] Like, there may be things where you're in the bottom quartile on something and that's okay because like your business model is different, right?
+
+150
+00:12:19,200 --> 00:12:23,280
+[SPEAKER_01] And there's not a single business model for all of these apps.
+
+151
+00:12:23,520 --> 00:12:27,840
+[SPEAKER_01] Like some apps more optimized for getting people to pay a lot at the subscription phase.
+
+152
+00:12:28,240 --> 00:12:31,120
+[SPEAKER_01] Or like, or it's really important that they just start a ton of trials.
+
+153
+00:12:31,200 --> 00:12:33,280
+[SPEAKER_01] Or it's really important that they do X or YZ.
+
+154
+00:12:33,360 --> 00:12:34,880
+[SPEAKER_01] And that really is app dependent.
+
+155
+00:12:36,240 --> 00:12:40,320
+[SPEAKER_01] And so you should apply that lens to be like, what are we actually doing here?
+
+156
+00:12:40,960 --> 00:12:50,320
+[SPEAKER_01] And then, you know, before you go take, oh, we're in the bottom quartile here, make sure you apply that to your unique situation and make sure you think through how that's going to affect other things.
+
+157
+00:12:51,680 --> 00:12:56,880
+[SPEAKER_01] But again, like, even with those caveats, I still think there's a lot you can draw potentially from this data.
+
+158
+00:12:57,520 --> 00:12:57,600
+[SPEAKER_00] Yeah.
+
+159
+00:12:58,240 --> 00:13:00,160
+[SPEAKER_00] And you hit the, you hit part of the rant.
+
+160
+00:13:00,320 --> 00:13:01,440
+[SPEAKER_00] I want to rant a little more.
+
+161
+00:13:02,880 --> 00:13:12,480
+[SPEAKER_00] So in this report and working with so many colleagues on it, I kept trying to write essays with all the, like, nuance and caveats and all this stuff.
+
+162
+00:13:12,480 --> 00:13:29,520
+[SPEAKER_00] And then my lovely colleagues kept kind of pushing back and summarizing and, and deleting paragraphs and stuff because, you know, for a report that you're going to read, uh, you know, a 300 page essay into the depths of nuance wasn't really a great read.
+
+163
+00:13:29,680 --> 00:13:31,680
+[SPEAKER_00] I was going to skip it anyway.
+
+164
+00:13:32,240 --> 00:13:32,880
+[SPEAKER_00] So, like, yeah.
+
+165
+00:13:33,120 --> 00:13:33,200
+[SPEAKER_00] Yeah.
+
+166
+00:13:33,440 --> 00:13:36,320
+[SPEAKER_00] But this is our chance to kind of, like, go into that nuance.
+
+167
+00:13:36,480 --> 00:13:41,520
+[SPEAKER_00] So the rest of this, you know, podcast, we've kind of already started, but, but it's, we're not doing any data on this podcast.
+
+168
+00:13:41,680 --> 00:13:44,160
+[SPEAKER_01] We're just going to talk, uh, footnotes the whole time.
+
+169
+00:13:44,240 --> 00:13:44,320
+[SPEAKER_01] Yeah.
+
+170
+00:13:44,720 --> 00:13:45,200
+[SPEAKER_01] Front matter.
+
+171
+00:13:45,280 --> 00:13:46,000
+[SPEAKER_01] It's all front matter.
+
+172
+00:13:46,000 --> 00:13:46,800
+[SPEAKER_01] No, I'm joking.
+
+173
+00:13:46,880 --> 00:13:47,680
+[SPEAKER_01] We're about to get into the data.
+
+174
+00:13:47,920 --> 00:13:48,000
+[SPEAKER_01] Yeah.
+
+175
+00:13:48,160 --> 00:14:01,040
+[SPEAKER_00] We are going to get into the into the data and this, this podcast is our opportunity to really talk through the nuance and me to go on my ranch that kind of got cut from some of the, uh, send this uh send your boss the PDF.
+
+176
+00:14:01,200 --> 00:14:03,840
+[SPEAKER_01] Don't send them, don't send them the link to the podcast.
+
+177
+00:14:04,000 --> 00:14:04,080
+[SPEAKER_01] Yeah.
+
+178
+00:14:04,800 --> 00:14:06,800
+[SPEAKER_01] This is for the this is for the subscription nerds out there.
+
+179
+00:14:07,440 --> 00:14:09,360
+[SPEAKER_01] The PDF is, you know, that's for the C-suite.
+
+180
+00:14:09,680 --> 00:14:12,400
+[SPEAKER_01] So, uh, you know, just really know your audience, right?
+
+181
+00:14:13,040 --> 00:14:15,600
+[SPEAKER_00] So I wanted to go a little deeper into your ranch.
+
+182
+00:14:15,920 --> 00:14:27,520
+[SPEAKER_00] Um, and I think this is just so important is that, you know, as a subscription app, you need to understand your own business model and your own unique leverage.
+
+183
+00:14:28,080 --> 00:14:34,560
+[SPEAKER_00] So in kind of thinking this through and preparing for the podcast, an example that really stands out to me is AllTrails.
+
+184
+00:14:34,800 --> 00:14:36,880
+[SPEAKER_00] We actually had the CEO of AllTrails on the podcast.
+
+185
+00:14:37,600 --> 00:14:46,800
+[SPEAKER_00] It's a fascinating business to me because their pricing is crazy compared to what we see now in most subscriptions.
+
+186
+00:14:48,640 --> 00:14:59,040
+[SPEAKER_00] They price it at I think they price it now at thirty dollars, but most of their or we don't have any data on them or anything, so I'm not sharing any like they're not a customer at the moment yet.
+
+187
+00:14:59,920 --> 00:15:00,880
+[SPEAKER_00] Future customer, of course.
+
+188
+00:15:01,280 --> 00:15:02,560
+[SPEAKER_00] Everybody has a future customer.
+
+189
+00:15:02,640 --> 00:15:12,240
+[SPEAKER_00] So I'm not sharing any private data, but from what the CEO shared on the podcast and just some level of inference, you know, they do, they do tons of promotions.
+
+190
+00:15:12,480 --> 00:15:22,320
+[SPEAKER_00] So even though their kind of regular subscription price is thirty dollars a year, I would imagine a lot of their subscriber base is on a like twenty dollars a year or fifteen dollars a year.
+
+191
+00:15:22,800 --> 00:15:31,440
+[SPEAKER_00] And so when you look at this kind of stalwart in the consumer subscription industry that's not really optimized on pricing.
+
+192
+00:15:31,760 --> 00:15:33,680
+[SPEAKER_00] So like what works?
+
+193
+00:15:34,000 --> 00:15:37,600
+[SPEAKER_00] Like why aren't they charging seventy dollars a year, one hundred.
+
+194
+00:15:37,920 --> 00:15:41,520
+[SPEAKER_00] Like some of these other subscription apps we see where I'm like, God, how do they charge so much?
+
+195
+00:15:42,160 --> 00:15:50,480
+[SPEAKER_00] And I think what it comes down to is a few things, and this is what every subscription app needs to kind of look at in their own data is one.
+
+196
+00:15:52,000 --> 00:16:01,200
+[SPEAKER_00] I would guess that having such a low price actually leads to much greater long term retention than some of these apps that charge a lot more.
+
+197
+00:16:01,520 --> 00:16:01,760
+[SPEAKER_00] Of course.
+
+198
+00:16:01,920 --> 00:16:02,000
+[SPEAKER_01] Yeah.
+
+199
+00:16:02,160 --> 00:16:02,240
+[SPEAKER_01] Yeah.
+
+200
+00:16:02,560 --> 00:16:07,680
+[SPEAKER_01] Price is always going to be inversely correlated with retention, unless it's a real, like, real, real need.
+
+201
+00:16:07,920 --> 00:16:10,960
+[SPEAKER_01] If it's a luxury good price and retention are probably going to be.
+
+202
+00:16:11,200 --> 00:16:15,280
+[SPEAKER_01] And it's, I mean, all trailsils is for some people not a luxury, right?
+
+203
+00:16:15,440 --> 00:16:16,800
+[SPEAKER_01] But like a lot of CSS is.
+
+204
+00:16:17,280 --> 00:16:19,120
+[SPEAKER_01] So like, yeah, you're always going to have that.
+
+205
+00:16:19,760 --> 00:16:23,680
+[SPEAKER_00] All the apps like to be able to charge a higher price and retain that higher price over time.
+
+206
+00:16:23,920 --> 00:16:24,880
+[SPEAKER_00] Maybe that's it.
+
+207
+00:16:24,960 --> 00:16:25,920
+[SPEAKER_00] All trails might be.
+
+208
+00:16:26,400 --> 00:16:30,960
+[SPEAKER_00] But on the other side, you know, this year as inflation was rising and everything else, I'd looked at all my.
+
+209
+00:16:31,280 --> 00:16:32,400
+[SPEAKER_00] Yeah, so they're cheap, right?
+
+210
+00:16:32,640 --> 00:16:33,120
+[SPEAKER_00] And guess what?
+
+211
+00:16:33,360 --> 00:16:38,560
+[SPEAKER_00] Like the ones that are like 60, 80 bucks a year, those are the ones I was like, ah, are they really like pulling their weight?
+
+212
+00:16:38,960 --> 00:16:42,640
+[SPEAKER_00] And the ones that were like 10, 20 bucks a year, it's like, nah, it's like pocket change.
+
+213
+00:16:43,680 --> 00:16:44,720
+[SPEAKER_00] It's really not that big a deal.
+
+214
+00:16:44,720 --> 00:16:46,320
+[SPEAKER_00] It's like a dollar a month or whatever.
+
+215
+00:16:46,720 --> 00:16:47,920
+[SPEAKER_00] But then the other thing I think.
+
+216
+00:16:48,880 --> 00:17:00,080
+[SPEAKER_00] And we actually talked on the podcast with or iTalks, you weren't on that episode, but with the cofounder or the founder and head of marketing, I believe, of Pok Pok, a kids app.
+
+217
+00:17:00,480 --> 00:17:09,280
+[SPEAKER_00] And they were talking about how they did some pricing experimentation where they doubled the price of their monthly subscription and saw more than double the revenue by doubling their price.
+
+218
+00:17:09,520 --> 00:17:12,080
+[SPEAKER_00] They actually had a higher conversion at a higher price.
+
+219
+00:17:12,240 --> 00:17:14,720
+[SPEAKER_01] Yeah, I mean, this is Econom one hundred one, right?
+
+220
+00:17:14,960 --> 00:17:16,160
+[SPEAKER_01] There was demand curve, right?
+
+221
+00:17:16,640 --> 00:17:24,880
+[SPEAKER_00] But what they started to see pretty quickly, and especially because it was a monthly subscription, so they got the data back more quickly is that code wasn't as good as it used to be.
+
+222
+00:17:24,880 --> 00:17:27,760
+[SPEAKER_00] But that cohort that paid the higher price turned at a much higher rate.
+
+223
+00:17:28,800 --> 00:17:34,800
+[SPEAKER_00] It's kind of what you're saying is that it just kind of makes sense is that price is going to be a factor in retention.
+
+224
+00:17:36,800 --> 00:17:46,960
+[SPEAKER_00] All trails may have, we don't know their data specifically, but they probably have industry leading retention at that lower price just because of who they are and a great product and everything.
+
+225
+00:17:47,440 --> 00:17:55,760
+[SPEAKER_00] But on the front end of that business, they also have really low customer acquisition costs because so much of their traffic comes from SEO.
+
+226
+00:17:56,000 --> 00:17:57,040
+[SPEAKER_00] They're just amazing at you.
+
+227
+00:17:57,040 --> 00:18:00,000
+[SPEAKER_00] You search any trail in the world and they're like the first result.
+
+228
+00:18:00,560 --> 00:18:08,400
+[SPEAKER_00] And so there's a unique business where you have, like, really low, I would, I would imagine very low kind of blended customer acquisition cost.
+
+229
+00:18:09,120 --> 00:18:12,160
+[SPEAKER_00] So the price isn't like, industry leading.
+
+230
+00:18:12,240 --> 00:18:14,080
+[SPEAKER_00] And, you know, we don't have any ECB data.
+
+231
+00:18:14,240 --> 00:18:19,280
+[SPEAKER_00] They're like trial start rates or conversion rates or like freemium users compared to paid users or whatever.
+
+232
+00:18:20,080 --> 00:18:23,920
+[SPEAKER_00] But then we also probably guess that they have industry leading retention.
+
+233
+00:18:24,720 --> 00:18:28,560
+[SPEAKER_00] Somebody on the AllTrails data teams is going, like, Woo, woo, you're right now.
+
+234
+00:18:30,000 --> 00:18:30,080
+[SPEAKER_01] Yeah.
+
+235
+00:18:30,720 --> 00:18:31,360
+[SPEAKER_01] Hypothetically.
+
+236
+00:18:32,960 --> 00:18:34,000
+[SPEAKER_01] A leading trails app.
+
+237
+00:18:34,240 --> 00:18:34,880
+[SPEAKER_01] Let's say.
+
+238
+00:18:35,360 --> 00:18:36,560
+[SPEAKER_01] Say that's how it works.
+
+239
+00:18:37,040 --> 00:18:37,680
+[SPEAKER_00] for all trails.
+
+240
+00:18:38,000 --> 00:18:52,800
+[SPEAKER_00] But that's how I think a lot of businesses need to kind of understand what's going on, is that if you have industry leading retention, maybe being lower quartile and trail start rates and having a very high kind of good freemium base to your app is a great strategy.
+
+241
+00:18:53,120 --> 00:19:02,320
+[SPEAKER_01] That's the thing, there's no universal model for all these apps because like that Doll chose example is a great, great example because their user acquisition strategy is probably unique versus a lot of apps right now.
+
+242
+00:19:02,400 --> 00:19:10,880
+[SPEAKER_01] Now, if you're an app that's mostly driving user acquisition through direct paid advertising, you're going to have a very different need and you're going to need these numbers to be in different places, right?
+
+243
+00:19:11,040 --> 00:19:12,320
+[SPEAKER_01] And so that's exactly.
+
+244
+00:19:12,800 --> 00:19:19,840
+[SPEAKER_01] It's like understanding the things that can't be seen within the App Store and within these metrics and apply that to your business and know and have a model.
+
+245
+00:19:20,080 --> 00:19:21,200
+[SPEAKER_01] Like everyone should have a spread.
+
+246
+00:19:21,440 --> 00:19:36,880
+[SPEAKER_01] If you haven't built this yet as a founder or whoever, like make sure you have a basic model that's like this many users installed, this many blank, blah, blah, like we can build some of that and we do in RevenueCat have some aspects of that, but like there's things that we can't fully account for that are outside of our view.
+
+247
+00:19:37,440 --> 00:19:47,200
+[SPEAKER_01] And you should have that kind of in a and built out somewhere else in a spreadsheet or something like this so that you can have, you know, again, it doesn't have to be right, but it can still be useful, right?
+
+248
+00:19:47,360 --> 00:19:47,600
+[SPEAKER_01] Right.
+
+249
+00:19:47,840 --> 00:19:48,640
+[SPEAKER_00] So, um, and.
+
+250
+00:19:48,880 --> 00:20:34,080
+[SPEAKER_00] And you brought up the kind of flip side that I wanted to touch on is that, you know, one of the trends we see, and this is going to be reflected in our data, is that we kind of, our customers go from all trails type apps that have leverage in customer acquisition costs, but then on the kind of flip side of that, we have a lot of customers and there's a, you know, a lot of subscription apps in the industry where if you're spending, you know, five bucks to get a download and, you know, fifty bucks to acquire a subscriber, you need those trial start rates and those trial conversion rates, you need to be, you know, at least median, if not top quartile, to make those things work because you need to get that return on ad spend.
+
+251
+00:20:34,480 --> 00:20:51,840
+[SPEAKER_00] And you probably, I mean, this is why we've seen a huge trend towards annual subscriptions is that from a cash flow perspective, you need to get that return on ad spend in a, you know, hopefully 30 day window, if not a 60 or 90 day window, just to turn over the cash quickly enough to, to fuel that machine.
+
+252
+00:20:52,480 --> 00:21:00,320
+[SPEAKER_00] And so if you, if your business is heavily spending on ads and you look at our, you know, median and you're like, oh, we're doing great.
+
+253
+00:21:00,720 --> 00:21:09,360
+[SPEAKER_00] Well, you know, maybe you're not, you know, because that's that's where the rubber meets the road because of that specific business model.
+
+254
+00:21:09,680 --> 00:21:17,280
+[SPEAKER_00] So anyway, you know, I think you've made the point well and we've gone on and on, but the point being like there's just so many different ways to make things work with a subscription app.
+
+255
+00:21:17,520 --> 00:21:26,640
+[SPEAKER_00] So as we talk through the details, as you read this report, and you you might want to pull up the report now, pause the podcast, because we are going to we're going to start diving into some of the insights.
+
+256
+00:21:27,680 --> 00:21:29,280
+[SPEAKER_00] Audio podcast heavy on visual aids.
+
+257
+00:21:29,440 --> 00:21:29,520
+[SPEAKER_00] Yeah.
+
+258
+00:21:30,080 --> 00:21:34,240
+[SPEAKER_00] Great media we're producing here at RevenueCat Broadcasting LLC.
+
+259
+00:21:35,360 --> 00:21:41,360
+[SPEAKER_00] But go to revenuecat dot com slash report and we'll redirect that URL to the current report.
+
+260
+00:21:41,520 --> 00:21:45,760
+[SPEAKER_00] So if you're listening in 2024 to this old podcast, you might get the new report.
+
+261
+00:21:47,200 --> 00:21:49,040
+[SPEAKER_00] Promise to update URLs in the future.
+
+262
+00:21:49,440 --> 00:21:50,080
+[SPEAKER_00] Good luck with that.
+
+263
+00:21:51,680 --> 00:22:18,080
+[SPEAKER_00] But the last thing I wanted to talk about before we kind of get even deeper is just that one of the things I've also seen talking to a lot of developers is the premature optimization is that if you're early in your business building a subscription app and you see some of these numbers and you're like, oh my my gosh, like we have to get our, you know, trial start rate up above the medium.
+
+264
+00:22:18,240 --> 00:22:19,680
+[SPEAKER_00] Like we need to be top quartile.
+
+265
+00:22:20,160 --> 00:22:31,840
+[SPEAKER_00] Well, if you're like, you know, three months in and you don't even have product market fit yet and you're still adding features to your product, you're just in such a different stage than some of these more mature apps.
+
+266
+00:22:31,920 --> 00:22:36,080
+[SPEAKER_01] And then you should be more focused probably on usage metrics and things like that.
+
+267
+00:22:36,880 --> 00:22:48,720
+[SPEAKER_00] And also user acquisition, like until you land a user acquisition channel that's going to bring you consistent, uh, cohorts of people who have specific needs, you know, if you're blasting out, you know, early on.
+
+268
+00:22:49,120 --> 00:22:50,640
+[SPEAKER_00] you're just getting some word of mouth.
+
+269
+00:22:51,280 --> 00:22:56,480
+[SPEAKER_00] Your numbers could be like crazy high and kind of deceive you because long term, those are going to drift low.
+
+270
+00:22:57,200 --> 00:22:58,080
+[SPEAKER_01] Friends and family beta.
+
+271
+00:22:58,160 --> 00:23:00,000
+[SPEAKER_00] That's obviously beta's not trying.
+
+272
+00:23:00,240 --> 00:23:07,760
+[SPEAKER_00] You know, you get a ton of press and you bring in a bunch of lucky losers whose numbers might be artificially low.
+
+273
+00:23:08,800 --> 00:23:11,120
+[SPEAKER_00] Yeah, thanks for correcting my colloquialism.
+
+274
+00:23:12,080 --> 00:23:16,560
+[SPEAKER_01] I think that's pretty I think that's pretty maybe outside the United States not so much.
+
+275
+00:23:16,960 --> 00:23:17,040
+[SPEAKER_00] Yeah.
+
+276
+00:23:17,520 --> 00:23:23,600
+[SPEAKER_00] So anyways, depending on what stage you're at, you also might take a different perspective on some of these metrics.
+
+277
+00:23:24,240 --> 00:23:36,800
+[SPEAKER_00] Like when you're early, you probably don't want to over optimize and like really get too in the weeds on any individual metric before you really understand that broader scope of like where are we acquiring users?
+
+278
+00:23:37,040 --> 00:23:38,320
+[SPEAKER_00] How high intent are they?
+
+279
+00:23:39,280 --> 00:23:51,840
+[SPEAKER_00] And then how do we make the ad economics work or whatever kind of acquisition strategy we're using to get that whole funnel dialed in without overly focusing on any one specific thing, especially being really early.
+
+280
+00:23:52,960 --> 00:23:53,840
+[SPEAKER_00] Can we do data now?
+
+281
+00:23:55,360 --> 00:23:57,040
+[SPEAKER_00] A couple more slides later.
+
+282
+00:23:58,720 --> 00:24:01,040
+[SPEAKER_00] So in this, and we've already talked about it it a lot.
+
+283
+00:24:01,120 --> 00:24:02,880
+[SPEAKER_00] Upper quartile, medium, lower quartile.
+
+284
+00:24:03,120 --> 00:24:07,520
+[SPEAKER_01] This is, this is, I'll take this as a personal, this is a personal hill I've, I've died on.
+
+285
+00:24:07,920 --> 00:24:08,800
+[SPEAKER_00] You're the numbers guy.
+
+286
+00:24:08,960 --> 00:24:13,600
+[SPEAKER_00] Tell me why we're using this and why it's important and then how it works.
+
+287
+00:24:14,080 --> 00:24:22,080
+[SPEAKER_01] So people, there's this, there's this concept of summary statistics, right, which is, uh, you take a group of numbers and then you summarize it with some fewer number of numbers, right?
+
+288
+00:24:22,560 --> 00:24:29,840
+[SPEAKER_01] Um, the most common one I think people are used to is an average or mean where you just like average everything, you weigh everything and divide it by, you know, to come up with an average.
+
+289
+00:24:30,400 --> 00:24:43,440
+[SPEAKER_01] Um, and one thing that they don't teach you in sixth grade is like that not all datasets are well characterized by those things or because a dataset is really a distribution like along an axis.
+
+290
+00:24:43,680 --> 00:24:48,960
+[SPEAKER_01] So you might have a bunch of low numbers and a bunch of high numbers or you might have a very smooth distribution of numbers.
+
+291
+00:24:49,120 --> 00:25:00,880
+[SPEAKER_01] You might have like all the numbers are at the high end and things like averages, means, median modes, like none of those alone necessarily describe a dataset well.
+
+292
+00:25:02,080 --> 00:25:05,840
+[SPEAKER_01] There are more complicated things that you can do, like there's skew and like all these things.
+
+293
+00:25:06,320 --> 00:25:09,040
+[SPEAKER_01] If it were up to me, I would just share distributions, histograms of everything.
+
+294
+00:25:09,280 --> 00:25:10,160
+[SPEAKER_01] That's the science.
+
+295
+00:25:10,320 --> 00:25:12,960
+[SPEAKER_01] I mean, in my science days, that's what mostly you would would do.
+
+296
+00:25:13,040 --> 00:25:14,480
+[SPEAKER_01] You share histograms of measured data.
+
+297
+00:25:14,640 --> 00:25:19,040
+[SPEAKER_01] That's kind of the best way to communicate a dataset to people, a distribution of dataset.
+
+298
+00:25:19,120 --> 00:25:24,000
+[SPEAKER_00] But like, I don't think that's why I wanted to share the scatter plot because it's so interesting to see where the actual dots are.
+
+299
+00:25:24,400 --> 00:25:24,880
+[SPEAKER_00] Yeah, actually.
+
+300
+00:25:24,960 --> 00:25:28,960
+[SPEAKER_01] Or looking at the RAWs, if you can, which most of our data points or sets are too big for that.
+
+301
+00:25:29,280 --> 00:25:29,440
+[SPEAKER_01] Right.
+
+302
+00:25:29,680 --> 00:25:39,360
+[SPEAKER_01] So, um, so where we ended up with is this concept of basically it's a it's a histogram but talking about lower quartile, middle quartile and upper quartile.
+
+303
+00:25:39,440 --> 00:25:39,600
+[SPEAKER_01] Right.
+
+304
+00:25:40,000 --> 00:25:40,080
+[SPEAKER_01] Yeah.
+
+305
+00:25:40,240 --> 00:25:41,280
+[SPEAKER_00] So like median.
+
+306
+00:25:41,760 --> 00:25:41,840
+[SPEAKER_01] Yeah.
+
+307
+00:25:42,080 --> 00:25:42,480
+[SPEAKER_01] So, yeah.
+
+308
+00:25:42,560 --> 00:25:43,280
+[SPEAKER_01] And with the median in that.
+
+309
+00:25:43,440 --> 00:25:45,280
+[SPEAKER_01] So I guess it's not, it's two middle quartiles.
+
+310
+00:25:45,360 --> 00:25:45,520
+[SPEAKER_01] Right.
+
+311
+00:25:45,600 --> 00:25:52,800
+[SPEAKER_01] So there's like the bottom, we've split a lot of stuff up into what the bottom 255 percent look like, what the middle 50 percent look like, right?
+
+312
+00:25:53,120 --> 00:25:56,800
+[SPEAKER_01] Where the mediane is within there, and then what the top 25 percent look like.
+
+313
+00:25:57,200 --> 00:26:11,280
+[SPEAKER_01] And I think that's important because when people would ask me over the years, what's, what's the average, what's a typical renewal rate, I'd be like, I can't tell you, I can tell you a number, but it's not going to tell you very much because there's apps way far out.
+
+314
+00:26:11,520 --> 00:26:15,120
+[SPEAKER_01] The distribution is very broad, which is a hard thing to say to somebody on support ticket.
+
+315
+00:26:15,440 --> 00:26:33,120
+[SPEAKER_01] So like, uh, so, so we've come down to this method of talking about quartiles, and I think it's a little bit more complicated, but I do think it helps capture a better idea of like where different apps lie and we can talk about it gives us a little bit easier way to get a handle on where where how the data is shaped but then also where you lie in the data.
+
+316
+00:26:33,280 --> 00:26:33,360
+[SPEAKER_01] Yeah.
+
+317
+00:26:33,760 --> 00:26:37,120
+[SPEAKER_00] So, and see, I didn't learn all this stuff in sixth grade.
+
+318
+00:26:37,280 --> 00:26:41,520
+[SPEAKER_00] I'm not a statistician myself and I've learned a lot from you over the years.
+
+319
+00:26:42,240 --> 00:26:49,520
+[SPEAKER_00] So, so let me let me kind of layman's uh uh uh explain it uh for our listeners who are more like me and then you can correct anything.
+
+320
+00:26:49,920 --> 00:27:00,000
+[SPEAKER_00] So um, so lower quartile means that twenty five percent of all apps fall from or below that lower quartile number.
+
+321
+00:27:00,640 --> 00:27:02,800
+[SPEAKER_00] So if we say like here, I'll skip ahead.
+
+322
+00:27:03,040 --> 00:27:17,360
+[SPEAKER_00] If we say the lower quartile for annual conversion rate to paid, the lower quartile is 21 percent on a 14-day trial.
+
+323
+00:27:18,080 --> 00:27:24,640
+[SPEAKER_00] So that means that 25 percent of apps are either 21 percent conversion rate or below.
+
+324
+00:27:24,880 --> 00:27:25,680
+[SPEAKER_00] Or below, yeah.
+
+325
+00:27:26,160 --> 00:27:32,000
+[SPEAKER_00] And then median being 44 percent means that that's the midpoint in our data.
+
+326
+00:27:32,480 --> 00:27:34,880
+[SPEAKER_01] So half of the apps are below that, half of the apps are above that.
+
+327
+00:27:35,360 --> 00:27:35,520
+[SPEAKER_00] Right.
+
+328
+00:27:35,680 --> 00:27:38,160
+[SPEAKER_00] So you just take the series of numbers.
+
+329
+00:27:38,400 --> 00:27:44,080
+[SPEAKER_00] So some apps are getting ten percent conversion rate, some apps are getting eighty percent conversion rate.
+
+330
+00:27:44,720 --> 00:27:48,240
+[SPEAKER_00] And each individual app is a data point along this spectrum.
+
+331
+00:27:48,880 --> 00:27:52,160
+[SPEAKER_00] And the median is just that midpoint of the data.
+
+332
+00:27:52,640 --> 00:28:08,960
+[SPEAKER_01] And you can see from that why it's important to have those two quartile numbers, because if you just reported a median of 44 percent, if the bottom quartile was 42 percent and the top quartile was 46 percent, that would be a very different situation than if the median is 44, the bottom quartile is 22 and the top quartile is something, right?
+
+333
+00:28:09,040 --> 00:28:19,440
+[SPEAKER_01] So you really need like for both of those data datasets, I would tell you the mean is 44 and that's not going to give you a full picture of like what's good and what's bad.
+
+334
+00:28:19,600 --> 00:28:21,440
+[SPEAKER_01] So that's why we've gone a little more complicated.
+
+335
+00:28:22,080 --> 00:28:23,280
+[SPEAKER_01] And yeah, no numbers are hard.
+
+336
+00:28:23,520 --> 00:28:26,080
+[SPEAKER_01] Stats, I think, is like the hardest thing to really wrap your head around.
+
+337
+00:28:26,640 --> 00:28:35,440
+[SPEAKER_00] And so then in this particular example, 61 percent is the upper quartile of trial start rate to paid subscriber conversion.
+
+338
+00:28:35,840 --> 00:28:40,720
+[SPEAKER_00] So that means 25 percent of apps are above 61 percent.
+
+339
+00:28:42,320 --> 00:28:44,320
+[SPEAKER_00] And those are kind of like the top performing apps.
+
+340
+00:28:44,480 --> 00:28:48,960
+[SPEAKER_00] And so that means that we probably have some apps and I didn't look at the raw data for this, but we probably have some apps.
+
+341
+00:28:49,760 --> 00:28:52,080
+[SPEAKER_00] that are 80%, 90% travel.
+
+342
+00:28:52,320 --> 00:28:53,280
+[SPEAKER_01] Yeah, most likely.
+
+343
+00:28:53,440 --> 00:28:53,520
+[SPEAKER_01] Yeah.
+
+344
+00:28:53,760 --> 00:28:54,560
+[SPEAKER_01] There's some natural limit.
+
+345
+00:28:54,640 --> 00:28:56,640
+[SPEAKER_01] Like, no apps are going to have 100.
+
+346
+00:28:56,800 --> 00:28:56,960
+[SPEAKER_00] Right.
+
+347
+00:28:57,040 --> 00:29:09,600
+[SPEAKER_01] Um, but I'll tell you, some get way closer than I would expect, but they like, end up easily, the further you get out on the wings, they end up being like interesting use cases and like often niches and stuff like that, which is why looking at the stuff in aggregate is important too.
+
+348
+00:29:09,760 --> 00:29:13,200
+[SPEAKER_01] Because like every app, there are always weird data outliers.
+
+349
+00:29:13,440 --> 00:29:21,360
+[SPEAKER_01] Um, and that's the other nice thing with quartiles and medianes, um, as summary statistics is that they, they don't weigh outliers as heavily.
+
+350
+00:29:21,680 --> 00:29:24,880
+[SPEAKER_01] So like, you know, anyone above it, like an outlier.
+
+351
+00:29:25,360 --> 00:29:29,360
+[SPEAKER_01] can really screw up a mean, but like it has less effect on a quartile, which is good.
+
+352
+00:29:29,680 --> 00:29:30,960
+[SPEAKER_01] So anyway, we could just talk about it.
+
+353
+00:29:31,680 --> 00:29:34,160
+[SPEAKER_00] And the great thing is it's not going to screw up the median either.
+
+354
+00:29:34,480 --> 00:29:49,280
+[SPEAKER_00] So if we had one app that had like ten million subscribers and they had a 90% trial conversion rate, if we did a mean that would skew it all north because we're just averaging all of this.
+
+355
+00:29:49,920 --> 00:29:51,360
+[SPEAKER_01] It's, you know, they're all just tools.
+
+356
+00:29:51,520 --> 00:29:53,120
+[SPEAKER_00] Some of them work better for some things than others.
+
+357
+00:29:54,240 --> 00:29:54,640
+[SPEAKER_00] This is great.
+
+358
+00:29:54,880 --> 00:29:58,960
+[SPEAKER_00] And I think this nuance will help people better understand the report and better put it to use.
+
+359
+00:29:59,200 --> 00:29:59,280
+[SPEAKER_00] Yeah.
+
+360
+00:29:59,520 --> 00:30:11,360
+[SPEAKER_00] So then, so then again, back to the that specific example, what we're saying is that fifty percent of apps fall in that range between the lower quartile and the upper quartile.
+
+361
+00:30:11,440 --> 00:30:22,800
+[SPEAKER_00] So in the definition, twenty one percent is the lower quartile, sixty one percent is the upper quartile, and then fifty percent of apps sit in that distribution in the middle.
+
+362
+00:30:23,120 --> 00:30:31,040
+[SPEAKER_00] And then of course the 44 percent median actually isn't perfectly in the middle because of the way that math works on that.
+
+363
+00:30:33,280 --> 00:30:36,560
+[SPEAKER_00] So the other interesting thing here is.
+
+364
+00:30:36,560 --> 00:31:00,720
+[SPEAKER_00] Here is that, you know, again, when you're putting yourself in this, you know, spectrum of medium upper and lower quartiles, we see that wide distribution you were talking about, which is really interesting is that in that fifty percent middle, you have up to a sixty one percent or a sixty percent just below that upper quartile number, all the way down to twenty two percent.
+
+365
+00:31:01,200 --> 00:31:02,480
+[SPEAKER_00] That's a huge range.
+
+366
+00:31:03,120 --> 00:31:04,160
+[SPEAKER_01] Yeah, on a relative basis.
+
+367
+00:31:04,320 --> 00:31:08,880
+[SPEAKER_01] I mean, it depends on what number you're talking about, but that can be substantially different businesses, right?
+
+368
+00:31:09,360 --> 00:31:13,680
+[SPEAKER_01] Again, depending on all your realities and the other aspects of your business model.
+
+369
+00:31:14,160 --> 00:31:14,240
+[SPEAKER_01] Right.
+
+370
+00:31:15,040 --> 00:31:25,360
+[SPEAKER_01] So yeah, it's it's we're trying to give as much as we can and try to, you know, represent it in a way that's both consumable but also like honest and clear.
+
+371
+00:31:26,800 --> 00:31:40,640
+[SPEAKER_01] But, but I think it's, I think it's, well, I'll say honestly, like if you're a person who's still listening to this podcast thirty minutes in, this is something that you will benefit from understanding better, I think, in life and in general in business running.
+
+372
+00:31:40,800 --> 00:31:45,680
+[SPEAKER_01] Because it's one thing, I said, you know, I came from a science background before I got into technology and then eventually business.
+
+373
+00:31:46,480 --> 00:31:48,640
+[SPEAKER_01] And I'll have to say like the there's some.
+
+374
+00:31:48,640 --> 00:31:54,000
+[SPEAKER_01] There are some real, real statistics crimes that happen in the way that people run businesses.
+
+375
+00:31:54,400 --> 00:31:58,000
+[SPEAKER_01] Like, yeah, you just look at the ratio and that's your percent.
+
+376
+00:31:58,240 --> 00:32:04,480
+[SPEAKER_01] I'm like, do we care about like error bars or counting errors or like anything like statistical fluctuations or anything like that?
+
+377
+00:32:04,640 --> 00:32:05,360
+[SPEAKER_00] And it's like, what?
+
+378
+00:32:05,600 --> 00:32:06,400
+[SPEAKER_01] And like, okay.
+
+379
+00:32:07,120 --> 00:32:09,200
+[SPEAKER_01] And so I end up sounding like a crazy person sometimes.
+
+380
+00:32:09,360 --> 00:32:11,760
+[SPEAKER_01] Like, I'm like, hey, like, I can't really trust this data.
+
+381
+00:32:11,920 --> 00:32:21,040
+[SPEAKER_01] And I think that's one of the reasons this report takes so long is because I've been kind of pumping the brakes because I have a I don't I have a high commitment to the truth.
+
+382
+00:32:21,680 --> 00:32:23,040
+[SPEAKER_00] That's one of the things you need to know about me.
+
+383
+00:32:23,840 --> 00:32:24,800
+[SPEAKER_00] I know that's in trouble.
+
+384
+00:32:24,800 --> 00:32:27,840
+[SPEAKER_00] What are the benefits and drawbacks to a CEO deep in statistics and science?
+
+385
+00:32:28,160 --> 00:32:29,840
+[SPEAKER_00] Well, I don't, I just don't like BS, right?
+
+386
+00:32:30,000 --> 00:32:34,880
+[SPEAKER_01] Like, I don't like companies, I don't like companies sharing stuff that's not going to be really that helpful.
+
+387
+00:32:35,040 --> 00:32:36,800
+[SPEAKER_01] I mean, there are features we haven't built because of this.
+
+388
+00:32:36,960 --> 00:32:46,880
+[SPEAKER_01] I mean, not to toot our horns or whatever, but I've definitely like, definitely like avoided even that's why our experiment product took so long because like, we wanted to make sure it was actually useful, right?
+
+389
+00:32:47,200 --> 00:32:51,440
+[SPEAKER_01] And actually, it gave good data and like wasn't guiding people in the wrong direction.
+
+390
+00:32:52,320 --> 00:32:52,560
+[SPEAKER_01] And so.
+
+391
+00:32:53,280 --> 00:32:58,000
+[SPEAKER_00] And this is how we approach because you are CEO, this is how we approach the entire product though.
+
+392
+00:32:58,160 --> 00:33:09,920
+[SPEAKER_01] And I appreciate that as a customer., yeah, we maybe even a little slower than maybe some of our, even our competitors, but I think it's for the best because, you know, ultimately, I think our charts are meaningful and we like, think about this stuff.
+
+393
+00:33:10,080 --> 00:33:10,480
+[SPEAKER_01] Yeah, we try.
+
+394
+00:33:10,640 --> 00:33:12,880
+[SPEAKER_01] I mean, there's always we can always improve our trust in our data.
+
+395
+00:33:13,120 --> 00:33:17,200
+[SPEAKER_01] It's a big initiative for us right now, but like, um, you know, it's a bit, it's important.
+
+396
+00:33:17,440 --> 00:33:19,600
+[SPEAKER_00] So can we, can we talk numbers now, David?
+
+397
+00:33:19,840 --> 00:33:19,920
+[SPEAKER_00] Yeah.
+
+398
+00:33:20,480 --> 00:33:20,560
+[SPEAKER_00] God.
+
+399
+00:33:22,400 --> 00:33:25,120
+[SPEAKER_01] You told me you were going to talk numbers on a podcast and I got really excited.
+
+400
+00:33:25,280 --> 00:33:25,680
+[SPEAKER_01] Here we are.
+
+401
+00:33:25,920 --> 00:33:26,400
+[SPEAKER_01] Thirty nine.
+
+402
+00:33:26,640 --> 00:33:27,440
+[SPEAKER_00] I want to get into it.
+
+403
+00:33:27,840 --> 00:33:27,920
+[SPEAKER_00] Okay.
+
+404
+00:33:28,400 --> 00:33:28,640
+[SPEAKER_00] All right.
+
+405
+00:33:28,800 --> 00:33:29,920
+[SPEAKER_00] We'll go into the key results.
+
+406
+00:33:30,080 --> 00:33:33,840
+[SPEAKER_00] And that last kind of topic was a good transition into this is the top.
+
+407
+00:33:34,720 --> 00:33:39,600
+[SPEAKER_00] So, so in this report, if you're following alongong at home, there's kind of five key takeaways from the report.
+
+408
+00:33:39,760 --> 00:33:42,480
+[SPEAKER_00] And so we'll go through each of those and then we'll dive deep into some of the numbers.
+
+409
+00:33:42,880 --> 00:33:50,800
+[SPEAKER_00] So, first key takeaway, top quartile apps perform three to fourteen times better than bottom quartile apps.
+
+410
+00:33:50,880 --> 00:34:02,160
+[SPEAKER_00] So we were already just kind of discussing this, but again, I think it's just such an important thing to recognize is just such a high degree of variance in almost all of the numbers we share today.
+
+411
+00:34:02,480 --> 00:34:02,560
+[SPEAKER_01] Yeah.
+
+412
+00:34:02,720 --> 00:34:07,120
+[SPEAKER_01] I mean, this is, this is, uh, it's very typical of what's called a power law distribution, right?
+
+413
+00:34:07,360 --> 00:34:12,800
+[SPEAKER_01] Where you end up with a long tail of, a long, you know, of, you know, people that don't know.
+
+414
+00:34:12,800 --> 00:34:16,240
+[SPEAKER_01] You know, people that don't break out and then you, you have outsized winners.
+
+415
+00:34:16,960 --> 00:34:32,080
+[SPEAKER_01] And we see that still, well, in, in even in across these metrics where you'll have a lot of apps that don't have particularly good, and then you'll have some that are insanely good in the ranges like 14 times, like we're talking 14 times better on a metric, right?
+
+416
+00:34:32,240 --> 00:34:34,000
+[SPEAKER_01] This is like not a 14 and bigger business.
+
+417
+00:34:34,160 --> 00:34:37,920
+[SPEAKER_01] This is like 14 times better ratioed performance in a lot of cases, right?
+
+418
+00:34:38,160 --> 00:34:40,480
+[SPEAKER_01] Which is not something that you can compound over time.
+
+419
+00:34:41,280 --> 00:34:47,920
+[SPEAKER_01] Uh, and so, yeah, again, goes to highlight that there's no typical number here on any of these numbers.
+
+420
+00:34:48,480 --> 00:35:20,240
+[SPEAKER_00] One of my little pet projects that didn't make it into this report, but I'm hoping will be a blog post in the not too distant future is another thing to keep in mind on this 14 times better performance is that this also shows how different the different strategies are where one company might be 14x on trial start rates, but then if we actually followed the entire funnel, they might be 14x better on trial start rates, but actually in the bottom quartile on the next thing down the chain.
+
+421
+00:35:20,400 --> 00:35:21,360
+[SPEAKER_01] Right, exactly.
+
+422
+00:35:21,680 --> 00:35:24,400
+[SPEAKER_01] That's the thing, is like when we say 14x, it's not a 14x better app.
+
+423
+00:35:24,800 --> 00:35:39,200
+[SPEAKER_01] that's in metric ranges, right, which potentially more than more highlights rather than like actual differentiation of total app performance, it's more of a different, it's more to highlight that there's a lot of it's a it's a vast zoo of animals out there, right?
+
+424
+00:35:39,600 --> 00:35:45,200
+[SPEAKER_00] Every like every one of every little creature has its niche and differences, right?
+
+425
+00:35:45,440 --> 00:35:46,240
+[SPEAKER_00] And they can be quite different.
+
+426
+00:35:47,280 --> 00:35:58,800
+[SPEAKER_00] And we kind of talked about it before, but just to highlight again, you know, it's pretty unlikely that you're going to be above the top quartile in every single metric.
+
+427
+00:35:59,040 --> 00:36:01,680
+[SPEAKER_00] I mean, those those are the totally stand-up businesses.
+
+428
+00:36:01,920 --> 00:36:03,360
+[SPEAKER_01] Because a lot of them are interrelated, right?
+
+429
+00:36:03,520 --> 00:36:07,440
+[SPEAKER_01] Like a lot of if one goes up by definition, kind of the other is going to go down.
+
+430
+00:36:07,680 --> 00:36:07,840
+[SPEAKER_00] Right.
+
+431
+00:36:08,800 --> 00:36:13,280
+[SPEAKER_00] And again, you know, companies like AllTrails maybe, you know, have a ton of people coming in.
+
+432
+00:36:13,360 --> 00:36:15,680
+[SPEAKER_00] It's the other lower quartile in trial start rate.
+
+433
+00:36:15,760 --> 00:36:22,800
+[SPEAKER_00] Again, and yet they were like, we don't we're not we're not we're not waiting any of these businesses by I mean, we have some selections in the cuts.
+
+434
+00:36:23,120 --> 00:36:28,960
+[SPEAKER_01] Like we threw out like people that had like really small datasets and things like this, we didn't include in the report just because like there was too much noise.
+
+435
+00:36:29,440 --> 00:36:36,560
+[SPEAKER_01] Um, so we'd had some floor, but we didn't say like, you know, they all have to be massive or like, and we don't we don't like we're not waiting things.
+
+436
+00:36:36,800 --> 00:36:40,400
+[SPEAKER_01] things massively differently and stuff like that based on how big the business is.
+
+437
+00:36:40,560 --> 00:36:44,000
+[SPEAKER_00] So, yeah, that's a great way of how you distribute the data.
+
+438
+00:36:44,240 --> 00:36:48,560
+[SPEAKER_00] So, yeah, when we see these averages, it's the average for the app.
+
+439
+00:36:49,680 --> 00:36:49,760
+[SPEAKER_01] Yeah.
+
+440
+00:36:50,560 --> 00:36:59,520
+[SPEAKER_01] So if your app is like ten times bigger than another app, but you're, you know, your, your 15% conversion rate only gets counted the same as someone who's much, much smaller.
+
+441
+00:36:59,680 --> 00:36:59,840
+[SPEAKER_01] Right.
+
+442
+00:37:00,000 --> 00:37:00,640
+[SPEAKER_00] And that's by design.
+
+443
+00:37:00,960 --> 00:37:05,360
+[SPEAKER_01] It helps with the optimization, but then also it doesn't, because like, it doesn't matter.
+
+444
+00:37:06,960 --> 00:37:07,360
+[SPEAKER_00] Yeah, exactly.
+
+445
+00:37:07,440 --> 00:37:10,720
+[SPEAKER_01] And it doesn't matter that your app is ten times bigger, like your conversion rate is your conversion rate.
+
+446
+00:37:10,800 --> 00:37:12,960
+[SPEAKER_01] And that applies if you're a small app or a big app, obviously.
+
+447
+00:37:13,360 --> 00:37:13,440
+[SPEAKER_00] So.
+
+448
+00:37:14,240 --> 00:37:14,240
+[SPEAKER_00] Okay.
+
+449
+00:37:14,640 --> 00:37:25,280
+[SPEAKER_00] So the next key, key takeaway is that for apps with trials, 3.7% of app downloads start a trial and 38% of those trials convert to paid subscribers.
+
+450
+00:37:26,080 --> 00:37:28,320
+[SPEAKER_00] And this was fascinating to me.
+
+451
+00:37:29,280 --> 00:37:32,320
+[SPEAKER_00] And this is the biggest single drop off in the funnel.
+
+452
+00:37:32,720 --> 00:37:39,440
+[SPEAKER_00] Like you get a download and medium is 3.7% start a free trial.
+
+453
+00:37:40,400 --> 00:37:41,440
+[SPEAKER_00] That's low.
+
+454
+00:37:43,040 --> 00:38:03,920
+[SPEAKER_01] This is then, and well, I'll just jump into the next data point since it's basically the combination of these two, which is that that means that only two percent of downloads turn into some sort of paying customer, which honestly that's kind of been the standard since since I've been doing map monetization in, you know, back in 2009, right?
+
+455
+00:38:04,240 --> 00:38:10,960
+[SPEAKER_01] Like, um, you know, and as soon as in-app purchases started, like you would find about a one percent conversion rate, um, on that order.
+
+456
+00:38:11,280 --> 00:38:15,200
+[SPEAKER_01] So you might be a little bit higher, two, three, one, but it's in the single digits.
+
+457
+00:38:15,600 --> 00:38:16,560
+[SPEAKER_01] And that's not unusual.
+
+458
+00:38:16,800 --> 00:38:21,040
+[SPEAKER_01] Now single digits mean if you go from two to three, that's a fifty percent increase.
+
+459
+00:38:21,520 --> 00:38:21,680
+[SPEAKER_01] Right?
+
+460
+00:38:21,920 --> 00:38:25,840
+[SPEAKER_01] So like, it only, you know, it's still, it doesn't mat matter that it's that small.
+
+461
+00:38:26,000 --> 00:38:42,240
+[SPEAKER_01] But when you're thinking about how your app is designed, the user experience, stuff like that, you remember there are 99 people or 97 people that are coming in and you're not converting, which is like both demoralizing, but also like, wow, there's like, I got 97 more chances that I'm missing on right now that you can think about converting.
+
+462
+00:38:42,480 --> 00:38:51,600
+[SPEAKER_01] And I think this is why we talk, start to, you start to look at some of this data and think about leverage points, paywall placements, you know, stuff like, you know, Superwall is a great tool for this.
+
+463
+00:38:51,920 --> 00:38:58,720
+[SPEAKER_01] Um, uh, shout out Jake, but like, uh, thinking about where and when you're presenting your offering to people.
+
+464
+00:38:58,880 --> 00:39:07,120
+[SPEAKER_01] And I just met with a, uh, uh, a founder who was just debating like where and how aggressively to show the paywall.
+
+465
+00:39:07,920 --> 00:39:16,640
+[SPEAKER_01] And I thought back to something that my old boss, Jesse Picard, Elevate Labs taught me or said to me when I was giving a similar argument, like, oh, I don't want to be so aggressive like showing a paywall.
+
+466
+00:39:16,800 --> 00:39:20,640
+[SPEAKER_01] He's like, hey, 97% of these people are going to come in and never pay you anything.
+
+467
+00:39:20,880 --> 00:39:22,480
+[SPEAKER_01] And you probably have some free experience.
+
+468
+00:39:22,800 --> 00:39:24,720
+[SPEAKER_01] Like, they can look at a paywall.
+
+469
+00:39:25,760 --> 00:39:27,040
+[SPEAKER_00] It's not going to ruin their life.
+
+470
+00:39:27,440 --> 00:39:27,600
+[SPEAKER_00] Right.
+
+471
+00:39:28,000 --> 00:39:29,520
+[SPEAKER_01] You know, you obviously want to balance that.
+
+472
+00:39:29,600 --> 00:39:31,200
+[SPEAKER_01] But like, hey, you're trying to run a business here.
+
+473
+00:39:31,280 --> 00:39:32,560
+[SPEAKER_01] You're doing a lot of effort into this.
+
+474
+00:39:32,720 --> 00:39:35,520
+[SPEAKER_01] 97% of these people are not going to give you any money at all.
+
+475
+00:39:35,920 --> 00:39:41,600
+[SPEAKER_01] Like, I think it's okay to like, you know, not hammer them, but like, make sure they know, like, make sure you're putting that out there.
+
+476
+00:39:41,760 --> 00:39:45,200
+[SPEAKER_01] And like, this shows that like, there's leverage there, right?
+
+477
+00:39:45,440 --> 00:39:47,360
+[SPEAKER_01] Like, you can, you can improve those numbers.
+
+478
+00:39:47,760 --> 00:39:47,840
+[SPEAKER_00] Yeah.
+
+479
+00:39:48,480 --> 00:39:50,400
+[SPEAKER_00] That's something I've been thinking a lot about too.
+
+480
+00:39:51,120 --> 00:39:58,720
+[SPEAKER_00] And I've analogized it to a store without prices, like, you know, you're just telling, oh my God.
+
+481
+00:39:59,040 --> 00:40:01,440
+[SPEAKER_00] You think about a user experience that is, I'm sure you've been to one.
+
+482
+00:40:01,520 --> 00:40:03,920
+[SPEAKER_00] Like, you're going to like, I'm like, I've done that in my apps.
+
+483
+00:40:04,480 --> 00:40:14,240
+[SPEAKER_01] Like, well, you go to like a high design place or like a home goods store and you walk in and it's just like, there's no, no price tags, no, no affordances that it's like, this is a place I can do commerce.
+
+484
+00:40:14,640 --> 00:40:16,240
+[SPEAKER_01] It's super off-putting, right?
+
+485
+00:40:16,480 --> 00:40:17,600
+[SPEAKER_01] And convincing, right?
+
+486
+00:40:18,080 --> 00:40:19,360
+[SPEAKER_01] People understand commerce.
+
+487
+00:40:19,680 --> 00:40:21,120
+[SPEAKER_01] Like, show them the commerce, right?
+
+488
+00:40:21,360 --> 00:40:27,120
+[SPEAKER_01] Uh, and so they'll you'll have some amount of drop off from that or like, you know, people will bounce, but that's fine.
+
+489
+00:40:27,360 --> 00:40:29,200
+[SPEAKER_01] You're being direct and honest and open, right?
+
+490
+00:40:29,440 --> 00:40:32,560
+[SPEAKER_01] It's like price transparency is never a bad thing.
+
+491
+00:40:32,800 --> 00:40:32,880
+[SPEAKER_01] So.
+
+492
+00:40:33,200 --> 00:40:33,280
+[SPEAKER_01] Yeah.
+
+493
+00:40:33,760 --> 00:40:33,840
+[UNKNOWN] Yeah.
+
+494
+00:40:34,240 --> 00:40:41,040
+[SPEAKER_00] And that's a mistake I've made in my apps is that, like, not showing the paywall and onboarding, and then people get onboarded.
+
+495
+00:40:41,200 --> 00:40:43,760
+[SPEAKER_00] They're like, doing stuff and they're excited and they're using your app.
+
+496
+00:40:44,000 --> 00:40:46,000
+[SPEAKER_00] And all of a sudden, like, boom, you like, block them.
+
+497
+00:40:46,400 --> 00:40:47,200
+[SPEAKER_00] It's a terrible experience.
+
+498
+00:40:47,280 --> 00:40:47,360
+[SPEAKER_01] Yeah.
+
+499
+00:40:47,840 --> 00:40:47,920
+[SPEAKER_01] Yeah.
+
+500
+00:40:48,000 --> 00:40:48,800
+[SPEAKER_01] Because they didn't know it was.
+
+501
+00:40:48,800 --> 00:40:49,600
+[SPEAKER_01] Yeah, yeah, yeah, because they didn't know it was coming, right?
+
+502
+00:40:49,760 --> 00:40:52,080
+[SPEAKER_01] Like, people are great with bad news, but they hate surprises.
+
+503
+00:40:52,480 --> 00:40:54,880
+[SPEAKER_01] So, like, like, get ahead of it.
+
+504
+00:40:56,480 --> 00:41:05,360
+[SPEAKER_01] So, yeah, let's get into the let's get into retention side, because I think that's, that's, yeah, I think where our data maybe is even more interesting and unique.
+
+505
+00:41:05,920 --> 00:41:18,880
+[SPEAKER_00] Yeah, so the, so the next key result, and, uh, so much to talk about here, but next key result is that if you can get users to get past that first renewal period, they're more likely to stay around for the long haul.
+
+506
+00:41:19,040 --> 00:41:24,000
+[SPEAKER_00] So, this is something I learned from you, um, early in my RevenueCat days.
+
+507
+00:41:24,080 --> 00:41:32,160
+[SPEAKER_00] is you were working on this crazy LTV model for our kind of version of our beta veiled Opus Magnum, yeah.
+
+508
+00:41:32,880 --> 00:41:34,880
+[SPEAKER_00] of our pricing experimentation.
+
+509
+00:41:35,840 --> 00:41:39,200
+[SPEAKER_00] And so in that, you did a survival analysis.
+
+510
+00:41:40,320 --> 00:42:00,320
+[SPEAKER_00] And I think a lot of people, it's just one of those kind of unintuitive things until you've really understood statistics, is that if you took all of your current subscribers, or if you take all of your subscribers ever to this point, and you say, okay, you know, a million subscribers.
+
+511
+00:42:01,040 --> 00:42:05,520
+[SPEAKER_00] And on average, they've stayed subscribed for 1.4 years.
+
+512
+00:42:05,840 --> 00:42:08,880
+[SPEAKER_00] So my LTV is 1.4 times my price.
+
+513
+00:42:10,240 --> 00:42:17,920
+[SPEAKER_00] But no, because depending on how old your business is, the longer people stay around, the less likely they are.
+
+514
+00:42:18,320 --> 00:42:18,640
+[SPEAKER_00] You don't know.
+
+515
+00:42:19,760 --> 00:42:32,720
+[SPEAKER_01] You're basically when you do that analysis, you're basically assuming that the folks that have been there for the high end of the larger side of those three years are going to turn immediately, which isn't the case.
+
+516
+00:42:33,520 --> 00:42:36,160
+[SPEAKER_01] They're actually their lifetime is probably much longer than that.
+
+517
+00:42:36,480 --> 00:42:42,080
+[SPEAKER_01] And so it's always going to underestimate your actual lifetime value.
+
+518
+00:42:42,160 --> 00:42:44,320
+[SPEAKER_01] And there are ways to incorporate that data.
+
+519
+00:42:44,480 --> 00:42:45,920
+[SPEAKER_01] And that's what survival analysis is.
+
+520
+00:42:46,000 --> 00:42:47,120
+[SPEAKER_01] And I did spend a lot of time on that.
+
+521
+00:42:47,360 --> 00:43:10,240
+[SPEAKER_01] I knew a lot more about the the morbid, the morbid and interesting fact is that I got all my data analysis tools from like, like, specifically cancer studies and things like this, like long longitudinal because you have the same problem where when they're evaluating long longitudinal treatments of drugs and things like this, where when they're trying to understand, you know, how much does this life extension drug help you?
+
+522
+00:43:10,480 --> 00:43:22,880
+[SPEAKER_01] Like if people, if you have like thirty, you can't say say that, like, oh, you can't count the people who have passed with the people who are still alive the same because you, you don't have, you don't know how long the people that are alive are going to last, right?
+
+523
+00:43:23,120 --> 00:43:24,000
+[SPEAKER_01] Like, you have some idea.
+
+524
+00:43:24,400 --> 00:43:26,480
+[SPEAKER_01] So you have to combine that data in a careful way.
+
+525
+00:43:26,640 --> 00:43:34,000
+[SPEAKER_01] And I think this is something that, I think that's something naive sometimes that developers do when they're trying to calculate their LTV.
+
+526
+00:43:34,160 --> 00:43:35,520
+[SPEAKER_01] And I think it's something we need to do better.
+
+527
+00:43:35,760 --> 00:43:37,760
+[SPEAKER_01] Predictive LTV is on our road map.
+
+528
+00:43:37,920 --> 00:43:41,120
+[SPEAKER_01] What I learned in that exercise a year or two ago was that it's not easy.
+
+529
+00:43:42,320 --> 00:43:43,440
+[SPEAKER_01] And we want to get back to it.
+
+530
+00:43:44,480 --> 00:43:48,240
+[SPEAKER_01] But in this report, we ended up doing something where we kind of just focused on this.
+
+531
+00:43:50,720 --> 00:43:53,520
+[SPEAKER_01] I think that in terms of benchmarking, there's reasons for that.
+
+532
+00:43:53,680 --> 00:43:55,280
+[SPEAKER_01] Like, one, you get it much faster.
+
+533
+00:43:55,840 --> 00:43:57,360
+[SPEAKER_01] So, like, if you just want to compare that.
+
+534
+00:43:57,680 --> 00:44:02,080
+[SPEAKER_01] And I do think it's like notionally related to your long term retention.
+
+535
+00:44:02,240 --> 00:44:11,520
+[SPEAKER_01] So, like, if looking at that first renewal rate, it's not going to tell you exactly what your long term renewal rate is, but I don't think a higher first renewal rate is going to be a bad thing for that long term retention.
+
+536
+00:44:12,400 --> 00:44:14,320
+[SPEAKER_00] And it sets the slope of the curve.
+
+537
+00:44:14,560 --> 00:44:15,200
+[SPEAKER_01] Yeah, exactly.
+
+538
+00:44:15,360 --> 00:44:19,920
+[SPEAKER_01] It's going to tell you a lot about how, you know, things are going to decade.
+
+539
+00:44:20,000 --> 00:44:28,880
+[SPEAKER_01] But the point here is that, um, that, you know, most of the people are not going to be able churn out early and like your renewal rates actually improve over time.
+
+540
+00:44:29,520 --> 00:44:33,280
+[SPEAKER_01] Like your your your folks that most likely to churn are going to churn the earliest.
+
+541
+00:44:33,440 --> 00:44:39,040
+[SPEAKER_01] So you don't have like every month you can think of like if you have a box of 100 users, I don't know why you put them in a box.
+
+542
+00:44:39,120 --> 00:44:39,520
+[SPEAKER_01] I don't know.
+
+543
+00:44:39,600 --> 00:44:42,800
+[SPEAKER_01] It goes back to my in physics, you're always putting people things in boxes.
+
+544
+00:44:42,800 --> 00:44:44,720
+[SPEAKER_01] Usually it's like, you know, molecules and stuff.
+
+545
+00:44:44,800 --> 00:44:47,120
+[SPEAKER_01] But anyway, you got 100 people in your subscriber pool.
+
+546
+00:44:47,680 --> 00:44:49,600
+[SPEAKER_01] The people that most likely to churn are going to do that first.
+
+547
+00:44:50,080 --> 00:44:59,040
+[SPEAKER_01] And then by definition, the folks that have that think about churning in that second month, they're going to be less, they're going to have probably on average a less higher propensity to churn.
+
+548
+00:44:59,280 --> 00:45:01,760
+[SPEAKER_01] So like your rate of churn each month is going to go down.
+
+549
+00:45:01,840 --> 00:45:11,120
+[SPEAKER_01] So you can't treat it like you can't treat it like half lives in molecules where every, you know, like the half life of plutonium is X and every X it goes down by half.
+
+550
+00:45:11,440 --> 00:45:13,520
+[SPEAKER_01] That's not exactly how subscriber bases work.
+
+551
+00:45:13,680 --> 00:45:14,080
+[SPEAKER_01] It's different.
+
+552
+00:45:14,400 --> 00:45:25,280
+[SPEAKER_01] And then on the long tail, you end up with interesting stuff where, you know, they've kind of committed, but like then you start running into things like, um, uh, uh, unvoluntary churn being a bigger thing, right?
+
+553
+00:45:25,440 --> 00:45:28,320
+[SPEAKER_01] Like where they're just churning because their credit cards are dying and things like that.
+
+554
+00:45:28,400 --> 00:45:29,760
+[SPEAKER_01] And that's a different game as well.
+
+555
+00:45:30,000 --> 00:45:35,600
+[SPEAKER_01] So we've tried to represent it as well as we could, but, um, and we do give some insights here into like how those systems work.
+
+556
+00:45:36,000 --> 00:45:36,000
+[UNKNOWN] Yeah.
+
+557
+00:45:36,240 --> 00:45:38,480
+[SPEAKER_00] Yeah, since we're on the topic, let's just jump ahead.
+
+558
+00:45:38,880 --> 00:45:41,680
+[SPEAKER_00] Let's talk about percentage of users retained over time.
+
+559
+00:45:42,240 --> 00:45:44,640
+[SPEAKER_00] So I'm I'm gonna rattle off some numbers.
+
+560
+00:45:45,040 --> 00:45:50,160
+[SPEAKER_00] If you're following along at home, you're looking for the percentage of users retained over time chart.
+
+561
+00:45:52,240 --> 00:46:07,120
+[SPEAKER_00] And this shows exactly what you're saying is that, you know, for a weekly subscription, by week one, you have 73% retained by week two, 55% retained by week three, 45% retained.
+
+562
+00:46:07,280 --> 00:46:08,400
+[SPEAKER_00] And these are the medians.
+
+563
+00:46:09,680 --> 00:46:12,320
+[SPEAKER_00] And then by year one, it's all the way down to.
+
+564
+00:46:14,240 --> 00:46:25,680
+[SPEAKER_00] But what that does, and you know, you can't see it on a podcast, but when you look at the chart, it creates a very nice curve that kind of flattens out at the bottom.
+
+565
+00:46:25,920 --> 00:46:34,000
+[SPEAKER_00] And then similarly for monthly, you have the month one retention is 64 percent, month two retention is 45 percent.
+
+566
+00:46:34,480 --> 00:46:36,480
+[SPEAKER_00] And then you get to a year and it's 11 percent.
+
+567
+00:46:37,200 --> 00:46:51,120
+[SPEAKER_00] And so again, that creates this just kind of nice curve that perfectly illustrates what you're saying about this kind of survival analysis is that the longer you stay subscribed, the more likely you' are to continue subscribing.
+
+568
+00:46:51,280 --> 00:46:56,880
+[SPEAKER_01] Yeah, you lose on net, on a total amount, you lose less because the cohort is smaller.
+
+569
+00:46:57,040 --> 00:47:05,200
+[SPEAKER_01] But then also on a percentage basis, the decay rate tends to go down over time, which isn't the case for most natural decay processes.
+
+570
+00:47:05,520 --> 00:47:13,360
+[SPEAKER_01] So now it's interesting though that, um, uh, so talking about those specific weekly versus monthly, just looking at how many people are left.
+
+571
+00:47:13,520 --> 00:47:21,920
+[SPEAKER_01] We had a blog post about this already, but like how many people are left after a year on on weekly, you're down to three percent of that cohort.
+
+572
+00:47:22,000 --> 00:47:23,680
+[SPEAKER_01] So you started with one hundred, there's three left.
+
+573
+00:47:23,920 --> 00:47:27,200
+[SPEAKER_01] Could you think about it?, you get, you get many more trials.
+
+574
+00:47:27,440 --> 00:47:29,280
+[SPEAKER_01] There's many more opportunities for people to rethink.
+
+575
+00:47:29,360 --> 00:47:34,880
+[SPEAKER_01] It's just you're rolling the dice more and more, which again differentiates subscribers away.
+
+576
+00:47:35,040 --> 00:47:48,720
+[SPEAKER_01] This is a discrete process, as opposed to like natural, now we're getting real in the weed, sorry, but like a natural like decay process, uh, where you do use like an exponential decay, but this only has like so many times that someone can, can unsubscribe.
+
+577
+00:47:49,120 --> 00:48:23,520
+[SPEAKER_01] Um, but, but if you look at it like monthly after a year, you're still eleven, which doesn't seem like a big decay, but it's three, almost four x what you will have left in a year with a weekly, which, which kind of highlights when you see, I don't want to pass judgments here, but when you see the kind of assets lean on weekly versus like monthly, there is some, I think, correlation with like angling towards longer term value versus versus like, you know, trying to maybe flow more cash upfront, um, which, which is interesting, just trying to lower the price point as low as they can to get people to subscribe.
+
+578
+00:48:23,680 --> 00:48:29,360
+[SPEAKER_00] And, and we talked about this with Zach on the podcast, like people, this also demonstrates that people are rational.
+
+579
+00:48:29,520 --> 00:48:35,040
+[SPEAKER_00] Like when I used to panic out about weekly subscriptions to be like, oh my gosh, it's like $500 a year.
+
+580
+00:48:35,360 --> 00:48:37,200
+[SPEAKER_00] And nobody's making it a a year, right?
+
+581
+00:48:37,920 --> 00:48:38,960
+[SPEAKER_00] No one's chasing it.
+
+582
+00:48:39,040 --> 00:48:42,800
+[SPEAKER_01] I mean, there's some, there's some, but like, presumably those could be long term.
+
+583
+00:48:43,200 --> 00:48:54,160
+[SPEAKER_01] I mean, I would hope that three of the people that you signed up, uh, of the hundred after a year are still getting value out of the product or like, it would surprise me if you have none after a year, right?
+
+584
+00:48:54,400 --> 00:48:58,080
+[SPEAKER_01] Like, somebody's, somebody's like, in love with your product forever, potentially, right?
+
+585
+00:48:58,320 --> 00:49:00,080
+[SPEAKER_01] Like, I find it hard to believe that none.
+
+586
+00:49:00,240 --> 00:49:01,360
+[SPEAKER_01] I mean, it could be, but Yeah.
+
+587
+00:49:01,680 --> 00:49:07,760
+[SPEAKER_00] And we haven't done this analysis, but I would imagine there's also a fair bit of jumping from a weekly subscription to an annual.
+
+588
+00:49:07,840 --> 00:49:11,360
+[SPEAKER_00] Like, once you've kind of proved it out after a couple of weeks, like, oh, this is a really great app.
+
+589
+00:49:11,520 --> 00:49:14,400
+[SPEAKER_00] I spent, you know, ten buckscks or whatever over the last couple of weeks.
+
+590
+00:49:14,560 --> 00:49:19,920
+[SPEAKER_00] And I actually want to use this long term, but five dollars a week is, you know, not actually the value I'm giving.
+
+591
+00:49:20,160 --> 00:49:20,240
+[SPEAKER_01] Yeah.
+
+592
+00:49:20,400 --> 00:49:31,120
+[SPEAKER_01] And talking about deficiencies in our data set potentially, like there are certain, there are edge cases like that that, uh, are not necessarily, like, are hard to perfectly reflect in our data and stuff like that.
+
+593
+00:49:31,360 --> 00:49:33,520
+[SPEAKER_01] So in some cases we selected those out and things like this.
+
+594
+00:49:33,680 --> 00:49:41,520
+[SPEAKER_01] So if you have a situation where you're, say, pushing people from a monthly to an annual, like, take that into account when you're looking at this data.
+
+595
+00:49:41,680 --> 00:49:44,000
+[SPEAKER_01] Because like we know that's not the case for most apps, right?
+
+596
+00:49:44,160 --> 00:49:48,640
+[SPEAKER_01] There's going to be things that we edge cases, like subscriptions, even if it's somewhat limited in what you can do.
+
+597
+00:49:49,120 --> 00:49:52,640
+[SPEAKER_01] There are a lot of ways you can set up an in-app subscription setup in 2022.
+
+598
+00:49:53,280 --> 00:49:54,320
+[SPEAKER_01] So take that into consideration.
+
+599
+00:49:54,480 --> 00:50:04,960
+[SPEAKER_01] And I guess like the last to take away your thunder, David, the last data point would be annual, which is 25 percent, which is then another doubling from monthly.
+
+600
+00:50:05,200 --> 00:50:05,680
+[SPEAKER_01] From monthly.
+
+601
+00:50:05,840 --> 00:50:13,040
+[SPEAKER_00] So that's pretty This has always fascinated me how why is annual retention so much higher?
+
+602
+00:50:13,600 --> 00:50:14,160
+[SPEAKER_00] 25 percent.
+
+603
+00:50:14,400 --> 00:50:18,560
+[SPEAKER_00] And then we'll get into the top media.
+
+604
+00:50:18,880 --> 00:50:20,400
+[SPEAKER_00] Actually, let's just go to it.
+
+605
+00:50:20,640 --> 00:50:24,320
+[SPEAKER_00] So the top quartile for first renewal on annual.
+
+606
+00:50:25,120 --> 00:50:30,960
+[SPEAKER_00] is 41 percent, the medium, which we were just discussing, is 25 percent, and the lower quartile is 16 percent.
+
+607
+00:50:31,840 --> 00:50:34,480
+[SPEAKER_00] So there's a pretty big range there as well.
+
+608
+00:50:35,040 --> 00:50:39,440
+[SPEAKER_00] So the top quartile being 40 percent and more at that annual renewal.
+
+609
+00:50:39,680 --> 00:50:39,760
+[SPEAKER_01] Yeah.
+
+610
+00:50:41,360 --> 00:50:49,040
+[SPEAKER_00] And then I don't think we did the, the spread for the, or I just don't have it here, but there's a spread for the monthly as well.
+
+611
+00:50:49,200 --> 00:50:49,280
+[SPEAKER_00] Yeah.
+
+612
+00:50:50,000 --> 00:50:50,720
+[SPEAKER_01] So what's your question?
+
+613
+00:50:50,880 --> 00:50:52,720
+[SPEAKER_01] It's like, why is, why is that so high?
+
+614
+00:50:53,120 --> 00:50:53,200
+[SPEAKER_00] Yeah.
+
+615
+00:50:53,440 --> 00:50:54,960
+[SPEAKER_00] Why is annual so much higher?
+
+616
+00:50:55,120 --> 00:50:57,680
+[SPEAKER_00] And this is probably some level of bias.
+
+617
+00:50:57,920 --> 00:50:58,000
+[SPEAKER_00] Yeah.
+
+618
+00:50:58,480 --> 00:51:00,880
+[SPEAKER_01] It's beyond our, well, it's beyond, this is not our department..
+
+619
+00:51:01,040 --> 00:51:01,680
+[SPEAKER_01] We just tell you the data.
+
+620
+00:51:02,000 --> 00:51:04,320
+[SPEAKER_01] I can't tell you why, but I can give you some theories, I guess.
+
+621
+00:51:04,400 --> 00:51:07,440
+[SPEAKER_01] Like one, one theory is that, yeah, you're saying bias, the selection, right?
+
+622
+00:51:07,680 --> 00:51:17,520
+[SPEAKER_01] Because like people that subscribe with an annual kind of implies they have some amount of cash sitting around to like pay 30, 60, whatever it is.
+
+623
+00:51:17,760 --> 00:51:25,040
+[SPEAKER_01] And like I think in general in monetization practice, there's this kind of dirty not secret that people with more money spend more money, right?
+
+624
+00:51:25,200 --> 00:51:26,320
+[SPEAKER_01] I don't think that's a surprise.
+
+625
+00:51:26,720 --> 00:51:28,560
+[SPEAKER_01] So like, and they're more likely to stay around.
+
+626
+00:51:28,640 --> 00:51:30,320
+[SPEAKER_01] They're more likely to retain on luxury goods.
+
+627
+00:51:30,400 --> 00:51:31,760
+[SPEAKER_01] They're more likely to not cancel things.
+
+628
+00:51:32,000 --> 00:51:33,360
+[SPEAKER_01] So like I think that's part of it.
+
+629
+00:51:33,680 --> 00:51:37,520
+[SPEAKER_01] So it's not that like the mechanics of the annual is necessarilyily much better.
+
+630
+00:51:37,760 --> 00:51:40,560
+[SPEAKER_01] It potentially filters better for the users you want to retain.
+
+631
+00:51:41,520 --> 00:51:50,160
+[SPEAKER_00] In our data, we don't necessarily know whether or we haven't broken it down by whether they even saw the monthly versus the annual.
+
+632
+00:51:50,560 --> 00:51:51,040
+[SPEAKER_00] Yes, exactly.
+
+633
+00:51:51,280 --> 00:51:56,240
+[SPEAKER_00] We have some apps in our in these data that are showing monthly and annual heads up.
+
+634
+00:51:56,560 --> 00:51:58,400
+[SPEAKER_00] Some are showing monthly, weekly and annual.
+
+635
+00:51:58,560 --> 00:51:59,440
+[SPEAKER_00] Some are showing just annual.
+
+636
+00:51:59,760 --> 00:52:01,120
+[SPEAKER_00] Some are not just monthly.
+
+637
+00:52:01,760 --> 00:52:05,040
+[SPEAKER_00] Some are any combination of the above and lifetime.
+
+638
+00:52:06,240 --> 00:52:08,480
+[SPEAKER_00] We don't actually look at lifetime in any of these data.
+
+639
+00:52:09,360 --> 00:52:12,160
+[SPEAKER_00] Which all have implications, right?
+
+640
+00:52:12,400 --> 00:52:12,560
+[SPEAKER_00] Right.
+
+641
+00:52:12,720 --> 00:52:16,400
+[SPEAKER_01] To like your mix, like who goes on to what plans and things like this.
+
+642
+00:52:16,560 --> 00:52:17,200
+[SPEAKER_01] Um, yeah.
+
+643
+00:52:17,520 --> 00:52:21,360
+[SPEAKER_01] But, you know, I think so that's one is the bias selection bias of people who end up on annual.
+
+644
+00:52:21,760 --> 00:52:24,400
+[SPEAKER_01] Another one is just number of opportunities to churn.
+
+645
+00:52:24,800 --> 00:52:26,160
+[SPEAKER_01] Like I do think makes a difference.
+
+646
+00:52:26,320 --> 00:52:30,480
+[SPEAKER_01] Like with the monthly, like you get an email from Apple every month that's like, hey, you're paying for X.
+
+647
+00:52:31,120 --> 00:52:33,200
+[SPEAKER_01] With an annual subscription, you get one a year.
+
+648
+00:52:33,760 --> 00:52:35,040
+[SPEAKER_01] Like that's going to make a difference.
+
+649
+00:52:35,280 --> 00:52:42,080
+[SPEAKER_01] Like if you send, if you send your customers twelve emails reminding them how much they're paying, it's an opportunity every time to rethink that relationship.
+
+650
+00:52:42,240 --> 00:52:42,400
+[SPEAKER_01] Right.
+
+651
+00:52:42,480 --> 00:52:44,960
+[SPEAKER_01] So I think there's going to be natural that happens less with annual.
+
+652
+00:52:45,040 --> 00:52:46,240
+[SPEAKER_01] So you're going to have less churn.
+
+653
+00:52:46,800 --> 00:52:51,040
+[SPEAKER_01] Um, and so, and I think that's why., you know, it's it's it's such a good proposition.
+
+654
+00:52:51,280 --> 00:52:53,840
+[SPEAKER_01] And then, you know, looking at those top quartiles again.
+
+655
+00:52:54,000 --> 00:52:56,880
+[SPEAKER_01] So I think that's where it's important to think like, what can I achieve?
+
+656
+00:52:57,280 --> 00:53:00,960
+[SPEAKER_01] And I think so like, let's talk about, like, seeing your app, a lot of people are thinking annuals.
+
+657
+00:53:01,040 --> 00:53:04,240
+[SPEAKER_01] Like annuals has been for the last two years, everyone's been like, oh, we figured it out.
+
+658
+00:53:04,320 --> 00:53:06,960
+[SPEAKER_01] 730 day trial into an annual, that's what we figured out.
+
+659
+00:53:06,960 --> 00:53:08,240
+[SPEAKER_01] This is the one monetization method.
+
+660
+00:53:08,640 --> 00:53:13,280
+[SPEAKER_01] And so you can see why here, it's that, you know, you get these better retention rates.
+
+661
+00:53:13,600 --> 00:53:16,000
+[SPEAKER_01] But then like, you should look at also like what you're getting.
+
+662
+00:53:16,160 --> 00:53:21,360
+[SPEAKER_01] Because I think that magic of annuals really works well for the top quartile, but it's a different game.
+
+663
+00:53:22,000 --> 00:53:32,400
+[SPEAKER_01] You know, you're if you're in the mediane or below, you know, you're only talking like a like a two x, one to two x differential over monthly in total retention.
+
+664
+00:53:32,560 --> 00:53:35,520
+[SPEAKER_01] But if you're in the top quartile, you're talking potentially higher, right?
+
+665
+00:53:35,760 --> 00:54:06,400
+[SPEAKER_01] Like, you know, I don't want to hide the data here, but the spread, the spread between the top quartile of monthly versus the top quartile of annual is higher than the spread between the median monthly and the median annual, which is, and that's a lot to process, but it tells you that there's like at the high end of performance on apps, there's more advantage to moving to an annual plan, which I think again, we're just a lot of this is proxying to product quality, right?
+
+666
+00:54:06,640 --> 00:54:08,960
+[SPEAKER_01] It's just telling you more about the product quality than anything else.
+
+667
+00:54:09,120 --> 00:54:09,200
+[SPEAKER_01] So.
+
+668
+00:54:09,920 --> 00:54:10,000
+[SPEAKER_00] Yeah.
+
+669
+00:54:10,160 --> 00:54:18,800
+[SPEAKER_00] And one of the things that we also can't show or don't show in our data is how much of a discount people are getting on the annual.
+
+670
+00:54:19,120 --> 00:54:33,840
+[SPEAKER_00] So if they see if they saw a paywall that said 999 a month, which is 120 dollars a year, and then they saw an annual at 50% off for 60 dollars a year, you know, that probably influenced them to move to annual for quite a few people.
+
+671
+00:54:34,000 --> 00:54:36,640
+[SPEAKER_00] So there's a kind of bias there as you were already kind of alluding to.
+
+672
+00:54:37,200 --> 00:54:40,240
+[SPEAKER_00] But then there's also potential like retention bias as well.
+
+673
+00:54:40,400 --> 00:54:44,960
+[SPEAKER_00] It's like they're actually paying quite a bit less than the people who are on monthly.
+
+674
+00:54:45,360 --> 00:54:49,520
+[SPEAKER_00] And so the amount of value they're getting to what they're paying is different.
+
+675
+00:54:50,160 --> 00:54:54,640
+[SPEAKER_00] And so, yeah, that's not something, you know, we have insight into it.
+
+676
+00:54:55,680 --> 00:54:56,800
+[SPEAKER_01] We don't show it in this report.
+
+677
+00:54:57,040 --> 00:55:02,400
+[SPEAKER_01] Because like people, people have a limited number of dimensions they can analyze in their head for finite beings.
+
+678
+00:55:02,800 --> 00:55:07,040
+[SPEAKER_01] Because like you can take all these numbers and be like, here's what it looks like for this price point and this price point.
+
+679
+00:55:07,200 --> 00:55:10,240
+[SPEAKER_01] But price points are also varied and all over the place and stuff like that.
+
+680
+00:55:10,400 --> 00:55:16,960
+[SPEAKER_01] And I think that going back to the meta of the report, like that was a lot of the work we had to do is decide, like, what's the most useful?
+
+681
+00:55:17,200 --> 00:55:21,200
+[SPEAKER_01] Like, what can we show without overwhelming people with making the data useful?
+
+682
+00:55:21,440 --> 00:55:29,680
+[SPEAKER_01] So, but it's an important caveat to remember is that, yeah, top quartile renewal rate might be correlated with bottom quartile and price, and we don't necessarily show that, right?
+
+683
+00:55:30,000 --> 00:55:34,720
+[SPEAKER_01] So, yeah, again, like think about, and but you know where your price sits relative to your peers, right?
+
+684
+00:55:34,880 --> 00:55:37,600
+[SPEAKER_01] So, like, take that into account and be like, are we relatively highly priced?
+
+685
+00:55:37,760 --> 00:55:40,000
+[SPEAKER_01] Well, then maybe that's going to push our renewal rates down a little bit.
+
+686
+00:55:40,160 --> 00:55:40,880
+[SPEAKER_01] It most likely will.
+
+687
+00:55:41,680 --> 00:55:43,440
+[SPEAKER_01] And, and this is also an opportunity for us.
+
+688
+00:55:43,600 --> 00:55:45,600
+[SPEAKER_01] This is year zero for this report.
+
+689
+00:55:46,000 --> 00:55:55,600
+[SPEAKER_01] Like, we're going to evolve this and we can, we can, this thing will be six hundred pages by the, by the time we go public.
+
+690
+00:55:56,160 --> 00:55:58,480
+[SPEAKER_00] So, yeah.
+
+691
+00:55:58,960 --> 00:56:12,000
+[SPEAKER_00] And retention is such a key part of all of this where, um, you know, it's something we talk about a little bit in the report, but, but there is just this, this is the magic of subscriptions, right?
+
+692
+00:56:12,320 --> 00:56:24,560
+[SPEAKER_00] Is that whether, whether it's eleven percent on the monthly or hopefully higher if you're in the top quartile or twenty five percent on the annual, hopefully higher if you're in the top quartile is that once you get a certain number.
+
+693
+00:56:25,200 --> 00:56:28,800
+[SPEAKER_00] of people to stay around, we just said they're more likely to stay around.
+
+694
+00:56:29,680 --> 00:56:32,720
+[SPEAKER_00] And that next year, you just get free money.
+
+695
+00:56:33,760 --> 00:56:49,920
+[SPEAKER_00] I was looking at my LaunchNet Pro revenue for this year yesterday in RevenueCat and saw that most of my revenue in 2022, because I haven't been actively working on the product, haven't been actively marketing it, was actually renewal revenue.
+
+696
+00:56:50,000 --> 00:56:52,720
+[SPEAKER_00] And I think it was actually like, Well, that's true for any business, basically.
+
+697
+00:56:52,960 --> 00:56:53,360
+[SPEAKER_00] A couple of years.
+
+698
+00:56:53,520 --> 00:56:53,600
+[SPEAKER_01] Yeah.
+
+699
+00:56:54,400 --> 00:56:58,320
+[SPEAKER_01] Just the way the renewal rates work, you're eventually going to, RevenueCat's in that situation too.
+
+700
+00:56:58,480 --> 00:56:58,560
+[SPEAKER_01] Wow.
+
+701
+00:56:59,040 --> 00:57:00,160
+[SPEAKER_01] Stacking those cohorts.
+
+702
+00:57:00,560 --> 00:57:10,240
+[SPEAKER_01] But like any business with good retention and good expansion or like minimal churn, yeah, pretty soon, the bulk of your revenue becomes from existing customers.
+
+703
+00:57:10,800 --> 00:57:11,200
+[SPEAKER_01] Which is great.
+
+704
+00:57:11,440 --> 00:57:18,240
+[SPEAKER_01] Like that's the thing I think with businesses that we've, I don't know, if you go back in time and think about people exacting commerce locally, right?
+
+705
+00:57:18,480 --> 00:57:21,840
+[SPEAKER_01] It's like you're pretty much a retained customer with your local bakery or whatever like that.
+
+706
+00:57:21,920 --> 00:57:30,480
+[SPEAKER_01] We kind of lost that in software land, but now we have it again where like you're going to kind of just be a ongoing service provider for, you know, whatever it is you do.
+
+707
+00:57:31,120 --> 00:57:35,680
+[SPEAKER_01] And I think that leads to, you know, better market economics and better results for people.
+
+708
+00:57:36,000 --> 00:57:36,160
+[SPEAKER_00] So.
+
+709
+00:57:37,360 --> 00:57:39,360
+[SPEAKER_00] Okay, we're going to go over the hour mark.
+
+710
+00:57:39,680 --> 00:57:40,960
+[SPEAKER_00] As you say, pick your favorites, David.
+
+711
+00:57:41,200 --> 00:57:45,600
+[SPEAKER_00] What's the last key, the last key takeaway.
+
+712
+00:57:45,840 --> 00:57:51,760
+[SPEAKER_00] Retention rates are about the subscription duration, are not about the subscription duration, but about the quality of your app.
+
+713
+00:57:52,000 --> 00:58:03,920
+[SPEAKER_00] So we won't dive deep into this number, but we did break down retention by duration of subscription, and it just goes down to quality.
+
+714
+00:58:04,160 --> 00:58:05,840
+[SPEAKER_00] It's like, is your app a great app?
+
+715
+00:58:06,160 --> 00:58:06,240
+[SPEAKER_00] Yeah.
+
+716
+00:58:06,560 --> 00:58:08,720
+[SPEAKER_00] And then if it's a monthly, they're going to stay subscribed.
+
+717
+00:58:08,880 --> 00:58:10,640
+[SPEAKER_00] If it's an annual, they're going to stay subscribed.
+
+718
+00:58:10,720 --> 00:58:12,400
+[SPEAKER_01] So like the very slight variations.
+
+719
+00:58:14,560 --> 00:58:17,200
+[SPEAKER_01] But yeah, it's again, it goes back to people are rational.
+
+720
+00:58:17,360 --> 00:58:19,920
+[SPEAKER_01] I think people in general irrational can be funny.
+
+721
+00:58:20,080 --> 00:58:24,320
+[SPEAKER_01] Like, I think generally people get the idea that people are irrational, which is true.
+
+722
+00:58:24,400 --> 00:58:25,520
+[SPEAKER_01] We do a lot of irrational things.
+
+723
+00:58:25,760 --> 00:58:28,800
+[SPEAKER_01] But I think when it comes to money, people get way more rational.
+
+724
+00:58:29,440 --> 00:58:29,600
+[SPEAKER_01] Right.
+
+725
+00:58:29,840 --> 00:58:30,400
+[SPEAKER_01] You know what I mean?
+
+726
+00:58:30,640 --> 00:58:40,720
+[SPEAKER_01] Like, as soon as it involves dollars, if people's rationality goes way up, even if they don't know it, even if they're not like actively thinking about it, I think people are much smarter with their money than they are with most other things.
+
+727
+00:58:41,760 --> 00:58:45,360
+[SPEAKER_00] And the rationality of consumers is a great lens to look at this report through as well.
+
+728
+00:58:45,520 --> 00:58:52,560
+[SPEAKER_00] It's like, why is a weekly subscriptiontion retention at year one, three percent, rational customers.
+
+729
+00:58:53,440 --> 00:59:00,720
+[SPEAKER_00] Why is the lower quartile of trial conversion rate sixteen percent on some of these numbers?
+
+730
+00:59:01,280 --> 00:59:02,240
+[SPEAKER_00] Rational consumers.
+
+731
+00:59:03,040 --> 00:59:13,360
+[SPEAKER_00] If you're offering something of value and you deliver that value over time and you're priced well against the value you deliver, that's how you build a great subscription business.
+
+732
+00:59:13,840 --> 00:59:22,560
+[SPEAKER_00] If you're offering minimal value and we're not delivering that value over time, you're going to struggle in all of these metrics.
+
+733
+00:59:22,640 --> 00:59:28,000
+[SPEAKER_01] Yeah, it's not going to matter if you find one you're broke., yeah, you're my, we're going back into meta.
+
+734
+00:59:28,240 --> 00:59:32,960
+[SPEAKER_01] We keep talking about the meta, which maybe is a bit better than just reading out the report to people.
+
+735
+00:59:33,200 --> 00:59:41,680
+[SPEAKER_01] But like, you know, I think about one of my goals with this report was to help people know where to focus, right?
+
+736
+00:59:42,000 --> 00:59:49,280
+[SPEAKER_01] I want you to look at this, look at your numbers and go, where do I, where do I spend my finite time?
+
+737
+00:59:49,680 --> 00:59:51,440
+[SPEAKER_01] Like, where do I, where might I have leverage?
+
+738
+00:59:51,680 --> 00:59:52,880
+[SPEAKER_01] Like, where might I be missing?
+
+739
+00:59:54,160 --> 00:59:58,720
+[SPEAKER_01] And you'll have to combine that with your own sense, but like, that's, that's, that's the goal.
+
+740
+01:00:00,160 --> 01:00:06,480
+[SPEAKER_01] It's not going to, yeah, magically take a product that doesn't have product market fit and give it product market fit, right?
+
+741
+01:00:07,360 --> 01:00:08,640
+[SPEAKER_01] There's no substitute for that.
+
+742
+01:00:09,040 --> 01:00:22,480
+[SPEAKER_01] This should be for products that have some amount of product market fit and ideally it's going to help you find a couple like glaring holes in your funnel or like places where you're underperforming, you think, relative to your peers and and maybe help you focus.
+
+743
+01:00:22,720 --> 01:00:23,280
+[SPEAKER_01] That's the goal.
+
+744
+01:00:23,680 --> 01:00:23,760
+[SPEAKER_00] Yeah.
+
+745
+01:00:24,320 --> 01:00:34,720
+[SPEAKER_00] And again, what's interesting about our data is we span apps that have not found product market fit that are early in their journey, that are late in their journey and don't have product market fit that are flashing the pans.
+
+746
+01:00:35,120 --> 01:00:40,160
+[SPEAKER_01] Apps flyer, apps flyer and Instagram don't ask you if you have product market fit before they let you spend, right?
+
+747
+01:00:40,400 --> 01:00:44,800
+[SPEAKER_01] Like there's like a lot of folks that, yeah, are probably over there.
+
+748
+01:00:45,280 --> 01:00:47,280
+[SPEAKER_01] This is something I end up telling people a lot of times too.
+
+749
+01:00:47,600 --> 01:00:50,960
+[SPEAKER_01] Like, don't get into, you know, don't focus on acquisition.
+
+750
+01:00:51,120 --> 01:00:52,480
+[SPEAKER_01] Don't do things in the right order, right?
+
+751
+01:00:52,720 --> 01:00:53,360
+[SPEAKER_01] So, right.
+
+752
+01:00:55,040 --> 01:00:55,280
+[SPEAKER_01] Data.
+
+753
+01:00:56,080 --> 01:00:56,160
+[SPEAKER_00] Okay.
+
+754
+01:00:56,640 --> 01:00:58,400
+[SPEAKER_00] A couple of my favorites.
+
+755
+01:00:58,960 --> 01:00:59,680
+[SPEAKER_00] It's so hard to pick.
+
+756
+01:00:59,760 --> 01:01:00,800
+[SPEAKER_00] There are a lot of trials.
+
+757
+01:01:01,200 --> 01:01:02,000
+[SPEAKER_00] We've already talked about trials.
+
+758
+01:01:02,080 --> 01:01:03,680
+[SPEAKER_01] We've kind of gone in a reverse order here.
+
+759
+01:01:03,760 --> 01:01:04,640
+[SPEAKER_01] I started with retention.
+
+760
+01:01:05,200 --> 01:01:05,360
+[SPEAKER_01] Right.
+
+761
+01:01:05,920 --> 01:01:06,480
+[SPEAKER_00] So yeah, okay.
+
+762
+01:01:07,040 --> 01:01:09,520
+[SPEAKER_00] I'll hit the trial strategy first.
+
+763
+01:01:10,480 --> 01:01:32,880
+[SPEAKER_00] So no trials, 39% of the apps that we analyzed don't have a trial at all, 30% have a mixed trial strategy where they do have either some lifetime purchase or subscriptions without a trial, and then we have 31% with a pure trial strategy.
+
+764
+01:01:33,040 --> 01:01:34,320
+[SPEAKER_00] So that was interesting to me.
+
+765
+01:01:34,880 --> 01:01:36,880
+[SPEAKER_01] I'd love to see this weighted by size of app.
+
+766
+01:01:37,280 --> 01:01:43,120
+[SPEAKER_01] It would be interesting to me because I don't know very few scaled apps that haven't implemented a trial strategy.
+
+767
+01:01:43,840 --> 01:01:51,040
+[SPEAKER_00] Well, see what's interesting is that I've actually been seeing more and more apps go without a trial strategy in two different situations.
+
+768
+01:01:51,360 --> 01:01:54,640
+[SPEAKER_00] One is like a fitness app with a really long onboarding.
+
+769
+01:01:55,040 --> 01:02:06,960
+[SPEAKER_00] You have like really high motivation and sometimes it can be a dark pattern when you build up motivation and then you have them pay right away.
+
+770
+01:02:08,320 --> 01:02:09,760
+[SPEAKER_00] So I've seen that kind of trend.
+
+771
+01:02:10,880 --> 01:02:16,560
+[SPEAKER_00] But the thing is, like, you kind of like have an expected value coming into a fitness app, like, you're going to use it or not.
+
+772
+01:02:16,800 --> 01:02:21,600
+[SPEAKER_00] And I think there's even arguments to be like, when people have money on the line, they're actually more likely to be successful.
+
+773
+01:02:22,080 --> 01:02:26,320
+[SPEAKER_00] So maybe that's even in a fitness app, a dark pattern that's actually beneficial to a user.
+
+774
+01:02:26,480 --> 01:02:32,240
+[SPEAKER_00] It's like, when they have money on the line, they're more likely to, like, force themselves to use the app, which gives them a better life.
+
+775
+01:02:32,800 --> 01:02:34,480
+[SPEAKER_00] If we're talking fitness apps.
+
+776
+01:02:35,040 --> 01:02:46,320
+[SPEAKER_00] Um, and then there's other situations where you have, um, a freemium product where the freemium is very generous and generous enough to kind of substitute for a trial.
+
+777
+01:02:46,560 --> 01:03:05,280
+[SPEAKER_00] And that's something if you have a very generous free trial and you have not, I mean, a generous free tier in your freemium strategy and you still have a free trial, that's a great little experiment to run is just take off the free trial because it like that's the point of a great freemium strategy.
+
+778
+01:03:05,360 --> 01:03:06,720
+[SPEAKER_00] That's the point of the Zitat experience.
+
+779
+01:03:07,120 --> 01:03:07,760
+[SPEAKER_00] products, by the way.
+
+780
+01:03:10,240 --> 01:03:10,400
+[SPEAKER_01] True.
+
+781
+01:03:12,160 --> 01:03:13,680
+[SPEAKER_00] But that's kind of the point of freemium, right?
+
+782
+01:03:13,840 --> 01:03:15,120
+[SPEAKER_00] It's like you get that experience.
+
+783
+01:03:15,360 --> 01:03:22,080
+[SPEAKER_00] And so I've actually been surprised to see apps that have a really strong freemium also offer a free trial.
+
+784
+01:03:24,000 --> 01:03:26,880
+[SPEAKER_00] So again, there's just so many blended strategies here.
+
+785
+01:03:28,240 --> 01:03:34,560
+[SPEAKER_00] But the kind of numbers that we can dig into for a sec are the download to trial start rates.
+
+786
+01:03:34,720 --> 01:03:37,520
+[SPEAKER_00] And this is just fascinating, wild variation.
+
+787
+01:03:38,320 --> 01:03:44,080
+[SPEAKER_00] So on a pure trial strategy, and let's focus on that because I think the mixed trial strategy is a little bit harder to understand.
+
+788
+01:03:45,040 --> 01:03:45,120
+[SPEAKER_00] Yeah.
+
+789
+01:03:45,520 --> 01:03:56,720
+[SPEAKER_00] Um, but on the pure trial strategy, we see a 2.1% lower quartile of download to trial start and then a 4.6% median and a 8.7% upper quartile.
+
+790
+01:03:56,960 --> 01:04:00,160
+[SPEAKER_00] So this is one of those massive swings, right?
+
+791
+01:04:00,400 --> 01:04:03,600
+[SPEAKER_01] Like two versus close to nine, like a five X.
+
+792
+01:04:04,320 --> 01:04:08,480
+[SPEAKER_01] And you think about this as the, this is a, this is a primary stat, like this is a.
+
+793
+01:04:08,480 --> 01:04:14,800
+[SPEAKER_01] this is your conversion rate is most likely going to be directly proportional to this very close to directly proportional.
+
+794
+01:04:15,440 --> 01:04:17,600
+[SPEAKER_01] And so, and that that's that's eight point seven.
+
+795
+01:04:17,920 --> 01:04:19,200
+[SPEAKER_01] That's the beginning of the quartile.
+
+796
+01:04:19,520 --> 01:04:22,400
+[SPEAKER_01] So like there are people like above most likely ten percent.
+
+797
+01:04:22,800 --> 01:04:24,000
+[SPEAKER_01] And that's not unusual to me.
+
+798
+01:04:24,160 --> 01:04:33,200
+[SPEAKER_01] Like I that's that's in, you know, in Elevate days, I we were pulling that on, you know, depending on where our customer sourcing was and stuff like this, great apps do pull that number.
+
+799
+01:04:33,680 --> 01:04:39,280
+[SPEAKER_01] And like that's just, you know, they do it via brand and via great onboarding and like via, you know.
+
+800
+01:04:39,280 --> 01:04:43,600
+[SPEAKER_01] You know, all the tricks in the book, having a good, compelling proposition.
+
+801
+01:04:44,480 --> 01:04:47,680
+[SPEAKER_01] And then on the flip side, you can do a lot worse, right?
+
+802
+01:04:47,920 --> 01:04:48,880
+[SPEAKER_00] Like, yeah, do better.
+
+803
+01:04:49,440 --> 01:04:57,120
+[SPEAKER_00] But again, so going back to like our hypothetical here, I would guess that all trails is in the bottom quartile.
+
+804
+01:04:58,720 --> 01:04:59,520
+[SPEAKER_00] I wish we had real data.
+
+805
+01:05:00,080 --> 01:05:01,440
+[SPEAKER_00] Speculation, speculation, parody.
+
+806
+01:05:01,520 --> 01:05:03,040
+[SPEAKER_00] Total speculation.
+
+807
+01:05:03,760 --> 01:05:04,560
+[SPEAKER_00] Total speculation.
+
+808
+01:05:05,040 --> 01:05:05,520
+[SPEAKER_00] We don't know.
+
+809
+01:05:06,320 --> 01:05:17,200
+[SPEAKER_00] But just based on, so apps like all trails that have a very generous premium tier, this is one of those areas where they might actually be an incredible business and perform in that way.
+
+810
+01:05:17,520 --> 01:05:18,480
+[SPEAKER_00] You don't need it.
+
+811
+01:05:18,640 --> 01:05:20,000
+[SPEAKER_01] You don't need it necessarily.
+
+812
+01:05:20,160 --> 01:05:20,560
+[SPEAKER_01] It depends.
+
+813
+01:05:20,720 --> 01:05:22,560
+[SPEAKER_01] Like, I mean, it also, so it's two numbers, right?
+
+814
+01:05:22,720 --> 01:05:32,480
+[SPEAKER_01] It's people who start a trial and people who have the opportunity to start a trial trials, trial trials, we would call, I guess, but like, and so both of those numbers have equal weight in the result, right?
+
+815
+01:05:32,720 --> 01:05:41,440
+[SPEAKER_01] So like, think about in a case of something like all trails with an interesting customer acquisition strategy where they're using SEO, which isn't a very common strategy, I think, for most mobile.
+
+816
+01:05:41,760 --> 01:05:47,200
+[SPEAKER_01] apps like that, that's going to directly impact that denominator and potentially depress that number.
+
+817
+01:05:48,000 --> 01:05:52,960
+[SPEAKER_01] But if the volume is much higher in that user base, it makes up for it, right?
+
+818
+01:05:53,280 --> 01:05:56,880
+[SPEAKER_01] So like, again, caveats, caveats, asterisks, asterisks.
+
+819
+01:05:57,520 --> 01:06:06,800
+[SPEAKER_01] But, but I would say these numbers seem fairly for me, applying my personal experience and bias to like what I've seen in the last like, you know, almost decade of this stuff.
+
+820
+01:06:06,960 --> 01:06:12,080
+[SPEAKER_01] I think these are pretty representative of apps that I think have good product market fit versus not depend, you know, with the.
+
+821
+01:06:12,080 --> 01:06:13,680
+[SPEAKER_01] With the caveats aside.
+
+822
+01:06:14,240 --> 01:06:14,400
+[UNKNOWN] Right.
+
+823
+01:06:14,720 --> 01:06:22,160
+[SPEAKER_00] And then so on the flip side, and we actually call this out in the report is I talked to the co founders of an app called Nanda Run.
+
+824
+01:06:23,120 --> 01:06:30,880
+[SPEAKER_00] Now they're a much smaller scale app, kind of an indie success story where they're doing well but not, you know, like, you know, scaled VC backed app.
+
+825
+01:06:31,760 --> 01:06:33,840
+[SPEAKER_00] You know, nothing on the level of altrails or whatever.
+
+826
+01:06:34,320 --> 01:06:41,840
+[SPEAKER_00] But what was really fascinating in talking to them is that most of their traffic actually comes from one blog post in a Facebook group.
+
+827
+01:06:42,080 --> 01:06:50,240
+[SPEAKER_00] So the one blog post is like couch to five k can cause injuries and it's not a great program for beginning runners.
+
+828
+01:06:50,560 --> 01:06:59,280
+[SPEAKER_00] And so the people read this whole post about, you know, a better way to get into running and then they go download the app.
+
+829
+01:06:59,680 --> 01:07:03,680
+[SPEAKER_00] So their trial start rate was twenty percent, like not even on that chart.
+
+830
+01:07:04,400 --> 01:07:05,360
+[SPEAKER_00] The denominator is different, right?
+
+831
+01:07:05,760 --> 01:07:11,120
+[SPEAKER_01] The numerator is probably the same, but like the people they're sending into that funnel are very, very selected right now.
+
+832
+01:07:11,200 --> 01:07:15,440
+[SPEAKER_01] Now, if they had a bigger mix of like organic from the app store, that's going to change, right?
+
+833
+01:07:15,600 --> 01:07:16,000
+[SPEAKER_01] That's right.
+
+834
+01:07:16,240 --> 01:07:17,200
+[SPEAKER_01] It's going to change dramatically.
+
+835
+01:07:17,600 --> 01:07:17,680
+[SPEAKER_00] Yeah.
+
+836
+01:07:18,000 --> 01:07:28,640
+[SPEAKER_00] And then what was interesting too in talking to them is that they did see that number drift down over time because when they first released the app, their Facebook group was like begging for this app.
+
+837
+01:07:29,360 --> 01:07:36,400
+[SPEAKER_00] And so, and this is kind of what I was talking about earlier, depending on your stage, depending on your source of traffic, depending on so many things, these numbers will fluctuate.
+
+838
+01:07:36,560 --> 01:07:38,880
+[SPEAKER_00] No, yeah, I mean, we've seen it over and over again.
+
+839
+01:07:39,200 --> 01:07:39,280
+[SPEAKER_01] Yeah.
+
+840
+01:07:39,760 --> 01:07:45,280
+[SPEAKER_01] Even if we're not an app, but like similarly, I can imagine, was it as their organics went up too as they like gained rankings?
+
+841
+01:07:45,280 --> 01:07:45,680
+[SPEAKER_01] Who was that like being wrangled?
+
+842
+01:07:46,160 --> 01:07:54,400
+[SPEAKER_00] Well, so what happened is that they, they pushed out this email blast in the Facebook group and got all of their kind of people who have been like pent up demand.
+
+843
+01:07:54,800 --> 01:07:57,920
+[SPEAKER_00] That's how pent up demand converted like crazy.
+
+844
+01:07:58,240 --> 01:08:06,080
+[SPEAKER_00] They had, I think, like a over twenty percent trial start rate between the initial cohort and then they had like a fundraising process.
+
+845
+01:08:06,880 --> 01:08:12,720
+[SPEAKER_00] They had like a ninety percent trial conversion rate because they were so high intent people like this pent up demand.
+
+846
+01:08:13,040 --> 01:08:15,760
+[SPEAKER_00] It was like incredible, ridiculous, mind bending numbers.
+
+847
+01:08:16,240 --> 01:08:27,920
+[SPEAKER_00] like breaks every chart that we show in this report, but then that all drifted down as they started getting more just organic like app source searched, you know, getting featured by Apple and stuff like that, all those numbers drifted down.
+
+848
+01:08:28,080 --> 01:08:35,040
+[SPEAKER_00] Now they're still kind of industry leading because most of their traffic is still coming from those kind of primary sources.
+
+849
+01:08:35,280 --> 01:08:36,800
+[SPEAKER_00] So again, it's just something to keep in mind.
+
+850
+01:08:36,880 --> 01:08:39,760
+[SPEAKER_00] It's like who's coming in, what's their level of intelligence.
+
+851
+01:08:39,920 --> 01:08:42,560
+[SPEAKER_00] And then you're going to understand, you know, these numbers differently.
+
+852
+01:08:43,280 --> 01:08:46,960
+[SPEAKER_00] Okay, one last one and we're going to have to wrap up, but trials start.
+
+853
+01:08:46,960 --> 01:08:52,400
+[SPEAKER_00] trial start to paid subscriber conversion rate and then another one with massive swings.
+
+854
+01:08:53,600 --> 01:08:58,000
+[SPEAKER_00] So we broke this down by trial duration.
+
+855
+01:08:58,480 --> 01:09:01,440
+[SPEAKER_00] So a less than four days.
+
+856
+01:09:02,000 --> 01:09:02,800
+[SPEAKER_00] This is an interesting thing.
+
+857
+01:09:02,960 --> 01:09:07,280
+[SPEAKER_00] I, I, pardon me like ninety seconds on this because we debated it a ton internally.
+
+858
+01:09:08,160 --> 01:09:11,280
+[SPEAKER_00] The App Store has three, seven, fourteen and thirty day trials.
+
+859
+01:09:11,920 --> 01:09:15,520
+[SPEAKER_00] The Play Store, you can set arbitrary trial.
+
+860
+01:09:16,080 --> 01:09:17,920
+[SPEAKER_00] So when you look at this report, you're going to see.
+
+861
+01:09:19,200 --> 01:09:24,880
+[SPEAKER_00] less than or equal to four days, five to nine days, ten to sixteen days, seven to seventeen to thirty two days.
+
+862
+01:09:25,040 --> 01:09:25,440
+[SPEAKER_00] I agree.
+
+863
+01:09:25,520 --> 01:09:28,560
+[SPEAKER_00] I'm pretty sure you'll just call it three seven fourteen and thirty.
+
+864
+01:09:29,360 --> 01:09:38,400
+[SPEAKER_00] But to be more accurate, we because there are a lot of Play Store apps that use arbitrary numbers in their free trials.
+
+865
+01:09:40,240 --> 01:09:44,880
+[SPEAKER_00] To simplify for this conversation, I'll use three seven fourteen eight and thirty.
+
+866
+01:09:46,480 --> 01:09:54,720
+[SPEAKER_00] But this was really interesting on our three day free trial, it had the lowest median, the lowest lower quartile, and the lowest upper quartile.
+
+867
+01:09:55,520 --> 01:10:04,720
+[SPEAKER_00] So from starting a free trial to actually paying, the lower quartile was nineteen percent, the median was thirty percent, and the top quartile was forty seven percent.
+
+868
+01:10:05,600 --> 01:10:10,880
+[SPEAKER_00] We jumped to the seven day free trial, which is one of the most popular trials in our data.
+
+869
+01:10:12,400 --> 01:10:23,840
+[SPEAKER_00] No, it was the most popular free trial in our data, and thirty day free trial and fourteen day free trial are pretty small and three day free trials actually, uh, pretty significant.
+
+870
+01:10:24,240 --> 01:10:24,800
+[SPEAKER_00] Pretty common.
+
+871
+01:10:24,880 --> 01:10:25,840
+[SPEAKER_00] Yeah, I see that sometimes.
+
+872
+01:10:26,000 --> 01:10:26,080
+[SPEAKER_00] Yeah.
+
+873
+01:10:26,480 --> 01:10:35,360
+[SPEAKER_00] But anyway, in the seven day free trial, the, the bottom quartile was twenty eight percent, the medium is forty five percent, and the upper quartile is sixty two percent.
+
+874
+01:10:35,680 --> 01:10:37,200
+[SPEAKER_00] So I've thrown out a lot of numbers.
+
+875
+01:10:37,440 --> 01:10:39,520
+[SPEAKER_00] Yeah, but let's, let's do the contrast.
+
+876
+01:10:39,760 --> 01:10:40,240
+[SPEAKER_00] So on a.
+
+877
+01:10:40,480 --> 01:10:41,760
+[SPEAKER_00] Let's just talk about those medians again.
+
+878
+01:10:41,920 --> 01:10:46,880
+[SPEAKER_01] So the three day is thirty percent medium conversion rate, and then the seven day is forty five.
+
+879
+01:10:47,200 --> 01:10:54,640
+[SPEAKER_01] Now, I will say this is unintuitive to me because I would think that the shorter the trial, the less time someone has to cancel, like they just have less time to think about it.
+
+880
+01:10:55,360 --> 01:11:00,640
+[SPEAKER_01] So I would, if you ask me, I wouldn't do it that you're going to have a higher conversion rate because there's just less time.
+
+881
+01:11:01,440 --> 01:11:02,720
+[SPEAKER_01] But that appears not to be the case.
+
+882
+01:11:03,120 --> 01:11:04,800
+[SPEAKER_01] That actually, there's something about it.
+
+883
+01:11:04,960 --> 01:11:05,920
+[SPEAKER_01] It could be selection bias.
+
+884
+01:11:06,080 --> 01:11:07,600
+[SPEAKER_01] It could be where we see three day trials.
+
+885
+01:11:08,240 --> 01:11:13,280
+[SPEAKER_01] That's probably mostly what it is, is what kind of products use three days versus versus seven days.
+
+886
+01:11:14,640 --> 01:11:16,000
+[SPEAKER_01] But it's still pretty interesting.
+
+887
+01:11:16,080 --> 01:11:20,800
+[SPEAKER_01] And let's just talk about a high, even that thirty percent is a little low, but forty five percent as the medium.
+
+888
+01:11:21,280 --> 01:11:36,320
+[SPEAKER_01] So like half of all those users that engage in that trial are converting, which is, I guess, like that's of three percent of downloads or something like this, but still, you know, that's that's pretty good.
+
+889
+01:11:36,800 --> 01:11:37,440
+[SPEAKER_01] That's pretty good.
+
+890
+01:11:37,920 --> 01:11:37,920
+[SPEAKER_01] Yeah.
+
+891
+01:11:38,720 --> 01:11:39,920
+[SPEAKER_00] I was surprised at these numbers.
+
+892
+01:11:40,240 --> 01:11:48,720
+[SPEAKER_00] These, these, so some of the numbers in here, you know, like the retention rate, the medium being twenty five at one year for annual subscription, that actually surprised me on the low side.
+
+893
+01:11:49,680 --> 01:11:51,840
+[SPEAKER_00] But this is one of those that surprised me on the high side.
+
+894
+01:11:52,960 --> 01:12:00,560
+[SPEAKER_00] that for a medium across all the apps that we track, 45% converting from a free trial to paid is encouraging.
+
+895
+01:12:01,120 --> 01:12:02,320
+[SPEAKER_00] It's like something.
+
+896
+01:12:02,880 --> 01:12:03,520
+[SPEAKER_00] Get that trial started.
+
+897
+01:12:04,000 --> 01:12:04,960
+[SPEAKER_00] That's where it's at, right?
+
+898
+01:12:05,200 --> 01:12:07,840
+[SPEAKER_01] Like get that trial started and it's magic.
+
+899
+01:12:08,000 --> 01:12:08,560
+[SPEAKER_01] That's the moment.
+
+900
+01:12:09,200 --> 01:12:09,280
+[SPEAKER_01] Yeah.
+
+901
+01:12:09,760 --> 01:12:14,000
+[SPEAKER_00] And then back to kind of what you were saying, I think there are a ton of reasons why we might see this.
+
+902
+01:12:15,040 --> 01:12:22,800
+[SPEAKER_00] And again, kind of back to all of these metrics, is a seven day free trial magical compared to a three day free trial?
+
+903
+01:12:23,280 --> 01:12:23,760
+[SPEAKER_00] Probably not.
+
+904
+01:12:24,640 --> 01:12:24,720
+[SPEAKER_00] Yeah.
+
+905
+01:12:25,040 --> 01:12:37,760
+[SPEAKER_00] It it probably is a certain level of selection bias is that, you know, a weekly subscription is more likely to do a three day free trial than a Yeah, that's most likely the case because you can't it's weird.
+
+906
+01:12:37,920 --> 01:12:44,000
+[SPEAKER_01] Yeah, I've seen that more often in in weeklies and then we've just seen general less attachment in those product durations.
+
+907
+01:12:44,480 --> 01:12:51,040
+[SPEAKER_01] Now I will I will call and this is worth pulling the report revenue caught dot com slash report to go look at it.
+
+908
+01:12:51,280 --> 01:12:58,320
+[SPEAKER_01] But actually there's fluctuation and, you know, because we go on to talk about the two week and the one mont month, there's fluctuation, but the median is 45, 44 and 45.
+
+909
+01:12:58,480 --> 01:12:59,440
+[SPEAKER_01] So they're almost identical.
+
+910
+01:12:59,760 --> 01:13:05,120
+[SPEAKER_01] And then also on the top quartile, we got 62, 61, 67 and on the bottom 28, 21, 21.
+
+911
+01:13:05,280 --> 01:13:10,800
+[SPEAKER_01] So like, that's a lot of numbers, but if you look at it visually, you'll see that it's kind of doesn't matter.
+
+912
+01:13:11,440 --> 01:13:11,600
+[SPEAKER_01] Right?
+
+913
+01:13:12,240 --> 01:13:16,160
+[SPEAKER_00] It's kind of like 15 and 30 day is like they kind of are all the same.
+
+914
+01:13:16,320 --> 01:13:23,440
+[SPEAKER_01] The top quartiles are very similar and the bottom quartiles are very similar and the median is very similar, which like my conclusion from that is it doesn't matter much.
+
+915
+01:13:23,760 --> 01:13:27,760
+[SPEAKER_01] Like it probably there's probably some., I think it's probably more about product marketing.
+
+916
+01:13:28,240 --> 01:13:43,200
+[SPEAKER_01] And it might be more interesting to look at not how this and this is the, this is where like all this data has to be like pulled into a human brain and applied to your situation because like it might be more interesting to see how those selections affect trial start rate, not necessarily conversion rate, right?
+
+917
+01:13:43,440 --> 01:13:48,560
+[SPEAKER_01] Because people are thinking about the duration more actively when they start it than probably during it.
+
+918
+01:13:49,200 --> 01:13:52,960
+[SPEAKER_01] And certainly the conversion rate is passive, the conversion event is passive, right?
+
+919
+01:13:53,200 --> 01:13:58,000
+[SPEAKER_01] So that's happening without their, without their, you know, immediate in our like direct interaction.
+
+920
+01:13:58,560 --> 01:14:01,040
+[SPEAKER_01] So, um, so yeah, I would consider that as well.
+
+921
+01:14:01,280 --> 01:14:02,160
+[SPEAKER_01] So, but then it's good.
+
+922
+01:14:02,240 --> 01:14:04,400
+[SPEAKER_01] An all, an all result is a result, as we say, right?
+
+923
+01:14:04,560 --> 01:14:08,720
+[SPEAKER_00] Um, and I wanted to call out the, the widest variance in this chart.
+
+924
+01:14:08,880 --> 01:14:18,880
+[SPEAKER_00] So on a 30 day free trials, 17 to 30 day free trials, 32 day free trials, um, the bottom quartile is 21 percent and the top quartile is 67 percent.
+
+925
+01:14:19,440 --> 01:14:19,840
+[SPEAKER_00] Three X.
+
+926
+01:14:20,080 --> 01:14:28,080
+[SPEAKER_00] Three more than a three X swing error band of, you know, where you're not even that broad.ad a program.
+
+927
+01:14:28,160 --> 01:14:30,800
+[SPEAKER_01] We're just talking 25 to 75 percent, right?
+
+928
+01:14:31,040 --> 01:14:32,400
+[SPEAKER_01] Of course, this difference, right?
+
+929
+01:14:32,640 --> 01:14:33,120
+[SPEAKER_01] Um, yeah.
+
+930
+01:14:33,280 --> 01:14:37,360
+[SPEAKER_01] This is the middle, the middle, the middle fifty percent of apps have that much range.
+
+931
+01:14:37,840 --> 01:14:38,000
+[SPEAKER_01] Right.
+
+932
+01:14:38,480 --> 01:14:38,800
+[SPEAKER_01] Which is why.
+
+933
+01:14:39,120 --> 01:14:49,280
+[SPEAKER_00] And so it just tells you again, you know, kind of to your point is that it's not about the duration, it's about product quality, product marketing, you know, it's about so many other things.
+
+934
+01:14:49,600 --> 01:14:54,800
+[SPEAKER_00] So you can have a 30 day free trial that only converts, you know, less than 21 percent.
+
+935
+01:14:55,040 --> 01:14:58,560
+[SPEAKER_00] You can have a 30 day trial that converts well over 67 percent.
+
+936
+01:14:58,960 --> 01:15:03,120
+[SPEAKER_01] We debated before this podcast and how much FUD and how much caveating and all this stuff.
+
+937
+01:15:03,200 --> 01:15:07,440
+[SPEAKER_01] And now after sitting here for an hour plus talking about it, I'm like, yeah, I think we've just discussed a number.
+
+938
+01:15:07,760 --> 01:15:08,560
+[SPEAKER_01] These numbers don't matter.
+
+939
+01:15:09,120 --> 01:15:13,200
+[SPEAKER_01] Like what matters is your product, which has been the beat we've been on with Subclub the whole time.
+
+940
+01:15:13,440 --> 01:15:14,640
+[SPEAKER_01] I'm being facetious, of course.
+
+941
+01:15:15,120 --> 01:15:16,240
+[SPEAKER_01] Some numbers really matter.
+
+942
+01:15:16,480 --> 01:15:19,600
+[SPEAKER_01] And that's the idea with the reports, like help you find the numbers that really matter.
+
+943
+01:15:20,320 --> 01:15:21,200
+[SPEAKER_01] But a lot of them may not.
+
+944
+01:15:21,440 --> 01:15:31,040
+[SPEAKER_01] And like, I think the goal with this is to give you, equip you at least with some education on what might or might not be the bottleneck for your particular business.
+
+945
+01:15:32,080 --> 01:15:37,120
+[SPEAKER_00] And that's a perfect place to kind of wrap up since we're way over time and we could we could talk for hours.
+
+946
+01:15:37,520 --> 01:15:39,040
+[SPEAKER_00] You and I could do like a four hour podcast.
+
+947
+01:15:41,760 --> 01:15:44,560
+[SPEAKER_00] Are we at the point in the podcast's journey where we have a side podcast?
+
+948
+01:15:44,800 --> 01:15:47,600
+[SPEAKER_01] Because that seems like what every podcast does at some point.
+
+949
+01:15:47,760 --> 01:15:51,440
+[SPEAKER_01] They start to replicate and then, you know, invariably cancel that podcast after they're live.
+
+950
+01:15:51,680 --> 01:15:52,720
+[SPEAKER_01] We and you talking numbers.
+
+951
+01:15:52,960 --> 01:15:56,800
+[SPEAKER_00] The only thing worse than producing one podcast is having to produce two podcasts.
+
+952
+01:15:57,440 --> 01:15:59,280
+[SPEAKER_00] So we won't be doing that, but we could.
+
+953
+01:15:59,680 --> 01:16:00,960
+[SPEAKER_01] But let's wrap up there.
+
+954
+01:16:01,280 --> 01:16:02,960
+[SPEAKER_00] So are these numbers perfect?
+
+955
+01:16:03,360 --> 01:16:03,440
+[SPEAKER_00] No.
+
+956
+01:16:05,520 --> 01:16:08,880
+[SPEAKER_00] Are they directly applicable in every metric to your app?
+
+957
+01:16:09,200 --> 01:16:09,360
+[SPEAKER_00] No.
+
+958
+01:16:09,840 --> 01:16:10,560
+[SPEAKER_00] But are they useful?
+
+959
+01:16:10,800 --> 01:16:12,080
+[SPEAKER_00] They are damn useful.
+
+960
+01:16:12,640 --> 01:16:18,560
+[SPEAKER_00] I've learned a lot from building this report and looking at the data and using it in the right way.
+
+961
+01:16:19,200 --> 01:16:21,760
+[SPEAKER_00] I do think that this report is going to help people make more money.
+
+962
+01:16:22,080 --> 01:16:23,760
+[SPEAKER_00] I think it's going to help people see some of these.
+
+963
+01:16:24,480 --> 01:16:27,360
+[SPEAKER_01] Even if it just helps one, David, just one app make a little more money.
+
+964
+01:16:27,600 --> 01:16:29,120
+[SPEAKER_01] That's all I want in this world.
+
+965
+01:16:29,760 --> 01:16:29,840
+[SPEAKER_01] Yeah.
+
+966
+01:16:31,680 --> 01:17:03,760
+[SPEAKER_00] So, to your point, I think the best lens to look at this is as a subscription app developer, you have a business and that business is comprised of hundreds of little micrometrics that you can move here and that you can move there, and what this report will hopefully do, and then this podcast being a companion to that report, is help you better put those metrics into context, and hopefully this podcast.cast.
+
+967
+01:17:03,920 --> 01:17:05,280
+[SPEAKER_00] No, nobody's still listening at this point.
+
+968
+01:17:06,000 --> 01:17:14,560
+[SPEAKER_00] They've all just gone and downloaded it, but to look at these numbers with enough context to say, okay, we're not top quartile in this metric.
+
+969
+01:17:14,880 --> 01:17:19,120
+[SPEAKER_00] We're, you know, median in that metric, but this is our business.
+
+970
+01:17:19,600 --> 01:17:28,720
+[SPEAKER_00] Our business has advantages and leverages here and we're top quartile there and we're going to be bottom quartile in the other as a result of the leverage we have in that metric.
+
+971
+01:17:29,760 --> 01:17:45,360
+[SPEAKER_00] And so take all of these numbers that you're looking at when you're reading the report and filter them through a broader strategy of how you're going to run your business, what leverage you have and then what points along that funnel you truly have leverage.
+
+972
+01:17:45,600 --> 01:17:55,200
+[SPEAKER_00] And, and, you know, this is what we were talking about earlier is that if you're an early stage app trying to perfectly optimize your trial start rate is maybe not the best place to spend your time.
+
+973
+01:17:55,840 --> 01:18:04,320
+[SPEAKER_01] I mean, this is our, this is again a SaaS company, not an app, but like, let's talk about revenue cat, like, the first three, four years, like, we used metrics, but we didn't really like.
+
+974
+01:18:05,440 --> 01:18:06,240
+[SPEAKER_01] focusing so heavily.
+
+975
+01:18:06,480 --> 01:18:10,880
+[SPEAKER_01] But in the last year, as like growth, as the company's got bigger, is more mature.
+
+976
+01:18:11,040 --> 01:18:22,240
+[SPEAKER_01] It's much, it's much more helpful for us to, this is a terminate you hear, it's the growth stage, just managed by metrics being like, okay, like even in the early days, you just be like, oh, let's make the product better or whatever, the metrics will take care of themselves.
+
+977
+01:18:22,240 --> 01:18:22,720
+[SPEAKER_01] It's true.
+
+978
+01:18:22,880 --> 01:18:25,840
+[SPEAKER_01] As you get further on, it's very helpful to be like, all right, we're going to do X.
+
+979
+01:18:26,160 --> 01:18:27,680
+[SPEAKER_01] And this is how we're going to measure X.
+
+980
+01:18:27,920 --> 01:18:28,000
+[SPEAKER_01] Yeah.
+
+981
+01:18:28,320 --> 01:18:28,480
+[SPEAKER_01] Right.
+
+982
+01:18:28,640 --> 01:18:39,520
+[SPEAKER_01] And I think as a business owner runner, if you're the CEO of a company or like you're part of a big company or just a sole proprietorship or whatever it is, that's going to be a different fit, different stage, different time to like manage my metrics.
+
+983
+01:18:39,600 --> 01:18:40,960
+[SPEAKER_01] I think it's always useful to have them.
+
+984
+01:18:41,280 --> 01:18:44,240
+[SPEAKER_01] How much emphasis you put on them, you know, depends.
+
+985
+01:18:44,960 --> 01:18:52,720
+[SPEAKER_01] But I do think like we've not always measured, we've not always managed my metrics at RevenueCat, but we've always had them, like we've always used them.
+
+986
+01:18:53,200 --> 01:18:54,800
+[SPEAKER_01] So like, yeah.
+
+987
+01:18:55,120 --> 01:19:04,560
+[SPEAKER_01] But regardless of if you're at the beginning of that journey or the end or the middle, I think you can use this data to enhance like how you're how you're using that, how you're using your own metrics.
+
+988
+01:19:05,680 --> 01:19:05,760
+[SPEAKER_01] Yeah.
+
+989
+01:19:06,400 --> 01:19:12,560
+[SPEAKER_00] And I think that's a really great place to wrap up is that, you know, metrics are of great use.
+
+990
+01:19:13,120 --> 01:19:13,280
+[SPEAKER_00] Great.
+
+991
+01:19:13,440 --> 01:19:15,200
+[SPEAKER_00] Love analytics, awesome numbers.
+
+992
+01:19:15,520 --> 01:19:17,760
+[SPEAKER_01] I love all numbers, three, seven, forty two.
+
+993
+01:19:18,080 --> 01:19:18,480
+[SPEAKER_01] They're great.
+
+994
+01:19:19,280 --> 01:19:20,160
+[SPEAKER_01] Summary statistics.
+
+995
+01:19:20,240 --> 01:19:20,880
+[SPEAKER_01] I could do this all day.
+
+996
+01:19:20,960 --> 01:19:22,800
+[SPEAKER_01] You didn't tell me we were starting a statistics podcast.
+
+997
+01:19:22,960 --> 01:19:24,160
+[SPEAKER_01] Now I'm all reenergized.
+
+998
+01:19:24,320 --> 01:19:26,720
+[SPEAKER_01] I mean, I love subscriptions and everything.
+
+999
+01:19:26,960 --> 01:19:31,600
+[SPEAKER_01] But I think, you know, if you got me talking stats all day, I think I'd be just as happy.
+
+1000
+01:19:32,160 --> 01:19:32,240
+[SPEAKER_01] So.
+
+1001
+01:19:33,040 --> 01:19:34,720
+[SPEAKER_01] Read this report and go run your business.
+
+1002
+01:19:35,200 --> 01:19:35,600
+[SPEAKER_00] Sounds good.
+
+1003
+01:19:36,560 --> 01:19:38,000
+[SPEAKER_00] I'm going to do that right now, David.
+
+1004
+01:19:40,400 --> 01:19:43,360
+[SPEAKER_00] Okay, I hope everyone enjoyed this and found some value.
+
+1005
+01:19:43,520 --> 01:19:45,680
+[SPEAKER_00] One other thing, two things I want to shout at the end.
+
+1006
+01:19:45,760 --> 01:19:50,400
+[SPEAKER_00] One, you've heard us say it a few times, but again, you can check out the full report.
+
+1007
+01:19:50,560 --> 01:19:56,480
+[SPEAKER_00] We'll link to it in the show notes, but revenuecat dot com slash report should resolve to the report.
+
+1008
+01:19:58,080 --> 01:20:12,000
+[SPEAKER_00] The last thing though is that we will be doing now that we have the infrastructure in place, we have the data scientists, we have Looker all dialed in and all these metrics., you know, better dialed in across all of RevenueCat's data.
+
+1009
+01:20:12,320 --> 01:20:16,320
+[SPEAKER_00] We will be doing more blog posts and we'll also be preparing for next year's report.
+
+1010
+01:20:16,640 --> 01:20:18,480
+[SPEAKER_00] So don't hit up Jacob.
+
+1011
+01:20:19,440 --> 01:20:19,600
+[SPEAKER_00] You can.
+
+1012
+01:20:19,920 --> 01:20:20,960
+[SPEAKER_00] I'll just forward it to David.
+
+1013
+01:20:21,760 --> 01:20:30,160
+[SPEAKER_01] I was just going to suggest that Jacob at revenue dot com, cat dot com or David at revenuecat dot com if you're hearing this, listening to this, we'll hopefully have some link along with the report too.
+
+1014
+01:20:30,320 --> 01:20:38,240
+[SPEAKER_01] But like feedback on this is, is, you know, really important to us because this is this we consider this another extension of our product and we want to make it better over time.
+
+1015
+01:20:38,560 --> 01:20:41,280
+[SPEAKER_01] And the only way you can make a product better is by listening to users.
+
+1016
+01:20:42,880 --> 01:21:00,800
+[SPEAKER_00] So tell me specifically how you found this report useful and then what holes you saw in the report that you think we should dive into a little more, either in blog posts or in next year's report that would meaningfully impact the decisions you make in running your subscription app business.
+
+1017
+01:21:00,960 --> 01:21:02,880
+[SPEAKER_00] And if you didn't find it helpful, you don't have to write anything.
+
+1018
+01:21:03,520 --> 01:21:04,720
+[SPEAKER_01] You can just write the negative too.
+
+1019
+01:21:05,040 --> 01:21:05,360
+[SPEAKER_01] That's fine.
+
+1020
+01:21:05,520 --> 01:21:07,040
+[SPEAKER_01] That's even potentially more useful.
+
+1021
+01:21:07,360 --> 01:21:07,920
+[SPEAKER_01] So please.
+
+1022
+01:21:08,000 --> 01:21:08,080
+[SPEAKER_01] Yeah.
+
+1023
+01:21:08,720 --> 01:21:08,960
+[SPEAKER_01] Please.
+
+1024
+01:21:09,840 --> 01:21:10,160
+[SPEAKER_00] All right.
+
+1025
+01:21:10,160 --> 01:21:13,920
+[SPEAKER_00] Okay, Jacob, it was so fun and we only went over twenty minutes.
+
+1026
+01:21:14,480 --> 01:21:14,880
+[SPEAKER_00] Sounds good.
+
+1027
+01:21:15,360 --> 01:21:15,440
+[SPEAKER_00] Okay.
+
+1028
+01:21:15,920 --> 01:21:16,480
+[SPEAKER_00] We'll see you.
+
+1029
+01:21:19,200 --> 01:21:20,560
+[SPEAKER_00] Thanks so much for listening.
+
+1030
+01:21:21,520 --> 01:21:24,960
+[SPEAKER_00] If you have a minute, please leave a review in your favorite podcast player.
+
+1031
+01:21:25,680 --> 01:21:30,640
+[SPEAKER_00] You can also stop by chat dot subclub dot com to join our private community.
