@@ -1,0 +1,4671 @@
+1
+00:00:02,000 --> 00:00:02,960
+Welcome to Launched.
+
+2
+00:00:03,120 --> 00:00:10,400
+I'm Charlie Chapman, and today I'm excited to bring you the developer behind the Japanese dictionary and study app, Nihongo, Chris Bacelli.
+
+3
+00:00:23,840 --> 00:00:24,960
+Chris, welcome to the show.
+
+4
+00:00:25,520 --> 00:00:26,960
+Hey Charlie, thanks for having me.
+
+5
+00:00:27,280 --> 00:00:33,360
+I was really embarrassed when this happened, so we actually got to meet in person, I guess it's like a month now.
+
+6
+00:00:33,520 --> 00:00:36,800
+It feels like I was going to say last week, and then I realized that's not the case.
+
+7
+00:00:37,120 --> 00:00:42,560
+This has been a crazy kind of month for me, but we actually got to hang out in person, which was really awesome.
+
+8
+00:00:42,880 --> 00:01:02,000
+And as we were hanging out, I referenced something that I thought was a conversation we had had on this podcast because I thought I had had you on this podcast before, but as we were talking, I realized I think I was thinking of one of those early iOS dev happy hour zoom things during the pandemic.
+
+9
+00:01:02,880 --> 00:01:06,400
+And this whole time I've been thinking I've had you on the show and I actually hadn't yet.
+
+10
+00:01:07,200 --> 00:01:08,160
+Yeah, I think that's right.
+
+11
+00:01:08,560 --> 00:01:21,280
+I remember when you first started, I like, yeah, I think I listened to like the very first episode and then reached out to you about coming on and then kind of just we didn't ever happen so it was good to finally get on here.
+
+12
+00:01:22,080 --> 00:01:22,160
+Yeah.
+
+13
+00:01:22,400 --> 00:01:33,520
+Usually I'm like, oh, you've been on my list forever but you literally have not been on my list because I thought we had I guess we just talked about your backstory before a little bit and so I had that in my head.
+
+14
+00:01:34,080 --> 00:01:34,160
+Yeah.
+
+15
+00:01:34,400 --> 00:01:34,480
+Yeah.
+
+16
+00:01:34,640 --> 00:01:42,560
+Well, we had the iOS dev happy hour and I think you just had like sometimes you're just like on Twitter, hey, come join me, let's chat, you know, so we did that.
+
+17
+00:01:42,720 --> 00:01:43,440
+I remember too.
+
+18
+00:01:43,680 --> 00:01:43,760
+Yeah.
+
+19
+00:01:44,400 --> 00:01:44,960
+That's really funny.
+
+20
+00:01:45,040 --> 00:01:50,800
+Well, I'm glad to correct that and fill in all the gaps that I don't have in my memory.
+
+21
+00:01:50,960 --> 00:01:52,640
+Although now we've got to hang out in person.
+
+22
+00:01:52,880 --> 00:01:59,760
+So it's always, it's always funny, uh, doing these whenever I've actually met the person because I spent so long never having met people in real life doing this show.
+
+23
+00:02:00,320 --> 00:02:00,400
+Yeah.
+
+24
+00:02:00,640 --> 00:02:03,200
+Well, I'm sorry if I've bored you with any stories that I already told.
+
+25
+00:02:03,680 --> 00:02:04,640
+No, no, no, no, no.
+
+26
+00:02:04,960 --> 00:02:11,840
+I'm the worst offender of, uh, of repeating stories and everyone listening has probably heard me repeating the same stories over and over again.
+
+27
+00:02:12,640 --> 00:02:15,120
+So, yeah, that's just, that's just part of the deal here.
+
+28
+00:02:15,360 --> 00:02:21,920
+Um, but before we get into Nihongo and, uh, and your app, I want to give everyone a bit of background into who you are.
+
+29
+00:02:22,160 --> 00:02:24,720
+So the three questions I always ask is where are you from?
+
+30
+00:02:25,360 --> 00:02:27,600
+Do you have a formal education related to what you do?
+
+31
+00:02:28,000 --> 00:02:30,880
+And then we can talk about your career leading up to Nihongo.
+
+32
+00:02:31,760 --> 00:02:32,240
+Yeah, sure.
+
+33
+00:02:33,200 --> 00:02:35,760
+Where I'm from is kind of a complicated question.
+
+34
+00:02:37,440 --> 00:02:46,560
+I was born in Minnesota, but moved to Oregon when I was one year old and lived in Oregon through the end of elementary school in a suburb of Portland, Oregon.
+
+35
+00:02:46,960 --> 00:02:50,640
+Then moved to Princeton, New Jersey for middle school and high school.
+
+36
+00:02:51,280 --> 00:02:56,160
+Then I went to California for college and stayed out in the San Francisco Bay Area for a few years after that.
+
+37
+00:02:56,880 --> 00:03:06,960
+Then I moved to Japan for two years and then came back from Japan and moved to Vermont, where I lived for eight years until last summer when I moved back to Japan.
+
+38
+00:03:07,360 --> 00:03:14,320
+So now I currently live in a town called Ikoma in Nara prefecture, about 45 minutes east of Osaka.
+
+39
+00:03:14,960 --> 00:03:15,440
+Nice, man.
+
+40
+00:03:15,760 --> 00:03:23,360
+It's so funny, like, that you like ping pong off the coasts, back and forth with random, you know, you jump all the way out to Japan and then back.
+
+41
+00:03:24,240 --> 00:03:26,400
+Like, my mom spent her entire life in Minnesota.
+
+42
+00:03:26,960 --> 00:03:30,800
+So, uh, until I was born, like, we moved to Oregon when I was one year old.
+
+43
+00:03:30,960 --> 00:03:33,360
+And that was the first time my mom had, like, lived outside Minnesota.
+
+44
+00:03:33,920 --> 00:03:34,880
+So she had tons of family.
+
+45
+00:03:35,200 --> 00:03:36,640
+So we came back to Minnesota every summer too.
+
+46
+00:03:36,640 --> 00:03:37,120
+I've lived in Minnesota every summer too.
+
+47
+00:03:37,200 --> 00:03:39,360
+So I feel like I have a connection to.
+
+48
+00:03:39,760 --> 00:03:47,920
+So yeah, when people ask where I'm from, I'm like, I've lived basically equal parts of my life in Oregon, New Jersey, California, Vermont.
+
+49
+00:03:48,240 --> 00:03:50,880
+And by the end of this stint in Japan, probably Japan as well.
+
+50
+00:03:51,520 --> 00:03:56,800
+So it's just mountain time in terms of North American time zones that you've pretty much avoided.
+
+51
+00:03:57,360 --> 00:03:57,840
+I guess so.
+
+52
+00:03:57,920 --> 00:03:58,000
+Yeah.
+
+53
+00:03:58,400 --> 00:03:59,280
+Maybe that's next, right?
+
+54
+00:03:59,440 --> 00:04:01,360
+We'll have to figure out where to move when we get back from Japan.
+
+55
+00:04:01,440 --> 00:04:02,960
+Maybe it'll be Colorado or something.
+
+56
+00:04:03,280 --> 00:04:03,680
+There you go.
+
+57
+00:04:03,920 --> 00:04:04,400
+There you go.
+
+58
+00:04:05,200 --> 00:04:05,600
+So okay.
+
+59
+00:04:05,840 --> 00:04:07,760
+So you've lived in lots of different places.
+
+60
+00:04:08,640 --> 00:04:10,880
+So then what about formal education?
+
+61
+00:04:12,000 --> 00:04:12,000
+Yeah.
+
+62
+00:04:12,240 --> 00:04:17,040
+Yeah, so I did study computer science at UC Berkeley.
+
+63
+00:04:19,200 --> 00:04:22,880
+And before that, you know, I had, yeah, I took some, I actually started programming.
+
+64
+00:04:23,920 --> 00:04:25,760
+I took my first programming class in high school.
+
+65
+00:04:26,400 --> 00:04:27,760
+I took a Visual Basic class.
+
+66
+00:04:27,920 --> 00:04:28,960
+Oh, very exciting.
+
+67
+00:04:29,760 --> 00:04:30,800
+Yeah, yeah.
+
+68
+00:04:31,360 --> 00:04:35,040
+So, but the thing with Visual Basic was like, I was really into video games.
+
+69
+00:04:35,120 --> 00:04:38,400
+I mean, that's kind of how I got into programming was through being really into video games.
+
+70
+00:04:38,960 --> 00:04:42,480
+And I took this Visual Basic class and they were trying to make us, you know, make forms with buttons.
+
+71
+00:04:42,560 --> 00:04:42,880
+Yeah, exactly.
+
+72
+00:04:42,960 --> 00:04:44,640
+I mean, that's kind of what Visual Basic is, right?
+
+73
+00:04:44,880 --> 00:04:52,320
+It's like make like Windows, you know, 98 apps that have buttons and forms you can fill out and stuff like that.
+
+74
+00:04:52,960 --> 00:04:59,760
+But I figured out that you can make a shape and you can make a timer and you can get input from the keyboard.
+
+75
+00:04:59,920 --> 00:05:03,920
+And once I figured out those three things, I was like, no, I'm done with, I'm done with all this.
+
+76
+00:05:04,480 --> 00:05:17,200
+I'm making Pong, you know, things that I'm like, so I think that was my like first thing I made that, that I mean, that was just like a really transformative experience for me, making Pong out of those little shapes and timers and stuff in Visual Basic.
+
+77
+00:05:17,360 --> 00:05:22,560
+Because then, yeah, I just went on and like, got super into making games and and everything like that.
+
+78
+00:05:23,520 --> 00:05:30,560
+Then taking Java, which was also offered in my high school, and started making Java applets and making games that were Java applets.
+
+79
+00:05:31,280 --> 00:05:31,920
+Oh yeah.
+
+80
+00:05:32,560 --> 00:05:35,360
+I almost made a joke about Java with games, but that's right.
+
+81
+00:05:35,520 --> 00:05:41,440
+There was an era there where you were either doing like Shockwave Flash or you were making Java applets.
+
+82
+00:05:41,920 --> 00:05:42,320
+Exactly.
+
+83
+00:05:42,400 --> 00:05:46,320
+So I went, so I knew I didn't, you know, I never learned to make things in Flash.
+
+84
+00:05:46,480 --> 00:05:48,080
+So, and Java was what my school offered.
+
+85
+00:05:48,160 --> 00:05:49,360
+So I started making games in Java.
+
+86
+00:05:49,440 --> 00:05:49,920
+And yeah.
+
+87
+00:05:50,800 --> 00:05:55,440
+This was the era, yeah, of like web, you know, the golden age of web games.
+
+88
+00:05:55,680 --> 00:06:05,440
+So this was like freearcade dot com was my site that I actually, you know, I like playing these games at, you know, in high school in the library or whatever.
+
+89
+00:06:06,000 --> 00:06:09,280
+And then once I like made a game, I reached out to them and see if they want to buy it.
+
+90
+00:06:09,760 --> 00:06:11,840
+And they gave me 500 bucks for a game I made.
+
+91
+00:06:12,000 --> 00:06:12,240
+Whoa.
+
+92
+00:06:13,200 --> 00:06:17,680
+Yeah, that was like, so that was really also like, holy, I can actually make money.
+
+93
+00:06:18,480 --> 00:06:20,000
+You're going to pay me money for this thing I made.
+
+94
+00:06:20,400 --> 00:06:21,360
+Yeah, wow.
+
+95
+00:06:22,240 --> 00:06:27,440
+That has never, you know, that has never crossed my mind that like, that was an app store.
+
+96
+00:06:27,680 --> 00:06:28,480
+Like, yeah.
+
+97
+00:06:28,880 --> 00:06:30,000
+I I don't know why.
+
+98
+00:06:30,160 --> 00:06:41,360
+I've never really thought, I don't know that I've ever talked to anyone who's sold it, but that was like a huge industry, I guess like yeah yeah that was a big thing a big part of our lives around you know, that time.
+
+99
+00:06:42,320 --> 00:06:42,640
+Exactly.
+
+100
+00:06:42,720 --> 00:06:42,800
+Yeah.
+
+101
+00:06:43,040 --> 00:06:46,480
+It was going to the you know school library and lunch break or whatever.
+
+102
+00:06:46,560 --> 00:06:48,880
+And so how what was the distribution for that?
+
+103
+00:06:49,280 --> 00:06:54,320
+Uh, was it basically you were like emailing a binary to them or something?
+
+104
+00:06:55,120 --> 00:06:56,400
+Yeah, because that's exactly it.
+
+105
+00:06:56,640 --> 00:06:59,840
+I basically just emailed a zipped up folder of a Java.
+
+106
+00:07:00,080 --> 00:07:00,720
+I don't even remember.
+
+107
+00:07:00,960 --> 00:07:01,040
+Wow.
+
+108
+00:07:02,480 --> 00:07:03,200
+That's pretty wild.
+
+109
+00:07:03,520 --> 00:07:03,920
+Whatever.
+
+110
+00:07:04,320 --> 00:07:04,400
+Yeah.
+
+111
+00:07:05,200 --> 00:07:15,200
+Um, was that, sorry, this is like going to go into a little tangent here, but was that like an exclusive thing or could you then shop it online around to, because there was like a million of these sites, right?
+
+112
+00:07:16,240 --> 00:07:19,600
+Yeah, I think it was an exclusive thing where I was Okay, that makes sense.
+
+113
+00:07:19,680 --> 00:07:22,720
+Yeah, I was, yeah, I think I was like giving it, giving all the rights to him.
+
+114
+00:07:22,960 --> 00:07:23,040
+Yeah.
+
+115
+00:07:24,640 --> 00:07:36,080
+And yeah, I just remember, like, when I think back, like, I found some of my emails to this guy, it was, and I remember this because I wrote them like, I think I just had no idea how to do this.
+
+116
+00:07:36,160 --> 00:07:42,720
+I was like, Dear Mr Derby, like, I just remember writing that and just been like, Oh, I had no idea even how to email people.
+
+117
+00:07:42,960 --> 00:07:46,800
+Like, and I sounded like such a, I don't know, I just had no idea what I was doing.
+
+118
+00:07:47,040 --> 00:07:56,320
+I mean, I was what, whenever I started doing the iOS app store thing, I was already in my late twenty years and I didn't know what I was doing.
+
+119
+00:07:56,480 --> 00:08:08,080
+I can't, I can't possibly imagine what high school me would have thought, especially if there was $500, like an unbelievable sum of money in my head at that time.
+
+120
+00:08:08,400 --> 00:08:09,520
+Man, that's really cool.
+
+121
+00:08:10,160 --> 00:08:12,320
+So that was like, so I had a job at the time.
+
+122
+00:08:14,080 --> 00:08:27,760
+I was just like, worked at the library, just like, you know, putting books back on the shelves basically, which was also kind of interesting because I was studying like I had gotten into into like computer science and so I was studying like sorting algorithms.
+
+123
+00:08:28,160 --> 00:08:33,840
+So I just remember like doing this with the books, like sorting the books and trying to figure out the optimal way to like sort these.
+
+124
+00:08:34,320 --> 00:08:36,000
+You're manually bubble sorting.
+
+125
+00:08:36,960 --> 00:08:37,040
+Yeah.
+
+126
+00:08:37,520 --> 00:08:39,920
+But it was like, I mean, it was incredibly mind-numbing.
+
+127
+00:08:40,320 --> 00:08:46,160
+But so this was like one way to make it interesting was to like try to like do the different strategies of sorting these books and Yeah.
+
+128
+00:08:46,400 --> 00:08:49,440
+You know, dealing with the fact that I had some shelf space so I could use that.
+
+129
+00:08:49,840 --> 00:08:55,360
+So I could do some sort of, you know, hash sorting or something, you know, like But anyway, yeah.
+
+130
+00:08:55,440 --> 00:08:56,880
+So I had like had that job at the time.
+
+131
+00:08:57,280 --> 00:08:59,520
+Um, and then started making these games and I was like, what am I doing?
+
+132
+00:08:59,600 --> 00:09:01,920
+I could just be programming and making games and selling them.
+
+133
+00:09:02,240 --> 00:09:08,640
+So the next summer I decided like, okay, I'm gonna quit my job at the library and just like pump out a few games over the summer.
+
+134
+00:09:09,840 --> 00:09:13,440
+Instead, I ended up basically playing Final Fantasy XI all summer.
+
+135
+00:09:14,080 --> 00:09:19,760
+I got sucked into an MMO and didn't do anything, but um, yeah.
+
+136
+00:09:20,320 --> 00:09:20,400
+Yeah.
+
+137
+00:09:20,720 --> 00:09:21,440
+So that was my whole.
+
+138
+00:09:22,000 --> 00:09:25,600
+So that's how I got like super into coding and stuff was just through making games.
+
+139
+00:09:25,680 --> 00:09:32,560
+Like I just really loved going and trying to figure out like how an engine for a different game could work.
+
+140
+00:09:32,720 --> 00:09:36,960
+So like first I made, you know, I said I made Pong and I made, um, I made different like puzzle games.
+
+141
+00:09:37,600 --> 00:09:40,240
+Like one of my favorite puzzle games was Tetris Attack.
+
+142
+00:09:40,640 --> 00:09:47,280
+And so, um, this was like an old Super Nintendo game that, um, and so I like, kind of made a recreation of that.
+
+143
+00:09:47,520 --> 00:09:50,400
+And that was the first one that I sold to freearchade dot com.
+
+144
+00:09:51,040 --> 00:09:58,480
+Um, but then I just like, I have like, twenty different like half finished projects of let me make something that's kind of like Advance Wars.
+
+145
+00:09:58,640 --> 00:10:05,840
+Let me make something that's like, try to figure out how to make, uh, um, like a platform, right?
+
+146
+00:10:05,920 --> 00:10:09,200
+I mean, like a Mario Cell game and like a schmupp, like a shooter kind of thing.
+
+147
+00:10:09,840 --> 00:10:12,960
+And then I even started, this was all doing like two D stuff.
+
+148
+00:10:13,280 --> 00:10:17,680
+So this was just like basically just using Java's like drawn image at XYQ.
+
+149
+00:10:17,920 --> 00:10:18,000
+Yeah.
+
+150
+00:10:18,480 --> 00:10:24,240
+You know, I tried to start doing like a Mario Kart game, but like using that two D stuff.
+
+151
+00:10:24,400 --> 00:10:33,360
+So like trying to figure out the math of doing those transformations and stuff and sort of realizing, okay, now I see why like this is hard and why people may be game engines for this, right?
+
+152
+00:10:33,760 --> 00:10:33,840
+Yeah.
+
+153
+00:10:35,920 --> 00:10:37,200
+But yeah, I got really into that.
+
+154
+00:10:37,360 --> 00:10:39,920
+And so then, yeah, decided I wanted to study computer science.
+
+155
+00:10:40,000 --> 00:10:44,560
+And so I went up to California and studied computer science in college.
+
+156
+00:10:45,360 --> 00:10:48,960
+And then coming out of college, were you in the game engine?
+
+157
+00:10:48,960 --> 00:10:57,840
+Were you still wanting to try and get, like, go into games as an industry or or did you go right into like, you know, software development kind of typical?
+
+158
+00:10:59,200 --> 00:11:02,400
+I was really struggling with that because I still really liked games a lot.
+
+159
+00:11:02,640 --> 00:11:07,840
+And I basically had gotten an internship while I was in college at a company called Bigfix.
+
+160
+00:11:08,560 --> 00:11:10,960
+And they were like an enterprise software company.
+
+161
+00:11:11,120 --> 00:11:16,160
+They were building basically tools for companies that have, say, like, like, 100,000 computers spread all over the world.
+
+162
+00:11:17,280 --> 00:11:24,640
+You have the ability to sort of get visibility into what software is installed on all of them, like properties like how much storage space and RAM and.
+
+163
+00:11:25,280 --> 00:11:27,520
+this, um, energy settings was a big thing they did.
+
+164
+00:11:27,680 --> 00:11:30,480
+And like, yeah, like fleet management kind of stuff.
+
+165
+00:11:30,880 --> 00:11:42,160
+Yeah, fleet management thing, but on a really huge scale, like across, yeah, like a hundred like Walmart was a customer or something like that, you know, like a hundred, yeah, yeah, like a thousand computers, all the like point of sale machines and stuff like that.
+
+166
+00:11:42,960 --> 00:11:46,720
+And so, uh, you could basically manage all of them and then like take actions on them.
+
+167
+00:11:47,120 --> 00:11:53,120
+So, um, you could, uh, yeah, like write scripts that would run on all the machines that fit certain criteria.
+
+168
+00:11:54,000 --> 00:11:59,600
+And the big sort of innovation that they did, I mean, this was a company that was founded in, I think, the late nineties.
+
+169
+00:11:59,680 --> 00:12:09,920
+So, I think at the time, the key differentiator for them was that all the processing happened on the endpoint, on the client, like desktop machine or something instant.
+
+170
+00:12:10,640 --> 00:12:24,400
+So instead of reporting, hey, here's all the properties of this machine, here's all this information, now you go to the server and you run stuff on the server that finds out which ones to target, they were doing their processing on the endpoints.
+
+171
+00:12:24,960 --> 00:12:28,640
+Which means it scales with the number of devices on the network.
+
+172
+00:12:28,800 --> 00:12:29,760
+Yeah, yeah, that's cool.
+
+173
+00:12:30,240 --> 00:12:30,560
+Exactly.
+
+174
+00:12:30,960 --> 00:12:35,520
+So it ended up being a really, I mean, I can't say good enough things about working at Bigfix.
+
+175
+00:12:37,440 --> 00:12:41,920
+And the follow up to this is I ended up joining them after college.
+
+176
+00:12:42,800 --> 00:12:47,680
+I was kind of I applied to some game companies and then but then ended up just deciding to continue with them instead.
+
+177
+00:12:48,720 --> 00:12:56,560
+And you know, I I one I feel like there's really there were really interesting problems to solve.
+
+178
+00:12:57,280 --> 00:12:59,200
+They had a bunch of domain specific languages.
+
+179
+00:12:59,520 --> 00:13:05,120
+They had a language called relevance, which was their like query language and a language called action script.
+
+180
+00:13:05,360 --> 00:13:12,320
+So I actually had like at one point a job where we were extending to like mobile devices and I basically got to like rewrite the.
+
+181
+00:13:14,240 --> 00:13:19,600
+the engine that runs like relevance at this like domain specific language they had.
+
+182
+00:13:19,920 --> 00:13:22,880
+And so I got to kind of like do all the research of like how to do that.
+
+183
+00:13:22,960 --> 00:13:25,200
+And I built a programming language dang.
+
+184
+00:13:25,920 --> 00:13:33,920
+runtime basically like getting into like tokenizers and parser and and text trees and all this cool stuff.
+
+185
+00:13:34,000 --> 00:13:35,520
+So there's really cool problems to solve.
+
+186
+00:13:36,080 --> 00:13:47,600
+It was also a massive distributed system effectively because you had all these endpoints that were running things and then they had to communicate with each other and communicate up the hierarchy in these complicated network environments and things.
+
+187
+00:13:49,440 --> 00:13:52,960
+So really, yeah, interesting sort of computer sciencey problems to solve.
+
+188
+00:13:53,600 --> 00:13:58,720
+And then, I also feel like the people there were amazing and that was really hard to leave.
+
+189
+00:13:59,120 --> 00:14:04,320
+Yeah, that's that's one of those things that will, what's the word I'm looking for?
+
+190
+00:14:04,480 --> 00:14:19,360
+It's like a bomb over so many other issues, pay could be bad, the future of the company could be bad, the work can be boring, but if the people are kind and enjoyable to be around, it's kind of like, well, maybe I'll stick it out for longer.
+
+191
+00:14:19,520 --> 00:14:24,960
+Like, I'm not saying that was the case there, but it's like, you know, I there's all those stats about like, you're doing great.
+
+192
+00:14:24,960 --> 00:14:29,920
+What are those statistics about like your direct manager being the most important, like the biggest factor in somebody actually staying or leaving?
+
+193
+00:14:30,720 --> 00:14:35,680
+Yeah, totally makes sense because it's all about it's the people you're spending a huge chunk of your life with.
+
+194
+00:14:35,760 --> 00:14:35,840
+Yeah.
+
+195
+00:14:36,960 --> 00:14:37,360
+Exactly.
+
+196
+00:14:37,680 --> 00:14:43,760
+Yeah, it's it's it's really is a like you're signing up for a Yeah, it's like a relationship with these people.
+
+197
+00:14:44,000 --> 00:14:45,360
+You have to live with them essentially.
+
+198
+00:14:46,160 --> 00:14:46,240
+Yeah.
+
+199
+00:14:47,040 --> 00:14:58,400
+And having that being toxic can ruin everything else being perfect and having them being amazing can really make it can really make up for a lot of other issues at any sort of company.
+
+200
+00:14:59,280 --> 00:15:00,000
+Yeah, definitely.
+
+201
+00:15:00,640 --> 00:15:04,000
+So they were, yeah, just like, yeah, kind and funny.
+
+202
+00:15:04,400 --> 00:15:06,080
+And it was a really great place to work.
+
+203
+00:15:06,400 --> 00:15:09,840
+And they were also really just into the craft of like software engineering.
+
+204
+00:15:10,320 --> 00:15:21,040
+So I like to say, or I like, you know, the way I kind of think about it when I look back on it is I learned computer science in college, but I really earned learned software engineering at my Yeah, yeah, just the craft of that.
+
+205
+00:15:21,200 --> 00:15:26,960
+People were into like, you know, reading, um, blogs on software engineering, like Joel on Software was a big one.
+
+206
+00:15:27,200 --> 00:15:27,280
+Yeah.
+
+207
+00:15:27,680 --> 00:15:29,040
+That, you know, we talked a lot about.
+
+208
+00:15:29,200 --> 00:15:33,680
+And like, um, I can't even, Raymond Chang, I think was one.
+
+209
+00:15:34,000 --> 00:15:36,640
+And like, um, yeah, just a lot of really good.
+
+210
+00:15:37,280 --> 00:15:41,600
+blogs and books and sort of commiserating on that.
+
+211
+00:15:43,040 --> 00:15:49,520
+So I feel like I just, yeah, like became a much better software engineer and learned sort of that whole field from my time there.
+
+212
+00:15:50,000 --> 00:15:56,720
+So I think it was the right call, but I was also that whole time feeling like, man, I've really wanted to do games for a really long time.
+
+213
+00:15:57,680 --> 00:15:59,600
+It's kind of what got me into this originally.
+
+214
+00:16:01,280 --> 00:16:19,840
+So when, so I basically stayed at Big Fix for a couple of years after college and then wanted to go live in Japan, especially like Justin, my husband wanted to go live in Japan.
+
+215
+00:16:20,640 --> 00:16:25,520
+And we wanted to go have that kind of adventure together of living somewhere outside the United States.
+
+216
+00:16:26,160 --> 00:16:29,440
+Has Japan always been like specifically a place?
+
+217
+00:16:29,680 --> 00:16:33,600
+Is it because of the game connection or Yeah, I mean, it kind of starts from that, right?
+
+218
+00:16:33,840 --> 00:16:36,560
+Like I started teaching taking Japanese in high school.
+
+219
+00:16:36,800 --> 00:16:40,160
+My high school has, you know, actually offered Japanese classes.
+
+220
+00:16:40,320 --> 00:16:41,680
+So I had taken like French.
+
+221
+00:16:42,160 --> 00:16:43,040
+Yeah, it was really cool.
+
+222
+00:16:43,360 --> 00:16:46,720
+I had taken French in high school, but didn't really feel any strong connection to that.
+
+223
+00:16:47,040 --> 00:16:52,320
+Get to high school, they offered Japanese and, you know, I was super into video games and anime and stuff like that.
+
+224
+00:16:52,400 --> 00:17:09,360
+So it was like if I had a choice between French, which I have kind of no connection to and no real drive to learn with Japanese, you know, and the thing was, if I'm really honest with myself about looking back on it, it was really because I wanted to play the like the next Final Fantasy and not have to wait for it to come out in the US.
+
+225
+00:17:09,920 --> 00:17:19,280
+Like that was probably like reason number one for learning how much did that, uh, yeah, that like FOMO, uh, play into, you know, the trajectory of your entire life.
+
+226
+00:17:20,000 --> 00:17:20,480
+Oh my gosh.
+
+227
+00:17:20,720 --> 00:17:21,680
+Yeah, it was huge.
+
+228
+00:17:21,840 --> 00:17:21,920
+Yeah.
+
+229
+00:17:22,240 --> 00:17:26,000
+Which it's also ironic because now games all come out worldwide at the same time.
+
+230
+00:17:26,240 --> 00:17:26,400
+Yeah.
+
+231
+00:17:26,960 --> 00:17:27,040
+No.
+
+232
+00:17:29,440 --> 00:17:30,080
+That's awesome.
+
+233
+00:17:30,800 --> 00:17:34,720
+But yeah, I mean, that was definitely like the original impetus to go learn Japanese.
+
+234
+00:17:36,080 --> 00:17:46,560
+Justin and I both applied to the JET program, which is like the program run through the Japanese government where you can go and teach Japanese at a Japanese high school or a Japanese public school.
+
+235
+00:17:47,360 --> 00:17:49,040
+You teach Japanese or teach English?
+
+236
+00:17:49,760 --> 00:17:50,880
+Did I say teach Japanese?
+
+237
+00:17:51,120 --> 00:17:52,000
+I meant teach English.
+
+238
+00:17:52,320 --> 00:17:53,120
+Okay, yeah, yeah.
+
+239
+00:17:53,280 --> 00:17:53,840
+Just making sure.
+
+240
+00:17:54,240 --> 00:17:55,200
+Yeah, yeah, yeah.
+
+241
+00:17:55,440 --> 00:17:56,400
+So you're teaching English.
+
+242
+00:17:56,560 --> 00:18:05,360
+You're basically like go to a Japanese school that they assign you to, which you don't get any choice over.
+
+243
+00:18:05,840 --> 00:18:14,480
+And then you go and you work in a school and teach English to Japanese kids.
+
+244
+00:18:15,360 --> 00:18:16,960
+So we both applied to this.
+
+245
+00:18:18,320 --> 00:18:26,880
+He got in and I didn't, but we were able to basically so I basically decided to quit my job at Big Fix.
+
+246
+00:18:27,840 --> 00:18:30,080
+We had actually gotten acquired by IBM.
+
+247
+00:18:30,160 --> 00:18:31,040
+So now it was IBM.
+
+248
+00:18:31,200 --> 00:18:33,840
+So I wasn't super crazy about working for IBM.
+
+249
+00:18:34,240 --> 00:18:38,400
+And so just and not in on a philosophical level or anything.
+
+250
+00:18:38,480 --> 00:18:42,720
+IBM is fine, but I was just it was kind of not like a startup feeling at all.
+
+251
+00:18:43,280 --> 00:18:43,600
+Exactly.
+
+252
+00:18:44,160 --> 00:18:44,240
+Yeah.
+
+253
+00:18:44,480 --> 00:18:44,560
+Yeah.
+
+254
+00:18:45,120 --> 00:18:49,200
+I've been through multiple of these where it's like, it's not that the big company's bad.
+
+255
+00:18:49,440 --> 00:18:55,120
+It's just no longer necessarily the type of company I enjoy being at in the same way.
+
+256
+00:18:55,840 --> 00:19:01,600
+So yeah, so I decided to quit that job and just this was going to be my moment where I go and become an independent game developer.
+
+257
+00:19:02,320 --> 00:19:10,160
+And I was going to take that time to like go live in Japan and Justin was going to be working and I was going to be at home being an independent game developer.
+
+258
+00:19:10,960 --> 00:19:17,200
+Did you know what that meant yet in terms of platform or type of game or anything like that?
+
+259
+00:19:18,560 --> 00:19:19,920
+It was probably iOS.
+
+260
+00:19:21,040 --> 00:19:22,320
+Well, there's another story.
+
+261
+00:19:22,560 --> 00:19:24,320
+Okay, there's a couple of stories to unpack there.
+
+262
+00:19:25,280 --> 00:19:25,840
+Let's do it.
+
+263
+00:19:26,400 --> 00:19:30,960
+So my first game I ever made or the first app I ever made for iOS is a game called Pipe Drop.
+
+264
+00:19:31,600 --> 00:19:32,400
+Still on the App Store.
+
+265
+00:19:32,640 --> 00:19:35,440
+That's still okay, I was about to say, I think I've seen that on the App Store.
+
+266
+00:19:36,480 --> 00:19:48,800
+It was like, basically, it's just like a puzzle game, kind of inspired by a cross between, if you ever played Pipe Dreams, like one of those old Windows 95, like I know that name.
+
+267
+00:19:49,360 --> 00:19:50,880
+From Pipe Mania, it's sometimes called.
+
+268
+00:19:52,400 --> 00:19:57,760
+It's like, basically, it's probably on a floppy disk that was passed around at some point, yeah.
+
+269
+00:19:58,080 --> 00:19:58,160
+Yeah.
+
+270
+00:19:59,360 --> 00:20:12,400
+So it's basically like arrange these pipes and then it starts they start to fill like there's a spigot and the spigot and like water starts to fill and you have to kind of like keep putting the pieces down to make sure the water doesn't get to the end and then you lose.
+
+271
+00:20:12,960 --> 00:20:15,840
+So I basically made a game that was a cross between that and like Tetris.
+
+272
+00:20:16,480 --> 00:20:24,000
+So instead of the water just slowly filling up and you have to kind of keep ahead of it, pieces drop from the top of the screen, including some spigots.
+
+273
+00:20:24,160 --> 00:20:25,760
+Yeahots and the segment paths.
+
+274
+00:20:26,400 --> 00:20:35,680
+And then basically you make a path, connect it to a spigot, hold your finger down on the spigot to open the water, and then that clears all the blocks that were part of the path that you made.
+
+275
+00:20:36,480 --> 00:20:38,560
+So it makes those go away.
+
+276
+00:20:38,800 --> 00:20:41,920
+So you have to kind of keep up with it to try to keep it from filling up to the top.
+
+277
+00:20:44,000 --> 00:20:49,280
+So that game I made and released in 2011.
+
+278
+00:20:50,080 --> 00:20:51,120
+So this was like, okay.
+
+279
+00:20:51,600 --> 00:20:57,360
+Pretty early iOS days, early enough that it got, you know, featured by Apple for the first week it was out.
+
+280
+00:20:57,920 --> 00:20:59,200
+Back when that was like, amazing.
+
+281
+00:20:59,680 --> 00:21:01,440
+Yeah, it felt, it felt amazing.
+
+282
+00:21:02,880 --> 00:21:07,520
+It was like a 99 cent download, so I think I made like 1000 bucks in the first week.
+
+283
+00:21:07,760 --> 00:21:08,640
+Like, okay, this is it.
+
+284
+00:21:08,800 --> 00:21:09,280
+This is the path.
+
+285
+00:21:09,440 --> 00:21:10,160
+This is what I can do.
+
+286
+00:21:10,240 --> 00:21:11,840
+I can quit my job and go do this full day.
+
+287
+00:21:12,080 --> 00:21:12,160
+Yeah.
+
+288
+00:21:12,400 --> 00:21:18,080
+You know, I just have to, you know, do a little better with the, you know, marketing and stuff and, you know, all that stuff.
+
+289
+00:21:18,240 --> 00:21:20,160
+That's not a big deal, you know, I'll figure that out.
+
+290
+00:21:22,880 --> 00:21:26,480
+And so that was, yeah, that was my idea was I was going to go and start doing that.
+
+291
+00:21:27,840 --> 00:21:33,040
+I also went for it and bought the Ouya Developer Kit.
+
+292
+00:21:33,840 --> 00:21:35,360
+Or do you have the Ouya?
+
+293
+00:21:35,600 --> 00:21:41,760
+This is the Android box that you plugged in your TV and it was going to be a game console.
+
+294
+00:21:42,480 --> 00:21:43,520
+Was that a Kickstarter?
+
+295
+00:21:44,320 --> 00:21:45,440
+Yeah, it was a Kickstarter.
+
+296
+00:21:46,160 --> 00:21:48,880
+So Yeah, that was I was like super excited about that.
+
+297
+00:21:49,040 --> 00:21:51,760
+I mean, like everyone was, because it felt like, this is it.
+
+298
+00:21:52,080 --> 00:21:55,120
+We're going to have the app store but as a game console, you know.
+
+299
+00:21:55,840 --> 00:21:56,160
+Exactly.
+
+300
+00:21:56,320 --> 00:21:58,400
+Like I prefered game I prefered console games.
+
+301
+00:21:58,480 --> 00:21:59,520
+I prefered playing on my TV.
+
+302
+00:22:00,240 --> 00:22:02,640
+But the main consoles felt totally inaccessible.
+
+303
+00:22:02,800 --> 00:22:06,400
+So as like an e-developer, this was like, yeah.
+
+304
+00:22:06,800 --> 00:22:28,320
+I mean, this was even maybe really early days of like digital downloads, I think, you know, so it was becoming more accessible to get on like PlayStation or whatever, but as just an individual, it wasn't really Yeah, because like Xbox Arcade was kind of a thing, but I think that was still a they reach out to you, not you reach out to them kind of situation.
+
+305
+00:22:29,760 --> 00:22:29,840
+Yeah.
+
+306
+00:22:30,160 --> 00:22:33,280
+So this felt like a guaranteed, like, okay, you can get on their platform.
+
+307
+00:22:33,840 --> 00:22:42,240
+They had a deal where like, if you were part of the first, you know, thousand or hundred developers to sign up or something, you'd like they'd guarantee you a spot on their Yeah.
+
+308
+00:22:42,960 --> 00:22:44,320
+App Store page or whatever.
+
+309
+00:22:44,880 --> 00:22:46,160
+So I went for that too.
+
+310
+00:22:46,560 --> 00:22:49,920
+And so I like, did do some development aimed at at you.
+
+311
+00:22:52,640 --> 00:22:59,840
+But basically what happened when I got to Japan was I kinda hated it.
+
+312
+00:23:00,400 --> 00:23:03,120
+I kinda like living in Japan?
+
+313
+00:23:03,680 --> 00:23:04,240
+No, no, no.
+
+314
+00:23:04,480 --> 00:23:04,640
+Sorry.
+
+315
+00:23:04,800 --> 00:23:08,160
+Living in Japan was great, but well, okay.
+
+316
+00:23:08,960 --> 00:23:15,440
+Living in Japan was I arrived in August and I don't know if you know about August in Japan, but it's like steamy.
+
+317
+00:23:16,480 --> 00:23:17,040
+Hot steamy.
+
+318
+00:23:18,320 --> 00:23:24,640
+This was like soon enough after the Fukushima disaster too that they were like low.
+
+319
+00:23:24,640 --> 00:23:29,040
+They had turned off, you know, after that happened they turned off all the nuclear power plants in the country.
+
+320
+00:23:29,920 --> 00:23:30,080
+Right.
+
+321
+00:23:30,880 --> 00:23:36,640
+So they were like big campaigns about like not really using your air conditioner.
+
+322
+00:23:37,360 --> 00:23:37,840
+Oh man.
+
+323
+00:23:38,880 --> 00:23:42,240
+And I was like, had just gotten there and didn't want to like do the wrong thing and everything.
+
+324
+00:23:42,800 --> 00:23:42,800
+Yeah.
+
+325
+00:23:43,760 --> 00:23:44,880
+I was like, sitting there.
+
+326
+00:23:46,000 --> 00:23:47,440
+Justin was going to work every day.
+
+327
+00:23:48,320 --> 00:23:55,360
+I was sitting there in this Japanese apartment, knowing nobody, not being super confident in the language, like in this steamy apartment.
+
+328
+00:23:55,600 --> 00:23:58,960
+So that was rough in its own way.
+
+329
+00:23:59,360 --> 00:24:00,400
+But I also just found that.
+
+330
+00:24:00,400 --> 00:24:05,280
+I didn't really enjoy the game development as much as I thought I would.
+
+331
+00:24:05,840 --> 00:24:14,400
+And it's funny because I had this experience of like making all these games in high school and like playing around, like I mentioned, of playing around making different genres and stuff like that.
+
+332
+00:24:14,960 --> 00:24:21,360
+And then I made PipeDrop and I enjoyed doing that, but when I made PipeDrop, there weren't any game engines yet, right?
+
+333
+00:24:21,680 --> 00:24:26,720
+Like this was PipeDrop is literally like UI image views being manual.
+
+334
+00:24:27,120 --> 00:24:28,080
+Wow, okay, yeah, yeah.
+
+335
+00:24:28,400 --> 00:24:29,360
+It's being manipulated.
+
+336
+00:24:29,920 --> 00:24:33,200
+Which is more similar to what you were doing in high school.
+
+337
+00:24:34,000 --> 00:24:35,200
+Yeah, exactly.
+
+338
+00:24:35,280 --> 00:24:36,240
+It was more similar to that.
+
+339
+00:24:36,880 --> 00:24:45,920
+But by the time I get to, you know, moving to Japan, Unity exists, you know, there's game engines are thing, Coco's 2D, there's like a whole bunch of things have happened.
+
+340
+00:24:46,320 --> 00:25:00,400
+And at that point, the like, engineer in me, the like, don't repeat yourself, don't, you know, waste time rebuilding the wheel, part of me was like, couldn't feel good about like just building an engine on my own, because what's the point?
+
+341
+00:25:00,560 --> 00:25:04,400
+Like, I should be using these tools that are just that have like done all that.
+
+342
+00:25:04,880 --> 00:25:10,800
+So, but then I go and use those tools and all of a sudden, the programming becomes a lot kind of less interesting to me.
+
+343
+00:25:11,040 --> 00:25:12,560
+It's more art direction and.
+
+344
+00:25:12,800 --> 00:25:18,320
+and dealing with art direction, it's game design, which is fun.
+
+345
+00:25:18,560 --> 00:25:30,800
+And I enjoy game design and I like that, but kind of found that when the challenging programming side of it was gone, it wasn't enough to sustain me as a, like, hopefully a full time job.
+
+346
+00:25:31,680 --> 00:25:31,760
+Yeah.
+
+347
+00:25:32,960 --> 00:25:46,880
+And so, yeah, I ended up, um, yeah, and it was really hard too, because this is like, this had been my kind of my dream since like high school of like becoming a your identity is wrapped up in it, right?
+
+348
+00:25:47,040 --> 00:25:47,360
+A little bit.
+
+349
+00:25:47,680 --> 00:25:48,640
+My identity was totally.
+
+350
+00:25:49,200 --> 00:25:49,840
+wrapped up in it.
+
+351
+00:25:50,640 --> 00:26:02,240
+Which I bet a significant amount of people listening to this probably could see themselves feeling a similar way to like being an indie.
+
+352
+00:26:03,120 --> 00:26:13,920
+It's like, how often are you thinking about, like, man, if I can get this, this app going, maybe I could do this full time, you know, maybe I can get these two things moving or get revenue here.
+
+353
+00:26:14,640 --> 00:26:24,800
+But yeah, whenever, you know, when the dog catches the mailman or catches their tail or whatever metaphor you want to use, like, is that really the life you'd want.
+
+354
+00:26:24,880 --> 00:26:26,800
+And you don't really know until you get there, I guess.
+
+355
+00:26:26,880 --> 00:26:27,680
+And you kind of got there.
+
+356
+00:26:28,080 --> 00:26:28,160
+Yeah.
+
+357
+00:26:28,960 --> 00:26:30,000
+And then, and then what?
+
+358
+00:26:31,440 --> 00:26:31,760
+Exactly.
+
+359
+00:26:31,920 --> 00:26:35,440
+I got there and then was like, wait, like, actually, I don't want to do this.
+
+360
+00:26:36,400 --> 00:26:39,440
+So that was a really hard, you know, realization to go through.
+
+361
+00:26:40,960 --> 00:26:52,560
+And I mean, to be honest, I ended up getting, sinking into probably the worst depression of my life, just being alone in a new country, or not alone in a new country, but Justin was there, but he was working every day.
+
+362
+00:26:52,720 --> 00:27:00,560
+So during the day, kind of alone trying to realize this dream that I had, but it wasn't really working and it was hot and all that.
+
+363
+00:27:02,000 --> 00:27:03,520
+That layered on top of everything else.
+
+364
+00:27:04,000 --> 00:27:05,200
+That didn't really help, you know.
+
+365
+00:27:05,920 --> 00:27:14,880
+So I ended up deciding to go and start studying Japanese at a Japanese language school.
+
+366
+00:27:17,280 --> 00:27:25,520
+And so I moved to Japan in August and basically that January then I started doing like a full time Japanese language classes there.
+
+367
+00:27:26,880 --> 00:27:33,840
+So, and this Justin encouraged me to do this and I can't thank him enough for that because it was it really pulled me out of the deep funk.
+
+368
+00:27:34,160 --> 00:27:35,840
+It gave you some purpose.
+
+369
+00:27:36,800 --> 00:27:38,240
+Like you had a goal.
+
+370
+00:27:38,960 --> 00:27:39,520
+Yeah, yeah.
+
+371
+00:27:41,200 --> 00:27:51,280
+I met a ton of really cool people because the thing about a Japanese language school is these are all international students from all over the world that are, you know, all coming to Japan and then going to these classes.
+
+372
+00:27:51,520 --> 00:27:56,720
+So, met a lot of interesting people, helped with my visa situation.
+
+373
+00:27:58,480 --> 00:28:04,400
+Japan didn't recognize same-sex marriage, so and still doesn't, but at the time I couldn't get a visa through that.
+
+374
+00:28:04,960 --> 00:28:05,840
+Oh, how did yeah.
+
+375
+00:28:05,920 --> 00:28:10,480
+So, were you on like a travel not to, I mean, we don't have to get into specifics, but were you on like a travel visa or?
+
+376
+00:28:11,200 --> 00:28:12,320
+Yeah, I was on a travel visa.
+
+377
+00:28:13,840 --> 00:28:14,240
+I did it.
+
+378
+00:28:14,400 --> 00:28:17,920
+I came in with a travel visa, switched to the school visa.
+
+379
+00:28:18,400 --> 00:28:44,000
+I was trying originally to maybe do some work with IBM, just enough that maybe they'd sponsor me because they have like a Japanese branch so I could get that but that didn't work out so I got the visa as a student and then I mean, this is the whole story but over the over the over the following two years basically like was a student for a while then went on a tourist visa for a while then basically left the country and came back in to get an extension of my tourist visa.
+
+380
+00:28:44,240 --> 00:28:45,040
+That's so stressful.
+
+381
+00:28:45,680 --> 00:28:45,680
+Yeah.
+
+382
+00:28:46,400 --> 00:28:46,480
+Yeah.
+
+383
+00:28:47,040 --> 00:28:48,160
+And then went back to school again.
+
+384
+00:28:48,400 --> 00:28:51,520
+Again, you know, I kind of just bounced around between different visa situations.
+
+385
+00:28:52,480 --> 00:29:18,720
+Yeah, so I went to this Japanese language school and just kind of, yeah, got into that, made friends, had some purpose there and then started to like get really into studying Japanese again and in studying Japanese, I had like a dictionary app that I used to look words up and I had a flashcard app that I was using.
+
+386
+00:29:19,360 --> 00:29:21,200
+So the dictionary app I was using was called Emiwa.
+
+387
+00:29:21,360 --> 00:29:25,360
+The flashcards app I was using was called Flashcards Deluxe and they're both good appss.
+
+388
+00:29:27,040 --> 00:29:30,960
+But I really wanted to be like studying these words that I was seeing now that I was living in Japan.
+
+389
+00:29:32,080 --> 00:29:43,920
+And so I would look up a word in Imiwa and then end up like making a flashcard by hand in my flashcards app to study.
+
+390
+00:29:44,800 --> 00:29:51,680
+And that got kind of like a pain, you know, that got was really tedious and that was kind of painful to go through.
+
+391
+00:29:52,080 --> 00:29:56,960
+So I ended up kind of falling back to like studying from pre made flashcard decks that I found on the internet.
+
+392
+00:29:58,640 --> 00:30:04,240
+And I ended up studying like, you know, ten, you know, ten times thousand most common words in Japanese and things like that.
+
+393
+00:30:05,120 --> 00:30:14,640
+And it struck me when I was doing that, that I was like, here I am, like, I'm surrounded by all this actual native Japanese I could be learning and I'm still studying the exact same way that I did in the US.
+
+394
+00:30:16,480 --> 00:30:19,280
+You know, from pre made decks, like, this doesn't really make any sense.
+
+395
+00:30:20,480 --> 00:30:28,880
+So I tried to, my first sort of attempt at solving this was actually to just kind of connect those two apps.
+
+396
+00:30:29,200 --> 00:30:38,720
+And I figured out that Emua had an export function that you could export that your dictionary history, the list of words that you looked up in the dictionary.
+
+397
+00:30:40,640 --> 00:30:45,280
+And their export format that they could export to Dropbox.
+
+398
+00:30:46,240 --> 00:30:47,440
+This was before iCloud.
+
+399
+00:30:47,600 --> 00:30:49,600
+So you could export to Dropbox.
+
+400
+00:30:51,280 --> 00:30:53,120
+So I would have it export to Dropbox.
+
+401
+00:30:53,360 --> 00:31:00,080
+I had my laptop sitting open on my, you know, little Japanese, you know, desk in my tiny little Japanese apartment.
+
+402
+00:31:00,160 --> 00:31:01,600
+I just leave my laptop open all day.
+
+403
+00:31:02,400 --> 00:31:17,040
+And I configured a folder action that's a macOS feature that you can a folder action is a macOS feature that I think still exists, but you can basically set it to run an Apple script or an automator action or something whenever it detects a new file going into a folder.
+
+404
+00:31:17,360 --> 00:31:17,440
+Yeah.
+
+405
+00:31:18,160 --> 00:31:21,280
+So I would have it like that set up on that Dropbox folder.
+
+406
+00:31:22,160 --> 00:31:36,160
+It would trigger a script to run that would convert the dictionary history file to the flashcard format that my flashcard app accepts because the flashcard apps had an import functionality.
+
+407
+00:31:38,400 --> 00:31:41,680
+So I basically like, yeah, made it so that I could kind of do what I wanted to do.
+
+408
+00:31:42,080 --> 00:31:59,680
+I'd hit export, you know, to be sitting on the train, you know, looking up stuff or whatever, hit export to Dropbox, wait thirty seconds and, you know, the my script would run, it would put it in another Dropbox folder and I could go, you know, for my flashcard app and thirty seconds later download that and have my flashcards.
+
+409
+00:32:00,400 --> 00:32:01,040
+That's awesome.
+
+410
+00:32:01,200 --> 00:32:07,680
+This is where I'm just like, man, imagine if shortcuts existed and they supported it at that time.
+
+411
+00:32:08,640 --> 00:32:08,720
+Yeah.
+
+412
+00:32:09,280 --> 00:32:10,960
+Well, I mean, I think you see where this is going.
+
+413
+00:32:11,200 --> 00:32:11,280
+Yeah.
+
+414
+00:32:11,760 --> 00:32:14,000
+Maybe Nihongo, maybe Nihongo never would have existed.
+
+415
+00:32:14,240 --> 00:32:14,720
+That's true.
+
+416
+00:32:14,800 --> 00:32:15,200
+That's true.
+
+417
+00:32:15,360 --> 00:32:15,440
+Yeah.
+
+418
+00:32:16,880 --> 00:32:20,880
+So that was the birth of Nihongo was I was just like, there's got to be a better way.
+
+419
+00:32:21,280 --> 00:32:27,440
+Wouldn't it be awesome if my dictionary app could just automatically make flashcards for me and I could just do that in one app.
+
+420
+00:32:28,480 --> 00:32:40,480
+And so that was like the version zero point one, you know, version of Nihongo was just dictionary that could that could create flashcards automatically from the words I looked up.
+
+421
+00:32:41,280 --> 00:32:44,720
+And I started using that to study every day.
+
+422
+00:32:45,680 --> 00:32:56,400
+Were you so were you thinking, was this like, I'm gonna, was this just the next step of your crazy Rube Goldberg machine was like build an app and it's just for yourself?
+
+423
+00:32:56,560 --> 00:33:00,720
+Or were you like, Ooh, this is something that like there could be.
+
+424
+00:33:01,040 --> 00:33:02,160
+a market for and I could sell.
+
+425
+00:33:02,960 --> 00:33:04,240
+No, it was definitely the former.
+
+426
+00:33:04,400 --> 00:33:08,480
+It was definitely like, this is just a better way for me to do this for myself.
+
+427
+00:33:09,360 --> 00:33:10,000
+I love that.
+
+428
+00:33:10,240 --> 00:33:17,200
+Like, it just keeps getting more and more, uh, like polished and nice, but you're still just like, this is just for yourself.
+
+429
+00:33:17,840 --> 00:33:17,920
+Yeah.
+
+430
+00:33:18,240 --> 00:33:20,320
+No, I mean, it's absolutely how I approached it.
+
+431
+00:33:20,480 --> 00:33:21,680
+It was like, this was just for me.
+
+432
+00:33:22,240 --> 00:33:24,880
+Um, I would go and study, yeah, using it.
+
+433
+00:33:25,520 --> 00:33:31,200
+And that, yeah, because like, I had a whole routine where I'd like do my flashcards during on the train.
+
+434
+00:33:31,840 --> 00:33:35,280
+And then, um, I had kind of a tradition of going out.
+
+435
+00:33:35,360 --> 00:33:39,840
+There was like a little beach near where we lived, a beach onto the Osaka Bay, basically.
+
+436
+00:33:41,440 --> 00:33:45,440
+And I would go and I was trying to read through Harry Potter in Japanese.
+
+437
+00:33:46,160 --> 00:33:54,960
+And so I had a tradition of I'd like do my flashcards and read some Harry Potter and like pick up some vocabulary from that and put it in as new flashcards.
+
+438
+00:33:55,360 --> 00:34:01,280
+And then I'd like end up just finding two or three things during that whole process of like things I wish worked differently or something.
+
+439
+00:34:01,600 --> 00:34:12,240
+So then, you know, after I was done, I'd go to a cafe and, you know, make some changes and then have a new build that I put on my phone and then the next day, you know, do the same thing but with these new, you know, fixes in it.
+
+440
+00:34:12,240 --> 00:34:13,840
+And that's awesome.
+
+441
+00:34:14,000 --> 00:34:18,480
+Had you done like traditional iOS development at that point?
+
+442
+00:34:19,200 --> 00:34:23,920
+Uh, or was it the game development kind of was your iOS experience?
+
+443
+00:34:24,640 --> 00:34:26,640
+The game development was my only iOS experience.
+
+444
+00:34:26,800 --> 00:34:38,800
+I guess, but you were using UI Kit, you were saying, and it's Yeah, I was using I was using UI Kit, but PipeDrop is literally, I didn't understand what a view controller was or what role or why this was a thing.
+
+445
+00:34:39,040 --> 00:34:40,640
+I think I really was even dismissive of it.
+
+446
+00:34:40,720 --> 00:34:43,200
+Like, why do they have this extra thing, a view controller?
+
+447
+00:34:43,360 --> 00:34:44,480
+Like, I don't need that, you know?
+
+448
+00:34:44,640 --> 00:34:55,600
+So I think I had a view controller that's like, ten lines of code or something that basically just put in a single UI view called like game view and then draw everything in there.
+
+449
+00:34:56,000 --> 00:35:00,640
+The entire logic of the game is inside this game view, which is a subclass of UI view.
+
+450
+00:35:01,200 --> 00:35:04,800
+So I would say I was doing UI kit, I'm doing air quotes here.
+
+451
+00:35:04,960 --> 00:35:11,040
+I was like doing, yeah, UI kit, I knew UI kit, but no, hadn't done anything real.
+
+452
+00:35:11,360 --> 00:35:14,880
+So yeah, I learned UI kit on Nihongo.
+
+453
+00:35:18,400 --> 00:35:24,720
+And so, you know, sometimes I find some of the deeper parts of my code base that I haven't touched in a long time and I'm just like cringing at like, yeah.
+
+454
+00:35:25,040 --> 00:36:08,560
+because it's all objective c2 and it's like i just did not know what i was doing at all um but uh but yeah so i was just like developing that um yeah totally for myself and it just became a tool that i was using yeah for studying in class so i just you know kind of did that approach where i had you know um uh what do you call it like a homing bullet or something but basically like build the single path that i really wanted and it was like the main user flow of the app and then start hanging things off of it yeah um so i started improving the dictionary and doing some other ideas that I had about how dictionaries could be better than the ones I'd used and started doing things with the flashcards and how could I make the flashcards better.
+
+455
+00:36:09,600 --> 00:36:13,520
+But at all at this point, it still really is just like for you.
+
+456
+00:36:14,000 --> 00:36:16,960
+Like did it even have like a second screen or anything of this other stuff?
+
+457
+00:36:18,480 --> 00:36:24,800
+No, I mean, I think at some point so I think I started developing it in like January of 2013.
+
+458
+00:36:25,680 --> 00:36:43,920
+Um, when I right around when I or maybe February, like right around when I started studying at the Japanese language school, I used it for myself and I basically like I think I did about a full year of Japanese language classes and so I think by about a year later I was honestly coming out of it thinking, you know what?
+
+459
+00:36:44,160 --> 00:36:46,400
+Like I got so much out of this tool that I built.
+
+460
+00:36:46,640 --> 00:37:00,320
+Like I think I learned more Japanese splitting my time between developing this app and studying Japanese than I would have if I had just focused on studying Japanese.
+
+461
+00:37:01,200 --> 00:37:03,040
+Yeah, I kind of built a hobby around it.
+
+462
+00:37:04,080 --> 00:37:14,000
+Yeah, yeah, I built a hobby around it and it was just like I felt like this was a total valid use of my time just for the goal of myself learning Japanese.
+
+463
+00:37:14,240 --> 00:37:21,040
+Like I felt like it was a better use of my time to build the better tool that fit the way that I wanted to study and fit my brain better.
+
+464
+00:37:22,720 --> 00:37:25,440
+This episode of Launched is brought to you by RevenueCat.
+
+465
+00:37:25,840 --> 00:37:28,160
+RevenueCat makes in-app subscriptions simple.
+
+466
+00:37:28,800 --> 00:37:34,000
+Their platform lets you focus on improving your app rather than getting bogged down in subscription infrastructure.
+
+467
+00:37:34,560 --> 00:37:42,640
+RevenueCat provides a back-end wrapper around Apple's store kit and Google Play billing to simplify the implementation and upkeep of in-app purchases.
+
+468
+00:37:43,280 --> 00:37:51,680
+RevenueCat provides out-of-the-box analytics for over 15 key subscription metrics, like monthly recurringring revenue, lifetime value, retention, and more.
+
+469
+00:37:52,400 --> 00:37:59,840
+RevenueCat also offers pre-built integrations with best in class tools like Amplitude, Apps Flyer, MixPanel, and Firebase.
+
+470
+00:38:00,160 --> 00:38:04,000
+So you can connect in-app purchase events in minutes in a couple of clicks.
+
+471
+00:38:04,640 --> 00:38:12,160
+Customers have been able to cut down on their engineering backlog, better understand customer behavior, and grow faster by switching to RevenueCat.
+
+472
+00:38:12,640 --> 00:38:17,760
+See why companies like Notion, VSCO, and Photoroom use RevenueCat to power in-app subscriptions.
+
+473
+00:38:18,320 --> 00:38:24,240
+Learn more at revenuecat dot com dot And our thanks to RevenueCat for sponsoring this episode of Launched.
+
+474
+00:38:25,440 --> 00:38:26,720
+You've been doing this for a year.
+
+475
+00:38:27,440 --> 00:38:30,960
+When does it transition to like, maybe I could actually sell this?
+
+476
+00:38:31,680 --> 00:38:33,280
+Yeah, probably about that time, I think.
+
+477
+00:38:34,640 --> 00:38:36,320
+And I don't remember, like, a specific moment.
+
+478
+00:38:36,640 --> 00:38:38,720
+I think I probably always thought I would publish it.
+
+479
+00:38:38,960 --> 00:38:40,960
+Like, I don't think I was ever just going to keep it for myself.
+
+480
+00:38:41,200 --> 00:38:41,280
+Yeah.
+
+481
+00:38:41,680 --> 00:38:46,720
+Just because I had been through the experience with PipeDrop and I saw, you know, making a thousand bucks on that.
+
+482
+00:38:46,800 --> 00:38:48,720
+I was like, okay, yeah, like, I could publish this.
+
+483
+00:38:48,880 --> 00:38:54,720
+And so I, I mean, I think I started in like early 2013.
+
+484
+00:38:55,440 --> 00:38:58,000
+It launched on the App Store in July of 2014.
+
+485
+00:38:58,160 --> 00:38:59,200
+So it was about a year and a half.
+
+486
+00:38:59,360 --> 00:38:59,520
+Wow.
+
+487
+00:38:59,840 --> 00:38:59,920
+Okay.
+
+488
+00:39:00,560 --> 00:39:13,520
+So I think, um, you know, I think, and I think some of the last things I was getting in was, you know, actually figuring out what features to put behind the paywall and building a paywall and, you know, all that kind of stuff and a settings settings screen.
+
+489
+00:39:14,160 --> 00:39:16,960
+So what was the business model initially?
+
+490
+00:39:18,000 --> 00:39:40,480
+It was a, uh, a one time in-app purchase to unlock the flashcards and, uh, clippings section, which I don't think I've talked about clippings, but that's basically the ability to, like, copy and paste text into the app and then have it, like, split it out individual, individual words, um, because in Japanese that's a hard problem because there's no spaces, um, and automatically make a flashcard deck from that.
+
+491
+00:39:41,280 --> 00:39:42,080
+How did you do that?
+
+492
+00:39:43,120 --> 00:39:48,080
+Is that a, like, known problem set for splitting up words with no spaces?
+
+493
+00:39:48,880 --> 00:39:48,960
+Yeah.
+
+494
+00:39:49,280 --> 00:39:53,520
+There's a whole area of, like, natural language processing around that called tokenization.
+
+495
+00:39:53,840 --> 00:39:53,920
+Wow.
+
+496
+00:39:54,400 --> 00:39:55,680
+Um, oh, okay.
+
+497
+00:39:55,920 --> 00:40:01,840
+I mean, it's like, it's called tokenization even with when there's spaces or commas or stuff usually.
+
+498
+00:40:02,320 --> 00:40:03,840
+But it sounds a lot more complicated.
+
+499
+00:40:05,520 --> 00:40:06,720
+It's called tokenization.
+
+500
+00:40:07,200 --> 00:40:09,680
+And yeah, but it's just a much harder problem in Japanese, right?
+
+501
+00:40:10,000 --> 00:40:12,240
+And Chinese too, because Chinese doesn't have spaces either.
+
+502
+00:40:12,480 --> 00:40:12,560
+Yeah.
+
+503
+00:40:13,520 --> 00:40:20,240
+You know, the route I should have gone was using one of the existing things, like MeCab was the popular one at the time.
+
+504
+00:40:20,720 --> 00:40:21,280
+What libraries?
+
+505
+00:40:21,840 --> 00:40:23,680
+Existing open source libraries for this.
+
+506
+00:40:24,320 --> 00:40:25,040
+But I ended up...
+
+507
+00:40:26,080 --> 00:40:32,400
+The trick is that I really wanted it to be really tightly integrated with the dictionary.
+
+508
+00:40:33,200 --> 00:40:40,320
+And the database that I was using for the dictionary, like, wouldn't have the same exact tokens.
+
+509
+00:40:40,480 --> 00:40:44,000
+Like, it wouldn't be a one-to-one mapping with the tokens that MeCab came up with.
+
+510
+00:40:44,960 --> 00:40:53,040
+So I ended up building my own tokenizer that was built around the tokens being exactly the tokens from the dictionary database.
+
+511
+00:40:53,920 --> 00:41:00,880
+Also, just in this conversation, I get the feeling, uh, you enjoy the science bit of computer science every now and then too.
+
+512
+00:41:01,200 --> 00:41:01,280
+Yeah.
+
+513
+00:41:02,160 --> 00:41:02,240
+Yeah.
+
+514
+00:41:02,560 --> 00:41:08,240
+That was a fun, definitely a fun problem to solve, um, and, uh, or to solve, quote, quote.
+
+515
+00:41:08,320 --> 00:41:12,880
+There's no, like, I, I, I want to, I'm getting close to actually replacing that system.
+
+516
+00:41:13,040 --> 00:41:14,160
+Finally, the same, ooh.
+
+517
+00:41:14,480 --> 00:41:20,400
+Basic bones, bones of that has been there since 2014, and it's time, it's time to redo it.
+
+518
+00:41:20,720 --> 00:41:20,880
+Okay.
+
+519
+00:41:21,200 --> 00:41:28,240
+So you built this thing for yourself, uh, eventually., you know, got it kind of tidied up so you could put it out in the store.
+
+520
+00:41:28,480 --> 00:41:28,560
+Yeah.
+
+521
+00:41:28,960 --> 00:41:34,080
+It has a, it's free with, uh, in that purchase to unlock some of the features.
+
+522
+00:41:34,960 --> 00:41:37,120
+Then what, how did that, how did that launch itself go?
+
+523
+00:41:38,640 --> 00:41:38,720
+Yeah.
+
+524
+00:41:39,120 --> 00:41:41,520
+Um, how did that launch go?
+
+525
+00:41:42,000 --> 00:41:46,640
+I had, I launched it and did, um, like a hacker news.
+
+526
+00:41:47,040 --> 00:41:49,680
+The big thing that was successful was a hacker news post about it.
+
+527
+00:41:50,160 --> 00:41:53,440
+Um, that you made or somebody else made that I made.
+
+528
+00:41:53,600 --> 00:41:53,680
+Yeah.
+
+529
+00:41:54,080 --> 00:41:54,160
+Okay.
+
+530
+00:41:54,480 --> 00:42:01,680
+Just like, yeah, that I made that was just kind of introducing it and it got a good amount of engagement and I think ended up on the front page of Hack Us for a little bit.
+
+531
+00:42:01,840 --> 00:42:06,080
+So, so that was, yeah, so that was, that felt really, really good.
+
+532
+00:42:07,280 --> 00:42:12,480
+And I got like some of the people that were developers of some other, you know, Japanese apps, you know, commenting about it.
+
+533
+00:42:12,640 --> 00:42:18,000
+And people, I think I was proud of the, like, landing page I made for it.
+
+534
+00:42:18,160 --> 00:42:18,960
+People thought it was nice.
+
+535
+00:42:19,200 --> 00:42:22,240
+And so I think I got some, you know, I think that helped a lot too.
+
+536
+00:42:25,200 --> 00:42:31,760
+But then beyond that, I think that was kind of the main thing that was successful about the launch.
+
+537
+00:42:31,920 --> 00:42:36,560
+I think I tried, you know, other sort of basic marketing and.
+
+538
+00:42:36,640 --> 00:42:40,000
+And, you know, Product Hunt and things like that, but it never really took off.
+
+539
+00:42:41,600 --> 00:42:42,320
+I'm curious.
+
+540
+00:42:42,640 --> 00:42:51,600
+And actually, we don't normally make calls out to the audience here, but I would love to hear from somebody who's had Product Hunt help them.
+
+541
+00:42:52,320 --> 00:43:06,560
+It feels like a thing that people do to do, but like, the more I think about it, like thinking through and the amount of people I've talked to on the show, I don't know of anybody who's been like, and Product Hunt really, you know, drove a lot of traffic for us.
+
+542
+00:43:06,800 --> 00:43:11,920
+Like, I don't know, it feels like it's kind of on everybody's checklist because we see everybody else do it, but.
+
+543
+00:43:12,960 --> 00:43:13,680
+Yeah, I don't know.
+
+544
+00:43:14,080 --> 00:43:14,960
+I'm really curious about that.
+
+545
+00:43:15,360 --> 00:43:26,640
+I'm not trying to throw shade on Product Hunt or anything, but it's just hearing you say that, it kind of triggered this thing that's been gestuating in my mind for a while of like, is that really like, what is this thing?
+
+546
+00:43:27,120 --> 00:43:28,000
+Does it actually matter?
+
+547
+00:43:29,440 --> 00:43:31,840
+I would say for me it hasn't, but yeah.
+
+548
+00:43:32,400 --> 00:43:35,120
+You've talked to more people who've launched things than I have.
+
+549
+00:43:35,520 --> 00:43:37,600
+Well, yeah, a specific subset of people anyway.
+
+550
+00:43:37,760 --> 00:43:39,200
+Anyway, that was a side.
+
+551
+00:43:39,520 --> 00:43:40,480
+I am curious though.
+
+552
+00:43:40,640 --> 00:43:41,520
+I would love to hear some of the.
+
+553
+00:43:41,920 --> 00:43:44,160
+Well, and specifically in your subset, that would be interesting.
+
+554
+00:43:44,240 --> 00:43:46,000
+Yeah, in your subset of people you talk to.
+
+555
+00:43:47,200 --> 00:44:03,600
+But basically, I launched it with, um, you know, I was originally going to do it at eight dollars and then was convinced to go down to four dollars because that felt like too much, you know, um, and launched and had a little bit of good feedback, but then it was pretty quiet.
+
+556
+00:44:04,000 --> 00:44:08,320
+Um, I also I launched basically one month before I moved back to the United States.
+
+557
+00:44:08,960 --> 00:44:10,480
+So I had a job lined up.
+
+558
+00:44:10,880 --> 00:44:11,680
+So I kind of.
+
+559
+00:44:12,880 --> 00:44:16,800
+I wasn't super, you know, tuned into it for a bit or like I had other priorities.
+
+560
+00:44:17,040 --> 00:44:18,400
+So I kind of just let it go up and.
+
+561
+00:44:18,960 --> 00:44:24,560
+And you were kind of, it sounds like you weren't thinking of it like this is a long term business as much as I made.
+
+562
+00:44:25,200 --> 00:44:32,480
+a tool and now I can put the tool out there and then I can make some money from that tool that I made, but it's like people buy it, they have it.
+
+563
+00:44:32,800 --> 00:44:37,280
+That's kind of kind of the end of the story in terms of the way you were thinking about it.
+
+564
+00:44:38,000 --> 00:44:48,080
+Yeah, like it could be, you know, a nice, you know, it would be nice if I made a little bit of money from it, but, um, you know, in planning out my next sort of life moves, um, I went through the same thing.
+
+565
+00:44:48,160 --> 00:44:49,760
+I applied to a bunch of game companies again.
+
+566
+00:44:50,000 --> 00:45:01,680
+I thought about going and doing games and, um, also was just looking at, um, I ended up getting invited to join a startup that, um, some of my friends from Bigfix, some people that I work fored with at Big Fix.
+
+567
+00:45:01,760 --> 00:45:02,160
+Oh, nice.
+
+568
+00:45:02,480 --> 00:45:03,040
+We're starting.
+
+569
+00:45:03,520 --> 00:45:12,240
+So I, um, almost I got to the final round of interviews with Media Molecule, the people who make, uh, Little Big Planet.
+
+570
+00:45:12,720 --> 00:45:13,440
+Yeah, and Dream.
+
+571
+00:45:14,240 --> 00:45:16,320
+Yeah, the PlayStation, uh, games.
+
+572
+00:45:16,960 --> 00:45:17,120
+Yeah.
+
+573
+00:45:18,000 --> 00:45:25,360
+So, um, so yeah, I I was down to like I was one of three final candidates for a position there and didn't get selected.
+
+574
+00:45:25,680 --> 00:45:31,680
+But I think if I had gotten that, I probably would have taken that and gone and worked at Media Molecule.
+
+575
+00:45:32,000 --> 00:45:33,920
+Um, so I didn't get that.
+
+576
+00:45:34,000 --> 00:45:38,880
+So I ended up going and working going to this startup that I my friends were starting.
+
+577
+00:45:41,680 --> 00:45:48,160
+And yeah, so I think like going indie on Nihongo was not in my, was not something I was thinking about at all.
+
+578
+00:45:50,640 --> 00:45:57,840
+Partially because I had used a lot of money living in Japan and not working for two years, so I couldn't really afford to do that.
+
+579
+00:45:58,480 --> 00:45:58,560
+Yeah.
+
+580
+00:45:58,800 --> 00:46:05,440
+So I went and worked for this company or this startup called Subspace and just kind of had Nihongo on the side.
+
+581
+00:46:05,920 --> 00:46:06,960
+Subspace was pretty cool.
+
+582
+00:46:07,280 --> 00:46:12,560
+This was a we basically built a fork of Chromium.
+
+583
+00:46:13,040 --> 00:46:15,360
+So it was a web browser that was a fork of Chromium.
+
+584
+00:46:16,480 --> 00:46:21,120
+And for people who don't know, Chromium is like the open source core of Chrome.
+
+585
+00:46:21,280 --> 00:46:28,080
+So Chrome is built from Chromium along with a bunch of other web browsers like Edge and I presume Edge is built on Chromium.
+
+586
+00:46:28,240 --> 00:46:28,320
+No.
+
+587
+00:46:28,480 --> 00:46:28,640
+Arc.
+
+588
+00:46:28,800 --> 00:46:28,960
+Yeah.
+
+589
+00:46:29,200 --> 00:46:29,440
+Arc.
+
+590
+00:46:29,920 --> 00:46:33,280
+So, so anyway, so we built our own web browser that was based on Chromium.
+
+591
+00:46:34,240 --> 00:46:45,920
+And the idea was that all of the file IO, anything that ever touched disk was encrypted using, you know, a cryptographic scheme based on your subspace password.
+
+592
+00:46:47,040 --> 00:46:52,960
+So this included like temporary files or caches, things like that, any downloads that you made in the app, anything like that.
+
+593
+00:46:55,520 --> 00:47:03,280
+And then you would have a sort of VPN like proxying component that you would install in your company.
+
+594
+00:47:03,600 --> 00:47:06,320
+Like this is enterprise aimed software.
+
+595
+00:47:06,480 --> 00:47:14,080
+So inside your company's internal network, you would install this little thing, this sort of VPN like component.
+
+596
+00:47:14,240 --> 00:47:18,480
+And then when you launch subspace, it would automatically connect to this VPN.
+
+597
+00:47:18,720 --> 00:47:21,360
+So everything that was going through subspace was going through the VPN.
+
+598
+00:47:22,320 --> 00:47:24,480
+So basically the idea was with those two components.
+
+599
+00:47:25,120 --> 00:47:39,520
+in place, you could navigate to any kind of internal sensitive documents on your internal network, download them to your computer, and even if your computer has a virus on it or something, it can't get at it because the only way it ever sits on disk on your computer is in a crypted format.
+
+600
+00:47:40,080 --> 00:47:40,240
+Right.
+
+601
+00:47:41,520 --> 00:47:56,000
+And then the way you could actually make that useful was the fact that Google had been investing a ton of things in making, for the purpose of making Chromebooks really useful, they have all these apps that run effectively within Chrome.
+
+602
+00:47:56,320 --> 00:48:12,320
+So they have an Office document editor and we can use that Office document editor to open up this, you know, we can expose our encrypted files to Chromium internally and to Chrome apps.
+
+603
+00:48:12,800 --> 00:48:22,160
+So you could actually edit with all the tools that they make for Chromebooks, you could actually use to edit your files in this encrypted browser that runs on a regular, you know, computer.
+
+604
+00:48:24,720 --> 00:48:26,160
+So yeah, really cool.
+
+605
+00:48:27,600 --> 00:48:29,440
+Cool idea, really interesting.
+
+606
+00:48:29,600 --> 00:48:31,680
+Again, like just a totally different kind of challenge.
+
+607
+00:48:31,920 --> 00:48:33,920
+Chromium is a massive C plus plus.
+
+608
+00:48:36,080 --> 00:48:41,200
+Um, so I worked with them and a bunch of people I really liked.
+
+609
+00:48:41,760 --> 00:48:47,200
+Uh, and then, um, we got acquired by Box, the cloud.
+
+610
+00:48:47,440 --> 00:48:47,920
+Oh yeah.
+
+611
+00:48:48,720 --> 00:48:49,200
+Yeah, yeah.
+
+612
+00:48:49,920 --> 00:48:52,320
+So, um, so then I went and worked for Box.
+
+613
+00:48:52,640 --> 00:48:57,760
+Um, and during that time, again, yeah, Nihongo was kind of something I mostly put on the back burner.
+
+614
+00:48:58,320 --> 00:49:05,360
+I did at the time the custom keyboards support in iOS came out.
+
+615
+00:49:05,840 --> 00:49:07,360
+That was like the big iOS feature.
+
+616
+00:49:07,600 --> 00:49:12,640
+And so I did take like I had built a Kanji, um, sort of keyboard for Nihongo.
+
+617
+00:49:13,360 --> 00:49:16,880
+And so I like, pulled that out into a custom keyboard to try to do that.
+
+618
+00:49:17,360 --> 00:49:17,440
+Yeah.
+
+619
+00:49:17,680 --> 00:49:17,760
+Yeah.
+
+620
+00:49:18,240 --> 00:49:20,560
+So I had like some little bit that I was still kind of poking at.
+
+621
+00:49:20,880 --> 00:49:23,120
+It was like a fun little playground app, basically.
+
+622
+00:49:23,440 --> 00:49:23,520
+Yeah.
+
+623
+00:49:23,760 --> 00:49:23,840
+Yeah.
+
+624
+00:49:24,320 --> 00:49:24,720
+Exactly.
+
+625
+00:49:25,680 --> 00:49:27,280
+So then, yeah, I was working at Box.
+
+626
+00:49:27,440 --> 00:49:34,000
+Um, and at Box I did, uh, a whole bunch of different things, like I came in with this sort of security, you know, acquisition.
+
+627
+00:49:34,160 --> 00:49:36,080
+So I was kind of in the security realm there.
+
+628
+00:49:36,880 --> 00:49:39,920
+Um, I did some work on like encryption in their iOS app.
+
+629
+00:49:40,320 --> 00:50:26,080
+I did some work on doing actually did like some really interesting deep dive into like Windows, uh, um, private APIs to like detect whether they're like file no file vault is mac whatever their encryption sort of equivalent to file vault is they have some private APIs that let you detect all the state of all of that without needing administrator privileges but that they don't allow they don't give to anybody else so it's like digging in and trying to do that anyway like a whole bunch of kind of stuff as security and then they made their box drive mac app and I went and was like worked on the box you know um the desktop team to go work on that.
+
+630
+00:50:28,560 --> 00:50:32,720
+And then I worked on their web app for a year just to kind of do something different.
+
+631
+00:50:34,880 --> 00:50:43,120
+And I worked on, yeah, another like we were going to do this in a deep integration of Box Drive into Windows 10.
+
+632
+00:50:44,160 --> 00:50:46,720
+And so I went and worked on that.
+
+633
+00:50:47,600 --> 00:50:54,560
+And it was actually like leading a team of engineers that were based out of Buenos Aires and Uruguay.
+
+634
+00:50:55,840 --> 00:51:00,160
+So yeah, so that was like, so basically my time at Box was like a ton of different.
+
+635
+00:51:00,240 --> 00:51:01,040
+different things.
+
+636
+00:51:01,200 --> 00:51:01,600
+Yeah, yeah.
+
+637
+00:51:01,680 --> 00:51:06,960
+A ton of different, like getting exposure to a ton of different teams and getting comfortable with like working across a ton of different teams.
+
+638
+00:51:08,000 --> 00:51:26,640
+And honestly, like, I think that was part of what made me comfortable jumping to the indie world was just because I had like experience with like the security stuff with, you know, a bunch of performance work, localization, like I IOS desktop.
+
+639
+00:51:27,040 --> 00:51:34,960
+Like, I feel like I just had all of these different engineering hats and like built systems and stuff like that that that I was able to then take.
+
+640
+00:51:35,200 --> 00:51:37,360
+And when you're an indie, you're kind an Indy, you're kind of doing everything.
+
+641
+00:51:37,600 --> 00:51:37,680
+Yeah.
+
+642
+00:51:38,240 --> 00:51:38,640
+Exactly.
+
+643
+00:51:39,520 --> 00:51:43,440
+So being comfortable jumping between these different domains was a big part of that.
+
+644
+00:51:44,640 --> 00:51:46,880
+So yeah, so I was working at BOX.
+
+645
+00:51:48,240 --> 00:51:52,320
+That was around the time when I started to like, I think I just had a big break with Nihongo.
+
+646
+00:51:54,000 --> 00:51:58,800
+And that's when I started to think about Nihongo as like a potential actual future path.
+
+647
+00:51:59,840 --> 00:52:01,120
+What do you mean, you had a big break?
+
+648
+00:52:02,800 --> 00:52:12,800
+So the first big break I had was actually with it started to get a ton of traction in China, which was really surprising.
+
+649
+00:52:13,200 --> 00:52:16,800
+to me because this is an English to Japanese dictionary.
+
+650
+00:52:17,360 --> 00:52:20,320
+And it was, was it only localized in English at the time?
+
+651
+00:52:20,720 --> 00:52:21,920
+It was only localized in English.
+
+652
+00:52:22,160 --> 00:52:22,240
+Okay.
+
+653
+00:52:22,880 --> 00:52:27,040
+So I was like, what, why in the world is this getting downloads and purchases in China?
+
+654
+00:52:28,160 --> 00:52:37,280
+It turns out like I finally did a bunch of digging and I found that there was this post on a Chinese website that was, it's kind of like an equivalent to Quora or something.
+
+655
+00:52:38,240 --> 00:52:41,920
+Just like a QA website where you can upvote questions and upvote answers.
+
+656
+00:52:43,760 --> 00:52:54,960
+And someone had asked on there, just like, you know, what's asking, I can't remember the exact wording of it, but what's what are good iOS Japanese dictionaries or what's the best tools for learning Japanese on iOS or something like that.
+
+657
+00:52:55,840 --> 00:53:08,560
+And someone wrote up this huge post that with images, like screenshots and things like this, that was an entire guide of basically how to use Nihongo to like look up the word that you're looking up in Japanese.
+
+658
+00:53:09,120 --> 00:53:16,960
+And once you get to the point where you get to the English definition, you could run a workflow.
+
+659
+00:53:17,120 --> 00:53:21,040
+This was before Apple bought workflow and turned it into shortcuts.
+
+660
+00:53:21,360 --> 00:53:27,600
+So this could run a workflow that would machine translate the English into Chinese.
+
+661
+00:53:28,480 --> 00:53:36,080
+This sounds like somebody doing, somebody in China doing exactly what you were doing that led up to Nihongo, where it's like, yeah.
+
+662
+00:53:36,640 --> 00:53:45,840
+You found a good tool and you like found this way to sort of force it into whatever use case you needed in their case, making it work with Chinese.
+
+663
+00:53:46,400 --> 00:53:46,880
+That's so cool.
+
+664
+00:53:47,040 --> 00:53:49,680
+I never I never made that connection before, but you're totally right.
+
+665
+00:53:51,360 --> 00:53:52,320
+They were doing the same thing.
+
+666
+00:53:53,040 --> 00:53:59,200
+But you recognized it and then as I'm assuming you're about to tell us, you kind of capitalized on that.
+
+667
+00:53:59,680 --> 00:54:24,400
+Yeah, yeah., so first of all, I was just, I mean, I never would have thought to do this because the idea to me that people would take machine translated English into Chinese, machine translated definitions of Japanese words, machine translated into Chinese, the idea that this would be actually not total gibberish and not, and meaningful at all to anyone, that kind of blow my mind.
+
+668
+00:54:25,440 --> 00:54:30,960
+I couldn't figure out any way to get actual Chinese definitions of the Japanese words.
+
+669
+00:54:31,200 --> 00:54:33,840
+That would have been my, like, first thing I would want to do is like, yeah.
+
+670
+00:54:34,160 --> 00:54:36,160
+Localize the app and then get Chinese definitions.
+
+671
+00:54:36,880 --> 00:54:47,920
+But what I could do was I could do a pre processing step where I actually machine translate everything into Chinese in advance and then can actually integrate it in like a first class way where it works with search.
+
+672
+00:54:48,080 --> 00:54:50,240
+You can search in Chinese and the words will show up.
+
+673
+00:54:51,120 --> 00:54:51,280
+Right.
+
+674
+00:54:51,920 --> 00:55:00,160
+And you can actually like I presented nicely where you can see the Chinese and it says machine translated from this English, you know, so you can still kind of have that context.
+
+675
+00:55:01,680 --> 00:55:01,760
+Okay.
+
+676
+00:55:03,600 --> 00:55:05,200
+So just to like to back up a second.
+
+677
+00:55:05,520 --> 00:55:18,000
+So you you saw that this was happening and you're like, all right, I can do this, you know, native and at least provide the same quality of translation for them, but native in the app.
+
+678
+00:55:18,320 --> 00:55:34,320
+So your first step was also doing the machine translated, uh, let's see, we're we're doing machine translated English into Chinese and it's mapping to the same Japanese definitions.
+
+679
+00:55:35,360 --> 00:55:48,720
+You look up a Japanese word and now instead of just seeing English, which you have to run your shortcut to look up or your workflow, now you see an actual Chinese and the Chinese is machine translated, so you know, your milesh may vary, but yeah.
+
+680
+00:55:48,800 --> 00:55:55,840
+Yeah, and so you had some sort of label on that then to like clarify that it was machine translated?
+
+681
+00:55:56,400 --> 00:55:57,040
+Yeah, that's right.
+
+682
+00:55:58,080 --> 00:56:08,240
+I said machine translated and included the English as well just because I feel like that's useful for people to see what if they have any English they can at least kind of understand why they're seeing what they're seeing.
+
+683
+00:56:08,960 --> 00:56:14,640
+So that was like the first thing you did, you released that and then how did like did that move the needle at all?
+
+684
+00:56:14,800 --> 00:56:16,400
+Did people seem to respond to that?
+
+685
+00:56:17,120 --> 00:56:17,680
+Yeah, it did.
+
+686
+00:56:18,720 --> 00:56:22,880
+And honestly, until about two years ago maybe China was my biggest market.
+
+687
+00:56:25,040 --> 00:56:39,840
+So like that was what really, yeah, really took Nihongo into something where like kind of from the level of like the first three years maybe that it was out, I think it was kind of like no more than a few hundred dollars a year kind of income.
+
+688
+00:56:41,440 --> 00:56:45,600
+And then all of a sudden it like went up, you know, like five times that or something.
+
+689
+00:56:45,680 --> 00:56:50,880
+I think I was hit started hitting like $1,000, you know, or $2,000 a year or something like that.
+
+690
+00:56:50,960 --> 00:56:55,280
+So it was like clearly just like an order of magnitude shift.
+
+691
+00:56:56,000 --> 00:57:00,640
+And I guess that's like it makes sense when you think about, you know, in terms of.
+
+692
+00:57:02,240 --> 00:57:14,720
+large markets for the App Store and then the big ones being like the kind of European market, the North American market, and then I guess it's China, right?
+
+693
+00:57:15,040 --> 00:57:22,640
+Like India isn't as big, I mean, it's a big population, but it's not as big on the Apple App Store, I don't think currently still.
+
+694
+00:57:23,280 --> 00:57:26,640
+But China is, especially in more recent times, is really big.
+
+695
+00:57:27,040 --> 00:57:32,640
+But like which of those major markets is going to have more people looking to translate to Japanese?
+
+696
+00:57:32,720 --> 00:57:33,840
+It probably is China.
+
+697
+00:57:35,200 --> 00:57:36,480
+So yeah, that's kind of crazy.
+
+698
+00:57:37,120 --> 00:57:37,200
+Yeah.
+
+699
+00:57:37,360 --> 00:57:43,120
+And I mean, it's also a little scary just because, like, I don't know how I don't know how to market this in China or like, yeah.
+
+700
+00:57:43,280 --> 00:57:48,240
+What to do, you know, um, it was definitely much more comfortable to just stay in the English-speaking world.
+
+701
+00:57:48,720 --> 00:58:00,400
+Um, but, uh, you know, so I tried to seize that opportunity and it ended up being way more work than I expected because I had, I guess I kind of had this sense of, ah, localization.
+
+702
+00:58:00,560 --> 00:58:07,520
+You all you have to do is just like, replace your strings with some NS localized string macros and you're, you're good to go.
+
+703
+00:58:07,680 --> 00:58:09,040
+But it was like way more than that.
+
+704
+00:58:09,520 --> 00:58:14,720
+So now when you, when you localize in Chinese., you've obviously done this.
+
+705
+00:58:14,880 --> 00:58:22,320
+I did this like a long time ago in a different world and so I'm trying to remember all this, but like they have character sets that are still like left to right.
+
+706
+00:58:23,600 --> 00:58:23,920
+Correct.
+
+707
+00:58:24,400 --> 00:58:29,200
+Or not character sets, but like the way it's written is left to right.
+
+708
+00:58:29,280 --> 00:58:38,080
+So you didn't have to do the like right to left stuff or I mean, nothing's vertical, right?
+
+709
+00:58:38,240 --> 00:58:42,240
+So you didn't have to like change your layout that much other than maybe words were different lengths.
+
+710
+00:58:43,280 --> 00:58:43,360
+Yeah.
+
+711
+00:58:43,760 --> 00:58:47,040
+And Chinese, honestly in terms of word length, Chinese is the easiest.
+
+712
+00:58:47,200 --> 00:58:48,000
+Chinese is the shortest.
+
+713
+00:58:48,000 --> 00:58:49,440
+It's just like it's okay.
+
+714
+00:58:49,680 --> 00:58:50,880
+It takes up like no space.
+
+715
+00:58:51,520 --> 00:58:59,040
+But I also at the same time did German and I think I started with German and Spanish maybe or something like that.
+
+716
+00:58:59,120 --> 00:58:59,680
+I tried to do it.
+
+717
+00:58:59,840 --> 00:59:03,200
+I think it's kind of the famous extremely long left word.
+
+718
+00:59:03,760 --> 00:59:04,480
+And that was on purpose, right?
+
+719
+00:59:04,640 --> 00:59:12,640
+If I'm going to do the localization, I should make this, I should take the time to actually like start with a long language and make it, make sure I'm done like a true engineer.
+
+720
+00:59:13,120 --> 00:59:13,920
+Let's test the edges.
+
+721
+00:59:14,720 --> 00:59:15,360
+Exactly, yeah.
+
+722
+00:59:15,520 --> 00:59:17,840
+German is the edge case of the language, I guess.
+
+723
+00:59:18,080 --> 00:59:18,160
+Yeah.
+
+724
+00:59:19,920 --> 00:59:22,640
+But there was I still don't have any right to left languages.
+
+725
+00:59:23,280 --> 00:59:24,160
+So it's just left, right.
+
+726
+00:59:24,720 --> 00:59:37,280
+But it was just like integrating things like in German, there's some of the database has native written German translations of or definitions of the English words.
+
+727
+00:59:37,600 --> 00:59:44,160
+Like the database I'm using is not just English, it's like English, German, French, Spanish, Russian.
+
+728
+00:59:44,400 --> 00:59:47,520
+Like there's a bunch of languages in it, but they don't have as much coverage as English.
+
+729
+00:59:48,080 --> 00:59:59,840
+So I developed a whole system of like having, you know, the native translations where I could, but then machine translation, the ones that I can't, and then setting up all the interactions.
+
+730
+01:00:00,160 --> 01:00:10,400
+infrastructure to like automatically as they add new entries to the dictionary machine translate the pieces that need to be machine translated and store those somewhere.
+
+731
+01:00:10,720 --> 01:00:16,240
+So you're using like a third party database then for the language sets.
+
+732
+01:00:17,200 --> 01:00:19,840
+Yeah, so the main definitions.
+
+733
+01:00:20,320 --> 01:00:24,240
+Yeah, the main definitions come from JMDict.
+
+734
+01:00:25,440 --> 01:00:28,880
+which is an open source project that's been around since I think the late 90s.
+
+735
+01:00:29,120 --> 01:00:44,320
+It's basically this professor at an Australian university who developed this project and it's like a community open source database of Japanese definitions and the primary language is English.
+
+736
+01:00:46,000 --> 01:00:47,360
+But he still works on it to this day.
+
+737
+01:00:47,600 --> 01:00:56,400
+Like he's still the maintainer of this database and you can go and contribute to it and make corrections and things like that.
+
+738
+01:00:56,640 --> 01:00:58,080
+There's a team of editors.
+
+739
+01:00:58,320 --> 01:01:01,360
+So they, you know, that review all the submissions and things like that.
+
+740
+01:01:02,320 --> 01:01:03,680
+But it's a very active project.
+
+741
+01:01:04,320 --> 01:01:05,280
+And then he, like...
+
+742
+01:01:06,080 --> 01:01:18,480
+basically finds similar projects around the world in different languages and then works with them to integrate their data so that they have like infrastructure set up where like the German project, Japanese.
+
+743
+01:01:19,200 --> 01:01:32,320
+dictionary project, uh, has like a daily dump where they translate their in their stuff into the format of JamDict so that you can have like one, one XML file where all this Yeah from in all the different languages.
+
+744
+01:01:33,040 --> 01:01:33,840
+Okay, that's cool.
+
+745
+01:01:34,160 --> 01:01:40,480
+So that explains the sort of variability in languages that you have or the dictionaries that you have.
+
+746
+01:01:41,040 --> 01:01:54,800
+So you're you developed a system that would basically backfill missing, uh, definitions for using what machine the machine learning or not machine learning, uh, machine translated.
+
+747
+01:01:55,600 --> 01:01:56,480
+Yeah, using machine trans.
+
+748
+01:01:56,800 --> 01:02:04,240
+Yeah, using machine translator, which right now I'm using Microsoft, Microsoft's Azure, whatever they call it, translator API.
+
+749
+01:02:05,600 --> 01:02:10,560
+Have you looked into like what it would cost to get that human translated?
+
+750
+01:02:12,560 --> 01:02:17,280
+I think I spend my translators, I think twenty cents a word.
+
+751
+01:02:18,320 --> 01:02:22,640
+There's about two hundred thousand entries in, in there.
+
+752
+01:02:24,800 --> 01:02:32,400
+Plus, yeah, two hundred thousand Japanese words, each of which has a definition, which ten to twenty, thirty words per definition.
+
+753
+01:02:32,560 --> 01:02:33,040
+I don't know.
+
+754
+01:02:33,680 --> 01:02:36,160
+So there's some math to do there, but very expensive.
+
+755
+01:02:36,400 --> 01:02:36,480
+Yeah.
+
+756
+01:02:38,240 --> 01:02:39,040
+No, that makes sense.
+
+757
+01:02:39,200 --> 01:02:40,960
+So the answer is yes, you've looked into it.
+
+758
+01:02:41,360 --> 01:02:41,440
+Yeah.
+
+759
+01:02:41,840 --> 01:02:42,720
+You've done the math.
+
+760
+01:02:44,160 --> 01:02:57,040
+So I take the approach of I have the entire UI of the app professionally translated and then the definitions, I just use this backfilling machine translation.
+
+761
+01:02:58,240 --> 01:03:01,440
+This episode of Launched is brought to you by Kaleidoscope 4.
+
+762
+01:03:02,160 --> 01:03:09,040
+After months of hard work, the Kaleidoscope team is proud to release the latest version of the world's best comparison and merge tool for the Mac.
+
+763
+01:03:09,680 --> 01:03:16,720
+The new version keeps Kaleidoscope as intuitive as possible while adding major new capabilities and modernizing many aspects of the app.
+
+764
+01:03:17,360 --> 01:03:20,080
+Here are some of the things you'll find in Kaleidoscope 4.
+
+765
+01:03:20,640 --> 01:03:26,000
+Syntax coloring for all common markup and programming languages with three themes to choose from.
+
+766
+01:03:26,640 --> 01:03:29,920
+It might seem like a subtle change, but once you see it, there's no going back.
+
+767
+01:03:30,720 --> 01:03:33,600
+A new command to create a merge from any text comparison.
+
+768
+01:03:34,240 --> 01:03:41,520
+This is a game changer that enables free editing of any comparison by moving the edited content into a separate destination that can be saved.
+
+769
+01:03:41,920 --> 01:03:49,840
+There's also powerful new text filters that can clean up your comparison and hide differences that are not relevant to the task, like timestamps or object addresses.
+
+770
+01:03:50,400 --> 01:03:53,840
+Go ahead and download the app and give Kaleidoscope 4 a thorough evaluation.
+
+771
+01:03:54,560 --> 01:03:57,040
+There's a fresh 14-day trial period for everyone.
+
+772
+01:03:57,680 --> 01:04:00,320
+Subscriptions start at $8 a month on a yearly plan.
+
+773
+01:04:00,720 --> 01:04:04,880
+If you bought a license to Kaleidoscope 3, you'll get a special discount on the first year.
+
+774
+01:04:05,440 --> 01:04:12,720
+Go to kaleidoscope.app to download now and use the coupon code launched to get a 10% discount for the first year.
+
+775
+01:04:13,440 --> 01:04:18,640
+That's lau nched to get a 10% discount for the first year.
+
+776
+01:04:19,280 --> 01:04:22,560
+Big thanks to Kaleidoscope for sponsoring this episode of launched.
+
+777
+01:04:23,520 --> 01:04:26,800
+What was your thinking with going into different languages?
+
+778
+01:04:27,120 --> 01:04:33,280
+Were you kind of, was the fact that China, you know, kind of took off like it was, was that sort of your.
+
+779
+01:04:33,760 --> 01:04:36,880
+proof of concept that there's interest in different markets?
+
+780
+01:04:37,040 --> 01:04:42,480
+And so you're sort of almost hunting around for other markets that might also be interested?
+
+781
+01:04:43,840 --> 01:04:43,920
+Yeah.
+
+782
+01:04:44,240 --> 01:04:56,000
+I mean, I think it was, um, if I'm, I think it was originally, hey, if I'm going to go through all this work to set up all this infrastructure, do all the, you know, string conversion stuff, get a trans get professional translators.
+
+783
+01:04:56,160 --> 01:05:00,640
+If I'm going to go through all this for Chinese, I may as well, you know, get some more value out of that.
+
+784
+01:05:01,120 --> 01:05:02,720
+How much work could it be to just add a couple of things?
+
+785
+01:05:02,960 --> 01:05:03,040
+Yeah.
+
+786
+01:05:03,680 --> 01:05:03,840
+Right?
+
+787
+01:05:04,000 --> 01:05:06,560
+Like, I mean, there's probably some truth to that, right?
+
+788
+01:05:06,720 --> 01:05:13,920
+The cost per language is probably still a lot smaller than the cost for the infrastructure, the one-off infrastructure.
+
+789
+01:05:14,400 --> 01:05:14,480
+Yeah.
+
+790
+01:05:14,800 --> 01:05:14,880
+Yeah.
+
+791
+01:05:15,200 --> 01:05:21,760
+The like marginal cost is low compared to the upfront, you know, investment in getting everything set up.
+
+792
+01:05:22,320 --> 01:05:32,320
+So, um, and I wanted to make sure I was setting it up in a way that wasn't specific to Chinese, that like I wanted to make sure everything I was doing could easily expand to new languages.
+
+793
+01:05:32,480 --> 01:05:32,640
+Right.
+
+794
+01:05:32,960 --> 01:05:42,480
+So, um, and I also had been looking at this database that had, yes, English as the primary language, but had like, ten other languages that it had data for.
+
+795
+01:05:42,720 --> 01:05:46,720
+And it seemed like a shame to make this app, you know, English only when there's all this great data there.
+
+796
+01:05:47,040 --> 01:05:47,040
+Yeah.
+
+797
+01:05:47,600 --> 01:05:53,840
+So, um, and I think that's how I picked the initial languages was basically which languages had the most data in that.
+
+798
+01:05:54,080 --> 01:05:54,160
+Yeah.
+
+799
+01:05:54,720 --> 01:05:56,080
+And I think German was the top one.
+
+800
+01:05:56,640 --> 01:05:56,720
+So.
+
+801
+01:05:57,520 --> 01:05:58,240
+So how did that go?
+
+802
+01:05:58,480 --> 01:06:03,200
+Did, did, do you get much of a user base in those other languages?
+
+803
+01:06:04,080 --> 01:06:04,960
+Yeah, it was slow.
+
+804
+01:06:05,760 --> 01:06:15,600
+Um, and China was definitely the big for initial thing, but today I think Germany, uh, might be my second largest, uh, market now.
+
+805
+01:06:16,640 --> 01:06:29,520
+It's interesting, like, you know, the China one worked because you sort of had a organic, you know, marketing event, I guess, but just turning on.
+
+806
+01:06:30,320 --> 01:06:33,760
+I now support this language doesn't mean that all those people are going to know.
+
+807
+01:06:34,240 --> 01:06:45,680
+So like how you said it was slow, it sounds like I'm imagining you either you just kind of had to wait for something organic to happen or you tried things to try and enter those markets?
+
+808
+01:06:46,720 --> 01:06:54,080
+Mostly just waiting for something organic to happen, which, yeah, I think I was struggling enough with marketing in English that like that's the thing.
+
+809
+01:06:54,960 --> 01:06:55,520
+I don't even know.
+
+810
+01:06:56,400 --> 01:07:04,160
+I have no clue like what that would be other than hoping for some of those app store features, you know, or something like that.
+
+811
+01:07:05,840 --> 01:07:07,280
+Well, yeah, I don't know.
+
+812
+01:07:08,560 --> 01:07:19,440
+Unfortunately, you know, I feel like in Germany, for example, a lot of people speak English in addition to German, so I think they have access to a lot of the marketing that goes on in English.
+
+813
+01:07:19,600 --> 01:07:22,800
+And if they're looking for something, they might be searched in English.
+
+814
+01:07:22,960 --> 01:07:33,680
+So, like, I think there was one, I think I actually got one review on a site that was a German, I feel like it was a German site, but it was written in English or something.
+
+815
+01:07:34,000 --> 01:07:43,840
+There was something where I ended up, I think I got one review that might have helped me with the German market a little bit, but overall, I think it was pretty much entirely just word of mouth, and that took years, basically.
+
+816
+01:07:44,080 --> 01:07:48,240
+I think I launched the localization in 2017 or something, like six years ago.
+
+817
+01:07:48,960 --> 01:07:51,680
+And it was just really slow and steady growth.
+
+818
+01:07:52,800 --> 01:08:09,520
+Have you, have you found any specific marketing or not even just marketing, but have there been any specific events that have worked for you other than, you know, this, that first Chinese sort of pop from somebody talking about it on that website?
+
+819
+01:08:11,360 --> 01:08:11,440
+Yeah.
+
+820
+01:08:14,000 --> 01:08:17,440
+I mean, I'll say, like, I've never gotten an Apple feature.
+
+821
+01:08:19,120 --> 01:08:26,880
+I like, I think if I look back in the history, there was like a week where I was on a couple of Watt's hot lists or something, but it's like Yeah, like when there was a new update or something.
+
+822
+01:08:27,440 --> 01:08:29,280
+Yeah, but like nothing really serious.
+
+823
+01:08:29,760 --> 01:08:42,400
+Um, I've never gotten really a feature in any significant like like any of the Apple tech press or anything like that or um, and I think it's maybe just this two niche like Japanese.
+
+824
+01:08:43,440 --> 01:08:50,400
+It's the it's the struggle like the overlap between, you know, Apple enthusiasts uh, yeah.
+
+825
+01:08:51,120 --> 01:08:54,400
+And your market isn't necessarily that big.
+
+826
+01:08:54,800 --> 01:08:55,360
+So yeah.
+
+827
+01:08:55,520 --> 01:09:09,920
+It's it's always hard like, you know, on if you listen to shows like this or, you know, other well-known podcasts or whatever, it's kind of like it must be frustrating when it's like, oh ye yeah, like you make friends with these people at nine to five or whatever.
+
+828
+01:09:10,000 --> 01:09:12,080
+And then if you can get a feature, it makes a big deal.
+
+829
+01:09:12,160 --> 01:09:14,160
+And it's like, it's a lot harder.
+
+830
+01:09:14,640 --> 01:09:23,200
+I always go back to the same well of talking about Curtis with Slopes, where it's like, those are just totally different markets and you have to kind of figure out how to find those people.
+
+831
+01:09:24,400 --> 01:09:24,560
+Yeah.
+
+832
+01:09:24,880 --> 01:09:30,400
+Well, and it's funny too, because there's not like Japanese learners monthly magazine or something either.
+
+833
+01:09:30,640 --> 01:09:31,200
+Like, right.
+
+834
+01:09:31,600 --> 01:09:34,800
+There's just, I think what I There are communities though, right?
+
+835
+01:09:35,280 --> 01:09:36,000
+There are communities.
+
+836
+01:09:36,480 --> 01:09:39,120
+And I think I've done a bad job tapping into them.
+
+837
+01:09:40,160 --> 01:09:44,000
+I think I targeted on like the Learn Japanese subreddit a lot.
+
+838
+01:09:44,240 --> 01:09:44,400
+Mm.
+
+839
+01:09:45,680 --> 01:09:46,960
+Oh, like running ads?
+
+840
+01:09:48,000 --> 01:09:51,120
+No, ads on Reddit are, I think they're really expensive or something.
+
+841
+01:09:51,360 --> 01:09:53,760
+I kind of remember it being You know, I've never actually thought about that.
+
+842
+01:09:54,000 --> 01:09:58,400
+Yeah, you'd think the fact that you can target communities would help, but maybe that's why they're expensive.
+
+843
+01:09:58,720 --> 01:10:08,000
+No, I mean, I've tried to just be engaged there, but it's really hard because they are like, Redditors are like super tuned in to if you're trying to sell them something.
+
+844
+01:10:08,240 --> 01:10:08,320
+Yeah.
+
+845
+01:10:08,800 --> 01:10:12,160
+And I find that community is also like really against anything paid.
+
+846
+01:10:12,320 --> 01:10:13,680
+Like they just want free stuff.
+
+847
+01:10:13,920 --> 01:10:16,960
+And if they, if you, if you have a price tag, you're just trying to screw them.
+
+848
+01:10:17,120 --> 01:10:21,680
+Like Yeah, because what percentage of that community is students?
+
+849
+01:10:22,320 --> 01:10:22,720
+Yeah, probably.
+
+850
+01:10:22,960 --> 01:10:23,440
+You know what I mean?
+
+851
+01:10:24,080 --> 01:10:24,880
+It probably sets the tone.
+
+852
+01:10:25,040 --> 01:10:27,840
+And if you're not, you were probably learning it initially as a student.
+
+853
+01:10:28,000 --> 01:10:39,360
+So it kind of creates an atmosphere of like more freemium tools, like probably a higher tolerance to like spammy ad filled kind of stuff just again because of the kind of market.
+
+854
+01:10:40,480 --> 01:10:49,120
+Well, and then the other thing is, I feel like with Nihongo, one of the things I really aimed for was like accessibility in the sense of like not having it be overly technical.
+
+855
+01:10:51,040 --> 01:10:56,720
+And I mean that maybe talking specifically about, I mean, part of it is like, okay, let's make it really easy to make flashcards, right?
+
+856
+01:10:57,040 --> 01:11:08,160
+Like make it so that you don't have to think about how to, you know, write a thing or import from some quiz, you know, import from some shared thing or and also the spaced repetition system that I use.
+
+857
+01:11:08,400 --> 01:11:10,320
+Like there's very few configuration options.
+
+858
+01:11:10,560 --> 01:11:16,080
+I just try to like have a point of view about how I think you're going to succeed at learning Japanese.
+
+859
+01:11:16,880 --> 01:11:25,360
+And I do some things, but that means there's not a lot of customization in how it works and it's much more like, here's the path that I think you should take.
+
+860
+01:11:26,080 --> 01:11:32,880
+And and one of the reasons I can do that is because there's this app called Anki, which has been around forever.
+
+861
+01:11:33,040 --> 01:11:35,920
+It was originally a desktop app before it was on mobile.
+
+862
+01:11:37,280 --> 01:11:41,520
+And it's a really powerful flash spaced repetition flashcard tool.
+
+863
+01:11:42,640 --> 01:11:46,720
+With tons of customizations and all the flashcards you can embed audio in.
+
+864
+01:11:46,960 --> 01:11:50,080
+You can put HTML in so you can make them display whatever you want.
+
+865
+01:11:50,480 --> 01:11:57,760
+You can tweak all the parameters of how the spaced repetition algorithm works, which actually I think I didn't actually explain what spaced repetition is.
+
+866
+01:11:58,080 --> 01:12:06,720
+Space repetition is like basically a system where you have a flashcard and it keeps track of when the right time to show you a flashcard again.
+
+867
+01:12:07,120 --> 01:12:12,960
+So you have a big pile, you've learned a thousand words and every day it will pick, okay, these are the ten that you should study today.
+
+868
+01:12:13,280 --> 01:12:20,320
+And then if you say, okay, I got that, it ends up pushing it out further and makes the interval to the next time that you see it even further.
+
+869
+01:12:21,280 --> 01:12:25,440
+And if you mark it wrong, then it's saying like, okay, I'll show that to you again somehow so you can see it.
+
+870
+01:12:25,600 --> 01:12:25,680
+Yeah.
+
+871
+01:12:26,560 --> 01:12:32,800
+So this all existed before Nihongo, but was kind of, there was a barrier to entry and a steep learning curve to it.
+
+872
+01:12:33,840 --> 01:12:42,480
+And so part of my goal with Nihongo is making it, okay, let's do space repetition, but like instead of having you track intervals, I have like levels.
+
+873
+01:12:42,720 --> 01:12:55,280
+You just have level one, two, three, four, five, you know, and like try to make it understandable where as you swipe the card, it like animates the little progress bar on your level filling up and like trying to make it a lot more approachable.
+
+874
+01:12:56,240 --> 01:12:56,240
+Yeah.
+
+875
+01:12:57,520 --> 01:13:02,720
+But the Reddit community is more into like Anki, like serious customization stuff like that.
+
+876
+01:13:03,120 --> 01:13:10,000
+So it's kind of like it's not a perfect even within my little niche, it's not a perfect fit to my niche.
+
+877
+01:13:11,680 --> 01:13:16,480
+You are probably in the you ended up building an entire app for this.
+
+878
+01:13:16,640 --> 01:13:21,360
+So like you naturally ended up in are like in those types of communities, right?
+
+879
+01:13:21,600 --> 01:13:23,040
+Whereas yeah, yeah, exactly.
+
+880
+01:13:23,840 --> 01:13:32,560
+The ones who your app is probably pretty well targeted for are not necessarily the group that you probably interacted with the most.
+
+881
+01:13:32,800 --> 01:13:40,720
+They're probably more like in Facebook or WhatsApp groups or what other, whatever other areas of communities has sort of formed up.
+
+882
+01:13:41,280 --> 01:13:45,360
+Yeah, and that's one thing where I feel like I just haven't done a great job figuring that out either.
+
+883
+01:13:46,080 --> 01:13:49,120
+And I know there's lots of like YouTubers that are doing Japanese learning.
+
+884
+01:13:49,280 --> 01:13:50,720
+I feel like I should be getting into that more.
+
+885
+01:13:51,520 --> 01:14:06,880
+But, um, but yeah, I feel like the moments that I have had success and that have been big for me have been, um, uh, I mean, I think, Yeah, the languages adding languages has been big.
+
+886
+01:14:07,120 --> 01:14:08,000
+The China thing was big.
+
+887
+01:14:09,440 --> 01:14:12,720
+I feel like the growth in downloads has just been really organic, I guess.
+
+888
+01:14:13,040 --> 01:14:15,120
+I don't feel like there have been lots of big spikes in that.
+
+889
+01:14:15,440 --> 01:14:26,240
+The spikes I have seen have been in like actual conversions to paying users, which I think there have been a few specific events like adding one of the first ones was adding audio to the app.
+
+890
+01:14:26,960 --> 01:14:38,320
+Um, was not something that I was super like, and by this, I mean basically, I initially added just text to speech, tap a button to pronounce the a word.
+
+891
+01:14:39,040 --> 01:14:41,120
+And this was behind the paywall.
+
+892
+01:14:41,920 --> 01:15:10,160
+And that drew a ton, a ton of new, um, purchasers, like a ton of new people to the pro version, um, to the point where I actually remember getting some, uh, it was funny because I got some support email at one point that point that was just complaining about how I mean, it was complaining about the fact that the clippings feature, the one that like tokenizes the text and then pulls things out, complaining that that was paid, like why why are you charging for this?
+
+893
+01:15:10,320 --> 01:15:13,840
+Like I get audio, but why are you charging for this like text feature?
+
+894
+01:15:14,080 --> 01:15:22,720
+And it's like the audio was literally like a one line API call to Apple to speak the text and this token, this clippings feature.
+
+895
+01:15:23,120 --> 01:15:27,680
+I did like natural language processing research and like spent months developing.
+
+896
+01:15:28,240 --> 01:15:45,520
+So it's like yeah, it always makes me think about the I wish I could remember the phrase off the top of my head, but there's there's some phrase about when you're designing paywalls and what features go in what bucket, how it's like you have to think about it from a user perspective and not your perspective.
+
+897
+01:15:45,680 --> 01:15:49,600
+Like we we always put those into buckets based on what's hard.
+
+898
+01:15:50,400 --> 01:16:02,400
+And, you know, the thing that's really easy, the perceived value of those is completely unrelated to how much effort goes into it on your end, especially when it's something like, you know, text to speech is hard.
+
+899
+01:16:02,720 --> 01:16:04,960
+It's just you didn't have to develop it.
+
+900
+01:16:05,440 --> 01:16:07,520
+But from a user's perspective, you know, it doesn't matter.
+
+901
+01:16:07,680 --> 01:16:17,520
+It's like the, yeah, when the value is being piggybacked off of a framework or an API that somebody else built the user doesn't know or care that that's the case.
+
+902
+01:16:17,920 --> 01:16:19,760
+Yeah, yeah, so totally true.
+
+903
+01:16:20,320 --> 01:16:21,440
+Yeah, it's kind of funny.
+
+904
+01:16:21,920 --> 01:16:24,720
+It's funny to think about, but yeah, that's a good reminder.
+
+905
+01:16:25,600 --> 01:16:26,880
+Yeah, so that was a big one.
+
+906
+01:16:27,040 --> 01:16:28,160
+That was a big jump for me.
+
+907
+01:16:28,880 --> 01:16:30,000
+Switching to subscriptions.
+
+908
+01:16:30,640 --> 01:16:31,840
+Yeah, I was going to ask about that.
+
+909
+01:16:32,000 --> 01:16:33,680
+You so you have switched to subscriptions.
+
+910
+01:16:34,320 --> 01:16:35,040
+Yeah, I switched.
+
+911
+01:16:35,680 --> 01:16:36,960
+What drove you for that to that?
+
+912
+01:16:38,560 --> 01:16:39,680
+Experimentation mostly.
+
+913
+01:16:39,840 --> 01:16:48,240
+I was curious to see if it would I mean, I was looking for ways at the time to get myself to the point where I could, you know, quit my job to focus on it.
+
+914
+01:16:49,280 --> 01:16:59,520
+And I guess, yeah, I guess I haven't gotten to that part of like my career path story which was in 2018, I left Box to go full time on Nihongo.
+
+915
+01:17:00,880 --> 01:17:07,120
+So I think it was actually in January of 2018, maybe, I think is when it was that I switched to subscriptions.
+
+916
+01:17:07,360 --> 01:17:09,760
+And part of it was like, let me get this in.
+
+917
+01:17:09,920 --> 01:17:16,400
+I'd rather do this experiment now before I'm trying to rely on this for my living expenses.
+
+918
+01:17:17,120 --> 01:17:19,760
+Do this now and then I can undo it if I need to or whatever.
+
+919
+01:17:20,400 --> 01:17:33,600
+But it ended up being a really good, yeah, really good shift for me, both just in pure, I think I made, you know, more money from it, but also just realigning where I was incentivized to spend my time.
+
+920
+01:17:35,920 --> 01:17:41,280
+When it was a one time purchase, it's kind of like once they made that purchase, there was no way I could make any more money from them.
+
+921
+01:17:41,520 --> 01:17:49,840
+So I wasn't like, there wasn't a direct incentive to like keep on improving those paid features or anything like that.
+
+922
+01:17:50,080 --> 01:17:57,360
+There was much more incentive towards like driving, getting more people driven to that purchase page and making that initial purchase.
+
+923
+01:17:59,120 --> 01:18:02,400
+But that's not the part of all this that I enjoy.
+
+924
+01:18:02,720 --> 01:18:51,840
+Like, the part I really enjoy is developing those awesome features that, you know, and making those better and the ones that I'm using every day, which are some of those pro features, you know so when making those pro features and putting on an update that improves them um when that directly you know decreases my churn and for you know um that's if i can feel justified in myself and say okay well actually you know this is for the business i'm working on this cool new feature for the business you know that's pretty great were you uh was your was that switch basically just taking the same uh paywall gate and moving it to a subscription instead of a one-time in-it purchase or did you change where things lied as far as features go um at the time i just kept it exactly as it was.
+
+925
+01:18:52,000 --> 01:18:55,520
+And that was kind of the scientist in me, like the Yeah.
+
+926
+01:18:55,840 --> 01:19:05,680
+I want to, you know, hold all, hold all the variables, you know, steady and control all the variables except for just what is the subscription versus in time, one time in a purchase.
+
+927
+01:19:06,160 --> 01:19:07,360
+How did that, how did that go?
+
+928
+01:19:07,680 --> 01:19:12,160
+You said it was about a year and a half after you switched was when you could go full time.
+
+929
+01:19:12,560 --> 01:19:17,600
+How long did it, how long did it take to get a read on how that switch went?
+
+930
+01:19:18,000 --> 01:19:20,080
+Because I'm like in the midst of it right now.
+
+931
+01:19:21,120 --> 01:19:58,240
+And one of the things that I wasn't anticipating necessarily, although if I had thought about it, I probably would have is just like how much longer it takes to to get a read on the situation because it's like yeah especially i guess i'll ask too if you like if it was monthly or annual or both but the annuals in particular it's like i'm gonna have to wait an entire year before i get literally any data on what the churn on that is and so it's kind of It's kind of strange sitting here right now and especially post launch because I had kind of a splashy launch.
+
+932
+01:20:00,560 --> 01:20:06,800
+You know, the churn is obviously higher after that because you got a lot more people to just try it out during that moment.
+
+933
+01:20:07,040 --> 01:20:14,320
+And so it's kind of, I'm kind of I'm kind of in this weird spot where I'm like, I don't I don't feel like I have an understanding of where the state of the business is.
+
+934
+01:20:14,480 --> 01:20:20,640
+And it kind of feels weird in a way that it wasn't with paid upfront because, you know, everything was clear.
+
+935
+01:20:20,800 --> 01:20:22,160
+You either got a sale or you didn't.
+
+936
+01:20:22,320 --> 01:20:23,440
+And then that was the end of the story.
+
+937
+01:20:24,960 --> 01:20:25,040
+Yeah.
+
+938
+01:20:25,360 --> 01:20:26,720
+And I don't have good news for you.
+
+939
+01:20:26,880 --> 01:20:30,400
+I think it takes a long time to really get a sense of it.
+
+940
+01:20:30,960 --> 01:20:41,600
+Um, I think the other thing that happened to me is I got people and maybe this happened to you too that I initially just switched from the onetime minute purchase to a monthly or yearly subscription.
+
+941
+01:20:42,080 --> 01:20:44,560
+And I got people that really wanted a lifetime option.
+
+942
+01:20:45,120 --> 01:20:46,000
+Um, yeah.
+
+943
+01:20:46,640 --> 01:20:55,440
+I know enough people have said they recommend doing that that I went ahead and did it despite kind of the popular opinion I feel like being to never ever do this.
+
+944
+01:20:55,760 --> 01:21:18,640
+But the general gist, I'm curious if this has borne out for you, but the argument that I've heard from some people I really trust that made a lot of sense to me is like, if you price it at around, you know, three a shears depending on, you know, your situation, most like if your churn is lower than that, then you're going to be in a really good spot with the rest of your business.
+
+945
+01:21:18,720 --> 01:21:19,440
+And so you're fine.
+
+946
+01:21:19,760 --> 01:21:25,440
+But most likely, that's around when, you know, you'd be expecting a lot of people to churn anyway.
+
+947
+01:21:25,600 --> 01:21:31,760
+And so it's not as much of a, like, drag on your business as maybe you fear it will be.
+
+948
+01:21:32,560 --> 01:21:32,640
+Yeah.
+
+949
+01:21:33,120 --> 01:21:34,320
+I think that makes a lot of sense.
+
+950
+01:21:34,640 --> 01:21:44,880
+Um, I think that's basically been how I felt about it is like, you know what, if people are giving me, uh, you know, three years worth of income from it, then I'm happy with that, you know.
+
+951
+01:21:45,520 --> 01:21:47,440
+Yeah, because it helps a lot right now.
+
+952
+01:21:47,680 --> 01:21:55,680
+Like right now, when I look at my numbers, that's helping with the sort of that initial, like, oh my God, everything's way lower than it would have been.
+
+953
+01:21:56,240 --> 01:22:01,040
+Um, those, those lifetimes kind of keep it up in that more normal range.
+
+954
+01:22:02,080 --> 01:22:04,640
+Well, and I think the other thing that I did was, um, you know.
+
+955
+01:22:05,600 --> 01:22:19,120
+I had an eight dollar in-app purchase going into my switch to transition or to subscriptions, which I turned into a two dollar a month or twenty dollar a year monthly annual split.
+
+956
+01:22:19,680 --> 01:22:24,160
+And so then when I went to add lifetime a few months later, I put it at 50 bucks.
+
+957
+01:22:24,400 --> 01:22:31,200
+And so all of a sudden I'm like, okay, well now somebody that three months ago would have given me eight dollars, I'm now getting 50 dollars from.
+
+958
+01:22:31,520 --> 01:22:32,880
+Like, I can't complain about that.
+
+959
+01:22:33,040 --> 01:22:44,320
+Like, you know, um, so I mean, part of, I think that was part of maybe what made the lifetime thing a lot easier to swallow too is because I was like, well, I'm making way more than I was off the, you know, the same purchase.
+
+960
+01:22:44,800 --> 01:22:45,040
+Right.
+
+961
+01:22:45,440 --> 01:22:45,760
+Exactly.
+
+962
+01:22:46,720 --> 01:22:46,800
+Yeah.
+
+963
+01:22:47,920 --> 01:22:48,000
+Yeah.
+
+964
+01:22:48,240 --> 01:22:49,280
+And people felt good about it.
+
+965
+01:22:49,440 --> 01:22:50,960
+They wanted to pay me the 50 bucks.
+
+966
+01:22:51,120 --> 01:22:51,280
+Right.
+
+967
+01:22:51,520 --> 01:22:53,840
+Like, um, so that was part of it too.
+
+968
+01:22:54,000 --> 01:22:58,800
+Like I didn't include it initially and people actually were just like, hey, I really want to give you that.
+
+969
+01:22:59,120 --> 01:23:02,240
+So, um, yeah.
+
+970
+01:23:02,400 --> 01:23:14,080
+So, but I think I and the, the, having the lifetime and having it be a lot more than I was getting before from just the, um, single in that purchase, uh, made that transition a lot less scary too.
+
+971
+01:23:14,240 --> 01:23:20,960
+Because it felt like I could see pretty quickly getting back up to the point where I had the same income that I had before the subscription switch.
+
+972
+01:23:21,920 --> 01:23:22,000
+Yeah.
+
+973
+01:23:22,400 --> 01:23:22,480
+Yeah.
+
+974
+01:23:22,640 --> 01:23:47,280
+I think the storyies that I used to always hear were, I think during the initial phase of like, you know, people switching to subscriptions, there was a, I think it was, there was a lot of companies that were like about to go bankrupt suddenly because, you know, they had just this huge user base pile that was starting to cost them more than it, you know, than it cost to run the business in the first place.
+
+975
+01:23:47,440 --> 01:23:48,400
+And so it started.
+
+976
+01:23:49,440 --> 01:23:50,240
+scaring people a lot.
+
+977
+01:23:50,400 --> 01:23:55,280
+And so I think most people didn't have lifetimes out of sort of principle, like this is bad.
+
+978
+01:23:56,080 --> 01:24:05,600
+And the stories I always heard was like, you know, your first six months, maybe even your first full year, it's going to be really scary because you're going to make way less money.
+
+979
+01:24:06,560 --> 01:24:10,720
+But then, you know, it starts to like pay off as you kind of get the machine machinery going.
+
+980
+01:24:10,880 --> 01:24:15,200
+And I feel like having that lifetime in the mix offsets that a little bit.
+
+981
+01:24:15,520 --> 01:24:15,600
+Yeah.
+
+982
+01:24:16,160 --> 01:24:18,640
+And I think now I'm going to try to de-emphasize it.
+
+983
+01:24:18,880 --> 01:24:22,880
+I think right now it's presented pretty equally to the monthly and annual subscriptions.
+
+984
+01:24:23,040 --> 01:24:34,080
+I think I'll probably switch to something more like what like Flighty does, I think pretty well, where they like kind of default to the yearly, but you have a button that says all plans and then you can see monthly or lifetime.
+
+985
+01:24:35,360 --> 01:24:35,440
+Yeah.
+
+986
+01:24:35,760 --> 01:24:36,880
+That's what I ended up doing.
+
+987
+01:24:37,840 --> 01:24:39,200
+And we should clarify too.
+
+988
+01:24:40,800 --> 01:24:50,720
+I think maybe yours a little bit, but but neither of our apps really have a major per user cost, which definitely plays into whether lifetime makes sense or not.
+
+989
+01:24:51,040 --> 01:25:03,600
+I don't I can already hear people, you know, screaming at their podcast player like, if you're like a weather app where, you know, the lifetime person, you will literally lose money if they last more than five years or something.
+
+990
+01:25:04,320 --> 01:25:05,680
+Lifetime probably doesn't make sense.
+
+991
+01:25:05,760 --> 01:25:05,840
+Yeah.
+
+992
+01:25:06,560 --> 01:25:07,440
+That's totally a good point.
+
+993
+01:25:07,680 --> 01:25:14,640
+The only feature I have that I pay per user basically is the OCR, which I do through a Google Cloud API.
+
+994
+01:25:15,280 --> 01:25:23,200
+But, and I was really nervous about that at first, like, oh man, I'm gonna just like, what should I even offer this on the lifetime, you know, plan?
+
+995
+01:25:23,440 --> 01:25:24,560
+Because I could lose so much money.
+
+996
+01:25:24,800 --> 01:25:29,520
+But at the end of the day, it's just, it's so cheap that it's ended up not being a big deal.
+
+997
+01:25:29,600 --> 01:25:34,800
+But well, and once, so how many this was, when did you say you switched it in 2018?
+
+998
+01:25:34,880 --> 01:25:36,720
+So it's been I think it was 2018.
+
+999
+01:25:36,880 --> 01:25:36,960
+Yeah.
+
+1000
+01:25:37,360 --> 01:25:38,080
+It's been quite a while.
+
+1001
+01:25:38,240 --> 01:25:41,200
+So you probably have a feeling on on your mix too.
+
+1002
+01:25:41,360 --> 01:25:48,320
+Because that's the other thing is like, if you have a healthy mix of subscribers with the lifetimes, that risk is probably a lot lower.
+
+1003
+01:25:49,120 --> 01:25:49,200
+Yeah.
+
+1004
+01:25:49,520 --> 01:25:52,160
+I think basically I'm hovering right now around 50-50.
+
+1005
+01:25:52,320 --> 01:25:55,920
+Like, I get 50% of my income from the lifetimes and 50% from subscriptions.
+
+1006
+01:25:57,440 --> 01:25:58,160
+You did eventually.
+
+1007
+01:25:59,360 --> 01:26:40,800
+switch to going full time indie was that like you kind of crossed the magical threshold of you know this makes sense now or what was the story there um it was more like i could see the threshold coming up and wanted to go try so and also had a bunch of savings from my um the you know acquisition um of subspace by box um i had enough money kind of that i could had put away there that i felt like i could go and take a leap and not have a job for a while and um i basically gave myself a year of like if you know i'll try this and see if i can make enough to live off it.
+
+1008
+01:26:41,440 --> 01:26:42,320
+So that was 2018.
+
+1009
+01:26:42,560 --> 01:26:43,920
+That was like fall of 2018.
+
+1010
+01:26:45,680 --> 01:26:47,200
+And I'm still here.
+
+1011
+01:26:47,440 --> 01:26:48,800
+It's like 2023.
+
+1012
+01:26:49,920 --> 01:26:50,800
+I'm still doing it.
+
+1013
+01:26:51,440 --> 01:26:59,760
+I would say I'm still not quite to the point where I'm like completely living off it.
+
+1014
+01:27:00,080 --> 01:27:02,400
+It's been still, I mean, it's been like, what does that mean?
+
+1015
+01:27:02,560 --> 01:27:04,880
+Five years and I'm still, still working towards it.
+
+1016
+01:27:05,120 --> 01:27:12,000
+But I basically got to the point where when Justin had a job to, we were good and not like living off it.
+
+1017
+01:27:12,320 --> 01:27:14,080
+Now he went and got, is getting a PhD.
+
+1018
+01:27:14,240 --> 01:27:16,400
+So I'm kind of catching up to that again.
+
+1019
+01:27:18,240 --> 01:27:30,800
+But yeah, so I basically, yeah, but my transition was have enough savings to feel like I could, you know, give myself a go at it and felt like I had a path.
+
+1020
+01:27:31,760 --> 01:27:46,160
+Part of it was because of the transition to trials or sorry to subscriptions and yeah, having some ideas on what marketing ideas I wanted to do or expansions to the app or whatever.
+
+1021
+01:27:47,520 --> 01:27:50,800
+And I've kind of managed to keep on a positive trajectory since then.
+
+1022
+01:27:50,960 --> 01:27:53,280
+So it's it's always been slow steady growth for me.
+
+1023
+01:27:53,360 --> 01:27:58,000
+I've never had any like big single big break, but a series of small things.
+
+1024
+01:28:00,320 --> 01:28:03,760
+And I've just, you know, kept that since 2018, kind of kept it up.
+
+1025
+01:28:04,480 --> 01:28:05,120
+Nice, man.
+
+1026
+01:28:05,920 --> 01:28:15,440
+That's, I mean, it's probably feels like a grind, but it's also like inspiring to see, like, you can keep grinding it out and keep, you know, moving up and moving up.
+
+1027
+01:28:16,960 --> 01:28:18,160
+Yeah, yeah, it feels good.
+
+1028
+01:28:18,320 --> 01:28:28,000
+It feels and it's, um, you know, a good sort of goal to have, I guess, this like goal of basically, I want to live off of this and have this be my full time thing is good motivation.
+
+1029
+01:28:28,640 --> 01:28:38,800
+Um, I sort of think about, I always think about how once I hit that and feel really comfortable with the amount of money I'm making that I want to just like only the features that I want to do for myself.
+
+1030
+01:28:39,040 --> 01:28:42,080
+Like I can kind of stop thinking about the like business side of it.
+
+1031
+01:28:42,640 --> 01:28:52,880
+But I feel like I also have to figure out how to make that still have purpose and still, you know, I was thinking about that after that deep dish talk from Peter Stein, Steinberger, is that his name?
+
+1032
+01:28:53,200 --> 01:28:54,000
+Steinbrenner, Err.
+
+1033
+01:28:54,480 --> 01:28:55,040
+Steinbrenner.
+
+1034
+01:28:55,360 --> 01:28:55,440
+Yeah.
+
+1035
+01:28:55,840 --> 01:29:00,240
+That he was saying like he had this great success but kind of didn't have purpose in his life anymore.
+
+1036
+01:29:00,800 --> 01:29:13,520
+And so I think about that a little bit of like, okay, yeah, I do need to make sure that I can still, you know, have a good purpose and and having that financial independence goal has been great for just having purpose and direction.
+
+1037
+01:29:14,320 --> 01:29:16,800
+I mean, it's kind of like we were talking about earlier on too.
+
+1038
+01:29:17,040 --> 01:29:40,720
+It's like whether it's having some major business success or, you know, starting a business or, you know, taking the leap and going into Indie and now you're sitting in your apartment, you know, trying to build a games business or whatever, like there's a point where you catch, you know, the dog catches the tail and you're kind of like, oh, well, that's what this is.
+
+1039
+01:29:40,960 --> 01:29:44,640
+Like you don't really know what the thing is until you get there.
+
+1040
+01:29:45,920 --> 01:29:51,440
+But having a goal in front of you is something that can, you know, be really helpful, I feel like.
+
+1041
+01:29:51,840 --> 01:29:52,560
+Yeah, absolutely.
+
+1042
+01:29:53,840 --> 01:29:58,880
+Before we wrap up, I also want to ask about your, I'm going to call it a spin-off app.
+
+1043
+01:29:59,040 --> 01:30:05,440
+I don't know if that's a correct way of phrasing it, but there's another app you have in the store called Nihongo Lessons.
+
+1044
+01:30:06,560 --> 01:30:07,440
+What's the story there?
+
+1045
+01:30:08,800 --> 01:30:26,480
+So the story there is last spring, there was, so there's this guy named Adam Shapiro, and he's been making this Japanese learning program called Japanese Level Up for about ten years, like about the same amount of time I've been working on Nihongo.
+
+1046
+01:30:27,520 --> 01:30:32,880
+And I think it started as a blog and about like strategies for learning Japanese.
+
+1047
+01:30:33,280 --> 01:30:38,720
+And then he developed this whole set of Anki like flashcards around Japanese.
+
+1048
+01:30:40,240 --> 01:30:55,680
+And it's this set of the core of it is seven thousand flashcards now that's each one introduces a new, each one has an example sentence associated with it, introduces a single new word.
+
+1049
+01:30:56,160 --> 01:31:00,960
+Everything else in the sentence you've learned before introduces one new word or one new grammatical concept or something.
+
+1050
+01:31:01,600 --> 01:31:05,920
+Anyway, so he had developed this whole set of content, but he decided he was done with it.
+
+1051
+01:31:06,080 --> 01:31:09,760
+Like he just wanted to move on with his life and kind of wasn't, was tired of supporting it.
+
+1052
+01:31:10,400 --> 01:31:13,760
+And, um, and was just going to kind of shut the whole thing down.
+
+1053
+01:31:14,400 --> 01:31:20,720
+Um, but said, hey, if there's anyone out there that, you know, might want to buy this, talk to me by the end of the month or something.
+
+1054
+01:31:21,680 --> 01:31:28,480
+So I basically couldn't really afford to actually buy his stuff outright, like buy his company or anything like that.
+
+1055
+01:31:28,880 --> 01:31:34,480
+But I talked to him and we ended up coming up with a deal where, um, we have just like a revenue share.
+
+1056
+01:31:34,880 --> 01:31:36,960
+And so he basically offered me this content.
+
+1057
+01:31:37,120 --> 01:31:38,000
+We do a revenue share.
+
+1058
+01:31:38,080 --> 01:31:40,800
+And so I built this new app around it called Nihongo Lessons.
+
+1059
+01:31:41,840 --> 01:31:50,320
+Um, it was really great because I kind of was looking at myself and realizing, hey, there's probably very few people in the world in a position to actually take this content and do something with it.
+
+1060
+01:31:50,720 --> 01:31:50,800
+Yeah.
+
+1061
+01:31:51,760 --> 01:31:54,400
+I have a user base that I can try and cross promote with.
+
+1062
+01:31:54,880 --> 01:31:59,280
+I have flashcards in my app already, so I kind of have the infrastructure for flashcards.
+
+1063
+01:31:59,920 --> 01:32:02,640
+Like, I was it was kind of a really good fit.
+
+1064
+01:32:03,040 --> 01:32:03,120
+So.
+
+1065
+01:32:05,360 --> 01:32:06,480
+So we made that deal.
+
+1066
+01:32:07,680 --> 01:32:13,360
+That was last spring, and then I'd spent the summer developing the app and launched it on December 1st.
+
+1067
+01:32:13,520 --> 01:32:18,160
+So, and it is kind of like a companion app or, you know, side app to Nihongo now.
+
+1068
+01:32:18,240 --> 01:32:26,400
+I kind of market it as, yeah, a bit of a companion app that's a bit more like the textbook to Japanese.
+
+1069
+01:32:29,840 --> 01:32:30,000
+Right.
+
+1070
+01:32:30,160 --> 01:32:30,960
+It's more guided.
+
+1071
+01:32:31,760 --> 01:32:33,120
+Yeah, more guided content.
+
+1072
+01:32:33,440 --> 01:32:39,440
+And I knew for a long time I had like, you know, an entry in my roadmap for like guided content because I wanted something like that.
+
+1073
+01:32:39,760 --> 01:32:42,320
+But it was kind of too daunting to build that myself.
+
+1074
+01:32:42,560 --> 01:32:49,520
+So it was actually pretty awesome to just have somebody that, hey, they've like spent a decade building out a bunch of awesome guided content that fits really well.
+
+1075
+01:32:49,680 --> 01:32:51,920
+And I liked the philosophy of it.
+
+1076
+01:32:54,080 --> 01:32:56,800
+He had like had everything professionally voice acted too.
+
+1077
+01:32:57,600 --> 01:33:00,720
+So like all the sentences are spoken out loud.
+
+1078
+01:33:02,320 --> 01:33:05,680
+And yeah, so it was a really great fit.
+
+1079
+01:33:06,400 --> 01:33:06,960
+We got along.
+
+1080
+01:33:08,400 --> 01:33:10,480
+And so far it's been successful.
+
+1081
+01:33:10,880 --> 01:33:12,160
+Feels, you know, pretty good.
+
+1082
+01:33:13,840 --> 01:33:15,280
+But yeah, that's how that came to be.
+
+1083
+01:33:16,160 --> 01:33:23,440
+Has that, like, that almost feels like, you know, one of the ways of reaching out to more customers for Nihongo too.
+
+1084
+01:33:23,760 --> 01:33:30,880
+Like in terms of if he's been doing this for that long, he probably has an audience that's not necessarily the same as your audience.
+
+1085
+01:33:31,600 --> 01:33:33,280
+Have you, you mentioned cross-promoting.
+
+1086
+01:33:33,440 --> 01:33:33,680
+Have you?
+
+1087
+01:33:34,480 --> 01:33:38,960
+Have you been able to find any ways to kind of bring people from either side to the other?
+
+1088
+01:33:40,240 --> 01:33:40,320
+Yeah.
+
+1089
+01:33:40,960 --> 01:33:41,760
+And you're absolutely right.
+
+1090
+01:33:41,920 --> 01:33:42,000
+Yeah.
+
+1091
+01:33:42,160 --> 01:33:45,600
+It's been a great way to just introduce it to people that didn't know about Nihongo.
+
+1092
+01:33:46,400 --> 01:33:49,760
+I built some sort of integration into Nihongo as part of it too.
+
+1093
+01:33:49,920 --> 01:33:59,520
+So basically there's like when you're looking at a flashcard Nihongo lessons, there's a one one button tap that takes you over to the dictionary entry for that word in Nihongo.
+
+1094
+01:34:00,560 --> 01:34:05,920
+And if you don't have Nihongo installed, it, you know, nicely prompts you to explain about it and link to the app store.
+
+1095
+01:34:07,120 --> 01:34:10,640
+So, yeah, it's a nice new flow of users to Nihongo in that direction.
+
+1096
+01:34:11,280 --> 01:34:29,040
+And then from Nihongo, you know, I'm able as part of like the series of prompts you see over the first couple days of using Nihongo and sort of the onboarding flow, it will tell you about Nihongo lessons and I have like a discount on Nihongo lessons for people that have Nihongo installed, um, things like that.
+
+1097
+01:34:29,280 --> 01:34:39,360
+So, so yeah, it's like, or have, yeah, or have Nihongo Pro, rather, if they have the Nihongo Pro subscription, they get, um, the discount on Nihongo lessons.
+
+1098
+01:34:40,080 --> 01:34:45,680
+So, um, yeah, I think it's opened up a whole bunch of new people that didn't know about Nihongo.
+
+1099
+01:34:46,720 --> 01:34:47,760
+It's really symbiotic.
+
+1100
+01:34:47,840 --> 01:34:47,920
+Yeah.
+
+1101
+01:34:48,560 --> 01:34:49,360
+Yeah, that's awesome.
+
+1102
+01:34:49,440 --> 01:34:55,360
+Have you, like, are you able to see in your, in your data like that, that's moved the needle a little bit?
+
+1103
+01:34:56,720 --> 01:34:56,800
+Yeah.
+
+1104
+01:34:57,280 --> 01:35:04,800
+Um, I mean, I definitely see it just in, it's like it, it's an additional revenue stream, basically, an additional, well, yeah, yeah, certainly on that one thing.
+
+1105
+01:35:04,880 --> 01:35:04,960
+thing.
+
+1106
+01:35:05,040 --> 01:35:05,360
+That front.
+
+1107
+01:35:06,320 --> 01:35:12,640
+On the Nihongo user side, I don't know if I've seen it like I don't see like a big bump from right when I Right.
+
+1108
+01:35:12,960 --> 01:35:14,800
+It wasn't like a radical business shift.
+
+1109
+01:35:15,360 --> 01:35:15,440
+Yeah.
+
+1110
+01:35:15,920 --> 01:35:23,120
+But like I said, Nihongo has the whole time been just this slow, steady progress of individual small events.
+
+1111
+01:35:23,280 --> 01:35:24,640
+And I think it definitely fits into that.
+
+1112
+01:35:24,960 --> 01:35:33,760
+Like, I'm sure some of my continued growth that I've seen since last December is the result of this new marketing channel, basically.
+
+1113
+01:35:34,400 --> 01:35:34,480
+Yeah.
+
+1114
+01:35:34,880 --> 01:35:35,840
+Man, that's really cool.
+
+1115
+01:35:36,880 --> 01:35:37,200
+Awesome.
+
+1116
+01:35:37,520 --> 01:35:42,880
+Well, I was going to say we've been going for X amount of time.
+
+1117
+01:35:43,200 --> 01:35:45,920
+But I'll just I'll just like self reveal it here.
+
+1118
+01:35:46,400 --> 01:35:54,400
+I cut you off in the middle of this to snag tickets to the talk show live because I got a bunch of frenetic texts.
+
+1119
+01:35:54,560 --> 01:35:59,920
+So I don't actually know how long we're actually we've been recording this episode, but it's definitely been quite a while.
+
+1120
+01:36:00,720 --> 01:36:01,600
+Yeah, well, I'm glad.
+
+1121
+01:36:05,040 --> 01:36:09,280
+But this is a very professional, professional show that we produce over here.
+
+1122
+01:36:10,400 --> 01:36:19,200
+But before I let you go, I do want to ask you the question I ask everyone to wrap the show up, which is what's a person or people out there that have inspired you that you recommend others to check out?
+
+1123
+01:36:19,680 --> 01:36:21,120
+So I have two that I want to give.
+
+1124
+01:36:24,720 --> 01:36:26,560
+So you went to Deep Dish Swift, you saw her talk.
+
+1125
+01:36:26,720 --> 01:36:34,240
+She gave a really great talk on mentorship and in the iOS community and mentorship has been really super important to me.
+
+1126
+01:36:34,720 --> 01:36:37,520
+I mentioned earlier, you know, Bigfix and the people I worked with there.
+
+1127
+01:36:38,240 --> 01:36:46,000
+I just had amazing mentors there that I'll call it Mike Autumn in particular, was just, has had such a huge impact on my career.
+
+1128
+01:36:46,640 --> 01:36:57,440
+So I really love seeing her do that and she's gone through a lot and just had, gone through a lot of adversity and I'm so glad that she's part of our community now.
+
+1129
+01:36:57,760 --> 01:37:10,960
+So I definitely think you should follow her if you're not already., the other person I wanted to mention was, oh man, Andrew's Andrew Jang, Jang.
+
+1130
+01:37:11,440 --> 01:37:12,080
+I'm sorry.
+
+1131
+01:37:13,600 --> 01:37:19,200
+I don't know how to pronounce it either, but it's Z, it's Z, uh, CHA in Z.
+
+1132
+01:37:19,520 --> 01:37:21,040
+I mean, there will be a link in this in the show.
+
+1133
+01:37:21,440 --> 01:37:21,520
+Yes.
+
+1134
+01:37:22,160 --> 01:37:31,200
+Um, so he we actually connected because, uh, he was building this photos app called Find, um, and he was doing OCR stuff.
+
+1135
+01:37:31,280 --> 01:37:34,560
+And so we kind of connected and some of the, because I did some OCR work in the Hong Go.
+
+1136
+01:37:35,040 --> 01:37:38,400
+Um, but he is, uh, I think a senior in high school.
+
+1137
+01:37:39,200 --> 01:37:41,120
+Oh, I had no idea he was that young.
+
+1138
+01:37:41,920 --> 01:37:43,200
+Yeah, he's a senior in high school.
+
+1139
+01:37:43,360 --> 01:37:49,520
+So he's posting about how he's like working, he's basically in high school working on college applications.
+
+1140
+01:37:50,720 --> 01:37:57,840
+He has a part time job at a fast food place at and is doing incredible iOS stuff.
+
+1141
+01:37:58,080 --> 01:38:05,680
+Like, he's got this app, Find, that's like, feels like kind of the photos, like what you kind of want photos app to be.
+
+1142
+01:38:05,840 --> 01:38:11,600
+Like, it's kind of, he just out Apple's Apple, it feels like, you know, with incredible animations.
+
+1143
+01:38:12,160 --> 01:38:15,360
+And he's just doing things with Swift UI that, like, I didn't know were possible.
+
+1144
+01:38:16,720 --> 01:38:21,280
+He's open really, really cool.
+
+1145
+01:38:23,040 --> 01:38:26,800
+And yeah, and he's doing it when he's like 18 years old and has a part time job.
+
+1146
+01:38:26,960 --> 01:38:28,720
+And yeah, it's pretty crazy.
+
+1147
+01:38:28,960 --> 01:38:32,480
+So you should all definitely check out all the work that he's doing.
+
+1148
+01:38:33,360 --> 01:38:34,960
+Yeah, that's crazy.
+
+1149
+01:38:35,280 --> 01:38:40,080
+Like, I didn't know his backstory at all, but I knew immediately who you were talking about.
+
+1150
+01:38:40,320 --> 01:38:42,480
+I knew the, like, cat profile.
+
+1151
+01:38:42,960 --> 01:38:44,800
+Yeah, Sailor Moon cat, right.
+
+1152
+01:38:44,960 --> 01:38:45,040
+Yeah.
+
+1153
+01:38:45,360 --> 01:38:53,520
+Because I see it all the time associated with these, like, cool UI animation videos or little things, but I didn't, I didn't know the story there.
+
+1154
+01:38:53,600 --> 01:38:54,960
+So man, yeah, that's awesome.
+
+1155
+01:38:55,120 --> 01:38:55,680
+That's a good one.
+
+1156
+01:38:56,480 --> 01:38:56,560
+Yeah.
+
+1157
+01:38:57,600 --> 01:38:57,680
+Cool.
+
+1158
+01:38:58,400 --> 01:39:00,480
+Well, I guess we can go ahead.
+
+1159
+01:39:00,640 --> 01:39:01,680
+We can go ahead and wrap up.
+
+1160
+01:39:01,920 --> 01:39:04,080
+Where can people find you and your work?
+
+1161
+01:39:05,920 --> 01:39:14,560
+Easiest way is I'm on Twitter at Chris Vasely or on Mastodon at Chris Vasely at mstdn.social.
+
+1162
+01:39:16,880 --> 01:39:22,080
+And if you want to check out my app, it's it'll be in the show notes, nihongo dash app.com.
+
+1163
+01:39:24,480 --> 01:39:27,280
+And yeah, nihongo on the app store as well.
+
+1164
+01:39:27,520 --> 01:39:27,600
+Yeah.
+
+1165
+01:39:28,160 --> 01:39:28,320
+Yep.
+
+1166
+01:39:31,280 --> 01:39:32,160
+Thanks for listening.
+
+1167
+01:39:32,640 --> 01:39:34,960
+This episode was edited by Jonathan Ruiz.
+
+1168
+01:39:35,280 --> 01:39:37,200
+If you'd like to discuss the show, you can find me.
