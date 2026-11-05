@@ -1,125 +1,133 @@
-# Blockchain, Liberland i budućnost nacija
+# #003 - Blockchain, Liberland i budućnost nacija - Dorian Jakov Š. V. i Matija S.
 
-**Kanal:** domovina_tv  
+**Kanal:** _unlisted  
 **Datum:** 2026-03-26  
 **Trajanje:** 137 min  
-**YouTube:** https://youtu.be/AoXN-3Mkmew  
-**Model:** gemini-2.5-flash  
+**Epizoda:** https://domovina.ai/v/AoXN-3Mkmew  
+**Izvornik:** youtube.com/watch?v=AoXN-3Mkmew  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-U ovoj epizodi podcasta Domovina TV, Dorian Jakov Štern Vukotić raspravlja o Liberland blockchainu, njegovoj migraciji na Ethereum i važnosti Zero Knowledge Proofs za privatnost i digitalni identitet. Razgovor obuhvaća evoluciju društava od carstava do nacija i uspon mrežnih zajednica, s primjerima specijalnih ekonomskih zona poput Prospere. Dotaknute su teme hiperregulacije inovacija, problematika hrvatskog bankarskog sustava, utjecaj umjetne inteligencije na programiranje te vizionarski projekt slanja hrvatskog grba na Mjesec.
+U epizodi podcasta Domovina TV, snimljenoj 19. ožujka 2026. na blagdan svetog Josipa, gost je Dorian Jakov Štern Vukotić, tech lead razvoja Liberland blockchaina. Govori o tome kako Liberland vodi državnu administraciju na blockchainu radi transparentnosti te zašto mrežu seli sa Substrate tehnologije na Ethereum. Glavni razlog selidbe su zero-knowledge dokazi koji omogućuju privatno glasanje i zaštitu identiteta. Razgovor se zatim širi na povijesni razvoj od carstava do država-nacija, mrežne zajednice i specijalne ekonomske zone poput Prospere, Singapura i Hong Konga te na štetne učinke hiperregulacije u medicini. Na kraju se raspravlja o stranom vlasništvu nad bankama u Hrvatskoj, inicijativi slanja modificiranog hrvatskog grba na Mjesec s projektom LifeShip, utjecaju umjetne inteligencije na programiranje i ideji likvidne demokracije.
 
 ## Ključne teme
 
-- blockchain tehnologija
-- liberland
-- zero knowledge proofs (zk proofs)
-- budućnost nacija i mrežne zajednice
-- specijalne ekonomske zone
-- hiperregulacija i inovacije
+- liberland blockchain i migracija na ethereum
+- zero-knowledge dokazi i privatnost
+- transparentnost države i tajnost glasanja
+- povijest carstava, nacija i mrežnih zajednica
+- slobodne ekonomske zone i hiperregulacija
 - bankarski sustav u hrvatskoj
-- umjetna inteligencija i programiranje
-- svemirski projekti
+- slanje hrvatskog grba na mjesec
+- umjetna inteligencija u programiranju
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_00 | Voditelj | voditelj |
+| SPEAKER_00 | Matija S. | voditelj |
 | SPEAKER_01 | Dorian Jakov Štern Vukotić | gost |
 
 ## Ključni zaključci
 
-1. Liberland blockchain je prvi sustav osmišljen za obavljanje cjelokupne državne administracije na blockchainu, osiguravajući transparentnost vladinih financija.
-2. Zero Knowledge Proofs (ZK Proofs) omogućuju potvrdu identiteta ili dobi bez otkrivanja osobnih podataka, što je ključno za privatnost i digitalne referendume.
-3. Migracija Liberland blockchaina na Ethereum omogućit će sofisticiranija rješenja za identitet i glasanje, rješavajući problem javnosti glasanja na prethodnoj Substrate tehnologiji.
-4. Koncept nacije je pod napadom, a nove tehnologije omogućuju organiziranje u 'network tribes' – zajednice ljudi sličnih svjetonazora, što se manifestira kroz slobodne ekonomske zone i 'pop-up' gradove.
-5. Hiperregulacija, posebno u medicini i biotehnologiji, koči inovacije jer birokrati izbjegavaju rizik odobravanja novih rješenja, što dovodi do prebacivanja razvoja u manje regulirane regije.
-6. Hrvatski bankarski sustav karakterizira dominacija stranih banaka i otežano osnivanje domaćih, što rezultira odlivom kapitala i prinosa iz lokalne ekonomije.
-7. Umjetna inteligencija (AI) je postala dovoljno napredna da preuzima ulogu kodiranja, mijenjajući ulogu programera u 'code reviewere' i manipulatore AI-a.
-8. Projekt slanja hrvatskog grba na Mjesec, modificiranog s krunom zamijenjenom zvijezdama, simbolizira demokratizaciju svemirskih putovanja i buduće prisustvo Hrvata u svemiru.
+1. Dorian navodi da je Liberland blockchain prvi zamišljen za vođenje cijele državne administracije. Oko 50% prihoda i rashoda vlade Liberlanda već je javno provjerljivo na blockchainu, a cilj je doći do 100%.
+2. Prema Dorianu, država bi trebala biti potpuno transparentna, a građani bi trebali imati privatnost. Ironično mu je što se kripto projekti, zbog bliskosti s vladama, kreću prema KYC-u i praćenju korisnika.
+3. Liberland mrežu seli sa Substrate tehnologije na Ethereum. Glavni je razlog zrelija ZK tehnologija, kojom se identitet može odvojiti od dokaza o građanstvu. Time se rješava problem javnog glasanja, zbog kojeg je dolazilo do pritiska na glasače.
+4. Građanin Liberlanda postaje se doprinosom državi koji trenutno iznosi 10.000 dolara. Svaki građanin može pokretati samo jedan validator, a mreža trenutno ima 40 validatora.
+5. Dorian opisuje prijelaz s doba carstava na doba nacija, koje su omogućili tiskani mediji i obrazovanje. Smatra da internet i jeftina putovanja sada omogućuju nastanak mrežnih zajednica i slobodnih zona poput Prospere i Zuzlu.
+6. Hiperregulacija, primjerice odobravanje lijekova u FDA, prema gostu koči inovacije u medicini, pa se one sve više događaju u Kini. Prospera to rješava modelom informiranog pristanka.
+7. Sugovornici kritiziraju to što Hrvatska praktički nema domaćih komercijalnih banaka osim državnog HPB-a. Dorianu najviše smeta što država hrvatskim bankarima ne dopušta da se natječu pod fer uvjetima. Dorian također planira na jesen poslati modificirani hrvatski grb, sa zvijezdama umjesto krune, na Mjesec u suradnji s LifeShipom.
 
 ## Spomenute osobe
 
-- Sveti Josip
+- sveti Josip
 - Dorian Jakov Štern Vukotić
-- Marija
 - Vitalik Buterin
-- Niklas
-- Trump
+- Mr. Beast
+- Nicholas (iz Infinite)
+- Donald Trump
 - Kamala
-- Mister Beast
-- Ilon Mask
+- Albert Einstein
+- Elon Musk
 - Bezos
-- Vit Jedlička
 - Thompson
+- Vítěz Lička
 
 ## Spomenuta mjesta
 
 - Hrvatska
+- Liberland
+- Srbija
 - Europa
 - Velika Britanija
-- EU
-- Amerika
 - Honduras
+- Prospera
+- Roatan
 - Singapur
 - Hong Kong
-- Dubaj
+- Dubai
 - Kina
-- Afrika
-- Azija
-- Sahara
+- Malezija
+- Forest City
 - Zagreb
 - Varaždin
-- Kaptol
-- Gradec
+- Krvavi most
 - Beč
-- Turska
+- Austrija
 - Njemačka
 - Francuska
 - Jugoslavija
-- Prospera
+- Slovačka
+- Pula
+- Rab
+- Bjelovar
+- Velika Gorica
+- Afrika
+- Sahara
+- Amerika
+- Argentina
 - Crna Gora
 - Gruzija
 - Istanbul
 - Švicarska
-- Malezija
-- Pula
-- Slovačka
-- Bjelovar
-- Velika Gorica
-- Japan
 - Ukrajina
-- Rusija
-- Mjesec
-- Mars
-- Rab
+- Japan
+- Češka
+- Monako
 - San Marino
 - Luksemburg
 - Lihtenštajn
 - Andora
 - Vatikan
-- Argentina
-- Češka
-- Srbija
+- Istra
+- Dalmacija
+- Slavonija
+- Mjesec
+- Mars
 
 ## Spomenute organizacije
 
 - Domovina TV
-- Hrvatski sabor
-- Apple iCloud
+- Ethereum
+- Polygon
+- Substrate
+- Polkadot
+- Bitcoin
+- Solana
+- Avalanche
+- Coinbase
+- Binance
+- SEC
 - FDA
 - Infinite
-- Volkswagen
-- SpaceX
-- ESA
-- AKD
-- MUP
+- Zicer
+- Europska unija
+- Hrvatski sabor
+- HNB
 - HPB
-- PBZ
-- UniCredit
-- Intesa Sanpaolo
+- UniCredit ZABA
+- Intesa Sanpaolo PBZ
 - Erste
 - Raiffeisen
 - OTP
@@ -127,21 +135,24 @@ U ovoj epizodi podcasta Domovina TV, Dorian Jakov Štern Vukotić raspravlja o L
 - INA
 - BlackRock
 - Vanguard
-- Google Meet
-- Zicer
+- AKD
+- MUP
+- Certilia
 - LifeShip
-- Digital Ocean
+- SpaceX
+- ESA
+- Starlink
 - Hetzner
+- DigitalOcean
 - Amazon Web Services
-- Coinbase
-- Binance
-- Gitcoin
-- Microsoft GitHub
-- Quick Cup EU
+- GitHub
+- Microsoft
+- Volkswagen
+- Libertad Avanza
 - HDZ
-- Možemo!
-- Liberty Advance
-- Slobodni
+- Možemo
+- Gitcoin
+- Quick Cups EU
 
 ---
-*Sentiment: mixed | Generirano: 2026-03-27T11:21:57.289Z*
+*Sentiment: positive | Generirano: 2026-11-05T10:09:14.763Z*
