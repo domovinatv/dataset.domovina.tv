@@ -1,0 +1,2959 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_01] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_01] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_01] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_01] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_01] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,480 --> 00:00:45,360
+[SPEAKER_01] Hello, I'm your host, David Bernard, and with me today, RevenueCat CEO Jacob Iting.
+
+7
+00:00:45,840 --> 00:00:50,080
+[SPEAKER_01] Our guest today is Taylor Wells, Director of Data Products at NewsCorp.
+
+8
+00:00:50,400 --> 00:01:02,320
+[SPEAKER_01] Having worked on data projects at Deloitte, Disney, and Business Insider, Taylor now works on data strategy, product insights, and identity frameworks across NewsCorp's many digital products.
+
+9
+00:01:02,800 --> 00:01:16,160
+[SPEAKER_01] On the podcast, we talk with Taylor about how to make better decisions with data, the many pitfalls of collecting and interpreting data, and why the best executive dashboardard is probably a handwritten weekly email.
+
+10
+00:01:17,040 --> 00:01:19,600
+[SPEAKER_01] Hey Taylor, thank you so much for joining us on the podcast today.
+
+11
+00:01:19,840 --> 00:01:20,480
+[SPEAKER_02] Thanks for having me.
+
+12
+00:01:20,720 --> 00:01:21,280
+[SPEAKER_02] Excited to be here.
+
+13
+00:01:21,840 --> 00:01:28,960
+[SPEAKER_01] So you've had a ton of experience working on data at Deloitte, Business Insider, Disney Plus, and now News Corp.
+
+14
+00:01:29,840 --> 00:01:35,760
+[SPEAKER_01] And I wanted to kick things off just talking about like what data science is.
+
+15
+00:01:36,240 --> 00:01:36,640
+[SPEAKER_01] Why data?
+
+16
+00:01:37,360 --> 00:01:39,440
+[SPEAKER_02] I would almost separate that into two different things.
+
+17
+00:01:39,760 --> 00:01:45,680
+[SPEAKER_02] Why I choose to beat myself up getting into a career in data or why data matters.
+
+18
+00:01:45,920 --> 00:01:56,480
+[SPEAKER_02] Honestly, on the why data matters part, I would almost start with, instead of looking at it as what data can do for you, it's more just like, how badly data can be misused, frankly, these days.
+
+19
+00:01:56,720 --> 00:01:58,560
+[SPEAKER_02] I think that you see that across most companies.
+
+20
+00:01:59,120 --> 00:02:21,600
+[SPEAKER_02] So everyone, when they think about how data and analytics and data science teams work, if they're not in those spaces but are in corporate settings, they often think of the problems that they've observed in the past, broken reports or problems trying to get to data or a lot of time, effort and money spent on data related initiatives or things like that that ultimately don't show much of the value that they think that it's going to show.
+
+21
+00:02:21,920 --> 00:02:29,360
+[SPEAKER_02] So I think it's very why I think it's important that people to be hesitant or reluctant about the return on investment in data itself.
+
+22
+00:02:29,920 --> 00:02:39,680
+[SPEAKER_02] But I think that people also realize that data as a concept and as a raw set is essentially some of the most valuable assets or products on Earth when used well.
+
+23
+00:02:40,160 --> 00:02:43,280
+[SPEAKER_02] So it's almost like atomic energy or something like that, right?
+
+24
+00:02:43,680 --> 00:02:48,640
+[SPEAKER_02] Like, it can be used for great things, but you remember Fukushima and things like that instead.
+
+25
+00:02:49,040 --> 00:02:52,800
+[SPEAKER_02] So everyone knows what bad data looks like and the challenges that you have.
+
+26
+00:02:53,040 --> 00:02:59,840
+[SPEAKER_02] Like they start a new initiative where they're going to build out a new data warehouse or move something over and then that turns into a slog.
+
+27
+00:03:00,400 --> 00:03:04,240
+[SPEAKER_02] There are now changes that were unexpected or it's even harder to do something.
+
+28
+00:03:04,640 --> 00:03:07,760
+[SPEAKER_02] It takes longer than they thought or costs are crazy out of control.
+
+29
+00:03:08,240 --> 00:03:15,600
+[SPEAKER_02] And then you also have things like companies that go out and hire a lot of data scientists or data analysts, but they don't really know what they should be focused on.
+
+30
+00:03:15,920 --> 00:03:23,440
+[SPEAKER_02] And it's more an afterthought of like, I'm going to hire great talented, smart people in those spaces because I don't understand them.
+
+31
+00:03:23,760 --> 00:03:25,520
+[SPEAKER_02] And they'll figure it out as we're going.
+
+32
+00:03:25,920 --> 00:03:29,280
+[SPEAKER_02] And that can work, but it so often doesn't.
+
+33
+00:03:29,520 --> 00:03:57,120
+[SPEAKER_02] I think that when data is driven by a business strategy that informs a data strategy, then things are incredibleibly effective and you're able to really extract a lot of value and learnings out of data, especially in data science, in understanding consumer interaction and engagement in ways that are not privacy violating or like invasive, but are used to better that product and that experience for the customers.
+
+34
+00:03:57,600 --> 00:04:03,120
+[SPEAKER_02] Nobody wants a lot of ads on the page, but they may need to generate that ad revenue in order to support things.
+
+35
+00:04:03,600 --> 00:04:21,200
+[SPEAKER_02] But if you're actually making the experience better in order to have those ads on the page that are less invasive or the customer is not having to cover as much of that cost for the company because you've built things really effectively and intuitively internally, then it can ultimately add value across the board.
+
+36
+00:04:21,440 --> 00:04:24,720
+[SPEAKER_02] That's how I see data and data science adding value generally.
+
+37
+00:04:25,440 --> 00:04:30,800
+[SPEAKER_01] So then what would you say is the foundation of a good data practice?
+
+38
+00:04:31,680 --> 00:04:36,240
+[SPEAKER_01] Like data is just a bunch of raw numbers.
+
+39
+00:04:36,560 --> 00:04:36,720
+[SPEAKER_02] Right.
+
+40
+00:04:37,040 --> 00:04:44,160
+[SPEAKER_02] Well, one thing I would say is that more often than not, companies start by saying we should just be collecting everything and then we'll figure out what we need, right?
+
+41
+00:04:44,400 --> 00:04:46,000
+[SPEAKER_02] So there's a lot of challenges around that.
+
+42
+00:04:46,640 --> 00:05:00,720
+[SPEAKER_02] But there's also the challenge of even if you have a honed focus on what you want to collect, say I don't need to record a viewport of the user, but I need to know at least when they click on a tile or whether or not the video plays whenever they click on the play button.
+
+43
+00:05:01,360 --> 00:05:16,560
+[SPEAKER_02] Without having structure around how you expect that to change over time to grow other use cases that are likely to come, you inevitably fall into the trap of building something that will have to be reversed or modified or adjusted.
+
+44
+00:05:16,800 --> 00:05:20,000
+[SPEAKER_02] And each step of that exponentially increases your cost.
+
+45
+00:05:20,480 --> 00:05:32,080
+[SPEAKER_02] Catching something early on could be one x of your cost and then ten x if you're fixing it by cleaning up downstream because now you've got new data coming in that you'd have to continually add new iterative processes to fix.
+
+46
+00:05:32,480 --> 00:05:41,120
+[SPEAKER_02] And then lastly, at the last mile, it may be 100 x more cost if you have bad reporting that are actually telling the wrong things because you have all this total frame.
+
+47
+00:05:41,600 --> 00:05:43,200
+[SPEAKER_00] Yeah, make a business move.
+
+48
+00:05:43,440 --> 00:05:48,240
+[SPEAKER_02] It's basically like when you look at data, data should be looked at in the same way that you're engineering a building.
+
+49
+00:05:48,480 --> 00:05:53,920
+[SPEAKER_02] You're going through the process of permits and agreements and alignment across the board on what things are going to be called.
+
+50
+00:05:54,320 --> 00:06:00,400
+[SPEAKER_02] Are we going to call this a wall or are we calling like the wires within the wall like the conduit or are we calling it this?
+
+51
+00:06:00,960 --> 00:06:04,880
+[SPEAKER_02] so that if someone says that term later, we all know exactly what that is referring to?
+
+52
+00:06:05,200 --> 00:06:22,720
+[SPEAKER_02] So it's a lot of getting that alignment and then carefully laying out what you expect, both the current version and the potential modularity or general generic nature that it needs to be in, in order for you to continue to scale that out or use it for different use cases.
+
+53
+00:06:22,960 --> 00:06:36,800
+[SPEAKER_02] And then lastly, you need to really have a deep understanding from the data team side of what the business is trying to do even further than what they're asking for today, but also what the product does itself and then what your output looks like for the user.
+
+54
+00:06:37,360 --> 00:06:42,880
+[SPEAKER_02] You often see people that will build dashboards, but they don't necessarily understand how the dashboard is going to be consumed.
+
+55
+00:06:42,960 --> 00:06:44,960
+[SPEAKER_02] They just know the generic requirements of the dash.
+
+56
+00:06:45,200 --> 00:06:51,360
+[SPEAKER_02] And therefore, the dash may technically meet the requirements, but is a challenge to use or misses the mark on what you're trying to do.
+
+57
+00:06:51,840 --> 00:06:52,480
+[SPEAKER_02] How do we look at it?
+
+58
+00:06:52,640 --> 00:06:52,800
+[SPEAKER_02] Exactly.
+
+59
+00:06:53,600 --> 00:07:08,880
+[SPEAKER_02] And on the flip side of that, you may have data engineers or data scientists who are trying to understand behavior based on how that's been described to them in the problem statements or the requirements, the tickets, whatever it is, but they are not regular users of the application and therefore don't understand how that works.
+
+60
+00:07:09,040 --> 00:07:12,000
+[SPEAKER_02] And it doesn't necessarily even mean that just heavy usage will fix that.
+
+61
+00:07:12,560 --> 00:07:31,920
+[SPEAKER_02] Like on Disney Plus, if you're a heavy user but you only have an Apple TV and you're saying, this is the behavior that I understand, which is very different than a low end Roku device or a phone and how they're engaging with the phone, like a swipe all the way down to the last row versus having to use the remote to do that, then you still may not fully understand how the product is being consumed, right?
+
+62
+00:07:32,160 --> 00:07:41,520
+[SPEAKER_02] So that deep understanding of what the upstream is, what needs to come out of this, and what are the business teams within it trying to accomplish both now and in the future.
+
+63
+00:07:42,240 --> 00:07:57,120
+[SPEAKER_01] Yeah, I think we see similar problems all the way from like indie developers with just the basic Firebased analytics., just collecting a ton of data, mislabeling that data, and then making bad decisions based on data they don't fully understand.
+
+64
+00:07:57,440 --> 00:07:59,680
+[SPEAKER_01] But then that propagates up at every stage.
+
+65
+00:07:59,920 --> 00:08:11,360
+[SPEAKER_01] Like you move from Firebase to Amplitude with the same mistakes, and then you move from Amplitude to like a custom data stack, make the same mistakes, and you have an entire data team propagating the same data mistakes.
+
+66
+00:08:12,000 --> 00:08:18,480
+[SPEAKER_01] What are some concrete things you've seen in what data to collect and how to think about that data collection?
+
+67
+00:08:18,800 --> 00:08:22,400
+[SPEAKER_00] I'm curious on that spectrum of collecting everything versus things that are semantically important.
+
+68
+00:08:22,640 --> 00:08:24,720
+[SPEAKER_00] Obviously, like I think both extremes don't work.
+
+69
+00:08:25,200 --> 00:08:27,440
+[SPEAKER_00] But collecting everything has cost implications, right?
+
+70
+00:08:27,840 --> 00:08:31,200
+[SPEAKER_00] And you're just drowning your data team in noise, typically.
+
+71
+00:08:31,440 --> 00:08:33,680
+[SPEAKER_00] So, like, how do you navigate that spectrum?
+
+72
+00:08:34,000 --> 00:08:34,160
+[SPEAKER_02] Right.
+
+73
+00:08:34,560 --> 00:08:49,200
+[SPEAKER_02] And that, frankly, I think one of the more hidden problems, too, is that when you have all that data, it's similar to saying, what are the lunch options and giving them two options to choose from, or three at a meeting versus bringing in an entire catering staff that can make any food.
+
+74
+00:08:49,520 --> 00:08:53,600
+[SPEAKER_02] Now you've opened the door to like, well, I didn't actually want you to order an omelet.
+
+75
+00:08:53,760 --> 00:08:58,000
+[SPEAKER_02] We don't have the equipment for an omelet, but now you've ordered it because I've said that you could do that, right?
+
+76
+00:08:58,560 --> 00:09:06,560
+[SPEAKER_02] As well as whether meaningful, nonharharmful, but ultimately like violating data or willfully violating data privacy and usage.
+
+77
+00:09:06,800 --> 00:09:22,400
+[SPEAKER_02] You know, if you're collecting all data and listing it, for example, in the EU by their GDPR constraints as functionally necessary because it's an internal tool that you also use to make sure that the site is up, that the paywall is working, that consent is being captured, et cetera.
+
+78
+00:09:22,560 --> 00:09:35,200
+[SPEAKER_02] And you're flagging those so they can't be used downstream, but you're not gate that to where it technically can't be used downstream as well, or masking it or protecting it, or omitting it when not needed, then you now open the door for a potential risk.
+
+79
+00:09:45,120 --> 00:09:51,680
+[SPEAKER_02] So I think that the balance is to go back to the original question of like where is the right mix?
+
+80
+00:09:52,160 --> 00:10:02,800
+[SPEAKER_02] If there was a clear answer to that for an app versus a website versus a cell phone or whatever you're manufacturing, then it would be more standardized across the industry.
+
+81
+00:10:03,280 --> 00:10:08,400
+[SPEAKER_02] But the fact is it really goes back to what is the company trying to accomplish.
+
+82
+00:10:08,720 --> 00:10:15,760
+[SPEAKER_02] I think that even in our earlier talks we talked about how data in itself is a not a value added to the business.
+
+83
+00:10:16,160 --> 00:10:19,920
+[SPEAKER_02] Collecting it, storing it, having that is not a value to the business.
+
+84
+00:10:20,320 --> 00:10:39,360
+[SPEAKER_02] It's whether or not you're actually using it and turning it into meaningful insights that impact the business, not even insights just for the sake of insights, which is also a problem area where you get kind of that 90% of the way, but it's not actually tied to the decision makers or the right levers aren't available for those people.
+
+85
+00:10:39,840 --> 00:10:45,040
+[SPEAKER_02] So I think it is literally a process of not trial and error, but a full understanding across data.
+
+86
+00:10:45,520 --> 00:10:51,120
+[SPEAKER_02] And that's why to kind of your example that you gave earlier of how it just continues to work the problem up in different ways.
+
+87
+00:10:51,680 --> 00:11:06,800
+[SPEAKER_02] If you're starting without a foundation, every time you restart and wondering why it's not working, it's because you have to slow down and set that foundation, have a full understanding across those teams, and then everything else becomes exponentially faster and easier.
+
+88
+00:11:07,680 --> 00:11:10,240
+[SPEAKER_02] But so often companies don't do that.
+
+89
+00:11:10,480 --> 00:11:24,880
+[SPEAKER_02] And frankly, you know, I get to brag or hang my hat on the fact that Disney Plus was not only such a great success, which a lot of that is a mixture of things happening, COVID and things like that, but it was also a great luxury to start from scratch.
+
+90
+00:11:24,880 --> 00:11:38,000
+[SPEAKER_02] from a data perspective on an app that we had the full support of the company, both financially and backing it and pushing it as this is what our future will look like.
+
+91
+00:11:38,240 --> 00:11:47,360
+[SPEAKER_02] This will be a key factor as much as parks or anything else, but also that it was they gave us the runway to launch the app a year and a half.
+
+92
+00:11:47,840 --> 00:11:54,640
+[SPEAKER_02] Now you see these streaming apps come out after like two months of being announced because they can kind of burn through that, but that opens the door for a lot of problems too.
+
+93
+00:11:54,800 --> 00:11:58,560
+[SPEAKER_02] Or they try to bolt several together and then they're building on legacy systems.
+
+94
+00:11:58,880 --> 00:12:02,240
+[SPEAKER_02] With Disney Plus, we were starting from scratchratch, ESPN plus, Disney plus.
+
+95
+00:12:02,480 --> 00:12:05,600
+[SPEAKER_02] We got to really go in and say, what do we need to collect?
+
+96
+00:12:06,160 --> 00:12:08,160
+[SPEAKER_02] How is this going to work across all the devices?
+
+97
+00:12:08,480 --> 00:12:19,840
+[SPEAKER_02] What are the limitations of each device that we need to factor in so that we can normalize some of this information and ensure that we aren't tracking something in one way on one and not that's what I mean when I say semantics.
+
+98
+00:12:20,160 --> 00:12:24,960
+[SPEAKER_00] When you're coming up with a tracking plan, it's like thinking about the semantics and how can you compare that?
+
+99
+00:12:25,280 --> 00:12:31,920
+[SPEAKER_00] Because to some degree you don't want to compare an action on a phone from an action on an OTT device, but in some cases you do.
+
+100
+00:12:32,000 --> 00:12:34,160
+[SPEAKER_00] Probably like a watch should mean the same thing.
+
+101
+00:12:34,400 --> 00:12:34,480
+[SPEAKER_00] Yes.
+
+102
+00:12:34,880 --> 00:12:35,680
+[SPEAKER_00] Right, to some degree.
+
+103
+00:12:36,320 --> 00:13:14,880
+[SPEAKER_00] made the point of like some amount of trial and error and guesswork and that's kind of what I've found historically is like for indies and whatever like when you're thinking about that first iteration of what do I care about just be logical go through and use your app and think about the things you do that you think would be interesting to know and put those 10 or 20 actions in and that's a good place to start and then I've always found it's usually if you miss something it doesn't take long to go back and add you know you might lose some historical data but also you keep making the point that data as collected is in some ways valueless right like it's like crude oil or some other raw asset like until you're refining it and actually action on it, it actually has zero value.
+
+104
+00:13:15,040 --> 00:13:19,840
+[SPEAKER_00] So don't worry too much about hoarding everything, because I've seen people do that too.
+
+105
+00:13:20,320 --> 00:13:26,480
+[SPEAKER_00] And like it can be used, but as you said, like there's implications for data regulation and privacy.
+
+106
+00:13:26,720 --> 00:13:34,560
+[SPEAKER_00] There's also implications for costs, like running a data, if you have your own data warehouse or even just running through all of these events platforms, they usually charge on events.
+
+107
+00:13:34,800 --> 00:13:42,160
+[SPEAKER_00] Some of them charge on users, which is nice, because then like if you have a user, you can track zero or one hundred thousand events, which is nice, but they're not all like that.
+
+108
+00:13:42,400 --> 00:13:45,200
+[SPEAKER_00] And so, yeah, just being somewhat logical is a good start.
+
+109
+00:13:45,360 --> 00:13:48,880
+[SPEAKER_02] Yeah, to that point, I think that there are ways to structure how you're approaching it.
+
+110
+00:13:48,880 --> 00:14:04,240
+[SPEAKER_02] So you can imagine how you're approaching it in a generic form where you can ultimately not then hinder changes going forward where it has changed like what you're trying to collect by having that framework that actually allows for modularity or scale.
+
+111
+00:14:04,640 --> 00:14:14,720
+[SPEAKER_02] So one example would be if you were planning to track how many people clicked a download button in a streaming app to see how many people actually use the download feature, how many downloads are completed.
+
+112
+00:14:15,040 --> 00:14:22,560
+[SPEAKER_02] You might build an event that is download clicked, download started, download paused, download completed, deleted, whatever.
+
+113
+00:14:24,000 --> 00:14:52,320
+[SPEAKER_02] If you're focusing generically, you can say, I'm going to build tracking for button clicked or click action, and then give keys to those buttons, ensure that there's structure in how that's built, so there's a bottom button that has to sit within a container that sits within a set, we have a page, and I've got those hierarchical keys built up so that now when someone comes back and says, Well, now we need to know when they hit download and then pause and then share and then download again, oh, that's a new function.
+
+114
+00:14:52,640 --> 00:15:00,720
+[SPEAKER_02] Well, now I can just say that either way, those were clicks of those actions, and I've mapped that behind the scenes to what those keys and tags represent.
+
+115
+00:15:01,600 --> 00:15:11,760
+[SPEAKER_02] And that's kind of like how you ultimately can say, we don't necessarily need to know everything upfront, but we haven't backed ourselves into a corner where we were tracking something as download click before and now it's button click.
+
+116
+00:15:12,000 --> 00:15:14,640
+[SPEAKER_02] And I've got to merge that data and clean it and normalize it.
+
+117
+00:15:14,720 --> 00:15:16,480
+[SPEAKER_02] Which you can do that pretty easily.
+
+118
+00:15:16,640 --> 00:15:23,360
+[SPEAKER_00] I mean, that's still pretty far down the semantic meaning stack versus like tap on x value, y value.
+
+119
+00:15:24,160 --> 00:15:27,920
+[SPEAKER_00] Which you can theoretically could collect what does every single tap event on the device?
+
+120
+00:15:28,240 --> 00:15:33,680
+[SPEAKER_00] And that's probably pretty useless, but hooking into your generic button class and making sure you capture all those.
+
+121
+00:15:33,840 --> 00:15:36,240
+[SPEAKER_00] I think about some of the tracking plan for RevenueCat.
+
+122
+00:15:36,240 --> 00:15:56,240
+[SPEAKER_00] for revenue cat is like we did have semantic stuff like created an app, created a project, which just creates, you know, going to the conversation about downstream consumers, if you have an event that is like project created that sets you up for much better self-service use cases, because most people understand what that means and they can probably pull something together and it most likely will be correct, but we still also have a page loaded event, right?
+
+123
+00:15:56,480 --> 00:16:08,000
+[SPEAKER_00] So like we know when a page loads and we have the path broken down and in some cases we've been able to retroactively, without going in and reengineering a semantically tracked whatever, we're able to go in and retrofit that in, which is good.
+
+124
+00:16:08,240 --> 00:16:10,880
+[SPEAKER_00] And that's still like, you know, there's not that many page loads, right?
+
+125
+00:16:11,520 --> 00:16:12,880
+[SPEAKER_00] There's not that many button clicks, right?
+
+126
+00:16:12,880 --> 00:16:13,200
+[SPEAKER_02] So you don't have that many button clicks right now.
+
+127
+00:16:13,920 --> 00:16:17,920
+[SPEAKER_02] And honestly, as things mature over time, you really figure out what you need to be focused on.
+
+128
+00:16:18,480 --> 00:16:24,320
+[SPEAKER_02] For example, do I need to know that all the icons of the home menu were shown when they clicked the word home?
+
+129
+00:16:25,040 --> 00:16:31,760
+[SPEAKER_02] I can assume fairly safely with QA testing and things like that of the app that all nine tabs are showing.
+
+130
+00:16:32,080 --> 00:16:34,640
+[SPEAKER_02] I don't need to confirm that nine were there every time.
+
+131
+00:16:35,120 --> 00:16:38,960
+[SPEAKER_02] But to your point, some of that can also be done within the stream of data.
+
+132
+00:16:39,360 --> 00:16:45,360
+[SPEAKER_02] And you can say that this button with this type that's being clicked has a key that represents that.
+
+133
+00:16:45,600 --> 00:16:59,200
+[SPEAKER_02] And as that data is being pulled in, I'm enriching it to then classify it as this is project started or app created and send that to the teams that it's relevant to while still being able to reverse engineer the raw data that you collected before.
+
+134
+00:16:59,520 --> 00:17:06,960
+[SPEAKER_02] But where companies, I think most people think of GA, Google Analytics and others when they think of these things is it collect, especially Adobe.
+
+135
+00:17:07,440 --> 00:17:16,000
+[SPEAKER_02] Each event is collecting a hundred pieces of metadata across them, yet they're almost all identical for that session or that user or whatever.
+
+136
+00:17:16,160 --> 00:17:23,920
+[SPEAKER_02] And in broad ways, like for a lot of the interactions, offloading some of that to essentially just capture when any of those states change.
+
+137
+00:17:24,960 --> 00:17:33,840
+[SPEAKER_02] And then being able to apply logic downstream to how frequently they're resetting a password instead of just saying I'm capturing password field every event.
+
+138
+00:17:34,480 --> 00:17:35,200
+[SPEAKER_00] Don't recommend that one.
+
+139
+00:17:35,760 --> 00:17:36,960
+[SPEAKER_00] Don't capture your password fields.
+
+140
+00:17:37,200 --> 00:17:38,000
+[SPEAKER_00] Officials, horse.
+
+141
+00:17:38,080 --> 00:17:38,320
+[SPEAKER_00] Example.
+
+142
+00:17:39,120 --> 00:17:52,480
+[SPEAKER_01] So once you start collecting data, one of the things you and I talked about before the podcast was how data is really just a symbolic representation, but that information is what we derive from the data.
+
+143
+00:17:53,360 --> 00:17:56,640
+[SPEAKER_01] So tell me a little bit more about what you meant by that.
+
+144
+00:17:57,040 --> 00:18:00,560
+[SPEAKER_02] Yeah, so I think everyone also knows that's had a data set anywhere.
+
+145
+00:18:01,040 --> 00:18:07,120
+[SPEAKER_02] that executives will often hone in on something and then there's not a lot of questions asked as to whether or not it's still needed.
+
+146
+00:18:07,280 --> 00:18:08,320
+[SPEAKER_02] Is it tracking the right thing?
+
+147
+00:18:08,560 --> 00:18:09,360
+[SPEAKER_02] Are we looking at the right thing?
+
+148
+00:18:10,000 --> 00:18:11,520
+[SPEAKER_02] And are we making any decisions out of it?
+
+149
+00:18:11,840 --> 00:18:22,560
+[SPEAKER_02] I can go into a theoretical company every week and give a weekly status that shows how many subscriber signups there were across the app or how many page views or whatever.
+
+150
+00:18:22,960 --> 00:18:27,520
+[SPEAKER_02] But the question is rarely asked, are we doing something with this information each time?
+
+151
+00:18:27,760 --> 00:18:28,400
+[SPEAKER_02] And if so, what?
+
+152
+00:18:28,720 --> 00:18:30,160
+[SPEAKER_02] Are we retroactively doing it?
+
+153
+00:18:30,480 --> 00:18:31,440
+[SPEAKER_02] Do we do it every week?
+
+154
+00:18:31,840 --> 00:18:33,200
+[SPEAKER_02] Would we like to do it more frequently?
+
+155
+00:18:33,360 --> 00:18:34,800
+[SPEAKER_02] Are we able to do it more frequently?
+
+156
+00:18:35,040 --> 00:18:36,960
+[SPEAKER_02] And so that's kind of the value that ultimately comes from the app.
+
+157
+00:18:36,960 --> 00:18:40,320
+[SPEAKER_02] the value that ultimately eludes companies around data very often.
+
+158
+00:18:40,880 --> 00:18:42,400
+[SPEAKER_00] What do you think the bottleneck is there?
+
+159
+00:18:42,560 --> 00:18:47,280
+[SPEAKER_00] Because like you have ostensibly smart people consuming this, but like there's failure to act.
+
+160
+00:18:47,520 --> 00:18:51,520
+[SPEAKER_00] Is that because there aren't things to do, which I think is maybe even a valid path?
+
+161
+00:18:51,760 --> 00:18:53,280
+[SPEAKER_00] What's your theory for when that fails?
+
+162
+00:18:53,520 --> 00:18:56,000
+[SPEAKER_02] Yeah, I think it depends on the company size, frankly.
+
+163
+00:18:56,320 --> 00:19:02,960
+[SPEAKER_02] So at a larger company, what you often get is people not asking questions because a senior asked for it and they don't want to push back.
+
+164
+00:19:03,200 --> 00:19:12,560
+[SPEAKER_02] And so you're building layers in between to the point that the people that are actually executing on building a report or surfacing a report or interpreting a report can't even.
+
+165
+00:19:12,960 --> 00:19:14,480
+[SPEAKER_02] necessarily get that question.
+
+166
+00:19:14,560 --> 00:19:16,080
+[SPEAKER_00] That tells me it's a stupid question.
+
+167
+00:19:17,200 --> 00:19:18,480
+[SPEAKER_00] Just that would save me so much time.
+
+168
+00:19:18,800 --> 00:19:21,680
+[SPEAKER_00] Because that's actually probably what the crux of what I'm trying to get to.
+
+169
+00:19:21,840 --> 00:19:23,120
+[SPEAKER_00] I have a curiosity about something.
+
+170
+00:19:23,680 --> 00:19:25,600
+[SPEAKER_00] And so I ask, oh, can we pull this together?
+
+171
+00:19:26,080 --> 00:19:31,520
+[SPEAKER_00] If someone who knows better than me of why this data is trash could tell me before I spend all that time.
+
+172
+00:19:32,240 --> 00:19:36,000
+[SPEAKER_02] Or knows what you'll ask after you get there and just gets you what you want.
+
+173
+00:19:36,400 --> 00:19:36,880
+[SPEAKER_02] What I want.
+
+174
+00:19:37,200 --> 00:19:39,360
+[SPEAKER_00] Like knows the why of what I'm trying to ask.
+
+175
+00:19:39,440 --> 00:19:39,920
+[SPEAKER_00] But you're right.
+
+176
+00:19:40,160 --> 00:19:45,040
+[SPEAKER_00] And I'm sure it depends on the culture you have as a company as to how much pushback you can give and stuff like that.
+
+177
+00:19:45,360 --> 00:19:45,520
+[SPEAKER_02] Right.
+
+178
+00:19:45,680 --> 00:19:48,000
+[SPEAKER_02] And again, I think a lot of these are rooted in some foundational things.
+
+179
+00:19:48,000 --> 00:19:54,720
+[SPEAKER_02] We're trying to answer things like do the employees of the company across the board fully understand what the business is trying to do?
+
+180
+00:19:55,040 --> 00:20:01,680
+[SPEAKER_02] I've worked at too many companies where it is unclear to all how it all comes together.
+
+181
+00:20:02,160 --> 00:20:04,000
+[SPEAKER_02] What is ad tech and marketing doing?
+
+182
+00:20:04,320 --> 00:20:06,160
+[SPEAKER_02] What are the business development teams doing?
+
+183
+00:20:06,480 --> 00:20:08,080
+[SPEAKER_02] What is strategy focusing on?
+
+184
+00:20:08,400 --> 00:20:09,600
+[SPEAKER_02] Who are our core customers?
+
+185
+00:20:09,920 --> 00:20:17,840
+[SPEAKER_02] Even at a prior publication, I found it incredible to see that when asked what their audience was, who are your readers?
+
+186
+00:20:18,000 --> 00:20:23,920
+[SPEAKER_02] Who are the people that you're trying to reach, but like who are your readers today, that they would have strong opinions of who those are.
+
+187
+00:20:24,640 --> 00:20:28,000
+[SPEAKER_02] But they were based on the assumptions of the executives, right?
+
+188
+00:20:28,320 --> 00:20:29,680
+[SPEAKER_02] Like maybe it's even the CEO.
+
+189
+00:20:30,160 --> 00:20:34,240
+[SPEAKER_02] Our readers are tech savvy, Northeastern or West Coast.
+
+190
+00:20:34,720 --> 00:20:37,040
+[SPEAKER_02] They don't want old legacy media, blah, blah, blah.
+
+191
+00:20:37,440 --> 00:20:41,200
+[SPEAKER_02] Like whatever the definition is, yet you go back and say, what is this based on?
+
+192
+00:20:41,360 --> 00:20:44,240
+[SPEAKER_02] Are these based on personas that you've created from data science?
+
+193
+00:20:44,640 --> 00:20:49,120
+[SPEAKER_02] Is this customer interviews and like working sessions for how the product is actually consumed?
+
+194
+00:20:49,280 --> 00:20:50,240
+[SPEAKER_02] Have you done polls?
+
+195
+00:20:50,800 --> 00:20:54,320
+[SPEAKER_02] Do you send out newsletters and you see what they're responding to and then you're profiling it?
+
+196
+00:20:54,800 --> 00:20:55,600
+[SPEAKER_02] It's often no.
+
+197
+00:20:56,000 --> 00:20:58,400
+[SPEAKER_02] It's just like that's what I built it for originally.
+
+198
+00:20:58,560 --> 00:21:00,320
+[SPEAKER_02] And I'm assuming that that's who my audience is.
+
+199
+00:21:00,320 --> 00:21:02,000
+[SPEAKER_02] audiences because no one said otherwise.
+
+200
+00:21:02,240 --> 00:21:13,920
+[SPEAKER_02] So it's really just like breaking that down, like if no one's pushing back to say we can't define our customer based on nothing, based on just our assumptions, then things continue to only actually like exponentially do that.
+
+201
+00:21:14,160 --> 00:21:23,280
+[SPEAKER_00] Who do you think are like for data teams to understand what the business should be focusing on and like how do you think the best way for those folks to get that information, where should that come from?
+
+202
+00:21:23,520 --> 00:21:23,920
+[SPEAKER_02] Absolutely.
+
+203
+00:21:24,080 --> 00:21:26,560
+[SPEAKER_02] It should be a coupling with data product, frankly.
+
+204
+00:21:26,880 --> 00:21:28,800
+[SPEAKER_02] Data product is that weird space, right?
+
+205
+00:21:29,120 --> 00:21:31,520
+[SPEAKER_02] It is not a product team in the traditional sense.
+
+206
+00:21:31,760 --> 00:21:33,520
+[SPEAKER_02] And I like to think of myself as a product person.
+
+207
+00:21:34,000 --> 00:21:35,600
+[SPEAKER_00] Can you define data product a little bit?
+
+208
+00:21:35,840 --> 00:21:36,320
+[SPEAKER_02] Yeah, exactly.
+
+209
+00:21:37,040 --> 00:21:38,800
+[SPEAKER_02] But data product kind of lives in between.
+
+210
+00:21:39,040 --> 00:21:41,040
+[SPEAKER_02] I've seen it live under product and engineering.
+
+211
+00:21:41,120 --> 00:21:42,400
+[SPEAKER_02] I've seen it live solely under product.
+
+212
+00:21:42,720 --> 00:21:47,200
+[SPEAKER_02] I've seen it live under its own umbrella under data, like chief data officer potentially.
+
+213
+00:21:47,520 --> 00:22:00,480
+[SPEAKER_02] And then I've seen it live in some hybrid forms or embedded models like a hub and spoke, where you have different people from the data product side working closer with the businesses while other product teams also are involved.
+
+214
+00:22:00,800 --> 00:22:05,280
+[SPEAKER_02] So think you're developing a new feature like 3D video for a streamer.
+
+215
+00:22:05,680 --> 00:22:10,720
+[SPEAKER_02] You may have that team that's conceptualizing the 3D video that they've pitched and sold executives on.
+
+216
+00:22:11,040 --> 00:22:47,680
+[SPEAKER_02] You have a data product person or team that are working now with the engineers alongside that to understand what that product team envisions for that, how they actually expect it to happen, how engineers actually expect that it can be built and delivered in order to inform how they should collect and capture that data and how it's going to impact all the stuff that they actually sit on top downstream, and then they have to take that message and understanding back to the data science, data engineering and data analytics teams to explain that, sell the vision of what we're trying to track, get feedback on how it could be better done or how they envision that it's most efficiently done.
+
+217
+00:22:48,400 --> 00:22:49,840
+[SPEAKER_02] What are some pitfalls, et cetera?
+
+218
+00:22:50,240 --> 00:22:56,800
+[SPEAKER_02] And then lay out that roadmap of features, you know, like in a JIRA sense, you know, like the work that needs to actually happen.
+
+219
+00:22:57,200 --> 00:23:08,560
+[SPEAKER_00] So you're saying, like, the people in the company who are responsible for integrating data into the tip of the spear, product features and stuff like that, they're learning through osmosis or direct interaction with the product leaders.
+
+220
+00:23:08,880 --> 00:23:09,040
+[SPEAKER_00] Right.
+
+221
+00:23:09,680 --> 00:23:13,840
+[SPEAKER_00] And the engineering team is building, who should ideally have a better understanding of why they're doing it.
+
+222
+00:23:14,240 --> 00:23:19,760
+[SPEAKER_02] And that often would not be effective to try and ask them to understand the data part while going on that.
+
+223
+00:23:20,000 --> 00:23:21,200
+[SPEAKER_02] In fact, it often never works.
+
+224
+00:23:21,360 --> 00:23:24,400
+[SPEAKER_02] If you were to go to a product team and say, put data first in your mind.
+
+225
+00:23:25,200 --> 00:23:44,240
+[SPEAKER_02] when you're developing a new product idea or a new feature, they will still end up, even if they're coming up with KPIs and metrics that they're going to track to measure ROI and success down the road, they still end up going, Oh, I forgot about that because I was so focused on seeing the feature come together in wireframes, tests, blah, blah, that now it's live and we don't have any data for it.
+
+226
+00:23:44,320 --> 00:23:53,680
+[SPEAKER_02] Now I've actually seen that even at a publication doing a podcast or streaming audio where they'll partner with a third party company, build this thing or this idea.
+
+227
+00:23:54,080 --> 00:24:03,200
+[SPEAKER_02] We all know data is important and that we'll need to understand the data about it, but at the last second you're like, Now this has actually already been pushed out live and we're not collecting any data on it.
+
+228
+00:24:03,520 --> 00:24:03,920
+[SPEAKER_02] Oh no.
+
+229
+00:24:04,240 --> 00:24:04,880
+[SPEAKER_02] Well, what do we do?
+
+230
+00:24:04,960 --> 00:24:06,720
+[SPEAKER_00] How do we do it a little bit before that?
+
+231
+00:24:06,880 --> 00:24:08,960
+[SPEAKER_00] Usually I do my data tracking like in the last day.
+
+232
+00:24:09,360 --> 00:24:09,600
+[SPEAKER_00] Right.
+
+233
+00:24:10,080 --> 00:24:18,640
+[SPEAKER_00] Which honestly kind of is fine because like you don't know and the instrumentation these days is at least for the like indicator using like a tool or something like that can be done pretty quickly.
+
+234
+00:24:18,800 --> 00:24:21,840
+[SPEAKER_00] But yeah, I also you said teams coming up with KPIs.
+
+235
+00:24:21,920 --> 00:24:22,480
+[SPEAKER_00] It's interesting.
+
+236
+00:24:22,640 --> 00:24:33,840
+[SPEAKER_00] I've watched us build subfeatures and things like this that we design very bespoke and interesting KPIs for and a KPI's usefulness goes down proportional to the amount of time you spend thinking about it.
+
+237
+00:24:35,600 --> 00:24:40,160
+[SPEAKER_00] Like the best ones are just like how many people use, how many dollars through features.
+
+238
+00:24:40,400 --> 00:24:47,840
+[SPEAKER_00] And I almost wonder if going back to interpretability, it's like if a KPI, you need a PhD to design it, you probably need at least a master's to understand it.
+
+239
+00:24:48,000 --> 00:24:51,040
+[SPEAKER_00] And let's be frank, like most people don't understand that stuff.
+
+240
+00:24:51,200 --> 00:24:52,320
+[SPEAKER_00] So don't overthink it.
+
+241
+00:24:52,960 --> 00:24:55,520
+[SPEAKER_00] You know, like in fact, don't overthink it might be.
+
+242
+00:24:55,920 --> 00:24:58,880
+[SPEAKER_02] Yes, don't overthink it as it starts to grow.
+
+243
+00:25:00,640 --> 00:25:07,920
+[SPEAKER_02] A lot of my examples too here are companies at large scale that are like, I was going to say most of these are a lot of investments in advance.
+
+244
+00:25:08,000 --> 00:25:10,800
+[SPEAKER_00] In terms of like, oh, you have a data product person who's bringing stuff back.
+
+245
+00:25:10,880 --> 00:25:12,640
+[SPEAKER_00] And like most companies, it's either going to be, well.
+
+246
+00:25:12,720 --> 00:25:16,240
+[SPEAKER_00] well, startups, it's going to be the founder, maybe like the lead engineer.
+
+247
+00:25:16,320 --> 00:25:21,040
+[SPEAKER_00] Maybe if you're a little bit big, you've got someone who's like data literate, but they're going to be going across the stack.
+
+248
+00:25:21,200 --> 00:25:26,480
+[SPEAKER_00] They're probably responsible for the technical stack, but then also probably the instrumentation and like all that stuff.
+
+249
+00:25:26,560 --> 00:25:34,480
+[SPEAKER_00] And I've been that guy before where I've had to be like, jumping up and down, being like, hey, like, you know, we don't have to do a lot, but like, let's make sure we collect the basics here.
+
+250
+00:25:34,880 --> 00:25:42,000
+[SPEAKER_00] The beauty is, I think, today there's enough tools that you can get eighty percent of what you need with some of this off the shelf stuff.
+
+251
+00:25:42,080 --> 00:25:51,920
+[SPEAKER_00] But yeah, I mean, even at RevenueCat, like Dave and I were talking about build versus buy on the way over here in terms of like, even just like an event tracking platform and we're like, yeah, I don't know why anyone would ever build internally.
+
+252
+00:25:52,160 --> 00:25:56,000
+[SPEAKER_00] And I was like, well, actually today we're almost kind of building our own internally.
+
+253
+00:25:56,480 --> 00:25:57,120
+[SPEAKER_00] Like, we are.
+
+254
+00:25:57,440 --> 00:26:06,160
+[SPEAKER_00] Because at some point you begin to rely on like usually an internal BI system and you probably have a data warehouse and at that point it's like, well, tracking event streams is kind of trivial at that point, right?
+
+255
+00:26:06,400 --> 00:26:08,960
+[SPEAKER_00] And there's some customization advantages you can get.
+
+256
+00:26:09,200 --> 00:26:24,000
+[SPEAKER_01] Yeah, I'm really curious to hear your thoughts on that because you and I were talking about your time at Disney Plus where it was SERP era, there were high hopes for Disney Plus and there was almost a blank check for what you were able to build inside Disney Plus.
+
+257
+00:26:24,640 --> 00:26:33,200
+[SPEAKER_01] And I'm curious, you know, it sounds like it was ultimately very successful, being able to ground up, but very few companies have the luxury.
+
+258
+00:26:33,760 --> 00:26:45,600
+[SPEAKER_01] I think you told me at one point there was like three hundred engineers and multiple teams across the company all working on essentially building an entire analytics company inside Disney.
+
+259
+00:26:46,320 --> 00:26:49,840
+[SPEAKER_02] And that was really not even outside of Disney Direct to Consumer.
+
+260
+00:26:50,160 --> 00:26:52,880
+[SPEAKER_02] That's not taking into account parks, cruises.
+
+261
+00:26:53,120 --> 00:26:53,200
+[SPEAKER_02] Yeah.
+
+262
+00:26:54,000 --> 00:26:54,400
+[SPEAKER_01] So yeah.
+
+263
+00:26:54,480 --> 00:27:08,400
+[SPEAKER_01] So then what are your thoughts on the build versus buy and blending the two and when it actually star makes sense to start building out your own data product versus relying more on off the shelf, what are the benefits and drawbacks of each?
+
+264
+00:27:08,880 --> 00:27:15,120
+[SPEAKER_01] And then after hundreds of engineers building this, now you still need tens of engineers to maintain it over time.
+
+265
+00:27:15,840 --> 00:27:22,800
+[SPEAKER_01] Very few companies, especially in our space in subscription apps, have the luxury of dedicating teams to that.
+
+266
+00:27:23,040 --> 00:27:29,360
+[SPEAKER_01] And then if they do, maybe those ten engineers would even maybe be dollar dollar RD spend.
+
+267
+00:27:29,520 --> 00:27:31,280
+[SPEAKER_00] Like it's almost doesn't really make sense.
+
+268
+00:27:31,840 --> 00:27:38,240
+[SPEAKER_01] Yeah, like their time would be better spent on consumer facing features or just like building infrastructure.
+
+269
+00:27:38,560 --> 00:27:40,960
+[SPEAKER_01] So I've, yeah, really teed up a long question.
+
+270
+00:27:41,520 --> 00:27:42,000
+[SPEAKER_01] No, no, no.
+
+271
+00:27:42,080 --> 00:27:46,000
+[SPEAKER_01] I think this is actually going to be one of the more succinct ones for me.
+
+272
+00:27:46,400 --> 00:27:56,240
+[SPEAKER_01] I think it does depend, but I would generally lean towards use off the shelf, use open source, things like that early on if you're not expecting immediate massive scale.
+
+273
+00:27:56,560 --> 00:28:33,120
+[SPEAKER_02] Unless you just think that you've struck the motherload in terms of an idea for an application or website and you could, there is a 10% chance that you could suddenly have 100 million users or something and now you backed yourself into a vendor corner from a volume perspective or pricing, then start with something more basic, but with a clear evaluation structure around when you cut over to other things, and a culture that both acknowledges and accepts that it's okay that things may not be congruent over time when you switch.
+
+274
+00:28:33,680 --> 00:29:02,000
+[SPEAKER_02] One of the biggest pitfalls of every company that's existed for more than a couple of years that I've been at is literally that they say, well, we've already started collecting this, and if we cut over to something new, it won't match the old reports or I can't end up with these like if we start these ideological layers of like I mean imagine the panic that's been going across the industry in publishing where it's not tech focused for the most part about the switch from GA 360 to GA 4.
+
+275
+00:29:02,560 --> 00:29:20,880
+[SPEAKER_02] GA 360 lived on for years and years past when it should have when Google said that they would kill it because customers were just so concerned about my bosses are saying that this is a completely new way to do it and they're not ready to start looking at things from a session perspective versus an event perspective or a device perspective.
+
+276
+00:29:21,200 --> 00:29:24,000
+[SPEAKER_02] It's a sea change in the way that we track it and we know that it's better.
+
+277
+00:29:24,800 --> 00:29:29,200
+[SPEAKER_02] But it means that now I can't show year over year comparisons that actually have a lot of value.
+
+278
+00:29:29,280 --> 00:29:32,720
+[SPEAKER_00] Or like the charts that we've relied on for years are now like invalid.
+
+279
+00:29:32,960 --> 00:29:34,720
+[SPEAKER_00] They just don't make sense in this new paradigm.
+
+280
+00:29:34,880 --> 00:29:34,960
+[SPEAKER_00] Yeah.
+
+281
+00:29:35,200 --> 00:29:35,920
+[SPEAKER_02] It's very painful.
+
+282
+00:29:36,400 --> 00:29:37,040
+[SPEAKER_00] Organizational change.
+
+283
+00:29:37,600 --> 00:29:38,240
+[SPEAKER_02] Yeah, absolutely.
+
+284
+00:29:38,400 --> 00:29:44,720
+[SPEAKER_02] I mean, even think about something like for Disney Plus, the idea of the bundle was introduced very late in the lead up to the launch.
+
+285
+00:29:44,960 --> 00:29:50,960
+[SPEAKER_02] We had an idea, again, we, I'm kind of just referring more to like non executive levels that something like that would happen.
+
+286
+00:29:51,200 --> 00:29:56,880
+[SPEAKER_02] But we also thought that it was more likely that it would just become subsumed in some way in either direction.
+
+287
+00:29:57,040 --> 00:30:01,120
+[SPEAKER_02] Like maybe it's Disney Plus merging into Hulu or vice versa, but that you end up with one of app.
+
+288
+00:30:01,360 --> 00:30:02,800
+[SPEAKER_02] And I still think that will ultimately happen.
+
+289
+00:30:03,200 --> 00:30:12,160
+[SPEAKER_02] But at the time, the idea of needing to synchronize user access across Hulu and Disney when someone changes to a bundle option, that wasn't present.
+
+290
+00:30:12,480 --> 00:30:13,680
+[SPEAKER_02] The idea of ads wasn't present.
+
+291
+00:30:13,920 --> 00:30:18,080
+[SPEAKER_02] So, like, you didn't really have the ability to figure out how that was then going to look on a report.
+
+292
+00:30:18,320 --> 00:30:26,480
+[SPEAKER_02] And it kind of like, as long as the company culture was setting the expectation of, like, I don't actually care if it translates over time, then you can win.
+
+293
+00:30:26,720 --> 00:30:31,600
+[SPEAKER_02] But also, again, startups have the luxury of saying, we don't have any historical data.
+
+294
+00:30:32,160 --> 00:30:38,640
+[SPEAKER_02] So as long as we're moving quickly and we end up in a good spot in the first couple of years, then you can usually ass establish a good practice going forward.
+
+295
+00:30:39,040 --> 00:30:48,320
+[SPEAKER_02] And when those businesses are coming back and trying to challenge like that, but I want it this way, just pushing back on what value do you get out of being able to translate that?
+
+296
+00:30:48,640 --> 00:31:06,880
+[SPEAKER_02] If they have all historical cliques of an article for the Journal or Business Insider going back for ten years so that they can show a line graph of ten year month over month growth down to like a section, but the sections have changed over time and now they're frustrated that the reports are not going to be congruent.
+
+297
+00:31:07,120 --> 00:31:12,160
+[SPEAKER_02] Say, what value are you getting in comparing something that happened ten years ago when the market was absolutely.
+
+298
+00:31:12,480 --> 00:31:13,520
+[SPEAKER_00] Oh, it's a renewed chart.
+
+299
+00:31:14,240 --> 00:31:15,280
+[SPEAKER_00] It's just nice to look at charts.
+
+300
+00:31:15,440 --> 00:31:15,680
+[SPEAKER_00] Exactly.
+
+301
+00:31:15,840 --> 00:31:16,400
+[SPEAKER_00] Yeah, yeah.
+
+302
+00:31:16,480 --> 00:31:17,040
+[SPEAKER_00] What's wrong with that?
+
+303
+00:31:17,200 --> 00:31:17,840
+[SPEAKER_02] But they're not pushing.
+
+304
+00:31:18,080 --> 00:31:18,880
+[SPEAKER_02] Is that not a valid example?
+
+305
+00:31:20,880 --> 00:31:24,160
+[SPEAKER_02] They're often not pushing back on the boss to say, yeah, yeah.
+
+306
+00:31:24,480 --> 00:31:26,720
+[SPEAKER_02] We actually, like, what are we going to do if we see a big change?
+
+307
+00:31:27,200 --> 00:31:27,600
+[SPEAKER_00] I don't know.
+
+308
+00:31:27,760 --> 00:31:28,480
+[SPEAKER_00] It's like a photo album.
+
+309
+00:31:28,640 --> 00:31:31,760
+[SPEAKER_00] I just like to be able to flip through and be like, oh, remember when we were at this much?
+
+310
+00:31:32,080 --> 00:31:33,280
+[SPEAKER_00] But, you know, it's a really good point.
+
+311
+00:31:33,440 --> 00:31:45,600
+[SPEAKER_00] I mean, I think about our transition from off the shelf amplitude to like, you know, when did we add an ETL or like, when did we add a phase where we could like transform some of the, like, evented data into something more semantically meaningful?
+
+312
+00:31:46,240 --> 00:32:40,800
+[SPEAKER_00] And yeah, it kind of happened when we started to break definitions and not just break them through like foolishness but through like okay the app is different now like I think one big example for us was like we sort of refactored what it meant to be a platform versus like different platforms anyway big structural change to how we did stuff and suddenly like X did not mean X anymore right and like to encapsulate that sometimes in a third party tool like amplitude it can be very difficult because like the operator of building charts and stuff has to have that information constantly loaded in their memory or they'll pull up stuff that doesn't make sense it's like non-congruent right and that's where for us it made sense to introduce some sort of pipelining step because then what we can do is encode that change into a pipeline and be like, okay, like in this month of this year, we change this definition and create some sort of like normalized super definition that takes some of the sharp edges off for data consumers.
+
+313
+00:32:41,120 --> 00:32:43,840
+[SPEAKER_00] But again, if you're just launching your app, like you don't need that.
+
+314
+00:32:44,000 --> 00:32:45,920
+[SPEAKER_00] Like that is a luxury of a problem to have.
+
+315
+00:32:46,080 --> 00:32:50,160
+[SPEAKER_00] And to your point earlier, you're not going to launch that app that has 100 million users in the first year.
+
+316
+00:32:50,480 --> 00:32:55,040
+[SPEAKER_00] And anyway, if you do and you owe Amplify a bunch of money, you don't care.
+
+317
+00:32:55,360 --> 00:32:56,000
+[SPEAKER_00] You're like, great.
+
+318
+00:32:56,400 --> 00:32:58,400
+[SPEAKER_00] Like one fire, I don't have to worry about right now.
+
+319
+00:32:58,560 --> 00:33:00,000
+[SPEAKER_00] They'll cut you a deal, probably, right?
+
+320
+00:33:00,240 --> 00:33:00,560
+[SPEAKER_02] Absolutely.
+
+321
+00:33:01,600 --> 00:33:08,000
+[SPEAKER_02] So, to that point though, like at scale where it can be problematic if you do have success is, you know, when we built Glimps internally.
+
+322
+00:33:08,400 --> 00:33:08,960
+[SPEAKER_02] And Glimps is.
+
+323
+00:33:09,280 --> 00:33:18,000
+[SPEAKER_02] Glimps is the internal event structure of click stream data within Disney Plus, which is still there today, at least since the last time I looked.
+
+324
+00:33:18,480 --> 00:33:20,720
+[SPEAKER_02] So, those events were that generic structure.
+
+325
+00:33:21,040 --> 00:33:22,000
+[SPEAKER_02] It was named Glimps.
+
+326
+00:33:22,240 --> 00:33:26,880
+[SPEAKER_02] It's an acronym for gathering live interactions via multi purpose surfacing of events.
+
+327
+00:33:27,040 --> 00:33:29,040
+[SPEAKER_00] Whichever in that meeting, someone felt really proud.
+
+328
+00:33:29,360 --> 00:33:29,680
+[SPEAKER_02] That was me.
+
+329
+00:33:31,040 --> 00:33:32,960
+[SPEAKER_02] And I had come up with about forty of them.
+
+330
+00:33:33,600 --> 00:33:34,000
+[SPEAKER_02] Like, what?
+
+331
+00:33:34,320 --> 00:33:36,000
+[SPEAKER_02] One night of, like, what are we going to call this?
+
+332
+00:33:36,640 --> 00:33:38,240
+[SPEAKER_02] And by the way, there's a reason I did it.
+
+333
+00:33:38,480 --> 00:33:41,760
+[SPEAKER_02] It's because my boss had been calling it UAT for so long.
+
+334
+00:33:42,240 --> 00:33:43,440
+[SPEAKER_02] User activity tracking.
+
+335
+00:33:43,600 --> 00:33:47,040
+[SPEAKER_02] And I was saying, UAT means user acceptance testing.
+
+336
+00:33:47,200 --> 00:33:48,400
+[SPEAKER_02] We can't confuse it.
+
+337
+00:33:48,720 --> 00:33:49,760
+[SPEAKER_02] You have to call it something else.
+
+338
+00:33:49,920 --> 00:33:52,240
+[SPEAKER_00] So I finally said, I have to come up with an acronym.
+
+339
+00:33:52,320 --> 00:33:56,800
+[SPEAKER_00] So you came in pitching like a director, like pitching a new movie, you're like storeboarding.
+
+340
+00:33:58,400 --> 00:33:59,520
+[SPEAKER_02] It was a rapid slack dump.
+
+341
+00:34:00,080 --> 00:34:04,160
+[SPEAKER_02] And my boss at the time, the head of data, Laura Evans, she's fantastic.
+
+342
+00:34:04,400 --> 00:34:05,600
+[SPEAKER_02] She just said, I don't care.
+
+343
+00:34:05,840 --> 00:34:06,480
+[SPEAKER_02] Glimpsed data.
+
+344
+00:34:07,520 --> 00:34:09,200
+[SPEAKER_02] Like, I had sent a big list of them.
+
+345
+00:34:09,520 --> 00:34:10,400
+[SPEAKER_00] Oh, you know they care.
+
+346
+00:34:10,800 --> 00:34:11,360
+[SPEAKER_01] That's impressive.
+
+347
+00:34:11,600 --> 00:34:16,240
+[SPEAKER_01] Pre GPT for being able to come up with such a fancy acronym.
+
+348
+00:34:16,480 --> 00:34:23,200
+[SPEAKER_02] Oh, it would have saved me countless nights while my two year-olds were sleeping and should have been getting a bedtime story.
+
+349
+00:34:23,680 --> 00:34:26,160
+[SPEAKER_02] Countless nights of me coming up with ridiculous acronyms.
+
+350
+00:34:26,320 --> 00:34:31,120
+[SPEAKER_00] I mean, we were joking about it, but naming and interpretability of this data really matters.
+
+351
+00:34:31,360 --> 00:34:32,160
+[SPEAKER_00] Like it really matters.
+
+352
+00:34:32,560 --> 00:34:35,360
+[SPEAKER_00] I mean, even a cute name for a system helps.
+
+353
+00:34:36,080 --> 00:34:37,600
+[SPEAKER_00] It helps people talk about a thing.
+
+354
+00:34:37,760 --> 00:34:48,400
+[SPEAKER_00] And like we, I'm battling this now in some cases in terms of data, a lot of times in terms of how we explain the product, and it's not always like, hey, at a high level it's easy to explain our product, but like a specific aspect of our product.
+
+355
+00:34:49,040 --> 00:34:55,440
+[SPEAKER_00] Like you need a surprising number of names for things and the consequences of choosing those names is a lot higher than you think.
+
+356
+00:34:56,880 --> 00:35:02,400
+[SPEAKER_02] I mean, I think design, UI, product marketing, all that are so underrated, frankly, these days.
+
+357
+00:35:02,640 --> 00:35:16,080
+[SPEAKER_02] Like just because it's AI is the focus and people want to cut costs and that's often an area that they feel like they can cut costs because now every app has been built like in several different ways, but there are not many like new ways that people are coming up with things.
+
+358
+00:35:16,160 --> 00:35:20,320
+[SPEAKER_02] So they think, oh, I could just use like standard practices and such and not have to worry about it.
+
+359
+00:35:20,480 --> 00:35:22,240
+[SPEAKER_02] But branding is incredibly important.
+
+360
+00:35:22,480 --> 00:35:36,400
+[SPEAKER_02] Think about Apple intelligence and how much we'll be saying that term for the next five to ten years, right, if it's successful versus if they just stuck with, we added AI in here, because no one will continue to call Google's services with Gemini.
+
+361
+00:35:36,960 --> 00:35:39,600
+[SPEAKER_02] It'll more for whatever, or they'll just never say it.
+
+362
+00:35:39,760 --> 00:35:45,600
+[SPEAKER_02] They'll just say, it's Google with AI, right, but to brand that in a way that Windows did with Copilot, right?
+
+363
+00:35:45,920 --> 00:35:50,880
+[SPEAKER_02] Now you see that ecosystem expanding to now their hardware is as a Copilot driven laptop.
+
+364
+00:35:51,200 --> 00:36:00,160
+[SPEAKER_02] So I think that's so important, but it also then, like you said, allows people internally to discuss things quickly without having to go back to like, where is this?
+
+365
+00:36:00,800 --> 00:36:08,640
+[SPEAKER_02] So when people talk about click stream events here, they have no necessary standard source of truth in their mind of what that means.
+
+366
+00:36:08,960 --> 00:36:09,440
+[SPEAKER_02] Is it GA?
+
+367
+00:36:09,760 --> 00:36:10,560
+[SPEAKER_02] Is it Parsley?
+
+368
+00:36:10,720 --> 00:36:12,000
+[SPEAKER_02] Is it Adobe, et cetera?
+
+369
+00:36:12,160 --> 00:36:13,600
+[SPEAKER_02] Or is it our internal events?
+
+370
+00:36:13,920 --> 00:36:22,720
+[SPEAKER_02] But at Disney Plus, it was the Glimpse events, which everyone then knew to mean these activity tracking events that are used for product analytics, business decisions, et cetera.
+
+371
+00:36:23,040 --> 00:36:27,120
+[SPEAKER_02] And then over here is Dust, which is like our service monitoring events.
+
+372
+00:36:27,280 --> 00:36:30,640
+[SPEAKER_02] And I don't know that one predeed me from the Bamtec days.
+
+373
+00:36:31,200 --> 00:36:33,040
+[SPEAKER_02] But Glimpse was an important branding for that.
+
+374
+00:36:33,200 --> 00:36:36,000
+[SPEAKER_02] And what I was saying on the cost piece is when we built Glimpse.
+
+375
+00:36:36,560 --> 00:36:40,160
+[SPEAKER_02] The reason was that we wanted to have only one integration within the app.
+
+376
+00:36:40,400 --> 00:36:41,840
+[SPEAKER_02] We didn't want to rely on third parties.
+
+377
+00:36:42,000 --> 00:36:45,840
+[SPEAKER_02] Then it became kind of sticky in terms of GDPR and consent and things like that.
+
+378
+00:36:46,160 --> 00:36:54,640
+[SPEAKER_02] We'd rather just say the data that we're collecting within the app is only going to Disney and then we use that internally in the ways that we define.
+
+379
+00:36:55,120 --> 00:37:03,360
+[SPEAKER_02] But the moment that you add Adobe or GA or anything like that, you've now opened up things like competition in terms of them being able to understand how much your volume is increasing.
+
+380
+00:37:03,520 --> 00:37:07,760
+[SPEAKER_02] People to monitor things and look to find insights about something versus if you're just increasing the volume.
+
+381
+00:37:08,000 --> 00:37:12,480
+[SPEAKER_02] Prevention, like even to add a third party processor, like you have to go through the legal.
+
+382
+00:37:13,360 --> 00:37:14,400
+[SPEAKER_02] rigor morally internally.
+
+383
+00:37:14,640 --> 00:37:17,200
+[SPEAKER_00] As a data team, you have to advocate for that and all that stuff.
+
+384
+00:37:17,360 --> 00:37:20,240
+[SPEAKER_00] You have to maintain the DPAs and make sure all that stuff's up to date.
+
+385
+00:37:20,320 --> 00:37:25,440
+[SPEAKER_00] Like GDPR really, I mean, I actually think the requirement for disclosure of third party data processing was good.
+
+386
+00:37:25,520 --> 00:37:30,800
+[SPEAKER_00] I think it was one of the things that came out of GDPR that was really pretty well done and like maybe could have been more simplified.
+
+387
+00:37:31,120 --> 00:37:32,880
+[SPEAKER_00] I feel like there's a lot of DPA theater.
+
+388
+00:37:33,280 --> 00:37:37,840
+[SPEAKER_00] This is like very much like analytics company problems, but like people just need a DPA.
+
+389
+00:37:38,000 --> 00:37:38,880
+[SPEAKER_00] It's like, all right, okay.
+
+390
+00:37:39,120 --> 00:37:45,200
+[SPEAKER_00] You could also just tell your customers you're sending data to us and what you're sending and everybody will just trust everybody, but I guess we'll have to do this little dance.
+
+391
+00:37:45,520 --> 00:37:46,000
+[SPEAKER_00] I get it now.
+
+392
+00:37:46,320 --> 00:37:48,800
+[SPEAKER_00] And like the nice thing too is like the tools are rolling.
+
+393
+00:37:49,200 --> 00:38:00,720
+[SPEAKER_00] some of this stuff yourself are becoming, you know, between the data, you know, just talking about AWS, like the ways for you to like store bulk data in AWS, the tools on processing over large flat files has gotten so much better.
+
+394
+00:38:01,200 --> 00:38:08,160
+[SPEAKER_00] Tools like DBT have made it much better to like manage like SQL pipelines, and then the database options have gotten so much better too.
+
+395
+00:38:08,320 --> 00:38:10,080
+[SPEAKER_00] Like when we Snowflake.
+
+396
+00:38:10,160 --> 00:38:11,760
+[SPEAKER_00] Yeah, yeah, Snowflake has changed everything.
+
+397
+00:38:12,320 --> 00:38:16,160
+[SPEAKER_00] Even Redshift has come a long way from where it was when we started using it a decade ago.
+
+398
+00:38:16,560 --> 00:38:19,200
+[SPEAKER_00] Clickhouse I haven't used personally, but there are like options.
+
+399
+00:38:19,440 --> 00:38:20,240
+[SPEAKER_00] Yeah, right?
+
+400
+00:38:20,480 --> 00:38:25,040
+[SPEAKER_00] And so I still think like when you're at day zero, don't do any of that that stuff.
+
+401
+00:38:25,120 --> 00:38:30,560
+[SPEAKER_00] Unless you're an expert and you've done it and you know exactly what you want and you know how to set it up very well, quickly and cheaply.
+
+402
+00:38:30,800 --> 00:38:36,080
+[SPEAKER_00] But I think the time to it making sense to actually use this stuff is actually much earlier than it's ever been.
+
+403
+00:38:36,240 --> 00:38:36,400
+[SPEAKER_02] Right.
+
+404
+00:38:37,120 --> 00:38:45,920
+[SPEAKER_02] In that case, it was built because of that, but it was also built because of a concern that costs would exponentially increase in a really successful scenario.
+
+405
+00:38:46,400 --> 00:38:49,280
+[SPEAKER_02] Even though the bar, I think, was set very low early on.
+
+406
+00:38:49,440 --> 00:38:58,240
+[SPEAKER_02] I think the original target was 50 million to 60 million users, but 40 to 60 in three years, and we hit 10 million the first day and 100 million in the first quarter.
+
+407
+00:38:58,480 --> 00:39:00,720
+[SPEAKER_02] But to that point, they also had Adobe as a backup.
+
+408
+00:39:01,200 --> 00:39:01,520
+[SPEAKER_02] plan, right?
+
+409
+00:39:01,760 --> 00:39:06,000
+[SPEAKER_02] So let's build it internally, but we've never done this before in this sense at Disney.
+
+410
+00:39:06,240 --> 00:39:12,960
+[SPEAKER_02] So let's also in the back have a contract with Adobe and be integrating it lightly but able to pull it out later, right?
+
+411
+00:39:14,800 --> 00:39:23,840
+[SPEAKER_02] In the first couple of weeks, we were able to show that the glimpse events that we built were running us around $1,000 a day in total, like end to end cost.
+
+412
+00:39:24,160 --> 00:39:27,680
+[SPEAKER_02] And I think the Adobe was costing us about $33,000 a day.
+
+413
+00:39:27,920 --> 00:39:31,760
+[SPEAKER_02] And so we were able to quickly say, let's rip this out because the data is reliable.
+
+414
+00:39:31,840 --> 00:39:32,240
+[SPEAKER_02] It's working.
+
+415
+00:39:32,320 --> 00:39:32,960
+[SPEAKER_02] Like we're doing.
+
+416
+00:39:33,600 --> 00:39:34,160
+[SPEAKER_00] You have it under control.
+
+417
+00:39:34,400 --> 00:39:38,080
+[SPEAKER_00] And if you have the right people who understand it to respond to, like, enhancements.ement requests and stuff like that.
+
+418
+00:39:38,400 --> 00:39:40,000
+[SPEAKER_00] I think it can be very superior.
+
+419
+00:39:40,240 --> 00:39:48,880
+[SPEAKER_00] But like on the cost point, it's like if your product generates any revenue like marginally per user, usually the like tracking and analytics stuff is a rounding air.
+
+420
+00:39:49,200 --> 00:39:59,120
+[SPEAKER_02] I mean, when it's a rounding air, you know, when you're talking about like billions of events a day, for example, versus like we were in like another level on that.
+
+421
+00:39:59,440 --> 00:40:04,320
+[SPEAKER_02] But like I think that if Disney Plus had launched incredibly slowly or Yeah, or wasn't it?
+
+422
+00:40:04,640 --> 00:40:08,960
+[SPEAKER_02] Or anything like any SPN Plus, I don't think that we even had Adobe integrated there.
+
+423
+00:40:09,200 --> 00:40:09,600
+[SPEAKER_02] Maybe we did.
+
+424
+00:40:09,920 --> 00:40:12,560
+[SPEAKER_02] But like in that case, it would have been fine to run that and not have to.
+
+425
+00:40:13,200 --> 00:40:16,080
+[SPEAKER_02] argue that, like, oh, but we should move that internally immediately.
+
+426
+00:40:16,240 --> 00:40:17,360
+[SPEAKER_02] The volume wasn't there at first.
+
+427
+00:40:18,000 --> 00:40:26,080
+[SPEAKER_01] But even 33,000 versus 1,000 isn't the actual cost because you have, what, 10 engineers, all in costs of, you know, 400,000.
+
+428
+00:40:26,160 --> 00:40:35,200
+[SPEAKER_02] I mean, if you're paying, if you're paying your resources on your team and things like that, 32,000 dollars a day combined to make those two even, then I'd love to work with you.
+
+429
+00:40:35,360 --> 00:40:36,240
+[SPEAKER_02] Yeah, a lot of that.
+
+430
+00:40:36,960 --> 00:40:39,520
+[SPEAKER_02] 33,000 dollars a day adds up really quickly.
+
+431
+00:40:39,760 --> 00:40:46,800
+[SPEAKER_02] And then you really can't argue that you're getting any value out of the data, because what on earth in terms of insights would you be producing out of that data?
+
+432
+00:40:47,680 --> 00:40:48,720
+[SPEAKER_02] That would actually be worth it..
+
+433
+00:40:48,880 --> 00:40:49,120
+[SPEAKER_00] What is that?
+
+434
+00:40:49,200 --> 00:40:50,400
+[SPEAKER_00] 33, that's like millions, right?
+
+435
+00:40:50,480 --> 00:40:50,560
+[SPEAKER_00] Yeah.
+
+436
+00:40:51,120 --> 00:40:54,160
+[SPEAKER_02] It was a lot of money if you had just continued with that.
+
+437
+00:40:54,320 --> 00:40:56,560
+[SPEAKER_02] And by the way, that was our early estimates.
+
+438
+00:40:56,880 --> 00:40:58,560
+[SPEAKER_02] We added triple, quadruple to the money.
+
+439
+00:40:58,880 --> 00:41:04,160
+[SPEAKER_00] Well, that's, I think, one of the, you know, locking into a tool stack that has constraints like that.
+
+440
+00:41:04,320 --> 00:41:08,320
+[SPEAKER_00] I think it forces you to not do things that might be helpful because of the cost.
+
+441
+00:41:08,720 --> 00:41:09,520
+[SPEAKER_00] And that stinks.
+
+442
+00:41:09,680 --> 00:41:18,880
+[SPEAKER_00] Like, because sometimes if you really want to do something and you're like, oh, I can't because MixPanel or whoever is going to charge me a hand and a leg, then like, you know, which you also run into with your own stack sometimes.
+
+443
+00:41:19,120 --> 00:41:24,560
+[SPEAKER_00] But again, it's like sometimes you can just bring events into the first stage of your processing and leave them there.
+
+444
+00:41:24,720 --> 00:41:29,920
+[SPEAKER_00] Like, you're like, we might even not pull these into Snowflake yet, but we're just going to let them stack up in cold storage.
+
+445
+00:41:30,080 --> 00:41:31,520
+[SPEAKER_00] And like, if we ever need them, we have them.
+
+446
+00:41:31,840 --> 00:41:33,280
+[SPEAKER_00] You can make those decisions, right?
+
+447
+00:41:33,440 --> 00:41:34,880
+[SPEAKER_00] And control costs quite effectively.
+
+448
+00:41:35,280 --> 00:41:49,920
+[SPEAKER_02] It goes back to the original kind of question and statement, which is that having those checkpoints or evaluation points understood across the business and the teams, and then adhering to them, can actually prevent a lot of what seems like a risk, right?
+
+449
+00:41:50,240 --> 00:42:06,080
+[SPEAKER_02] You could say, we're going to have Adobe in here, but if we're moderately successful, we need to evaluate within three months whether or not the continued cost needs to start being offset, whether or not it's theres that we're scaling back some of the events or whether or not we're adding additional tracking at a certain rate.
+
+450
+00:42:06,480 --> 00:42:15,360
+[SPEAKER_02] Or you could say, if we're wildly successful, we need to evaluate within a month how quickly we can start deploying an internal solution that can offset that.
+
+451
+00:42:15,680 --> 00:42:22,480
+[SPEAKER_02] How much of an overlap time that we need, like a month for comparison of the metrics or something to ensure that things you put in worked.
+
+452
+00:42:22,880 --> 00:42:24,160
+[SPEAKER_02] And then turn the old one off.
+
+453
+00:42:24,400 --> 00:42:27,440
+[SPEAKER_02] But as long as you have those, then the process is actually pretty easy.
+
+454
+00:42:27,840 --> 00:42:29,520
+[SPEAKER_02] It's just that they don't often plan those.
+
+455
+00:42:29,840 --> 00:42:31,840
+[SPEAKER_02] And they'll say, we're going to buy instead of build.
+
+456
+00:42:32,480 --> 00:42:34,160
+[SPEAKER_02] And then it becomes, well, we bought.
+
+457
+00:42:34,400 --> 00:42:37,840
+[SPEAKER_02] So, you know, like we didn't think about the scenario., oh well, we're here now.
+
+458
+00:42:38,000 --> 00:42:44,560
+[SPEAKER_02] It's just going to be an inherent built in cost that I have to now raise my price or do something different to offset and find it elsewhere.
+
+459
+00:42:44,880 --> 00:42:52,000
+[SPEAKER_02] But in reality, you could have just said, no, we already had a plan for when we'd check this, and now we checked it, and it didn't pass, so let's pivot.
+
+460
+00:42:52,160 --> 00:43:03,440
+[SPEAKER_00] I made me think of an example of a company I worked at where we did the opposite, where we started off with a very bare bones dumping logs into a SQL database, and we actually moved everything back to, I think it was MixPanel in this case.
+
+461
+00:43:04,000 --> 00:43:05,680
+[SPEAKER_00] And the reason was it was too hard to play with.
+
+462
+00:43:05,760 --> 00:43:07,920
+[SPEAKER_00] Like you couldn't play with the right tools.
+
+463
+00:43:08,320 --> 00:43:11,200
+[SPEAKER_00] Yeah, at the time, like Tableau wasn't where it is, Looker didn't exist.
+
+464
+00:43:11,360 --> 00:43:15,440
+[SPEAKER_00] Like there wasn't really a world where you could easily layer a BI tool, at least in the startup.
+
+465
+00:43:16,080 --> 00:43:22,320
+[SPEAKER_00] Like something a small startup would pay for, like you could layer on, and that was prohibitive, and, you know, because like we just weren't asking questions.
+
+466
+00:43:22,720 --> 00:43:28,480
+[SPEAKER_00] Because like my data process, that's a big part of how I'll use data, is like I like to just explore, like just play around.
+
+467
+00:43:28,640 --> 00:43:35,920
+[SPEAKER_00] Just like if you have like good based data and like the semantics are mostly like understandable, and if 75% of the answers you come to are valid, right?
+
+468
+00:43:36,080 --> 00:43:39,920
+[SPEAKER_00] Like once in a while you'll pull a query and you'll be like, well, that doesn't make sense because, you know, whatever.
+
+469
+00:43:40,240 --> 00:43:42,960
+[SPEAKER_00] I find that to be an incredibly powerful tool.
+
+470
+00:43:43,520 --> 00:43:48,640
+[SPEAKER_00] And I don't know, I might be an exception in the exact world of someone who's like very, you know, you're from a data.
+
+471
+00:43:48,720 --> 00:43:48,880
+[SPEAKER_00] perspective.
+
+472
+00:43:49,040 --> 00:43:52,400
+[SPEAKER_02] You are, but you're one of the exceptions that's actually on the right thing.
+
+473
+00:43:52,560 --> 00:43:54,560
+[SPEAKER_00] Yeah, but I feel like it's going to be on the rise, right?
+
+474
+00:43:54,800 --> 00:43:55,920
+[SPEAKER_02] It's like more and more.
+
+475
+00:43:57,200 --> 00:43:58,160
+[SPEAKER_02] At least not what I've seen.
+
+476
+00:43:58,560 --> 00:44:00,480
+[SPEAKER_00] I mean, think about it this way.
+
+477
+00:44:00,960 --> 00:44:06,800
+[SPEAKER_00] As the C-suite becomes more and more that they started their careers when SQL existed, yeah.
+
+478
+00:44:07,360 --> 00:44:12,480
+[SPEAKER_00] I think like it's likely that data literacy becomes a more common thing in the boardroom.
+
+479
+00:44:12,720 --> 00:44:18,880
+[SPEAKER_02] I mean, I would say you're right in that this example would be Michael Paul was the president of Disney Plus at the time.
+
+480
+00:44:19,280 --> 00:44:25,600
+[SPEAKER_02] He was one of the types of people who would say dashboards are meaningless if it's just showing me the the same stuff.
+
+481
+00:44:25,840 --> 00:44:27,120
+[SPEAKER_02] I'm now losing the thread.
+
+482
+00:44:27,200 --> 00:44:28,640
+[SPEAKER_02] I don't know what I should be focused on.
+
+483
+00:44:28,880 --> 00:44:30,880
+[SPEAKER_02] And I'm continually adding to that stack of data.
+
+484
+00:44:31,200 --> 00:44:35,440
+[SPEAKER_02] If you're thinking about printing them out, I'm adding to a stack of what I have to go through each time.
+
+485
+00:44:35,680 --> 00:44:39,360
+[SPEAKER_02] But it all looks fairly the same as what it did the last time I looked at it.
+
+486
+00:44:39,600 --> 00:44:40,960
+[SPEAKER_02] So what exactly is it telling me?
+
+487
+00:44:41,360 --> 00:44:56,000
+[SPEAKER_02] And it got to the point where near the end of when I was working on data products there was, I was tasked with writing an email every day by noon that just had three bullets and up to two sub bullets within each of the bullets.
+
+488
+00:44:56,720 --> 00:45:02,720
+[SPEAKER_02] Just an email that just said, here are the three things that you should be focused on that happened the day before.
+
+489
+00:45:03,120 --> 00:45:03,840
+[SPEAKER_02] Here is the change.
+
+490
+00:45:04,320 --> 00:45:21,120
+[SPEAKER_02] And even if that's here is an interesting insight that you should be focused on that's based on something where I'm looking over time or something, but I'm abstracting that and they have the trust to understand and believe that you're surfacing them the right things, then suddenly dashboards become absolutely irrelevant, frankly.
+
+491
+00:45:21,360 --> 00:45:21,600
+[SPEAKER_02] To me.
+
+492
+00:45:21,920 --> 00:45:23,920
+[SPEAKER_02] Like I love a good dashboard as a data person.
+
+493
+00:45:24,400 --> 00:45:26,480
+[SPEAKER_02] I build dashboards on my own personal data.
+
+494
+00:45:27,600 --> 00:45:29,520
+[SPEAKER_02] I just love playing around with it.
+
+495
+00:45:29,760 --> 00:45:35,040
+[SPEAKER_02] But if I needed to get value out of it before saying that, like, is it worth the time and investment?
+
+496
+00:45:35,280 --> 00:45:42,960
+[SPEAKER_02] Then I'd probably say no., no, it's not worth me charting how many iMessage emojis I send to each person in a list or something like, you know, some nonsense.
+
+497
+00:45:43,680 --> 00:45:47,760
+[SPEAKER_02] But companies will continue to track that and say, which are the most used emojis, right?
+
+498
+00:45:48,000 --> 00:45:49,600
+[SPEAKER_02] Instead of just saying, does it actually matter?
+
+499
+00:45:49,840 --> 00:45:50,960
+[SPEAKER_02] Does it cost anything to do that?
+
+500
+00:45:51,200 --> 00:45:54,160
+[SPEAKER_02] And they're handing that report every month, every day or whatever.
+
+501
+00:45:54,400 --> 00:46:00,000
+[SPEAKER_02] So once you actually can raise that and it starts at the top of, I don't actually want to look at dashboards anymore.
+
+502
+00:46:00,160 --> 00:46:05,360
+[SPEAKER_02] I don't want to look at reports and I don't care about month over month if it's not actionable.
+
+503
+00:46:05,840 --> 00:46:13,200
+[SPEAKER_02] I'd much rather you tell me that we're actually seeing a weird trend where people that log in after ten people.m.
+
+504
+00:46:13,760 --> 00:46:17,920
+[SPEAKER_02] on weekends, end up being our longest tenured customers over time.
+
+505
+00:46:18,400 --> 00:46:25,200
+[SPEAKER_02] Or people that sign up for the bundle annually end up using it forty percent more than other consumers.
+
+506
+00:46:25,680 --> 00:46:27,360
+[SPEAKER_02] Then that's what I actually want to have.
+
+507
+00:46:27,440 --> 00:46:28,800
+[SPEAKER_02] That's what I want to have on your dashboard right now.
+
+508
+00:46:28,960 --> 00:46:32,480
+[SPEAKER_02] Right, because then I can aim, I can aim business teams at those problems.
+
+509
+00:46:32,800 --> 00:46:35,280
+[SPEAKER_02] Hey, we need to go promote more this annual bundle.
+
+510
+00:46:35,520 --> 00:46:40,080
+[SPEAKER_02] We need to aim at ad campaigns that run in the evening because we're missing that market.
+
+511
+00:46:40,480 --> 00:46:52,320
+[SPEAKER_02] Chapek after him even made a comment at one conference and said, one of the craziest things that he found from the data at Disney Plus was that more than fifty percent of the audience was single adults.
+
+512
+00:46:52,880 --> 00:46:54,720
+[SPEAKER_02] I think even broadly adult male.
+
+513
+00:46:55,280 --> 00:46:58,560
+[SPEAKER_02] But the assumption coming in was that this was going to be a kids app, right?
+
+514
+00:46:58,800 --> 00:47:03,760
+[SPEAKER_02] I mean, that was like what consumers kind of interpreted initially, and then they saw that it would be more than that.
+
+515
+00:47:04,080 --> 00:47:08,960
+[SPEAKER_02] But it also never planned to have R rated content or FX content, et cetera.
+
+516
+00:47:09,280 --> 00:47:10,800
+[SPEAKER_02] What are you going to do with the Fox stuff?
+
+517
+00:47:11,200 --> 00:47:20,400
+[SPEAKER_02] So he was surprised to see that this Disney branded family-oriented thing was surprisingly used by people that didn't have kids and were adults.
+
+518
+00:47:20,720 --> 00:47:26,160
+[SPEAKER_02] But that's the kind of stuff that you can unlock from those insights that you find early on and then you can adjust.
+
+519
+00:47:26,480 --> 00:47:45,440
+[SPEAKER_02] But if I'm just showing you a report that you asked that was saying, show me XYZ and it wasn't focused on how much has this thing grown into a tool that's primarily used by what we think are adult individuals that don't have children, then yeah, it could be six months before you actually realize it and you've missed it, maybe that's when another competitor came out in HR Lunge.
+
+520
+00:47:45,760 --> 00:47:47,680
+[SPEAKER_00] You may think of like neural activation, right?
+
+521
+00:47:47,840 --> 00:47:51,920
+[SPEAKER_00] Like the dashboards are raw input, but like there needs to be like a filter.
+
+522
+00:47:52,160 --> 00:48:01,760
+[SPEAKER_00] You would think that AI would get there, but like I'm not sure we're anywhere close to that because it's like I have a bunch of dashboards, we have our reporting for like board decks and all that stuff, it's a little bit more formal.
+
+523
+00:48:02,000 --> 00:48:06,960
+[SPEAKER_00] But then I also have my own crazy dashboards that are not super interpretable, but I know what they mean.
+
+524
+00:48:07,120 --> 00:48:08,160
+[SPEAKER_00] And they give me signal.
+
+525
+00:48:08,240 --> 00:48:13,520
+[SPEAKER_00] But again, it's like, I don't really care how many API connects we had yesterday.
+
+526
+00:48:14,240 --> 00:48:23,440
+[SPEAKER_00] I care about that piece of data in context with everything else on the dashboard, in context with what I'm seeing in Slack, not budgets, people, what's the point of it.
+
+527
+00:48:23,680 --> 00:48:32,480
+[SPEAKER_00] But yeah, but it's like if a human at this stage still isn't there to synthesize that into what you're talking about, those three bullet points, which I don't send this to anybody because they're for me.
+
+528
+00:48:32,640 --> 00:48:35,200
+[SPEAKER_00] Sometimes I'll send them to the team and I'll be like, wow, look at this.
+
+529
+00:48:35,360 --> 00:48:36,240
+[SPEAKER_00] The value is questionable.
+
+530
+00:48:36,800 --> 00:48:41,840
+[SPEAKER_00] And it's interesting to think like this is just speculative, but like, will we be able in data land?
+
+531
+00:48:42,640 --> 00:48:43,760
+[SPEAKER_00] I think that is like the holy grail.
+
+532
+00:48:43,840 --> 00:48:45,680
+[SPEAKER_00] Everybody says they want to generate insights.
+
+533
+00:48:45,840 --> 00:48:47,280
+[SPEAKER_00] But I'm not sure we're anywhere close to that.
+
+534
+00:48:47,360 --> 00:49:00,480
+[SPEAKER_01] I was going to say, I think my biggest takeaway from this whole conversation is that the absolutely best BI tool that you can build is a really smart human with access to good data who writes three bullet points a day in an email.
+
+535
+00:49:01,200 --> 00:49:04,240
+[SPEAKER_01] And who isn't being asked to do things that don't add value, right?
+
+536
+00:49:04,720 --> 00:49:08,320
+[SPEAKER_02] Like who is challenged to actually get out of the normal practice in data.
+
+537
+00:49:08,720 --> 00:49:13,280
+[SPEAKER_02] Because, I mean, some of the bullets that we would send are there to give that cont context, right?
+
+538
+00:49:13,520 --> 00:49:18,080
+[SPEAKER_02] Like, it could be, hey, we had a ten percent increase in signups in the EU.
+
+539
+00:49:18,480 --> 00:49:23,760
+[SPEAKER_02] That may be on a main dash, but drilling into that may be, and it was primarily in the Netherlands yesterday.
+
+540
+00:49:24,720 --> 00:49:35,440
+[SPEAKER_02] And that's because we launched a new promo in the Netherlands overnight for three months free, but we spent with a target of twenty percent overnight.
+
+541
+00:49:35,680 --> 00:49:43,360
+[SPEAKER_02] So we actually performed poorly, but you would lose that at a typical dashboard level by saying, hey, look, things are going well.
+
+542
+00:49:43,680 --> 00:49:44,720
+[SPEAKER_02] But in reality, you lost the money.
+
+543
+00:49:45,040 --> 00:49:45,840
+[SPEAKER_02] What other anomaly?
+
+544
+00:49:46,000 --> 00:49:47,920
+[SPEAKER_02] Like, and how these questions morph over time.
+
+545
+00:49:48,560 --> 00:49:55,440
+[SPEAKER_02] Someone may want to know how a Taylor Swift folklore exclusive service that launches at midnight does for the next 24 hours.
+
+546
+00:49:55,680 --> 00:50:00,240
+[SPEAKER_02] And then going forward, they may say, Now I want to see how Beyonce's does when we launch that.
+
+547
+00:50:00,720 --> 00:50:04,800
+[SPEAKER_02] And then I want to stack it against how well movies are doing versus those exclusive things.
+
+548
+00:50:05,200 --> 00:50:06,800
+[SPEAKER_02] And ultimately, like, what was the budget?
+
+549
+00:50:07,120 --> 00:50:08,560
+[SPEAKER_02] How much promotion did we do?
+
+550
+00:50:08,800 --> 00:50:09,920
+[SPEAKER_02] What did we initially expect?
+
+551
+00:50:10,240 --> 00:50:16,240
+[SPEAKER_02] And did that one actually outperform, but it had three X higher budget and expectations, and it actually underperformed, right?
+
+552
+00:50:16,560 --> 00:50:19,040
+[SPEAKER_02] Like, I need something that can kind of synthesize that.
+
+553
+00:50:19,440 --> 00:50:24,480
+[SPEAKER_02] And I think that I may have a counter view of that in that I do think that with good data.
+
+554
+00:50:25,200 --> 00:50:29,440
+[SPEAKER_02] and well informed AI that you actually can reach that.
+
+555
+00:50:29,840 --> 00:50:44,240
+[SPEAKER_02] It's that you would have to have the patience and commitment of teams to both get out of their comfort zone, know that things can be wrong sometimes, and just accept that you have to double check a bit, but that ultimately it will get you to that point.
+
+556
+00:50:44,480 --> 00:50:58,240
+[SPEAKER_02] I've even dumped credit card data, bank data and things like that into GPT and run with its new data analytics model things like look for insights of like what jumps out to you, graph these by categories, et cetera, what's changing.
+
+557
+00:50:58,480 --> 00:51:10,000
+[SPEAKER_02] And it can do a fairly good job of saying, hey, you're spending more on restaurants late in the month or in the summer, your restaurant costs double, but you're factoring a budget of X across the year as a standard thing.
+
+558
+00:51:10,160 --> 00:51:15,840
+[SPEAKER_02] So you should have a seasonal budget for these things because you're going out more for conferences or what, like it's just nice out.
+
+559
+00:51:16,160 --> 00:51:25,120
+[SPEAKER_02] It does a decent job of not only finding those, but then having the memory to add that information later and continue where it left off and say, Yeah, maybe I'll be wrong.
+
+560
+00:51:25,520 --> 00:51:26,240
+[SPEAKER_00] Maybe I'll be wrong.
+
+561
+00:51:26,320 --> 00:51:27,120
+[SPEAKER_00] Maybe I'll be wrong.
+
+562
+00:51:27,280 --> 00:51:35,200
+[SPEAKER_02] I would definitely not bet anything on it currently, but I think that it's actually surprised me in the last couple of months versus where it started about a year ago.
+
+563
+00:51:35,280 --> 00:51:36,560
+[SPEAKER_02] There's a blindness there where you're always.
+
+564
+00:51:37,120 --> 00:51:40,000
+[SPEAKER_00] assuming that the thing you do will never be replaced by AI.
+
+565
+00:51:40,800 --> 00:51:41,520
+[SPEAKER_02] Yeah, exactly.
+
+566
+00:51:42,000 --> 00:51:46,240
+[SPEAKER_02] Once I saw like C three AI demo, that's an Anderson Horowitz one.
+
+567
+00:51:46,480 --> 00:51:57,520
+[SPEAKER_02] It's solely geared at AI for analytics within enterprise corporations, synthesizing all that information, citing at sources and being able to look across all these things without people having to like do the ETL and all that.
+
+568
+00:51:57,920 --> 00:51:59,680
+[SPEAKER_02] I was like, this is amazing.
+
+569
+00:52:00,160 --> 00:52:00,800
+[SPEAKER_02] Oh, no.
+
+570
+00:52:02,720 --> 00:52:03,360
+[SPEAKER_02] Where do I go?
+
+571
+00:52:03,520 --> 00:52:03,920
+[SPEAKER_02] It's good.
+
+572
+00:52:04,160 --> 00:52:05,120
+[SPEAKER_02] To a beach, somewhere.
+
+573
+00:52:05,360 --> 00:52:05,440
+[SPEAKER_02] Yes.
+
+574
+00:52:06,160 --> 00:52:07,280
+[SPEAKER_02] So no one is safe.
+
+575
+00:52:07,600 --> 00:52:07,680
+[SPEAKER_01] Okay.
+
+576
+00:52:08,000 --> 00:52:11,360
+[SPEAKER_01] We've gone super deep into all the theory and practice.
+
+577
+00:52:11,680 --> 00:52:12,720
+[SPEAKER_01] And I didn't want to end with a.
+
+578
+00:52:13,280 --> 00:52:17,120
+[SPEAKER_01] few more concrete examples because you shared some very cool ones with me before this.
+
+579
+00:52:17,360 --> 00:52:19,360
+[SPEAKER_01] So let's just go through a few and we'll wrap up.
+
+580
+00:52:19,520 --> 00:52:27,760
+[SPEAKER_01] But one of the examples you shared was Bluey and understanding it as content in ways that you wouldn't expect.
+
+581
+00:52:28,240 --> 00:52:28,320
+[SPEAKER_01] Right.
+
+582
+00:52:28,640 --> 00:52:33,840
+[SPEAKER_02] The short of that was that early on we had assumptions about what could be popular.
+
+583
+00:52:34,320 --> 00:52:38,880
+[SPEAKER_02] We had assumptions about what would be better algorithmically driven versus curated sets of content.
+
+584
+00:52:39,600 --> 00:52:41,520
+[SPEAKER_02] Do we want to create one called Puppies and Kittens?
+
+585
+00:52:41,920 --> 00:52:47,920
+[SPEAKER_02] Or do we want something that's going to figure out whether you like puppies but hate kittens and don't want to see a row with Mix?
+
+586
+00:52:48,480 --> 00:52:58,000
+[SPEAKER_02] And so early on we had to make decisions on which rows would be curated and where those would be placed, and then also what content would be in the curated rows and what order those fell.
+
+587
+00:52:58,320 --> 00:53:08,880
+[SPEAKER_02] And a lot of times that was based on, without getting into specifics, maybe it's priority based on budget of the content itself, like we want to self promote some of these blockbusters higher.
+
+588
+00:53:09,280 --> 00:53:19,360
+[SPEAKER_02] Maybe it was, well, these probably won't be popular, or, oh, this is what Disney has found on its linear channels in the past are successful in terms of audience ratings from Nielsen or whatever.
+
+589
+00:53:19,440 --> 00:53:21,360
+[SPEAKER_02] So these are probably going to be our more popular shows.
+
+590
+00:53:21,680 --> 00:53:23,680
+[SPEAKER_02] One of those sets was Disney Jr.
+
+591
+00:53:24,000 --> 00:53:24,960
+[SPEAKER_02] on the adult world.
+
+592
+00:53:25,920 --> 00:53:34,400
+[SPEAKER_02] And they thought, this can go essentially, this is my assumption of what they were thinking was, well, this would just go kind of at the end because otherwise they'd use a kid profile, right?
+
+593
+00:53:34,720 --> 00:53:36,080
+[SPEAKER_02] So we'll just put Disney Jr.
+
+594
+00:53:36,160 --> 00:53:36,640
+[SPEAKER_02] at the bottom.
+
+595
+00:53:36,880 --> 00:53:49,440
+[SPEAKER_02] And one of the newer shows on that was Bluey, which is a BBC and ABC Australian Broadcasting Company collab show that's based out of Australia on an Australian cartoon family of dogs.
+
+596
+00:53:50,000 --> 00:53:55,520
+[SPEAKER_02] It is by far the best show that I almost would say, like, it's worth watching even if you're not a parent.
+
+597
+00:53:55,680 --> 00:53:56,640
+[SPEAKER_02] Or planning to be a parent.
+
+598
+00:53:56,720 --> 00:53:58,160
+[SPEAKER_00] It's a cartoon that's made me cry.
+
+599
+00:53:58,640 --> 00:53:58,960
+[SPEAKER_02] Exactly.
+
+600
+00:53:59,200 --> 00:54:02,080
+[SPEAKER_02] I've cried more times than I'd like like to admit, frankly.
+
+601
+00:54:02,400 --> 00:54:05,840
+[SPEAKER_02] Maybe more than I've cried over things that my children have actually done.
+
+602
+00:54:06,320 --> 00:54:06,640
+[SPEAKER_02] In total.
+
+603
+00:54:07,360 --> 00:54:08,320
+[SPEAKER_02] It's such a moving show.
+
+604
+00:54:08,720 --> 00:54:09,920
+[SPEAKER_02] And it's so well formatted.
+
+605
+00:54:10,160 --> 00:54:11,200
+[SPEAKER_02] Seven minute sections.
+
+606
+00:54:11,520 --> 00:54:13,040
+[SPEAKER_02] It's not this long form content.
+
+607
+00:54:13,280 --> 00:54:19,760
+[SPEAKER_02] So it can be something to get them tired or to distract them for a moment or whatever, but they squeeze such a fantastic message in it.
+
+608
+00:54:20,080 --> 00:54:22,720
+[SPEAKER_02] But it's not on the radar of Disney Jr.
+
+609
+00:54:22,880 --> 00:54:24,560
+[SPEAKER_02] for example, historical numbers.
+
+610
+00:54:24,720 --> 00:54:26,880
+[SPEAKER_02] It had just launched on cable channels.
+
+611
+00:54:27,280 --> 00:54:31,200
+[SPEAKER_02] So there weren't really metrics on how many people were watching it or how it was used.
+
+612
+00:54:31,600 --> 00:54:35,040
+[SPEAKER_02] But on Disney Plus, we were seeing fantastic numbers from it.
+
+613
+00:54:36,160 --> 00:54:42,640
+[SPEAKER_02] looking at what content gets watched all the way through, like a 99, 98 percent completion rating each episode, right?
+
+614
+00:54:43,040 --> 00:54:44,880
+[SPEAKER_02] Or how often do they finish the whole season?
+
+615
+00:54:45,200 --> 00:54:47,120
+[SPEAKER_02] Or how often do they rewatch the season?
+
+616
+00:54:47,520 --> 00:54:48,240
+[SPEAKER_02] Or something like that.
+
+617
+00:54:48,640 --> 00:54:51,760
+[SPEAKER_02] But it was still a limited number of people that were actually doing that.
+
+618
+00:54:52,240 --> 00:55:03,680
+[SPEAKER_02] And as a data person, I wanted to use that one as an example, not only because I love the show and I just intuitively thought that it would be successful if it had more of a platform, but why should it be a hero row?
+
+619
+00:55:03,840 --> 00:55:08,400
+[SPEAKER_02] Like how am I going to justify that it's a big masthead image at the top of an adult profile?
+
+620
+00:55:08,640 --> 00:55:10,640
+[SPEAKER_02] So let's look at the child profile.
+
+621
+00:55:10,880 --> 00:55:12,800
+[SPEAKER_02] Well, we're not really promoting the child profile.
+
+622
+00:55:13,280 --> 00:55:14,960
+[SPEAKER_02] Most people may not even know that it exists.
+
+623
+00:55:15,120 --> 00:55:19,680
+[SPEAKER_02] They log in to Disney and if they skip the profile setup, then your name is blank.
+
+624
+00:55:20,000 --> 00:55:23,120
+[SPEAKER_02] It's a Mickeyhead and you never think about it again, right?
+
+625
+00:55:23,360 --> 00:55:24,800
+[SPEAKER_02] Unless someone prompts you to reset that.
+
+626
+00:55:25,040 --> 00:55:27,760
+[SPEAKER_00] So you're just saying, Oh, Disney Plus is a child profile.
+
+627
+00:55:28,160 --> 00:55:28,320
+[SPEAKER_00] Right.
+
+628
+00:55:28,960 --> 00:55:33,520
+[SPEAKER_02] And also, like, as a parent, when you're launching this thing, you probably just bought it because the kids are screaming in the corner.
+
+629
+00:55:33,760 --> 00:55:36,160
+[SPEAKER_02] And you're like, I'm gonna do more.
+
+630
+00:55:37,360 --> 00:55:41,040
+[SPEAKER_02] Say the word Bluey there, pull it up, hit play, and then we're off to the races.
+
+631
+00:55:41,200 --> 00:55:43,280
+[SPEAKER_02] But now you have an adult profile using it.
+
+632
+00:55:43,760 --> 00:55:52,960
+[SPEAKER_02] So to me, it was already inherently flawed because most people were not setting up child profiles and I didn't think that it it was because they didn't have kids, it was just because they were watching younger age content.
+
+633
+00:55:53,360 --> 00:55:55,200
+[SPEAKER_02] But how discoverable was Bluey?
+
+634
+00:55:55,440 --> 00:55:58,000
+[SPEAKER_02] It's on the last row in one of the last tiles.
+
+635
+00:55:58,400 --> 00:56:08,720
+[SPEAKER_02] So even on an Apple TV with a quickly scrolling wheel, you'd still have to scroll through twenty five rows and then scroll over fifteen, twenty tiles before you got to that content.
+
+636
+00:56:09,200 --> 00:56:12,320
+[SPEAKER_02] But if you completed the content, it now was not in your continue watching.
+
+637
+00:56:12,480 --> 00:56:14,000
+[SPEAKER_02] And you'd have to go find that each time.
+
+638
+00:56:14,160 --> 00:56:17,760
+[SPEAKER_02] And at the time there was only one season, so you could burn through it in a couple of hours, right?
+
+639
+00:56:18,320 --> 00:56:21,200
+[SPEAKER_02] It became so frustrating because the kids would want to watch it.
+
+640
+00:56:21,360 --> 00:56:31,040
+[SPEAKER_02] So I had the luxury of at least having a captive audience that I could test on and a real use case, but it was a good example of that it could have been any content and it could have been anything.
+
+641
+00:56:31,760 --> 00:56:33,120
+[SPEAKER_02] How hard is it for them to get to it?
+
+642
+00:56:33,280 --> 00:56:38,880
+[SPEAKER_02] And what appears when I start typing Bluey, like if I type BL and it's Blue's Clues or something like that?
+
+643
+00:56:39,360 --> 00:56:45,280
+[SPEAKER_02] And down here buried is Bluey because we chose to do it alphabetically or because we chose to do it based on number of views.
+
+644
+00:56:46,000 --> 00:56:48,400
+[SPEAKER_02] How hard is it for that parent to ultimately get back to that?
+
+645
+00:56:48,960 --> 00:56:51,760
+[SPEAKER_02] And in the child profile, the search was non existent.
+
+646
+00:56:51,920 --> 00:56:52,560
+[SPEAKER_02] You couldn't search.
+
+647
+00:56:52,720 --> 00:56:58,160
+[SPEAKER_02] So you had to literally find it within these groupings that didn't have names because your expectation is a five year old using it.
+
+648
+00:56:58,320 --> 00:57:00,480
+[SPEAKER_02] So I would use that one to say, you have this content.
+
+649
+00:57:01,120 --> 00:57:08,320
+[SPEAKER_02] that is being consumed heavily by a subset of users of the app, and they are religious about it.
+
+650
+00:57:08,800 --> 00:57:27,360
+[SPEAKER_02] They're sharing links to it, et cetera, but you've made it almost impossible for them to pin that as a rewatch once they've completed it, or for them to find any of that other similar Kid content, but your root problem is actually because of a broken process with how the profiles are set up and how they would find that content in the other piece.
+
+651
+00:57:27,840 --> 00:57:32,000
+[SPEAKER_02] So that problem is a representation of something that you can what's what you can do right this second?
+
+652
+00:57:32,320 --> 00:57:35,920
+[SPEAKER_02] Move Bluey up higher, move that row up higher, or make something taggable.
+
+653
+00:57:36,560 --> 00:57:37,920
+[SPEAKER_02] But what's something you could do long term?
+
+654
+00:57:38,400 --> 00:57:50,800
+[SPEAKER_02] Think about thoughtful ways to promote or nudge people that do have kids at home to set up that child profile and not so that you can just know that they have a kid or know that they have three kids because they set up three profiles, but what value do they get out of it?
+
+655
+00:57:51,040 --> 00:57:57,840
+[SPEAKER_02] By doing this, their bluey stuff is always right there and your recommended for you row is not getting muddy with child content as well.
+
+656
+00:57:58,240 --> 00:58:01,040
+[SPEAKER_02] Now I know the shows that you want to watch and I can show you the right thing.
+
+657
+00:58:01,200 --> 00:58:04,160
+[SPEAKER_02] So that's your long term, but in the short term I can also profit.
+
+658
+00:58:04,640 --> 00:58:19,440
+[SPEAKER_02] And for Disney's case, how that then turns into a massive business is if this thing is successful and you move it up and you're seeing that exponential growth, you're seeing it in real real time versus Nielsen scores or a movie in a theater or something like that where you're waiting for box office and run up and all that.
+
+659
+00:58:19,920 --> 00:58:23,440
+[SPEAKER_02] How can we quickly say, here's where we need to do a Broadway show?
+
+660
+00:58:23,760 --> 00:58:31,360
+[SPEAKER_02] We need to ramp up merch manufacturing because maybe that needs a two month lead time of design and engineering of what all these toys or environments are going to look like.
+
+661
+00:58:31,760 --> 00:58:33,120
+[SPEAKER_02] How do we get shipping out for that?
+
+662
+00:58:33,280 --> 00:58:35,440
+[SPEAKER_02] How do we promote the show more on Disney Junior?
+
+663
+00:58:36,000 --> 00:58:38,320
+[SPEAKER_02] Do we need to reshuffle a lot of what we've already put there?
+
+664
+00:58:38,480 --> 00:58:43,360
+[SPEAKER_02] Do we need to promote it in the parks and have a ride or an experience, have Bluey walking around?
+
+665
+00:58:43,600 --> 00:58:50,160
+[SPEAKER_02] Whatever it is, you see how that has that knock on effect of like, not only that one insight of like, this is a good piece of content buried here down.
+
+666
+00:58:51,120 --> 00:58:59,360
+[SPEAKER_02] But you miss that if you're not understanding the data and you're asking for structured things that are expected and you're not saying, what is the thing I should be looking at instead?
+
+667
+00:58:59,760 --> 00:59:05,680
+[SPEAKER_02] And that could cause you to miss out on maybe a small bump, but maybe an entire new business model.
+
+668
+00:59:06,000 --> 00:59:09,600
+[SPEAKER_02] And in this case, what has turned into like a phenomenon of a show with broadband.
+
+669
+00:59:10,320 --> 00:59:12,320
+[SPEAKER_00] This might be the killer app for Disney plus, I think.
+
+670
+00:59:12,480 --> 00:59:18,720
+[SPEAKER_00] And like, we maybe don't watch that many movies, but Bluey's is one of those things we watch over and over again because it's infinitely repeatable.
+
+671
+00:59:19,040 --> 00:59:25,360
+[SPEAKER_00] It's a good example of just not carrying in too many assumptions about how your users will use the thing and just listen to your users.
+
+672
+00:59:25,760 --> 00:59:37,520
+[SPEAKER_00] Like they will tell you what they care about and have it maybe tune your data stack so that you can detect and understand and promote like how your users are actually using if your app is revenue cat or whatever.
+
+673
+00:59:37,920 --> 00:59:39,760
+[SPEAKER_00] That's kind of classic product market fit finding, right?
+
+674
+00:59:40,000 --> 00:59:42,240
+[SPEAKER_00] It's like don't let your assumptions carry you too far.
+
+675
+00:59:42,320 --> 00:59:44,400
+[SPEAKER_00] And I think that's one of the problems of building in big org's too.
+
+676
+00:59:44,800 --> 00:59:50,160
+[SPEAKER_00] Like you have so many ways people think it should work because their org and their thing and whatever.
+
+677
+00:59:50,240 --> 00:59:56,400
+[SPEAKER_00] And it's, you know, it's all very well intentioned, but at the end of the day, you have to look at the data and the assumptions.
+
+678
+00:59:56,560 --> 00:59:58,320
+[SPEAKER_02] Yeah, the assumptions that they lead in with.
+
+679
+00:59:58,480 --> 00:59:59,920
+[SPEAKER_02] And that's kind of like to that last point.
+
+680
+01:00:00,240 --> 01:00:10,400
+[SPEAKER_02] point of how it can impact is coming in with the expectation of what we think that these are going to be bucketed by like Marvel and Star Wars super fans combined or Disney animated fanatics.
+
+681
+01:00:10,880 --> 01:00:12,640
+[SPEAKER_02] That might be what your executives are telling.
+
+682
+01:00:12,720 --> 01:00:23,200
+[SPEAKER_02] But if you're not giving the leeway for data scientists and data analytics teams to explore what the true definitions may be or whether or not they can reinforce those definitions, then you can miss out.
+
+683
+01:00:23,360 --> 01:00:51,280
+[SPEAKER_02] And in that case, that's where we were able to reorient and say, hey, the data science teams, the data analytics teams, they're finding that these buckets actually make more sense in terms of what expected behavior will happen or what they'll resonate with based on tranches like parents with kids., parents with young kids, parents with older kids, adult couples, single adults, teenagers, whatever those groupings are, actually have more patterns in common than users when you try to bucket based on a Star Wars super fan.
+
+684
+01:00:51,600 --> 01:00:58,880
+[SPEAKER_02] Because a third of them may love Star Wars, but also like animated movies, a third of them may love Star Wars and Marvel a ton.
+
+685
+01:00:59,200 --> 01:01:02,080
+[SPEAKER_02] A third may hate Marvel and love Star Wars.
+
+686
+01:01:02,320 --> 01:01:02,800
+[SPEAKER_02] You know what I mean?
+
+687
+01:01:03,040 --> 01:01:09,920
+[SPEAKER_02] So if you're going in with those presumptions instead of being curious and allowing those teens the leeway to explore that, you can miss it.
+
+688
+01:01:10,000 --> 01:01:12,800
+[SPEAKER_02] And then don't shoot down based on personal biases.
+
+689
+01:01:12,960 --> 01:01:13,840
+[SPEAKER_02] What's right in front of you.
+
+690
+01:01:14,160 --> 01:01:21,280
+[SPEAKER_02] There are times that I have intuition on something and I chase it down and I see early on that, like, hey, that's actually going different than I thought.
+
+691
+01:01:21,680 --> 01:01:23,520
+[SPEAKER_02] And there's that urge internally.
+
+692
+01:01:23,760 --> 01:01:27,920
+[SPEAKER_02] Maybe you've gone through those executive means and said, I'm really confident that this is actually going to happen.
+
+693
+01:01:28,000 --> 01:01:28,960
+[SPEAKER_02] Maybe we just need to run the top.
+
+694
+01:01:29,600 --> 01:01:30,240
+[SPEAKER_02] Good hypothesis.
+
+695
+01:01:31,200 --> 01:01:38,720
+[SPEAKER_02] But you get so much further in your career by being ruthless with yourself about what you're seeing, COVID, data, things like that.
+
+696
+01:01:39,040 --> 01:01:47,200
+[SPEAKER_02] You can apply this almost anywhere, but also that it goes so far in companies with how they will trust you with bigger and bigger things in the future.
+
+697
+01:01:47,600 --> 01:01:50,960
+[SPEAKER_02] If you're able to own up with the fact that that actually turned out to not be.
+
+698
+01:01:51,520 --> 01:01:56,320
+[SPEAKER_02] I know that I thought that was, and I told you that, and we're half bought in on it, but we got to pivot.
+
+699
+01:01:56,640 --> 01:01:57,600
+[SPEAKER_02] And this is just a miss.
+
+700
+01:01:57,840 --> 01:02:02,080
+[SPEAKER_02] Here's a good thing that I found of that as well, like some positive, but yeah, it kind of stinks that we missed the mark.
+
+701
+01:02:02,320 --> 01:02:02,880
+[SPEAKER_00] They now know that.
+
+702
+01:02:03,040 --> 01:02:04,720
+[SPEAKER_00] Is it better than chasing?
+
+703
+01:02:05,200 --> 01:02:19,440
+[SPEAKER_02] Yes, and they now know that when I'm thinking about making a VP or, you know, like other decision to launch a new thing, that you're not going to buy into that and potentially ride into the ground and risk something because you don't want it to go against what you had previously kind of stated.
+
+704
+01:02:20,160 --> 01:02:26,400
+[SPEAKER_00] One bias there, I think oftentimes I feel like people have a bias to believe that everything should be like causally explainable, right?
+
+705
+01:02:26,560 --> 01:02:28,240
+[SPEAKER_00] Like you'll have some things.
+
+706
+01:02:28,240 --> 01:02:36,880
+[SPEAKER_00] something, some truth in the data, but like the world's chaotic, and there may not be a like causative explanation for this other than just random fluctuations.
+
+707
+01:02:37,040 --> 01:02:42,160
+[SPEAKER_00] And I find that to be a really hard thing where people get hung up on is they're like, if a number goes up, there must be a reason why.
+
+708
+01:02:42,320 --> 01:02:44,800
+[SPEAKER_00] And it's like, Yes, that this is doing that.
+
+709
+01:02:45,600 --> 01:02:46,480
+[SPEAKER_02] That this is leading to that.
+
+710
+01:02:46,800 --> 01:02:46,800
+[SPEAKER_02] Yeah.
+
+711
+01:02:47,040 --> 01:02:56,720
+[SPEAKER_00] It's But like sometimes also the dice get rolled in a certain way and a number goes and they're like, How quickly the answer back to them of what would you do to prove that those are interrelated?
+
+712
+01:02:57,280 --> 01:03:08,720
+[SPEAKER_02] Would it be that you change for ten percent of the users that they don't see the thing that you think is driving this action and then that you're measuring whether or not that actually declines?ed, and if it didn't, then it actually helped design and experience.
+
+713
+01:03:08,880 --> 01:03:10,640
+[SPEAKER_02] Cool, okay, then let's how quickly can we do that?
+
+714
+01:03:11,440 --> 01:03:11,600
+[SPEAKER_02] Right?
+
+715
+01:03:12,160 --> 01:03:16,560
+[SPEAKER_02] So like, even if someone wants to try and correlate, just challenge them to, okay, trust and value.
+
+716
+01:03:16,800 --> 01:03:19,200
+[SPEAKER_00] It forces them to think about the production process of the data, right?
+
+717
+01:03:19,360 --> 01:03:24,480
+[SPEAKER_00] And then you go, well, I guess the production process is inherently chaotic, and so likely there's not actually data here.
+
+718
+01:03:25,040 --> 01:03:26,640
+[SPEAKER_01] Well, I think that's a great place to wrap up.
+
+719
+01:03:26,800 --> 01:03:26,880
+[SPEAKER_01] Yeah.
+
+720
+01:03:27,120 --> 01:03:28,960
+[SPEAKER_01] We could go on for like four more hours.
+
+721
+01:03:29,360 --> 01:03:31,920
+[SPEAKER_02] I told you, it could turn into a book if you, if you let it.
+
+722
+01:03:32,960 --> 01:03:34,080
+[SPEAKER_01] But thank you so much for joining us.
+
+723
+01:03:34,320 --> 01:03:35,760
+[SPEAKER_01] This was a really fun conversation.
+
+724
+01:03:35,920 --> 01:03:38,800
+[SPEAKER_01] I think a lot of insightful things for folks to think about.
+
+725
+01:03:39,120 --> 01:03:49,760
+[SPEAKER_01] And I know if any indie developers made it all the way through to this point, a lot of this is not directly applicable except that you need to think through a lot of this even as an indie.
+
+726
+01:03:50,000 --> 01:03:54,480
+[SPEAKER_01] Like thinking about your little the best, the most successful indies I know are the most data-oriented ones.
+
+727
+01:03:54,560 --> 01:03:54,640
+[SPEAKER_01] Yeah.
+
+728
+01:03:55,840 --> 01:04:07,200
+[SPEAKER_01] Your little Firebase instance, like it matters because that's how you're going to improve your product and having good data in there, making good decisions based on that data is a key to building a great product.
+
+729
+01:04:07,680 --> 01:04:27,200
+[SPEAKER_02] And I think that thinking of it with a data-oriented mindset as an engineer and a developer on front-end applications is super important in thinking what happens if I change this later, how that's going a big takeaway too.
+
+730
+01:04:27,360 --> 01:04:27,440
+[SPEAKER_02] Yeah.
+
+731
+01:04:27,680 --> 01:04:27,920
+[SPEAKER_01] All right.
+
+732
+01:04:28,080 --> 01:04:29,200
+[SPEAKER_01] Well, thank you so much for joining us.
+
+733
+01:04:29,360 --> 01:04:29,440
+[SPEAKER_01] Yeah.
+
+734
+01:04:29,600 --> 01:04:30,080
+[SPEAKER_02] Thank you guys.
+
+735
+01:04:30,240 --> 01:04:31,440
+[SPEAKER_02] It's been a wonderful conversation.
+
+736
+01:04:32,320 --> 01:04:34,960
+[SPEAKER_02] I can always dive in stuff like this for hours.
+
+737
+01:04:35,040 --> 01:04:35,520
+[SPEAKER_02] So thank you.
+
+738
+01:04:38,160 --> 01:04:39,440
+[SPEAKER_01] Thank you so much for listening.
+
+739
+01:04:40,400 --> 01:04:43,760
+[SPEAKER_01] If you have a minute, please leave a review in your favorite podcast player.
+
+740
+01:04:44,640 --> 01:04:49,440
+[SPEAKER_01] You can also stop by chat dot subclub dot com to join our private community.
