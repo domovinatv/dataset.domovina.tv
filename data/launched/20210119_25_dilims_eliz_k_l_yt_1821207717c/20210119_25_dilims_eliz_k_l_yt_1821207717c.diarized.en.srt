@@ -1,0 +1,1419 @@
+1
+00:00:02,640 --> 00:00:03,520
+[SPEAKER_01] Welcome to Launched.
+
+2
+00:00:03,680 --> 00:00:10,400
+[SPEAKER_01] I'm Charlie Chapman, and today I'm excited to bring you the developer behind the wonderful time zone app, Delims, Eliz Killich.
+
+3
+00:00:23,440 --> 00:00:25,520
+[SPEAKER_01] Eliz, thank you so much for coming on the show.
+
+4
+00:00:26,080 --> 00:00:26,320
+[SPEAKER_00] Hello.
+
+5
+00:00:27,040 --> 00:00:28,640
+[SPEAKER_00] Thank you, Charlie, for having me.
+
+6
+00:00:29,200 --> 00:00:38,400
+[SPEAKER_01] So the original idea for this podcast actually was that as new apps came out, I was going to bring people on and talk about their launch.
+
+7
+00:00:39,040 --> 00:00:45,200
+[SPEAKER_01] And because this year got so insane pretty much everywhere, I started working way ahead.
+
+8
+00:00:45,360 --> 00:00:52,800
+[SPEAKER_01] And one of the interesting byproducts of that is I've been talking to people who have long-running apps and telling their long stories, which have been really interesting.
+
+9
+00:00:53,360 --> 00:01:00,400
+[SPEAKER_01] But today, I'm extremely excited to talk about an app that I had on my radar to talk about right when it came out, which I believe was over the summer.
+
+10
+00:01:00,880 --> 00:01:04,800
+[SPEAKER_01] And then it just kept getting sort of pushed down my list because I was working too far ahead.
+
+11
+00:01:04,960 --> 00:01:06,720
+[SPEAKER_01] And so it actually has been out for a while.
+
+12
+00:01:08,560 --> 00:01:16,640
+[SPEAKER_01] Very selfishly, Delims is an app that is like perfect for me, and I just want to see, I want everybody to be using it so that it keeps being worked on.
+
+13
+00:01:16,960 --> 00:01:21,120
+[SPEAKER_01] And so I'm extremely excited to have you here to talk about it.
+
+14
+00:01:21,520 --> 00:01:22,880
+[SPEAKER_00] Yeah, thank you so much.
+
+15
+00:01:23,520 --> 00:01:32,240
+[SPEAKER_00] The Limbs is it's been around like six or seven months, so you can say it's launched recently.
+
+16
+00:01:33,040 --> 00:01:38,480
+[SPEAKER_00] So I think it's a good candidate for the launched podcast.
+
+17
+00:01:39,280 --> 00:01:43,760
+[SPEAKER_00] So yeah, and thank you for the nice feedback about the app.
+
+18
+00:01:44,240 --> 00:01:46,000
+[SPEAKER_01] Yeah, thank you for making it.
+
+19
+00:01:46,640 --> 00:01:50,160
+[SPEAKER_01] But before we get into The Limbs, I want to give everyone a primer on who you are.
+
+20
+00:01:50,400 --> 00:01:53,440
+[SPEAKER_01] So the three questions I ask everyone are, where are you from?
+
+21
+00:01:53,920 --> 00:01:56,640
+[SPEAKER_01] Do you have like formal education related to what you're doing here?
+
+22
+00:01:57,280 --> 00:02:00,480
+[SPEAKER_01] And what was your career like kind of leading up to Delims?
+
+23
+00:02:02,080 --> 00:02:02,720
+[SPEAKER_00] Hello everyone.
+
+24
+00:02:03,600 --> 00:02:08,480
+[SPEAKER_00] So I'm Ellis, as you have heard.
+
+25
+00:02:09,120 --> 00:02:10,720
+[SPEAKER_00] I'm from Turkey, Ankara.
+
+26
+00:02:11,280 --> 00:02:19,360
+[SPEAKER_00] I've been a developer like ten more than ten years now and I have a degree in computer science.
+
+27
+00:02:20,240 --> 00:02:30,240
+[SPEAKER_00] I'm actually the head of product for a software called Kubo in a company called Unscrambled, which is a US company.
+
+28
+00:02:31,200 --> 00:02:36,160
+[SPEAKER_00] So I've been mostly doing fronthand work, but Delims is a.
+
+29
+00:02:37,040 --> 00:02:38,000
+[SPEAKER_00] side project of mine.
+
+30
+00:02:38,480 --> 00:02:47,440
+[SPEAKER_00] So I've been working on this idea for a while and just thought that I need this app for myself.
+
+31
+00:02:47,840 --> 00:02:54,800
+[SPEAKER_00] And so I couldn't find what I want and I just made it.
+
+32
+00:02:55,200 --> 00:02:56,880
+[SPEAKER_00] Had you done iOS development before?
+
+33
+00:02:58,240 --> 00:03:02,480
+[SPEAKER_00] I actually have, but it was using React native.
+
+34
+00:03:02,880 --> 00:03:03,600
+[SPEAKER_01] Oh, okay.
+
+35
+00:03:03,760 --> 00:03:07,760
+[SPEAKER_00] So I haven't done any native development before.
+
+36
+00:03:08,400 --> 00:03:09,120
+[SPEAKER_01] That makes sense.
+
+37
+00:03:09,520 --> 00:03:12,800
+[SPEAKER_01] So you mentioned this is something that you were looking for yourself.
+
+38
+00:03:13,120 --> 00:03:14,000
+[SPEAKER_01] I'm assuming that.
+
+39
+00:03:14,480 --> 00:03:15,440
+[SPEAKER_01] Oh, and actually I should give.
+
+40
+00:03:16,320 --> 00:03:19,440
+[SPEAKER_01] let you give a quick introduction to what Delims actually is.
+
+41
+00:03:20,240 --> 00:03:23,280
+[SPEAKER_01] I'll let you give the pitch and then I'll explain why it works for me so well.
+
+42
+00:03:24,560 --> 00:03:26,960
+[SPEAKER_00] Yeah, Delims is a time zone self.
+
+43
+00:03:27,440 --> 00:03:31,040
+[SPEAKER_00] So the need came from myself, actually.
+
+44
+00:03:31,600 --> 00:03:36,880
+[SPEAKER_00] As I said, I'm working in a multinational company.
+
+45
+00:03:37,360 --> 00:03:46,800
+[SPEAKER_00] So we have offices in the US, in India, in Philippines, in Singapore, in Turkey, in lots of places.
+
+46
+00:03:47,280 --> 00:03:53,600
+[SPEAKER_00] And I'm working day to day with those people.
+
+47
+00:03:54,240 --> 00:04:25,200
+[SPEAKER_00] with different time zones and it's kind of a hassle to know when to schedule a meeting and know who is working at that time so I had some needs regarding that like anybody would I search for available apps at that time and the apps that I found was not in sync with what I had in my mind.
+
+48
+00:04:26,160 --> 00:04:38,560
+[SPEAKER_00] So I started working on something quickly in the weekend and I created a web app that's just a stripped down version of the mobile app we see today.
+
+49
+00:04:39,600 --> 00:04:43,200
+[SPEAKER_00] So it's basically a bunch of bars and a line.
+
+50
+00:04:44,400 --> 00:04:55,520
+[SPEAKER_00] But that felt so correct that I wanted to have that in other people's phones and that's how DLIMPS came out.
+
+51
+00:04:55,840 --> 00:04:55,920
+[SPEAKER_01] Yeah.
+
+52
+00:04:56,080 --> 00:05:18,960
+[SPEAKER_01] And like you mentioned, like there's these bars and the thing that's like amazing about it is, I mean, like most time zone apps, you kind of get this list of different time zones that you've specified and you can see, like in mine, I have, you know, my current time, which is Central American and then California time and then India, UK, New York, New Zealand and then Ankara because I was planning out scheduling this call with you actually.
+
+53
+00:05:19,440 --> 00:05:26,000
+[SPEAKER_01] But what it shows like I get to specify what times within each one of these zones are important to me.
+
+54
+00:05:26,880 --> 00:05:30,000
+[SPEAKER_01] So for me that's I have almost all of them set to be 8 a.m.
+
+55
+00:05:30,160 --> 00:05:30,960
+[SPEAKER_01] to 10 p.m.
+
+56
+00:05:31,520 --> 00:05:40,320
+[SPEAKER_01] because that's kind of when people are awake because what I want to see is is the person I'm about to like DM or send an email to or whatever, are they awake right now?
+
+57
+00:05:41,040 --> 00:05:46,320
+[SPEAKER_01] And I also use this for when I'm like tweeting something that I want that to me I want more people to see.
+
+58
+00:05:47,360 --> 00:05:52,160
+[SPEAKER_01] I want to line it up so that the most amount of people are probably awake right now.
+
+59
+00:05:52,800 --> 00:05:55,120
+[SPEAKER_01] And it gives you this really cool view.
+
+60
+00:05:55,520 --> 00:06:02,960
+[SPEAKER_01] There will be a link in the show notes and all this is in the screenshots in your App Store, but you can just immediately see where they all overlap.
+
+61
+00:06:03,600 --> 00:06:17,920
+[SPEAKER_01] And then you have this really cool thing where you can like grab this bar and drag it around and change the time and see exactly what time all of the other zones are in, you know, at 8.20 p.m.
+
+62
+00:06:18,160 --> 00:06:18,400
+[SPEAKER_01] my time.
+
+63
+00:06:18,960 --> 00:06:21,200
+[SPEAKER_01] I can see immediately that it's 7.50 a.m.
+
+64
+00:06:21,280 --> 00:06:21,600
+[SPEAKER_01] in India.
+
+65
+00:06:21,920 --> 00:06:33,680
+[SPEAKER_01] And there's no other time zone app I've ever seen that seems like it's showing you the concept of time more generally rather than like this is what the time is right now in all these different places.
+
+66
+00:06:34,240 --> 00:06:38,560
+[SPEAKER_01] And that to me is what makes it so different and like really special and cool.
+
+67
+00:06:38,960 --> 00:06:50,080
+[SPEAKER_00] Yeah, there's like tons of time zones out there and most of them just show you local times in different visualizations, right?
+
+68
+00:06:50,480 --> 00:06:59,680
+[SPEAKER_00] Some have fancy graphics, some have just the text, some have the analog clock, et cetera.
+
+69
+00:07:00,320 --> 00:07:59,120
+[SPEAKER_00] But none of them work for me because the time bars you see on the limbs are a need of mine because some people most people work different times in our company right so some for example i work from 10 a.m to 7 p.m and a guy i work with in the us works like crazy times at the night and this is very important for me because apart from having the local time i also need to know which time frames he's or she is working on see and the time frames that you see on the limbs lets you specify these different things or different time slots so that you can immediately see if it's overlapping or not.
+
+70
+00:07:59,760 --> 00:07:59,920
+[SPEAKER_00] Right.
+
+71
+00:08:00,160 --> 00:08:11,360
+[SPEAKER_01] Like you could have waking hours, you know, for like my purposes, but you could also say working hours and they're all totally like custom and you can kind of bend it to your will.
+
+72
+00:08:11,760 --> 00:08:14,960
+[SPEAKER_01] And in all of those cases you get that, yeah, you said it.
+
+73
+00:08:15,120 --> 00:08:22,080
+[SPEAKER_01] Like it's where they're overlapping is this like magic time slot where you can communicate or set up meetings or whatever.
+
+74
+00:08:22,320 --> 00:08:26,240
+[SPEAKER_00] Yeah, you don't need to know their local time.
+
+75
+00:08:26,800 --> 00:08:30,640
+[SPEAKER_00] and calculate if it's the right time or not.
+
+76
+00:08:31,040 --> 00:08:36,240
+[SPEAKER_00] You just need to know if it's overlapping or not, which is far more easy for me.
+
+77
+00:08:36,560 --> 00:08:36,960
+[SPEAKER_00] It is.
+
+78
+00:08:37,200 --> 00:08:37,680
+[SPEAKER_00] I don't know.
+
+79
+00:08:38,160 --> 00:08:46,000
+[SPEAKER_01] Yeah, that's exactly how maybe it's because I'm more like I'm not this like, you know, like a secretary that's really in depth on scheduling everything.
+
+80
+00:08:46,240 --> 00:08:53,520
+[SPEAKER_01] I'm thinking in more broad strokes of like it's the morning, it's the evening, it's work time, it's dinner time, it's bedtime, you know, that kind of thing.
+
+81
+00:08:53,920 --> 00:09:00,640
+[SPEAKER_01] And because it's so visual, you get those broad strokes really easily, which I don't know, it's just really cool.
+
+82
+00:09:01,520 --> 00:09:06,000
+[SPEAKER_01] And I really, it's been extremely helpful for me for both, you know, not.
+
+83
+00:09:06,480 --> 00:09:09,280
+[SPEAKER_01] so much work things because my my company is all U.S.
+
+84
+00:09:09,360 --> 00:09:09,600
+[SPEAKER_01] based.
+
+85
+00:09:09,760 --> 00:09:16,560
+[SPEAKER_01] So we have the complicated four time zones to deal with, which is yeah, nothing compared to once you cross the pond, I guess.
+
+86
+00:09:17,120 --> 00:09:22,080
+[SPEAKER_01] But, you know, for family members that live abroad, being able to know if it's if they're asleep or not.
+
+87
+00:09:22,640 --> 00:09:31,120
+[SPEAKER_01] You I don't know if this was in the original version or not, but you've added a feature where you can show when it's like daytime, daytime hours versus nighttime hours.
+
+88
+00:09:31,520 --> 00:09:32,000
+[SPEAKER_01] Yeah, yeah.
+
+89
+00:09:32,720 --> 00:09:39,360
+[SPEAKER_00] Actually, it was kind of in the original version, but it was just using 6 a.m.
+
+90
+00:09:39,440 --> 00:09:40,240
+[SPEAKER_00] to 6 p.m.
+
+91
+00:09:40,480 --> 00:09:43,440
+[SPEAKER_00] as the daytime and the rest as the nighttime.
+
+92
+00:09:43,920 --> 00:09:57,760
+[SPEAKER_00] But now when you set it a city, it uses the city's location information to calculate the current day's sunrise and sunset times.
+
+93
+00:09:58,080 --> 00:09:58,560
+[SPEAKER_00] Oh, wow.
+
+94
+00:09:58,720 --> 00:10:03,360
+[SPEAKER_00] So that, yeah, it's the actual sunrise and sunset times for each city.
+
+95
+00:10:04,800 --> 00:10:09,280
+[SPEAKER_01] Is that using like an API or did you like find the algorithms for that?
+
+96
+00:10:10,560 --> 00:10:14,080
+[SPEAKER_00] It's using a CocoaPots package.
+
+97
+00:10:14,240 --> 00:10:15,040
+[SPEAKER_00] Okay, cool.
+
+98
+00:10:15,600 --> 00:10:15,680
+[SPEAKER_00] Yeah.
+
+99
+00:10:16,320 --> 00:10:16,560
+[SPEAKER_00] Nice.
+
+100
+00:10:17,040 --> 00:10:17,680
+[SPEAKER_01] That's awesome.
+
+101
+00:10:18,320 --> 00:10:19,680
+[SPEAKER_01] So this started out as a web app.
+
+102
+00:10:20,240 --> 00:10:23,440
+[SPEAKER_01] And did you say what was your reason for wanting to bring it to the phone?
+
+103
+00:10:24,080 --> 00:10:27,200
+[SPEAKER_00] So yeah, it started as a weekend project.
+
+104
+00:10:27,760 --> 00:10:38,880
+[SPEAKER_00] I built a proof of concept over the weekend and I just showed this to some of my colleagues, some of my friends, and they liked it so much.
+
+105
+00:10:39,440 --> 00:10:45,920
+[SPEAKER_00] And that gave me some kind of push to make it available to other people as well.
+
+106
+00:10:46,560 --> 00:10:58,160
+[SPEAKER_00] And since I've been a iOS user for so long and I've built mobile apps before, I wanted to create an iPhone app for this.
+
+107
+00:10:59,360 --> 00:11:01,280
+[SPEAKER_00] I thought that this is a nice idea.
+
+108
+00:11:01,840 --> 00:11:06,880
+[SPEAKER_00] This is a nice implementation, why not make it available as an app, right?
+
+109
+00:11:07,760 --> 00:11:17,360
+[SPEAKER_00] And when I decided to create this app, the first thing that comes to my mind is which technology, right?
+
+110
+00:11:18,000 --> 00:11:18,960
+[SPEAKER_00] How can I build this?
+
+111
+00:11:19,520 --> 00:11:20,800
+[SPEAKER_00] Is it going to be cross platform?
+
+112
+00:11:21,440 --> 00:11:23,520
+[SPEAKER_00] Is it going to use the native functions?
+
+113
+00:11:24,080 --> 00:11:28,080
+[SPEAKER_00] Is it going to be Swift Objective C or what?
+
+114
+00:11:29,200 --> 00:11:38,240
+[SPEAKER_00] So when I decided to create this app, Swift UI came out recently, actually like a month ago or something.
+
+115
+00:11:38,880 --> 00:11:38,960
+[SPEAKER_01] Okay.
+
+116
+00:11:39,600 --> 00:11:42,160
+[SPEAKER_01] So this was like the year before last summer.
+
+117
+00:11:42,400 --> 00:11:43,120
+[SPEAKER_01] Yeah, yeah, yeah.
+
+118
+00:11:43,520 --> 00:11:43,520
+[SPEAKER_00] Okay.
+
+119
+00:11:44,640 --> 00:11:52,160
+[SPEAKER_00] And I decided that I'm going to use SwiftUI, but I don't know Swift, which is a problem.
+
+120
+00:11:54,000 --> 00:12:02,960
+[SPEAKER_01] I very familiarly, I was about six months ahead of you on coming from React and learning Swift from scratch, so I'm very empathetic to that.
+
+121
+00:12:05,120 --> 00:12:14,000
+[SPEAKER_00] So yeah, I just thought that since so many people know it, why can't I do it right?
+
+122
+00:12:15,280 --> 00:12:20,800
+[SPEAKER_00] And I just started to build this and as anyone would.
+
+123
+00:12:21,760 --> 00:12:32,160
+[SPEAKER_00] I came across a lot of problems because it's a new platform as cvTI, which was pretty problematic last year.
+
+124
+00:12:32,560 --> 00:12:32,640
+[SPEAKER_01] Yeah.
+
+125
+00:12:32,880 --> 00:12:37,600
+[SPEAKER_01] IOS developers with a lot of experience were having all sorts of problems and still to this day.
+
+126
+00:12:38,080 --> 00:12:39,360
+[SPEAKER_01] It's a very green technology.
+
+127
+00:12:40,160 --> 00:12:40,240
+[SPEAKER_00] Yeah.
+
+128
+00:12:42,000 --> 00:12:55,520
+[SPEAKER_00] There were times that I would work on a problem like two weeks and finally I would find the solution that it's a bug in the cvTI, which is very frustrating.
+
+129
+00:12:55,760 --> 00:12:55,840
+[SPEAKER_01] Yeah.
+
+130
+00:12:57,040 --> 00:12:59,760
+[SPEAKER_00] That's one of the reasons that it's.
+
+131
+00:13:00,720 --> 00:13:23,600
+[SPEAKER_00] It took so long to make it available as an app because it took almost nine months to build the app, which is not fair to say that it's nine months because the development process was like I would build some kind of functionality for a day and I wouldn't touch like three months.
+
+132
+00:13:24,240 --> 00:13:25,760
+[SPEAKER_00] Yeah, classic size project.
+
+133
+00:13:26,480 --> 00:13:27,040
+[SPEAKER_01] Yeah, yeah.
+
+134
+00:13:27,680 --> 00:13:35,440
+[SPEAKER_00] And another two days with lots of things happening and five more months passing.
+
+135
+00:13:36,240 --> 00:13:37,920
+[SPEAKER_00] So that's why it took so long.
+
+136
+00:13:38,560 --> 00:13:52,960
+[SPEAKER_00] And but at the end I decided that let's make it available because the WWDC was coming and I was pretty hacked again and I decided that why not now?
+
+137
+00:13:53,520 --> 00:13:55,280
+[SPEAKER_00] And yeah, that's awesome.
+
+138
+00:13:55,520 --> 00:14:05,920
+[SPEAKER_01] It's amazing how much WWDC and having this sort of like central point event can spur so many people to it's kind of like you create a natural deadline for yourself.
+
+139
+00:14:06,000 --> 00:14:11,520
+[SPEAKER_01] Like I'm going to get it out before that so that then I can use the new stuff and I'm not trying to finish out this old thing or whatever.
+
+140
+00:14:11,840 --> 00:14:18,080
+[SPEAKER_01] That's like an interesting, maybe unintentional like benefit of having a big event like that, I guess.
+
+141
+00:14:56,080 --> 00:14:56,640
+[SPEAKER_01] I caught up with that.
+
+142
+00:14:56,800 --> 00:15:01,200
+[SPEAKER_01] And it's fun to have your own project that sort of makes all of that more relevant to you.
+
+143
+00:15:02,240 --> 00:15:14,480
+[SPEAKER_01] Whereas at a company, even if you are doing iOS at a company, usually you watch these things and you go, oh, I'll be really excited to use that in two years when we get to support the newer versions or whatever.
+
+144
+00:15:15,200 --> 00:15:19,280
+[SPEAKER_01] And so having a side project like that lets you kind of dig in right away, I guess.
+
+145
+00:15:19,680 --> 00:15:26,080
+[SPEAKER_01] So you were building it over a pretty long amount of time, but not necessarily, you know, 100% of your time over that, obviously.
+
+146
+00:15:26,240 --> 00:15:26,320
+[SPEAKER_01] Yeah.
+
+147
+00:15:27,360 --> 00:15:32,320
+[SPEAKER_01] Did you have like a test flight beta or something over that time where you were getting feedback from people?
+
+148
+00:15:32,480 --> 00:15:34,240
+[SPEAKER_01] You said you had shared the web app with some friends.
+
+149
+00:15:34,640 --> 00:15:34,720
+[SPEAKER_01] Yeah.
+
+150
+00:15:35,200 --> 00:15:41,920
+[SPEAKER_00] Uh, I think the first test flight was available like the end of last year.
+
+151
+00:15:42,240 --> 00:15:42,880
+[SPEAKER_00] Oh, wow, okay.
+
+152
+00:15:43,280 --> 00:15:50,720
+[SPEAKER_00] The previous year, so we are since we are in 2021, it was available at the end of 2019.
+
+153
+00:15:51,360 --> 00:15:58,640
+[SPEAKER_00] So I didn't touch the development for like five or six months, maybe.
+
+154
+00:15:59,360 --> 00:16:00,800
+[SPEAKER_00] So it was on hold.
+
+155
+00:16:02,080 --> 00:16:03,920
+[SPEAKER_00] Even the test flight got removed.
+
+156
+00:16:04,480 --> 00:16:05,200
+[SPEAKER_01] Oh, wow, yeah.
+
+157
+00:16:05,280 --> 00:16:05,600
+[SPEAKER_01] Oh, okay.
+
+158
+00:16:05,680 --> 00:16:05,760
+[SPEAKER_01] Yeah.
+
+159
+00:16:06,000 --> 00:16:07,280
+[SPEAKER_01] That's like ninety days or something.
+
+160
+00:16:07,680 --> 00:16:07,760
+[SPEAKER_01] Yeah.
+
+161
+00:16:08,400 --> 00:16:10,720
+[SPEAKER_01] Did you find having that out there like help?
+
+162
+00:16:11,040 --> 00:16:13,440
+[SPEAKER_01] Were you getting a lot of feedback from like friends and stuff?
+
+163
+00:16:13,600 --> 00:16:16,720
+[SPEAKER_01] Or did you make that publicly ava available or were you just sharing that with people you knew?
+
+164
+00:16:16,960 --> 00:16:21,120
+[SPEAKER_00] No, no, I was just sharing with one or two people that I know.
+
+165
+00:16:21,600 --> 00:16:26,720
+[SPEAKER_00] So it was just to show that there's an app or something like that.
+
+166
+00:16:27,120 --> 00:16:39,600
+[SPEAKER_00] But I had some help from people I know from Twitter, like James, but most of the time, like 95% of the time, I was my own own.
+
+167
+00:16:40,480 --> 00:16:41,920
+[SPEAKER_00] That's kind of hard to actually.
+
+168
+00:16:42,640 --> 00:16:47,360
+[SPEAKER_01] Yeah, whenever you're sort of yeah, you're doing all of your own QA and testing and Yeah.
+
+169
+00:16:47,600 --> 00:16:51,680
+[SPEAKER_01] It's definitely a different environment when you've been working with teams for a long time.
+
+170
+00:16:53,360 --> 00:17:02,640
+[SPEAKER_00] In my day to day job, we have a pretty big team and we have divided so everyone has their own stuff.
+
+171
+00:17:03,760 --> 00:17:06,960
+[SPEAKER_00] And when you got stuck, you can ask around, et cetera.
+
+172
+00:17:07,360 --> 00:17:07,440
+[SPEAKER_00] Yeah.
+
+173
+00:17:07,920 --> 00:17:15,040
+[SPEAKER_00] When you're an indeed developer or you're doing a side project like this, most of the time, you're on your own.
+
+174
+00:17:15,680 --> 00:17:20,160
+[SPEAKER_00] So that's much harder than doing developments in a team.
+
+175
+00:17:20,720 --> 00:17:21,680
+[SPEAKER_00] Yeah, definitely.
+
+176
+00:17:22,400 --> 00:17:23,600
+[SPEAKER_01] That was my experience as well.
+
+177
+00:17:24,720 --> 00:17:29,840
+[SPEAKER_01] Although it helped that I was on an iOS team with, you know, other iOS developers during my normal job.
+
+178
+00:17:30,000 --> 00:17:33,520
+[SPEAKER_01] And so I could I could go to work and be like, hey, I'm running into this problem.
+
+179
+00:17:33,840 --> 00:17:34,320
+[SPEAKER_01] What do you think?
+
+180
+00:17:34,480 --> 00:17:36,880
+[SPEAKER_01] And my friends would help me out a lot there.
+
+181
+00:17:37,360 --> 00:17:45,360
+[SPEAKER_01] So like leading up to when you were going to launch, so did you kind of, as WWDC was approaching, did you kind of just say, you know what?
+
+182
+00:17:45,520 --> 00:17:49,520
+[SPEAKER_01] I want to get this out before WWDC and set a date for yourself?
+
+183
+00:17:50,000 --> 00:17:51,760
+[SPEAKER_00] Yes, yes, yes.
+
+184
+00:17:53,040 --> 00:18:01,440
+[SPEAKER_00] So I had a set time like before the WWDC, but I couldn't make it at that time.
+
+185
+00:18:02,240 --> 00:18:06,320
+[SPEAKER_00] But I didn't want to push it like a year again.
+
+186
+00:18:06,880 --> 00:18:15,120
+[SPEAKER_00] So before I create the app, I had a long list of checklists that I want to have in the first version.
+
+187
+00:18:16,160 --> 00:18:23,360
+[SPEAKER_00] But I decided that if I want to check every one of these items, it's never going to finish.
+
+188
+00:18:24,160 --> 00:18:25,440
+[SPEAKER_00] You'll just keep adding new items.
+
+189
+00:18:25,840 --> 00:18:26,320
+[SPEAKER_01] Yeah, yeah.
+
+190
+00:18:26,880 --> 00:18:35,600
+[SPEAKER_00] So I decided to mark some point and just let it out and add updates with the new features, et cetera.
+
+191
+00:18:36,000 --> 00:18:42,320
+[SPEAKER_00] That's why I released the first version without some key features that I had in my mind.
+
+192
+00:18:43,280 --> 00:18:53,520
+[SPEAKER_01] Yeah, the last episode I did was with David Smith and he was saying he has a process where he literally writes like done or I don't remember what he writes.
+
+193
+00:18:53,600 --> 00:18:58,800
+[SPEAKER_01] He puts a sticky note thing that he slaps on his monitor that says, No new features, like, no more.
+
+194
+00:18:59,040 --> 00:19:02,800
+[SPEAKER_01] All you can do now is some bug fixes and get your marketing stuff ready.
+
+195
+00:19:03,360 --> 00:19:06,480
+[SPEAKER_01] I think that's something literally everybody has to fight with.
+
+196
+00:19:07,360 --> 00:19:11,280
+[SPEAKER_00] Yeah, building new features is more fun for a developer.
+
+197
+00:19:11,760 --> 00:19:12,160
+[SPEAKER_00] For sure.
+
+198
+00:19:12,320 --> 00:19:12,880
+[SPEAKER_00] So, yeah.
+
+199
+00:19:14,400 --> 00:19:28,880
+[SPEAKER_00] You just want to avoid other things like bug fixing or marketing stuff or you want to avoid all those things and you want to create this cool new idea you had in mind.
+
+200
+00:19:29,040 --> 00:20:16,960
+[SPEAKER_00] mind your minds that's when you are sleeping last night yeah so yeah it it it seems like it's the most important thing in the world but it's not so you have to make a stop somewhere so how did how did the launch itself go then did you do any sort of marketing planning going into it or is it just kind of get it out in the store and maybe tweet about it uh actually i just made it available and just created the tweet and the most marketing thing that i did was sending that tweet to some friends in Twitter and some people that I know in the community that might be interested in Twitter.
+
+201
+00:20:18,240 --> 00:20:28,640
+[SPEAKER_00] So I also shared that tweet with some other channels like some Slack groups that I've been part of, but that's pretty much it.
+
+202
+00:20:29,200 --> 00:20:36,640
+[SPEAKER_00] And people liked the videos, people liked the app, people liked the idea, so they just retweeted it.
+
+203
+00:20:37,360 --> 00:20:43,040
+[SPEAKER_00] And that was the thing that made it into a radar of other people's.
+
+204
+00:20:43,360 --> 00:20:46,800
+[SPEAKER_01] Yeah, I'm pretty sure that's how I found it with somebody sharing it.
+
+205
+00:20:47,360 --> 00:20:47,440
+[SPEAKER_01] Yeah.
+
+206
+00:20:48,400 --> 00:20:52,480
+[SPEAKER_01] And I think I had the same reaction as what you were just describing.
+
+207
+00:20:52,800 --> 00:20:56,640
+[SPEAKER_01] It was like, it wasn't just that I thought it was cool and wanted to share something that I thought was cool.
+
+208
+00:20:56,880 --> 00:21:04,880
+[SPEAKER_01] It was almost this like, very selfish, protective, like, I want this thing to succeed because I've been looking for this for so long.
+
+209
+00:21:06,320 --> 00:21:09,360
+[SPEAKER_01] I actually, ironically, I had been using David Smith.
+
+210
+00:21:09,680 --> 00:21:10,960
+[SPEAKER_01] He has an app called Calzones.
+
+211
+00:21:11,360 --> 00:21:12,720
+[SPEAKER_01] That's also a good time zone app.
+
+212
+00:21:13,120 --> 00:21:14,560
+[SPEAKER_01] And I've been using that for a long time.
+
+213
+00:21:14,720 --> 00:21:16,560
+[SPEAKER_01] And it was good for like scheduling things.
+
+214
+00:21:17,200 --> 00:21:20,560
+[SPEAKER_01] But I wanted literally exactly what you wrote, basically.
+
+215
+00:21:21,360 --> 00:21:22,720
+[SPEAKER_01] I've wanted that for a really long time.
+
+216
+00:21:23,040 --> 00:21:28,560
+[SPEAKER_01] And so for me, it was like, oh my gosh, I want everybody else to find this so that it succeeds.
+
+217
+00:21:28,640 --> 00:21:36,960
+[SPEAKER_01] And it seemed like it got a really good reaction from people because it really is just unique, which is always an interesting thing on the App Store.
+
+218
+00:21:39,040 --> 00:21:45,680
+[SPEAKER_01] Did you have any sort of metrics or goals or was it sort of you just were putting it out there to see what happened?
+
+219
+00:21:46,560 --> 00:22:08,640
+[SPEAKER_00] No, I just wanted to share what I created and having good reactions, having people like it is just a plus for side project for me.
+
+220
+00:22:09,200 --> 00:22:12,400
+[SPEAKER_00] It's still far from having my only job.
+
+221
+00:22:12,800 --> 00:22:13,200
+[SPEAKER_00] Right, right.
+
+222
+00:22:13,680 --> 00:22:21,920
+[SPEAKER_00] So yeah, it's just nice to see people's reaction like yourself.
+
+223
+00:22:22,400 --> 00:22:36,960
+[SPEAKER_00] So you say that you like it, you say that you enjoy using it and you found it useful, which is very important for me and which is very fulfilling for me.
+
+224
+00:22:38,000 --> 00:22:44,320
+[SPEAKER_01] One thing that's kind of funny with this, too, is did you actually get the release out like right before WWDC?
+
+225
+00:22:44,960 --> 00:22:45,680
+[SPEAKER_01] No, I didn't.
+
+226
+00:22:46,240 --> 00:22:46,720
+[SPEAKER_00] I couldn't.
+
+227
+00:22:46,960 --> 00:22:48,720
+[SPEAKER_00] So it was, that's what I thought I remembered.
+
+228
+00:22:49,040 --> 00:23:01,440
+[SPEAKER_01] So the thing that you ran into that's a little unlucky or lucky, I guess, depending how you want to look at it is a time zone app, one of the core features of a time zone app is that you want to look at it easily.
+
+229
+00:23:01,840 --> 00:23:13,280
+[SPEAKER_01] And so you in the original version you had widget support, but you had widget support for the old, the old iOS widgets, which actually you couldn't do that in Swift UI, could you?
+
+230
+00:23:13,600 --> 00:23:14,960
+[SPEAKER_01] I think Today Extensions, right?
+
+231
+00:23:15,200 --> 00:23:15,280
+[SPEAKER_00] Yeah.
+
+232
+00:23:17,280 --> 00:23:20,640
+[SPEAKER_00] I had the Wigita extension in the Today Extensions.
+
+233
+00:23:20,960 --> 00:23:20,960
+[UNKNOWN] Yeah.
+
+234
+00:23:21,600 --> 00:23:23,520
+[SPEAKER_00] Part of the old Swift UI.
+
+235
+00:23:25,280 --> 00:23:38,320
+[SPEAKER_00] And when they updated the iOS and I saw that you can put widgets in the home screen, it's like a no brainer to bring it over, right?
+
+236
+00:23:38,880 --> 00:23:49,520
+[SPEAKER_00] And it's so much more useful there because you can literally see on your screen, which is what a clock or a time zone app should do.
+
+237
+00:23:50,000 --> 00:23:55,840
+[SPEAKER_01] And like you built you built it all in SwiftUI, which is the framework that widgets worked with.
+
+238
+00:23:56,080 --> 00:24:03,280
+[SPEAKER_01] So I assume it was, I don't want to say trivial because obviously it's work, but it seems like it's probably a pretty natural natural choice to move it over there.
+
+239
+00:24:03,520 --> 00:24:08,400
+[SPEAKER_00] Yeah, it's it's yeah, it's much more, much easier than what other people said.
+
+240
+00:24:09,280 --> 00:24:22,000
+[SPEAKER_00] Because I already had the foundation, all I had to do is make it available to the Today extension, Today home widget thingy.
+
+241
+00:24:22,640 --> 00:24:22,720
+[SPEAKER_00] Yeah.
+
+242
+00:24:23,200 --> 00:24:37,120
+[SPEAKER_00] So it's much more easy than what other people had to because if you don't have a CVS UI app, you had, you literally had to create a new view from scratch, right?
+
+243
+00:24:37,520 --> 00:24:37,680
+[UNKNOWN] Right.
+
+244
+00:24:38,080 --> 00:24:40,880
+[SPEAKER_00] But I just reused the old ones.
+
+245
+00:24:42,320 --> 00:24:44,880
+[SPEAKER_00] Of course I made some changes, but yeah.
+
+246
+00:24:45,280 --> 00:25:00,640
+[SPEAKER_00] Another thing that's really cool, and it's interesting to hear you say that you hadn't done like Swifter, I guess you've done iOS development but not in native code before, because to me this is one of those apps that's just really solid feeling.
+
+247
+00:25:01,680 --> 00:25:08,320
+[SPEAKER_01] And in your settings screen, one of the things I really love is that you have a whole bunch of options for different views that you can see.
+
+248
+00:25:08,960 --> 00:25:19,440
+[SPEAKER_01] And there's like a live preview of the things that you're changing in there, which is something that I feel like most people don't necessarily go the extra mile to do because it is work.
+
+249
+00:25:20,000 --> 00:25:23,200
+[SPEAKER_01] But it makes such a big difference in understanding what each of those settings do.
+
+250
+00:25:23,600 --> 00:25:31,120
+[SPEAKER_00] So I've been an UX engineer before and I've been pretty involved with the UX community.
+
+251
+00:25:31,680 --> 00:25:37,520
+[SPEAKER_00] We even had the first UX community in Ankara called UX Minimum.
+
+252
+00:25:37,920 --> 00:25:44,880
+[SPEAKER_00] So I'm pretty involved with the UX and the UX user experience in general.
+
+253
+00:25:45,760 --> 00:25:52,000
+[SPEAKER_00] And that's why I wanted to create the app with UX in my mind, right?
+
+254
+00:25:52,720 --> 00:26:00,560
+[SPEAKER_00] So when you use the app, I gave the app to other people and just watch them, what are they doing.
+
+255
+00:26:01,040 --> 00:26:06,720
+[SPEAKER_00] And I just gathered some feedback from them, what they are expecting, things like that.
+
+256
+00:26:07,440 --> 00:26:14,400
+[SPEAKER_00] And the live thing that you mentioned was a feedback from one of these sessions.
+
+257
+00:26:14,640 --> 00:26:15,360
+[SPEAKER_00] Oh, that's interesting.
+
+258
+00:26:15,760 --> 00:26:16,880
+[SPEAKER_00] So, yeah, yeah.
+
+259
+00:26:18,320 --> 00:26:25,920
+[SPEAKER_00] And I just saw the opportunity and just thought that it's going to be useful for people.
+
+260
+00:26:27,280 --> 00:26:35,440
+[SPEAKER_01] That's one of those things that I don't want to speak for other indies, but at least for myself, because it's indie development is such an insular thing.
+
+261
+00:26:35,760 --> 00:26:43,920
+[SPEAKER_01] I, like, I'm pretty good about tweeting out what I'm working on and trying to get feedback, but actually handing it to somebody and watching them use it.
+
+262
+00:26:44,800 --> 00:26:48,880
+[SPEAKER_01] Like as soon as you said that, I was like, I think the only time I've done that is with my children.
+
+263
+00:26:49,840 --> 00:26:57,360
+[SPEAKER_01] I will give my children the app and let them poke around because I think it's funny and I actually have learned a couple lessons from that, but I've never done that with other people.
+
+264
+00:26:57,600 --> 00:27:04,240
+[SPEAKER_01] I mean, obviously right now, I can't really do that with other people, but that's something that's probably worth kind of going out of your way to do.
+
+265
+00:27:04,640 --> 00:27:05,120
+[SPEAKER_00] Yeah, yeah.
+
+266
+00:27:06,000 --> 00:27:10,400
+[SPEAKER_00] It's especially useful if the other people is not tech savvy.
+
+267
+00:27:10,720 --> 00:27:11,200
+[SPEAKER_00] Yeah, right.
+
+268
+00:27:11,920 --> 00:27:21,680
+[SPEAKER_00] So I gave my phone to my mother to see what is what he's going and what he's doing on my phone.
+
+269
+00:27:22,480 --> 00:27:33,680
+[SPEAKER_00] So even though he didn't understand the concept of time zones that much, but she gave me some ideas that's where my phone is lacking, right?
+
+270
+00:27:34,080 --> 00:27:35,280
+[SPEAKER_00] Where my app is lacking.
+
+271
+00:27:36,880 --> 00:27:42,320
+[SPEAKER_00] I just recommend this thing to all the indeed developers.
+
+272
+00:27:42,880 --> 00:27:51,520
+[SPEAKER_00] Just give your app to someone who doesn't know anything about your app and just watch what they are doing without telling anything.
+
+273
+00:27:52,000 --> 00:27:52,560
+[SPEAKER_00] But just watch.
+
+274
+00:27:53,920 --> 00:27:56,160
+[SPEAKER_00] Yeah, that I should be doing that, honestly.
+
+275
+00:27:58,720 --> 00:28:18,000
+[SPEAKER_00] That's yeah, if there's one lesson I'll take away from this, that I think I'm gonna actually try and set something up for that because yeah, like, because as I played designer, when I tried setting my stuff up, I'm always trying to think, like I was trying to think through problems that people could run into.
+
+276
+00:28:18,320 --> 00:28:25,520
+[SPEAKER_01] Like my player screen is sort of weird and I was afraid people wouldn't know how to dismiss it and so I added a little animated arrow to point them down.
+
+277
+00:28:26,080 --> 00:28:29,440
+[SPEAKER_01] But like, I never really confirmed that that was really an issue.
+
+278
+00:28:29,760 --> 00:28:39,600
+[SPEAKER_01] And maybe there's something else that to me seems obvious because I'm a developer who is steeped in the Higg and knows, you know, iOS guidelines, but like most people aren't.
+
+279
+00:28:39,840 --> 00:28:44,320
+[SPEAKER_01] And so what are the things that to me are obvious that aren't necessarily obvious to others?
+
+280
+00:28:44,480 --> 00:28:51,200
+[SPEAKER_01] And yeah, the best way to figure that out is just hand it to someone who's totally ignorant of what your app's supposed to do and watch where they fail.
+
+281
+00:28:51,680 --> 00:28:52,400
+[SPEAKER_01] Yeah, exactly.
+
+282
+00:28:52,880 --> 00:28:53,680
+[SPEAKER_01] Yeah, that's cool.
+
+283
+00:28:54,880 --> 00:28:59,120
+[SPEAKER_01] So the last question I have about the limbs is again a selfish one.
+
+284
+00:29:00,080 --> 00:29:02,640
+[SPEAKER_01] Is it available on Apple Silicon Max?
+
+285
+00:29:02,800 --> 00:29:03,760
+[SPEAKER_01] Because I don't have one yet.
+
+286
+00:29:04,320 --> 00:29:04,400
+[SPEAKER_01] Yeah.
+
+287
+00:29:04,560 --> 00:29:04,640
+[SPEAKER_01] Yeah.
+
+288
+00:29:05,440 --> 00:29:05,760
+[SPEAKER_01] Oh man.
+
+289
+00:29:05,920 --> 00:29:06,560
+[SPEAKER_01] That makes me happy.
+
+290
+00:29:06,800 --> 00:29:09,440
+[SPEAKER_00] Yeah, I just made it available.
+
+291
+00:29:09,920 --> 00:29:13,920
+[SPEAKER_00] I also saw a command on the App Store.
+
+292
+00:29:13,920 --> 00:29:23,040
+[SPEAKER_00] the app store that some people said nice things about how it works beautifully on their Mac and how it is.
+
+293
+00:29:24,000 --> 00:29:31,680
+[SPEAKER_00] Yeah, I I couldn't try it because I don't have a silicone Mac, but yeah, apparently it works okay.
+
+294
+00:29:32,160 --> 00:29:32,800
+[SPEAKER_01] That's awful.
+
+295
+00:29:32,880 --> 00:29:37,360
+[SPEAKER_01] I mean, I I have found myself multiple times wanting it on my Mac.
+
+296
+00:29:38,160 --> 00:29:41,040
+[SPEAKER_01] One, because widgets like port over really well.
+
+297
+00:29:41,760 --> 00:29:44,640
+[SPEAKER_01] And so, yeah, just having the widget sitting there on the side is nice.
+
+298
+00:29:45,040 --> 00:29:52,720
+[SPEAKER_01] But then, yeah, also being able to pop it open and quickly drag that line to see, okay, at seven o'clock tonight, what time is it going to be?
+
+299
+00:29:53,200 --> 00:29:54,400
+[SPEAKER_01] in the UK?
+
+300
+00:29:55,280 --> 00:29:58,000
+[SPEAKER_01] That's a thing I frequently think through.
+
+301
+00:29:59,440 --> 00:30:05,600
+[SPEAKER_01] Or sometimes I'll literally type it out in Google, What time is it in XYZ, even though I have the app literally sitting right there.
+
+302
+00:30:05,680 --> 00:30:10,320
+[SPEAKER_01] And I've got my habits out for the phone, but on the Mac, it would be really nice.
+
+303
+00:30:10,400 --> 00:30:14,240
+[SPEAKER_01] So one of these days, I'll get one of those M1 Max.
+
+304
+00:30:14,400 --> 00:30:17,520
+[SPEAKER_01] And I'm excited to know that that's sitting there waiting for me.
+
+305
+00:30:19,360 --> 00:30:31,200
+[SPEAKER_00] It's available as an iOS app in the Mac, but maybe in the near time, it can be available as a native app.
+
+306
+00:30:31,520 --> 00:30:31,680
+[SPEAKER_00] Ooh.
+
+307
+00:30:33,360 --> 00:30:35,520
+[SPEAKER_00] Catalyst or like learning apps?
+
+308
+00:30:35,680 --> 00:30:38,720
+[SPEAKER_00] No, no, using SwiftUI.
+
+309
+00:30:38,880 --> 00:30:40,160
+[SPEAKER_00] Oh, right, SwiftUI.
+
+310
+00:30:40,320 --> 00:30:40,720
+[SPEAKER_00] Oh, wow.
+
+311
+00:30:41,360 --> 00:30:42,640
+[SPEAKER_00] You can use SwiftUI now.
+
+312
+00:30:43,360 --> 00:30:43,760
+[SPEAKER_00] That's right.
+
+313
+00:30:44,720 --> 00:30:45,040
+[SPEAKER_00] Interesting.
+
+314
+00:30:45,680 --> 00:30:49,520
+[SPEAKER_00] Well, I am, I'm looking forward to maybe that in the future.
+
+315
+00:30:50,320 --> 00:31:00,240
+[SPEAKER_00] So I guess I'll round this out with asking the question I ask everyone, which is, what is a person or people out there that have inspired you and your work that you would recommend other people to check out?
+
+316
+00:31:00,640 --> 00:31:09,760
+[SPEAKER_00] Yeah, I can recommend James Thompson, the developer of Peacock, because he's kind of a friend of mine.
+
+317
+00:31:11,040 --> 00:31:15,520
+[SPEAKER_00] And he helped me a lot on the development of the LIMS app.
+
+318
+00:31:16,320 --> 00:31:22,000
+[SPEAKER_00] So I would recommend him to anyone who somehow doesn't know him.
+
+319
+00:31:22,880 --> 00:31:24,000
+[SPEAKER_00] So go check him out.
+
+320
+00:31:24,400 --> 00:31:39,600
+[SPEAKER_01] Yes, he is one of the nicest, I mean, I've probably said this about too many people, but really honestly, genuinely extremely kind person and has a wealth of knowledge when it comes to Apple development over a long period of time.
+
+321
+00:31:39,920 --> 00:31:41,920
+[SPEAKER_01] So I will give a hard second to that.
+
+322
+00:31:42,080 --> 00:31:51,280
+[SPEAKER_01] And if you, you know, if you want a primer on who James Thompson is, one of the it's like the third or fourth episode of this podcast I had him on, so you can check that out.
+
+323
+00:31:54,080 --> 00:31:54,400
+[UNKNOWN] Awesome.
+
+324
+00:31:55,120 --> 00:32:00,640
+[SPEAKER_01] So I guess I'll wrap up by asking where can people find you and your app?
+
+325
+00:32:01,120 --> 00:32:19,200
+[SPEAKER_00] Yeah, they can reach me at Twitter with Elise underscore click, glitch, they can reach me at my personal website elise dot DE V comma and they can download the limbs from the app store.
+
+326
+00:32:19,600 --> 00:32:21,920
+[SPEAKER_00] Just type the limbs and press enter.
+
+327
+00:32:22,560 --> 00:32:22,960
+[SPEAKER_00] Awesome.
+
+328
+00:32:23,040 --> 00:32:25,600
+[SPEAKER_00] And that's D I L I M S, right?
+
+329
+00:32:26,080 --> 00:32:26,720
+[SPEAKER_01] Yes, yes.
+
+330
+00:32:27,040 --> 00:32:28,400
+[SPEAKER_01] It's the limbs time zones app.
+
+331
+00:32:29,280 --> 00:32:33,680
+[SPEAKER_01] Doesn't that mean it means time zone or means zones in Turkish?
+
+332
+00:32:34,000 --> 00:32:34,800
+[SPEAKER_01] In Turkish, yes.
+
+333
+00:32:35,520 --> 00:32:46,960
+[SPEAKER_00] So the name of the app is so when I first decided to create the app, I just needed to type something in the Xcode project name.
+
+334
+00:32:47,200 --> 00:32:47,680
+[SPEAKER_00] Ah, yes.
+
+335
+00:32:48,160 --> 00:32:50,640
+[SPEAKER_00] So the first thing was zones, right?
+
+336
+00:32:51,520 --> 00:32:55,280
+[SPEAKER_00] And that project went sideways quickly.
+
+337
+00:32:55,840 --> 00:32:59,920
+[SPEAKER_00] So I had to create a new project.
+
+338
+00:33:00,720 --> 00:33:05,360
+[SPEAKER_00] And since zones were already there, I just used Dilimbs.
+
+339
+00:33:06,400 --> 00:33:13,200
+[SPEAKER_00] Which is Dilim means time zone in Turkish and Dilims means time zones.
+
+340
+00:33:14,240 --> 00:33:15,840
+[SPEAKER_00] So kind of a mix.
+
+341
+00:33:16,560 --> 00:33:18,880
+[SPEAKER_00] And later on, I just liked the name.
+
+342
+00:33:19,840 --> 00:33:20,640
+[SPEAKER_00] So I kept it.
+
+343
+00:33:21,040 --> 00:33:24,560
+[SPEAKER_01] And it's a short name that's available in the App Store, which is always a precious thing.
+
+344
+00:33:26,400 --> 00:33:26,720
+[SPEAKER_00] Awesome.
+
+345
+00:33:26,880 --> 00:33:27,440
+[SPEAKER_01] Well, thank you.
+
+346
+00:33:27,600 --> 00:33:29,040
+[SPEAKER_01] Thank you again so much for coming on.
+
+347
+00:33:29,360 --> 00:33:30,480
+[SPEAKER_01] This was really fun.
+
+348
+00:33:30,720 --> 00:33:34,160
+[SPEAKER_01] I'm glad to get to talk about a new app on here as well.
+
+349
+00:33:34,320 --> 00:33:35,440
+[SPEAKER_01] I want to make sure I keep doing that.
+
+350
+00:33:35,680 --> 00:33:36,720
+[SPEAKER_01] So thank you.
+
+351
+00:33:36,960 --> 00:33:37,440
+[SPEAKER_01] Thank you again.
+
+352
+00:33:38,160 --> 00:33:39,840
+[SPEAKER_01] Thank you again for having me.
+
+353
+00:33:40,160 --> 00:33:41,280
+[SPEAKER_00] It was really fun.
+
+354
+00:33:43,920 --> 00:33:44,640
+[UNKNOWN] Thanks for listening.
+
+355
+00:33:44,880 --> 00:33:46,880
+[SPEAKER_01] If you'd like to discuss the show, you can find me on the website.
