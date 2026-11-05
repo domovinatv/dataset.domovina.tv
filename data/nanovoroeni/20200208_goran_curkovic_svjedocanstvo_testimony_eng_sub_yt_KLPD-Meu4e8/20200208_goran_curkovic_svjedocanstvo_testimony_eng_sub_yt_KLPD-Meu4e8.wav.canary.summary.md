@@ -1,81 +1,93 @@
-# Goran Ćurković | Svjedočanstvo
+# Goran Ćurković – svjedočanstvo
 
-**Kanal:** nanovoroeni  
+**Kanal:** _unlisted  
 **Datum:** 2020-02-08  
 **Trajanje:** 69 min  
-**YouTube:** https://youtu.be/KLPD-Meu4e8  
-**Model:** gemini-2.5-flash  
+**Epizoda:** https://domovina.ai/v/KLPD-Meu4e8  
+**Izvornik:** youtube.com/watch?v=KLPD-Meu4e8  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-Ovaj podcast donosi potresno životno svjedočanstvo Gorana Ćurkovića, koji opisuje svoj put od teškog djetinjstva obilježenog obiteljskim tragedijama, ovisnošću o drogama i kriminalom, do duhovnog obraćenja i pronalaska mira u vjeri. Goran detaljno priča o godinama provedenim na ulici, u zatvorima i psihijatrijskim ustanovama, te o čudesnom preokretu koji je doživio u zajednici Cenacolo u Međugorju. Njegova priča kulminira pomirenjem s obitelji, brakom i posvećenošću evangelizaciji i pomaganju drugima.
+Na susretu molitvene zajednice Nanovo rođeni Goran Ćurković iznosi svoje životno svjedočanstvo, koje dijeli na život bez Boga i život s Bogom. Opisuje djetinjstvo u Splitu u obitelji bez vjere, obiteljske tragedije, pokušaj samoubojstva u 13. godini nakon kojeg mu je metak ostao u glavi, ovisnost o drogi i alkoholu, zatvor, psihijatriju te devet godina života na ulici. Prekretnica dolazi nakon molitve Zdravomarije i susreta sa ženom koja ga šalje u Međugorje, gdje ulazi u zajednicu Cenacolo, miri se s ocem, zapošljava se uz pomoć fratara i upoznaje svoju buduću suprugu Katarinu. Danas je ikonograf, otac petero djece i svakodnevno svjedoči hodočasnicima, a posebno mu je drago svjedočiti u zatvorima i na psihijatriji.
 
 ## Ključne teme
 
-- ovisnost o drogama
-- obiteljski problemi
-- duhovno obraćenje
-- život na ulici
+- obraćenje i vjera
+- ovisnost o drogi i alkoholu
+- obiteljski odnosi i pomirenje
 - zajednica cenacolo
 - međugorje
-- pomirenje s obitelji
-- evangelizacija
+- molitva
+- brak i obitelj
+- svjedočanstvo kao misija
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
+| SPEAKER_00 | Goran Ćurković | gost |
 | SPEAKER_01 | Voditelj | voditelj |
-| SPEAKER_02 | Goran Ćurković | gost |
 
 ## Ključni zaključci
 
-1. Goranovo djetinjstvo u Splitu bilo je obilježeno obiteljskim tragedijama, nedostatkom vjere i molitve, te nasiljem oca, što ga je rano gurnulo u pušenje, alkohol i kriminal.
-2. Nakon majčine smrti u 13. godini, Goran je pao u depresiju, pokušao samoubojstvo (metak mu je ostao u glavi) i počeo koristiti marihuanu, a kasnije i heroin, što ga je dovelo do zatvora i psihijatrijske bolnice s dijagnozom epilepsije i shizofrenije.
-3. Proveo je devet godina na ulici, doživljavajući ekstremnu degradaciju, samoozljeđivanje i višestruke pokušaje samoubojstva, osjećajući da je smrt jedini spas.
-4. Prekretnica se dogodila kada je, nakon molitve Zdravo Marijo, susreo ženu Dijanu koja ga je poslala u Međugorje, gdje je ušao u zajednicu Cenacolo i započeo proces oporavka od ovisnosti.
-5. U zajednici je doživio pomirenje s ocem, shvativši da su se roditelji godinama molili za njegovo obraćenje, te je pronašao novi smisao života kroz rad, molitvu i vjeru.
-6. U Međugorju je upoznao Katarinu, Čehinju koja je željela postati časna sestra, i nakon duge borbe i Božje intervencije, vjenčali su se i dobili petero djece, gradeći novi život posvećen vjeri.
-7. Danas Goran aktivno svjedoči o svom obraćenju, posebno u zatvorima i psihijatrijskim ustanovama, smatrajući to svojom misijom i izvorom snage, te pomaže drugima da pronađu put iz ovisnosti.
+1. Goran je odrastao u katoličkoj obitelji bez molitve i odlaska u crkvu, a obitelj su pogodile tragedije: sestra je poginula pavši s petog kata, brat je ostao gluhonijem, a majka je pala u depresiju i alkoholizam te umrla kad je Goranu bilo 13 godina.
+2. Na prvu godišnjicu majčine smrti pucao je sebi u glavu; metak mu je ostao u glavi, a nakon toga je počeo s tabletama, marihuanom i heroinom, krao je, bio u zatvoru i na psihijatriji, ranio oca nožem i devet godina živio na ulici.
+3. Nakon noći u kojoj je shvatio da je sam kriv za svoj život i počeo moliti Zdravomariju, žena Dijana pronašla ga je u parku, sredila mu dokumente i poslala ga u Međugorje, gdje je odmah primljen u zajednicu.
+4. U zajednici ga je promijenio primjer momaka koji su umjesto njega radili u kamenolomu, a nakon molitve i noćnog klečanja u kapeli otac ga je neočekivano posjetio te su se pomirili; otac mu je rekao da se za njega obitelj već godinama moli.
+5. Nakon četiri godine zajednice uz pomoć fra Slavka Barbarića dobio je posao čišćenja zahoda u Međugorju, gdje je upoznao Katarinu, Čehinju koja se molila za poziv u redovništvo; vjenčali su se 3. lipnja 2000. u crkvi sv. Jakova u Međugorju i imaju petero djece.
+6. Kaže da od dolaska u Međugorje nije imao epileptičnih napada, da nikad nije imao napast vratiti se drogi, a maćeha je devet godina svaki mjesec plaćala misu za njegovo obraćenje.
+7. Danas je ikonograf i svakodnevno drži po tri do četiri svjedočanstva; zajedno sa suprugom uputio je više od 60 mladih u zajednicu, a najdraže mu je svjedočiti u zatvorima i na psihijatriji.
 
 ## Spomenute osobe
 
-- Goran Ćurković
+- Marko (Goranov otac)
 - Dijana
-- Katarina
-- Fra Slavko Barbarić
-- Smiljivoj Koludrović
+- sestra Elvira
+- fra Slavko Barbarić
+- fra Ivan Bradvica
+- Milivoj Koludrović
 - Besim
-- Rifet
-- Otac Dušan
+- Rifat
+- Drago
+- Katarina
+- otac Dušan
 - Lucija
 - Luka
 - Ana
-- Marko
+- Marko (Goranov sin)
 - Jan
+- Vicka
 
 ## Spomenuta mjesta
 
 - Split
+- Međugorje
+- Bosna i Hercegovina
+- Hrvatska
+- Argentina
 - Popovača
 - Remetinec
-- Međugorje
 - Križevac
+- Mostar
+- Njemačka
 - Hamburg
+- Češka
+- Slovačka
+- Italija
+- Poljska
+- Irska
 - Dublin
 - Ukrajina
 - Engleska
-- Irska
-- Italija
-- Slovačka
-- Mostar
-- Češka
-- Crkva sv. Jakova
 
 ## Spomenute organizacije
 
-- Cenacolo
+- Zajednica Cenacolo
 - Caritas
+- Centar za borbu protiv droge u Mostaru
+- Župni ured Međugorje
+- policija
 
 ---
-*Sentiment: positive | Generirano: 2026-03-19T11:45:27.973Z*
+*Sentiment: mixed | Generirano: 2026-11-02T15:05:29.851Z*
