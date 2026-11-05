@@ -1,0 +1,2447 @@
+1
+00:00:00,160 --> 00:00:12,160
+As much as I've designed it to have that artwork first principle in mind, it was also because I wanted people recommending a media to someone else.
+
+2
+00:00:12,960 --> 00:00:24,880
+If that person pulls out their phone and the app they use to get some information about the movie looks sleek and polished, I wanted the other person to go, wow, what is this?
+
+3
+00:00:25,360 --> 00:00:26,320
+Welcome to Launched.
+
+4
+00:00:26,560 --> 00:00:49,040
+I'm Charlie Chapman, and today I'm excited to bring you the developer behind the excellent media tracking app SQL, Romain, welcome to the show.
+
+5
+00:00:51,120 --> 00:00:51,680
+You're laughing.
+
+6
+00:00:51,760 --> 00:00:54,400
+So let's just No, no, no, no, no, no.
+
+7
+00:00:54,640 --> 00:00:56,080
+This is the show that we're going to do this.
+
+8
+00:00:56,480 --> 00:01:00,560
+So I just want the audience to know what you just had to endure for what?
+
+9
+00:01:00,880 --> 00:01:02,000
+A good five minutes straight.
+
+10
+00:01:02,320 --> 00:01:11,040
+And I've said it on the show before, but I really like that to try to get as close as I can to the correct pronunciation of someone's name whenever we start.
+
+11
+00:01:11,360 --> 00:01:12,160
+You get close.
+
+12
+00:01:14,720 --> 00:01:15,920
+Yeah, that's very kind of you.
+
+13
+00:01:16,320 --> 00:01:25,600
+Do you want to, uh, for the record, tell people the actual correct way to pronounce your name so that they don't have my horrible butchering as the version in their ears?
+
+14
+00:01:26,320 --> 00:01:28,240
+So, Romain Lefebvre.
+
+15
+00:01:28,640 --> 00:01:29,440
+Lefebvre, okay.
+
+16
+00:01:29,680 --> 00:01:34,720
+So, if you ever see it written, just ignore the B and you'll be easier.
+
+17
+00:01:35,440 --> 00:01:35,760
+Perfect.
+
+18
+00:01:36,160 --> 00:01:56,080
+So, yeah, I think this is maybe the second episode in a row where I've had to start it with somebody correcting their name, but I think it's a, it's a service that I provide here is that I give people a medium to have the correct pronunciation of their name etched in audio form whenever you usually see them only in written form on the internet.
+
+19
+00:01:56,800 --> 00:01:57,680
+I take that very seriously.
+
+20
+00:01:59,200 --> 00:02:02,320
+Living in London is something I struggle with, so I'm very grateful.
+
+21
+00:02:03,200 --> 00:02:03,280
+Yes.
+
+22
+00:02:03,840 --> 00:02:19,040
+And we'll get into that here in a second, but before we get too far, I want to give you an opportunity to give a quick elevator pitch for what SQL is, just because I have a tendency to go down a lot of rabbit holes before we get to the actual app, and I feel like it's helpful for people to know where we're going.
+
+23
+00:02:19,360 --> 00:02:23,200
+So just in a short form, what is the app SQL?
+
+24
+00:02:24,080 --> 00:02:24,240
+Sure.
+
+25
+00:02:24,880 --> 00:02:30,640
+It's an IOS, iPadOS, macOS and even VisionOS app.
+
+26
+00:02:31,520 --> 00:02:40,320
+So very focused on Apple platforms for tracking your movies, your TV shows, but also your games, your books and even your audiobooks.
+
+27
+00:02:40,480 --> 00:02:48,160
+So instead of having to jongle between different apps, you'll just use one that has a uniform set of features.
+
+28
+00:02:48,320 --> 00:02:59,360
+So you don't have to remember that this book tracking app that you're using has these features, but this other one doesn't or these features on that other one are paid and these ones are free.
+
+29
+00:02:59,600 --> 00:03:00,800
+So it's sort of central.
+
+30
+00:03:00,800 --> 00:03:04,560
+It kind of centralizes everything that essentially you consume during your downtime.
+
+31
+00:03:05,440 --> 00:03:05,760
+Perfect.
+
+32
+00:03:06,080 --> 00:03:11,920
+And before we get into SQL and the story of how you built that, I want to give everyone an introduction to who you are.
+
+33
+00:03:12,240 --> 00:03:15,680
+So the three questions I always ask to start the show are where are you from?
+
+34
+00:03:16,160 --> 00:03:18,480
+Do you have a formal education related to what you do?
+
+35
+00:03:18,800 --> 00:03:22,800
+And then let's talk about what your career was leading up to you building SQL.
+
+36
+00:03:23,600 --> 00:03:23,760
+Sure.
+
+37
+00:03:24,000 --> 00:03:26,400
+So in case you didn't catch it, I'm French.
+
+38
+00:03:26,800 --> 00:03:29,760
+Born in Marseille, so that's the southeast of France.
+
+39
+00:03:30,560 --> 00:03:31,680
+I never really grew up there.
+
+40
+00:03:31,920 --> 00:03:44,320
+We moved a back to Marseille for university and then to Oxford where I studied computer science and software engineering.
+
+41
+00:03:44,880 --> 00:03:45,040
+Cool.
+
+42
+00:03:45,200 --> 00:03:47,840
+So it seems relatively relevant to what you do today.
+
+43
+00:03:48,240 --> 00:03:48,320
+Yeah.
+
+44
+00:03:48,560 --> 00:04:05,840
+Although interestingly, I was more inclined towards design when it came to choosing a career path because I've essentially been using Photoshop since I was, I think, twelve years old, not doing anything of particularly great ambition.
+
+45
+00:04:06,240 --> 00:04:17,040
+You know, I would hang out on community forums and I think people would want, you know, little themed icons for their profiles and like banners for their signatures.
+
+46
+00:04:17,760 --> 00:04:19,760
+So I would basically just be making these for people.
+
+47
+00:04:20,480 --> 00:04:29,680
+So initially I wanted to go down the kind of design related routes, you know, maybe CGI or graphic design or that kind of stuff.
+
+48
+00:04:29,840 --> 00:04:35,120
+And then my parents kind of pushed me towards a more engineer related role.
+
+49
+00:04:35,280 --> 00:04:36,160
+And I thought, you know what?
+
+50
+00:04:36,480 --> 00:04:37,200
+I like computers.
+
+51
+00:04:37,440 --> 00:04:40,960
+I don't know that much about them, but I think I can do it.
+
+52
+00:04:41,280 --> 00:04:41,840
+So yeah.
+
+53
+00:04:42,560 --> 00:04:44,640
+And so you got a computer science degree.
+
+54
+00:04:44,880 --> 00:04:52,800
+Did you graduate and kind of go into the engineering world and get a job at like a normal company or like what, what was that like?
+
+55
+00:04:53,520 --> 00:04:58,560
+So before graduating in my uni, we had to do internships.
+
+56
+00:04:59,680 --> 00:05:03,200
+So I had been doing I I did a couple internships.
+
+57
+00:05:03,440 --> 00:05:05,120
+The first one didn't go too well.
+
+58
+00:05:05,680 --> 00:05:10,720
+The second one was much more successful, but I did a couple internships as an iOS developer.
+
+59
+00:05:11,280 --> 00:05:11,600
+Ah, okay.
+
+60
+00:05:11,920 --> 00:05:14,800
+Had you done iOS or were you an iPhone user before that?
+
+61
+00:05:15,440 --> 00:05:16,560
+I was an iPhone user.
+
+62
+00:05:16,800 --> 00:05:20,560
+We had a brief Objective C course at uni.
+
+63
+00:05:21,920 --> 00:05:22,560
+Very progressive.
+
+64
+00:05:23,600 --> 00:05:24,160
+Very progressive.
+
+65
+00:05:24,320 --> 00:05:31,360
+And also the fact that it didn't scare me off was probably all the square brackets didn't immediately.
+
+66
+00:05:31,840 --> 00:05:32,080
+I know.
+
+67
+00:05:32,720 --> 00:05:35,200
+For me, they just made they just made a lot of sense.
+
+68
+00:05:35,440 --> 00:05:36,160
+So yeah.
+
+69
+00:05:36,640 --> 00:05:39,040
+So I kind of was an iPhone user.
+
+70
+00:05:39,280 --> 00:05:46,720
+I, you know, I feel like it's probably a bit typical, but I I kind of resonated a lot with Apple's design philosophy.
+
+71
+00:05:47,280 --> 00:05:56,640
+And I think at the time as well, it's kind of when I realized that my design skills could be used for developing, you know, designing the things I was developing.
+
+72
+00:05:57,200 --> 00:06:04,400
+So in a group project, I would always end up being the guy who was doing the design., so it's kind of a miracle that I managed to be an engineer by the end of that.
+
+73
+00:06:04,880 --> 00:06:18,320
+But, you know, that's when I actually learned about UI design, UX design, and what it actually takes to create an interface that sort of makes sense and is usable and achieves its goals, right?
+
+74
+00:06:18,960 --> 00:06:22,480
+That wasn't part of the curriculum at all, but you just figure it out.
+
+75
+00:06:23,040 --> 00:06:37,840
+I do feel like if you're in that sort of Apple, Mac and then IOS, you know, community, it is a much more blended world than the other engineering, like communities that I've been part of at least.
+
+76
+00:06:38,800 --> 00:06:49,920
+There's often a lot of people I've had a lot of people on this podcast that are like, you know, they're like, I'm a designer that kind of masquerades as an engineer or I'm an engineer who kind of masquerades as a designer.
+
+77
+00:06:50,160 --> 00:07:03,840
+But like people, even if they don't see it as they don't identify themselves that way or they don't see it as their specialty, they enjoy that sort of multidisciplinary way of thinking and you're rewarded with that on the Apple platforms.
+
+78
+00:07:03,920 --> 00:07:07,840
+I feel like more, especially in the indie space for being able to kind of bring both together.
+
+79
+00:07:08,560 --> 00:07:08,960
+Absolutely.
+
+80
+00:07:09,040 --> 00:07:14,960
+I think like, you know, even now, I still don't really know what I identify with.
+
+81
+00:07:15,280 --> 00:07:20,240
+Even though I graduated as a developer, I just feel so strongly about design.
+
+82
+00:07:21,120 --> 00:07:22,800
+And we'll get into it.
+
+83
+00:07:22,960 --> 00:07:25,920
+But my career was actually as a designer, not as a developer.
+
+84
+00:07:26,320 --> 00:07:26,640
+Oh, okay.
+
+85
+00:07:27,520 --> 00:07:34,800
+So it like I had very little experience, apart from this internship as a professional engineer.
+
+86
+00:07:35,040 --> 00:07:37,280
+So that was an interesting turn, I'd say.
+
+87
+00:07:38,320 --> 00:07:38,640
+Interesting.
+
+88
+00:07:38,880 --> 00:07:43,280
+So you ended up when you kind of got into your career going the design route.
+
+89
+00:07:43,440 --> 00:07:45,600
+Was that at software companies though, I'm guessing?
+
+90
+00:07:46,160 --> 00:07:46,240
+Yes.
+
+91
+00:07:46,640 --> 00:07:48,560
+And it was completely not.
+
+92
+00:07:48,720 --> 00:07:51,280
+Not by mistake, but it wasn't intentional.
+
+93
+00:07:51,680 --> 00:08:01,520
+The first company I applied to, which was in London, hired me technically as an engineer, but sort of a design minded engineer.
+
+94
+00:08:01,920 --> 00:08:13,440
+So they knew that I enjoyed design, they had seen a few prototypes of things that I had worked on, and they thought that was a nice complement to their current engineering skills.
+
+95
+00:08:13,680 --> 00:08:24,240
+So they got me through the door, and I think within a week of my joining, their designer left the company, and they were like, well, you can do design, right?
+
+96
+00:08:25,040 --> 00:08:29,120
+And so I don't think I touched a single line of code in that job.
+
+97
+00:08:29,600 --> 00:08:30,320
+Was that nice?
+
+98
+00:08:30,560 --> 00:08:34,480
+Like, was it kind of like, oh my gosh, I can't believe this opportunity opened up the door?
+
+99
+00:08:34,720 --> 00:08:36,640
+Or were you like, I miss writing code?
+
+100
+00:08:37,280 --> 00:08:39,440
+Eventually, that's what happened.
+
+101
+00:08:40,080 --> 00:08:44,320
+I think initially, I was just like, hell, you know, like you, you're keen to prove yourself.
+
+102
+00:08:45,520 --> 00:08:48,880
+They throw a challenge at you and you just want to rise to the challenge.
+
+103
+00:08:49,040 --> 00:08:53,200
+And so I was just like, yeah, I will design this feature for you.
+
+104
+00:08:53,600 --> 00:08:58,560
+And I stayed at this company for, I think it was five or six years.
+
+105
+00:08:59,040 --> 00:09:00,560
+I did design and then I.
+
+106
+00:09:00,560 --> 00:09:07,760
+And then as you tend to do, I don't know if you have any startup experience, but they sort of throw more and more challenges at you and try to get more and more out of you.
+
+107
+00:09:07,920 --> 00:09:10,400
+So eventually I became product manager.
+
+108
+00:09:11,600 --> 00:09:11,680
+Yeah.
+
+109
+00:09:12,400 --> 00:09:18,640
+So eventually I became product manager again with no qualification at all, you know, learning everything on the job.
+
+110
+00:09:19,200 --> 00:09:32,880
+And there was a point at which they hired a CTO who sat me down and he said, you're going to need to choose between product management and product design because I think you can be great at both.
+
+111
+00:09:33,680 --> 00:09:36,640
+But right now you're not doing a good, you know, you can be great.
+
+112
+00:09:37,120 --> 00:09:40,800
+at both, but you, you're not doing a good job at either because you're trying to do both.
+
+113
+00:09:41,120 --> 00:09:55,120
+And I think for me, that's when I decided that design was what I wanted to do because I just have something about just creating something and being able to look, look back at the end of the day and say, like, yeah, I made this, it's cool.
+
+114
+00:09:55,680 --> 00:10:11,520
+Yeah, I feel like product management or management of any kind, you know, I think a lot of engineers listening probably have, you know, that are later in their careers have gone through the experience of being an IC individual contributor engineer and then growing into a leadership type role.
+
+115
+00:10:12,000 --> 00:10:12,720
+And that's.
+
+116
+00:10:12,720 --> 00:10:28,640
+it's hard when you were in a role where like you've tangibly had things you made sitting in front of you to transition to a role where when you look back at the year, you're like, these are the things my team made, but nothing is like yours the same way.
+
+117
+00:10:29,360 --> 00:10:37,760
+And I feel like a lot of people on this podcast, that's when the indie app development thing started because you needed a little thing to like sit and mold yourself and be like, this is mine.
+
+118
+00:10:38,160 --> 00:10:38,240
+Yeah.
+
+119
+00:10:38,640 --> 00:10:40,080
+I mean, that is basically it.
+
+120
+00:10:40,320 --> 00:10:47,280
+And I think, you know, I I did ponder this very dilemma, I guess for myself.
+
+121
+00:10:47,360 --> 00:10:57,360
+It's like, do I want to take more of a managerial role, which I did for a while, but I always felt like I need to be able to create something.
+
+122
+00:10:57,920 --> 00:10:59,760
+And it's just a different type of creation, right?
+
+123
+00:11:00,000 --> 00:11:04,480
+Like there is a creation by proxy that happens when you're managing the people who are doing it.
+
+124
+00:11:05,600 --> 00:11:20,640
+I can tell you, like at RevenueCat, there are teams where even though the person leading it probably isn't doing 95% of the like manual work themselves, the output is 100% them.
+
+125
+00:11:20,960 --> 00:11:21,360
+You know what I mean?
+
+126
+00:11:21,680 --> 00:11:31,200
+So like there is a real craft to it, but I think it's also just a different skill set and a lot of people are less interested or haven't built up that skill set or whatever.
+
+127
+00:11:31,360 --> 00:11:38,480
+And it takes a long time to build, just like it took a long time to build your skills in the craft of design or software development or whatever.
+
+128
+00:11:39,120 --> 00:11:39,200
+Yeah.
+
+129
+00:11:39,680 --> 00:11:45,120
+And I think, you know, different people will have different affinities for different types of tasks, right?
+
+130
+00:11:45,440 --> 00:11:50,080
+Like you might not enjoy managing or you might, right?
+
+131
+00:11:50,320 --> 00:11:57,200
+Like you might be a developer and you start putting your toes into management and you realize that actually you're getting a lot of satisfaction out of it.
+
+132
+00:11:57,600 --> 00:11:59,360
+And I think that's great if it's you, right?
+
+133
+00:11:59,600 --> 00:12:03,200
+I think in my case it wasn't't, I enjoyed the mentorship element.
+
+134
+00:12:04,000 --> 00:12:07,200
+I didn't necessarily enjoy the management element of it.
+
+135
+00:12:07,920 --> 00:12:18,480
+So along this, so I guess in this case, you kind of then went back into more design-oriented work at the sort of individual contributor level.
+
+136
+00:12:19,520 --> 00:12:23,600
+Were you doing your own side indie apps throughout all of this?
+
+137
+00:12:23,920 --> 00:12:30,720
+Or at this stage, were you pretty much focused only on your day job when it came to software development and design?
+
+138
+00:12:32,480 --> 00:12:43,520
+Halfway through that job, I think two or three years in, I started getting a getting a niche for coding my own stuff again.
+
+139
+00:12:44,080 --> 00:13:07,040
+And that was like the code itself was the thing you missed, like the actual Yeah, it's like for me it's almost like the brain teaser part of it, you know, it's like how how can I make this happen, you know, and even from like optimization of the code is like how can I make this the you know, best code it can in a way, right?
+
+140
+00:13:07,760 --> 00:13:21,680
+And so that I missed that, but I was also worried that I was going down a path that wasn't my original degree and I would slowly lose credibility as a developer as well.
+
+141
+00:13:21,920 --> 00:13:29,200
+Like if you wanted to go back, you wouldn't have that sort of fallback in terms of just like strategic employment opportunities.
+
+142
+00:13:30,000 --> 00:13:30,400
+Exactly.
+
+143
+00:13:31,360 --> 00:13:38,880
+And so I, funny enough as well, so when I graduated, I think it was the year Apple announced Swift.
+
+144
+00:13:39,600 --> 00:13:43,920
+And so I was very, you know, basically I had no Swift experience.
+
+145
+00:13:44,400 --> 00:13:45,280
+Yeah, nobody had.
+
+146
+00:13:45,680 --> 00:13:48,960
+Yeah, but, you know, two or three years in, I still didn't have any Swift experience.
+
+147
+00:13:50,080 --> 00:13:52,800
+And so I was very much an Objective C developer.
+
+148
+00:13:52,960 --> 00:13:59,520
+And I thought to myself, well, I probably should have a little side project that I can at least be.
+
+149
+00:14:00,240 --> 00:14:06,080
+The goal was for me to familiarize myself with UIKit again, which after three years I kind of had forgotten.
+
+150
+00:14:06,160 --> 00:14:16,800
+So the app was still coded in Objective C as a proxy for me to just familiarize myself or refamiliarize myself with UIKit.
+
+151
+00:14:17,360 --> 00:14:24,240
+And that was, that's an app I released in 2019, not with much ambition again.
+
+152
+00:14:24,240 --> 00:14:29,200
+And again, basically, I made it for myself and I thought, well, it's it's called remindly.
+
+153
+00:14:29,440 --> 00:14:37,520
+It's an app to create Apple reminders more conveniently than Apple reminders would let you do.
+
+154
+00:14:37,840 --> 00:14:43,280
+And the main reason through to the store, which was your first app, you know, you'd release to the store then it was.
+
+155
+00:14:43,680 --> 00:14:46,720
+And it actually started as a set of shortcuts.
+
+156
+00:14:47,200 --> 00:14:49,360
+And so I would basically I had my own shortcuts.
+
+157
+00:14:49,600 --> 00:14:51,840
+I was just like being design minded.
+
+158
+00:14:52,000 --> 00:14:58,800
+It wasn't particularly pleasant to just like tap options in shortcuts to be like, oh, I want to be reminded of this when I arrive at home.
+
+159
+00:14:58,960 --> 00:15:02,560
+And like, you know, there's like three or four different selections you need to make.
+
+160
+00:15:03,280 --> 00:15:07,200
+And so I thought to myself, like, well, it could be a nice design challenge.
+
+161
+00:15:07,360 --> 00:15:12,160
+I can make my own app, familiarize myself with coding again, and get this out the door.
+
+162
+00:15:12,400 --> 00:15:15,520
+But I literally didn't message to anyone.
+
+163
+00:15:15,840 --> 00:15:22,480
+I didn't have a social media presence, so like it launched to no fanfare whatsoever.
+
+164
+00:15:23,120 --> 00:15:23,680
+Nor did I try.
+
+165
+00:15:24,160 --> 00:15:34,560
+Were you wanting it to be, or was it like the goal mostly was to have an app in the store for the sake of going through that process, slash like a portfolio piece or something?
+
+166
+00:15:35,040 --> 00:15:45,840
+It was mostly a portfolio piece, I added a tip jar to the app just on the off chance that anyone would find it useful and wanted to reward me for it.
+
+167
+00:15:46,560 --> 00:15:50,320
+I think to this date, the only person who tipped me is still my mom.
+
+168
+00:15:50,960 --> 00:15:57,600
+I didn't have the heart to tell her that Apple would take a cut out of that, so I don't think she knows, but yeah.
+
+169
+00:15:58,640 --> 00:16:00,000
+So okay, so you had that.
+
+170
+00:16:00,720 --> 00:16:09,200
+And I guess before moving on, you know, how do you feel about the worth of doing that project?
+
+171
+00:16:09,600 --> 00:16:12,400
+Because I think, at least, to lead the witness a little bit.
+
+172
+00:16:13,040 --> 00:16:23,920
+I feel like having a sort of Muse side project as an engineer or designer who wants to keep up your engineering chops or whatever, that alone is super valuable.
+
+173
+00:16:24,160 --> 00:16:38,800
+But getting it into the store, going through that whole process and then having a thing that you can kind of update as iOS versions come out, what have you, just that alone, even if nobody's using it, feels to me like a valuable thing to have just as a way.
+
+174
+00:16:39,120 --> 00:16:41,520
+It's almost like doing code caddas or something.
+
+175
+00:16:41,840 --> 00:16:46,160
+It's just a nice exercise to kind of keep you sharp and keep your skills ready for the next thing.
+
+176
+00:16:46,880 --> 00:16:47,520
+Yeah, I agree.
+
+177
+00:16:50,400 --> 00:16:57,760
+The surprising challenge, I think, in releasing this app was, you know, I made the functionality I needed for myself.
+
+178
+00:16:57,920 --> 00:17:01,440
+You know, it's because it started as a project mostly for myself.
+
+179
+00:17:02,080 --> 00:17:03,840
+And so I made the functionality I needed.
+
+180
+00:17:04,160 --> 00:17:06,480
+And then I was like, well, it would be nice if I released it on the app.
+
+181
+00:17:06,640 --> 00:17:10,880
+So, and you quickly realized that, yeah, you can't just release this to.
+
+182
+00:17:11,280 --> 00:17:16,320
+Yeah, it's not like a web thing where you just drop it into a S3 bucket and now it's available to the world.
+
+183
+00:17:17,040 --> 00:17:30,400
+No, and even beyond that, it's just like, well, you kind of need, you know, obviously there's all the hoops Apple makes you jump through from the Ts and Cs that you need to set up somewhere and the App Store screenshots you need to take.
+
+184
+00:17:30,720 --> 00:17:34,080
+But like even this, right, is like creating App Store screenshots.
+
+185
+00:17:34,240 --> 00:17:37,600
+It's like, well, what do I talk about?
+
+186
+00:17:38,080 --> 00:17:42,800
+For this project that is mostly made for me, right, it's like, how do I market this thing?
+
+187
+00:17:43,200 --> 00:17:50,960
+Even though I didn't necessarily have big ambitions for it, you still think about, well, if I'm going to do it, I might as well at least give it a chance.
+
+188
+00:17:51,520 --> 00:17:52,640
+Like an honest try.
+
+189
+00:17:53,040 --> 00:18:00,400
+And a preferences screen and trying to think about what people might want out of this, you know, to configure.
+
+190
+00:18:00,960 --> 00:18:05,840
+And things they, you know, because I can't just hardcode my home address into the app.
+
+191
+00:18:06,080 --> 00:18:07,280
+Yeah, exactly.
+
+192
+00:18:07,520 --> 00:18:07,680
+Right.
+
+193
+00:18:08,160 --> 00:18:10,640
+Eventually, I kind of need to let people be able.
+
+194
+00:18:11,040 --> 00:18:22,880
+So there was a bunch of features like this that I had to suddenly consider, which wasn't completely alien to me, because obviously I was doing UI and UX design as a job.
+
+195
+00:18:23,200 --> 00:18:26,320
+So these were considerations I had in my in my day to day job.
+
+196
+00:18:26,560 --> 00:18:36,320
+But when it comes to your side project, I think it feels strange to to almost relinquish it and say, well, actually.
+
+197
+00:18:36,320 --> 00:18:39,120
+Actually, someone else is going to need to use this now.
+
+198
+00:18:39,920 --> 00:18:49,360
+Ah, like you feel like it took away from the like it almost was worse for you because you know how to make it work for other people too?
+
+199
+00:18:50,080 --> 00:18:52,960
+You know, I don't mean to say this in a negative way, right?
+
+200
+00:18:53,200 --> 00:18:59,440
+Like it wasn't necessarily worse, it was just, you know, when you're creating this, you have a certain mindset.
+
+201
+00:18:59,760 --> 00:19:05,680
+And when you realize that other people need to use this, your mindset shifts.
+
+202
+00:19:06,240 --> 00:19:22,640
+And I think that's the, that was the interesting and useful skill that I gained by doing this part, even though I wasn't trying to make a big deal out of it, or I didn't have any ambitions to make big money out of this, thankfully.
+
+203
+00:19:22,880 --> 00:19:24,480
+Otherwise, I'd be very disappointed.
+
+204
+00:19:24,800 --> 00:19:35,360
+But even though I didn't have big ambitions for it, it was still a useful shift of mindset that allowed me to think about how do I ship something?
+
+205
+00:19:35,680 --> 00:19:43,760
+How do I market it beyond the technical process of like archiving your Xcode project and sending it to App Store Connect and doing all that.
+
+206
+00:19:43,920 --> 00:19:46,320
+It's just that this is going to be used by people.
+
+207
+00:19:47,520 --> 00:19:54,240
+What do I need to change about my approach in this product to make this usable.
+
+208
+00:19:55,200 --> 00:20:06,160
+Okay, so you released that and I don't even know if that's it sounds like maybe that is still in the store, but it's not like a major part of your app portfolio.
+
+209
+00:20:06,640 --> 00:20:12,000
+No, I think I checked earlier actually to this day, it has less than a thousand downloads.
+
+210
+00:20:13,040 --> 00:20:26,720
+Hey, like I even more than a hundred feels like it's kind of cool that there's probably not the app we're here to talk about.
+
+211
+00:20:27,360 --> 00:20:34,080
+So what's the what's the sort of journey from where we left off to, you know, building SQL?
+
+212
+00:20:34,800 --> 00:20:34,880
+Yeah.
+
+213
+00:20:35,680 --> 00:20:44,080
+So after that initial startup job, I joined a separate startup in finance, still mobile app.
+
+214
+00:20:44,880 --> 00:20:48,960
+But I think very quickly, I sort of started getting another itch.
+
+215
+00:20:49,200 --> 00:20:56,000
+And it was a bit different this time because I think there's so much design you can do with a financial product.
+
+216
+00:20:56,480 --> 00:20:56,560
+Yeah.
+
+217
+00:20:56,960 --> 00:21:01,440
+Like in terms of UX, like there's so many ways you can show a list of transactions to people.
+
+218
+00:21:02,480 --> 00:21:15,440
+And, you know, sure, there's a bunch of transactional screens, but, like, they're very sort of, you know, make sure you're conveying the purpose and the result of what they're about to do from a financial perspective.
+
+219
+00:21:16,240 --> 00:21:19,680
+And so it's not particularly exciting to me, at any rate.
+
+220
+00:21:20,320 --> 00:21:26,640
+And so I started thinking about getting another project out, this time that would be more visual.
+
+221
+00:21:27,520 --> 00:21:44,160
+And that's when I remembered one of the prototypes I made when I was looking for a bit less so now, but I was very into movie trailers.
+
+222
+00:21:45,680 --> 00:21:50,800
+And I felt like they were like this unique art form in themselves.
+
+223
+00:21:51,360 --> 00:21:54,320
+I think trailers nowadays are not nearly as exciting.
+
+224
+00:21:54,960 --> 00:22:04,080
+I feel like because this I'm trying to think, I mean, this would have been later, but still this is more in the air of like the social network trailer or a lot of Christopher Nolan trailer.
+
+225
+00:22:04,240 --> 00:22:06,000
+You know, The Dark Knight, I remember was one of the.
+
+226
+00:22:07,200 --> 00:22:10,960
+I must have watched the Dark Knight trailer at least a hundred times at the time.
+
+227
+00:22:11,200 --> 00:22:17,440
+Yeah, it's funny when you think back on that the because there was like the separate trailers like app, right?
+
+228
+00:22:17,840 --> 00:22:18,880
+At least on the Apple TV.
+
+229
+00:22:19,200 --> 00:22:22,000
+Yeah, actually Apple had a trailers app.
+
+230
+00:22:22,320 --> 00:22:22,400
+Yeah.
+
+231
+00:22:22,640 --> 00:22:23,760
+And it was awesome.
+
+232
+00:22:24,320 --> 00:22:24,800
+It was great.
+
+233
+00:22:25,120 --> 00:22:25,520
+It was great.
+
+234
+00:22:25,680 --> 00:22:25,760
+Yeah.
+
+235
+00:22:26,080 --> 00:22:30,800
+So I think the trailers app could only show you trailers in 720p, if I remember correctly.
+
+236
+00:22:30,800 --> 00:22:32,640
+And it's like, Hey, that's high definition.
+
+237
+00:22:32,880 --> 00:22:34,320
+That was high definition at the time.
+
+238
+00:22:34,720 --> 00:22:43,520
+But I did find out that they actually had 10 HP versions of these trailers and I was able to just download these trailers and oh, interesting.
+
+239
+00:22:44,000 --> 00:22:44,000
+Okay.
+
+240
+00:22:44,400 --> 00:22:45,280
+Glorious at the time.
+
+241
+00:22:45,840 --> 00:22:48,480
+Anyway, side attention, you know, ten.
+
+242
+00:23:24,320 --> 00:23:28,800
+games on sale and don't have time to play them all and lose track of which ones I've got.
+
+243
+00:23:29,360 --> 00:23:33,840
+And the same would happen for movies because the company had a generous book allowance.
+
+244
+00:23:34,160 --> 00:23:37,680
+Sorry, the same would happen for books because the company had a generous book allowance.
+
+245
+00:23:38,320 --> 00:23:42,240
+So you had to use that and you're like, oh, so every month you forget what you have.
+
+246
+00:23:42,800 --> 00:23:49,920
+Every month I would buy new books and I would like to have these bookshelves of books and not really know which ones I had read and which ones I hadn't.
+
+247
+00:23:50,400 --> 00:24:01,440
+And so that convergence sort of made me think like, I wonder if I could make something that allows me to track all of these things in a single place.
+
+248
+00:24:02,480 --> 00:24:09,200
+And I think that was an interesting challenge because these media types are consumed differently.
+
+249
+00:24:10,720 --> 00:24:20,400
+If you look at, you know, a game tracking app, it usually behaves quite a bit differently than a TV show tracking app or movie tracking app or book tracking app.
+
+250
+00:24:20,960 --> 00:24:37,520
+And I thought to myself, like, well, if I can create an experience that is, I don't know, that goes to the core of what all of these are, but still, you know, offer unique capabilities and, you know, I did it.
+
+251
+00:24:37,680 --> 00:24:43,600
+Basically, the interesting challenge for me was to not design for a lowest common denominator.
+
+252
+00:24:43,920 --> 00:24:44,000
+Yeah.
+
+253
+00:24:44,480 --> 00:24:44,720
+Exactly.
+
+254
+00:24:45,280 --> 00:24:46,000
+That's the risk, right?
+
+255
+00:24:46,400 --> 00:24:52,800
+Because you could just make a you could just make a database essentially that is essentially a glorified Excel sheet.
+
+256
+00:24:52,800 --> 00:25:07,440
+Well, at the end of the day, I mean, most of our apps are glorified Excel sheets, but like you could take that to its extreme in either direction where it's a really plain Excel sheet that they all look exactly the same and they maybe have a square image or something that's exactly the same.
+
+257
+00:25:08,240 --> 00:25:12,480
+Or you could go the other way where it's completely open database, but like it's not a.
+
+258
+00:25:13,600 --> 00:25:14,560
+refined experience.
+
+259
+00:25:14,880 --> 00:25:30,320
+And the challenge, the fun, I think the reason why these types of apps are a joy for designers in particular, kind of like the old Twitter world, is it's like you have this set of challenges that you can solve in different ways and you can put your own, like, stamp on that, right?
+
+260
+00:25:31,360 --> 00:25:31,760
+Exactly.
+
+261
+00:25:32,160 --> 00:25:44,480
+And so, you know, then it's, it comes down to, well, if I design a screen for, you know, looking at the details of the movie, that's great.
+
+262
+00:25:45,040 --> 00:26:01,440
+But then how do I design a screen for looking at the details of a game that still feels like it belongs to the same app and that a user, you know, if you've been tracking movies and suddenly you decide to track a game that you don't feel lost because it's completely different in its interactions.
+
+263
+00:26:02,160 --> 00:26:23,520
+And so, yeah, that was what attracted me to that particular project, it was, you know, the visual aspect of it because media is so rich and I thought, you know, I can do something really interesting with this and the sort of, I guess, challenge of finding an experience that can encompass all of these media types together.
+
+264
+00:26:24,560 --> 00:26:31,760
+So at this time, because this is probably 2020, 2021, like it was 2021, yes.
+
+265
+00:26:31,920 --> 00:26:34,640
+I think I started working on it in 2021.
+
+266
+00:26:35,200 --> 00:26:44,400
+So by this point, there definitely were, like, this was almost a genre of app to some degree, some different kinds of like tracking apps, right?
+
+267
+00:26:44,960 --> 00:26:45,280
+Were you...
+
+268
+00:26:46,960 --> 00:27:10,160
+like looking at those and being like none of these solve a specific problem I have or were you almost trying to be like I want to just build my thing in a in a silo to some degree based on your way of solving that problem I think it was a little bit of both where I started looking at, you know, I guess you can call it competition, right?
+
+269
+00:27:10,560 --> 00:27:11,360
+See what's out there.
+
+270
+00:27:11,840 --> 00:27:22,080
+You know, I used because I used the movie tracking app and I used the game tracking app and the book tracking app, and so I had experience using these apps, right?
+
+271
+00:27:22,480 --> 00:27:34,400
+And so that sort of merging of the genres, I guess, came from that me wanting something that felt a bit more unified.
+
+272
+00:27:34,960 --> 00:27:35,040
+Right.
+
+273
+00:27:35,360 --> 00:27:36,560
+And was that your like?
+
+274
+00:27:36,560 --> 00:27:48,400
+What's your central thesis, so to speak, for the app, the differentiator in your head of like the main problem you're trying to solve is the unification, bringing them all into a cohesive singular app experience?
+
+275
+00:27:48,640 --> 00:28:00,240
+Or were there other like driving forces at the beginning that were like, you know, input needs to be as smooth, way smoother than these or the experience of viewing them needs to be better or something?
+
+276
+00:28:00,480 --> 00:28:06,800
+Like, was there a specific thesis that was driving it or it almost sounds like the way you're talking about it, it was the unification was kind of the big thing.
+
+277
+00:28:07,120 --> 00:28:16,480
+Yeah, the unification was the main thesis when it came to actually building the app, that input was extremely important to me.
+
+278
+00:28:16,880 --> 00:28:36,480
+I spent countless days, I think, at the time creating a single text field where you could search for something and the app would hopefully surface the actual item you want across all of the data sources it uses, so you wouldn't have to go, I'm adding a movie or I'm adding a game.
+
+279
+00:28:36,640 --> 00:28:42,240
+It just goes, you stop typing and immediately you get the result you expect at the top, hopefully.
+
+280
+00:28:42,400 --> 00:28:45,360
+I don't think the first version was particularly good at doing that.
+
+281
+00:28:46,000 --> 00:29:24,320
+I think it got significantly better as time went on and my skills and you know sort of observations of what was going wrong improved but but yeah so the the main thesis was definitely the unification and I think I would be remissed if I didn't call out the excellent so far app as well by Sean Hickman which I think you had on on your show before yeah he's been on the show yeah and I think I can't remember if his app came out around the time I started working on SQL much long before but I think it was out when I started my work on SQL and I think it was one of the apps I evaluated and for me I wanted something that.
+
+282
+00:29:24,480 --> 00:29:27,280
+that would be more visual, right?
+
+283
+00:29:27,680 --> 00:29:37,760
+That would sort of another main thesis, and I think that was sort of the main actually sort of requirements when I started working on that I wrote down, it was sort of the ease of input.
+
+284
+00:29:38,000 --> 00:29:40,240
+And the second one was artwork first.
+
+285
+00:29:41,600 --> 00:29:55,040
+And it was always putting forward the uniqueness of the media you're tracking so that you're creating a space that is sort of reflective of each individual piece of media that you're tracking.
+
+286
+00:29:55,600 --> 00:29:58,000
+So I like that you said you think you wrote that down.
+
+287
+00:29:58,400 --> 00:30:00,720
+So you were coming at it.
+
+288
+00:30:01,280 --> 00:30:12,320
+I ask this question a lot and a lot of people sometimes sit and think about it, but I'm curious, like that was a thing at the beginning, before you started building.
+
+289
+00:30:13,120 --> 00:30:21,600
+You thought through what the real thesis or principles of the app were and, importantly, where the priorities lie when you have to make a trade-off.
+
+290
+00:30:21,840 --> 00:30:23,360
+You made those decisions beforehand.
+
+291
+00:30:23,920 --> 00:30:24,000
+Yes.
+
+292
+00:30:24,320 --> 00:30:35,600
+And I think that I feel like that must be sort of my short stint as a PM, you know, to almost lay down the requirements for the product you're about to build or the feature you're about to build.
+
+293
+00:30:36,080 --> 00:30:45,680
+I felt like I need to be able to articulate why I'm doing it and what I'm about to try to achieve.
+
+294
+00:30:47,680 --> 00:30:51,520
+I think that's to me anyway, not that I would say I'm like this great product person.
+
+295
+00:30:51,760 --> 00:31:12,400
+So, you know, maybe everything I'm saying is dumb, but I feel like the people I've worked with who I think are the best at at product stuff are the ones who, whether it's very explicit and written down and intentional at the beginning or something that they build internally in their brain as they're going is the ones who are able to understand.
+
+296
+00:31:12,560 --> 00:31:49,760
+understand that set of priorities and have it nice and like solidified in their brain so that when you know you start building and you run into all these compromises and choices you may have to make you have this thing to fall back to and it's consistent and you make that same choice throughout i think that's where you end up with a product at the end of the day that has a what makes these the great indie apps that we talk about it has this feeling of like intentionality and personality because it's like this is what is a priority to priority to this person and you can feel it throughout.
+
+297
+00:31:49,920 --> 00:31:59,200
+And I think making those choices early on, I think it's a really good exercise for anyone, even if it's just a little side project that you're doing for a portfolio piece.
+
+298
+00:31:59,600 --> 00:32:03,520
+Like when I built Dark Noise, I didn't think anyone was going to actually use it, but I did the same thing.
+
+299
+00:32:03,680 --> 00:32:07,760
+I wrote, these are the three principles, and everything comes back to that.
+
+300
+00:32:08,240 --> 00:32:15,520
+And I will make choices that feel almost silly, but I'm going to prioritize this over everything else always.
+
+301
+00:32:15,920 --> 00:32:17,600
+And I think that's a useful thing to do.
+
+302
+00:32:17,680 --> 00:32:23,680
+And it helps you not fall into the trap of solving things the same way as all the other people that you're looking at as examples.
+
+303
+00:32:24,800 --> 00:32:36,160
+It is very useful and I think it makes you say no to a bunch of stuff, especially for V one because, you know, you think about a movie tracking app.
+
+304
+00:32:36,880 --> 00:32:40,800
+There are countless things I could have added to the app, right?
+
+305
+00:32:41,680 --> 00:32:50,880
+The first version didn't even have cast and crew details because V one didn't even have synopsis or anything like this, like no details.
+
+306
+00:32:51,040 --> 00:32:58,720
+Because that wasn't it wasn't in those that list of priorities you had, you know, it doesn't put it in faster and it doesn't make it visually more appealing necessarily.
+
+307
+00:32:59,280 --> 00:32:59,600
+Exactly.
+
+308
+00:33:00,160 --> 00:33:03,760
+The way I like to design products is with an end goal in mind.
+
+309
+00:33:04,160 --> 00:33:18,000
+So even though the first version didn't have these things, I knew maybe not exactly, but I knew of a few directions I could take once it came time for me to incorporate these features that are maybe more media specific.
+
+310
+00:33:18,640 --> 00:33:23,200
+So that, you know, because it comes down to that unification requirement, right?
+
+311
+00:33:23,440 --> 00:33:26,640
+It's like I've unified it and the first version was very basic.
+
+312
+00:33:26,800 --> 00:33:37,680
+You know, you would open a piece of media and you would see the screen was a big artwork, you know, harking back to that artwork first principle, the poster in the middle and there's some very key detail.
+
+313
+00:33:37,760 --> 00:33:43,520
+And basically you were able to add it to your library, mark it as watched or completed or in your backlog.
+
+314
+00:33:44,320 --> 00:33:45,280
+And that was it, right?
+
+315
+00:33:45,840 --> 00:33:56,400
+Because the point of the app was to be able to track these things effortlessly and to never lose track of the things you're actually excited about.
+
+316
+00:33:57,440 --> 00:34:02,800
+So another, another kind of requirement was, again, that tracking of the things you're excited about.
+
+317
+00:34:02,960 --> 00:34:06,960
+That was that feeling I wanted to capture, you know, when we're talking about media trailers.
+
+318
+00:34:07,920 --> 00:34:12,320
+And so the app was designed around this upcoming section at the top.
+
+319
+00:34:12,960 --> 00:34:20,080
+And when something came out, you had this big carousel saying out now that sort of highlights the thing again, you're excited about.
+
+320
+00:34:20,640 --> 00:34:30,640
+But beyond that, it didn't have all that many features, but they all sort of fed into that set of requirements I had set for myself upfront.
+
+321
+00:34:30,960 --> 00:34:36,480
+And so as you're building this first one, were you thinking, this is very similar to your last app?
+
+322
+00:34:36,880 --> 00:34:42,240
+This is not, you know, if I put a tip jar in and my mom's the only one who buys it, that's totally fine.
+
+323
+00:34:42,400 --> 00:34:47,840
+Or were you like, let's make a run at this as like a little side business.
+
+324
+00:34:48,240 --> 00:34:53,280
+And, you know, did you try to do some more marketing and think through things in that, in that way?
+
+325
+00:34:54,240 --> 00:34:54,320
+Yes.
+
+326
+00:34:54,800 --> 00:34:59,600
+I never really thought I would become an indie out of it.
+
+327
+00:35:00,240 --> 00:35:04,160
+That was sort of a different happenstance, I guess.
+
+328
+00:35:04,640 --> 00:35:06,480
+But I did want to give this a real chance.
+
+329
+00:35:06,640 --> 00:35:13,200
+And, you know, when I started working on it, I was like, well, I think there's a couple of ways I can potentially monetize this.
+
+330
+00:35:14,320 --> 00:35:24,800
+And so I tried to keep this in mind, you know, even thinking as I was creating features, thinking like what should be a paid feature, what should be a free feature.
+
+331
+00:35:26,000 --> 00:35:30,400
+I knew I wanted a free tier because I think media consumption.
+
+332
+00:35:31,120 --> 00:35:35,840
+There's a lot of word of mouth, you know, around the media you're consuming.
+
+333
+00:35:36,080 --> 00:35:39,680
+And so I feel, well, the more people can use the app, the better.
+
+334
+00:35:40,480 --> 00:35:45,360
+The challenge I had with V one is that there weren't very many features I could put behind a paywall.
+
+335
+00:35:46,080 --> 00:35:49,040
+And so I started a bit more narrow.
+
+336
+00:35:49,680 --> 00:35:51,120
+I think there were two or three features.
+
+337
+00:35:51,520 --> 00:35:56,000
+One of them was the notifications for new releases, which is still a paid feature today.
+
+338
+00:35:57,200 --> 00:36:02,800
+But the other was you could only track up to I think it was 25 media items.
+
+339
+00:36:03,280 --> 00:36:06,880
+You could probably use it for a while, I guess, because it's only 25 upcoming then, right?
+
+340
+00:36:07,440 --> 00:36:08,720
+No, it was 25 total.
+
+341
+00:36:09,280 --> 00:36:10,880
+Okay, so you'd have to like roll.
+
+342
+00:36:11,280 --> 00:36:16,000
+I mean, I wish I had had that idea of only doing 25 upcoming, if I'm honest.
+
+343
+00:36:16,080 --> 00:36:30,560
+That is actually quite well, but you do want people to run into the paywall, otherwise it's just free software, which is fine, but like if the goal is to kind of make this into a little business, then nobody's going to upgrade if they never run into it.
+
+344
+00:36:31,040 --> 00:36:50,240
+Exactly, and I think the problem was that she could have a paywall or set of paid features is I think it went against that virality of media where I think people would start would open the app and realize like, I'm going to have to pay for this at some point.
+
+345
+00:36:51,920 --> 00:36:55,360
+And I think it might as well have been paid upfront because of it.
+
+346
+00:36:56,080 --> 00:37:06,320
+Because you could say 25, unless it was 2000, I feel like people would be, you know, 25 or 50 or 100 people would think, This is a paid app.
+
+347
+00:37:07,040 --> 00:37:12,240
+I think it depends on your audience, but I do think that a lot of people on the App Store.
+
+348
+00:37:13,280 --> 00:37:17,840
+especially indies who are marketing probably through their channels.
+
+349
+00:37:18,000 --> 00:37:23,440
+And so it's reaching a more sort of nerdy Apple enthusiast crowd.
+
+350
+00:37:24,240 --> 00:37:29,680
+That group is extremely tuned to think from the very beginning, like, how am I paying for this?
+
+351
+00:37:30,240 --> 00:37:34,560
+It's one of the reasons why I think showing the paywall as part of your onboarding is better.
+
+352
+00:37:35,200 --> 00:37:36,160
+There's a lot of reasons for that.
+
+353
+00:37:36,320 --> 00:37:38,240
+One of them is it converts better, blah, blah, blah.
+
+354
+00:37:38,320 --> 00:37:48,560
+But even just from a pure, like, if your goal is not to make the most money, people just, it gets aggravating when you open an app and you're just like, it's just like, hey, this is free and you can use it.
+
+355
+00:37:48,560 --> 00:37:54,320
+And, you know, if you're one of those people who uses software a lot, you're kind of like, I know there's something coming.
+
+356
+00:37:54,560 --> 00:37:55,440
+Like, where is it?
+
+357
+00:37:55,760 --> 00:37:58,560
+I need to find it so I can decide, am I going to invest in this or not?
+
+358
+00:37:59,360 --> 00:38:11,360
+And so having a free tier that you could use, even if it's super limited, you could use that indefinitely and it's good versus a free tier where you run into a limit eventually.
+
+359
+00:38:11,920 --> 00:38:14,000
+That's not so much a free tier as it is a trial.
+
+360
+00:38:15,040 --> 00:38:16,800
+And people will make that conversion in their head.
+
+361
+00:38:16,960 --> 00:38:19,760
+At least certain cohorts of users, I think, make that conversion in their head.
+
+362
+00:38:20,320 --> 00:38:30,800
+And so, yeah, sometimes I think it's better to be more limited but unlimited within that set versus give everybody access to everything and then they hit a paywall eventually.
+
+363
+00:38:31,040 --> 00:38:35,120
+But I don't know, it can go both ways, but you should think of it more like a trial than a free tier then.
+
+364
+00:38:35,840 --> 00:38:36,160
+Exactly.
+
+365
+00:38:36,400 --> 00:38:43,440
+And I think part of my thinking as well was, well, I will keep working on this up, I will add more features.
+
+366
+00:38:44,480 --> 00:38:59,840
+You know, I already had some ideas for paid features and I thought, well, to me anyway, I don't know if you'd agree, but I think it's easier to turn a paid feature into a free one than it is to take away a free feature and make it paid.
+
+367
+00:39:00,240 --> 00:39:06,400
+Certainly, especially if you want to like grandfather old users in, and then there's just a lot of hairiness technically to do that.
+
+368
+00:39:07,200 --> 00:39:20,400
+Yeah, and I think if in my head the number of items as a limit was never really meant as a, you know, sort of final feature to payroll, if you will.
+
+369
+00:39:20,640 --> 00:39:31,200
+Like I knew it was probably going to go away because again, I wanted to leverage that sort of, you know, I want as many users to use SQL as possible, right?
+
+370
+00:39:31,840 --> 00:39:41,920
+Because I've built it in a way that more users don't really incur more cost to me, you know, beyond my living cost, right?
+
+371
+00:39:42,560 --> 00:39:46,000
+And so supporting a free user doesn't cost me all that much.
+
+372
+00:39:46,880 --> 00:39:48,640
+You mentioned it earlier and I wrote it down.
+
+373
+00:39:48,880 --> 00:39:51,920
+I want to bring up is the data sources.
+
+374
+00:39:52,240 --> 00:40:00,000
+So like, you know, this is not just a database app where every user doesn't have any sort of server hit.
+
+375
+00:40:00,240 --> 00:40:04,160
+Like when you do a search and you try to find a movie and those posters, they're all coming from somewhere.
+
+376
+00:40:04,640 --> 00:40:05,440
+Where is that coming from?
+
+377
+00:40:05,680 --> 00:40:09,360
+Is that somewhere that costs you money or is it one of the like free movie database kind of things?
+
+378
+00:40:09,920 --> 00:40:12,400
+So the movie and series is...
+
+379
+00:40:12,640 --> 00:40:18,400
+is partly coming from, well, is almost wholly coming from the movie DB.
+
+380
+00:40:18,960 --> 00:40:36,880
+So TMDB, which when I started was a free database, they introduced a paid plan which luckily doesn't sync my whole business, which is always the risk, right, when you're relying on third party APIs like this.
+
+381
+00:40:37,360 --> 00:40:42,160
+Speaking of what we say, like where you use a thing and you're kind of like, there's going to be a payment somewhere.
+
+382
+00:40:42,480 --> 00:40:56,240
+I feel like API access is one of those where like, even if something's free now, unless it's like built into the charter of that thing, you should probably set yourself up to be prepared for the fact that maybe it won't be at some point in the future.
+
+383
+00:40:56,880 --> 00:40:56,960
+Yeah.
+
+384
+00:40:57,440 --> 00:41:05,920
+And I think for people who want to use that API, I think they still have a free tier if you're not making any money out of it.
+
+385
+00:41:06,160 --> 00:41:06,240
+Yeah.
+
+386
+00:41:06,480 --> 00:41:07,280
+I think that's right.
+
+387
+00:41:08,000 --> 00:41:08,080
+Yeah.
+
+388
+00:41:08,480 --> 00:41:19,600
+And then the games come from IGDB, which I believe is a subsidiary of Amazon or Twitch or I guess both via a weird game of acquisition.
+
+389
+00:41:19,840 --> 00:41:20,720
+Subsidiaries, yeah.
+
+390
+00:41:21,040 --> 00:41:23,680
+Which is completely free, if I'm not mistaken.
+
+391
+00:41:24,320 --> 00:41:31,760
+And then the books API, for better or worse, is coming from Apple Books, which is obviously Oh, I didn't know they had an API.
+
+392
+00:41:32,320 --> 00:41:41,680
+They have an iTunes API, which works for music and also books, which I'm I would be amazed if anyone at Apple looked at it.
+
+393
+00:41:42,160 --> 00:41:46,800
+Still knows it is it still powered by web objects or whatever that's called?
+
+394
+00:41:48,480 --> 00:41:50,480
+I don't know, but I don't think I want to know.
+
+395
+00:41:50,640 --> 00:42:03,200
+There was there was one there was a week where essentially the API stopped working and it took them a couple of weeks to actually get it back to learn where it's hosted and run it.
+
+396
+00:42:03,440 --> 00:42:06,000
+To find someone who has access to change anything there.
+
+397
+00:42:06,400 --> 00:42:12,880
+Yeah, yeah, so I guess someone touched something at some point and didn't realize they broke the API, which was funny.
+
+398
+00:42:13,120 --> 00:42:13,760
+That's really funny.
+
+399
+00:42:13,920 --> 00:42:16,800
+Yeah, so those are the main, the main three databases I use.
+
+400
+00:42:16,960 --> 00:42:29,760
+Thankfully, none of them are priced outside of what I could afford, but there's always the risk of, you know, what if any of these shut down at some point as well.
+
+401
+00:42:30,240 --> 00:42:36,320
+Have you built things in a way where there's like an abstraction layer where you could like try to swap out?
+
+402
+00:42:37,680 --> 00:42:38,640
+what the provider is.
+
+403
+00:42:39,280 --> 00:42:39,360
+Yeah.
+
+404
+00:42:39,680 --> 00:42:50,640
+So actually, you know, when we're talking about unification, that was also almost part of it, which was how do I build an interface that can accommodate any data source and any media type?
+
+405
+00:42:50,960 --> 00:42:54,480
+At least with V one, it was very straightforward to add a media type.
+
+406
+00:42:54,800 --> 00:42:57,040
+I think it would still be straightforward to do so.
+
+407
+00:42:57,600 --> 00:43:03,280
+And if I wanted to change the source for a media type today, I could if I needed.
+
+408
+00:43:03,760 --> 00:43:17,040
+And that's also, you know, sort of including keeping your old media items on the old data source in a way that isn't going to completely nuke everything, but slowly sort of migrating to a new data source.
+
+409
+00:43:17,120 --> 00:43:20,400
+So like, I sort of, you know, that's more with experience.
+
+410
+00:43:20,480 --> 00:43:21,280
+That wasn't that day one.
+
+411
+00:43:21,440 --> 00:43:35,280
+But it's the kind of stuff that when you're starting to build a business, you're starting to think about what are sort of existence threatening risks for your business, which I don't know if I'm fully equipped for any of these really.
+
+412
+00:43:35,680 --> 00:43:42,960
+You know, I've put stuff in place here and there, but I think there's a bit where you can, especially as an indie, way over think about those.
+
+413
+00:43:43,520 --> 00:43:46,160
+Like, there's a degree of being prepared for things.
+
+414
+00:43:46,240 --> 00:43:58,240
+And then there's a degree of like, you're spending all your time preparing for a disaster that might not happen instead of just moving forward and growing, which is probably the thing that makes you more defensible than anything.
+
+415
+00:43:58,960 --> 00:44:10,160
+Um, but especially when you're making pricing decisions, it's that's a smart thing to think about is like, okay, if this thing that's free becomes paid, like, how can I weather that storm?
+
+416
+00:44:10,320 --> 00:44:13,200
+And having a way to make money is a big part of that.
+
+417
+00:44:14,080 --> 00:44:14,400
+Exactly.
+
+418
+00:44:14,720 --> 00:44:15,040
+Exactly.
+
+419
+00:44:15,200 --> 00:44:15,280
+Yeah.
+
+420
+00:44:15,840 --> 00:44:21,200
+So, you know, we're still talking about the V one here, which is, you know, on, on brand for this show.
+
+421
+00:44:21,600 --> 00:44:24,720
+So, uh, let's get to, you know, the title of this show, the launch itself.
+
+422
+00:44:25,600 --> 00:44:27,440
+So you're treating it more seriously.
+
+423
+00:44:27,520 --> 00:44:36,720
+It sounds like you have at least some desire to make this into, you know, a product that people other than your mom will, will download and maybe even pay for.
+
+424
+00:44:37,440 --> 00:44:43,840
+What did you do to, to try to, like, sort of market that launch and then how did the launch itself go?
+
+425
+00:44:44,560 --> 00:44:46,640
+Honestly, again, fairly little.
+
+426
+00:44:47,360 --> 00:44:55,040
+I would call myself naive, I guess, you know, sort of, I thought, well, you know, I was proud of it.
+
+427
+00:44:55,360 --> 00:45:00,480
+And I felt for the most part, if you build something great, people will come, which maybe.
+
+428
+00:45:00,480 --> 00:45:09,840
+Which may be, but I did one thing, which is I reached out to a few Mac and app oriented websites about the app.
+
+429
+00:45:10,640 --> 00:45:14,960
+And thankfully, it was MaxDorys who picked it up.
+
+430
+00:45:15,360 --> 00:45:21,360
+And it was only a, well, I don't want to sound ungrateful, it was a mention on their members' newsletter.
+
+431
+00:45:22,240 --> 00:45:27,600
+But it still made a significant difference when it comes to numbers, right?
+
+432
+00:45:27,840 --> 00:45:27,920
+Yeah.
+
+433
+00:45:28,560 --> 00:45:36,880
+When you're starting at just, you know, it's on the App Store and you hope you get some search keywords that work out, that is a real source of distribution.
+
+434
+00:45:37,600 --> 00:45:38,400
+that actually exists.
+
+435
+00:45:39,200 --> 00:45:39,520
+Exactly.
+
+436
+00:45:39,680 --> 00:45:50,800
+And, you know, it wasn't a massive influx of users, but I had at least enough users that for the first time I was getting feedback from people, you know, saying it would be nice if your app did this or if it did that.
+
+437
+00:45:51,440 --> 00:45:52,800
+That was actually very nice.
+
+438
+00:45:53,280 --> 00:46:01,040
+It's worth mentioning as well, you know, at that point I had quit my previous job and well, quit is not exactly the word.
+
+439
+00:46:01,440 --> 00:46:03,040
+I volunteered for redundancy.
+
+440
+00:46:04,160 --> 00:46:06,720
+That's such a British way of phrase.
+
+441
+00:46:09,040 --> 00:46:12,000
+Well, I think it's an important distinction in that.
+
+442
+00:46:12,160 --> 00:46:24,800
+that I would not have gone full time on SQL otherwise because it gave me a runway where I thought, well, this app is like the V one is almost done.
+
+443
+00:46:25,840 --> 00:46:34,080
+I have an opportunity to break free from that job and focus on this side project I've been working on for nearly a year.
+
+444
+00:46:35,280 --> 00:46:38,160
+And I thought, well, I'll give it a try.
+
+445
+00:46:38,720 --> 00:46:40,160
+If it works out, great.
+
+446
+00:46:40,960 --> 00:46:47,360
+If it doesn't work out, at least I have a little runway financially to course correct.
+
+447
+00:46:48,160 --> 00:46:50,560
+And a portfolio piece that makes it easier to get a job.
+
+448
+00:46:51,440 --> 00:46:51,760
+Exactly.
+
+449
+00:46:52,160 --> 00:46:57,920
+And so I launched it, I think, in the first eight months.
+
+450
+00:46:58,640 --> 00:47:10,320
+So I say eight months because it took me eight months to release V two, which was, to me, the real launch of SQL in a way, because that's when it actually sort of took off.
+
+451
+00:47:11,200 --> 00:47:14,720
+And so in the first eight months, I made $1,000, I think.
+
+452
+00:47:15,280 --> 00:47:17,280
+So plenty to sustain you living in London.
+
+453
+00:47:18,080 --> 00:47:22,960
+Plenty to sustain my London lifestyle, absolutely.
+
+454
+00:47:23,360 --> 00:47:24,160
+It was clearly not enough.
+
+455
+00:47:24,320 --> 00:48:21,680
+enough and i think i thought well i'm going to release v2 and i'm if i can make a thousand pounds in the first month month of launch for v2 i'll keep going what was it as you're building v2 and also i guess what was what was in v2 but what were you thinking would make that make a difference was it just features or was there some marketing stuff also in that a mix of both from a feature perspective there was you know the obvious omissions from v1 things like checking the synopsis checking being able to look at trailers, being able to track individual episodes, which I don't think V one did, you know, that sort of stuff that actually makes it not just a brain dump of like, oh, I want to watch movie X, let me put it in this app, but actually lets you keep up with the stuff you're actually tracking, right?
+
+456
+00:48:22,480 --> 00:48:34,000
+Especially when it comes to series, like tracking a series and not being able to remember which episode you stopped on or even know when a new episode comes out was a little bit limiting, right?
+
+457
+00:48:34,880 --> 00:48:36,800
+And so that was kind of.
+
+458
+00:48:37,520 --> 00:48:37,920
+the main one.
+
+459
+00:48:38,160 --> 00:48:42,880
+And all of that came from also feedback from the initial wave of users, right?
+
+460
+00:48:43,200 --> 00:48:46,640
+Is what are the priorities for my first users?
+
+461
+00:48:47,040 --> 00:48:50,400
+And that was vital in guiding where the app needed to go.
+
+462
+00:48:50,960 --> 00:48:56,400
+Another one was, you know, your app is great, but I'm opening it and there's nothing for me to add.
+
+463
+00:48:56,720 --> 00:48:57,920
+I have to remember myself.
+
+464
+00:48:58,080 --> 00:49:05,920
+So I added a kind of a fledgling browsing feature where you could see what was trending and what was popular.
+
+465
+00:49:06,720 --> 00:49:08,000
+Just like a better empty state.
+
+466
+00:49:08,720 --> 00:49:08,720
+Yeah.
+
+467
+00:49:09,040 --> 00:49:23,440
+So that at least if you're coming fresh, you have know, essentially it was focused on the initial experience, focused on the continued experience to make sure that you could actually track these things.
+
+468
+00:49:24,000 --> 00:49:32,880
+And that's when I also switched the paywall to allow for unlimited items as well, because now I had more features to put behind the paywall.
+
+469
+00:49:33,280 --> 00:49:40,720
+The main focus but for the launch, that's, you know, where I said earlier I was a bit naive because obviously you know, you reach out to a few media.
+
+470
+00:49:41,680 --> 00:49:46,720
+Some of them will pick it up, but that's when I realized like maybe I should be on social media.
+
+471
+00:49:48,960 --> 00:49:50,960
+Still, I'm not really a social media person.
+
+472
+00:49:51,680 --> 00:49:56,160
+I don't particularly enjoy posting, I guess.
+
+473
+00:49:56,400 --> 00:50:17,200
+Like, you know, I'm I don't really know what it is, but I don't necessarily want to show my work too early or I never think people have anything to not learn from me, but I always feel like I don't have anything worth saying, which is kind of funny now that I'm on a podcast.
+
+474
+00:50:17,680 --> 00:50:17,760
+Yeah.
+
+475
+00:50:19,280 --> 00:50:26,080
+Spending the last hour talking, but, um, but that, you know, that was at least the, the headspace I was in at that time.
+
+476
+00:50:27,040 --> 00:50:31,200
+And so I wasn't on social media and I realized like actually I kind of need to be on social media.
+
+477
+00:50:31,920 --> 00:50:45,280
+And so I slowly started, you know, briefly mentioned the app here and there, sharing a few screenshots from what I was building as you're building it, kind of a build in public style thing.
+
+478
+00:50:46,080 --> 00:50:46,160
+Yeah.
+
+479
+00:50:48,480 --> 00:50:54,640
+I wasn't doing quite as much as some of the more prolific build in public community members, I guess.
+
+480
+00:50:54,720 --> 00:51:19,680
+But, you know, it was sort of me dipping my toes in, joining a few communities and just eventually getting the upcoming update actually noticed, which was a big change from just releasing something and praying that it would get an audience, but actually releasing something knowing that people had seen it, that people had enjoyed it, made a massive difference, right?
+
+481
+00:51:20,480 --> 00:51:35,680
+And that's when, again, the good people at Max Stories actually wrote a full on review about the 2.0 update, which, you know, having been a reader of Max Stories for years, I was just blown away, right?
+
+482
+00:51:36,320 --> 00:51:38,960
+And that is essentially where SQL actually took off.
+
+483
+00:51:39,600 --> 00:51:46,000
+Yeah, Mac stories is I feel like the patron saint of indie developers.
+
+484
+00:51:46,160 --> 00:51:49,200
+Maybe that's yeah, that's the frame I've been looking for a good phrase.
+
+485
+00:51:49,280 --> 00:51:52,000
+I always say like they're like it's like they're like the taste makers.
+
+486
+00:51:52,480 --> 00:52:02,080
+Like they're not the biggest, you know, like in some ways like a nine to five Mac blog post will drive more numbers because it's just bigger readership and everything.
+
+487
+00:52:02,640 --> 00:52:04,240
+And I love everybody at nine to five Mac.
+
+488
+00:52:04,480 --> 00:52:15,200
+This is not a but there's something maybe it's just because you know, I listen to a lot of relay podcasts and so I've listened to App Stories and John and that crew for a long time.
+
+489
+00:52:16,000 --> 00:52:24,000
+I think the other thing is that their articles are kind of a work of art a lot of times in a way that they put a lot of effort into these.
+
+490
+00:52:24,480 --> 00:52:38,560
+Yeah, like I'm sure you had the same experience, but I've read them for a very long time and it wasn't until I read them writing about my app that I realized how deep they go, because they brought up things that I've never tweeted about.
+
+491
+00:52:39,120 --> 00:52:47,360
+I never thought anyone would notice and like little details that I was kind of proud of and I'm like, wow, like they get it in a way that's pretty special.
+
+492
+00:52:48,320 --> 00:52:50,960
+They are not as prolific in terms of the amount that they're writing.
+
+493
+00:52:51,120 --> 00:52:55,120
+I think they can spend more time writing longer form things and doing that.
+
+494
+00:52:55,760 --> 00:52:55,840
+Yeah.
+
+495
+00:52:56,080 --> 00:53:01,280
+And I think to some extent, you know, they wrote about my product better than I could have ever done.
+
+496
+00:53:02,080 --> 00:53:03,680
+I 100% felt the same way.
+
+497
+00:53:04,080 --> 00:53:12,960
+In a way that I'm just like, Yeah, this is probably what I would have said if I could actually, you know, write properly.
+
+498
+00:53:13,120 --> 00:53:21,200
+You know, I mean, it's just like if I could write a review of my own app in a biased way, it's probably the things I would want to be called out.
+
+499
+00:53:21,600 --> 00:53:21,680
+Right.
+
+500
+00:53:22,560 --> 00:54:00,800
+And so the fact that they would automatically pick up on this because obviously you know you reach out to them you know you don't give them talking points you don't you know at most you say this is what's new you know this is what I focused on and they'll they'll do the the work right and the fact that they would call out the things you're proud of is just like quite um I don't know not refreshing but gratifying yes you know I'll say like at least the advice I generally give people is most people aren't mac stories and I don't mean that in a skill level I mean that in a like like I said before most people need to write things really fast.
+
+501
+00:54:01,760 --> 00:54:14,160
+So if you're reaching out to press, it's it is generally better to provide them as much resources, prose, you know, explanations of features, the things that you think are important or cool to call out.
+
+502
+00:54:14,320 --> 00:54:21,120
+It's better to highlight those to people and that that will increase the likelihood of people writing about you.
+
+503
+00:54:21,440 --> 00:54:34,160
+But with all of these things, you know, I'm I'm sure like because that's a community you care about, you built this app with a lot of their ideals in mind just because you share those because you've kind of grown up reading their stuff.
+
+504
+00:54:34,720 --> 00:54:38,960
+But there's nothing you can do to guaranteeantee any of these types of features, right?
+
+505
+00:54:39,440 --> 00:54:41,520
+It's all like build something great.
+
+506
+00:54:42,240 --> 00:54:46,000
+You do not have to reach out, but you definitely increase your odds by reaching out.
+
+507
+00:54:46,480 --> 00:54:52,240
+But it kind of, to some degree, ends there, other than building something that you know fits that audience.
+
+508
+00:54:53,200 --> 00:54:54,080
+Yeah, absolutely.
+
+509
+00:54:54,320 --> 00:55:06,560
+And I think, and the reason I credit, you know, Mac Stories for SQL taking off is actually because, you know, now with a review, it got in front of many more people.
+
+510
+00:55:07,120 --> 00:55:07,200
+Yeah.
+
+511
+00:55:08,240 --> 00:55:12,720
+And that's when people started recommending the app to others.
+
+512
+00:55:14,400 --> 00:55:52,480
+The first sort of event of this happening was Quinn Nelson of Snazzy Labs who I think he was just asking on social media for cool apps that are not very well known that people really enjoy and I wasn't even aware he asked on social media and I watched his video and he highlighted SQL and he said SQL was by far the most recommended app and I was just what do you mean like surely not right like someone like Snazzy Labs who has like I don't know how many viewers he has, but probably millions.
+
+513
+00:55:53,200 --> 00:55:56,640
+And I just thought, like, what do you mean it was the most recommended app?
+
+514
+00:55:57,040 --> 00:55:58,160
+Like, it's not possible.
+
+515
+00:55:58,720 --> 00:55:58,960
+Right.
+
+516
+00:55:59,440 --> 00:56:04,480
+And then the second one, which I thought was funny, is David Pierce of The Verge.
+
+517
+00:56:04,960 --> 00:56:08,000
+You know, every week he writes, installs a newsletter.
+
+518
+00:56:08,560 --> 00:56:15,600
+And I think it's I think it's on Thursdays where he asks people either in general what they've been enjoying that week.
+
+519
+00:56:16,080 --> 00:56:21,040
+And there was a week where he asked specifically for how people kept track of their media.
+
+520
+00:56:22,000 --> 00:56:24,480
+And I thought to myself, it would be really cool if they.
+
+521
+00:56:24,480 --> 00:56:26,800
+or if David highlighted SQL.
+
+522
+00:56:27,200 --> 00:56:30,800
+And I thought, well, I'm working on this beta.
+
+523
+00:56:31,040 --> 00:56:31,760
+It's almost ready.
+
+524
+00:56:32,240 --> 00:56:37,760
+Maybe I'll email him to say, like, hey, I've got this app and it might be of interest.
+
+525
+00:56:38,080 --> 00:56:38,480
+So I did.
+
+526
+00:56:39,280 --> 00:56:49,040
+And he replied, I think, within a couple of hours, saying, like, Oh my God, I absolutely wanted to email you because your app is the most recommended media tracking app in my replies.
+
+527
+00:56:49,280 --> 00:56:53,840
+And again, I was just like, Why would David Pierce want to email me about my app?
+
+528
+00:56:54,640 --> 00:56:59,360
+You know, he actually invited me to just chat with him and we had a call.
+
+529
+00:57:00,320 --> 00:57:11,120
+I just felt very surreal when you're coming from, you know, making this app and for the first eight months there is not anyone but a very, very small audience.
+
+530
+00:57:12,320 --> 00:57:26,000
+And, you know, very grateful for that audience because they helped me shape the future of SQL, but going from this to people actively recommending the app to essentially tastemakers, right?
+
+531
+00:57:27,360 --> 00:57:28,960
+was yeah, surreal.
+
+532
+00:57:29,760 --> 00:57:35,680
+And like if I put on my, you know, growth marketing revenue cat hat, it feels like the primary.
+
+533
+00:57:37,360 --> 00:58:14,560
+distribution mechanism then for sequel is through like organic press and then organic you know sharing within that but even even that maybe it's happening between people the same way but at least the ones you've highlighted it's more like you've built something that resonates with with the press and with the community and because of that they write about it more people find out about it and when they want to reach out to their audience for things people are suggesting it because it it resonates with that specific audience and that kind of comes becomes a way.
+
+534
+00:58:15,040 --> 00:58:15,760
+Yeah, exactly.
+
+535
+00:58:16,000 --> 00:58:23,040
+And, you know, I think I vaguely tried Apple, like app stall search ads.
+
+536
+00:58:23,520 --> 00:58:25,040
+And I was just like, this isn't for me.
+
+537
+00:58:25,440 --> 00:58:28,000
+So, you know, I did not put a lot of money in it.
+
+538
+00:58:28,160 --> 00:58:32,160
+I think I used $100 free credits and that's basically it.
+
+539
+00:58:32,960 --> 00:58:40,400
+And the way I see it, and I also appreciate how fortunate I am to be in this position.
+
+540
+00:58:40,640 --> 00:58:48,880
+But if I have to hustle over social media posts and ad campaigns, this isn't the job I want to do.
+
+541
+00:58:49,280 --> 00:58:52,080
+And I know that's, you know, a very fortunate position that I'm in.
+
+542
+00:58:52,240 --> 00:58:59,760
+I know there's plenty of MD developers that have to crack that social media, you know, outreach.
+
+543
+00:59:01,440 --> 00:59:09,200
+And I haven't had to do any, you know, I post on social media, but it's very much just, nah, I'm, you know, I'm going to release.
+
+544
+00:59:09,680 --> 00:59:14,560
+It's casual and in some ways more aimed at, again, the kind of community enthusiast side.
+
+545
+00:59:15,120 --> 00:59:15,840
+Yeah, exactly.
+
+546
+00:59:16,480 --> 00:59:20,000
+And so, and so I haven't had to do any of that.
+
+547
+00:59:20,640 --> 00:59:30,080
+And the bulk of SQL's growth has come from media coverage and also word of mouth, you know, as you pointed out, you know, I get a lot of emails of people saying I love SQL.
+
+548
+00:59:30,480 --> 00:59:32,480
+I recommend it to all my friends and family.
+
+549
+00:59:33,200 --> 00:59:49,040
+And that was also intentional, you know, the the media detail screen, as much as I've designed it to have that artwork first principle in mind, it was also because I wanted people recommending a media to someone else.
+
+550
+00:59:49,760 --> 00:59:59,520
+If that person pulls out their phone and the app they use to get some information about the movie or add it to their library from their recommendation.
+
+551
+01:00:00,320 --> 01:00:06,000
+If it looks sleek and polished, I wanted the other person to go, like, wow, what is this?
+
+552
+01:00:06,320 --> 01:00:06,480
+Right?
+
+553
+01:00:07,040 --> 01:00:09,280
+Have you done anything with that on the digital front?
+
+554
+01:00:09,680 --> 01:00:25,760
+Like, have you thought about screens or built in features aimed around, you know, screenshotting or something so that, trying to get people to like, if they're sharing a movie that they're excited about, they're sharing a screenshot of the app because it's, it's like the most fun way to share that.
+
+555
+01:00:25,920 --> 01:00:28,320
+And then you kind of get that, like, what's the app, you know, question?
+
+556
+01:00:29,280 --> 01:00:30,160
+I I haven't.
+
+557
+01:00:30,560 --> 01:00:34,480
+I have, I think there's about five hundred tickets in my backlog.
+
+558
+01:00:34,800 --> 01:00:34,880
+Yeah.
+
+559
+01:00:35,600 --> 01:00:36,480
+Things I want to do.
+
+560
+01:00:37,040 --> 01:00:37,520
+This is one.
+
+561
+01:00:38,400 --> 01:00:56,720
+And if you look at the things I've done with SQL in the last few years that actually head towards this kind of feature, the thing for me, and maybe it's a fault, but I before I want to allow sharing, I want to be able to localize the app.
+
+562
+01:00:57,840 --> 01:01:06,400
+But before I want to localize the app, I kind of want to make sure it hits a certain standard of quality that I've set for myself.
+
+563
+01:01:07,600 --> 01:01:17,520
+The idea being that if you're going to share it and people are going to hear about it, if it's not localized, the outreach is going to be be limited anyway, so I might as well do localization first.
+
+564
+01:01:19,040 --> 01:01:26,880
+But if I'm going to increase the outreach, then there are a few features that regularly come back from feedbacks.
+
+565
+01:01:27,200 --> 01:01:29,120
+Like you should have this feature, you should have that feature.
+
+566
+01:01:29,280 --> 01:01:40,240
+And I'm like, I should include these because if people hear about SQL and dismiss it for not having these features, then I don't really want to hear about SQL until it's ready, if that makes sense.
+
+567
+01:01:41,360 --> 01:01:47,920
+Which is a bit of a, I don't know, it might be a bit of a chicken and egg problem, which is or maybe trying to reach perfection.
+
+568
+01:01:48,880 --> 01:01:53,040
+Yeah, I think it's who I am.
+
+569
+01:01:53,120 --> 01:01:58,800
+That's how I create something where I always want to put my best foot forward, I think.
+
+570
+01:01:59,360 --> 01:02:07,840
+And so before I localize the app, I'm absolutely just like, I need these two or three features before I do this.
+
+571
+01:02:08,160 --> 01:02:12,400
+Unfortunately, there were very big features that took me a very long time to build, but I'm getting there.
+
+572
+01:02:12,880 --> 01:02:17,360
+When I don't get sidetracked by redesigning my media detail screen for the fifth time.
+
+573
+01:02:19,360 --> 01:02:25,920
+But yeah, eventually, you know, eventually I'm sure you'll be able to take a screenshot and share that.
+
+574
+01:02:26,240 --> 01:02:28,560
+What I want to do actually is use AppClips.
+
+575
+01:02:29,120 --> 01:02:39,360
+Yeah, but I think if the idea is social, if it's social sharing, it's like images and screenshots, I think are the mechanism that really works.
+
+576
+01:02:39,760 --> 01:02:41,920
+So I think that for me they would go hand in hand, right?
+
+577
+01:02:42,160 --> 01:02:53,120
+There would be a screenshot that you share and there would be a link, you know, a SQL link that you can tap and essentially get started immediately using the app and experiencing what the app is like.
+
+578
+01:02:53,680 --> 01:02:55,200
+I don't see App Cliffs in the wild.
+
+579
+01:02:55,440 --> 01:02:58,240
+Maybe there's maybe there's a reason for it, but I don't know.
+
+580
+01:02:58,400 --> 01:03:00,160
+It's my master plan, App Cliffs.
+
+581
+01:03:01,760 --> 01:03:02,000
+Perfect.
+
+582
+01:03:02,240 --> 01:03:02,560
+All right.
+
+583
+01:03:02,720 --> 01:03:05,760
+Well, I'm very excited to see, you know, all these finally.
+
+584
+01:03:05,760 --> 01:03:11,920
+All these five thousand tickets, you know, come out in the next, in the next couple of weeks because, you know, now we have Fable or Soul or whatever.
+
+585
+01:03:12,240 --> 01:03:13,040
+It's Fable five.
+
+586
+01:03:14,000 --> 01:03:18,080
+Just sick the AIs on it and you should knock that out, you know, before this episode comes out.
+
+587
+01:03:18,480 --> 01:03:20,720
+Yeah, I'll check that progress just after this.
+
+588
+01:03:20,880 --> 01:03:24,720
+I'm sure I knocked it out of the park without any intervention.
+
+589
+01:03:25,520 --> 01:03:28,800
+But for real, this was like, this was super fun talking through all this.
+
+590
+01:03:29,040 --> 01:03:31,520
+You know, it's funny, you said that the other app came out in 2019.
+
+591
+01:03:31,760 --> 01:03:35,280
+I thought Sequel came out in 2019 because that's when Dark Noise came out.
+
+592
+01:03:35,440 --> 01:03:39,520
+And I feel like I've always thought of Sequel as part of this.
+
+593
+01:03:40,160 --> 01:03:42,400
+I feel like there was this, like, space of.
+
+594
+01:03:42,400 --> 01:03:55,120
+wave of indeed wave is a better word of of of indeed apps that came out in that 2019 2020 era that you know I I've now seen like it kind of comes in these different waves but that was this kind of specific crest.
+
+595
+01:03:55,440 --> 01:03:57,840
+No, it was actually a little bit younger than I thought it was.
+
+596
+01:03:58,560 --> 01:03:59,280
+2022.
+
+597
+01:03:59,440 --> 01:03:59,520
+Yeah.
+
+598
+01:04:00,000 --> 01:04:05,280
+Well, from the beginning, it may have been whenever Max Stories wrote about it, if I'm being maybe not V one, maybe V two.
+
+599
+01:04:05,360 --> 01:04:05,440
+Yeah.
+
+600
+01:04:05,680 --> 01:04:06,640
+Yeah, yeah, exactly.
+
+601
+01:04:07,200 --> 01:04:10,640
+But no, it's it's been really fun to watch and obviously use the app as well.
+
+602
+01:04:11,120 --> 01:04:19,920
+And so before before I end the show, I gotta ask the question I asked in the show every time, which is what's a person or people out there that have inspired you and your work?
+
+603
+01:04:20,880 --> 01:04:56,560
+Yeah, I I've got a couple I think one of it isn't necessarily very original but I would have to say David Smith to me like he is the quintessential indeed dev right and like the craftsmanship he puts into his apps and the level of consideration and respect for his users is just like everything I aspire to do and I do say aspire because I think it's a long way for me to get there but yeah if I if I have a North Star I think it's David and the second would be Nick Leith from Remind Me Faster.
+
+604
+01:04:56,560 --> 01:05:10,960
+remind me faster who also released mood faster recently which is respectively this marquee app I guess remind me faster is an easy way of entering reminders into the Apple reminders app which is very similar to my very first Yeah, I was about to say.
+
+605
+01:05:11,200 --> 01:05:17,520
+Yeah, they came out at the same time and he's done an incredible job and he, you know, way better than anything I could have ever done.
+
+606
+01:05:17,920 --> 01:05:30,720
+And you know, he has like such a skill at creating interactions that are so focused that they could be boring but he makes them all delightful.
+
+607
+01:05:31,200 --> 01:06:48,800
+And so for anyone who wants like a master class in design interaction just go and check his apps they're just beautifully made and really really really thought out fantastic all right well thank you again for your time this was like super fun where can people find you and your work yeah I'm on most meaningful social media platforms these days mostly threads and mastodon I think I'm on blue sky too but if you search for at rlfb you know as a as a way to to avoid people mistyping my last name I've taken to i've just taken to shorten it to lfb uh so either roman underscore lfb on uh threads or rlfb on mastodon all right perfect and uh thank you all for listening uh launched is part of the revenue cat podcast family if you want to learn more about the growth side of the mobile app business you should check out subclub uh which is hosted by my good friend and colleague david barnard um you can check out revenycat dot com to learn more about the easiest way to grow and monetize your mobile app business and of course uh you can go to launchedfm dot com to learn more and find more episodes of this here podcast.
+
+608
+01:06:49,200 --> 01:06:52,080
+And a reminder, this is a video podcast as well.
+
+609
+01:06:52,320 --> 01:06:57,600
+So we're on YouTube and you can see, you know, our beautiful offices here and smiling faces.
+
+610
+01:06:58,160 --> 01:06:58,960
+That's it for now.
+
+611
+01:06:59,280 --> 01:07:01,840
+So I will see you all again in two weeks.
+
+612
+01:07:02,320 --> 01:07:02,560
+Bye.
