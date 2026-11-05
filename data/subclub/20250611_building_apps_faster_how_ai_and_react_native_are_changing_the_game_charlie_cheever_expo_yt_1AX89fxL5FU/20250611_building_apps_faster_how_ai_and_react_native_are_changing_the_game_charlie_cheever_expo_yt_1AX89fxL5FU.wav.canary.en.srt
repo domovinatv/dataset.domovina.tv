@@ -1,0 +1,2627 @@
+1
+00:00:01,120 --> 00:00:08,720
+Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:41,120 --> 00:00:46,080
+Hello, I'm your host David Bernard, and with me today, RevenueCat CEO Jacob Iting.
+
+7
+00:00:46,480 --> 00:00:56,880
+Our guest today is Charlie Cheever, the co-founder and CEO of Expo, the easiest way to create native apps and websites that run everywhere using React.
+
+8
+00:00:57,360 --> 00:01:11,840
+On the podcast, we talk with Charlie about why React native has become the default for VC funded apps, how AI is accelerating development cycles, and why speed of iteration matters more than programming language.
+
+9
+00:01:12,640 --> 00:01:15,040
+Hey Charlie, thanks so much for joining us on the podcast.
+
+10
+00:01:15,520 --> 00:01:16,560
+Hey, thanks for having me.
+
+11
+00:01:16,640 --> 00:01:17,600
+It's awesome to be here.
+
+12
+00:01:17,840 --> 00:01:19,760
+And Jacob, nice to have you on as well today.
+
+13
+00:01:20,320 --> 00:01:29,120
+Excited to talk about, I think, one of the dev tools I've been aware of for a long time has also become suddenly super, super relevant in 2025.
+
+14
+00:01:29,520 --> 00:01:30,800
+So yeah, Expo.
+
+15
+00:01:31,440 --> 00:01:52,800
+Yeah, Charlie, so there's a lot of reasons I wanted to have you on the podcast, but the main one kind of Jacob alluded to as CEO of Expo, you're seeing a lot of things happen these days with new people getting into programming with React specifically becoming more and more popular, more and more used, kind of the default for a lot of companies to build on.
+
+16
+00:01:52,960 --> 00:01:56,800
+So why don't we just kick things off with kind of a high level overview?
+
+17
+00:01:57,040 --> 00:02:07,840
+I think a lot of folks listening won't be developers themselves, so they might not kind of understand what React native is, and we can talk about that, and then as well as like how Expo works with that.
+
+18
+00:02:08,000 --> 00:02:09,840
+So yeah, tell us a little bit about React.
+
+19
+00:02:10,400 --> 00:02:10,480
+Yeah.
+
+20
+00:02:10,800 --> 00:02:23,040
+So React is this JavaScript framework that was invented, gosh, you know, over a decade ago by a guy named Jordan Walk at Facebook to build complicated UIs in a way that you could reason about and generate consistently.
+
+21
+00:02:24,080 --> 00:02:25,840
+Core idea is that it's kind of component based.
+
+22
+00:02:26,080 --> 00:02:30,960
+So like the way a human being would break down a product or a UI, it lines up pretty much with that.
+
+23
+00:02:31,040 --> 00:02:33,360
+You know, you'd say, like, oh, here's my pricing component.
+
+24
+00:02:33,440 --> 00:02:37,120
+And within that, I have, you know, the dollars component and the cents component or something like that.
+
+25
+00:02:37,680 --> 00:02:45,520
+But then the real magic to it is that you represent state as sort of, you have this abstract state of the world.
+
+26
+00:02:46,080 --> 00:02:52,240
+And then the UI is always kind of being re rendered to update to represent whatever the current state of the world is.
+
+27
+00:02:52,480 --> 00:02:58,720
+And so if you remember like older websites, a lot of times you would have, you know, you might click a button to say follow someone.
+
+28
+00:03:00,720 --> 00:03:10,320
+It would update correctly where you clicked, but then things would sort of look incorrect on other parts of the screen or there'd just sort of be these inconsistencies with that.
+
+29
+00:03:10,640 --> 00:03:16,640
+And as a general rule, when you use React, all this stuff sort of magically falls on place because, you know, this stuff happens.
+
+30
+00:03:16,800 --> 00:03:22,960
+Actually, this sort of idea, I believe, sort of came from the way that video games have come to work.
+
+31
+00:03:23,120 --> 00:03:29,360
+So if you think about, like, really old video games, like, you know, a snake is moving across the screen on a really low res monitor.
+
+32
+00:03:29,760 --> 00:03:39,840
+And so the way that the snake moves is that you, you draw one pixel more on the right for the head to move a little one step further and you erase one pixel on the far left for the tail to kind of shimmy forward.
+
+33
+00:03:40,160 --> 00:03:45,200
+It's simple enough that you can actually just manipulate pixels directly to kind of change things how you want them to be.
+
+34
+00:03:45,440 --> 00:03:57,120
+But then if you imagine, you know, sort of a modern video game or anything once you get into the era of 3D, it's kind of like think about Call of Duty and like trying to figure out what any given pixel on the screen is.
+
+35
+00:03:57,200 --> 00:03:59,040
+It's just crazy to figure out how to do that.
+
+36
+00:03:59,280 --> 00:04:09,520
+And so the way that people end up doing it is basically like having some sort of representation of what's going on in the world and then a system that kind of figures out, okay, here's this 3D model and it's made up of all these triangles, so we're going to draw this here.
+
+37
+00:04:09,920 --> 00:04:12,560
+And then everything gets kind of re rendered every frame because of that.
+
+38
+00:04:12,960 --> 00:04:16,000
+And so React is sort of that for UIs for applications.
+
+39
+00:04:16,640 --> 00:04:23,040
+And so it's become by far the most popular way to build websites these days.
+
+40
+00:04:23,520 --> 00:04:34,000
+And there's still a lot of older code out there that's using like jQuery and Angular is still pretty big, but like almost everything new that's done by, you know, reasonable people is done using React.
+
+41
+00:04:34,320 --> 00:04:37,520
+Revenue cat dot com app dot revenue cat dot com reasonable people.
+
+42
+00:04:37,760 --> 00:04:37,840
+Yeah.
+
+43
+00:04:38,320 --> 00:04:42,960
+All this AI development is even further accelerating that because there's sort of the most training data to train on.
+
+44
+00:04:43,200 --> 00:04:49,200
+And because it's sort of a component based system that's lin reasons about stuff.
+
+45
+00:04:49,440 --> 00:04:53,440
+There's a lot of reasons why LMs are really good at generating React code and things like that.
+
+46
+00:04:54,000 --> 00:05:08,960
+But what Expo is, is basically like a way to use React to write UIs that not only work on the web, but also work on iOS and Android and other services and give you sort of actually native apps there.
+
+47
+00:05:09,200 --> 00:05:14,080
+It's built on top of this technology from React Native called React Native that came out of Facebook Meta.
+
+48
+00:05:14,560 --> 00:05:19,280
+But you can kind of think of Expo as sort of like the equivalent of what Next.js is in the web world.
+
+49
+00:05:19,440 --> 00:05:27,120
+If people don't know what that is, that's basically like this framework from Brussell that's become sort of the most popular web way to build a new website using React.
+
+50
+00:05:27,920 --> 00:05:38,000
+A lot of batteries are included, a lot of nice features are just kind of already configured for you and set up properly, and a lot of problems are just solved, and it just kind of becomes the standard.
+
+51
+00:05:38,480 --> 00:05:42,960
+And so there's a lot of other, you know, a lot of example code depends on it, things like that.
+
+52
+00:05:43,200 --> 00:05:45,440
+What we provide with Expo is kind of a couple of different things.
+
+53
+00:05:46,000 --> 00:06:05,760
+One is we provide this sort of what we call the Expo SDK, which has, you know, literally a hundred different APIs that let you have access to all the sensors on the device, you know, like the accelerometer, the gyroscope, things like that, but then also handle, you know, basic tasks like, you know, video and audio playback and recording and things that you want to do in an app like that, location services, things like that.
+
+54
+00:06:06,000 --> 00:06:09,200
+And generally, they'll give you access to, you know, there's sort of multiple implementations of these.
+
+55
+00:06:09,360 --> 00:06:11,120
+So, and they're well tested and things like that.
+
+56
+00:06:11,280 --> 00:06:22,800
+So, they work on iOS, they work on Android, and they work on the web in the same way that like a standard library and, you know, Python or something like that includes a lot of the basic things you need to do to write a program that actually does something.
+
+57
+00:06:23,120 --> 00:06:28,160
+You know, the Expo Standard Library is basically a sort of basic batteries included way to get started.
+
+58
+00:06:28,240 --> 00:06:36,960
+And then we have a bunch of tools that include ExpoGo, which is an app in the App Store that will let you sort of get going editing a live real app on your actual computer.
+
+59
+00:06:36,960 --> 00:06:40,480
+You can upload your app on your actual device within seconds, which is a real differentiating factor.
+
+60
+00:06:40,800 --> 00:06:57,600
+So a lot of the new tools that are doing AI stuff with development, they end up using Expo as their way to deliver that stuff because you can download ExpoGo on your phone, scan one of these QR codes that these AI tools are generating, and it can actually be like vibe coding or live editing your app on the fly.
+
+61
+00:06:58,000 --> 00:07:02,000
+And then we also provide a suite of cloud services that are sort of how we make money.
+
+62
+00:07:02,320 --> 00:07:06,320
+Like we run a build service that runs Xcode in the cloud and Android Studio in the cloud.
+
+63
+00:07:06,480 --> 00:07:09,920
+We run sort of an update service, which is kind of the analogue of web hosting.
+
+64
+00:07:10,000 --> 00:07:12,000
+We also do web hosting and a few other things.
+
+65
+00:07:12,720 --> 00:07:29,520
+One of the beauties of React, a working React on the web or on React native, is like live updating, which is not something for mobile that we had without React native, is like you would build, you'd modify your Objective C or Swift or whatever, you'd have to recompile the whole app, you'd have to deploy it to the simulator or to the device.
+
+66
+00:07:29,840 --> 00:07:34,720
+And it's like if you have a small app, maybe it's thirty seconds sometimes, but if you have a big app, that could be minutes.
+
+67
+00:07:35,200 --> 00:07:48,960
+The cycle of using, you know, well, React native and then ExpoGo allowed you to have this like insanely tight build and change and view cycle that was, even though React native, I think especially in the early days was like somewhat tight.
+
+68
+00:07:48,960 --> 00:07:54,160
+was kind of some difficult to work with or it had it wasn't as battery loaded as you've made it now with all the Expo stuff.
+
+69
+00:07:54,480 --> 00:07:57,600
+If you could get that to work, it was just crazy how fast you could iterate.
+
+70
+00:07:57,680 --> 00:08:11,280
+And I think that was like a huge I don't know how much credit Expo gets for like making React native a thing, but I think that made that made the developer experience really viable and actually like in a lot of ways better than the native development experience on mobile.
+
+71
+00:08:11,760 --> 00:08:16,000
+Yeah, that iteration speed is a huge reason why people have kind of moved in this direction.
+
+72
+00:08:16,400 --> 00:08:29,200
+Like I think a lot of the customers that we have now, a lot of them have actually had working like IOS, you know, written in Swift, written in Directive C apps and working Android apps that are written in Java or Kotlin.
+
+73
+00:08:29,840 --> 00:08:33,040
+And they just kind of found it's too much work to maintain these.
+
+74
+00:08:33,280 --> 00:08:38,240
+If we want to add new features, we can't move fast enough on either platform, let's say both at the same time.
+
+75
+00:08:38,400 --> 00:08:41,120
+It's really hard to hire for these kind of specialized positions.
+
+76
+00:08:41,440 --> 00:08:44,160
+We're at risk all the time if our one Android person leaves.
+
+77
+00:08:44,320 --> 00:08:45,040
+What are we going to do?
+
+78
+00:08:45,520 --> 00:08:53,520
+And so a huge deal for all these companies is basically like, we can move faster than we could on either platform alone, but now we're able to write one React code base.
+
+79
+00:08:53,920 --> 00:09:00,720
+There are way more React developers in the world than there are basically any native platform like Swift developers or Kotlin developers.
+
+80
+00:09:01,440 --> 00:09:04,320
+Yeah, just because it's the default on the web, right?
+
+81
+00:09:04,560 --> 00:09:05,440
+Like, it creates just more.
+
+82
+00:09:05,840 --> 00:09:06,000
+Right.
+
+83
+00:09:06,320 --> 00:09:16,160
+And so you can take your, the same pool of people you'd be hiring your website team from and put them all on your sort of application team and they can work on all products all at once.
+
+84
+00:09:16,480 --> 00:09:18,160
+And that's a really big deal for a lot of people.
+
+85
+00:09:18,320 --> 00:09:28,080
+But then even on top of that, you're still moving faster because you're getting, instead of having to recompile every time you make a change, you're usually getting the same benefits that you would basically work on a website.
+
+86
+00:09:28,240 --> 00:09:34,960
+Like, a lot of the way to think about what Expo does is it sort of takes the things that are good about doing web development and brings them into the world with native mobile.
+
+87
+00:09:35,040 --> 00:09:39,920
+Did you guys ever get guff from Apple for pulling down some kind of live code.
+
+88
+00:09:40,240 --> 00:09:44,160
+Because they used to have some stupid rules about this, and I think they relaxed them.
+
+89
+00:09:44,560 --> 00:09:46,080
+They've really changed the rules over time.
+
+90
+00:09:46,720 --> 00:09:51,680
+Like they used to be really strict and say, like, you can't download any code, but then like people would just use WebUs.
+
+91
+00:09:52,160 --> 00:09:56,960
+And then, of course, the way that the web works is it downloads a bunch of code like JavaScript and CSS and stuff.
+
+92
+00:09:57,120 --> 00:09:59,040
+And then also, like, big companies were just doing it.
+
+93
+00:09:59,200 --> 00:10:02,640
+And so it was sort of a don't ask, don't tell policy or whatever.
+
+94
+00:10:02,800 --> 00:10:05,440
+But then they kind of realized that it was just stupid to prevent that.
+
+95
+00:10:05,760 --> 00:10:07,760
+They changed a lot of the rules over the last couple of years.
+
+96
+00:10:07,920 --> 00:10:12,000
+So now it basically says, you know, don't like trick people or lead people.
+
+97
+00:10:12,560 --> 00:10:19,680
+But if you and you can download code and you can run it, it has to be sort of interpreted code, not compiled binary code, which is fine.
+
+98
+00:10:20,480 --> 00:10:32,800
+And like the way that that expo works is you download JavaScript for JavaScript bytecode and then it gets interpreted on the device, kind of the way that like your web browser or your computer might download JavaScript for a website and and run stuff.
+
+99
+00:10:32,960 --> 00:10:37,840
+And so we never had too much trouble with that because as we were kind of starting to get popular, Apple was in the process of kind of pulling back a little from being super deep strict about those rules.
+
+100
+00:10:37,920 --> 00:10:39,520
+Five years earlier, you would have had a hard time, but they were, yeah.
+
+101
+00:10:39,600 --> 00:10:39,840
+Possibly.
+
+102
+00:10:39,920 --> 00:10:56,400
+But they've also there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's there's maybe literally like one or two cases where something that was like a fintech app or something like that, they said, hey, we don't want you downloading anything.
+
+103
+00:10:56,800 --> 00:10:59,920
+We see network requests for things that look like they changed the UI of this.
+
+104
+00:11:00,080 --> 00:11:22,000
+It's been a while since we've heard of anything like that, but maybe, you know, back in the early days, we heard of one or two things like that, but that's pretty common that like Apple and Google, but especially Apple are often pretty, they like to just like poke at things and come up with reasons to reject apps every now and then just to remind you who's in charge and make sure that, like, well, I mean, it literally in a way does circumvent app review, right?
+
+105
+00:11:22,240 --> 00:11:23,680
+Like you can blow away an entire app.
+
+106
+00:11:24,160 --> 00:11:24,240
+Yeah.
+
+107
+00:11:24,400 --> 00:11:27,920
+Yeah, the way they've changed the rules is not to say you can do whatever you want.
+
+108
+00:11:28,160 --> 00:11:46,480
+It's just to be more product focused in the way that they describe it, where like if you were to say if you were to use this downloading new code technology to take, you know, an app that was for buying groceries and turn it into some, you know, like OnlyFans type thing, like then they would say, Hey, you can't just like change this under people's feet.
+
+109
+00:11:46,560 --> 00:11:47,680
+This isn't what they signed up for.
+
+110
+00:11:47,840 --> 00:11:48,560
+You're tricking people.
+
+111
+00:11:48,800 --> 00:11:49,760
+We're going to ban you for that.
+
+112
+00:11:50,000 --> 00:11:52,160
+But it's less about the mechanism that you're using to do it.
+
+113
+00:11:52,240 --> 00:11:56,000
+And it's more just like the fact that you're tricking users and pulling the rug off of them.
+
+114
+00:11:56,160 --> 00:11:57,040
+Is it Von Neumann?
+
+115
+00:11:57,040 --> 00:12:06,160
+Who's the one really hard to like differentiate because you could send JSON down that your app functionally interprets to like do things, right?
+
+116
+00:12:06,400 --> 00:12:09,120
+So it's like, it's really hard to say what's code and what's not.
+
+117
+00:12:09,360 --> 00:12:22,960
+That's the way a lot of modern apps that don't use Java, like things like Yelp that are older apps that are written in, you know, Objective C Swift or whatever, they're doing exactly what you're describing, where they're downloading a lot of chunks of JSON to deliver custom UI.
+
+118
+00:12:23,200 --> 00:12:28,560
+They're kind of edging their way into building a kind of half baked dynamic interpreter of UIs.
+
+119
+00:12:28,880 --> 00:12:48,080
+Basically, React's like rendering a scene graph or I don't know what it's called in ReactLamb, but there's a kind of moderately famous like old CS quote that sort of like any sufficiently complicated, you know, system in C plus plus contains a half working, you know, inefficient version of Lisp or something like that.
+
+120
+00:12:48,160 --> 00:12:49,840
+And it's kind of the same thing that you're describing.
+
+121
+00:12:50,160 --> 00:13:00,400
+Well, one of the things that I did want to kind of talk through is that the combination of React native and Expo especially have kind of become a new default.
+
+122
+00:13:00,800 --> 00:13:12,560
+And you quoted in our state of subscription apps report that the pragmatic engineer reported that almost all new VC funded startups are using React native versus building.
+
+123
+00:13:13,040 --> 00:13:22,080
+native and huge apps, Spotify, Discord, NFL, tons of the biggest apps that people interact with on a daily basis are built in React native.
+
+124
+00:13:22,160 --> 00:13:26,800
+And we kind of already touched on the speed of execution, being able to change things remotely.
+
+125
+00:13:27,280 --> 00:13:31,920
+But do you think building apps with native code is less important in 2025 and why?
+
+126
+00:13:32,720 --> 00:13:33,920
+There's a couple of things going on.
+
+127
+00:13:34,800 --> 00:13:38,560
+One is just there's a general improvement in the technology.
+
+128
+00:13:38,800 --> 00:13:48,880
+You see this happen all over the place where like writing stuff in client side JavaScript didn't make sense in like 2004 because it just all the features you needed were not there and the performance.
+
+129
+00:13:49,360 --> 00:13:50,800
+of JSVMs wasn't there, et cetera.
+
+130
+00:13:51,200 --> 00:13:52,320
+And then things just get faster and better.
+
+131
+00:13:52,640 --> 00:13:56,720
+That's one part of what's happening here where there's a lot of stuff that's happened in this space.
+
+132
+00:13:56,880 --> 00:13:58,640
+Like some bits like pretty low level.
+
+133
+00:13:59,040 --> 00:14:01,360
+Meta is responsible for like two of these things.
+
+134
+00:14:01,520 --> 00:14:09,120
+And it's great to have a kind of deep pocketed company behind a lot of this that like relies on it for a lot of important things.
+
+135
+00:14:09,280 --> 00:14:24,960
+And so two really important things that have happened in the ecosystem are this new JSVM called Hermes, which is actually like, I don't know if you want me to go too much into the weeds here, but basically like there's the most famous JSVM these days is like the one that gets the most important.
+
+136
+00:14:24,960 --> 00:14:26,640
+Like the one that Google made for Chrome called V eight.
+
+137
+00:14:27,040 --> 00:14:31,920
+And that's a really great JSVM, where it really moved the web forward, it moved JS forward.
+
+138
+00:14:32,240 --> 00:14:33,600
+It's a jitting VM.
+
+139
+00:14:33,760 --> 00:14:35,920
+And so it does just in time compilation of your code.
+
+140
+00:14:36,080 --> 00:14:43,600
+And so, like, as your code is running for the first couple of times, it will track the hot pads and kind of compile those on the fly, and they'll run faster.
+
+141
+00:14:44,320 --> 00:14:56,720
+But in UIs, you actually don't really want that a lot of times, because you're not doing a lot of complicated computations or mathie type things.
+
+142
+00:14:56,960 --> 00:15:00,480
+You're just like trying to run through things once and put things on the screen.
+
+143
+00:15:00,800 --> 00:15:11,760
+And so you actually want to opt and like a lot of times when you think about what you want in UIs, you want it to be like that first interaction comes as quickly as possible rather than like you start running faster and faster as your code runs over time.
+
+144
+00:15:12,080 --> 00:15:20,320
+It's really good at passing some certain benchmark, but not actually what matters for scene graph rendering because of Apple's restrictions on sort of native code execution.
+
+145
+00:15:20,480 --> 00:15:23,040
+You can't really run a JIT on an interpreter.
+
+146
+00:15:23,440 --> 00:15:31,760
+I was going to be what I asked like what the status on that was because I didn't think you, you famously like Apple wouldn't allow this for ostensibly but probably legitimately security reasons.
+
+147
+00:15:31,920 --> 00:15:35,360
+Yeah, I think that's it's like not crazy that they restrict stuff in this way.
+
+148
+00:15:35,520 --> 00:15:40,560
+So Hermes is designed to not jit for performance reasons in an interesting way.
+
+149
+00:15:41,120 --> 00:15:44,400
+And it's really designed for this use case in particular and a few others.
+
+150
+00:15:44,800 --> 00:15:47,040
+And it also uses a bytecode format.
+
+151
+00:15:47,200 --> 00:15:55,680
+So instead of just sending strings of text that are human readable, it kind of precompiles into a more intermediate format and can send that down, that saves some time.
+
+152
+00:15:56,160 --> 00:15:58,640
+That just boosted performance, especially on low end Android.
+
+153
+00:15:58,960 --> 00:16:00,800
+But across the board, Hermes is a big step.
+
+154
+00:16:00,880 --> 00:16:12,240
+And there's also something called the new architecture of React Native that, like, you know, it had been talked about for years and finally in the last year, it's now rolled out and kind of the default of new Expo apps and new React Native apps is to use this new architecture.
+
+155
+00:16:12,640 --> 00:16:22,560
+It allows a lot more control over low level stuff that you actually want to really optimize the performance of things like lists are really important to UIs on mobile.
+
+156
+00:16:22,880 --> 00:16:27,760
+Like, almost every app that you use involves, like, scrolling through a lot of lists.
+
+157
+00:16:28,320 --> 00:16:30,480
+Think about Instagram, think about any Messenger you use.
+
+158
+00:16:30,800 --> 00:16:40,000
+UI list view, I think famously was like the singular most important component of Coco originally because it was just super optimized and so fast that we made the original iPhone feel so good.
+
+159
+00:16:40,720 --> 00:16:53,040
+And so one thing that this new architecture enables is just like you can write much faster lists because you can sort of synchronously measure elements and react to those changes without having to go through lots of re rendering steps.
+
+160
+00:16:53,280 --> 00:16:59,360
+I'm like glossing over a lot of stuff there, but basically this new architecture is a big step forward in terms of performance possibilities and a few other things.
+
+161
+00:16:59,600 --> 00:17:07,280
+The other thing that's happened is you sort of the way you pose this question was like, is it less important to write native code on mobile?
+
+162
+00:17:07,600 --> 00:17:15,360
+But actually one thing that we spent a while doing at Expo was making it a lot easier to write native code as part of a React native app.
+
+163
+00:17:15,840 --> 00:17:26,000
+And so like part of the sort of dream of React native is always that you're actually weaving stuff that's like native code with stuff that's like orchestrated by JavaScript.
+
+164
+00:17:26,080 --> 00:17:30,480
+And you're writing React for web, how you can interleave like HTML basically, right?
+
+165
+00:17:30,800 --> 00:17:32,720
+Like style within your JavaScript, you know?
+
+166
+00:17:32,880 --> 00:17:36,800
+Like you can kind of seamlessly like write components out and then switch back and forth.
+
+167
+00:17:37,200 --> 00:17:37,840
+It's kind of like that.
+
+168
+00:17:39,040 --> 00:17:49,840
+And React native, like when you generate like a UI, a view or, you know, a list view or a scroll view, one of the things that's really appealing about React native is it's actually generating like the operating system components.
+
+169
+00:17:50,160 --> 00:17:55,440
+Like a view in React native on iOS will generate a UI view from UI Kit and on Android view.
+
+170
+00:17:55,600 --> 00:18:00,880
+And so like the actual elements that you're interacting with should feel exactly right for the operating system you're on.
+
+171
+00:18:01,280 --> 00:18:16,640
+But then if you do need to write some sort of specialized native code to do some sort of fluid simulation or some really custom video player or something like that or some view that pops up a native share dialogue or a native payments dialogue or something like that, you can easily drop down into native code and write that stuff.
+
+172
+00:18:16,960 --> 00:18:22,160
+A big thing that we worked on at Expo is we this gets in the weeds a little bit, but it's actually pretty important.
+
+173
+00:18:22,560 --> 00:18:26,240
+We developed this thing that we call config plugins in CNG.
+
+174
+00:18:27,200 --> 00:18:36,480
+And the sort of way that you would do native code in React native projects before that was kind of the same way that you might have dealt with like.
+
+175
+00:18:37,360 --> 00:18:50,640
+PHP extensions back in the day or like weaving together C plus plus code with like a scripting language where you're doing a lot of like compiling stuff yourself, figuring out which things you need to download and which dependencies you need to download and like how to put them all in the right place.
+
+176
+00:18:51,200 --> 00:18:59,200
+Like if you were making in my, my, my shoes, trying to make a React native SDK that someone else could then go use that was based on native code, it was rough.
+
+177
+00:19:00,000 --> 00:19:01,120
+Really, really rough to do.
+
+178
+00:19:01,280 --> 00:19:10,320
+And so like all, a lot of these projects would have, you know, you go to the GitHub for it and the read me is like a four or five page long thing with like, here's all the steps you need to do on Android.
+
+179
+00:19:10,400 --> 00:19:11,840
+Here's all the steps you need to do on iOS.
+
+180
+00:19:12,080 --> 00:19:26,480
+And then if you're bringing in the RevenueCat module and a special video player module and a camera module, a lot of times those things would actually the instructions would have you editing various config files or whatnot, and they might step on each other's toes, like, hey, in this app delegate, add these, add these lines.
+
+181
+00:19:26,640 --> 00:19:32,080
+And then you're like, well, those lines, that doesn't look like it says it's going to look because I added this other module or whatever.
+
+182
+00:19:32,240 --> 00:19:42,880
+And so what config plugins are basically in your module, you can add a set of instructions or scripts that basically tell the native code how to install itself in a generalized way.
+
+183
+00:19:43,440 --> 00:19:46,560
+And then what CNG is, is continuous native generation.
+
+184
+00:19:46,800 --> 00:19:48,480
+And so in a typical like.
+
+185
+00:19:48,960 --> 00:19:54,080
+old school React native project, you'd have like your JavaScript source directory that has like your React code.
+
+186
+00:19:54,400 --> 00:19:59,920
+And then you'd have like an Android directory and an IOS directory where it's like the special native code for Android and IOS would live.
+
+187
+00:20:00,560 --> 00:20:12,960
+And in a sort of expo project using CNG, you don't have the Android and IOS directory typically living in your project because they get generated every time you make a change to the set of config plugins you use.
+
+188
+00:20:13,280 --> 00:20:14,960
+They're almost like machine code now, right?
+
+189
+00:20:15,120 --> 00:20:16,640
+Like, kind of like, halfway between.
+
+190
+00:20:16,880 --> 00:20:29,520
+When you npm install some package, it like figures out what needs to get downloaded and kind of moves those files into the right directory and kind of makes it so that you can just require that in your or import it in your project and it just kind of works.
+
+191
+00:20:29,680 --> 00:20:40,320
+And you can kind of think of it as the same thing where you can just kind of one command to install a new, you know, React native purchases or some other package and then all the setup just gets taken care of.
+
+192
+00:20:40,480 --> 00:20:45,680
+And if you upgrade to a new version of React native or new native stuff, all that stuff just kind of happens seamlessly.
+
+193
+00:20:46,000 --> 00:20:49,200
+It's gotten way, way easier to actually use native code.
+
+194
+00:20:49,360 --> 00:20:59,040
+And so even for people that like think native code is really important, it's gotten much more sensible to use React native than it was in the past because it's a lot easier to access the native layers of stuff.
+
+195
+00:20:59,040 --> 00:21:00,800
+The way a lot of people probably look at it is like if you think.
+
+196
+00:21:00,800 --> 00:21:08,560
+And what I'm trying to look at is like, if you think about what's going on in the world of AI, obviously performance is super important in doing all this machine learning type stuff, et cetera, et cetera.
+
+197
+00:21:08,720 --> 00:21:21,360
+But a lot of the code that people who work on optimizing these models at OpenAI or playing around with these things, they're running a lot of Python because some things need to be really, really fast, but a lot of stuff doesn't need to be really, really fast.
+
+198
+00:21:21,520 --> 00:21:25,760
+You're just saying, go do this task that has to be really fast, and you're sort of orchestrating things.
+
+199
+00:21:26,000 --> 00:21:27,680
+And so you see this happening in a lot of systems.
+
+200
+00:21:27,840 --> 00:21:29,840
+And so that's one big factor.
+
+201
+00:21:30,240 --> 00:21:35,360
+Another factor is like, a couple of years ago, engineers were kind of considered assets to tech companies.
+
+202
+00:21:35,520 --> 00:21:41,360
+And so people were trying to hire.ire, you know, if I can hire a hundred people, I'm worth a hundred million dollars or something is a blog post I read.
+
+203
+00:21:41,600 --> 00:21:43,360
+And like, people are not thinking that way anymore.
+
+204
+00:21:43,600 --> 00:22:02,560
+Many of the companies that we talked to that are using Expo, they even had like working iOS apps that were well reviewed, perfectly fine, and, you know, good Android apps that were also in sync with that and perfectly functional, but they were just finding it was really hard to move forward quickly, really hard to keep those things in sync, really hard to hire for these positions.
+
+205
+00:22:02,720 --> 00:22:11,040
+And also just like they were really at risk if they were to lose their one Android developer or their one iOS developer and they'd just be stuck and unable to like keep their product going.
+
+206
+00:22:11,200 --> 00:22:13,600
+And so creates some really awkwkward choices too.
+
+207
+00:22:13,760 --> 00:22:17,600
+When you're like, oh, we want to experiment with something, but then you're kind of forced to not do parody.
+
+208
+00:22:17,680 --> 00:22:19,920
+You have to do it on one platform and then backport it.
+
+209
+00:22:20,080 --> 00:22:23,120
+And then that backport never happens because like you're busy and yeah.
+
+210
+00:22:23,600 --> 00:22:29,440
+And now all your documentation to your users and your customer service team is getting confused and has to ask more questions.
+
+211
+00:22:29,760 --> 00:22:33,120
+There's just all kinds of things that are bad news about going down that path.
+
+212
+00:22:33,280 --> 00:22:43,840
+In general, like there used to be this idea that like your Android users have fundamentally different expectations than IOS users and the web is its own beast.
+
+213
+00:22:43,920 --> 00:22:48,000
+And so like if you go back in time to say like, you know, 2011.
+
+214
+00:22:48,480 --> 00:22:56,000
+I think Dropbox and Slack were two pretty good examples of this where they had totally separate design teams working on their Android and iOS products.
+
+215
+00:22:56,160 --> 00:23:01,360
+And so if you like to switch from an Android phone to an iOS phone or vice versa and you're using Dropbox, you're using Slack.
+
+216
+00:23:01,440 --> 00:23:03,360
+You would just be like, I don't know where anything is.
+
+217
+00:23:03,600 --> 00:23:04,320
+What the heck is this?
+
+218
+00:23:04,480 --> 00:23:12,400
+Because it's just like a totally different product and now things have really gone pretty far in the other direction where convergent evolution, right?
+
+219
+00:23:12,640 --> 00:23:16,320
+Like it turns out that there's only so many ways to make a decent mobile app.
+
+220
+00:23:16,720 --> 00:23:19,440
+People want basically the same product on iOS and Android and web.
+
+221
+00:23:19,760 --> 00:23:26,880
+And if so like when I use the United Airlines app on my phone, whether it's on my iPhone or my Android phone or the mobile website or the website.
+
+222
+00:23:26,960 --> 00:23:29,120
+It's basically the same product, the same design language.
+
+223
+00:23:29,280 --> 00:23:30,800
+Things are all basically the same places.
+
+224
+00:23:31,120 --> 00:23:33,120
+I don't think United Airlines actually uses React.
+
+225
+00:23:33,440 --> 00:23:34,640
+They might, but I don't believe.
+
+226
+00:23:34,880 --> 00:23:38,160
+I just think like the general thinking around product is moving in that direction.
+
+227
+00:23:38,400 --> 00:23:44,560
+But then once your thinking around product moves in that direction, you're like, why doesn't our implementation match the way that we're actually building a product?
+
+228
+00:23:44,960 --> 00:23:46,000
+Oh, I see what you're saying.
+
+229
+00:23:46,080 --> 00:23:49,760
+So the actual conformity comes first, like that we should just have things identical.
+
+230
+00:23:49,920 --> 00:23:54,080
+And then from then it follows, like why do we have these like separate tool chains, right?
+
+231
+00:23:54,400 --> 00:23:54,480
+Yeah.
+
+232
+00:23:55,040 --> 00:24:03,920
+And then another thing that's kind of come online is we did a lot of work to make Expo work on the web as well as iOS and Android.
+
+233
+00:24:04,240 --> 00:24:09,600
+So a lot of the people now that use Expo actually literally have one team across iOS and Android and web.
+
+234
+00:24:09,840 --> 00:24:11,840
+And so it's not just a mobile only thing.
+
+235
+00:24:12,080 --> 00:24:26,640
+So one of the most prominent, exciting Expo apps is Blue Sky, which is like, feels really good and like, I find it basically as good as an app, uh, missing a few, you know, advanced video features and stuff, but otherwise like, pretty comparable to Twitter and always feels great.
+
+236
+00:24:26,800 --> 00:24:36,000
+But they had their sort of thing they'll say is like one man, three platforms, four months was how they built their, the first version of the app because they were not even planning to build an app.
+
+237
+00:24:36,320 --> 00:24:57,920
+It's a complicated sort of origin story, but, you know, when Jack Dorsey was sort of thinking about how social media needed to evolve and how it could be federated, he sort of allocated some funding for a federated protocol, but they were really just imagining they would make a protocol for how to federate something like Twitter, and that Twitter would be the first client of this protocol.
+
+238
+00:24:58,400 --> 00:25:01,600
+And then, you know, unless you have Twitter, it's just sort of like, why do I need this?
+
+239
+00:25:01,840 --> 00:25:05,120
+You know, I'm trying to cut everything and make this a lean and mean machine.
+
+240
+00:25:05,200 --> 00:25:06,240
+I don't need to deal with this.
+
+241
+00:25:06,400 --> 00:25:11,840
+But they had incorporated it as a separate company and sort of the funding was sort of already earmarked for it.
+
+242
+00:25:11,920 --> 00:25:20,960
+So they were able to keep going, but they, you know, they were looking around and they're like, we have like a ten person team and we have no developers who are iOS developers or Android developers and we're on a kind of tight timeline here.
+
+243
+00:25:21,120 --> 00:25:27,600
+We need and we realized like our only way forward is actually to make an app to be the flagship version of our, you know, federated protocol.
+
+244
+00:25:28,000 --> 00:25:38,320
+And so they just had Paul on their team, didn't even have React experience and he just learned on the fly and he was just a really sharp guy with pretty good taste and was able to make something pretty good out of the game.
+
+245
+00:25:38,400 --> 00:25:42,560
+And they still have only about three people working on the app and it works across all the different platforms.
+
+246
+00:25:42,880 --> 00:25:45,280
+And so it's one, they have one code base for their web.
+
+247
+00:25:45,680 --> 00:25:47,920
+That's like extreme React UI, right?
+
+248
+00:25:48,320 --> 00:25:50,080
+like being able to scale.
+
+249
+00:25:50,400 --> 00:25:50,880
+That's crazy.
+
+250
+00:25:51,040 --> 00:25:53,840
+One thing, we were talking about the Facebook investments.
+
+251
+00:25:54,240 --> 00:26:01,120
+Who's doing most of the work on that last translation layer now from like your scene graph to rendering in native UIs and stuff?
+
+252
+00:26:01,280 --> 00:26:02,640
+Is Facebook still developing a lot of that?
+
+253
+00:26:02,800 --> 00:26:03,920
+Is it handled by the community?
+
+254
+00:26:04,160 --> 00:26:10,960
+Because I imagine a lot of what makes React native plus Expo work really well is kind of that last mile of translating it to the platform.
+
+255
+00:26:11,840 --> 00:26:17,200
+A lot of that kind of doesn't need as much change as you might think.
+
+256
+00:26:17,680 --> 00:26:22,880
+One reason it works pretty well in a lot of ways is that there's it's not a super heavy layer.
+
+257
+00:26:23,360 --> 00:26:35,840
+I'm glossing over a bit here, but like if you make a view in React native, like you know, you know, you use angle brackets and you write view, you're writing some React code, when that targets web, that's just going to turn into a div.
+
+258
+00:26:36,400 --> 00:26:40,480
+There isn't some sort of like crazy like giant transformation.
+
+259
+00:26:40,960 --> 00:26:43,440
+You can kind of reason about how it's going to end up running.
+
+260
+00:26:43,920 --> 00:26:50,080
+And when you have that view and it goes on iOS, it's going to end up with just like a UI view from UIKit.
+
+261
+00:26:50,560 --> 00:26:53,840
+And like there's a little bit of rapping and other kinds of things that go on there.
+
+262
+00:26:54,080 --> 00:27:00,880
+And like basically like a lot of what we think of as apps is just like rectangles and sort of coloring and styling and text and then some images and things like that.
+
+263
+00:27:01,440 --> 00:27:02,720
+And so there's work to do.
+
+264
+00:27:02,880 --> 00:27:14,880
+Like we released something not that long ago called Expo Image, which, you know, a lot of people are using things like SD Web Image and Fast Image and certain things like that will handle caching and different formats and things like that.
+
+265
+00:27:15,360 --> 00:27:18,160
+And we kind of like some of those weren't that well maintained.
+
+266
+00:27:18,240 --> 00:27:23,440
+And so we just kind of decided this is something we should build ourselves and pull into the SDK and sort of standardize and whatnot.
+
+267
+00:27:23,680 --> 00:27:24,560
+So we do a lot of that.
+
+268
+00:27:24,720 --> 00:27:34,560
+There's also a lot of the innovation that's happening right now that's pretty good for the space is, you know, expectations of what we expect from products have gone up a lot.
+
+269
+00:27:34,800 --> 00:27:36,880
+This is true on the web, kind of double true on mobile.
+
+270
+00:27:37,200 --> 00:27:46,880
+But if you think back to, you know, a web 15 years ago or something, what you would expect from a website is you wouldn't expect any kind of 3D graphics or, you know, interesting transitions or whatever.
+
+271
+00:27:46,960 --> 00:27:50,720
+But now you even go to, like, some random product page or something.
+
+272
+00:27:50,800 --> 00:27:56,320
+And a lot of times you'll scroll down and some kind of crazy 3D animation will happen as you scroll or something like that.
+
+273
+00:27:56,480 --> 00:28:00,960
+And a lot is like WebGL and just like things for doing that on the web of Advanced Flight.
+
+274
+00:28:01,200 --> 00:28:12,720
+And so if you want to add a lot of really nice touches to a sort of React Native app or something like that, there's some really good libraries out there like React Native Ski, which adds this sort of Ski 2D.
+
+275
+00:28:13,440 --> 00:28:14,160
+graphics engine.
+
+276
+00:28:14,240 --> 00:28:21,840
+And then there's, you know, at this conference I'm at today, there was just some announcements around React native web GPU and having access to that.
+
+277
+00:28:22,080 --> 00:28:27,120
+And then there's something called Reanimated made by a firm in Poland called Software Manchin.
+
+278
+00:28:27,280 --> 00:28:41,840
+They also make something called React native gesture handler that like these powerful libraries that let you get all these gestures and animations to be really right, but also be like things that you can write in just JavaScript instead of having to go write a bunch of custom native code to make something like look and feel really cool.
+
+279
+00:28:42,240 --> 00:28:44,320
+Not getting back into the multi-platform problem, right?
+
+280
+00:28:44,480 --> 00:28:46,320
+Where you have to like do some like native stuff.
+
+281
+00:28:46,480 --> 00:28:47,920
+It sounds like stuff's really accelerating.
+
+282
+00:28:48,160 --> 00:29:01,200
+I think there was a I don't know when this was, but there was a moment, maybe it was five years ago, when Facebook kind of dropped React Native and there was like a lot of FUD about maybe React Native's over, but it seems like that's the opposite now.
+
+283
+00:29:01,440 --> 00:29:04,480
+Is that was that was always just a fake news or what was the story?
+
+284
+00:29:04,960 --> 00:29:13,280
+There were a couple of things that were challenging, the most damaging thing that probably ever happened in the history of React Native is that Airbnb was kind of a early user of it.
+
+285
+00:29:13,440 --> 00:29:18,560
+And they, you know, they had a couple of guys there that were really good developers and, and, and, you know, contributed a lot.
+
+286
+00:29:18,640 --> 00:29:24,000
+And they they'd go around at a lot of conferences and talk about their work for a bunch of like complicated reasons.
+
+287
+00:29:24,560 --> 00:29:31,120
+The engineering team at Airbnb decided like, it doesn't make sense to kind of maintain our native stuff and our React native stuff.
+
+288
+00:29:31,520 --> 00:29:34,160
+And we decided that like the native people kind of win.
+
+289
+00:29:34,800 --> 00:29:36,880
+And so like, we're going to just stop doing this.
+
+290
+00:29:37,200 --> 00:29:39,520
+And they were never a fully React native app though.
+
+291
+00:29:39,600 --> 00:29:40,960
+They had like React native components.
+
+292
+00:29:41,600 --> 00:29:44,720
+No, they were using it for like, you know, twenty percent of the app or something like that.
+
+293
+00:29:44,880 --> 00:29:46,560
+But they were just they were pretty vocal about it.
+
+294
+00:29:46,800 --> 00:29:48,720
+Which is less, you get less benefit then, right?
+
+295
+00:29:48,880 --> 00:29:54,880
+Like if you have like a native and it's a little complicated to kind of have a really mixed brownfield type approach.
+
+296
+00:29:55,200 --> 00:30:38,480
+Like, it's more complicated than having a website that was using jQuery and then is using React for one of the screreens because in a website you're using JavaScript everywhere and so if you have some data that's pulled down by a jQuery AJAX call and then you want to use it inside of a react component or reuse some of the same state you can just pass those variables back and forth or refer to them and this is just like one example just to illustrate the point but like let's say that you had you know a screen on Airbnb's app that's written in Swift and then you know another part of that screen is written in React native and then it's relying on you know some profile for a house listing and that house listing has some data and has like a you know URL of a photo or something like that.
+
+297
+00:30:39,200 --> 00:30:43,040
+And you pull down that data in Swift and it's now in Swift variables.
+
+298
+00:30:43,360 --> 00:30:51,360
+And then all of a sudden you're like, React native wants access to the same photo to make sure it's the right thing or it wants to highlight something.
+
+299
+00:30:51,600 --> 00:30:53,600
+And like, that data isn't available in JavaScript.
+
+300
+00:30:53,680 --> 00:30:58,160
+So you have to create some sort of way to, you know, marshall things across some bridge and whatnot.
+
+301
+00:30:58,880 --> 00:30:59,120
+Bridge.
+
+302
+00:30:59,280 --> 00:31:02,880
+And then now at a minimum you're probably duplicating your memory consumption, right?
+
+303
+00:31:03,200 --> 00:31:05,200
+And it just gets like, there's different ways you can handle it.
+
+304
+00:31:05,280 --> 00:31:09,600
+But it's it's kind of like you now have it's almost like you have this like three things to worry about.
+
+305
+00:31:09,840 --> 00:31:14,400
+Like your native world, your JavaScript world and then the way to move between them.
+
+306
+00:31:14,640 --> 00:31:21,360
+And so now like a lot of things that are I think that's something I really want to work on is making that sort of incremental transition easier.
+
+307
+00:31:22,000 --> 00:31:29,200
+But in the world we are in now, definitely the things that are having the most success that we see are things that kind of start from the beginning as your Rack native apps.
+
+308
+00:31:29,360 --> 00:31:41,840
+They might use a lot of native code, but it's usually in this way where it's like, oh, we're going to do some really specific stuff like have a custom video player, but it's going to be a Rack native module and that can just kind of plug in and we can drop down a native code wherever we need to.
+
+309
+00:31:42,080 --> 00:31:45,920
+But the whole system is kind of being orchestrated and controlled by Rack native.
+
+310
+00:31:46,320 --> 00:32:10,480
+Another thing that, you know, when I was talking about the trans transition to this being pretty standards, a thing that we spent a lot of time on was Evan Bacon on our team, who was amazing, spearheaded this work on something called Expo Router, which is pretty common in the world of React or websites to have a sort of router, a thing that will handle, you know, just sort of mapping out like the architecture of like all the tabs on your screen or like what URLs are mapped to and what not.
+
+311
+00:32:10,720 --> 00:32:22,240
+It's a much more complicated problem on this sort of multiplatform mobile type thing because if you think about like this is probably something that like anyone can kind of understand if they stop and think about it for a minute, but most of us don't.
+
+312
+00:32:22,480 --> 00:32:28,000
+Where like on the web the structure of what websites is that you have this URL bar and there's a kind of back button.
+
+313
+00:32:28,560 --> 00:32:40,320
+And like, it means that there's like, there's a kind of one stack of like navigation in a lot of cases where if you think about, you know, everyone probably is familiar with Instagram who's, who's listening to this podcast.
+
+314
+00:32:40,800 --> 00:32:45,840
+And that's a pretty common paradigm where there's like four or five tabs at the bottom of your screen.
+
+315
+00:32:46,240 --> 00:32:47,920
+And each of those is kind of its own stack.
+
+316
+00:32:48,560 --> 00:32:56,000
+And so if you, you know, go to your profile tab and then you tap on followers and then you tap on someone else's profile, that's like all happening under the profile tab.
+
+317
+00:32:56,240 --> 00:32:59,040
+But then if you go to the search tab, you go to look at someone else's profile.
+
+318
+00:32:59,200 --> 00:33:00,480
+But then if you go back to your own profile.
+
+319
+00:33:01,120 --> 00:33:01,200
+tab.
+
+320
+00:33:01,600 --> 00:33:03,040
+It's still whatever you've navigated to.
+
+321
+00:33:03,200 --> 00:33:05,920
+And there's kind of like multiple hierarchies of stuff going on.
+
+322
+00:33:06,080 --> 00:33:12,800
+And so when you're making an app that exists as a mobile app, you often want that paradigm that's more like the Instagram app.
+
+323
+00:33:13,040 --> 00:33:17,360
+But then when you're on the web, you want it to feel like a website and be natural in that way.
+
+324
+00:33:17,760 --> 00:33:21,680
+And then there's also this deep linking is this gnarly problem that is actually pretty hard to get right.
+
+325
+00:33:21,840 --> 00:33:31,360
+Where like if you think about like anything you have an app installed for, they might send you an email that has like a, you know, like, hey, like, check out this listing for this product for sale on our app or whatever.
+
+326
+00:33:31,520 --> 00:33:36,240
+And then you tap in the link and it like opens the app and it just is like, gets confused and takes you to the home screen.
+
+327
+00:33:36,400 --> 00:33:39,120
+And you're like, I was trying to get to the specific product or the specific video.
+
+328
+00:33:39,440 --> 00:33:40,560
+It's about 50-50.
+
+329
+00:33:40,560 --> 00:33:43,760
+I feel like when I deep link into an app, if I'm going to get where I'm trying to go.
+
+330
+00:33:44,000 --> 00:33:44,080
+Yeah.
+
+331
+00:33:44,400 --> 00:33:51,760
+And so Expo Router handles that and just like works basically as well as anything can work across iOS and Android and web.
+
+332
+00:33:52,080 --> 00:33:59,920
+And just that problem just becomes a thing that's solved for you, rather than a thing that you spend hours and hours and hours trying to get right and stressing about and whatever.
+
+333
+00:34:00,080 --> 00:34:04,240
+And so that's a very nice thing that just made it a lot easier for people to adopt.
+
+334
+00:34:04,800 --> 00:34:20,400
+In researching for this podcast and then now in listening to you for the last, you know, thirty minutes or so, I've updated my priorities a lot in, you know, I was one of those snooty IOS developers who was like, oh, and, you know, that was like, so focused on, oh, it's, it's got to be native.
+
+335
+00:34:20,640 --> 00:34:27,920
+Like React Native is just a, you know, lame web rapper and like users are going to notice the performance is not going to be there.
+
+336
+00:34:28,160 --> 00:34:35,280
+It's going to be more complicated and like all that is which may have been true in 2019 or 2018, but maybe not today.
+
+337
+00:34:35,600 --> 00:34:37,600
+On the web, you can always view source.
+
+338
+00:34:38,080 --> 00:34:41,040
+And so you can kind of always figure out what any website is built with.
+
+339
+00:34:41,280 --> 00:34:48,480
+But one thing that I've always found funny is like when someone does a a awesome job building a React Native app, you don't notice.
+
+340
+00:34:49,120 --> 00:34:52,080
+and you just assume that it's like, you know, truly native or whatever.
+
+341
+00:34:52,560 --> 00:34:56,000
+You can make pretty trash Swift UI and UIKit apps too, right?
+
+342
+00:34:56,240 --> 00:34:56,800
+I've seen them.
+
+343
+00:34:57,040 --> 00:34:57,200
+Right.
+
+344
+00:34:57,280 --> 00:35:05,520
+And so there are some bad React native and bad Expo apps out there that are just like, you know, unnecessarily causing all kinds of rerunners or loops or whatever.
+
+345
+00:35:05,600 --> 00:35:09,200
+And, you know, but you can also do that as you're saying with Swift UI or whatever.
+
+346
+00:35:09,520 --> 00:35:14,320
+Like, a lot of times there'll be like a bad Swift UI app and people just will be like, oh, stupid React native.
+
+347
+00:35:14,480 --> 00:35:15,600
+I can tell that this is.
+
+348
+00:35:16,560 --> 00:35:22,320
+And like, because there's no, there's no easy way to kind of do a view source or have you ever done any like blind taste tests?
+
+349
+00:35:22,480 --> 00:35:23,840
+That would be very funny to like.
+
+350
+00:35:24,720 --> 00:35:37,920
+James and Brent on our team, I think, used to be pretty good at being able to sort of, oh, I'm going to drag this screen and like, I'll notice some, you know, artifact in this thing and I can tell that that's using this library and stuff like that.
+
+351
+00:35:38,160 --> 00:35:50,880
+It's getting harder, but there's still some ways that you can tell certain things for sure, but we've also tried scanning the App Store and downloading a lot of the top apps and just sort of like, we did a research project to basically just figure out what because we're an open source product.
+
+352
+00:35:51,040 --> 00:35:53,680
+So we don't actually know everyone who's using Xbox.
+
+353
+00:35:53,920 --> 00:35:55,760
+If you're just using the open source framework, we don't know.
+
+354
+00:35:55,920 --> 00:36:01,040
+So we had to download just like the top 100 apps in every category just to get a sense of what was going on there.
+
+355
+00:36:01,200 --> 00:36:03,040
+So I was talking about updating my priorities.
+
+356
+00:36:03,200 --> 00:36:07,760
+The biggest thing that forced me to update my priorities was actually our state of subscription apps report.
+
+357
+00:36:07,840 --> 00:36:15,760
+And that's what I wanted to talk about next is that in our report, we showed that rack native apps actually monetize better than native apps.
+
+358
+00:36:16,000 --> 00:36:18,080
+There's probably a little bit of 100% positive.
+
+359
+00:36:18,240 --> 00:36:19,200
+It's all the framework data.
+
+360
+00:36:19,920 --> 00:36:21,520
+There's probably a little bit of bias in that.
+
+361
+00:36:21,760 --> 00:36:27,360
+And we've talked about this before that, you know, we have a ton of indie developers on RevenueCat who are iOS only.
+
+362
+00:36:28,000 --> 00:36:35,920
+And that, you know, to our point earlier, a lot of the VC funded apps are cross platform from the beginning and kind of building a business, not a hobby.
+
+363
+00:36:36,080 --> 00:36:37,840
+maybe tend towards React native.
+
+364
+00:36:38,000 --> 00:36:43,520
+So there's some bias in the data and you kind of alluded to this earlier that what matters is your product.
+
+365
+00:36:44,160 --> 00:36:49,120
+And if you're able to iterate more quickly, build a better product, it doesn't matter what technology you're using.
+
+366
+00:36:49,520 --> 00:36:56,960
+And in fact, maybe it does in that React native lets you move faster and that you don't have multiple teams, you don't have things getting out of sync and stuff like that.
+
+367
+00:36:57,200 --> 00:37:06,800
+But I know you saw that data because, you know, we had you do a little blurb in our report, but did that surprise you to see our data that React native apps are monetizing better than native apps?
+
+368
+00:37:07,200 --> 00:37:21,200
+That's a little surprising to me just because, like, I would have expected that a lot of the, you know, native apps would be iPhonehone only and like iPhone tends to monetize better than Android in my limited I mean, you guys would know better than I would, but But it's almost always like it's iOS and Android, right?
+
+369
+00:37:21,360 --> 00:37:23,440
+So the Android's almost probably always like incremental.
+
+370
+00:37:23,760 --> 00:37:33,440
+I could see something here where it's just like a lot of the people using React, like you're going to have more React native apps that are newer because React native is just I certainly Expo has gotten way more popular recently.
+
+371
+00:37:33,600 --> 00:37:38,080
+Like our NPM weekly downloads have tripled in the past year, for example.
+
+372
+00:37:38,720 --> 00:37:51,760
+So like a lot of stuff that's built that way is going to be newer and it's going to have people making active choices like researching the best way to do stuff and working on things and trying to use the best technologies and best practices.
+
+373
+00:37:52,080 --> 00:37:55,520
+Whereas some of the older stuff might just be like this project has been around a while.
+
+374
+00:37:55,760 --> 00:37:58,160
+It's kind of in, you know, cruise control mode.
+
+375
+00:37:58,320 --> 00:38:03,200
+Like I'm not saying maintenance mode, but just kind of like we're just trying to keep this running or whatever.
+
+376
+00:38:03,600 --> 00:38:21,680
+That would be part of the guess I would make, but I also would just kind of like bring up the point again that whenever you need to in React native, it's now quite easy to drop down and write, you know, a whole screen in Swift UI and Kotlin or whatever you want for the Zig platforms.
+
+377
+00:38:22,000 --> 00:38:27,680
+And so like if you're a good React native developer, you're probably doing that at various points whenever you need to.
+
+378
+00:38:28,000 --> 00:38:32,640
+But like, you know, on your settings screen, you basically never need to do that in most cases.
+
+379
+00:38:32,960 --> 00:38:46,720
+Like, you, those kind of things that in a lot of even, um, a lot of the parts of the actual iOS settings app, like if you go into like your manager subscriptions of your iOS stuff, a lot of stuff has actually been using like WebViews, even though we think of it as kind of native to the Apple platform.
+
+380
+00:38:46,960 --> 00:38:47,680
+Oh yeah, yeah.
+
+381
+00:38:47,760 --> 00:38:49,440
+Like the subscription one, it drives me nuts.
+
+382
+00:38:49,600 --> 00:38:51,120
+It's like, it is markedly slower.
+
+383
+00:38:51,280 --> 00:38:53,040
+It would be better if you actually Yeah, you should use it.
+
+384
+00:38:53,200 --> 00:38:54,400
+Yeah, I think it actually would be.
+
+385
+00:38:55,120 --> 00:39:00,720
+They would never, they would never dare put JavaScript between them and UIC.
+
+386
+00:39:36,400 --> 00:39:37,440
+Apps and React native.
+
+387
+00:39:37,600 --> 00:39:40,400
+It's been frustrating in different ways, but this was five, six years ago, right?
+
+388
+00:39:40,640 --> 00:39:41,920
+And like, things have changed.
+
+389
+00:39:42,400 --> 00:39:44,560
+It's gotten way, way better, way easier to make stuff.
+
+390
+00:39:44,720 --> 00:39:48,400
+Yeah, thanks to you guys and also just like baseline technology changes.
+
+391
+00:39:48,800 --> 00:39:50,080
+Phones are faster as well.
+
+392
+00:39:50,560 --> 00:40:00,480
+And so I remember in the late teens being skeptical of people that were making this choice because I was tried and true mobile objectivity and Java developer.
+
+393
+00:40:01,280 --> 00:40:02,880
+And I remember being skeptical.
+
+394
+00:40:03,440 --> 00:40:15,600
+But now looking back, those companies have had various success and not success, but none of it was like hurt by the fact that they were, you know, in fact, like, are you for all the reasons stru we talked about today, I think it was, it was, these were good choices.
+
+395
+00:40:15,840 --> 00:40:17,120
+It was in the business you're in to.
+
+396
+00:40:17,360 --> 00:40:24,720
+And then now today, you know, speaking of making things easier, the next kind of topics I wanted to discuss was AI assisted development.
+
+397
+00:40:25,360 --> 00:40:29,440
+I did want to kind of cage these two different things because I think they get blended a little bit.
+
+398
+00:40:30,080 --> 00:40:41,920
+So we'll talk first about what I'm calling AI assisted app development where you're a programmer, you know what you're doing and AI is accelerating things, whether you're using React native or not.
+
+399
+00:40:42,240 --> 00:40:48,000
+And then you have the kind of vibe coding like, I'm going to, you know, jump into Bolt to replate it and throw a few prompts in there.
+
+400
+00:40:48,640 --> 00:40:50,880
+And I don't really know how to code, but it's going to build an app.
+
+401
+00:40:51,280 --> 00:41:07,200
+Let's talk first about what you're seeing in that AI assisted app development loop of like really top notch programmers using AI and React to just move quicker using things like cursor and windsurf and GitHub copilot and cloud code and all these kinds of tools to move faster.
+
+402
+00:41:07,600 --> 00:41:08,320
+What are you seeing there?
+
+403
+00:41:08,640 --> 00:41:14,720
+And also maybe like what exposes like kind of a unique position right now in this world, which I think is interesting for that kind of stuff.
+
+404
+00:41:15,200 --> 00:41:20,640
+One that's really a big deal is like how well trained are the models and the stuff that you're having it right?
+
+405
+00:41:21,040 --> 00:41:33,040
+And one thing that's just good about React is there's a ton of open sour source example code out there, and people tend, it's much more common to make like a React project open source than it is to make like a Swift project.
+
+406
+00:41:33,280 --> 00:41:40,480
+These LMs are actually pretty good at figuring out most things out to some degree, but just the more training data they have, the better they're going to be and whatnot.
+
+407
+00:41:40,480 --> 00:41:50,720
+And so there's like 1.2 million plus Expo projects that are open source on GitHub right now, and some of those are old and outdated, and that can cause that's its own kind of niche problem or whatever.
+
+408
+00:41:51,200 --> 00:41:52,880
+But a big part of it is just like there's that.
+
+409
+00:41:53,200 --> 00:42:22,080
+But then another thing that happens is that when you have this kind of AI assisted coding in your developer, I was actually teaching a workshop the other day at a college and a few years ago when I would do that, a lot of the time I would spend in this when I was teaching a workshop making a basic app would just be me typing out, you know, basic stuff of state management or, you know, going to our docs to look up the right, you know, thing to, you know, the right incantation to import the camera module or things like that.
+
+410
+00:42:22,640 --> 00:42:29,360
+And then I was just like in five minutes I had built a whole to do list app and added a couple of features to it.
+
+411
+00:42:29,440 --> 00:42:34,560
+And I was just like, okay, class, I'm not going to have you watch me use Cloud for the rest of this session.
+
+412
+00:42:34,720 --> 00:42:37,520
+Just like come up to me if you have problems and I'll just talk to you you guys.
+
+413
+00:42:37,760 --> 00:42:40,400
+The time it takes to do basic stuff just goes way, way down.
+
+414
+00:42:40,800 --> 00:42:48,320
+And so when that's happening, we start to get super sensitive to the things that start to take a lot of time and slow you down.
+
+415
+00:42:48,800 --> 00:42:58,240
+And so, yeah, I'm sure you guys have seen that famous XKCD comic where there's the guys like cardboard sword fighting in the in the spinny chairs where they're waiting for things to compile.
+
+416
+00:42:58,720 --> 00:43:12,480
+And so like when it's taking you like a split second to write code and then all of a sudden you're spending a minute and 45 seconds as your app the sort of nasty thing about sort of compiled apps and stuff like that is they start off kind of like when you have.
+
+417
+00:43:13,120 --> 00:43:18,960
+a white screen with like one thing of black text on it that just says like hello, it's like compilation is pretty quick.
+
+418
+00:43:19,040 --> 00:43:26,560
+But then you even when you get to start six, seven screens that are pretty it's like four git sub modules, SPM, CocoaPods, somehow both in the same project.
+
+419
+00:43:26,800 --> 00:43:26,880
+Yeah.
+
+420
+00:43:27,600 --> 00:43:40,640
+Yeah, all of a sudden that's now 45 seconds, a minute 45, and it just kind of like big companies that have these huge, sprawling apps like Uber, like a huge chunk of the engineering and stuff is like it takes 45 minutes plus to compile our app.
+
+421
+00:43:40,880 --> 00:43:46,720
+And so people are going off and making new projects where they're building new UIs and then trying to copy and paste them over and some crazy stuff.
+
+422
+00:43:46,880 --> 00:43:48,000
+So anyway, tangent.
+
+423
+00:43:48,400 --> 00:43:54,640
+But you can imagine that like waiting for stuff to compile when you're not really spending any time writing code just becomes super, super painful.
+
+424
+00:43:54,800 --> 00:44:04,240
+And so like the idea that you can just like make a quick change, you save it and that UI is now updated on your phone or in your simulator or whatever right away, that just feels so much better.
+
+425
+00:44:04,800 --> 00:44:10,160
+And that bottleneck is really exposed as you really ratchet down the amount of time that you're spending writing code.
+
+426
+00:44:10,480 --> 00:44:18,640
+Sort of a similar principle is happening with vibe coding as well, where like models like Claude and Gemini or whatever are like decent at writing Swift code or whatever.
+
+427
+00:44:18,800 --> 00:44:35,280
+That's actually kind of exciting for React native because what I was talking to someone today is a really good React native developer, this guy, Fernando., who's the head of mobile at Versailles, he was saying a lot of what he's been doing lately is doing more stuff in Swift on iOS because he doesn't have to become a Swift expert.
+
+428
+00:44:35,360 --> 00:44:45,760
+He can kind of like when he wants to go do something, he can just kind of have AI point him the right direction, clean up stuff and make it kind of make it work, and so he's able to write more stuff in native code.
+
+429
+00:44:46,160 --> 00:45:00,800
+So like LMs are actually decent at writing that stuff, but like imagine you're a vibe coder and you're just like, hey, I want to try, I heard that I can make stuff as a, you know, just vibe coding now and you decide you want to do that by writing some Swift code and that's like, okay, well, first of all you need a Mac only..
+
+430
+00:45:00,880 --> 00:45:03,520
+Only what, twelve percent of computers globally are Macs.
+
+431
+00:45:03,760 --> 00:45:06,640
+Okay, so now a lot of people are just like stuck and they can't do anything.
+
+432
+00:45:06,720 --> 00:45:09,280
+But let's say you do have a Mac and let's say it's a fast Mac or whatever.
+
+433
+00:45:09,440 --> 00:45:14,160
+And it's kind of like, okay, now here's your next instruction is download Xcode.
+
+434
+00:45:14,400 --> 00:45:16,480
+And that often takes like 45 minutes.
+
+435
+00:45:16,960 --> 00:45:22,640
+And then setting it up is like another 45 minutes of 99 dollars sign up to the Apple Developer Program.
+
+436
+00:45:22,800 --> 00:45:23,520
+You need a DUNS number.
+
+437
+00:45:23,680 --> 00:45:24,880
+No, you don't have to do that, but like.
+
+438
+00:45:24,960 --> 00:45:31,360
+You don't need a DUNS number until you want to go to the App Store, but like, it literally can take you three days before you get your developer account approved.
+
+439
+00:45:31,520 --> 00:45:34,560
+You don't need a developer account anymore to just put something on your own device.
+
+440
+00:45:34,800 --> 00:45:36,480
+But like, not even the simulator actually.
+
+441
+00:45:37,120 --> 00:45:38,480
+on your end device, you can do it without.
+
+442
+00:45:39,120 --> 00:45:44,720
+Yeah, you can if you plug your phone into your computer, it's pretty handicapped in many ways, but they're a little bit more lax.
+
+443
+00:45:45,040 --> 00:45:54,480
+Like the mindset just seems to be like, it's a privilege that you would be able to write any software on these devices that are sort of pristine playgrounds.
+
+444
+00:45:54,800 --> 00:45:57,520
+I mean, I won't do back in my day, but it's a heck of a lot easier now.
+
+445
+00:45:57,760 --> 00:46:00,080
+It's gotten easier, but it's still not like actively easy.
+
+446
+00:46:00,240 --> 00:46:02,560
+It's like you're, there's just a whole bunch of hurdles.
+
+447
+00:46:02,800 --> 00:46:06,480
+Opening an HTML file in Chrome, you know, and boom, you're running.
+
+448
+00:46:06,640 --> 00:46:19,600
+Expo has just like a bunch of different tools, and I like, it'll take me a long time to explain all of them, but like one of them is this ExpoGo app that you can download from the App Store and that has basically just like most of the modules in the Expo SDK kind of baked into it already.
+
+449
+00:46:19,920 --> 00:46:26,800
+And so if you just want to use the camera view or location or the gyroscope or any of the sort of basic things, those are already just like baked in native.
+
+450
+00:46:27,360 --> 00:46:30,320
+And so that covers a lot of ground for a lot of people.
+
+451
+00:46:30,800 --> 00:46:40,240
+And so if you can write stuff that you can use any font you want, you can do any kind of styling you want, you can do any kind of things with it even has Racknative SKI built into it.
+
+452
+00:46:40,320 --> 00:46:42,960
+And so you can do like pretty complex stuff with just this.
+
+453
+00:46:43,600 --> 00:46:47,360
+And so a lot of the vibe coder stuff basically just is like here, here's your instructions.
+
+454
+00:46:48,000 --> 00:46:52,480
+With the ExpoGo app from the App Store, we're putting a QR code up on your screen, scan the QR code, bam.
+
+455
+00:46:53,360 --> 00:47:00,400
+In less than thirty, forty seconds, you now have your app on your phone as you make changes to it and you're writing stuff.
+
+456
+00:47:01,040 --> 00:47:01,680
+That's just happening.
+
+457
+00:47:01,840 --> 00:47:05,120
+So, like, I was just up in Seattle at this place called the AI.
+
+458
+00:47:05,440 --> 00:47:10,640
+It's sort of a complicated thing that's like an incubator plus event space plus coworking space.
+
+459
+00:47:10,960 --> 00:47:16,160
+The person who runs the physical space there was telling me that they needed some kind of check in.
+
+460
+00:47:16,320 --> 00:47:23,680
+You know, a lot of offices have this kind of check in step where you go up to the desk and they have an iPad and you sort of fill out your name and who you're going to visit and whatnot.
+
+461
+00:47:24,320 --> 00:47:38,640
+And she was saying that, like, because they're this kind of hybrid of a, you know, a couple of different things all at once, none of the sort of off the shelf solutions were exactly what they needed, but they also didn't need something like super crazy complicated because it's just like they don't have a hundred locations.
+
+462
+00:47:38,800 --> 00:47:40,000
+They just have this one space.
+
+463
+00:47:40,480 --> 00:48:00,800
+She's not a, you know, traditionally trained developer or anything, but she was able to just fire a bolt with Expo and like build an app just vibe coding that, like, you know, has their whole list of experts connected to that database and then has a whole sign of form and you can sign your name and then it submits it and it stores it in a, you know, Postgres database in the cloud using Superbase and they can, you know, access it.
+
+464
+00:48:01,360 --> 00:48:12,560
+And she was able to do that in a couple of hours just like, you know, repeatedly prompting, not editing any of the code, which would like comparative even an expert developer that would take a week, you know, to make it work, right?
+
+465
+00:48:13,200 --> 00:48:13,600
+Yeah, probably.
+
+466
+00:48:14,400 --> 00:48:20,400
+That's actually like live now, like it using some of the expo tools to help get stuff into a sort of test flight.
+
+467
+00:48:20,640 --> 00:48:26,000
+Like a lot of what we actually do is just solving this distribution problem of like, hey, I want to, I want to take this app and get in.
+
+468
+00:48:26,400 --> 00:48:29,040
+So it's great that you get, you can get up and running in the Go app.
+
+469
+00:48:29,280 --> 00:48:30,960
+I mean, I know you guys still do a lot.
+
+470
+00:48:31,120 --> 00:48:38,960
+I think, I think the thing that's made expo, one of the things that's like that last mile on mobile is so painful, right?
+
+471
+00:48:39,200 --> 00:48:39,680
+So it's great.
+
+472
+00:48:39,840 --> 00:48:45,680
+You can vibe code something up and it's in, you know, it's basically running in a browser, but then like, okay, you want to get it on the app store, right?
+
+473
+00:48:46,000 --> 00:49:01,040
+And so a lot of what we've been working on the last year or two is stuff to let like we just released a module not that long ago called like NPM test flight where you can basically in an Excel project run NPM test flight and it'll just like walk you through all the steps and put it in test flight and you don't have to like you're not thinking about provisioning profiles.
+
+474
+00:49:01,200 --> 00:49:07,360
+You're not thinking about distribution certificates, all these things that are just like I feel like I've talked to so many people who are in the mobile world.
+
+475
+00:49:07,600 --> 00:49:12,000
+And if if you look, sort of get them aside and you're like, explain to me what a provisioning profile is.
+
+476
+00:49:12,160 --> 00:49:16,560
+They're kind of like., Oh, Charlie, I'm probably one of the few people that could actually do a really good job.
+
+477
+00:49:16,960 --> 00:49:17,440
+But right.
+
+478
+00:49:17,680 --> 00:49:18,080
+I'm sure.
+
+479
+00:49:18,240 --> 00:49:20,720
+But like knowledge, I would love to free up in my head.
+
+480
+00:49:21,120 --> 00:49:21,840
+Get, trust me.
+
+481
+00:49:22,080 --> 00:49:22,320
+Right.
+
+482
+00:49:22,400 --> 00:49:27,840
+And there's just a lot of people like, I don't, I just kind of like keep refreshing things or Google things until it finally works.
+
+483
+00:49:28,160 --> 00:49:35,040
+Yeah, when they added at some point in X and X code, they added like a fix my provisioning profile button, which the worst, like never click that button.
+
+484
+00:49:36,160 --> 00:49:40,480
+Yeah, which is like actually like roll a dice and maybe nuke my developer profile.
+
+485
+00:49:42,080 --> 00:49:47,360
+There's still some sort of rough edges around because Apple just like wants to stay in control of things and it's hard to make something that's perfect.
+
+486
+00:49:47,600 --> 00:49:48,640
+But we put a lot of work.
+
+487
+00:49:49,200 --> 00:49:57,840
+into making it so that getting up and running on the web because we've added web hosting and stuff like that or getting up and running through Test Flight or the App Store or whatever, all those things have been a lot easier.
+
+488
+00:49:57,920 --> 00:50:02,080
+Like a really good flow that a lot of people like is we actually run Excode and Red Studio in the cloud for people.
+
+489
+00:50:02,240 --> 00:50:04,480
+That's kind of one of the main ways that we make money as a company.
+
+490
+00:50:04,960 --> 00:50:08,480
+And if you don't have a Mac or you don't have a fast computer, that's just like pretty nice.
+
+491
+00:50:08,560 --> 00:50:11,280
+But it also means that you're not grinding your computer to halt.
+
+492
+00:50:11,440 --> 00:50:14,080
+Every time you do a check in, it's easy to have a cloud build or kick off.
+
+493
+00:50:14,160 --> 00:50:21,280
+But then we can also take that artifact and just submit it for you or put it in Test Flight or just do whatever, wherever that artifact needs to go.
+
+494
+00:50:21,600 --> 00:50:22,880
+We can sort of solve those problems for you.
+
+495
+00:50:22,960 --> 00:50:23,360
+We can run a bunch.
+
+496
+00:50:23,520 --> 00:50:28,240
+You can have, you know, a bunch of sc scripted tests run against it and then, you know, a report generated whatnot.
+
+497
+00:50:28,640 --> 00:50:38,400
+So solving a lot of those problems is like a big part of what we just kind of realized that people need to go from, you know, idea to living thing that's running, you know, in production the way they want it to be.
+
+498
+00:50:38,720 --> 00:50:45,760
+You mentioned there's like Bolt and Replet and Lovable and AZero, there's a bunch of these and most of them are going through you.
+
+499
+00:50:46,320 --> 00:50:48,560
+Do you think that that's the way things are going to shake out?
+
+500
+00:50:48,720 --> 00:50:57,520
+Like, because I'm wondering for us as an infrastructure company too, like, it depends on your belief in AGI, like whether or not you can be like build expo, you know, as a, as a command line thing.
+
+501
+00:50:57,840 --> 00:51:00,720
+Do you think these companies continue to, like, run through a, like, centralized service?
+
+502
+00:51:01,120 --> 00:51:02,560
+provider or do you think they're going to need to own this?
+
+503
+00:51:02,640 --> 00:51:10,160
+I guess it's it comes out of a question of like where the value accrues and stuff or or maybe you can even say, are you guys thinking about just owning the vibe coding layer?
+
+504
+00:51:10,320 --> 00:51:11,360
+Like where do you think it goes?
+
+505
+00:51:11,760 --> 00:51:14,400
+Developers want to do all kinds of things in all different ways.
+
+506
+00:51:14,800 --> 00:51:20,480
+And so like if we were to just every time where we've sort of said, well, we think that probably most people want to do this.
+
+507
+00:51:20,560 --> 00:51:22,800
+So let's just kind of assume that and build everything around that.
+
+508
+00:51:23,200 --> 00:51:31,280
+We end up with a whole bunch of people like, actually, I want to do something really weird and or I need to because I think that's just going to be actually a pretty wide variety of different things.
+
+509
+00:51:31,680 --> 00:51:41,600
+The other side of the coin is that like, I think one thing that I've noticed about AI generated code and whatnot is that it works better in general the more you keep it on the rails.
+
+510
+00:51:42,240 --> 00:51:53,200
+And so a big step forward for Bolt and Lovable was when they both took Superbase and made that sort of the, this sort of, this is the way that we do a back end for you.
+
+511
+00:51:53,760 --> 00:51:57,920
+And I'm sure part of that was just sort of connecting Superbase and making easy to set up an account.
+
+512
+00:51:58,080 --> 00:52:12,800
+But I think another part of it was probably they were tweaking the sort of system prompts of what they did in terms of saying when you do a back end, here's the rules like use Superbase, keep the, make sure that you don't leak the private key to the clients, you know, just like do these things in this way.
+
+513
+00:52:14,240 --> 00:52:23,840
+And so I think that makes it, in a lot of ways, like, makes more sense to rely on like a standard, very popular provider because there's going to be good training data on that.
+
+514
+00:52:23,920 --> 00:52:26,640
+It's going to, everyone's going to kind of know how to work with it and what not.
+
+515
+00:52:26,880 --> 00:52:30,480
+I think that we're still in, you know, early days and what not.
+
+516
+00:52:30,640 --> 00:52:41,680
+But I do think that like, I think that we'll see a lot of winners win harder because like, people will just like get started and not want to fight the AI that has just sort of been sort of trained to like, oh, use this solution.
+
+517
+00:52:41,760 --> 00:52:58,080
+Or like, I mean, you could probably get an AI to generate a Svelte website or something like that these days., like if you just said please use Svelte, but like if you just say like go make me a website, like almost every model is going to default to doing React and kind of lean that direction.
+
+518
+00:52:58,320 --> 00:53:00,320
+And it probably tells you to go to Expo too, right?
+
+519
+00:53:00,480 --> 00:53:02,080
+Like, how do I get this on my phone?
+
+520
+00:53:02,240 --> 00:53:04,800
+It's probably nine times out of ten going to tell you like this.
+
+521
+00:53:04,960 --> 00:53:07,440
+We see a lot for revenue cat, like how are you going to purchase this?
+
+522
+00:53:07,520 --> 00:53:10,480
+They're like, do all this or go to revenuecat dot com, right?
+
+523
+00:53:10,720 --> 00:53:11,840
+Like, that's an option.
+
+524
+00:53:12,160 --> 00:53:22,320
+I think a lot of things that are just like easier and cut out the other annoying stuff, like you're saying, like, or go to revenuecat dot com and like, a lot of the problems that you're going to face are just kind of going away or handled by this.
+
+525
+00:53:22,560 --> 00:53:30,080
+People I think are just going to have a lot less patience for this sort of other steps or this sort of wandering in the forest trying to get some complicated thing to work.
+
+526
+00:53:30,400 --> 00:53:45,840
+I have sort of an argument, a gradient descent argument where like if the energy it requires to like send someone to RevenueCat or Expo or whatever is always less than like the energy it would take to generate the tokens, like the model should just optimize towards like that outcome, right?
+
+527
+00:53:46,400 --> 00:53:54,000
+Which is a fancy way of basically saying what you're saying, which is like if it's already a relative minimum, like it's going to like continue to reinforce that, right?
+
+528
+00:53:54,160 --> 00:54:01,920
+Like using super base and whatever versus like when it's exploring new space, which is what the vibe coders are actually building, that's where the model should be spending most of its energy.
+
+529
+00:54:02,400 --> 00:54:16,160
+I still think there's stuff where like a lot of the people that are making these, you know, web-based friends for AIs and whatnot, like they don't want to get into the weeds on like some narrow slice of the problem that's like, or sometimes not even like, I mean, I think our space is actually not very narrow.
+
+530
+00:54:16,320 --> 00:54:20,400
+Part of the challenge of it is that there's so many things going on on mobile and such a huge service area.
+
+531
+00:54:20,800 --> 00:54:24,400
+And like, you know, could you try to build all the stuff that we built?
+
+532
+00:54:24,720 --> 00:54:27,120
+Like, yeah, you could with enough effort, you could.
+
+533
+00:54:27,280 --> 00:54:31,040
+And you could probably, it'd probably be easier the second time around because you could just look at what we did in a lot of cases.
+
+534
+00:54:31,120 --> 00:54:32,960
+Probably true for, you know, revenue cat as well.
+
+535
+00:54:33,040 --> 00:54:36,720
+There's like if you wanted to build something that was like revenue cat, you could just look at it and put it.
+
+536
+00:54:36,880 --> 00:54:37,840
+But there's a lot of detail.
+
+537
+00:54:38,080 --> 00:54:40,560
+I'm sure there's a thousand details that will.
+
+538
+00:54:41,040 --> 00:54:44,400
+Yeah, that then LMs actually aren't great at understanding, right?
+
+539
+00:54:44,720 --> 00:54:45,280
+Necessarily, right?
+
+540
+00:54:45,680 --> 00:54:45,760
+Yeah.
+
+541
+00:54:46,080 --> 00:54:56,160
+And so a lot of I think a lot of these people like just want to offload things to pieces that they kind of know work and are well maintained more than like trying to compete with them necessarily.
+
+542
+00:54:56,400 --> 00:54:57,600
+We'll see how things play out.
+
+543
+00:54:58,000 --> 00:55:17,120
+A developer friend I've worked with for years who who who was also a very kind of snobbish native developer for a long time was telling me how much he enjoys working with LLMs and React native because it closes a loop as well because the LLM can actually render it, test it, and close the loop on that.
+
+544
+00:55:17,600 --> 00:55:22,560
+Have you been seeing that as a trend as well of like it just getting better and better at being so quick?
+
+545
+00:55:23,440 --> 00:55:29,440
+Like you were saying, you don't want to have to compile an app, wait five minutes to then test the code.
+
+546
+00:55:30,000 --> 00:55:38,320
+Yeah, even like using cursor or using chat GPT alongside Xcode is just like a, it's a substandard experience to using one of these vibe coding tools for that reason, right?
+
+547
+00:55:38,480 --> 00:55:41,600
+Like the LM can actually run the code, which is a huge advantage.
+
+548
+00:55:41,920 --> 00:55:54,960
+One thing I've heard is that one of the reasons that these LMs are quite good at writing code compared to a lot of other things is because they could like generate output and then run the code and tell if it like worked.
+
+549
+00:55:55,200 --> 00:55:59,840
+And so like, it's a lot easier to like train on that versus like, is this a good poem?
+
+550
+00:56:00,160 --> 00:56:04,480
+When I ask it to come up with a company strategy, it has no way to RL that back in, for example.
+
+551
+00:56:05,120 --> 00:56:18,080
+But then there's also, this is maybe not quite what you're talking about, but like, that's sort of what you're talking about, but a zoomed out version to some extent, where I was, I used to work with a guy who was like a really good designer slash Swift engineer.
+
+552
+00:56:18,960 --> 00:56:28,880
+And he had started a new startup that was like a consumer product, and they had built it in Swift for all the reasons that, people who, oh, we have to get every interaction perfect.
+
+553
+00:56:29,120 --> 00:56:32,960
+It's got, you know, we're consumer things, so every little detail matters, blah, blah.
+
+554
+00:56:33,040 --> 00:56:47,200
+And then there was this spot where they had something that people liked, but it just wasn't quite at the point where it was like, could raise like a Series B or just was like really off to the races, and so they needed to kind of work on it, but also was like, you know, had some network effects.
+
+555
+00:56:47,280 --> 00:56:53,440
+So they were kind of like, well, we kind of need to be on Android and web, but we also kind of need to be changing this product.
+
+556
+00:56:54,080 --> 00:57:00,480
+And so like, are we going to freeze everything and go build an Android version, but then we're going to be stuck with two versions of the code and we're never going to be able to move forward?
+
+557
+00:57:00,800 --> 00:57:08,240
+And like, it also, even if we were just sticking with iOS, like, it takes us a long time to make even one new screen or whatever.
+
+558
+00:57:08,480 --> 00:57:10,960
+And so, he's, you know, he's working on a new thing now.
+
+559
+00:57:11,200 --> 00:57:14,960
+And it's, he's basically just like, yeah, I'm just using Expo for it.
+
+560
+00:57:15,280 --> 00:57:22,160
+The technology has come to the point where I've been able to make the things I need to do, and I can just tell so much more quickly whether I like something or not.
+
+561
+00:57:22,560 --> 00:57:26,240
+And I can drop down to Swift when I need to, but I actually haven't really needed to at all yet.
+
+562
+00:57:26,560 --> 00:57:36,560
+And so I think that like a lot of people are kind of learning other lessons about iteration the hardware, or it's like, you often end up in this middle ground where you're like, this is kind of good, but it's exactly what I want.
+
+563
+00:57:36,960 --> 00:57:40,080
+And like, if you can't, like, it just you have to really know what you want.
+
+564
+00:57:40,240 --> 00:57:42,480
+I think when you're, if, if it's to make it worth it.
+
+565
+00:57:42,800 --> 00:57:49,760
+Even if there's some relative, uh, difficulty of working with the tools, like, it can easily be wiped out by, like, a small increase in iteration speed.
+
+566
+00:57:50,000 --> 00:57:50,160
+Right.
+
+567
+00:57:50,480 --> 00:57:50,560
+Yeah.
+
+568
+00:57:50,720 --> 00:57:53,280
+Jake and I were talking about this before we got on Craigslist.
+
+569
+00:57:53,440 --> 00:57:56,800
+I went and looked it up in the App Store because I haven't used Craigslist in years.
+
+570
+00:57:56,960 --> 00:58:04,160
+Actually, I hadn't even downloaded the app, surprisingly, but it's got like 450,000 reviews and an average of 4.8 stars.
+
+571
+00:58:04,880 --> 00:58:20,320
+And, you know, my reflection upon seeing that was that React native app, by the way, or we are expo, expo driven React native app, by the way, which Charlie and I were talking on the call the call, like my long story, too much detail, but my wife worked there back in 2016, 2017, and this was like something I went in and talked to them about to help them.
+
+572
+00:58:20,720 --> 00:58:22,560
+I'm probably breaking an NDA, I don't care.
+
+573
+00:58:22,800 --> 00:58:25,360
+And apparently like this was I said, Oh, you should check out Expo.
+
+574
+00:58:25,600 --> 00:58:30,960
+Apparently it was one of the first like big companies or something like shocking logos that you saw Charlie, which is pretty funny.
+
+575
+00:58:31,280 --> 00:58:35,200
+They reached out to us and were like, Hey, we're thinking about using you for, we didn't have any.
+
+576
+00:58:35,440 --> 00:58:38,160
+I think the biggest thing with Expo at that point was like urban dictionaries.
+
+577
+00:58:39,040 --> 00:58:41,200
+That's kind of a big, I mean, it's cool.
+
+578
+00:58:41,360 --> 00:58:45,040
+You're starting over the fringes of brand, but like, you know, it's a big step up.
+
+579
+00:58:45,040 --> 00:58:45,680
+Well, yeah, yeah.
+
+580
+00:58:45,920 --> 00:58:48,560
+I was just going to say, upon seeing that, it really struck me.
+
+581
+00:58:49,040 --> 00:58:54,480
+that people review and they care about and they rate the outcome.
+
+582
+00:58:55,040 --> 00:58:58,720
+Is Craigslist helping me do what I set out to achieve?
+
+583
+00:58:59,520 --> 00:59:04,320
+They're not rating every little interaction that you think needs to be perfect.
+
+584
+00:59:04,960 --> 00:59:10,960
+And I mean, just looking at the screenshots, you can tell that Craigslist app is as Craigslist website is.
+
+585
+00:59:11,280 --> 00:59:14,400
+It's not this incredibly polished, like perfect experience.
+
+586
+00:59:15,040 --> 00:59:18,400
+You might be thinking, what's the actual constraining factor here, like limiting factor?
+
+587
+00:59:18,480 --> 00:59:22,400
+Maybe it's not Exposed Polish or Rackay's Polish, but maybe Craigslist design.
+
+588
+00:59:23,360 --> 00:59:23,920
+Right, totally.
+
+589
+00:59:24,400 --> 00:59:30,000
+But the point being that people love the app, you know, 4.8 stars, 450,000 reviews.
+
+590
+00:59:30,400 --> 00:59:33,680
+There's a lot of native apps out there that are not even close to that, right?
+
+591
+00:59:34,000 --> 00:59:41,760
+One is that the biggest user of Rack Native inside of Meta, I think, is actually the marketplace thing, which gets like a billion people using it every day.
+
+592
+00:59:42,080 --> 00:59:47,200
+And so like both, I guess, Craigslist and also the thing that sort of replaced Craigslist for many of us are built with.
+
+593
+00:59:47,280 --> 00:59:48,800
+And I think marketplace is actually quite nice.
+
+594
+00:59:48,960 --> 00:59:51,440
+I was telling David before this, it's my favorite social network.
+
+595
+00:59:51,680 --> 00:59:52,960
+I just love going on there and browsing.
+
+596
+00:59:53,040 --> 00:59:54,160
+And just it's entertaining.
+
+597
+00:59:54,320 --> 00:59:56,480
+The algorithm is not aggressively trying to get my attention.
+
+598
+00:59:56,640 --> 00:59:57,280
+It's awesome.
+
+599
+00:59:58,160 --> 00:59:58,720
+It's very real.
+
+600
+00:59:58,880 --> 00:59:59,600
+But then the other thing that.
+
+601
+01:00:00,000 --> 01:00:03,040
+That reminded me of, like, one thing that's just driven me crazy for years.
+
+602
+01:00:03,200 --> 01:00:12,240
+And part of the reason I work on this is that when I look around and look at how people I know and you and me use software, I'm mostly on my mobile device.
+
+603
+01:00:12,400 --> 01:00:14,640
+I'm someone whose job is to sit at a computer all day.
+
+604
+01:00:14,960 --> 01:00:21,600
+So I'm definitely not like anti computer, but like most people don't have jobs where they sit in front of a computer all day.
+
+605
+01:00:21,920 --> 01:00:28,560
+I think it's become much, much less normal for like people who don't have computer jobs or aren't enthusiasts to have a PC that they use regularly.
+
+606
+01:00:28,880 --> 01:00:30,960
+But if you think about like, what do developers work on?
+
+607
+01:00:31,200 --> 01:00:41,600
+It's kind of like most people out there are like web developers who make websites for people sitting at their computer and like, whereas then the way we're using software is like most people are just like using the app on their phone for whatever.
+
+608
+01:00:41,920 --> 01:00:46,080
+And like, this's getting more and more true where it used to be like, you know, I wouldn't write important emails on my phone.
+
+609
+01:00:46,160 --> 01:00:46,880
+I would sit down and write.
+
+610
+01:00:47,040 --> 01:00:49,680
+And now like most of the important emails I write, I write for my phone.
+
+611
+01:00:49,760 --> 01:00:59,200
+And I would, I wouldn't say to be like, well, probably, you know, early days of Expo, I'd sometimes, I'd point this out and I'd be like, you know, it's not like we're going to, you know, first person shooter video games and video editing and stuff like that.
+
+612
+01:00:59,360 --> 01:01:01,360
+That's probably, you know, not going to move to mobile.
+
+613
+01:01:01,600 --> 01:01:08,480
+But now like TikTok probably has more minutes of video edited per day than the sum of, you know, Final Cut and Premiere or whatever.
+
+614
+01:01:08,640 --> 01:01:17,360
+And then, you know, I'm sure that the sum total of minutes played on, like, first person shooters on Android devices is bigger than PCs these days and whatnot.
+
+615
+01:01:17,680 --> 01:01:17,760
+Yeah.
+
+616
+01:01:18,080 --> 01:01:21,360
+How many people are playing Counter, sitting down and playing Counter Strike any more?
+
+617
+01:01:21,520 --> 01:01:24,400
+You know, all these things I was like, Oh, well, I don't know if this will move over.
+
+618
+01:01:24,560 --> 01:01:25,520
+They're all basically have.
+
+619
+01:01:25,920 --> 01:01:40,240
+And so like, part of what I just want to solve is like, how do we make it so that like, it's easy enough to work on mobile stuff so that we can line up the like developer effort and energy with like how people are actually using software in the world.
+
+620
+01:01:40,640 --> 01:01:50,480
+Because we like, I remember I was in, uh, in Miami and I was sitting next to someone who was telling me they were working on, one of these weed buying startups or whatever.
+
+621
+01:01:50,640 --> 01:01:54,080
+And they told me they had a they work on a 20-person developer team.
+
+622
+01:01:54,960 --> 01:02:04,400
+And he was like, oh yeah, there's like, you know, I think we have me and sometimes this other person with like half of their time helps me on the app and we're using, you know, React native for it.
+
+623
+01:02:04,720 --> 01:02:05,760
+And then I was like, oh okay.
+
+624
+01:02:06,160 --> 01:02:09,520
+And he was like, and he was like, yeah, pretty much everybody else works on the website.
+
+625
+01:02:09,680 --> 01:02:16,000
+And I was like, well, oh, so like the app must just be some sort of like add on here or, you know, not that important to you.
+
+626
+01:02:16,400 --> 01:02:19,120
+And he was like, no, no, no, 95 percent of our sales are through the app.
+
+627
+01:02:19,520 --> 01:02:22,400
+But for whatever reason., like, you know, you can hire web developers.
+
+628
+01:02:22,560 --> 01:02:25,760
+And so they just like, that's, you know, they had all these people working on the website.
+
+629
+01:02:25,840 --> 01:02:32,800
+And it's just like, I think a lot of the industry is in the state where it's like, it's so much easier to write stuff and deploy stuff on the web.
+
+630
+01:02:32,960 --> 01:02:37,600
+And they're just such a better development experience in history that we end up like gravitating in that direction.
+
+631
+01:02:38,240 --> 01:02:43,440
+These constraints like kind of echo and like, they create like some sort of imbalances like, you know, accidentally.
+
+632
+01:02:43,680 --> 01:02:47,920
+But I do think that some of these things are changing and getting a bit easier to deal with and whatnot.
+
+633
+01:02:48,160 --> 01:02:55,760
+And, you know, some of the ways that some policies change based on some of these lawsuits and whatnot, I think it's going to potentially make distribution easier in some ways.
+
+634
+01:02:56,160 --> 01:02:58,080
+I think I only expect it to get more liberalized, right?
+
+635
+01:02:58,240 --> 01:03:02,800
+Like I don't expect Apple to get more, you know, I think the trend was likely to continue with and without lawsuits.
+
+636
+01:03:03,040 --> 01:03:14,960
+I think they'll just be I think it's kind of the way I think it's kind of like, you know, when Uber first launched, I think it was probably technically illegal in a lot of places, but it's just like, at the end of the day, like if something is really good where it's like, it's just if the people demand it, it will happen.
+
+637
+01:03:15,600 --> 01:03:20,960
+Then like eventually will sort of the floodgates will kind of the dam will leak or burst or something.
+
+638
+01:03:21,440 --> 01:03:30,480
+Well, I think that's a great topic to wrap up on, you know, with the increase in tools, with AI, with everything that's going on in the industry, it's just faster.
+
+639
+01:03:30,960 --> 01:03:32,960
+and easier to build software that helps people.
+
+640
+01:03:33,280 --> 01:03:34,320
+And that's really cool.
+
+641
+01:03:34,800 --> 01:03:36,320
+And it's exciting to be a part of it.
+
+642
+01:03:36,720 --> 01:03:38,800
+Anything else you wanted to share as we were wrapping up?
+
+643
+01:03:38,960 --> 01:03:41,520
+No, I feel like I got to show our products for now.
+
+644
+01:03:43,360 --> 01:03:50,960
+I was going to say you could go to you could go to Expo's website, but honestly, people will probably just find you via Bolt, you know, like it'll just be LLMs will tell you to go there.
+
+645
+01:03:51,120 --> 01:03:52,800
+But no, I think it's really cool what you guys are building.
+
+646
+01:03:52,960 --> 01:03:58,320
+I think it's like, I don't know, you get me excited that, you know, we're still early days on this, like, transition to mobile.
+
+647
+01:03:58,480 --> 01:04:03,600
+And like, in fact, like maybe much like eCom and Shopify, you know, opened up eCom for a lot of people.
+
+648
+01:04:03,760 --> 01:04:05,440
+I still think like mobile development.
+
+649
+01:04:06,080 --> 01:04:09,920
+and development in general is now just finally getting opened up and Expo plays a big part of that.
+
+650
+01:04:10,160 --> 01:04:10,800
+It's just really cool.
+
+651
+01:04:10,960 --> 01:04:12,800
+So yeah, thanks for the work you're doing.
+
+652
+01:04:13,040 --> 01:04:13,920
+All right, thanks, Charlie.
+
+653
+01:04:14,080 --> 01:04:15,440
+All right, have a great day, David.
+
+654
+01:04:15,680 --> 01:04:16,720
+Talk to you later, Jacob.
+
+655
+01:04:18,960 --> 01:04:20,320
+Thanks so much for listening.
+
+656
+01:04:21,200 --> 01:04:24,720
+If you have a minute, please leave a review in your favorite podcast player.
+
+657
+01:04:25,520 --> 01:04:30,400
+You can also stop by chat dot subclub dot com to join our private community.
