@@ -1,0 +1,4043 @@
+1
+00:00:03,360 --> 00:00:10,400
+[SPEAKER_00] Hey, you're listening to the Subclub Podcast, a show dedicated to the best practices for building and growing subscription app businesses.
+
+2
+00:00:10,880 --> 00:00:14,720
+[SPEAKER_00] We'll share insider secrets from the top subscription apps on the app stores.
+
+3
+00:00:15,200 --> 00:00:16,000
+[SPEAKER_00] Let's get into the show.
+
+4
+00:00:17,840 --> 00:00:22,880
+[SPEAKER_02] Hello, I'm your host, David Bernard, and with me, as always, RevenueCat CEO, Jacob Biding.
+
+5
+00:00:23,360 --> 00:00:26,960
+[SPEAKER_02] Our guest today is Ben Thompson, author and founder of Stratechry.
+
+6
+00:00:27,680 --> 00:00:34,560
+[SPEAKER_02] For almost a decade now, Ben has been writing and speaking about the strategy and business of technology and its impact on society.
+
+7
+00:00:34,880 --> 00:00:39,760
+[SPEAKER_02] On the podcast today, we talk with Ben about all things App Store's.
+
+8
+00:00:40,240 --> 00:00:47,440
+[SPEAKER_02] From Apple's revolutionary launch of the App Store in 2008 to the monopoly like powers both Google and Apple wield today.
+
+9
+00:00:48,320 --> 00:01:01,280
+[SPEAKER_02] With multiple lawsuits filed, government investigations ongoing, and developers' sentiment at an all time low, we take an honest look at the challenges and trade-offs in trying to bring two of the world's largest companies to heal.
+
+10
+00:01:02,080 --> 00:01:03,280
+[SPEAKER_01] Hi Ben, how are you?
+
+11
+00:01:04,000 --> 00:01:04,400
+[SPEAKER_01] I'm good.
+
+12
+00:01:05,280 --> 00:01:06,480
+[SPEAKER_01] Good that we could finally make this happen.
+
+13
+00:01:06,720 --> 00:01:07,440
+[SPEAKER_01] Looking forward to it.
+
+14
+00:01:07,840 --> 00:01:09,600
+[SPEAKER_02] Yeah, Bucks won the playoffs.
+
+15
+00:01:09,680 --> 00:01:14,240
+[SPEAKER_02] You made it through two weeks in quarantine with two two kids in a hotel room, right?
+
+16
+00:01:15,040 --> 00:01:15,760
+[SPEAKER_01] I did, I did.
+
+17
+00:01:16,000 --> 00:01:18,000
+[SPEAKER_01] I came out the other side, so it's all good.
+
+18
+00:01:18,400 --> 00:01:19,440
+[SPEAKER_03] Oh, congratulations.
+
+19
+00:01:19,680 --> 00:01:24,560
+[SPEAKER_03] I've been quarantined for eighteen months in the Midwest and I'm not sure I'll ever get out.
+
+20
+00:01:25,920 --> 00:01:26,720
+[SPEAKER_01] So you did it right.
+
+21
+00:01:27,120 --> 00:01:31,200
+[SPEAKER_01] It's a little different when you literally can't leave your room by the force of law.
+
+22
+00:01:31,760 --> 00:01:31,840
+[SPEAKER_02] Yeah.
+
+23
+00:01:32,640 --> 00:01:33,680
+[SPEAKER_02] A little bit, yeah, I agree.
+
+24
+00:01:34,320 --> 00:01:34,400
+[SPEAKER_02] Wow.
+
+25
+00:01:35,440 --> 00:01:48,000
+[SPEAKER_02] Yeah, so I guess a little inside baseball, but Ben was in the US for a few weeks when the Bucks were winning the NBA championship and then he's based in Taiwan.
+
+26
+00:01:48,400 --> 00:01:55,120
+[SPEAKER_02] And so, when coming back to Taiwan, they in the first two weeks, you you couldn't even leave the hotel room.
+
+27
+00:01:55,360 --> 00:01:58,960
+[SPEAKER_02] So, like, they brought you food and Yeah, they brought you food.
+
+28
+00:01:59,360 --> 00:02:03,600
+[SPEAKER_01] They opened the window for a minute or like, the window opened about three inches.
+
+29
+00:02:03,920 --> 00:02:06,160
+[SPEAKER_03] So, kind of like folding out.
+
+30
+00:02:06,320 --> 00:02:08,240
+[SPEAKER_03] It's a classic Taipei hotel room, right?
+
+31
+00:02:08,400 --> 00:02:09,120
+[SPEAKER_03] Like, yeah.
+
+32
+00:02:09,280 --> 00:02:10,400
+[SPEAKER_03] It probably faced a brick wall.
+
+33
+00:02:11,760 --> 00:02:14,320
+[SPEAKER_01] The view was the view wasn't, wasn't terrible, fortunately.
+
+34
+00:02:14,800 --> 00:02:15,600
+[SPEAKER_01] So that was a good thing.
+
+35
+00:02:15,840 --> 00:02:19,040
+[SPEAKER_01] But yeah, we usually go back every summer.
+
+36
+00:02:20,160 --> 00:02:23,360
+[SPEAKER_01] And we actually weren't going to this summer, but then there was a outbreak here.
+
+37
+00:02:23,520 --> 00:02:24,800
+[SPEAKER_01] So things kind of got lockeded down.
+
+38
+00:02:24,880 --> 00:02:28,880
+[SPEAKER_01] So I was like, well, if we're going to get locked down, might as well save the lockdown for when we come back.
+
+39
+00:02:28,960 --> 00:02:29,920
+[SPEAKER_01] And so it was great.
+
+40
+00:02:30,080 --> 00:02:30,800
+[SPEAKER_01] It worked out perfectly.
+
+41
+00:02:30,960 --> 00:02:32,320
+[SPEAKER_01] Yeah, being back in the US was great.
+
+42
+00:02:33,760 --> 00:02:38,800
+[SPEAKER_01] And, you know, I think the US, I think, doesn't even as bad as it feels.
+
+43
+00:02:38,960 --> 00:02:43,280
+[SPEAKER_01] And I know Jacob was just screaming, you have no idea how good you have it, I think, compared to the rest of the world.
+
+44
+00:02:44,000 --> 00:02:46,320
+[SPEAKER_01] And, and so it was great being back.
+
+45
+00:02:46,560 --> 00:02:50,160
+[SPEAKER_01] Obviously, the, you know, being there for the playoff run was, was incredible.
+
+46
+00:02:50,880 --> 00:02:55,120
+[SPEAKER_01] And, and yeah, I just had to sort of endurance coming on the, on the way here, on the way coming in.
+
+47
+00:02:55,200 --> 00:02:55,680
+[SPEAKER_01] And it's fine.
+
+48
+00:02:56,160 --> 00:02:56,560
+[SPEAKER_01] We're all good.
+
+49
+00:02:56,720 --> 00:02:57,280
+[SPEAKER_01] Back in my office.
+
+50
+00:02:57,360 --> 00:02:58,000
+[SPEAKER_01] Kids are in school.
+
+51
+00:02:58,240 --> 00:02:59,840
+[SPEAKER_01] So it's, it's good to get going.
+
+52
+00:03:00,000 --> 00:03:00,320
+[SPEAKER_01] Nice.
+
+53
+00:03:00,800 --> 00:03:02,160
+[SPEAKER_03] And live the podcast about it.
+
+54
+00:03:02,240 --> 00:03:03,520
+[SPEAKER_03] So, yeah.
+
+55
+00:03:04,640 --> 00:03:07,520
+[SPEAKER_03] We talked about the App Store today, I suppose, or app stores.
+
+56
+00:03:07,840 --> 00:03:18,960
+[SPEAKER_03] I was just thinking how brilliant of a move that was for Apple because it's so awkward to write about app stores because the only way to differentiate between the App Store and app stores is through capitalization.
+
+57
+00:03:19,600 --> 00:03:19,680
+[SPEAKER_03] Yeah.
+
+58
+00:03:20,640 --> 00:03:21,360
+[SPEAKER_01] It's very irritating.
+
+59
+00:03:21,920 --> 00:03:26,400
+[SPEAKER_01] It's definitely something that I've struggled with in the past.
+
+60
+00:03:26,880 --> 00:03:29,040
+[SPEAKER_01] On the other hand, there's really only two that matter.
+
+61
+00:03:29,280 --> 00:03:34,480
+[SPEAKER_01] And so that you can just say App Store and Play Store and and be fine.
+
+62
+00:03:34,960 --> 00:03:41,440
+[SPEAKER_03] That's yeah, the easiest way, right, to like, yeah, make it general, at least for now, right, probably for the foreseeable future.
+
+63
+00:03:42,560 --> 00:03:45,200
+[SPEAKER_03] So speaking of the App Store, I did, I wanted to dive in.
+
+64
+00:03:46,720 --> 00:03:57,120
+[SPEAKER_03] And, you know, as I told you, Ben, I mean, my, my goal for today is to, is to talk about the things that matter no matter what happens with regulation, everything else.
+
+65
+00:03:57,200 --> 00:04:04,800
+[SPEAKER_02] Because there's, I mean, from the EU and UK, the US government lawsuits, I mean, don't forget what, what state was it?
+
+66
+00:04:04,960 --> 00:04:06,960
+[SPEAKER_02] Was it Arizona that was trying to, oh yeah.
+
+67
+00:04:07,280 --> 00:04:10,320
+[SPEAKER_02] Like at a state level as well, like, like regional legislation.
+
+68
+00:04:10,960 --> 00:04:12,000
+[SPEAKER_02] So there's so much going on.
+
+69
+00:04:12,720 --> 00:04:17,920
+[SPEAKER_02] And ultimately what's likely to happen is that different countries are going to have different laws.
+
+70
+00:04:18,400 --> 00:04:20,240
+[SPEAKER_02] Different states might even have different laws.
+
+71
+00:04:20,720 --> 00:04:21,600
+[SPEAKER_02] It's going to be a mess.
+
+72
+00:04:22,400 --> 00:04:28,000
+[SPEAKER_02] So what I wanted to try and do today is just talk through all the tradeoffs.
+
+73
+00:04:28,640 --> 00:04:36,080
+[SPEAKER_02] There's a lot of things going on and there's a lot of proposals for how to solve the different problems, the different people.
+
+74
+00:04:36,400 --> 00:04:38,800
+[SPEAKER_02] Some people think are a problem and some people don't think are a problem.
+
+75
+00:04:39,760 --> 00:04:43,280
+[SPEAKER_02] And then some people think one solution, some people think a different solution.
+
+76
+00:04:43,520 --> 00:04:48,400
+[SPEAKER_02] And so in each of those are multiple tradeoffs, multiple challenges.
+
+77
+00:04:50,000 --> 00:05:02,560
+[SPEAKER_02] But I think just talking through all of that helps frame the conversation and I think will help folks understand kind of how things may play out as different regulations get passed.
+
+78
+00:05:03,200 --> 00:05:07,600
+[SPEAKER_03] This is very important for my strategic five-year planning as you're revenue cat conversations.
+
+79
+00:05:09,120 --> 00:05:17,760
+[SPEAKER_01] I would back up a little bit because I think it's easy to get stuck in the minutiae of sort of regulations and specific rules and all those sorts of things.
+
+80
+00:05:18,480 --> 00:05:29,680
+[SPEAKER_01] And I think what's useful and important and is a driving factor for, you know, why I started Checkery in 2013 and I know you were reading back then, David, and I appreciate it.
+
+81
+00:05:30,320 --> 00:05:34,800
+[SPEAKER_01] And I think you were reading because I was really the only person writing about the App Store.
+
+82
+00:05:35,040 --> 00:05:36,720
+[SPEAKER_01] And now everyone's talking about it.
+
+83
+00:05:36,960 --> 00:05:44,640
+[SPEAKER_01] And back then, I remember there was someone, like a year or two after I gone on subscription only, someone wrote about, oh, look at this newsletter thing.
+
+84
+00:05:44,800 --> 00:05:45,360
+[SPEAKER_01] It seems interesting.
+
+85
+00:05:45,520 --> 00:05:48,720
+[SPEAKER_01] And they did like a breakdown of like one of my newsletters.
+
+86
+00:05:49,120 --> 00:05:52,320
+[SPEAKER_01] And it was pretty funny because I actually had the wrong year and the date.
+
+87
+00:05:52,480 --> 00:05:53,280
+[SPEAKER_01] It was like February.
+
+88
+00:05:54,000 --> 00:06:00,240
+[SPEAKER_01] I didn't update my, like, my production was not as, uh, as was not as automated as it is today.
+
+89
+00:06:02,480 --> 00:06:04,400
+[SPEAKER_01] But one of the things he said, I had three different items.
+
+90
+00:06:04,480 --> 00:06:12,560
+[SPEAKER_01] He's like, oh, he talks about the news of the day, this and then he has this cute little fascination with app stores and it's like, oh, it's very, it makes it feel like a very personal thing.
+
+91
+00:06:13,200 --> 00:06:16,480
+[SPEAKER_01] And that was sort of the prevailing wisdom, like, what, like, who cares?
+
+92
+00:06:16,640 --> 00:06:17,840
+[SPEAKER_01] It's not that big of a deal.
+
+93
+00:06:18,480 --> 00:06:30,320
+[SPEAKER_01] And the reason why it matters, why it matters today, why it matters then is that Apple is basically setting the rules of an economy.
+
+94
+00:06:30,880 --> 00:06:36,880
+[SPEAKER_01] And that's important in itself, but it's also important as mobile becomes the economy.
+
+95
+00:06:37,520 --> 00:06:45,040
+[SPEAKER_01] So you have a situation where Apple is actually deciding from on high what can or cannot work.
+
+96
+00:06:45,680 --> 00:06:57,680
+[SPEAKER_01] And just broadly, philosophically speaking, I think history shows that's generally not the optimal way for an outcome as far as the economy goes to have sort of a centralized decision maker.
+
+97
+00:06:58,080 --> 00:07:00,560
+[SPEAKER_01] And just to give an example, let me give you an example right here.
+
+98
+00:07:02,000 --> 00:07:08,000
+[SPEAKER_01] One of the, and I'll say this is dispositive, but, but, you know, there's controversy going on right now.
+
+99
+00:07:08,160 --> 00:07:11,200
+[SPEAKER_01] I know this is going to come out for a few weeks, but there's controversy going on about one pastor, right?
+
+100
+00:07:11,280 --> 00:07:16,080
+[SPEAKER_01] About this, this app, and they're going to Electron and they're being an enterprise app and all these sorts of things.
+
+101
+00:07:16,560 --> 00:07:18,960
+[SPEAKER_01] And people are like, oh, you know, they're they're a great consumer app.
+
+102
+00:07:19,120 --> 00:07:20,240
+[SPEAKER_01] They're really focused on the user experience.
+
+103
+00:07:20,320 --> 00:07:21,200
+[SPEAKER_01] Now they're going the other direction.
+
+104
+00:07:21,280 --> 00:07:23,200
+[SPEAKER_01] They took VC funding, blah, blah, blah, blah.
+
+105
+00:07:23,440 --> 00:07:30,160
+[SPEAKER_01] And the number one company in my estimation, I mean, beyond one password making their own decisions, but is Apple.
+
+106
+00:07:30,800 --> 00:07:34,560
+[SPEAKER_01] And the reason why it matters is Apple competes with them.
+
+107
+00:07:35,120 --> 00:07:38,720
+[SPEAKER_01] They're they're making, they're improving something that goes with the thing.
+
+108
+00:07:38,960 --> 00:07:44,560
+[SPEAKER_01] Apple's product is going to be is already built in in the keyword matter, or what's it called?
+
+109
+00:07:45,040 --> 00:07:45,520
+[SPEAKER_01] Keychain.
+
+110
+00:07:46,000 --> 00:07:48,800
+[SPEAKER_01] And they're making it much more user facing and fully featured.
+
+111
+00:07:49,680 --> 00:08:03,680
+[SPEAKER_01] And Apple has, and well, one password for many years could do the charge for every version on desktop, which is the way productivity software has charged and made money for decades, as long as the PC has been around.
+
+112
+00:08:04,240 --> 00:08:05,760
+[SPEAKER_01] They also need to have mobile apps.
+
+113
+00:08:06,080 --> 00:08:07,360
+[SPEAKER_01] And can they do that on mobile?
+
+114
+00:08:07,680 --> 00:08:08,000
+[SPEAKER_01] Not really.
+
+115
+00:08:08,400 --> 00:08:12,240
+[SPEAKER_01] And so they're stuck in the scenario where actually, no, we should build a back end service.
+
+116
+00:08:12,720 --> 00:08:16,000
+[SPEAKER_01] And they start with iCloud thinking, Dropbox thinking, oh, no, we have our own service.
+
+117
+00:08:16,400 --> 00:08:28,560
+[SPEAKER_01] And there are legitimate reasons for that from a user experience perspective, but there's also a business reason, which is that's how you manage to charge for software on iOS because you can charge a subscription fee to have a cloud service.
+
+118
+00:08:28,960 --> 00:08:38,240
+[SPEAKER_01] And oh, by the way, you should probably turn off iCloud sync, which people are upset about, or Dropbox sync because we need people to force it into our service and everyone's mad at this company.
+
+119
+00:08:38,480 --> 00:08:41,600
+[SPEAKER_01] And meanwhile, Apple is not developing their UI frameworks on macOS.
+
+120
+00:08:41,840 --> 00:08:45,760
+[SPEAKER_01] They're making it so that if you want to compete, you need to go cross platform because Apple's competing with you.
+
+121
+00:08:46,160 --> 00:08:54,960
+[SPEAKER_01] They're restricting the sort of business you can run and not allowing the core productivity at business model that is proven to work for many, many years.
+
+122
+00:08:55,360 --> 00:08:59,920
+[SPEAKER_01] And poor run, one password is all of Apple's fans yelling at it like, what, why are you being so terrible?
+
+123
+00:09:00,160 --> 00:09:08,960
+[SPEAKER_01] And now, again, I'm oversimplifying what I'm sure is a complex situation, but the point is this is the water we're swimming in.
+
+124
+00:09:09,200 --> 00:09:21,120
+[SPEAKER_01] We are swimming in water that is Apple deciding the fundamental rules of the universe as far as businesses go, and that's fundamentally a problem in my mind.
+
+125
+00:09:21,600 --> 00:09:26,400
+[SPEAKER_01] It's a problem from a theoretical perspective, but it's a problem from an in practice perspective.
+
+126
+00:09:26,560 --> 00:09:31,520
+[SPEAKER_01] Apple has literally made multiple kinds of business models impossible.
+
+127
+00:09:32,160 --> 00:09:36,560
+[SPEAKER_01] And it's particularly frustrating because many of the business models they've made impossible are one.
+
+128
+00:09:36,560 --> 00:09:38,720
+[SPEAKER_01] possible are those that have been proven to work.
+
+129
+00:09:39,360 --> 00:09:42,000
+[SPEAKER_01] We are looking at productivity company after productivity company.
+
+130
+00:09:42,320 --> 00:09:50,800
+[SPEAKER_01] I mean, I wrote an article ages ago, sorry to rant, but I wrote an article ages ago about how why are there no great new productivity companies on iOS?
+
+131
+00:09:51,120 --> 00:09:54,800
+[SPEAKER_01] And this was one of my big takeaways is the business model, it's just not there.
+
+132
+00:09:54,960 --> 00:09:57,680
+[SPEAKER_01] It's hard to find a productivity company.
+
+133
+00:09:57,920 --> 00:10:02,320
+[SPEAKER_01] Like, well, like, so for the Mac, you had something like Omni Software, a classic example, right?
+
+134
+00:10:02,480 --> 00:10:04,800
+[SPEAKER_01] You build up and you make these software things.
+
+135
+00:10:05,280 --> 00:10:08,720
+[SPEAKER_01] And they've done relatively well on iOS for a time.
+
+136
+00:10:09,360 --> 00:10:20,160
+[SPEAKER_01] And it turns out Omni Software is not doing so hot these days because as the market moves away and is increasingly centered on iOS and the business model that they enjoyed for years on the Mac isn't there.
+
+137
+00:10:20,560 --> 00:10:40,320
+[SPEAKER_01] The fundamental reality is what we know for a fact and we can get into lots of the reasons and causes and it's not just this, but it's one of the causes is that there was a much healthier ecosystem for high end productivity complex involved apps on a far tinyer platform in the Mac than there is on iOS today.
+
+138
+00:10:41,120 --> 00:10:43,360
+[SPEAKER_01] And that's, to me, that's a disaster.
+
+139
+00:10:43,840 --> 00:10:57,840
+[SPEAKER_01] Like in Apple, and it's as a fan of computers and a fan of like cool software, it makes me sad that iOS is still is honestly such a wasteland and people will point and say, look, oh, look at all the money that's made.
+
+140
+00:10:58,080 --> 00:11:15,120
+[SPEAKER_01] Yeah, I'm happy that you can buy your gems and your emotes and your dances, but it like if we step back and we actually start categorizing the money and where it's made and the sort of software that's incentivized to be developed, are any of us proud of where the industry is right now?
+
+141
+00:11:16,400 --> 00:11:17,520
+[SPEAKER_03] The aspects of it, yes.
+
+142
+00:11:18,800 --> 00:11:21,920
+[SPEAKER_03] It's like, well, let me throw myself in front of this bus a little bit.
+
+143
+00:11:22,400 --> 00:11:26,560
+[SPEAKER_01] To the guy who has an incentivizered to apps is counterargumenting.
+
+144
+00:11:26,880 --> 00:11:28,800
+[SPEAKER_03] Based on overcoming all Apple's shortcomings.
+
+145
+00:11:29,360 --> 00:11:42,320
+[SPEAKER_03] Well, not all, but, but I mean, I think, I think in some, you know, and some, one, one thing I'll challenge with that argument is that, like, any time, any time the environment changes, the economy changes, the way the marketplace changes, there'll be winners and losers.
+
+146
+00:11:42,400 --> 00:11:48,320
+[SPEAKER_03] And I look at Omni and it's like, yeah, you said, I think it's oversimplification to blame it on the App Store, you know, like Google Docs was also a thing.
+
+147
+00:11:48,400 --> 00:11:51,440
+[SPEAKER_03] Like there were lots of trends that could have caused a company like that to die.
+
+148
+00:11:51,920 --> 00:11:54,480
+[SPEAKER_01] I'm sorry to Omni Fox.
+
+149
+00:11:55,600 --> 00:11:57,520
+[SPEAKER_01] I regret naming a company because it's easy.
+
+150
+00:11:57,840 --> 00:11:58,800
+[SPEAKER_01] This is exactly what happens.
+
+151
+00:11:58,960 --> 00:12:02,560
+[SPEAKER_01] People latch on it and there's a million million problems that Omni's encountered, for sure.
+
+152
+00:12:02,960 --> 00:12:03,200
+[SPEAKER_01] For sure.
+
+153
+00:12:04,080 --> 00:12:10,240
+[SPEAKER_01] The fact of the matter is though, there's a reason Omni always comes up in these conversations because there's no one else.
+
+154
+00:12:11,040 --> 00:12:27,040
+[SPEAKER_01] How is it that we got a platform that has all these capabilities and has this massively larger user base and still the go to example for an independent software maker is like Omni and Panic and that and like companies that have been around for 25 years and and I'm going to push back at you and you're wrong, Jacob.
+
+155
+00:12:27,440 --> 00:12:27,520
+[UNKNOWN] Yeah.
+
+156
+00:12:28,080 --> 00:12:32,720
+[SPEAKER_01] This isn't, no, this is not a, oh, that's what happens sort of situation.
+
+157
+00:12:33,360 --> 00:12:36,480
+[SPEAKER_01] Apple defines the rules and they.
+
+158
+00:12:36,480 --> 00:12:41,680
+[SPEAKER_01] And they set up rules that basically make these sorts of businesses impossible.
+
+159
+00:12:41,920 --> 00:12:43,760
+[SPEAKER_01] Like there's no ifs, answers, what's about it.
+
+160
+00:12:44,000 --> 00:12:45,920
+[SPEAKER_01] You can't wave your hand and say, Oh, that's the market at work.
+
+161
+00:12:46,080 --> 00:12:47,040
+[SPEAKER_01] It's not the market at work.
+
+162
+00:12:47,920 --> 00:12:48,880
+[SPEAKER_01] It's a dictator at work.
+
+163
+00:12:48,960 --> 00:12:50,880
+[SPEAKER_03] Well, I wouldn't say they're not impossible.
+
+164
+00:12:51,120 --> 00:12:53,600
+[SPEAKER_03] Like there's nothing, there's nothing that changed, right?
+
+165
+00:12:53,760 --> 00:12:57,600
+[SPEAKER_03] Like the world that Omni sold into still exists, right?
+
+166
+00:12:57,840 --> 00:13:03,040
+[SPEAKER_03] Like they can still sell, they can still sell their software just like they did the whole 15 years ago.
+
+167
+00:13:03,440 --> 00:13:04,160
+[SPEAKER_01] No, that's wrong.
+
+168
+00:13:04,640 --> 00:13:09,600
+[SPEAKER_01] The whole like you can't say that pretend like the Mac and Windows are what they were.
+
+169
+00:13:09,680 --> 00:13:13,520
+[SPEAKER_01] Like we spent 20 years talking about how they or 15 years how they've been disrupted by mobile.
+
+170
+00:13:14,000 --> 00:13:18,800
+[SPEAKER_01] The reality is there was a working business model for productivity software that was proven to work.
+
+171
+00:13:19,440 --> 00:13:22,160
+[SPEAKER_01] That business model is impossible on iOS.
+
+172
+00:13:22,560 --> 00:13:24,320
+[SPEAKER_01] It's literally not allowed.
+
+173
+00:13:24,880 --> 00:13:27,680
+[SPEAKER_01] And so you're going to sit here and say, Oh, that had nothing to do with it.
+
+174
+00:13:27,840 --> 00:13:31,760
+[SPEAKER_01] That had nothing to do with the fact that these companies can't make a business or there's no new companies that came along.
+
+175
+00:13:31,920 --> 00:13:38,640
+[SPEAKER_03] So you're arguing that because Omni Graphical can't sell on iOS that that has killed their, their Mac business, right?
+
+176
+00:13:38,880 --> 00:13:42,480
+[SPEAKER_03] I'm sorry to use omni American, but no, no, that's right.
+
+177
+00:13:42,560 --> 00:13:44,240
+[SPEAKER_01] I, and I'm sorry I brought it up.
+
+178
+00:13:44,720 --> 00:13:48,960
+[SPEAKER_01] The reality is that we can't pretend like the Mac has continued in isolation.
+
+179
+00:13:49,520 --> 00:13:51,280
+[SPEAKER_01] The Mac lives in an iPhone world.
+
+180
+00:13:51,680 --> 00:13:53,280
+[SPEAKER_01] Windows lives in an iPhone world.
+
+181
+00:13:54,400 --> 00:14:03,200
+[SPEAKER_01] The response to you is why are there no major companies that have been built on since then that are productivity centric?
+
+182
+00:14:03,680 --> 00:14:08,960
+[SPEAKER_01] Like the all the enterprise companies that exist are SaaS companies that are cloud centric, which is fine.
+
+183
+00:14:09,200 --> 00:14:19,600
+[SPEAKER_01] Like that there's lots of things that lend itself to the model, but they're, but they're, they're, they're all like this idea of these, these, you know, like, and I think the one password point is interesting here.
+
+184
+00:14:20,000 --> 00:14:24,000
+[SPEAKER_01] This idea of there being bespoke high end, like what, what do people want?
+
+185
+00:14:24,320 --> 00:14:27,360
+[SPEAKER_01] What are people lamenting in this one-password controversy?
+
+186
+00:14:27,600 --> 00:14:30,400
+[SPEAKER_01] They're lamenting the loss of it used to be when you used a Mac.
+
+187
+00:14:30,960 --> 00:14:45,280
+[SPEAKER_01] And I felt this very, I remember back when I worked at Microsoft and I would tell people that one of the, I actually Windows was not, I Windows is a great operating system and people, my problem with Windows is the third-party applications.
+
+188
+00:14:45,440 --> 00:14:46,160
+[SPEAKER_01] And people are like, what?
+
+189
+00:14:46,320 --> 00:14:46,960
+[SPEAKER_01] What are you talking about?
+
+190
+00:14:47,200 --> 00:14:48,080
+[SPEAKER_01] I thought that was the Mac problem.
+
+191
+00:14:48,320 --> 00:14:50,320
+[SPEAKER_01] And like, no, that was actually never the case.
+
+192
+00:14:50,720 --> 00:14:54,800
+[SPEAKER_01] Like, yes, for a lot of like wine and business applications and specialized things, there'll only be Windows versions.
+
+193
+00:14:55,120 --> 00:15:09,200
+[SPEAKER_01] But when it came to personal productivity, what made the Mac awesome was you had all these interesting distinct applications that were super spoke that fit in the operating system that were labored over with love.
+
+194
+00:15:10,160 --> 00:15:14,800
+[SPEAKER_01] And that market never developed on iOS because that market's expensive.
+
+195
+00:15:15,280 --> 00:15:16,320
+[SPEAKER_01] It costs money to do that.
+
+196
+00:15:16,640 --> 00:15:17,360
+[SPEAKER_01] It's hard to do.
+
+197
+00:15:17,760 --> 00:15:19,600
+[SPEAKER_01] You need to have a business case to do so.
+
+198
+00:15:20,320 --> 00:15:30,160
+[SPEAKER_01] And the reality is in any business, and you should know this given the analytics tools and stuff that you do, and I'm sure you do, like you, you have to be able to make money from your existing customers.
+
+199
+00:15:31,120 --> 00:15:35,600
+[SPEAKER_01] Your biggest issue in money and where all the VC money goes in all these startups is customer acquisition.
+
+200
+00:15:36,880 --> 00:15:39,280
+[SPEAKER_01] is hard, it's expensive and it gets harder over time.
+
+201
+00:15:39,680 --> 00:15:51,200
+[SPEAKER_01] If you don't have a sort of network effect that increases the inherent value of your application, your marginal customer, every marginal customer is harder and harder to acquire because your app is less and less in their sweet spot.
+
+202
+00:15:51,280 --> 00:15:52,800
+[SPEAKER_01] So you have to spend more money to get them.
+
+203
+00:15:53,360 --> 00:15:59,760
+[SPEAKER_01] Once you get a customer, what you have to do is you have to make money from that customer on a recurring basis over time.
+
+204
+00:16:00,160 --> 00:16:05,440
+[SPEAKER_01] Now, obviously, with a lot of software, that the subscription model makes sense, right?
+
+205
+00:16:05,760 --> 00:16:12,400
+[SPEAKER_01] And the market has sort of accepted and become fine with cloud services are going to have a subscription model and people are somewhat okay with it.
+
+206
+00:16:13,040 --> 00:16:13,920
+[SPEAKER_01] Some people still grumble.
+
+207
+00:16:14,960 --> 00:16:35,200
+[SPEAKER_01] But this idea of trying to fit an application, one that's primarily device centric, one whose value is in the quality of its user interface and the interactions that you have with it, to say that should be paid for by a subscription is it's a fundamental mismatch of the way people are experiencing the application versus the way they're paying for it.
+
+208
+00:16:35,520 --> 00:16:37,600
+[SPEAKER_01] And we had a model that works.
+
+209
+00:16:37,840 --> 00:16:46,320
+[SPEAKER_01] The way that people get money from recurring customers is they sell a V one and then they put their heads down and they do all the work of building a V two.
+
+210
+00:16:46,480 --> 00:16:48,560
+[SPEAKER_01] Then they put it in the store or put it online.
+
+211
+00:16:49,120 --> 00:16:51,280
+[SPEAKER_01] And people pay again, the same people pay again.
+
+212
+00:16:51,520 --> 00:16:56,800
+[SPEAKER_01] I mean, how many of us have software that we've paid for eight, nine, ten times and we're happy to do it?
+
+213
+00:16:57,120 --> 00:17:05,520
+[SPEAKER_01] Like, I remember in the days of being on the Mac, a new version would come out and it's like, yes, I can't wait to give you my money because it's going to be fun and cool and interesting.
+
+214
+00:17:05,920 --> 00:17:19,360
+[SPEAKER_01] And what makes this so frustrating from Apple's perspective is Apple ought to understand better than anyone that different kinds of software, different kinds of work should have different kinds of release cycles and different kinds of monetization.
+
+215
+00:17:19,680 --> 00:17:21,680
+[SPEAKER_01] Like there's a like finished products.
+
+216
+00:17:21,840 --> 00:17:22,800
+[SPEAKER_01] Apple does an iPhone.
+
+217
+00:17:22,960 --> 00:17:29,120
+[SPEAKER_01] Everything they do, that's why they're like like, Apple doesn't do agile like, it's like, it's like, well, much more of a waterfall sort of approach where why?
+
+218
+00:17:29,520 --> 00:17:32,880
+[SPEAKER_01] Because the software and the hardware has to be ready to go in September.
+
+219
+00:17:33,040 --> 00:17:34,240
+[SPEAKER_01] Like, that's, it's a deadline.
+
+220
+00:17:34,480 --> 00:17:35,120
+[SPEAKER_01] You saw that this week.
+
+221
+00:17:35,280 --> 00:17:41,760
+[SPEAKER_01] They cut the FaceTime sharing share time thing because that's the choice you have to make because it has to launch in September.
+
+222
+00:17:42,080 --> 00:17:47,520
+[SPEAKER_01] When that phone comes out, it has to be as perfect as it can possibly be because, because they only get one chance at the hardware, right?
+
+223
+00:17:47,680 --> 00:17:48,800
+[SPEAKER_01] And once it's out, it's out.
+
+224
+00:17:49,120 --> 00:17:57,200
+[SPEAKER_01] And so one thing that Apple, I think, one of the reasons why Apple struggled with services is because they took that same approach to online services, right?
+
+225
+00:17:57,360 --> 00:17:59,040
+[SPEAKER_01] Do you remember the Mobile Me debacle, right?
+
+226
+00:17:59,360 --> 00:18:00,000
+[SPEAKER_01] What was the problem with that?
+
+227
+00:18:00,000 --> 00:18:00,560
+[SPEAKER_01] I forget.
+
+228
+00:18:01,120 --> 00:18:08,640
+[SPEAKER_01] They tried to launch this fully featured, massively involved, complicated application like it was a phone on web objects.
+
+229
+00:18:10,800 --> 00:18:12,320
+[SPEAKER_01] But the problem was the mindset.
+
+230
+00:18:12,560 --> 00:18:24,880
+[SPEAKER_01] It was like, okay, here it is, and it's done, and it's fully baked, and it's all, look at all these amazing demos we can do, and it completely fell over because when you're the good thing about launching something like a phone is all the variables are under your control.
+
+231
+00:18:25,120 --> 00:18:30,320
+[SPEAKER_01] I mean, you're not going to get everything right, for sure, but you at least have the capacity to sort of get everything right.
+
+232
+00:18:30,640 --> 00:18:34,160
+[SPEAKER_01] When you're launching online, the number of variabilities are off the roof.
+
+233
+00:18:34,240 --> 00:18:35,680
+[SPEAKER_01] Like it's a combinatory problem.
+
+234
+00:18:35,840 --> 00:18:45,680
+[SPEAKER_01] Like it's an infinite number of situations could be, could be, you know, if someone's phone's lagging, if they have a bad connection, if they're going, like you just, you have to build web services.
+
+235
+00:18:46,320 --> 00:18:58,720
+[SPEAKER_01] So they're sort of like iterative and self healing, and they fail gracefully, and they have multiple fail states and stuff falls down, and you can update it on the on the go, and you can always, and you would, and that's where the agile approach sort of has always made sense.
+
+236
+00:18:58,800 --> 00:19:03,120
+[SPEAKER_01] You're going to do sprints, you're going to do like just regular updates, you're going to keep moving things sort of forward.
+
+237
+00:19:03,600 --> 00:19:17,840
+[SPEAKER_01] And, and it honestly took Apple years to rejigger their, their, their webs, their services side to actually work, like literally work, like day to day work to work in a way that fit with services.
+
+238
+00:19:18,240 --> 00:19:25,120
+[SPEAKER_01] Like they had to completely change their thinking of how we do software development and that thinking had to be different from their phones.
+
+239
+00:19:26,160 --> 00:19:27,360
+[SPEAKER_01] How does this tie into apps?
+
+240
+00:19:27,840 --> 00:19:30,160
+[SPEAKER_01] It's the same thing for applications.
+
+241
+00:19:30,640 --> 00:19:39,280
+[SPEAKER_01] Some applications are primarily web applications that, yes, will have an API driven app or something on those lines and they're very iterative and it's primarily back end driven.
+
+242
+00:19:40,160 --> 00:19:45,600
+[SPEAKER_01] And those make sense and those very much make sense with the subscription model and you're you're accessing this sort of ongoing service.
+
+243
+00:19:47,040 --> 00:19:48,160
+[SPEAKER_01] What has gone from this world?
+
+244
+00:19:48,320 --> 00:20:36,720
+[SPEAKER_01] world and again part of it is just the world changing i will grant you that but what is gone from this world is the bespoke we're going to make the best possible app that we can and then we're going to put it together in a package and release it and people are going to pay us for it and it's gone not just because of the rise of cloud services which is absolutely part of it and not just the rise of collaboration and both those points get at some of the stuff that omni missed out on for sure to make it specific but that other world is not even possible and to pretend like that doesn't matter to me I think misses the point and and it's the sound, it's what's under the surface of these angst-filled complaints about projects like One Password or projects like that, or Slack being Electron or whatever might be.
+
+245
+00:20:37,200 --> 00:20:39,120
+[SPEAKER_01] And now Slack should obviously be Electron.
+
+246
+00:20:39,360 --> 00:20:44,560
+[SPEAKER_01] We can have a separate discussion about why I actually think the vast majority of people complaining about this are totally wrong.
+
+247
+00:20:47,600 --> 00:20:51,760
+[SPEAKER_01] But I think people would feel better about these services being on Electron.
+
+248
+00:20:52,240 --> 00:20:58,320
+[SPEAKER_01] If they also knew, oh, we also have all these other cool apps that are bespoke and custom that remind me of the Mac that I used to have.
+
+249
+00:20:58,960 --> 00:21:00,640
+[SPEAKER_01] And a big reason we don't is because.
+
+250
+00:21:01,120 --> 00:21:02,160
+[SPEAKER_01] Apple makes that impossible.
+
+251
+00:21:03,520 --> 00:21:14,480
+[SPEAKER_03] I'm going to reinject myself and jump in front of the bus one more time because I think to the lay, you made a bunch of distinctions there being like apps that that are primarily back end powered.
+
+252
+00:21:14,720 --> 00:21:18,800
+[SPEAKER_03] And I would argue that the lay person can't tell the difference.
+
+253
+00:21:19,200 --> 00:21:22,000
+[SPEAKER_03] The app gets downloaded from the internet, comes to the app store, it's on my phone.
+
+254
+00:21:22,080 --> 00:21:22,480
+[SPEAKER_03] It's magic.
+
+255
+00:21:22,560 --> 00:21:26,160
+[SPEAKER_03] It doesn't matter if it's Google Docs or it's my phone connectivity is so ubiquitous now.
+
+256
+00:21:26,640 --> 00:21:39,200
+[SPEAKER_03] I think the and it's why I think maybe we're in agreement that this Electron versus Coco argument is stupid because it doesn't matter if the thing delivers the value that the consumer wants, it's effectively the same.
+
+257
+00:21:40,240 --> 00:21:59,920
+[SPEAKER_03] And so, you know, when I I do worry a little bit, it's like, yeah, okay, we we yearn for the Halcyon days of downloading zip files and these like beautiful installers where you just drag over the lovely icon made by Icon Factory, like that whole world, which I would also, I think, I don't have the numbers, but I feel like it was actually pretty small, right?
+
+258
+00:22:00,240 --> 00:22:04,880
+[SPEAKER_03] Compared to like the amount of commerce that's being done on the App Store and selling more software to more people.
+
+259
+00:22:05,440 --> 00:22:08,320
+[SPEAKER_01] So, of course, but what is that money going to?
+
+260
+00:22:08,640 --> 00:22:14,800
+[SPEAKER_01] Like, like, how much, like, how much money is spent on productivity, particularly once you cut out, say, Adobe and Microsoft.
+
+261
+00:22:15,120 --> 00:22:25,760
+[SPEAKER_01] What's ironic is we've actually gone full circle and we're back in, you know, 1997 where the only companies that are making money on productivity software on the Mac are Adobe and Microsoft.
+
+262
+00:22:25,840 --> 00:22:53,360
+[SPEAKER_01] I mean, it's it's a wild sort of like turn of turning of events and again, I'm not denying all those other fundamental changes and there's a fundamental shift to cloud software and like there's all sorts of reasons why it makes sense for an application to be primarily web, Android and iOS and actually in the long run just web except for the fact that Apple is kneecapping, you know, browser performance on iOS, but that's a different conversation.
+
+263
+00:22:54,560 --> 00:22:58,080
+[SPEAKER_01] But, but the, so there's real secular factors going here.
+
+264
+00:22:58,480 --> 00:23:10,560
+[SPEAKER_01] All I'm pushing back on is to pretend like Apple's decisions here didn't matter and didn't have an impact, I think is just letting them off the hook.
+
+265
+00:23:10,720 --> 00:23:11,920
+[SPEAKER_01] We're sitting here in 2022.
+
+266
+00:23:12,000 --> 00:23:19,280
+[SPEAKER_01] We're talking about decisions in 2008, like where, where this ecos, and there's a certain amount of path dependence in this world.
+
+267
+00:23:19,600 --> 00:23:26,640
+[SPEAKER_01] Like, of course, in 2022, Apple could add in update pricing tomorrow and it would make no difference.
+
+268
+00:23:26,800 --> 00:23:28,400
+[SPEAKER_01] Like the ship has sailed, it's over.
+
+269
+00:23:29,120 --> 00:23:39,840
+[SPEAKER_01] But if they had shipped with it in 2008 and and there had been a development of that sort of market and that sort of expectation and understanding, then I think I I we would be in a very different place today.
+
+270
+00:23:40,080 --> 00:23:43,680
+[SPEAKER_01] So so again, we're we haven't even gotten to the topics of our conversation.
+
+271
+00:23:43,840 --> 00:23:44,880
+[SPEAKER_01] Oh, I mean we have.
+
+272
+00:23:46,640 --> 00:24:01,680
+[SPEAKER_01] The reason to bring this up is I think the point I'm trying to make big picture is when you get into the details of specific things, you lose sight of really how broad the impact is of Apple's approach.
+
+273
+00:24:02,160 --> 00:24:07,760
+[SPEAKER_01] It's defining the laws of what is or is not possible, not just laws, like literally what is or is not possible.
+
+274
+00:24:08,560 --> 00:24:15,680
+[SPEAKER_01] And I think the people, it's underrated just how, again, it's the water we swim in.
+
+275
+00:24:15,760 --> 00:24:20,720
+[SPEAKER_01] And so we're stuck fighting about like details, like, should this kelp plant be here or there?
+
+276
+00:24:21,680 --> 00:24:26,800
+[SPEAKER_01] And forgetting that the entire, like, ocean is a decision made by people.
+
+277
+00:24:28,720 --> 00:24:33,840
+[SPEAKER_01] And so many people in the ecosystem don't want to hold them responsible for those decisions.
+
+278
+00:24:34,400 --> 00:24:34,880
+[SPEAKER_01] I don't know.
+
+279
+00:24:35,520 --> 00:24:40,880
+[SPEAKER_01] I just been top of mind because again, I don't know when this is going to come out, but this week, everyone's flipping up this one password thing.
+
+280
+00:24:41,280 --> 00:24:51,920
+[SPEAKER_01] And it's like there's so many aspects of what's happening here that are actually due to decisions made by Apple, and no one's talking about that, that aspect of it.
+
+281
+00:24:52,240 --> 00:24:52,320
+[SPEAKER_03] Yeah.
+
+282
+00:24:52,800 --> 00:24:52,960
+[SPEAKER_03] Yeah.
+
+283
+00:24:53,120 --> 00:24:56,000
+[SPEAKER_03] I mean, when you say they're not laws in the sense they're not written, right?
+
+284
+00:24:56,240 --> 00:25:03,680
+[SPEAKER_03] And in, and in many cases, like, yeah, Apple doesn't, it speaks to like the danger of reckless regulation as well.
+
+285
+00:25:03,840 --> 00:25:05,360
+[SPEAKER_03] Like, it's very hard to predict.
+
+286
+00:25:05,600 --> 00:25:17,680
+[SPEAKER_03] Like, Apple probably in 2008 didn't have that on the like cost factor when they were trying to decide like how they build right like, oh, we're going to kill this whole cottage industry of great mac software, right?
+
+287
+00:25:17,840 --> 00:25:21,040
+[SPEAKER_03] Or we're going to limit its market potential over the next decade.
+
+288
+00:25:21,360 --> 00:25:23,680
+[SPEAKER_03] Um, and I I I disagree.
+
+289
+00:25:24,000 --> 00:25:24,560
+[SPEAKER_01] I think they did.
+
+290
+00:25:24,880 --> 00:25:25,600
+[SPEAKER_01] I think they knew.
+
+291
+00:25:26,160 --> 00:25:26,720
+[SPEAKER_01] It's very hard.
+
+292
+00:25:27,200 --> 00:25:31,680
+[SPEAKER_01] And I think it's maybe less the case with Apple today, but particularly Apple around that era.
+
+293
+00:25:32,560 --> 00:25:37,600
+[SPEAKER_01] I was I was at Apple, uh, in 2010 when they started the Apple University thing.
+
+294
+00:25:37,760 --> 00:25:40,640
+[SPEAKER_01] And this was like, but Apple University is kind of a glorified HR program today.
+
+295
+00:25:40,800 --> 00:25:43,200
+[SPEAKER_01] But it was, you know, back then it was a much smaller team.
+
+296
+00:25:43,360 --> 00:25:45,600
+[SPEAKER_01] It was like, I think we were from the top of the company, et cetera.
+
+297
+00:25:45,920 --> 00:25:46,880
+[SPEAKER_01] I didn't know you worked there.
+
+298
+00:25:47,360 --> 00:25:48,640
+[SPEAKER_01] And one of the biggest.
+
+299
+00:25:49,280 --> 00:26:03,120
+[SPEAKER_01] takeaways from that I got from being there was it was striking how everyone who had been there in the 90s was just fundamentally scarred and changed by that.
+
+300
+00:26:03,680 --> 00:26:11,440
+[SPEAKER_01] And you would have people bring up that Wired cover of, you know, Apple in the, in, in, in, in, in the Crown of Thorns and just unprompted.
+
+301
+00:26:11,600 --> 00:26:12,400
+[SPEAKER_01] It would always come up.
+
+302
+00:26:12,880 --> 00:26:21,280
+[SPEAKER_01] And there was this sense very powerful and deep that we can never let ourselves be in that situation again.
+
+303
+00:26:21,920 --> 00:26:23,280
+[SPEAKER_01] And you go back to that situation.
+
+304
+00:26:23,360 --> 00:26:28,480
+[SPEAKER_01] You go back to that, that famous Steve Jobs keynote in Boston where Bill Gates sort of looms over the stage.
+
+305
+00:26:28,560 --> 00:26:41,360
+[SPEAKER_01] If you go back and you read and you read the whole thing, not just the Bill Gates part, but everything that Steve, you know, that Jobs says about, you know, we need to work like just because Microsoft, we don't need Microsoft to lose for us to win, we need to work together, blah, blah, blah.
+
+306
+00:26:41,840 --> 00:26:45,120
+[SPEAKER_01] There's an aspect there and you think about the context.
+
+307
+00:26:45,600 --> 00:26:48,000
+[SPEAKER_01] Microsoft and Adobe decided the fate of Apple.
+
+308
+00:26:48,640 --> 00:26:50,720
+[SPEAKER_01] It was out of Apple's hands.
+
+309
+00:26:51,360 --> 00:26:57,280
+[SPEAKER_01] And if Microsoft didn't decide to commit to making Office and if Adobe wasn't going to make Photoshop, Apple was done.
+
+310
+00:26:57,360 --> 00:27:00,720
+[SPEAKER_01] Like they, like they, like even with Steve Jobs being there, I think they would have done.
+
+311
+00:27:02,160 --> 00:27:08,480
+[SPEAKER_01] And I think there was a what Apple took away from that was we can never be in this situation again.
+
+312
+00:27:08,720 --> 00:27:16,640
+[SPEAKER_01] We can never be in a situation where people on our platform, companies on our platform are more important than we are.
+
+313
+00:27:18,320 --> 00:27:26,080
+[SPEAKER_01] And this was, you know, I think this is probably when David started reading was one of my very first articles, but why does Apple not enable sustainable business on the App Store 2013?
+
+314
+00:27:26,240 --> 00:27:29,440
+[SPEAKER_01] Like, like, and, and, you know, I talked about how they made all these games.
+
+315
+00:27:29,680 --> 00:27:37,520
+[SPEAKER_01] And to me, it was very confusing at the time because this was when, like, iOS versus Android still felt like a competitoritive fight.
+
+316
+00:27:37,680 --> 00:27:40,960
+[SPEAKER_01] And it's like Apple has better frameworks.
+
+317
+00:27:42,560 --> 00:27:45,680
+[SPEAKER_01] They have the cream of the, they have the richer customers.
+
+318
+00:27:46,080 --> 00:27:50,320
+[SPEAKER_01] They have all these developers that want to make these incredible sort of applications.
+
+319
+00:27:50,720 --> 00:27:58,800
+[SPEAKER_01] And if you get into, and productivity applications create lock-in because people get attached to a particular app, a particular way of working, and they want to use that.
+
+320
+00:27:59,120 --> 00:28:08,240
+[SPEAKER_01] I'm like, why is Apple not doing everything possible to create the conditions for developers to make incredible apps that are only possible on iOS?
+
+321
+00:28:09,040 --> 00:28:12,560
+[SPEAKER_01] And even if they wanted to go across the platform, they wouldn't because the iOS frameworks and.
+
+322
+00:28:13,200 --> 00:28:15,600
+[SPEAKER_01] approaches and money making possibilities so much better.
+
+323
+00:28:18,080 --> 00:28:33,360
+[SPEAKER_01] And I went back to that speech and it's like, because Apple would rather have box standard games and box standard applications that work the same everywhere, as long as it means they're never held hostage by, they don't want that.
+
+324
+00:28:33,520 --> 00:28:35,600
+[SPEAKER_01] They want lock-in on iOS to come from Apple.
+
+325
+00:28:36,480 --> 00:28:43,440
+[SPEAKER_01] They never want lock-in to come from Microsoft or from Adobe or from a future Microsoft or Adobe that would come up on iOS.
+
+326
+00:28:44,160 --> 00:28:48,480
+[SPEAKER_01] They want when Apple says they want control, they want control of their most important technologies, that means they want control.
+
+327
+00:28:48,960 --> 00:28:49,680
+[SPEAKER_01] of lock in too.
+
+328
+00:28:50,480 --> 00:28:55,520
+[SPEAKER_01] They want to be the one that decides are you locked in or not, because they can decide that and they would never get in that position again.
+
+329
+00:28:55,680 --> 00:28:57,280
+[SPEAKER_01] Now, again, this is a path dependency thing.
+
+330
+00:28:57,440 --> 00:29:01,520
+[SPEAKER_01] I think if you go back to Apple today, there's not very many people left who were there in the nineties.
+
+331
+00:29:01,760 --> 00:29:11,840
+[SPEAKER_01] I would imagine like that attitude is not necessarily there, but I do think that attitude guided the early decision making around the App Store.
+
+332
+00:29:13,120 --> 00:29:17,840
+[SPEAKER_01] And you roll forward those decisions fifteen years and here we are.
+
+333
+00:29:18,800 --> 00:29:29,440
+[SPEAKER_01] And so I think that's, you know, it's just, this is one of those things where I do like going into history and going into companies and like what really shapes them and their thinking and what they do.
+
+334
+00:29:30,000 --> 00:29:35,120
+[SPEAKER_01] You can tell a very different story about Microsoft, for example, and like why, why their approach to developers is very different.
+
+335
+00:29:35,440 --> 00:29:37,600
+[SPEAKER_01] And that goes back to the earliest days of Microsoft as well.
+
+336
+00:29:37,680 --> 00:29:40,240
+[SPEAKER_01] Like companies have these, these moments in time.
+
+337
+00:29:40,480 --> 00:29:41,760
+[SPEAKER_01] Like Facebook is a famous one, right?
+
+338
+00:29:42,080 --> 00:29:45,520
+[SPEAKER_01] Facebook, what was it, you know, everyone complained about the news feed, but everyone actually loved it, right?
+
+339
+00:29:45,760 --> 00:29:49,920
+[SPEAKER_01] And so Facebook learned ignore what the critics say, look at the data, right?
+
+340
+00:29:50,160 --> 00:29:52,240
+[SPEAKER_01] And like, and you see this in Google, same thing.
+
+341
+00:29:52,400 --> 00:29:55,520
+[SPEAKER_01] Google's like, if we just build the best technology, we will win.
+
+342
+00:29:55,920 --> 00:29:58,720
+[SPEAKER_01] And, and, and, and they go into different markets like, why aren't we winning?
+
+343
+00:29:58,800 --> 00:29:59,360
+[SPEAKER_01] We have the best technology.
+
+344
+00:29:59,520 --> 00:30:03,040
+[SPEAKER_01] It's like, well, this market actually isn't the web where everything's accessible and wide open.
+
+345
+00:30:03,280 --> 00:30:05,600
+[SPEAKER_01] You actually need salespeople and you need to make commitments.
+
+346
+00:30:05,840 --> 00:30:08,320
+[SPEAKER_01] You need to not change your, you know, throw something out after two years.
+
+347
+00:30:08,560 --> 00:30:12,960
+[SPEAKER_01] And like you see this in company after company, they're they have their what does culture mean?
+
+348
+00:30:13,200 --> 00:30:29,280
+[SPEAKER_01] Culture is when you do things without thinking about it, that just the way you do it, just the way you think about things and Apple's culture is very fundamentally that Apple is in control and they never want to be in a situation where they are not in control.
+
+349
+00:30:30,000 --> 00:30:39,120
+[SPEAKER_01] And I and I think that's the core thing to understand about the App Store and how we got to where we are in 2022 is that was the guiding principle when when it launched.
+
+350
+00:30:39,360 --> 00:30:47,840
+[SPEAKER_03] And, and, like I said, now here we are in, in fear of, uh, zooming back into minutiae because I think your psychoanalysis of Apple is actually pretty accurate.
+
+351
+00:30:48,000 --> 00:30:54,000
+[SPEAKER_03] I mean, you know, I was there at the exact same time and there was it's kind of interesting to, uh, paint our perspectives.
+
+352
+00:30:54,160 --> 00:31:02,080
+[SPEAKER_03] I was on the iPhone team, which was much the average tenure of the folks on that team was much, much less.
+
+353
+00:31:02,400 --> 00:31:09,200
+[SPEAKER_03] Like we were all pretty much new to Apple, um, and potentially kind of explains maybe some of this like old guard new guard split.
+
+354
+00:31:09,520 --> 00:31:25,520
+[SPEAKER_03] But I want to go back and ask you because I I kind of don't I just don't understand you say this particular, somewhat minute about paid upgrades being the way that the software was made and that was so important and it was part of their business model and I agree.
+
+355
+00:31:25,840 --> 00:31:27,360
+[SPEAKER_03] It's just they built their cycles around it.
+
+356
+00:31:27,920 --> 00:31:33,360
+[SPEAKER_03] Every year, two years, they would release a new version and they'd add some features and you'd re up 90 dollars or whatever it was.
+
+357
+00:31:34,320 --> 00:31:36,320
+[SPEAKER_03] And I think Apple knew they didn't have that.
+
+358
+00:31:36,720 --> 00:31:43,840
+[SPEAKER_03] And then in 2013 or 2014, whenever they liberalized, they launched newstand and then they said, okay, now you can do this with your content app.
+
+359
+00:31:44,000 --> 00:31:48,720
+[SPEAKER_03] And then a few years later, they said, hey, actually, pretty much all apps can do it within some very minor requirements.
+
+360
+00:31:49,440 --> 00:31:59,920
+[SPEAKER_03] And I always took that as Apple saying like, hey, we're not going to do, we're not going to replicate this version box software, but if you just want to amortize that, you say like, hey, we're going to do one update a year.
+
+361
+00:32:00,240 --> 00:32:04,080
+[SPEAKER_03] You can do it in twelve micro updates and you pay $60 a year.
+
+362
+00:32:04,480 --> 00:32:07,920
+[SPEAKER_03] I guess I don't, but how do you see that as so different?
+
+363
+00:32:08,400 --> 00:32:09,920
+[SPEAKER_01] I think there's a couple of things going on here.
+
+364
+00:32:10,080 --> 00:32:18,480
+[SPEAKER_01] So, so one, speaking of path dependence, I don't know that Apple ever had really the capability to do upgrade pricing in the store, which is built on that ancient technology.
+
+365
+00:32:19,280 --> 00:32:22,320
+[SPEAKER_03] I think it was a like, we could get this done in one sprint kind of thing, right?
+
+366
+00:32:22,800 --> 00:32:23,200
+[SPEAKER_01] Exactly.
+
+367
+00:32:24,000 --> 00:32:26,960
+[SPEAKER_01] But which is a whole interesting, not a kettle fish.
+
+368
+00:32:27,280 --> 00:32:29,920
+[SPEAKER_01] Uh, I think the issue there, and so here's, here's an example.
+
+369
+00:32:30,480 --> 00:32:33,680
+[SPEAKER_01] I'll give you two examples, uh, to kind of answer your question in a direct way.
+
+370
+00:32:33,920 --> 00:32:36,640
+[SPEAKER_01] Uh, but I will answer it directly after the give it to two examples.
+
+371
+00:32:37,040 --> 00:32:46,080
+[SPEAKER_01] So number one is, uh, recall, I think it was OS 10 Lion, where Apple introduced a new document model, uh, where instead of doing save as or whatever, just save continuously.
+
+372
+00:32:46,240 --> 00:32:49,760
+[SPEAKER_01] And if you want to do a different version, you should duplicate the file and blah, blah, blah.
+
+373
+00:32:50,000 --> 00:32:50,480
+[SPEAKER_01] I remember.
+
+374
+00:32:50,640 --> 00:32:50,720
+[SPEAKER_01] Yes.
+
+375
+00:32:52,240 --> 00:32:52,880
+[SPEAKER_01] Painfully, right?
+
+376
+00:32:53,120 --> 00:32:53,520
+[SPEAKER_01] You remember.
+
+377
+00:32:54,400 --> 00:32:56,160
+[SPEAKER_01] Like, I haven't used pages since then.
+
+378
+00:32:56,400 --> 00:32:58,000
+[SPEAKER_01] Like, I switched back to Word.
+
+379
+00:32:58,000 --> 00:32:59,600
+[SPEAKER_01] I'm like, yeah, I can't deal with it.
+
+380
+00:32:59,920 --> 00:33:01,040
+[SPEAKER_01] My mind doesn't work this way way.
+
+381
+00:33:01,200 --> 00:33:02,000
+[SPEAKER_01] I can't handle it.
+
+382
+00:33:02,640 --> 00:33:09,440
+[SPEAKER_01] And I know, and just for your commenters, yes, I know Apple, you can do option, click option and get the save as blah blah blah.
+
+383
+00:33:09,760 --> 00:33:10,320
+[SPEAKER_01] Like whatever.
+
+384
+00:33:12,080 --> 00:33:12,320
+[SPEAKER_01] And why?
+
+385
+00:33:13,200 --> 00:33:16,320
+[SPEAKER_01] Apple looked at this like, no, this isn't the way it should work.
+
+386
+00:33:16,640 --> 00:33:17,680
+[SPEAKER_01] It should actually work this way.
+
+387
+00:33:17,840 --> 00:33:18,480
+[SPEAKER_01] And they changed it.
+
+388
+00:33:18,960 --> 00:33:25,840
+[SPEAKER_01] The problem is that, again, to go with this idea of path dependency, people had been working a particular way with documents for 25 years.
+
+389
+00:33:27,920 --> 00:33:31,440
+[SPEAKER_01] Even if you say, if we started in a vacuum, it should be this way.
+
+390
+00:33:31,920 --> 00:33:33,200
+[SPEAKER_01] We're not starting in a vacuum.
+
+391
+00:33:33,520 --> 00:33:38,080
+[SPEAKER_01] We're starting with a certain degree of user expectations and the way things sort of work.
+
+392
+00:33:38,560 --> 00:33:39,200
+[SPEAKER_01] Here's another example.
+
+393
+00:33:40,080 --> 00:33:46,160
+[SPEAKER_01] A couple of weeks ago, Apple introduced this on device scanning for CSAM for this horrific material, right?
+
+394
+00:33:46,480 --> 00:33:58,000
+[SPEAKER_01] And they're like, oh, it's not really on device scanning because it's actually sending this packet up to the cloud and and it's only five cloud photos is turned on and you know, and you know down the line they want to turn on and encrypt five cloud photos and that's the expectation for it.
+
+395
+00:33:58,480 --> 00:34:04,000
+[SPEAKER_01] And Apple and I I talked to Apple about this and they're very, very puzzled like why people are upset about this.
+
+396
+00:34:04,160 --> 00:34:06,320
+[SPEAKER_01] Like it's clearly it's clearly a better solution.
+
+397
+00:34:06,880 --> 00:34:13,680
+[SPEAKER_01] And I was talking to the Apple person and he's like, would you rather just would you rather we scanan all the photos in our cloud?
+
+398
+00:34:13,840 --> 00:34:14,960
+[SPEAKER_01] And I'm like, yes, I would.
+
+399
+00:34:15,200 --> 00:34:16,160
+[SPEAKER_01] I would actually prefer that.
+
+400
+00:34:16,800 --> 00:34:20,720
+[SPEAKER_01] I'm like, I'm sending my photos to a different company, to their computers.
+
+401
+00:34:21,120 --> 00:34:21,920
+[SPEAKER_01] They're out of my hands.
+
+402
+00:34:22,160 --> 00:34:22,640
+[SPEAKER_01] I accept that.
+
+403
+00:34:22,960 --> 00:34:23,840
+[SPEAKER_01] I accept that reality.
+
+404
+00:34:24,160 --> 00:34:26,080
+[SPEAKER_01] And the Apple person was honestly shocked.
+
+405
+00:34:27,360 --> 00:34:28,000
+[SPEAKER_01] They're like, really?
+
+406
+00:34:28,240 --> 00:34:29,200
+[SPEAKER_01] But that's less private.
+
+407
+00:34:29,440 --> 00:34:34,960
+[SPEAKER_01] I'm like, my definition of privacy involves me deciding what my device does, right?
+
+408
+00:34:35,600 --> 00:34:38,560
+[SPEAKER_01] And now, I don't want to, I don't want that, that's a whole separate topic.
+
+409
+00:34:38,880 --> 00:34:47,840
+[SPEAKER_01] But what happens in that situation, I think if you step back is Apple went back to like, okay, first principles, what's the best way to do this, right?
+
+410
+00:34:48,160 --> 00:34:48,320
+[SPEAKER_01] Right?
+
+411
+00:34:48,560 --> 00:34:50,400
+[SPEAKER_01] What's the way that we could design this system?
+
+412
+00:34:51,120 --> 00:34:55,280
+[SPEAKER_01] And they discounted and ignored user expectations.
+
+413
+00:34:55,680 --> 00:35:02,320
+[SPEAKER_01] And the reality is, is we've had an expectation that cloud services are going to have access to our stuff and scan it for years now.
+
+414
+00:35:02,640 --> 00:35:13,840
+[SPEAKER_01] And it's fine that Apple thinks it's not, that's not good for privacy, but like that ship sailed, like people like, is anyone in the world surprised that if you upload your photos to Google Photos, they're going to be standing in the cloud?
+
+415
+00:35:14,080 --> 00:35:14,960
+[SPEAKER_01] Like that's on the tin.
+
+416
+00:35:15,200 --> 00:35:16,960
+[SPEAKER_01] That's like, hey, that's what they do, right?
+
+417
+00:35:17,120 --> 00:35:19,920
+[SPEAKER_01] And Apple's like, oh, no, actually privacy should be this way.
+
+418
+00:35:20,240 --> 00:35:22,800
+[SPEAKER_01] And they're trying to create this entirely new way of doing it.
+
+419
+00:35:23,040 --> 00:35:24,720
+[SPEAKER_01] And it's not that they're wrong.
+
+420
+00:35:24,720 --> 00:35:27,680
+[SPEAKER_01] It's not that they're wrong per se, it's that there's a path dependency here.
+
+421
+00:35:27,920 --> 00:35:38,080
+[SPEAKER_01] People already have an expectation of how things work and people's broadly speaking are okay with some random company's cloud looking at their stuff, but my device is my device.
+
+422
+00:35:38,800 --> 00:35:43,680
+[SPEAKER_01] And again, if you get into the fine details, you're like, okay, I get Apple's point of view.
+
+423
+00:35:43,840 --> 00:35:44,480
+[SPEAKER_01] That makes sense.
+
+424
+00:35:45,040 --> 00:35:46,240
+[SPEAKER_01] It actually is quite secure.
+
+425
+00:35:46,560 --> 00:35:52,640
+[SPEAKER_01] Like there's arguments for it, but they looked over and ignored this kind of path dependency factor.
+
+426
+00:35:53,760 --> 00:35:55,520
+[SPEAKER_01] So let's get to subscriptions.
+
+427
+00:35:55,680 --> 00:36:04,000
+[SPEAKER_01] Apple comes out finally after five, six or seven, eight years, whatever it was, it's like, okay., no, the solution for productivity software is you can charge a subscription.
+
+428
+00:36:04,560 --> 00:36:05,760
+[SPEAKER_01] And I was a part of this.
+
+429
+00:36:06,000 --> 00:36:14,720
+[SPEAKER_01] I wrote an article, another article early in the, in the App Store or when I first started Checkery saying that subscriptions are the obvious business model for productivity software.
+
+430
+00:36:15,200 --> 00:36:21,440
+[SPEAKER_01] And this was, uh, I think when Adobe was or was about to transition or going to transition, I'm like, this is by far the way it should be.
+
+431
+00:36:21,760 --> 00:36:22,080
+[SPEAKER_01] Because why?
+
+432
+00:36:22,480 --> 00:36:23,840
+[SPEAKER_01] You're using these applications every day.
+
+433
+00:36:24,000 --> 00:36:25,520
+[SPEAKER_01] You're getting used from them constantly.
+
+434
+00:36:25,920 --> 00:36:31,120
+[SPEAKER_01] Like, it makes sense that you're actually paying for the value you're, you're gaining over time.
+
+435
+00:36:31,440 --> 00:36:38,880
+[SPEAKER_01] And it's actually you get a match of the supply and demand curves where they align much better and it's a better deal for people that they use occasionally and people they use all the time, et cetera, et cetera.
+
+436
+00:36:39,040 --> 00:36:43,680
+[SPEAKER_01] And from a big fan having his nice having you on.
+
+437
+00:36:46,240 --> 00:36:54,320
+[SPEAKER_01] And the thing is when you have enterprise businesses who have people whose job is to literally think about this, they're like, yeah, that makes sense.
+
+438
+00:36:54,480 --> 00:36:55,520
+[SPEAKER_01] Like, let's sign me up.
+
+439
+00:36:55,600 --> 00:36:56,000
+[SPEAKER_01] Let's do it.
+
+440
+00:36:56,160 --> 00:36:57,120
+[SPEAKER_01] I want to have that ongoing support.
+
+441
+00:36:57,280 --> 00:36:59,760
+[SPEAKER_01] I want to have that going in, going experience, that going expectation.
+
+442
+00:37:00,480 --> 00:37:07,040
+[SPEAKER_01] The problem is in the consumer market, you had a certain way of doing things and a certain expectation that had built up over decades.
+
+443
+00:37:07,680 --> 00:37:12,000
+[SPEAKER_01] And the reality is that consumers, and we see this not just with apps, but in all sorts of things.
+
+444
+00:37:12,800 --> 00:37:20,480
+[SPEAKER_01] especially at that time, we're not really used to and comfortable with this idea of paying subscriptions for their stuff.
+
+445
+00:37:20,640 --> 00:37:22,400
+[SPEAKER_01] Now that's changed, for sure.
+
+446
+00:37:23,040 --> 00:37:45,920
+[SPEAKER_01] I would say, so Jacquarie's, I would like to think that I helped that change along by, you know, but there's a, but there's an expectation and a, even if it makes sense, if you look at it super analytically and super rationally, the reality of a marketplace is in the consumer marketplace in particular is that's not how people think about it.
+
+447
+00:37:46,000 --> 00:37:47,680
+[SPEAKER_01] It's not how people sort of approach the market.
+
+448
+00:37:47,840 --> 00:37:48,720
+[SPEAKER_01] They, they have an expectation.
+
+449
+00:37:49,440 --> 00:37:50,880
+[SPEAKER_01] of paying something and then it's mine.
+
+450
+00:37:51,360 --> 00:37:58,640
+[SPEAKER_01] And even though, to your point, software needs to be updated and it, almost all software needs a cloud component now and it has the constant connectivity.
+
+451
+00:37:59,600 --> 00:38:02,800
+[SPEAKER_01] And I think that just people weren't ready for that.
+
+452
+00:38:03,120 --> 00:38:07,840
+[SPEAKER_01] And again, we're getting there now where people have an increasing willingness to pay subscriptions.
+
+453
+00:38:08,560 --> 00:38:13,200
+[SPEAKER_01] But the problem is that we had a decade, it took a long time to get there.
+
+454
+00:38:13,840 --> 00:38:16,320
+[SPEAKER_01] And this entire universe and expectation is gone.
+
+455
+00:38:16,960 --> 00:38:25,760
+[SPEAKER_01] And what you see is all these new consumers that come along, they don't care about bespoke, beautiful, wonderful apps.
+
+456
+00:38:26,640 --> 00:38:30,480
+[SPEAKER_01] And that's why it's kind of a shame because it's not coming back.
+
+457
+00:38:30,640 --> 00:38:31,760
+[SPEAKER_01] Like that era's gone.
+
+458
+00:38:32,160 --> 00:38:39,120
+[SPEAKER_01] And the reality is if you're a business, whether you're like, you can either adapt like one password or die.
+
+459
+00:38:39,440 --> 00:38:46,480
+[SPEAKER_01] I'm not saying Omni's dead, but like, struggles significantly because the reality is, is the world has moved on.
+
+460
+00:38:47,200 --> 00:38:50,160
+[SPEAKER_01] And when I look back at that, I mourn it.
+
+461
+00:38:50,400 --> 00:38:51,680
+[SPEAKER_01] I'm sad that that world's gone.
+
+462
+00:38:51,760 --> 00:38:55,440
+[SPEAKER_01] I don't think it needed to be gone, but I think it's gone because of Apple's decisions.
+
+463
+00:38:55,920 --> 00:38:58,720
+[SPEAKER_01] But we are now 52 minutes in.
+
+464
+00:39:00,240 --> 00:39:04,640
+[SPEAKER_01] And this was only a precursor to what we were supposed to talk about, which was I'm satisfied.
+
+465
+00:39:07,600 --> 00:39:14,160
+[SPEAKER_01] But the reason why I want to start here is I think Apple's power is still underrated.
+
+466
+00:39:14,800 --> 00:39:21,520
+[SPEAKER_01] Like people get so obsessed about the 30% and they get so obsessed about these different things and those are sideshows.
+
+467
+00:39:22,320 --> 00:39:26,960
+[SPEAKER_01] The reality is that there is we don't actually know what the best business models are.
+
+468
+00:39:27,360 --> 00:39:33,360
+[SPEAKER_01] We don't actually know what the best way to monetize apps are because we've never had the real, like it's never been tried.
+
+469
+00:39:33,680 --> 00:39:33,840
+[SPEAKER_01] Yeah.
+
+470
+00:39:34,560 --> 00:40:20,400
+[SPEAKER_02] And to your point, I think that if you if you look back at had apple not made some of the decisions they made and we had the flexibility as developers to experiment with different business models things could look much different today omni could have experimented with with the update models they could have done different things and things would have ended up differently and and to your point i think i'm gonna be honest i think did jacob defend jacob i think omni is probably in trouble anyway i think because they were so we're gonna get nasty letters from some omni person and i apologize i've used your software for a long time big fan but but but where we're at now though is that that with the subscription business model, we are starting to finally start seeing this new shift.
+
+471
+00:40:21,120 --> 00:40:25,920
+[SPEAKER_02] As you were saying, consumers have become more accepting of subscriptions.
+
+472
+00:40:26,160 --> 00:40:35,520
+[SPEAKER_02] And so, like a great example that you might not even be aware of, we actually had the founder on the podcast on the last episode that might come out after this one, but is Photo Room.
+
+473
+00:40:36,000 --> 00:40:42,160
+[SPEAKER_02] They're essentially unbundling Photoshop and allowing you to create professional quality photos directly on your phone.
+
+474
+00:40:42,560 --> 00:40:45,920
+[SPEAKER_02] So it, it, they use AI to remove the background.
+
+475
+00:40:46,000 --> 00:40:50,160
+[SPEAKER_02] They let you so people are using this for Shopify shops and other stuff.
+
+476
+00:40:50,240 --> 00:40:57,440
+[SPEAKER_02] It is productivity visual software that's this kind of prosumer and it's incredible.
+
+477
+00:40:57,600 --> 00:40:58,720
+[SPEAKER_02] They they do a fantastic job.
+
+478
+00:40:59,040 --> 00:41:02,080
+[SPEAKER_03] You would never you would never put it on a shelf next to Photoshop, right?
+
+479
+00:41:02,240 --> 00:41:03,600
+[SPEAKER_03] Like, and that's kind of the point, right?
+
+480
+00:41:03,840 --> 00:41:03,920
+[SPEAKER_03] Yeah.
+
+481
+00:41:04,160 --> 00:41:18,000
+[SPEAKER_02] But they're but they're unbundling Photoshop and I think we're we're getting to we're getting there as far as new productivity software being able enabled by the subscription model.
+
+482
+00:41:18,400 --> 00:41:43,200
+[SPEAKER_02] But but your point is, and this is what I want to talk about on this podcast is that is that Apple's iron fist ruling of the App Store is preventing experimentation and preventing developers from trying new things, trying different business models, experimenting with APIs in ways that Apple doesn't think are kosher.
+
+483
+00:41:43,520 --> 00:41:52,160
+[SPEAKER_02] And there's just so many ways in which Apple is continuing to limit the entire marketplace, the entire economy.
+
+484
+00:41:52,480 --> 00:41:53,360
+[SPEAKER_02] And I like that you...
+
+485
+00:41:54,000 --> 00:41:57,360
+[SPEAKER_02] kicked it off talking about how important all of this really is.
+
+486
+00:41:57,680 --> 00:42:05,280
+[SPEAKER_02] It's like this super computer we have in our pocket that we all spend hours on every day is too uncontrolled by one company, right?
+
+487
+00:42:05,680 --> 00:42:09,600
+[SPEAKER_02] To the future for one company to rule it with such an iron fist.
+
+488
+00:42:09,920 --> 00:42:24,800
+[SPEAKER_02] And so, yeah, before we get dive back into the minutiae, I mean, I did want to step back and talk about, you know, 2008 when the App Store was launched, you know, I launched my company in 2008.
+
+489
+00:42:25,120 --> 00:42:36,960
+[SPEAKER_02] I worked as an indie developer for thirteen years, completely supported by App Store revenue from my own apps that I created in coordination with developers within the company.
+
+490
+00:42:36,960 --> 00:42:42,240
+[SPEAKER_02] with developers with no software experience, with nothing other than just thinking it was a cool opportunity.
+
+491
+00:42:43,120 --> 00:42:53,200
+[SPEAKER_02] So the App Store did enable a whole new set of opportunities for developers, a whole new class of software.
+
+492
+00:42:53,760 --> 00:43:05,120
+[SPEAKER_02] And we're talking specifically about productivity software, but we're leaving out the Ubers, the Facebooks, the Airbnbs, and so many other incredibly innovative things that have been empowered by Apple's platform.
+
+493
+00:43:06,320 --> 00:43:06,880
+[SPEAKER_01] But that's the thing.
+
+494
+00:43:08,000 --> 00:43:16,160
+[SPEAKER_01] All the innovation, by and large, has come with apps that have monetization models that don't run into app store restrictions.
+
+495
+00:43:16,480 --> 00:43:17,840
+[SPEAKER_02] No, they don't run into app store restrictions.
+
+496
+00:43:17,920 --> 00:43:20,240
+[SPEAKER_03] Like, it makes sure the billion dollar companies, right?
+
+497
+00:43:20,640 --> 00:43:24,320
+[SPEAKER_03] The lion's share of them, the big ones, they're outside of IAP, right?
+
+498
+00:43:24,560 --> 00:43:24,880
+[SPEAKER_02] That's right.
+
+499
+00:43:25,200 --> 00:43:35,040
+[SPEAKER_02] And we're just now starting to see the Bumbles, the Duolingo's, the Calms that are finally in 2021, actually becoming those billion dollar taxes.
+
+500
+00:43:35,840 --> 00:43:37,040
+[SPEAKER_03] 30% off the top in a decade.
+
+501
+00:43:37,120 --> 00:43:38,000
+[SPEAKER_03] That's what you're going to get.
+
+502
+00:43:38,160 --> 00:43:38,240
+[SPEAKER_03] Yeah.
+
+503
+00:43:39,200 --> 00:43:40,080
+[SPEAKER_01] No, that's the issue.
+
+504
+00:43:40,240 --> 00:43:44,560
+[SPEAKER_01] You have to be so big to overcome that 30% barrier.
+
+505
+00:43:44,640 --> 00:43:46,000
+[SPEAKER_01] I mean, you see them like Roblox.
+
+506
+00:43:46,240 --> 00:43:48,720
+[SPEAKER_01] I mean, like, which by the way, hilarious.
+
+507
+00:43:49,040 --> 00:43:51,040
+[SPEAKER_01] that that's not an app store, but other stuff is.
+
+508
+00:43:51,680 --> 00:44:03,200
+[SPEAKER_01] Um, the, the, uh, like they're, they'll, they're still losing unbelievable amounts of money and would be in so much better shape if they didn't have that 30%, right?
+
+509
+00:44:03,360 --> 00:44:12,560
+[SPEAKER_01] Like, it's just like, but that's the company that's been around since 2006 and they've just IPOed and, and, and they have so many, like they're so big.
+
+510
+00:44:13,600 --> 00:44:20,880
+[SPEAKER_01] compared to any sort of rel, you know, similar size company from like 10 years ago, but why, why has it taken so long?
+
+511
+00:44:21,040 --> 00:44:22,000
+[SPEAKER_01] Why do they have to get so big?
+
+512
+00:44:22,240 --> 00:44:23,040
+[SPEAKER_01] Why to make it?
+
+513
+00:44:23,360 --> 00:44:33,200
+[SPEAKER_01] Because they have to overcome this thirty percent barrier and you can do it, but it's it just raises the bar so much higher than it would be otherwise.
+
+514
+00:44:33,840 --> 00:44:46,240
+[SPEAKER_01] And to your point, David, I think the, you know, yes, we're getting to that model, but we would have gotten to a workable model faster and I think more models without these kind of restrictions, these restrictions in place.
+
+515
+00:44:46,560 --> 00:44:54,720
+[SPEAKER_01] And, you know, to go back when you started in 2008 and you were all over this and I've always been very impressed with the way you sort of saw this opportunity and seized it.
+
+516
+00:44:55,200 --> 00:44:56,640
+[SPEAKER_01] And where did thirty percent come from?
+
+517
+00:44:56,880 --> 00:44:57,680
+[SPEAKER_01] Why did it make sense?
+
+518
+00:44:58,640 --> 00:44:59,200
+[SPEAKER_01] It made sense.
+
+519
+00:44:59,360 --> 00:45:02,720
+[SPEAKER_01] Remember when the apps first started?, you bought software, right?
+
+520
+00:45:03,040 --> 00:45:06,880
+[SPEAKER_01] Like you you put it in there and you and you paid for it and there was no in-app purchase.
+
+521
+00:45:06,960 --> 00:45:12,640
+[SPEAKER_01] There were no subscriptions there and that actually sort of fit the world as it was.
+
+522
+00:45:12,880 --> 00:45:16,960
+[SPEAKER_01] There was sort of like freeware online and there was some software that you paid for, right?
+
+523
+00:45:17,280 --> 00:45:23,360
+[SPEAKER_01] And so the irony of all this complaining is that Apple actually started with the old model.
+
+524
+00:45:24,160 --> 00:45:26,640
+[SPEAKER_01] The problem is that that was it, right?
+
+525
+00:45:27,520 --> 00:45:28,080
+[SPEAKER_01] And it didn't work.
+
+526
+00:45:29,360 --> 00:45:32,720
+[SPEAKER_01] Like, well, I guess you couldn't upgrade.
+
+527
+00:45:32,720 --> 00:45:37,200
+[SPEAKER_01] Like, that's like, if you were there early, you could ride the growing user base.
+
+528
+00:45:37,440 --> 00:45:39,040
+[SPEAKER_01] You could constantly be getting new customers, right?
+
+529
+00:45:39,200 --> 00:45:42,480
+[SPEAKER_01] There was all, you know, uh, everyone needed a mirror.
+
+530
+00:45:43,200 --> 00:45:50,000
+[SPEAKER_01] That's the app of yours, I always remember, David, but I'm, but there's, uh, you know, there's, there's, and so you could ride that wave.
+
+531
+00:45:50,240 --> 00:45:52,960
+[SPEAKER_01] The problem is what happened when the easy new customers stopped.
+
+532
+00:45:53,200 --> 00:45:56,080
+[SPEAKER_01] You had, you had no way to monetize your existing customers.
+
+533
+00:45:56,640 --> 00:46:08,160
+[SPEAKER_01] And so, and then Apple introduced in-app purchase, uh, and, you know, and the rest, you know, and then, and then they forget a lot of the app store restrictions came after in-app purchase.
+
+534
+00:46:08,400 --> 00:46:13,840
+[SPEAKER_01] Like it was still relatively, like you could buy books on Kindle for years in the App Store.
+
+535
+00:46:14,080 --> 00:46:46,240
+[SPEAKER_01] It wasn't until Apple introduced in-app purchase and then I think Microsoft or not Microsoft, Amazon ran a commercial that showed that if you bought a book on iOS, you could also read on Android and Apple lost their crap and they're like, why are like, this isn't cool and then they came back to to to to to to Amazon and cut it off and that was sort of the turning point was I think it was 2012 they they forced them to take out in-app purchase and and the restrictions have that was that was the end.
+
+536
+00:46:46,400 --> 00:46:54,960
+[SPEAKER_01] Like, and I don't know, David, be interesting from your perspective., it feels like 2008 to 2012, that was the era of innovation.
+
+537
+00:46:55,600 --> 00:47:04,480
+[SPEAKER_01] And maybe it's a coincidence that Apple's crackdown coincided with the real sort of like that was the end of the Wild West.
+
+538
+00:47:04,960 --> 00:47:12,080
+[SPEAKER_01] And now it was big companies and it was scamming games and everyone else just sort of had to meddle through.
+
+539
+00:47:12,240 --> 00:47:13,600
+[SPEAKER_03] I mean, it was the Medal Ages, right?
+
+540
+00:47:13,760 --> 00:47:14,880
+[SPEAKER_03] Or the dark, dark ages, right?
+
+541
+00:47:15,600 --> 00:48:01,040
+[SPEAKER_01] I would say 2012 to 2020, I would say now until I think what we're seeing is a renaissance or I don't know, maybe I'm gonna oversell it because I'm shilling for this model., but like, let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me let me All this stuff.
+
+542
+00:48:01,040 --> 00:48:01,600
+[SPEAKER_03] They don't want that, right?
+
+543
+00:48:01,760 --> 00:48:04,000
+[SPEAKER_03] Like they don't they they they they deny that reality, right?
+
+544
+00:48:04,320 --> 00:48:05,520
+[SPEAKER_01] But they didn't want that.
+
+545
+00:48:05,840 --> 00:48:10,560
+[SPEAKER_01] They should have made it possible to build sustainable iOS only businesses a decade ago.
+
+546
+00:48:10,720 --> 00:48:16,480
+[SPEAKER_01] It's like, it's like, Apple is like stuck in this worldview where they deny decisions they made a decade ago.
+
+547
+00:48:17,200 --> 00:48:26,160
+[SPEAKER_01] And the problem is that ship sailed and every developer that wants to build a sustainable business is obviously going to be cross platform and Apple is not going to lift a finger to help them.
+
+548
+00:48:26,320 --> 00:48:34,800
+[SPEAKER_01] And by even if you're only on Apple's platforms, things like subscriptions and matching receipts and all these sorts of things are going to be extremely difficult and not well developed.
+
+549
+00:48:35,200 --> 00:48:36,640
+[SPEAKER_01] It as happens in it's like.
+
+550
+00:48:37,120 --> 00:48:37,840
+[SPEAKER_01] your cable company.
+
+551
+00:48:38,080 --> 00:48:42,560
+[SPEAKER_01] If the cable company doesn't have to compete with anyone, they're going to give you crap customer service, because why not?
+
+552
+00:48:42,720 --> 00:48:43,520
+[SPEAKER_01] It's the same thing with Apple.
+
+553
+00:48:43,840 --> 00:48:48,640
+[SPEAKER_01] If they don't have to compete with any payment providers, why do they have to have a great, a great system?
+
+554
+00:48:48,880 --> 00:48:49,280
+[SPEAKER_01] They don't.
+
+555
+00:48:49,360 --> 00:48:50,160
+[SPEAKER_01] You're stuck with it.
+
+556
+00:48:50,560 --> 00:48:57,680
+[SPEAKER_01] And, uh, and, uh, that's why, like, I, from the beginning, I, David actually came to me before he went to work for you and he's like, what do you think of a revenue account?
+
+557
+00:48:57,840 --> 00:48:59,040
+[SPEAKER_01] I'm like, massive fan.
+
+558
+00:48:59,520 --> 00:49:03,760
+[SPEAKER_01] Like, it just because it's solving such a critical pain point.
+
+559
+00:49:04,320 --> 00:49:12,880
+[SPEAKER_01] Um, and it's one of those situations where I think people didn't fully appreciate what you guys were doing because people have always watched the App Store.
+
+560
+00:49:13,200 --> 00:49:27,040
+[SPEAKER_01] No, they haven't they haven't they haven't appreciated one, they haven't always appreciated the app store and two, people were so down on apps ever making money other than games and stuff like that just because to your point, it was the dark ages, right?
+
+561
+00:49:27,200 --> 00:49:28,320
+[SPEAKER_01] It was it was so rough.
+
+562
+00:49:28,480 --> 00:49:33,840
+[SPEAKER_01] So I'm a huge revenue cap fan and that and so I that's one of the reasons I'm I'm you know very happy to be here.
+
+563
+00:49:34,160 --> 00:49:35,600
+[SPEAKER_03] We'll clip that for a lot of our content marketing.
+
+564
+00:49:36,000 --> 00:49:36,240
+[SPEAKER_03] Thank you.
+
+565
+00:49:37,600 --> 00:49:42,720
+[SPEAKER_02] I do want to I want to refocus the conversation because there's some things I really want to talk to you about.
+
+566
+00:49:43,040 --> 00:49:48,800
+[SPEAKER_02] So we spent an hour kind of talking about a lot of the problems and kind of setting a mindset.
+
+567
+00:49:49,280 --> 00:49:50,240
+[SPEAKER_02] of why it matters.
+
+568
+00:49:51,040 --> 00:50:02,320
+[SPEAKER_02] But what I really wanted to talk through is that there's been a lot of solutions proposed from the Open App Markets Act to regulation regulators poking around.
+
+569
+00:50:03,440 --> 00:50:14,080
+[SPEAKER_02] And we I think it's fairly well established, even though we spent another hour on it, that it's a problem that Apple wielding this much control is a problem.
+
+570
+00:50:14,800 --> 00:50:17,920
+[SPEAKER_02] Google following suit as part of a duopoly is a problem.
+
+571
+00:50:18,400 --> 00:50:34,480
+[SPEAKER_02] So there's there's a lot of proposals for how to solve it, but each of those proposals then come with what trade.-offs, with a lot of potential for unforeseen downsides, potential for consumer harm, potential for so many different things.
+
+572
+00:50:34,720 --> 00:50:39,360
+[SPEAKER_03] So what I wanted to capture, right, is basically in some ways, it will entrench them, right?
+
+573
+00:50:39,520 --> 00:50:45,600
+[SPEAKER_03] If they're, if they have laws written towards them, it gives them opportunities to build around it and become even further entrenched.
+
+574
+00:50:46,240 --> 00:50:46,320
+[SPEAKER_02] Yeah.
+
+575
+00:50:46,880 --> 00:50:53,200
+[SPEAKER_02] So what I wanted to do is talk through some of the solutions, like where do we, where do we go from here?
+
+576
+00:50:53,520 --> 00:50:55,200
+[SPEAKER_02] Like what solves this?
+
+577
+00:50:55,760 --> 00:51:00,720
+[SPEAKER_02] And I think there's a few ways to think about this, not just, you know, laws.
+
+578
+00:51:01,360 --> 00:51:03,920
+[SPEAKER_02] being written and regulation, but like, what could Apple do?
+
+579
+00:51:04,480 --> 00:51:20,720
+[SPEAKER_02] So, so, so the first thing that's always top of mind, and you were just wrapping up discussing it, so let's jump right into that one is, you know, both the EU, the Open App Markets Act are hitting on on payments.
+
+580
+00:51:21,600 --> 00:51:26,000
+[SPEAKER_02] You know, that's a fundamental part of commerce on the app stores.
+
+581
+00:51:26,320 --> 00:51:30,960
+[SPEAKER_03] And I think one of your biggest grips too, Ben, if I look at, you know, some of what you've written, it's the distribution.
+
+582
+00:51:31,280 --> 00:51:45,760
+[SPEAKER_01] Apple has a pretty good case that they they deserve a toll, but it's the after the fact that I think you've you've made arguments that I think so here let me tell you my I think there's a distinction between my ideal solution and what may or may not happen.
+
+583
+00:51:47,040 --> 00:51:58,720
+[SPEAKER_01] And so my ideal solution is actually and this really shows I'm not an absolutist on this because a lot of people are grumpy at me because I don't go in their estimation far enough.
+
+584
+00:51:59,360 --> 00:52:07,040
+[SPEAKER_01] My idealized solution is what Android basically has been to date and Android is going to change that, which is unfortunate.
+
+585
+00:52:07,440 --> 00:52:18,560
+[SPEAKER_01] But what they've been to date is basically if you'rere not, you can have a web view that's sort of like in your app and you can kick out to your own website and do your own payments there.
+
+586
+00:52:18,880 --> 00:52:20,880
+[SPEAKER_01] So, so you can have like the Kindle app.
+
+587
+00:52:21,120 --> 00:52:32,560
+[SPEAKER_01] There's a tab on there that says store that actually loads a web view, which is the, you know, amazon.com and you go there and you buy your book and you click buy and it's there in your library, Spotify, same thing.
+
+588
+00:52:32,720 --> 00:52:33,680
+[SPEAKER_01] There's a sign-up screen.
+
+589
+00:52:33,760 --> 00:52:35,120
+[SPEAKER_01] You're actually on spotify.com.
+
+590
+00:52:35,520 --> 00:52:39,440
+[SPEAKER_01] Uh, it's been the same thing for like, uh, you know, IAC, like Tinder and stuff like that.
+
+591
+00:52:39,520 --> 00:52:49,840
+[SPEAKER_01] You actually click you're actually on a website and you're paying there and that money is not going to Google is not taking a share of that and you can do you can and you can imagine for a pork six hour you could sell upgrades that way.
+
+592
+00:52:50,000 --> 00:52:51,200
+[SPEAKER_01] Like, basically you do whatever you want.
+
+593
+00:52:51,280 --> 00:52:59,200
+[SPEAKER_01] Like, you have, you have full capability and there's a communication between the web back end and back to the phone, um, you know, that unlocks capabilities or whatever it might be.
+
+594
+00:53:00,000 --> 00:53:18,800
+[SPEAKER_01] And then meanwhile, uh, and so what I like about this is, um, and I know my, my games developer friends will be grumpy at this, but I, I, I think that there is a legitimate case to be worried about, uh, sort of abuse of the, of the platform and sort of scams and taking advantage of customers.
+
+595
+00:53:19,200 --> 00:53:46,880
+[SPEAKER_01] And particularly when you're dealing with products that appeal to kids and you can get a situation where if you if you can go to WebView in some game and you put your credit card in once and then that button just keeps popping up again and again you want to add whatever and you just keep hitting it and there's no sort of restriction on it you can't put any limitation on it I think that we're very quickly going to end up in a situation of people are like you know, bad situation.
+
+596
+00:53:47,200 --> 00:53:53,840
+[SPEAKER_03] Not just kids exploding people with gambling addictions, all the sort of like worst actors that I think make a lot of money on the App Store now.
+
+597
+00:53:54,400 --> 00:53:55,360
+[SPEAKER_01] Yeah, absolutely.
+
+598
+00:53:55,520 --> 00:54:03,760
+[SPEAKER_01] But I mean, I I'm not there is some aspect of people need to take some level, I think, of personal responsibility, but that obviously varies.
+
+599
+00:54:04,240 --> 00:54:11,040
+[SPEAKER_01] There can be addiction issues for sure, but there's also, but there's a little aspect of like, kids aren't they're not equipped to be making those sort of decisions, right?
+
+600
+00:54:11,600 --> 00:54:19,120
+[SPEAKER_01] And you can, and so I think, I think, and just to go full circle, and I've been very anti-Apple here, I've always been super pro App Store.
+
+601
+00:54:19,280 --> 00:54:32,960
+[SPEAKER_01] Like, I think the reality is that people became scared to one of the reasons the Mac market was so much better than the Windows market is no one on earth wanted to install software, install applications on Windows because they were scared.
+
+602
+00:54:33,040 --> 00:54:34,000
+[SPEAKER_01] They're scared to get malware.
+
+603
+00:54:34,160 --> 00:54:35,920
+[SPEAKER_01] They're scared to get viruses, whatever it might be.
+
+604
+00:54:36,160 --> 00:54:40,480
+[SPEAKER_01] And so everything went web only on Windows, you know, much earlier.
+
+605
+00:54:41,280 --> 00:54:46,480
+[SPEAKER_01] And so the App Store fixed that problem and made people eager to try stuff like just willy nilly.
+
+606
+00:54:46,560 --> 00:54:47,040
+[SPEAKER_01] You heard about an Apple.
+
+607
+00:54:47,280 --> 00:54:48,560
+[SPEAKER_01] I'll download, I'll give it a try.
+
+608
+00:54:48,720 --> 00:54:49,840
+[SPEAKER_01] That it's been phenomenal.
+
+609
+00:54:50,080 --> 00:54:52,480
+[SPEAKER_01] It is Apple's absolutely right and fair to argue.
+
+610
+00:54:52,800 --> 00:54:57,040
+[SPEAKER_01] They massively increased the market, they created huge opportunities for developers of all sorts.
+
+611
+00:54:57,760 --> 00:55:02,480
+[SPEAKER_01] They made David, you know, this, this rich mogul who's looking down on us, right?
+
+612
+00:55:04,240 --> 00:55:12,720
+[SPEAKER_01] Yeah, but it's, it's, and so that gets lost though because there's some situation where just because like what we're.
+
+613
+00:55:13,120 --> 00:55:17,680
+[SPEAKER_01] arguing about is not that Apple didn't create this market and didn't make it possible for developers to make all this money.
+
+614
+00:55:18,080 --> 00:55:20,320
+[SPEAKER_01] It's a question of could this market actually be so much bigger?
+
+615
+00:55:20,560 --> 00:55:22,560
+[SPEAKER_01] Could there be so much more money being made?
+
+616
+00:55:22,720 --> 00:55:24,320
+[SPEAKER_01] Could there be so many more businesses?
+
+617
+00:55:24,880 --> 00:55:29,600
+[SPEAKER_01] It's the opportunity cost of what's been lost along the way and that's always harder to measure, right?
+
+618
+00:55:30,160 --> 00:55:35,600
+[SPEAKER_01] And it's always going to be a rhetorical advantage for Apple is it's true they did make all this stuff possible.
+
+619
+00:55:36,240 --> 00:55:42,640
+[SPEAKER_01] My point is there could have been much more and there's been stuff lost along the way thanks to their policies, but that point should be left in.
+
+620
+00:55:43,040 --> 00:55:47,680
+[SPEAKER_01] So my preferred outcome is things like games are still locked down.
+
+621
+00:55:48,080 --> 00:55:57,360
+[SPEAKER_01] I actually think a lot of games would want to stay with in-app purchase anyway because you want to finish that conversion when the user is in the moment, in the middle of it.
+
+622
+00:55:57,440 --> 00:56:01,840
+[SPEAKER_01] You don't want to kick him out of the website, kind of breaks the flow, breaks the mood, et cetera, et cetera.
+
+623
+00:56:02,080 --> 00:56:05,920
+[SPEAKER_01] And, you know, but so there's lots of, you know, reasons it could go either way.
+
+624
+00:56:07,120 --> 00:56:12,160
+[SPEAKER_01] And, and people are like, you know, the other thing is Apple, Apple can compete, right?
+
+625
+00:56:12,320 --> 00:56:13,920
+[SPEAKER_01] I, I, I'm actually fine.
+
+626
+00:56:14,880 --> 00:56:18,560
+[SPEAKER_01] and good with the sort of platform owner having inherent advantages.
+
+627
+00:56:18,800 --> 00:56:22,240
+[SPEAKER_01] I'm okay if using in-app purchase is way easier than anything else.
+
+628
+00:56:22,480 --> 00:56:29,280
+[SPEAKER_01] Like I, I, I, so I don't think that Apple has to allow a different credit card processor into their in-app purchase API.
+
+629
+00:56:29,440 --> 00:56:31,200
+[SPEAKER_01] Like, I'm fine that that's theirs, right?
+
+630
+00:56:31,600 --> 00:56:33,680
+[SPEAKER_01] And that's the advantage you get by, by owning the.
+
+631
+00:56:34,000 --> 00:56:39,280
+[SPEAKER_03] I see what you're saying is using the, like, if store kit you could plug in, you could pass it a credit card token or whatever.
+
+632
+00:56:39,520 --> 00:56:40,000
+[SPEAKER_01] Right, exactly.
+
+633
+00:56:40,160 --> 00:56:40,640
+[SPEAKER_01] Okay, exactly.
+
+634
+00:56:40,640 --> 00:56:46,640
+[SPEAKER_01] No, I'm fine, I'm fine with Apple owning the whole stack and Apple, like Apple, I am an Apple customer.
+
+635
+00:56:46,800 --> 00:56:49,360
+[SPEAKER_01] I like they deliver integrated products with great user experiences.
+
+636
+00:56:49,520 --> 00:56:50,480
+[SPEAKER_01] I'm willing to pay for that.
+
+637
+00:56:50,800 --> 00:56:56,000
+[SPEAKER_01] And I think Apple can sell a situation where, look, you should only buy from us, stay with us.
+
+638
+00:56:56,240 --> 00:56:57,200
+[SPEAKER_01] It's going to be super secure.
+
+639
+00:56:57,280 --> 00:56:58,240
+[SPEAKER_01] We're going to protect your stuff.
+
+640
+00:56:58,480 --> 00:56:59,680
+[SPEAKER_01] And the reality is customers.
+
+641
+00:56:59,840 --> 00:57:03,120
+[SPEAKER_01] There's a fair number of customers that will go along with that.
+
+642
+00:57:03,440 --> 00:57:13,760
+[SPEAKER_01] I mean, I have people that won't subscribe to Checkery and they're like, I will never subscribe until you've done that purchase because I won't I won't purchase a subscription for having the one on Apple so I can cancel it easily.
+
+643
+00:57:14,800 --> 00:57:18,960
+[SPEAKER_01] I will tell you actually, I don't object to the 30%.
+
+644
+00:57:19,280 --> 00:57:22,000
+[SPEAKER_01] It's the I don't get any information on my customers.
+
+645
+00:57:22,160 --> 00:57:23,040
+[SPEAKER_01] There's a control, right?
+
+646
+00:57:23,120 --> 00:57:23,520
+[SPEAKER_02] Yeah, yeah.
+
+647
+00:57:23,680 --> 00:57:24,960
+[SPEAKER_02] No, but it's not just a control problem.
+
+648
+00:57:25,280 --> 00:57:28,400
+[SPEAKER_01] It's a I can't deliver them the full experience.
+
+649
+00:57:28,560 --> 00:57:30,080
+[SPEAKER_01] I can't give them access to the website.
+
+650
+00:57:30,160 --> 00:57:31,760
+[SPEAKER_01] I can't give them access to different stuff.
+
+651
+00:57:31,840 --> 00:57:36,800
+[SPEAKER_01] Like you're locked into an app only sort of existence.
+
+652
+00:57:38,080 --> 00:57:39,280
+[SPEAKER_01] And that's that's really the issue.
+
+653
+00:57:39,360 --> 00:57:41,760
+[SPEAKER_01] Like, I like my I send email for a living.
+
+654
+00:57:42,160 --> 00:57:44,160
+[SPEAKER_01] If I can't email you, that's a little bit of a problem.
+
+655
+00:57:45,040 --> 00:57:51,440
+[SPEAKER_02] That is a solvable problem though, because you can require an account to subscribe and then take payment after they've created an account.
+
+656
+00:57:51,600 --> 00:57:52,800
+[SPEAKER_02] But total side note.
+
+657
+00:57:53,120 --> 00:58:00,240
+[SPEAKER_01] Well, but so so so so it's just so so my preferred outcome that's my preferred outcome is basically what the situation I think Android has had it right.
+
+658
+00:58:01,040 --> 00:58:03,840
+[SPEAKER_01] Android for frustrating reasons has gone in the other direction.
+
+659
+00:58:04,000 --> 00:58:05,040
+[SPEAKER_01] We're going to become more like Apple.
+
+660
+00:58:05,360 --> 00:58:07,040
+[SPEAKER_01] You have to now use in app purchase for basically everything.
+
+661
+00:58:07,280 --> 00:58:08,720
+[SPEAKER_01] It's a good sign of a duopoly, right?
+
+662
+00:58:08,880 --> 00:58:10,560
+[SPEAKER_01] Like, it's a great sign, right?
+
+663
+00:58:10,960 --> 00:58:12,400
+[SPEAKER_01] It really is like the, you know.
+
+664
+00:58:14,240 --> 00:58:22,560
+[SPEAKER_01] And so the problem and the concern I have and this regulation, it's going to happen to you first probably, but something is going to happen.
+
+665
+00:58:22,880 --> 00:58:25,680
+[SPEAKER_01] It's going to go too far in the other direction in my estimation.
+
+666
+00:58:25,920 --> 00:58:30,960
+[SPEAKER_01] Like there's going to be, you're actually going to get, you're going to throw the baby out with the bath water.
+
+667
+00:58:31,760 --> 00:58:34,000
+[SPEAKER_01] And the reality is, that's what happens.
+
+668
+00:58:34,800 --> 00:58:42,160
+[SPEAKER_01] If you don't self regulate, if you don't sort of be reasonable, it's like being an oak tree that rots from the inside.
+
+669
+00:58:42,240 --> 00:58:47,040
+[SPEAKER_01] Like you're going to crack and the whole thing is going to be down instead of sort of adjusting and doing what you should.
+
+670
+00:58:47,200 --> 00:58:48,640
+[SPEAKER_01] And that's why it's so frustrating.
+
+671
+00:58:49,200 --> 00:58:52,560
+[SPEAKER_01] and like, I feel like I banged my head against the wall for the last decade.
+
+672
+00:58:53,040 --> 00:58:54,720
+[SPEAKER_01] The App Store actually was important.
+
+673
+00:58:55,040 --> 00:58:56,560
+[SPEAKER_01] I was right to be writing about it.
+
+674
+00:58:56,880 --> 00:59:11,440
+[SPEAKER_01] And Apple, you just go back to those emails and it's almost like, you know, not to be overly, overly dramatic, but it's like, it's heartbreaking to see these emails of, of Apple internally saying, do we want to be in this situation where we're making billions and billions of dollars from this?
+
+675
+00:59:11,600 --> 00:59:13,760
+[SPEAKER_01] Like, should we start, should we get ahead of this?
+
+676
+00:59:14,320 --> 00:59:16,880
+[SPEAKER_01] And it's like, you know, this rule is not taken.
+
+677
+00:59:17,280 --> 00:59:17,360
+[SPEAKER_01] Yeah.
+
+678
+00:59:17,600 --> 00:59:26,400
+[SPEAKER_01] I mean, and you think about it, like, how many things about Apple and you see Apple today, it's like, yeah, it's great for the stock price., they have this services narrative and it is important.
+
+679
+00:59:26,720 --> 00:59:34,000
+[SPEAKER_01] It really is like because services revenue, the multiple on that is way higher than product revenue because it's recurring.
+
+680
+00:59:34,160 --> 00:59:35,280
+[SPEAKER_01] It's it's predictable.
+
+681
+00:59:35,600 --> 00:59:40,800
+[SPEAKER_01] You know, it's going to be there for basically forever and absolutely has a massive impact on Apple stock price.
+
+682
+00:59:40,960 --> 00:59:41,600
+[SPEAKER_01] It really, really does.
+
+683
+00:59:42,000 --> 00:59:52,960
+[SPEAKER_01] And so from a financial perspective, from a shareholder perspective, and this, by the way, is why so much of the discussion online is very fraught because a lot of people have Apple stock and I think that might inform their opinions.
+
+684
+00:59:53,360 --> 00:59:53,920
+[SPEAKER_01] It really does.
+
+685
+00:59:54,640 --> 00:59:56,880
+[SPEAKER_01] It really has been a massive win for Apple.
+
+686
+00:59:57,280 --> 00:59:59,360
+[SPEAKER_01] And so when I put my business analyst hat on.
+
+687
+01:00:00,000 --> 01:00:00,880
+[SPEAKER_01] It's very smart.
+
+688
+01:00:01,040 --> 01:00:10,400
+[SPEAKER_01] And I honestly, it's probably the topic where I get away from what's checkers should be more than anything because at the end of the day, I like Apple products.
+
+689
+01:00:10,560 --> 01:00:11,920
+[SPEAKER_01] I like great user experiences.
+
+690
+01:00:12,080 --> 01:00:15,840
+[SPEAKER_01] I like the idea of a company that wins by being the best.
+
+691
+01:00:16,480 --> 01:00:26,960
+[SPEAKER_01] And it kind of breaks my teenage heart that loved these products to see a company's incentives be warped the way they have been for Apple.
+
+692
+01:00:27,680 --> 01:00:41,040
+[SPEAKER_01] Even as I put my analyst hat on, I'm like trying to spin these arguments that you're risking yourself in the long term, but it's kind of hard to argue that because the reality is it's really phenomenal for your business.
+
+693
+01:00:41,280 --> 01:00:41,680
+[SPEAKER_01] It really is.
+
+694
+01:00:42,000 --> 01:00:42,800
+[SPEAKER_02] When does the bow break?
+
+695
+01:00:43,120 --> 01:00:45,760
+[SPEAKER_02] I mean, I, uh, keeping your analyst hat on for a minute.
+
+696
+01:00:45,920 --> 01:01:00,560
+[SPEAKER_02] I mean, I do think there's a strong argument to make that, you know, as these chips start to fall and as Apple is forced to allow developers to accept, uh, off-app store payments, it's going to force Apple to compete.
+
+697
+01:01:00,720 --> 01:01:02,240
+[SPEAKER_02] And that's actually going to be good for Apple.
+
+698
+01:01:02,960 --> 01:01:06,880
+[SPEAKER_02] Like if they dropped the app store fee to eight percent, ten percent.
+
+699
+01:01:07,600 --> 01:01:09,600
+[SPEAKER_02] There was, I think it was in the Epic trial.
+
+700
+01:01:10,160 --> 01:01:23,040
+[SPEAKER_02] It came out that Netflix did a study and for them to be a net win using Apple's in-app purchase system, the I think the study showed it needed to be at like twelve percent or something.
+
+701
+01:01:23,840 --> 01:01:42,480
+[SPEAKER_02] So if Apple's forced to compete and developers are starting to accept off-app store payments and they are forced to actually reduce the rate, now they're more competitive and can win back some of the business they lost because when you get back to what you were saying earlier., consumers want to pay with their face.
+
+702
+01:01:42,800 --> 01:01:43,760
+[SPEAKER_02] They want to make it easy.
+
+703
+01:01:43,840 --> 01:01:45,360
+[SPEAKER_02] They don't want to enter another credit card.
+
+704
+01:01:45,600 --> 01:01:52,080
+[SPEAKER_02] They don't want to have to worry about how they're going to cancel their New York Times subscription and have to call someone to cancel it.
+
+705
+01:01:52,400 --> 01:02:06,960
+[SPEAKER_02] So like they can win on both fronts and I think there's an argument to be made that they'll make more money by doing that and continue to benefit the services narrative, not just lose money.
+
+706
+01:02:07,360 --> 01:02:08,320
+[SPEAKER_02] Here's what I say though.
+
+707
+01:02:08,720 --> 01:02:10,400
+[SPEAKER_01] I want to believe that that's true, right?
+
+708
+01:02:10,800 --> 01:02:11,840
+[SPEAKER_01] And it might be true.
+
+709
+01:02:12,560 --> 01:02:26,800
+[SPEAKER_01] I what I'm very cognizant of though is one of the biggest sort of mental traps you can fall into is confirmation bias where you're like because I because I want Apple to do that and I want developers to make more money and I want there to be competition in the marketplace.
+
+710
+01:02:27,440 --> 01:02:31,840
+[SPEAKER_01] And so I want to find all the arguments that say, actually, this is going to be good for you too.
+
+711
+01:02:32,720 --> 01:02:44,080
+[SPEAKER_01] And the fact of and so I'm but I'm that that makes me inherently wary of saying that's definitely going to be the case because the reality is is that they make a whole bunch of money doing what they do now.
+
+712
+01:02:44,560 --> 01:02:54,160
+[SPEAKER_01] It's very easy to see, again, developers really, you know, forcing users into sort of another direction.
+
+713
+01:02:55,760 --> 01:02:58,400
+[SPEAKER_01] And so there's, you know, I just don't know.
+
+714
+01:02:59,760 --> 01:03:10,160
+[SPEAKER_01] I can understand Apple not going in that direction and not sort of wanting to kill the golden goose, even if there are plausible arguments that they'll be better on the other side.
+
+715
+01:03:10,480 --> 01:03:18,640
+[SPEAKER_01] Like they're they're they're so deep now that I can be sympathetic that it's not like it's not going to change unless they're forced to to change.
+
+716
+01:03:19,040 --> 01:03:21,040
+[SPEAKER_02] Let's get back to what the golden goose really is though.
+
+717
+01:03:21,200 --> 01:03:25,360
+[SPEAKER_02] And that's where I actually proposed this in the podcast with Ben Baharan.
+
+718
+01:03:26,800 --> 01:03:32,400
+[SPEAKER_02] And I like that you're making the distinctions between apps and games because I think that's a valid distinction.
+
+719
+01:03:32,720 --> 01:03:42,080
+[SPEAKER_02] And if you look at competition in the market, Sony, Microsoft, so many other game stores charge 30%.
+
+720
+01:03:42,480 --> 01:03:43,600
+[SPEAKER_02] So leave games alone.
+
+721
+01:03:43,760 --> 01:03:45,680
+[SPEAKER_02] They're 80% of the revenue anyway.
+
+722
+01:03:46,240 --> 01:03:57,440
+[SPEAKER_02] So if you're looking at Apple, I'm not a full of app people, but go to your point, they wouldn't actually be risking that much money if they only did it on apps.
+
+723
+01:03:57,680 --> 01:03:59,600
+[SPEAKER_01] That's why things should have gone this way a long time ago.
+
+724
+01:03:59,680 --> 01:04:01,840
+[SPEAKER_01] Like it's it's the vast majority of revenue.
+
+725
+01:04:02,320 --> 01:04:04,080
+[SPEAKER_01] No one feels sorry for the game makers, right?
+
+726
+01:04:04,240 --> 01:04:15,440
+[SPEAKER_01] I think I was on an episode of Dithering, John Gruber made the point that, you know, like the only people that think it should be easier to, to, to, to, you know, buy gems in a game are our video game developers.
+
+727
+01:04:15,520 --> 01:04:17,440
+[SPEAKER_01] Like no one actually thinks that, right?
+
+728
+01:04:17,920 --> 01:04:28,800
+[SPEAKER_01] And I think part of it, and you talked, you know, I think Google felt like, you know, I think the Epic suing them despite the fact that they have siloading was in part because they treat games differently.
+
+729
+01:04:29,040 --> 01:04:31,200
+[SPEAKER_01] And so they felt like, well, no, we have to treat everyone the same.
+
+730
+01:04:31,520 --> 01:04:32,480
+[SPEAKER_01] And I think that's a mistake.
+
+731
+01:04:32,560 --> 01:04:33,680
+[SPEAKER_01] I think I, I'm with you.
+
+732
+01:04:33,920 --> 01:04:39,040
+[SPEAKER_01] I think that the solution here has always been to treat games differently.
+
+733
+01:04:39,680 --> 01:04:51,200
+[SPEAKER_01] The, the companies that get sympathy and justifiably so are companies like Spotify, are companies that like are competing with Apple and with, with, with, you know, this massive disadvantage.
+
+734
+01:04:51,360 --> 01:04:53,760
+[SPEAKER_01] Like the Spotify thing is so blatantly unfair.
+
+735
+01:04:53,920 --> 01:05:07,760
+[SPEAKER_01] I mean, like, it's, it's, they have a way better case than Epic, I think, in my personal opinion, it's hilarious that Apple thinks it's remotely okay that they can have a competing service that doesn't that, that, that, that, that has a percentage of advantage.
+
+736
+01:05:07,840 --> 01:05:07,920
+[SPEAKER_01] Yeah.
+
+737
+01:05:08,160 --> 01:05:09,440
+[SPEAKER_01] Unlike the OS, right?
+
+738
+01:05:09,600 --> 01:05:10,080
+[SPEAKER_03] It's crazy.
+
+739
+01:05:10,320 --> 01:05:15,120
+[SPEAKER_01] I mean, like, that is the sort of advantage where you and Spotify can't even say go to our website, right?
+
+740
+01:05:15,600 --> 01:05:22,320
+[SPEAKER_01] That's the sort of example where someone at Apple has to like be stand up at a meeting and say, what are we doing here?
+
+741
+01:05:22,800 --> 01:05:33,360
+[SPEAKER_01] Like, like, like, what this is a recipe for every single regulator on Earth to either find a law that says this is wrong or make a law that says it's wrong because it's so blatantly wrong.
+
+742
+01:05:33,440 --> 01:05:37,520
+[SPEAKER_03] Well, I was I'm trying to sneak in is, you know, but when, when does it break?
+
+743
+01:05:37,920 --> 01:05:38,080
+[SPEAKER_03] Right?
+
+744
+01:05:38,320 --> 01:05:40,080
+[SPEAKER_03] Like, when is it going to come?
+
+745
+01:05:40,240 --> 01:05:50,160
+[SPEAKER_03] Is Apple going to, I mean, they've already been going, they're apparently very happy to go to Supreme Court and the cases that have been brought, they've had pretty good stand on and they seem like they're going to be fine.
+
+746
+01:05:50,800 --> 01:05:53,600
+[SPEAKER_03] But at some point, well, either it breaks or it doesn't, right?
+
+747
+01:05:53,840 --> 01:06:07,200
+[SPEAKER_03] Is there anything in your, in your, you know, years of psychoanalyzing Apple's culture, like, what do you think it will take to get them to either self-regulate or do you think they'll just dr drive this thing off a cliff until it, until, like, you know, the regulators set in from all directions?
+
+748
+01:06:07,520 --> 01:06:08,640
+[SPEAKER_03] Is there something that can happen?
+
+749
+01:06:09,520 --> 01:06:12,320
+[SPEAKER_01] You keep saying that I'm psychoanalytic, I think is a little excessive.
+
+750
+01:06:14,240 --> 01:06:22,480
+[SPEAKER_01] I think the idea that Apple is, uh, or Apple in circa 2010 was still shaped by the trauma of the late nineties is a fair point.
+
+751
+01:06:22,640 --> 01:06:26,160
+[SPEAKER_01] I'm not going to extend, uh, I didn't say it was bad psychoanalytic.
+
+752
+01:06:28,080 --> 01:06:35,760
+[SPEAKER_01] I mean, the problem is they have a really fundamental, uh, business problem now, which is they make an absolutely gigantic amount of money from the App Store.
+
+753
+01:06:35,920 --> 01:06:41,920
+[SPEAKER_01] Like, that's, and you see the same thing with the Google deal where they make all this money there.
+
+754
+01:06:42,080 --> 01:06:45,600
+[SPEAKER_01] Like, they, it's just, and all this money is, is like pure profit.
+
+755
+01:06:46,240 --> 01:06:47,120
+[SPEAKER_01] I mean, it's not pure profit.
+
+756
+01:06:47,280 --> 01:06:49,920
+[SPEAKER_01] They obviously have costs, but it's, it's very profitable.
+
+757
+01:06:50,400 --> 01:07:00,880
+[SPEAKER_01] And so it's just really, it's really difficult for any sort of executive to voluntarily cut that off.
+
+758
+01:07:00,960 --> 01:07:03,120
+[SPEAKER_01] It's like, whereas like, oh, the government made us do it.
+
+759
+01:07:03,200 --> 01:07:07,040
+[SPEAKER_01] Like, that's, you know, that, that, that, that's job preserving in a way.
+
+760
+01:07:07,360 --> 01:07:09,200
+[SPEAKER_01] Um, so I think it's one of those.
+
+761
+01:07:41,680 --> 01:07:48,400
+[SPEAKER_01] Humans, crap, I'm going to write a psychoanalyst, but humans don't do well with kind of dissonance, right?
+
+762
+01:07:48,800 --> 01:07:54,000
+[SPEAKER_01] And so what they do is they talk themselves into rationale and reasons that justify the position that they have.
+
+763
+01:07:54,480 --> 01:08:03,520
+[SPEAKER_01] And so I think we're in a situation where Apple has really genuinely convinced themselves that they deserve this money, that their model is right.
+
+764
+01:08:04,720 --> 01:08:08,720
+[SPEAKER_01] And that's why they now come across, and I think, David, you've probably experienced this.
+
+765
+01:08:09,200 --> 01:08:14,160
+[SPEAKER_01] Apple comes across as more extreme about the app store today than they did two years ago or four years ago.
+
+766
+01:08:15,280 --> 01:08:16,960
+[SPEAKER_01] It's like they're getting more extreme.
+
+767
+01:08:17,360 --> 01:08:18,960
+[SPEAKER_01] And it's like, why is that happening?
+
+768
+01:08:19,040 --> 01:08:20,320
+[SPEAKER_01] Don't you see the regulatory pressure?
+
+769
+01:08:20,480 --> 01:08:21,600
+[SPEAKER_01] Don't you see all the outrage?
+
+770
+01:08:22,080 --> 01:08:35,920
+[SPEAKER_01] And I think it's this cognitive dissonance where as the money gets ever and ever greater and as the contradictions become higher and higher, the need to convince yourself that no, actually, I'm doing the right thing becomes bigger and bigger.
+
+771
+01:08:36,480 --> 01:08:44,320
+[SPEAKER_01] And you get these situations where they're in there like telling longstanding, well known developers, oh, nice app you have over there.
+
+772
+01:08:44,560 --> 01:08:46,960
+[SPEAKER_01] You know, we let that get away, you know, like with the base camp thing.
+
+773
+01:08:47,120 --> 01:08:49,200
+[SPEAKER_01] Hey, Basecamp's been in the store for a long time.
+
+774
+01:08:49,360 --> 01:08:50,320
+[SPEAKER_01] We haven't made any money.
+
+775
+01:08:50,720 --> 01:08:56,560
+[SPEAKER_01] And you better let you, like, it's like, wait, are you threatening this old app because of this, of this new app?
+
+776
+01:08:56,800 --> 01:09:03,040
+[SPEAKER_01] Like, and this has been the tale, I think, because it's not just the policies, it's the way they've communicated the policies.
+
+777
+01:09:03,680 --> 01:09:06,160
+[SPEAKER_01] It has gotten, like, more shrill.
+
+778
+01:09:06,320 --> 01:09:07,840
+[SPEAKER_01] They're never apologetic, right?
+
+779
+01:09:08,160 --> 01:09:09,600
+[SPEAKER_01] No matter how big they step on it.
+
+780
+01:09:09,680 --> 01:09:11,040
+[SPEAKER_03] Like they're never apologetic.
+
+781
+01:09:11,120 --> 01:09:19,760
+[SPEAKER_01] It's not just that they're not apologetic, it's that they're offended at the very possibility that you think they didn't do anything.
+
+782
+01:09:20,080 --> 01:09:21,280
+[SPEAKER_01] No, but it's a statement.
+
+783
+01:09:21,760 --> 01:09:23,520
+[SPEAKER_01] And you hear this from companies.
+
+784
+01:09:23,680 --> 01:09:33,760
+[SPEAKER_01] I mean, last year when the Hay thing went down, I heard from hundreds of developers because I put on a thing on Twitter of like, and some very, very large developers.
+
+785
+01:09:34,000 --> 01:09:41,360
+[SPEAKER_01] Like there's one developer that has that has a free app in the store, makes a lot of money but not from any purchases.
+
+786
+01:09:41,440 --> 01:09:45,600
+[SPEAKER_01] And Apple's like, all your money that you've made is because of us.
+
+787
+01:09:46,400 --> 01:09:55,840
+[SPEAKER_01] And you better figure out a way to see how you can get more money going to the App Store because like it's BS that you've been in the store this this long and we don't get anything off it.
+
+788
+01:09:56,000 --> 01:09:56,800
+[SPEAKER_01] And it's like, wow.
+
+789
+01:09:56,880 --> 01:09:58,160
+[SPEAKER_01] And this is at like the very, very high level.
+
+790
+01:09:58,400 --> 01:10:00,960
+[SPEAKER_01] It's like, like, what's like in my.
+
+791
+01:10:01,360 --> 01:10:03,600
+[SPEAKER_01] And you would say, like, oh, come on, that can't be true.
+
+792
+01:10:03,760 --> 01:10:12,240
+[SPEAKER_01] Except that when you hear similar sort of stories again and again and again of what feels like shakedowns, it's like, what's what happened?
+
+793
+01:10:12,560 --> 01:10:13,680
+[SPEAKER_01] What's what's going on here?
+
+794
+01:10:14,160 --> 01:10:17,440
+[SPEAKER_01] And again, I'm sure if you went to Sinua, you'd say, oh, we didn't mean that.
+
+795
+01:10:17,520 --> 01:10:18,400
+[SPEAKER_01] We didn't want to come that way.
+
+796
+01:10:18,640 --> 01:10:27,120
+[SPEAKER_01] But the problem is when you gender a way of viewing the world and you have this persecuted complex that Apple tends to develop and, and, and, you know, everyone's so unfair to us.
+
+797
+01:10:27,360 --> 01:10:28,720
+[SPEAKER_01] and we need clarity.
+
+798
+01:10:29,440 --> 01:10:29,520
+[SPEAKER_01] Yeah.
+
+799
+01:10:30,320 --> 01:10:32,560
+[SPEAKER_01] And you have this sense of like, no, we deserve this.
+
+800
+01:10:33,360 --> 01:10:43,200
+[SPEAKER_01] You start like you start acting that way to other people and it's and you gender a lot of envy and you get and what happens to those developers?
+
+801
+01:10:43,440 --> 01:10:44,480
+[SPEAKER_01] They start going to regulators.
+
+802
+01:10:44,640 --> 01:10:47,760
+[SPEAKER_01] They start calling people up, say, like they start calling their Congress people.
+
+803
+01:10:48,480 --> 01:10:53,760
+[SPEAKER_01] And it's like it becomes a self perpetuating cycle that it's a very dangerous place to be.
+
+804
+01:10:54,080 --> 01:11:12,000
+[SPEAKER_03] I think your point, I'm, I've now my, my, my priorities have collapsed to the, uh, of regulation being the one likely outcome just because then that point makes a ton of sense is that there's never going to be a person who can or will stand up in a meeting and stop the presses, right?
+
+805
+01:11:12,240 --> 01:11:13,120
+[SPEAKER_03] Like stop the train.
+
+806
+01:11:13,360 --> 01:11:14,720
+[SPEAKER_03] Like nobody's going to have that power.
+
+807
+01:11:15,200 --> 01:11:20,480
+[SPEAKER_03] And it's, and it's whether they know it or not, it's easier to wait for an externality, right?
+
+808
+01:11:21,120 --> 01:11:22,880
+[SPEAKER_03] And they just hope that they'll be able to overcome it.
+
+809
+01:11:22,960 --> 01:11:23,520
+[SPEAKER_03] And I don't know.
+
+810
+01:11:23,600 --> 01:11:25,600
+[SPEAKER_03] Maybe there's, I don't think there's a killing shot.
+
+811
+01:11:25,760 --> 01:11:32,240
+[SPEAKER_03] I don't think there's something that's going to fundamentally destroy the App Store or like totally break what we have.
+
+812
+01:11:32,320 --> 01:11:57,120
+[SPEAKER_01] have and and maybe it gets worse and like growth gets it's limited but like yeah I I think it makes a ton of sense wow there's probably going to be fragmentation right like where where the EU you have to treat it differently as compared to the US and and the shame about this is the more things fragment, the more the cost is borne by developers right because they have like and you start losing and this is why the reason why the app store's personal to me it's it's two parts.
+
+813
+01:11:57,200 --> 01:12:01,760
+[SPEAKER_01] One is just my long you know, long-standing history of being you know, I started out as an Apple fan.
+
+814
+01:12:01,840 --> 01:12:02,960
+[SPEAKER_01] I wouldn't say an Apple fan.
+
+815
+01:12:03,040 --> 01:12:39,680
+[SPEAKER_01] Like being an analyst is like you hear this from sports writers like they'll they were big fans of the sports team growing up when you become a sports writer then you're you're not a fan of anything it's like it's your job that's me and Apple right when I was a big Apple fan now I'm not an Apple fan I'm not an Apple enemy it's just like it's my job right but when it comes to this there's part of that like I do feel this is a betrayal of what Apple always was and stood for and and that bugs that bums me out um but there's also an aspect where the thing I'm really passionate about and is really important to me broadly speaking is I think the internet is fundamentally changing business it's fundamentally changing the the world, right?
+
+816
+01:12:40,000 --> 01:12:40,880
+[SPEAKER_01] In all sorts of ways.
+
+817
+01:12:41,200 --> 01:12:44,720
+[SPEAKER_01] And one of the really cool things of the internet, there's lots of downsides, which we're all aware of.
+
+818
+01:12:44,880 --> 01:12:50,800
+[SPEAKER_01] But one of the cool things is the idea that anyone can sort of start a business, can do something sort of anywhere.
+
+819
+01:12:50,880 --> 01:12:53,280
+[SPEAKER_01] This idea of there being much more individual level entrepreneurs.
+
+820
+01:12:53,440 --> 01:13:00,160
+[SPEAKER_01] It could be things like Etsy, I think, like, which is amazing company in the way that it enables, like, I bought, you know, I bought some Christmas ornaments.
+
+821
+01:13:00,240 --> 01:13:01,360
+[SPEAKER_01] It's just awesome.
+
+822
+01:13:01,440 --> 01:13:03,920
+[SPEAKER_01] Like, if someone makes a living doing that, that's so cool.
+
+823
+01:13:04,400 --> 01:13:07,600
+[SPEAKER_01] I can make a living sitting here in Taiwan writing a newsletter.
+
+824
+01:13:07,920 --> 01:13:08,640
+[SPEAKER_01] That's amazing.
+
+825
+01:13:08,880 --> 01:13:10,240
+[SPEAKER_01] It's so great that's happened.
+
+826
+01:13:10,320 --> 01:13:17,840
+[SPEAKER_01] And I was seeing what's happened with Sububstack and all these, like, there's so much more, better, interesting writing on the internet now, post Substack.
+
+827
+01:13:18,000 --> 01:13:21,360
+[SPEAKER_01] Like, it's been just an explosion and people are actually making it.
+
+828
+01:13:21,520 --> 01:13:22,080
+[SPEAKER_01] It's amazing.
+
+829
+01:13:22,160 --> 01:13:22,640
+[SPEAKER_01] It's so cool.
+
+830
+01:13:22,880 --> 01:13:24,960
+[SPEAKER_01] And the App Store is absolutely part of this.
+
+831
+01:13:25,360 --> 01:13:27,360
+[SPEAKER_01] And again, I love the App Store.
+
+832
+01:13:27,520 --> 01:13:27,840
+[SPEAKER_01] It's great.
+
+833
+01:13:28,240 --> 01:13:30,000
+[SPEAKER_01] It created so many opportunities.
+
+834
+01:13:30,560 --> 01:13:31,840
+[SPEAKER_01] And I come at this.
+
+835
+01:13:32,320 --> 01:13:33,600
+[SPEAKER_01] It's like the tragic.
+
+836
+01:13:34,480 --> 01:13:35,840
+[SPEAKER_01] I don't come at this as a hater.
+
+837
+01:13:35,920 --> 01:13:37,040
+[SPEAKER_01] I come at this as a lover, right?
+
+838
+01:13:37,200 --> 01:13:39,040
+[SPEAKER_01] Like, it's like, the sort of thing.
+
+839
+01:13:39,520 --> 01:13:44,560
+[SPEAKER_01] And what's so, the problem and where the App Store really bugs me.
+
+840
+01:13:45,280 --> 01:13:50,560
+[SPEAKER_01] is the hurdles and costs it puts up for the little guy, right?
+
+841
+01:13:50,880 --> 01:13:53,040
+[SPEAKER_01] Like big companies can deal with this complexity.
+
+842
+01:13:53,280 --> 01:13:55,520
+[SPEAKER_01] Big companies can pay RevenueCat a whole bunch of money.
+
+843
+01:13:55,680 --> 01:14:05,280
+[SPEAKER_01] Big companies can have multiple development teams to build an Android version and build an Electron version and build a build a, you know, IOS version.
+
+844
+01:14:05,760 --> 01:14:10,720
+[SPEAKER_01] And what doesn't work is being a little guy and like, okay, I want to build something that works.
+
+845
+01:14:10,880 --> 01:14:12,880
+[SPEAKER_01] Like you think about it from a monetization perspective.
+
+846
+01:14:13,920 --> 01:14:16,480
+[SPEAKER_01] At this point, you need to be cross platform, right?
+
+847
+01:14:17,120 --> 01:14:25,760
+[SPEAKER_01] If you, you have to support multiple payment options, you have to support at, at a minimum, you, you can have maybe one system for the web and Android, at least for now.
+
+848
+01:14:26,000 --> 01:14:27,760
+[SPEAKER_01] And then you have to have a different system for iOS.
+
+849
+01:14:27,920 --> 01:14:30,400
+[SPEAKER_01] And, and, and, and, like, that's busy work.
+
+850
+01:14:30,720 --> 01:14:34,960
+[SPEAKER_01] It's busy work that has nothing to do with an individual developer making a go of it.
+
+851
+01:14:35,120 --> 01:14:37,200
+[SPEAKER_01] And people go to, go back to one password.
+
+852
+01:14:37,360 --> 01:14:38,400
+[SPEAKER_01] Oh, they took VC money.
+
+853
+01:14:38,880 --> 01:14:40,000
+[SPEAKER_01] They blame VC money.
+
+854
+01:14:40,640 --> 01:14:42,400
+[SPEAKER_01] They couldn't make it as a little company.
+
+855
+01:14:42,560 --> 01:14:44,320
+[SPEAKER_01] Like the reality, you have to go big.
+
+856
+01:14:44,720 --> 01:14:50,640
+[SPEAKER_01] Like, and Apple, Apple is such an, they created this opportunity space.
+
+857
+01:14:51,440 --> 01:14:55,120
+[SPEAKER_01] But the way they ruled it is so big company friendly.
+
+858
+01:14:55,280 --> 01:14:57,760
+[SPEAKER_01] And everything Apple does is all big company friendly.
+
+859
+01:14:58,000 --> 01:15:02,800
+[SPEAKER_01] This whole advertising thing or the lockdown of ATT, right?
+
+860
+01:15:03,120 --> 01:15:06,000
+[SPEAKER_01] Like that kills the little guy, absolutely kills them.
+
+861
+01:15:06,240 --> 01:15:12,720
+[SPEAKER_01] What Facebook did is so underappreciated, underrated was Facebook basically made a union of small app developers.
+
+862
+01:15:12,960 --> 01:15:20,480
+[SPEAKER_01] And they're like, okay, we're going to create a system so all small app developers can have equivalent capability and power of a Google.
+
+863
+01:15:21,040 --> 01:15:27,040
+[SPEAKER_01] And they can have the same kind of measurement capability, the same kind of sort of advertising capabilities, and the little guy can really make a go of it.
+
+864
+01:15:27,520 --> 01:15:29,760
+[SPEAKER_01] And that Apple just flushed that down the toilet.
+
+865
+01:15:30,160 --> 01:15:34,160
+[SPEAKER_01] Amazon's advertising exploding, no problem, because they're a big company.
+
+866
+01:15:34,320 --> 01:15:35,920
+[SPEAKER_01] They have all the first party data that they need.
+
+867
+01:15:36,080 --> 01:15:50,560
+[SPEAKER_01] They don't need to get like all this sort of and this perspective and I think the frustration is this no there's no one internal to Apple that even has this perspective that even they've not lived it in a lot of cases, right?
+
+868
+01:15:50,800 --> 01:15:51,920
+[SPEAKER_03] Like that's always been my experience.
+
+869
+01:15:52,000 --> 01:16:01,840
+[SPEAKER_01] No, not unilaterally, but yeah, I mean, there's this is where we're getting into Apple criminology., I think there was a, you know, a major executive of the iPhone that I think was more developer friendly.
+
+870
+01:16:02,000 --> 01:16:03,280
+[SPEAKER_01] That wasn't going to much out.
+
+871
+01:16:04,560 --> 01:16:06,160
+[SPEAKER_03] Our Lord and Savior, Scott Forstel.
+
+872
+01:16:06,400 --> 01:16:06,480
+[SPEAKER_03] Yes.
+
+873
+01:16:07,840 --> 01:16:10,560
+[SPEAKER_03] I I literally had the office above his for like a year.
+
+874
+01:16:11,280 --> 01:16:11,360
+[SPEAKER_03] Yeah.
+
+875
+01:16:11,600 --> 01:16:12,000
+[SPEAKER_03] It was great.
+
+876
+01:16:12,160 --> 01:16:13,520
+[SPEAKER_03] I could feel the I could feel the heat.
+
+877
+01:16:14,000 --> 01:16:14,080
+[SPEAKER_03] Yeah.
+
+878
+01:16:15,920 --> 01:16:17,600
+[SPEAKER_01] A complicated guy, to say the least.
+
+879
+01:16:17,760 --> 01:16:23,680
+[SPEAKER_01] Um, but I I think that Apple is just a big company that does stuff that's great for big companies.
+
+880
+01:16:23,760 --> 01:16:25,920
+[SPEAKER_01] All of Apple's decisions and policies are amazing for Google.
+
+881
+01:16:26,320 --> 01:16:27,120
+[SPEAKER_01] They're amazing for Amazon.
+
+882
+01:16:27,520 --> 01:16:30,560
+[SPEAKER_01] Um, and frankly, in the very long run, it's going to be to be amazing for Facebook too.
+
+883
+01:16:30,640 --> 01:16:32,640
+[SPEAKER_01] What's going to happen is Facebook's just internalizing everything.
+
+884
+01:16:33,120 --> 01:16:37,920
+[SPEAKER_01] Every little player, instead of having their own little website and making go on their own, they're going to be on Facebook.
+
+885
+01:16:38,160 --> 01:16:44,320
+[SPEAKER_01] Like, it's like, oh, great Apple, you you you set Facebook back a couple of years and then just made them a million times stronger.
+
+886
+01:16:44,480 --> 01:16:45,920
+[SPEAKER_01] Like, congratulations.
+
+887
+01:16:46,160 --> 01:16:56,560
+[SPEAKER_01] Um, and, uh, and I don't know, I, I'm not a full boar sort of like rant, complain, but like, like I said, it's like, it's like, uh, it's just a bummer because this is the future.
+
+888
+01:16:57,040 --> 01:17:22,400
+[SPEAKER_01] I think this is the economy of the future and Apple started out being such a positive influence on that future and to see them not lean into it, but to actually throw up ever more hurdles, ever more barriers and to be a one person dev shop or a very small dev shop that actually makes a sustainable goal of it, uh, is to my mind much harder than it should be.
+
+889
+01:17:22,560 --> 01:17:28,160
+[SPEAKER_01] It can still be done, but it's much more difficult than it should be in a different marketplace with fewer restrictions.
+
+890
+01:17:28,400 --> 01:17:29,600
+[SPEAKER_01] Oh, Ben, I think you've done it.
+
+891
+01:17:29,680 --> 01:17:33,680
+[SPEAKER_03] I think you've I think you've made me a powerful love hater of Apple.
+
+892
+01:17:34,000 --> 01:17:35,440
+[SPEAKER_03] Again, I've kind of been soft on them.
+
+893
+01:18:07,680 --> 01:18:10,240
+[SPEAKER_01] The whole presentation was about the hardware, hardware, hardware.
+
+894
+01:18:10,400 --> 01:18:12,080
+[SPEAKER_01] And it's like, oh, we need to create this new hardware.
+
+895
+01:18:12,240 --> 01:18:19,840
+[SPEAKER_01] It's like, I'm like, this is Apple, like the iPads, the iPad is my, it's such a frustrating product for me personally.
+
+896
+01:18:20,000 --> 01:18:27,200
+[SPEAKER_01] Like, one of my all time favorite, I think underrated Steve Jobs presentations was his second last presentation ever where he introduced the iPad 2.
+
+897
+01:18:27,760 --> 01:18:31,520
+[SPEAKER_01] And that was when they had the Garage Band, particularly the Garage Band introduction.
+
+898
+01:18:33,040 --> 01:18:36,640
+[SPEAKER_01] And it was this amazing, just incredible demonstration.
+
+899
+01:18:36,800 --> 01:18:39,200
+[SPEAKER_01] Like, it was mind blowing at the time.
+
+900
+01:18:39,600 --> 01:18:42,160
+[SPEAKER_01] And Jobs comes out and he's practically as has tears in his eyes.
+
+901
+01:18:42,720 --> 01:18:44,560
+[SPEAKER_01] And he's like, now anyone can make music.
+
+902
+01:18:44,720 --> 01:18:48,880
+[SPEAKER_01] And it was this idea that the iPad created.
+
+903
+01:18:49,920 --> 01:18:52,080
+[SPEAKER_01] It was something completely new to the world, right?
+
+904
+01:18:52,960 --> 01:18:56,160
+[SPEAKER_01] And the challenge for the iPad has always been, it's new to the world.
+
+905
+01:18:56,320 --> 01:18:58,080
+[SPEAKER_01] Like a phone, everyone has a phone, right?
+
+906
+01:18:58,320 --> 01:18:59,280
+[SPEAKER_01] The phone sold itself.
+
+907
+01:18:59,840 --> 01:19:01,920
+[SPEAKER_01] The iPad was something different.
+
+908
+01:19:02,560 --> 01:19:06,240
+[SPEAKER_01] And the iPad more than the phone needed developers.
+
+909
+01:19:06,560 --> 01:19:08,320
+[SPEAKER_01] Because it, what does an iPad do?
+
+910
+01:19:08,480 --> 01:19:09,520
+[SPEAKER_01] It transforms into something new.
+
+911
+01:19:09,600 --> 01:19:14,320
+[SPEAKER_01] Every time you open an app, it now it's an eSL, now it's a music making studio, now it's whatever it might be.
+
+912
+01:19:14,960 --> 01:19:21,680
+[SPEAKER_01] And it was screaming out for that's the platform where I want to see the next panic, where I want to see the next Omni software.
+
+913
+01:19:21,920 --> 01:19:28,560
+[SPEAKER_01] Like companies that create these incredible apps that take advantage of these capabilities that never existed previously.
+
+914
+01:19:29,040 --> 01:19:29,920
+[SPEAKER_01] And that just never happened.
+
+915
+01:19:30,080 --> 01:19:37,040
+[SPEAKER_01] I mean, the iPad's a fine business today, mostly for surfing the web and doing stuff in this Apple trying to make it like a macro placement.
+
+916
+01:19:37,280 --> 01:19:39,600
+[SPEAKER_01] 90% of the apps I use on iPads, Google apps.
+
+917
+01:19:39,840 --> 01:19:39,920
+[SPEAKER_01] Yeah.
+
+918
+01:19:41,200 --> 01:19:42,800
+[SPEAKER_01] And it's such a bummer.
+
+919
+01:19:44,080 --> 01:19:47,120
+[SPEAKER_01] And it really crystallized for me with that iPad Pro introduction.
+
+920
+01:19:47,120 --> 01:19:50,960
+[SPEAKER_01] Introduction where the problem Apple is your ecosystem control.
+
+921
+01:19:51,440 --> 01:19:52,320
+[SPEAKER_01] It's not the hardware.
+
+922
+01:19:52,720 --> 01:19:53,520
+[SPEAKER_01] The hardware is great.
+
+923
+01:19:53,760 --> 01:19:55,520
+[SPEAKER_01] There's a reason people never upgrade their iPads.
+
+924
+01:19:55,760 --> 01:19:57,920
+[SPEAKER_01] Apple nailed the hardware like ten years ago, right?
+
+925
+01:19:58,160 --> 01:20:16,320
+[SPEAKER_01] I mean, like the Pixel's been great, but like, but by large, like, you know, and, and it was, it's like, and the, what I concluded in that article was, there's product companies and there's platform companies and the mindset and approach is just so different between the two.
+
+926
+01:20:16,880 --> 01:20:19,920
+[SPEAKER_01] And I kind of said in that article, it would be great.
+
+927
+01:20:20,640 --> 01:20:28,960
+[SPEAKER_01] if we could have a system where Apple makes the products and then they hand it off to Microsoft and Microsoft can run the platform, right?
+
+928
+01:20:29,440 --> 01:20:42,320
+[SPEAKER_01] If Microsoft had an iPad sort of thing, I firmly believe the sorts and types of applications that would be available would be incredible, would be mind blowing and the iPad would actually be worth ten X what it is today.
+
+929
+01:20:43,200 --> 01:20:48,800
+[SPEAKER_01] The problem is that the mindset of creating a platform, you have to be flexible.
+
+930
+01:20:49,040 --> 01:20:50,480
+[SPEAKER_01] You have to bend over backwards.
+
+931
+01:20:50,800 --> 01:20:59,440
+[SPEAKER_01] You have to deal with a lot of loopholes, let things through the sort of approach that doesn't lend itself to making beautiful jewel like consumer products, right?
+
+932
+01:20:59,760 --> 01:21:02,080
+[SPEAKER_01] It comes back to what, where are these companies like?
+
+933
+01:21:02,320 --> 01:21:09,760
+[SPEAKER_01] And so Apple gains this platform by virtue of being the best product company on earth and they still make amazing products.
+
+934
+01:21:10,000 --> 01:21:27,680
+[SPEAKER_01] They're so clearly still the best, but the approach and mindset and total control and it's going to be perfect works against being a benevolent dictator, being against the sort of flexible sort of platform provider and Microsoft, meanwhile, can't make great consumer products.
+
+935
+01:21:27,920 --> 01:21:30,000
+[SPEAKER_01] And so they can't have a platform, right?
+
+936
+01:21:30,320 --> 01:21:35,120
+[SPEAKER_01] And so even though they would manage it much better than Apple did, and it's, you know, that's just the way the world works, unfortunately.
+
+937
+01:21:35,280 --> 01:21:39,440
+[SPEAKER_03] You need to get Tim to get on the stage with the big Microsoft execut behind him, uh, just to be his.
+
+938
+01:21:39,920 --> 01:21:40,560
+[SPEAKER_03] We're heading over.
+
+939
+01:21:40,800 --> 01:21:41,520
+[SPEAKER_01] We're heading over.
+
+940
+01:21:41,920 --> 01:21:43,920
+[SPEAKER_02] Microsoft is in charge of the app store.
+
+941
+01:21:44,080 --> 01:21:44,240
+[SPEAKER_01] Yeah.
+
+942
+01:21:44,880 --> 01:21:46,800
+[SPEAKER_02] And it is really frustrating though.
+
+943
+01:21:47,440 --> 01:21:54,400
+[SPEAKER_02] And, and, uh, you've won me over to the point of, well, and, and you're the one who helped me really lose my Apple religion.
+
+944
+01:21:54,960 --> 01:21:56,400
+[SPEAKER_02] You know, I was that fanboy.
+
+945
+01:21:56,560 --> 01:22:34,000
+[SPEAKER_02] I, I became a developer as just a total fanboy and and then you know made my living for 13 years as a developer but as i've lost that apple religion and started to come around to regulation being the only solution it's sad and frustrating that that apple isn't doing more to self-regulate to make some of the changes that are gonna build the better platform that are not gonna throw the baby out with the bath water and and that's where like Like you said, if Apple sat down today in 2021 and said, like, how should we run the App Store?
+
+946
+01:22:34,240 --> 01:22:37,120
+[SPEAKER_02] It would just look so fundamentally different than it does today.
+
+947
+01:22:37,840 --> 01:22:40,080
+[SPEAKER_02] But it's like technical debt.
+
+948
+01:22:40,560 --> 01:22:43,280
+[SPEAKER_02] They have strategy debt from 2000.
+
+949
+01:22:43,600 --> 01:22:44,320
+[SPEAKER_02] Business model debt.
+
+950
+01:22:44,800 --> 01:22:56,480
+[SPEAKER_02] When they first released the App Store, and then they have psychological debt from the nineties, and then now they have business debt from 2016 ish when they switched to the services revenue.
+
+951
+01:22:56,720 --> 01:23:11,760
+[SPEAKER_02] So they're fighting psychological debt, strategy debt, and then now this, this pile of cash that they can't turn away and it's just sad to see them running it the way they're running and not fundamentally rethinking some of these things.
+
+952
+01:23:12,240 --> 01:23:26,320
+[SPEAKER_02] And I am, as much as I've come around to regulation being the only solution, I do fear what you said earlier, that some of these regulations are going to throw the baby out with the bathwater and we're going to be worse off in the long run.
+
+953
+01:23:26,480 --> 01:23:27,760
+[SPEAKER_02] Developers are going to be worse off.
+
+954
+01:23:27,840 --> 01:23:28,320
+[SPEAKER_03] No, absolutely.
+
+955
+01:23:28,640 --> 01:23:29,520
+[SPEAKER_03] That's what I was going to say.
+
+956
+01:23:29,920 --> 01:23:33,440
+[SPEAKER_01] This is where I go full circle and kind of align with Jacob's position.
+
+957
+01:23:34,640 --> 01:23:37,920
+[SPEAKER_01] I am terrified of this kind of regulation.
+
+958
+01:23:38,400 --> 01:23:38,640
+[SPEAKER_01] coming down.
+
+959
+01:23:39,440 --> 01:23:46,400
+[SPEAKER_01] And I think the point cannot be, again, this has been mostly negative on Apple and it's sort of just because that's where we're at for the App Store.
+
+960
+01:23:46,880 --> 01:23:54,080
+[SPEAKER_01] We can't forget the App Store absolutely transformed developer economics.
+
+961
+01:23:54,240 --> 01:24:01,360
+[SPEAKER_01] It and it transformed it by virtue of increasing the market size to a far greater size than anyone thought was possible.
+
+962
+01:24:02,000 --> 01:24:08,480
+[SPEAKER_01] And it did that by engendering trust in consumers and that trust is in a wide open marketplace.
+
+963
+01:24:08,880 --> 01:24:10,800
+[SPEAKER_01] That's something that is going to be lost and it's going to be.
+
+964
+01:24:11,920 --> 01:24:12,240
+[SPEAKER_01] a shame.
+
+965
+01:24:13,280 --> 01:24:15,040
+[SPEAKER_01] And I'm not, I don't know if it's a good thing.
+
+966
+01:24:15,360 --> 01:24:15,760
+[SPEAKER_01] I don't know.
+
+967
+01:24:16,080 --> 01:24:19,680
+[SPEAKER_01] So I basically spent 90 minutes avoiding your question, Jacob.
+
+968
+01:24:20,080 --> 01:24:22,800
+[SPEAKER_01] But one, I don't, I don't know when or if it's going to happen.
+
+969
+01:24:23,280 --> 01:24:24,800
+[SPEAKER_01] And I don't know if it's a good thing.
+
+970
+01:24:24,880 --> 01:24:26,480
+[SPEAKER_01] I actually, I'm very, very worried about it.
+
+971
+01:24:26,880 --> 01:24:36,320
+[SPEAKER_01] That's why I just wish, and I've been begging Apple literally the entire running trajectory, please change course here because there's no good outcome the way this is going.
+
+972
+01:24:36,640 --> 01:24:47,760
+[SPEAKER_01] Either you're not going to get the judgment and fine distinctions of differentiating between games and different kinds of services, it's going to be an all or nothing sort of solution.
+
+973
+01:24:47,760 --> 01:24:50,880
+[SPEAKER_01] You're going to it's going to be a sledgehammer, not a scalpel.
+
+974
+01:24:51,440 --> 01:25:02,720
+[SPEAKER_02] And but, alas, we need to wrap up, but that's what I was hoping to talk more about the scalpel tonight.
+
+975
+01:25:03,040 --> 01:25:16,400
+[SPEAKER_02] You and I, Ben, will just have to write more about some of the scalpel things and and continue the conversation about why it matters and why there is risk in these regulations.
+
+976
+01:25:16,960 --> 01:25:23,120
+[SPEAKER_01] Just getting rid of the anti steering provision where you can tell people to go to the website would be something.
+
+977
+01:25:24,240 --> 01:25:28,240
+[SPEAKER_01] And the fact that Apple won't even allow that is really tells you a lot, right?
+
+978
+01:25:28,560 --> 01:25:38,240
+[SPEAKER_01] No, I mean, I can understand their argument, but the fact that they won't even give it on that point in the face of clear regulatory pressure really shows that there's something kind of rotten here.
+
+979
+01:25:38,880 --> 01:25:43,040
+[SPEAKER_01] And that, and real, to me, that more than anything, like, shows why this is inevitable.
+
+980
+01:25:43,120 --> 01:25:43,600
+[SPEAKER_01] Like that.
+
+981
+01:25:44,080 --> 01:25:44,800
+[SPEAKER_01] And what's rotten?
+
+982
+01:25:44,960 --> 01:25:45,360
+[SPEAKER_01] It's the money.
+
+983
+01:25:45,520 --> 01:25:46,400
+[SPEAKER_02] It's exactly what you said.
+
+984
+01:25:46,560 --> 01:25:56,560
+[SPEAKER_02] It's the anti steering provision gives them the ability to force people to use their in-app purchase, which helps their services narrative, which helps their stock price.
+
+985
+01:25:56,800 --> 01:26:00,560
+[SPEAKER_02] And it also gives a worse user experience because people open these apps and they can't do anything with them.
+
+986
+01:26:00,720 --> 01:26:01,520
+[SPEAKER_01] Yeah, terrible, right?
+
+987
+01:26:01,760 --> 01:26:02,640
+[SPEAKER_01] I thought that's what matters.
+
+988
+01:26:02,800 --> 01:26:03,440
+[SPEAKER_01] It blows my mind.
+
+989
+01:26:05,280 --> 01:26:07,280
+[SPEAKER_02] Okay, well, we we we have to wrap up.
+
+990
+01:26:07,760 --> 01:26:08,960
+[SPEAKER_02] Thank you so much for your time.
+
+991
+01:26:09,360 --> 01:26:14,480
+[SPEAKER_02] So, Ben, do you have a do you have a blog or something that you can find just to write anywhere on?
+
+992
+01:26:14,640 --> 01:26:16,160
+[SPEAKER_02] Do you have a SoundCloud that you need to pick up?
+
+993
+01:26:18,240 --> 01:26:21,360
+[SPEAKER_01] Right after Sequoia, there's free articles you can start that.
+
+994
+01:26:21,680 --> 01:26:22,800
+[SPEAKER_01] There's for pay if you want.
+
+995
+01:26:23,360 --> 01:26:29,280
+[SPEAKER_01] And then dithering, uh, twice a week, me and John Gruber, um, 15 minutes an episode, much shorter than this.
+
+996
+01:26:29,760 --> 01:26:31,680
+[SPEAKER_01] Uh, we do talk about the App Store a lot though.
+
+997
+01:26:32,240 --> 01:26:45,120
+[SPEAKER_03] And I'll say that when I, when I, when I went from being just a guy who wrote code to a guy who's like trying to build a business, uh, Ben, I listened to a ton of your podcasts and it kind of like, was really, uh, good, good way, good, good mind opening content.
+
+998
+01:26:45,280 --> 01:26:49,840
+[SPEAKER_03] So I really suggest anyone who found this conversation interesting, like really dig in.
+
+999
+01:26:49,920 --> 01:26:50,800
+[SPEAKER_03] Ben's got some great stuff.
+
+1000
+01:26:51,120 --> 01:26:51,200
+[SPEAKER_03] Yeah.
+
+1001
+01:26:51,360 --> 01:26:52,480
+[SPEAKER_03] And I'm a big revenue cap fan.
+
+1002
+01:26:52,640 --> 01:26:53,840
+[SPEAKER_01] I, like, it's just a product.
+
+1003
+01:26:54,080 --> 01:26:58,000
+[SPEAKER_01] It's one of those companies that needs to exist and it's great that you built it.
+
+1004
+01:26:58,400 --> 01:26:59,440
+[SPEAKER_01] Well, we'll see.
+
+1005
+01:27:00,800 --> 01:27:04,240
+[SPEAKER_03] It doesn't look like it doesn't look like our need for us will go away any time soon.
+
+1006
+01:27:04,400 --> 01:27:06,080
+[SPEAKER_03] So this is booming.
+
+1007
+01:27:06,400 --> 01:27:06,480
+[SPEAKER_03] Okay.
+
+1008
+01:27:06,960 --> 01:27:07,440
+[SPEAKER_03] Thanks, Ben.
+
+1009
+01:27:09,280 --> 01:27:13,680
+[SPEAKER_00] To make sure you never miss an episode, subscribe to the show in your favorite podcast player.
+
+1010
+01:27:14,160 --> 01:27:15,200
+[SPEAKER_00] Thanks so much for listening.
+
+1011
+01:27:15,680 --> 01:27:16,400
+[SPEAKER_00] Until next time.
