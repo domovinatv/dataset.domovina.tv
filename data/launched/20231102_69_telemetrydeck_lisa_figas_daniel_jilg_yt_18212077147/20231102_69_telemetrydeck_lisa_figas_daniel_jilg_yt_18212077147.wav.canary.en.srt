@@ -1,0 +1,3719 @@
+1
+00:00:01,440 --> 00:00:02,240
+Welcome to Launched.
+
+2
+00:00:02,480 --> 00:00:10,640
+I'm Charlie Chapman, and today I'm excited to bring you the team behind the Privacy Focused Analytics Service Telemetry Deck, Lisa Figas and Daniel Biel.
+
+3
+00:00:24,240 --> 00:00:24,960
+Welcome to the show.
+
+4
+00:00:25,200 --> 00:00:26,640
+Hey, it's amazing to be here.
+
+5
+00:00:26,960 --> 00:00:27,840
+Thanks for having us.
+
+6
+00:00:28,080 --> 00:00:35,200
+I haven't done a podcast with multiple people in a little while, so there's my excuse number one for why this will be, you know, unprofessional.
+
+7
+00:00:35,360 --> 00:00:52,160
+And then excuse number two., which you both already know, is right, like literally as I was setting up this recording, a bunch of equipment and big trucks showed up right in front of my house, right outside of my office, and literally started tearing the road off the road in front of me.
+
+8
+00:00:52,640 --> 00:00:58,400
+So I very last minute scrambled and put together a little recording studio here in my closet.
+
+9
+00:01:00,080 --> 00:01:12,160
+So that's my other excuse for why this is going to be unprofessional is that I'm a little on edge because I was just scrambling around trying to find cables and figure out how to record with this other audio interface I don't normally use.
+
+10
+00:01:15,680 --> 00:01:16,320
+I have an excuse.
+
+11
+00:01:16,560 --> 00:01:20,480
+Your closet is more professional than others can ever be wished to be for.
+
+12
+00:01:22,000 --> 00:01:25,200
+I mean, I guess acoustically, this is like the optimal setup, right?
+
+13
+00:01:25,440 --> 00:01:26,240
+That's what they always say.
+
+14
+00:01:26,720 --> 00:01:27,120
+Oh yeah.
+
+15
+00:01:28,000 --> 00:01:30,640
+We'll just go ahead and try and like lead right into things here then.
+
+16
+00:01:31,280 --> 00:01:37,280
+So, before we get into telemetry deck and what you all built there, I want to introduce everyone to who you both are.
+
+17
+00:01:37,600 --> 00:01:43,200
+So, we're going to start with Lisa, and I'll start out by asking the three questions I always ask to launch this show.
+
+18
+00:01:43,520 --> 00:01:45,520
+So, the first question is, where are you from?
+
+19
+00:01:45,920 --> 00:01:48,960
+And then, do you have a formal education related to what you do.
+
+20
+00:01:49,280 --> 00:01:55,680
+And then you can kind of talk about what your career was that led up to you meeting Daniel and starting Telemetry Deck.
+
+21
+00:01:56,160 --> 00:01:57,200
+Okay, I give my best.
+
+22
+00:01:58,080 --> 00:02:09,360
+So I was born in the former Eastern Germany and then lived there until like six or seven and then we moved to former Western Germany.
+
+23
+00:02:10,320 --> 00:02:16,640
+And my whole school education and university I received here in Bavaria.
+
+24
+00:02:18,000 --> 00:02:21,280
+We live close to Munich like an hour ago.
+
+25
+00:02:23,280 --> 00:02:24,960
+And I spent my time with Daniel.
+
+26
+00:02:24,960 --> 00:02:32,720
+I studied sociology, politics and human geography.
+
+27
+00:02:33,360 --> 00:02:33,840
+Oh man.
+
+28
+00:02:34,400 --> 00:02:36,640
+That's a good place in the world to do that, I feel like.
+
+29
+00:02:37,520 --> 00:02:41,600
+Especially, you know, there's a lot of things happening in all those arenas.
+
+30
+00:02:42,320 --> 00:02:47,360
+Yeah, and I studied during the conflict in Iraq.
+
+31
+00:02:48,240 --> 00:02:55,680
+So I also started learning Arabic because I thought politics and Arabic might be a good career choice.
+
+32
+00:02:56,240 --> 00:02:57,680
+There might be some relevance there.
+
+33
+00:02:58,720 --> 00:02:58,800
+Yeah.
+
+34
+00:03:00,000 --> 00:03:08,000
+Recently from semester to semester, less people attended the course, so they finally closed the Arabic lesson.
+
+35
+00:03:08,080 --> 00:03:08,560
+Oh, wow.
+
+36
+00:03:08,960 --> 00:03:10,640
+Just because it's so difficult or?
+
+37
+00:03:11,520 --> 00:03:17,600
+Yeah, it's very difficult because you write in the other direction, yeah.
+
+38
+00:03:18,160 --> 00:03:28,000
+And also you don't have like vocals in the written language, so you have to know is there a da or do or do, or you know?
+
+39
+00:03:28,880 --> 00:03:33,600
+So you have to learn very, very much, not only vocabulary.
+
+40
+00:03:34,320 --> 00:03:35,040
+Yeah, wow.
+
+41
+00:03:36,000 --> 00:03:40,240
+And my formal education is in German, we say magister.
+
+42
+00:03:40,480 --> 00:03:43,200
+I honestly, I don't know how to translate it to English.
+
+43
+00:03:43,520 --> 00:03:50,400
+It's like diploma, but just another kind of way to study.
+
+44
+00:03:51,040 --> 00:03:52,640
+Oh, it's not like major specific.
+
+45
+00:03:53,280 --> 00:03:57,120
+Yeah, you have like one main, one main science.
+
+46
+00:03:57,520 --> 00:04:02,240
+In my case, it was sociology and two other professions.
+
+47
+00:04:03,360 --> 00:04:11,840
+And yeah, yeah, it's very common for people that studied sociology to go into marketing.
+
+48
+00:04:12,880 --> 00:04:27,360
+because you in both in both professions you need to know how to separate the society in like groups or clusters based on their interests and behavior.
+
+49
+00:04:28,480 --> 00:04:45,360
+So I started my professional career after university in online marketing and I was there for several years in different like agencies and yeah, my last is it occupation?
+
+50
+00:04:46,480 --> 00:04:54,640
+Yes, yeah, I was at Boxcryptor, a cloud encryption service also based here in Augsburg where I live.
+
+51
+00:04:55,440 --> 00:05:11,520
+And there I had the chance to dive deep into privacy laws because the company offered end-to-end encryption, which is also a highly political issue when it comes to cloud security and things like that.
+
+52
+00:05:12,560 --> 00:05:19,120
+And yeah, this allowed me to learn all the boring privacy law skills.
+
+53
+00:05:19,600 --> 00:05:23,920
+I can I have a good use now that we founded Telemetry Deck.
+
+54
+00:05:24,160 --> 00:05:24,240
+Yeah.
+
+55
+00:05:24,320 --> 00:05:25,360
+Yeah, that's interesting.
+
+56
+00:05:25,600 --> 00:05:33,040
+So you have the marketing background where obviously analytics is like a huge deal and the understanding of the needs there.
+
+57
+00:05:33,600 --> 00:05:41,360
+And then you have the privacy understanding both legally and just people's needs in those in those areas.
+
+58
+00:05:42,160 --> 00:05:49,040
+And yeah, that at least from my understanding of the telemetry deck story, those feel very, very much involved, both of those pieces.
+
+59
+00:05:49,600 --> 00:06:00,800
+And we are strategically based here in Europe because the GDPR is like the first big privacy law in a lot of other regions, such as some states.
+
+60
+00:06:01,200 --> 00:06:08,160
+in the US, but also Brazil, India and so on, they make like copycat of the GDPR.
+
+61
+00:06:08,960 --> 00:06:22,160
+So it's, for me, from my perspective, my knowledge, it's very easy to follow these regulations and give advice to our customers or use it in our marketing arguments.
+
+62
+00:06:22,880 --> 00:06:23,440
+Nice, okay.
+
+63
+00:06:23,920 --> 00:06:26,400
+So, all right, so that leads you up to telemetry deck.
+
+64
+00:06:26,480 --> 00:06:30,160
+So let's rewind and then Daniel, we can go through those same three questions.
+
+65
+00:06:30,320 --> 00:06:31,040
+So where are you from?
+
+66
+00:06:31,280 --> 00:06:33,360
+Do you have a formal education related to what you do?
+
+67
+00:06:33,840 --> 00:06:36,880
+And then what was your career that led up to telemetry deck.
+
+68
+00:06:37,600 --> 00:06:38,160
+All right, cool.
+
+69
+00:06:39,200 --> 00:06:43,440
+So I am also from Augsburg, Germany, tiny town in the very south.
+
+70
+00:06:44,960 --> 00:06:48,960
+And I actually attended the same university as Lisa, but we didn't know each other back then.
+
+71
+00:06:49,120 --> 00:06:49,520
+Oh, okay.
+
+72
+00:06:50,480 --> 00:06:59,760
+I studied computer science with a minor in philosophy, which I later changed to multimedia and 3D design, I think.
+
+73
+00:07:01,520 --> 00:07:06,720
+My thesis was about what was back then organic computing and today you'd call it AI, I think.
+
+74
+00:07:07,040 --> 00:07:09,600
+Yeah, machine learning a couple of years ago, AI now.
+
+75
+00:07:10,000 --> 00:07:11,520
+We'll have a new name for it in two years.
+
+76
+00:07:12,240 --> 00:07:18,000
+So yeah, so I've always been like a tinkerer and a developer even in school and then later university.
+
+77
+00:07:18,480 --> 00:07:21,840
+And I kind of fell into like I was a Linux guy.
+
+78
+00:07:21,920 --> 00:07:24,320
+I was one of those really annoying Linux guys.
+
+79
+00:07:24,960 --> 00:07:31,200
+And then I discovered that Macs have a Unix terminal, but also the sound works and the WiFi works.
+
+80
+00:07:31,280 --> 00:07:33,280
+So I was like, okay, no, I'm a Mac guy.
+
+81
+00:07:35,200 --> 00:07:38,880
+And I really went, went into like I want to program these and whatever.
+
+82
+00:07:39,040 --> 00:07:41,360
+And then the iPhone came out and I was so flashed.
+
+83
+00:07:42,160 --> 00:07:52,400
+I couldn't afford when I first, but I think I I saved up for the three G back then and you couldn't program them them, but I started programming like these little web applications for them.
+
+84
+00:07:52,880 --> 00:07:53,840
+The sweet solution.
+
+85
+00:07:54,640 --> 00:08:04,480
+As soon as they announced with IO iPhone OS 3, I think, as they announced that there would be an SDK, I was like, okay, I gotta, I gotta learn Objective C now.
+
+86
+00:08:06,160 --> 00:08:07,920
+And yeah, I wrote a little app.
+
+87
+00:08:08,240 --> 00:08:11,600
+The app was one of the first 100 apps in the Apple App Store.
+
+88
+00:08:11,680 --> 00:08:12,000
+Oh, wow.
+
+89
+00:08:12,480 --> 00:08:12,560
+Okay.
+
+90
+00:08:12,720 --> 00:08:13,520
+iPhone App Store.
+
+91
+00:08:14,160 --> 00:08:18,800
+It was just the tinyest app to help you concentrate during your studies.
+
+92
+00:08:19,280 --> 00:08:22,960
+It's basically the Pomodoro method, but I don't think it had that name back then.
+
+93
+00:08:23,040 --> 00:08:30,160
+It was just like, okay, gives you a little time little timer, ten minutes of concentration, and then it gives you a little ding, and it will allow you two minutes break or something.
+
+94
+00:08:30,400 --> 00:08:30,480
+Yeah.
+
+95
+00:08:31,280 --> 00:08:37,920
+That sold for one US dollar or one euro, depending on which store you were in, and it paid my rent for a whole while.
+
+96
+00:08:38,960 --> 00:08:39,600
+That's awesome.
+
+97
+00:08:39,840 --> 00:08:39,920
+Yeah.
+
+98
+00:08:40,240 --> 00:08:42,960
+Yeah, that was So you were there during like the gold rush era.
+
+99
+00:08:43,520 --> 00:08:44,960
+Oh yeah, those were the days.
+
+100
+00:08:45,200 --> 00:08:54,160
+Like I was I wasn't in a position to really capitalize on that and just go all in, but I had a very mini apartment and that was paid for and that was really nice.
+
+101
+00:08:54,320 --> 00:08:55,760
+Like I rented twice.
+
+102
+00:08:55,840 --> 00:08:57,040
+Like I didn't have to do anything.
+
+103
+00:08:57,920 --> 00:09:00,560
+For, for like, yeah, especially just.
+
+104
+00:09:00,720 --> 00:09:05,040
+Just making something on your own and then making any kind of income is also always exciting.
+
+105
+00:09:05,360 --> 00:09:05,440
+Yeah.
+
+106
+00:09:06,800 --> 00:09:20,960
+So yeah, I got a like after uni, I got a job as an iPhone developer at various companies and then got into a very tiny app development agency and I was the first full time employee.
+
+107
+00:09:21,040 --> 00:09:26,560
+Like the owner just like hired all these like students as part time like interns basically to work.
+
+108
+00:09:26,640 --> 00:09:26,720
+Yeah.
+
+109
+00:09:27,120 --> 00:09:31,200
+And then he was like, okay, I'm gonna hire this guy as a first time employee.
+
+110
+00:09:31,760 --> 00:09:35,600
+And I became the CTO of that thing and kind of grew it to fifty employees or so.
+
+111
+00:09:35,680 --> 00:09:36,880
+Both of them were developers.
+
+112
+00:09:37,440 --> 00:09:38,400
+and or designers.
+
+113
+00:09:40,480 --> 00:09:42,480
+And so yeah, and then I kind of jumped around.
+
+114
+00:09:42,720 --> 00:09:48,400
+I had a bit of a startup excursion before Telemetry Deck into the aerospace industry.
+
+115
+00:09:48,560 --> 00:09:52,000
+Like, we were, like, I was programming satellites or at least satellite prototypes.
+
+116
+00:09:52,480 --> 00:09:52,480
+Wow.
+
+117
+00:09:54,080 --> 00:10:02,000
+And then I landed at various privacy focused companies, like KeepSafe in San Francisco and then later Clicks in Munich.
+
+118
+00:10:02,640 --> 00:10:11,520
+And for both of those, I wrote algorithms to extract personally identifiable information from browsing data.
+
+119
+00:10:11,680 --> 00:10:14,880
+So basically they had browsers that would try to prevent tracking.
+
+120
+00:10:16,400 --> 00:10:19,200
+And yeah, that's kind of how that went.
+
+121
+00:10:19,920 --> 00:10:22,080
+And then the telemetry deck story starts.
+
+122
+00:10:23,280 --> 00:10:24,800
+Do you want to get into that right now?
+
+123
+00:10:25,120 --> 00:10:27,040
+Yeah, I think we've now converged.
+
+124
+00:10:27,200 --> 00:10:28,320
+Well, we haven't converged yet.
+
+125
+00:10:28,480 --> 00:10:30,000
+You guys are on parallel tracks.
+
+126
+00:10:30,640 --> 00:10:31,760
+I don't know how you met yet.
+
+127
+00:10:32,320 --> 00:10:32,400
+Yeah.
+
+128
+00:10:32,960 --> 00:10:39,760
+So we've known each other on Twitter by then, I think, but we didn't really like we were aware of each other's existence.
+
+129
+00:10:40,800 --> 00:10:46,000
+For people who don't know, Twitter is the name of a service that used to exist.
+
+130
+00:10:46,800 --> 00:10:49,680
+That was really great for, you know, keeping up with people in our community.
+
+131
+00:10:50,240 --> 00:10:51,120
+It was really helpful.
+
+132
+00:10:52,640 --> 00:10:52,800
+Yeah.
+
+133
+00:10:54,080 --> 00:11:01,680
+So I wanted to make an app that is kind of like, oh, the new iPhones, the new iOS has that now, where it asks you every day, like, how are you feeling?
+
+134
+00:11:01,840 --> 00:11:02,320
+What's your mood?
+
+135
+00:11:02,400 --> 00:11:04,240
+And what's your mood?
+
+136
+00:11:04,320 --> 00:11:04,320
+Yeah.
+
+137
+00:11:04,480 --> 00:11:15,360
+I kind of wanted to make something like that, but also with various correlations, like it would ask like, would ask like for access to your calendar, it would ask if...
+
+138
+00:11:16,960 --> 00:11:24,560
+Ah, various things, but one thing that it also added was it would try to ask for health data and would ask like if requests.
+
+139
+00:11:24,720 --> 00:12:04,640
+request from the health app whether you're on like how what where you are in your cycle for example and whether you've had any like sexual intercourse or stuff like that and um I published that and it was like not much of a success like the people who used it were super happy about it but it was just too niche and I also apparently I like I suck at marketing if only you knew somebody who knew marketing like I get this I get this message on Twitter uh from Lisa who's like hey your app is cool but it sucks you are not someone who menstruates and you also have no clue about how, like, how to reach your target audience.
+
+140
+00:12:06,320 --> 00:12:07,440
+I have thoughts.
+
+141
+00:12:08,080 --> 00:12:12,400
+And I'm like, okay, like, let's go for a drink and tell me your thoughts, please.
+
+142
+00:12:12,480 --> 00:12:13,920
+And Lisa had a lot of thoughts.
+
+143
+00:12:15,520 --> 00:12:18,960
+Lisa, feel free to jump in if you want to add something to that.
+
+144
+00:12:20,640 --> 00:12:34,720
+But the thing was we kind of like improved that app a lot because Lisa had such a different and way better perspective and was way better to reach people like that would be users of this app.
+
+145
+00:12:35,280 --> 00:12:44,480
+And so at some point we were like like, okay, how do we actually control how or find out how people are using the app, like which parts of it are people using?
+
+146
+00:12:45,040 --> 00:12:47,520
+And I was like, I'm not going to install Firebase into that thing.
+
+147
+00:12:48,400 --> 00:12:51,280
+It knows various very personal things about you.
+
+148
+00:12:52,320 --> 00:12:54,480
+So I was like, okay, I'm just going to roll my own thing.
+
+149
+00:12:56,800 --> 00:13:02,240
+And it was, I took code from a previous project that was mostly about AB testing.
+
+150
+00:13:02,720 --> 00:13:12,320
+And I took code from the previous Aerospace project that also folded by that time that was about data processing and extract transform load pipelines and stuff like that.
+
+151
+00:13:12,880 --> 00:13:22,720
+And I was like, okay, I'm just going to like have an API that accepts data, like removes all, like removes all user identifiers and then like just stores it.
+
+152
+00:13:23,280 --> 00:13:26,080
+And this is this is just for your app, but in your data.
+
+153
+00:13:26,400 --> 00:13:26,800
+This is just fun.
+
+154
+00:13:27,360 --> 00:13:37,040
+It didn't even have a name, it was just for this app and that's how we launched that app and it was kind of helpful and was very like nice to like and very motivating to look at.
+
+155
+00:13:37,280 --> 00:13:43,600
+Like the main reason why I love this was I could just see that people are actually using the app and that's like so nice.
+
+156
+00:13:44,480 --> 00:13:48,720
+Before we go too much deeper in that, I want to like rewind a little bit to Lisa's perspective on this.
+
+157
+00:13:49,200 --> 00:13:52,160
+So like you, you knew Daniel through Twitter.
+
+158
+00:13:53,520 --> 00:13:58,160
+Is this something that you would frequently do, where like you'd have a whole bunch of feedback for?
+
+159
+00:13:58,480 --> 00:14:12,640
+Because I have some friends who, you know, will remain nameless here, but like there are people in our community that are sort of famous for like if they start sending you feedback, you're about to get this just like torrent of very, very high quality feedback.
+
+160
+00:14:12,720 --> 00:14:17,280
+And it's kind of, everyone has a little story of this, like random improvements to their app from these people.
+
+161
+00:14:18,240 --> 00:14:22,160
+Is this something you did frequently or is there something like specific about this situation?
+
+162
+00:14:22,720 --> 00:14:23,040
+Not at all.
+
+163
+00:14:23,920 --> 00:14:29,200
+I was just curious about that guy I was following, I think, for several years on Twitter.
+
+164
+00:14:29,680 --> 00:14:33,440
+And he was in that bubble of our city.
+
+165
+00:14:34,000 --> 00:14:42,480
+So there were meetups and I think we had a hashtag for Augsburg, things like Augs with an X.
+
+166
+00:14:43,280 --> 00:14:45,040
+Yeah, I guess that was the community too, right?
+
+167
+00:14:45,200 --> 00:14:48,160
+Because it's not like you were in the IOS community or whatever.
+
+168
+00:14:48,560 --> 00:14:49,520
+No, no, not at all.
+
+169
+00:14:49,920 --> 00:14:58,800
+There was some kind of social check that this guy existed and was like a real normal human being.
+
+170
+00:14:59,360 --> 00:15:00,640
+So thank you so much.
+
+171
+00:15:01,280 --> 00:15:01,920
+I felt safe.
+
+172
+00:15:02,160 --> 00:15:03,200
+That was before she got here.
+
+173
+00:15:03,520 --> 00:15:04,000
+To meet him.
+
+174
+00:15:04,400 --> 00:15:06,880
+Of course, we met in public and all that stuff.
+
+175
+00:15:07,200 --> 00:15:11,440
+But yeah, this was just so much fun this evening.
+
+176
+00:15:13,120 --> 00:15:21,040
+And also, I think I can share that Daniel is so kind when we said goodbye this evening.
+
+177
+00:15:22,240 --> 00:15:27,360
+He said, Do you like hugging or do you mind if I hug you?
+
+178
+00:15:27,520 --> 00:15:29,600
+Because I feel it, but I don't know how you feel.
+
+179
+00:15:30,320 --> 00:15:34,160
+And I thought this was so thoughtful and so respectful.
+
+180
+00:15:34,880 --> 00:15:36,880
+So I agree.
+
+181
+00:15:37,840 --> 00:15:46,000
+I felt that he was the right person to create an app that deals with such intimate data.
+
+182
+00:15:47,120 --> 00:15:54,400
+And yeah, I was happy that he was interested in my perspective and my experience.
+
+183
+00:15:55,440 --> 00:15:56,080
+That's awesome.
+
+184
+00:15:56,400 --> 00:16:02,320
+So at this point, was it just, this is Daniel, your little side app project?
+
+185
+00:16:03,120 --> 00:16:09,840
+And Lisa, you just had like ideas that were coming in or was there sort of a formal business partnership that started around that time?
+
+186
+00:16:10,160 --> 00:16:10,800
+No, not at all.
+
+187
+00:16:13,040 --> 00:16:14,800
+the access to the Instagram account.
+
+188
+00:16:14,880 --> 00:16:21,200
+So I did some posting and marketing there, but no, no, we did not incorporate something.
+
+189
+00:16:22,320 --> 00:16:28,480
+And what were the what were the types of needs that drove you to be like, we need some sort of data.
+
+190
+00:16:28,640 --> 00:16:40,640
+Like what were the types of things you were looking for that you didn't have that then prompted this whole, let's mash together a bunch of old code and like make a service just for our app to collect data privately.
+
+191
+00:16:41,360 --> 00:16:49,840
+We wanted to have user numbers, but also what we wanted to have was we wanted to know like are people using this thing long term?
+
+192
+00:16:50,480 --> 00:16:56,160
+Are people launching the app manually or are they responding to a notification?
+
+193
+00:16:56,960 --> 00:16:59,360
+And also what kinds of data are they entering?
+
+194
+00:16:59,520 --> 00:17:11,520
+Are they entering the full spectrum of data or are they very much concentrating on one specific subset or one specific slider where they could just enter their mood but they wouldn't touch the other sliders or something like that.
+
+195
+00:17:12,240 --> 00:17:15,920
+And that was because we just wanted to continue working on that app.
+
+196
+00:17:16,240 --> 00:17:21,040
+And it was both a passion, was a passion project for both of us.
+
+197
+00:17:21,360 --> 00:17:22,560
+The app didn't make any money.
+
+198
+00:17:22,800 --> 00:17:24,640
+It was never really monetized.
+
+199
+00:17:25,280 --> 00:17:46,000
+We felt like we couldn't really ask for an ad purchase and we tried to add Google Ads at some point, I think, but it just completely like Google immediately blocked us and we we we we couldn't even integrate the we could like we even like we could integrate the SDK, but it would never show any ads, so it didn't really work.
+
+200
+00:17:46,480 --> 00:17:55,520
+So I think we because because we both wanted to work on this app, we needed some sort of motivation like if it's not for money then why are we doing this?
+
+201
+00:17:56,240 --> 00:18:00,560
+And I think that was at least for me the reason why I really wanted to have.
+
+202
+00:18:01,120 --> 00:18:06,000
+some sort of analytics that shows, oh yeah, this part of the app, people are really using that.
+
+203
+00:18:06,160 --> 00:18:07,520
+So it makes sense to polish it.
+
+204
+00:18:07,680 --> 00:18:10,560
+It makes sense to improve it so that we can see even more usage.
+
+205
+00:18:11,360 --> 00:18:12,560
+Yeah, that makes a lot of sense.
+
+206
+00:18:12,720 --> 00:18:14,880
+Like, you know, to fast forward a little bit.
+
+207
+00:18:15,040 --> 00:18:24,880
+I I'm very much a user for dark noise and like, one of the things that I really like looking at is, is, yeah, which features are being used.
+
+208
+00:18:25,120 --> 00:18:31,760
+Like, it's very fun to see charts for how many people are hitting play every day as a confirmation that real people are there.
+
+209
+00:18:31,920 --> 00:18:32,880
+And that's nice.
+
+210
+00:18:33,200 --> 00:18:36,720
+But what's really like genuinely helpful is like, how many people are playing from.
+
+211
+00:18:37,440 --> 00:18:38,000
+a widget?
+
+212
+00:18:38,400 --> 00:18:38,880
+Like really?
+
+213
+00:18:39,280 --> 00:18:41,520
+Because a widget gives me lots of marketing.
+
+214
+00:18:42,080 --> 00:18:43,760
+And so it's worth spending time on.
+
+215
+00:18:44,000 --> 00:18:49,520
+But like if nobody's using it, especially certain widgets, maybe I shouldn't spend as much time on those.
+
+216
+00:18:49,680 --> 00:18:53,840
+And I should spend more time on like shortcut support because people are using that more or whatever.
+
+217
+00:18:54,240 --> 00:18:55,360
+Um, and that's the type of data.
+
+218
+00:18:55,600 --> 00:18:55,680
+Yeah.
+
+219
+00:18:55,920 --> 00:19:00,000
+There's no way to get that through like automatically through App Store Connect or anything.
+
+220
+00:19:00,400 --> 00:19:06,000
+Um, and so, yeah, to actually understand how people are using it is extremely valuable.
+
+221
+00:19:06,240 --> 00:19:19,120
+I mean, in a proper, you know, capital B business, it's really valuable to know what you should spend time on, but also for a side project., when you have a very, very limited amount of time to understand what you should be like kind of putting your focus and polish on.
+
+222
+00:19:20,080 --> 00:19:20,720
+Yeah, exactly.
+
+223
+00:19:21,360 --> 00:19:31,360
+And so at some point, that was about, I want to say, the end of 2021, the end of 2019, I want to say, or the beginning of 2020.
+
+224
+00:19:33,440 --> 00:19:39,200
+And what I wanted to do in 2020 was I wanted to go on a, on a like...
+
+225
+00:19:39,760 --> 00:19:41,040
+a sabbatical with my wife.
+
+226
+00:19:41,200 --> 00:19:47,840
+So me and my wife, we wanted to travel the world and we had planned that for literally years.
+
+227
+00:19:48,000 --> 00:19:54,240
+Like we had like saved up a lot of money and we kind of both This is a familiar story.
+
+228
+00:19:56,000 --> 00:20:03,200
+We both like calculate or like manipulate our relative careers so that we would be able to either quit our jobs or take a year off.
+
+229
+00:20:04,800 --> 00:20:22,240
+And so because she's a teacher and the school year ends in July or around these parts at least, we wanted to leave in August of 2020 and just like I I think we would have started with the US and then like travel like travel across Canada and then I don't know.
+
+230
+00:20:22,640 --> 00:20:24,240
+So have you like, have you gotten to do that?
+
+231
+00:20:24,240 --> 00:21:04,240
+that just to you know no skip over ah we i i think i've told this before but like we were planning a similar thing for our 10th anniversary uh to go to london it was like this huge thing and we finally actually did it uh this last summer oh that's fantastic it grew into a bigger thing because of the number of years uh since uh you know but you should you should you should make that happen uh just as a side from this definitely definitely like it's it's still it's still like somehow it's gonna be possible at some at some point i think yeah um and so what i what i was thinking was okay i'm gonna be traveling the world for a year i'm not gonna be like like working like a programmer and I'm going to miss it.
+
+232
+00:21:04,560 --> 00:21:13,120
+So what I'm going to do is I'm going to find like one of those MacBook ones, the really, really tiny ones, and then I'm going to just hack on a side project.
+
+233
+00:21:14,000 --> 00:21:24,640
+And I think I want to hack on the analytics part because I'm just going to package this up and then maybe just offer it as an open source software or whatever.
+
+234
+00:21:24,800 --> 00:21:28,240
+You think, yeah, just like this will be a fun open source library to help people.
+
+235
+00:21:28,640 --> 00:21:34,800
+No, no pressure, just like just something to be creative with when I have time, if I have time.
+
+236
+00:21:35,280 --> 00:21:47,040
+And then, of course, the pandemic hit so we all stayed put and so I was like okay just gonna I guess I'm gonna work some more on that because I'm kind of bored and have nothing else to do.
+
+237
+00:21:47,440 --> 00:21:54,400
+I recently listened to your episode with Leo Mielick and he said kind of the same thing like this is a corona baby.
+
+238
+00:21:54,960 --> 00:22:04,240
+Yeah, yeah, I think we're starting to see the fruits of some of those corona side projects that have flourished in the couple of years since.
+
+239
+00:22:05,040 --> 00:22:15,120
+And so I kind of just posted on Twitter like what I was doing because I was like yeah, hi, I'm just like what I wanted to take one of my fellow developers to share my enthusiasm about this.
+
+240
+00:22:15,280 --> 00:22:25,360
+I was like, okay, so I'm writing, I'm writing the API in Swift for the server because I have to rewrite it anyway and I get to try this out, basically.
+
+241
+00:22:25,600 --> 00:22:25,680
+Yeah.
+
+242
+00:22:25,920 --> 00:22:27,200
+And people are like, oh, this is cool.
+
+243
+00:22:27,280 --> 00:22:28,000
+And then I was like, okay.
+
+244
+00:22:28,160 --> 00:22:31,600
+And then I'm going to write a Swift UI native app to display all the charts and whatever.
+
+245
+00:22:31,680 --> 00:22:32,960
+And people are like, oh, this is really cool.
+
+246
+00:22:33,120 --> 00:22:34,160
+Like, how can I use this?
+
+247
+00:22:35,680 --> 00:22:38,400
+And so I was like, okay, suddenly people are interested in this.
+
+248
+00:22:38,880 --> 00:22:44,720
+And I think at some point, okay, there's two things that happened then.
+
+249
+00:22:44,960 --> 00:22:51,120
+There was one that was the product hunt launch and the other was Lisa introducing me to her boss, and I think that happened first.
+
+250
+00:22:51,360 --> 00:22:52,560
+So Lisa, do you want to take over?
+
+251
+00:22:52,960 --> 00:22:53,760
+Yeah, yeah, sure.
+
+252
+00:22:54,640 --> 00:23:05,200
+The year that Daniel spared was coming to an end, and he asked me, okay, what, what's how is how should we continue this?
+
+253
+00:23:05,600 --> 00:23:09,760
+Is this a hobby or can this be a company or so?
+
+254
+00:23:10,000 --> 00:23:20,160
+And I said, okay, my boss is really into startup mentoring because I was working at the startup at that time myself.
+
+255
+00:23:21,040 --> 00:23:24,240
+And I just set up a call and then you.
+
+256
+00:23:24,240 --> 00:23:26,640
+And you, maybe he has some advice on that.
+
+257
+00:23:27,520 --> 00:23:29,280
+And you know how this works.
+
+258
+00:23:29,440 --> 00:23:31,040
+You set up a call and invite people.
+
+259
+00:23:31,280 --> 00:23:33,040
+And somehow I was in that call.
+
+260
+00:23:34,160 --> 00:23:36,800
+That was not my plan, but I don't know, it happened.
+
+261
+00:23:36,960 --> 00:23:40,000
+And Robert is his name.
+
+262
+00:23:40,800 --> 00:23:49,200
+He talked about an hour how amazing this project is and that Danielle should definitely continue it.
+
+263
+00:23:50,480 --> 00:23:52,240
+But he should not do it alone.
+
+264
+00:23:53,200 --> 00:24:00,000
+Because it's, I think the main reason was it's too risky for.
+
+265
+00:24:00,240 --> 00:24:15,040
+For if you look for external investors, they don't like to give money to just one person because, you know, maybe something happens to that person.
+
+266
+00:24:15,600 --> 00:24:21,120
+And also there's a lot of things to do that are not writing code, right?
+
+267
+00:24:21,520 --> 00:24:29,600
+But organizing the company and my aforementioned lack of marketing, you know, credentials and all that as well.
+
+268
+00:24:30,400 --> 00:24:30,560
+Right.
+
+269
+00:24:31,440 --> 00:24:36,000
+So imagine I was the pandemic hit me too.
+
+270
+00:24:36,480 --> 00:24:41,680
+And I have two kids that were we were forced to home school at that time.
+
+271
+00:24:42,720 --> 00:24:45,200
+And it was a very hard time for my family.
+
+272
+00:24:47,040 --> 00:24:54,160
+And then this idea popped up, okay, Daniel needs a companion on his, on his adventure.
+
+273
+00:24:55,600 --> 00:24:57,280
+And I don't remember.
+
+274
+00:24:57,520 --> 00:25:04,720
+I think it was just a few days after that call when it never left my thoughts.
+
+275
+00:25:04,960 --> 00:25:11,040
+Okay, you, you, maybe you should do this because this is a once in a lifetime chance.
+
+276
+00:25:13,040 --> 00:25:18,960
+Your best friend is coming up with a project that could potentially change your life.
+
+277
+00:25:20,000 --> 00:25:33,920
+So the topic is so interesting because the privacy aspect of the analytics was an important topic in our friendship until then.
+
+278
+00:25:34,800 --> 00:25:38,080
+We talked a lot about that and how important it is for us and so on.
+
+279
+00:25:38,960 --> 00:25:56,960
+So we had several years to discuss our what is it shared not shared beliefs or Yeah, you guys were you were in sync on like how you your worldview on this at least this topic.
+
+280
+00:25:57,760 --> 00:25:57,920
+Right.
+
+281
+00:25:58,240 --> 00:25:59,360
+And also on a personal level.
+
+282
+00:25:59,680 --> 00:26:03,360
+So we had a really good basis for starting a company together.
+
+283
+00:26:04,640 --> 00:26:10,320
+We also were were looking for a third person because we thought maybe some knowledge.
+
+284
+00:26:11,040 --> 00:26:12,560
+None of us has.
+
+285
+00:26:13,680 --> 00:26:21,280
+But you know, we in Germany, we were not allowed to go out or meet people at that time.
+
+286
+00:26:21,920 --> 00:26:24,400
+And if you can't like drink a beer with someone, you can't drink a beer.
+
+287
+00:26:24,880 --> 00:26:25,280
+with someone.
+
+288
+00:26:25,920 --> 00:26:30,080
+How do you find out if you can trust each other on a business level?
+
+289
+00:26:30,960 --> 00:26:40,640
+Building high trust relationships is really hard anyway, but it's especially hard over Zoom or something if there isn't a previous relationship already there.
+
+290
+00:26:41,440 --> 00:26:49,280
+And the incorporation process in Germany, it's from the law perspective, it's comparable to getting married.
+
+291
+00:26:49,920 --> 00:26:54,720
+I've heard a I've heard a really tiny bit of paperwork involved in German bureaucracy.
+
+292
+00:26:55,680 --> 00:26:55,840
+Right.
+
+293
+00:26:56,720 --> 00:27:00,640
+It's a friend who moves there and explains the process of like.
+
+294
+00:27:01,440 --> 00:27:04,320
+I think it was just like so he could what was it?
+
+295
+00:27:04,480 --> 00:27:05,680
+It was so he could move into his apartment.
+
+296
+00:27:05,760 --> 00:27:07,440
+I don't even think it was like a driver's license.
+
+297
+00:27:07,760 --> 00:27:14,400
+And he just talked about like he had to go over to this place and then they were like, Oh, no, you need to go over to this bank.
+
+298
+00:27:14,640 --> 00:27:16,320
+And then they were like, No, you need to go over to this.
+
+299
+00:27:16,640 --> 00:27:20,640
+And there was like this huge chain of physical places that he had to go to.
+
+300
+00:27:20,800 --> 00:27:25,760
+And he's like, I thought I was in the land of, you know, engineering and efficiency.
+
+301
+00:27:26,080 --> 00:27:29,840
+But when it comes to bureaucracy, apparently, that's not really the case.
+
+302
+00:27:30,320 --> 00:27:31,840
+We kind of stopped in the fax era.
+
+303
+00:27:33,680 --> 00:27:34,400
+Do you still have faxes?
+
+304
+00:27:34,880 --> 00:27:35,600
+We still have a lot.
+
+305
+00:27:38,000 --> 00:27:39,360
+Yes, it's Germany, isn't it?
+
+306
+00:27:39,760 --> 00:27:41,760
+Whereas emails aren't like here at least.
+
+307
+00:27:41,920 --> 00:27:43,840
+So like everyone faxes, like not everyone.
+
+308
+00:27:44,320 --> 00:27:45,200
+Oh, that's the reason.
+
+309
+00:27:45,840 --> 00:27:48,720
+It's because of a legal thing with whether it's binding contracts.
+
+310
+00:27:48,960 --> 00:27:51,360
+That's incredibly stupid in my opinion.
+
+311
+00:27:51,520 --> 00:27:52,240
+That's fascinating.
+
+312
+00:27:53,120 --> 00:28:01,840
+There's apparently this like app on the App Store that's for doing faxes and it is just killing it in Germany for this particular reason.
+
+313
+00:28:02,000 --> 00:28:04,320
+And I didn't have the reason why, but that makes a lot of sense.
+
+314
+00:28:04,400 --> 00:28:12,560
+Yeah, we as a company, we have a website that or a web application that we are customers of where you pay them a few bucks a month and then you can just send.
+
+315
+00:28:13,200 --> 00:28:19,520
+and receive faxes as PDFs, basically, which is of course much safer than sending those PDFs by email.
+
+316
+00:28:19,840 --> 00:28:19,920
+Yeah.
+
+317
+00:28:20,480 --> 00:28:20,560
+Wow.
+
+318
+00:28:21,120 --> 00:28:22,880
+That's that's amazing.
+
+319
+00:28:23,200 --> 00:28:39,520
+So what we basically, like every week, have to do because of some reason is print out a form, sign it manually, and then scan it and send it back like on electronic.
+
+320
+00:28:40,080 --> 00:28:41,040
+We have to do this every week.
+
+321
+00:28:42,080 --> 00:28:43,120
+Yeah, for some reason.
+
+322
+00:28:43,520 --> 00:28:47,840
+We, we, yes, we received some grants and then they check in after a year.
+
+323
+00:28:48,960 --> 00:28:50,880
+Is your business still running, things like that.
+
+324
+00:28:51,200 --> 00:28:51,520
+Goodness.
+
+325
+00:28:52,000 --> 00:28:57,040
+And Danielle showed me this feature on what is it?
+
+326
+00:28:57,920 --> 00:28:59,600
+The preview app in macOS, right?
+
+327
+00:29:00,640 --> 00:29:01,600
+It's preview.
+
+328
+00:29:02,640 --> 00:29:06,080
+That you can add your signature and then just insert it.
+
+329
+00:29:06,640 --> 00:29:09,440
+So I'm using this, no one ever complained.
+
+330
+00:29:10,080 --> 00:29:17,360
+I don't know if they check like one institution actually, I don't remember which, but one actually complained.
+
+331
+00:29:18,000 --> 00:29:18,560
+Do you remember this?
+
+332
+00:29:18,720 --> 00:29:24,240
+Like, one, one, one, one individual was like, or institution was like, it was a potential customer.
+
+333
+00:29:24,640 --> 00:29:27,920
+And they wrote us back and they were like, yeah, this is electronically generated.
+
+334
+00:29:28,080 --> 00:29:30,480
+You got to print it out and take a picture and then send us that.
+
+335
+00:29:31,840 --> 00:29:32,480
+That's amazing.
+
+336
+00:29:34,080 --> 00:29:35,520
+I love, I love stuff like that.
+
+337
+00:29:36,160 --> 00:29:46,720
+Here in, well, in the States, it's like everything state dependent, like, you know, the individual states in Missouri where I'm at, it's like you can like walk into a bank and accidentally open up an LLC.
+
+338
+00:29:46,880 --> 00:29:48,800
+It feels like it's so, it's so easy.
+
+339
+00:29:50,160 --> 00:29:51,440
+It's a very, very different process.
+
+340
+00:29:51,760 --> 00:29:57,920
+It almost feels like you're doing something wrong in the other direction, which I guess is the opposite problem.
+
+341
+00:29:58,240 --> 00:29:58,960
+Same with our taxes.
+
+342
+00:29:59,200 --> 00:30:05,040
+It's like you feel like you' can literally do anything, but at some point you might end up in jail if you do it wrong.
+
+343
+00:30:05,440 --> 00:30:07,360
+And there's no clear answer for what that is.
+
+344
+00:30:07,600 --> 00:30:08,720
+At least that's my perspective.
+
+345
+00:30:08,800 --> 00:30:09,840
+So I'm always terrified.
+
+346
+00:30:11,040 --> 00:30:16,640
+No, I think the worst thing that could happen to us is that we have to fill out even more forms.
+
+347
+00:30:18,960 --> 00:30:20,560
+That does sound pretty terrible though.
+
+348
+00:30:21,600 --> 00:30:27,280
+I just I just received a two a three pages of forms from our annual tax.
+
+349
+00:30:29,040 --> 00:30:35,040
+And they're asking about the room my husband's desk is standing in.
+
+350
+00:30:35,360 --> 00:30:39,840
+How big is it and how many pris percentage of usage is for his job?
+
+351
+00:30:41,600 --> 00:30:42,320
+Oh my goodness.
+
+352
+00:30:43,520 --> 00:30:48,800
+This episode of Launched is brought to you by Timing, the smartest automatic time tracking app for Mac.
+
+353
+00:30:49,280 --> 00:30:55,200
+And good news, if you sign up today via timingapp.com/launched, you get ten percent off your first bill.
+
+354
+00:30:55,760 --> 00:31:00,240
+If you're someone who bills by hour, timing is a no brainer solution for tracking those hours.
+
+355
+00:31:00,640 --> 00:31:09,280
+But even if you're salaried or a bill per project, timing is a great tool for measuring how long you actually spend on a project and helps you make better plans for future projects.
+
+356
+00:31:09,840 --> 00:31:12,000
+One great thing about timing is automatic tracking.
+
+357
+00:31:12,640 --> 00:31:21,840
+Nobody likes starting and stopping timers, so Timer automatically tracks your app, document, and website usage without you lifting a finger, perfect for the fast-paced development environment.
+
+358
+00:31:22,400 --> 00:31:29,920
+Timing is chalk full of features tailored for developers like automatic categorization, intelligent meeting recognition, and team collaboration features.
+
+359
+00:31:30,320 --> 00:31:32,560
+One really cool feature is cross-device tracking.
+
+360
+00:31:32,880 --> 00:31:39,600
+Unique to Timing, it imports your iPhone and iPad usage data from screen time, offering a complete picture of your digital life.
+
+361
+00:31:40,240 --> 00:31:50,640
+You can try out Timing for free for thirty days, and if you like what you see, you can use the URL timingapp dot com slash launched for a ten percent discount on your first bill and that link will be in the show notes.
+
+362
+00:31:51,120 --> 00:31:56,240
+So if you want to stop guessing and start maximizing your productivity, timing is your go-to solution.
+
+363
+00:31:56,640 --> 00:31:59,760
+Thank you so much to Timing for sponsoring this episode of Launched.
+
+364
+00:32:00,720 --> 00:32:08,240
+So you ended up with with you two went through paperwork to decide to like make do a start of make this like a proper business.
+
+365
+00:32:09,200 --> 00:32:18,480
+I'm assuming that very quickly it was obvious like that you both had very clear uh skills that like were very different than each other.
+
+366
+00:32:18,720 --> 00:32:26,080
+So was was the sort of breakup of the work pretty clear cut or how was it like forming kind of a business right relationship at the beginning?
+
+367
+00:32:27,280 --> 00:32:32,000
+We discuss, so formally Daniel is CTO and I am CEO.
+
+368
+00:32:32,960 --> 00:32:37,520
+There are some tasks that are clearly assigned to one of these roles.
+
+369
+00:32:37,840 --> 00:32:37,920
+Yeah.
+
+370
+00:32:38,640 --> 00:32:52,400
+Like I would say on a regular basis we discuss who likes to do one task better than the other or for which person is some task like easier or quicker or whatever.
+
+371
+00:32:52,880 --> 00:33:02,480
+So this is one of our values that we try to respect the mental health of each other.
+
+372
+00:33:02,880 --> 00:33:11,440
+And we found out that we run on different operating systems and we try to take care of that.
+
+373
+00:33:12,000 --> 00:33:23,600
+So when it comes to good hours for setting up a meeting or when it comes to paperwork or reminders or things like that.
+
+374
+00:33:24,480 --> 00:33:36,640
+So I think the biggest, can I say that misalignment between task and role was when Danielle last year.
+
+375
+00:33:36,640 --> 00:33:48,800
+Last year, I did a really deep dive into the process of building a company and inviting business angels as investors.
+
+376
+00:33:49,680 --> 00:33:55,680
+We had to set up a really big contract of about twenty pages and 36.
+
+377
+00:33:56,480 --> 00:33:56,560
+Okay.
+
+378
+00:33:59,520 --> 00:34:11,280
+So you see that he really, he learned it by heart and he explained to me the pros and cons of every paragraph and I was so impressed by that.
+
+379
+00:34:13,040 --> 00:34:21,840
+Of course, I'm happy that he does that and I take care of other things that he just doesn't like and it's totally fine.
+
+380
+00:34:22,800 --> 00:34:24,400
+It's great when you're two people.
+
+381
+00:34:25,440 --> 00:34:25,920
+I don't know.
+
+382
+00:34:27,200 --> 00:34:31,120
+It's a little bit easier to just have a conversation and go through everything.
+
+383
+00:34:32,080 --> 00:34:46,000
+But for the next month and years, I think it will be we stay at this smaller team so we can go on and cultivate this kind of working together.
+
+384
+00:34:46,880 --> 00:34:46,960
+Yeah.
+
+385
+00:34:47,600 --> 00:34:59,360
+And I want to get into the angel investment stuff, but like rolling back a little bit, you formed a business, but at this point you didn't have a service you were selling yet, right?
+
+386
+00:35:00,160 --> 00:35:00,960
+Or was that after?
+
+387
+00:35:01,600 --> 00:35:03,760
+I didn't have a business before, but I was freelancing.
+
+388
+00:35:04,320 --> 00:35:08,640
+And as such, I could actually sell a service or at least provide a service, I don't know.
+
+389
+00:35:08,960 --> 00:35:11,520
+So at the beginning, we were like, okay, though this is completely free.
+
+390
+00:35:12,480 --> 00:35:16,000
+Everything is marked as beta and just like, please, please use it.
+
+391
+00:35:17,440 --> 00:35:20,400
+And so this is how we launched the thing on Product Hunt.
+
+392
+00:35:20,720 --> 00:35:31,440
+And it was like, okay, if, I don't know, 300 users sign up and actually start using it, then we can like follow the like we can continue like actually incorporating this thing.
+
+393
+00:35:32,640 --> 00:35:36,240
+And so we put it on Product Hunt and I have this big whiteboard in my kitchen.
+
+394
+00:35:36,640 --> 00:35:39,520
+And so every time someone would sign up, I would make a tick.
+
+395
+00:35:40,320 --> 00:35:46,560
+And in the first two days or so or even overnight, we had like six hundred ticks.
+
+396
+00:35:46,880 --> 00:35:47,440
+Oh my goodness.
+
+397
+00:35:47,920 --> 00:35:49,200
+Or tick marks or yeah.
+
+398
+00:35:49,520 --> 00:35:53,120
+And so I was like, I was like, at the beginning, I was like a bundle of nerves.
+
+399
+00:35:53,280 --> 00:35:57,360
+I don't know if the, Lisa, if you did you even realize how excited I was about this?
+
+400
+00:35:57,520 --> 00:35:58,000
+I don't know.
+
+401
+00:35:58,800 --> 00:35:59,840
+But I was a bundle of nerves.
+
+402
+00:36:00,000 --> 00:36:04,000
+I was like, really, like every time something came in, I was like, okay, will we get over that threshold?
+
+403
+00:36:04,240 --> 00:36:06,720
+Will we actually, will this be a viable thing?
+
+404
+00:36:06,960 --> 00:36:10,320
+Because otherwise, it doesn't make sense to, like, make it bigger, right?
+
+405
+00:36:12,400 --> 00:36:17,840
+And at the end of, like, after a few days, it was clear, like, okay, yeah, this is actually, this is actually businessable.
+
+406
+00:36:19,600 --> 00:36:20,720
+And so we were like, okay, cool.
+
+407
+00:36:21,040 --> 00:36:21,680
+Then let's go there.
+
+408
+00:36:21,840 --> 00:36:23,200
+Let's, let's go into this direction.
+
+409
+00:36:23,440 --> 00:36:26,000
+And then there's different forms of incorporation.
+
+410
+00:36:26,160 --> 00:36:40,960
+And once we reached the smallest one, which was enough to actually, like, write invoices and stuff like that, then we actually started, like, like accepting payment and actually making the service a paid service for larger customers.
+
+411
+00:36:41,440 --> 00:36:51,680
+And we kind of grandfathered in people, I think, and we gave them like very we had lots of I remember we had lots of lots of discussion about like how should the pricing be?
+
+412
+00:36:52,320 --> 00:36:54,400
+What are other services asking for?
+
+413
+00:36:55,360 --> 00:37:00,320
+How do we communicate this to the how do we communicate this to the existing community?
+
+414
+00:37:00,800 --> 00:37:07,040
+Like will people just like get up and leave because they feel betrayed that this free service is no longer free?
+
+415
+00:37:09,040 --> 00:37:38,320
+But yeah, that what we had at the time is we had a Slack channel that was like where we kind of funneled people in that that still exists but I kind of don't want to maintain it anymore because it's actually like it doesn't really scale for support reasons or whatever but back at the time that was ideal because like just like there were I want to say maybe 20, 30 people in there and they were all very enthusiastic telemetry deck users.
+
+416
+00:37:40,160 --> 00:38:24,800
+And so we what we did was like we just like wrote our plans in there and we're like okay so hey community what we want to do is we want to ask for money and this these are the price points that we're thinking of um and these will be monthly and then what do you think basically and we had we heard some feedback and i think we had we actually changed the price a little bit and then like with the second version of the prices that's what we kind of implemented using stripe and because i think because we asked the community and various other people beforehand and because we try to be very respectful with with and very gentle with the upgrades uh this went off without a hitch and i think in retrospect we probably might have been too gentle even.
+
+417
+00:38:25,360 --> 00:38:25,440
+Yeah.
+
+418
+00:38:26,160 --> 00:38:33,200
+Because that's one of our problems, if I like, if I may say so, that we don't we don't ask for enough money.
+
+419
+00:38:35,440 --> 00:38:41,120
+We we try to be very nice because we want people to use it to use our service, we want people to be super happy and that will continue, of course.
+
+420
+00:38:43,280 --> 00:38:47,520
+But even when we increased our prices a year later or was it two years later, Lisa?
+
+421
+00:38:47,760 --> 00:38:49,520
+I think it was a year later.
+
+422
+00:38:50,240 --> 00:38:53,520
+We doubled the prices and no one even blinked, basically.
+
+423
+00:38:55,040 --> 00:38:57,360
+So maybe that's even that is too low.
+
+424
+00:38:57,600 --> 00:38:58,000
+I don't know.
+
+425
+00:38:59,360 --> 00:39:00,320
+But yeah.
+
+426
+00:39:00,320 --> 00:39:00,320
+Yeah.
+
+427
+00:39:01,040 --> 00:39:04,560
+I think it's tricky with enterprise software like this.
+
+428
+00:39:05,520 --> 00:39:07,040
+Like this is something that's interesting.
+
+429
+00:39:07,280 --> 00:39:11,520
+I wasn't there at the beginning of RevenueCat where I work now, but like thinking about it.
+
+430
+00:39:11,680 --> 00:39:24,000
+And obviously they're a little different because like you you're touching people's actual payment method, but still like integrating inside of somebody's app is requires this like high amount of trust.
+
+431
+00:39:24,800 --> 00:39:44,160
+And so at the very beginning of something, it's like you have to build that trust and reasonably somebody, you know, Netflix probably shouldn't add telemetry deck whenever it first came out, just because it hasn't proven itself at that point.
+
+432
+00:39:45,440 --> 00:40:03,920
+And so, and like, so it takes time to build up that trust and then like your prices and everything can reflect that, but it's, there's like a delay there that happens, right, and it's a tricky thing because it's like you're not necessarily changing the service, you're changing the degree of trust, which really, really matters.
+
+433
+00:40:05,200 --> 00:40:11,200
+But, you know, from a user's perspective, if they're already in, it's, it makes it kind of like awkward, I guess.
+
+434
+00:40:12,000 --> 00:40:12,480
+Oh yeah.
+
+435
+00:40:13,680 --> 00:40:30,320
+I think we were very gentle to our existing customers because we gave them a heads up prices are changing and a lot of people used the chance to get the old price and can still use it.
+
+436
+00:40:31,120 --> 00:40:34,800
+I think it's it was in April, I guess.
+
+437
+00:40:35,920 --> 00:40:39,920
+So it's like over half a year now.
+
+438
+00:40:40,640 --> 00:40:46,720
+And yeah, I think this was very fair for the community and the new customers.
+
+439
+00:40:47,360 --> 00:40:52,800
+They don't even see the old prizes because they are they are nowhere online anymore.
+
+440
+00:40:54,320 --> 00:40:54,640
+That's cool.
+
+441
+00:40:54,880 --> 00:40:59,680
+So whenever you were first starting, you said you had like 600 people signing up when it was free.
+
+442
+00:41:00,400 --> 00:41:03,840
+What was what was kind of the mix of people you're having?
+
+443
+00:41:04,240 --> 00:41:10,560
+I'm guessing especially at that stage it was almost entirely like small indie side project type companies.
+
+444
+00:41:10,800 --> 00:41:10,880
+Yeah.
+
+445
+00:41:11,360 --> 00:41:11,440
+Yeah.
+
+446
+00:41:12,400 --> 00:41:21,360
+So basically if you look at a at a spectrum of software developer sizes, we were at the very, very tiny end of the spectrum.
+
+447
+00:41:21,840 --> 00:41:27,840
+Our customers were either like hobby side projects or single person indeed developers, which was fine.
+
+448
+00:41:28,080 --> 00:41:30,080
+Like these were the enthusiasts that we had.
+
+449
+00:41:30,320 --> 00:41:36,720
+And also the app were sizes where like the back end has gone through about five or six generations by now.
+
+450
+00:41:37,120 --> 00:41:49,440
+And each of them, each of these generations can handle more, like more data basically without choking up, without going, going slow because, uh, they're just like the number of data goes, goes up exponentially if you have more customers.
+
+451
+00:41:49,760 --> 00:41:52,400
+Uh, but yeah, like so we were at the very small end.
+
+452
+00:41:52,720 --> 00:42:00,720
+And then kind of ever since then we started like getting slightly bigger and slightly bigger, um, bigger customers and the especially the iPhone.
+
+453
+00:42:01,280 --> 00:42:08,000
+or the iOS Indie community was like super helpful with that because, um, many people in that community know me already.
+
+454
+00:42:08,720 --> 00:42:08,880
+Right.
+
+455
+00:42:09,200 --> 00:42:12,480
+And also they know each other and they, they prefer quality.
+
+456
+00:42:13,200 --> 00:42:24,960
+And I mean, even though I'm not super happy with how polished the user interface of telemetry deck is because it could be so much better, apparently it is good enough to be, to, to people to go like, oh yeah, I'm going to try that out.
+
+457
+00:42:25,680 --> 00:42:37,840
+And, um, and so, yeah, we had, uh, we had, we had, we had, we had, we've had, like, a lot of success with just like Indie developers for their side projects or their main projects going, okay, I'm going to try try this out for them.
+
+458
+00:42:38,000 --> 00:42:45,200
+It's very they don't have these enterprise-y lag times where you have to wait like six months until actually something actually happens or something.
+
+459
+00:42:45,440 --> 00:42:49,600
+They just decide and then try it out because the SDK is kind of like just a swift package.
+
+460
+00:42:49,680 --> 00:42:50,480
+You just drag it in.
+
+461
+00:42:51,440 --> 00:43:01,040
+And so it was very, very like motivational to really see apps signing up that where I'm like, oh, I know that person.
+
+462
+00:43:01,280 --> 00:43:02,400
+That's so cool.
+
+463
+00:43:03,200 --> 00:43:04,640
+Or like, oh, I know that person.
+
+464
+00:43:04,960 --> 00:43:14,240
+This person writes the software that I used to concentrate while working on Telemetry Deck because it produces a lot of dark noise in the, by the way, the spaceaceship engine is my favorite.
+
+465
+00:43:15,200 --> 00:43:17,360
+I didn't, I didn't pick up on that until just now.
+
+466
+00:43:20,560 --> 00:43:23,440
+So yeah, that was very motivating and also very helpful, of course.
+
+467
+00:43:23,840 --> 00:43:26,640
+And that also gave us our first boost of revenue.
+
+468
+00:43:26,800 --> 00:43:34,480
+Like I didn't clear it with people, so I'm not going to name names, but one of the larger apps signed up and like they had to use like a bigger plan.
+
+469
+00:43:34,720 --> 00:43:37,760
+And so that was our first boost of like more revenue basically.
+
+470
+00:43:39,680 --> 00:43:42,720
+Where we were like a long way away from profitable, of course.
+
+471
+00:43:44,640 --> 00:43:58,000
+But there was something that actually moved the needle where we could like say, like, hey, if like if this continues., if we have like six or six or seven more people like this, um, as our customers, then, like, yeah, we can think about, like, doing this, um, full time.
+
+472
+00:43:58,800 --> 00:44:05,600
+Because at the time, uh, Lisa was still working for her old job and I was basically living off the, uh, sabbatical money.
+
+473
+00:44:06,160 --> 00:44:08,000
+Yeah, you mentioned it wasn't profitable yet.
+
+474
+00:44:08,160 --> 00:44:10,480
+So is it, is it because of the server costs?
+
+475
+00:44:10,800 --> 00:44:12,960
+Uh, no, it's because of the costs of living.
+
+476
+00:44:13,440 --> 00:44:16,320
+Like, so right now, yeah, yeah.
+
+477
+00:44:16,480 --> 00:44:19,440
+The most, most of our expenses are just salaries right now.
+
+478
+00:44:19,600 --> 00:44:19,680
+Yeah.
+
+479
+00:44:20,160 --> 00:44:25,600
+Um, a bit of, a bit of taxes and, like, you know, like pension, pension funds and stuff like that, of course.
+
+480
+00:44:26,480 --> 00:44:31,680
+But yeah, like our biggest cost point by far is just like salaries.
+
+481
+00:44:32,240 --> 00:44:37,120
+And yeah, you mentioned like, you know, you get your first big customer in and that was a they need a bigger plan.
+
+482
+00:44:37,680 --> 00:44:49,360
+So like right now, your whole pricing structure is based on signals, uh, which is, which is the amount of, you know, uh, actual events or whatever you want to call them that people are sending in through.
+
+483
+00:44:49,600 --> 00:44:55,360
+So like it kind of naturally scales up with a bigger company that they're going to pay you more, obviously.
+
+484
+00:44:55,680 --> 00:44:59,200
+And obviously that also then offsets the cost that you incur for that.
+
+485
+00:44:59,360 --> 00:45:03,760
+Was that, was that your., like pretty much, that's how we're going to price it from the beginning?
+
+486
+00:45:03,840 --> 00:45:08,480
+Or was there sort of ideas or different things thrown around in terms of how you do pricing?
+
+487
+00:45:09,840 --> 00:45:13,600
+We added the thing that we grow with our customers.
+
+488
+00:45:14,160 --> 00:45:19,200
+We added this just this year in the April's price increase.
+
+489
+00:45:20,800 --> 00:45:27,040
+It is now part of our, oh, I only know the German word, the agib.
+
+490
+00:45:27,360 --> 00:45:28,880
+Danya, can you help the terms?
+
+491
+00:45:29,440 --> 00:45:31,040
+The end user license agreements.
+
+492
+00:45:31,760 --> 00:45:31,840
+Yes.
+
+493
+00:45:32,960 --> 00:45:43,360
+That if you hit your threshold of your actual plan with the signals, two months in a row, then we'll upgrade you automatically.
+
+494
+00:45:44,880 --> 00:45:56,480
+So this gives us the, yeah, it reduces the work with upgrading people manually, which is, yeah, you know, we have customers from all over the world.
+
+495
+00:45:56,720 --> 00:45:59,760
+There's time zone issues and things like that.
+
+496
+00:46:00,160 --> 00:46:02,640
+Everything is like written by email.
+
+497
+00:46:03,120 --> 00:46:06,400
+If we can reduce that, this is very helpful for us.
+
+498
+00:46:06,960 --> 00:46:13,520
+So that's why we decided to add this, yeah, change in the, in the, in the payment.
+
+499
+00:46:14,400 --> 00:46:16,160
+In terms of it automatically happening.
+
+500
+00:46:16,880 --> 00:46:17,040
+Right.
+
+501
+00:46:17,680 --> 00:46:21,600
+And you mentioned another aspect of Signals.
+
+502
+00:46:22,960 --> 00:46:26,080
+Maybe we can we can explain that a bit too.
+
+503
+00:46:26,720 --> 00:46:27,440
+Sorry, Daniel.
+
+504
+00:46:28,640 --> 00:46:39,360
+We have when you when you start when you create an account, you get like 100,000 Signals for free every month forever.
+
+505
+00:46:40,240 --> 00:46:48,800
+And this is working fine for smaller, smallish apps with not a lot of users.
+
+506
+00:46:49,440 --> 00:46:55,760
+or yeah, our customers can decide what actions they want to track.
+
+507
+00:46:56,000 --> 00:47:03,520
+So you have a little bit of wiggle room, how much signals you actually send to us.
+
+508
+00:47:04,240 --> 00:47:11,600
+And if you hit that threshold, then we ask you to upgrade to a paid plan.
+
+509
+00:47:12,560 --> 00:47:19,440
+And we have some nudging installed for motivational reasons.
+
+510
+00:47:19,760 --> 00:47:24,640
+So in the moment when you're, let's say, one hundred percent.
+
+511
+00:47:24,640 --> 00:47:30,400
+100,000 and first data point enters our server.
+
+512
+00:47:32,640 --> 00:47:33,920
+You are blocked.
+
+513
+00:47:34,080 --> 00:47:36,160
+You don't see your data for the rest of the month.
+
+514
+00:47:36,800 --> 00:47:40,480
+We still take your information and process it.
+
+515
+00:47:40,960 --> 00:47:41,280
+Oh, okay.
+
+516
+00:47:41,520 --> 00:47:42,480
+So it's not blocking.
+
+517
+00:47:42,640 --> 00:47:46,080
+If you go over your limit, it's not like you lose all that data.
+
+518
+00:47:47,120 --> 00:47:50,240
+The kind of motivator is you can't look at it for the rest of that month.
+
+519
+00:47:51,120 --> 00:47:51,280
+Right.
+
+520
+00:47:51,680 --> 00:47:59,280
+And if you change to paid plan or upgrade your plan, then you will be able to see everything.
+
+521
+00:48:01,040 --> 00:48:07,520
+If not, it is, it stays blocked, but you can see data again starting first of the next month.
+
+522
+00:48:07,760 --> 00:48:08,640
+When the month starts over.
+
+523
+00:48:09,200 --> 00:48:09,280
+Right.
+
+524
+00:48:09,440 --> 00:48:10,560
+Yeah, that seems reasonable.
+
+525
+00:48:10,720 --> 00:48:23,280
+I just, I really like that when, when your business model allows for you to, like, have a natural growth with company, you know, what you said, we grow when you grow kind of thing.
+
+526
+00:48:23,920 --> 00:48:25,840
+It felt very natural to start with that.
+
+527
+00:48:26,160 --> 00:48:30,720
+Like we kind of wanted to align our motivation with those of our customers.
+
+528
+00:48:31,280 --> 00:48:34,880
+Especially like starting from the back when it was just a hobby side project.
+
+529
+00:48:35,280 --> 00:48:37,200
+It just like, it just makes sense., I think.
+
+530
+00:48:37,360 --> 00:48:40,800
+And also just implementation wise, it was the easiest way to implement this.
+
+531
+00:48:41,280 --> 00:48:44,320
+And we thought every now and then about changing, about changing this.
+
+532
+00:48:44,480 --> 00:48:48,880
+Like, for example, some of our competitors, they charge by users instead of like events.
+
+533
+00:48:49,280 --> 00:48:49,440
+Right.
+
+534
+00:48:49,840 --> 00:48:56,640
+And the thing is, though, you can't really like our costs align with signals.
+
+535
+00:48:57,280 --> 00:49:04,960
+And so, for example, if you have seven users, but you send like 400 events per user, then you're going to incur a lot of data.
+
+536
+00:49:05,200 --> 00:49:05,520
+Exactly.
+
+537
+00:49:05,600 --> 00:49:06,960
+Even though you only have seven users.
+
+538
+00:49:07,280 --> 00:49:12,160
+It creates a nice incentive where it's like your users are also motivated to.
+
+539
+00:49:12,320 --> 00:49:22,720
+to be good citizens isn't the right word, but like, uh, if it's worth it for them to send a crazy amount of signals for some specific reason, then that's fine.
+
+540
+00:49:22,960 --> 00:49:25,280
+But then, you know, that payment is incurred to them.
+
+541
+00:49:25,360 --> 00:49:36,800
+Otherwise, yeah, it encourages people to like be kind of efficient, uh, with those signals, which helps with your growth over time, you know, scaling to bigger and bigger amounts of data that you can process.
+
+542
+00:49:37,840 --> 00:50:28,320
+And an additional upside is that it also encourages people to be, um, very careful with the data because they only collect data that they actually need, which is like in line with our whole privacy focus i jumped over that but like the definitely the pitch now in my memory from when this all was coming out is that was the pitch then is you know this is the analytics service for people who want to be privacy focused we kind of hinted at it at the beginning was that pretty much from the get-go your your thinking and your marketing yeah yeah absolutely yeah um i think at the beginning was only yeah okay we we will we will be at the same analytics service as let's say the analytics part for google firebase but with privacy and now it's like okay we will we want to be to be that, but we also want to be slightly, slightly more user friendly.
+
+543
+00:50:28,480 --> 00:50:32,960
+We want to be more helpful in automatically surfacing the data that you need.
+
+544
+00:50:34,000 --> 00:50:36,880
+And there's like a lot of like plans in that direction.
+
+545
+00:50:38,160 --> 00:50:42,800
+But so far, so far, we haven't like materialized all of those.
+
+546
+00:50:44,160 --> 00:50:46,640
+But yeah, we want to, we want to be both kind of now.
+
+547
+00:50:47,120 --> 00:50:49,840
+But the privacy part is very important.
+
+548
+00:50:50,480 --> 00:50:57,280
+And one of the, one of the reasons we're, we're doing this and we're so motivated is that, yeah, we think that is an important topic.
+
+549
+00:50:58,160 --> 00:51:11,600
+Yeah, I think like selfishly, not selfishly, but from my perspective, there is that element for sure, where it's like, it's not even just, you know, clearly like that is a big focus for you all.
+
+550
+00:51:11,760 --> 00:51:13,840
+You have the expertise, you understand that space.
+
+551
+00:51:15,200 --> 00:51:25,600
+There's also simply the fact that you're not connected to a tech giant who has the infrastructure to take advantage of that data, even if, you know, they're saying they're not or whatever, which makes you feel a little better.
+
+552
+00:51:26,160 --> 00:51:28,320
+But then there's also just, it's lighter weight.
+
+553
+00:51:28,480 --> 00:51:31,520
+Like it feels, it's so simple to use.
+
+554
+00:51:31,920 --> 00:51:36,480
+Like, you know, I I've talked a lot about how easy RevenueCAD is to integrate.
+
+555
+00:51:36,880 --> 00:51:42,320
+But like Telemetry Deck's actually my first experience with pulling in a library that's a service like this.
+
+556
+00:51:43,200 --> 00:51:50,960
+That was that experience where I set aside like a project in my, you know, to do app for pulling this in.
+
+557
+00:51:51,120 --> 00:51:52,640
+And it was like a task.
+
+558
+00:51:52,800 --> 00:51:58,800
+Like it really was like you just pull in the SPM library and and sign up.
+
+559
+00:51:58,960 --> 00:51:59,600
+And then there you go.
+
+560
+00:52:00,320 --> 00:52:00,880
+You're already going.
+
+561
+00:52:01,040 --> 00:52:02,080
+And it was like, whoa, okay.
+
+562
+00:52:02,320 --> 00:52:03,520
+This is, this is pretty cool.
+
+563
+00:52:04,320 --> 00:52:05,920
+Can we quote this on our website?
+
+564
+00:52:06,880 --> 00:52:07,440
+Can you what?
+
+565
+00:52:08,000 --> 00:52:08,640
+Oh, quote.
+
+566
+00:52:08,720 --> 00:52:08,720
+Yeah.
+
+567
+00:52:09,040 --> 00:52:09,280
+Sure.
+
+568
+00:52:09,360 --> 00:52:09,360
+Yeah.
+
+569
+00:52:09,680 --> 00:52:10,000
+Why not?
+
+570
+00:52:11,920 --> 00:52:17,680
+Yeah, but really, like it really is, um, yeah, getting going is super basic.
+
+571
+00:52:18,080 --> 00:52:32,880
+And, uh, it's definitely, you know, especially at the beginning, there was definitely the, like, it felt like part of the sort of indie iOS community in terms of, like, what things were cared about.
+
+572
+00:52:33,120 --> 00:52:34,320
+And it's not a giant company.
+
+573
+00:52:34,480 --> 00:52:40,960
+I don't expect it to have every single feature that, you know, a mixed panel or even Google Firebase or whatever would have necessarily.
+
+574
+00:52:41,120 --> 00:52:43,280
+But it seemed like it cared about the things I cared about.
+
+575
+00:52:44,000 --> 00:53:01,040
+But then as I've gotten to where I care more and more about different things because of how flexible the system is, I've been able to sort of very easily wrangle it into giving me some reports about the data that I'm interested in finding out.
+
+576
+00:53:02,240 --> 00:53:08,560
+And that has been compared to the tools I've used before, which admittedly it's been a while since I've played with most of them.
+
+577
+00:53:09,600 --> 00:53:15,040
+It's so easy to like get a 80% there version of the thing I'm looking for.
+
+578
+00:53:15,680 --> 00:53:18,880
+And that has been, you know, super helpful.
+
+579
+00:53:20,640 --> 00:53:32,880
+And so yeah,, you guys found the hack, which is if you don't say anything, Charlie will just keep talking because he can't stop.
+
+580
+00:53:33,200 --> 00:53:38,720
+And because I genuinely love Telemetry Deck, you know, it's going to be good things that come out.
+
+581
+00:53:40,320 --> 00:53:41,840
+We're both grinning from ear to ear.
+
+582
+00:53:42,000 --> 00:53:43,200
+So like, thank you so much.
+
+583
+00:53:44,880 --> 00:53:44,960
+Yeah.
+
+584
+00:53:45,680 --> 00:53:49,360
+Yeah, it's cool to see, to see like it grow.
+
+585
+00:53:49,680 --> 00:53:55,840
+I also watched it come from the beginning too, which also makes it, you know, feels a little more personal, which is fun to watch.
+
+586
+00:53:56,000 --> 00:54:00,560
+But I mean, it definitely feels like it's it's grown quite a bit in terms of.
+
+587
+00:54:01,040 --> 00:54:02,560
+user base and who all is using it.
+
+588
+00:54:02,960 --> 00:54:09,920
+And like we you kind of mentioned it earlier, but at some point, I don't remember if it was last year or the year before, uh, you took on investment.
+
+589
+00:54:10,160 --> 00:54:14,560
+And I'm curious what the, like, story is there, why you did that and what it's kind of enabled you to do.
+
+590
+00:54:15,760 --> 00:54:20,960
+So yeah, as Daniel said, the our biggest cost is the salary.
+
+591
+00:54:21,760 --> 00:54:34,000
+And until the end of August 2022, I was still in my old job, um, which was very, um, uh, exhausting.
+
+592
+00:54:34,320 --> 00:54:34,400
+Yeah.
+
+593
+00:54:35,200 --> 00:54:36,560
+To have like two full time.
+
+594
+00:54:36,560 --> 00:55:18,880
+full-time jobs and a family and household and everything so we and also um daniel had kept away his uh his money for the for the travel and um this budget was just coming to an end um so um yeah we had to to decide how how to go on with the company and how to free lisa from from her job and um we found this network of um women that want to support other women building a business.
+
+595
+00:55:20,160 --> 00:55:35,840
+And yeah, they understood the problem that there are not so many companies founded by women or with the women in the team and especially in the tech area.
+
+596
+00:55:37,360 --> 00:55:48,480
+So there was a really good support in that network and we found six so called business angels that invested in our company.
+
+597
+00:55:50,400 --> 00:55:52,320
+Not like a million or so.
+
+598
+00:55:53,120 --> 00:56:09,520
+I don't think we share the exact number, but it kept us going for a while with our salaries and with some license costs and smaller marketing campaigns and things like that.
+
+599
+00:56:12,240 --> 00:56:19,280
+And I think two of these women are data privacy lawyers themselves.
+
+600
+00:56:20,400 --> 00:56:21,280
+That feels very relevant.
+
+601
+00:56:22,560 --> 00:56:23,040
+Right, right.
+
+602
+00:56:24,960 --> 00:56:28,160
+They immediately understood what we are doing and how important it is.
+
+603
+00:56:28,480 --> 00:56:51,360
+And so we have like our own personal team of mentors and supporters and especially they especially supporters with their network and they are really well connected because of this network of women that want to support women owned businesses.
+
+604
+00:56:52,320 --> 00:57:08,480
+And yeah, profit a lot also from the marketing and PR perspective.
+
+605
+00:57:08,880 --> 00:57:08,960
+Yeah.
+
+606
+00:57:09,600 --> 00:57:10,240
+Well, that's cool.
+
+607
+00:57:10,400 --> 00:57:10,480
+Okay.
+
+608
+00:57:10,720 --> 00:57:24,000
+So it was mostly it was it was basically taken on to extend runway and also has all these benefits of, you know, a network of advisors and like people who understand the space and you can bounce ideas off of and everything.
+
+609
+00:57:25,040 --> 00:57:25,120
+Yes.
+
+610
+00:57:25,440 --> 00:57:25,520
+Yes.
+
+611
+00:57:26,160 --> 00:57:33,520
+Typically, you're looking for people that are not only giving you the money but can help you with something else.
+
+612
+00:57:34,000 --> 00:57:43,280
+For example, knowledge in the in the privacy law area or network or things like that.
+
+613
+00:57:43,680 --> 00:57:51,280
+And we have a really good match in that area in that perspective.
+
+614
+00:57:52,480 --> 00:57:59,280
+I'm sorry, I'm missing the important vocabulary, but I think you you understand that we are really happy with our business angels.
+
+615
+00:58:00,160 --> 00:58:08,640
+Yeah, no, I mean, it sounds like it's a really good partnership as well as, you know, the obvious like just cash and runway are also helpful.
+
+616
+00:58:09,360 --> 00:58:12,000
+And the marriage of those two is obviously a big deal.
+
+617
+00:58:12,800 --> 00:58:16,160
+So since then, how has the business been going?
+
+618
+00:58:17,520 --> 00:58:19,440
+Are you growing kind of how you're hoping to?
+
+619
+00:58:20,560 --> 00:58:32,320
+And like, one thing I'm curious about is, is the market segment changing at all from that sort of indie small developer long tail cohort that you were sort of targeting at the beginning?
+
+620
+00:58:33,520 --> 00:58:45,920
+So one thing that we did that was really important at the beginning of the year or I think end of last year is we went into a like we rented a cabin in the woods in the winter.
+
+621
+00:58:46,000 --> 00:58:48,240
+It had a one one of the walls was completely glass.
+
+622
+00:58:48,800 --> 00:58:50,720
+You could see over the snowy mountains.
+
+623
+00:58:50,880 --> 00:58:51,680
+It was really nice.
+
+624
+00:58:52,320 --> 00:59:00,560
+And we just spent a weekend in the woods cooking, drinking wine and plastering that window wall full of posters.
+
+625
+00:59:00,880 --> 00:59:01,280
+Oh man.
+
+626
+00:59:01,520 --> 00:59:02,720
+That sounds awesome.
+
+627
+00:59:02,960 --> 00:59:11,280
+I actually learned that Lisa has a very specific way of like pulling posters off the block, like you're not supposed to pull it, pull it from the bottom upwards because then it kind of curls inward.
+
+628
+00:59:11,520 --> 00:59:11,600
+Yeah.
+
+629
+00:59:12,080 --> 00:59:14,640
+And so it doesn't stick flush against the wall.
+
+630
+00:59:14,720 --> 00:59:14,880
+Right.
+
+631
+00:59:15,040 --> 00:59:21,040
+So you have to have it, have to pull it from the side or something and then it kind of sticks flush against the wall and it kind of stays there, which is very cool.
+
+632
+00:59:21,920 --> 00:59:24,880
+This is the most important lesson from this podcast for the listeners.
+
+633
+00:59:27,920 --> 00:59:33,200
+I mean, that's a good point though, because yeah, then you end up with a wall of all these like sort of flipped up post it notes.
+
+634
+00:59:33,440 --> 00:59:33,600
+Yeah.
+
+635
+00:59:34,080 --> 00:59:42,640
+And so what we did, we were kind of, we were kind of like, okay, how like, what are our, which are the customers that we want to reach and how can we reach them?
+
+636
+00:59:42,960 --> 00:59:44,800
+Like, what are the features that we should work on?
+
+637
+00:59:45,040 --> 00:59:47,120
+Like, what are the messages that we should, should do?
+
+638
+00:59:47,280 --> 00:59:49,360
+Like, how should we, how should we continue?
+
+639
+00:59:49,600 --> 00:59:51,360
+Like, let's have a, let's have a little bit of a plan.
+
+640
+00:59:52,240 --> 00:59:59,680
+And one of the most important decisions we made was that, uh, before we kind of were like, okay, we're in.
+
+641
+01:00:00,160 --> 01:00:05,120
+analytics and analytics kind of talk to analytics people kind of talk to the marketing people.
+
+642
+01:00:05,600 --> 01:00:08,240
+So these must be our customers, but we kind of didn't make headway.
+
+643
+01:00:08,800 --> 01:00:19,680
+But where we did make headway without even trying was with developers because we really are able to very, very well talk to developers because we're just very nerdy or nerdy people ourselves.
+
+644
+01:00:21,920 --> 01:00:46,880
+And so we were like, okay, is there, is there a thing where we can just like talk to the developers and they will kind of like bring us into their, like, jobs and they will bring us into their project and we kind of googled around it or duck duck went around and found out that there's actually a whole emerging field of like developer marketing.
+
+645
+01:00:47,360 --> 01:00:49,920
+Like please don't have me watch the webinar.
+
+646
+01:00:50,160 --> 01:00:51,200
+Just tell me what the price is.
+
+647
+01:00:51,600 --> 01:00:54,880
+Just give me the documentation instead of like paywalling it or whatever.
+
+648
+01:00:55,360 --> 01:00:57,520
+And we were like, hey, we're doing half of these things already.
+
+649
+01:00:58,320 --> 01:00:59,440
+And so we were like, okay.
+
+650
+01:01:00,160 --> 01:01:03,520
+So this year, let's try marketing to developers.
+
+651
+01:01:03,840 --> 01:01:04,960
+So we're not a B2B business.
+
+652
+01:01:05,200 --> 01:01:06,000
+We're not business to business.
+
+653
+01:01:06,160 --> 01:01:08,400
+We' B2D, business to developer.
+
+654
+01:01:10,480 --> 01:01:13,280
+And that really was very helpful.
+
+655
+01:01:14,960 --> 01:01:21,600
+So when we started focusing on that, it was really, we got an immediate response.
+
+656
+01:01:22,400 --> 01:01:32,480
+We got, like, so we improved our website, we improved our messaging, and we kind of leaned into what we were already doing, like just the whole word of mouth, like.
+
+657
+01:01:33,680 --> 01:01:54,960
+Yeah, we stopped wasting time on other things, meaning things that were geared more to targeting the wrong audience in your arguments and in your posts and marketing campaigns and things like that.
+
+658
+01:01:55,680 --> 01:02:00,560
+So you're focusing on the developer and what exactly do you mean by that?
+
+659
+01:02:00,800 --> 01:02:12,720
+Like does that mean, you know, the developer within an org like the ICs themselves or are you meaning more like those smaller to mid size indie developers?
+
+660
+01:02:13,280 --> 01:02:16,000
+where the sort of head of the company is a developer.
+
+661
+01:02:16,400 --> 01:02:20,800
+Like what's what kind of that cohort you're talking about when you say that?
+
+662
+01:02:21,600 --> 01:02:22,880
+Well, okay.
+
+663
+01:02:23,280 --> 01:02:26,400
+So one of the one of the really important customers are still the indies.
+
+664
+01:02:27,280 --> 01:02:44,720
+Those kind of keep us on top and they keep us well known and they keep they just like they they they talk about us which is super important because we we find that once someone knows about us they and like they are like they are like they realize like the value that we can give them.
+
+665
+01:02:45,360 --> 01:02:49,120
+And they then they're very likely to actually try us out or at least read about us.
+
+666
+01:02:49,360 --> 01:02:49,440
+Yeah.
+
+667
+01:02:50,320 --> 01:02:53,520
+Whereas like our main problem basically is getting known.
+
+668
+01:02:53,680 --> 01:02:55,040
+So hi launch listeners.
+
+669
+01:02:55,600 --> 01:02:55,680
+Yeah.
+
+670
+01:02:58,560 --> 01:02:58,960
+So, yeah.
+
+671
+01:02:59,040 --> 01:03:14,800
+So, um, so the indie community is very important, but also, um, many indie developers or many just developers in that kind of community, they will have a day job and then they will go to work one day and the product owner will be like, hey, um, so we need to add analytics.
+
+672
+01:03:15,040 --> 01:03:19,360
+And then that person will hopefully raise their hand and say like, hey, I know a good solution for this.
+
+673
+01:03:19,840 --> 01:03:21,120
+And so that's really important too.
+
+674
+01:03:21,600 --> 01:03:26,960
+And also that gives that gives potential customers a lot of trust if we are used by more people.
+
+675
+01:03:28,960 --> 01:03:37,280
+And of course, what that also means is like that secondary like audience is then like people who are basically product owners.
+
+676
+01:03:37,840 --> 01:03:49,120
+They don't have to be developers, but they are kind of technically minded because they are developing an app as a product, even though they have employees who do the coding for them, maybe, like they still think about how to improve that app.
+
+677
+01:03:49,360 --> 01:03:54,800
+And so those people are a way better audience and target audience than just marketing people.
+
+678
+01:03:55,920 --> 01:04:01,280
+And Lisa always says that the marketing and developers hate each other and we can kind of make that disappear that way.
+
+679
+01:04:02,560 --> 01:04:06,960
+And the third important target group is people who work in compliance.
+
+680
+01:04:07,840 --> 01:04:19,360
+So because of the GDPR, there's like a whole bunch of people that are like internal or external data privacy officers or data privacy lawyer.
+
+681
+01:04:19,920 --> 01:04:23,440
+Yeah, isn't that like a required position once a company is a certain size?
+
+682
+01:04:23,600 --> 01:04:23,680
+Yeah.
+
+683
+01:04:25,600 --> 01:04:34,480
+And I talk to this kind of people mostly via LinkedIn because they are very well connected there.
+
+684
+01:04:35,360 --> 01:04:38,000
+And very visible and findable.
+
+685
+01:04:39,520 --> 01:04:48,880
+And these are the ones that get asked, okay, we want to avoid Google products or we don't want to send data to the US or things like that.
+
+686
+01:04:49,120 --> 01:04:51,760
+It's an important thing here in Europe.
+
+687
+01:04:53,760 --> 01:05:01,200
+And they can then recommend us as a solution and that's what they like.
+
+688
+01:05:01,840 --> 01:05:03,200
+They want to help their customers.
+
+689
+01:05:03,440 --> 01:05:05,440
+So it's a win-win situation.
+
+690
+01:05:06,080 --> 01:05:19,600
+And also compliance offices or compliance departments in really big enterprises, they are also a huge fan of us, but they have like horrible sales processes.
+
+691
+01:05:20,240 --> 01:05:20,320
+Yeah.
+
+692
+01:05:21,520 --> 01:05:21,600
+Yeah.
+
+693
+01:05:22,960 --> 01:05:40,480
+So what I'm curious like for both of those, for the devel compliance officers, like what are the types of things you said you're focusing less on on things that aren't as important for those and more on things that are.
+
+694
+01:05:40,960 --> 01:05:44,640
+What are the types of things like what's something for switching to developers?
+
+695
+01:05:45,200 --> 01:06:01,200
+Yeah, we we don't write like white papers that white papers are very important when you do enterprise marketing because people want to download something and print it out and bring it to a meeting to show that it's it's a serious thing, right?
+
+696
+01:06:03,120 --> 01:06:08,960
+Usually you create something that's gated content and then you ask for an email address or a phone number.
+
+697
+01:06:09,360 --> 01:06:09,600
+Right.
+
+698
+01:06:10,320 --> 01:06:18,720
+And then you contact these people later because you know this person is interested in this kind of content, so there must be a reason.
+
+699
+01:06:18,880 --> 01:06:19,200
+Right.
+
+700
+01:06:19,920 --> 01:06:30,880
+And in developer marketing, you really have to avoid this kind of I give you something, you give me your email address exchange.
+
+701
+01:06:31,760 --> 01:06:38,000
+They'll bounce very fast, especially someone who's looking for something privacy focused probably more so.
+
+702
+01:06:38,240 --> 01:06:38,320
+Yeah.
+
+703
+01:06:38,960 --> 01:06:39,120
+Right.
+
+704
+01:06:39,520 --> 01:06:45,760
+And on the other hand, you must provide certain information really fast.
+
+705
+01:06:46,880 --> 01:06:48,480
+Daniel mentioned the pricing.
+
+706
+01:06:49,040 --> 01:06:54,480
+It's very important that you show your prices and not only have these contact sales buttons.
+
+707
+01:06:54,800 --> 01:06:54,880
+Yeah.
+
+708
+01:06:56,400 --> 01:07:03,440
+And the other thing is that you need to have a really good documentation.
+
+709
+01:07:04,640 --> 01:07:09,440
+And we this is for just two examples.
+
+710
+01:07:10,000 --> 01:07:17,680
+of things we try to do and try to show very easily to someone who's interested in our product.
+
+711
+01:07:19,440 --> 01:07:26,240
+To make it very easy to decide, okay, this is how much it costs and this is how I can help myself if I have a problem.
+
+712
+01:07:27,760 --> 01:07:36,480
+And also it helps us be more efficient because we, it's just us two and two people that help us part time.
+
+713
+01:07:38,560 --> 01:07:41,840
+We can't deliver like a 24 hour support thing.
+
+714
+01:07:42,720 --> 01:07:48,400
+So it's in our own interest too that the documentation just works really good.
+
+715
+01:07:49,200 --> 01:07:50,560
+How have you been able to focus?
+
+716
+01:07:50,800 --> 01:07:59,920
+Because that's, I mean, good documentation is a, I think, huge deal for something developer focused like this, but it's a huge investment too.
+
+717
+01:08:00,240 --> 01:08:12,960
+Like how, how have you been structurally making sure that you're keeping that up and making it, you know, high quality enough that one, it's people see it as good and two, it lowers the amount of support that you're in the app getting.
+
+718
+01:08:13,120 --> 01:08:20,560
+I think one of the main things that we do is wh is whenever we get it, we do get a support question and that is not answered by our documentation.
+
+719
+01:08:20,720 --> 01:08:22,960
+We just try to update the documentation right away.
+
+720
+01:08:24,240 --> 01:08:25,120
+So that's very important.
+
+721
+01:08:25,680 --> 01:08:40,480
+The other thing is that whenever I work on a new feature or something, it really helps me write the documentation, it really helps me clarify in my mind the kind of APIs or user interfaces that we want to build for that.
+
+722
+01:08:41,120 --> 01:08:46,400
+So I often end up writing half of the documentation before even starting the feature and then finishing it.
+
+723
+01:08:46,720 --> 01:08:48,800
+It's documentation driven development.ment.
+
+724
+01:08:49,120 --> 01:08:49,280
+Right.
+
+725
+01:08:50,240 --> 01:08:54,480
+We do a lot of test driven on the back end, but documentation driven is also very important.
+
+726
+01:08:54,880 --> 01:08:58,880
+Yeah, I mean, I think it's a big deal if you want it to feel natural.
+
+727
+01:08:59,200 --> 01:09:07,520
+Because yeah, whenever you're having to write a doc or a guide and it's really awkward, it's very quick that it's like, oh, this is how everybody's going to experience this.
+
+728
+01:09:07,680 --> 01:09:08,880
+It may have made sense technically.
+
+729
+01:09:09,440 --> 01:09:14,240
+What we also have is our documentation is just a bunch of markdown files that are in a public GitHub repository.
+
+730
+01:09:14,400 --> 01:09:20,320
+So if you find a problem with them or have a suggestion, you can just file a pull request against that thing.
+
+731
+01:09:20,800 --> 01:09:21,600
+Do you get that a lot?
+
+732
+01:09:22,560 --> 01:09:27,040
+No, we get we get like once every two months or so we get a pull request.
+
+733
+01:09:27,120 --> 01:09:29,920
+Hey, but that's enough to be able to sell that as a story though.
+
+734
+01:09:30,640 --> 01:09:50,880
+And it is not in a cynical way, although maybe that's how I would treat it, but Yeah, and I mean, it's it's not it's not a bad thing, you know, like so, and we also like And so the the fourth thing is one of our coworkers or one of our coworkers, Marina, they are our technical documentation writer.
+
+735
+01:09:51,200 --> 01:10:14,880
+And this is really helpful because if I would write all the documentation, it would take me forever and I love writing the documentation too, but also I can be kind of in my head and we want to talk to developers, but it should still be understandable somehow and not go too deep into Well, then you have a lot of the inside information that makes it a little harder to explain it to an outside person, right?
+
+736
+01:10:15,600 --> 01:10:16,160
+Exactly that.
+
+737
+01:10:16,720 --> 01:10:26,640
+And so what we kind of ended up with is sometimes I will just write the bullet points or just like have like my internal notes, pass them on to Marina and they will actually.
+
+738
+01:10:27,520 --> 01:10:29,600
+form that into a coherent article.
+
+739
+01:10:29,840 --> 01:10:34,400
+And if they have a question, then they can ask me directly or kind of look into the code or whatever.
+
+740
+01:10:34,800 --> 01:10:38,160
+And so that actually helps improve the quality of the documentation as well.
+
+741
+01:10:39,280 --> 01:10:39,920
+That's awesome.
+
+742
+01:10:40,640 --> 01:10:41,120
+So okay.
+
+743
+01:10:41,440 --> 01:10:46,480
+So we're like starting to bump up against time, so I'm going to try and like wrap things up.
+
+744
+01:10:46,720 --> 01:10:51,360
+But before we get to, you know, that final question, kind of switch gears.
+
+745
+01:10:51,520 --> 01:10:52,560
+You said that that's worked for you.
+
+746
+01:10:52,640 --> 01:10:54,720
+How have you, like, you've seen that bear out?
+
+747
+01:10:54,880 --> 01:10:58,480
+Like it's starting to kind of move the needle, switching your sort of focus?
+
+748
+01:10:59,280 --> 01:10:59,280
+Yeah.
+
+749
+01:11:01,120 --> 01:11:02,160
+We're still not profitable.
+
+750
+01:11:03,680 --> 01:11:09,120
+So spread the word, like come on, people help us, help us out by telling all your friends about us.
+
+751
+01:11:10,080 --> 01:11:13,840
+But we're closer and we're also getting larger customers.
+
+752
+01:11:14,320 --> 01:11:19,280
+Like our newest, largest customer is now an actual enterprise organization.
+
+753
+01:11:19,520 --> 01:11:24,240
+It's the public transport company for Augsburg, our hometown.
+
+754
+01:11:24,400 --> 01:11:35,920
+And so they have an app where you can book train tickets and or tram tickets, bus tickets, find out like routes across the city using the different public transport options and stuff like that.
+
+755
+01:11:36,400 --> 01:11:38,320
+And we're in that app now and that's really cool.
+
+756
+01:11:38,880 --> 01:11:46,320
+And to be there, we've had to survive the whole corporate process basically from sales.
+
+757
+01:11:46,720 --> 01:11:49,360
+Yeah, you've learned probably a million lessons, right?
+
+758
+01:11:50,000 --> 01:11:56,960
+Yeah, to, oh yeah, we need these fifteen times the types of documents to, oh yeah, we need a Yeah, it's ironic.
+
+759
+01:11:57,520 --> 01:12:04,800
+You have to pass all the data privacy checks because they don't believe you when you say we don't process any personal data.
+
+760
+01:12:05,040 --> 01:12:05,120
+Yeah.
+
+761
+01:12:06,080 --> 01:12:12,800
+But still, every, everyone in that company who has something to do with privacy, um, has to check us.
+
+762
+01:12:13,280 --> 01:12:16,800
+And they are on a different level of technical knowledge.
+
+763
+01:12:16,960 --> 01:12:21,600
+So you have to explain it like in different levels via paperwork.
+
+764
+01:12:22,480 --> 01:12:24,960
+And I think it took us a whole year.
+
+765
+01:12:26,080 --> 01:12:26,160
+Yeah.
+
+766
+01:12:27,120 --> 01:12:30,160
+Man, that's, that's like, you know, that's crazy.
+
+767
+01:12:30,400 --> 01:12:33,040
+But also it's, uh, it's really exciting.
+
+768
+01:12:33,280 --> 01:12:39,360
+Like, you know, each, each time you do that, like those first six hundred people you got, which are probably smaller people.
+
+769
+01:12:40,080 --> 01:12:44,400
+You probably learned a bunch of lessons there that you could carry to the next and make that process easier.
+
+770
+01:12:44,880 --> 01:12:46,640
+And, you know, this is just another one of those.
+
+771
+01:12:46,880 --> 01:12:56,880
+As long as you keep growing, you're going to keep, uh, running into new, like, challenges that will then make getting the next version of that same sized company easier.
+
+772
+01:12:57,200 --> 01:12:58,640
+You start generating playbooks and everything.
+
+773
+01:12:58,880 --> 01:13:00,640
+And so, uh, that's really cool.
+
+774
+01:13:01,360 --> 01:13:04,240
+I guess, I guess we can start, we can start the wrap up process here.
+
+775
+01:13:04,560 --> 01:13:08,480
+Uh, so I'll, we'll start with you, Daniel, because I think I started with Lisa earlier.
+
+776
+01:13:08,640 --> 01:13:18,800
+So I'll ask you the question and then we'll get to Lisa, the question I ask everyone to end this show, which is, what is a person or people out there that have inspired you and your work that you'd recommend others to check out?
+
+777
+01:13:19,520 --> 01:13:19,760
+All right.
+
+778
+01:13:20,400 --> 01:13:30,000
+So I've thought long and hard about this because, like, a huge amount of people automatically spring to mind, like, people who have mentored me, people I've learned from, most of them are developers.
+
+779
+01:13:31,520 --> 01:13:37,520
+The thing is, when I just mentioned someone in our community, I would then have to provide a link to their work.
+
+780
+01:13:38,240 --> 01:13:43,520
+And ever since the great Twitter implosion of 2003, it's kind of hard to find people online.
+
+781
+01:13:43,680 --> 01:13:44,880
+Like, people are inspired.
+
+782
+01:13:44,880 --> 01:13:46,480
+People are like all these show nuts.
+
+783
+01:13:46,720 --> 01:13:46,800
+Yeah.
+
+784
+01:13:48,320 --> 01:13:51,360
+Um, so, so, yeah, I can't really.
+
+785
+01:13:51,600 --> 01:13:58,080
+So I thought, okay, so what I'm, what I'm going to tell you is some, some one that inspires me is Trent Reznor of Nine Inch Nail.
+
+786
+01:13:58,320 --> 01:13:58,720
+Oh yeah.
+
+787
+01:13:58,960 --> 01:13:59,840
+That's my favorite band.
+
+788
+01:14:00,640 --> 01:14:12,480
+And what I really like about it, besides just the really cool sounds and the really cool music, is that he's one of those people who, um, who had very like significant life changes.
+
+789
+01:14:13,120 --> 01:14:34,400
+And I think he was, he was a drug abuser and kind of, kind of lifted himself out of that and just like went through so many phases and still took his music with him and changed the music in a way that is still relevant and cool and fresh and and it like expresses what he likes, what he thinks, what he feels, even though he changed so much.
+
+790
+01:14:34,640 --> 01:14:39,440
+And so, yeah, I just love listening to him and I'm really I'm really impressed by him as a person.
+
+791
+01:14:40,240 --> 01:14:50,320
+Many, many, many lines of code have been written by well, I was going to say me, just millions of people everywhere by his social network soundtrack with Radakus Ross.
+
+792
+01:14:50,480 --> 01:14:50,640
+Totally.
+
+793
+01:14:50,640 --> 01:14:50,640
+Yeah, I think it's right.
+
+794
+01:14:50,800 --> 01:14:51,600
+Totally like, yeah.
+
+795
+01:14:51,760 --> 01:14:54,400
+That one, I hard, hard, same on there.
+
+796
+01:14:54,480 --> 01:14:56,400
+And then I think, is it ghosts?
+
+797
+01:14:56,480 --> 01:14:57,600
+Oh, ghosts, one of those.
+
+798
+01:14:57,680 --> 01:14:58,480
+That's what I was going to say.
+
+799
+01:14:59,120 --> 01:15:00,320
+Every time I mention it, people bring that up.
+
+800
+01:15:00,480 --> 01:15:02,080
+And then I'm like, oh yeah, I forgot about that.
+
+801
+01:15:02,160 --> 01:15:03,280
+And I'll listen to it for a little bit.
+
+802
+01:15:04,640 --> 01:15:05,520
+Yeah, that's a good one.
+
+803
+01:15:05,760 --> 01:15:08,320
+Okay, I'll, the same question then for you, Lisa.
+
+804
+01:15:08,880 --> 01:15:18,080
+Yeah, so I also want to recommend someone I never met and this person doesn't know I exist, but I follow her very closely.
+
+805
+01:15:18,720 --> 01:15:20,240
+It's Meredith Whitaker.
+
+806
+01:15:20,640 --> 01:15:33,280
+She's the president of the Signal is a chat messenger app, but also has a very strong focus on privacy and to end crypted.
+
+807
+01:15:34,320 --> 01:15:47,680
+So it's a safe way of communication and a lot of our business development is based on Signal communication because we Danielle and I are both working from our homes.
+
+808
+01:15:49,360 --> 01:15:54,880
+Yeah, and she's like speaking up on political topics.
+
+809
+01:15:55,600 --> 01:15:59,040
+So there's a big up going on in the European Union.
+
+810
+01:16:00,160 --> 01:16:07,280
+They want to break, like basically, the there's a secrecy, a secret of communication.
+
+811
+01:16:08,000 --> 01:16:18,240
+It's provided by law, but they want to break it to catch the bad guys and Signal would be directly affected by that.
+
+812
+01:16:18,640 --> 01:16:23,040
+So she's very active and gets interviewed a lot.
+
+813
+01:16:23,360 --> 01:16:30,960
+And yeah, I just she's a role model because she's also like a deep in privacy.
+
+814
+01:16:32,400 --> 01:16:35,360
+She's a woman in that business raising her voice.
+
+815
+01:16:36,000 --> 01:16:38,000
+And this really inspires me.
+
+816
+01:16:38,240 --> 01:16:39,680
+I would love to meet her one day.
+
+817
+01:16:40,480 --> 01:16:42,480
+But she always posts like afterwards.
+
+818
+01:16:42,800 --> 01:16:45,280
+I was at that event when I went there.
+
+819
+01:16:45,440 --> 01:16:45,760
+Oh man.
+
+820
+01:16:46,480 --> 01:16:50,400
+So, yeah, I would love to meet her some day.
+
+821
+01:16:51,120 --> 01:16:52,000
+Where is Signal based?
+
+822
+01:16:52,160 --> 01:16:52,640
+I don't remember.
+
+823
+01:16:52,720 --> 01:16:54,480
+Is it like, it's European, right?
+
+824
+01:16:55,040 --> 01:16:56,640
+I think in Switzerland.
+
+825
+01:16:57,040 --> 01:17:00,320
+I was going to say Switzerland and then I backed off because I always get wrong.
+
+826
+01:17:00,960 --> 01:17:11,600
+My husband just mentioned that they may made a setup with the foundation and so on that they are not catchable by new regulations.
+
+827
+01:17:12,320 --> 01:17:13,520
+I don't know how this works.
+
+828
+01:17:13,920 --> 01:17:17,920
+I think that's why they are in a non EU country.
+
+829
+01:17:18,400 --> 01:17:19,680
+I guess that makes sense, yeah.
+
+830
+01:17:20,160 --> 01:17:21,920
+But I'm sorry, I'm not sure about that.
+
+831
+01:17:22,160 --> 01:17:23,360
+No, I yeah, I was just curious.
+
+832
+01:17:24,160 --> 01:17:27,040
+Yeah, that would be, I mean, it affects you all too.
+
+833
+01:17:27,200 --> 01:17:35,280
+Obviously it affects everyone, but in terms of business, like all of the kind of flare-ups of anti-encryption.
+
+834
+01:17:35,760 --> 01:17:42,640
+laws that have been popping up and then like not necessarily going away, just kind of fizzling away in awkward ways.
+
+835
+01:17:43,600 --> 01:17:45,600
+It's definitely been so uncomfortable.
+
+836
+01:17:46,720 --> 01:18:00,560
+For everyone who's interested in that because it's a very important days when it comes to the final process of this thing becoming a law, check out the hashtag chat control.
+
+837
+01:18:04,640 --> 01:18:06,240
+You can find it in social media.
+
+838
+01:18:06,960 --> 01:18:12,080
+A lot of people are writing about this and it's a lot of European countries are blocking it.
+
+839
+01:18:12,320 --> 01:18:16,320
+So they just postponed Daniel, what is abstemung?
+
+840
+01:18:16,880 --> 01:18:20,480
+Where people raise their hands and they yes or no and the majority, what is it called?
+
+841
+01:18:20,800 --> 01:18:21,120
+A vote.
+
+842
+01:18:22,080 --> 01:18:22,400
+A vote.
+
+843
+01:18:22,560 --> 01:18:22,640
+Yeah.
+
+844
+01:18:23,680 --> 01:18:30,080
+They just canceled or postponed a vote because they knew that not enough European countries would agree.
+
+845
+01:18:30,800 --> 01:18:44,880
+So hopefully this thing gets cancelled, but it's like a crime and privacy policy, lawmaking and even Ashton Cutter is involved in that, but I leave that hanging on here as a spoiler.
+
+846
+01:18:45,680 --> 01:18:49,600
+Go on a deep dive into that if you if you want.
+
+847
+01:18:51,280 --> 01:18:53,200
+He's not playing a good role in it.
+
+848
+01:18:53,600 --> 01:18:54,000
+Oh, no.
+
+849
+01:18:54,240 --> 01:18:54,320
+Okay.
+
+850
+01:18:55,040 --> 01:18:55,360
+Interesting.
+
+851
+01:18:55,440 --> 01:18:57,440
+I'll have to I'll have to look that up after this.
+
+852
+01:18:58,320 --> 01:18:58,480
+Cool.
+
+853
+01:18:58,720 --> 01:18:58,800
+Okay.
+
+854
+01:18:59,120 --> 01:19:01,520
+Well, thank you both for joining me.
+
+855
+01:19:01,600 --> 01:19:07,760
+This is, I mean, I am a, as I said, multiple times, I'm a very happy customer of Telemetry Deck.
+
+856
+01:19:08,320 --> 01:19:10,240
+I've really, I've really enjoyed it.
+
+857
+01:19:10,400 --> 01:19:11,200
+It's it's been.
+
+858
+01:19:12,800 --> 01:19:19,520
+Sometimes I think I abuse is the wrong word, but like, it is my hammer, so everything is a nail.
+
+859
+01:19:19,760 --> 01:19:27,440
+I often use it to solve problems where there's a better tool for it, but I know I can do it much faster in Telemetry Deck.
+
+860
+01:19:27,520 --> 01:19:36,800
+And so there's been a bunch of cases where I've sprung something in there really quick, in a quick and dirty way, and then maybe I'll go use something else for, you know, otherwise.
+
+861
+01:19:37,040 --> 01:19:47,280
+But the ability to quickly spin up insights is what they're called, but, you know, graphs that showcase, uh, something interesting.
+
+862
+01:19:47,680 --> 01:19:50,720
+I'm trying to solve some problem or are my users doing XYZ?
+
+863
+01:19:51,680 --> 01:19:55,200
+That has been extremely satisfying.
+
+864
+01:19:55,760 --> 01:19:56,640
+So okay.
+
+865
+01:19:56,880 --> 01:20:04,560
+So you get an invitation for a case study afterwards because I'm really interested in learning more about that.
+
+866
+01:20:05,040 --> 01:20:10,320
+Well, yeah, I definitely, I, I, as I've already shown you, I will talk a lot about it.
+
+867
+01:20:10,560 --> 01:20:10,640
+So.
+
+868
+01:20:11,760 --> 01:20:13,120
+Thank you so much for having us though.
+
+869
+01:20:13,200 --> 01:20:17,760
+And I am, I don't know about Lisa, but I am like a really, really heavy user of dark noise as well.
+
+870
+01:20:18,000 --> 01:20:19,840
+So the respect goes both ways.
+
+871
+01:20:22,480 --> 01:20:22,800
+Thank you.
+
+872
+01:20:23,600 --> 01:20:26,640
+I'm a heavy listener of your podcast, so I never miss an episode.
+
+873
+01:20:26,720 --> 01:20:27,200
+Oh, wow.
+
+874
+01:20:27,360 --> 01:20:27,440
+Okay.
+
+875
+01:20:27,760 --> 01:20:28,400
+Well, thank you.
+
+876
+01:20:28,560 --> 01:20:29,360
+Now I'm blushing.
+
+877
+01:20:30,000 --> 01:20:32,400
+So we'll move on from the talk about me.
+
+878
+01:20:32,640 --> 01:20:35,280
+So where can people find both of you and your work?
+
+879
+01:20:35,520 --> 01:20:36,320
+We'll start with you, Lisa.
+
+880
+01:20:38,160 --> 01:20:39,520
+You mean the social accounts?
+
+881
+01:20:39,760 --> 01:20:39,840
+Yeah.
+
+882
+01:20:40,080 --> 01:20:42,000
+Oh well, on the internet or not.
+
+883
+01:20:42,480 --> 01:20:42,560
+Okay.
+
+884
+01:20:43,680 --> 01:20:46,640
+So right now I'm very active on LinkedIn.
+
+885
+01:20:47,360 --> 01:20:48,560
+You can just look up my name.
+
+886
+01:20:48,800 --> 01:20:51,440
+There are not so many people with my last name.
+
+887
+01:20:52,560 --> 01:20:57,680
+And when I blog, it everything shows up on the Telemetry Deck website.
+
+888
+01:20:58,000 --> 01:21:05,280
+We also post everything we write in our newsletter that comes like every two weeks.
+
+889
+01:21:06,240 --> 01:21:15,200
+And on the network we don't mention, I am at meet underline Lisa.
+
+890
+01:21:16,480 --> 01:21:25,840
+And I just created a Blue Sky account, but I don't know how the handle is because it was like somehow different because it was already occupied.
+
+891
+01:21:26,320 --> 01:21:26,400
+Okay.
+
+892
+01:21:26,800 --> 01:21:27,280
+Well, yeah.
+
+893
+01:21:28,000 --> 01:21:37,200
+I'm not sure if you are yeah, if you are allowed to post blue sky links on a Twitter or if you get blocked immediately.
+
+894
+01:21:37,440 --> 01:21:37,920
+I'm not sure.
+
+895
+01:21:38,240 --> 01:21:39,920
+Who knows when this episode comes out?
+
+896
+01:21:40,640 --> 01:21:43,120
+You might there might not even be a Twitter to go to.
+
+897
+01:21:43,360 --> 01:21:44,560
+It's it's always a mystery.
+
+898
+01:21:45,760 --> 01:21:46,000
+Right.
+
+899
+01:21:46,400 --> 01:21:46,480
+Okay.
+
+900
+01:21:46,880 --> 01:21:47,840
+And then Daniel.
+
+901
+01:21:48,800 --> 01:21:49,120
+Right.
+
+902
+01:21:50,080 --> 01:21:50,160
+Yeah.
+
+903
+01:21:50,480 --> 01:21:57,280
+So like, let me start with telemetrydeck dot com dot That's where you can find everything telemetrydeck and everything else is linked from there as well.
+
+904
+01:21:58,000 --> 01:22:01,520
+I'm mostly active social on social networks on Mastodon.
+
+905
+01:22:01,680 --> 01:22:05,440
+So you can find me at Daniel at social dot telemetrydeck dot com.
+
+906
+01:22:05,680 --> 01:22:11,440
+By the way, Lisa, you are Lisa at social dot telemetrydeck dot com, but you post not as often as I do.
+
+907
+01:22:13,520 --> 01:22:16,400
+I think I have a Blue Sky account, but I never, I never post there.
+
+908
+01:22:16,800 --> 01:22:19,680
+I'm break the system on Twitter, but I kind of also abandoned that.
+
+909
+01:22:19,840 --> 01:22:23,520
+So right now I'm on Mastodon waiting for either threads to be available in the EU.
+
+910
+01:22:24,160 --> 01:22:29,440
+I was about to make the joke about threads and I don't know, like CU privacy-centric problems.
+
+911
+01:22:30,000 --> 01:22:30,080
+Yeah.
+
+912
+01:22:30,320 --> 01:22:32,320
+Maybe they never expect to make a new deck.
+
+913
+01:22:32,320 --> 01:22:32,320
+Don't tell me to do that.
+
+914
+01:22:32,640 --> 01:22:33,040
+Maybe they should.
+
+915
+01:22:33,520 --> 01:22:33,840
+Oh, they should.
+
+916
+01:22:34,000 --> 01:22:34,240
+They should.
+
+917
+01:22:34,560 --> 01:22:35,920
+That's what the hold up is, I bet.
+
+918
+01:22:36,000 --> 01:22:36,320
+Zuck.
+
+919
+01:22:36,560 --> 01:22:37,520
+Zuck, write minimo.
+
+920
+01:22:37,760 --> 01:22:37,840
+Yeah.
+
+921
+01:22:39,840 --> 01:22:40,240
+Awesome.
+
+922
+01:22:40,400 --> 01:22:41,600
+Well, thank you again for coming.
+
+923
+01:22:41,920 --> 01:22:42,640
+This was a blast.
+
+924
+01:22:43,440 --> 01:22:44,000
+Thank you so much.
+
+925
+01:22:44,560 --> 01:22:46,080
+It was so much joy talking to you.
+
+926
+01:22:46,240 --> 01:22:47,680
+Thanks, Chani, for the invitation.
+
+927
+01:22:50,640 --> 01:22:51,440
+Thanks for listening.
+
+928
+01:22:52,000 --> 01:22:54,320
+This episode was edited by Jonathan Ruiz.
+
+929
+01:22:54,720 --> 01:23:01,040
+If you'd like to discuss the show, you can find me on Twitter at underscore chuckeeeecee or tweet the show directly at launch.fm.
+
+930
+01:23:01,680 --> 01:23:09,520
+I'd really appreciate a rating or review in your podcast app of choice, and you can find show notes and more at launchedfm.com.
