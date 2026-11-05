@@ -1,0 +1,3503 @@
+1
+00:00:00,240 --> 00:00:06,720
+[SPEAKER_00] Somehow I see that a big comedian in Sweden named Magnus Petnir, he posts on Twitter like, Hey, can someone make me an app?
+
+2
+00:00:07,200 --> 00:00:08,880
+[SPEAKER_00] And I have no idea how to build an app.
+
+3
+00:00:09,200 --> 00:00:10,000
+[SPEAKER_00] I didn't have a Mac.
+
+4
+00:00:10,480 --> 00:00:11,920
+[SPEAKER_00] I didn't know what Xcode was.
+
+5
+00:00:12,160 --> 00:00:15,120
+[SPEAKER_01] I knew nothing, but I was like, Well, you didn't even have an iPhone at this point, right?
+
+6
+00:00:15,280 --> 00:00:18,480
+[SPEAKER_00] You just saw No, no, I've just seen one.
+
+7
+00:00:19,360 --> 00:00:23,200
+[SPEAKER_00] So I write to Magnus like, Hey, I can do it for you, no problem.
+
+8
+00:00:23,440 --> 00:00:27,040
+[SPEAKER_00] So then I go back to that store and I was like, Hey, okay, I've taken on building an app.
+
+9
+00:00:27,280 --> 00:00:28,320
+[SPEAKER_00] I think I need a Mac, right?
+
+10
+00:00:28,480 --> 00:00:29,280
+[SPEAKER_00] And there's a gap.
+
+11
+00:00:29,520 --> 00:00:31,760
+[SPEAKER_00] So I asked them like, Hey, could you sell one cheap for me?
+
+12
+00:00:32,000 --> 00:00:35,040
+[SPEAKER_00] And they said like, Yeah, we have a few old ones that have been returned or whatever.
+
+13
+00:00:35,280 --> 00:00:36,640
+[SPEAKER_00] So I bought that for $150.
+
+14
+00:00:37,200 --> 00:00:37,760
+[SPEAKER_01] Oh, wow.
+
+15
+00:00:37,920 --> 00:00:39,520
+[SPEAKER_00] I think it was a MacBook G4.
+
+16
+00:00:39,840 --> 00:00:42,320
+[SPEAKER_01] Oh, so that's like a power PC then, right?
+
+17
+00:00:42,720 --> 00:00:43,040
+[SPEAKER_00] Exactly.
+
+18
+00:00:43,120 --> 00:00:43,760
+[SPEAKER_00] And this was wow.
+
+19
+00:00:43,840 --> 00:00:44,480
+[SPEAKER_00] I didn't know what it was.
+
+20
+00:00:44,560 --> 00:00:46,080
+[SPEAKER_01] Do we even build iOS apps with that?
+
+21
+00:00:46,640 --> 00:00:46,720
+[SPEAKER_00] No.
+
+22
+00:00:50,080 --> 00:00:50,960
+[SPEAKER_01] Welcome to Launched.
+
+23
+00:00:51,120 --> 00:00:59,520
+[SPEAKER_01] I'm Charlie Chapman, and today I'm excited to bring you the developers behind the Indie App Studio, Ambi Studio, Sophia Larson and Cesar Pinto Castillo.
+
+24
+00:01:13,200 --> 00:01:14,880
+[SPEAKER_01] Sofia, Cesar, welcome to the show.
+
+25
+00:01:15,120 --> 00:01:15,360
+[SPEAKER_02] Thank you.
+
+26
+00:01:15,680 --> 00:01:15,920
+[SPEAKER_02] Thank you.
+
+27
+00:01:16,880 --> 00:01:21,280
+[SPEAKER_01] We were together at this point, it was a few months ago now at WWDC.
+
+28
+00:01:21,600 --> 00:01:25,280
+[SPEAKER_01] We did a live show together, which was brief but it was very fun.
+
+29
+00:01:25,520 --> 00:01:26,640
+[SPEAKER_01] At least I thought it was very fun.
+
+30
+00:01:27,040 --> 00:01:28,240
+[SPEAKER_02] Yeah, it was a lot of fun.
+
+31
+00:01:29,120 --> 00:01:29,840
+[SPEAKER_00] Short and sweet.
+
+32
+00:01:30,160 --> 00:01:30,800
+[SPEAKER_01] Short and sweet.
+
+33
+00:01:30,800 --> 00:01:31,840
+[SPEAKER_01] Very, very, very short.
+
+34
+00:01:33,280 --> 00:01:48,400
+[SPEAKER_01] As I've been doing mostly with these live shows, I found it actually more fun to just do a normal episode with you all where we can stretch out and have our like longer conversations rather than trying to fit it into the time slot and deal with the technical issues like we had to deal with there.
+
+35
+00:01:48,960 --> 00:01:50,880
+[SPEAKER_01] So this will be this will be fun.
+
+36
+00:01:51,280 --> 00:01:54,160
+[SPEAKER_01] I think both of us have been kind of traveling all over the place.
+
+37
+00:01:54,400 --> 00:01:56,400
+[SPEAKER_01] So this is our first chance to get back together.
+
+38
+00:01:57,200 --> 00:01:57,760
+[SPEAKER_01] Are you back home?
+
+39
+00:01:58,560 --> 00:01:59,440
+[SPEAKER_02] Yes, finally.
+
+40
+00:01:59,840 --> 00:02:02,560
+[SPEAKER_02] Like we spent a month in San Francisco more or less.
+
+41
+00:02:03,600 --> 00:02:09,760
+[SPEAKER_02] So just being able to sleep in your own bed and have your own smells is like aww.
+
+42
+00:02:10,960 --> 00:02:17,200
+[SPEAKER_01] Speaking of that, I want to kick off the show the same way I always do, which is always fun whenever there's two different guests.
+
+43
+00:02:17,360 --> 00:02:18,640
+[SPEAKER_01] So we'll start with Cesar.
+
+44
+00:02:19,680 --> 00:02:23,040
+[SPEAKER_01] But I always start by asking the same three questions, which is where are you from?
+
+45
+00:02:23,680 --> 00:02:54,080
+[SPEAKER_01] Do you have a formal education and then uh usually i ask what's the story leading up to you know you starting your indie development but let's just go with those first two questions for now and then we can go to sofia and then we can talk about your kind of development journeys together okay so uh i'm born not born not far from here knee shopping here in sweden south of stockholm uh and yes i do have a formal education uh i got a bachelor's in computer science and then sofia what about you So I'm born on the west coast.
+
+46
+00:02:54,480 --> 00:02:55,520
+[SPEAKER_02] That's very important to me.
+
+47
+00:02:56,000 --> 00:02:58,400
+[SPEAKER_02] So we're currently on the east coast of Sweden.
+
+48
+00:02:59,200 --> 00:03:00,400
+[SPEAKER_02] It's a city called Gothenburg.
+
+49
+00:03:01,040 --> 00:03:03,200
+[SPEAKER_02] It's the second biggest city in Sweden.
+
+50
+00:03:03,680 --> 00:03:05,600
+[SPEAKER_02] And I moved here for this guy.
+
+51
+00:03:07,840 --> 00:03:11,440
+[SPEAKER_01] And then do you have a formal education in software development?
+
+52
+00:03:12,400 --> 00:03:12,480
+[SPEAKER_02] No.
+
+53
+00:03:13,360 --> 00:03:13,440
+[SPEAKER_01] No.
+
+54
+00:03:13,760 --> 00:03:20,240
+[SPEAKER_01] So this was a decent part of our conversation that we had live, and I think it's one of the fun things to explore here.
+
+55
+00:03:20,800 --> 00:03:25,440
+[SPEAKER_01] Starting with Cesar, because your story is a little more typical in terms of people I've had on guests.
+
+56
+00:03:26,000 --> 00:03:28,880
+[SPEAKER_01] How did you get into software development and building apps?
+
+57
+00:03:30,400 --> 00:03:30,480
+[SPEAKER_00] Okay.
+
+58
+00:03:31,040 --> 00:03:34,240
+[SPEAKER_00] So it is a long story.
+
+59
+00:03:34,480 --> 00:03:35,840
+[SPEAKER_00] So I'm going to try to make it short.
+
+60
+00:03:37,600 --> 00:03:38,960
+[SPEAKER_00] version back in June.
+
+61
+00:03:39,920 --> 00:03:40,160
+[SPEAKER_00] Perfect.
+
+62
+00:03:40,880 --> 00:03:42,320
+[SPEAKER_01] See, this is why we do this.
+
+63
+00:03:42,640 --> 00:03:44,560
+[SPEAKER_01] So we can really get to the meat of it, you know?
+
+64
+00:03:45,040 --> 00:03:45,120
+[SPEAKER_01] Okay.
+
+65
+00:03:45,440 --> 00:03:52,480
+[SPEAKER_00] So when I first, I was actually going to join what's called Lumpen in English.
+
+66
+00:03:52,800 --> 00:03:53,600
+[SPEAKER_00] Is it the military?
+
+67
+00:03:54,480 --> 00:03:59,760
+[SPEAKER_02] Yeah, like it's educational military stuff.
+
+68
+00:04:00,000 --> 00:04:00,080
+[SPEAKER_00] Yeah.
+
+69
+00:04:00,880 --> 00:04:03,040
+[SPEAKER_00] So I was actually signed on to do that.
+
+70
+00:04:03,360 --> 00:04:05,920
+[SPEAKER_00] It was all I had gone there, done the tests.
+
+71
+00:04:06,160 --> 00:04:08,240
+[SPEAKER_00] They had signed me on something I was going to do.
+
+72
+00:04:09,040 --> 00:04:12,160
+[SPEAKER_00] And then out of nowhere, one day, I see that in a city.
+
+73
+00:04:12,800 --> 00:04:19,840
+[SPEAKER_00] in Sweden called Westeros, there was a game development education at Maledollen University.
+
+74
+00:04:20,400 --> 00:04:26,240
+[SPEAKER_00] So I see that and I feel like, wow, this is what I want to do because Young Ni loved games.
+
+75
+00:04:26,480 --> 00:04:28,320
+[SPEAKER_00] Why wouldn't I want to be doing that all day?
+
+76
+00:04:28,800 --> 00:04:29,840
+[SPEAKER_01] Right, yeah, exactly.
+
+77
+00:04:30,960 --> 00:04:39,280
+[SPEAKER_00] So I wrote a letter by hand to the guy who assigned me to the thing in the military, whatever it's called.
+
+78
+00:04:39,520 --> 00:04:40,400
+[SPEAKER_00] I'm not sure, sorry.
+
+79
+00:04:41,040 --> 00:04:43,760
+[SPEAKER_00] I sent him a letter explaining that, hey, I'm so sorry.
+
+80
+00:04:44,320 --> 00:04:50,080
+[SPEAKER_00] I know I signed on to do this, but I found this education that I would love to do.
+
+81
+00:04:50,880 --> 00:04:52,320
+[SPEAKER_00] Is there anything we could work out?
+
+82
+00:04:53,440 --> 00:04:54,400
+[SPEAKER_00] And I just waited.
+
+83
+00:04:54,640 --> 00:04:56,720
+[SPEAKER_00] And I think like two weeks later, I get a reply from him.
+
+84
+00:04:57,040 --> 00:04:58,000
+[SPEAKER_00] Yeah, sure, says I.
+
+85
+00:04:58,080 --> 00:04:59,040
+[SPEAKER_00] No, not a problem at all.
+
+86
+00:04:59,360 --> 00:05:02,800
+[SPEAKER_00] Whenever you're done with your education, just call me back and we'll sort this out.
+
+87
+00:05:03,360 --> 00:05:07,280
+[SPEAKER_00] This, by the way, would never happen today because of the state of things in the world.
+
+88
+00:05:07,760 --> 00:05:10,480
+[SPEAKER_00] But back then, a little more peacetime.
+
+89
+00:05:10,720 --> 00:05:13,200
+[SPEAKER_00] It's like, I don't need more guys in the military.
+
+90
+00:05:14,000 --> 00:05:15,200
+[SPEAKER_00] So I go to East Jerusalem.
+
+91
+00:05:15,280 --> 00:05:17,120
+[SPEAKER_00] I start studying this game development program.
+
+92
+00:05:17,600 --> 00:05:21,200
+[SPEAKER_00] And then I study maybe a year or something and I feel like maybe not my thing.
+
+93
+00:05:21,920 --> 00:05:24,000
+[SPEAKER_00] I switch over to studying to become a teacher.
+
+94
+00:05:26,720 --> 00:05:32,080
+[SPEAKER_00] Meantime, I also start working as a coopier, blackjack dealer at night and bartender.
+
+95
+00:05:32,480 --> 00:05:34,000
+[SPEAKER_00] And I do that for maybe another year.
+
+96
+00:05:34,560 --> 00:05:37,040
+[SPEAKER_00] And then I just feel like, nope, this is not it either.
+
+97
+00:05:37,760 --> 00:05:43,520
+[SPEAKER_00] And somewhere there, I just get so tired of continuously working, not knowing what to do.
+
+98
+00:05:44,880 --> 00:05:49,760
+[SPEAKER_00] So I go back to university and I talk to, oh my God, I'm losing all the words today.
+
+99
+00:05:50,000 --> 00:05:50,720
+[SPEAKER_02] Thank the counselor.
+
+100
+00:05:50,880 --> 00:05:51,440
+[SPEAKER_00] Yeah, thank you.
+
+101
+00:05:51,520 --> 00:05:51,920
+[SPEAKER_00] The counselor.
+
+102
+00:05:52,080 --> 00:05:52,480
+[SPEAKER_01] Yeah, yeah.
+
+103
+00:05:52,640 --> 00:05:54,480
+[SPEAKER_00] Talk to her and explain like, hey, you know what?
+
+104
+00:05:54,640 --> 00:05:55,840
+[SPEAKER_00] I think I'm going to go back to study.
+
+105
+00:05:56,000 --> 00:06:00,000
+[SPEAKER_00] And you know, I studied a year here, so I shouldn't have much left, right?
+
+106
+00:06:01,200 --> 00:06:07,600
+[SPEAKER_00] So she prints out my results from this from the first year and also the year I started to become a teacher.
+
+107
+00:06:08,240 --> 00:06:21,680
+[SPEAKER_00] She was like, yeah, Cesar, you don't have a lot of points here or finished courses and almost none of it is usable if you want to have a bachelor in computer science because I wasn't feeling it anymore for the game development thingy.
+
+108
+00:06:22,720 --> 00:06:24,160
+[SPEAKER_00] So I was like, ah, okay then.
+
+109
+00:06:24,800 --> 00:06:25,760
+[SPEAKER_00] Okay, let's just do this.
+
+110
+00:06:26,800 --> 00:06:27,920
+[SPEAKER_00] So I started from scratch.
+
+111
+00:06:28,560 --> 00:06:28,720
+[SPEAKER_01] Good.
+
+112
+00:06:29,280 --> 00:06:30,880
+[SPEAKER_00] And this is, I think, three years in.
+
+113
+00:06:31,440 --> 00:06:34,560
+[SPEAKER_00] And then in the last three years, that's I just bum, bum, bum.
+
+114
+00:06:34,720 --> 00:06:35,040
+[SPEAKER_00] I just did it.
+
+115
+00:06:35,360 --> 00:07:12,720
+[SPEAKER_00] Is that because it clicked like this is a thing you enjoyed or were you just like you gotta get out of here something clicked I can't say what but because I tried all the everything else barman blackjack dealer I went a few months to Spain and worked as a phone salesman I did all these things that I thought I was going to do and I was like nope nope nope nope nope and then it was like okay let's get let's just go back to this and somehow I feel I felt like okay now I know this is the thing I should do but it was in c sharp dot net etc so I did the thing and in the final course I had where you do the examiners a bit I'm losing all the English word today what's the word your thesis?
+
+116
+00:07:12,960 --> 00:07:13,760
+[SPEAKER_00] My thesis, yeah.
+
+117
+00:07:13,840 --> 00:07:14,240
+[SPEAKER_00] Okay, thank you.
+
+118
+00:07:14,560 --> 00:07:15,680
+[SPEAKER_00] So I was doing my thesis.
+
+119
+00:07:16,160 --> 00:07:21,280
+[SPEAKER_00] And when doing that, so they basically, we were a class of like, I don't know, maybe twenty people.
+
+120
+00:07:21,680 --> 00:07:23,120
+[SPEAKER_00] And they made us into small groups.
+
+121
+00:07:23,360 --> 00:07:26,240
+[SPEAKER_00] And I got to choose, I got to choose my team.
+
+122
+00:07:26,800 --> 00:07:28,640
+[SPEAKER_00] So I choose a couple of, you know, classmates.
+
+123
+00:07:28,960 --> 00:07:30,080
+[SPEAKER_00] We were like three or four.
+
+124
+00:07:30,800 --> 00:07:34,240
+[SPEAKER_00] We get a assignment that we should do and we do that as a thesis.
+
+125
+00:07:34,400 --> 00:07:40,000
+[SPEAKER_00] And then at the end of the semester, when we're done, our examiner, he looks at it and it's like, yeah, this is cool.
+
+126
+00:07:40,160 --> 00:07:40,720
+[SPEAKER_00] This is very good.
+
+127
+00:07:41,200 --> 00:07:41,520
+[SPEAKER_00] Good job.
+
+128
+00:07:41,920 --> 00:07:46,000
+[SPEAKER_00] But just so you know, this assignment was not a fake one.
+
+129
+00:07:46,240 --> 00:07:46,880
+[SPEAKER_00] This was a real one.
+
+130
+00:07:47,360 --> 00:07:48,800
+[SPEAKER_00] This is actually an assignment from Volvo.
+
+131
+00:07:49,840 --> 00:07:51,920
+[SPEAKER_00] And they saw what you implemented.
+
+132
+00:07:52,560 --> 00:07:56,400
+[SPEAKER_00] So they want you to build this for real in their factory in Uloftstone.
+
+133
+00:07:56,960 --> 00:07:59,440
+[SPEAKER_00] And you get to pick one of your classmates.
+
+134
+00:08:00,080 --> 00:08:05,600
+[SPEAKER_00] And when I was saying classmates, it was not, it sounds like we're eating crayons and stuff, but it's not like that.
+
+135
+00:08:08,000 --> 00:08:11,520
+[SPEAKER_00] So I take one of my classmates or study buddies, whatever.
+
+136
+00:08:12,160 --> 00:08:12,800
+[SPEAKER_02] Study buddies.
+
+137
+00:08:12,960 --> 00:08:13,840
+[SPEAKER_00] I don't know what to call it.
+
+138
+00:08:14,480 --> 00:08:15,200
+[SPEAKER_02] It's a classmate.
+
+139
+00:08:15,280 --> 00:08:17,600
+[SPEAKER_02] It's a classmate.
+
+140
+00:08:18,240 --> 00:08:18,960
+[SPEAKER_00] It's a classmate.
+
+141
+00:08:19,040 --> 00:08:19,120
+[SPEAKER_00] Okay.
+
+142
+00:08:19,280 --> 00:08:22,240
+[SPEAKER_00] I think that's one of my classmates that I trusted the most.
+
+143
+00:08:23,520 --> 00:08:32,880
+[SPEAKER_00] And during the summer, they relocate us down to Ulofstrom and we actually get paid and we implement this for real and it's put into the factory line.
+
+144
+00:08:33,360 --> 00:08:38,800
+[SPEAKER_01] And this is some sort of custom software then for use in the factory, right?
+
+145
+00:08:39,440 --> 00:08:43,520
+[SPEAKER_00] Yes, this is really C-sharp and ASP.NET and yeah, okay, okay.
+
+146
+00:08:43,920 --> 00:08:44,800
+[SPEAKER_01] Similar backgrounds here.
+
+147
+00:08:45,360 --> 00:08:49,760
+[SPEAKER_01] Although mine was a lot less, I was doing insurance claims processing.
+
+148
+00:08:49,920 --> 00:08:53,440
+[SPEAKER_01] So slightly less exciting than Volvo factory floor software.
+
+149
+00:08:53,760 --> 00:08:56,640
+[SPEAKER_00] I can go into what the software did if you want to, very vaguely.
+
+150
+00:08:57,040 --> 00:09:00,640
+[SPEAKER_01] Yeah, I mean, I'm more, I guess more interested in, you know, doing that.
+
+151
+00:09:01,200 --> 00:09:12,720
+[SPEAKER_01] which sounds more like industrial slash enterprise type development in the C sharp land, how do you get from there to building consumer software and specifically mobile consumer software?
+
+152
+00:09:13,120 --> 00:09:14,000
+[SPEAKER_00] Okay, that's a good question.
+
+153
+00:09:14,400 --> 00:09:16,000
+[SPEAKER_00] So I did this.
+
+154
+00:09:16,640 --> 00:09:19,520
+[SPEAKER_00] I, you know, I knew how it worked, et cetera.
+
+155
+00:09:19,920 --> 00:09:23,600
+[SPEAKER_00] I never felt, you know, the good thing inside you that you build something.
+
+156
+00:09:23,840 --> 00:09:25,840
+[SPEAKER_00] I didn't get that when building something in C sharp.
+
+157
+00:09:26,160 --> 00:09:29,040
+[SPEAKER_00] I even tried building for, I had an Xperia X one.
+
+158
+00:09:29,520 --> 00:09:31,520
+[SPEAKER_00] There's a Sony Ericsson cell phone.
+
+159
+00:09:31,680 --> 00:09:32,960
+[SPEAKER_00] You can just flip up the keyboard.
+
+160
+00:09:33,040 --> 00:09:35,040
+[SPEAKER_00] I had that and I built software for that.
+
+161
+00:09:35,920 --> 00:09:36,800
+[SPEAKER_00] And it was just terrible.
+
+162
+00:09:37,360 --> 00:09:38,160
+[SPEAKER_00] I just hated it.
+
+163
+00:09:39,200 --> 00:09:41,680
+[SPEAKER_00] Whatever I did, it just didn't look good.
+
+164
+00:09:42,400 --> 00:09:43,760
+[SPEAKER_00] It felt overly complicated.
+
+165
+00:09:44,640 --> 00:09:50,400
+[SPEAKER_00] And then one day I go by a store window in Vesteros, and there's an iPhone there.
+
+166
+00:09:51,200 --> 00:09:52,480
+[SPEAKER_00] And it's like in this demo mode.
+
+167
+00:09:52,640 --> 00:09:56,320
+[SPEAKER_00] So it's just scrolling through the contact sheet or the contact app.
+
+168
+00:09:57,040 --> 00:10:01,120
+[SPEAKER_00] It's going into apps, doing stuff, and it all, and it looks so fluid.
+
+169
+00:10:01,360 --> 00:10:02,080
+[SPEAKER_00] It looks so simple.
+
+170
+00:10:02,880 --> 00:10:14,960
+[SPEAKER_01] The visual I have in my head is you like walking down an icy street in the middle of winter, and then there's this glow coming from a window to your side and you stop and you're like, what is this?
+
+171
+00:10:15,200 --> 00:10:19,040
+[SPEAKER_01] It's like music starts, you know, building like you're struck by inspiration.
+
+172
+00:10:19,520 --> 00:10:20,720
+[SPEAKER_00] That's exactly what it felt like.
+
+173
+00:10:21,200 --> 00:10:28,480
+[SPEAKER_00] I just saw it and I was like, oh my God, this, this is amazing because in my world, I was thinking of the, what was it called?
+
+174
+00:10:28,800 --> 00:10:29,920
+[SPEAKER_00] Windows Mobile CE?
+
+175
+00:10:30,320 --> 00:10:30,640
+[SPEAKER_01] Yeah, yeah.
+
+176
+00:10:30,960 --> 00:10:33,440
+[SPEAKER_00] That's what I came, that's what I had looked at 20 minutes before.
+
+177
+00:10:33,600 --> 00:10:34,800
+[SPEAKER_00] I was like, okay, this is it.
+
+178
+00:10:35,120 --> 00:10:36,400
+[SPEAKER_00] This is how good it gets.
+
+179
+00:10:37,920 --> 00:10:39,760
+[SPEAKER_00] So I see that iPhone, it looks amazing.
+
+180
+00:10:41,360 --> 00:10:52,640
+[SPEAKER_00] I talk to him in the store for a bit and then I go back to my apartment and somehow I see that a big comedian in Sweden named Michael Magnus Bettnir, he posts on Twitter like, hey, can someone make me an app?
+
+181
+00:10:54,560 --> 00:10:56,480
+[SPEAKER_00] And I have no idea how to build an app.
+
+182
+00:10:57,040 --> 00:10:57,760
+[SPEAKER_00] I didn't have a Mac.
+
+183
+00:10:58,240 --> 00:10:59,760
+[SPEAKER_00] I didn't know what Xcode was.
+
+184
+00:11:00,080 --> 00:11:03,120
+[SPEAKER_01] I knew nothing, but I was like, Well, you didn't even have an iPhone at this point, right?
+
+185
+00:11:03,280 --> 00:11:06,640
+[SPEAKER_00] You just saw No, no, I've just seen one.
+
+186
+00:11:07,360 --> 00:11:11,200
+[SPEAKER_00] So I write to Magnus like, hey, I can do it for you, no problem.
+
+187
+00:11:11,440 --> 00:11:13,280
+[SPEAKER_00] We chat back and forth what he wants it to do.
+
+188
+00:11:13,680 --> 00:11:15,440
+[SPEAKER_00] I was like, okay, I can figure this out.
+
+189
+00:11:15,920 --> 00:11:17,120
+[SPEAKER_00] And we agree on a price.
+
+190
+00:11:17,280 --> 00:11:21,680
+[SPEAKER_00] Then I go back to that store and I was like, hey, okay, I've taken notes to build an app.
+
+191
+00:11:22,560 --> 00:11:23,600
+[SPEAKER_00] I think I need a Mac, right?
+
+192
+00:11:23,840 --> 00:11:24,480
+[SPEAKER_00] And there's a gap.
+
+193
+00:11:25,040 --> 00:11:25,840
+[SPEAKER_00] They knew you needed a Mac.
+
+194
+00:11:26,160 --> 00:11:29,600
+[SPEAKER_00] So I asked them, like, hey, could you could you sell one cheap for me?
+
+195
+00:11:29,920 --> 00:11:32,080
+[SPEAKER_00] Do you have maybe something, you know, behind the counter?
+
+196
+00:11:32,560 --> 00:11:36,720
+[SPEAKER_00] And they said, like, yeah, we have a few old ones that have been returned or whatever.
+
+197
+00:11:37,760 --> 00:11:39,040
+[SPEAKER_00] So you can buy that really cheap.
+
+198
+00:11:39,360 --> 00:11:40,960
+[SPEAKER_00] So I bought that for $150.
+
+199
+00:11:41,600 --> 00:11:42,160
+[SPEAKER_01] Oh, wow.
+
+200
+00:11:42,400 --> 00:11:44,080
+[SPEAKER_00] I think it was a MacBook G4.
+
+201
+00:11:44,560 --> 00:11:47,200
+[SPEAKER_01] Oh, so that's like a power PC then, right?
+
+202
+00:11:48,000 --> 00:11:48,320
+[SPEAKER_00] Exactly.
+
+203
+00:11:48,480 --> 00:11:49,760
+[SPEAKER_00] And this was, I didn't know what it was.
+
+204
+00:11:49,840 --> 00:11:51,440
+[SPEAKER_01] Do you even build iOS apps with that?
+
+205
+00:11:52,000 --> 00:11:52,080
+[SPEAKER_01] No.
+
+206
+00:11:55,520 --> 00:11:57,200
+[SPEAKER_00] So I get back to my apartment.
+
+207
+00:11:57,680 --> 00:11:58,400
+[SPEAKER_00] I boot it up.
+
+208
+00:11:58,560 --> 00:12:00,960
+[SPEAKER_00] I install Spotify because that's what you had to do do, right?
+
+209
+00:12:01,120 --> 00:12:01,600
+[SPEAKER_01] Of course, yeah.
+
+210
+00:12:01,680 --> 00:12:02,240
+[SPEAKER_00] It works really well.
+
+211
+00:12:02,640 --> 00:12:05,520
+[SPEAKER_00] It booted so fast, even though it was three or four years old by this time.
+
+212
+00:12:06,080 --> 00:12:11,840
+[SPEAKER_00] And I installed Xcode, I prepared everything, and then I just have the sample project and I try to build it.
+
+213
+00:12:12,240 --> 00:12:14,720
+[SPEAKER_00] And it's like, Exactly what you're saying.
+
+214
+00:12:14,960 --> 00:12:16,960
+[SPEAKER_00] You need an Intel PC to compile this.
+
+215
+00:12:18,480 --> 00:12:19,200
+[SPEAKER_00] God damn it.
+
+216
+00:12:19,520 --> 00:12:25,280
+[SPEAKER_00] So I go back and I was like, Hey, do you have like a used Intel Mac back there?
+
+217
+00:12:26,240 --> 00:12:27,600
+[SPEAKER_00] No, because they were brand new.
+
+218
+00:12:28,080 --> 00:12:32,160
+[SPEAKER_00] So I had to spend all the money I was getting paid to build the app to buy my first Mac.
+
+219
+00:12:32,720 --> 00:12:34,480
+[SPEAKER_02] Did you get some money in advance?
+
+220
+00:12:34,800 --> 00:12:34,880
+[SPEAKER_00] No.
+
+221
+00:12:35,280 --> 00:12:35,680
+[SPEAKER_02] Oh, okay.
+
+222
+00:12:40,480 --> 00:12:43,600
+[SPEAKER_00] So that's how I got into app development.
+
+223
+00:12:44,320 --> 00:12:46,080
+[SPEAKER_01] So like, how did that go then?
+
+224
+00:12:46,320 --> 00:12:47,120
+[SPEAKER_01] You figured it out?
+
+225
+00:12:47,520 --> 00:12:48,560
+[SPEAKER_00] Yeah, I figured it out.
+
+226
+00:12:48,720 --> 00:12:55,360
+[SPEAKER_00] So his first, so basically he wanted an app that showed his blog posts and he had a WordPress website.
+
+227
+00:12:56,560 --> 00:12:59,520
+[SPEAKER_00] So I was like, cool, okay, WordPress and I need this in the app.
+
+228
+00:13:00,000 --> 00:13:01,680
+[SPEAKER_00] And I heard about this thing called JSON.
+
+229
+00:13:01,920 --> 00:13:07,440
+[SPEAKER_00] So I built a plugin for WordPress that made all the blog posts available through JSON via an API.
+
+230
+00:13:07,920 --> 00:13:10,640
+[SPEAKER_00] And then I just pulled that into the app and presented it in a list.
+
+231
+00:13:10,960 --> 00:13:12,160
+[SPEAKER_00] That was like the very first version.
+
+232
+00:13:14,960 --> 00:13:15,520
+[SPEAKER_00] Oh my God.
+
+233
+00:13:15,840 --> 00:13:15,920
+[SPEAKER_00] Yes.
+
+234
+00:13:16,400 --> 00:13:17,920
+[SPEAKER_00] When there was only one screen size.
+
+235
+00:13:18,240 --> 00:13:18,880
+[SPEAKER_01] Oh yeah.
+
+236
+00:13:19,120 --> 00:13:19,760
+[SPEAKER_01] Yeah, that too.
+
+237
+00:13:20,560 --> 00:13:20,640
+[SPEAKER_01] Okay.
+
+238
+00:13:20,880 --> 00:13:22,000
+[SPEAKER_01] So that's how you got into it.
+
+239
+00:13:22,160 --> 00:13:39,520
+[SPEAKER_01] And then, uh, before we jump over to Sophia, did you obviously got it working, you enjoyed it, presumably you got paid so that you could pay for your stuff, did you then just start being like, this is what I want to be doing and like, try to find kind of odd jobs or something, building software for people or apps for people?
+
+240
+00:13:39,920 --> 00:13:40,240
+[SPEAKER_00] Exactly.
+
+241
+00:13:40,480 --> 00:13:42,880
+[SPEAKER_00] So one day I was walking down the street in Mr.
+
+242
+00:13:43,120 --> 00:13:47,680
+[SPEAKER_00] Ooz and I ran into this friend of mine who was like, hey, you know what, Sase?
+
+243
+00:13:47,920 --> 00:13:50,000
+[SPEAKER_00] I'm working as this ad agency around the corner.
+
+244
+00:13:50,160 --> 00:13:53,600
+[SPEAKER_00] You can join us, the company, the name was Care of House.
+
+245
+00:13:54,400 --> 00:13:55,760
+[SPEAKER_00] So I joined that company.
+
+246
+00:13:56,240 --> 00:14:02,800
+[SPEAKER_00] I go there, talk to the CEO, and I remember that conversation because my friend Alexander who was there, he was working for free.
+
+247
+00:14:03,280 --> 00:14:05,120
+[SPEAKER_00] It was sort of a, we call it an internship.
+
+248
+00:14:05,280 --> 00:14:10,160
+[SPEAKER_00] Yeah, an internship, exactly, sort of where he would work for free, but to learn the ropes.
+
+249
+00:14:10,640 --> 00:14:12,560
+[SPEAKER_00] So I'm sitting there, I'm talking to the CEO.
+
+250
+00:14:12,640 --> 00:14:13,520
+[SPEAKER_00] Alexander is there as well.
+
+251
+00:14:13,680 --> 00:14:17,200
+[SPEAKER_00] We're talking for maybe thirty minutes about how the whole setup works.
+
+252
+00:14:17,680 --> 00:14:18,640
+[SPEAKER_00] And we really click.
+
+253
+00:14:19,200 --> 00:14:23,600
+[SPEAKER_00] I walk out, I get back to my apartment, and then I realize like, I got rent to pay.
+
+254
+00:14:23,680 --> 00:14:25,600
+[SPEAKER_00] I got a pay off my students student loan.
+
+255
+00:14:26,880 --> 00:14:27,840
+[SPEAKER_00] I can't work for free.
+
+256
+00:14:28,160 --> 00:14:29,920
+[SPEAKER_00] So I sent him an email like, oh, you know what?
+
+257
+00:14:30,000 --> 00:14:33,680
+[SPEAKER_00] I'm sorry, sorry for taking up your time, but I won't be able to work for free.
+
+258
+00:14:34,000 --> 00:14:35,440
+[SPEAKER_00] So I guess this won't work.
+
+259
+00:14:35,920 --> 00:14:40,640
+[SPEAKER_00] So he then just calls me back and I'm like, hey, why don't you come into the office tomorrow and we'll figure something out.
+
+260
+00:14:42,080 --> 00:14:48,480
+[SPEAKER_00] So we talked about it and then I got my first job at that ad agency and they wanted to get into apps.
+
+261
+00:14:49,120 --> 00:14:52,320
+[SPEAKER_01] So that was sort of the perfect kind of jumping off point.
+
+262
+00:14:52,720 --> 00:14:54,560
+[SPEAKER_02] So it was like the first time for them as well?
+
+263
+00:14:54,800 --> 00:14:54,880
+[SPEAKER_00] Yes.
+
+264
+00:14:55,760 --> 00:14:56,000
+[SPEAKER_00] Exactly.
+
+265
+00:14:56,720 --> 00:15:00,000
+[SPEAKER_00] And then what happened is that they had they didn't get any app assignments.
+
+266
+00:15:00,800 --> 00:15:02,080
+[SPEAKER_00] App clients, they found none.
+
+267
+00:15:02,400 --> 00:15:05,040
+[SPEAKER_00] So I was there for six months doing web development.
+
+268
+00:15:05,920 --> 00:15:06,720
+[SPEAKER_02] But you got paid.
+
+269
+00:15:07,040 --> 00:15:07,600
+[SPEAKER_00] I got paid.
+
+270
+00:15:07,920 --> 00:15:08,480
+[SPEAKER_00] I got paid.
+
+271
+00:15:08,720 --> 00:15:13,040
+[SPEAKER_00] And in all of this thing, I got in touch with a company in Stockholm, ID Labs.
+
+272
+00:15:13,600 --> 00:15:15,200
+[SPEAKER_00] And that's my first app job.
+
+273
+00:15:15,360 --> 00:15:18,960
+[SPEAKER_00] That was an app agency making only apps for the app platform.
+
+274
+00:15:19,600 --> 00:15:19,840
+[SPEAKER_01] Cool.
+
+275
+00:15:20,000 --> 00:15:26,640
+[SPEAKER_01] So where we're at with you is you're now, you know, building apps as your kind of normal day to day job.
+
+276
+00:15:27,200 --> 00:15:31,280
+[SPEAKER_01] But you came through with a computer science degree, although there were some twists and turns to get there.
+
+277
+00:15:32,240 --> 00:15:36,720
+[SPEAKER_01] But kind of in some ways more typical, although a funny starting story for you.
+
+278
+00:15:36,720 --> 00:15:38,480
+[SPEAKER_01] So this is a really interesting story for the IOS side of the house.
+
+279
+00:15:39,040 --> 00:15:46,880
+[SPEAKER_01] So if we roll back to Sophia, you don't have a computer science degree, or at least that wasn't your original kind of career path, right?
+
+280
+00:15:47,680 --> 00:15:47,760
+[SPEAKER_02] No.
+
+281
+00:15:48,400 --> 00:15:50,880
+[SPEAKER_02] So I have a background in textiles.
+
+282
+00:15:51,200 --> 00:15:54,240
+[SPEAKER_02] I have a bachelor in textile engineering and science.
+
+283
+00:15:54,640 --> 00:15:59,760
+[SPEAKER_01] I think it's safe to say that this is the first person on Launched whose background is in textiles.
+
+284
+00:16:00,800 --> 00:16:11,920
+[SPEAKER_01] We've had a lot of varying different backgrounds of people that kind of fell into this industry, but I don't think we've had anyone else who has textile engineering as kind of their background.
+
+285
+00:16:12,640 --> 00:16:14,400
+[SPEAKER_01] So how did you get into that for starters?
+
+286
+00:16:14,880 --> 00:16:16,640
+[SPEAKER_02] Yeah, it's very niche.
+
+287
+00:16:17,920 --> 00:16:18,800
+[SPEAKER_02] I can tell you that.
+
+288
+00:16:20,720 --> 00:16:27,760
+[SPEAKER_02] Actually, to begin with, I wanted to be like an architect or work or study in industrial design.
+
+289
+00:16:29,120 --> 00:16:36,800
+[SPEAKER_02] So it's always been like this scientific artsy combination, you can call it.
+
+290
+00:16:37,120 --> 00:16:40,000
+[SPEAKER_01] Which from an American's perspective anyway, feels like it's...
+
+291
+00:16:40,880 --> 00:16:47,600
+[SPEAKER_01] Stereotypical isn't the right word, but a thing that's very popular in Sweden, like industrial design feels like an elevated art form.
+
+292
+00:16:48,000 --> 00:16:58,080
+[SPEAKER_01] Is that really a true thing or is that just because we associate like IKEA and some design firms with Yeah, I was just going to say it's because Yeah, that might be purely all it's about.
+
+293
+00:16:58,320 --> 00:17:00,720
+[SPEAKER_01] So it's not something that everybody around you is also into.
+
+294
+00:17:01,120 --> 00:17:02,400
+[SPEAKER_02] I haven't really thought about it.
+
+295
+00:17:02,560 --> 00:17:09,040
+[SPEAKER_02] I think it's like when we go abroad, you can really tell that Sweden has very high standards.
+
+296
+00:17:09,360 --> 00:17:13,760
+[SPEAKER_02] Like when it comes to that's a very nice way to say other places don't have high standards.
+
+297
+00:17:14,800 --> 00:17:24,800
+[SPEAKER_02] Like it's very there are a lot of laws and how things can and should be built and there are some restrictions, let's just say.
+
+298
+00:17:25,360 --> 00:17:25,440
+[SPEAKER_02] that.
+
+299
+00:17:25,760 --> 00:17:27,920
+[SPEAKER_00] I don't want to be that guy, but Germany has a lot of laws.
+
+300
+00:17:28,080 --> 00:17:29,280
+[SPEAKER_02] Okay, yeah, we're not Germany.
+
+301
+00:17:29,600 --> 00:17:31,280
+[SPEAKER_00] Germany's not that nice as Sweden.
+
+302
+00:17:31,440 --> 00:17:33,280
+[SPEAKER_02] No, but we have good laws.
+
+303
+00:17:35,120 --> 00:17:36,000
+[SPEAKER_02] Not unnecessary laws.
+
+304
+00:17:36,480 --> 00:17:37,200
+[SPEAKER_00] Find a good Daleks.
+
+305
+00:17:37,760 --> 00:17:41,120
+[SPEAKER_01] So you wanted to get into industrial design or architecture or something like that.
+
+306
+00:17:42,000 --> 00:17:49,200
+[SPEAKER_02] Yeah, and then when I was in school, it's like it's called gymnasium in Sweden.
+
+307
+00:17:49,840 --> 00:17:51,440
+[SPEAKER_02] It's like high school, I guess.
+
+308
+00:17:52,240 --> 00:17:54,960
+[SPEAKER_02] You're like 15, 17 years old.
+
+309
+00:17:55,440 --> 00:17:56,720
+[SPEAKER_01] Like pre-university.
+
+310
+00:17:57,360 --> 00:17:57,680
+[SPEAKER_02] Exactly.
+
+311
+00:17:58,160 --> 00:17:58,480
+[SPEAKER_02] Exactly.
+
+312
+00:17:59,520 --> 00:18:02,800
+[SPEAKER_02] So we had guests coming to a classroom.
+
+313
+00:18:03,120 --> 00:18:05,680
+[SPEAKER_02] I think this was in math or in physics or something.
+
+314
+00:18:06,320 --> 00:18:09,760
+[SPEAKER_02] And they just like talked about different educations.
+
+315
+00:18:10,320 --> 00:18:11,680
+[SPEAKER_02] So they had two engineers.
+
+316
+00:18:13,040 --> 00:18:22,880
+[SPEAKER_02] because I was studying science and one was a textile engineer and one was another type of engineer from another very big university in my hometown.
+
+317
+00:18:23,280 --> 00:20:07,440
+[SPEAKER_02] And when she talked about like what they do and the courses they were studying, I was so inspired because they combined my passion for science and physics and chemistry and not so much biology but uh you know all the typical science um what do you call subjects um they combined it with textiles and some it's not super aesthetical but they touch base with aesthetics like uh color wheels and other things that is aesthetical what is textile engineering then is that like the engineering behind obviously creating of textiles and stuff but like you just mentioned color science i imagine a major part of it is just manufacturing things with the right types of properties including the way it looks and how long it lasts and everything like that yeah you are the first person that has asked me what it is that actually can you know guess it guess and that's very impressive so most people ask me like oh so are you a designer like do you design fashion like no oh so you're a seamstress well no we did take a class in that because we have to have an understanding of like different seams and how how how it gives its different strengths and things like that, but it's more about the study of the fibers, I would say, and how you can process different fibers and like different techniques of when you're weaving, like you get different features for the textiles and the fabrics and knitting and so on.
+
+318
+00:20:07,840 --> 00:20:09,440
+[SPEAKER_02] And then that's just one part.
+
+319
+00:20:09,680 --> 00:20:11,120
+[SPEAKER_02] Then you have like all the coating.
+
+320
+00:20:12,080 --> 00:20:28,960
+[SPEAKER_02] like if you prepare it with this type of plastic you get these different features like raincoats for instance or it can get more complex than that so if you take geotextiles for instance, is what you put in the ground underneath airports.
+
+321
+00:20:29,360 --> 00:20:32,720
+[SPEAKER_02] So, you know, when it's below freezing.
+
+322
+00:20:33,200 --> 00:20:34,160
+[SPEAKER_00] Yeah, below freezing point.
+
+323
+00:20:34,800 --> 00:20:36,080
+[SPEAKER_02] The ground is like still smooth.
+
+324
+00:20:36,480 --> 00:20:41,520
+[SPEAKER_02] And then you have geotextiles in farming and you have medicinal textiles in hospitals.
+
+325
+00:20:41,920 --> 00:20:42,480
+[SPEAKER_02] And there's like...
+
+326
+00:20:43,440 --> 00:20:48,800
+[SPEAKER_02] so many textiles with different features and capabilities that we don't really think about in a normal day.
+
+327
+00:20:48,960 --> 00:20:52,000
+[SPEAKER_02] And then don't get me started on like automobile textiles.
+
+328
+00:20:52,320 --> 00:21:02,880
+[SPEAKER_01] Yeah, well, I mean, as you're talking, I'm literally just like looking around my room and I'm like, it's like that overwhelming feeling of when you think about the details that go into everything in your everyday life.
+
+329
+00:21:02,960 --> 00:21:13,600
+[SPEAKER_01] I don't know if there's there's got to be a long like German word for this or something, but I go through this sometimes, but you've now added a new layer to this, which is going to be the actual material science behind everything.
+
+330
+00:21:14,080 --> 00:21:29,440
+[SPEAKER_01] But like just seeing, you know, I have like a scarf sitting over the hair, but then I also have one of those standard, I forgot what the actually might be Ikea shelves that has the the box the cubes inside it, but those cubes are textiles, right?
+
+331
+00:21:29,760 --> 00:21:30,640
+[SPEAKER_01] Yeah, yeah, exactly.
+
+332
+00:21:31,280 --> 00:21:47,440
+[SPEAKER_01] Even just looking at the different materials on there, I'm like, yeah, it's like, it's almost overwhelming to think about the amount of engineering that goes into all of these different materials that there's like five layers up of engineers that are then using it to in products, I'm presuming.
+
+333
+00:21:48,640 --> 00:21:52,640
+[SPEAKER_01] But it's almost like you're at the kernel layer of software development.
+
+334
+00:21:53,200 --> 00:21:56,240
+[SPEAKER_01] And then there's a bunch of people building on stacks on stacks on stacks.
+
+335
+00:21:56,400 --> 00:21:59,920
+[SPEAKER_01] It's like the same thing exists in physical engineering as well, I guess.
+
+336
+00:22:00,400 --> 00:22:00,480
+[SPEAKER_02] Yeah.
+
+337
+00:22:00,800 --> 00:22:04,480
+[SPEAKER_02] So my thesis was actually about medicinal textile.
+
+338
+00:22:05,280 --> 00:22:44,240
+[SPEAKER_02] When you have, I'm not sure about the English name, but vertical vibrosis, you know, when you have your veins on the legs they turn blue because they can pump up the blood correctly so my thesis was about getting a bandage that you apply to the leg after surgery to so it would get the right pressure like independent on independently on who would apply it so i i didn't I didn't make this bandage just to be clear, but my thesis was about how to get it a CE standard.
+
+339
+00:22:45,040 --> 00:22:46,640
+[SPEAKER_02] And a CE standard is like...
+
+340
+00:22:47,600 --> 00:22:49,040
+[SPEAKER_00] We don't have it in the the US.
+
+341
+00:22:49,360 --> 00:22:50,800
+[SPEAKER_02] No, so that's a European thing.
+
+342
+00:22:52,640 --> 00:22:56,960
+[SPEAKER_01] It's like a sort of regulatory hurdle, like you have to get an approval.
+
+343
+00:22:57,280 --> 00:22:58,720
+[SPEAKER_01] Yes, like, okay, yeah, yeah.
+
+344
+00:22:59,120 --> 00:23:03,520
+[SPEAKER_02] You should have that standard for certain appliances and objects.
+
+345
+00:23:03,920 --> 00:23:16,960
+[SPEAKER_02] Anyway, so my thesis was about, okay, so which ISO standard should it test through and what results after those tests should it have to get this.
+
+346
+00:23:17,600 --> 00:23:18,160
+[SPEAKER_02] CE standard.
+
+347
+00:23:19,280 --> 00:23:24,400
+[SPEAKER_01] This is like super fascinating, but that is not generally speaking related to what you're doing now.
+
+348
+00:23:25,040 --> 00:23:30,800
+[SPEAKER_01] So what's the path from this to, you know, building apps?
+
+349
+00:23:31,680 --> 00:23:31,760
+[SPEAKER_02] Yeah.
+
+350
+00:23:32,000 --> 00:23:41,600
+[SPEAKER_02] So like I mentioned, textile engineering, like the education is a lot about both scientifically and like aesthetics and design.
+
+351
+00:23:42,400 --> 00:23:46,240
+[SPEAKER_01] The intersection of science and art, you could say.
+
+352
+00:23:46,640 --> 00:23:47,520
+[SPEAKER_02] Yeah, kind of.
+
+353
+00:23:48,320 --> 00:23:49,680
+[SPEAKER_02] And I've always been into that.
+
+354
+00:23:50,000 --> 00:23:52,400
+[SPEAKER_02] I started sewing when I was like four years old.
+
+355
+00:23:53,120 --> 00:23:58,400
+[SPEAKER_02] I would sit in my mother's lap and she was behind the sewing machine and I was just like, get the startup.
+
+356
+00:23:59,360 --> 00:24:33,600
+[SPEAKER_02] So I've always been into like creating things and for me it's not necessarily important like how i create things just that i do so working digitally is like oh it's so nice because then i then i don't need like a full stash you should see like saves a lot of money right my my wife uh is really or i guess is was really into scrapbooking and so We would go to scrapbooking stores a lot and build up this big collection of materials and heat guns and all this stuff.
+
+357
+00:24:33,680 --> 00:24:34,800
+[SPEAKER_01] And it was very, very cool.
+
+358
+00:24:35,360 --> 00:24:51,920
+[SPEAKER_01] But then whenever she kind of started transitioning into Photoshop, the amount of money that we spent, even though we spend a lot of money on printing these big photobooks, it's still just nothing compared to the amount of material you need to buy whenever you're into some sort of physical craft like that.
+
+359
+00:24:52,320 --> 00:25:01,200
+[SPEAKER_02] Yeah, because with physical things, you run out eventually, or it's the wrong material, or Yeah, kind of.
+
+360
+00:25:01,600 --> 00:25:09,360
+[SPEAKER_02] So imagine if you have, like, you're going to populate a list in an app, and then it's like, Oh, no, you ran out of images.
+
+361
+00:25:10,240 --> 00:25:12,000
+[SPEAKER_02] Like that doesn't happen with app developers.
+
+362
+00:25:12,640 --> 00:25:15,280
+[SPEAKER_01] Although with tokens now, maybe you could say the same thing.
+
+363
+00:25:15,600 --> 00:25:16,560
+[SPEAKER_02] Sure, sure.
+
+364
+00:25:17,280 --> 00:25:20,960
+[SPEAKER_02] But you have to prompt responsibly.
+
+365
+00:25:21,440 --> 00:25:22,560
+[SPEAKER_01] Yeah, yeah, exactly.
+
+366
+00:25:23,120 --> 00:25:32,880
+[SPEAKER_02] So no, but so for me, going into app development, it wasn't like that big of a deal, to be honest, in terms of like what I like to do.
+
+367
+00:25:33,440 --> 00:25:38,960
+[SPEAKER_02] But to take it back a bit, why I got into app development is a different thing.
+
+368
+00:25:40,000 --> 00:25:44,000
+[SPEAKER_02] So I applied for a lot of jobs as a textile engineer.
+
+369
+00:25:44,400 --> 00:25:47,040
+[SPEAKER_02] And like I mentioned earlier, it's very niche.
+
+370
+00:25:47,520 --> 00:26:11,520
+[SPEAKER_02] So it's very hard to get into and you practically have to know someone on the inside to like get a position which i unfortunately didn't because my parents like yeah they they wasn't in that field like at all and i didn't know anyone who was really um So I would get one rejection after another.
+
+371
+00:26:12,400 --> 00:26:19,680
+[SPEAKER_02] But then I've heard of this like internship you could take because when I was applying for jobs, they told me like, oh, you don't have enough experience.
+
+372
+00:26:20,240 --> 00:26:23,200
+[SPEAKER_02] I was like, well, this is what I'm trying to get in the first job.
+
+373
+00:26:23,520 --> 00:26:24,880
+[SPEAKER_02] You know, like how do you get experience?
+
+374
+00:26:25,280 --> 00:26:28,560
+[SPEAKER_02] if you don't get the job anywhere?
+
+375
+00:26:28,880 --> 00:26:40,320
+[SPEAKER_02] Well, so I started to apply to those internships, even though I really didn't want to because I felt like it should be enough that I have my exam as a bachelor.
+
+376
+00:26:40,640 --> 00:26:48,640
+[SPEAKER_02] But if this is the way in, then okay, I will take this, you know, I will take the extra steps just so I can get in.
+
+377
+00:26:49,920 --> 00:26:52,160
+[SPEAKER_02] And I started to apply to those internships.
+
+378
+00:26:52,480 --> 00:26:56,320
+[SPEAKER_02] And then they told me, which are free, by the way, like you work for free.
+
+379
+00:26:56,720 --> 00:26:57,360
+[SPEAKER_01] Yeah, exactly.
+
+380
+00:26:58,000 --> 00:27:02,080
+[SPEAKER_02] And they told me that I don't have enough experience.
+
+381
+00:27:02,800 --> 00:27:03,920
+[SPEAKER_01] For the internships.
+
+382
+00:27:04,800 --> 00:27:04,880
+[SPEAKER_02] Yeah.
+
+383
+00:27:05,760 --> 00:27:06,160
+[SPEAKER_01] Goodness.
+
+384
+00:27:07,280 --> 00:27:13,200
+[SPEAKER_02] And that's when it hit me like, okay, so this is what it's going to be like.
+
+385
+00:27:13,600 --> 00:27:15,200
+[SPEAKER_02] They don't value you as a person.
+
+386
+00:27:15,680 --> 00:27:18,480
+[SPEAKER_02] Like you are nothing for them.
+
+387
+00:27:19,360 --> 00:27:26,880
+[SPEAKER_02] So I decided like, okay, that's not for me because that doesn't correspond very well with my.
+
+388
+00:27:28,080 --> 00:27:38,080
+[SPEAKER_02] view on like humanity and people in general like you know um and simultaneously, I was sitting.
+
+389
+00:27:38,480 --> 00:27:40,240
+[SPEAKER_02] So we have a very big desk.
+
+390
+00:27:40,800 --> 00:27:50,160
+[SPEAKER_02] So Caesar and I would sit at the same desk next to each other, like doing our things, but he would work and I would apply for jobs or internships in this case.
+
+391
+00:27:51,280 --> 00:27:55,280
+[SPEAKER_02] And he would just get one email after the other, like, come work with us.
+
+392
+00:27:55,600 --> 00:27:57,920
+[SPEAKER_02] We have ping pong and it's free beer.
+
+393
+00:27:58,240 --> 00:28:00,720
+[SPEAKER_02] And if you work late, you get a free dinner too.
+
+394
+00:28:01,040 --> 00:28:03,600
+[SPEAKER_02] And I was like, you know, you can get the same sharp contrast.
+
+395
+00:28:03,760 --> 00:28:04,640
+[SPEAKER_02] I think I.
+
+396
+00:28:05,600 --> 00:28:06,000
+[SPEAKER_02] every day.
+
+397
+00:28:06,640 --> 00:28:10,640
+[SPEAKER_02] And then one day I just decided like, I'm not going to have it.
+
+398
+00:28:10,880 --> 00:28:11,680
+[SPEAKER_02] Like, I want that.
+
+399
+00:28:11,920 --> 00:28:13,840
+[SPEAKER_02] Like, I'm going to get in on that.
+
+400
+00:28:14,480 --> 00:28:17,040
+[SPEAKER_01] So how did you go about starting that process then?
+
+401
+00:28:17,280 --> 00:28:18,320
+[SPEAKER_01] You decide you want to do it.
+
+402
+00:28:18,800 --> 00:28:20,800
+[SPEAKER_01] You don't have a computer science background at all.
+
+403
+00:28:21,360 --> 00:28:22,240
+[SPEAKER_01] What's step one?
+
+404
+00:28:23,040 --> 00:28:26,400
+[SPEAKER_02] I started with Swift, what is it called?
+
+405
+00:28:26,560 --> 00:28:28,640
+[SPEAKER_02] Swift Playgrounds on the iPad.
+
+406
+00:28:30,160 --> 00:28:35,360
+[SPEAKER_02] And this, I should disclaim that I was also in the beginning of my burnout.
+
+407
+00:28:35,920 --> 00:28:46,000
+[SPEAKER_01] I know of multiple people who have been burning out in their careers and started hacking with Swift or learning how to do software development as a like almost coping mechanism for it.
+
+408
+00:28:46,880 --> 00:28:48,640
+[SPEAKER_01] Most of them don't complete it.
+
+409
+00:28:49,040 --> 00:28:49,200
+[SPEAKER_01] though.
+
+410
+00:28:49,920 --> 00:28:54,800
+[SPEAKER_02] Talking about the burnout, I couldn't do anything, to be honest.
+
+411
+00:28:55,120 --> 00:29:01,600
+[SPEAKER_02] I would make some puzzles like 15 minutes here and there during the days.
+
+412
+00:29:01,920 --> 00:29:03,600
+[SPEAKER_02] Like I couldn't even watch TV.
+
+413
+00:29:03,920 --> 00:29:04,480
+[SPEAKER_02] I couldn't read.
+
+414
+00:29:04,800 --> 00:29:06,480
+[SPEAKER_02] I was that at that point.
+
+415
+00:29:07,440 --> 00:29:08,720
+[SPEAKER_02] And then I worked up from there.
+
+416
+00:29:09,280 --> 00:29:11,120
+[SPEAKER_02] And then I started with Swift Playgrounds.
+
+417
+00:29:11,760 --> 00:29:14,320
+[SPEAKER_02] I did, you have like a little character.
+
+418
+00:29:14,480 --> 00:29:15,760
+[SPEAKER_02] It's called Byte, I think.
+
+419
+00:29:16,320 --> 00:29:23,680
+[SPEAKER_02] And you help it through a maze by adding codes like one step forward, one step to the left and so on.
+
+420
+00:29:23,920 --> 00:29:27,840
+[SPEAKER_02] And then you would loop over and over and it would get more and more complex.
+
+421
+00:29:28,560 --> 00:29:38,400
+[SPEAKER_02] So that's how I started to get an understanding of like what is code and how can you use it and how can you make it more like effective like reuse code.
+
+422
+00:29:38,800 --> 00:29:46,560
+[SPEAKER_02] And then Cesar wanted to change the code base for Ambre, well, previously known as cooking.
+
+423
+00:29:47,120 --> 00:29:47,200
+[SPEAKER_01] Okay.
+
+424
+00:29:47,520 --> 00:29:51,040
+[SPEAKER_01] So, and I guess we need to like pause right there and back up just a second.
+
+425
+00:29:51,360 --> 00:29:53,600
+[SPEAKER_01] So, for some reason, I thought this came later.
+
+426
+00:29:53,920 --> 00:29:58,320
+[SPEAKER_01] So you already had your own app then, Cesar, and that was called cooking.
+
+427
+00:29:58,480 --> 00:29:58,960
+[SPEAKER_00] Oh, yeah.
+
+428
+00:29:59,360 --> 00:29:59,680
+[SPEAKER_00] Cooking.
+
+429
+00:29:59,920 --> 00:30:02,240
+[SPEAKER_01] So what's the story story there?
+
+430
+00:30:02,960 --> 00:30:08,160
+[SPEAKER_00] Okay, so which year did it launch a Cloud Kit?
+
+431
+00:30:08,480 --> 00:30:10,720
+[SPEAKER_00] Was that twenty seventeen, twenty sixteen, something like that?
+
+432
+00:30:10,880 --> 00:30:12,480
+[SPEAKER_01] It would have been, I mean, that era, yeah.
+
+433
+00:30:12,640 --> 00:30:18,480
+[SPEAKER_00] Somewhere, ah, yeah, it doesn't really matter which year, but that year that they released that, I was like, what can I build with this?
+
+434
+00:30:18,640 --> 00:30:20,800
+[SPEAKER_00] I need to build something, mostly because I just want to, you know.
+
+435
+00:30:21,200 --> 00:30:23,200
+[SPEAKER_01] Had you built like your own stuff before that?
+
+436
+00:30:23,840 --> 00:30:24,240
+[SPEAKER_00] Oh, yeah.
+
+437
+00:30:24,640 --> 00:30:36,240
+[SPEAKER_00] So I've been employed as an engineer since 2011, and by 2016 or 2017, whatever it was, I've already gone through multiple companies and employments and building my own apps on the side.
+
+438
+00:30:36,320 --> 00:30:41,840
+[SPEAKER_01] side had any of your own apps through that like popped and made any real sort of money?
+
+439
+00:30:42,960 --> 00:31:18,240
+[SPEAKER_00] I would say no real sort of money no real sort would be like 10k USD so nothing even close to that nothing even close to that just to make so the apps I released maybe maybe a few hundred dollars tops yeah yeah pay for your developer account sort of yeah exactly so one of the early ones was we made an app for Orlanda which is airport in Stockholm so we basically not for them but we just made an app me and a friend of mine so we just pulled the website and we would send you push notifications, whatever, an airplane arrived or departed.
+
+440
+00:31:18,640 --> 00:31:19,360
+[SPEAKER_01] Oh, interesting.
+
+441
+00:31:19,520 --> 00:31:19,600
+[SPEAKER_01] Okay.
+
+442
+00:31:19,920 --> 00:31:24,400
+[SPEAKER_01] Like an early, is it ATC, the one that's like blowing up right now?
+
+443
+00:31:25,200 --> 00:31:26,880
+[SPEAKER_00] Yeah, but not the cool voiceovers.
+
+444
+00:31:26,960 --> 00:31:28,320
+[SPEAKER_01] It will just Yeah, yeah, of course, of course.
+
+445
+00:31:28,320 --> 00:31:28,800
+[SPEAKER_01] Yeah, yeah.
+
+446
+00:31:28,960 --> 00:31:31,520
+[SPEAKER_00] A lot of flight, way, way more basic.
+
+447
+00:31:31,680 --> 00:31:33,120
+[SPEAKER_00] The ATC app is way, way cooler.
+
+448
+00:31:33,520 --> 00:31:42,640
+[SPEAKER_00] So 2017, 2016, whatever it was, iCloud is launched and I look at it and see, I need to build something with this because I wanted to learn the technology, what was possible or was not possible.
+
+449
+00:31:43,600 --> 00:31:45,680
+[SPEAKER_00] So what I do is I build a recipe app.
+
+450
+00:31:46,560 --> 00:31:46,960
+[SPEAKER_00] That's simple.
+
+451
+00:31:47,360 --> 00:31:59,520
+[SPEAKER_00] You upload your CK records and those are recipes of course stored in the in your own cloud kit and you could see other people's recipes and I named it cooking and I put it out there and I forgot about it.
+
+452
+00:31:59,920 --> 00:32:03,280
+[SPEAKER_01] So it didn't it didn't blow up it wasn't getting recognition.
+
+453
+00:32:03,520 --> 00:32:04,080
+[SPEAKER_00] Absolutely not.
+
+454
+00:32:04,320 --> 00:32:05,200
+[SPEAKER_00] Okay, absolutely not.
+
+455
+00:32:05,360 --> 00:32:07,120
+[SPEAKER_01] All right, so that's the kind of it was being used.
+
+456
+00:32:08,160 --> 00:32:08,720
+[SPEAKER_00] It was being used.
+
+457
+00:32:09,200 --> 00:32:09,680
+[SPEAKER_01] It was being used.
+
+458
+00:32:09,920 --> 00:32:11,360
+[SPEAKER_01] Okay, so you had some users at least.
+
+459
+00:32:11,840 --> 00:32:15,920
+[SPEAKER_02] Oh yeah, we had Phyllis because you could create like profiles.
+
+460
+00:32:16,240 --> 00:32:16,320
+[SPEAKER_00] Yeah.
+
+461
+00:32:16,640 --> 00:32:24,000
+[SPEAKER_02] So you had a like name and a little image and then just a list of your recipes and she had like more than a hundred recipes.
+
+462
+00:32:24,480 --> 00:32:24,560
+[SPEAKER_01] Ah.
+
+463
+00:32:24,640 --> 00:33:02,240
+[SPEAKER_02] ah okay and this is an important detail you had to enter them manually you couldn't rearrange order like in in instructions thank you or ingredients you would have to get it like right the first time or you would have to redo oh there was no editing you could edit but you couldn't reorder yeah so let's say you messed up on the first instruction you would have basically would have to redo most of wow okay i just wanted to test the technology put it out there and for some reason this is the classic like uh yeah looking for uh some app as an excuse to try out a piece of technology.
+
+464
+00:33:02,720 --> 00:33:03,760
+[SPEAKER_00] Yes, exactly.
+
+465
+00:33:04,240 --> 00:33:10,080
+[SPEAKER_00] That happened and then I didn't touch it for many years and then we come back to Sophia's story.
+
+466
+00:33:10,560 --> 00:33:13,360
+[SPEAKER_01] So you built this and it was kind of sitting out there.
+
+467
+00:33:13,520 --> 00:33:30,080
+[SPEAKER_01] There were users using it and Sophia and this is sitting out there presumably for some amount of time and then Sophia started learning Swift development and the concepts of software development in general and that's where you were like, oh, I'd like to update this app.
+
+468
+00:33:30,320 --> 00:33:31,600
+[SPEAKER_01] Maybe she can start doing that.
+
+469
+00:33:31,760 --> 00:33:32,720
+[SPEAKER_01] Is that kind of the origin there?
+
+470
+00:33:33,280 --> 00:33:33,360
+[SPEAKER_02] Yeah.
+
+471
+00:33:33,600 --> 00:33:37,360
+[SPEAKER_02] So Cesar wanted it to be in Swift and Swift UI.
+
+472
+00:33:38,160 --> 00:33:40,080
+[SPEAKER_01] So it was in Objective C originally?
+
+473
+00:33:40,560 --> 00:33:44,400
+[SPEAKER_00] Yeah, it was written in Objective C originally and I think I added some stuff in Swift.
+
+474
+00:33:45,280 --> 00:33:46,000
+[SPEAKER_00] You marked them.
+
+475
+00:33:46,400 --> 00:33:52,080
+[SPEAKER_00] Yeah, and that was basically just the, you know, all the communication with CloudKit, but there was no UI.
+
+476
+00:33:52,240 --> 00:33:54,000
+[SPEAKER_00] Oh yeah, the UI was still in UIKit.
+
+477
+00:33:54,800 --> 00:33:55,200
+[SPEAKER_00] That was it.
+
+478
+00:33:55,360 --> 00:33:59,280
+[SPEAKER_00] And Swift UI has been launched and Sophia wants to learn how to code.
+
+479
+00:33:59,760 --> 00:34:00,480
+[SPEAKER_01] Perfect combination.
+
+480
+00:34:00,720 --> 00:34:00,800
+[SPEAKER_01] Okay.
+
+481
+00:34:01,120 --> 00:34:01,600
+[SPEAKER_00] Yeah, right.
+
+482
+00:34:02,000 --> 00:34:07,360
+[SPEAKER_02] So Cezar said, like, oh, wow, I have this app lying around and I want it in Swift UI.
+
+483
+00:34:08,000 --> 00:34:10,000
+[SPEAKER_02] Why don't you just rewrite all the views?
+
+484
+00:34:11,280 --> 00:34:12,400
+[SPEAKER_02] I was like, okay.
+
+485
+00:34:13,440 --> 00:34:14,400
+[SPEAKER_01] Easy first task.
+
+486
+00:34:15,040 --> 00:34:35,040
+[SPEAKER_02] I had only touched Xcode before by, so I made my first encounter with Xcode was these iMessage sticker apps because I wanted to create real stickers, but then you have to handle all the logistics and the printing and the sending and they're hopefully not like refunds.
+
+487
+00:34:35,280 --> 00:34:37,600
+[SPEAKER_02] So this was like, well, you can do it digitally.
+
+488
+00:34:38,080 --> 00:34:40,400
+[SPEAKER_02] I'm like, yeah, let's do it.
+
+489
+00:34:42,000 --> 00:34:49,840
+[SPEAKER_02] So I actually have a sticker app on the app store with illustrations from my hometown Gothenburg.
+
+490
+00:34:50,160 --> 00:34:50,640
+[SPEAKER_01] Oh, nice.
+
+491
+00:34:50,800 --> 00:34:50,880
+[SPEAKER_01] Okay.
+
+492
+00:34:51,840 --> 00:34:52,800
+[SPEAKER_01] And you had done that already?
+
+493
+00:34:53,200 --> 00:34:55,680
+[SPEAKER_01] Like this was before you started learning Swift and all that?
+
+494
+00:34:56,400 --> 00:34:56,480
+[SPEAKER_02] Yes.
+
+495
+00:34:57,040 --> 00:35:03,360
+[SPEAKER_02] So I was like somewhat familiar with Xcode, but I haven't touched code in it.
+
+496
+00:35:03,840 --> 00:35:08,320
+[SPEAKER_02] So yeah, I started, you know, just building out the views.
+
+497
+00:35:09,440 --> 00:35:14,240
+[SPEAKER_02] And I guess I never stopped because I'm still building that views.
+
+498
+00:35:17,360 --> 00:35:18,480
+[SPEAKER_01] How did that process go though?
+
+499
+00:35:18,720 --> 00:35:21,920
+[SPEAKER_01] Like, I don't know, it's a weird thing to talk about.
+
+500
+00:35:22,320 --> 00:35:36,320
+[SPEAKER_01] You know, it's the type of story that I always loved bringing up here because there's a lot of people at different stages of their journey, but it's like, I don't even know nowadays, you know, with AI, it's like, everything's just so radically different.
+
+501
+00:35:36,640 --> 00:35:44,560
+[SPEAKER_01] But for you at this point, you're just going one by one and trying to, how do I make this thing work this way here?
+
+502
+00:35:44,880 --> 00:35:49,600
+[SPEAKER_01] And you're just doing a lot of Googleing essentially and trying and failing?
+
+503
+00:35:50,320 --> 00:35:51,680
+[SPEAKER_02] Yes, a lot of failing.
+
+504
+00:35:54,320 --> 00:35:59,680
+[SPEAKER_02] Because I think my biggest problem was, I didn't have any terminology.
+
+505
+00:36:00,400 --> 00:36:05,200
+[SPEAKER_02] So when I wanted to Google for something, I had to describe what I wanted.
+
+506
+00:36:05,840 --> 00:36:11,520
+[SPEAKER_02] I couldn't just say like, oh, I'm looking for this modifier or this whatever.
+
+507
+00:36:11,920 --> 00:36:16,000
+[SPEAKER_01] Even the word modifier is like not part of your nomenclature already.
+
+508
+00:36:16,240 --> 00:36:18,960
+[SPEAKER_01] And that's where I feel like the AI thing comes in.
+
+509
+00:36:19,360 --> 00:36:28,080
+[SPEAKER_01] Like it's so much easier to describe in all of the wrong words a problem and it fully understands what you're talking about and then tell you what all the right words are.
+
+510
+00:36:28,720 --> 00:36:28,800
+[SPEAKER_02] Yeah.
+
+511
+00:36:29,040 --> 00:36:31,120
+[SPEAKER_02] I wouldn't say fully understand to be honest.
+
+512
+00:36:31,840 --> 00:36:35,840
+[SPEAKER_01] Well, certainly a lot better than Google would in this stage.
+
+513
+00:36:36,640 --> 00:36:38,080
+[SPEAKER_00] Charlie, you're absolutely right.
+
+514
+00:36:39,840 --> 00:36:40,320
+[SPEAKER_01] There it is.
+
+515
+00:36:41,760 --> 00:36:42,320
+[SPEAKER_02] Oh, I know.
+
+516
+00:36:42,720 --> 00:36:45,040
+[SPEAKER_02] So many times I've had to correct Claude.
+
+517
+00:36:45,360 --> 00:36:57,120
+[SPEAKER_01] So you started doing, you started doing this, and what was your goal to kind of get a new version of cooking out and then build that into something that was making you money?
+
+518
+00:36:57,360 --> 00:37:04,240
+[SPEAKER_01] Or were you using it as a springboard to get into, you know, building software yourself and having your own clients or working with Cesar?
+
+519
+00:37:04,400 --> 00:37:06,480
+[SPEAKER_01] Or like, kind of, what was the goal ultimately here?
+
+520
+00:37:07,040 --> 00:37:08,000
+[SPEAKER_02] Yeah, a springboard.
+
+521
+00:37:08,720 --> 00:37:44,240
+[SPEAKER_02] I needed to practice and to learn, basically and because I wanted to become a developer and then the idea was that I was gonna work as a developer like being employed somewhere but then Cesar heard of something called Apple Entrepreneur Camp I think this was in 2020 or 2021 yeah and he said like oh honey you should definitely apply to this I was like yeah but they're never gonna accept me because I know nothing like I am such a beginner and like I don't even know the right words.
+
+522
+00:37:44,480 --> 00:37:47,680
+[SPEAKER_02] Like I can't even communicate about what I'm building, you know?
+
+523
+00:37:47,920 --> 00:37:48,640
+[SPEAKER_01] And this is the.
+
+524
+00:37:49,200 --> 00:37:50,640
+[SPEAKER_01] program run by Apple, right?
+
+525
+00:37:51,120 --> 00:37:51,200
+[SPEAKER_01] Yes.
+
+526
+00:37:51,520 --> 00:37:52,640
+[SPEAKER_00] And can I just add one thing here?
+
+527
+00:37:53,200 --> 00:37:59,760
+[SPEAKER_00] The whole adventure with Apple, the things Sofis, you know, beginning to explain now, is thanks to what's the UX divine device at Apple?
+
+528
+00:38:00,640 --> 00:38:00,880
+[SPEAKER_00] Stern.
+
+529
+00:38:01,280 --> 00:38:01,840
+[SPEAKER_00] Mike Stern.
+
+530
+00:38:02,000 --> 00:38:02,720
+[SPEAKER_00] Oh, Mike Stern.
+
+531
+00:38:02,880 --> 00:38:03,600
+[SPEAKER_01] Oh, Mike Stern.
+
+532
+00:38:03,840 --> 00:38:03,920
+[SPEAKER_00] Yes.
+
+533
+00:38:04,800 --> 00:38:06,960
+[SPEAKER_00] It was his post that started all this.
+
+534
+00:38:07,120 --> 00:38:07,920
+[SPEAKER_02] Oh, thank you, Mike.
+
+535
+00:38:08,160 --> 00:38:08,240
+[SPEAKER_00] Yeah.
+
+536
+00:38:09,600 --> 00:38:10,320
+[SPEAKER_00] So he made a post.
+
+537
+00:38:10,560 --> 00:38:12,240
+[SPEAKER_00] I saw it about Apple Intermittal Camp.
+
+538
+00:38:12,640 --> 00:38:14,400
+[SPEAKER_00] And I went over it to feel like, look at this.
+
+539
+00:38:15,680 --> 00:38:15,760
+[SPEAKER_02] Yeah.
+
+540
+00:38:16,160 --> 00:38:17,040
+[SPEAKER_02] And I was terrified.
+
+541
+00:38:17,280 --> 00:38:21,040
+[SPEAKER_02] And Cesar said, like, oh, whoa, what's the worst thing that's going to happen?
+
+542
+00:38:21,360 --> 00:38:21,600
+[SPEAKER_02] You know?
+
+543
+00:38:22,320 --> 00:38:23,360
+[SPEAKER_02] They say no, or they say yes.
+
+544
+00:38:23,520 --> 00:38:27,040
+[SPEAKER_02] And I said, like, ye that's the worst thing they can say yes, you know?
+
+545
+00:38:27,920 --> 00:38:29,440
+[SPEAKER_01] Then saying yes is the worst thing.
+
+546
+00:38:30,560 --> 00:38:32,160
+[SPEAKER_02] Then I would actually have to do it.
+
+547
+00:38:33,120 --> 00:38:44,080
+[SPEAKER_02] And I got an email where they said it was imperative that we got a call scheduled like this week or early next week.
+
+548
+00:38:44,320 --> 00:38:44,880
+[SPEAKER_01] So very often.
+
+549
+00:38:45,200 --> 00:38:45,360
+[SPEAKER_01] That was.
+
+550
+00:38:46,480 --> 00:38:46,560
+[SPEAKER_02] Yeah.
+
+551
+00:38:47,360 --> 00:38:47,920
+[SPEAKER_01] Just all of a sudden.
+
+552
+00:38:49,600 --> 00:38:56,400
+[SPEAKER_01] Like, we need to get hold of you right now and no details so that you sit there and think, there's a hundred ways I could make this go wrong.
+
+553
+00:38:56,480 --> 00:38:58,320
+[SPEAKER_01] And then you stress about it over and over and over again.
+
+554
+00:38:58,640 --> 00:39:00,720
+[SPEAKER_00] I even remember the exact phrasing they used.
+
+555
+00:39:00,720 --> 00:40:42,080
+[SPEAKER_02] the we used it's of utmost importance that we get on a call it's effective it was it was but i was shaking like a leaf like i was so nervous and then i uh i talked to ceeso like oh what do i do what do i do it's like you take the call like okay um and then we had the call and ceeso well before we scheduled the call i said ceeso like well what do they want to talk about like why why would they want to call me and he said like oh you know it's just like um they want to welcome you in like in person like you know properly not via email they just want to tell you you got in you know it's like yeah like okay okay well do i have to prepare anything it's like no it's gonna be a five minute call you know they're just gonna say whoa you're on board welcome in i mean that's what i would have guessed based on this and it's a valid guess right i don't know what else i would have even expected i'm waiting on the edge of my seat to hear what it actually was oh it turned out it was a technical interview for two hours oh my goodness wow i'm not happy do you think it was helpful in a way though that you weren't expecting that much because then you weren't going into it with the same nerves probably well my nerves were all over anyway but fair yeah yeah okay so you had like a full interview but uh how did it end up how did it end up going then well i got in You got in.
+
+556
+00:40:42,640 --> 00:40:43,120
+[SPEAKER_02] I got in.
+
+557
+00:40:43,920 --> 00:40:44,400
+[SPEAKER_01] Yay.
+
+558
+00:40:44,720 --> 00:40:45,040
+[SPEAKER_02] Thank you.
+
+559
+00:40:45,360 --> 00:40:45,680
+[SPEAKER_02] Thank you.
+
+560
+00:40:46,000 --> 00:40:47,520
+[SPEAKER_01] So what did that entail then?
+
+561
+00:40:47,840 --> 00:40:50,240
+[SPEAKER_01] Like what, you know, getting in means what?
+
+562
+00:40:50,560 --> 00:40:52,400
+[SPEAKER_01] What did you actually do after that?
+
+563
+00:40:53,120 --> 00:40:55,920
+[SPEAKER_02] So I think it started a couple of weeks later.
+
+564
+00:40:56,800 --> 00:40:59,600
+[SPEAKER_02] Like it was definitely within two months.
+
+565
+00:41:00,000 --> 00:41:00,880
+[SPEAKER_02] It was the same summer.
+
+566
+00:41:01,040 --> 00:41:03,440
+[SPEAKER_02] I think this was like end of spring and this was in the summer.
+
+567
+00:41:03,760 --> 00:41:10,800
+[SPEAKER_02] It was a two weeks boot camp for like how to create apps, like what to think of, how you pitch it.
+
+568
+00:41:11,360 --> 00:41:14,320
+[SPEAKER_02] We had DTS hours with Apple engineers.
+
+569
+00:41:14,560 --> 00:41:17,600
+[SPEAKER_02] We had design sessions with Apple designers.
+
+570
+00:41:19,040 --> 00:41:29,040
+[SPEAKER_02] We talked with, we had like pitch meeting, like how to elevator pitch with I don't remember who like their titles but they were like very high up.
+
+571
+00:41:29,440 --> 00:41:29,520
+[SPEAKER_01] Yes.
+
+572
+00:41:29,840 --> 00:41:36,080
+[SPEAKER_01] Was that in Cupertino or was this kind of because this is like in that kind of COVID in between era.
+
+573
+00:41:36,640 --> 00:41:37,680
+[SPEAKER_01] So was it virtual?
+
+574
+00:41:38,240 --> 00:41:40,480
+[SPEAKER_02] So unfortunately it was during the pandemic.
+
+575
+00:41:40,800 --> 00:41:50,400
+[SPEAKER_02] So it was virtual but it was also nice in one way that it was because I still wasn't like recovered from my burnout.
+
+576
+00:41:51,120 --> 00:42:02,800
+[SPEAKER_02] So for me this was actually the best outcome because then I could like sleep in my own bed and yeah yeah you know having a flying across the world in a different time zone in a different place.
+
+577
+00:42:03,440 --> 00:42:06,000
+[SPEAKER_02] Yeah, um, it was enough as it was.
+
+578
+00:42:06,560 --> 00:42:12,480
+[SPEAKER_02] Um, we literally like slept and ate and coded like that.
+
+579
+00:42:12,800 --> 00:42:14,880
+[SPEAKER_02] That's the only thing we did for two weeks.
+
+580
+00:42:15,760 --> 00:42:16,960
+[SPEAKER_00] And it was not a lot of sleep.
+
+581
+00:42:17,600 --> 00:42:18,000
+[SPEAKER_02] No, no.
+
+582
+00:42:18,240 --> 00:42:23,440
+[SPEAKER_02] So, uh, to to be able to like get the most out of it, we would eat during the sessions.
+
+583
+00:42:24,160 --> 00:42:28,080
+[SPEAKER_02] So, uh, yeah, we didn't have, we didn't really have time to eat to be honest.
+
+584
+00:42:28,160 --> 00:42:29,680
+[SPEAKER_00] No, and it was on US base, right?
+
+585
+00:42:29,920 --> 00:42:30,720
+[SPEAKER_00] Because it was adapted.
+
+586
+00:42:30,800 --> 00:42:33,680
+[SPEAKER_01] Oh, sixteen oh, yeah, yeah.
+
+587
+00:42:33,680 --> 00:42:35,360
+[SPEAKER_02] It was a nine hour time difference.
+
+588
+00:42:35,680 --> 00:42:35,840
+[SPEAKER_00] Yeah.
+
+589
+00:42:36,560 --> 00:42:41,920
+[SPEAKER_01] So out of all of that, I mean, it sounds like that was a boon for your career, it was helpful for you.
+
+590
+00:42:42,640 --> 00:42:44,960
+[SPEAKER_01] What was the big thing that you feel like you got out of it?
+
+591
+00:42:45,200 --> 00:42:54,640
+[SPEAKER_01] Was it technical or was it kind of process or understanding the App Store better or like what you got out of it that you feel like then helped you with your career?
+
+592
+00:42:55,360 --> 00:42:56,800
+[SPEAKER_02] This is gonna sound super cheesy.
+
+593
+00:42:57,920 --> 00:43:02,720
+[SPEAKER_02] But my confidence, because going in, I felt like such an imposter.
+
+594
+00:43:03,440 --> 00:43:08,320
+[SPEAKER_02] I was nervous at every meeting thinking, Oh, they're gonna call me out.
+
+595
+00:43:08,720 --> 00:43:09,680
+[SPEAKER_01] Yeah, they're gonna find out.
+
+596
+00:43:10,720 --> 00:43:11,680
+[SPEAKER_01] I have no idea what I'm doing.
+
+597
+00:43:12,400 --> 00:43:12,480
+[SPEAKER_01] Yeah.
+
+598
+00:43:12,480 --> 00:43:49,600
+[SPEAKER_02] yeah yeah but the environment that they created not only for me but for all attendees uh just made it you know made me believe in myself and in what i do and i could see the progress like when i had my first dts hour with the with an engineer i had never uh par code uh pear coded yeah and that's why you programmed yeah pear programmed yeah uh before and so i didn't really know what was expected of me but i tend to set very high expectations on myself.
+
+599
+00:43:50,240 --> 00:43:55,360
+[SPEAKER_02] So I thought that I would have to like know everything and have it all figured out beforehand.
+
+600
+00:43:55,840 --> 00:43:59,120
+[SPEAKER_02] And like I mentioned, I had zero terminology.
+
+601
+00:43:59,920 --> 00:44:05,440
+[SPEAKER_02] So just like trying to communicate in the first place was like terrifying.
+
+602
+00:44:06,000 --> 00:44:08,240
+[SPEAKER_02] It was going to be so obvious in my eyes.
+
+603
+00:44:08,560 --> 00:44:10,960
+[SPEAKER_02] It was going to be so obvious like you don't belong here.
+
+604
+00:44:13,040 --> 00:44:13,600
+[SPEAKER_02] But it was great.
+
+605
+00:44:14,880 --> 00:44:15,520
+[SPEAKER_01] That's awesome.
+
+606
+00:44:16,080 --> 00:44:22,480
+[SPEAKER_01] So as you came out, so you come out of that with renewed, obviously skills and knowledge and whatever, but also renewed confidence.
+
+607
+00:44:23,200 --> 00:44:25,920
+[SPEAKER_01] How did that go into your work then?
+
+608
+00:44:26,720 --> 00:44:50,720
+[SPEAKER_02] I would get like the energy to keep on pushing forward because trying to explain to someone who doesn't program, I tend to say like it's a roller coaster like your day is a full-blown roller coaster like you have something that you are struggling with and you're like basically grinding and you don't know why it won't build because we didn't have Claude.
+
+609
+00:44:51,280 --> 00:44:52,800
+[SPEAKER_02] You can't ask anyone really.
+
+610
+00:44:53,680 --> 00:44:54,560
+[SPEAKER_02] And then you would get it.
+
+611
+00:44:54,800 --> 00:45:00,000
+[SPEAKER_02] And when it would build, like you got zero errors and you would be like at the top of that roller coaster.
+
+612
+00:45:00,000 --> 00:45:02,880
+[SPEAKER_02] And it was like, yeah.
+
+613
+00:45:03,680 --> 00:45:07,120
+[SPEAKER_02] So it was like you just get the energy to continue doing that.
+
+614
+00:45:07,680 --> 00:45:20,800
+[SPEAKER_01] I feel like software development, you know, as a, not as a rule, obviously plenty of people don't fit this, but, but if you've done this for long enough, you kind of almost can't see yourself as infallible because...
+
+615
+00:45:21,760 --> 00:45:26,240
+[SPEAKER_01] You're just repeatedly running into massive roadblocks that you have to push through, at least most people.
+
+616
+00:45:26,400 --> 00:45:26,800
+[SPEAKER_01] I don't know.
+
+617
+00:45:26,960 --> 00:45:36,560
+[SPEAKER_01] There's probably super geniuses out there that never ran into build errors, but most of us would have sometimes days where you're just banging your head against a problem and it kind of, it's like you can't.
+
+618
+00:45:36,960 --> 00:45:52,240
+[SPEAKER_01] be like the computer's wrong, I'm not wrong because, you know, as much as we all like to think it's the compiler error, we always end up finding out most of the time that, oh no, it was actually we missed a comma or didn't release, you know, some memory in some spot or whatever.
+
+619
+00:45:52,480 --> 00:45:59,040
+[SPEAKER_01] And so getting roadblocked almost creates a specific type of culture that we all had this shared understanding that we could be wrong.
+
+620
+00:45:59,280 --> 00:46:04,800
+[SPEAKER_01] But I almost wonder if I feel like we're entering this era where you almost never really get roadblocks.
+
+621
+00:46:05,280 --> 00:46:09,040
+[SPEAKER_01] Like sometimes you have to keep asking the thing to do it multiple times.
+
+622
+00:46:09,680 --> 00:46:24,320
+[SPEAKER_01] But at least in my experience, I'm aggravated at the machine for not getting it, as opposed to this feeling of like I'm doing it wrong, which I wonder if that's going to tweak our, how we think about ourselves and our brains a little bit as, you know, a software engineering field or something.
+
+623
+00:46:24,720 --> 00:46:27,520
+[SPEAKER_01] I don't know, weird, sudden observation based on that.
+
+624
+00:46:27,760 --> 00:46:32,960
+[SPEAKER_01] But anyway, so you're coming out of that, now you have the confidence to kind of push through and build things.
+
+625
+00:46:33,520 --> 00:46:36,880
+[SPEAKER_01] Did you pour that into the cooking app then?
+
+626
+00:46:37,600 --> 00:46:39,520
+[SPEAKER_01] Was that kind of your primary muse at that point?
+
+627
+00:46:40,320 --> 00:46:45,040
+[SPEAKER_02] Yeah, because we were starting to get featured on App Store.
+
+628
+00:46:45,920 --> 00:47:24,320
+[SPEAKER_02] It's like, oh, whoa, this is starting to take off and now we really need someone to actually continue to improve it like now we have a legit reason so I would do that and yeah it would continue to grow and fast forwarding I would take on more work like I would get I got my first client job together with Cesar because again I was terrified afraid being called out like she had no clue she doesn't know what she's doing and this was together with Marlin and Kai oh nice client they had.
+
+629
+00:47:25,360 --> 00:47:30,400
+[SPEAKER_02] So we would be here in Sweden and they would be in Vancouver.
+
+630
+00:47:31,200 --> 00:47:34,160
+[SPEAKER_02] And then the client was like somewhere Midwest.
+
+631
+00:47:34,720 --> 00:47:34,800
+[SPEAKER_01] Yeah.
+
+632
+00:47:35,280 --> 00:47:36,000
+[SPEAKER_02] I think in the US.
+
+633
+00:47:36,640 --> 00:47:40,240
+[SPEAKER_02] So we would like to cover three very different time zones.
+
+634
+00:47:40,960 --> 00:47:41,360
+[SPEAKER_02] It was cool.
+
+635
+00:47:42,480 --> 00:47:43,280
+[SPEAKER_00] Yeah, it was cool.
+
+636
+00:47:44,000 --> 00:47:44,720
+[SPEAKER_01] That's awesome.
+
+637
+00:47:44,960 --> 00:47:50,480
+[SPEAKER_01] So you've kind of folded in client work into both of your work then, but you do both keep up.
+
+638
+00:47:51,040 --> 00:47:53,200
+[SPEAKER_01] you know, a collection of apps yourself.
+
+639
+00:47:53,520 --> 00:48:00,480
+[SPEAKER_01] So Ambi Studio, as we referenced here, it has the cooking app, which is now renamed Ambre, is that correct?
+
+640
+00:48:00,720 --> 00:48:01,600
+[SPEAKER_00] Mm hmm.
+
+641
+00:48:01,680 --> 00:48:02,000
+[SPEAKER_00] Exactly.
+
+642
+00:48:02,160 --> 00:48:05,200
+[SPEAKER_01] And then you have a podcasting app, listen, there's a couple of other ones on there.
+
+643
+00:48:05,600 --> 00:48:09,680
+[SPEAKER_01] What are the things that you've done over time to make those more visible?
+
+644
+00:48:09,920 --> 00:48:14,880
+[SPEAKER_01] I feel like Ombre in particular is one that, you know, I see picked up, it's referenced.
+
+645
+00:48:15,360 --> 00:48:18,480
+[SPEAKER_01] You all have kind of become voices in the community in a way.
+
+646
+00:48:19,520 --> 00:48:21,360
+[SPEAKER_01] Is that all something you've been intentional about?
+
+647
+00:48:21,680 --> 00:48:25,120
+[SPEAKER_01] Or are there things that you've done that have worked or haven't worked in terms of marketing?
+
+648
+00:48:26,400 --> 00:48:32,240
+[SPEAKER_02] I think we haven't done that much marketing, like not properly anyway.
+
+649
+00:48:33,360 --> 00:48:35,360
+[SPEAKER_02] We do have an Instagram account for it.
+
+650
+00:48:37,200 --> 00:48:45,200
+[SPEAKER_02] But it's more just because we feel like we have to have it because it's a great way for users to reach out to us.
+
+651
+00:48:46,160 --> 00:48:51,280
+[SPEAKER_02] And if they have feedback or they have some problems or whatever.
+
+652
+00:48:52,640 --> 00:48:54,000
+[SPEAKER_02] And that's mostly because of that.
+
+653
+00:48:54,400 --> 00:49:01,200
+[SPEAKER_02] But it was actually Cesar and a contact at Apple who like, I wouldn't say nudge, they almost like kicked me into.
+
+654
+00:49:02,480 --> 00:49:06,080
+[SPEAKER_02] get a social media presence, which I did.
+
+655
+00:49:06,400 --> 00:49:12,640
+[SPEAKER_02] And then when I started to post about, you know, app development, but Embrain particularly.
+
+656
+00:49:12,640 --> 00:49:18,560
+[SPEAKER_02] in particular and like more towards UI and design, I would get a following.
+
+657
+00:49:18,960 --> 00:49:33,600
+[SPEAKER_02] And I think it has to do with I am a minority because I'm a woman and also because I was posting about design, had a feeling it was more like code-based posts before in the community.
+
+658
+00:49:34,400 --> 00:49:39,600
+[SPEAKER_02] Or it's like, I had this idea and I saw this new API or SDK and I'm going to try it out.
+
+659
+00:49:40,320 --> 00:49:44,160
+[SPEAKER_02] whereas I would like, ooh, this color combination is super nice.
+
+660
+00:49:44,320 --> 00:49:48,560
+[SPEAKER_02] And if you put it this way, like in.
+
+661
+00:49:49,120 --> 00:49:53,120
+[SPEAKER_02] the layout, it would read much better or, I don't know, things like that.
+
+662
+00:49:53,760 --> 00:49:57,120
+[SPEAKER_01] There's a certain creativity in the stuff that both of you put out.
+
+663
+00:49:57,200 --> 00:50:03,840
+[SPEAKER_01] I think, like, Listen, your podcast app has a fun, I would say, like chat head style window that you can throw around the screen.
+
+664
+00:50:04,240 --> 00:50:08,160
+[SPEAKER_01] But the thing I I will never forget is the first time I met both of you.
+
+665
+00:50:08,400 --> 00:50:09,600
+[SPEAKER_01] I don't know if you remember this.
+
+666
+00:50:10,320 --> 00:50:11,680
+[SPEAKER_01] I think I do.
+
+667
+00:50:12,560 --> 00:50:19,680
+[SPEAKER_01] I think we were sitting on the roof of the Apple App Store that's across from the Apple Park and the mothership.
+
+668
+00:50:20,320 --> 00:50:24,560
+[SPEAKER_01] Yeah, and you were introducing yourself and then Sophia pulls, what was it?
+
+669
+00:50:24,960 --> 00:50:26,560
+[SPEAKER_01] You had a card, I think, is what you started with.
+
+670
+00:50:26,720 --> 00:50:27,840
+[SPEAKER_01] And you're like, This is my app.
+
+671
+00:50:28,320 --> 00:50:29,040
+[SPEAKER_01] And it was Ombre.
+
+672
+00:50:29,280 --> 00:50:30,400
+[SPEAKER_01] And it was like a QR code.
+
+673
+00:50:30,480 --> 00:50:31,200
+[SPEAKER_01] And you scanned it.
+
+674
+00:50:31,840 --> 00:50:34,320
+[SPEAKER_01] And then you downloaded the app.
+
+675
+00:50:34,640 --> 00:50:39,840
+[SPEAKER_01] And then inside the app, there was another QR code that you scanned to get like a specific recipe.
+
+676
+00:50:40,480 --> 00:50:43,200
+[SPEAKER_01] And the recipe was for how to make Swedish fish.
+
+677
+00:50:44,320 --> 00:50:46,560
+[SPEAKER_01] And I watched you do this to other people after me.
+
+678
+00:50:46,720 --> 00:50:47,840
+[SPEAKER_01] And we all had the same reaction.
+
+679
+00:50:47,920 --> 00:50:51,680
+[SPEAKER_01] You'd it would it would open up the recipe and you're like, Oh, that's cute.
+
+680
+00:50:51,760 --> 00:50:52,880
+[SPEAKER_01] Like, Oh, you're from Sweden.
+
+681
+00:50:53,040 --> 00:50:53,440
+[SPEAKER_01] That's funny.
+
+682
+00:50:53,600 --> 00:50:57,520
+[SPEAKER_01] And then you'd pull a Swedish fish in a little baggy out and hand it to them.
+
+683
+00:50:57,680 --> 00:50:59,840
+[SPEAKER_01] Like, Here's the ingredients you have that you can make it.
+
+684
+00:51:00,720 --> 00:51:05,280
+[SPEAKER_01] So, ah, it was like it was one of those where I'm like, okay, these are these are very fun people.
+
+685
+00:51:05,760 --> 00:51:11,440
+[SPEAKER_01] Yeah, that was it was a cool way to kind of introduce yourself to everybody there.
+
+686
+00:51:12,080 --> 00:51:15,040
+[SPEAKER_02] I think it was the year after app clips were.
+
+687
+00:51:15,760 --> 00:51:17,680
+[SPEAKER_01] Oh, maybe it was an app clip that would make sense.
+
+688
+00:51:17,920 --> 00:51:24,640
+[SPEAKER_02] Because we wanted to use an app clip and I think one of the most frequent comments were like, oh my god, you have an app clip.
+
+689
+00:51:24,720 --> 00:51:25,920
+[SPEAKER_02] I've never seen an app clip.
+
+690
+00:51:27,360 --> 00:51:30,560
+[SPEAKER_01] What's funny is if you did the same thing, you might get the exact same reaction now.
+
+691
+00:51:30,800 --> 00:51:31,440
+[SPEAKER_01] They didn't exactly.
+
+692
+00:51:32,000 --> 00:51:33,200
+[SPEAKER_02] Yeah, not many of them.
+
+693
+00:51:33,520 --> 00:51:34,320
+[SPEAKER_01] Yeah, yeah, yeah.
+
+694
+00:51:34,560 --> 00:51:37,600
+[SPEAKER_01] Just when you're like paying for your food, at least here in the States.
+
+695
+00:51:37,920 --> 00:51:39,040
+[SPEAKER_01] That's where I see them the most.
+
+696
+00:51:39,440 --> 00:51:51,520
+[SPEAKER_01] We're getting at time and I don't want to end without asking both of you the question I ask everyone to end this show, which is who is a person or people out there that have inspired you and your work that you recommend others to check out?
+
+697
+00:51:51,920 --> 00:51:53,440
+[SPEAKER_01] And Cesar, I'll start with you.
+
+698
+00:51:53,920 --> 00:51:54,400
+[SPEAKER_00] Oh, wow.
+
+699
+00:51:54,640 --> 00:51:56,800
+[SPEAKER_00] This is so incredibly difficult.
+
+700
+00:51:57,600 --> 00:52:11,840
+[SPEAKER_00] Along the journey of many years of doing app development, it's so easy to look up on these idols or these very successful people and see them as your, I don't know, your goal, where you want to be.
+
+701
+00:52:12,720 --> 00:52:20,320
+[SPEAKER_00] But as I've become older, I've started to value more the people in my position doing the hustle.
+
+702
+00:52:20,800 --> 00:52:24,400
+[SPEAKER_00] So for example, ask me ten years ago, I would say Steve Jobs.
+
+703
+00:52:24,960 --> 00:52:27,200
+[SPEAKER_00] And sure, Steve Jobs still super impressive.
+
+704
+00:52:27,360 --> 00:52:39,920
+[SPEAKER_00] I'm, you know, I still love a lot of things he did, but on a way, in a way, I can today understand that I can't compare myself to what he did or was or managed to do.
+
+705
+00:52:40,640 --> 00:52:43,760
+[SPEAKER_00] We were in two, we are and were in two very different places.
+
+706
+00:52:44,320 --> 00:52:48,000
+[SPEAKER_00] But when seeing other people in my position today and seeing what they achieve.
+
+707
+00:52:49,120 --> 00:52:53,200
+[SPEAKER_00] They might not be as famous, they might not be as visible, but they just keep on doing it.
+
+708
+00:52:53,440 --> 00:52:55,200
+[SPEAKER_00] They believe in themselves, they believe in their product.
+
+709
+00:52:56,560 --> 00:52:58,480
+[SPEAKER_00] That is extremely humbling.
+
+710
+00:52:58,800 --> 00:53:00,560
+[SPEAKER_00] I think that those are my idols.
+
+711
+00:53:00,720 --> 00:53:06,640
+[SPEAKER_00] And I don't want to name anyone because when you start, there's a saying in Sweden, Ingen named, ingen klem.
+
+712
+00:53:06,960 --> 00:53:08,480
+[SPEAKER_02] I knew you could say it.
+
+713
+00:53:08,880 --> 00:53:12,320
+[SPEAKER_00] Basically, it's like, nobody mentioned, nobody's forgotten.
+
+714
+00:53:12,960 --> 00:53:13,440
+[SPEAKER_01] Yeah, yeah.
+
+715
+00:53:13,520 --> 00:53:17,280
+[SPEAKER_01] If you're giving a whole speech, you never start listing names because, yeah.
+
+716
+00:53:17,760 --> 00:53:21,200
+[SPEAKER_01] As soon as you do that, you're like, all you can think about is, Who am I forgetting now?
+
+717
+00:53:21,600 --> 00:53:22,400
+[SPEAKER_00] Yes, exactly.
+
+718
+00:53:22,640 --> 00:53:23,680
+[SPEAKER_00] And you always forget someone.
+
+719
+00:53:24,000 --> 00:53:32,400
+[SPEAKER_00] But to be honest, the biggest inspiration is seeing other people trying to build products, build apps, build designs.
+
+720
+00:53:32,560 --> 00:53:43,120
+[SPEAKER_00] It doesn't have to be the entire app, but maybe just the app icon or the product or your landing site and trying to be original and trying to create something new.
+
+721
+00:53:43,680 --> 00:53:51,040
+[SPEAKER_00] That is extremely inspiring because I know that is also the most difficult part, creating something brand new from scratch.
+
+722
+00:53:51,600 --> 00:53:52,160
+[SPEAKER_01] Okay, cool.
+
+723
+00:53:52,480 --> 00:53:55,840
+[SPEAKER_01] Well, Cesar just coped out of giving a real answer.
+
+724
+00:53:56,000 --> 00:53:56,720
+[SPEAKER_01] So Sophia.
+
+725
+00:53:58,480 --> 00:53:59,360
+[SPEAKER_01] No, that's a good answer.
+
+726
+00:53:59,360 --> 00:54:00,000
+[SPEAKER_01] It's a good answer.
+
+727
+00:54:00,000 --> 00:55:22,960
+[SPEAKER_02] It's a good answer it's a good answer i mean you didn't give a name you know but i respect the uh i respect the working your way around it uh sophia do you have do you have a person that you'd inspire or are you also going to avoid uh names i was just thinking about what cisner said like how hard it is to get started on a project i don't think it's hard to get started like that's the easy part you have like a thousand ideas it's like i want to do that i'm going to do that it's continuing yeah following up like finishing up like all those loose ends like the last 10 percent that's the hard part i don't have anyone in those 10 though that i no um but uh in terms of having like an idol or uh someone because it's an idol you don't have to put him at that level uh but i would say like uh so i follow a lot of like product designers and designers in general on social media because that's where I get my inspiration just to see like how they solved complex UI or UX flows but also like just being goofy and silly and like exploring how can you use shaders or how can you like look at a to-do list differently.
+
+728
+00:55:23,440 --> 00:55:33,360
+[SPEAKER_02] And so I whenever I see something good, I don't just bookmark it because I'm never gonna go back and look at that because it doesn't happen in my everyday flow, you know?
+
+729
+00:55:33,680 --> 00:55:36,160
+[SPEAKER_02] So what I do is that I message myself.
+
+730
+00:55:37,120 --> 00:55:38,640
+[SPEAKER_02] Like that is my Yeah, yeah.
+
+731
+00:55:39,760 --> 00:55:42,880
+[SPEAKER_01] I immediately dump it into a group chat, generally speaking.
+
+732
+00:55:43,280 --> 00:55:45,280
+[SPEAKER_01] That's almost like my because I'm the same way.
+
+733
+00:55:45,360 --> 00:55:48,720
+[SPEAKER_01] If I like add it, I've tried all the Read It Later apps.
+
+734
+00:55:49,120 --> 00:55:50,240
+[SPEAKER_01] and putting it in notes and all that.
+
+735
+00:55:50,480 --> 00:55:51,760
+[SPEAKER_01] It's like I'm never going to go back.
+
+736
+00:55:51,920 --> 00:55:59,360
+[SPEAKER_01] But for some reason, if it's if I throw it in a group chat of some kind, it's like a place I'll actually remember putting it there.
+
+737
+00:55:59,680 --> 00:56:03,280
+[SPEAKER_01] Or in my case, it'll spark a discussion which helps cement it.
+
+738
+00:56:03,600 --> 00:56:13,040
+[SPEAKER_01] But, and this is going to be the case for you too, in the new Siri AI world, all of that is so much more searchable and easy to access than it was before.
+
+739
+00:56:13,600 --> 00:56:17,360
+[SPEAKER_02] So I was going right before this, this call.
+
+740
+00:56:18,720 --> 00:57:01,760
+[SPEAKER_02] I actually went through my iMessage chat with myself because I don't really think of it's kind of sounds boring i don't really think of anyone in particular when i look at designs because i don't want to be barked at like oh this is from this person so it has to be good or this is from that person so it's probably not that good i just like try to look at the content but i did see a design that i really liked so i want to give a shout out to a person not that he needed maybe but it's really cool his name is alex wickhart i think and he has the same handle i can i can send you the handle name yeah what is how do you spell how do you spell the handle?
+
+741
+00:57:02,560 --> 00:57:03,680
+[SPEAKER_02] Alex, as in Alex.
+
+742
+00:57:06,080 --> 00:57:15,440
+[SPEAKER_02] Then, for you, E-I-C-H-A-R-T.
+
+743
+00:57:16,160 --> 00:57:18,480
+[SPEAKER_01] Oh, building whimsical apps in Japan.
+
+744
+00:57:19,680 --> 00:57:19,760
+[SPEAKER_01] Okay.
+
+745
+00:57:20,080 --> 00:57:20,160
+[SPEAKER_02] Yeah.
+
+746
+00:57:20,800 --> 00:57:24,240
+[SPEAKER_02] So these are very cool, right?
+
+747
+00:57:24,720 --> 00:57:27,440
+[SPEAKER_02] And you probably haven't seen it, so you have no idea what we're talking about.
+
+748
+00:57:28,160 --> 00:57:28,240
+[SPEAKER_01] No.
+
+749
+00:57:29,520 --> 00:57:31,920
+[SPEAKER_02] But it's pretty cool, right?
+
+750
+00:57:32,880 --> 00:57:36,240
+[SPEAKER_01] Yeah, and it's very, this like calendar sticker app.
+
+751
+00:57:36,320 --> 00:58:49,440
+[SPEAKER_02] app uh looks very unique too yeah i like it so it's like posts like that that can like spark and a new idea of how to solve something or like look at it doesn't doesn't so if he's working on calendar things doesn't necessarily spark an idea for me within calendars or meal plans in ambre but it can be like how I look at everyday objects like differently how can you bring it in in the UI and yeah and I have two more names if you want sure i don't know the pronunciation so bear with me proscu a okay proscu.a so his handle is a pr-o-s-k-u-a-a he also has like a cool designs and then there is aurelian aurelian and he posts like about branding in general like he always usually like lift up different websites that have like cool landing pages i try to look at like product designers, I guess.
+
+752
+00:58:49,600 --> 00:58:49,680
+[SPEAKER_00] Yeah.
+
+753
+00:58:50,080 --> 00:58:58,560
+[SPEAKER_00] Looking at the signs today and how things are made is getting so much more interesting now that it's so easy to build stuff.
+
+754
+00:58:58,880 --> 00:59:02,640
+[SPEAKER_00] I mean, with AI today, we can build so much stuff.
+
+755
+00:59:03,600 --> 00:59:09,680
+[SPEAKER_00] The thing that's going to put you apart, your product apart from the competition is the experience you offer.
+
+756
+00:59:11,280 --> 00:59:13,440
+[SPEAKER_00] It probably won't be the feature set anymore.
+
+757
+00:59:15,520 --> 00:59:19,760
+[SPEAKER_00] So I think the sign is going to become even more important in the coming years than it has been.
+
+758
+00:59:20,400 --> 00:59:21,040
+[SPEAKER_01] Absolutely agree.
+
+759
+00:59:21,360 --> 00:59:23,680
+[SPEAKER_01] Like it's so easy to build the same thing.
+
+760
+00:59:25,280 --> 00:59:37,120
+[SPEAKER_01] I think also on top of that is how hard it is to design something like that kind of comes into play too because it's so easy to copy, you know, a simple design concept, right?
+
+761
+00:59:37,760 --> 00:59:59,360
+[SPEAKER_01] So making the overall experience feel right and feel polished and have lots and lots of those little details, that's what's going to go a long way because yeah, you almost what you need is for all of the little like when you've when you use software that's been really well crafted, you feel it constantly.
+
+762
+01:00:00,240 --> 01:00:01,760
+[SPEAKER_01] all the little choices that were made.
+
+763
+01:00:02,160 --> 01:00:08,800
+[SPEAKER_01] And if you're, if you're giving up all of those little choices to an AI model, they can often make really good ones.
+
+764
+01:00:08,960 --> 01:00:15,920
+[SPEAKER_01] It's not that they can't, but they're they're all going to feel a little more similar unless you can guide that programmer or whatever you want to call the model.
+
+765
+01:00:16,240 --> 01:00:16,480
+[SPEAKER_00] Oh my god.
+
+766
+01:00:16,800 --> 01:00:16,800
+[SPEAKER_00] Yes.
+
+767
+01:00:17,120 --> 01:00:20,240
+[SPEAKER_00] It's always a website that's been designed by Claude today.
+
+768
+01:00:20,880 --> 01:00:20,960
+[SPEAKER_02] Yes.
+
+769
+01:00:21,840 --> 01:00:28,080
+[SPEAKER_01] But then a website is said to be built by Claude that feels good and like well crafted as well.
+
+770
+01:00:28,400 --> 01:00:29,680
+[SPEAKER_01] It's not that Claude is the problem.
+
+771
+01:00:29,920 --> 01:00:33,360
+[SPEAKER_01] It's that you're giving up all of the, all of those little choices.
+
+772
+01:00:33,680 --> 01:00:36,800
+[SPEAKER_01] And so, and maybe there's a world where that goes away too.
+
+773
+01:00:36,880 --> 01:00:40,240
+[SPEAKER_01] I, I, I'm not going to act like I can predict how this is going to look in five years.
+
+774
+01:00:40,560 --> 01:01:00,080
+[SPEAKER_01] But at least right now, if you sit there and you do that same level of like refinement and revision, even if you're not the one writing the characters in and doing the code, I think that's where you can really bring in your design and experience, like expertise and stand out from, you know, the craft of everything else.
+
+775
+01:01:00,720 --> 01:01:01,440
+[SPEAKER_00] Yeah, exactly.
+
+776
+01:01:01,600 --> 01:01:07,840
+[SPEAKER_00] And that's, so I need to mention one thing, which I saw the other day, you know, Linus Tulvalds, the Linux guy.
+
+777
+01:01:08,000 --> 01:01:08,080
+[SPEAKER_01] Yeah.
+
+778
+01:01:08,800 --> 01:01:08,880
+[SPEAKER_00] Yeah.
+
+779
+01:01:09,280 --> 01:01:16,560
+[SPEAKER_00] So he mentioned that, and I'm paraphrasing now, but he was mentioning that people are complaining about AI and how you.
+
+780
+01:01:17,120 --> 01:01:18,720
+[SPEAKER_00] don't know what is being written.
+
+781
+01:01:19,840 --> 01:01:23,920
+[SPEAKER_00] And I think he compared that to people writing code, not reading the assembly code.
+
+782
+01:01:24,240 --> 01:01:24,320
+[SPEAKER_01] Yes.
+
+783
+01:01:25,040 --> 01:01:26,080
+[SPEAKER_01] That's how I feel anyway.
+
+784
+01:01:26,480 --> 01:01:29,040
+[SPEAKER_01] It's like I don't know what's going on under the hood of core data.
+
+785
+01:01:29,520 --> 01:01:30,480
+[SPEAKER_00] Exactly, exactly.
+
+786
+01:01:30,640 --> 01:01:34,080
+[SPEAKER_00] And that's, I think, that's, I think he's totally right on that.
+
+787
+01:01:34,960 --> 01:01:42,320
+[SPEAKER_00] And I mean, what it means is that we as developers or engineers or designers, what we own is the UX and quality of our app.
+
+788
+01:01:42,720 --> 01:01:47,120
+[SPEAKER_00] Our customers are not going to read the code, are not going to worry about what the assembly code is like.
+
+789
+01:01:47,840 --> 01:01:52,560
+[SPEAKER_00] They worry about performance, solving a problem and hopefully doing it in a beautiful way.
+
+790
+01:01:52,880 --> 01:01:53,360
+[SPEAKER_01] Yeah, exactly.
+
+791
+01:01:54,160 --> 01:02:04,720
+[SPEAKER_01] harnesses for testing essentially, like actually validating that it does the right thing at the end, especially when it comes out data, privacy and then validating that the information is correct and all that.
+
+792
+01:02:04,960 --> 01:02:07,760
+[SPEAKER_01] But yeah, no, I definitely agree with that.
+
+793
+01:02:08,160 --> 01:02:08,880
+[SPEAKER_02] I want to add something.
+
+794
+01:02:09,360 --> 01:02:09,840
+[SPEAKER_01] Yeah, yeah.
+
+795
+01:02:10,240 --> 01:02:19,440
+[SPEAKER_02] The way I see it when talking with people about AI, because there's like this echo going around like, oh, AI is going to take all of our jobs, you know?
+
+796
+01:02:20,080 --> 01:02:22,080
+[SPEAKER_02] But I see it as a tool.
+
+797
+01:02:22,720 --> 01:02:25,280
+[SPEAKER_02] Like Procrate is a tool.
+
+798
+01:02:25,680 --> 01:02:27,360
+[SPEAKER_02] Like an iPad is a tool.
+
+799
+01:02:28,000 --> 01:02:29,680
+[SPEAKER_02] A pencil is a tool.
+
+800
+01:02:30,720 --> 01:02:32,320
+[SPEAKER_02] When you buy like watercolor.
+
+801
+01:02:33,040 --> 01:02:36,960
+[SPEAKER_02] It's pigment and something that bind the pigment.
+
+802
+01:02:37,600 --> 01:02:40,160
+[SPEAKER_02] That's a tool for you to express yourself, right?
+
+803
+01:02:41,120 --> 01:02:42,080
+[SPEAKER_02] It's the same with AI.
+
+804
+01:02:42,640 --> 01:02:46,720
+[SPEAKER_02] It's just a next level of being able to express yourself.
+
+805
+01:02:47,600 --> 01:02:59,200
+[SPEAKER_02] And it just opens doors for so many more people, like designers, for instance, who didn't have the tools, the right toolbox for creating it, but they had had it in their head instead.
+
+806
+01:02:59,360 --> 01:03:02,480
+[SPEAKER_02] And now we get to see what they visualized.
+
+807
+01:03:03,440 --> 01:03:24,000
+[SPEAKER_02] And it has helped us improve and build Amber like immensely this year because I've gotten into AI coding and now I can put in the things that I had in my head and not relying on Cesar having the time to actually understand me first of all and then implementing it.
+
+808
+01:03:24,320 --> 01:03:33,040
+[SPEAKER_02] But I can talk directly with Claude and see my ideas come to life like within minutes, hours, depending on the complexity.
+
+809
+01:03:33,600 --> 01:03:35,680
+[SPEAKER_02] So I'm all for it.
+
+810
+01:03:36,160 --> 01:03:39,040
+[SPEAKER_01] Yeah, the ability to reduce that cycle time.
+
+811
+01:03:39,920 --> 01:03:48,480
+[SPEAKER_01] to feeling something and then, you know, trying to change it or tweak it or refine it for me has been, yeah, extremely.
+
+812
+01:03:48,480 --> 01:04:00,080
+[SPEAKER_01] Extremely fun, even if it's a little scary whenever I get deep into that and realize I haven't looked at anything under the hood and who knows what's going on under there, but I'm slowly letting that go more and more kind of as I go.
+
+813
+01:04:00,320 --> 01:04:01,600
+[SPEAKER_00] I think that's the way that we need to go.
+
+814
+01:04:01,680 --> 01:04:07,920
+[SPEAKER_00] We just like you said, I mean, we need to make sure we're compliant with laws or whatever depending on what kind of product you're building.
+
+815
+01:04:08,800 --> 01:04:17,840
+[SPEAKER_00] But if we ignore that for a moment, if you make sure QA is awesome, the app looks amazing and it solves a real problem, does the code details really matter?
+
+816
+01:04:18,320 --> 01:04:18,480
+[SPEAKER_01] Right.
+
+817
+01:04:18,880 --> 01:04:19,440
+[SPEAKER_01] Yeah, exactly.
+
+818
+01:04:19,680 --> 01:04:19,840
+[SPEAKER_01] Cool.
+
+819
+01:04:20,000 --> 01:04:20,240
+[SPEAKER_01] All right.
+
+820
+01:04:20,400 --> 01:04:21,280
+[SPEAKER_01] Well, thank you both.
+
+821
+01:04:21,680 --> 01:04:22,880
+[SPEAKER_01] This was it was super fun.
+
+822
+01:04:23,040 --> 01:04:31,520
+[SPEAKER_01] It was super fun to get to talk in a little more of a relaxed atmosphere than in front of a big crowrowd shooting, you know, T-shirts out of my fake cannon.
+
+823
+01:04:32,560 --> 01:04:34,160
+[SPEAKER_01] So thank you for coming.
+
+824
+01:04:34,320 --> 01:04:35,280
+[SPEAKER_01] This was this was super fun.
+
+825
+01:04:35,680 --> 01:04:36,480
+[SPEAKER_00] Thank you for having us.
+
+826
+01:04:36,720 --> 01:04:36,800
+[SPEAKER_00] Yeah.
+
+827
+01:04:37,040 --> 01:04:39,920
+[SPEAKER_02] Thank you so much for having us a second time, I would say.
+
+828
+01:04:40,240 --> 01:04:40,320
+[SPEAKER_01] Yeah.
+
+829
+01:04:40,880 --> 01:04:42,640
+[SPEAKER_02] I'm still counting the live one.
+
+830
+01:04:42,960 --> 01:04:43,840
+[SPEAKER_00] Oh yeah, that counts.
+
+831
+01:04:44,080 --> 01:04:45,120
+[SPEAKER_00] Has anyone been on twice?
+
+832
+01:04:45,520 --> 01:04:47,600
+[SPEAKER_01] Jordan Morgan is on every year.
+
+833
+01:04:47,760 --> 01:04:48,720
+[SPEAKER_01] We have a Christmas special.
+
+834
+01:04:50,000 --> 01:04:51,600
+[SPEAKER_00] And that's always Jordan.
+
+835
+01:04:52,080 --> 01:04:59,680
+[SPEAKER_01] And then Ryan Jones kind of has been on twice because of we did a live show after he had been on, you know, for real.
+
+836
+01:04:59,920 --> 01:05:00,800
+[SPEAKER_01] It was like years later.
+
+837
+01:05:01,200 --> 01:05:04,800
+[SPEAKER_01] But I think those I'm trying to think there might be someone else who's been on twice.
+
+838
+01:05:04,800 --> 01:05:06,080
+[SPEAKER_01] I don't know who else who's been on twice, but it's pretty rare.
+
+839
+01:05:06,160 --> 01:05:06,560
+[SPEAKER_01] It's pretty.
+
+840
+01:05:07,520 --> 01:05:09,840
+[SPEAKER_00] Okay, so if anyone calls in sick, you know who to call.
+
+841
+01:05:10,080 --> 01:05:10,880
+[SPEAKER_01] Yeah, there you go.
+
+842
+01:05:12,000 --> 01:05:13,920
+[SPEAKER_02] We can talk textile engineering.
+
+843
+01:05:14,480 --> 01:05:19,840
+[SPEAKER_01] Oh, no, that, that, maybe, yeah, we might have a separate, you know, side episode just on that.
+
+844
+01:05:20,640 --> 01:05:23,600
+[SPEAKER_01] Okay, so where can people find you both and your work?
+
+845
+01:05:24,240 --> 01:05:25,360
+[SPEAKER_00] I would say on VS.
+
+846
+01:05:25,680 --> 01:05:26,480
+[SPEAKER_00] Yeah, the app store.
+
+847
+01:05:26,880 --> 01:05:31,200
+[SPEAKER_00] So in September with OS 27, we're launching a new update for Ombre.
+
+848
+01:05:32,160 --> 01:05:33,920
+[SPEAKER_00] We're embracing all the new APIs.
+
+849
+01:05:34,160 --> 01:05:38,320
+[SPEAKER_00] We don't need to get into details, but we are using almost all of them, right?
+
+850
+01:05:38,640 --> 01:05:39,040
+[SPEAKER_00] I think so.
+
+851
+01:05:39,520 --> 01:05:41,680
+[SPEAKER_00] And we're adding some social elements as well.
+
+852
+01:05:43,440 --> 01:05:45,360
+[SPEAKER_00] On the App Store for OS 27 release.
+
+853
+01:05:45,680 --> 01:05:47,280
+[SPEAKER_01] And that's AMBRG.
+
+854
+01:05:47,760 --> 01:05:48,080
+[SPEAKER_01] Umbre.
+
+855
+01:05:48,640 --> 01:05:49,440
+[SPEAKER_00] Yeah, exactly.
+
+856
+01:05:49,680 --> 01:05:50,880
+[SPEAKER_00] It's going to be in the show notes.
+
+857
+01:05:51,360 --> 01:05:52,240
+[SPEAKER_01] Of course, of course.
+
+858
+01:05:52,960 --> 01:05:53,440
+[SPEAKER_00] My show.
+
+859
+01:05:53,920 --> 01:05:54,320
+[SPEAKER_01] Awesome.
+
+860
+01:05:54,560 --> 01:05:55,360
+[SPEAKER_00] I'll send you the list.
+
+861
+01:05:55,520 --> 01:05:56,400
+[SPEAKER_00] I'll send you the list.
+
+862
+01:05:57,200 --> 01:05:59,280
+[SPEAKER_00] But you can find us on Twitter, right?
+
+863
+01:06:00,240 --> 01:06:00,320
+[SPEAKER_02] Yeah.
+
+864
+01:06:00,480 --> 01:06:01,360
+[SPEAKER_00] What's your handle?
+
+865
+01:06:02,160 --> 01:06:03,200
+[SPEAKER_02] Fossea Design.
+
+866
+01:06:04,320 --> 01:06:05,680
+[SPEAKER_00] And mine is Jag Cesar.
+
+867
+01:06:06,320 --> 01:06:06,640
+[SPEAKER_01] All right.
+
+868
+01:06:07,120 --> 01:06:07,360
+[SPEAKER_01] Perfect.
+
+869
+01:06:07,920 --> 01:06:10,320
+[SPEAKER_01] And then thank you all for listening.
+
+870
+01:06:10,800 --> 01:06:13,760
+[SPEAKER_01] Launched is part of the RevenueCat podcast family now.
+
+871
+01:06:13,920 --> 01:06:22,560
+[SPEAKER_01] So if you want to learn more about the growth side of the mobile app business, you should check out the Subclub podcast hosted by my good friend and colleague David Barnard.
+
+872
+01:06:23,040 --> 01:06:28,160
+[SPEAKER_01] You can check out revenucat.com to learn more about the easiest way to grow and monetize your mobile app business.
+
+873
+01:06:28,640 --> 01:06:32,240
+[SPEAKER_01] And of course, you can find more launched at launchedfm.com.
+
+874
+01:06:33,120 --> 01:06:34,400
+[SPEAKER_01] And yeah, that's it.
+
+875
+01:06:34,560 --> 01:06:36,080
+[SPEAKER_01] So I'll see you all in two weeks.
+
+876
+01:06:36,480 --> 01:06:36,640
+[SPEAKER_01] Bye.
