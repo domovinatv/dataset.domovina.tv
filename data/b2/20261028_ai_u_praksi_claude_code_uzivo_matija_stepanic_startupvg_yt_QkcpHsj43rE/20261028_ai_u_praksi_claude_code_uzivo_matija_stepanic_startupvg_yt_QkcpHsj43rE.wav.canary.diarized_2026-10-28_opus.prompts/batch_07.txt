@@ -1,0 +1,65 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Uvod u StartupVG Masterclass i osnove rada s Claude Codeom: subvencionirani AI, MCP-ovi, prvi demo i upravljanje kontekstom
+Tema: Granica od 180.000 tokena i /wrap-up: kako Claude piše prompt samome sebi
+Ključni pojmovi: duljina konteksta, tokeni, wrap-up skill, handoff prompt, paralelne sesije
+Osobe/organizacije: Claude Code, stepanic.domovina.ai, GitHub, Claude
+Sadržaj:
+Na kraju ovog dijela Stepanić je pokazao kako upravlja **duljinom konteksta**. Postavio je limit: kada kontekst prijeđe **180.000 tokena**, Claude mu predlaže da pozove **wrap-up skill**. Taj skill sažme sve što je trenutno u kontekstu modela, spremi to na disk i izradi **handoff prompt** za nastavak rada u sljedećoj sesiji.
+
+Skill je napravio uz pomoć Claudea i dostupan je na **stepanic.domovina.ai** te na njegovu **GitHubu**. Riječ je o većoj količini teksta s uputama. Sve što se odvija u chatu nije trajno spremljeno na disk, a Claude tijekom rada nauči mnogo detalja: koje su zamke, što je još otvoreno i slično. Naredba `/wrap-up` prođe kroz cijeli razgovor, zabilježi te stvari i u kućnom direktoriju, u mapi za handoffove, stvori datoteku s točnim uputama kako nastaviti.
+
+Zašto je to korisno? Stepanić tvrdi da je **Claude najbolji kada sam sebi piše promptove**. Takav je prompt optimalno složen: troši minimalno tokena, a daje najbolji rezultat u sljedećoj sesiji. To je posebno važno pri radu s više paralelnih Claude Code sesija.
+
+Podijelio je i vlastita zapažanja o kontekstu:
+- u trenutku demonstracije sesija je trošila **101.000 tokena** od raspoloživih milijun;
+- prva poruka odmah zauzme oko **60.000 tokena**, jer se u kontekst učita mnoštvo skillova i drugih podataka;
+- prvih 100.000 tokena popunjava se puno brže, a kasnije svaka poruka dodaje tek malo;
+- ako se ubaci velika količina vlastitog znanja, kontekst može narasti i na 600.000 tokena;
+- alat je, prema njegovu iskustvu, najučinkovitiji oko **220.000 do 250.000 tokena**, a sljedeći limit na koji pazi jest 300.000.
+
+Rad tako dijeli u cjeline. Kada je jedna gotova i vidi da sve radi, pokrene wrap-up, zatim očisti sesiju naredbom `clear`. U novoj sesiji ne mora predavati nikakvu datoteku: dovoljno je reći „nastavi sa zadnjim handoffom”, jer je i za to napravio poseban skill.
+
+=== SEKCIJA 1 ===
+Blok: Claude Code u stvarnom radu: klijentske izmjene, usporedba s Cursorom, objava na Cloudflare, prepoznavanje govora i pregled projekata
+Tema: Pravi klijent, pravi web: kako WhatsApp poruka postaje izmjena na stranici
+Ključni pojmovi: staging okruženje, Cloudflare Workers, Wrangler CLI, klijentski zahtjevi, Git
+Osobe/organizacije: Matija Stepanić, Marko, krošulja.hr, Cloudflare, Cloudflare Workers, D1, Claude Code, Claude Desktop, WhatsApp
+Sadržaj:
+Nakon demonstracije *wrap-up* skilla i rada s *handoff* datotekama, **Matija Stepanić** prelazi na jedan od zanimljivijih dijelova večeri. Pokazuje stvarni projekt stvarnog klijenta. Riječ je o Marku, koji sjedi u publici i čiji web **krošulja.hr** Stepanić održava. Cilj je publici pokazati kako paralelni rad s Claude Codeom izgleda u svakodnevnoj praksi.
+
+Uputa koju Stepanić upisuje u terminal kratka je i na hrvatskom jeziku. Claude treba pogledati koje su nove poruke od Marka stigle od zadnjeg *snapshota* i provjeriti traži li klijent neku izmjenu na webu. Zatim treba isplanirati posao. Pritom ga izričito upozorava: **„Ne idi odmah na produkciju, nego idemo testirati prvo na staging.“**
+
+Stepanić objašnjava razliku između alata. Obični Claude Desktop može napisati aplikaciju koju korisnik zatim ručno kopira. Claude Code u terminalu radi izravno na korisnikovu datotečnom sustavu. Stepanić mu je dodatno dao ovlasti za spajanje na svoj **Cloudflare** račun putem **Wrangler CLI-ja**, Cloudflareova alata za naredbeni redak. Krošulja.hr je postavljena na **Cloudflare Workers** i koristi Cloudflareovu bazu **D1**.
+
+Stepanić naglašava da sve to postoji i neovisno o umjetnoj inteligenciji. Novost je u tome što je AI dovoljno pametan da na računalu s autoriziranim Cloudflare računom sam izgradi novu verziju stranice i postavi je na *staging* okruženje.
+
+Na ekranu se vidi kako Claude radi:
+- pet puta poziva WhatsApp,
+- primjećuje da su sve tri fotografije spremljene pod istim imenom pa se međusobno prepisuju,
+- odlučuje ih preuzimati jednu po jednu i brisati privremenu datoteku prije svakog preuzimanja.
+
+Stepanić priznaje da ni sam u tom trenutku ne zna točno što se sve događa. Repozitorij već sadrži mnogo znanja o projektu, pa Claude ne ispisuje svaki korak. Upravo tu vidi glavnu prednost rada s Gitom: **sve što Claude izgradi ili objavi uvijek se može vratiti korak unatrag**. Šteta je zato zanemariva, pogotovo jer izmjena prvo ide na provjeru na stagingu.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu

@@ -1,0 +1,63 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Godinu dana na velikom projektu: Git kao trajna memorija umjetne inteligencije
+Ključni pojmovi: kontekstni prozor, Git history, trajna memorija, commit poruke, veliki projekti
+Osobe/organizacije: Matija Stepanić, Git, Claude Code, Claude Desktop, Opus 5.5, Anthropic, Domovina Energy, Markdown
+Sadržaj:
+Drugi sudionik iz publike postavlja hipotetski scenarij. Netko odluči razvijati veliki proizvod, recimo „Facebook 2”, i na njemu svakodnevno radi godinu dana. Što ako AI u tom razdoblju počne zaboravljati, dodavati neželjene funkcionalnosti ili ukloni dio koji koristi 500.000 korisnika? Postoji li i dalje problem gubljenja konteksta na velikim projektima, kakav je bio prisutan prije godinu-dvije, i gdje se čuva memorija? U Markdown datotekama ili negdje drugdje?
+
+Matija Stepanić pitanje naziva odličnim. Potvrđuje da LLM uvijek ima **ograničen kontekst**. Danas je to milijun tokena, a do prije šest mjeseci bilo je 200.000, što je već tada bilo malo. Milijun tokena opisuje kao golem napredak, posebno uz model Opus 5.5, koji radi vrlo brzo.
+
+### Povijest commitova kao jeftin podsjetnik
+
+Rješenje vidi u činjenici da je proizvod skup skripti, ekrana i ostalih datoteka koje su, kao i dosad, **verzionirane u Gitu** i nalaze se na disku. Kada otvori Claude Code u postojećem projektu, najprije mu kaže neka pogleda **Git history**. To je vrlo jeftino jer Claude čita samo kratke poruke commitova, i to šest mjeseci unatrag, za oko 20.000 tokena. Nakon toga razumije što se radilo prije tri mjeseca, što danas i što je ispravljeno.
+
+Ilustrira to izmišljenim primjerom: Claude primijeti da je kontaktna forma promijenjena prošloga tjedna u tri datoteke. Kada korisnik zatraži da forma više ne bude ružičasta nego narančasta, zna točno gdje treba intervenirati, izmijeni datoteke, napravi commit i time stvori novi stabilni *checkpoint*.
+
+Zaključak je jasan: **Git repozitorij, koji nije ništa drugo nego mapa na disku, služi kao trajna memorija.** Sadržaj mogu biti Markdown, Excel i HTML datoteke ili Python skripte, pa čak i binarne datoteke. Claude, primjerice, može utvrditi da je datoteka *proba123.mp3* služila kao testni skup podataka i da je dodana prije 23 dana. Tako sam rekonstruira kontekst. Kod Claude Desktopa, za usporedbu, svaki je chat nov. Anthropic čuva bazu razgovora, ali model ih mora pretraživati.
+
+### Demonstracija na projektu Energy
+
+Stepanić to pokazuje na projektu Domovina Energy. Naredba `git log` prikazuje commit od istog popodneva u kojem je provjeren sandbox u pregledniku, a `git diff HEAD~1` točno pokazuje što se promijenilo u zadnjem commitu, primjerice dio predloška i nekoliko redaka koda. Claude Code, objašnjava, učitava samo te promjene, po potrebi otvara cijele datoteke, sam bira što šalje modelu na obradu, a zatim rezultat vraća u projekt i pokreće aplikaciju na računalu, gdje ju je moguće provjeriti u pregledniku.
+
+=== SEKCIJA 1 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Halucinacije i nestali gumbi: koliko je rizično pustiti AI na produkciju
+Ključni pojmovi: halucinacije, neželjene izmjene, Git diff, verifikacija, produkcijski rizik
+Osobe/organizacije: Matija Stepanić, Claude Code, Claude in Chrome, Cursor, Claude, Git
+Sadržaj:
+Isti sudionik nastavlja: znači li to da su halucinacije svedene na minimum? I koliko je rizično raditi na stvarnom projektu s mnogo korisnika, primjerice na funkcionalnosti „dodaj prijatelja”, kada nije jasno je li AI usput nešto izmijenio ili uklonio? Iz vlastitog iskustva s Cursorom i Claudeom navodi da mu se više puta dogodilo da alat napravi nešto što nije tražio. Pita mora li se kod golemog projekta svaki put analizirati cijeli kod.
+
+Matija Stepanić odgovara da izmjene radi Claude Code, ali je **Git istina koja se nalazi na disku**. Aplikacija se pokreće iz mape, bez AI-a, a Git točno pokazuje što se promijenilo. Na prikazanom primjeru vidi se da je u zadnja dva commita jedan redak obrisan, a jedan dodan, pa sada funkcija prima dva parametra. Ništa drugo nije dodano.
+
+### Kad AI „usput” nešto popravi ili pokvari
+
+Stepanić priznaje da se ponekad događa da Claude usput pronađe grešku uvedenu prije tri tjedna i ispravi tri-četiri retka. Događa se i da se nešto izgubi. Navodi primjer: nakon dva tjedna primijeti da nema jednog gumba, pa pita Claude u kojoj ga je sesiji uklonio. Claude potvrdi da se to dogodilo prije dva dana i ispriča se.
+
+Ističe, međutim, da AI **ne može ništa podmetnuti**, jer mijenja datoteke na korisnikovu disku. Korisnik zadržava kontrolu i može odbaciti svaku izmjenu koja mu se ne sviđa. Može ga, dodaje, pustiti i da radi naslijepo, ali tada vrijedi logika „od ideje do finalnog proizvoda”: ako aplikacija u pregledniku i forma izgledaju dobro, izmjena se objavljuje korisnicima. Ako je pritom nestao gumb ili se dio sučelja pojavio na engleskom umjesto na hrvatskom, to po Stepanićevu mišljenju samo znači da čovjek nije sve pregledao.
+
+Zato kombinira dva sloja: **Claude Code razvija, a Claude Code s Claude in Chrome provjerava** je li sve ispravno. Ako uoči grešku, vraća se i ispravlja je, u stalnom kretanju naprijed-natrag.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu

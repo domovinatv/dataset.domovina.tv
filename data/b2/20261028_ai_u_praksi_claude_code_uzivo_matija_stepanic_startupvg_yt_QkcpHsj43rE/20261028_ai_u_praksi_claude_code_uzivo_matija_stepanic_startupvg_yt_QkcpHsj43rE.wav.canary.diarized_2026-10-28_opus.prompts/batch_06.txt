@@ -1,0 +1,53 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Uvod u StartupVG Masterclass i osnove rada s Claude Codeom: subvencionirani AI, MCP-ovi, prvi demo i upravljanje kontekstom
+Tema: Git kao sigurnosna mreža i zašto Claude Code smije raditi bez pitanja
+Ključni pojmovi: Git, verzioniranje, sigurnosna upozorenja, sandbox, radni stroj
+Osobe/organizacije: Git, Linus Torvalds, Linux, Claude Code, Anthropic, Brave
+Sadržaj:
+Claude je javio da je stranica gotova, da je svaki korak provjerio u Braveu i da lokalno radi, te da je napravio **četiri commita**. Stepanić je publiku pitao tko zna što je Git, a ruku je podiglo šest-sedam programera.
+
+Git je objasnio i onima bez programerskog iskustva. Riječ je o alatu koji je izmislio **Linus Torvalds**, tvorac Linuxa. Linux i Git su, kaže, „dva alata koja vam ikad trebaju”, napravljena kao potpuno otvoreni kod za opće dobro. Git verzionira datoteke. Ako netko napiše „jabuka” i to commita, a zatim napiše „jabuka je crvena”, Git zabilježi da je stari redak obrisan i dodan novi. Kroz tu se povijest može slobodno šetati. Kada Claude koristi takve godinama provjerene alate, rezultat je, kaže, „ovakva eksplozija”.
+
+Ključna je poruka da se korisnici trebaju ohrabriti i Claude Code pokretati bez traženja dopuštenja. Inače bi ga u ovakvom procesu tridesetak puta pitao je li siguran da želi izvršiti neku radnju. Stepanić je primijetio da stalno samo pritišće „može”, a nijedan prijedlog dosad nije bio „obrisat ću ti sve s diska”.
+
+Primjećuje i da Anthropic, razvijajući Claude Code uz pomoć Claudea, sve više ugrađuje zaštitu od samog alata. U novijim automatskim ažuriranjima upozorenje iskače čak i kad Claude želi obrisati privremenu datoteku koju je sam napravio. Pita je li korisnik siguran i daje mu 60 sekundi, nakon čega sam odabire „ne”. Zato smatra da je alat **defenzivniji** nego što bi bio itko tko radi zlonamjerno.
+
+Ne tvrdi da se problemi ne događaju. Bilo je slučajeva brisanja bitnih datoteka i mnogo objava o tome kako je „AI pobjegao iz sandboxa”. On Claude namjerno nikad ne pokreće u sandboxu, kako bi na disku mogao raditi što god treba. To znači da računalo mora biti **isključivo radni stroj**, na koji ne treba stavljati ništa što korisnik ne želi da AI pokupi. Pritom smatra da velike kompanije ionako već odavno, i prije AI-ja, znaju sve o nama.
+
+=== SEKCIJA 1 ===
+Blok: Uvod u StartupVG Masterclass i osnove rada s Claude Codeom: subvencionirani AI, MCP-ovi, prvi demo i upravljanje kontekstom
+Tema: Promptati na hrvatskom ili engleskom? „Njemu je to semantički jabuka”
+Ključni pojmovi: hrvatski jezik, engleski jezik, promptanje, semantika, potrošnja struje
+Osobe/organizacije: Claude
+Sadržaj:
+Jedan od sudionika iz publike pitao je hoće li rezultati biti drukčiji ako se prompt napiše na engleskom umjesto na hrvatskom. Stepanić kaže da sam gotovo stalno prompta na hrvatskom. Kad mu Claude počne odgovarati na engleskom, kaže mu da prestane i nastavi na hrvatskom.
+
+Objašnjava da su neuronske mreže uglavnom istrenirane na engleskom pa **troše manje struje** kada su i ulaz i izlaz na engleskom, među ostalim zbog duljine znakova. Sam je prompt, međutim, u biti isti. Model interno razumije da su „jabuka” i „apple” semantički ista stvar. Svejedno je napiše li se „napravi formu na web-stranici” ili „create a contact form on website”.
+
+Sudionik je zaključio da je za svakodnevne zadatke hrvatski dovoljan. Za složenije stvari, poput istraživanja ili doktorata o nečemu što još ne postoji, preporučio je engleski. Stepanić se načelno složio, ali je dodao da je i sam izlaz kao znanje semantički jednak na oba jezika.
+
+Najčešći problem, prema njegovu iskustvu, jest to da model radi doslovne prijevode i „englizira” hrvatski tekst. Tada mu kaže otprilike ovo: sviđa mi se znanje koje si dao, ali ga napiši u duhu hrvatskog jezika, gramatički i pravopisno ispravno. Model tada preslaže rečenice: značenje ostaje isto, ali su ljepše napisane. Stepanić 99 posto posla radi na hrvatskom. Upravo je dan ranije primijetio da je Claude odjednom počeo sve ispisivati na engleskom, pa ga je morao vratiti na hrvatski.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu

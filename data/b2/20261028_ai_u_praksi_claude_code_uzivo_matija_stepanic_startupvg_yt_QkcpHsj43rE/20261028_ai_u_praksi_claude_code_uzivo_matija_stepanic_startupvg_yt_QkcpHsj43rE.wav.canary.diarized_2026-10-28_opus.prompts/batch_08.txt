@@ -1,0 +1,65 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Claude Code u stvarnom radu: klijentske izmjene, usporedba s Cursorom, objava na Cloudflare, prepoznavanje govora i pregled projekata
+Tema: Tri uspravne fotografije i vodoravni hero: Claude čita slike i provjerava sam sebe
+Ključni pojmovi: Claude Vision, OCR, hero fotografija, Claude in Chrome, verifikacija prije deploymenta
+Osobe/organizacije: Marko, Claude Vision, Claude in Chrome, Brave, WhatsApp, Amazon, Mac
+Sadržaj:
+Da publici ne bi otkrio tuđe poruke, Stepanić sam pročita samo Markov zahtjev. Klijent je napisao kratku poruku: pozdravlja i moli da se tri priložene fotografije ubace na naslovnicu **krošulja staging** stranice, po mogućnosti tako da se izmjenjuju, kako bi vidio kako to izgleda.
+
+Claude je u međuvremenu migrirao bazu podataka, pokrenuo naredbe Wranglera nad bazom D1 i provjerio trenutno stanje zaliha na stagingu. Izvijestio je da je Marko izričito spomenuo staging, pa izmjena ide samo tamo. Zatim je javio problem: **sve tri fotografije su uspravne, u omjeru 2:3, a hero element na naslovnici je vodoravan**.
+
+Stepanić objašnjava kako je Claude uopće „vidio“ fotografije. Slike je jednostavno preuzeo iz WhatsApp chata, a zatim upotrijebio **Claude Vision**. Prema Stepanićevim riječima, to je skup alata koji kombinira lokalnu i oblačnu obradu. Na Macu se koristi ugrađeni *offline* OCR, a u modelu se dodatno pametno analiziraju slike. Dio obrade tako ide na Amazonove servere, a dio se izvršava izravno na računalu. Slika s tekstom, primjerice, može se pročitati potpuno lokalno.
+
+Kad je Claude počeo razvijati izmjenu, Stepanić mu daje još jednu uputu. Prije objave treba putem **Claude in Chrome** ekstenzije u pregledniku **Brave** pratiti što se događa i potvrditi da sve radi. Riječ je o istom principu koji je ranije pokazao na demo stranici: AI ne samo da piše kod, nego i sam klika po aplikaciji te provjerava rezultat prije nego što ga vidi klijent.
+
+Dok Claude radi, Stepanić iskorištava pauzu i pita publiku ima li novih poruka i pitanja.
+
+=== SEKCIJA 1 ===
+Blok: Claude Code u stvarnom radu: klijentske izmjene, usporedba s Cursorom, objava na Cloudflare, prepoznavanje govora i pregled projekata
+Tema: Claude Code ili Cursor? Posrednici, gubici i trening vlastitih modela
+Ključni pojmovi: Cursor, AI posrednici, vlastiti modeli, VS Code fork, poslovni model
+Osobe/organizacije: Cursor, SpaceX, Anthropic, Visual Studio Code, Antigravity, Google, Codex, OpenAI, Sonnet 3.5, Grok 4, Memphis, Elon Musk, Microsoft
+Sadržaj:
+Jedan sudionik iz publike postavlja pitanje koje zanima mnoge programere: koliko se Claude danas razlikuje od **Cursora**? Sudionik navodi da je Cursor nedavno preuzeo SpaceX i pita je li Anthropic zapravo zakupio podatkovne centre od Cursora.
+
+Stepanić odgovara poviješću. Cursor je *fork* **Visual Studio Codea**, a takvih forkova ima mnogo. Prije otprilike tri godine Cursor se pozicionirao kao AI asistent za programiranje unutar VS Codea. Velika većina developera, uključujući i Stepanića, koristila je VS Code. Danas Stepanić koristi **Antigravity**, Googleov fork istog editora.
+
+Zatim objašnjava Cursorov raniji poslovni model. Tvrtka je bila **posrednik između developera i proizvođača jezičnih modela**:
+- developer pošalje dio svog koda i zahtjev,
+- Cursor to spremi i pozove, primjerice, Anthropicov model Sonnet 3.5,
+- model vrati rješenje uz manje greške,
+- Cursor spremi odgovor i proslijedi ga korisniku.
+
+Korisnik je za to plaćao 20 dolara mjesečno i mogao je koristiti alat koliko želi. Stepanić upozorava da „baca brojke“, ali tvrdi da nije daleko od istine: takav korisnik Cursor je mogao stajati i 300 dolara, što znači gubitak od oko 280 dolara po korisniku.
+
+Sljedeći korak bio je logičan. Cursor je skupio mnogo parova korisničkih upita i odgovora konkurentskog modela. Na tim je podacima istrenirao **vlastiti model** i spojio ga u svoj podatkovni centar, čime je „odrezao dobavljača“. Kad korisnik i dalje plaća 20 dolara, a struja tvrtku stoji, primjerice, 5 dolara, posao postaje profitabilan. Ključno pitanje, zaključuje Stepanić, jest **tko može doći do krajnjeg korisnika i proširiti se po svijetu**.
+
+Tržište opisuje kao „mrtvu utrku“ u kojoj sudjeluju Claude Code, OpenAI-jev Codex, Antigravity CLI, brojni *open source* alati koji se spajaju na sve modele te Cursor. Ipak, prema njegovu iskustvu, **Anthropic je stalno korak ispred ostalih po kvaliteti koda koji stvarno radi**.
+
+Sudionik dodaje vlastito iskustvo. Otkako Cursor koristi vlastiti model, više ne preprodaje toliko Anthropicov API. Taj model mu se u radu na web aplikacijama čini prilično dobrim i znatno jeftinijim nego prije godinu dana. Stepanić se slaže. Iznosi i svoju, kako sam kaže, slikovitu interpretaciju: Anthropic hosta svoj softver u Memphisu, na SpaceX-ovoj infrastrukturi, pa se postavlja pitanje kopira li netko taj „komad memorije“ i nudi ga korisnicima pod drugim imenom, poput Groka 4. Usporedbom s mliječnim proizvodima pod različitim markama, ali „od iste krave“, priznaje da pojednostavljuje.
+
+Osvrće se i na Elona Muska. Musk je, prema Stepaniću, uložio i donirao velik novac OpenAI-ju, a zatim se s njima razišao kad je korporativno ušao Microsoft. Stepanić sve to zaključuje ocjenom da su to „samo priče za javnost“.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu

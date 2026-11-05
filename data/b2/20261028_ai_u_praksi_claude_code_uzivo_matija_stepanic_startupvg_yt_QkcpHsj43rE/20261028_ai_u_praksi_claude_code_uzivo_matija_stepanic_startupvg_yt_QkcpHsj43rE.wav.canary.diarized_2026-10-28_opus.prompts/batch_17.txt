@@ -1,0 +1,53 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Terminal ili aplikacija? Daljinsko upravljanje i iOS simulator
+Ključni pojmovi: terminal, Claude Desktop, remote control, iOS simulator, korisničko sučelje
+Osobe/organizacije: Matija Stepanić, Marko, Claude Code, Claude Desktop, Cowork, Lomnica, iOS, WhatsApp
+Sadržaj:
+Sljedeće pitanje odnosi se na sučelje: ima li prednosti korištenje Claude Codea u terminalu u odnosu na Claudeovu aplikaciju s ugrađenim Claude Codeom ili je riječ o osobnom izboru? Matija Stepanić odgovara da koristi terminal jer tako Claude piše **izravno po njegovu disku**. Sudionici iz publike napominju da i lokalna desktop aplikacija piše po disku. Stepanić to potvrđuje, ali ističe da mu je u radu najvažnija mogućnost **remote control**.
+
+### Ista sesija na računalu i mobitelu
+
+Pokazuje kako sesiju naziva „Markovi zahtjevi”, koja se izvršava u određenoj mapi na računalu u uredu u Lomnici, otvara u Claude Desktopu, a zatim i na mobitelu. Prikaz je identičan: na telefonu se vidi i posljednja naredba da se poruka pošalje Marku na WhatsApp. Desktop aplikacija, dodaje, izgleda lijepo, ali ta mu je funkcija najkorisnija kada razvija za iOS.
+
+Objašnjava i zašto. Kada AI u **iOS simulatoru** klikće mišem, a on u međuvremenu pomakne miš, Claude „zaboravi” gdje treba kliknuti. Zato pusti računalo da samo radi u simulatoru, uključi remote control i promptove šalje s mobitela. Tako ne dira ni tipkovnicu ni miš računala na kojem se vrti simulator.
+
+Stepanić priznaje i prednosti desktop aplikacije: lijepo prikazuje snimke zaslona i u nju je najlakše prebaciti sliku. Jedan sudionik iz publike, koji i sam radi isključivo kroz Claudeovu aplikaciju, napominje da mu je to praktičnije jer kod izrade web-stranica vidi cijelu nadzornu ploču i preglednik. Razgovor završava zaključkom da je riječ uglavnom o drukčijem sučelju za isti alat.
+
+=== SEKCIJA 1 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: AI recepcija i virtualna centrala: tehnički izvedivo, klijent se još traži
+Ključni pojmovi: pozivni centri, AI recepcija, speech-to-text, text-to-speech, virtualna centrala
+Osobe/organizacije: Matija Stepanić, iOS, Android
+Sadržaj:
+Jedan sudionik iz publike, povezujući temu podcasta i pretvorbe govora u tekst, pita je li Matija Stepanić radio projekte za **pozivne centre**. Stepanić odgovara da nije, ali da mu se javio jedan mlađi programer koji je radio **AI recepcije**.
+
+Opisuje kako takav sustav funkcionira: netko nazove hotel, javi mu se AI glas, a u pozadini rade *speech-to-text* i *text-to-speech*. Sustav provodi pametnu trijažu poput virtualne centrale, odgovara na pitanja na koja zna odgovor ili pozivatelja upućuje na zaposlenika. Time se pozivi mogu obrađivati paralelno.
+
+Stepanić ističe da se takvi sustavi danas mogu u potpunosti napraviti, ali on trenutno nema klijenta kojemu bi trebali. Kada iz publike dobaci da takvih klijenata ima, odgovara da mu ih zasad nitko ne nudi, i poziva sve zainteresirane da mu se jave.
+
+Tehnički opisuje mogući sustav: rješenje na iOS-u i Androidu prepoznaje dolazni zvuk, veliki pružatelji usluga nude transkripciju u stvarnom vremenu, tekst se odmah zapisuje i obrađuje LLM-om. Složi se *pipeline* i sustav radi.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu

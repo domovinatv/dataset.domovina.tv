@@ -1,0 +1,69 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Mac mini u Lomnici, Raspberry Pi u Lukavcu: vlastita infrastruktura bez posrednika
+Ključni pojmovi: Mac mini, udaljeni pristup, RustDesk relay, peer-to-peer, Antigravity
+Osobe/organizacije: Matija Stepanić, Lomnica, Lukavec, Mac mini, MacBook Pro, Lenovo, RustDesk, AnyDesk, TeamViewer, Home Assistant Yellow, Raspberry Pi, Antigravity, Gemini 3.8 Flash, Google, Opus 5.5
+Sadržaj:
+Sudionik iz publike primjećuje da je Matija Stepanić nekoliko puta spomenuo server u Lomnici. Stepanić pojašnjava da je riječ o običnom računalu, **Mac miniju**. Tijekom predavanja s Lenovo prijenosnika spojen je na udaljenu radnu površinu tog Mac minija, koji ima dva monitora. Na njemu inače radi, a kada je izvan ureda, spaja se na daljinu. Računalo je stalno uključeno, pa ga ne mora paliti ni gasiti i uvijek može nastaviti gdje je stao.
+
+### RustDesk umjesto AnyDeska i TeamViewera
+
+Umjesto plaćenih alata poput AnyDeska ili TeamViewera koristi open source **RustDesk**, za koji navodi da je implementiran u Flutteru. Instaliran mu je na iOS-u i Windowsima. Posebnost je u tome što u kući u Lukavcu ima **Home Assistant Yellow**, mali Raspberry Pi na kojem radi **RustDesk relay server**. Lenovo se na Mac mini spaja preko tog uređaja, bez ikakvog drugog pružatelja usluga u oblaku. Veza je, ističe, potpuno *peer-to-peer*: razmijene se ključevi i uspostavi se spoj.
+
+Veza je i vrlo brza. U Lomnici je računalo spojeno Cat6 kabelom, uz gotovo gigabit u preuzimanju i 500 megabita u slanju, a i internet u dvorani je dobar.
+
+### Eksperiment s Antigravityjem
+
+Uz Mac mini stoji i MacBook Pro na kojem Stepanić eksperimentira s Googleovim **Antigravityjem** i modelom **Gemini 3.8 Flash**. U mapi *Domovina Gnosis Node* pita ga radi li sve ispravno od posljednje snimke stanja. Tada se ne poziva Anthropicov server u Memphisu, nego Googleov oblak s TPU procesorima. Antigravity pritom pokreće šest naredbi na računalu, čita log datoteke i šalje sve Geminiju na analizu.
+
+Stepanić ocjenjuje da je Gemini izvrstan i vrlo brz u načinu samo za čitanje (*read-only*) te da je sve bolji. Ipak, zaključuje da je **Opus 5.5 trenutno najpametniji i najisplativiji**.
+
+=== SEKCIJA 1 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Cijeli tjedan razvija Opus, a u petak sigurnost provjerava Fable
+Ključni pojmovi: tjedni limit, sigurnosna provjera, refaktoriranje, pretplate, paušalno korištenje
+Osobe/organizacije: Matija Stepanić, Opus 5.5, Fable 5.1, Sonnet 5, Claude Max, Claude Pro, Claude Desktop, Gemini Pro, Gemini Ultra, Argon 4, Google Workspace, Google Drive, Google Vertex, Anthropic, Antigravity, Gemini 3.8
+Sadržaj:
+Matija Stepanić zatim otkriva kako maksimalno iskorištava pretplatu. Tjedni limit resetira mu se u **subotu u 2 ujutro**, pa u petak pred kraj radnog vremena provjeri koliko mu je kvote ostalo. Na Mac miniju to pokazuje naredbom `/usage`: trenutna sesija potrošila je 3 posto, a od tjedne kvote, na pretplati od 90 eura mjesečno, potrošeno je 33 posto.
+
+### Tjedni ritam
+
+Kada mu u petak preostane još oko 80 do 90 posto kvote, uključuje model **Fable 5.1**, uz jasnu uputu da njime ništa ne razvija jer je vrlo skup i brzo troši tokene. Fable umjesto toga dobiva zadatak da pregleda sve što je tijekom tjedna razvijeno s **Opusom 5.5**, kao neovisni model potraži sigurnosne rubne slučajeve (*security edge cases*) i provjeri postoje li rupe kroz koje bi se aplikacija mogla hakirati.
+
+Fable prođe velikim projektom i napravi jedan ili više Markdown izvještaja, ovisno o tome koliko je kvote preostalo. U ponedjeljak Stepanić Opusu kaže neka pregleda petkov izvještaj. Opus procijeni što bi se doista moglo poboljšati i to refaktorira. Tako šest dana radi s Opusom, a zadnji dan Fable potroši ostatak kvote. To je, ističe, i cilj: **ako se pretplata plaća paušalno, plaća se isto bez obzira na to iskoristi li se 0 ili 100 posto.**
+
+### Usporedba pretplata
+
+Stepanić daje i pregled ponude:
+
+- **Claude Max** za oko 90 eura (pet puta veći limit), uz skuplju varijantu s dvadeset puta većim limitom za 180 eura mjesečno;
+- **Claude Pro** za 15 do 18 eura, koji je više nego dovoljan za korištenje i isprobavanje;
+- **besplatna** inačica nema Claude Code, nego samo razgovor u Claude Desktopu, i nema pristup Opusu 5.5, nego Sonnetu 5 i drugim modelima.
+
+Za kodiranje preporučuje Opus 5.5, a za analizu Fable 5.1. Zbog toga, kaže, ne mora sve kontrolirati: zahtjev se obradi, provjeri, objavi i pošalje odgovor uz minimalno grešaka.
+
+Google nudi **Gemini Pro** za 20 dolara mjesečno, uz koji dolazi cijeli Google Workspace s mnogo prostora na Google Driveu, dok **Gemini Ultra** daje pristup novom modelu Argon 4, koji je navodno također dobar. Stepanić podsjeća da je Google investitor u Anthropic te da su Opus modeli dostupni i na Google Vertexu. Svi veliki igrači, smatra, imaju pristup svemu, a ostalo su „igre za javnost” u kojima se novosti puštaju postupno. Zaključuje da je važno što se s AI-em radi, jer je riječ o nečemu što nitko prije nije vidio.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu

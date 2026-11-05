@@ -1,0 +1,57 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Claude Code u stvarnom radu: klijentske izmjene, usporedba s Cursorom, objava na Cloudflare, prepoznavanje govora i pregled projekata
+Tema: Od lokalne stranice do javnog linka: objava na Cloudflare i push notifikacije za 15 minuta
+Ključni pojmovi: deployment, Cloudflare Workers, DNS, push notifikacije, produktivnost
+Osobe/organizacije: Cloudflare, Cloudflare Workers, Wrangler CLI, predavanje-ai.vg.domovina.ai, iOS, Android, WhatsApp
+Sadržaj:
+Demo stranica stolarske tvrtke napravljena ranije na predavanju dosad je radila samo lokalno. Stepanić sada traži od Claudea da je objavi. Kaže mu da na računalu ima Wrangler CLI povezan s Cloudflare računom i da stranicu treba postaviti na **Cloudflare Workers** pod adresom **predavanje-ai.vg.domovina.ai**.
+
+Domena je već u njegovu Cloudflare računu, pa će Claude sam podesiti DNS zapise i sve ostalo potrebno. Taj se posao nekad radio ručno.
+
+Kao usporedbu navodi primjer od istog dana. S klijentom je radio na mobilnoj aplikaciji za iOS i Android, gdje je trebalo uvesti **push notifikacije**: kad se nešto dogodi, obavijest treba stići drugim povezanim korisnicima. Nekad je to bio **posao za dva tjedna**:
+- traženje koda u starom projektu,
+- ručno kopiranje mišem,
+- odabir biblioteka po broju zvjezdica na GitHubu,
+- ručno povezivanje svega.
+
+Danas Claudeu preda gotove dijelove, pusti ga da radi i odmah se posveti drugom zadatku. Za petnaestak minuta se vrati i provjeri radi li sve. Ako ne radi, Claudea „malo pogurne“ i problem se riješi.
+
+Stranica je u međuvremenu dostupna na javnoj adresi, čak i s tipfelerima koje je Stepanić napravio pri upisu domene. Na drugom ekranu otvara se objavljeni sadržaj o namještaju i drvu. Stepanić zatim ide korak dalje: traži od Claudea da na istu domenu doda i jednostavnu **aplikaciju za praćenje troškova**. Nakon toga treba sročiti lijepu poruku i s linkom je poslati u WhatsApp grupu predavanja, kako bi sudionici stranicu otvorili na mobitelima.
+
+=== SEKCIJA 1 ===
+Blok: Claude Code u stvarnom radu: klijentske izmjene, usporedba s Cursorom, objava na Cloudflare, prepoznavanje govora i pregled projekata
+Tema: Clipboard, datoteke i poruka koju nije poslao čovjek
+Ključni pojmovi: clipboard history, promptovi koje AI piše sebi, WhatsApp obavijesti, iteriranje s klijentom
+Osobe/organizacije: Raycast, Mac, Marko, WhatsApp, Claude Code
+Sadržaj:
+U Claudeovu izvještaju pojavljuje se napomena „Poruka za Marka u Clipboardu“. Stepanić to koristi da pokaže jedan od svojih radnih trikova. Dugo je radio tako da Claude, nakon što završi neki posao, napiše prompt ili poruku za sljedeći korak i spremi je u međuspremnik. Polazi od uvjerenja da je **Claude najbolji kad sam sebi piše promptove**.
+
+Na Macu ima instaliran **Raycast** s ugrađenom poviješću međuspremnika. Kad više paralelnih Claude Code sesija istodobno sprema sadržaj u Clipboard, zadnji zapis se ne gubi. Uvijek se može vratiti na neki od prethodnih. Na ekranu se vidi upravo pripremljena poruka za Marka s opisom demo stranice i korištene tehnologije. S vremenom je Stepanić prešao na drugi pristup: umjesto Clipboarda, Claude piše **datoteke** koje se kasnije mogu pročitati s diska.
+
+U međuvremenu poruka s linkom stiže u WhatsApp grupu, a sudionik iz publike potvrđuje primitak. Stepanić naglašava da poruku nije poslao ručno, nego ju je poslao „ovaj komad softvera“.
+
+Kod Markova zahtjeva situacija je drugačija. Stepanić pita Claudea je li Marku išta poslano ili je sve ostalo samo na računalu. Claude odgovara da Marku još ništa nije poslano: poruka je samo u međuspremniku, a izmjene na stagingu su žive. Stepanić mu kaže da poruku pošalje Marku na WhatsApp. Marko tako dobiva pregledan link na kojem može provjeriti izmjenu i dati povratnu informaciju. Ako mu se nešto ne sviđa, može se nastaviti iterirati. Stepanić takav način rada opisuje kao pravu **suradnju**.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu

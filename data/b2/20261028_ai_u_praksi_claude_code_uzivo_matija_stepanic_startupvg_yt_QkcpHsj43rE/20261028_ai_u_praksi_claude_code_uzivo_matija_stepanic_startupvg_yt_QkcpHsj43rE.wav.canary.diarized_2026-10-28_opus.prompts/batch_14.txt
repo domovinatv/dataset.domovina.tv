@@ -1,0 +1,71 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 2 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Od čega živi programer koji gotovo sve objavljuje kao open source?
+Ključni pojmovi: konzalting, monetizacija podcasta, transkripcija i dijarizacija, provizije kartičnih procesora, SEPA Instant
+Osobe/organizacije: Matija Stepanić, Marko, Australija, Google Meet, FlutterFlow, YouTube, Booking, Revolut, Stripe, Monerium
+Sadržaj:
+Nakon dugog pregleda projekata jedan sudionik iz publike postavlja pitanje koje je mnogima bilo na umu. Primijetio je da je velik dio prikazanih rješenja vezan uz podcaste i fiskalizaciju te da je većina **open source** i namijenjena uskoj niši. Zanima ga na kojim projektima, osim Markova, Matija Stepanić trenutno radi i od čega zapravo zarađuje.
+
+Stepanić odgovara da se posljednjih sedam godina, još prije dolaska umjetne inteligencije, bavi **konzaltingom jedan na jedan s klijentom**. Kao primjer navodi klijenta iz Australije s kojim provede dva sata na pozivu preko Google Meeta. Tako je pet godina radio **FlutterFlow consulting**: klijent govori što želi, a on kodira pred njim. Isti model rada zadržao je i danas, samo uz pomoć AI-a.
+
+Na području podcasta trenutno ponajviše konzultira za jednu domaću tvrtku iz medijske industrije. Radi na **transkripciji i dijarizaciji** audiodatoteka, odnosno na tome da se snimke pametno prepišu i da se prepozna tko je što rekao.
+
+### Vizija: oglasni prostor bez posrednika
+
+Stepanić zatim objašnjava kako vidi budućnost monetizacije podcasta. YouTube kreatoru osigurava marketing i vidljivost velikom broju korisnika, ali ti korisnici gledaju reklame. Prema njegovim riječima, kreator na kraju dobije oko **20 do 25 posto** iznosa koji je oglašivač platio, bio to Booking, Revolut ili netko treći.
+
+Ideja koju razvija jest **peer-to-peer prodaja marketinškog prostora**. Gledatelji bi sadržaj pratili bez reklama, a kreatora bi podržavali donacijom ili zakupom sponzorskog prostora. Problem su naknade za plaćanje:
+
+- ako oglasni prostor košta 1 euro i plaća se karticom preko Stripea, procesor kartica uzme oko **30 posto**, što Stepanić smatra prevelikim troškom;
+- ako kupac iz hrvatske banke plaća SEPA transakcijom, plaća oko **33 centa** po transakciji;
+- s Revolutom je, međutim, moguće skenirati **EPC QR kod** i platiti preko **SEPA Instanta**. Monerium uplatu prepozna u nekoliko sekundi, a novac od točke A do točke B stigne **bez provizije**.
+
+Gost tada nudi da to pokaže uživo.
+
+=== SEKCIJA 1 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Uživo s pravim novcem: 1,06 eura od Revoluta do blockchaina u nekoliko sekundi
+Ključni pojmovi: EPC QR kod, SEPA Instant, payment intent, plaćanje bez provizije, javno provjerljive uplate
+Osobe/organizacije: Matija Stepanić, Marko, mpt.hr, Revolut, Monerium, Gnosis, Gnosis Scan, Safe, Gemini, Kickstarter, Indiegogo, Croinvest, Crobuy, krošulja.hr
+Sadržaj:
+Matija Stepanić upozorava da bi zbog Murphyjeva zakona demonstracija mogla zakazati, no ipak je izvodi. Prikazuje svoj **MVP**: fotografiju vlastite kuće uz vizualizaciju koju je izradio Gemini, a koja pokazuje kako bi kuća izgledala sa solarnom elektranom na krovu. Kao primjer zadaje uplatu od **1,06 eura**. Napominje da je svrha transakcije nevažna jer može biti riječ o prodaji ili bilo čemu drugom.
+
+### Kako uplata putuje
+
+Njegov servis **mpt.hr** najprije kreira takozvani *payment intent*, čime sustav zna da očekuje upravo tu uplatu. Stepanić naglašava da takvih istodobnih uplata može biti na tisuće. Zatim u Revolutu otvara plaćanja i skenira **EPC QR kod**. Aplikacija sama ispuni SEPA nalog na IBAN njegove tvrtke s iznosom od 1,06 eura.
+
+Tu nailazi na prepreku. Prije dva do tri tjedna Revolut je prestao preuzimati polje *reference* iz QR koda, iako se u njemu nalaze podaci za Gnosis, točna adresa i identifikator. Stepanić je zato sustav prilagodio tako da se uplata može prepoznati i automatski, a za demonstraciju referencu **5188** upisuje ručno. Nakon verifikacije licem Revolut šalje novac s njegova litavskog na estonski IBAN.
+
+U nekoliko sekundi SEPA transakcija postaje vidljiva, a **Monerium**, kojeg Stepanić opisuje kao vrlo zanimljiv fintech, odmah na **Gnosis blockchainu**, na njegovu *Safe multi-signature walletu*, izdaje (minta) 1,06 eura. Crowdfunding kampanja u demonstraciji uplatu prepoznaje i pripisuje iznos.
+
+### Zašto pravi novac, a ne sandbox
+
+Stepanić otkriva da su on i Marko demonstraciju pripremili na stagingu krošulje koristeći Moneriumov *sandbox*. Ipak je odlučio pokazati transakciju s pravim novcem jer Moneriumu verifikacija novih korisnika traje dugo.
+
+Prema njegovim riječima, ovakav model može koristiti platforma tipa Kickstarter, Indiegogo ili Croinvest, webshop poput Crobuyja ili krošulja.hr, odnosno bilo koji sustav kroz koji prolazi novac. Korisničko iskustvo uspoređuje s prislanjanjem kartice na POS uređaj u trgovini: kratki „ping” i novac je otišao.
+
+Ključno je da je novac s Revoluta stigao do Moneriuma, a da usput **nitko nije uzeo proviziju**. Svaka je uplata uz to **javno provjerljiva**: na Gnosis Scanu vidi se transakcija od 1,06 eura stara minutu. Stepanić zaključuje da je razlika između pravog i lažnog novca samo u tome koja se baza podataka koristi.
+
+Za svaku sekciju (indeksi 0–1) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu
