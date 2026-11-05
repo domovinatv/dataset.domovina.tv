@@ -1,0 +1,4863 @@
+1
+00:00:01,840 --> 00:00:02,720
+Welcome to Launched.
+
+2
+00:00:02,960 --> 00:00:10,560
+I'm Charlie Chapman, and today I'm excited to bring you the coder, writer, speaker behind the amazing Hacking with Swift website, Paul Hudson.
+
+3
+00:00:23,760 --> 00:00:24,800
+Paul, welcome to the show.
+
+4
+00:00:24,960 --> 00:00:26,240
+Oh, it's great to be here, Charlie.
+
+5
+00:00:26,320 --> 00:00:27,040
+Thanks for having me.
+
+6
+00:00:27,200 --> 00:00:27,440
+I am.
+
+7
+00:00:27,840 --> 00:00:28,640
+I'm very excited.
+
+8
+00:00:29,680 --> 00:00:34,000
+We we met once before in the amazing Happy Hour.
+
+9
+00:00:34,160 --> 00:00:37,520
+Happy Hour, IOS happy hour thing that's started since this pandemandemic.
+
+10
+00:00:38,000 --> 00:00:41,040
+And I know you, you're a huge fan of Star Wars.
+
+11
+00:00:41,120 --> 00:00:47,440
+So I just figured we'd devote this whole thing to the Star Wars franchise because of how passionate you are for it.
+
+12
+00:00:48,960 --> 00:00:58,640
+So folks who haven't made the happy hour may not realize there are some hardcore Star Wars fans there who would very much enjoy talking about Star Wars a great deal during the happy hour.
+
+13
+00:00:58,880 --> 00:01:02,160
+And I have almost negative interest on Star Wars.
+
+14
+00:01:02,640 --> 00:01:09,040
+And the interesting thing is there are other, like I get emails from random people to other Paul Hudson who think they have my email address.
+
+15
+00:01:09,280 --> 00:01:12,480
+And one's a weather reporter and one's a massive Star Wars fan.
+
+16
+00:01:12,560 --> 00:01:12,640
+fan.
+
+17
+00:01:12,880 --> 00:01:16,560
+I get emails all the time about weather and Star Wars and I just don't, I couldn't care less.
+
+18
+00:01:17,200 --> 00:01:20,160
+Weather and Star Wars together, like the weather in Star Wars?
+
+19
+00:01:20,480 --> 00:01:22,720
+That would be a curious particular kind of fan, wouldn't it?
+
+20
+00:01:22,800 --> 00:01:24,000
+A curious fan that one.
+
+21
+00:01:24,400 --> 00:01:28,000
+Star Wars feels like a big enough fan base that that's a niche that probably exists.
+
+22
+00:01:28,480 --> 00:01:29,360
+I bet it does, you know.
+
+23
+00:01:30,080 --> 00:01:43,280
+I looked into it and there's a lot of folks like trying to compare universes, like how big a Star Wars ship is a Star Trek ship's kind of thing, and then measuring them down to like deck size and length and the the the the and it's very, very interesting, but yeah, it's not for me.
+
+24
+00:01:45,040 --> 00:01:53,360
+So before we get into hacking with Swift, I'd like to give everyone a primer on who you are, other than, you know, your huge passion for the Star Wars franchise.
+
+25
+00:01:53,520 --> 00:01:53,600
+Yeah.
+
+26
+00:01:54,560 --> 00:01:57,600
+So the three questions I always ask everyone are, where are you from?
+
+27
+00:01:57,920 --> 00:02:00,320
+Do you have, like, a formal education related to what you do?
+
+28
+00:02:00,640 --> 00:02:04,000
+And then, what was your career like leading up to hacking with Swift?
+
+29
+00:02:04,320 --> 00:02:06,800
+Okay, so three questions back to back, so I can remember them all.
+
+30
+00:02:06,960 --> 00:02:10,960
+Where I'm from, I think it's hard to tell these days.
+
+31
+00:02:11,200 --> 00:02:18,800
+I'm from the UK, obviously, but thanks to Game of Thrones, on one side we have, you know, people slaughtering each other with an English accent over there.
+
+32
+00:02:19,280 --> 00:02:25,760
+And then, of course, more recently, we have Ted Lasso showing folks that we can be quite nice when genu when gently encouraged.
+
+33
+00:02:26,080 --> 00:02:28,560
+But also I know it's really big right now is Bridgerton.
+
+34
+00:02:29,280 --> 00:02:33,040
+So the British folks are either humping or killing each other, one of the two.
+
+35
+00:02:33,840 --> 00:02:35,120
+So I'm from the UK.
+
+36
+00:02:35,360 --> 00:02:36,480
+Take that way if you want to mean.
+
+37
+00:02:37,520 --> 00:02:38,320
+That's the first one.
+
+38
+00:02:38,800 --> 00:02:40,640
+Do I have a formal education in what I do?
+
+39
+00:02:40,960 --> 00:02:43,440
+Yes, I have managed to acquire three degrees.
+
+40
+00:02:44,080 --> 00:02:46,080
+One was an undergrad CS degree.
+
+41
+00:02:46,480 --> 00:02:50,720
+I then did an undergrad English degree and then a postgrad classics degree.
+
+42
+00:02:51,280 --> 00:02:52,560
+And all three have been useful.
+
+43
+00:02:52,720 --> 00:02:56,320
+You know, learning to code and work with computers and similar.
+
+44
+00:02:56,640 --> 00:02:57,680
+Larning to write about them.
+
+45
+00:02:58,160 --> 00:03:00,000
+And the last one actually made a lot of money in the app world.
+
+46
+00:03:00,480 --> 00:03:02,640
+I made an app about classics and that has done very well for myself.
+
+47
+00:03:03,200 --> 00:03:04,000
+Ah, interesting.
+
+48
+00:03:04,400 --> 00:03:06,400
+Classics as in like classic literature?
+
+49
+00:03:07,440 --> 00:03:12,160
+It's also classical studies, a particular field, and it basically means the Romans and the Greeks.
+
+50
+00:03:12,320 --> 00:03:12,720
+Ah, okay.
+
+51
+00:03:13,360 --> 00:03:24,000
+And to a lesser extent, some other civilizations around the time, the Fenicians and the Cretians and the Egyptians and similar, but but yeah, it's mostly the Latin and the Greek languages and cultures and histories.
+
+52
+00:03:24,720 --> 00:03:29,600
+And my most successful app ever, the one that made me the most money, was an app for Latin students.
+
+53
+00:03:29,680 --> 00:03:30,880
+Wow, how about that?
+
+54
+00:03:31,600 --> 00:03:40,960
+Paid my mortgage for the last ten years now, multiple times over, because universities are and lots of schools around the world teach Latin and they just buy it for their students.
+
+55
+00:03:41,120 --> 00:03:44,320
+Every year they buy 100, 200 at a time for all their students in the year.
+
+56
+00:03:44,800 --> 00:03:50,080
+And yeah, they choose my app because it's the number one app in a very, very, very small space.
+
+57
+00:03:51,440 --> 00:03:55,360
+That was question two and the last one was, how did I get to where I am?
+
+58
+00:03:56,880 --> 00:03:57,440
+That's a big one.
+
+59
+00:03:57,600 --> 00:03:58,240
+That's a huge question.
+
+60
+00:03:58,320 --> 00:03:58,720
+Sure, yeah.
+
+61
+00:03:58,800 --> 00:03:59,680
+That takes a lot of time.
+
+62
+00:03:59,920 --> 00:04:03,040
+Well, it all started a long time ago in a galaxy far, far away.
+
+63
+00:04:03,520 --> 00:04:04,000
+There it is.
+
+64
+00:04:06,400 --> 00:04:07,440
+I did a CS degree.
+
+65
+00:04:08,000 --> 00:04:21,280
+I did CS beforehand as one of those terribly boring kids who got into coding at a a young age and became increasingly laser focused on coding and computers and coding with computers and da da da da da da da.
+
+66
+00:04:21,440 --> 00:04:23,600
+And I kind of forgot that the rest of the world existed.
+
+67
+00:04:23,760 --> 00:04:26,560
+I got more into software, software, software.
+
+68
+00:04:26,880 --> 00:04:31,280
+I went to university for it and graduated with my degree, went straight into a coding job.
+
+69
+00:04:31,840 --> 00:04:33,520
+And it was great fun, right?
+
+70
+00:04:33,760 --> 00:04:35,120
+I had a lot of fun doing CS.
+
+71
+00:04:36,000 --> 00:04:43,600
+But then I was doing web development for a sort of a shoot of a real estate company.
+
+72
+00:04:43,920 --> 00:04:46,800
+So real estate in the UK obviously is, you know, building houses and similar.
+
+73
+00:04:46,960 --> 00:04:53,840
+But this company here, they built shopping net malls, which of course are very, very, very big multibillion pound projects.
+
+74
+00:04:54,320 --> 00:05:02,000
+And to build malls, they constructed huge models of the mall, physical models you could walk around to scale.
+
+75
+00:05:02,480 --> 00:05:06,000
+And these, you know, you've got to imagine room size models of malls.
+
+76
+00:05:06,400 --> 00:05:09,840
+Okay, so like the whole mall was the size of a single room.
+
+77
+00:05:10,400 --> 00:05:11,760
+That's the type of scale we're talking about.
+
+78
+00:05:12,080 --> 00:05:12,560
+Right, exactly.
+
+79
+00:05:12,720 --> 00:05:16,800
+It was huge, huge multi story models including car parks and chimneys.
+
+80
+00:05:17,200 --> 00:05:22,800
+You could see, you know, a store might be the size of a small store, the size of a credit card, for example.
+
+81
+00:05:22,960 --> 00:05:25,680
+Then bigger stores would be, you know, big., big things on the model.
+
+82
+00:05:26,160 --> 00:05:28,560
+And they were they were very, very expensive to make as you might imagine.
+
+83
+00:05:28,640 --> 00:05:29,840
+I guess.
+
+84
+00:05:30,240 --> 00:05:32,080
+A small change, you've got to change the model.
+
+85
+00:05:32,480 --> 00:05:38,800
+So this company funded a fence startup to basically produce 3D tools to make these things in 3DS Max.
+
+86
+00:05:39,040 --> 00:05:42,320
+So you could design them quickly and then walk around them in a virtual way.
+
+87
+00:05:42,800 --> 00:05:46,400
+And I joined this company in London to do their web stuff for them.
+
+88
+00:05:46,960 --> 00:05:55,040
+And I started writing at the same time for a magazine, a Linux magazine of all things about PHP of all things times two.
+
+89
+00:05:56,000 --> 00:05:57,680
+Because they hadn't got a PHP tutorial.
+
+90
+00:05:57,840 --> 00:05:59,040
+This was 2003.
+
+91
+00:05:59,280 --> 00:06:00,880
+So it was extremely big at the time.
+
+92
+00:06:01,360 --> 00:06:03,520
+I thought, yeah, okay, I'll give it a try.
+
+93
+00:06:03,680 --> 00:06:04,400
+So I wrote for them.
+
+94
+00:06:04,560 --> 00:06:04,960
+They liked it.
+
+95
+00:06:05,040 --> 00:06:05,600
+They printed it.
+
+96
+00:06:05,680 --> 00:06:06,400
+They asked for more.
+
+97
+00:06:06,720 --> 00:06:09,920
+I wrote a whole series of things for them and then actually joined them full time.
+
+98
+00:06:10,320 --> 00:06:19,600
+I left London, left CS, left coding full time, became a full time journalist in my current town, town called Bath in the southwest of England, for this company.
+
+99
+00:06:19,760 --> 00:06:29,440
+And I spent a long time, like eight years, as a magazine journalist, talking about computers, traveling the world, doing interviews with various famous folks, having a lot of fun.
+
+100
+00:06:29,600 --> 00:06:30,480
+I mean, it was a great job.
+
+101
+00:06:30,640 --> 00:06:33,360
+It was really, really, very, very easy job.
+
+102
+00:06:37,360 --> 00:06:43,120
+if you're passionate about the topics that you're kind of getting to spend all your time diving into and talking to people about.
+
+103
+00:06:43,280 --> 00:06:44,240
+But that's the magic.
+
+104
+00:06:44,400 --> 00:06:46,000
+And it's the same with Star Wars, to be fair.
+
+105
+00:06:48,560 --> 00:06:50,640
+The whole company is based around the idea of hobbies.
+
+106
+00:06:51,200 --> 00:06:55,120
+That everyone has a hobby and hobbies are incredibly fractal things.
+
+107
+00:06:55,680 --> 00:06:57,600
+The closer you look, the more complex they are.
+
+108
+00:06:57,920 --> 00:06:59,920
+Look even closer and more and more complex.
+
+109
+00:07:00,160 --> 00:07:05,680
+And so the company had magazines on computers and computer games had magazines.
+
+110
+00:07:05,760 --> 00:07:08,240
+Like PC Gamer was one of the titles owned by the company.
+
+111
+00:07:09,040 --> 00:07:10,240
+We had titles for guitars.
+
+112
+00:07:10,400 --> 00:07:14,240
+If you like guitars, learn, want to play guititar or practice guitar, got one of the magazine for you.
+
+113
+00:07:14,400 --> 00:07:18,240
+Or drumming or mountain biking or cross stitching or whatever you wanted.
+
+114
+00:07:19,200 --> 00:07:25,280
+And it was great because if you were passionate about anything in your free time, they'd have a magazine probably for you.
+
+115
+00:07:25,360 --> 00:07:26,240
+It wasn't quite that niche.
+
+116
+00:07:26,400 --> 00:07:32,960
+It wasn't like model train collecting or anything, but all the big hit hobbies they were interested in, including a movie magazine.
+
+117
+00:07:33,040 --> 00:07:36,880
+They had one just of movie fans who wanted to read about movies and what kind of jazz.
+
+118
+00:07:37,200 --> 00:07:40,720
+So I worked for them doing Linux, a Linux magazine.
+
+119
+00:07:40,960 --> 00:07:42,480
+And again, it was great fun.
+
+120
+00:07:42,880 --> 00:07:44,880
+I got to meet everyone I wanted to meet.
+
+121
+00:07:46,160 --> 00:07:48,240
+Larry Wall who made Pearl.
+
+122
+00:07:48,560 --> 00:07:55,200
+or Guido Van Rossum from Python or Rasmus Lerdoff from PHP itself or whatever.
+
+123
+00:07:55,280 --> 00:07:59,440
+I traveled the world, meeting these folks, interviewing them and hanging out with them and asking the questions and becoming friends with them.
+
+124
+00:07:59,520 --> 00:08:01,200
+And it was a really, really great job.
+
+125
+00:08:01,440 --> 00:08:02,800
+Yeah, that sounds awesome.
+
+126
+00:08:02,960 --> 00:08:07,760
+But you have to imagine every month you're faced with 128 pages, 132 pages that are completely blank.
+
+127
+00:08:08,080 --> 00:08:09,120
+How are you going to fill them up?
+
+128
+00:08:09,280 --> 00:08:10,320
+What's interesting right now?
+
+129
+00:08:10,560 --> 00:08:12,640
+And you get to decide what's interesting.
+
+130
+00:08:13,120 --> 00:08:23,920
+So you're trying to read the pulse of the community a lot and get a sense of where it's going and what's interesting and what's new and what might be interesting and try and provide a bit of guidance, a bit of feedback and constantly.
+
+131
+00:08:26,000 --> 00:08:27,040
+So it was a lot of fun.
+
+132
+00:08:27,760 --> 00:08:28,320
+How did you do that?
+
+133
+00:08:28,560 --> 00:08:32,560
+Like, how, was it like forums or I don't know what time period we're talking about here?
+
+134
+00:08:32,800 --> 00:08:39,520
+So you have to keep in mind, it was, it was, yeah, so 2003, 2011 or so, I forget what it was, 2010 maybe.
+
+135
+00:08:40,960 --> 00:08:52,320
+Yeah, so you are on forums, you're looking what people are saying, you're getting emails or actually posts a lot of the time from readers saying, here's what I'm working on, here's what's interesting.
+
+136
+00:08:52,560 --> 00:08:55,520
+You're watching, it was then SourceForge at the time, yeah.
+
+137
+00:08:55,680 --> 00:08:57,840
+Very closely seeing what's changing, what's happening.
+
+138
+00:08:58,240 --> 00:09:00,000
+There was no GitHub sadly at the time.
+
+139
+00:09:01,120 --> 00:09:05,760
+But yeah, so you're doing your best to keep up to a very, very wide area.
+
+140
+00:09:06,240 --> 00:09:08,720
+And even, you know, Linux is a niche within a niche, right?
+
+141
+00:09:08,880 --> 00:09:10,400
+But it's still a huge, huge area.
+
+142
+00:09:10,880 --> 00:09:11,040
+Right.
+
+143
+00:09:11,440 --> 00:09:13,680
+And helpfully, you build contacts.
+
+144
+00:09:14,160 --> 00:09:16,480
+And actually, some of those I still hang out with today.
+
+145
+00:09:16,800 --> 00:09:20,960
+Some of my friends I met back then, I still talk to and hang out with today, which is just great fun.
+
+146
+00:09:21,840 --> 00:09:26,400
+But yeah, so you get to decide the tone and direction of a large part of the community.
+
+147
+00:09:26,560 --> 00:09:29,040
+And that was very, very exciting to do.
+
+148
+00:09:29,360 --> 00:09:30,720
+And I enjoyed it very much.
+
+149
+00:09:30,880 --> 00:09:35,280
+And honestly, the best part was when you finish a magazine for the month, you're done.
+
+150
+00:09:35,680 --> 00:09:36,560
+You can't do anything else.
+
+151
+00:09:36,880 --> 00:09:38,560
+There's nothing to happen until next month.
+
+152
+00:09:38,720 --> 00:09:39,680
+You have to just chill out.
+
+153
+00:09:39,760 --> 00:09:47,120
+So we'd just go to the pub for a couple of days and talk about like why do they have tires in Frontier Elite 2?
+
+154
+00:09:47,200 --> 00:09:48,960
+Why do the spaceships have tires when they land?
+
+155
+00:09:49,200 --> 00:09:49,920
+It doesn't make any sense.
+
+156
+00:09:50,000 --> 00:09:50,720
+What's going on here?
+
+157
+00:09:51,120 --> 00:09:57,120
+We'd pass days of our lives discussing the minutiae of Amiga history or similar because we could.
+
+158
+00:09:57,520 --> 00:10:02,960
+Yeah, I guess that's the difference from like software where the release is kind of the beginning point.
+
+159
+00:10:03,440 --> 00:10:04,400
+A lot of times it feels like.
+
+160
+00:10:04,480 --> 00:10:04,640
+Right.
+
+161
+00:10:04,720 --> 00:10:05,280
+Because exactly.
+
+162
+00:10:05,440 --> 00:10:10,480
+Your next however long is going to be dealing with feedback, rushing to get new features out, yada yada.
+
+163
+00:10:10,560 --> 00:10:10,960
+But yeah.
+
+164
+00:10:12,240 --> 00:10:16,240
+Especially a print magazine, like there's no, you know, corrections or correct.
+
+165
+00:10:16,400 --> 00:10:16,800
+It's going on.
+
+166
+00:10:17,200 --> 00:10:17,760
+Making updates.
+
+167
+00:10:17,920 --> 00:10:18,640
+Yeah, it's out there.
+
+168
+00:10:19,040 --> 00:10:24,960
+But also the magic is, you know, that you're sitting there trying to get the cover exactly right or your pages exactly right.
+
+169
+00:10:25,440 --> 00:10:30,800
+And if they if they involve all sorts of ugly hacks, no one cares.
+
+170
+00:10:30,960 --> 00:10:31,120
+Yeah.
+
+171
+00:10:31,600 --> 00:10:34,080
+If it looks, if it looks right on the page, it's right.
+
+172
+00:10:34,560 --> 00:10:35,760
+It doesn't matter how you got there.
+
+173
+00:10:36,000 --> 00:10:36,480
+It looks right.
+
+174
+00:10:36,720 --> 00:10:37,120
+It is right.
+
+175
+00:10:37,360 --> 00:10:38,240
+Out the door, it goes.
+
+176
+00:10:38,880 --> 00:10:41,520
+And it went wrong once.
+
+177
+00:10:42,560 --> 00:10:46,000
+We were I've been editor of the magazine.
+
+178
+00:10:46,240 --> 00:10:53,440
+I was running the magazine this time by about eighteen months and our production editor had gone on vacation.
+
+179
+00:10:54,080 --> 00:11:07,360
+Production is responsible for getting raw text in, correcting the raw text, giving it to Art who lays it out, back to production who then make it fit, make it work, correcting all the little little things, and handing it off to me to sign off and go to print.
+
+180
+00:11:08,240 --> 00:11:15,520
+Our production editor had gone on vacation and left a temporary person in their place who sadly didn't understand the systems.
+
+181
+00:11:16,320 --> 00:11:20,400
+We ended up sending a lot of wrong pages to Press, which was not great.
+
+182
+00:11:21,680 --> 00:11:28,560
+Helpfully, they were wrong insofar as they were s like version five rather than version seven or version six.
+
+183
+00:11:29,200 --> 00:11:30,720
+So like types and stuff, but not.
+
+184
+00:11:31,200 --> 00:11:32,720
+Types glorious.
+
+185
+00:11:32,800 --> 00:11:38,880
+And one of them was, you know, we have this thing in print and actually online where you have a page title, here's your big headline.
+
+186
+00:11:39,280 --> 00:11:45,600
+Below that is a subheadline or strap line where you kind of give them a taste of what's in there in the task you'll learn about yada yada yada.
+
+187
+00:11:46,000 --> 00:11:51,040
+And the worst one was it had a strap line saying, Two lines of nonsense here repeated five times.
+
+188
+00:11:52,160 --> 00:11:52,720
+Because that's our.
+
+189
+00:11:52,960 --> 00:11:53,280
+That's our.
+
+190
+00:11:53,360 --> 00:11:53,680
+That's our.
+
+191
+00:11:53,760 --> 00:11:55,360
+That's our nonsense, but it's not particularly valuable.
+
+192
+00:11:55,440 --> 00:11:56,720
+So it's just two lines of nonsense here.
+
+193
+00:11:56,880 --> 00:11:58,160
+It wasn't caught, so it went out.
+
+194
+00:11:58,480 --> 00:11:59,920
+And, you know, I turned it into a game.
+
+195
+00:12:00,240 --> 00:12:03,120
+I said to readers, you know, oops, the wrong page went to press.
+
+196
+00:12:03,520 --> 00:12:04,160
+Sorry about that.
+
+197
+00:12:05,040 --> 00:12:10,320
+Reply to this blog post and the first person to spot each typo once will get a free book.
+
+198
+00:12:10,640 --> 00:12:11,680
+Ah, that's awesome.
+
+199
+00:12:12,000 --> 00:12:12,880
+We had stacks of books.
+
+200
+00:12:13,200 --> 00:12:14,960
+We get mailed all the time to review for the magazine.
+
+201
+00:12:15,040 --> 00:12:15,920
+So we just sent them up.
+
+202
+00:12:16,240 --> 00:12:19,840
+You win a book, you win a book and people loved it because, you know, we make mistakes.
+
+203
+00:12:19,920 --> 00:12:20,560
+We're a team too.
+
+204
+00:12:20,720 --> 00:12:22,480
+We're doing our best and things go wrong sometimes.
+
+205
+00:12:22,720 --> 00:12:25,520
+So you adapt, you get over it and you have some fun with it.
+
+206
+00:12:25,840 --> 00:12:26,160
+That's great.
+
+207
+00:12:26,560 --> 00:12:33,360
+That's, were you like horrified when you realized or did you pretty quickly be like, wow, someone made a mistake, especially since it wasn't you?
+
+208
+00:12:34,320 --> 00:12:37,840
+It ultimately is me, you know, as editor of the magazine., it is, it's me.
+
+209
+00:12:38,240 --> 00:12:39,360
+You know, you get on with it.
+
+210
+00:12:39,520 --> 00:12:42,480
+And, and, and, and, honestly, there are many, many worse mistakes out there.
+
+211
+00:12:42,640 --> 00:12:49,040
+And, but more than once, other magazines, fortunately never us, other magazines went out with the wrong barcode on.
+
+212
+00:12:49,600 --> 00:12:51,200
+And that's a proper fatal error.
+
+213
+00:12:51,360 --> 00:12:58,960
+That's when they will get all the magazines back and pulp them and destroy them, and then reissue, you know, fifty thousand magazines to get them out there.
+
+214
+00:12:59,120 --> 00:13:00,880
+Yeah, because you can't check anyone out, right?
+
+215
+00:13:01,120 --> 00:13:02,240
+Like, correct them correctly.
+
+216
+00:13:02,400 --> 00:13:03,120
+Yeah, that would be rough.
+
+217
+00:13:03,600 --> 00:13:05,200
+They'll get the wrong price again and again.
+
+218
+00:13:05,280 --> 00:13:08,880
+So they had to pulp, you know, a lot of magazines and throw them away, which is grim.
+
+219
+00:13:09,040 --> 00:13:10,240
+So, yeah, we never had that.
+
+220
+00:13:11,680 --> 00:13:12,640
+It could have been a lot worse.
+
+221
+00:13:12,640 --> 00:13:17,680
+It makes me think of when movie trailers get released with, like, Temp Audio.
+
+222
+00:13:17,920 --> 00:13:21,440
+I don't know if you've ever seen, like, I think there was a Tom Cruise movie.
+
+223
+00:13:21,920 --> 00:13:25,600
+I'll put a link in the show notes, but it's literally just the sound of him screaming.
+
+224
+00:13:25,760 --> 00:13:27,920
+That's the only sound that made it in the Temp Audio.
+
+225
+00:13:28,320 --> 00:13:33,920
+There's no music, there's no sound effects, it's just him endlessly screaming in this, in this trailer.
+
+226
+00:13:34,000 --> 00:13:35,120
+And it's, it's amazing.
+
+227
+00:13:36,000 --> 00:13:37,760
+But I feel horrible for whoever let that through.
+
+228
+00:13:38,000 --> 00:13:39,440
+I'd watch that movie, that sounds good.
+
+229
+00:13:41,120 --> 00:13:44,000
+I've certainly seen that they do a lot of, like, temporary music.
+
+230
+00:13:44,720 --> 00:13:47,520
+They'll borrow music from other well-known movies and put it in there.
+
+231
+00:13:47,840 --> 00:13:48,640
+You know, there are movies.
+
+232
+00:13:48,960 --> 00:13:54,240
+They're not ripping it off from the internet, but they're taking temporary soundtracks because the real world isn't done yet and they'll put that out.
+
+233
+00:13:54,560 --> 00:13:54,640
+Yeah.
+
+234
+00:13:54,960 --> 00:13:55,040
+Yeah.
+
+235
+00:13:55,360 --> 00:13:56,000
+Haxcalaw.
+
+236
+00:13:57,200 --> 00:13:57,200
+Yeah.
+
+237
+00:13:57,440 --> 00:13:57,600
+Yeah.
+
+238
+00:13:57,840 --> 00:14:15,840
+That's one of the fun things about I was going to say physical, but I guess movies aren't necessarily physical, but a distribution of your creation that is final is, yeah, you can have the most hacky scaffolding around the thing, but as long as the final thing is okay, it's good.
+
+239
+00:14:16,400 --> 00:14:18,160
+You can't quite get away with that with software.
+
+240
+00:14:18,720 --> 00:14:24,400
+Well, I did see recently Jordan Singer posted a mock-up.
+
+241
+00:14:25,280 --> 00:14:28,240
+of a CD or DVD with a Slack logo on.
+
+242
+00:14:28,480 --> 00:14:29,280
+Oh yeah, yeah.
+
+243
+00:14:29,840 --> 00:14:30,800
+And it was like, what?
+
+244
+00:14:31,600 --> 00:14:32,880
+Because that's what it would have been, right?
+
+245
+00:14:33,280 --> 00:14:38,000
+Install Slack and you live with that version for six months, twelve months or longer.
+
+246
+00:14:38,480 --> 00:14:39,840
+And of course we don't do it anymore.
+
+247
+00:14:39,920 --> 00:14:44,000
+We're used to the idea of, you know, just ship something that vaguely works and fix it in the post, it'll be fine.
+
+248
+00:14:44,160 --> 00:14:44,240
+Yeah.
+
+249
+00:14:45,440 --> 00:14:46,880
+Yeah, it's definitely a different world.
+
+250
+00:14:47,520 --> 00:14:47,600
+Yeah.
+
+251
+00:14:47,840 --> 00:14:51,440
+And I obviously prefer to be able to put updates out freely.
+
+252
+00:14:51,520 --> 00:14:52,560
+It's much, much nicer.
+
+253
+00:14:52,960 --> 00:14:56,960
+You know, Swift UI wouldn't work terribly well in print, let's face it, because it's changing that often.
+
+254
+00:14:57,600 --> 00:15:03,360
+So after the magazine, how did you get better back into development or did you go straight into hacking?
+
+255
+00:15:03,680 --> 00:15:04,240
+Yeah, okay.
+
+256
+00:15:04,960 --> 00:15:09,200
+So all this time, you know, when you start coding, you get this addiction to coding.
+
+257
+00:15:09,360 --> 00:15:10,400
+You never really lose it, right?
+
+258
+00:15:10,560 --> 00:15:12,880
+You always want to hack on stuff and build with stuff and try stuff.
+
+259
+00:15:13,040 --> 00:15:16,640
+And all this time I was coding for myself in my free time.
+
+260
+00:15:16,960 --> 00:15:25,600
+So I was doing a lot of PHP, then did C plus plus, then did, let me think, follow my numbers, Python was next, I think.
+
+261
+00:15:27,120 --> 00:15:34,560
+I did a lot of Windows Mobile, like the original Windows Mobile, Mobile 5 or so and 6, that was C sharp.
+
+262
+00:15:35,040 --> 00:16:21,200
+Was this just for fun for yourself yeah yeah totally just for fun you know because anything that stayed still long enough i could kind of hack on i want to hack on so i i bought a uh you know windows mobile phone back then that was a thing and you could run c sharp two on there so i built this huge game for windows mobile and some apps i wanted to play just for me uh i built stuff for xbox 360 that was a lot of fun as well i even made um android stuff later on too so anything that stays still long enough i want to break and fiddle with and whatever and obviously when ios came out i looked at it immediately you know i applied for the initial release of the SDK, and it wasn't one of the first by a long way, but when I finally got it, it was still, you know, early in the release days.
+
+263
+00:16:21,840 --> 00:16:26,640
+I was horrified because A objective C terrified me at the time.
+
+264
+00:16:26,720 --> 00:16:28,080
+I thought, what's going on here?
+
+265
+00:16:28,160 --> 00:16:31,120
+Table view, table view, table view, what's going on?
+
+266
+00:16:31,600 --> 00:16:36,720
+That was weird, but also things, it just seemed a bit backwards to begin with.
+
+267
+00:16:37,120 --> 00:16:46,320
+For example, I remember like the earliest thing they sort of showed off was the picture of planet Earth in the background and a glass button for a core button in the middle.
+
+268
+00:16:46,880 --> 00:16:52,080
+And, you know, when I saw the code., I'm like, wow, the glass button is a picture of a glass button.
+
+269
+00:16:52,320 --> 00:16:53,200
+They're not drawing that.
+
+270
+00:16:53,280 --> 00:16:56,560
+It's just literally rendering an image that just seems really lazy.
+
+271
+00:16:56,720 --> 00:17:01,200
+Why do you want to do this kind of backwards ancient kind of coding with this weird language no one else uses?
+
+272
+00:17:01,440 --> 00:17:02,400
+So I backed away from it.
+
+273
+00:17:02,560 --> 00:17:07,440
+I missed all of iPhone OS 2, but iPhone OS 3, I started making apps for.
+
+274
+00:17:07,840 --> 00:17:12,080
+So I ported my big game from Xbox to iPhone.
+
+275
+00:17:12,800 --> 00:17:17,200
+I made other apps for using UI Kit using my bizarre hack.
+
+276
+00:17:17,600 --> 00:17:18,320
+What brought you back in?
+
+277
+00:17:18,480 --> 00:17:19,600
+Because it's because it's there.
+
+278
+00:17:19,680 --> 00:17:20,320
+I wanted to try it.
+
+279
+00:17:21,360 --> 00:17:23,840
+I kept throwing myself at it until it worked.
+
+280
+00:17:24,400 --> 00:17:32,320
+I remember I was on the train to see my grandmother who lived about four hours away by train, and I thought, on this train journey, I will figure this out.
+
+281
+00:17:32,720 --> 00:17:34,400
+I will not get off this train until it's done.
+
+282
+00:17:34,560 --> 00:17:36,560
+And unfortunately, I ended up in Scotland somewhere.
+
+283
+00:17:36,640 --> 00:17:37,840
+I got off at the right point.
+
+284
+00:17:38,400 --> 00:17:39,120
+I figured it out.
+
+285
+00:17:39,200 --> 00:17:41,120
+But, you know, there was no internet the whole way.
+
+286
+00:17:41,360 --> 00:17:44,160
+This was, you know, 2010, I guess or something.
+
+287
+00:17:44,800 --> 00:17:47,840
+So no, I had no internet on my train at the time.
+
+288
+00:17:48,160 --> 00:17:52,080
+So it was just me figuring out at the time zips.
+
+289
+00:17:52,480 --> 00:17:53,920
+Because there were no storyboards yet.
+
+290
+00:17:54,720 --> 00:17:58,400
+Trying to figure out, you know, what first responder was, why this thing is not broken now.
+
+291
+00:17:59,680 --> 00:18:02,960
+And I cracked it and my code from back then was of course a disaster.
+
+292
+00:18:03,120 --> 00:18:04,000
+It's basically on fire.
+
+293
+00:18:04,560 --> 00:18:10,480
+But I got into it and I figured it out and I ended up making a massive collection of apps again and again and again.
+
+294
+00:18:10,640 --> 00:18:11,520
+It was a challenge for me.
+
+295
+00:18:11,680 --> 00:18:13,280
+How many apps can I produce every week?
+
+296
+00:18:13,520 --> 00:18:15,600
+Three, four, five, six, seven in a week.
+
+297
+00:18:15,840 --> 00:18:19,920
+Just keep on throwing them out, learning, learning, learning, throwing everything I could possibly do at it.
+
+298
+00:18:20,480 --> 00:18:26,880
+And then the company I worked for realized I could do this and started asking me to help them out building apps for clients.
+
+299
+00:18:27,200 --> 00:18:34,480
+So I made this a store kind of marketing app for a big biking company called Colnago.
+
+300
+00:18:34,880 --> 00:18:36,720
+I made an app for them to show off their latest.
+
+301
+00:18:37,120 --> 00:19:03,600
+bikes the cycles i made an app for um for fender i made an app for alice cooper wow because they could sell it on to the through the agency to well there's my dog's barking sorry sell on to the whoever right but i i made a lot of apps in a very short space of time and the company eventually said okay you know we're going to do this thing this was ipad os oh ipad ios sorry ios 4 We're going to have this thing called Project 10.
+
+302
+00:19:03,840 --> 00:19:10,320
+We're going to build 10 apps back to back in time for Christmas, of which 9 were given to me to build and work on.
+
+303
+00:19:11,040 --> 00:19:13,120
+I shipped them all, plus my own personal apps..
+
+304
+00:19:13,200 --> 00:19:14,240
+And it was, it was a great success.
+
+305
+00:19:14,480 --> 00:19:14,960
+It worked well.
+
+306
+00:19:15,040 --> 00:19:18,160
+It gave us this experience very, very quickly in getting apps out there.
+
+307
+00:19:18,640 --> 00:19:19,280
+And that was great.
+
+308
+00:19:19,760 --> 00:19:26,720
+So what was, whenever you were like teaching yourself, what was your primary learning material?
+
+309
+00:19:27,120 --> 00:19:28,480
+Was it Apple's documentation?
+
+310
+00:19:28,800 --> 00:19:29,600
+Was it you buying books?
+
+311
+00:19:29,760 --> 00:19:32,000
+This feels relevant to what you eventually ended up doing.
+
+312
+00:19:32,320 --> 00:19:33,520
+So I wasn't buying books.
+
+313
+00:19:34,400 --> 00:19:38,960
+I used to love buying coding books when I was kind of postgraduate university.
+
+314
+00:19:39,360 --> 00:19:40,480
+I had my first paycheck, right?
+
+315
+00:19:40,640 --> 00:19:45,040
+I was like, I'd go to the bookstore almost every lunch time and browse through the books, particularly around paycheck time.
+
+316
+00:19:45,360 --> 00:19:46,800
+I still have some of the ones I bought actually.
+
+317
+00:19:46,960 --> 00:19:48,880
+The particular series I really enjoyed buying this.
+
+318
+00:19:49,040 --> 00:19:54,720
+I could treat for myself this games programming series that they'd have and I'd buy one like once a month because it's expensive, but I got it.
+
+319
+00:19:54,960 --> 00:19:56,240
+So that wasn't booked sadly.
+
+320
+00:19:56,400 --> 00:19:58,000
+It was mostly Apple's documentation.
+
+321
+00:19:58,240 --> 00:19:58,320
+Okay.
+
+322
+00:19:58,560 --> 00:20:01,920
+Occasionally the sample code and sometimes WDC stuff.
+
+323
+00:20:02,560 --> 00:20:04,320
+But yeah, it was mostly their documentation.
+
+324
+00:20:05,120 --> 00:20:06,400
+And it was, you know, try and error.
+
+325
+00:20:06,480 --> 00:20:08,560
+Just try things out until it worked and until I liked it.
+
+326
+00:20:09,600 --> 00:20:15,520
+And it hit the big time really when the company said, listen, this is getting silly.
+
+327
+00:20:15,680 --> 00:20:18,640
+We're making a lot of apps now, trying things out.
+
+328
+00:20:18,800 --> 00:20:19,760
+This is a growing area.
+
+329
+00:20:20,480 --> 00:20:24,960
+We need to try and make a team out of this, a real full-time coding team for app development.
+
+330
+00:20:25,840 --> 00:20:30,640
+And at this time, obviously, I was the only person in the company with any vague interest in making that happen.
+
+331
+00:20:31,040 --> 00:20:35,600
+Out of 1200 people, there was one iOS developer, which was me.
+
+332
+00:20:35,760 --> 00:20:38,080
+And so they appointed me onto the team.
+
+333
+00:20:39,120 --> 00:20:40,480
+And I founded a team around that.
+
+334
+00:20:40,640 --> 00:20:51,120
+And we ended up making a massive, ridiculous framework, huge platform for building magazines for iOS.
+
+335
+00:20:51,520 --> 00:20:51,600
+Okay.
+
+336
+00:20:52,160 --> 00:20:56,240
+And the company backed this up with a new launch.
+
+337
+00:20:56,400 --> 00:21:00,320
+It launched a magazine about iPads and iPhones.
+
+338
+00:21:01,040 --> 00:21:02,880
+And it was for iPads and iPhones.
+
+339
+00:21:03,360 --> 00:21:08,160
+And the brilliant thing we did was we made it on iPads and iPhones.
+
+340
+00:21:08,720 --> 00:21:17,760
+Like the software that my team and I programmed was a visual magazine designer that ran on iPads.
+
+341
+00:21:18,640 --> 00:21:24,800
+So you could you could place pictures, you could integrate native things like actual table views we placed on there.
+
+342
+00:21:25,040 --> 00:21:31,920
+You could bring in data, you could add smooth animations, you could do motion effects of tilt and so forth using the accelerometer.
+
+343
+00:21:32,560 --> 00:21:35,040
+And they launched a magazine called Tap, Tap Magazine.
+
+344
+00:21:35,600 --> 00:21:36,880
+And it was on a tablet.
+
+345
+00:21:36,880 --> 00:21:37,760
+It was, it was honestly ridiculous.
+
+346
+00:21:37,920 --> 00:21:43,040
+The company actually got a patent for some of the things we did because it was so unusual for magazines to be able to do these kinds of things.
+
+347
+00:21:43,440 --> 00:21:45,440
+It had, you know, like native flip effects for the cover.
+
+348
+00:21:45,840 --> 00:21:47,520
+Flip it over to see what's inside the magazine.
+
+349
+00:21:47,680 --> 00:21:48,720
+It just looked fantastic.
+
+350
+00:21:49,040 --> 00:21:51,280
+And it gave the team the option to do these things.
+
+351
+00:21:52,000 --> 00:21:56,640
+They could make, you know, scratch to reveal the answer or tip this way to reveal this, whatever.
+
+352
+00:21:56,880 --> 00:22:01,440
+And it gave them the power of building all the kind of native iOS effects they wanted.
+
+353
+00:22:02,160 --> 00:22:05,120
+Like, you know, rearrangeable table views, for example.
+
+354
+00:22:05,360 --> 00:22:08,000
+That's a trivial thing for coders to do, but hard for designers to do.
+
+355
+00:22:08,240 --> 00:22:08,400
+Right.
+
+356
+00:22:08,640 --> 00:22:09,680
+were now possible to do.
+
+357
+00:22:09,920 --> 00:22:39,760
+And they ship that, that whole magazine powered by us and then the big thing happened which was iOS 5 with newstand and newstand of course was the ill fated attempt at getting magazine subscriptions through the app store and our platform powered the entire launch for the company and we ended up dominating the app store on day one worldwide we were 75 percent of the titles available.
+
+358
+00:22:40,000 --> 00:22:41,040
+It was just massive.
+
+359
+00:22:41,360 --> 00:22:42,160
+Because you could quickly...
+
+360
+00:22:42,880 --> 00:22:43,360
+We were ready.
+
+361
+00:22:43,760 --> 00:22:45,040
+We were totally ready.
+
+362
+00:22:45,280 --> 00:22:48,640
+And some titles there, like Mac Life, did extreme...
+
+363
+00:22:48,640 --> 00:22:54,560
+extremely well and other ones we thought what's going to happen here but no idea we'd suddenly do randomly well in South Korea.
+
+364
+00:22:54,880 --> 00:22:57,760
+New markets we hadn't even vaguely approached were able to find us.
+
+365
+00:22:58,000 --> 00:23:01,840
+And I remember we were there on the launch week saying, well, that was quite easy actually.
+
+366
+00:23:01,920 --> 00:23:02,640
+We managed to do this.
+
+367
+00:23:02,800 --> 00:23:07,280
+Yeah, there were a few late night calls to Cupertino when things weren't working quite correctly but we pulled it off.
+
+368
+00:23:07,440 --> 00:23:07,840
+We did it.
+
+369
+00:23:08,240 --> 00:23:10,000
+And let's just check the support inbox.
+
+370
+00:23:10,160 --> 00:23:10,960
+Let's see what's going on.
+
+371
+00:23:11,120 --> 00:23:18,000
+Oh, it's only ten emails from we'd made, you know, I think half a million dollars on the first sort of 24, 48 hours.
+
+372
+00:23:18,720 --> 00:23:20,160
+And oh, it's only ten emails.
+
+373
+00:23:20,320 --> 00:23:22,000
+And then someone said, oh, wait a minute.
+
+374
+00:23:22,240 --> 00:23:22,960
+That's page one.
+
+375
+00:23:24,560 --> 00:23:26,560
+And there were hundreds of pages.
+
+376
+00:23:26,960 --> 00:23:32,560
+You could scroll through and there were emails glow saying it's not working, it's not working, it's not working, it's not working.
+
+377
+00:23:33,440 --> 00:23:42,960
+This was back in the very, very early days of subscriptions when Apple hadn't put in place all the very careful wording around renewing and cancellation and restoring purchases and similar.
+
+378
+00:23:43,760 --> 00:23:45,760
+And it was training customers for the first time.
+
+379
+00:23:46,320 --> 00:23:46,400
+Yeah.
+
+380
+00:23:46,960 --> 00:23:48,080
+They had no experience with it.
+
+381
+00:23:48,560 --> 00:23:48,640
+Yeah.
+
+382
+00:23:48,960 --> 00:23:50,240
+And some were genuinely angry.
+
+383
+00:23:50,480 --> 00:23:53,680
+Like, I have paid 500 bucks for my iPad.
+
+384
+00:23:54,160 --> 00:23:55,920
+Why do I have to pay for your magazine?
+
+385
+00:23:56,640 --> 00:23:59,520
+That was the honest to God emails we were getting.
+
+386
+00:23:59,920 --> 00:24:00,560
+They were really angry.
+
+387
+00:24:00,960 --> 00:24:04,400
+So the product we launched was just vast.
+
+388
+00:24:04,800 --> 00:24:12,800
+It was a huge, huge thing for building very, very interactive, very advanced magazines with built on iPad for iPad, optimized for iPad.
+
+389
+00:24:13,280 --> 00:24:15,440
+And like I say, we licensed it galore.
+
+390
+00:24:15,760 --> 00:24:17,680
+It was licensed by Peppa Pig.
+
+391
+00:24:17,920 --> 00:24:18,480
+My kids love that one.
+
+392
+00:24:18,640 --> 00:24:22,480
+Oh, it was licensed by UBS, the big Swiss bank.
+
+393
+00:24:23,040 --> 00:24:24,880
+PlayStation used it, Fender used it.
+
+394
+00:24:25,040 --> 00:24:33,040
+It was very, very popular and made last count 25 million dollars plus just for this fairly small company.
+
+395
+00:24:33,280 --> 00:24:36,400
+Because think about it, magazines normally aren't a particularly high.
+
+396
+00:24:36,400 --> 00:24:38,560
+So, you're in a particularly high profit margin business.
+
+397
+00:24:38,960 --> 00:24:39,120
+Right.
+
+398
+00:24:39,440 --> 00:24:41,760
+You might make five percent or ten percent of your profit margin.
+
+399
+00:24:41,920 --> 00:24:43,120
+Suddenly it's like ninety percent.
+
+400
+00:24:43,280 --> 00:24:44,320
+We're making free money.
+
+401
+00:24:44,640 --> 00:24:48,640
+So the company had gone from like losing $400,000 to making $10 million.
+
+402
+00:24:49,600 --> 00:24:50,560
+Like, what happened here?
+
+403
+00:24:50,880 --> 00:24:52,240
+It was a ridiculous turnaround.
+
+404
+00:24:52,480 --> 00:24:58,640
+And the original, the original newsstand concept was like, your magazines will be apps, right?
+
+405
+00:24:58,800 --> 00:25:03,600
+Like that's sort of changed since then, but that perfectly fits into what you, what you had already built, I guess.
+
+406
+00:25:04,080 --> 00:25:04,160
+Yeah.
+
+407
+00:25:04,800 --> 00:25:05,600
+We'd planned for it.
+
+408
+00:25:05,680 --> 00:25:06,960
+We'd worked towards it for a while.
+
+409
+00:25:07,520 --> 00:25:09,600
+And we were very, very ready for it.
+
+410
+00:25:09,680 --> 00:25:12,000
+The platform was just, we were pushing it extremely hard.
+
+411
+00:25:12,160 --> 00:25:58,720
+hard and we carried on pushing it for years afterwards adding more and more things because you know once the initial buzz of wow this is amazing new stuff we got into the you know churn of readers you know who wants to carry on subscribing and it was interesting seeing like mac life used to be a really really big us mac magazine and they had uh it was uh i don't know the exact pricing but i think it was like a dollar a month you could subscribe for through the app to subscribe or I think it was five dollars for a year and they made it so ridiculously cheap and as a result you could either buy a magazine for five or six bucks, like buy a one off magazine, or subscribe for a dollar and get that magazine plus next one plus next one, da da da, for six bucks.
+
+412
+00:25:59,280 --> 00:26:01,520
+So they, everyone chose to subscribe.
+
+413
+00:26:01,760 --> 00:26:12,880
+So they ended up with like ninety thousand subscribers in a very short period of time, like eighteen months, they had ninety thousand subscribers to the App Store, which is ninety thousand dollars a month, which is, you know, good money for a magazine quite frankly.
+
+414
+00:26:13,120 --> 00:26:14,240
+So it was huge.
+
+415
+00:26:14,480 --> 00:26:23,920
+It was really unexpectedly massive and we ended up with a team of I think twenty three, twenty four, maybe even twenty five people managing the whole delivery of this application.
+
+416
+00:26:24,240 --> 00:26:24,320
+Wow.
+
+417
+00:26:25,040 --> 00:26:28,640
+So then what kind of came next then, I guess, for you?
+
+418
+00:26:29,440 --> 00:26:31,760
+Well, ultimately, nothing lasts forever, right?
+
+419
+00:26:32,400 --> 00:26:37,680
+And I think the company's attempt to license this was never going to work.
+
+420
+00:26:38,560 --> 00:26:40,000
+UBS was a great client.
+
+421
+00:26:40,240 --> 00:26:40,800
+They were so nice.
+
+422
+00:26:40,960 --> 00:26:47,280
+They were so friendly, so helpful, and paid a lot of money for the right to use software, as did the other companies.
+
+423
+00:26:47,440 --> 00:26:52,720
+But ultimately, the problem the company was facing was it's hard to succeed as a digital magazine.
+
+424
+00:26:53,200 --> 00:26:59,840
+Like we know, so Jamie Oliver, a British chef, launched a digital magazine using our platform, which is great.
+
+425
+00:27:00,000 --> 00:27:01,760
+It's a beautiful, beautiful magazine.
+
+426
+00:27:01,920 --> 00:27:05,600
+Really did a great job of integrating all these native iOS features, yada, yada, yada.
+
+427
+00:27:05,760 --> 00:27:08,400
+But ultimately, he might sell 3,000 copies that month.
+
+428
+00:27:08,640 --> 00:27:08,720
+Yeah.
+
+429
+00:27:09,040 --> 00:27:10,320
+And that's not enough to get by on.
+
+430
+00:27:10,480 --> 00:27:14,800
+So a lot of that investment in making a beautiful, you know, interactive.
+
+431
+00:27:14,960 --> 00:27:15,040
+Yeah.
+
+432
+00:27:15,520 --> 00:27:15,920
+Exactly.
+
+433
+00:27:16,320 --> 00:27:18,160
+And so they start going to PDFs.
+
+434
+00:27:18,800 --> 00:27:24,960
+Uh, you know, they might add a few bits of jingle to the PDF, but it's spritzing around here and there, but it's still a PDF.
+
+435
+00:27:25,280 --> 00:27:26,160
+It's not very exciting.
+
+436
+00:27:26,400 --> 00:27:28,880
+And so that would cause sales to go down further.
+
+437
+00:27:29,200 --> 00:27:30,480
+People were less happy with the magazine.
+
+438
+00:27:30,560 --> 00:27:41,040
+Like the Jamie Oliver application, you would go through, search by ingredients, what you had versus what they were able to show you and they'd find the recipes for you and add it to a shopping list directly inside the application.
+
+439
+00:27:41,280 --> 00:27:41,760
+Here are the things.
+
+440
+00:27:41,920 --> 00:27:42,640
+Oh, add it in.
+
+441
+00:27:42,960 --> 00:27:45,200
+Go and buy these things in the dairy aisle, whatever, right?
+
+442
+00:27:45,920 --> 00:27:46,560
+It was brilliant.
+
+443
+00:27:47,040 --> 00:27:50,080
+It felt native but also felt like a magazine experience at the same time.
+
+444
+00:27:50,400 --> 00:27:52,480
+And as it went to PDF, people lost interest.
+
+445
+00:27:53,120 --> 00:27:55,200
+And so the sales wouldn't, were not as big.
+
+446
+00:27:55,600 --> 00:27:57,760
+The licensing effort, I think, was just doomed to fail.
+
+447
+00:27:58,160 --> 00:28:00,880
+We're a magazine company, not a software licensing company.
+
+448
+00:28:01,200 --> 00:28:03,360
+Our competitors didn't want anything to do with our software.
+
+449
+00:28:03,520 --> 00:28:08,000
+They wanted to build their own software because, of course, it was scary, licensing a competitor's software.
+
+450
+00:28:08,000 --> 00:28:08,640
+Right.
+
+451
+00:28:08,720 --> 00:28:09,920
+And so it was never going to last, right?
+
+452
+00:28:10,000 --> 00:28:11,200
+It was a, it was a brilliant fun.
+
+453
+00:28:11,280 --> 00:28:12,720
+We made a stupid amount of money in it.
+
+454
+00:28:12,720 --> 00:28:16,880
+It's a silly amount of money in a short bit of time, but ultimately it had to draw a line somewhere.
+
+455
+00:28:16,960 --> 00:28:21,200
+And I think now they have a coding team of maybe one, maybe zero.
+
+456
+00:28:21,920 --> 00:28:23,200
+Just supporting their own stuff.
+
+457
+00:28:23,840 --> 00:28:44,640
+Yeah, because at this point, you know, it's more economical to be somewhere else, you know, to use the increasingly invasive Google ads or using Apple News plus or similar, any kind of aggregation service that takes the cost away from you and allows you surf along PDFs, basically.
+
+458
+00:28:44,880 --> 00:28:45,040
+Right.
+
+459
+00:28:45,360 --> 00:28:49,920
+So make the big money, obviously divid, dividend that out to your shareholders.
+
+460
+00:28:50,160 --> 00:28:53,520
+And then when it comes to the next tranche of money, switch to something cheaper.
+
+461
+00:28:53,760 --> 00:28:54,560
+And that's what happened.
+
+462
+00:28:54,960 --> 00:28:58,480
+So did you, were you, stayed with them for a while after that?
+
+463
+00:28:58,720 --> 00:29:01,600
+Or were you kind of getting itchy to try something new?
+
+464
+00:29:02,160 --> 00:29:02,800
+I did, yeah.
+
+465
+00:29:03,120 --> 00:29:08,000
+I was there, oh, good grief, 2016, 2015.
+
+466
+00:29:08,160 --> 00:29:08,560
+Oh, wow.
+
+467
+00:29:09,280 --> 00:29:10,560
+I actually left the company.
+
+468
+00:29:10,880 --> 00:29:12,800
+You know, I joined 2003.
+
+469
+00:29:13,280 --> 00:29:14,800
+Must have been 2015 then, perhaps.
+
+470
+00:29:14,960 --> 00:29:18,000
+Anyway, so I was there for about twelve years is the answer.
+
+471
+00:29:18,320 --> 00:29:24,400
+Of which eight was as a journalist, and then the last four of slash five was as running the software team.
+
+472
+00:29:24,960 --> 00:29:27,200
+And did that lead right into Hacking with Swift then?
+
+473
+00:29:28,960 --> 00:29:31,920
+I wrote Hacking with Swift early.
+
+474
+00:29:32,320 --> 00:29:33,760
+I was still at the company while I was still writing.
+
+475
+00:29:33,920 --> 00:29:35,120
+It was 2014 when I wrote.
+
+476
+00:29:35,200 --> 00:29:37,680
+The year Swift launched, I started writing Hacking with Swift.
+
+477
+00:29:38,000 --> 00:29:39,520
+I was still at the company and they didn't mind.
+
+478
+00:29:39,600 --> 00:29:40,240
+They couldn't care less.
+
+479
+00:29:40,320 --> 00:29:41,200
+They weren't into books.
+
+480
+00:29:41,360 --> 00:29:42,800
+Books wasn't their area, so that was fine.
+
+481
+00:29:42,960 --> 00:29:44,400
+Was hacked did it start as a book?
+
+482
+00:29:44,560 --> 00:29:45,680
+Yeah, it was started as a book.
+
+483
+00:29:45,760 --> 00:29:47,920
+Yeah, the original Hacking with Swift book.
+
+484
+00:29:48,080 --> 00:29:52,480
+Okay, so the first Hacking with Swift was a book you wrote whenever Swift first came out?
+
+485
+00:29:52,880 --> 00:29:55,680
+Yeah, so Swift launched 2014, if I remember correctly.
+
+486
+00:29:56,240 --> 00:30:08,000
+I started writing I got the domain November 2014, so I started writing it a little before October, Se September time and it was ready in December and I launched it January 1st, 2015 as a book.
+
+487
+00:30:08,400 --> 00:30:10,480
+You could buy the book and nothing else, that was it.
+
+488
+00:30:11,200 --> 00:30:12,720
+And it wasn't a great success, that's for sure.
+
+489
+00:30:12,880 --> 00:30:14,240
+But it wasn't designed to be too fair.
+
+490
+00:30:14,400 --> 00:30:15,280
+I had a full time job.
+
+491
+00:30:15,440 --> 00:30:17,200
+I was paid very well to do what I was doing.
+
+492
+00:30:17,600 --> 00:30:20,640
+It was a side thing and I just basically ignored it.
+
+493
+00:30:20,800 --> 00:30:21,440
+I forgot all about it.
+
+494
+00:30:21,600 --> 00:30:23,280
+I didn't even think about it for a long, long time.
+
+495
+00:30:23,520 --> 00:30:24,880
+Had you written other books before?
+
+496
+00:30:25,360 --> 00:30:26,080
+I had done, yeah.
+
+497
+00:30:26,160 --> 00:30:28,480
+So I wrote an O'Reilly book, Practical PHP.
+
+498
+00:30:28,880 --> 00:30:30,160
+I had written books on Linux.
+
+499
+00:30:31,200 --> 00:30:37,040
+So this is kind of one of your many hobbies and hacking with Swift was just, hey, this new Swift thing'ss coming out.
+
+500
+00:30:37,120 --> 00:30:37,680
+It's really exciting.
+
+501
+00:30:37,760 --> 00:30:39,920
+I'm going to write a book, which is something that you've done a bunch of times.
+
+502
+00:30:40,240 --> 00:30:40,800
+Exactly, yeah.
+
+503
+00:30:40,880 --> 00:30:45,920
+So I had written an app for Swift Launch Day, which was iOS 8.
+
+504
+00:30:46,800 --> 00:30:47,920
+Crack, it's a while ago now.
+
+505
+00:30:48,880 --> 00:30:50,320
+It was iOS 8 at the time.
+
+506
+00:30:50,960 --> 00:30:57,200
+And I wrote a Safari extension called ViewSource, which you can tell what it does right in the name.
+
+507
+00:30:58,240 --> 00:30:59,600
+Yeah, it does what it says on the ten.
+
+508
+00:30:59,920 --> 00:31:00,720
+Yeah, you couldn't do it.
+
+509
+00:31:00,800 --> 00:31:03,040
+So I nabbed the name ViewSource, made the ViewSource app.
+
+510
+00:31:03,200 --> 00:31:05,520
+It's done very well for itself, all by itself, which is great.
+
+511
+00:31:05,920 --> 00:31:07,840
+And that's still there in Swift one actually.
+
+512
+00:31:08,240 --> 00:31:08,960
+I haven't moved it.
+
+513
+00:31:09,040 --> 00:31:10,160
+I haven't touched it at all.
+
+514
+00:31:10,560 --> 00:31:12,480
+I had forgotten it existed until someone mentioned it recently.
+
+515
+00:31:12,720 --> 00:31:50,880
+they they've been using it for shortcuts which is brilliant very well done them but that was new to me um so yeah i wrote this book just for fun and got out there and i learned a lot along the way about you know iOS and swift and more and then did nothing with it so i left it there to kind of rot interesting so so what i mean i'm struggling to link uh these two things together then how did the hacking with swift website come about well it had the you know the dot com but the actual uh content i think uh let me see uh my years are fuzzy i probably tried to sit and write this down once or i've conflicted with it once The best thing about a podcast is you get at least some sort of document.
+
+516
+00:31:51,360 --> 00:31:53,280
+I can have a go, but I'll get it wrong, I'm sure.
+
+517
+00:31:54,000 --> 00:31:55,920
+It was there, 2015, it was going nowhere.
+
+518
+00:31:56,080 --> 00:31:56,720
+It was going nowhere.
+
+519
+00:31:57,200 --> 00:32:00,000
+Some folks bought it, but not many folks bought it because no one knew who I was.
+
+520
+00:32:00,320 --> 00:32:01,360
+No one cared who I was.
+
+521
+00:32:02,400 --> 00:32:06,960
+And so I ended up making the book, the downloadable book, free.
+
+522
+00:32:07,360 --> 00:32:09,120
+So you could download the whole thing for free if you wanted to.
+
+523
+00:32:09,200 --> 00:32:10,800
+Rather than paying for it, just get it for free.
+
+524
+00:32:10,960 --> 00:32:11,360
+It's fine.
+
+525
+00:32:11,840 --> 00:32:16,800
+And then I want to say 2016, I put it online for free.
+
+526
+00:32:17,120 --> 00:32:18,480
+I had to read online for free.
+
+527
+00:32:18,960 --> 00:32:19,040
+Okay.
+
+528
+00:32:20,640 --> 00:32:31,520
+It gets a bit hazy on them because at some point when I left the company, I was sort of thinking, okay, I've left my, you know, very well-paying software development job.
+
+529
+00:32:31,760 --> 00:32:33,760
+I've got to look for an actual income here.
+
+530
+00:32:34,960 --> 00:32:42,800
+The company I worked for, I was at this point, I was a director of the company and so I had a six-month notice period and they were very generous.
+
+531
+00:32:42,960 --> 00:32:45,920
+I said, listen, you know, obviously we don't want any competition here.
+
+532
+00:32:46,320 --> 00:32:46,800
+Just go away.
+
+533
+00:32:47,360 --> 00:32:48,400
+Sit at home for six months.
+
+534
+00:32:49,040 --> 00:32:49,680
+Do everything you want to.
+
+535
+00:32:49,840 --> 00:32:50,480
+Gardening leave.
+
+536
+00:32:50,640 --> 00:32:51,600
+Just do what you like.
+
+537
+00:32:51,680 --> 00:32:52,000
+Go away.
+
+538
+00:32:52,640 --> 00:32:55,600
+And so I thought, okay, I've got six months to kind of prove this is going to work.
+
+539
+00:32:56,000 --> 00:32:56,640
+Is this possible?
+
+540
+00:32:57,680 --> 00:33:03,520
+And so by this point, I yeah, I can get dates roughly right in my head.
+
+541
+00:33:04,160 --> 00:33:05,520
+The site was definitely up and running.
+
+542
+00:33:05,760 --> 00:33:10,080
+All the stuff was free online to read on web pages.
+
+543
+00:33:10,400 --> 00:33:11,840
+Plus the book was free to download.
+
+544
+00:33:12,560 --> 00:33:16,320
+And my first choice was I want the book not free to download.
+
+545
+00:33:17,280 --> 00:33:20,160
+So you can come to the site and read it free if you want to support me by the book.
+
+546
+00:33:20,320 --> 00:33:21,360
+And that was the first change I made.
+
+547
+00:33:21,520 --> 00:33:25,840
+It's like, you know, I So you had made like a sort of web version of the book content.
+
+548
+00:33:26,080 --> 00:33:27,360
+Is that what the site was at that point?
+
+549
+00:33:27,520 --> 00:33:27,600
+Okay.
+
+550
+00:33:28,320 --> 00:33:30,480
+The whole at this point for sure, yes, definitely.
+
+551
+00:33:30,640 --> 00:33:32,000
+The whole thing was able to read online.
+
+552
+00:33:32,160 --> 00:33:34,160
+The whole book, every chapter was available to read online.
+
+553
+00:33:34,320 --> 00:33:38,720
+Plus you could download the book, the PDF version, EPUB, whatever, from Gumro for free.
+
+554
+00:33:38,880 --> 00:33:38,960
+Okay.
+
+555
+00:33:39,200 --> 00:33:39,840
+And I made this choice.
+
+556
+00:33:39,920 --> 00:33:41,680
+Listen, get out in life if you want to, that's fine.
+
+557
+00:33:41,840 --> 00:33:44,080
+But if you want to support my work, buy the book.
+
+558
+00:33:44,800 --> 00:33:47,760
+And that was my first, like, that was my plan A in life.
+
+559
+00:33:48,240 --> 00:33:52,960
+I could, you know, commute to London, which is an hour and forty five minutes a day by train there and back.
+
+560
+00:33:53,360 --> 00:33:56,720
+So it's, you know, three and a bit hours of travel every day.
+
+561
+00:33:57,200 --> 00:33:59,360
+I could move house somewhere cheaper.
+
+562
+00:33:59,520 --> 00:34:03,360
+I could get a job in Bristol, in a nearby city, you know, doing software development, whatever.
+
+563
+00:34:04,080 --> 00:34:06,240
+But my plan A was, can I make this book thing work?
+
+564
+00:34:06,560 --> 00:34:06,640
+Okay.
+
+565
+00:34:07,120 --> 00:34:09,520
+And plan B was, you know, should I make more money from apps?
+
+566
+00:34:09,680 --> 00:34:12,880
+Because I'm still making very good money from apps at this point, my personal apps.
+
+567
+00:34:12,880 --> 00:34:14,880
+Um, but planning was books.
+
+568
+00:34:14,960 --> 00:34:21,040
+So I I I I made the the book not free and wrote a second book called Pro Swift.
+
+569
+00:34:21,600 --> 00:34:25,440
+Uh, and that's been very popular and that convinced me, wow, that I could do this full time.
+
+570
+00:34:26,000 --> 00:34:27,520
+And it's kind of grown since then, really.
+
+571
+00:34:28,000 --> 00:34:28,080
+Okay.
+
+572
+00:34:28,640 --> 00:34:31,280
+So it started out as a series of books.
+
+573
+00:34:32,480 --> 00:34:36,080
+And then at some point you started writing articles, right?
+
+574
+00:34:36,320 --> 00:34:41,360
+I mean, what like what I think of, you know, me coming in in 2019.
+
+575
+00:34:41,760 --> 00:34:44,400
+Yeah, 2019 was when I like, entered the iOS space.
+
+576
+00:34:45,040 --> 00:34:55,120
+Literally, one of the first things I found was hacking with Swift is is where you go to figure things out because if you google something, you're going to come across a Hacking with Swift article that's going to explain yada yada.
+
+577
+00:34:55,440 --> 00:35:04,960
+So where did it go from writing these big books with narratives and whatever to writing these more shorter form articles?
+
+578
+00:35:05,680 --> 00:35:08,240
+So the articles So what are the mistakes I've made?
+
+579
+00:35:08,720 --> 00:35:16,160
+One of the many mistakes I've made is that the site's disorganized because I kind of never planned it this way, right?
+
+580
+00:35:16,400 --> 00:35:17,440
+There's no grand plan here.
+
+581
+00:35:17,760 --> 00:35:22,160
+This is me having a lot of fun exploring, experimenting and writing up what I find.
+
+582
+00:35:22,880 --> 00:35:24,800
+And I wrote the books as a warning.
+
+583
+00:36:01,680 --> 00:36:05,520
+But to learn that way requires a sequential approach.
+
+584
+00:36:06,160 --> 00:36:12,320
+Start Project 1, Chapter 1, work your way through to Project 30, Chapter 30, like that, like that, all the way through.
+
+585
+00:36:13,120 --> 00:36:19,280
+And that was great for a book, but it wasn't great for folks who had a quick answer request.
+
+586
+00:36:20,240 --> 00:36:22,160
+How this one thing, how do I do it?
+
+587
+00:36:22,560 --> 00:36:23,680
+And I'd answer that question.
+
+588
+00:36:24,080 --> 00:36:25,600
+How do you do core motion?
+
+589
+00:36:26,160 --> 00:36:29,360
+But I'd answered it in the middle of Project 15 or something, right?
+
+590
+00:36:29,760 --> 00:36:29,920
+Right.
+
+591
+00:36:30,160 --> 00:36:35,520
+It would be like, you know, here we're making a ball where you've got to tilt your ball around the maze and land it in the hole to win the game.
+
+592
+00:36:35,680 --> 00:36:38,400
+And here in the middle of the project, let's make it do core motion.
+
+593
+00:36:38,720 --> 00:36:46,240
+And so it was all there, but it was done in such a way that it made it very, very hard to get to unless you were actively following the projects.
+
+594
+00:36:47,040 --> 00:36:50,960
+And so I went through the whole book and said, okay, what have I actually covered here?
+
+595
+00:36:51,600 --> 00:36:56,640
+pulled out a list of maybe three hundred things that were in there, techniques along the way.
+
+596
+00:36:57,360 --> 00:37:03,120
+And I just pulled out that one sample and made that into what I ended up calling the Swift knowledge base.
+
+597
+00:37:03,760 --> 00:37:05,120
+So here's one thing.
+
+598
+00:37:05,600 --> 00:37:11,280
+How do I do, you know, table view delegates or did select whatever, did it, pulled out from the projects.
+
+599
+00:37:11,520 --> 00:37:15,680
+You don't have to follow the project anymore, you can find this one page and make that a standalone thing.
+
+600
+00:37:15,920 --> 00:37:17,920
+And in many places, the source code is exactly the same.
+
+601
+00:37:18,080 --> 00:37:19,280
+I've had a different description around it.
+
+602
+00:37:19,440 --> 00:37:20,160
+They get much more to the point.
+
+603
+00:37:20,240 --> 00:37:21,360
+So it's not waffle anymore.
+
+604
+00:37:21,440 --> 00:37:22,480
+It's like, here's your answer.
+
+605
+00:37:22,640 --> 00:37:23,040
+Boom, done.
+
+606
+00:37:23,200 --> 00:37:23,360
+Right.
+
+607
+00:37:23,440 --> 00:37:25,760
+So you don't need the context of the previous chapters or whatever.
+
+608
+00:37:26,160 --> 00:37:26,480
+Exactly.
+
+609
+00:37:26,880 --> 00:37:27,200
+Exactly.
+
+610
+00:37:27,520 --> 00:37:30,480
+It's straight to the point and and right into with the code.
+
+611
+00:37:31,200 --> 00:37:37,040
+And that was obviously a huge step forward for me because I hadn't even considered teaching folks that way.
+
+612
+00:37:37,680 --> 00:37:44,000
+But it was popular because folks kind of go on Google and go, I'm stuck with this thing and paste the error into Google and see what comes up.
+
+613
+00:37:44,160 --> 00:37:47,360
+And hopefully, it's it's it's it's one of my articles because that's what I do.
+
+614
+00:37:47,680 --> 00:37:48,560
+You know, when I hit.
+
+615
+00:37:48,960 --> 00:37:50,480
+a problem, I solve it and then write about it.
+
+616
+00:37:50,640 --> 00:37:52,320
+That's how I have these ideas.
+
+617
+00:37:52,480 --> 00:37:54,720
+I don't invent problems for myself and then write about them.
+
+618
+00:37:54,880 --> 00:37:56,800
+I build the app, go, hmm, this doesn't work right.
+
+619
+00:37:56,960 --> 00:37:58,640
+And then solve it and then write my solution.
+
+620
+00:37:59,360 --> 00:38:03,920
+And so I'm just relying on folks doing exactly the same thing, hitting exactly the same problems as me.
+
+621
+00:38:04,000 --> 00:38:05,120
+And it seems to work.
+
+622
+00:38:05,600 --> 00:38:13,360
+It's fascinating that you like the books came first and sort of you use those to drive the articles though.
+
+623
+00:38:14,000 --> 00:38:14,880
+I wouldn't have thought that.
+
+624
+00:38:15,280 --> 00:38:21,040
+It makes sense for why hacking with Swift seems a little bit more comprehensive, I guess.
+
+625
+00:38:21,360 --> 00:38:24,720
+That's maybe not the right word, but it's like it doesn't.
+
+626
+00:38:25,040 --> 00:38:29,760
+feel like what you were just saying is people like to write articles, you know, I run into a problem.
+
+627
+00:38:31,600 --> 00:38:34,400
+After I solve it, I'll write up a blog post about it on my site.
+
+628
+00:38:34,880 --> 00:38:37,680
+And that leads to lots of really good blog posts by lots of people.
+
+629
+00:38:38,080 --> 00:38:39,280
+But I think there's a difference.
+
+630
+00:38:40,240 --> 00:39:07,200
+There's things that maybe don't seem as exciting that that process wouldn't naturally generate where like fundamentals, I guess, where if you're driving it from your book, you do go through all those fundamentals because you know you're trying to build up sort of this walk people through this process of learning a thing and so I wonder if that that actually breeds a different type of article on your site than what maybe you get on other places.
+
+631
+00:39:07,840 --> 00:39:08,480
+Very possibly.
+
+632
+00:39:09,200 --> 00:39:13,440
+It is, you know, undeniably, literally, you can see the code is the same.
+
+633
+00:39:14,960 --> 00:39:20,400
+The example articles there in the knowledge base are literally taken from real projects.
+
+634
+00:39:20,720 --> 00:39:23,120
+I haven't just made up a problem and here's how I solved it.
+
+635
+00:39:23,360 --> 00:39:25,120
+This is a problem I hit in a real project.
+
+636
+00:39:25,360 --> 00:39:26,320
+Here's how it's solved.
+
+637
+00:39:26,640 --> 00:39:28,400
+And that always adds value.
+
+638
+00:39:29,040 --> 00:39:30,400
+This is not foo bar bar as.
+
+639
+00:39:30,640 --> 00:39:32,720
+This is a real thing, a real problem, real solutions.
+
+640
+00:39:33,200 --> 00:39:36,000
+You know, it's it works with the corner cases and so forth.
+
+641
+00:39:36,320 --> 00:39:36,720
+There it is.
+
+642
+00:39:37,280 --> 00:39:38,560
+And it means you can trust it.
+
+643
+00:39:38,720 --> 00:39:40,080
+You know, I'm not just inventing problems.
+
+644
+00:39:40,480 --> 00:39:42,080
+These are real problems and real solutions too.
+
+645
+00:39:42,720 --> 00:39:51,680
+Of course, a real challenge then was to keep it up to date as Swift evolves, as Swift changes, you know, and IOS and UIC it changes, keeping that evolving.
+
+646
+00:39:51,760 --> 00:39:53,520
+And that's been a challenge to put it mildly.
+
+647
+00:39:53,840 --> 00:40:08,320
+That by far, that is one of the most surprising things whenever I came into the IOS world was one, Apple's documentation was not quite as up to snuff as some of the other platforms that I've worked on.
+
+648
+00:40:08,720 --> 00:40:12,640
+But I was blown away by hacking with Swift and some of the other.
+
+649
+00:40:13,520 --> 00:40:18,640
+writers, how you guys actually update your articles with new Swift versions.
+
+650
+00:40:18,720 --> 00:40:24,720
+Like it will usually say up at the top, you know, this has been updated with Swift 5 or Swift 4.5 or whatever.
+
+651
+00:40:25,120 --> 00:40:27,120
+And that kind of blows my mind.
+
+652
+00:40:27,360 --> 00:40:29,520
+I can't even comprehend, like, how do you keep up with that?
+
+653
+00:40:29,680 --> 00:40:32,400
+Do you have a system every time a new version of Swift drops?
+
+654
+00:40:32,880 --> 00:40:33,600
+It is a lot of work.
+
+655
+00:40:34,160 --> 00:40:38,640
+And you're right, the Apple documentation isn't optimal, let's put it that way.
+
+656
+00:40:39,680 --> 00:40:41,040
+Trying to think of a nice way to say it.
+
+657
+00:40:41,600 --> 00:40:41,680
+Yeah.
+
+658
+00:40:42,640 --> 00:40:47,680
+Just actually just today, Peter Steinberg was tweeting about a quirk in.
+
+659
+00:40:48,800 --> 00:40:53,600
+Swift UI, which it likes making your icons blue.
+
+660
+00:40:53,920 --> 00:40:54,000
+Yeah.
+
+661
+00:40:54,560 --> 00:40:56,240
+Because it's it's making them tappable.
+
+662
+00:40:56,640 --> 00:40:59,840
+And he found the solution, used rendering mode original after going through Google.
+
+663
+00:41:00,560 --> 00:41:03,120
+And someone said, Oh, that's interesting.
+
+664
+00:41:03,840 --> 00:41:06,160
+Was this documented in official documentation?
+
+665
+00:41:06,640 --> 00:41:10,160
+And Steinberger said, Oh, official docs, you mean two straws?
+
+666
+00:41:10,320 --> 00:41:11,680
+Yes, he's got an after about this.
+
+667
+00:41:13,040 --> 00:41:14,320
+Which is very, very flattering.
+
+668
+00:41:15,600 --> 00:41:20,960
+Because I often do have documentation for things that Apple have not documented, particularly with Swift UI in the early days.
+
+669
+00:41:21,040 --> 00:41:22,720
+It was it was very one sided there.
+
+670
+00:41:23,520 --> 00:41:24,560
+I do assist them is the answer.
+
+671
+00:41:25,200 --> 00:41:29,440
+and I use Git extensively is the answer.
+
+672
+00:41:29,680 --> 00:41:38,320
+So all my work, every project, every word, every sample code is in a monorepo, my Swift GitHub monorepo.
+
+673
+00:41:38,960 --> 00:41:50,080
+And I've gotten a script that basically builds a single project out of about ninety percent of the knowledge base and then builds it.
+
+674
+00:41:50,320 --> 00:41:50,800
+Oh, wow.
+
+675
+00:41:51,120 --> 00:41:54,880
+And I'll get warnings galore deprecation whatever out of that.
+
+676
+00:41:55,680 --> 00:42:00,800
+It's not perfect because, you know, deprecation is one kind of thing I want to catch, but also new techniques.
+
+677
+00:42:01,760 --> 00:42:06,400
+Like, you know, deprecation wouldn't catch me using SwiftyJSON rather than Codable, for example.
+
+678
+00:42:06,640 --> 00:42:06,800
+Right.
+
+679
+00:42:06,960 --> 00:42:10,240
+It wouldn't say, here you could use the result type rather than something else.
+
+680
+00:42:10,400 --> 00:42:14,000
+So, you know, making sure the code is modern is harder to catch.
+
+681
+00:42:14,560 --> 00:42:18,160
+But, you know, deprecation that's actually fairly straightforward thanks to Xcode.
+
+682
+00:42:18,480 --> 00:42:30,960
+Well, I mean, honestly though, even just that the code compiles is a upgrade from Stack Overflow or what I was used to in other framework, like blog spheres.
+
+683
+00:42:32,000 --> 00:42:32,720
+That's fascinating.
+
+684
+00:42:33,040 --> 00:42:36,000
+I would never have guessed that, but that just like seems obvious now that you say it.
+
+685
+00:42:36,480 --> 00:42:41,360
+I think because Stack Overflow, it's hostile for a start, but let's park that temporarily.
+
+686
+00:42:42,880 --> 00:42:48,720
+The answer is often the fifth thing down, the correct, modern answer, and it's not even marked as the correct answer.
+
+687
+00:42:48,800 --> 00:42:51,600
+You've got to kind of read them all and decide for yourself which one is correct.
+
+688
+00:42:52,000 --> 00:42:53,520
+I'm kind of doing that job for you.
+
+689
+00:42:54,000 --> 00:43:01,280
+I've said, I've gone through this problem, here's my solution, I've checked it, tested it, I've had feedback from other people, this is the best solution I've found so far.
+
+690
+00:43:01,760 --> 00:43:07,920
+And, you know, of course there could be even better ones hidden away somewhere else, but I've done my best to be at least updated and modern and working and good.
+
+691
+00:43:08,400 --> 00:43:11,600
+And that is more than a lot of Stack Overflow.
+
+692
+00:43:11,840 --> 00:43:19,120
+Also, I still find., you know, oh, here's the answer, and it's from eight years ago in Objective C, and that's not functionally helpful.
+
+693
+00:43:19,360 --> 00:43:21,840
+And with Swift particularly, you know, that was true in Swift 2.
+
+694
+00:43:21,920 --> 00:43:22,080
+Great.
+
+695
+00:43:22,160 --> 00:43:27,280
+What's it in Swift 3 or Swift 4 or Swift 5 or Swift 5.4 due out in a couple of months?
+
+696
+00:43:27,680 --> 00:43:33,520
+It's always changing, always evolving, and it makes it hard to trust sites like Slack Overflow.
+
+697
+00:43:33,840 --> 00:43:34,640
+Is that still relevant?
+
+698
+00:43:34,800 --> 00:43:35,680
+You just don't know anymore.
+
+699
+00:43:35,920 --> 00:43:36,480
+Yeah, yeah.
+
+700
+00:43:36,960 --> 00:43:48,720
+Often you can find something that works or at least you can convince to work with a little massaging, but you never really feel confident that it's correct, even if it works, if that makes sense.
+
+701
+00:43:49,360 --> 00:43:59,760
+Yeah, I remember seeing someone making a Python library, I think it was, that would import the best answer from Stack Overflow as a way to solve your problem.
+
+702
+00:44:00,240 --> 00:44:12,480
+It's obviously a massive hack, but you wanted to roll a dice, for example, or whatever it happened to be, you just go import dice from Stack Overflow and it would search that plus Python and then pull the correct answer, the first right answer from there into your code.
+
+703
+00:44:12,640 --> 00:44:13,040
+Oh my god.
+
+704
+00:44:13,920 --> 00:44:19,920
+And that might work a Python where there's a sort of a longer tail of support for the language, but Swift is very, very fast moving.
+
+705
+00:44:20,160 --> 00:44:24,800
+Even like recently with Swift 5.1, that wasn't that long a ago.
+
+706
+00:44:24,880 --> 00:44:25,520
+That was just last year.
+
+707
+00:44:25,600 --> 00:44:27,600
+Oh, sorry, 2019 now.
+
+708
+00:44:28,560 --> 00:44:32,000
+And that was, you know, property wrappers plus DSL plus whatever.
+
+709
+00:44:32,240 --> 00:44:33,840
+It was a huge, huge release.
+
+710
+00:44:34,240 --> 00:44:39,040
+Or you had, of course, Swift 5.2 where they added, oh, what's 5.2?
+
+711
+00:44:39,120 --> 00:44:39,840
+What's 5.2?
+
+712
+00:44:39,920 --> 00:44:40,480
+I can't remember now.
+
+713
+00:44:40,800 --> 00:44:41,520
+It was a lot of stuff, right?
+
+714
+00:44:41,680 --> 00:44:43,760
+Oh, it was, ah, key path expressions as functions, right?
+
+715
+00:44:43,920 --> 00:44:44,640
+It was, it was huge.
+
+716
+00:44:45,360 --> 00:44:46,720
+Again, big changes.
+
+717
+00:44:47,840 --> 00:44:50,960
+Default arguments for subscripts, for example, was in 5.2.
+
+718
+00:44:51,360 --> 00:44:52,800
+That's when they proved the diagnostics.
+
+719
+00:44:52,880 --> 00:45:01,840
+That's when Holly and her team landed the, you know, actual working error messages, for example, landed in 5.23 was big.
+
+720
+00:45:02,000 --> 00:45:06,640
+You had the multipattern catch clauses, you had multiple training closures for Swift UI, basically.
+
+721
+00:45:06,880 --> 00:45:06,960
+Yeah.
+
+722
+00:45:08,560 --> 00:45:11,680
+They added comparable for enums and more.
+
+723
+00:45:12,160 --> 00:45:16,320
+So they keep on improving the language and 5.4 is going to be a huge release.
+
+724
+00:45:16,320 --> 00:45:20,880
+And of course, async await just landed in the main branch of Swift.
+
+725
+00:45:21,360 --> 00:45:21,840
+Oh, did it?
+
+726
+00:45:21,920 --> 00:45:22,640
+Yeah, I didn't see it.
+
+727
+00:45:23,040 --> 00:45:23,280
+It did.
+
+728
+00:45:23,440 --> 00:45:23,600
+It did.
+
+729
+00:45:23,760 --> 00:45:23,840
+Yeah.
+
+730
+00:45:24,080 --> 00:45:25,120
+They're pushing that very quickly.
+
+731
+00:45:25,280 --> 00:45:29,520
+Async await's there now with an experimental concurrency flag.
+
+732
+00:45:29,840 --> 00:45:30,240
+Beautiful.
+
+733
+00:45:30,320 --> 00:45:35,360
+To use to enable it, but it's there, as is, I believe, async sequence as well.
+
+734
+00:45:35,520 --> 00:45:37,520
+So you can do asynchronoonous map now.
+
+735
+00:45:38,160 --> 00:45:38,800
+Interesting, man.
+
+736
+00:45:39,200 --> 00:45:44,000
+Yeah, coming from C sharp, losing Async Await was one of the most brutal things.
+
+737
+00:45:44,240 --> 00:45:44,320
+Yeah.
+
+738
+00:45:45,680 --> 00:46:01,600
+Yeah, so it's interesting because Async Await, they've got a little chart diagram of the language and the changes they want to make as part of concurrency, and Async Await is like at the head of this tree, but there's multiple branches coming out of it, and they're kind of linked a little bit.
+
+739
+00:46:01,760 --> 00:46:04,560
+So reading the proposal is almost asynchronous itself.
+
+740
+00:46:04,720 --> 00:46:04,960
+Good.
+
+741
+00:46:05,200 --> 00:46:08,720
+So read it, read a bit, then pause, then read something else, and then pause there, read a third thing.
+
+742
+00:46:08,880 --> 00:46:09,360
+Yeah, yeah.
+
+743
+00:46:09,680 --> 00:46:15,040
+But the Async Await, it's going to be the most used., but it's not the biggest change they're going to make.
+
+744
+00:46:15,440 --> 00:46:18,480
+There are other massive changes they're making as part of this currency push.
+
+745
+00:46:18,960 --> 00:46:22,480
+The actor model, for example, is huge, huge, huge set of changes.
+
+746
+00:46:23,040 --> 00:46:26,400
+And that is not in C sharp, that's in, you know, Elixir.
+
+747
+00:46:26,640 --> 00:46:32,000
+I was about to say, I don't, I keep reading blog posts explaining it, and I definitely don't have my head wrapped around it yet.
+
+748
+00:46:32,240 --> 00:46:33,200
+Yeah, it's going to take some time.
+
+749
+00:46:33,280 --> 00:46:34,800
+And that'll be, it'll be a while till it lands.
+
+750
+00:46:34,880 --> 00:46:37,920
+And it's so big, they're currently planning to do it in two phases.
+
+751
+00:46:38,080 --> 00:46:38,640
+Oh, interesting.
+
+752
+00:46:38,800 --> 00:46:44,000
+You know, they want phase one, the small set, and then phase two, the source breaking changes, basically, make it really, really work.
+
+753
+00:46:44,240 --> 00:46:52,880
+So it's going to be huge, and that takes commitment to maintain, from a writing perspective, to go back and update old articles.
+
+754
+00:46:53,280 --> 00:46:57,920
+You know, there is no financial incentive for me to do that, but I know folks rely on it.
+
+755
+00:46:58,320 --> 00:47:01,280
+They trust when they come to my site, this code will work.
+
+756
+00:47:01,680 --> 00:47:02,560
+It will be up to date.
+
+757
+00:47:02,800 --> 00:47:08,320
+And so I go back as often as I can and just quietly fix, update, tweak, improve articles.
+
+758
+00:47:08,800 --> 00:47:15,680
+So you kind of mentioned it there, and that was actually one of my next questions is how, I mean, ultimately hacking with Swift is your business.
+
+759
+00:47:15,920 --> 00:47:16,720
+It's your livelihood.
+
+760
+00:47:16,880 --> 00:47:17,840
+So it is.
+
+761
+00:47:18,320 --> 00:47:21,360
+What is your primary, primary way of supporting it?
+
+762
+00:47:22,400 --> 00:47:24,560
+So I don't run ads on the site.
+
+763
+00:47:25,120 --> 00:47:26,800
+I don't even have Google Analytics on the site.
+
+764
+00:47:26,960 --> 00:47:32,560
+There are no trackers at all on the site because folks should be able to come and learn Swift in privacy, quite frankly.
+
+765
+00:47:33,040 --> 00:47:37,280
+Which feels pretty rare for written web in 2021.
+
+766
+00:47:37,760 --> 00:47:38,240
+Maybe, yeah.
+
+767
+00:47:38,880 --> 00:47:50,640
+I think, and it's hard to say, of course, I think the site is the most privacy open, transparent one in the entire community, which is great.
+
+768
+00:47:51,600 --> 00:47:53,120
+And I'm, you know, proud of that.
+
+769
+00:47:54,240 --> 00:48:01,040
+But in terms of making money, we do have some site sponsorship, like you can place your image and some text on there.
+
+770
+00:48:01,200 --> 00:48:05,600
+There's no tracking for that, obviously, but you can sponsor the site and folks do.
+
+771
+00:48:05,760 --> 00:48:09,440
+I'm very grateful for it's actually RevenueCat this week sponsoring it, which is great.
+
+772
+00:48:09,600 --> 00:48:10,400
+Thank you, RevenueCat.
+
+773
+00:48:11,840 --> 00:48:14,240
+That's some money that helps, you know, pay my mortgage.
+
+774
+00:48:15,280 --> 00:48:18,240
+Book sales, obviously, people buy books, which is great.
+
+775
+00:48:18,480 --> 00:48:21,600
+Often they buy it just to support my work, to say thank you for something they've done.
+
+776
+00:48:22,000 --> 00:48:37,680
+But right now, the biggest plan for me is my subscription service, Hacking With Swift Plus, where folks can pay 20 bucks a month or 200 bucks a year, so you know, getting two months free and get regular videos and articles from me explaining things in detail.
+
+777
+00:48:37,760 --> 00:48:39,600
+And it's been great fun to do because it really is.
+
+778
+00:48:39,840 --> 00:48:43,040
+Lots and lots of detail I wouldn't otherwise do in the site.
+
+779
+00:48:43,360 --> 00:48:49,520
+So I pick a topic and do a 30-30 minute talk or 40 minute video on this one topic once, twice a week.
+
+780
+00:48:50,000 --> 00:48:54,240
+And it's been great to explore because it's a lot of fun to just look at, hmm, how does this really work?
+
+781
+00:48:54,480 --> 00:48:59,120
+Let's do a little tangent here and a little tangent here and explore the whole thing in a wider way.
+
+782
+00:48:59,360 --> 00:49:01,600
+So that's proved very, very popular right now.
+
+783
+00:49:01,680 --> 00:49:02,400
+So I'm glad for that.
+
+784
+00:49:02,720 --> 00:49:03,360
+And that's very new.
+
+785
+00:49:03,600 --> 00:49:04,640
+That launched last year, right?
+
+786
+00:49:05,120 --> 00:49:07,760
+It launched June last year, just in time for dub dub.
+
+787
+00:49:08,480 --> 00:49:08,560
+Yeah.
+
+788
+00:49:09,360 --> 00:49:18,400
+But I'm already up to, well, I'm already up to, I think, 93 videos and at least 24 hours of content already just from these very, very long videos I make.
+
+789
+00:49:18,880 --> 00:49:39,120
+So it's interesting because when I think of a subscription based, you know, business, what I often think is that like frees up the creator to kind of explore more and do more, but you've you've always been doing a lot and I guess partly because you're not driven by ad sales the way like clicks weren't your metric before either.
+
+790
+00:49:39,920 --> 00:49:44,880
+But it seems like you have a huge breadth of types of things you do.
+
+791
+00:49:45,040 --> 00:49:54,240
+How do you like prioritize what you want to do or what type of thing?, you know, YouTube, you've done a bunch of like book projects, you have that like Swift Community Awards.
+
+792
+00:49:54,560 --> 00:49:57,600
+How do you prioritize like what it is you should be spending your time on?
+
+793
+00:49:58,400 --> 00:49:59,600
+Uh, very badly.
+
+794
+00:50:02,320 --> 00:50:06,960
+And I think it comes down to the the same problem we have with coding in general.
+
+795
+00:50:08,000 --> 00:50:13,840
+We are excited about what we're excited about, you know, whatever's in our brain right now, we want to do more of it.
+
+796
+00:50:14,480 --> 00:50:19,200
+And so when I write a book, which doesn't happen so much anymore, you know, I don't do that many books anymore.
+
+797
+00:50:19,680 --> 00:50:23,360
+I whatever's in my brain right now, it gets, it's, I'm preoccupied with it.
+
+798
+00:50:23,600 --> 00:50:24,320
+I can't get rid of it.
+
+799
+00:50:24,400 --> 00:50:31,120
+I'll try to sleep or watch TV or do some regular work or whatever, and this idea keeps coming back to haunt me, haunt me, haunt me.
+
+800
+00:50:31,280 --> 00:50:34,320
+I want to do this, do this, do this thing, and it ends up being a book.
+
+801
+00:50:34,400 --> 00:50:35,840
+Like usually I can't get rid of it.
+
+802
+00:50:36,000 --> 00:50:39,760
+If it's still there six months later, I've got to write a book about it, get rid of it, get out of my head.
+
+803
+00:50:40,080 --> 00:50:43,920
+And so I've written books about, you know, macOS, watchOS, even TVOS.
+
+804
+00:50:44,640 --> 00:50:50,400
+And for that time, I was just doing three or four months of solid watchOS coding.
+
+805
+00:50:50,720 --> 00:50:53,920
+Every day, all day, even weekends sometimes, coding, coding, coding watchOS.
+
+806
+00:50:54,160 --> 00:51:01,200
+I made dozens of apps for watchOS, exploring it, trying it, seeing what was really possible, and then picked out all my favorites and made a book out of it it.
+
+807
+00:51:02,000 --> 00:51:03,200
+And normally that was fine.
+
+808
+00:51:03,360 --> 00:51:04,480
+Normally that wasn't a problem.
+
+809
+00:51:04,960 --> 00:51:11,760
+It became a problem in 2019 when SwiftUI launched because my macOS book is AppKit, my watchwest book is watchkit.
+
+810
+00:51:12,640 --> 00:51:14,240
+And folks now want SwiftUI.
+
+811
+00:51:14,960 --> 00:51:20,320
+And any book you buy from me comes with a lifetime update for free.
+
+812
+00:51:21,040 --> 00:51:25,040
+So whenever I write a update for a book, you'll get it free of charge.
+
+813
+00:51:25,200 --> 00:51:26,560
+And I'll stand by that.
+
+814
+00:51:27,280 --> 00:51:32,880
+And so I could very easily say, you know, macOS, AppKit, macOS SwiftUI, different platform.
+
+815
+00:51:33,280 --> 00:51:34,000
+That's not an update.
+
+816
+00:51:34,160 --> 00:51:35,040
+That's a complete rewrite.
+
+817
+00:51:35,280 --> 00:51:36,240
+You got to pay for it again.
+
+818
+00:51:36,800 --> 00:51:37,600
+But I haven't done that.
+
+819
+00:51:38,480 --> 00:51:44,080
+I released a Watch OS update last year, completely rewrote the book from scratch in two FDI.
+
+820
+00:51:44,240 --> 00:51:49,280
+So you now learn two FDI for Watch OS, specialising on that platform with native projects.
+
+821
+00:51:49,600 --> 00:51:50,960
+And it was a free update to everyone.
+
+822
+00:51:51,520 --> 00:51:52,640
+And that feels like a rewrite.
+
+823
+00:51:53,280 --> 00:51:55,840
+It was a complete every word for every project was changed.
+
+824
+00:51:55,920 --> 00:51:57,840
+Everything, single thing had to change.
+
+825
+00:51:58,320 --> 00:51:58,960
+And that's fine.
+
+826
+00:51:59,680 --> 00:52:01,760
+But I made it free for people who had bought the book.
+
+827
+00:52:02,240 --> 00:52:12,960
+Because I want to stand by folks when they trust me with their money, when they choose me over another Watch OS book, of which there are zero, but yet the idea, they know I'm going to take care of them.
+
+828
+00:52:13,120 --> 00:52:15,360
+They know their investment is safe because it's an investment.
+
+829
+00:52:15,440 --> 00:52:16,880
+It's a learning investment in yourself.
+
+830
+00:52:16,960 --> 00:52:19,280
+And you only have so much money to go around, particularly right now.
+
+831
+00:52:19,360 --> 00:52:20,000
+It's quite tight.
+
+832
+00:52:20,160 --> 00:52:24,640
+So I want to make sure folks said, Yeah, I made the right choice with Hackney Swift.
+
+833
+00:52:24,960 --> 00:52:27,520
+That's that is brave.
+
+834
+00:52:29,120 --> 00:52:31,200
+Yeah, the macOS one's taking a long time.
+
+835
+00:52:31,360 --> 00:52:31,920
+It's a long time.
+
+836
+00:52:32,080 --> 00:52:34,640
+And now Swift UI for macOS is still not in a great place.
+
+837
+00:52:35,840 --> 00:52:38,800
+Even things like, you know, showing the window is bizarre.
+
+838
+00:52:38,880 --> 00:52:40,640
+It's hard to do on macOS for Swift UI.
+
+839
+00:52:40,720 --> 00:52:42,400
+You've got to do it yourself basically, which is silly.
+
+840
+00:52:42,480 --> 00:52:43,200
+I don't understand why.
+
+841
+00:52:43,760 --> 00:52:47,280
+Anyway, so that's behind where I'd like to be for sure.
+
+842
+00:52:47,840 --> 00:52:48,640
+The TWS book.
+
+843
+00:52:49,440 --> 00:52:54,080
+was never popular because it's TVOS, but I'll still update it at some point.
+
+844
+00:52:54,320 --> 00:52:58,240
+I still feel obliged to do it because I want people to know they can trust me.
+
+845
+00:52:58,560 --> 00:53:11,520
+Same for like, I released this thing called the Frequent Flyer Club and it's based on my old PC slash Amiga gaming days, when you bought a game and you put the game in to play it, it would have copy protection built into the game.
+
+846
+00:53:12,160 --> 00:53:19,840
+It'd say, to verify you bought this and you know, stole it from a friend, what is the fifth word on page 32 or something like that?
+
+847
+00:53:20,000 --> 00:53:21,200
+Ryan, read this word out.
+
+848
+00:53:21,680 --> 00:53:23,840
+And retroactively, I added that to all my books.
+
+849
+00:53:23,920 --> 00:53:24,640
+So it'd say, you know.
+
+850
+00:53:24,960 --> 00:53:27,360
+know, the frequent flyer word for this book is whatever.
+
+851
+00:53:28,000 --> 00:53:39,600
+And if you enter that word into the site along with your other words, it unlocks extra bonus material, you know, new videos, new downloadable stuff like wall charts and similar to have as a bonus, as a thank you for buying my stuff.
+
+852
+00:53:39,920 --> 00:53:41,760
+Again, it wasn't designed to be that way.
+
+853
+00:53:41,920 --> 00:53:44,000
+It was added as an extra thing, like the free updates.
+
+854
+00:53:44,160 --> 00:53:47,600
+But I want to say folks, you know, I'm giving you above and beyond what you expected.
+
+855
+00:53:47,680 --> 00:53:49,440
+That's, that's the goal with all my work.
+
+856
+00:53:50,160 --> 00:54:06,560
+So another thing that seems like it's a through line with at least you, the way that you talk online is that one of the things that's important to you in this field is bringing new people in and specifically trying to make our field more diverse.
+
+857
+00:54:07,280 --> 00:54:14,560
+And this is something that as I've been doing this project in particular, I've noticed I personally struggle with.
+
+858
+00:54:14,720 --> 00:54:21,840
+Like my, the world that I inhibit is not very diverse, especially in the indie space, but just generally.
+
+859
+00:54:22,160 --> 00:54:24,000
+But this seems like it's something that's really important to you.
+
+860
+00:54:24,240 --> 00:54:25,040
+And I'm just curious.
+
+861
+00:54:25,600 --> 00:55:16,000
+like what are the types of things that people in this world can do to try and help that and i know this is like a massive question that you i'm springing on you so don't feel like you have to have something I can easily cut this but I just didn't want to let this go without asking that question it it is important that everyone gets involved and at the very least work towards making a better healthier happier community for whatever definition of that they have in their head and that might be for them mentoring men that's fine and you know if you are contributing if you are helping people learn getting alongside them and making a difference, that's great.
+
+862
+00:55:16,960 --> 00:55:19,840
+There are a lot, a lot of dudes out there who genuinely need help.
+
+863
+00:55:20,320 --> 00:55:22,400
+Real, I don't mean like, you know, my code is broken.
+
+864
+00:55:22,640 --> 00:55:28,800
+I mean actual support, you know, encouragement and empathy and showing them some love.
+
+865
+00:55:29,520 --> 00:55:34,560
+That is a really, that is a good distinction that I don't think I think I think through as well as I probably should.
+
+866
+00:55:35,680 --> 00:55:37,120
+But it's a problem.
+
+867
+00:55:37,360 --> 00:55:38,080
+It's a real problem.
+
+868
+00:55:38,800 --> 00:55:48,640
+And actually, just today, there's a BBC news article in the UK about white men from poor backgrounds are huge.
+
+869
+00:55:48,800 --> 00:55:57,360
+Hugely disadvantaged and underrepresented at a university because they don't get the support required to succeed and they get left behind.
+
+870
+00:55:57,920 --> 00:55:58,720
+And that's a real problem.
+
+871
+00:55:58,880 --> 00:56:07,920
+And they're, you know, when you compare them against other minority groups or girls at their same age at the same school, they'll be left behind.
+
+872
+00:56:08,400 --> 00:56:09,040
+And that's a problem.
+
+873
+00:56:09,360 --> 00:56:11,360
+They feel left behind and feel like no one wants to help them.
+
+874
+00:56:11,440 --> 00:56:12,640
+And that sucks.
+
+875
+00:56:12,880 --> 00:56:23,200
+So I'm not, I'm not saying everyone has to go all out to find women of color to sponsor or mentor or whatever.
+
+876
+00:56:23,520 --> 00:56:24,240
+I'd love to see that.
+
+877
+00:56:25,360 --> 00:56:30,560
+But every single person can say, yeah, I can help someone who looks like me.
+
+878
+00:56:31,440 --> 00:56:32,320
+Everyone can do that.
+
+879
+00:56:32,800 --> 00:56:35,200
+And, you know, Charlie, you're a, you're a white dude.
+
+880
+00:56:35,520 --> 00:56:40,960
+You must know a lot of white dudes who look up to you and respect you and would love to have you come alongside and help them.
+
+881
+00:56:40,960 --> 00:56:42,960
+And again, I don't mean fix their bugs.
+
+882
+00:56:43,600 --> 00:56:49,040
+I mean genuinely, emotionally, support them and encourage them and give them some direction in life.
+
+883
+00:56:49,280 --> 00:56:50,720
+Because it can be really, really hard.
+
+884
+00:56:51,280 --> 00:56:51,360
+Yeah.
+
+885
+00:56:52,400 --> 00:57:02,560
+Think about, you know, when you were like, you know, 16, 17, 18, you can, you get kind of angsty, get kind of angry, get a bit, you know, directionless or lost and it's hard.
+
+886
+00:57:02,960 --> 00:57:10,480
+So having someone older than you, a bit more experienced than you, come along and say, yeah, I'm not going to just sort of donate some money to a charity or whatever.
+
+887
+00:57:10,720 --> 00:57:22,160
+I'm going to give up my time for you and help you and actually go alongside you and stay with you for six months or a year or ideally longer makes such a massive impact.
+
+888
+00:57:22,880 --> 00:57:25,200
+And yeah, so I think everyone can do that.
+
+889
+00:57:25,840 --> 00:57:32,560
+I would obviously personally like to see a more diverse community, as you said, a more inclusive and welcoming community.
+
+890
+00:57:33,520 --> 00:57:36,000
+I don't think we're particularly good at that in the Swift world.
+
+891
+00:57:36,160 --> 00:58:09,360
+world which is a shame we've got a lot of work to do there but at the same time you know i'd be really really conscious i'm not sort of like a male savior coming in to help those poor women who can't help themselves no they're doing amazing work i'm just here to promote them and elevate them and make sure they have the space to succeed and do any support i can to help out and so Recently we launched diversity in Swift on swift.org, which is fantastic.
+
+892
+00:58:09,600 --> 00:58:32,560
+We have now dedicated private communities for women in Swift black and swift and that's going to grow you know it's only in the very first month now of of diversity and swift we're going to do a lot more and a large part of that is giving these people um space to connect and feel safe and not feel judged and learn and grow and have a great time with swift um and I'm not involved in that.
+
+893
+00:58:32,640 --> 00:58:35,760
+You know, I don't post on the black and swift forums or the women and swift forums.
+
+894
+00:58:35,920 --> 00:58:41,840
+They're not for me, but I want to make sure they're able to happen and I'm there advocating for them and sponsoring them.
+
+895
+00:58:42,400 --> 00:58:49,760
+And, you know, even recently, even just this month, literally this month, I was asked to speak at a conference.
+
+896
+00:58:50,240 --> 00:58:52,400
+Really lovely people who run this conference.
+
+897
+00:58:52,560 --> 00:58:52,960
+Great people.
+
+898
+00:58:53,520 --> 00:58:54,560
+Love them very, very much.
+
+899
+00:58:55,600 --> 00:58:57,040
+But they had one female speaker.
+
+900
+00:58:57,840 --> 00:58:59,120
+I said, that is not going to happen.
+
+901
+00:58:59,360 --> 00:59:00,320
+I'm not going to speak there.
+
+902
+00:59:01,840 --> 00:59:06,960
+Can I suggest that I reach out to some friends I know and ask if they'd like to speak?
+
+903
+00:59:07,120 --> 00:59:08,240
+I said, yeah, go for it.
+
+904
+00:59:08,480 --> 00:59:10,800
+So I tap up two women I know doing amazing work.
+
+905
+00:59:10,960 --> 00:59:12,240
+Say, hey, this conference is great.
+
+906
+00:59:12,480 --> 00:59:13,200
+I trust them very much.
+
+907
+00:59:13,360 --> 00:59:14,160
+You're doing amazing work.
+
+908
+00:59:14,320 --> 00:59:14,880
+Do you want to speak?
+
+909
+00:59:15,120 --> 00:59:15,600
+Yeah, great.
+
+910
+00:59:15,840 --> 00:59:16,080
+Boom.
+
+911
+00:59:16,320 --> 00:59:17,840
+And now they've got three female speakers.
+
+912
+00:59:18,000 --> 00:59:20,000
+So that's what I'm trying to do.
+
+913
+00:59:20,320 --> 00:59:21,520
+It's not necessarily mentoring.
+
+914
+00:59:21,680 --> 00:59:24,880
+I'm not saying, yeah, let's chat and have a Skype call and exchange emails.
+
+915
+00:59:25,440 --> 00:59:26,160
+I do that too.
+
+916
+00:59:26,880 --> 00:59:30,720
+You know, I'm mentoring a lovely young woman right now at the local university.
+
+917
+00:59:30,880 --> 00:59:40,480
+She's building an application to handle mental health for people who are experiencing financial problems right now and the pandemic or similar.
+
+918
+00:59:40,480 --> 00:59:41,680
+And I'm mentoring her.
+
+919
+00:59:42,000 --> 00:59:46,240
+But what I'm doing, this other thing is sponsoring, you know, saying, I will put your name forward.
+
+920
+00:59:46,400 --> 00:59:47,120
+I will elevate you.
+
+921
+00:59:47,280 --> 00:59:49,520
+I'll make the connections for you, people I know.
+
+922
+00:59:49,920 --> 00:59:50,320
+And that's...
+
+923
+00:59:51,040 --> 00:59:54,320
+just as if not more important, you know, because they're already doing great work.
+
+924
+00:59:54,480 --> 00:59:59,600
+They don't need mentoring and they're great, but they are being ignored or overlooked or whatever and making us
+
+925
+01:00:00,080 --> 01:00:01,360
+connections for them matters.
+
+926
+01:00:01,520 --> 01:00:10,720
+So, you know, I do a variety of things, it's the TLDR, but what I want to say is really, A, everyone can get involved, but space for anyone.
+
+927
+01:00:10,880 --> 01:00:13,760
+If you want to mentor young white men, go for it.
+
+928
+01:00:14,240 --> 01:00:23,200
+If you want, if you're a listener and you want to mentor young black men or young black women or trans men, whatever, there is space for you to do that.
+
+929
+01:00:23,840 --> 01:00:29,440
+If you're able to sponsor people and put them forward and advocate for them, argue for them and fight for them too, do that as well.
+
+930
+01:00:29,760 --> 01:00:34,960
+I mean, there's a lot of space for anyone to get involved and I'm happy to take part and do my bit, you know.
+
+931
+01:00:35,920 --> 01:00:45,120
+There's kind of an interesting three line from the interview I did with Ish and I'm only like, I don't know, a third through the interview you just did with Ish the other day.
+
+932
+01:00:45,360 --> 01:00:53,280
+So maybe you guys talked about this too, but he has a really cool philosophy around that, which is basically just like, do the small thing where you can.
+
+933
+01:00:53,760 --> 01:00:53,840
+Yeah.
+
+934
+01:00:54,400 --> 01:01:00,320
+And, you know, he has an amazing story that talks, you know, through somebody doing a small thing for him.
+
+935
+01:01:00,480 --> 01:01:05,360
+But, like, I like that, that idea of like, anybody can jump in and...
+
+936
+01:01:07,040 --> 01:01:08,400
+It's weird, like, I don't know.
+
+937
+01:01:08,880 --> 01:01:24,240
+I always feel like I shouldn't say anything because I'm paranoid I'm going to say the wrong thing, but I guess it's the same concept of don't let good be the enemy or great be the enemy of good or whatever, where it's like., I sometimes hesitate to do anything because I'm afraid it's not the best thing.
+
+938
+01:01:24,560 --> 01:01:24,720
+Right.
+
+939
+01:01:25,280 --> 01:01:28,240
+And just doing something is still better than doing nothing.
+
+940
+01:01:28,640 --> 01:01:28,720
+Yeah.
+
+941
+01:01:29,040 --> 01:01:32,480
+And that applies, I guess, in this space just as well as any.
+
+942
+01:01:32,960 --> 01:01:33,040
+Yeah.
+
+943
+01:01:34,720 --> 01:01:43,360
+There's a spectrum and you are, I know, absolutely certain you are very, very far towards the nice end of the spectrum.
+
+944
+01:01:43,760 --> 01:01:44,240
+Right.
+
+945
+01:01:44,800 --> 01:01:46,720
+You know, you've Well, we've never met in person before.
+
+946
+01:01:47,040 --> 01:01:47,520
+That's true.
+
+947
+01:01:47,760 --> 01:01:49,280
+You're only nice in audio format.
+
+948
+01:01:49,520 --> 01:01:51,440
+You're only a nice sort of waste upwards, right?
+
+949
+01:01:51,600 --> 01:01:51,760
+Yeah.
+
+950
+01:01:52,800 --> 01:01:53,200
+Who knows?
+
+951
+01:01:54,400 --> 01:01:56,960
+You know, I remember how many years ago it was.
+
+952
+01:01:57,040 --> 01:02:07,360
+was one of the presidents or vice presidents of the US was I wasn't, Romney maybe was saying, you know, he doesn't he doesn't meet women in a private space.
+
+953
+01:02:07,760 --> 01:02:08,960
+Ah, that was Pence.
+
+954
+01:02:09,200 --> 01:02:10,320
+Oh, I was going to say Pence.
+
+955
+01:02:10,400 --> 01:02:14,320
+Anyway, yeah, so one of the more curious members of your government.
+
+956
+01:02:15,040 --> 01:02:15,840
+Actually, I went now.
+
+957
+01:02:16,000 --> 01:02:16,320
+Hurry.
+
+958
+01:02:16,480 --> 01:02:19,040
+Anyway, and it was it was like a bit weird.
+
+959
+01:02:19,360 --> 01:02:21,200
+Like, what do you think is going to happen?
+
+960
+01:02:21,360 --> 01:02:27,040
+What do you, you know, what if you're that scared of women saying you assaulted them or something like, what are you trying to say?
+
+961
+01:02:27,200 --> 01:02:33,360
+It's just bizarre the weird knots people twist themselves into to avoid helping out.
+
+962
+01:02:34,080 --> 01:02:35,920
+And, you know, Ish is the opposite of that.
+
+963
+01:02:36,560 --> 01:02:37,840
+He wants to go out and help everyone.
+
+964
+01:02:38,240 --> 01:02:42,960
+And the example he gave was misses Meade, his tutor who bought the Apple II for him and helped him out.
+
+965
+01:02:43,440 --> 01:02:47,600
+And he said, The world's always changing the largest of ways from the smallest of things.
+
+966
+01:02:48,640 --> 01:02:50,480
+And it's so very true.
+
+967
+01:02:50,960 --> 01:02:52,080
+You know, it doesn't take much.
+
+968
+01:02:52,640 --> 01:03:01,280
+Having that coffee with someone or, you know, an extra second breakfast because you want to go and network with people can be the connection that gets them somewhere great.
+
+969
+01:03:01,840 --> 01:03:02,720
+They have all the skills.
+
+970
+01:03:03,040 --> 01:03:05,120
+They have all the training, the ability, the portfolio.
+
+971
+01:03:05,360 --> 01:03:06,320
+They're missing the connection.
+
+972
+01:03:06,480 --> 01:03:07,440
+And you can be that connection.
+
+973
+01:03:07,600 --> 01:03:07,680
+Yeah.
+
+974
+01:03:07,840 --> 01:03:10,640
+Just get in there and talk to them and get involved.
+
+975
+01:03:10,880 --> 01:03:12,240
+And anyone can do that.
+
+976
+01:03:12,800 --> 01:03:14,160
+You know, yes, fine.
+
+977
+01:03:14,480 --> 01:04:00,000
+You know, I run a conference hacking with swift live once a year for charity we've we raised what thirty thousand dollars last year which is great i ran a birthday stream this year raising money teaching swift ui for a local homeless charity i built the swift for good book last year year before to raise money for black girls code um these are things i want to do to make a concrete difference to people but what matters most is my actual time i can donate money galore anyone can donate money that's fine you know jeff bezos can donate money which is not too but he could do but your actual time is limited the number of hours you have in a day is way more valuable to you and to the people you give them to.
+
+978
+01:04:00,160 --> 01:04:06,080
+So I encourage people, you don't have to have fifty thousand YouTube subscribers or whatever in order to do this kind of thing.
+
+979
+01:04:06,400 --> 01:04:11,120
+You can get involved and find someone to help and it will make a huge, huge difference to that person.
+
+980
+01:04:11,600 --> 01:04:11,680
+Yeah.
+
+981
+01:04:12,080 --> 01:04:22,480
+And I really like the example of sort of expending your political capital to advocate for someone, which may not even be seen, but that can be, make a huge difference in someone's life.
+
+982
+01:04:22,880 --> 01:04:28,080
+Or like in the case of Ish, where it's like, you know, how much of a difference does it make if Ish speaks at a conference for Ish?
+
+983
+01:04:28,320 --> 01:04:30,720
+It makes some, but how many people does Ish inspire then?
+
+984
+01:04:30,800 --> 01:04:30,960
+Yeah.
+
+985
+01:04:31,120 --> 01:04:32,800
+You know, it's the composing effects of all that.
+
+986
+01:04:32,880 --> 01:05:16,720
+that and so yeah yeah okay i really appreciate that thank you i know that i hate springing like heavy questions on people like that but uh it's an important it's an important question you know i i keep telling folks they say oh yeah the swift community is great and i say is it great is it great is great the word you mean here is it good is it above average where are we in the world of programming language communities and i don't think we're great you know i don't think we compare well against other communities and the example i try and tell folks about because it's local to me was at the uk python conference picon, which I went to two years ago, and it was in a building in Wales.
+
+987
+01:05:16,880 --> 01:05:18,400
+It was all community run and so forth.
+
+988
+01:05:18,640 --> 01:05:20,400
+There was no commercial behind it whatsoever.
+
+989
+01:05:21,280 --> 01:05:23,840
+But I went there because they had Children's Day.
+
+990
+01:05:24,720 --> 01:05:28,640
+Like, come and bring your kid and we'll have fun with Python together.
+
+991
+01:05:29,200 --> 01:05:29,440
+Interesting.
+
+992
+01:05:29,840 --> 01:05:35,600
+And that was huge because, you know, how many conferences do you go to where you see kids in Swift?
+
+993
+01:05:35,840 --> 01:05:36,240
+Hardly any.
+
+994
+01:05:36,480 --> 01:05:37,440
+We kind of exclude kids.
+
+995
+01:05:37,840 --> 01:05:41,120
+We don't want people with kids there at all.
+
+996
+01:05:41,520 --> 01:05:46,400
+You often see things done, you know, during work days when, you know, people have kids, stuff doesn't work out for them.
+
+997
+01:05:46,480 --> 01:05:48,400
+So we kind of self select the kind of audience we have.
+
+998
+01:05:48,720 --> 01:05:50,080
+And of course, PyCon went further.
+
+999
+01:05:50,480 --> 01:05:57,520
+They had a dedicated sign language interpreter at the front of the convention, signing every talk as it happened.
+
+1000
+01:05:58,080 --> 01:06:00,240
+And they had text to speech.
+
+1001
+01:06:02,400 --> 01:06:10,080
+So as someone spoke on the stage, it was transcribed on monitors below so they could follow and read it on the speech.
+
+1002
+01:06:10,320 --> 01:06:12,000
+They had hearing loop things.
+
+1003
+01:06:12,240 --> 01:06:14,080
+They could hear through hearing aids.
+
+1004
+01:06:14,400 --> 01:06:15,440
+They had a free creche.
+
+1005
+01:06:15,840 --> 01:06:18,640
+So everyone came along, hey, your kid can't go to the kids' day.
+
+1006
+01:06:18,880 --> 01:06:19,200
+That's fine.
+
+1007
+01:06:19,360 --> 01:06:19,920
+Go to the creche.
+
+1008
+01:06:20,000 --> 01:06:24,320
+It's staffed by qualified child minders who take care of your kids so you can enjoy the conference.
+
+1009
+01:06:24,800 --> 01:06:27,600
+If you're a breastfeeding mother, there's a nursing room just for you.
+
+1010
+01:06:27,840 --> 01:06:29,520
+It's quiet, stepped aside just for you.
+
+1011
+01:06:30,160 --> 01:06:34,800
+They had, you know, mobility support like lifts for wheelchairs and ramps for wheelchairs.
+
+1012
+01:06:35,200 --> 01:06:39,280
+They had lactose free menus and vegan menus and gluten free menus.
+
+1013
+01:06:39,680 --> 01:06:44,160
+They had a room, a quiet room for folks who had to pray at the right times.
+
+1014
+01:06:44,800 --> 01:06:48,560
+It was remarkable, all the things they offered.
+
+1015
+01:06:48,800 --> 01:06:52,400
+And then they said, hey, you know, if it comes down to it, you can't afford to come.
+
+1016
+01:06:52,720 --> 01:06:54,160
+We have a financial grant.
+
+1017
+01:06:54,880 --> 01:06:56,080
+We will pay for your travel.
+
+1018
+01:06:56,480 --> 01:06:57,760
+We'll pay for your subsistence.
+
+1019
+01:06:58,000 --> 01:07:02,560
+We'll pay for you to take time off work as well as discounting of free tickets.
+
+1020
+01:07:02,960 --> 01:07:07,200
+And like this is the Python community isn't exactly a rich community, right?
+
+1021
+01:07:07,600 --> 01:07:09,200
+The iOS one, the cost of entry here.
+
+1022
+01:07:09,680 --> 01:07:12,080
+for us, buying a Mac mini is the cheapest thing you can do.
+
+1023
+01:07:12,160 --> 01:07:12,960
+And that's very expensive.
+
+1024
+01:07:13,040 --> 01:07:16,640
+But a MacBook Pro or an iPhone or an iPad, very, very high.
+
+1025
+01:07:17,440 --> 01:07:22,800
+And we might do one of these things or zero of these things.
+
+1026
+01:07:23,840 --> 01:07:26,720
+And that really annoys me.
+
+1027
+01:07:26,880 --> 01:07:33,440
+It really gets me angry because seeing other communities do genuinely great things, really encouraging everyone to come.
+
+1028
+01:07:33,600 --> 01:07:34,320
+Hey, you got kids?
+
+1029
+01:07:34,480 --> 01:07:34,560
+Come.
+
+1030
+01:07:34,720 --> 01:07:35,200
+Bring them with you.
+
+1031
+01:07:35,280 --> 01:07:35,920
+Put them in the creche.
+
+1032
+01:07:36,000 --> 01:07:36,640
+We'll take care of them.
+
+1033
+01:07:36,720 --> 01:07:37,200
+It'll be fine.
+
+1034
+01:07:37,440 --> 01:07:40,160
+What you want to eat, what you want to pray, it'll all be good.
+
+1035
+01:07:40,400 --> 01:07:41,600
+Come and join us in the Python world.
+
+1036
+01:07:41,920 --> 01:07:43,440
+And that is powerful stuff.
+
+1037
+01:07:43,760 --> 01:07:44,480
+And we don't have that.
+
+1038
+01:07:44,560 --> 01:07:45,440
+And it makes me angry.
+
+1039
+01:07:45,920 --> 01:07:47,280
+That is, uh, that is fascinating.
+
+1040
+01:07:47,360 --> 01:07:53,760
+I mean, I haven't been to a Swift conference yet because by the time I was in a position where I could start going to conferences, the world fell apart.
+
+1041
+01:07:54,000 --> 01:08:07,120
+But that sounds like a really cool, like sort of aspiration, or maybe not aspiration, but what's the, like, totem, a thing to look at, to sort of aspire to for conferences.
+
+1042
+01:08:07,600 --> 01:08:10,080
+I mean, you've actually, I guess you've actually organized conferences.
+
+1043
+01:08:10,560 --> 01:08:14,000
+I feel bad, like, pushing on what a conference should do because...
+
+1044
+01:08:15,200 --> 01:08:17,280
+I've never been in a position where I've tried to organize one.
+
+1045
+01:08:17,440 --> 01:08:19,840
+I know they're very complicated, but they are.
+
+1046
+01:08:20,000 --> 01:08:25,200
+But I've been to many, you know, 40, 50 conferences for iOS, just for iOS.
+
+1047
+01:08:25,360 --> 01:08:30,960
+Never mind, beforehand, as a journalist,, I went to lots of other conferences and they're great fun.
+
+1048
+01:08:31,120 --> 01:08:32,320
+I love meeting people there.
+
+1049
+01:08:32,640 --> 01:08:41,840
+I get the privilege of flying out somewhere, meeting folks, seeing their code, sharing my code, sharing their code, listening to some great talks, going to workshops and then speaking myself most of the time as well.
+
+1050
+01:08:42,240 --> 01:08:42,720
+It's great fun.
+
+1051
+01:08:42,960 --> 01:08:43,440
+I love it very much.
+
+1052
+01:08:43,680 --> 01:08:59,200
+I'm not going to say otherwise, but when your conference is 500 bucks or 600 bucks, whatever, expensive conferences, and I see things like, yeah, on the first night is a is a boat party where there's free drinks and we'll sail around and like, yeah, great.
+
+1053
+01:08:59,520 --> 01:09:02,480
+These rich iOS folks get a nice boat party and yada yada yada.
+
+1054
+01:09:02,480 --> 01:09:05,840
+What about you cancel a boat party and donate 50 grand to a charity, you know?
+
+1055
+01:09:06,160 --> 01:09:08,800
+You know, people who actually need the money.
+
+1056
+01:09:09,200 --> 01:09:11,120
+Well, hey, that would do a lot of diverse tickets.
+
+1057
+01:09:11,200 --> 01:09:13,040
+That's like 100 diverse tickets right there.
+
+1058
+01:09:13,680 --> 01:09:18,000
+And it just feels like more for people who have enough already.
+
+1059
+01:09:18,320 --> 01:09:18,800
+And I get it.
+
+1060
+01:09:18,880 --> 01:09:19,680
+They want to have a nice time.
+
+1061
+01:09:19,760 --> 01:09:20,880
+Of course, they want to have a nice time.
+
+1062
+01:09:20,960 --> 01:09:22,400
+They can do that without an expensive boat party.
+
+1063
+01:09:22,400 --> 01:09:23,920
+You can do it anywhere, quite frankly.
+
+1064
+01:09:24,400 --> 01:09:31,760
+And, you know, so the Hacking Swift Live, we donate all our profits to charity.
+
+1065
+01:09:32,880 --> 01:09:34,720
+A wonderful charity called Special Effect.
+
+1066
+01:09:34,880 --> 01:09:35,760
+They're based in the UK.
+
+1067
+01:09:36,400 --> 01:09:43,680
+And their goal is to produce custom hardware for profoundly disabled children and adults.
+
+1068
+01:09:44,160 --> 01:09:44,800
+So they can play.
+
+1069
+01:09:44,880 --> 01:10:28,480
+play video games so they can have fun with their family and friends in a sports game like you know FIFA soccer or whatever they would otherwise be impossible to play because they can only move their eyes or only move you know two fingers and they build custom hardware to make this possible and for them thirty thousand forty thousand dollars is a lot of money they can help thirty or forty people with that money and they do and you know i remember the first year last year was virtual because of the pandemic but the first year was in person and um i want to show folks where their money's going you've paid your three hundred bucks here's where your money's going and i had to play a three minute video from special effect and I could barely get back on stage.
+
+1070
+01:10:28,800 --> 01:10:34,560
+I was on the edge of tears because it's just so beautiful what they do and they need the money.
+
+1071
+01:10:35,360 --> 01:10:47,440
+And, you know, last year with the pandemic when, you know, lots of folks lost their jobs or lost work, you know, they were furloughed here in the UK, so they were on 80% income, for example.
+
+1072
+01:10:48,080 --> 01:10:52,720
+A lot of charity events were cancelled, you know, charitable runs and other things were cancelled.
+
+1073
+01:10:53,280 --> 01:10:58,880
+There's more need than ever for people to say, I'm going to donate my money and time.
+
+1074
+01:10:59,520 --> 01:11:42,960
+And so, yeah, I think the iOS world has a lot to answer for and a lot more we can improve on and honestly it doesn't take much it doesn't take much I mean like I remember last year I did one of the TriSwift world workshops and you can get paid for them here's the money here's half the money whatever it is from the workshop I said I don't want any money please give this away as diversity tickets I did the same in iOS dev UK a big iOS UK conference you might imagine from the name a iOS conference here again thank you very much for your money I don't want it please have diversity tickets and it helps people get that step forward helps them get somewhere they wouldn't otherwise be able to do.
+
+1075
+01:11:43,120 --> 01:11:43,760
+I don't need more money.
+
+1076
+01:11:43,920 --> 01:11:44,560
+I've got enough money.
+
+1077
+01:11:44,720 --> 01:11:46,720
+I've got a house and, you know, car and kids and stuff.
+
+1078
+01:11:46,800 --> 01:11:47,520
+My dogs are happy.
+
+1079
+01:11:47,600 --> 01:11:48,400
+I've got enough money.
+
+1080
+01:11:48,800 --> 01:11:50,080
+Let's help somebody else.
+
+1081
+01:11:50,320 --> 01:11:51,520
+This is a massive, massive rant.
+
+1082
+01:11:51,680 --> 01:11:54,000
+I apologize for that, but oh no, this is good stuff.
+
+1083
+01:11:54,800 --> 01:12:00,400
+I'm bad about, like I said, I I have the, well, I'm literally doing it now, right?
+
+1084
+01:12:00,640 --> 01:12:02,640
+Big pause because I'm afraid to say the wrong thing.
+
+1085
+01:12:02,800 --> 01:12:04,800
+And so I appreciate having somebody who will.
+
+1086
+01:12:06,800 --> 01:12:08,320
+And so I, no, I appreciate that.
+
+1087
+01:12:08,720 --> 01:12:14,880
+And I think this is stuff that I need to hear, honestly, to be totally honest with you.
+
+1088
+01:12:14,960 --> 01:12:16,160
+So, right.
+
+1089
+01:12:16,320 --> 01:12:23,920
+But you need to understand, like I said, when you compare you on that spectrum towards the nice side, very much towards our side versus the pence.
+
+1090
+01:12:24,480 --> 01:12:28,480
+I don't want to go into a room alone with a woman because I might say I'll do the wrong thing.
+
+1091
+01:12:28,960 --> 01:12:31,040
+You are genuinely trying to do the right thing.
+
+1092
+01:12:32,080 --> 01:12:37,200
+And occasionally, you'll say the wrong thing, but you're not doing it maliciously.
+
+1093
+01:12:38,240 --> 01:12:39,200
+Everyone makes mistakes.
+
+1094
+01:12:39,360 --> 01:12:43,760
+I've made a ton of mistakes, stupid, massive regret mistakes in my life.
+
+1095
+01:12:44,000 --> 01:12:44,560
+And that's normal.
+
+1096
+01:12:45,040 --> 01:12:45,840
+That's just called life.
+
+1097
+01:12:46,880 --> 01:12:49,040
+When someone says, hey, listen, that sucked.
+
+1098
+01:12:49,120 --> 01:12:50,000
+You shouldn't have done that.
+
+1099
+01:12:50,880 --> 01:12:53,920
+You either say, no, no, no, no.
+
+1100
+01:12:54,160 --> 01:12:54,880
+That's not offensive.
+
+1101
+01:12:54,960 --> 01:12:56,160
+I decide what's offensive.
+
+1102
+01:12:56,400 --> 01:12:57,200
+I'll do it anyway.
+
+1103
+01:12:57,840 --> 01:13:00,080
+And honestly, just please don't do that that.
+
+1104
+01:13:00,240 --> 01:13:01,280
+That's a horrible thing to do.
+
+1105
+01:13:01,600 --> 01:13:05,360
+As my friend Adrian would say, that way is a path to the dark side.
+
+1106
+01:13:06,560 --> 01:13:07,920
+Or you say, you know, you're right.
+
+1107
+01:13:08,080 --> 01:13:08,480
+I'm sorry.
+
+1108
+01:13:08,880 --> 01:13:09,600
+I'm going to do better.
+
+1109
+01:13:10,320 --> 01:13:11,200
+And it does not take much.
+
+1110
+01:13:11,600 --> 01:13:14,240
+Does not take much at all to take the second option there.
+
+1111
+01:13:15,120 --> 01:13:18,400
+And when I've been called out, I do get called out.
+
+1112
+01:13:18,560 --> 01:13:19,520
+Of course I get called out.
+
+1113
+01:13:20,080 --> 01:13:21,840
+Not so often as I used to be, fortunately.
+
+1114
+01:13:22,400 --> 01:13:24,400
+I say, you know, I can learn from this.
+
+1115
+01:13:24,720 --> 01:13:27,760
+I can listen to you, understand your perspective, and do better.
+
+1116
+01:13:28,320 --> 01:13:32,240
+And if you apologize, folks will nearly always forgive you.
+
+1117
+01:13:32,480 --> 01:13:33,600
+Because they know it's not malicious.
+
+1118
+01:13:34,000 --> 01:13:35,760
+They know that you're trying your best.
+
+1119
+01:13:36,080 --> 01:13:40,000
+So if you're sitt kind of doing it wrong.
+
+1120
+01:13:40,560 --> 01:13:48,640
+Say what you think is the right thing and you'll do better as you speak, as you learn, as folks feedback to you, because you are doing it with the right intentions.
+
+1121
+01:13:48,800 --> 01:13:49,440
+That's what matters.
+
+1122
+01:13:50,320 --> 01:13:52,800
+Well, I appreciate hearing all that.
+
+1123
+01:13:52,960 --> 01:13:53,600
+So thank you.
+
+1124
+01:13:55,680 --> 01:14:07,520
+Before I, I guess I'm a little bit over time maybe already, but I don't want to let you go without asking the question I ask everybody, which is what's a person or people out there that have inspired you and your work that you'd recommend other people check out?
+
+1125
+01:14:08,240 --> 01:14:15,680
+The number one inspiration for me, and I've talked about this a couple of times before, is a woman called Kathy Sierra.
+
+1126
+01:14:16,560 --> 01:14:29,440
+And she's very, very hardwork to find out more about because she made the cardinal mistake of being a smart woman on the internet and therefore got a lot of abuse.
+
+1127
+01:14:30,400 --> 01:14:38,720
+And she was doxed off the internet at least once, perhaps twice by people who should have known better.
+
+1128
+01:14:39,680 --> 01:14:41,360
+And it's a real shame because she...
+
+1129
+01:14:42,320 --> 01:14:58,960
+is was a massive luminary so far ahead of the pack when it came to teaching she started a series of books at a riley called head first and they made head first java head first sipad and head first statistics, head first whatever, whatever, whatever.
+
+1130
+01:15:00,080 --> 01:15:04,640
+And her and her partner built this way of teaching.
+
+1131
+01:15:05,440 --> 01:15:11,920
+And it was such a breakthrough way to excite your mind, excite your brain, to make things really stick.
+
+1132
+01:15:12,720 --> 01:15:27,600
+And today, the main, I guess, leftover from that, apart from her books, the head first series she edited, is her old old old old old old old old old old defunct blog which is creating passionate users.
+
+1133
+01:15:28,000 --> 01:16:55,600
+It's at headrush.typepad.com and I refer folks to that a heck of a lot and say look at this it tells you in like uh uh uh uh seven words everything you're gonna know to write a great presentation article book chapter and i can i can describe it over the podcast it's a it's a line one end beginning one end end there's an arrow pointing to beginning saying don't start here and about you know five centimeters ten centimeters i mean an inch or whatever in uh it says uh start here you know don't go at the very beginning go after the beginning that's where you start and i remember you know i i i did a proof run of her um for ahead first book and i worked with her and burt bates um who was a co editor, co founder of the series.
+
+1134
+01:16:56,320 --> 01:16:59,360
+And they were to explain to me where folks get it wrong.
+
+1135
+01:16:59,520 --> 01:17:10,400
+Like if you're writing a book about JavaScript at the time and still today, still today, so many books start with something like in the 1960s, ARPANET was like, no one cares.
+
+1136
+01:17:11,280 --> 01:17:14,560
+No one cares about ARPANET or, you know, Tim Berners Lee.
+
+1137
+01:17:14,960 --> 01:17:17,520
+If you want to have that fine, put it in an appendix at the back.
+
+1138
+01:17:18,000 --> 01:17:20,080
+Get into, hey, you want to do JavaScript?
+
+1139
+01:17:20,400 --> 01:17:21,280
+I love JavaScript.
+
+1140
+01:17:21,520 --> 01:17:21,840
+Let's go.
+
+1141
+01:17:22,800 --> 01:17:26,000
+That's where you start your book on JavaScript or whatever you want to write about.
+
+1142
+01:17:26,240 --> 01:17:31,280
+Leave the fluff, the boring history, whatever, the ancient history way, way, way to the back and do it then.
+
+1143
+01:17:31,760 --> 01:17:35,360
+She has been a massive inspiration for me for at least fifteen years.
+
+1144
+01:17:35,600 --> 01:17:41,920
+I got to meet in person once, just once, but lots of emails in the meantime and she's been huge for me.
+
+1145
+01:17:42,480 --> 01:17:43,360
+Man, that is awesome.
+
+1146
+01:17:43,520 --> 01:17:46,640
+I've somehow missed out on this, you ever talking about her.
+
+1147
+01:17:46,880 --> 01:17:48,560
+So I'm excited to check that out.
+
+1148
+01:17:48,720 --> 01:17:49,120
+Thank you.
+
+1149
+01:17:49,360 --> 01:17:51,680
+All right, so I guess we can go ahead and wrap up.
+
+1150
+01:17:51,840 --> 01:17:54,560
+Where's the best place for people to find you and your work?
+
+1151
+01:17:54,800 --> 01:17:56,960
+So I run a site called hacking with swift dot com.
+
+1152
+01:17:57,360 --> 01:17:57,920
+Okay, okay.
+
+1153
+01:17:58,320 --> 01:17:59,920
+Yeah, I write posters sometimes.
+
+1154
+01:18:00,080 --> 01:18:03,120
+I have a YouTube channel, but it's mostly Twitter.
+
+1155
+01:18:03,440 --> 01:18:04,960
+Let's face it these days, mostly Twitter.
+
+1156
+01:18:05,200 --> 01:18:11,520
+I am two straws, TWO straws on Twitter and on Reddit and GitHub and stack over.
+
+1157
+01:18:11,520 --> 01:18:14,560
+and Stack Overflow, one of those places you'll find me.
+
+1158
+01:18:14,800 --> 01:18:16,160
+You can email me, of course, if you want.
+
+1159
+01:18:16,400 --> 01:18:18,720
+I'm Paul at hackingwithswift.com.
+
+1160
+01:18:19,600 --> 01:18:23,760
+I have lots of presentations, you know, various conferences when they're back to being live again.
+
+1161
+01:18:24,000 --> 01:18:25,680
+So you can perhaps come and say hello in person.
+
+1162
+01:18:25,840 --> 01:18:26,240
+I don't mind.
+
+1163
+01:18:26,320 --> 01:18:27,840
+And I might be a dub one of these years.
+
+1164
+01:18:28,000 --> 01:18:28,480
+That'd be good.
+
+1165
+01:18:28,640 --> 01:18:28,960
+Let's hope.
+
+1166
+01:18:29,280 --> 01:18:29,520
+One day.
+
+1167
+01:18:30,080 --> 01:18:30,160
+Yeah.
+
+1168
+01:18:30,400 --> 01:18:33,520
+Well, last year was a wash out, but I've been there a few years before, so I don't mind so much.
+
+1169
+01:18:33,760 --> 01:18:35,440
+Last year was my first year that I was going to go.
+
+1170
+01:18:35,600 --> 01:18:37,440
+So I was pretty devastated.
+
+1171
+01:18:37,680 --> 01:18:37,760
+Yeah.
+
+1172
+01:18:38,000 --> 01:18:38,640
+Oh, that's bad.
+
+1173
+01:18:38,800 --> 01:18:38,880
+Yeah.
+
+1174
+01:18:39,520 --> 01:18:41,680
+Let's face it, this year is not going to happen either, sadly.
+
+1175
+01:18:41,840 --> 01:18:41,920
+No.
+
+1176
+01:18:42,160 --> 01:18:42,640
+Yeah, I know.
+
+1177
+01:18:43,440 --> 01:18:48,240
+The first podcast mention of, you know what, I don't think twenty twenty two is going to happen happen happened.
+
+1178
+01:18:48,480 --> 01:18:49,120
+And I'm not there.
+
+1179
+01:18:49,280 --> 01:18:53,280
+I don't know if you think that, but it kind of wrecked me for the next couple of hours, I think.
+
+1180
+01:18:53,760 --> 01:18:56,800
+Just internalizing the possibility that that could happen.
+
+1181
+01:18:57,760 --> 01:18:59,040
+Yeah, it's it's pretty grim.
+
+1182
+01:18:59,200 --> 01:19:02,480
+It's a shame because, you know, so many of my friends live in the Bay Area.
+
+1183
+01:19:02,960 --> 01:19:04,400
+I get to see them once a year in person.
+
+1184
+01:19:05,520 --> 01:19:08,960
+I do Skype calls and similar or FaceTime, and it kind of works, but it's not the same.
+
+1185
+01:19:09,120 --> 01:19:09,920
+You want to meet folks.
+
+1186
+01:19:10,080 --> 01:19:10,160
+Yeah.
+
+1187
+01:19:10,720 --> 01:19:11,840
+I want to hug people, Charlie.
+
+1188
+01:19:11,920 --> 01:19:13,440
+I want to hug my friends again, you know?
+
+1189
+01:19:14,240 --> 01:19:16,000
+So I've got to wait a while.
+
+1190
+01:19:17,040 --> 01:19:17,120
+So.
+
+1191
+01:19:17,600 --> 01:19:21,040
+I have, I have to meet anyone from the IOS community in person.
+
+1192
+01:19:21,760 --> 01:19:21,840
+Wow.
+
+1193
+01:19:22,560 --> 01:19:23,840
+Outside of where I worked.
+
+1194
+01:19:24,320 --> 01:19:29,200
+And now I, I switch jobs to a remote company, and so now even my colleagues are, uh, all remote, so.
+
+1195
+01:19:30,240 --> 01:19:31,920
+So I think, yeah, dubbed off this year.
+
+1196
+01:19:32,000 --> 01:19:34,560
+Hopefully next year, just to see my friends hang out again.
+
+1197
+01:19:34,720 --> 01:19:38,000
+I miss it because it's a great event, great buzz, great vibe.
+
+1198
+01:19:38,080 --> 01:19:44,080
+You meet so many people and have random encounters, random breakfasts, lunch, dinners, drinks, whatever it is, coffee galore.
+
+1199
+01:19:44,400 --> 01:19:45,760
+Yeah, that's me for coffee.
+
+1200
+01:19:46,000 --> 01:19:47,920
+That times ten a day, you have a lot of coffee.
+
+1201
+01:19:48,640 --> 01:19:48,720
+Yeah.
+
+1202
+01:19:49,760 --> 01:19:50,400
+But it's really good.
+
+1203
+01:19:50,720 --> 01:19:51,200
+But you need it.
+
+1204
+01:19:51,520 --> 01:19:52,320
+Oh yeah, crackie.
+
+1205
+01:19:52,400 --> 01:19:53,680
+Yeah, I do a lot of work at the club.
+
+1206
+01:19:53,760 --> 01:19:54,640
+It's busy time for me.
+
+1207
+01:19:54,800 --> 01:19:55,360
+Oh, I bet.
+
+1208
+01:19:55,760 --> 01:19:58,480
+Okay, well, I will let you go so we can wrap up here.
+
+1209
+01:19:58,640 --> 01:20:00,560
+But I just really seriously thank you.
+
+1210
+01:20:00,720 --> 01:20:02,080
+This was absolutely delightful.
+
+1211
+01:20:02,400 --> 01:20:03,360
+I appreciate you coming.
+
+1212
+01:20:05,520 --> 01:20:06,160
+Thanks for listening.
+
+1213
+01:20:06,480 --> 01:20:08,400
+If you'd like to discuss the show, you can find me on Twitter.
+
+1214
+01:20:09,040 --> 01:20:12,880
+at underscore chuck EC or tweet the show directly at launchedfm.
+
+1215
+01:20:13,360 --> 01:20:20,560
+I'd really appreciate a rating or review in Apple Podcasts, Overcast, Breaker or whatever your podcast of choice happens to be.
+
+1216
+01:20:20,960 --> 01:20:44,400
+And you can find show notes and more at launchedfm dot com dot
