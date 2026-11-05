@@ -1,0 +1,831 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_00] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_00] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_00] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_00] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:41,440 --> 00:00:43,280
+[SPEAKER_00] Hello, I'm your host, David Barnard.
+
+7
+00:00:43,760 --> 00:00:49,360
+[SPEAKER_00] Today's conversation is shorter than usual and will be featured in RevenueCat's State of Subscription Apps report.
+
+8
+00:00:50,080 --> 00:00:57,040
+[SPEAKER_00] Each episode in this series will explore one crucial topic and share actionable insights from top subscription app operators.
+
+9
+00:00:57,440 --> 00:01:01,840
+[SPEAKER_00] With me today, Anmel Tavari, Director of Product at Duolingo.
+
+10
+00:01:02,080 --> 00:01:18,000
+[SPEAKER_00] On the podcast, I talk with Anmel about how Duolingo prioritizes clarity over persuasion on their paywalls, why they offer users multiple free trials instead of just one, and how adding friction to their trial reminder flow actually boosted conversions.
+
+11
+00:01:18,800 --> 00:01:21,520
+[SPEAKER_00] Hey, Ann Mull, thank you so much for joining me on the podcast today.
+
+12
+00:01:21,760 --> 00:01:22,160
+[SPEAKER_01] Hi, David.
+
+13
+00:01:22,400 --> 00:01:23,680
+[SPEAKER_01] Yeah, really excited to be here.
+
+14
+00:01:23,840 --> 00:01:24,640
+[SPEAKER_01] Thank you for having me.
+
+15
+00:01:24,880 --> 00:01:36,080
+[SPEAKER_00] So I had your Chief Product Officer, Jim on the podcast recently and was so fascinated talking to him about the free trial dynamics and even having a free trial for a freemium app.
+
+16
+00:01:36,320 --> 00:01:39,920
+[SPEAKER_00] So folks can go back and listen to that episode if they want to dig into some of those lessons.
+
+17
+00:01:40,320 --> 00:01:42,240
+[SPEAKER_00] But there was so much we didn't have time to talk about.
+
+18
+00:01:42,480 --> 00:01:50,640
+[SPEAKER_00] And so I thought it would be fun to have you on to kind of dig deeper into some of the deeper lessons that Duolingo's learned about freemium and free trials.
+
+19
+00:01:50,960 --> 00:01:52,720
+[SPEAKER_00] So I wanted to start at a really high level.
+
+20
+00:01:53,440 --> 00:02:02,400
+[SPEAKER_00] What would you say is kind of the guiding principle for Duolingo around fre trials and getting people to experience the premium features?
+
+21
+00:02:03,040 --> 00:02:03,120
+[SPEAKER_01] Yeah.
+
+22
+00:02:03,760 --> 00:02:17,360
+[SPEAKER_01] I think, you know, the first thing that comes to mind is when you're trying to sell a product, it's incredibly hard to tell you or even describe to a user what the value proposition of that product is.
+
+23
+00:02:17,760 --> 00:02:30,080
+[SPEAKER_01] Now, we can do it through kind of like UX or like certain copy or even an ad, but the best way for a user to really know what you get in a subscription is by trying it.
+
+24
+00:02:30,400 --> 00:02:36,240
+[SPEAKER_01] And we've seen it as such an effective lever that when you're trying to explain that you get unlimited energy.
+
+25
+00:02:36,240 --> 00:02:40,880
+[SPEAKER_01] And so, if you have limited energy or no ads, the best way to kind of experience that is by trying it.
+
+26
+00:02:41,280 --> 00:02:42,880
+[SPEAKER_01] You're not going to understand the benefit.
+
+27
+00:02:43,120 --> 00:02:50,960
+[SPEAKER_01] And so, for us, trials are a really effective lever to try and get people to adopt our paid features.
+
+28
+00:02:51,360 --> 00:02:55,360
+[SPEAKER_00] And then how do you position that in a way that makes it clear?
+
+29
+00:02:55,920 --> 00:03:01,360
+[SPEAKER_01] One of the things that we've learned is our goal is not to like persuade users to try this.
+
+30
+00:03:01,840 --> 00:03:05,040
+[SPEAKER_01] Our goal is to give them clarity and confidence to purchase.
+
+31
+00:03:05,600 --> 00:03:14,240
+[SPEAKER_01] So, you know, the most effective way for users to be able to feel confident to try a trial is to know, like, well, what does that really entail?
+
+32
+00:03:14,800 --> 00:03:20,240
+[SPEAKER_01] That is anything from being able to explain in a timeline what happens on which day of the trial.
+
+33
+00:03:21,040 --> 00:03:29,600
+[SPEAKER_01] We've seen even if, for example, when you're on one plan and you want to move to a different plan, trying to be clear about, like, what, what is, how much money are you going to get back?
+
+34
+00:03:29,760 --> 00:03:32,160
+[SPEAKER_01] The refunds clarity is so important.
+
+35
+00:03:33,120 --> 00:03:46,480
+[SPEAKER_01] And, you know, very recently, a great example of this is that we've had this functionality where when you sign up for a free trial, you'll get a reminder, a notification sent to you on, you know, about two days before your trial expires.
+
+36
+00:03:46,800 --> 00:03:52,480
+[SPEAKER_01] And we decided, we decided to test, well, what about, what if we let you choose which day you get that reminder?
+
+37
+00:03:52,800 --> 00:03:54,160
+[SPEAKER_01] And counterintuitive like that.
+
+38
+00:03:54,160 --> 00:03:57,920
+[SPEAKER_01] We could have, like, that normally you would think that friction is probably not a good thing.
+
+39
+00:03:58,320 --> 00:04:06,080
+[SPEAKER_01] But what we saw was that, you know, that drew attention to the fact that you can choose when you want to do a reminder and we're going to remind you.
+
+40
+00:04:06,240 --> 00:04:07,760
+[SPEAKER_01] And so you can decide to cancel later.
+
+41
+00:04:08,160 --> 00:04:15,360
+[SPEAKER_01] That buys us enough time so that you wait till that fifth day or sixth day to decide really, okay, am I getting value out of this?
+
+42
+00:04:16,080 --> 00:04:21,680
+[SPEAKER_01] And it was a really great way to increase confidence in what you're in the product that you're going to try.
+
+43
+00:04:22,240 --> 00:04:24,800
+[SPEAKER_00] Any other lessons around clarity in copy?
+
+44
+00:04:25,520 --> 00:04:28,720
+[SPEAKER_00] I know Duolingo has done a lot with multi step paywalls.
+
+45
+00:04:28,800 --> 00:04:30,960
+[SPEAKER_00] It seems like another way to introduce clarity.
+
+46
+00:04:31,440 --> 00:04:32,320
+[SPEAKER_00] Any other lessons there?
+
+47
+00:04:32,880 --> 00:04:38,160
+[SPEAKER_01] One of the things that I think users, of course, also care about is like not losing their progress.
+
+48
+00:04:38,800 --> 00:04:52,160
+[SPEAKER_01] And so what we've seen is that users are just much more likely to start a trial when the decision or like when we position it as, well, you know, if you've run out of hearts or energy, if you don't continue, you're going to basically lose your progress.
+
+49
+00:04:52,480 --> 00:05:07,760
+[SPEAKER_01] And I think we've done it in a way that's like balances, kind of showing still some sense of progress, but trying to basically also indicate that, well, if you pay gems or if you try start this free trial now, that's going to basically you'll be able to kind of maintain your progress and finish this lesson.
+
+50
+00:05:08,080 --> 00:05:12,320
+[SPEAKER_01] I think the other lesson, the other kind of big lesson that we have seen is that there isn't.
+
+51
+00:05:12,320 --> 00:05:14,160
+[SPEAKER_01] is that there is no one size fits all.
+
+52
+00:05:14,720 --> 00:05:17,920
+[SPEAKER_01] A really great example of that is new users versus current users.
+
+53
+00:05:18,240 --> 00:05:24,400
+[SPEAKER_01] We know that when a user is brand new to Dualingo, they're actually much more likely to convert.
+
+54
+00:05:24,800 --> 00:05:40,000
+[SPEAKER_01] And what we've actually seen is that instead of trying to just like, you know, take our standard upsells that try to promote Super Dualingo and just put them in the onboarding flow, we found that it's much better to actually make it contextual to the onboarding.
+
+55
+00:05:40,160 --> 00:05:44,400
+[SPEAKER_01] So as an example, we asked like, how do you want to learn or how do you want to achieve your goals?
+
+56
+00:05:44,880 --> 00:05:46,960
+[SPEAKER_01] Is it with ads or without ads?
+
+57
+00:05:47,040 --> 00:05:51,360
+[SPEAKER_01] Or do you want to learn faster or do you want to just learn at the pace that you prefer?
+
+58
+00:05:51,360 --> 00:05:51,520
+[SPEAKER_01] or you would prefer.
+
+59
+00:05:52,160 --> 00:05:59,200
+[SPEAKER_01] And what we saw was that when that is kind of positioned as part of onboarding, we saw significantly higher kind of uptick rate.
+
+60
+00:05:59,280 --> 00:06:00,960
+[SPEAKER_01] It was one of our biggest wins last year.
+
+61
+00:06:01,680 --> 00:06:15,360
+[SPEAKER_01] And what it's telling us is that we can't while we some standardization is really helpful, especially if you think about it like, you know, our purchase flow, sometimes you need to be aware of kind of who the user is and when, you know, what, where they are in their life cycle.
+
+62
+00:06:15,760 --> 00:06:15,840
+[SPEAKER_00] Yeah.
+
+63
+00:06:16,240 --> 00:06:17,280
+[SPEAKER_00] That makes a lot of sense.
+
+64
+00:06:17,680 --> 00:06:19,120
+[SPEAKER_00] And what about trial duration?
+
+65
+00:06:19,360 --> 00:06:25,040
+[SPEAKER_00] Have you all experimented with like a month long free trial, three day free trial, all the way up and down the stack?
+
+66
+00:06:25,200 --> 00:06:27,360
+[SPEAKER_00] Or where do you land on duration of trial?
+
+67
+00:06:27,840 --> 00:06:34,160
+[SPEAKER_01] We used to have a two week trial., I think, towards the end of 2024.
+
+68
+00:06:34,800 --> 00:06:45,760
+[SPEAKER_01] And one of the things that we ended up doing was we tested a shorter duration, seven days, and we tested this with a couple of different combinations, but users are usually eligible for multiple trials.
+
+69
+00:06:46,240 --> 00:06:50,640
+[SPEAKER_01] And when we tested reducing it, we actually saw like two different benefits.
+
+70
+00:06:51,040 --> 00:07:00,160
+[SPEAKER_01] The first was, of course, overall net, we saw more conversions over time in combination with like playing around with how many trials we can offer to a user.
+
+71
+00:07:00,480 --> 00:07:07,600
+[SPEAKER_01] But the second much more valuable benefit was when you start a trial and you have to wait 14 days for a user to convert.
+
+72
+00:07:08,640 --> 00:07:11,600
+[SPEAKER_01] But from an experimentation perspective, you have to wait 14 days.
+
+73
+00:07:12,160 --> 00:07:19,920
+[SPEAKER_01] And so we actually basically doubled our experimentation velocity because now instead of having to wait 14 days, you just get your results in seven days.
+
+74
+00:07:20,160 --> 00:07:25,040
+[SPEAKER_01] And imagine that compound over an entire quarter or over six months or over a year.
+
+75
+00:07:25,520 --> 00:07:32,160
+[SPEAKER_01] It was an incredibly powerful lever because we can start, we can know very quickly whether an experiment is going to perform well or not.
+
+76
+00:07:32,400 --> 00:07:34,160
+[SPEAKER_01] And then if it's not performing, that's great.
+
+77
+00:07:34,400 --> 00:07:37,440
+[SPEAKER_01] We can actually decide, okay, we can shut that down and move on to the next one.
+
+78
+00:07:37,680 --> 00:07:40,320
+[SPEAKER_01] So I think that has been an incredibly effective lever for us.
+
+79
+00:07:40,800 --> 00:07:42,960
+[SPEAKER_00] You were talking about multiple trials.
+
+80
+00:07:43,520 --> 00:07:44,960
+[SPEAKER_00] Tell me more about how that works.
+
+81
+00:07:45,840 --> 00:07:47,920
+[SPEAKER_00] And especially in light of tactically, you know, Apple.
+
+82
+00:07:48,720 --> 00:07:54,160
+[SPEAKER_00] on any one SKU will only allow the intro free offer to be eligible one time.
+
+83
+00:07:54,720 --> 00:08:00,400
+[SPEAKER_00] So then you probably have some way of resetting that or sending them a different SKU or something like that.
+
+84
+00:08:00,640 --> 00:08:04,320
+[SPEAKER_00] So it's not it's not been typical and Apple doesn't really make it easy either.
+
+85
+00:08:04,880 --> 00:08:07,760
+[SPEAKER_00] Why offer multiple trials to users?
+
+86
+00:08:08,240 --> 00:08:26,480
+[SPEAKER_01] What we've realized is, I mean, as with anything, it's ultimately a question of like, what's going to be the easiest for a user to both basically feel confident in trying something out, but also we've also quickly realized that users are not always in the same life cycle stage.
+
+87
+00:08:26,960 --> 00:08:30,960
+[SPEAKER_01] And so there are advantages in having multiple trials for us.
+
+88
+00:08:31,600 --> 00:08:41,680
+[SPEAKER_01] The first is it's effective for us because we can try to understand, well, okay, maybe in the first time you didn't fully get to understand the benefits or maybe you tried it and you weren't sure.
+
+89
+00:08:42,160 --> 00:08:47,120
+[SPEAKER_00] Or you tried it and you were like super busy that one week and didn't actually get to experience it.
+
+90
+00:08:47,440 --> 00:08:47,760
+[SPEAKER_00] Exactly.
+
+91
+00:08:48,320 --> 00:08:54,320
+[SPEAKER_01] And maybe a simple framing of all this is that imagine if I asked you as from a business point of view, right?
+
+92
+00:08:54,560 --> 00:09:02,480
+[SPEAKER_01] Or even from a user's point of view, you might benefit from having trying a product over a long, like over multiple periods, but spread across a little bit.
+
+93
+00:09:02,880 --> 00:09:06,000
+[SPEAKER_01] And from a business point of view, it's better because now you as a user.
+
+94
+00:09:06,720 --> 00:09:11,040
+[SPEAKER_01] have to decide four times, three or four times, whether you want to make this purchase or not.
+
+95
+00:09:11,280 --> 00:09:15,760
+[SPEAKER_01] And of course, you know, aggregated across those, we would see that it's an effective lever.
+
+96
+00:09:16,240 --> 00:09:31,200
+[SPEAKER_01] The second point that I want to make is what we've seen is that, of course, not everyone is as comfortable to start a trial or for whatever reason there's a lot of hesitation despite all the things that we try and do to try and increase clarity of when you're going to get a reminder, et cetera.
+
+97
+00:09:31,760 --> 00:09:42,160
+[SPEAKER_01] So we have this concept of a free taste and where we basically can offer you a trial like experience, which is three days but with no strings attached.
+
+98
+00:09:42,480 --> 00:09:43,840
+[SPEAKER_01] You get three days of the service.
+
+99
+00:09:44,800 --> 00:09:49,520
+[SPEAKER_01] And you end up, you can try the, try the subscription tier, super or max.
+
+100
+00:09:49,840 --> 00:09:53,840
+[SPEAKER_01] And at the end of the day at the end of that period, you get to decide whether you want to convert or not.
+
+101
+00:09:54,080 --> 00:09:56,400
+[SPEAKER_01] Or during the period, you can decide whether you want to convert or not.
+
+102
+00:09:56,560 --> 00:10:01,520
+[SPEAKER_01] And that's been a really effective lever for not just free to pay, but paid to pay.
+
+103
+00:10:01,680 --> 00:10:05,280
+[SPEAKER_01] Because to your point about Apple, it's a little, it's quite difficult for us.
+
+104
+00:10:05,520 --> 00:10:10,240
+[SPEAKER_01] It's we can't offer a second, another free trial when you're already a paying subscriber.
+
+105
+00:10:10,560 --> 00:10:17,760
+[SPEAKER_01] But what we can do is we can offer you a free taste and then still take you back to the original subscription tier that you were on.
+
+106
+00:10:18,240 --> 00:10:24,640
+[SPEAKER_01] And that's been a really effective lever for us to get people to try our highest tier, max, with video calls, especiallyally.
+
+107
+00:10:24,960 --> 00:10:32,720
+[SPEAKER_01] One last point is, and when you think about free tastes or free trials, it doesn't just extend to the tiers or the whole product.
+
+108
+00:10:33,280 --> 00:10:37,040
+[SPEAKER_01] Sometimes you can even extend it to a single individual feature.
+
+109
+00:10:37,360 --> 00:10:40,000
+[SPEAKER_01] We have something called a video call, which is part of the max tier.
+
+110
+00:10:40,160 --> 00:10:52,880
+[SPEAKER_01] And what we've tried to, what we've seen sometimes is offering just enough free tastes of that video call just in isolation, just one call, is actually not a bad way to try and get people to try a feature and see if they want to convert.
+
+111
+00:10:53,200 --> 00:10:54,960
+[SPEAKER_01] And we've seen that also as an effective lever.
+
+112
+00:10:55,360 --> 00:11:02,720
+[SPEAKER_00] Are there, what are the specific ways you make it really clear that they're getting this reverse trial?
+
+113
+00:11:03,280 --> 00:11:11,040
+[SPEAKER_00] is what it's typically called in the industry where you don't have a credit card and they actually have to subscribe to get back to the subscription state.
+
+114
+00:11:11,600 --> 00:11:12,400
+[SPEAKER_00] How do you make that clear?
+
+115
+00:11:12,640 --> 00:11:13,600
+[SPEAKER_00] Is there a countdown?
+
+116
+00:11:14,240 --> 00:11:16,240
+[SPEAKER_00] You know, what kind of copy is on the buttons?
+
+117
+00:11:16,560 --> 00:11:20,000
+[SPEAKER_00] Because this is something I know I've heard from other folks who have done this.
+
+118
+00:11:20,160 --> 00:11:28,880
+[SPEAKER_00] I've done some of this in my own app that I run on the side and people expect it to auto convert and they're even like scared to like get that free taste.
+
+119
+00:11:29,840 --> 00:11:31,840
+[SPEAKER_00] At least like I haven't been able to crack it.
+
+120
+00:11:31,920 --> 00:11:35,520
+[SPEAKER_00] I haven't talked to many people who have cracked being able to communicate that effectively.
+
+121
+00:11:36,160 --> 00:11:36,240
+[SPEAKER_00] Yeah.
+
+122
+00:11:36,720 --> 00:11:47,360
+[SPEAKER_01] Well, the first thing is we usually always have copy that makes it absolutely clear that this is a three day kind of free period or free preview.
+
+123
+00:11:47,600 --> 00:11:50,720
+[SPEAKER_01] I think preview is another phrasing that I've used in the industry.
+
+124
+00:11:51,440 --> 00:11:58,640
+[SPEAKER_01] The other thing is we actually always position it as like a reward and we say, hey, you just earned, you just earned this.
+
+125
+00:11:58,800 --> 00:12:07,040
+[SPEAKER_01] And one of the things that we used to initially have it on our, you know, when you're learning through the course, there's a path, there's a chest on the path in your learning path.
+
+126
+00:12:07,360 --> 00:12:13,920
+[SPEAKER_01] And we actually moved it towards after the lesson because it felt more rewarding to earn it after completing a lesson.
+
+127
+00:12:14,160 --> 00:12:20,960
+[SPEAKER_01] And so I think when you position it as a reward, it helps like signal that, like, oh, I'm getting this as just like a limited time benefit.
+
+128
+00:12:21,280 --> 00:12:27,360
+[SPEAKER_01] The other there are we do use like kind of like some type of timers or concepts of timers to help drive like urgency.
+
+129
+00:12:27,520 --> 00:12:40,720
+[SPEAKER_01] When you go to the subscriptions page, you'll also see that you can upgrade any time, but it's super important to like make sure that consumers understand that this is not going to suddenly charge you a different amount.
+
+130
+00:12:41,680 --> 00:12:56,080
+[SPEAKER_01] One of the things that of course we always, you know, we talk about clarity, but clarity also comes is super important in just maintaining trust because if suddenly users don't trust what you're doing, then you know, they're will be way more skeptical.
+
+131
+00:12:56,240 --> 00:13:04,720
+[SPEAKER_01] And I think the risk in a product like where you're paying for super and you get a trial for Max is, you know, they may even cancel their super and we of course don't want that.
+
+132
+00:13:05,600 --> 00:13:12,000
+[SPEAKER_00] So, and then I would imagine the, the paywall they land on after a free taste looks different.
+
+133
+00:13:12,320 --> 00:13:15,200
+[SPEAKER_00] It has different copy than like an onboarding paywall.
+
+134
+00:13:15,360 --> 00:13:33,440
+[SPEAKER_00] So does that paywall say like, you know, did you enjoy your three days like extended indefinitely or like are there any kind of copy wins you've had there that kind of help, you know, remind people or or reinforce that like loss aversion, you're going to lose this if you don't like how do you position that after the free taste?
+
+135
+00:13:33,840 --> 00:13:40,240
+[SPEAKER_01] Yeah, usually after we we always let users know, I think it's like a home drawer that comes up.
+
+136
+00:13:40,560 --> 00:13:44,720
+[SPEAKER_01] I think one of the things we just emphasize is that your X benefits have ended.
+
+137
+00:13:45,040 --> 00:13:48,480
+[SPEAKER_01] And then we usually always give like two sets of options.
+
+138
+00:13:49,040 --> 00:13:53,200
+[SPEAKER_01] One is either to continue or to basically kind of explore and or resubscribe.
+
+139
+00:13:53,600 --> 00:13:58,480
+[SPEAKER_01] And I think that the important thing there is that being super clear that it's ended.
+
+140
+00:13:58,640 --> 00:14:03,680
+[SPEAKER_01] And two, we're drawing attention to the fact that you can easily rejoin.
+
+141
+00:14:04,240 --> 00:14:05,280
+[SPEAKER_01] What about personalization?
+
+142
+00:14:05,520 --> 00:14:13,360
+[SPEAKER_00] Are you doing any kind of user level personalization on these paywalls and offers and when to offer the free trials and things like that?
+
+143
+00:14:13,760 --> 00:14:13,840
+[SPEAKER_01] Yeah.
+
+144
+00:14:14,160 --> 00:14:17,520
+[SPEAKER_01] We've really ramped up, I think, our investments in personalization.
+
+145
+00:14:17,520 --> 00:14:21,440
+[SPEAKER_01] optimization and using machine learning to try and optimize a whole host of things.
+
+146
+00:14:21,920 --> 00:14:36,480
+[SPEAKER_01] As you know, we of course our freemium or free tier is with ads and those ads are a mix of kind of ads that are promoting our subscription products and also third party ads, promoting websites, mobile, other mobile apps, et cetera.
+
+147
+00:14:36,800 --> 00:14:49,040
+[SPEAKER_01] And one of the first few things that we tried starting to optimize was, well, what is the right mix of, you know, promoting our own product versus serving other external ads?
+
+148
+00:14:49,760 --> 00:14:51,360
+[SPEAKER_01] And we saw good wins on it.
+
+149
+00:14:51,680 --> 00:14:56,800
+[SPEAKER_01] And then that translates also into now, well, okay, now if we know that you're likely to subscribe.
+
+150
+00:14:57,280 --> 00:15:00,320
+[SPEAKER_01] We can probably predict how likely are you to subscribe to which plan.
+
+151
+00:15:00,720 --> 00:15:13,280
+[SPEAKER_01] We used to have like fixed ratios on how many ads we show that are for like each tier, but that's quite an inefficient way of operating because we probably have a lot of signals that we can leverage.
+
+152
+00:15:13,520 --> 00:15:15,840
+[SPEAKER_01] Did you ever tap on that plan in the past?
+
+153
+00:15:16,480 --> 00:15:21,680
+[SPEAKER_01] Did you try to learn more about a video call when we showed you the video call as your next lesson?
+
+154
+00:15:22,240 --> 00:15:34,880
+[SPEAKER_01] So for us, we've seen actually like a lot of great wins and it's super important to kind of keep collecting signals that can help you personalize not just basically kind of all aspects of like upsells.
+
+155
+00:15:35,520 --> 00:15:38,640
+[SPEAKER_01] And I think we are still we've just barely scratched the surface of it.
+
+156
+00:15:38,800 --> 00:15:51,360
+[SPEAKER_01] And I think there's a lot of like wins that we can go like just getting all the way into, for example, we have many, many creatives that run to promote our super product as an ad at the end of a lesson.
+
+157
+00:15:51,680 --> 00:15:57,840
+[SPEAKER_01] And we've had some wins in having a bandit and trying to optimize which creative will work best for who.
+
+158
+00:15:58,640 --> 00:16:00,800
+[SPEAKER_01] And we're continuing to see wins from that.
+
+159
+00:16:01,040 --> 00:16:02,000
+[SPEAKER_01] Yeah, that's awesome.
+
+160
+00:16:02,160 --> 00:16:13,520
+[SPEAKER_00] And always fun to hear that Apple and Duolingo scale is still early in some of the optimizations that we all wish we had time and budget and teams to work on.
+
+161
+00:16:13,840 --> 00:16:17,360
+[SPEAKER_00] It's really cool to hear the winds you have seen on personalization in the app.
+
+162
+00:16:17,760 --> 00:16:32,800
+[SPEAKER_00] I want to wrap up with something you actually taught me when we were preparing for the podcast, and that is that free trials aren't actually common everywhere around the world and that you do need to take into account the way certain countries are used to buying things.
+
+163
+00:16:32,960 --> 00:16:34,640
+[SPEAKER_00] So tell me more about what you learned there.
+
+164
+00:16:34,960 --> 00:16:39,840
+[SPEAKER_01] I think free trials are really kind of a not necessarily universal concept.
+
+165
+00:16:40,320 --> 00:16:52,560
+[SPEAKER_01] They are getting better understood over time, but there will always be regional differences, whether that's for payment method reasons, regulation reasons or just consumer preferences.
+
+166
+00:16:55,520 --> 00:17:00,320
+[SPEAKER_01] Almost every single subscription service doesn't really offer a free trial.
+
+167
+00:17:00,880 --> 00:17:03,360
+[SPEAKER_01] That's absolutely zero dollars to try.
+
+168
+00:17:04,000 --> 00:17:13,920
+[SPEAKER_01] They actually prefer a model in which you have to pay a very small nominal amount to get access to a trial, let's say like a dollar or 99 cents.
+
+169
+00:17:14,080 --> 00:17:19,600
+[SPEAKER_01] And that's quite interesting because one, the reasons behind this is of course cultural nuances play out.
+
+170
+00:17:19,920 --> 00:17:23,200
+[SPEAKER_01] People are not familiar with this auto renewal concept.
+
+171
+00:17:23,840 --> 00:17:35,760
+[SPEAKER_01] And two is paid trials is quite interesting because they are actually trying to do something which is similar in what we're talking about about in terms of trying to add clarity that this is a paid product.
+
+172
+00:17:36,000 --> 00:17:47,680
+[SPEAKER_01] So, you know, back to my really original point about clarity over persuasion, it's you'll see that like it's so important to make sure that people understand what they're going to be trying or buying.
+
+173
+00:17:48,000 --> 00:17:56,880
+[SPEAKER_01] Ultimately, you know, you want to be clear that there will be an annual charge or a monthly charge after your trial that's going to happen on a recurring basis.
+
+174
+00:17:57,440 --> 00:18:08,640
+[SPEAKER_01] And what you see is that in certain markets like China, there are just different preferences and we're still working through those and we want to make sure we can cater to these markets in the right way.
+
+175
+00:18:08,880 --> 00:18:11,440
+[SPEAKER_01] China is such an important market and I think paid trials.
+
+176
+00:18:12,160 --> 00:18:14,800
+[SPEAKER_01] will probably, you know, it's not just China that I've seen them in.
+
+177
+00:18:14,960 --> 00:18:16,800
+[SPEAKER_01] I've seen them in other parts, like in Europe as well.
+
+178
+00:18:17,280 --> 00:18:18,080
+[SPEAKER_01] That's so fascinating.
+
+179
+00:18:18,240 --> 00:18:24,720
+[SPEAKER_00] And I mean, I was thinking as you were talking, I mean, it's a weird concept that you're just giving something away, something of value.
+
+180
+00:18:25,200 --> 00:18:29,840
+[SPEAKER_00] You don't walk into a restaurant and, like, give me, give me a bite of that steak to see if I want the steak or the fish.
+
+181
+00:18:30,400 --> 00:18:35,600
+[SPEAKER_00] You know, I guess maybe an ice cream counter, like, you can get samples of the different flavors when they have like fifty flavors.
+
+182
+00:18:35,840 --> 00:18:40,960
+[SPEAKER_00] Like, there aren't just, there aren't just, there aren't that many places where you just get something that's truly valuable.
+
+183
+00:18:41,200 --> 00:18:49,360
+[SPEAKER_00] It's a weird thing to, like, give something that you're going to charge for that should be truly valuable, but then just give it away, give it, give the free taste away.
+
+184
+00:18:49,520 --> 00:18:50,560
+[SPEAKER_00] So, yeah, I can understand.
+
+185
+00:18:51,120 --> 00:18:53,600
+[SPEAKER_00] culturally and just like user psychology.
+
+186
+00:18:54,080 --> 00:19:02,560
+[SPEAKER_00] And I've heard from, you know, especially for folks who are running ads, the signal of a, you know, one dollar thirty day trial kind of thing.
+
+187
+00:19:02,800 --> 00:19:11,200
+[SPEAKER_00] It's like the people who are willing to get over that hurdle to a dollar can give you on the day one, much better signal back to the ad networks than running a free trial.
+
+188
+00:19:11,360 --> 00:19:21,600
+[SPEAKER_01] So I've even heard paid trials being used for that reason as well, of just getting better signal quicker, because if you're willing to pay a dollar, you're at least willing to pay something for the product.
+
+189
+00:19:22,080 --> 00:19:27,360
+[SPEAKER_01] And it's, you know, so many free trials these days, people just turn them off immediately after starting the free trial.
+
+190
+00:19:27,440 --> 00:19:29,680
+[SPEAKER_01] And so it's hard to like get signal from a free trial.
+
+191
+00:19:30,320 --> 00:19:30,960
+[SPEAKER_01] That's very true.
+
+192
+00:19:31,040 --> 00:19:42,480
+[SPEAKER_01] And I would just say like the day zero cancellation is such an important, like, kind of thing to track if you're ever running a free trial because it's a good indicator of whether like your users really have high intent or not.
+
+193
+00:19:42,720 --> 00:19:45,760
+[SPEAKER_01] Once they've cancelled, it's really hard to get them to cancel.
+
+194
+00:19:46,160 --> 00:19:58,640
+[SPEAKER_01] And the other thing is that like, I think you have to realize that if you don't earn trust, then it's going to translate into either just poor conversions or even customer complaints that like, oh, I didn't expect this charge.
+
+195
+00:19:58,960 --> 00:20:00,400
+[SPEAKER_01] So super important to get it right.
+
+196
+00:20:00,720 --> 00:20:02,800
+[SPEAKER_01] MO, so much fun chatting with you today.
+
+197
+00:20:02,960 --> 00:20:04,000
+[SPEAKER_00] There's a lot of great lessons.
+
+198
+00:20:04,160 --> 00:20:05,360
+[SPEAKER_00] So thank you so much for joining.
+
+199
+00:20:05,520 --> 00:20:07,120
+[SPEAKER_00] And anything you wanted to share as we wrap up?
+
+200
+00:20:07,280 --> 00:20:08,480
+[SPEAKER_00] Any jobs at Duolingo you wanted to do?
+
+201
+00:20:09,600 --> 00:20:11,040
+[SPEAKER_00] No, thank you first of all for having me.
+
+202
+00:20:11,120 --> 00:20:12,560
+[SPEAKER_01] Yes, Duolingo is hiring.
+
+203
+00:20:12,880 --> 00:20:18,880
+[SPEAKER_01] Please feel free to look at our kind of careers website and if there's any roles that are of interest, please apply.
+
+204
+00:20:19,040 --> 00:20:20,880
+[SPEAKER_01] But thank you so much again, David, for having me.
+
+205
+00:20:21,040 --> 00:20:22,080
+[SPEAKER_01] Yeah, thank you for joining me.
+
+206
+00:20:24,560 --> 00:20:25,840
+[SPEAKER_00] Thank you so much for listening.
+
+207
+00:20:26,720 --> 00:20:30,240
+[SPEAKER_00] If you have a minute, please leave a review in your favorite podcast player.
+
+208
+00:20:31,040 --> 00:20:35,920
+[SPEAKER_00] You can also stop by chat dot subclub dot com to join our private community.
