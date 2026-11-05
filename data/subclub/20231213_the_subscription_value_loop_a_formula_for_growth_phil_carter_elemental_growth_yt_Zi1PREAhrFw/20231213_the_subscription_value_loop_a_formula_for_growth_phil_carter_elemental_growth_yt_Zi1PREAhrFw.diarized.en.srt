@@ -1,0 +1,4275 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_01] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_01] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_01] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_01] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_01] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,480 --> 00:00:45,280
+[SPEAKER_01] Hello, I'm your host, David Bernard, and with me today, RevenueCat CEO, Jacob Eiting.
+
+7
+00:00:45,760 --> 00:00:52,480
+[SPEAKER_01] Our guest today is Phil Carter, an independent growth advisor and angel investor helping consumer subscription companies.
+
+8
+00:00:52,800 --> 00:00:59,040
+[SPEAKER_01] Phil spent the last decade as a VC and product leader at companies like Fair, Quizlet, and Ibotta.
+
+9
+00:00:59,520 --> 00:01:12,720
+[SPEAKER_01] On the podcast, we talk with Phil about his subscription value loop framework, what it means to create robust value for customers, and why AB testing shouldn't be your first step in price optimization.
+
+10
+00:01:13,920 --> 00:01:16,560
+[SPEAKER_01] Phil, thank you so much for joining us on the podcast today.
+
+11
+00:01:16,880 --> 00:01:17,520
+[SPEAKER_02] It's good to be here.
+
+12
+00:01:17,680 --> 00:01:18,400
+[SPEAKER_02] Thanks for having me.
+
+13
+00:01:18,720 --> 00:01:20,720
+[SPEAKER_01] And Jacob, always nice to chat with you.
+
+14
+00:01:21,200 --> 00:01:23,920
+[SPEAKER_00] I'm extremely excited to be here with you today, David.
+
+15
+00:01:24,560 --> 00:01:28,640
+[SPEAKER_01] So, Phil, you have a ton of experience working with subscription apps.
+
+16
+00:01:28,800 --> 00:01:32,160
+[SPEAKER_01] You've been doing consulting for a while now, working with a bunch of great apps.
+
+17
+00:01:32,800 --> 00:01:38,800
+[SPEAKER_01] As we dive into some of your frameworks and other things, I know a lot of those were developed during your time at Quizlet.
+
+18
+00:01:38,880 --> 00:01:43,360
+[SPEAKER_01] So let's kick it off talking about Quizlet and how you ended up working there.
+
+19
+00:01:43,840 --> 00:01:44,240
+[SPEAKER_02] Yeah, sure.
+
+20
+00:01:44,640 --> 00:01:47,680
+[SPEAKER_02] So I found my way to Quizlet through a little bit of a circuitous route.
+
+21
+00:01:48,000 --> 00:01:58,720
+[SPEAKER_02] I started my career out of college as a consultant, as many of us do, but then pretty quickly discovered tech in the Bay Area and was the first employee at a car sharing app called Wheels.
+
+22
+00:01:59,040 --> 00:02:00,080
+[SPEAKER_02] It was a pretty cool product.
+
+23
+00:02:00,400 --> 00:02:07,760
+[SPEAKER_02] We had the first in car device where you could sound the horn, lock and unlock the vehicle, find it on your iPhone and Android if you were under reservation.
+
+24
+00:02:08,000 --> 00:02:09,040
+[SPEAKER_02] And so that was a cool product.
+
+25
+00:02:09,680 --> 00:02:15,360
+[SPEAKER_02] And then ended up going to business school, spent a few years in venture capital doing early stage consumer mobile investing.
+
+26
+00:02:15,760 --> 00:02:20,000
+[SPEAKER_02] And so that's how I found my way to consumer tech specifically, which goes in ebb and flows.
+
+27
+00:02:20,160 --> 00:02:26,400
+[SPEAKER_02] There are a lot of people out there who spend their whole career in B2B, but I was attracted to technology for the impact it can have on everyday people's lives.
+
+28
+00:02:26,560 --> 00:02:33,600
+[SPEAKER_02] And so I spent a few years in venture capital, and then I met my wife Ashley in business school, and we wanted to be closer to family in the great outdoors.
+
+29
+00:02:33,840 --> 00:02:44,880
+[SPEAKER_02] So we packed all our belongings up in our Subaru in 2015, drove across the country to Colorado, and I've been here ever since as a product and growth leader for a few companies out here.
+
+30
+00:02:45,280 --> 00:02:45,440
+[SPEAKER_02] Cool.
+
+31
+00:02:45,600 --> 00:02:48,320
+[SPEAKER_01] So then what attracted you to work at Quizlet?
+
+32
+00:02:48,560 --> 00:02:52,320
+[SPEAKER_01] I know there were some specific aspects of the product that seemed to gel with you.
+
+33
+00:02:52,400 --> 00:02:53,360
+[SPEAKER_01] So why Quizlet?
+
+34
+00:02:53,680 --> 00:02:53,760
+[SPEAKER_02] Yeah.
+
+35
+00:02:54,000 --> 00:03:03,760
+[SPEAKER_02] So the funny story about Quizlet is I had actually never heard of the company at the time, and I was briefly embarrassed about that until I found out that a lot of other people hadn't heard of it either.
+
+36
+00:03:03,920 --> 00:03:09,680
+[SPEAKER_02] It was like one of those really well kept secrets where high school and college students in the US have been using Quizlet for over a decade.
+
+37
+00:03:10,000 --> 00:03:14,240
+[SPEAKER_02] I wasn't quite in the age demographic where it was an instrumental tool for me personally.
+
+38
+00:03:14,720 --> 00:03:20,160
+[SPEAKER_02] So I had a recruiter reach out in 2018 and mentioned this company Quizlet that was starting a Denver office.
+
+39
+00:03:20,480 --> 00:03:24,000
+[SPEAKER_02] And at the time I had been working at iBot, I had been leading core product team there.
+
+40
+00:03:24,240 --> 00:03:32,000
+[SPEAKER_02] But I found that I really loved growth and specifically product driven growth, things like onboarding, SEO, conversion, optimization, conversion.
+
+41
+00:03:32,880 --> 00:03:36,720
+[SPEAKER_02] And so when I heard about Quizlet, it just felt like the perfect alignment.
+
+42
+00:03:37,360 --> 00:03:43,760
+[SPEAKER_02] of a really interesting product, a great mission that was really making people's lives better, and then a great business model.
+
+43
+00:03:44,240 --> 00:03:56,640
+[SPEAKER_02] When I looked at the unit economics as part of my interview process there, the combination of really low cost organic user acquisition through word of mouth and SEO, combined with the recurring revenue that you get from a subscription business, was really convincing to me.
+
+44
+00:03:56,800 --> 00:03:59,680
+[SPEAKER_02] So I ended up taking the job to go start Quizlet's growth team.
+
+45
+00:04:00,160 --> 00:04:05,200
+[SPEAKER_02] And I went home for the holidays that year and told my cousins I was joining this startup called Quizlet.
+
+46
+00:04:05,360 --> 00:04:06,960
+[SPEAKER_02] And they were like, yeah, of course we know Quizlet.
+
+47
+00:04:07,040 --> 00:04:08,000
+[SPEAKER_02] We've been using it for years.
+
+48
+00:04:09,200 --> 00:04:12,240
+[SPEAKER_00] Yeah, I'm sure this is something you've seen in patterns now.
+
+49
+00:04:12,800 --> 00:04:17,840
+[SPEAKER_00] But this low cost of acquisition, there's always like something with the great subscription apps like Duolingo.
+
+50
+00:04:18,000 --> 00:04:18,800
+[SPEAKER_00] I think it was the same way.
+
+51
+00:04:19,040 --> 00:04:22,960
+[SPEAKER_00] There's something about them that makes their CAC really low and Quizlet.
+
+52
+00:04:23,280 --> 00:04:28,320
+[SPEAKER_00] I feel like students in that community, they have high needs, like specific needs, and they're very viral, right?
+
+53
+00:04:28,480 --> 00:04:31,680
+[SPEAKER_00] So they like communicate a ton and that changes everything.
+
+54
+00:04:32,320 --> 00:04:37,520
+[SPEAKER_00] But it struck me, I don't know if it's this irony or whatever this is, but that's when you hire the growth team, right?
+
+55
+00:04:37,680 --> 00:04:40,080
+[SPEAKER_00] It's like bringing the growth team when you have the good economics.
+
+56
+00:04:40,240 --> 00:04:41,360
+[SPEAKER_00] That's the company you want to come into.
+
+57
+00:04:41,520 --> 00:04:43,280
+[SPEAKER_00] It's like the company doesn't need a growth team.
+
+58
+00:04:43,600 --> 00:04:45,360
+[SPEAKER_00] Then bring in the growth team, right?
+
+59
+00:04:46,000 --> 00:04:47,360
+[SPEAKER_01] And that's exactly what I was going to say.
+
+60
+00:04:47,520 --> 00:04:49,120
+[SPEAKER_01] So it's like they were already grow growing.
+
+61
+00:04:49,280 --> 00:04:50,400
+[SPEAKER_01] They had a lot of word of mouth.
+
+62
+00:04:50,640 --> 00:04:51,920
+[SPEAKER_01] What did they hire you to do then?
+
+63
+00:04:52,240 --> 00:04:53,600
+[SPEAKER_01] And what did you do at Quizlet?
+
+64
+00:04:54,000 --> 00:04:56,480
+[SPEAKER_02] Quizlet already had a few people who were working on growth.
+
+65
+00:04:56,560 --> 00:05:02,480
+[SPEAKER_02] And so they had been doing some signup optimization work, things like new user onboarding flows, signup walls.
+
+66
+00:05:02,880 --> 00:05:04,480
+[SPEAKER_02] And the company was growing very nicely.
+
+67
+00:05:04,640 --> 00:05:10,720
+[SPEAKER_02] And so it not just made it a really compelling opportunity, it also made my job much easier to get things to the next level.
+
+68
+00:05:11,120 --> 00:05:26,960
+[SPEAKER_02] Where I really added value was getting into the nuts and bolts of how Quizlet had got to where it was and then how we were going to replicate that growth going forward and more and more so replicate that growth in international markets where 95% of the global student population lives outside the US.
+
+69
+00:05:27,280 --> 00:05:28,800
+[SPEAKER_02] And so that was a huge challenge for us.
+
+70
+00:05:29,280 --> 00:05:35,200
+[SPEAKER_02] So one of the first things I did in my first few months there was I talked to a lot of customers, obviously.
+
+71
+00:05:35,520 --> 00:05:47,200
+[SPEAKER_02] I spent a lot of time in the weeds with the analytics team and basically destilled down, okay, Quizlet has been around for almost fifteen years at that point, a lot of different product features, a lot of different user segments.
+
+72
+00:05:47,360 --> 00:05:50,000
+[SPEAKER_02] But like at the end of the day, what's really driving growth for this business?
+
+73
+00:05:50,400 --> 00:05:57,360
+[SPEAKER_02] And it turned out that there were six key actions and four core growth loops, SEO being the most important one that was driving a lot of the growth.
+
+74
+00:05:57,600 --> 00:06:05,680
+[SPEAKER_02] And so then based on that information, we built a quantitative growth model around it, we were able to more systematically drive user and revenue growth from that point.
+
+75
+00:06:06,080 --> 00:06:12,560
+[SPEAKER_00] The quantitative growth model, this was a thing I remember hearing about, it was kind of the holy grail of how to build a growth system, right?
+
+76
+00:06:12,800 --> 00:06:13,920
+[SPEAKER_00] It's like, you have to have a model.
+
+77
+00:06:14,240 --> 00:06:15,040
+[SPEAKER_00] What does that practically mean?
+
+78
+00:06:15,440 --> 00:06:15,760
+[SPEAKER_00] What is that?
+
+79
+00:06:15,920 --> 00:06:17,280
+[SPEAKER_00] Is that some machine learning thing?
+
+80
+00:06:17,440 --> 00:06:18,080
+[SPEAKER_00] Like, what is that?
+
+81
+00:06:18,480 --> 00:06:26,560
+[SPEAKER_02] I mean, the short answer is it looks very different at every company for a good reason because you can't just take one template and copy paste and have it work for your business.
+
+82
+00:06:27,280 --> 00:06:36,960
+[SPEAKER_02] But what you're looking for is the simplest possible model you can get away with, called the minimum viable model that really gets at the variables that are most leveraged for transactions.
+
+83
+00:06:36,960 --> 00:06:39,200
+[SPEAKER_02] leverage for driving your business that are tied to those key user actions.
+
+84
+00:06:39,440 --> 00:06:44,720
+[SPEAKER_02] And so for Quizlet, we had acquisition, retention and monetization assumptions built into the model.
+
+85
+00:06:44,880 --> 00:06:46,080
+[SPEAKER_02] It was about a hundred variables.
+
+86
+00:06:46,400 --> 00:06:49,760
+[SPEAKER_02] And we broke it down by students versus teachers and a couple of other key variables.
+
+87
+00:06:49,920 --> 00:06:51,120
+[SPEAKER_02] I won't go into too much detail.
+
+88
+00:06:51,680 --> 00:07:05,760
+[SPEAKER_02] It was simple enough that it could be communicated across the company and used to align people around common ways of thinking about growth, but complex enough that it could help inform strategy and identify where the biggest leverage points were.
+
+89
+00:07:06,160 --> 00:07:10,480
+[SPEAKER_00] I remember being in this position at Elevate and being like, what is it like a model?
+
+90
+00:07:10,800 --> 00:07:11,680
+[SPEAKER_00] Like, how do I make this?
+
+91
+00:07:11,920 --> 00:07:12,320
+[SPEAKER_00] Like, what?
+
+92
+00:07:12,320 --> 00:07:16,160
+[SPEAKER_00] What, I need to hire like some fancy to do some fancy stuff.
+
+93
+00:07:16,320 --> 00:07:20,000
+[SPEAKER_00] It's like, no, literally just write the equation that equals money, right?
+
+94
+00:07:20,320 --> 00:07:25,520
+[SPEAKER_00] Put money on one side and then figure out the multiplication problem and addition problem.
+
+95
+00:07:26,000 --> 00:07:28,960
+[SPEAKER_00] Usually it's linear algebra that goes in and generates that money.
+
+96
+00:07:29,280 --> 00:07:29,840
+[SPEAKER_00] And that's your model.
+
+97
+00:07:30,080 --> 00:07:30,480
+[SPEAKER_00] And it's different.
+
+98
+00:07:30,800 --> 00:07:37,600
+[SPEAKER_00] Like you said, it's like, okay, well, we have teachers generate some amount of something, students generate another amount of something multiplied by our conversion rate multiplied by this.
+
+99
+00:07:37,840 --> 00:07:39,440
+[SPEAKER_00] I mean, I have one for revenue cat as well.
+
+100
+00:07:39,680 --> 00:07:41,120
+[SPEAKER_00] Then you just take partial derivatives, right?
+
+101
+00:07:41,360 --> 00:07:44,240
+[SPEAKER_00] You'd be like, okay, what's the most effective variable to move today?
+
+102
+00:07:44,640 --> 00:07:46,240
+[SPEAKER_00] What are some strategies I can employ?
+
+103
+00:07:46,560 --> 00:07:50,800
+[SPEAKER_00] And it just helps you to like hold the business in your head in terms of like the mechanics of it.
+
+104
+00:07:51,040 --> 00:07:53,200
+[SPEAKER_00] And I don't know if you found this, but they're always wrong.
+
+105
+00:07:53,280 --> 00:07:54,080
+[SPEAKER_00] And that's a good thing.
+
+106
+00:07:54,160 --> 00:07:54,720
+[SPEAKER_00] They're always wrong.
+
+107
+00:07:55,840 --> 00:08:06,480
+[SPEAKER_02] So Reforge actually has a really provocative statement, which are models are useless, but the exercise of modeling is absolutely necessary because it forces you to really think through the hardest questions.
+
+108
+00:08:06,640 --> 00:08:08,800
+[SPEAKER_02] And then the other thing is, so there are two components, right?
+
+109
+00:08:09,040 --> 00:08:19,920
+[SPEAKER_02] There's the more complex quantitative version of the model, but the blueprint of the model is basically just one image of the various actions users are taking and the compounding loops that forms that drive user revenue growth.
+
+110
+00:08:20,240 --> 00:08:27,200
+[SPEAKER_02] And in a lot of cases, that ends up being equally valuable because it just gets everyone on the same page using the same language and operating on the same assumption.
+
+111
+00:08:27,280 --> 00:08:30,240
+[SPEAKER_00] The schematic for the business and you were talking about alignment, right?
+
+112
+00:08:30,400 --> 00:08:35,440
+[SPEAKER_00] You can start to like, okay, team X, this is the part of the acyclic graph you're going to be working on, right?
+
+113
+00:08:35,600 --> 00:08:37,520
+[SPEAKER_00] Or I guess it is a cyclic graph in this case.
+
+114
+00:08:37,840 --> 00:08:39,600
+[SPEAKER_00] This is the little loop you're going to be working on.
+
+115
+00:08:39,680 --> 00:08:41,600
+[SPEAKER_00] This is a loop you're going to be working on, stuff like that.
+
+116
+00:08:41,680 --> 00:08:42,800
+[SPEAKER_00] So, yeah, super useful.
+
+117
+00:08:43,200 --> 00:08:43,280
+[SPEAKER_02] Yeah.
+
+118
+00:08:43,520 --> 00:08:49,680
+[SPEAKER_02] One other thing we did is we built the most basic version of the model for the US only, but then we replicated it for other international markets.
+
+119
+00:08:49,920 --> 00:08:57,280
+[SPEAKER_02] So you could literally put a country code into a Python script and replicate the whole thing for a target market in Europe or South America or Asia.
+
+120
+00:08:57,520 --> 00:09:02,000
+[SPEAKER_02] And that was cool because it just let us look at how the business was growing differently across different regions.
+
+121
+00:09:02,160 --> 00:09:02,960
+[SPEAKER_02] So that was another use case.
+
+122
+00:09:03,280 --> 00:09:04,960
+[SPEAKER_00] Yeah, you basically can slice it, right?
+
+123
+00:09:05,200 --> 00:09:06,560
+[SPEAKER_02] I'm sure you didn't have that on day one.
+
+124
+00:09:06,720 --> 00:09:07,280
+[SPEAKER_02] No, right?
+
+125
+00:09:07,440 --> 00:09:09,360
+[SPEAKER_00] You know, I had something simpler.
+
+126
+00:09:10,240 --> 00:09:10,720
+[SPEAKER_00] We didn't.
+
+127
+00:09:11,200 --> 00:09:21,680
+[SPEAKER_01] So in building this very Quizlet specific model, I know you came up with kind of like a broader framework to think about subscription app growth.
+
+128
+00:09:22,080 --> 00:09:25,760
+[SPEAKER_01] So I'd love to dive into that now, the subscription value loop.
+
+129
+00:09:26,160 --> 00:09:33,920
+[SPEAKER_01] Tell me how that work at Quizlet informed what you now developed as this subscription value loop and what it is.
+
+130
+00:09:34,160 --> 00:09:37,760
+[SPEAKER_01] And then we'll dive into all the specifics of the subscscription value loop?
+
+131
+00:09:38,000 --> 00:09:38,400
+[SPEAKER_02] Yeah, sure.
+
+132
+00:09:38,560 --> 00:09:42,640
+[SPEAKER_02] Well, like so many of these stories, I'd love to say that I had this all in my head at the time.
+
+133
+00:09:43,680 --> 00:09:44,720
+[SPEAKER_02] I absolutely did not.
+
+134
+00:09:45,200 --> 00:09:49,760
+[SPEAKER_02] So this was a framework I actually developed more recently as I've been starting this growth advising business.
+
+135
+00:09:50,720 --> 00:09:54,160
+[SPEAKER_02] But at the time, the way it manifested was there were two problems.
+
+136
+00:09:54,400 --> 00:09:58,320
+[SPEAKER_02] One was coming out of the model work, where are the biggest bottlenecks in the business?
+
+137
+00:09:58,880 --> 00:10:02,240
+[SPEAKER_02] And then based on that, where are the biggest strategic opportunities we should be focused on?
+
+138
+00:10:02,480 --> 00:10:07,520
+[SPEAKER_02] Because as a product or growth leader, you're always constrained by people and by time, right?
+
+139
+00:10:07,680 --> 00:10:10,720
+[SPEAKER_02] And so you've got to find the highest leverage initiative to be working on at any given time.
+
+140
+00:10:10,880 --> 00:10:11,680
+[SPEAKER_02] And that's always a challenge.
+
+141
+00:10:12,080 --> 00:10:24,320
+[SPEAKER_02] You all have a lot of founders on your podcasts who are working at smaller apps, but as you get to this kind of awkward adolescent phase of a Series B, Series C company, you're kind of figuring out, okay, where does growth product fit in versus core product versus growth marketing?
+
+142
+00:10:25,040 --> 00:10:28,480
+[SPEAKER_02] And this was a challenge I heard come up again and again because I would talk to my peers at other companies.
+
+143
+00:10:28,640 --> 00:10:30,240
+[SPEAKER_02] I'm like, I'm figuring this out for the first time.
+
+144
+00:10:30,400 --> 00:10:32,400
+[SPEAKER_02] I hadn't led a growth product team before this.
+
+145
+00:10:32,560 --> 00:10:34,000
+[SPEAKER_02] I was working on core product that I bought.
+
+146
+00:10:34,320 --> 00:10:35,600
+[SPEAKER_02] So how are you thinking about this?
+
+147
+00:10:36,000 --> 00:10:42,720
+[SPEAKER_02] And I just kept hearing the same challenges of like, we're stepping on marketing's toes because life cycle marketing really needs to work with onboarding.
+
+148
+00:10:42,880 --> 00:10:43,920
+[SPEAKER_02] So how do we coordinate on that?
+
+149
+00:10:44,160 --> 00:10:47,200
+[SPEAKER_02] And we don't know when core product should be taking the lead versus growth product.
+
+150
+00:10:47,600 --> 00:11:14,720
+[SPEAKER_02] And so I started talking about this idea of value creation versus value capture and working with the VP of product at Quizlet around, okay, how can we have core product teams really focus on creating core value for the users with the primary metric being retention, and then free up growth product to focus on value capture as well as new user onboarding and various things that sort of connect users to that core value.
+
+151
+00:11:14,880 --> 00:11:17,520
+[SPEAKER_02] So this idea of value creation versus value capture is where it all started.
+
+152
+00:11:17,680 --> 00:11:21,280
+[SPEAKER_02] And it seemed to really resonate with my team and with the executives at Quizlet.
+
+153
+00:11:21,600 --> 00:11:24,480
+[SPEAKER_02] And then as we started to adopt this framework.
+
+154
+00:11:25,760 --> 00:11:32,640
+[SPEAKER_02] We also talked to marketing about how we can best coordinate on bringing more people into Quizlet, whether that be free users or ultimately subscribers.
+
+155
+00:11:33,040 --> 00:11:36,000
+[SPEAKER_02] And so that's where the interim step of value delivery came in.
+
+156
+00:11:36,640 --> 00:11:46,880
+[SPEAKER_01] So this subscription value loop, value creation, value delivery, value capture, I think it's a really great way to think about this kind of like high level model, like we've been talking about.
+
+157
+00:11:47,120 --> 00:11:48,160
+[SPEAKER_00] Almost all businesses, right?
+
+158
+00:11:48,560 --> 00:11:49,600
+[SPEAKER_00] Like creation and capture.
+
+159
+00:11:49,920 --> 00:11:50,320
+[SPEAKER_00] That's the thing.
+
+160
+00:11:50,480 --> 00:11:54,880
+[SPEAKER_00] Delivery is part of that as well as distribution, but creation and capture, it's somewhat universal.
+
+161
+00:11:55,440 --> 00:11:59,200
+[SPEAKER_01] Do you have any concrete examples of how this plays out?
+
+162
+00:12:00,000 --> 00:12:06,640
+[SPEAKER_02] This has just come up in a number of your other podcast episodes, this idea of, you know, in the early days of the app stores, there were no subscription apps.
+
+163
+00:12:06,800 --> 00:12:08,640
+[SPEAKER_02] It was all just pay to download, pay to use.
+
+164
+00:12:08,960 --> 00:12:28,240
+[SPEAKER_02] And then subscription apps started to come along, but it took a little while for the best companies to really figure out how to create this compounding value engine, and the best businesses ended up leapfrogging their competitors in many cases because they found a really important need that was going unmet or not sufficiently met.
+
+165
+00:12:28,640 --> 00:12:34,400
+[SPEAKER_02] They really invested a lot of their resources in making that solution to that need as good as it possibly could be.
+
+166
+00:12:34,880 --> 00:12:36,640
+[SPEAKER_02] But then, importantly, they were able to.
+
+167
+00:12:37,200 --> 00:12:43,920
+[SPEAKER_02] capture enough of that value on the back end to reinvest into the business and build that mote around their core product advantage.
+
+168
+00:12:44,400 --> 00:12:58,160
+[SPEAKER_02] And so one of the examples that has come up in a previous subclub episode is the example of Spotify versus Pandora, where Pandora was the first mover in that space, but was more of an ad driven model and that was suboptimal for two reasons.
+
+169
+00:12:58,400 --> 00:13:03,200
+[SPEAKER_02] One, it wasn't the best user experience because you would be interrupted all the time while you were listening to your music.
+
+170
+00:13:03,440 --> 00:13:09,360
+[SPEAKER_02] And then two, they didn't have as much profit density in their business model, their LTV-CAC ratio, I would guess.
+
+171
+00:13:09,360 --> 00:13:09,840
+[SPEAKER_02] I don't know.
+
+172
+00:13:09,920 --> 00:13:15,280
+[SPEAKER_02] I never worked at Pandora, but I would guess it wasn't as strong as it could have been had they had Spotify's model.
+
+173
+00:13:15,440 --> 00:13:26,240
+[SPEAKER_02] And so along come Spotify, they really go all in on the subscription business model and they find a way to really efficiently reinvest that revenue back into the core product experience.
+
+174
+00:13:26,480 --> 00:13:28,080
+[SPEAKER_02] And then you can look at the charts out there.
+
+175
+00:13:28,240 --> 00:13:31,600
+[SPEAKER_02] I mean, they just close the gap very quickly and the rest is history.
+
+176
+00:13:32,080 --> 00:13:41,760
+[SPEAKER_01] And then what aspects of working day to day in a subscription app do you feel like can be best informed at a high level from this subscription value loop?
+
+177
+00:13:42,080 --> 00:13:42,160
+[UNKNOWN] Yeah.
+
+178
+00:13:42,320 --> 00:13:49,680
+[SPEAKER_02] Well, I think where it gets interesting because your point earlier, Jacob, if you zoom out enough, this framework applies to almost any business, certainly any consumer subscription.
+
+179
+00:13:50,080 --> 00:13:50,720
+[SPEAKER_00] Capitalism, really.
+
+180
+00:13:50,960 --> 00:13:52,400
+[SPEAKER_02] Yes, free enterprise.
+
+181
+00:13:52,640 --> 00:14:04,480
+[SPEAKER_02] I think what's different about consumer subscriptions, even relative to prosumer apps, is they really have to sell themselves because the LTVs on consumer subscriptions are much lower than enterprise SaaS or prosumer, right?
+
+182
+00:14:04,960 --> 00:14:08,880
+[SPEAKER_02] And so you need a really, really efficient machine for this to work.
+
+183
+00:14:09,360 --> 00:14:15,200
+[SPEAKER_02] And you need everyone at the company to understand what their roles and responsibilities are and how they fit into the framework.
+
+184
+00:14:15,600 --> 00:14:22,640
+[SPEAKER_02] I think where the rubber hits the road is on the specific prerequisites within each step that need to be true for it to really be firing on all cylinders.
+
+185
+00:14:22,800 --> 00:14:27,920
+[SPEAKER_02] And then what that means in terms of initiatives that the team works on and how they approach solving problems.
+
+186
+00:14:28,400 --> 00:14:28,960
+[SPEAKER_01] Let's dive in.
+
+187
+00:14:29,280 --> 00:14:37,280
+[SPEAKER_01] I'm excited to go through the nuts and bolts and like details of each of these points in the subscription value loop.
+
+188
+00:14:37,520 --> 00:14:40,240
+[SPEAKER_01] So the first one is value creation.
+
+189
+00:14:40,640 --> 00:14:45,200
+[SPEAKER_01] We've kind of talked at a very high level, but what is in this framework?
+
+190
+00:14:45,520 --> 00:14:46,560
+[SPEAKER_01] What is value creation?
+
+191
+00:14:47,040 --> 00:14:50,240
+[SPEAKER_02] So value creation is likely the most important step, right?
+
+192
+00:14:50,400 --> 00:14:53,360
+[SPEAKER_02] Because if you don't have a product that people really want, then nothing else matters.
+
+193
+00:14:54,000 --> 00:14:58,320
+[SPEAKER_02] And so it really comes down to what I'm calling the four Rs within the framework.
+
+194
+00:14:58,720 --> 00:14:59,680
+[SPEAKER_02] So is it robust?
+
+195
+00:15:00,000 --> 00:15:01,920
+[SPEAKER_02] Are you delivering value rapidly?
+
+196
+00:15:02,480 --> 00:15:03,600
+[SPEAKER_02] Is it repeatable value?
+
+197
+00:15:03,920 --> 00:15:08,080
+[SPEAKER_02] And then is it remarkable enough that people are going to talk about it and ultimately build a community around it?
+
+198
+00:15:08,400 --> 00:15:16,480
+[SPEAKER_02] And so we can go through those one by one, but the first is robust, which is really a measure of, do you have a value promise that is solving a real pain point for customers?
+
+199
+00:15:16,800 --> 00:15:18,400
+[SPEAKER_02] And do you have strong product market fit?
+
+200
+00:15:18,640 --> 00:15:26,400
+[SPEAKER_02] And so one of the things that I look at when I'm thinking about this part of value creation is there's a 40 percent test that Sean Ellis developed.
+
+201
+00:15:26,640 --> 00:15:28,720
+[SPEAKER_02] He was the first marketer at Dropbox.
+
+202
+00:15:29,120 --> 00:15:30,160
+[SPEAKER_02] And it's a very simple test.
+
+203
+00:15:30,400 --> 00:15:34,960
+[SPEAKER_02] You just ask your customers, if you were no longer able to use this product today, how disappointed would you be?
+
+204
+00:15:35,040 --> 00:15:36,960
+[SPEAKER_02] Very disappointed, somewhat disappointed or not disappointed.
+
+205
+00:15:37,920 --> 00:15:43,920
+[SPEAKER_02] He realized over time after working with enough companies and talking to enough customers that the golden benchmark was forty percent.
+
+206
+00:15:44,000 --> 00:15:50,000
+[SPEAKER_02] You needed forty percent of your customers to say that they would be very disappointed if they could no longer use your product to really say you had strong product market fit.
+
+207
+00:15:50,320 --> 00:15:51,600
+[SPEAKER_02] And you can also subsegment that.
+
+208
+00:15:51,920 --> 00:15:57,280
+[SPEAKER_02] So you can look at it globally across all of your users, but you can also peel the onion back and look at smaller segments.
+
+209
+00:15:57,600 --> 00:16:05,520
+[SPEAKER_02] And so one of the things that I think Superhuman actually pioneered this idea, but many other companies have followed it is product market fit can be very binary.
+
+210
+00:16:05,760 --> 00:16:09,520
+[SPEAKER_02] You hear people talk about, well, you know product market fit when you see it because everything just becomes easier.
+
+211
+00:16:09,840 --> 00:16:10,960
+[SPEAKER_02] But that's not very actionable.
+
+212
+00:16:11,360 --> 00:16:18,560
+[SPEAKER_02] And it can feel very lonely as a found founder of a new company who's like trying to figure out, well, how far away are we from product market fit?
+
+213
+00:16:19,120 --> 00:16:22,800
+[SPEAKER_00] It's like a combustion process that is like exotherm versus endotherm.
+
+214
+00:16:23,120 --> 00:16:25,840
+[SPEAKER_00] If your process takes energy, you just you push it, it stops.
+
+215
+00:16:25,920 --> 00:16:26,640
+[SPEAKER_00] You push it, it stops.
+
+216
+00:16:26,720 --> 00:16:27,520
+[SPEAKER_00] You push it, it stops.
+
+217
+00:16:27,680 --> 00:16:34,880
+[SPEAKER_00] I always think about it and that's why it's binary is like eventually the combustion, the reaction, whatever chemistry magic you're making becomes exothermic.
+
+218
+00:16:35,200 --> 00:16:41,200
+[SPEAKER_00] It can actually like release energy and that's you come above this line somewhere and then that's where you get that perception, I believe.
+
+219
+00:16:41,520 --> 00:16:42,880
+[SPEAKER_00] Then everything just starts to run away.
+
+220
+00:16:43,120 --> 00:16:45,600
+[SPEAKER_00] If it has enough fuel, it can potentially go forever, right?
+
+221
+00:16:45,840 --> 00:16:48,640
+[SPEAKER_01] Then you start feeding the fuel, not pushing it yourself.
+
+222
+00:16:49,120 --> 00:16:50,080
+[SPEAKER_01] Yeah, yeah, exactly.
+
+223
+00:16:50,240 --> 00:16:58,240
+[SPEAKER_00] The problem is, I think, you're about to highlight, is that you don't know if you're one iteration or a thousand iterations away from tripping into that boundary.
+
+224
+00:16:58,320 --> 00:17:02,080
+[SPEAKER_00] Unfortunately, it's not as predictive as say like chemistry is, right?
+
+225
+00:17:02,480 --> 00:17:03,360
+[SPEAKER_02] Yeah, no, that's right.
+
+226
+00:17:03,520 --> 00:17:04,480
+[SPEAKER_02] And I love the car analogy.
+
+227
+00:17:04,640 --> 00:17:09,360
+[SPEAKER_02] I know Lenny has used it and it's one that I often think about as a growth leader, but that's right.
+
+228
+00:17:09,600 --> 00:17:11,600
+[SPEAKER_02] You want to know, are we even building the right car?
+
+229
+00:17:12,080 --> 00:17:17,920
+[SPEAKER_02] So where the 40% test is so helpful is you can say, okay, are we at 20% of our customers at this point?
+
+230
+00:17:18,080 --> 00:17:18,800
+[SPEAKER_02] Are we at 30%?
+
+231
+00:17:18,960 --> 00:17:19,840
+[SPEAKER_02] Are we at 40%?
+
+232
+00:17:20,160 --> 00:17:28,160
+[SPEAKER_02] And then not many companies do this, but if you're really systematic about it, you can actually create a an objective function and sort of work your way over the line.
+
+233
+00:17:28,480 --> 00:17:35,280
+[SPEAKER_02] And so Rahul Vora, who is the founder and CEO of Superhuman, has this great blog post where he talks about how Superhuman did this in the early days.
+
+234
+00:17:35,840 --> 00:17:38,000
+[SPEAKER_02] They were looking for a way to measure product market fit.
+
+235
+00:17:38,560 --> 00:17:39,520
+[SPEAKER_02] He found Sean Ellis.
+
+236
+00:17:39,760 --> 00:17:45,760
+[SPEAKER_02] They did the 40 percent test and they found that they were below the line, but maybe not as below the line as they would have thought.
+
+237
+00:17:46,080 --> 00:17:54,960
+[SPEAKER_02] And then they went through this iterative process where they basically looked at which segments of their users had the highest propensity to say they would be very disappointed.
+
+238
+00:17:55,280 --> 00:17:57,840
+[SPEAKER_02] And they resegmented the data and that brought them a little closer.
+
+239
+00:17:58,000 --> 00:18:00,800
+[SPEAKER_02] And then they went and talked to those users and they said, well, what would it take?
+
+240
+00:18:01,600 --> 00:18:04,560
+[SPEAKER_02] for you to be more delighted with this product, more willing to pay for it?
+
+241
+00:18:05,360 --> 00:18:15,920
+[SPEAKER_02] And by doing that, they were able to really hone around the nucleus of their highest intent users and develop a product roadmap that filled those gaps.
+
+242
+00:18:16,480 --> 00:18:26,480
+[SPEAKER_02] And very quickly, he goes into detail in the blog post, but very quickly that allowed them to get beyond that 40% threshold and learn a lot along the way that helped them later on as they were scaling the business.
+
+243
+00:18:27,040 --> 00:18:36,800
+[SPEAKER_01] Would you do that 40% test at a feature level too, to like understand which features specifically are driving that delight versus like at a higher level, overall product level?
+
+244
+00:18:37,600 --> 00:18:38,480
+[SPEAKER_02] It's an interesting question.
+
+245
+00:18:38,880 --> 00:18:45,360
+[SPEAKER_02] And I don't want to say you couldn't do that, but I don't think it's the right approach because the best products have a one plus one equals three effect, right?
+
+246
+00:18:45,600 --> 00:18:46,960
+[SPEAKER_00] The whole is greater than the sum of its parts.
+
+247
+00:18:47,120 --> 00:18:50,800
+[SPEAKER_02] And so I think what you want to segment on is the user persona, not the feature.
+
+248
+00:18:51,120 --> 00:18:55,600
+[SPEAKER_02] There are other tools that can allow you to isolate the value of individual features, which is really important.
+
+249
+00:18:56,000 --> 00:18:56,080
+[SPEAKER_00] Yeah.
+
+250
+00:18:56,240 --> 00:19:09,600
+[SPEAKER_00] It's not a thing you probably run into statistical issues, but depending on your user base size, I think that's one thing that is fraught a little bit in these surveys is like depending on who you're sampling, it can really vary the same segmentation question, but generally like, who are you asking?
+
+251
+00:19:09,680 --> 00:19:11,280
+[SPEAKER_00] Is it everybody who ever signed up?
+
+252
+00:19:11,360 --> 00:19:12,880
+[SPEAKER_00] Is it everybody who ever hits your web page?
+
+253
+00:19:13,280 --> 00:19:15,840
+[SPEAKER_00] I said everybody who ever actually uses the product, right?
+
+254
+00:19:16,160 --> 00:19:22,560
+[SPEAKER_00] I think in some arguments, everybody who uses the product is pretty good because if anybody's using the product, you've got part market fit for somebody.
+
+255
+00:19:22,720 --> 00:19:24,080
+[SPEAKER_00] How deep is it and stuff like that?
+
+256
+00:19:24,640 --> 00:19:33,840
+[SPEAKER_00] I think you need to also use these in conjunction with some of the other classic product market fit usage statistics like retention, whatever makes sense for your product.
+
+257
+00:19:34,000 --> 00:19:41,360
+[SPEAKER_00] If that's a consumer product day one day seven, if that's a SaaS product, it's probably something a little bit different because it's like you were saying, Sean said forty percent.
+
+258
+00:19:41,600 --> 00:19:44,000
+[SPEAKER_00] Yeah, you know, like what's the what's the science behind it?
+
+259
+00:19:44,240 --> 00:19:45,680
+[SPEAKER_00] Yeah, you know, kind of works.
+
+260
+00:19:46,000 --> 00:19:46,560
+[SPEAKER_00] And I do agree.
+
+261
+00:19:46,720 --> 00:19:50,400
+[SPEAKER_00] I have seen people use this and it gives you a good directionctionality, but that's a lot of this stuff.
+
+262
+00:19:50,560 --> 00:19:51,440
+[SPEAKER_00] It's all very directional.
+
+263
+00:19:51,760 --> 00:19:53,200
+[SPEAKER_02] Well, none of these are silver bullets.
+
+264
+00:19:53,280 --> 00:19:55,440
+[SPEAKER_02] It's using them in tandem where I think you get the magic.
+
+265
+00:19:55,840 --> 00:19:55,920
+[SPEAKER_00] Yeah.
+
+266
+00:19:56,320 --> 00:20:13,520
+[SPEAKER_01] And before we move on from robust, it was a perfect thing to start off the whole subscription value loop on robustness because I do think that's missing from so many apps who think it's a growth problem, it's a marketing problem, it's a retention problem, it's whatever problem they think it is.
+
+267
+00:20:14,240 --> 00:20:17,040
+[SPEAKER_01] At the core, it's just so easy to build an app.
+
+268
+00:20:17,600 --> 00:20:20,560
+[SPEAKER_01] You said this, it's easy to build an app, but it's hard to stand out.
+
+269
+00:20:21,040 --> 00:20:24,160
+[SPEAKER_01] And robustness is where it just has to be a good product.
+
+270
+00:20:24,880 --> 00:20:26,240
+[SPEAKER_01] Like people actually have to care.
+
+271
+00:20:26,800 --> 00:20:28,800
+[SPEAKER_01] People actually have to get value from it.
+
+272
+00:20:28,960 --> 00:20:32,960
+[SPEAKER_01] Like it has to be something real to build a good business on top of.
+
+273
+00:20:33,600 --> 00:20:37,280
+[SPEAKER_01] And I do see a lot of apps, and I mean, there's different niches.
+
+274
+00:20:37,440 --> 00:20:39,440
+[SPEAKER_01] Like a knitting app is a great example of that.
+
+275
+00:20:39,600 --> 00:20:46,160
+[SPEAKER_01] Like I don't care about knitting, but for some segment of the population, like a knitting app is amazing and valuable.
+
+276
+00:20:46,400 --> 00:20:50,080
+[SPEAKER_01] But whatever it is, it's like you just have to actually create value.
+
+277
+00:20:50,320 --> 00:20:58,000
+[SPEAKER_01] And so robust, while I know you use that word to fit into the four Rs of value creation, it's just a little awkward.
+
+278
+00:20:58,560 --> 00:20:59,360
+[SPEAKER_02] I'm a former consultant.
+
+279
+00:20:59,680 --> 00:21:00,480
+[SPEAKER_02] I have to make a pitch.
+
+280
+00:21:02,720 --> 00:21:07,600
+[SPEAKER_01] But that foundation of just value creation, I think, is just so important.
+
+281
+00:21:08,080 --> 00:21:14,880
+[SPEAKER_01] Anything else you wanted to talk about on the value creation robustness side of things before we move on to the other Rs in value creation?
+
+282
+00:21:15,280 --> 00:21:16,480
+[SPEAKER_02] I completely agree with what you just said.
+
+283
+00:21:16,640 --> 00:21:17,840
+[SPEAKER_02] This is the first step for a reason.
+
+284
+00:21:18,000 --> 00:21:20,880
+[SPEAKER_02] If you don't have a robust value promise, nothing else matters.
+
+285
+00:21:21,200 --> 00:21:30,240
+[SPEAKER_02] The only other thing I would say is we talked about finding initial product market fit, but this can also be really important for companies that have already found product market fit but are trying to expand that product market fit.
+
+286
+00:21:30,800 --> 00:21:33,200
+[SPEAKER_02] And so a couple of examples of this that come to mind.
+
+287
+00:21:33,360 --> 00:21:38,880
+[SPEAKER_02] I was at Quizlet during the time when they acquired Slater, which ended up becoming their textbook explanations tool.
+
+288
+00:21:39,200 --> 00:21:41,280
+[SPEAKER_02] And so that's a great example of Quizlet.
+
+289
+00:21:41,360 --> 00:21:46,080
+[SPEAKER_02] Up to that point, it had historically been focused on repetition based learning and preparing for exams.
+
+290
+00:21:46,480 --> 00:21:52,480
+[SPEAKER_02] The acquisition of Slater and standing up Quizlet Explanations really helped them move into homework help and getting unstuck problem space.
+
+291
+00:21:52,640 --> 00:22:01,360
+[SPEAKER_02] And so that's a perfect example of if you had looked at a segment of users, they would probably have told you like, this is a need we wish Quizlet had and that filled the gap.
+
+292
+00:22:01,680 --> 00:22:06,880
+[SPEAKER_02] And then I've been working with a number of subscription companies more recently as part of my advising work.
+
+293
+00:22:07,360 --> 00:22:09,040
+[SPEAKER_02] And one of the companies is called Matter.
+
+294
+00:22:09,280 --> 00:22:11,680
+[SPEAKER_02] It's kind of a next generation reading and listening app.
+
+295
+00:22:12,000 --> 00:22:16,960
+[SPEAKER_02] So similar to what Pocket was, you know, a decade ago, but with a lot of more advanced features.
+
+296
+00:22:17,600 --> 00:22:27,520
+[SPEAKER_02] And they started with a focus on reading, but recently they launched a feature called readable podcasts that allowed you to convert a podcast into a text transcription.
+
+297
+00:22:27,840 --> 00:22:34,880
+[SPEAKER_02] It did other things like you could double tap your AirPods to pause and create a highlight out of the audio transcription.
+
+298
+00:22:35,040 --> 00:22:40,480
+[SPEAKER_02] And so it's this really innovative feature that kind of expanded the value prop of Matter to a segment of its users.
+
+299
+00:22:41,040 --> 00:22:44,480
+[SPEAKER_02] And that alone ended up almost doubling subscriber conversion for the business.
+
+300
+00:22:44,720 --> 00:22:51,200
+[SPEAKER_02] And so it's a great example of even if you already have product market fit, you should always be on the lookoutout for those clusters of users that want more.
+
+301
+00:22:51,680 --> 00:22:52,560
+[SPEAKER_00] There's two parts of it, right?
+
+302
+00:22:52,800 --> 00:22:56,880
+[SPEAKER_00] There's market and the product, and both of those are this nebulous problem space.
+
+303
+00:22:57,200 --> 00:23:04,080
+[SPEAKER_00] People have like distributions of needs and use cases, but there's adjacencies and things, and you're moving towards a sort of equilibrium.
+
+304
+00:23:04,320 --> 00:23:12,320
+[SPEAKER_00] You're finding folks that are adjacent to what you know how to do, but have, like you're saying, some adjacent need, and then you can take your product and you can also serve them.
+
+305
+00:23:12,560 --> 00:23:18,320
+[SPEAKER_00] And that's actually why companies can scale, because that's more efficient than finding that very first breaking into a market.
+
+306
+00:23:18,640 --> 00:23:23,520
+[SPEAKER_00] Also, you're running against like no brand, no business mechanisms, give nothing.
+
+307
+00:23:23,680 --> 00:23:24,800
+[SPEAKER_00] You're starting very scratch.
+
+308
+00:23:24,960 --> 00:23:40,240
+[SPEAKER_00] Yeah, like I was saying, it's like why we have such parallel outcomes often in business is because you can just draft from these things like repeatedly, but it still does play into that robustness argument and the fact that it's never product market fit, even though it is binary, it's binary for your first one.
+
+309
+00:23:40,480 --> 00:23:40,640
+[SPEAKER_00] Yeah.
+
+310
+00:23:40,960 --> 00:23:46,160
+[SPEAKER_00] Everything else, you know, it's like a repeated process of Yeah, it's incremental expansion and yeah, exactly.
+
+311
+00:23:46,880 --> 00:23:48,880
+[SPEAKER_01] Robust, rapid, repeatable, remarkable.
+
+312
+00:23:49,120 --> 00:23:50,160
+[SPEAKER_01] Let's move on to rapid.
+
+313
+00:23:50,640 --> 00:23:54,800
+[SPEAKER_01] What do you mean by rapid in the context of value creation?
+
+314
+00:23:55,360 --> 00:23:59,680
+[SPEAKER_02] Yeah, I think this one may be the most obvious, which is there are more apps than ever out there.
+
+315
+00:24:00,080 --> 00:24:05,200
+[SPEAKER_02] It's really hard to get someone's attention and it's really easy to lose it very quickly.
+
+316
+00:24:05,440 --> 00:24:13,760
+[SPEAKER_02] I think there was a study done by Microsoft a number of years ago that showed that the average human attention span had dropped by like fifty percent between 2000 and 2015.
+
+317
+00:24:14,080 --> 00:24:17,680
+[SPEAKER_02] I'm sure there were flaws with that study, but directionally, people's attention spans are getting shorter.
+
+318
+00:24:17,760 --> 00:24:18,960
+[SPEAKER_02] I think that's pretty hard to argue with.
+
+319
+00:24:19,200 --> 00:24:22,800
+[SPEAKER_01] Yeah, and this day with TikTok, it's evolving even more quickly.
+
+320
+00:24:23,440 --> 00:24:25,920
+[SPEAKER_00] Hopefully, we've hit bedrock with neural functions.
+
+321
+00:24:26,880 --> 00:24:27,360
+[SPEAKER_00] I hope so.
+
+322
+00:24:27,680 --> 00:24:28,160
+[SPEAKER_00] I hope so.
+
+323
+00:24:28,800 --> 00:24:30,080
+[SPEAKER_00] Neuralink might change everything.
+
+324
+00:24:31,520 --> 00:24:35,680
+[SPEAKER_02] So the idea here is it's not enough to create a really compelling product.
+
+325
+00:24:36,560 --> 00:24:40,800
+[SPEAKER_02] You need to make sure people understand why it matters for them really, really quickly.
+
+326
+00:24:41,280 --> 00:24:50,880
+[SPEAKER_02] And so the companies that do this really well, they take a problem space that in general is somewhat complex because if it wasn't, then someone probably would have already solved it.
+
+327
+00:24:51,280 --> 00:25:00,640
+[SPEAKER_02] And they really destill it down to like, what is the most important point for me to get across to new users in their first session, ideally in the first thirty seconds of using the app.
+
+328
+00:25:01,040 --> 00:25:06,400
+[SPEAKER_02] Reforge has this framework that talks about sign up and then moving into the setup moment, the aha moment and the habit moment.
+
+329
+00:25:06,560 --> 00:25:13,920
+[SPEAKER_02] So ultimately, you want to build a sustainable habit with users, but you're never going to get there if you can't tell them why they should be using your app in their first session.
+
+330
+00:25:14,160 --> 00:25:29,200
+[SPEAKER_02] And so I like to think about this one in terms of like, how do we remove all of the noise from those first few onboarding screens as much as possible, front load as much delight and back load as much work so that we get the user to the aha moment as quickly as we can.
+
+331
+00:25:29,760 --> 00:25:32,800
+[SPEAKER_01] I was just talking to Ryan Jones, the founder of Flighty.
+
+332
+00:25:32,960 --> 00:25:33,600
+[SPEAKER_01] He's in Austin.
+
+333
+00:25:33,760 --> 00:25:39,360
+[SPEAKER_01] So we went and had a coffee and he was talking through his onboarding and we were just talking through like what he could potentially do.
+
+334
+00:25:39,600 --> 00:25:40,960
+[SPEAKER_01] He's like, my onboarding sucks.
+
+335
+00:25:41,120 --> 00:25:41,920
+[SPEAKER_01] It's just a single page.
+
+336
+00:25:42,080 --> 00:25:43,200
+[SPEAKER_01] Like, I know I need to do more.
+
+337
+00:25:43,360 --> 00:25:48,560
+[SPEAKER_01] And I was like, I don't know that you do because his product really does a great job of.
+
+338
+00:25:49,200 --> 00:25:55,040
+[SPEAKER_01] once you get into the product, he has a lot of little setup your first flight or like if you don't have a flight, like do a sample flight.
+
+339
+00:25:55,600 --> 00:26:10,160
+[SPEAKER_01] And so that one page of onboarding for Flighty, because the product itself gets people to that aha moment, may not need this massive onboarding to actually get to that moment, but then there's so many apps where maybe you do need that.
+
+340
+00:26:10,720 --> 00:26:14,640
+[SPEAKER_01] Are there some examples you wanted to share around this getting to that aha moment?
+
+341
+00:26:15,280 --> 00:26:16,320
+[SPEAKER_02] I think that's really well said.
+
+342
+00:26:16,560 --> 00:26:19,280
+[SPEAKER_02] I mean, less is more in general when it comes to onboarding.
+
+343
+00:26:19,520 --> 00:26:22,880
+[SPEAKER_02] And so if you can get away with one or two screens, great, by all means do it.
+
+344
+00:26:23,040 --> 00:26:24,480
+[SPEAKER_02] But that's not always practical.
+
+345
+00:26:25,040 --> 00:26:34,000
+[SPEAKER_02] And so I think one canonical example of a product that's been really successful with a longer onboarding flow is Noom, the weight loss and fitness app.
+
+346
+00:26:34,720 --> 00:26:46,640
+[SPEAKER_02] And one of their big insights was that by asking users more questions, they were actually building more and more intent because users felt like, okay, I have an acute problem that I want solved.
+
+347
+00:26:47,120 --> 00:26:49,200
+[SPEAKER_02] I'm here for a reason and I need your help.
+
+348
+00:26:49,920 --> 00:26:58,960
+[SPEAKER_02] And the more you ask me questions, the more I feel listened to and the more I feel like this product is actually going to succeed where many other products I've tried in the past have failed.
+
+349
+00:27:00,000 --> 00:27:04,000
+[SPEAKER_02] So, just like with all of these and with any framework, right, there's always going to be exceptions.
+
+350
+00:27:04,480 --> 00:27:07,600
+[SPEAKER_02] But I would start from the point of what's the minimum viable onboarding experience?
+
+351
+00:27:07,840 --> 00:27:10,480
+[SPEAKER_02] Like how quickly can we explain to a user why this matters?
+
+352
+00:27:11,120 --> 00:27:13,680
+[SPEAKER_02] So, a couple of other examples I'll give you on the other end of the spectrum.
+
+353
+00:27:13,920 --> 00:27:16,240
+[SPEAKER_02] Reflectly is an app I really love.
+
+354
+00:27:16,320 --> 00:27:20,240
+[SPEAKER_02] I think Reflectly is largely growing through paid ads and word of mouth.
+
+355
+00:27:20,560 --> 00:27:21,440
+[SPEAKER_02] They have a fairly simple product.
+
+356
+00:27:21,680 --> 00:27:22,400
+[SPEAKER_02] It's a journaling app.
+
+357
+00:27:22,560 --> 00:27:24,000
+[SPEAKER_02] There are many journaling apps out there.
+
+358
+00:27:24,160 --> 00:27:26,560
+[SPEAKER_02] And so, their onboarding is very short and very delightful.
+
+359
+00:27:26,720 --> 00:27:27,840
+[SPEAKER_02] It's really, really well designed.
+
+360
+00:27:27,920 --> 00:27:28,960
+[SPEAKER_02] It gets to the point quickly.
+
+361
+00:27:29,280 --> 00:27:32,880
+[SPEAKER_02] And there's a hard paywall pretty quickly, or at least there was the last time I looked at the app.
+
+362
+00:27:33,200 --> 00:27:35,840
+[SPEAKER_02] That's an example of like all the way on the other end of the spectrum versus Noom.
+
+363
+00:27:36,160 --> 00:27:42,480
+[SPEAKER_02] And in the middle you have Rise is another app that I've been using a lot this year around sleep and energy management.
+
+364
+00:27:42,960 --> 00:27:50,160
+[SPEAKER_02] For me, they're one of the best examples of onboarding I've seen in recent memory because they take this really complex problem around sleep, right?
+
+365
+00:27:50,400 --> 00:27:57,600
+[SPEAKER_02] Like everyone sleeps differently, you've got genetics, you've got environmental factors, and it's a really cool challenge they're solving.
+
+366
+00:27:58,080 --> 00:28:05,200
+[SPEAKER_02] It's not a simple one, but you have to be able to explain to the user in a minute or less, right, why this is going to work for them.
+
+367
+00:28:05,840 --> 00:28:14,560
+[SPEAKER_02] And so in a few screens, they basically say, imagine there was a drug out there that could solve all these problems for you, make you happier, healthier, more energetic.
+
+368
+00:28:15,040 --> 00:28:16,000
+[SPEAKER_02] That drug is sleep.
+
+369
+00:28:16,560 --> 00:28:22,160
+[SPEAKER_02] Now, based on the scientific evidence, there's really only one variable that matters most, and that is sleep debt.
+
+370
+00:28:22,400 --> 00:28:29,280
+[SPEAKER_02] And then they say, answer a few questions and we will help calculate your sleep debt score and immediately tell you changes you can make to improve your energy level.
+
+371
+00:28:29,680 --> 00:28:35,440
+[SPEAKER_02] And so within two minutes, you understand the value prop, you understand the metric that matters most, which is sleep debt.
+
+372
+00:28:35,760 --> 00:28:39,280
+[SPEAKER_02] You've provided them with the minimum amount of information they need to provide you with the best possible experience.
+
+373
+00:28:39,440 --> 00:28:43,760
+[SPEAKER_02] And then there's an optional flow where you can connect your wearable device, which many people using Rise are likely to be doing.
+
+374
+00:28:44,000 --> 00:28:50,240
+[SPEAKER_02] And then you get this magic output of like, here's your sleep debt based on the last 30, 60, 90 days of your sleep.
+
+375
+00:28:50,560 --> 00:28:55,280
+[SPEAKER_02] And here's what that means in terms of when you should be going to bed, when you should be waking up, when you should stop drinking coffee in the morning.
+
+376
+00:28:55,600 --> 00:28:57,120
+[SPEAKER_02] And that's just such a powerful experience.
+
+377
+00:28:57,200 --> 00:29:02,960
+[SPEAKER_02] It takes this really complex problem and it simplifies it and helps the user believe that this is going to help them.
+
+378
+00:29:03,280 --> 00:29:20,560
+[SPEAKER_01] I don't know if we talked about this on that podcast or not, but I've since used that as an example that the onboarding of rise is a great example that the value prop of rise is sleep coaching and the onboarding is delivering that coaching value.
+
+379
+00:29:20,880 --> 00:29:21,920
+[SPEAKER_01] Like what's a good coach?
+
+380
+00:29:22,000 --> 00:29:23,280
+[SPEAKER_01] They're going to ask you some questions.
+
+381
+00:29:23,520 --> 00:29:25,440
+[SPEAKER_01] They're going to inform you of things you didn't know.
+
+382
+00:29:25,600 --> 00:29:32,080
+[SPEAKER_01] They're going to and it's like the onboarding is actually demonstrating the value of Rise as a coach.
+
+383
+00:29:32,400 --> 00:29:38,080
+[SPEAKER_01] And maybe Noom is a similar thing of like a good weight loss plan is not going to be the same for every person.
+
+384
+00:29:38,480 --> 00:29:47,840
+[SPEAKER_01] And by asking those questions, it's like demonstrating that they're going to be a good coach because they're going to take all these different factors into account when they're building this custom plan for you.
+
+385
+00:29:48,160 --> 00:30:09,040
+[SPEAKER_01] So it's interesting how onboarding can actually demonstrate the product value through asking questions and like delivering some of that value along the way versus like leading up to the value or trying to tell people about the value, but actually helping them experience the value in the onboarding, I think is part of the key to why that ends up working as well as it does.
+
+386
+00:30:09,680 --> 00:30:10,640
+[SPEAKER_00] It's sales, right?
+
+387
+00:30:10,880 --> 00:30:12,160
+[SPEAKER_00] Yeah, this is a sales pitch.
+
+388
+00:30:12,320 --> 00:30:16,240
+[SPEAKER_00] This is the you've got two minutes to sell somebody a timeshare or whatever it is, right?
+
+389
+00:30:16,640 --> 00:30:20,880
+[SPEAKER_00] It's just that you're doing it in the form of an app, so you have a multimedia experience and stuff like this.
+
+390
+00:30:21,040 --> 00:30:25,760
+[SPEAKER_00] And maybe that's where some developers struggle is that maybe they're like, Oh, it's got to fit in the interface.
+
+391
+00:30:25,840 --> 00:30:26,880
+[SPEAKER_00] It doesn't have to be whatever.
+
+392
+00:30:27,200 --> 00:30:27,760
+[SPEAKER_00] There are no rules.
+
+393
+00:30:27,840 --> 00:30:31,360
+[SPEAKER_00] I think you just highlighted, Phil, with these three wildly different examples of onboarding, right?
+
+394
+00:30:31,760 --> 00:30:32,720
+[SPEAKER_00] There really are no rules.
+
+395
+00:30:33,040 --> 00:30:38,800
+[SPEAKER_00] It's like, what is the best way to make the most compelling human pitch for what value you're providing.
+
+396
+00:30:39,360 --> 00:30:46,320
+[SPEAKER_00] And I would say it's different because it's consumer, but honestly, be to be like every sales pitch, you have to hook someone in the first thirty seconds, right?
+
+397
+00:30:46,480 --> 00:30:48,080
+[SPEAKER_00] Or they're just like, it's not for me.
+
+398
+00:30:48,320 --> 00:30:48,880
+[SPEAKER_00] You think about it.
+
+399
+00:30:49,040 --> 00:30:51,040
+[SPEAKER_00] Somebody saw something, they tracked it.
+
+400
+00:30:51,200 --> 00:30:52,320
+[SPEAKER_00] They went through the beginning of the funnel.
+
+401
+00:30:52,480 --> 00:30:55,520
+[SPEAKER_00] They downloaded your app and here they are, like, don't blow it.
+
+402
+00:30:55,600 --> 00:30:56,960
+[SPEAKER_00] You've come a long way to get them here.
+
+403
+00:30:57,120 --> 00:31:04,080
+[SPEAKER_00] If you're an early stage person, like thinking about how do I think about onboarding, I think you can evaluate product market fit before you have a good onboarding, right?
+
+404
+00:31:04,240 --> 00:31:06,080
+[SPEAKER_00] Like if your onboarding can be kind of crappy.
+
+405
+00:31:06,240 --> 00:31:12,720
+[SPEAKER_00] And in fact, I think that can help reduce the like noise because if you have a really good onboarding but a crappy product, it might like.
+
+406
+00:31:13,360 --> 00:31:14,240
+[SPEAKER_02] it's a bridge to nowhere.
+
+407
+00:31:15,040 --> 00:31:15,600
+[SPEAKER_00] Yeah, exactly.
+
+408
+00:31:15,840 --> 00:31:23,360
+[SPEAKER_00] If you're asking these surveys and stuff, people might give you like weird answers like, Oh, it's really beautiful because you did a really good onboarding, but the app sucks, but I'm going to tell you the onboarding was good.
+
+409
+00:31:23,520 --> 00:31:30,800
+[SPEAKER_00] But if the onboarding is absolutely garbage and like people are still saying, I love this app, then you really know you've cracked it.
+
+410
+00:31:30,960 --> 00:31:34,000
+[SPEAKER_00] Then, yeah, the onboarding to that, and then it's just pure rocket fuel, right?
+
+411
+00:31:34,240 --> 00:31:35,600
+[SPEAKER_02] Yeah, no, I think that's exactly right.
+
+412
+00:31:35,760 --> 00:31:43,360
+[SPEAKER_02] They definitely go in that order and onboarding is becoming more important than ever because even if you do have a really good product, your early adopters will stay with you no matter what.
+
+413
+00:31:43,600 --> 00:31:48,960
+[SPEAKER_02] And you guys have made the point that it's actually a positive signal in some ways when you have a really crappy product and people are not going to be with you.
+
+414
+00:31:48,960 --> 00:31:52,000
+[SPEAKER_02] And people still want to use it, but eventually you'll move past those early adopters.
+
+415
+00:31:52,400 --> 00:31:58,640
+[SPEAKER_02] And especially if you start relying on paid advertising, then you better be able to tell someone quickly why this matters for them.
+
+416
+00:31:59,120 --> 00:32:07,520
+[SPEAKER_02] And one last point before we move on, David, you brought up this idea of helping the user to understand why the product is valuable as they're going through the onboarding flow.
+
+417
+00:32:07,600 --> 00:32:10,160
+[SPEAKER_02] So at Quizlet, we actually call this immersive onboarding.
+
+418
+00:32:10,400 --> 00:32:17,600
+[SPEAKER_02] The idea was how can we keep the user in the product as they're going through the setup and aha moments.
+
+419
+00:32:18,160 --> 00:32:19,200
+[SPEAKER_02] Not every product can do that.
+
+420
+00:32:19,360 --> 00:32:26,160
+[SPEAKER_02] It depends a little bit on the nature of your product and your target customer, but there are plenty of good examples out there of apps who do, and Rise is one example.
+
+421
+00:32:26,240 --> 00:32:28,240
+[SPEAKER_02] I think Duolingo is another great example, right?
+
+422
+00:32:28,400 --> 00:32:30,560
+[SPEAKER_02] The onboarding is you do a round of language learning.
+
+423
+00:32:30,640 --> 00:32:38,080
+[SPEAKER_02] You answer a few questions on what language you're studying, on what your proficiency level is, and then you're dropped immediately into this gamified learning experience.
+
+424
+00:32:38,240 --> 00:32:44,240
+[SPEAKER_02] And by the end of it, if you were ever going to sign up for Duolingo, now's the time because you're really excited about what it can do for you.
+
+425
+00:32:44,720 --> 00:32:52,400
+[SPEAKER_01] One piece of context I think a lot of people leave out in thinking through onboarding is like what the experience was before getting to onboarding.
+
+426
+00:32:53,040 --> 00:33:00,560
+[SPEAKER_01] So if you're just repeating your top three screenshots from the app store, like people probably have seen that.
+
+427
+00:33:01,200 --> 00:33:02,400
+[SPEAKER_01] What ad did they see?
+
+428
+00:33:02,640 --> 00:33:06,240
+[SPEAKER_01] What value prop were you selling that brought them into the app?
+
+429
+00:33:06,560 --> 00:33:08,880
+[SPEAKER_01] And like, how much awareness do they already have of that?
+
+430
+00:33:09,760 --> 00:33:21,840
+[SPEAKER_01] And then the onboarding shouldn't just be a repeat of the first three screenshots in the app store because they've already seen those and that's where that term the immersive, what did you call immersive onboarding?
+
+431
+00:33:22,000 --> 00:33:22,720
+[SPEAKER_01] Immersive onboarding.
+
+432
+00:33:23,520 --> 00:33:24,480
+[SPEAKER_01] Yeah, that's really cool.
+
+433
+00:33:24,880 --> 00:33:31,440
+[SPEAKER_01] Just thinking through, like you actually at that point, they downloaded it because they had a sense that it was going to be valuable.
+
+434
+00:33:32,000 --> 00:33:35,360
+[SPEAKER_01] If it's flighty, it's a flight tracking app, it's going to track flights.
+
+435
+00:33:35,600 --> 00:33:39,280
+[SPEAKER_01] You don't need to tell them in five screenshots that you're going to track the flights.
+
+436
+00:33:39,520 --> 00:33:46,160
+[SPEAKER_01] If they're downloading Duolingo, you don't need to tell them in six pages that you're going to teach them how to learn a language.
+
+437
+00:33:46,320 --> 00:33:48,400
+[SPEAKER_01] It's like that's the value they're expecting to get.
+
+438
+00:33:48,800 --> 00:33:56,880
+[SPEAKER_01] You want to demonstrate how you're going to do that and demonstrate how you're actually going to deliver that value for them and immersive onboarding.
+
+439
+00:33:57,040 --> 00:34:01,440
+[SPEAKER_01] That's a great way to think about helping people get to that value as quickly as possible.
+
+440
+00:34:02,000 --> 00:34:07,360
+[SPEAKER_02] Yeah, it's the whole idea of show don't tell because you've already told in the app store and in your advertising.
+
+441
+00:34:07,680 --> 00:34:11,040
+[SPEAKER_02] And so once they get to the app, you should be showing them, not telling them.
+
+442
+00:34:11,280 --> 00:34:12,240
+[SPEAKER_02] That's a great way to think about it.
+
+443
+00:34:12,400 --> 00:34:12,480
+[SPEAKER_01] Okay.
+
+444
+00:34:12,720 --> 00:34:15,520
+[SPEAKER_01] Okay, so robust, rapid, repeatable, remarkable.
+
+445
+00:34:16,080 --> 00:34:19,600
+[SPEAKER_01] What is repeatable in the context of value creation?
+
+446
+00:34:20,240 --> 00:34:27,920
+[SPEAKER_02] Repeatable is one of those that while the overall framework might be universal, I think this one is especially important for subscription products, right?
+
+447
+00:34:28,160 --> 00:34:35,680
+[SPEAKER_02] Because there are plenty of apps out there, I'm sure both of you have used some of them where the first month you're like, man, this is incredible.
+
+448
+00:34:36,240 --> 00:34:37,760
+[SPEAKER_02] How did I never know about this before?
+
+449
+00:34:38,400 --> 00:34:46,000
+[SPEAKER_02] And then you get like 60 or 90 days in and you're like, I've kind of gotten the value I wanted out of this and I'm not sure I need it anymore.
+
+450
+00:34:46,480 --> 00:34:52,880
+[SPEAKER_02] And actually, I think early generations of f fitness trackers, Fitbit being one example, ran into this challenge a lot.
+
+451
+00:34:53,040 --> 00:34:55,200
+[SPEAKER_02] In some ways, it was why they were a hardware model, right?
+
+452
+00:34:55,440 --> 00:34:56,560
+[SPEAKER_02] Because they're getting paid in advance.
+
+453
+00:34:56,640 --> 00:34:58,560
+[SPEAKER_02] Obviously, they have to cover their hardware costs.
+
+454
+00:34:58,720 --> 00:35:10,160
+[SPEAKER_02] But another problem was if all you're really doing is telling someone how many steps they walked every day, and then a few cool analytics around that, there's a kind of decay curve to the marginal value that a user is getting from that experience.
+
+455
+00:35:10,560 --> 00:35:20,960
+[SPEAKER_02] And so you need to make sure that the value promise that sits at the center of your subscription value loop is repeatable, and that there's a kind of a new chapter every so often that's going to bring the user back in.
+
+456
+00:35:21,360 --> 00:35:23,840
+[SPEAKER_02] And this also gets into different types of subscription products, right?
+
+457
+00:35:26,240 --> 00:35:31,920
+[SPEAKER_02] you just need more content, like with Netflix, with Spotify, with even meditation apps like Headspace and Calm.
+
+458
+00:35:32,000 --> 00:35:34,560
+[SPEAKER_02] A lot of it is just new content that will bring people back.
+
+459
+00:35:35,120 --> 00:35:38,640
+[SPEAKER_02] In other cases, like for tools products, Aura is a good example of this.
+
+460
+00:35:38,880 --> 00:35:40,080
+[SPEAKER_02] Whoop is a good example of this.
+
+461
+00:35:40,640 --> 00:35:50,240
+[SPEAKER_02] It's how can we build more functionality and how can as a user is using us for a longer and longer duration of time as they're using the product and looking at it more frequently, how can we cover new insights?
+
+462
+00:35:50,480 --> 00:35:53,280
+[SPEAKER_02] I think Aura is a great example of a product that's done a really good job of that.
+
+463
+00:35:53,760 --> 00:35:56,720
+[SPEAKER_02] Because if you don't do that, eventually your subscribers are going to churn.
+
+464
+00:35:57,200 --> 00:36:00,720
+[SPEAKER_02] And ultimately, consumer subscription businesses only really work.
+
+465
+00:36:01,600 --> 00:36:09,280
+[SPEAKER_02] if they have really high long term retention rates, because that's what builds the compounding layer cake of net revenue retention.
+
+466
+00:36:09,680 --> 00:36:13,520
+[SPEAKER_01] Yeah, I think about this a lot with, I mean, things like a document scanner.
+
+467
+00:36:14,320 --> 00:36:19,520
+[SPEAKER_01] Where that really works is a subscription app is the people who are regularly scanning documents.
+
+468
+00:36:20,240 --> 00:36:28,480
+[SPEAKER_01] But if you like, oh, I just need to quickly scan something because I'm buying a house and you do that once a decade or whatever, that's not a repeatable experience.
+
+469
+00:36:28,800 --> 00:36:31,200
+[SPEAKER_01] And so that's not the core market for a scanner app.
+
+470
+00:36:31,440 --> 00:36:35,920
+[SPEAKER_01] I do feel like there are a lot of subscription apps out there now that offer a very.
+
+471
+00:36:37,040 --> 00:36:43,280
+[SPEAKER_01] especially for a broader market, do offer kind of a more time encapsulated value prop.
+
+472
+00:36:43,520 --> 00:36:47,600
+[SPEAKER_01] It's like I'm going to do things once or twice and I'm going to get the value out of it.
+
+473
+00:36:47,920 --> 00:36:50,640
+[SPEAKER_01] And you don't build a great subscription app on that.
+
+474
+00:36:50,880 --> 00:36:56,400
+[SPEAKER_01] Now a document scanner is a good example that there are a ton of people I use, uh, I was going to say, David, it's just a product market thing.
+
+475
+00:36:56,560 --> 00:37:02,000
+[SPEAKER_00] Like you're just in the market for which it isn't a great subscription business, but there may be a market for which it is a good subscription.
+
+476
+00:37:02,080 --> 00:37:04,000
+[SPEAKER_00] I think it's going to be But you need to figure that out, right?
+
+477
+00:37:04,240 --> 00:37:09,520
+[SPEAKER_01] Yeah, because like I was going to say, I use this app, Scanner Pro by Readle, and I use it multiple times a month.
+
+478
+00:37:09,840 --> 00:37:11,840
+[SPEAKER_01] And I actually bought it as a paid app years ago.
+
+479
+00:37:11,920 --> 00:37:14,080
+[SPEAKER_01] So I'm not even paying a subscription for it.
+
+480
+00:37:14,240 --> 00:37:23,040
+[SPEAKER_01] But that's an example where I am part of their target market as a subscription app because I'm going to keep scanning multiple documents a month indefinitely.
+
+481
+00:37:23,600 --> 00:37:28,800
+[SPEAKER_01] But then for other people who do it once, that's just not the market that's going to work for that app.
+
+482
+00:37:29,280 --> 00:37:35,680
+[SPEAKER_01] So yeah, you have to figure out, like, is there a core demographic who is going to get repeatable value out of it?
+
+483
+00:37:36,080 --> 00:37:38,080
+[SPEAKER_01] Or is this more kind of a one off value prop?
+
+484
+00:37:38,240 --> 00:37:42,400
+[SPEAKER_01] And if it's a one off value prop, it's going to be really hard to build a good business around that.
+
+485
+00:37:43,120 --> 00:37:43,200
+[SPEAKER_02] Yeah.
+
+486
+00:37:43,840 --> 00:37:50,640
+[SPEAKER_02] If that's your product, you better either be monetizing heavily upfront, either with a lifetime or any plan.
+
+487
+00:37:51,120 --> 00:37:53,680
+[SPEAKER_02] But even then, you're kind of like building a castle on sand, right?
+
+488
+00:37:53,840 --> 00:37:56,720
+[SPEAKER_02] Because the value you deliver is incommensurate with what you're charging.
+
+489
+00:37:57,200 --> 00:37:58,160
+[SPEAKER_00] There's just high turnover.
+
+490
+00:37:58,320 --> 00:38:00,160
+[SPEAKER_00] Those are super durable businesses, right?
+
+491
+00:38:00,400 --> 00:38:01,680
+[SPEAKER_00] With a handful of exceptions.
+
+492
+00:38:02,080 --> 00:38:11,120
+[SPEAKER_00] There was this error, I think this was pre ATT and the unit economic changes on acquisition in the App Store, but there were just so many of these like shovelware subscription apps.
+
+493
+00:38:11,280 --> 00:38:17,840
+[SPEAKER_00] They were just trying to extract as much money before they got caught by the user kind of situation and high turnover.
+
+494
+00:38:18,000 --> 00:38:18,720
+[SPEAKER_00] Let's put it that way.
+
+495
+00:38:18,800 --> 00:38:20,720
+[SPEAKER_00] Like they did not survive the ATT apocalypse.
+
+496
+00:38:21,040 --> 00:38:23,680
+[SPEAKER_00] They were subscription businesses in name only in the sense, right?
+
+497
+00:38:23,840 --> 00:38:32,240
+[SPEAKER_00] That they were, yeah., they technically set up a recurring thing, but in terms of having any kind of durable, repeatable value delivery and capture, like, it wasn't really there.
+
+498
+00:38:32,640 --> 00:38:34,320
+[SPEAKER_00] And time eventually shook those out.
+
+499
+00:38:34,640 --> 00:38:46,320
+[SPEAKER_02] Well, and you mentioned, so the second exception I was going to make is if you can manage to find an organic acquisition model that is so strong that you're spending very little money to acquire users, then maybe, maybe it still works.
+
+500
+00:38:46,640 --> 00:38:47,680
+[SPEAKER_02] But those are hard to come by.
+
+501
+00:38:48,480 --> 00:38:59,360
+[SPEAKER_02] If you don't have a repeatable value prop that can sustain long term retention and your primary growth loop is paid ads, that's where you see a graveyard of companies that have just completely failed.
+
+502
+00:38:59,520 --> 00:39:03,040
+[SPEAKER_00] Yeah, because you eventually run out out, your cat goes up as you expend your users.
+
+503
+00:39:03,200 --> 00:39:10,160
+[SPEAKER_00] And actually, I think that's kind of the, just to jump to the next R, this is remarkable and like efficiency and virality, right?
+
+504
+00:39:10,720 --> 00:39:11,840
+[SPEAKER_00] It's part of that capture.
+
+505
+00:39:12,080 --> 00:39:13,360
+[SPEAKER_00] So what do you mean by remarkable?
+
+506
+00:39:13,440 --> 00:39:14,800
+[SPEAKER_00] Sorry, David, I stole your job.
+
+507
+00:39:15,360 --> 00:39:15,760
+[SPEAKER_00] It's fun.
+
+508
+00:39:16,480 --> 00:39:16,480
+[SPEAKER_00] Yeah.
+
+509
+00:39:16,800 --> 00:39:26,880
+[SPEAKER_02] So remarkable is the idea that there are stand out companies like Tender, Strava that have built these explosive experiences, right?
+
+510
+00:39:27,040 --> 00:39:30,960
+[SPEAKER_02] And with Tender, it was the swipe mechanic, among other things with Strava.
+
+511
+00:39:31,280 --> 00:39:33,840
+[SPEAKER_02] It was this highly engaged community of athletes.
+
+512
+00:39:34,000 --> 00:39:35,840
+[SPEAKER_02] If it didn't happen on Strava, it didn't happen.
+
+513
+00:39:36,160 --> 00:39:37,360
+[SPEAKER_02] But those are the exceptions.
+
+514
+00:39:37,680 --> 00:39:50,400
+[SPEAKER_02] Even if you're not a product that depends primarily on virality in order to grow your user base, ideally you want a product that is unique and compelling enough that people want to talk about it.
+
+515
+00:39:50,880 --> 00:39:56,240
+[SPEAKER_02] And you may not have a K factor over one, but people are going to tell their friends and family members about it.
+
+516
+00:39:56,400 --> 00:39:57,760
+[SPEAKER_02] And that does two things that are important.
+
+517
+00:39:58,400 --> 00:40:03,120
+[SPEAKER_02] One, it helps drive more organic acquisition, which brings down blended CAC and gives you a more sustainable business model.
+
+518
+00:40:03,360 --> 00:40:09,600
+[SPEAKER_02] But the other thing it does is it creates this installed community of users who are really loyal and talking to each other.
+
+519
+00:40:10,000 --> 00:40:16,400
+[SPEAKER_02] And again, Strava is like a stand out example of this., but when you have that, it also really helps with long term retention.
+
+520
+00:40:16,560 --> 00:40:23,760
+[SPEAKER_02] And that's equally, if not more important at the end of the day than, you know, having a viral product that has a K factor over the one, because that's really, really hard to come by.
+
+521
+00:40:24,320 --> 00:40:29,760
+[SPEAKER_01] I think this is something people assume, Oh, if I just build a great product, people will talk about it or whatever.
+
+522
+00:40:29,840 --> 00:40:33,680
+[SPEAKER_01] And to some extent, that's true, but the remarkable part is really interesting.
+
+523
+00:40:34,000 --> 00:41:00,080
+[SPEAKER_01] And again, just being fresh on my mind, having talked to Ryan recently, the most remarkable part about Flighty and the stories that get told is when Flighty tells people six hours in advance that their flight is going to be delayed or two hours in advance and they can actually see that the plane that's supposed to take them wherever they're going hasn't even landed at the airport or whatever and they get to spend three more hours at home with their family instead of sitting at the airport for three hours.
+
+524
+00:41:00,480 --> 00:41:02,800
+[SPEAKER_01] That's what people remark when they talk about Flighty.
+
+525
+00:41:02,960 --> 00:41:06,480
+[SPEAKER_01] It's like, yeah, it's a great flight tracker and yes, it has all these other great features.
+
+526
+00:41:06,800 --> 00:41:12,720
+[SPEAKER_01] It's probably a good exercise for founders and growth teams to think like, what is remarkable about our product?
+
+527
+00:41:12,960 --> 00:41:15,680
+[SPEAKER_01] And in that word, it's like, what will people actually say?
+
+528
+00:41:15,920 --> 00:41:18,800
+[SPEAKER_01] What are people actually saying about our product when they share?
+
+529
+00:41:19,040 --> 00:41:24,160
+[SPEAKER_01] Is there something that people care enough about that they're actually going to talk about it?
+
+530
+00:41:24,960 --> 00:41:26,720
+[SPEAKER_01] And can we make it easy, right?
+
+531
+00:41:27,040 --> 00:41:27,200
+[SPEAKER_00] Right.
+
+532
+00:41:27,440 --> 00:41:27,520
+[SPEAKER_00] Yeah.
+
+533
+00:41:28,000 --> 00:41:29,360
+[SPEAKER_00] Do something to facilitate that.
+
+534
+00:41:29,760 --> 00:41:29,840
+[UNKNOWN] Yeah.
+
+535
+00:41:30,080 --> 00:41:36,720
+[SPEAKER_02] Well, and two other things that I think a lot of companies don't think about when it comes to having a remarkable product that drives word of mouth.
+
+536
+00:41:36,800 --> 00:41:40,480
+[SPEAKER_02] So one is there are different types of word of mouth loops.
+
+537
+00:41:40,640 --> 00:41:46,560
+[SPEAKER_02] There's the like Facebook example of it just went viral like wildfire at Harvard and then everywhere else.
+
+538
+00:41:47,200 --> 00:41:48,880
+[SPEAKER_02] But that's not the only type of virality.
+
+539
+00:41:49,040 --> 00:41:53,600
+[SPEAKER_02] So you have a personal viral loop, which is people are inviting people to the product because it makes the product more valuable to them.
+
+540
+00:41:53,920 --> 00:42:00,960
+[SPEAKER_02] You have a social viral loop, which is where people are telling other people about the product because they want to be one of the cool kids who knew about it early on and sort of spread the word.
+
+541
+00:42:01,760 --> 00:42:08,720
+[SPEAKER_02] You have a financial viral loop, which is you're actually getting a monetary or non monetary reward for inviting other people.
+
+542
+00:42:08,880 --> 00:42:14,720
+[SPEAKER_02] And so there are subscription apps like Masterclass, for example, has done a really good job with that type of growth strategy.
+
+543
+00:42:15,200 --> 00:42:23,120
+[SPEAKER_02] And then there are casual contact viral loops where people at a party see someone swiping on Tinder and they're like, oh, that's interesting.
+
+544
+00:42:23,360 --> 00:42:24,560
+[SPEAKER_02] Maybe I should download Tinder.
+
+545
+00:42:25,120 --> 00:42:32,320
+[SPEAKER_02] Or people are at a marathon and they see people recording their run on Strava and they think, oh, maybe I should record my run on Strava.
+
+546
+00:42:32,560 --> 00:42:41,680
+[SPEAKER_02] So you have to think about what your product is naturally suited for when it comes to how it's going to drive word of mouth and how you design it to match that flavor of word of mouth.
+
+547
+00:42:42,160 --> 00:42:50,800
+[SPEAKER_02] And then I think the other thing that people miss is the fact that so much word of mouth happens offline and you can't measure it easily.
+
+548
+00:42:51,440 --> 00:42:59,920
+[SPEAKER_02] And so there are exceptions where you can just track directly in the app, like someone sent a referral code or they shared an invitation through this channel and there's a unique parameter.
+
+549
+00:43:00,080 --> 00:43:04,720
+[SPEAKER_02] And so we know how many people invited, how many friends they invited and how many of those friends converted.
+
+550
+00:43:05,200 --> 00:43:06,880
+[SPEAKER_02] But most of the activity is happening offline.
+
+551
+00:43:07,440 --> 00:43:12,880
+[SPEAKER_02] And so there's a tool called the word of mouth coefficient that allows you to quantify offline word of mouth.
+
+552
+00:43:13,280 --> 00:43:20,160
+[SPEAKER_02] by looking at how many new users are you getting through channels like direct branded search or social in any given period.
+
+553
+00:43:20,400 --> 00:43:26,560
+[SPEAKER_02] So look at it over the course of a week, a month over your returning users plus any new users getting through nonorganic channels.
+
+554
+00:43:27,040 --> 00:43:33,360
+[SPEAKER_02] And that coefficient is telling you how efficiently you're getting new users through word of mouth from your existing user base.
+
+555
+00:43:33,680 --> 00:43:42,000
+[SPEAKER_02] And so that's nice because it goes beyond tools like NPS that aren't really telling you anything actionable about what you can do to a tool that quantifies it in more detail.
+
+556
+00:43:42,400 --> 00:43:56,000
+[SPEAKER_00] The word of mouth coefficient I found I googled it because I need to google things, but there's an ar a really interesting concept of using basically subtracting all your knowns and then it's like assuming that that's the remainder is your word of mouth.
+
+557
+00:43:56,080 --> 00:43:57,120
+[SPEAKER_00] Is that like the basic concept?
+
+558
+00:43:57,440 --> 00:43:58,240
+[SPEAKER_02] Yeah, that's the idea.
+
+559
+00:43:58,400 --> 00:44:10,800
+[SPEAKER_02] You're basically backing into what we can directionally estimate we're getting in terms of word of mouth new user acquisition through returning users and new users who are not coming in through organic channels.
+
+560
+00:44:10,960 --> 00:44:12,560
+[SPEAKER_02] So that could be paid ads.
+
+561
+00:44:12,880 --> 00:44:15,120
+[SPEAKER_02] It could be non branded search traffic.
+
+562
+00:44:15,360 --> 00:44:26,240
+[SPEAKER_02] And the reason it's powerful is it helps you understand one like overall similar to K factor, roughly how many new word of mouth users are we gettinging for an existing active user?
+
+563
+00:44:26,880 --> 00:44:34,560
+[SPEAKER_02] The second reason it's important is because depending on the nature of your product, you can actually see word-to-mouth coefficient fluctuate quite a bit for various reasons.
+
+564
+00:44:34,800 --> 00:44:50,720
+[SPEAKER_02] And so I spent time at Quizlet looking at this, but I've also worked with several ed-tech companies as part of my advising business, and one of the things you often see in ed-tech is your word-to-mouth coefficient goes way down over the summer and during holidays, which makes sense because nobody is in school.
+
+565
+00:44:51,360 --> 00:45:00,160
+[SPEAKER_02] Then there are these critical back to school periods around August, September in North America as well as after the holidays where your word-to-mouth coefficient spikes way up.
+
+566
+00:45:00,640 --> 00:45:09,280
+[SPEAKER_02] And then there are also a few periods in the middle of the school year around exams where you have these windows of opportunity to really take advantage of a much higher word of mouth coefficient.
+
+567
+00:45:09,440 --> 00:45:19,280
+[SPEAKER_02] And then the last piece that was even more interesting was during the pandemic, you saw word of mouth coefficient fall off a cliff when the pandemic first hit for a lot of ed tech companies.
+
+568
+00:45:19,760 --> 00:45:23,120
+[SPEAKER_02] But then what happened after that really varied by country.
+
+569
+00:45:24,000 --> 00:45:28,640
+[SPEAKER_02] And so you had countries that kicked into gear with remote learning really quickly.
+
+570
+00:45:29,280 --> 00:45:34,480
+[SPEAKER_02] And in those countries, word of mouth coefficients actually ended up higher than they were before the pandemic in some cases.
+
+571
+00:45:34,960 --> 00:45:39,840
+[SPEAKER_02] And then you had other countries that took much longer to recover, and you could see all this in the word of mouth data.
+
+572
+00:45:40,240 --> 00:45:47,360
+[SPEAKER_02] And so it's a pretty actionable metric in terms of identifying when you have these pockets of opportunity to capture more virality.
+
+573
+00:45:47,760 --> 00:45:53,920
+[SPEAKER_02] And then when you pair that with the type of virality that your product drives, you can think more tactically around, okay, what does that mean in terms of what do we do in the product?
+
+574
+00:45:54,160 --> 00:46:00,640
+[SPEAKER_01] Well, I think that's a great place to wrap up the four Rs of value creation, robust, rapid, repeatable, and remarkable.
+
+575
+00:46:01,680 --> 00:46:03,600
+[SPEAKER_01] The alliteration is amusing.
+
+576
+00:46:03,920 --> 00:46:08,160
+[SPEAKER_01] I love your consultant background and alliterating these, but it is actually helpful.
+
+577
+00:46:08,320 --> 00:46:11,600
+[SPEAKER_01] Like, I'm going to remember that robust, rapid, repeatable, remarkable.
+
+578
+00:46:12,000 --> 00:46:12,480
+[SPEAKER_02] That's the idea.
+
+579
+00:46:12,880 --> 00:46:14,960
+[SPEAKER_02] If someone doesn't remember it, then it never happened.
+
+580
+00:46:15,920 --> 00:46:16,240
+[SPEAKER_01] All right.
+
+581
+00:46:16,400 --> 00:46:18,400
+[SPEAKER_01] So let's move on to value delivery.
+
+582
+00:46:18,640 --> 00:46:24,080
+[SPEAKER_01] What do you mean by value delivery in the context of this subscription value loop?
+
+583
+00:46:24,400 --> 00:46:24,480
+[SPEAKER_02] Yeah.
+
+584
+00:46:24,720 --> 00:46:36,000
+[SPEAKER_02] So value delivery is the idea of, okay, you have a product that people care about and want to use, how do you, as cost efficiently as possible, get it into the hands of as many users as possible and connect them to that value?
+
+585
+00:46:36,320 --> 00:46:55,840
+[SPEAKER_02] And the reason this is so important for consumer subscription apps, especially now, is because the playbook for much of the last decade has been find a product that people are interested in and then go spend a bunch of money on Google and Meta to acquire users and make sure LTVCAC is high enough for the business to work and keep your fingers crossed that that will last.
+
+586
+00:46:56,160 --> 00:47:01,120
+[SPEAKER_02] I'm oversimplifying it, but that playbook no longer works for a variety of reasons.
+
+587
+00:47:01,760 --> 00:47:04,960
+[SPEAKER_02] One, the app stores have just become much more crowded, so there's a lot more competition.
+
+588
+00:47:05,680 --> 00:47:12,880
+[SPEAKER_02] Two, there's all of the challenges presented by ATT and iOS 14 where paid marketing is a lot less efficient than it used to be.
+
+589
+00:47:13,200 --> 00:47:18,720
+[SPEAKER_02] And then the third, which is not the most important, but it's a factor is venture capital funding is harder to come by now.
+
+590
+00:47:19,040 --> 00:47:33,120
+[SPEAKER_02] And so if your plan was, well, we're going to scale until we hit a tipping point where the economics work and we can do that because we're going to raise a large seed in Series A round that doesn't work anymore, at least not in this market environment.
+
+591
+00:47:33,360 --> 00:47:34,800
+[SPEAKER_01] Certainly not in consumer, right?
+
+592
+00:47:35,600 --> 00:47:44,480
+[SPEAKER_01] And not when interest rates are non-zero, that capital needs a faster return on investment and a more sure return on investment.
+
+593
+00:47:44,960 --> 00:47:45,040
+[SPEAKER_02] Yeah.
+
+594
+00:47:45,200 --> 00:47:51,120
+[SPEAKER_02] So I was going to say, I'm not going to go into as much detail on value delivery as I do on value creation and value capture.
+
+595
+00:47:51,440 --> 00:48:00,480
+[SPEAKER_02] But the number one point I want to make on value delivery is that the best consumer subscription companies, almost without exception, and those that have really stood the test of time.
+
+596
+00:48:00,480 --> 00:48:08,640
+[SPEAKER_02] And they've been able to pass the test of time, have really robust organic acquisition strategies that are their primary growth lever, and they only use paid ads as a supplement.
+
+597
+00:48:09,040 --> 00:48:10,160
+[SPEAKER_01] What are some examples of that?
+
+598
+00:48:10,640 --> 00:48:12,800
+[SPEAKER_02] So I think you can divide them into two categories.
+
+599
+00:48:13,120 --> 00:48:16,800
+[SPEAKER_02] You have companies that have really been able to grow through word of mouth.
+
+600
+00:48:16,960 --> 00:48:18,080
+[SPEAKER_02] The other big one is content.
+
+601
+00:48:18,960 --> 00:48:20,640
+[SPEAKER_02] So there are a few different flavors of this.
+
+602
+00:48:20,880 --> 00:48:26,960
+[SPEAKER_02] Quizlet is an example of a company that has done a really nice job growing through long tail SEO, right?
+
+603
+00:48:27,280 --> 00:48:30,880
+[SPEAKER_02] There's so much flashcards content created on Quizlet by students, by teachers.
+
+604
+00:48:31,440 --> 00:48:40,640
+[SPEAKER_02] And so even though there are plenty of other ed tech companies out there competing for head terms, Quizlet has a really strong advantage in long tail search queries.
+
+605
+00:48:41,120 --> 00:48:48,400
+[SPEAKER_02] So that's one good example of a company that has been able to find this kind of unique way of scaling without having to spend a lot of money.
+
+606
+00:48:48,880 --> 00:48:51,440
+[SPEAKER_02] Another good example is AllTrails, which I know has been on the podcast.
+
+607
+00:48:51,920 --> 00:48:57,520
+[SPEAKER_02] And for them, long tail search, I'm sure, was relevant as well, but hyper local search, I'm sure, was a big advantage for them.
+
+608
+00:48:57,680 --> 00:49:06,480
+[SPEAKER_02] Because if I'm looking for where I want to go on a hike or a trail run, I'm probably, by and large, looking within 5, 10 miles of my home.
+
+609
+00:49:07,200 --> 00:49:24,400
+[SPEAKER_02] And so, as is the case with all these things, you sort of have to double click and triple click before you get to the real insights., but I think companies that can generate user generated content that's organic to the product experience and ideally pair that user generated content with a unique and differentiated SEO strategy can really be successful over the long run.
+
+610
+00:49:24,640 --> 00:49:28,320
+[SPEAKER_01] Yeah, and there's probably like ten other ways that that works.
+
+611
+00:49:28,800 --> 00:49:38,800
+[SPEAKER_01] We could probably do a whole podcast on all the different kinds of organic loops that work for different apps for different reasons, for different contexts, for different markets, for different whatever.
+
+612
+00:49:39,200 --> 00:49:40,640
+[SPEAKER_01] But yeah, I think that's a good summary.
+
+613
+00:49:40,800 --> 00:49:48,320
+[SPEAKER_01] We do talk a ton on the podcast about value delivery, about getting attention for your app, about getting people to the app store, about marketing and everything else.
+
+614
+00:49:48,960 --> 00:50:01,200
+[SPEAKER_00] One point that Phil has in the notes here, and we talked about earlier, there's always this wall eventually that LTV and CAC kind of normalize because you push beyond your product market fit, you've pushed into a less spendy market.
+
+615
+00:50:01,520 --> 00:50:02,960
+[SPEAKER_00] Like eventually it loses steam.
+
+616
+00:50:03,120 --> 00:50:09,280
+[SPEAKER_00] It might be at scale A, scale B, scale C, right, you know, some order of magnitude difference between those two, but it will die out.
+
+617
+00:50:09,600 --> 00:50:13,520
+[SPEAKER_00] All the things we talked about before make that number a little bit further in the future.
+
+618
+00:50:13,920 --> 00:50:20,160
+[SPEAKER_00] Better word of mouth, all these things, like better product, make that all a little bit more efficient, but at the end of the day, you're only going to be able to scale it so far.
+
+619
+00:50:20,560 --> 00:50:24,320
+[SPEAKER_00] And so, I mean, I think that just supports your point, and which is a benefit for the world.
+
+620
+00:50:24,800 --> 00:50:26,640
+[SPEAKER_00] Like, I think we've entered an even better era.
+
+621
+00:50:27,040 --> 00:50:30,240
+[SPEAKER_00] I wasn't super excited with the Zurp era of apps, as we mentioned before.
+
+622
+00:50:30,400 --> 00:50:33,920
+[SPEAKER_00] And I think we've entered a better world where, as you said, talking about value capture, right?
+
+623
+00:50:34,080 --> 00:50:36,560
+[SPEAKER_00] Like value creation, value capture, delivery and all that stuff.
+
+624
+00:50:36,720 --> 00:50:37,920
+[SPEAKER_00] Let's let the app store handle that.
+
+625
+00:50:38,080 --> 00:50:38,880
+[SPEAKER_00] That's why we've been there.
+
+626
+00:50:39,200 --> 00:50:40,640
+[SPEAKER_00] You know, kind of an in-grade thing.
+
+627
+00:50:40,960 --> 00:50:43,440
+[SPEAKER_02] Yeah, there's this idea of painkillers versus vitamins.
+
+628
+00:50:43,680 --> 00:50:47,040
+[SPEAKER_02] And I think Zurp allowed a lot of vitamins to hang around.
+
+629
+00:50:47,920 --> 00:50:54,400
+[SPEAKER_02] But at the end of the day, if your product isn't solving a real need, then it probably won't last.
+
+630
+00:50:54,720 --> 00:51:01,280
+[SPEAKER_02] And so I think as Zurp has subsided, there's just been a lot of companies left holding the bag who don't really have an ans answer for it.
+
+631
+00:51:01,840 --> 00:51:06,320
+[SPEAKER_01] So the last part of the subscription value loop is value capture.
+
+632
+00:51:06,560 --> 00:51:08,960
+[SPEAKER_01] And this is one I do want to deep dive into.
+
+633
+00:51:09,280 --> 00:51:14,320
+[SPEAKER_01] And we do talk about this a lot on the podcast, but it's just such a fundamental part that's hard.
+
+634
+00:51:14,560 --> 00:51:25,600
+[SPEAKER_01] You know, you create value, but capturing the value and finding the right balance of how much value you give to the users and how much value you take and finding that right balance is really tricky.
+
+635
+00:51:25,920 --> 00:51:28,080
+[SPEAKER_01] So tell me about value capture.
+
+636
+00:51:28,640 --> 00:51:28,720
+[SPEAKER_02] Yeah.
+
+637
+00:51:28,880 --> 00:51:33,840
+[SPEAKER_02] So value capture is this idea that, to go back to the car analogy, your subscription revenue is your fuel.
+
+638
+00:51:34,160 --> 00:51:35,920
+[SPEAKER_02] And so even if you build a really nice car.
+
+639
+00:51:36,800 --> 00:51:40,640
+[SPEAKER_02] If it doesn't have enough fuel to run, it's ultimately going to sputter out and fail.
+
+640
+00:51:41,600 --> 00:51:52,320
+[SPEAKER_02] And so I think what's interesting about this step is you can almost think of different categories of companies in terms of where they are strong versus weak in the subscription value loop.
+
+641
+00:51:52,480 --> 00:51:56,320
+[SPEAKER_02] And so the companies that are really, really strong at value creation, they have a great product.
+
+642
+00:51:57,040 --> 00:51:59,280
+[SPEAKER_02] They're going to get past that initial product market fit phase.
+
+643
+00:51:59,440 --> 00:52:08,000
+[SPEAKER_02] They're at least going to get to the point where they're scaling the business, but they may run into a wall if they can't be efficient about one or both of value delivery and value capture.
+
+644
+00:52:08,400 --> 00:52:16,240
+[SPEAKER_02] On the other end of the spectrum, you have the companies that are really good at value capture, but they're not good at val value capture, well, they're probably never really going to get much beyond the starting day, right?
+
+645
+00:52:16,400 --> 00:52:30,640
+[SPEAKER_02] And so what's interesting about value capture, and a lot of my advising work centers around this step is you really want these companies to succeed that have done a great job building a great product, but they just haven't quite figured out how to get enough value back out of the system to keep the car running.
+
+646
+00:52:31,520 --> 00:52:40,080
+[SPEAKER_02] And I even run sometimes into, we ran into this a little bit at Quizlet, where Quizlet is such a mission driven company and it's done so much good in the world for teachers and students.
+
+647
+00:52:40,400 --> 00:52:43,680
+[SPEAKER_02] But there were times I was like, well, should we be monetizing this product less than we are?
+
+648
+00:52:44,000 --> 00:52:45,840
+[SPEAKER_02] Like, ultimately, this is an education app.
+
+649
+00:52:46,000 --> 00:52:47,680
+[SPEAKER_02] We want to do everything we can to advance education.
+
+650
+00:52:48,400 --> 00:52:50,160
+[SPEAKER_02] But it doesn't have to be a zero sum game.
+
+651
+00:53:10,080 --> 00:53:12,640
+[SPEAKER_02] And so, value capture is all about making sure the car keeps running.
+
+652
+00:53:13,040 --> 00:53:14,160
+[SPEAKER_00] You want to leave surplus, right?
+
+653
+00:53:14,320 --> 00:53:15,120
+[SPEAKER_00] This is what you're saying.
+
+654
+00:53:15,280 --> 00:53:16,800
+[SPEAKER_00] This is the debate on how much to capture.
+
+655
+00:53:17,200 --> 00:53:18,800
+[SPEAKER_00] You can capture none, you'll go out of business.
+
+656
+00:53:19,360 --> 00:53:30,720
+[SPEAKER_00] But, at the end of the day, you should be allowed to capture enough that you're still delivering a net value, you know, if you put dollars on it, you create $100 of value for your customer, you charge them 50, like they're still ahead.
+
+657
+00:53:31,040 --> 00:53:32,400
+[SPEAKER_00] Nobody should be angry about that, right?
+
+658
+00:53:32,560 --> 00:53:39,440
+[SPEAKER_00] Like people get really icky about monetization, but like with the energy analogies, again, I know, but it's the car analogy, the same thing.
+
+659
+00:53:39,520 --> 00:53:48,480
+[SPEAKER_00] It's you've created a little engine and extracting the fuel from the engine is why these things grow, which is actually different than the car analogy where you bring the fuel in from somewhere else.
+
+660
+00:53:48,640 --> 00:53:51,120
+[SPEAKER_00] It's actually a perpetual motion machine more so.
+
+661
+00:53:51,760 --> 00:53:59,040
+[SPEAKER_00] The point you make about, and it's maybe a little handy if you're having that conversation with yourself about like, are we capturing too much value?
+
+662
+00:53:59,280 --> 00:54:00,480
+[SPEAKER_00] Are we like off of our mission?
+
+663
+00:54:01,120 --> 00:54:07,280
+[SPEAKER_00] But if you like, actually are investing that capture back into the product, it's not right.
+
+664
+00:54:07,520 --> 00:54:10,080
+[SPEAKER_00] Like, and I guess that depends on what you do with the profits of a business.
+
+665
+00:54:10,480 --> 00:54:12,800
+[SPEAKER_00] It just goes into like the fundamentals of capitalism, right?
+
+666
+00:54:13,040 --> 00:54:14,240
+[SPEAKER_00] Are you reinvesting that in growth?
+
+667
+00:54:14,400 --> 00:54:15,920
+[SPEAKER_00] Are you reinvesting that in product?
+
+668
+00:54:16,640 --> 00:54:17,920
+[SPEAKER_00] Are you reinvesting that in both?
+
+669
+00:54:18,480 --> 00:54:27,520
+[SPEAKER_00] You're not only leaving a value surplus and depending on how much you capture, but you're also leveraging that investment into, hopefully, even more value creation for the customer.
+
+670
+00:54:28,160 --> 00:54:31,040
+[SPEAKER_02] Lots of hands getting waved and like the accounting on that, right?
+
+671
+00:54:31,360 --> 00:54:32,160
+[SPEAKER_02] Like it's really hard.
+
+672
+00:54:32,560 --> 00:54:41,440
+[SPEAKER_02] Well, and I think there are exogenous forces that dictate in most cases., at least with consumer subscription apps, that a lot of the value will be reinvested into the business.
+
+673
+00:54:41,840 --> 00:54:42,480
+[SPEAKER_02] For two reasons.
+
+674
+00:54:43,120 --> 00:54:50,000
+[SPEAKER_02] One is because the companies that make it far enough to where they're really honing their value capture engine that have grown to your point earlier, right?
+
+675
+00:54:50,240 --> 00:54:55,360
+[SPEAKER_02] You probably haven't hired a large growth team until you've gotten to the point where you have a really compelling product and a large user base.
+
+676
+00:54:55,680 --> 00:54:58,640
+[SPEAKER_02] So the companies that have made it this far have made it this far for a reason.
+
+677
+00:54:58,720 --> 00:55:02,640
+[SPEAKER_02] And they have a compelling product and they're not mercenaries, or they probably wouldn't have made it this far.
+
+678
+00:55:03,200 --> 00:55:12,640
+[SPEAKER_02] The second and probably more important reason is the competitive forces around consumer subscription, unless you have a really, really strong network effect, which most consumer subscription apps don't.
+
+679
+00:55:13,280 --> 00:55:21,120
+[SPEAKER_02] You can't afford not reinvest a lot of that value into the product, because if you don't, someone will come along and they will, and eventually they'll leapfrogue you.
+
+680
+00:55:21,760 --> 00:55:36,320
+[SPEAKER_01] You talked about a freemium strategy as the paid users subsidizing the value that you're giving away for free to the free users, but you can and do actually capture some amount of value from the free users.
+
+681
+00:55:36,640 --> 00:55:45,360
+[SPEAKER_01] And if you're using a freemium model, you should be thinking about what value you're capturing from those free users.
+
+682
+00:55:45,600 --> 00:55:47,920
+[SPEAKER_01] And a good example is all trails, which we've talked about a lot.
+
+683
+00:55:48,720 --> 00:55:56,880
+[SPEAKER_01] But part of the reason their freemium strategy works is that those free users are helping update the data and adding new trails.
+
+684
+00:55:57,280 --> 00:56:00,960
+[SPEAKER_01] And it's like they're actually contributing value back into the loop.
+
+685
+00:56:01,280 --> 00:56:08,240
+[SPEAKER_01] And all trails has, I think they have some minimal ads and some sponsorships and things like that, and they have merchandise and they have other things.
+
+686
+00:56:08,800 --> 00:56:17,040
+[SPEAKER_01] And so when thinking about value capture, we're mostly going to talk about value capture in relation to capture through subscription.
+
+687
+00:56:17,440 --> 00:56:24,800
+[SPEAKER_01] But when you have a freemium model, you should still also be thinking about what value those free users are adding to the equation.
+
+688
+00:56:25,200 --> 00:56:30,880
+[SPEAKER_01] So before we move on to the subscription value capture, what are your thoughts on that value capture from the free users?
+
+689
+00:56:31,520 --> 00:56:32,480
+[SPEAKER_02] I think that's spot on.
+
+690
+00:56:32,800 --> 00:56:40,160
+[SPEAKER_02] And as with so many things, you need to tailor your strategy around the fundamental constraints of your business.
+
+691
+00:56:40,480 --> 00:56:45,920
+[SPEAKER_02] So in this case, your growth loops that drive your business will dictate things like what is our trial strategy?
+
+692
+00:56:46,480 --> 00:56:49,440
+[SPEAKER_02] How aggressive or conservative are we going to be with our paywall placement?
+
+693
+00:56:49,840 --> 00:56:59,680
+[SPEAKER_02] And for a product like AllTrails or Quizlet for that matter, where so much of the growth is being driven organically, you are getting a ton of value out of those free users.
+
+694
+00:57:00,240 --> 00:57:08,880
+[SPEAKER_02] In fact, I would argue you're getting value that the business would struggle to exist without, or at least it would be much less valuable, right?
+
+695
+00:57:09,120 --> 00:57:11,840
+[SPEAKER_02] Because they are the engine that is driving compounding growth.
+
+696
+00:57:12,240 --> 00:57:40,800
+[SPEAKER_02] On the other end of that spectrum, though, there are cases where you have a product that free users might hang around and dabble, and they might write into customer support every now and then, and they're not adding zero value, but the amount of value they're adding is so incommensurate with the amount of time and maintenance and energy that a company can be spending to support them that it's not always a good thing, that it's not always the case that you want to cater to that free user segment.
+
+697
+00:57:41,120 --> 00:57:42,960
+[SPEAKER_02] It just really depends on your product and your business model.
+
+698
+00:57:43,600 --> 00:57:52,000
+[SPEAKER_01] And to your point with Quizlet, I mean, it's perfectly acceptable as a business to say part of our mission as a company is to deliver excess value.
+
+699
+00:57:52,080 --> 00:57:57,600
+[SPEAKER_01] And part of how we're going to do that is to give way more away to these free users and let the paid users subsidize it.
+
+700
+00:57:58,240 --> 00:58:00,880
+[SPEAKER_01] But you need to think about, is that what we're doing?
+
+701
+00:58:01,200 --> 00:58:03,680
+[SPEAKER_01] Or do we need to capture more value from the free users?
+
+702
+00:58:04,160 --> 00:58:06,400
+[SPEAKER_01] Or how do we capture more value from the free users?
+
+703
+00:58:06,560 --> 00:58:10,640
+[SPEAKER_01] So I think it's kind of an interesting thought exercise on the freemium side of the equation.
+
+704
+00:58:11,040 --> 00:58:18,480
+[SPEAKER_02] I think that part of the reason why Quizlet is now one of the most valuable ed tech companies in the world is because they've given away so much value for so long.
+
+705
+00:58:18,720 --> 00:58:20,640
+[SPEAKER_02] In their case, it really does make sense for their model.
+
+706
+00:58:21,120 --> 00:58:31,760
+[SPEAKER_02] It's built this really compelling community, not just among students, but there's this cross side network effect between teachers and students that creates this really virtuous cycle, improves retention, improves power word of mouth.
+
+707
+00:58:32,320 --> 00:58:39,280
+[SPEAKER_02] And it's because Quizlet had no subscription for the first many years of its existence, didn't even have ads for a long time.
+
+708
+00:58:39,840 --> 00:58:48,880
+[SPEAKER_02] And even after it introduced a subscription, kept its prices quite low, that allowed the company to build this really strong mode and this brand around we're going to do good.
+
+709
+00:58:49,200 --> 00:58:50,880
+[SPEAKER_02] We're going to put our students and teachers first.
+
+710
+00:58:51,360 --> 00:59:00,160
+[SPEAKER_02] And there are a lot of companies that tried to take the shortcut and monetize more rapidly that ultimately ended failing because Quizlet just had such an advantage when it came to acquisition.
+
+711
+00:59:00,480 --> 00:59:09,280
+[SPEAKER_01] So let's move on to the five Ps of value capture, paywall, pricing and packaging, payments and promotions.
+
+712
+00:59:10,000 --> 00:59:13,280
+[SPEAKER_01] So it's four categories, five Ps.
+
+713
+00:59:14,720 --> 00:59:16,560
+[SPEAKER_02] I bundled pricing and packaging together.
+
+714
+00:59:17,200 --> 00:59:17,680
+[SPEAKER_01] It makes sense.
+
+715
+00:59:17,840 --> 00:59:18,320
+[SPEAKER_02] It makes sense.
+
+716
+00:59:18,480 --> 00:59:19,440
+[SPEAKER_02] It's a classic pair.
+
+717
+00:59:20,000 --> 00:59:21,200
+[SPEAKER_01] So let's talk about paywall.
+
+718
+00:59:21,520 --> 00:59:24,720
+[SPEAKER_01] In the context of the value capture, how should you be thinking?
+
+719
+00:59:25,200 --> 00:59:25,920
+[SPEAKER_01] about paywalls?
+
+720
+00:59:26,240 --> 00:59:27,840
+[SPEAKER_02] I'll break this into two parts.
+
+721
+00:59:28,000 --> 00:59:35,120
+[SPEAKER_02] There's standard stuff that you can and should do with your paywall that kind of applies to about any consumer or prosumer subscription app.
+
+722
+00:59:35,520 --> 00:59:38,640
+[SPEAKER_02] And I know you've had Jake Moore from Superwall on the podcast a couple of times.
+
+723
+00:59:38,720 --> 00:59:39,920
+[SPEAKER_02] I think he's talked through a lot of these.
+
+724
+00:59:40,080 --> 00:59:46,800
+[SPEAKER_02] So things like when you're just getting started, err on the side of being aggressive with your paywall because one, it will help you start to make revenue.
+
+725
+00:59:47,040 --> 00:59:52,640
+[SPEAKER_02] But two, it will really filter out the users who are your early adopters, who value your premium product the most.
+
+726
+00:59:53,120 --> 00:59:54,240
+[SPEAKER_02] So that makes a lot of sense.
+
+727
+00:59:54,560 --> 00:59:56,720
+[SPEAKER_02] And then there's tactics around use visuals.
+
+728
+00:59:56,720 --> 00:59:58,480
+[SPEAKER_02] A picture is worth a thousand words.
+
+729
+00:59:58,720 --> 00:59:59,840
+[SPEAKER_02] A video is better than an image.
+
+730
+01:00:00,320 --> 01:00:06,800
+[SPEAKER_02] Like, make your paywall as compelling as possible, keep your feature list short, lead with an emotional appeal.
+
+731
+01:00:07,360 --> 01:00:10,960
+[SPEAKER_02] A lot of this just goes back to front load delight, make things as easy as possible for the user.
+
+732
+01:00:11,040 --> 01:00:13,520
+[SPEAKER_02] Like, a lot of users don't even read all the text on the paywall, right?
+
+733
+01:00:13,680 --> 01:00:16,240
+[SPEAKER_02] And so it has to be quick and easy to consume.
+
+734
+01:00:16,640 --> 01:00:31,920
+[SPEAKER_02] I think where things get really interesting is when you start to move one layer deeper than the kind of general best practices around paywall and get into the specifics around what makes sense for your business, depending on factors like the nature of your product.
+
+735
+01:00:32,400 --> 01:00:43,120
+[SPEAKER_02] So if you have a more complex product, you're likely going to need to give a user a little bit more time to experience it before you ask them to put their credit card down.
+
+736
+01:00:43,600 --> 01:00:44,480
+[SPEAKER_02] Pricing similar.
+
+737
+01:00:44,640 --> 01:00:47,520
+[SPEAKER_02] Like if you have a really high price, you're going to need to be more conservative.
+
+738
+01:00:47,600 --> 01:00:49,520
+[SPEAKER_02] If you have a lower price, you can probably be more aggressive.
+
+739
+01:00:49,840 --> 01:00:51,200
+[SPEAKER_02] Growth loops, we already covered.
+
+740
+01:00:51,440 --> 01:00:59,680
+[SPEAKER_02] So if user generated content or by word of mouth are core to your growth strategy, probably want to have a freemium app experience and create a great experience for free users.
+
+741
+01:01:00,000 --> 01:01:06,000
+[SPEAKER_02] But if you're a pay to play subscription where it's all about just channeling revenue back into paid ads, then you can be more aggressive.
+
+742
+01:01:06,560 --> 01:01:08,000
+[SPEAKER_02] And then there are a few other factors.
+
+743
+01:01:08,160 --> 01:01:15,520
+[SPEAKER_02] Like so target users, adults and prosumers are probably going to be a little bit more patient and have a little bit more money to spend versus students or teenagers.
+
+744
+01:01:16,000 --> 01:01:17,120
+[SPEAKER_02] So you have to keep that in mind.
+
+745
+01:01:17,600 --> 01:01:18,800
+[SPEAKER_02] Competition is an obvious one.
+
+746
+01:01:19,040 --> 01:01:24,480
+[SPEAKER_02] So like the more viable substitutes there are for your product, the more you probably will need to be generous with your paywall.
+
+747
+01:01:24,720 --> 01:01:26,400
+[SPEAKER_02] And then the last one is trial strategy.
+
+748
+01:01:26,960 --> 01:01:34,240
+[SPEAKER_02] So where you place the paywall, how aggressively you place the paywall, needs to be compatible with how you've structured your free trial.
+
+749
+01:01:34,800 --> 01:01:40,960
+[SPEAKER_02] If you're giving away a month free, then paywall away because it's a very soft paywall, right?
+
+750
+01:01:41,120 --> 01:01:43,920
+[SPEAKER_02] People are still going to get a lot of time to experience the core value prop.
+
+751
+01:01:44,320 --> 01:01:50,160
+[SPEAKER_02] But if it's a three day free trial or if there's no trial at all, then you probably want to be a little more thoughtful about where you put that experience.
+
+752
+01:01:50,560 --> 01:01:55,840
+[SPEAKER_01] What are some good examples that you've seen of effective paywall strategies?
+
+753
+01:01:56,480 --> 01:02:02,320
+[SPEAKER_02] I'll give a couple of outside in examples that I've just observed companies doing what I would consider to be a really good job with this.
+
+754
+01:02:02,480 --> 01:02:09,520
+[SPEAKER_02] And then I have one example of a company that I'm working directly with now that I mentioned before, Matter, that actually saw pretty significant improvements from some of these changes.
+
+755
+01:02:10,000 --> 01:02:14,480
+[SPEAKER_02] To start with, Calm, I think is a company that gets referenced a lot in terms of their paywall design.
+
+756
+01:02:14,960 --> 01:02:15,840
+[SPEAKER_02] There's the obvious stuff.
+
+757
+01:02:16,000 --> 01:02:17,280
+[SPEAKER_02] They lead with an emotional appeal.
+
+758
+01:02:17,520 --> 01:02:21,360
+[SPEAKER_02] They have this nice calming imagery of people resting and meditating.
+
+759
+01:02:21,920 --> 01:02:23,360
+[SPEAKER_02] Their feature list is short and pithy.
+
+760
+01:02:23,360 --> 01:02:25,360
+[SPEAKER_02] It doesn't take a lot of time to read read or digest.
+
+761
+01:02:25,920 --> 01:02:31,280
+[SPEAKER_02] They use the standard Amazon yellow best deal recommended tags to highlight the annual plan.
+
+762
+01:02:31,840 --> 01:02:35,600
+[SPEAKER_02] They break down the effective monthly rate of the annual plan versus the monthly plan.
+
+763
+01:02:35,760 --> 01:02:38,400
+[SPEAKER_02] They're all the like blocking and tackling stuff that they do really well.
+
+764
+01:02:38,880 --> 01:02:50,720
+[SPEAKER_02] I think the more subtle thing that is easy to miss with Colm's paywall is one, it's very much built for mobile because most of Colm's consumers are purchasing on mobile and using the app on mobile as opposed to desktop.
+
+765
+01:02:50,800 --> 01:02:53,920
+[SPEAKER_02] They do have a desktop paywall, but it's, I would guess, it's not what most people are going to.
+
+766
+01:02:54,640 --> 01:03:00,560
+[SPEAKER_02] And then the second piece is the secret to Colm's success in leapfrogging headspace in many ways was.
+
+767
+01:03:00,720 --> 01:03:08,000
+[SPEAKER_02] was stumbling over this idea of sleep stories and really solving the most acute pain point people have in this mindfulness space, which is sleeping better.
+
+768
+01:03:08,560 --> 01:03:14,720
+[SPEAKER_02] And so if you look at their paywall, imagine it's midnight or one in the morning and you can't sleep.
+
+769
+01:03:14,880 --> 01:03:15,920
+[SPEAKER_02] You've got racing thoughts.
+
+770
+01:03:16,240 --> 01:03:20,080
+[SPEAKER_02] You open your calm app, maybe you heard about it from a friend or you've been considering paying for it.
+
+771
+01:03:20,640 --> 01:03:23,440
+[SPEAKER_02] And it's like this nice, soft blue palette.
+
+772
+01:03:23,680 --> 01:03:25,440
+[SPEAKER_02] It uses a lot of calming language.
+
+773
+01:03:26,000 --> 01:03:32,880
+[SPEAKER_02] It's just very tailored for their customer and the mind space that their customer is going to be in when they're getting to that purchase decision.
+
+774
+01:03:33,360 --> 01:03:39,920
+[SPEAKER_02] And so I think that's an example of going beyond the generic advice, going beyond the frameworks and actually applying judgment around what's going to work for their consumer.
+
+775
+01:03:40,320 --> 01:03:48,320
+[SPEAKER_01] I notice Calm has also experimented a lot now and is leaning in toward customizing the paywall experience for different entry points.
+
+776
+01:03:48,960 --> 01:04:02,080
+[SPEAKER_01] So like if you enter, I was playing with the app recently and I'm not currently a subscriber, so when you enter from like whatever famous person, Matthew McConaughey reads me to sleep, I think they have like sleep stories from him.
+
+777
+01:04:02,720 --> 01:04:07,360
+[SPEAKER_01] It's like you tap on that button and then it follows through with Matthew McConaughey.
+
+778
+01:04:07,760 --> 01:04:14,720
+[SPEAKER_01] But if you hit the paywall without that context, you're not seeing celebrities., you're seeing different sets of value prop.
+
+779
+01:04:15,040 --> 01:04:18,080
+[SPEAKER_01] And so, you know, and it's a big team and they're able to do this.
+
+780
+01:04:18,560 --> 01:04:22,560
+[SPEAKER_01] It's harder as a small app to figure out every different entry point and all that.
+
+781
+01:04:22,880 --> 01:04:32,640
+[SPEAKER_01] But over time, figuring out those entry points and even potentially customizing the paywall to the entry points can be a very effective way to do it, and I think Calm is really killing it on that front.
+
+782
+01:04:33,200 --> 01:04:44,720
+[SPEAKER_02] Yeah, I think that's something where you've seen a lot more innovation recently, is personalizing the paywall or customizing it based on the channel the user came in through or even based on in-app signals that you've got about the user, depending on where the paywall is placed.
+
+783
+01:04:45,040 --> 01:04:48,400
+[SPEAKER_01] Yeah, any other examples top of mind on great paywall strategies?
+
+784
+01:04:49,040 --> 01:04:52,320
+[SPEAKER_02] I think another example that a lot of people point to is Duolingo.
+
+785
+01:04:52,400 --> 01:04:58,240
+[SPEAKER_02] I talked about their immersive onboarding experience and getting the user to the point where they're really excited about the product before they get to the paywall.
+
+786
+01:04:58,800 --> 01:05:08,080
+[SPEAKER_02] Above and beyond all of the standard advice, I think one thing Duolingo really differentiates itself on is this personification of the app through Duo, their owl mascot.
+
+787
+01:05:08,640 --> 01:05:13,920
+[SPEAKER_02] And when you convert into a trial with Duolingo, which is now Super Duolingo is what they're calling.
+
+788
+01:05:14,000 --> 01:05:16,160
+[SPEAKER_02] It used to be Duolingo Plus, now it's Super Duolingo.
+
+789
+01:05:16,320 --> 01:05:17,840
+[SPEAKER_02] Duo turns into an astronaut.
+
+790
+01:05:18,160 --> 01:05:21,600
+[SPEAKER_02] The whole Chrome of the app experience changes the color, the look, the feel.
+
+791
+01:05:21,840 --> 01:05:22,560
+[SPEAKER_02] There's more animation.
+
+792
+01:05:23,040 --> 01:05:38,400
+[SPEAKER_02] That's a missed opportunity that I think a lot of you obviously you're not going to do an optimization like this as a smaller company, but when you get to the point where there's a lot of leverage in optimizing trial start and trial conversion, doing something like that that really celebrates that purchase moment, I think can be really powerful.
+
+793
+01:05:38,720 --> 01:05:44,480
+[SPEAKER_02] And then the last example I was going to give is this company that I've been working with, Matter that I mentioned previously, the reading app.
+
+794
+01:05:45,040 --> 01:05:53,360
+[SPEAKER_02] So we followed a lot of the standard advice that Jake provided in terms of just making the paywall more prominent, looking at paywall view rate.
+
+795
+01:05:53,600 --> 01:06:00,720
+[SPEAKER_02] So like what percentage of all users who install the app are actually viewing the paywall at least once in their first session, in their first week, in their first month?
+
+796
+01:06:01,520 --> 01:06:11,120
+[SPEAKER_02] And by being a little bit more aggressive about where we place the paywall, but then also by optimizing copy visuals and a number of other things, matter ended up more than doubling the paywall view rate.
+
+797
+01:06:11,520 --> 01:06:16,320
+[SPEAKER_02] And then that translated into about a thirty percent increase in subscriber conversion.
+
+798
+01:06:16,640 --> 01:06:22,400
+[SPEAKER_02] And so these things like a lot of them seem small, but in the aggregate, they can actually lead to some pretty significant improvements.
+
+799
+01:06:22,880 --> 01:06:27,040
+[SPEAKER_01] Yeah, thirty percent and doubling the paywall view rate, which we hear that a lot.
+
+800
+01:06:27,200 --> 01:06:42,800
+[SPEAKER_01] We've talked to a lot of people in the podcasts, like people who didn't have the paywall and onboarding, they moved it to onboarding, which like for them, sometimes it's like a hundred X because the paywall was so deeply buried in the app experience that they're showing the paywall way more than double.
+
+801
+01:06:43,200 --> 01:06:52,320
+[SPEAKER_01] And then it's like five Xing revenue, not even just a thirty percent increase, but if you're already fairly optimized, there's still opportunities to increase by thirty percent, which is crazy.
+
+802
+01:06:52,640 --> 01:06:56,160
+[SPEAKER_00] I remember doing optimization stuff around Elevate in the back of the day.
+
+803
+01:06:56,400 --> 01:07:00,000
+[SPEAKER_00] And like everything is just how close it is to the starting point.
+
+804
+01:07:00,320 --> 01:07:01,040
+[SPEAKER_00] There's things you can do.
+
+805
+01:07:01,200 --> 01:07:06,080
+[SPEAKER_00] You can shovel things around, but there's kind of an exponential decay curve in like who sees what in an app.
+
+806
+01:07:06,640 --> 01:07:08,560
+[SPEAKER_00] And then also you have your home screen in the app.
+
+807
+01:07:08,880 --> 01:07:13,360
+[SPEAKER_00] That's where ninety percent of the eyeball minutes are going to be, ninety five percent of the eyeballeball minutes.
+
+808
+01:07:13,680 --> 01:07:14,880
+[SPEAKER_00] That's not even a paywall hack.
+
+809
+01:07:14,960 --> 01:07:19,680
+[SPEAKER_00] It's a good strategy, but it's just like, make sure every and this is something I learned from a Zynga person.
+
+810
+01:07:19,920 --> 01:07:25,040
+[SPEAKER_00] Zynga people are really good at monetization, but like, the user should always be one click away from buying.
+
+811
+01:07:25,280 --> 01:07:26,640
+[SPEAKER_00] You know, you design a store the same way.
+
+812
+01:07:26,800 --> 01:07:30,640
+[SPEAKER_00] Like, you don't go into a store and there's like massive parts of the store where you can't buy things, right?
+
+813
+01:07:30,960 --> 01:07:32,800
+[SPEAKER_00] Like, the whole purpose of it is to buy things.
+
+814
+01:07:32,880 --> 01:07:34,560
+[SPEAKER_00] And you have to think about your app in the same way.
+
+815
+01:07:34,800 --> 01:07:36,960
+[SPEAKER_00] If you're monetizing, you don't have to be gauche about it.
+
+816
+01:07:37,040 --> 01:07:42,640
+[SPEAKER_00] Like, you can do it tastefully, but you should always be subtly reminding your customers, like, hey, and that's why I like the Dualingo example.
+
+817
+01:07:42,800 --> 01:07:50,400
+[SPEAKER_00] I didn't know they changed the Chrome, because like, I think that's a really easy way to remind users you don't have Pro, just so you know., you're not paying, right?
+
+818
+01:07:50,880 --> 01:07:52,560
+[SPEAKER_00] Even if they don't get any features, right?
+
+819
+01:07:52,800 --> 01:07:54,480
+[SPEAKER_00] It's just kind of a subtle psychology thing.
+
+820
+01:07:54,800 --> 01:07:57,040
+[SPEAKER_02] We still love you, but you're not quite as special as you could be.
+
+821
+01:07:57,600 --> 01:07:57,680
+[SPEAKER_00] Yeah.
+
+822
+01:07:58,000 --> 01:08:02,880
+[SPEAKER_00] I mean, I think you can make the argument that a lot of subscription apps in some degree are a luxury product.
+
+823
+01:08:03,360 --> 01:08:07,520
+[SPEAKER_00] You don't need Duolingo to survive, certainly don't need Duolingo Pro to survive, right?
+
+824
+01:08:07,760 --> 01:08:08,800
+[SPEAKER_00] You don't need those things.
+
+825
+01:08:09,120 --> 01:08:17,040
+[SPEAKER_00] So you can take some pages out of what the automotive industry does and like the luxury goods industry and think about it in some ways as a display of status, right?
+
+826
+01:08:17,440 --> 01:08:19,360
+[SPEAKER_00] I guess it's more about what's behind the paywall.
+
+827
+01:08:19,680 --> 01:08:25,600
+[SPEAKER_00] But as you're leading someone through that paywall as well, you're selling them on what life will be like on the other side for them, you know what I mean?
+
+828
+01:08:25,840 --> 01:08:28,800
+[SPEAKER_00] Like, oh, come on, you've got, oh, sir, eight dollars a month.
+
+829
+01:08:28,960 --> 01:08:29,840
+[SPEAKER_00] Wow, big spender.
+
+830
+01:08:30,000 --> 01:08:30,640
+[SPEAKER_00] Come on in, right?
+
+831
+01:08:30,880 --> 01:08:44,960
+[SPEAKER_02] Like, well, and to that point, I've found this isn't always the right answer, but in many cases, there's this one, two punch of trigger a paywall in a user's first session, whether that's immediately after sign up or at the end of an onboarding flow, depends on the product.
+
+832
+01:08:45,280 --> 01:08:53,760
+[SPEAKER_02] But make sure that a user sees the paywall in their first session, because you'd be shocked how many users of consumer subscription apps don't even know there is a premium version of the product.
+
+833
+01:08:54,480 --> 01:09:01,680
+[SPEAKER_02] But then pair that with a set of more customized paywalls that are tied to your best premium value props and measure them.
+
+834
+01:09:01,840 --> 01:09:10,560
+[SPEAKER_02] So you have a free number of uses, but once you get to the end of that free usage quota, then you get a customized paywall that's really honed around that feature.
+
+835
+01:09:11,280 --> 01:09:32,960
+[SPEAKER_02] And I think what's nice about that is you solve the paywall view rate problem that Jake talks about, which is you have to first just make sure people know your premium product exists, but then instead of like tapping them on the shoulder every single time they open the app, which becomes really annoying really quickly and it's going to churn out a lot of your free users, instead like align the ask around purchasing the product with when the user is actually experiencing the value.
+
+836
+01:09:33,040 --> 01:09:33,200
+[SPEAKER_00] Yeah.
+
+837
+01:09:33,680 --> 01:09:39,840
+[SPEAKER_00] And then being thoughtful about where those like limitations to free usage are I think a lot of David, I'm sure you've talked to a lot of indies.
+
+838
+01:09:40,000 --> 01:09:44,960
+[SPEAKER_00] This is like classic indie mistake is like, oh, I'm going to bury the purchase thing like in the settings, whatever.
+
+839
+01:09:45,040 --> 01:09:47,600
+[SPEAKER_00] And like, yeah, they actually have a pretty convincing pro offering.
+
+840
+01:09:48,000 --> 01:09:50,320
+[SPEAKER_00] Some kids it's just like embarrassed to like, pull it forward.
+
+841
+01:09:50,560 --> 01:09:57,520
+[SPEAKER_00] This is some advice I had from a mentor, but just being like, these people are getting an app for free, they can look at an app, they can look at the price tag.
+
+842
+01:09:57,840 --> 01:09:58,400
+[SPEAKER_00] They're not going to die.
+
+843
+01:09:58,640 --> 01:10:00,560
+[SPEAKER_00] We use it like, don't be annoying about it.
+
+844
+01:10:00,640 --> 01:10:01,360
+[SPEAKER_00] Like, be thoughtful.
+
+845
+01:10:01,440 --> 01:10:06,480
+[SPEAKER_00] You don't want to degrade your free user experience completely, but it's okay for free users to give something up.
+
+846
+01:10:06,720 --> 01:10:10,000
+[SPEAKER_00] If that's just a little bit of degradation in user experience, that's okay.
+
+847
+01:10:10,400 --> 01:10:12,880
+[SPEAKER_02] If you do it right, the paywall moment in itself.
+
+848
+01:10:13,760 --> 01:10:15,280
+[SPEAKER_02] I think Duolingo is a great example of that.
+
+849
+01:10:15,440 --> 01:10:23,600
+[SPEAKER_02] Like, even if you decide not to pay, like, oh, Duolingo in an astronaut suit, that's a great guiding principle from, like, product design and business design in general.
+
+850
+01:10:23,920 --> 01:10:26,960
+[SPEAKER_00] It's like, even bad moments in a business, they're in support.
+
+851
+01:10:27,200 --> 01:10:36,400
+[SPEAKER_00] Like, something's bad, you know, whatever, you have an incident, like, whatever it is, there's always ways to think about how you can take that moment and turn it into a net positive experience.
+
+852
+01:10:36,960 --> 01:10:38,960
+[SPEAKER_00] And sometimes it's just little things, right?
+
+853
+01:10:39,200 --> 01:10:43,440
+[SPEAKER_00] It's like framings and copy and offering to like make it right.
+
+854
+01:10:43,680 --> 01:10:45,280
+[SPEAKER_00] That applies to monetization as well.
+
+855
+01:10:45,520 --> 01:10:47,040
+[SPEAKER_00] The walls and like where you hit stuff.
+
+856
+01:10:47,200 --> 01:10:47,280
+[SPEAKER_00] So.
+
+857
+01:10:47,600 --> 01:10:47,680
+[SPEAKER_00] Yeah.
+
+858
+01:10:48,160 --> 01:10:54,160
+[SPEAKER_01] And I think you have a little bit more flexibility to your point, Phil, about turning out free users by annoying them.
+
+859
+01:10:54,400 --> 01:11:01,840
+[SPEAKER_01] It's like the more value you're creating for those users, the more leeway you have to demand something of them.
+
+860
+01:11:02,080 --> 01:11:08,000
+[SPEAKER_01] So like my fitness pal, I'm not currently subscribed, but I still check calories every now and then, I check my macros or whatever.
+
+861
+01:11:08,640 --> 01:11:11,360
+[SPEAKER_01] Every single time you open the app, they show up paywall.
+
+862
+01:11:12,000 --> 01:11:16,960
+[SPEAKER_01] I'm not as annoyed anymore because it's like I'm getting so much value when I use it.
+
+863
+01:11:17,200 --> 01:11:18,160
+[SPEAKER_01] It's a fair trade, right?
+
+864
+01:11:19,200 --> 01:11:32,800
+[SPEAKER_01] I mean, we've talked about it a lot today, but that kind of balance of how much value you're creating and how much value you're cap capturing, that paywall moment, you just have so much more leeway with those free users if you're giving them so much value.
+
+865
+01:11:33,360 --> 01:11:38,880
+[SPEAKER_01] But moving on from paywall pricing and packaging are the next two P's of value capture.
+
+866
+01:11:39,200 --> 01:11:40,480
+[SPEAKER_01] Let's talk pricing and packaging.
+
+867
+01:11:41,200 --> 01:11:51,040
+[SPEAKER_02] When you look at each of the steps in the subscription value loop and then you look at the individual levers within each step, this is one of those, along with onboarding and a couple of others that has the most leverage.
+
+868
+01:11:51,600 --> 01:11:52,960
+[SPEAKER_02] Getting pricing and packaging right.
+
+869
+01:11:53,200 --> 01:11:57,680
+[SPEAKER_02] I think there have been a few episodes you all have had guests on that said, well pricing in the early days doesn't really matter.
+
+870
+01:11:57,840 --> 01:11:58,400
+[SPEAKER_02] And I agree with that.
+
+871
+01:11:58,480 --> 01:12:00,160
+[SPEAKER_02] Like in the early days, just find product market fit.
+
+872
+01:12:00,640 --> 01:12:08,800
+[SPEAKER_02] But once you get to the world I've spent most of my career in, Series B, Series C, trying to get to the point where you can go public, pricing really, really matters.
+
+873
+01:12:09,120 --> 01:12:10,560
+[SPEAKER_02] And it's really hard to do well.
+
+874
+01:12:10,960 --> 01:12:29,280
+[SPEAKER_02] And so one of the things that I try to help clients with in my advising business is using some pretty standard tools out there like Van Westendorp and Conjoint Analysis to really get to at least a more accurate view of what the optimal price is for your product.
+
+875
+01:12:30,000 --> 01:12:37,360
+[SPEAKER_02] So to just briefly break those two down, Van Westendorp Analysis, I actually was listening to the latest podcast episode on my of my run this morning.
+
+876
+01:12:37,920 --> 01:12:42,720
+[SPEAKER_02] And so I know the CEO of Ladder mentioned Van Westendorp last week, so I won't go into too much detail.
+
+877
+01:12:42,800 --> 01:12:46,240
+[SPEAKER_02] But the idea is basically you can't ask a user directly, how much would you pay for this product?
+
+878
+01:12:46,560 --> 01:12:56,240
+[SPEAKER_02] Because research has shown they're going to generally give you a lower price than is actually what they would be willing to pay because they know that any answer they give you could impact what you end up charging.
+
+879
+01:12:56,560 --> 01:12:57,840
+[SPEAKER_02] So instead you ask a range.
+
+880
+01:12:58,000 --> 01:13:02,160
+[SPEAKER_02] You ask, at what price would this product feel like it was really expensive?
+
+881
+01:13:02,400 --> 01:13:05,040
+[SPEAKER_02] At what price would it feel like it's starting to become more of a bargain?
+
+882
+01:13:05,200 --> 01:13:07,760
+[SPEAKER_02] At what price would it feel cheap, like a really good deal?
+
+883
+01:13:07,840 --> 01:13:09,600
+[SPEAKER_02] And at what price would it feel too cheap?
+
+884
+01:13:10,000 --> 01:13:11,840
+[SPEAKER_02] That means you would actually question the quality of the product.
+
+885
+01:13:12,560 --> 01:13:15,840
+[SPEAKER_02] And then by doing that, you can generate what's called the Van Wessendorp.
+
+886
+01:13:16,000 --> 01:13:17,760
+[SPEAKER_02] It's basically a price sensitivity meter.
+
+887
+01:13:18,000 --> 01:13:21,280
+[SPEAKER_02] And so it shows you these intersection points between those four curves.
+
+888
+01:13:21,600 --> 01:13:26,320
+[SPEAKER_02] And it gives you an optimal price range and also an optimal price point somewhere within that range.
+
+889
+01:13:26,880 --> 01:13:32,080
+[SPEAKER_02] This tool is really good when you're just looking at what is the overall willingness to pay for my product in the aggregate.
+
+890
+01:13:32,800 --> 01:13:37,920
+[SPEAKER_02] Or, as was mentioned in the latter episode, you can cut it by segments of users.
+
+891
+01:13:38,160 --> 01:13:45,600
+[SPEAKER_02] So if I want to know for students versus teachers or for college students versus high school students, what willingness to pay looks like, you can do that segmentation.
+
+892
+01:13:46,000 --> 01:13:49,520
+[SPEAKER_02] It's not as good at pinpointing willingness to pay for individualsal features.
+
+893
+01:13:49,760 --> 01:13:53,120
+[SPEAKER_02] And so that's where conjoint analysis can be a useful supplementary tool.
+
+894
+01:13:53,520 --> 01:13:57,040
+[SPEAKER_02] Because what conjoint does is it presents the users with a set of alternatives.
+
+895
+01:13:57,200 --> 01:14:00,880
+[SPEAKER_02] It could be two packages, it could be three packages, usually it's no more than two to four.
+
+896
+01:14:01,440 --> 01:14:03,760
+[SPEAKER_02] And each package has a list of attributes.
+
+897
+01:14:04,000 --> 01:14:10,800
+[SPEAKER_02] So this could be price, it could be number of super likes per month in the case of a dating app like Tender or Bumble.
+
+898
+01:14:11,120 --> 01:14:13,280
+[SPEAKER_02] So it could be a range, or it could be binary.
+
+899
+01:14:13,440 --> 01:14:15,600
+[SPEAKER_02] So it could be a feature that you either get or you don't get.
+
+900
+01:14:16,160 --> 01:14:28,480
+[SPEAKER_02] And then every user is asked to go through anywhere from like five to ten of these conjo, again, there's a formula that will sort of spit out.
+
+901
+01:14:28,560 --> 01:14:31,680
+[SPEAKER_02] Okay, what is the relative importance of each of these attributes?
+
+902
+01:14:31,920 --> 01:14:35,360
+[SPEAKER_02] What is the marginal willingness to pay for each level within each attribute?
+
+903
+01:14:35,840 --> 01:14:40,320
+[SPEAKER_02] So how much more am I willing to pay for five super likes versus ten super likes versus twenty super likes?
+
+904
+01:14:40,640 --> 01:14:49,040
+[SPEAKER_02] And when you do all that, you can really hone in on not just how much are people willing to pay overall, but what are the premium features that are driving most of the monetization for our business?
+
+905
+01:14:49,280 --> 01:14:50,960
+[SPEAKER_02] And again, how does that vary by user segment?
+
+906
+01:14:51,600 --> 01:14:53,920
+[SPEAKER_01] Where does price testing fit into this?
+
+907
+01:14:54,240 --> 01:15:00,320
+[SPEAKER_01] Is this kind of hypothesis validation starting with Venn Westendorp and conjoint analysis?
+
+908
+01:15:00,720 --> 01:15:06,480
+[SPEAKER_01] and then start testing whether your hypothesis formed by this analysis is actually correct?
+
+909
+01:15:06,880 --> 01:15:07,520
+[SPEAKER_02] Yeah, that's right.
+
+910
+01:15:07,760 --> 01:15:09,920
+[SPEAKER_02] And I view them as tools in the same toolkit.
+
+911
+01:15:10,160 --> 01:15:14,880
+[SPEAKER_02] And I've even had a healthy debate with a couple of my clients around, like, why don't we just do an AB test?
+
+912
+01:15:15,120 --> 01:15:16,640
+[SPEAKER_02] Like, why do we even need to run a survey?
+
+913
+01:15:17,360 --> 01:15:21,120
+[SPEAKER_02] And sometimes that's the right answer, like in general the ultimate survey.
+
+914
+01:15:21,440 --> 01:15:22,240
+[SPEAKER_02] Yeah, exactly.
+
+915
+01:15:22,720 --> 01:15:24,320
+[SPEAKER_02] I mean, that's the real asset test, right?
+
+916
+01:15:24,720 --> 01:15:25,520
+[SPEAKER_02] I'll give you an example.
+
+917
+01:15:25,840 --> 01:15:31,760
+[SPEAKER_02] I work with an ed tech company down in South America called Udox, and they had two tiers.
+
+918
+01:15:32,000 --> 01:15:36,880
+[SPEAKER_02] So they had Udox Lite and Udox Pro, and then they had monthly and annual subscriptions.
+
+919
+01:15:37,280 --> 01:15:41,920
+[SPEAKER_02] And one thing I'll say right off the start is when you're an early stage consumer company, ideally you want one plan.
+
+920
+01:15:42,560 --> 01:15:54,240
+[SPEAKER_02] You want one plan that is either annual only or that is monthly and annual because any more complexity than that and you're going to lose conversion on the margin simply because people don't have the attention span to make a decision.
+
+921
+01:15:54,320 --> 01:15:54,960
+[SPEAKER_02] That's that complex.
+
+922
+01:15:55,120 --> 01:15:57,760
+[SPEAKER_02] If they're a prosumer or it's B2B SaaS, different story.
+
+923
+01:15:57,840 --> 01:15:59,760
+[SPEAKER_02] But for consumer, you want to keep it as simple as possible.
+
+924
+01:16:00,080 --> 01:16:01,200
+[SPEAKER_02] So we could have run an AB test.
+
+925
+01:16:01,360 --> 01:16:07,920
+[SPEAKER_02] And if we'd run an AB test, we would have figured out what is the optimal annual and monthly price for the light and pro tiers respectively.
+
+926
+01:16:08,160 --> 01:16:12,640
+[SPEAKER_02] But what happened is we ran the Van Westendorp and we looked at the light versus pro plans.
+
+927
+01:16:12,640 --> 01:16:23,360
+[SPEAKER_02] So we compared the Pro plans with the Van Westendorp analysis and we saw that the marginal willingness to pay for the Pro plan was very, very small relative to the Light plan.
+
+928
+01:16:24,000 --> 01:16:28,960
+[SPEAKER_02] And we also found that the marginal willingness to pay for annual relative to monthly was fairly low.
+
+929
+01:16:29,520 --> 01:16:36,720
+[SPEAKER_02] And in some cases, this just comes down to, you're talking about college students in South America, they don't have a ton of disposable income in many cases.
+
+930
+01:16:37,200 --> 01:16:39,920
+[SPEAKER_02] So some of it just comes down to the ability to pay for the product.
+
+931
+01:16:40,720 --> 01:17:01,440
+[SPEAKER_02] But then we did the conjoint and in the conjoint, we actually found that student interest in ebook content generated by publishers that was like the biggest incremental value prop for the Pro plan was you don't just get access to user generated content, you get professional publisher content was actually in many cases the lowest marginal to pay premium feature.
+
+932
+01:17:02,080 --> 01:17:15,120
+[SPEAKER_02] And so as a result, what the company ended up doing was streamlining down to a single tier, just getting rid of the Pro tier and only having what they now call Udocs plus, and then lowering their annual price.
+
+933
+01:17:15,760 --> 01:17:18,320
+[SPEAKER_02] And so they had a much simpler set of plans.
+
+934
+01:17:19,040 --> 01:17:23,920
+[SPEAKER_02] They had a lower annual price that was more aligned with willingness to pay of their target user base.
+
+935
+01:17:24,560 --> 01:17:36,160
+[SPEAKER_02] And then also importantly, because they got rid of the ebook content, which had a pretty significant cost component to it because they had licensing deals with these publishers, they actually improved their margins and as a result their LTV-CAC ratio.
+
+936
+01:17:36,480 --> 01:17:47,440
+[SPEAKER_02] And so in aggregate, and I've talked to the founder about sharing this information in aggregate, this ended up driving a twelve percent increase in subscriber conversion and a ten percent increase in net subscription revenue.
+
+937
+01:17:48,000 --> 01:17:52,720
+[SPEAKER_02] So this is a case where AB testing is fast and it's effective, but it's kind of a blunt instrument.
+
+938
+01:17:53,440 --> 01:17:57,040
+[SPEAKER_02] And surveys can give you some deeper insights when you do them the right way.
+
+939
+01:17:57,360 --> 01:17:57,360
+[UNKNOWN] Yeah.
+
+940
+01:17:57,920 --> 01:18:00,640
+[SPEAKER_01] And then doing the Van Wessendorp and the Conjoint.
+
+941
+01:18:01,040 --> 01:18:10,160
+[SPEAKER_01] analysis helps you create a thesis for why the prices you're going to test should be tested versus just throwing crap against the wall.
+
+942
+01:18:10,640 --> 01:18:11,760
+[SPEAKER_02] That's my favorite method.
+
+943
+01:18:12,800 --> 01:18:13,120
+[SPEAKER_02] It works.
+
+944
+01:18:13,600 --> 01:18:14,480
+[SPEAKER_02] It works until it doesn't.
+
+945
+01:18:14,800 --> 01:18:18,640
+[SPEAKER_02] Hold your finger in the wind, be like, 4.99.
+
+946
+01:18:19,600 --> 01:18:21,440
+[SPEAKER_02] That's the right answer for the early days.
+
+947
+01:18:22,240 --> 01:18:22,320
+[SPEAKER_01] Yeah.
+
+948
+01:18:23,120 --> 01:18:25,360
+[SPEAKER_01] So the next P is payments.
+
+949
+01:18:25,920 --> 01:18:28,080
+[SPEAKER_01] What do you mean by payments in this context?
+
+950
+01:18:28,720 --> 01:18:28,800
+[SPEAKER_02] Yeah.
+
+951
+01:18:29,040 --> 01:18:31,040
+[SPEAKER_02] So payments, I break down into a few things.
+
+952
+01:18:31,440 --> 01:18:45,680
+[SPEAKER_02] One is I think a lot of people don't realize the degree to which alternative payment methods or APMs are surpassing in many cases credit cards, the biggest ones being obviously Visa, MasterCard, American Express as the primary forum of e commerce, right?
+
+953
+01:18:45,920 --> 01:18:49,360
+[SPEAKER_02] Like that's happening in a lot of international markets and it's even starting to happen in the US.
+
+954
+01:18:50,080 --> 01:18:56,240
+[SPEAKER_02] And so one is just making sure you're aware of the alternative payment methods that really matter in your geography and for your user base.
+
+955
+01:18:56,960 --> 01:19:04,400
+[SPEAKER_02] The second is your purchase flow and just making sure that you're being as clear and transparent as possible with users around how your trial works.
+
+956
+01:19:04,800 --> 01:19:12,480
+[SPEAKER_02] And so the canonical example here is the Blinkist ethical subscription design pattern, which I think JC Day was on your podcast and talked about how effective that was.
+
+957
+01:19:12,480 --> 01:19:14,800
+[SPEAKER_02] That was Quizlet ended up adopting that pattern.
+
+958
+01:19:14,960 --> 01:19:16,560
+[SPEAKER_02] Many other consumer apps have as well.
+
+959
+01:19:17,040 --> 01:19:24,080
+[SPEAKER_02] It's one of those rare win-win where it drives a huge amount of incremental upside in terms of subscriber conversion revenue, but it's also just the right thing to do.
+
+960
+01:19:25,120 --> 01:19:26,720
+[SPEAKER_02] It really builds trust with your users.
+
+961
+01:19:27,040 --> 01:19:28,800
+[SPEAKER_02] And then the last one is cancellation flows.
+
+962
+01:19:28,960 --> 01:19:30,960
+[SPEAKER_02] And this is one that I think is tricky, right?
+
+963
+01:19:31,280 --> 01:19:37,920
+[SPEAKER_02] Because you want to remind the user of what they're losing if they give up the premium plan, but you don't want to be a jerk, right?
+
+964
+01:19:38,160 --> 01:19:44,720
+[SPEAKER_02] You don't want to adopt these black hat patterns that many companies end up doing in some cases just because they see all the other companies doing it.
+
+965
+01:19:44,960 --> 01:19:57,040
+[SPEAKER_02] And so you need to make sure sure that you're not preventing users from canceling the subscription if that's what they want to do, but it's okay to remind them along the way, like, hey, why are you leaving?
+
+966
+01:19:57,200 --> 01:19:57,920
+[SPEAKER_02] Can we fix it?
+
+967
+01:19:58,080 --> 01:19:58,720
+[SPEAKER_02] Is the price too high?
+
+968
+01:19:58,960 --> 01:20:00,080
+[SPEAKER_02] Okay, we can offer you a discount.
+
+969
+01:20:00,320 --> 01:20:01,040
+[SPEAKER_02] Is it something else?
+
+970
+01:20:01,200 --> 01:20:02,880
+[SPEAKER_02] Like, is there anything we can do to ameliorate this?
+
+971
+01:20:03,040 --> 01:20:04,640
+[SPEAKER_02] And if the answer is no, then fine, they cancel.
+
+972
+01:20:04,960 --> 01:20:20,160
+[SPEAKER_02] And I think this is going to become more and more important because there's legislation that is working its way through at both the federal and state level now in the US that is actually going to mandate that more and more subscription apps basically make it as easy to cancel as it was to sign up.
+
+973
+01:20:20,320 --> 01:20:26,960
+[SPEAKER_02] And so you're not going to be able to get away with some of the stuff that some companies have been doing for a while where you kind of make cancellation really difficult to find.
+
+974
+01:20:27,360 --> 01:20:27,440
+[SPEAKER_01] Yeah.
+
+975
+01:20:27,600 --> 01:20:29,520
+[SPEAKER_01] And the app stores make that really easy.
+
+976
+01:20:30,160 --> 01:20:46,640
+[SPEAKER_01] But I did want to highlight when you were talking about alternative payment methods, I've been hearing this from RevenueCat customers that when they are offering web payments, it's not enough to just offer like credit card and Apple Pay and Apple Pay is kind of the happy easy path for a lot of folks.
+
+977
+01:20:47,200 --> 01:20:50,480
+[SPEAKER_01] But like pay with Venmo, pay with PayPal, all those.
+
+978
+01:20:50,960 --> 01:20:57,040
+[SPEAKER_01] It's like if someone's potentially going to give you money, make it as easy as possible for them to give you that money.
+
+979
+01:20:57,680 --> 01:21:07,760
+[SPEAKER_01] And some of those alternative payment methods even in the US, actually can drive incremental revenue just by making it that much easier for people to pay outside of the App Store.
+
+980
+01:21:08,000 --> 01:21:08,720
+[SPEAKER_02] Well, I mentioned it.
+
+981
+01:21:08,800 --> 01:21:15,600
+[SPEAKER_02] So there's the US, which is the primary market for a lot of consumer subscription apps, but this is even more important in a lot of international markets.
+
+982
+01:21:15,760 --> 01:21:25,600
+[SPEAKER_02] And when we looked at this at Quizlet, we didn't do a ton of this while I was at the company, but we started to look at it because we wanted to make sure that we were not just bringing in more users to international markets, we were actually monetizing as many of them as we could.
+
+983
+01:21:26,400 --> 01:21:29,040
+[SPEAKER_02] It's a shockingly high percentage of users in certain countries.
+
+984
+01:21:29,200 --> 01:21:30,320
+[SPEAKER_02] Like Germany is a great example.
+
+985
+01:21:30,640 --> 01:21:34,160
+[SPEAKER_02] You have SEPA in other markets like in the Netherlands, it's ideal.
+
+986
+01:21:34,320 --> 01:21:35,040
+[SPEAKER_02] You have So Fort.
+
+987
+01:21:35,360 --> 01:21:36,720
+[SPEAKER_02] In South America, there's Boleto.
+
+988
+01:21:37,360 --> 01:21:39,120
+[SPEAKER_02] in Brazil, there's OXO in Mexico.
+
+989
+01:21:39,280 --> 01:21:50,480
+[SPEAKER_02] So you kind of have to know if you're an US company expanding into some of these countries or if you're an international company, just make sure you know what the numbers are in terms of how many of your potential subscribers are going to pay with these feature requests, Jacob.
+
+990
+01:21:50,880 --> 01:21:52,960
+[SPEAKER_01] RevenueCat needs to make this easy for developers.
+
+991
+01:21:52,960 --> 01:21:55,680
+[SPEAKER_01] We didn't accept like thousands of different payment plans.
+
+992
+01:21:55,760 --> 01:21:58,800
+[SPEAKER_01] Neither confirm nor deny anything about our roadmap.
+
+993
+01:21:59,040 --> 01:21:59,120
+[SPEAKER_01] So.
+
+994
+01:22:01,360 --> 01:22:01,440
+[SPEAKER_01] Okay.
+
+995
+01:22:01,840 --> 01:22:05,680
+[SPEAKER_01] The last P for us to touch on today as we wrap up is promotions.
+
+996
+01:22:06,000 --> 01:22:07,760
+[SPEAKER_01] And I do think this is a really important one.
+
+997
+01:22:08,000 --> 01:22:15,840
+[SPEAKER_01] So I'm curious to hear exactly how you think about the usefulness of promotions in this value capture step.
+
+998
+01:22:16,320 --> 01:22:20,640
+[SPEAKER_02] Well, and this one feels timely because we've all just gone through Black Friday and Cyber Monday.
+
+999
+01:22:20,720 --> 01:22:27,360
+[SPEAKER_02] And so I'm sure like me, you've just been inundated with deal after deal after deal and act now and don't miss out the best deal of the year.
+
+1000
+01:22:27,600 --> 01:22:32,960
+[SPEAKER_02] And I think this gets at the key point I want to make with promotions because promotions are not rocket science, right?
+
+1001
+01:22:33,280 --> 01:22:34,880
+[SPEAKER_02] It's a tool, just like a lot of these things are.
+
+1002
+01:22:35,040 --> 01:22:44,000
+[SPEAKER_02] It's a tool to better align the value of your product with the willingness to pay of an individual customer and by doing so to capture more consumer surplus for your business.
+
+1003
+01:22:44,480 --> 01:22:46,880
+[SPEAKER_02] The key though is you have to be targeted and thoughtful about it.
+
+1004
+01:22:47,040 --> 01:22:53,280
+[SPEAKER_02] And so I actually think we've got a good little bit of an over rotation on the amount of act now black Friday deals.
+
+1005
+01:22:53,360 --> 01:22:54,560
+[SPEAKER_02] I mean, that certainly has its place.
+
+1006
+01:22:55,200 --> 01:23:02,000
+[SPEAKER_02] I actually think the companies that are doing this best are for holiday deals and other kinds of seasonal promotions.
+
+1007
+01:23:02,480 --> 01:23:08,560
+[SPEAKER_02] They're really injecting their own personality and brand into it so that it stands out, and then there are these more sophisticated techniques.
+
+1008
+01:23:08,800 --> 01:23:11,600
+[SPEAKER_02] So one of them is activity based discounts.
+
+1009
+01:23:11,760 --> 01:23:22,960
+[SPEAKER_02] So if a user comes in and they don't subscribe within their first 24 hours, look at the point where 90% of your subscribers typically convert, and then whatever that time period is at that point, if a user hasn't converted, offer them a discount.
+
+1010
+01:23:23,280 --> 01:23:30,160
+[SPEAKER_02] I think that's a really effective method because the user is giving you a direct signal on their level of intent willingness to pay based off of their activity in the app.
+
+1011
+01:23:30,400 --> 01:23:31,120
+[SPEAKER_02] So that's a good one.
+
+1012
+01:23:31,440 --> 01:23:44,560
+[SPEAKER_02] And then I think the last one is geography based or there are many cases where you can't segment based on demographic data, but where you can use demographic or psychographic information to just better align the price of your product with the customer, I think that's where most of the value is.
+
+1013
+01:23:44,960 --> 01:23:52,880
+[SPEAKER_01] I've been talking a lot about tiering as a way to expand the number of points along that price value curve.
+
+1014
+01:23:53,600 --> 01:23:59,920
+[SPEAKER_01] But in preparing for this podcast and talking to you, it kind of dawned on me that promotions are another very effective way to do that.
+
+1015
+01:24:00,320 --> 01:24:08,800
+[SPEAKER_01] is that if you would potentially consider doing a premium tier, that's a lot of bandwidth on separating out the features and a lot of cognitive load.
+
+1016
+01:24:08,960 --> 01:24:11,760
+[SPEAKER_01] As you said with the UDOC's example of having multiple tiers.
+
+1017
+01:24:12,560 --> 01:24:24,160
+[SPEAKER_01] So the first step before you go to tiering your subscription is to start experimenting with promotions, see if you can meet more people on that value demand curve by offering them discounts.
+
+1018
+01:24:24,320 --> 01:24:26,240
+[SPEAKER_01] And yeah, I mean, more and more apps are using it.
+
+1019
+01:24:26,320 --> 01:24:34,160
+[SPEAKER_01] It's not like this is rocket science or some like amazing revelation, but it is something that I think is a great way to meet more customers where they're at.
+
+1020
+01:24:34,560 --> 01:24:35,680
+[SPEAKER_00] It's labor intensive too.
+
+1021
+01:24:35,920 --> 01:24:45,600
+[SPEAKER_00] I think is one of those things those things that why it's a tactic you layer in a little bit later when you're spending more of your time on value capture, you have extra lanes for like a growth team or someone to focus on this.
+
+1022
+01:24:46,160 --> 01:24:48,080
+[SPEAKER_00] It was a huge unlock almost ten years ago.
+
+1023
+01:24:48,160 --> 01:24:51,760
+[SPEAKER_00] Now I guess, like an elevator, huge unlock for us to run stuff.
+
+1024
+01:24:52,000 --> 01:24:56,720
+[SPEAKER_00] And I think we also just have the cover in our society that like people don't get that mad when things go on sale.
+
+1025
+01:24:56,960 --> 01:25:04,400
+[SPEAKER_00] Like it's an expectation that if I buy in normal time or I will wait this year, there's kind of an interesting backlash on Black Friday specifically.
+
+1026
+01:25:04,560 --> 01:25:05,600
+[SPEAKER_00] I feel like maybe you're right.
+
+1027
+01:25:05,680 --> 01:25:06,800
+[SPEAKER_00] I feel like maybe this is over.
+
+1028
+01:25:07,120 --> 01:25:12,000
+[SPEAKER_00] Maybe we're on the way out, but we make a product with essentially zero marginal cost, right?
+
+1029
+01:25:12,720 --> 01:25:15,760
+[SPEAKER_00] It would be very silly for us to only sell at one price point.
+
+1030
+01:25:16,160 --> 01:25:23,680
+[SPEAKER_00] So finding good ways to do that to like unlock more of that demand that you're just leaving on the table is smart, right?
+
+1031
+01:25:24,240 --> 01:25:25,040
+[SPEAKER_02] I think that's right.
+
+1032
+01:25:25,360 --> 01:25:28,640
+[SPEAKER_02] And I also think sometimes people look at price discrimination.
+
+1033
+01:25:28,960 --> 01:25:30,800
+[SPEAKER_02] Even the word price discrimination sounds negative.
+
+1034
+01:25:30,960 --> 01:25:31,920
+[SPEAKER_00] They do need a rebranding there.
+
+1035
+01:25:32,080 --> 01:25:33,280
+[SPEAKER_02] Yeah, they do need a rebranding.
+
+1036
+01:25:33,440 --> 01:25:35,280
+[SPEAKER_02] That's why I say capturing consumer surplus.
+
+1037
+01:25:35,520 --> 01:25:37,840
+[SPEAKER_02] But in all seriousness, you have to look at it both ways.
+
+1038
+01:25:38,160 --> 01:25:46,960
+[SPEAKER_02] Like one way to look at it is, well, they're discounting so they can bring more users into the product that otherwise wouldn't pay.
+
+1039
+01:25:47,280 --> 01:25:50,480
+[SPEAKER_02] And isn't that unfair to the users who are willing to pay a higher price.
+
+1040
+01:25:50,720 --> 01:26:06,960
+[SPEAKER_02] But the other way to look at it is if a company is not able to monetize those lower willingness to pay users or the users that simply don't have the resources to be able to pay but really want the product, then they are actually forced in many cases to set their price higher to make the economics work, which ends up hurting everyone.
+
+1041
+01:26:07,520 --> 01:26:11,200
+[SPEAKER_02] And so there is an argument to be made that done thoughtfully, this is actually better.
+
+1042
+01:26:11,520 --> 01:26:14,080
+[SPEAKER_02] It's certainly better for the business and it can go way too far.
+
+1043
+01:26:14,640 --> 01:26:17,600
+[SPEAKER_02] But done thoughtfully, it can actually benefit the consumer as well.
+
+1044
+01:26:18,000 --> 01:26:19,920
+[SPEAKER_01] Well, I think that's a great place to wrap up.
+
+1045
+01:26:20,320 --> 01:26:22,320
+[SPEAKER_01] Phil, it was really fun talking to you.
+
+1046
+01:26:22,480 --> 01:26:24,640
+[SPEAKER_01] And I don't feel like we could have done this justice.
+
+1047
+01:26:25,120 --> 01:26:33,280
+[SPEAKER_01] I specifically decided to make this the first long podcast because there was just so much to go through in this loop, this framework that you developed.
+
+1048
+01:26:33,760 --> 01:26:36,000
+[SPEAKER_01] But as we wrap up, anything else you wanted to share?
+
+1049
+01:26:36,320 --> 01:26:37,920
+[SPEAKER_02] Well, first of all, I just wanted to thank you all.
+
+1050
+01:26:38,080 --> 01:26:43,440
+[SPEAKER_02] As you know, David, and as you found out earlier, Jacob, I've been a fan of your podcast for about a year now.
+
+1051
+01:26:43,840 --> 01:26:47,680
+[SPEAKER_02] I hadn't stumbled on it until this spring, but I've catched up.
+
+1052
+01:26:47,840 --> 01:26:59,520
+[SPEAKER_02] I've now listened to every episode and really love what you guys are doing, not only because the content is great, but it's really built a nice community around people who are living and breathing this stuff every day as far as things go on my end.
+
+1053
+01:26:59,680 --> 01:27:00,560
+[SPEAKER_02] So you can reach me.
+
+1054
+01:27:01,120 --> 01:27:03,200
+[SPEAKER_02] at philgcarter on x.
+
+1055
+01:27:03,920 --> 01:27:07,600
+[SPEAKER_02] You can also check out my website at WWW dot philgcarter dot com.
+
+1056
+01:27:08,400 --> 01:27:13,920
+[SPEAKER_02] And then I'm launching a course with Reforge in January actually on consumer subscription growth.
+
+1057
+01:27:14,080 --> 01:27:16,320
+[SPEAKER_02] So as you said, David, there was a lot to cover in this podcast.
+
+1058
+01:27:16,480 --> 01:27:19,520
+[SPEAKER_02] And even with the time we had, we only really scratched the surface.
+
+1059
+01:27:20,080 --> 01:27:31,920
+[SPEAKER_02] And so if you feel like some of these frameworks and tools we talked about would be beneficial for your business, reach out to me through the channels that I mentioned, or you can go to reforge dot com and you should be able to find the course there as well.
+
+1060
+01:27:32,240 --> 01:27:32,640
+[SPEAKER_01] Awesome.
+
+1061
+01:27:32,720 --> 01:27:33,600
+[SPEAKER_01] Phil, thank you so much.
+
+1062
+01:27:33,840 --> 01:27:34,640
+[SPEAKER_01] This was a blast.
+
+1063
+01:27:34,960 --> 01:27:36,640
+[SPEAKER_01] And certainly in this hour and a half.
+
+1064
+01:27:37,280 --> 01:27:41,920
+[SPEAKER_01] already influenced my thinking a lot, so I think it's going to be super valuable for the audience.
+
+1065
+01:27:42,080 --> 01:27:43,200
+[SPEAKER_01] So thank you for sharing today.
+
+1066
+01:27:43,440 --> 01:27:44,640
+[SPEAKER_02] Likewise, it was my pleasure.
+
+1067
+01:27:46,960 --> 01:27:48,320
+[SPEAKER_01] Thank you so much for listening.
+
+1068
+01:27:49,280 --> 01:27:52,640
+[SPEAKER_01] If you have a minute, please leave a review in your favorite podcast player.
+
+1069
+01:27:53,520 --> 01:27:58,400
+[SPEAKER_01] You can also stop by chat dot subclub dot com to join our private community.
