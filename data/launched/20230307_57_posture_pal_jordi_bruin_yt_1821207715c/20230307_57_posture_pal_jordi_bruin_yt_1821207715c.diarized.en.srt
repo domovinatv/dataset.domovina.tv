@@ -1,0 +1,4251 @@
+1
+00:00:01,040 --> 00:00:01,920
+[SPEAKER_01] Welcome to Launched.
+
+2
+00:00:02,000 --> 00:00:10,400
+[SPEAKER_01] I'm Charlie Chapman, and today I'm excited to bring you the prolific developer behind the apps PostgrePy, MacWhisper, and much more, Jordi Brune.
+
+3
+00:00:24,320 --> 00:00:25,600
+[SPEAKER_01] Jordi, welcome to the show.
+
+4
+00:00:26,080 --> 00:00:27,360
+[SPEAKER_01] Thanks for the invitation, Charlie.
+
+5
+00:00:27,600 --> 00:00:28,240
+[SPEAKER_01] Thanks for coming.
+
+6
+00:00:29,200 --> 00:00:32,000
+[SPEAKER_01] I feel like this invitation started, unlike most, in person.
+
+7
+00:00:32,560 --> 00:00:42,160
+[SPEAKER_00] I think we were like walking down the streets of San, but it got finalized in that apartment that you were staying in with Christian and Mustafa.
+
+8
+00:00:42,400 --> 00:00:42,480
+[SPEAKER_01] Yeah.
+
+9
+00:00:42,880 --> 00:00:47,120
+[SPEAKER_00] And we were sitting on the couch and you're like, oh yeah, you're gonna totally go on show.
+
+10
+00:00:47,360 --> 00:00:49,200
+[SPEAKER_00] And it's like, okay, let's make it happen.
+
+11
+00:00:49,520 --> 00:00:54,480
+[SPEAKER_01] I think the thing that happened is you come out with an app approximately every four days or something like that.
+
+12
+00:00:54,800 --> 00:00:57,760
+[SPEAKER_01] So every time we've talked, you're like, oh, I got this new thing coming.
+
+13
+00:00:58,160 --> 00:00:59,120
+[SPEAKER_01] Let's wait till after that.
+
+14
+00:01:00,400 --> 00:01:03,360
+[SPEAKER_01] But then by the time we get to organizing again, you have another new thing coming.
+
+15
+00:01:03,520 --> 00:01:05,360
+[SPEAKER_01] And so I think we're finally just forcing it.
+
+16
+00:01:05,760 --> 00:01:07,040
+[SPEAKER_00] It's sort of my fear of commitment.
+
+17
+00:01:07,120 --> 00:01:12,000
+[SPEAKER_00] Like when it gets too close, I just, okay, let's quickly release something new so I have a good excuse for Charlie not to get on the show.
+
+18
+00:01:14,240 --> 00:01:19,680
+[SPEAKER_01] That's your way of ghosting me is it's like incredibly elaborate making of new apps.
+
+19
+00:01:20,240 --> 00:01:20,560
+[SPEAKER_00] Exactly.
+
+20
+00:01:20,880 --> 00:01:25,600
+[SPEAKER_00] And then that way, like, there's no way you can, like, judge me for it because it would just seem like I'm being very productive.
+
+21
+00:01:26,000 --> 00:01:29,280
+[SPEAKER_00] It's actually just a coping mechanism for not getting on your show.
+
+22
+00:01:29,520 --> 00:01:31,280
+[SPEAKER_01] That's a, it's a real life hack right there.
+
+23
+00:01:31,440 --> 00:01:31,520
+[SPEAKER_01] Okay.
+
+24
+00:01:31,840 --> 00:01:38,560
+[SPEAKER_01] Well, before we get into all of your apps here, let's let's start things off by letting the listeners know who you are.
+
+25
+00:01:39,200 --> 00:01:43,040
+[SPEAKER_01] So the three questions I always ask to start this off is where are you from?
+
+26
+00:01:43,440 --> 00:01:45,680
+[SPEAKER_01] Do you have a formal education related to what you do?
+
+27
+00:01:46,000 --> 00:01:47,360
+[SPEAKER_01] And then we can talk about your career.
+
+28
+00:01:47,680 --> 00:01:51,680
+[SPEAKER_01] I guess we can talk about your career that led up to you making apps.
+
+29
+00:01:52,320 --> 00:01:52,560
+[SPEAKER_00] All right.
+
+30
+00:01:52,960 --> 00:01:54,320
+[SPEAKER_00] So I am Jordi Bruin.
+
+31
+00:01:54,800 --> 00:02:02,000
+[SPEAKER_00] In Dutch you say Jordi Braun, but we just figured out that the Braun is not really easily pronounciable for people who speak English.
+
+32
+00:02:02,240 --> 00:02:06,320
+[SPEAKER_01] Did you did you just pronounce the J, the J sound when you said Jordi?
+
+33
+00:02:06,480 --> 00:02:07,680
+[SPEAKER_00] Oh, you did say it.
+
+34
+00:02:07,840 --> 00:02:09,680
+[SPEAKER_00] If I say it in English, I would say Jordi Bruin.
+
+35
+00:02:09,840 --> 00:02:10,800
+[SPEAKER_00] Oh, you said J.
+
+36
+00:02:11,040 --> 00:02:11,120
+[SPEAKER_00] Yeah.
+
+37
+00:02:11,360 --> 00:02:11,760
+[SPEAKER_00] I don't know.
+
+38
+00:02:11,920 --> 00:02:13,120
+[SPEAKER_00] It's just easier, I guess, for people.
+
+39
+00:02:13,200 --> 00:02:16,560
+[SPEAKER_00] But so right now I live in Amsterdam in the Netherlands.
+
+40
+00:02:16,800 --> 00:02:20,240
+[SPEAKER_00] I'm from a smaller town called Alkmaar, which probably most people don't know.
+
+41
+00:02:20,480 --> 00:02:23,680
+[SPEAKER_00] It's known for its cheese, but other than that, there's not really a lot of reasons to go there.
+
+42
+00:02:24,000 --> 00:02:36,720
+[SPEAKER_00] I used to work at this digital agency for about eight years before I went indie, but before that I did a study in management economics and law, which I think is pretty much the furthest away from any of this stuff that we're doing now.
+
+43
+00:02:38,480 --> 00:02:43,120
+[SPEAKER_00] Had a short three months stint at the University of Amsterdam doing media and culture, but then I...
+
+44
+00:02:44,000 --> 00:02:48,640
+[SPEAKER_00] It was this study where you could do like film, TV, radio stuff, and internet stuff.
+
+45
+00:02:49,040 --> 00:02:51,760
+[SPEAKER_00] So you went from law to media?
+
+46
+00:02:52,400 --> 00:02:53,760
+[SPEAKER_00] No, so the media stuff was before.
+
+47
+00:02:53,920 --> 00:02:54,800
+[SPEAKER_00] That was when I was 18.
+
+48
+00:02:55,040 --> 00:02:57,200
+[SPEAKER_00] And I thought, oh, I'm going to be able to do stuff with the internet.
+
+49
+00:02:57,840 --> 00:03:41,520
+[SPEAKER_00] And then in the first three months, I had to do these workshops and we had to notice this like not very well-known producer director called martin scorsese and i'd never heard of him before so i think that might have been a sign that maybe that was not the study for me uh that whole tv film world um and then i had this year where i didn't know what i wanted to do did all these tests where you talk to a guy and they ask you 400 questions and say oh you need to be this or that um and i was watching a lot of scrubs at the time which is this tv show about doctors so obviously that became an answer for me because i don't know sort of gravitated to those answers but yeah that wasn't the thing as well and then i did this study called management Economics and Law, which is basically a little bit of everything, like a very broad generic study.
+
+50
+00:03:43,040 --> 00:03:46,800
+[SPEAKER_00] And in the third year or so, I wasn't really enjoying it anymore.
+
+51
+00:03:47,040 --> 00:03:54,160
+[SPEAKER_00] And I started this internship at this digital agency called Triple in Altmar as a data analyst.
+
+52
+00:03:54,320 --> 00:03:56,640
+[SPEAKER_00] Like, I don't know, looking at Excel data or something.
+
+53
+00:03:57,840 --> 00:04:01,600
+[SPEAKER_00] But it was in the world of like apps and working with the phone and everything.
+
+54
+00:04:01,760 --> 00:04:03,760
+[SPEAKER_00] So this was 2010 or something around that time.
+
+55
+00:04:05,440 --> 00:04:06,640
+[SPEAKER_00] And I really enjoyed that.
+
+56
+00:04:06,880 --> 00:04:12,400
+[SPEAKER_00] So I ended up like staying there for eight years, finishing my studies like five years after starting there.
+
+57
+00:04:12,800 --> 00:04:15,280
+[SPEAKER_00] So I think in total, it took me eight years to finish the study.
+
+58
+00:04:15,520 --> 00:04:20,480
+[SPEAKER_00] It's supposed to be four years because there was like this gap where, yeah, I mean, I got the job already that I wanted to do, right?
+
+59
+00:04:20,720 --> 00:04:21,200
+[SPEAKER_00] Right.
+
+60
+00:04:22,160 --> 00:04:23,840
+[SPEAKER_00] There was not a lot of incentive to do that.
+
+61
+00:04:24,080 --> 00:04:27,680
+[SPEAKER_00] And the nice thing is at that company, I got a lot of room for growth.
+
+62
+00:04:27,920 --> 00:04:45,680
+[SPEAKER_00] So I think I had six different job titles through the years, from UX designer to concepting to project management to at some point doing some actual programming as well, because I was also that typical designer that would come up to the developer to say, ah, why is it three months of work?
+
+63
+00:04:45,920 --> 00:04:48,880
+[SPEAKER_00] Because I just found on StackOverflow that you can just use this code.
+
+64
+00:04:49,920 --> 00:05:24,720
+[SPEAKER_00] um and i remember very vividly we had this like all hands meeting for this team i was on like to really discuss that behavior because the designers were really the annoying people in the room there but that was also the trigger for me to to start learning how to program because we had made i think the first year i was there we made this small app called lulu which is basically a way to to plan dates in whatsapp so just a simple way to do that with friends and um like a developer colleague made it and i was like oh like i want to be able to add stuff to this i want to be able to make it better.
+
+65
+00:05:25,520 --> 00:05:29,040
+[SPEAKER_00] So I think it was about four months after Swift 1.0 came out.
+
+66
+00:05:29,920 --> 00:05:45,920
+[SPEAKER_00] I took their Objective C project, put that on the left side of my screen, and then just opened Xcode on the right side and just rewrote everything line by line in Swift because that way you could just see, okay, what does this 200 piece of line, a piece of code do?
+
+67
+00:05:46,560 --> 00:05:49,120
+[SPEAKER_00] And just like put it over one by one basically.
+
+68
+00:05:50,800 --> 00:05:55,840
+[SPEAKER_00] And the main thing there was I had an incentive to make it better because it was not just a like a tutorial project.
+
+69
+00:05:55,920 --> 00:05:58,800
+[SPEAKER_00] It was like, hey, I want to be able to work on this and make it better.
+
+70
+00:05:59,040 --> 00:07:12,160
+[SPEAKER_00] So it was a really good incentive to to make yeah to learn how to program um and then i think 2017 i took a sabbatical traveled through asia moved to amsterdam afterwards um and then i noticed like i want to do more like actual development i don't want to do this like i don't want to do presentations anymore for companies and like trying to convince them to make this thing that we want to make um so i decided to go freelance uh in 2019 um and my first project was a react native project for uh for the local zoo here which was a really cool project i'd never done react native before but i figured oh three months to learn it like how hard can it be um and it was actually not that bad but like i didn't want to get into react native development right right so then i was doing some um some project management stuff in early 2020 and then um covid came and that project i was working on got put on pause and so then in april 2020 is actually when i started really working on my own projects like really working on them so i made this app susie that we can either talk about now or later but um which kind of was my first real in the project kind of thing where I was like, oh, hey, I can actually make money with this.
+
+71
+00:07:12,240 --> 00:07:41,840
+[SPEAKER_00] this i can work on this full time like well not not full time what what was that yeah so i i had a girlfriend in 2019 who was allergic to oranges and she was not Dutch so every time i would like read the label on the back to see if there's oranges in there so i made this small app for her as a romantic gesture to um like scan the label and it would tell her hey you can have this or you cannot have this and then well like that that thing ended and then um in April 2020, I was like, all right, what do I want to do?
+
+72
+00:07:41,920 --> 00:07:45,840
+[SPEAKER_00] And then I figured, all right, let me just make this app and make it for a bunch of allergies.
+
+73
+00:07:45,920 --> 00:07:48,560
+[SPEAKER_00] So that if you have peanut allergy or, you know.
+
+74
+00:07:48,560 --> 00:09:38,240
+[SPEAKER_00] um you're uh gluten intolerant or you are vegan or something you can just like point your camera at the like the ingredient label on it so was it more or less looking for it was looking for like specific words and yeah so i had these huge words list yeah okay that's interesting yeah and it all started from a very simple um a sample project from apple so they they had released this like text recognition thing the year before and they had the sample project where you could scan a business card and it would look for a phone number ah yeah see i have no experience with text recognition at all but i took that sample project found the code where it looked for the phone number and just literally put the word orange but in dutch in there and kind of worked so it was like a very clear thing of like all right let me make it useful and then like see what else i can make with it um but it just started as a fun little thing to make for her right so um but then it it got picked up by by a lot of press people really liked it um apple featured it in the first week or so after it came out so all those things were like hey there's like i can actually start doing these things and i'm just fantasizing about it and it was also really nice because before that you're always or i was always making things for clients and then they had clients right they had customers so if i was passionate about something it was always like yeah if the the client is not as passionate about it it's not really going to go anywhere exactly but here i i i got all the feedback email and i got all the messages from from people who wanted to improve the app so there was this direct connection between what i was making and the impact it was having on people so that was really nice yeah that was always because i did consulting too for a while and that was always one of the like even outside of the indie space just internally working for a company who works for a company who has users.
+
+75
+00:09:39,600 --> 00:09:42,960
+[SPEAKER_01] There's a lot of disconnect between you and the users themselves.
+
+76
+00:09:43,200 --> 00:09:51,600
+[SPEAKER_01] And then even if you do get that feedback, you have to push for getting the client to prioritize because everything's a trade-off, right?
+
+77
+00:09:51,760 --> 00:09:55,280
+[SPEAKER_01] There's like, if I do this, it makes their lives easier, but we lose money.
+
+78
+00:09:55,840 --> 00:09:59,200
+[SPEAKER_01] And as an individual or as a company, you can make that choice.
+
+79
+00:09:59,520 --> 00:10:03,760
+[SPEAKER_01] But if you're consulting, you have to convince somebody else to make that choice.
+
+80
+00:10:04,080 --> 00:10:04,160
+[SPEAKER_00] Yeah.
+
+81
+00:10:04,320 --> 00:10:09,520
+[SPEAKER_00] And I think also if you're doing it yourself, you're the one that gets to deal with the results of that choice.
+
+82
+00:10:09,840 --> 00:10:28,480
+[SPEAKER_00] Whereas if you work with a team or a company, you can say, like, oh., we need to add this, but then if that also has effects on customer support or has effects on the designers or on project management or long-term impact of a decision on the company, like those things are obviously a lot easier to do when your company is just you and the project you're making are smaller, et cetera, et cetera.
+
+83
+00:10:28,800 --> 00:10:38,480
+[SPEAKER_00] So I think that's why through the years I've gravitated more and more towards just making like very simple focused things where I know the scope of like this decision has this impact.
+
+84
+00:10:39,120 --> 00:10:49,360
+[SPEAKER_00] and worst case it has this as a result but that's manageable basically um so yeah i'm i'm really happy i was able to to get away from i mean i learned a lot there.
+
+85
+00:10:49,520 --> 00:10:50,480
+[SPEAKER_00] Like, don't get me wrong.
+
+86
+00:10:50,800 --> 00:10:56,560
+[SPEAKER_00] I think all the skills I learned by working on these big projects were like, oh, I want to make it that much better.
+
+87
+00:10:56,800 --> 00:10:58,640
+[SPEAKER_00] Okay, maybe there's not a budget for this right now.
+
+88
+00:10:58,720 --> 00:11:01,280
+[SPEAKER_00] Or let me just do it myself because that way it actually gets done.
+
+89
+00:11:02,240 --> 00:11:03,760
+[SPEAKER_00] There's definitely benefits there, of course.
+
+90
+00:11:04,080 --> 00:11:13,680
+[SPEAKER_00] But, um, yeah, I'm happy to be away from that now where it's more I make something and I get an email the next day from a customer that says, hey.
+
+91
+00:11:13,920 --> 00:11:21,360
+[SPEAKER_00] I really enjoyed you adding that and then me replying in a minute because I'm on my phone on my Mac like that that's that's really nice feeling.
+
+92
+00:11:21,600 --> 00:11:26,080
+[SPEAKER_01] Yeah, the flip side is when you get emails and you're like, ye yes, I know that's a problem.
+
+93
+00:11:26,640 --> 00:11:28,320
+[SPEAKER_01] No, I don't have time to do that now.
+
+94
+00:11:29,120 --> 00:11:30,400
+[SPEAKER_01] And you are the one doing that.
+
+95
+00:11:30,560 --> 00:11:34,240
+[SPEAKER_01] Whereas at a company, you're kind of like, I agree, but they won't let me do that.
+
+96
+00:11:34,400 --> 00:11:36,000
+[SPEAKER_01] And it kind of, you know what I mean?
+
+97
+00:11:36,240 --> 00:11:47,360
+[SPEAKER_01] There's a little bit of like, I don't know, I feel like I carry a lot more guilt for my indie stuff around than I do for my work stuff, because my work stuff, it's the company, the cloud of the company's fault.
+
+98
+00:11:47,520 --> 00:11:48,000
+[SPEAKER_01] You know what I mean?
+
+99
+00:11:48,400 --> 00:11:49,040
+[SPEAKER_01] True, true.
+
+100
+00:11:50,080 --> 00:11:57,040
+[SPEAKER_00] I mean, there's this thing where you can be open about it to your customers, like, hey, it's me that's working on this thing.
+
+101
+00:11:57,600 --> 00:12:02,800
+[SPEAKER_00] So a lot of times, for example, this week, I had a problem in Monster.terey for one of my apps for Mac Whisper.
+
+102
+00:12:02,960 --> 00:12:05,680
+[SPEAKER_00] And I haven't had a Monterey device in a while.
+
+103
+00:12:05,840 --> 00:12:08,160
+[SPEAKER_00] So I yesterday installed a virtualization thing.
+
+104
+00:12:09,040 --> 00:12:11,600
+[SPEAKER_00] But it's very difficult for me to test that exact flow.
+
+105
+00:12:12,320 --> 00:12:15,920
+[SPEAKER_00] So what I just say now is like, all right, I'm going to be working on that.
+
+106
+00:12:16,240 --> 00:12:17,920
+[SPEAKER_00] I can just give you a refund in the meantime.
+
+107
+00:12:18,080 --> 00:12:20,960
+[SPEAKER_00] Like, to get away from that guilt as well.
+
+108
+00:12:21,360 --> 00:12:27,760
+[SPEAKER_00] So, um, I think that's also one of the things, like, you don't have to, you don't have to consult with anyone else in the company.
+
+109
+00:12:27,840 --> 00:12:29,120
+[SPEAKER_00] Like, how are you going to approach this?
+
+110
+00:12:29,360 --> 00:12:30,800
+[SPEAKER_00] Like, whatever works to make.
+
+111
+00:12:31,200 --> 00:12:34,560
+[SPEAKER_00] So my goal is basically to have as little stress as possible when it comes to work.
+
+112
+00:12:34,720 --> 00:13:16,640
+[SPEAKER_00] So I sometimes just don't do certain features or certain things if it would lead to more stress but it's always a bit of a trade-off because sometimes you take on things that are more ambitious and then okay this code is a lot more complex than I thought it's leading to a lot okay I have to spend another week trying to get it all better um so yeah it's it's an interesting trade-off but I think with time it gets easier so is Susie still in the store then I don't I don't recall you talking about that before um so it came out in 2020 so by now it's sort of like old so to say in terms of the stuff I've been working on but it's still available right now um okay cool yeah Yeah, I haven't done an update in about, I would say more than a year.
+
+113
+00:13:17,520 --> 00:13:35,200
+[SPEAKER_00] I did a big update in the end of 2021, but by that time was also slowly starting to work on some other things that I was maybe a bit more passionate about because I kind of lost the intrinsic motivation to really improve SUSY because I'm not allergic to anything and I don't have certain dietary requirements.
+
+114
+00:13:35,360 --> 00:13:42,960
+[SPEAKER_00] So then if it doesn't, if it's not a continuous part of my like daily life, it's hard to to really come up with, oh, this should work better, right?
+
+115
+00:13:43,120 --> 00:15:01,120
+[SPEAKER_00] If you're like for the apps that I make that I use often as well, a lot of times I was run into something it's like oh i wish it would do this and then oh wait i'm the developer i can make that yeah exactly um but the nice thing is that susie is still super useful for people because i made it in a way that like even if i would never do an update it would still be useful people can get can add their own categories and everything right um because i like i make a lot of things but i also try to make all the things i make like work in sort of a vacuum that even if there was only like one person that would want to use it it would still be valuable for that person it doesn't require me to do a continuous update so it doesn't require me to to um like like fix breaking features like breaking changes every year with the new releases because i try to stay very like true to the the default ios right guidelines and components um like basically been doing swift ui only since 2020 since when sushi came out um and i usually target like the latest os's as well so if anything new right now i would make ventura only or ios 16 only uh anything i would release the week after 17 comes out would just be 17 only so that way you kind of get away from a lot of those like like maintenance kind of thoughts that could break your app.
+
+116
+00:15:01,360 --> 00:15:04,240
+[SPEAKER_00] And obviously if something breaks, I will try to fix it.
+
+117
+00:15:04,480 --> 00:15:07,760
+[SPEAKER_00] But so the same is with Susie.
+
+118
+00:15:08,000 --> 00:15:11,200
+[SPEAKER_00] Like even if I wouldn't do anything on it right now, it would still be able to function.
+
+119
+00:15:11,360 --> 00:15:19,760
+[SPEAKER_00] And now at the point, like, oh, I want to get back to it again and do like a two-week crunch where I just like redo all the screens in like modern Swift UI, I guess.
+
+120
+00:15:21,520 --> 00:15:22,400
+[SPEAKER_00] But yeah, I don't know.
+
+121
+00:15:22,800 --> 00:15:25,040
+[SPEAKER_00] That's sort of the trade-off with making a lot of different things.
+
+122
+00:15:25,840 --> 00:15:37,520
+[SPEAKER_00] um that sometimes the things that you know it's like having a lot of children i guess and i keep i love this one right now but that that one she was cute when she was two and a half but now it's like she's just being just being annoyed.
+
+123
+00:15:38,000 --> 00:15:42,400
+[SPEAKER_00] Um, no, but like, it's just, um, it's a bit of a trade-off.
+
+124
+00:15:42,560 --> 00:15:42,640
+[SPEAKER_00] Yeah.
+
+125
+00:15:42,880 --> 00:15:49,520
+[SPEAKER_00] Um, I think ideally I would want to at some point hire someone to, to work on, on maintaining these projects.
+
+126
+00:15:49,680 --> 00:16:00,480
+[SPEAKER_00] Um, last year I had an intern for the first time and I really enjoyed that experience, but I was also traveling around that time, so I was, I felt a bit guilty to, to not offer as much support or guidance there.
+
+127
+00:16:00,720 --> 00:16:12,640
+[SPEAKER_00] And so I think ideally I would want to have maybe sort of a junior developer who look after all the projects that are already out there and just like do small tweaks here and there and small, small improvements, because it's also nice, I guess.
+
+128
+00:16:13,200 --> 00:17:33,200
+[SPEAKER_00] to work on because everything's already like the basis is there you can just like tweak on top of it i think that would be nice as a junior programming tool yeah for sure um but it's it's kind of hard like i've never really considered myself to be a uh like a boss or something where i would have like people working under me i'd rather collaborate with people or something but and i'm also a perfectionist so it would be hard to give code away like all right i'm just let i'm just gonna let you work on this project yeah these are kind of like these are your kids it's kind of hard to let somebody else muck around in there yeah and i think it's also you have to kind of take some distance from it because like if you would put a junior developer or something on a project it's probably going to take i don't know like two weeks to make some some feature whereas for me because i'm like super into how that app was made i could probably do it in a day or something um so it's kind of it feels hard at least for me to justify then letting someone else work on that right i can also spend more of my time and then obviously that's that's this trade-off where over time you want to like spend less time working on the stuff you're working on right um and delegate that in a way then like time versus money what's more important um But yeah, I think right now I'm not at the point where I would want to have people actually working for me because comes with a lot of responsibility that I don't really want to take, I think.
+
+129
+00:17:33,920 --> 00:17:36,400
+[SPEAKER_01] Okay, so Suzy is out there.
+
+130
+00:17:36,960 --> 00:17:40,640
+[SPEAKER_01] It somewhat surprisingly to you has an audience.
+
+131
+00:17:40,800 --> 00:17:41,920
+[SPEAKER_01] It's like a little bit of a business.
+
+132
+00:17:42,400 --> 00:17:43,280
+[SPEAKER_01] Where do you go from there?
+
+133
+00:17:43,840 --> 00:17:46,640
+[SPEAKER_00] At the time, I was a friend of mine.
+
+134
+00:17:47,040 --> 00:17:49,200
+[SPEAKER_00] She was helping me out with doing the marketing and everything.
+
+135
+00:17:50,080 --> 00:17:55,680
+[SPEAKER_00] We were trying to make it like really grow, see what features we need to add, reach out to customers and everything.
+
+136
+00:17:57,520 --> 00:18:00,240
+[SPEAKER_00] It got featured by Apple and like people from Apple reached out.
+
+137
+00:18:00,720 --> 00:18:12,720
+[SPEAKER_00] So then all of a sudden you're in this sort of serious, all right, now I'm going to make it as an indie developer and decide, okay, I'm not going to do client work and just focus on this with the little savings I had at the time.
+
+138
+00:18:13,520 --> 00:18:24,000
+[SPEAKER_00] It wasn't, I think it peaked at around maybe a thousand per month or something at that time in terms of income, which is like, it's nice, but it's not comfortable to just live on, right?
+
+139
+00:18:24,640 --> 00:18:27,760
+[SPEAKER_00] So I took some client work again for a little bit on the side.
+
+140
+00:18:27,920 --> 00:18:28,080
+[SPEAKER_00] And then...
+
+141
+00:18:28,560 --> 00:18:34,160
+[SPEAKER_00] Well, as you probably know, if you have client work, all of a sudden the client deadlines are more important than your own deadlines.
+
+142
+00:18:35,040 --> 00:18:42,480
+[SPEAKER_00] So it's very easy to not work on your own stuff and just spend the evenings working on that stuff for the client who actually is paying for you.
+
+143
+00:18:45,200 --> 00:18:54,800
+[SPEAKER_00] And I think around that time, I was focused too much on just Susie, whereas what I really enjoyed was solving these small problems here and there.
+
+144
+00:18:55,520 --> 00:18:59,600
+[SPEAKER_00] So I did some small projects here and there that were...
+
+145
+00:19:00,560 --> 00:19:14,640
+[SPEAKER_00] yeah not really going anywhere like just not not finishing them not really releasing them um so it wasn't until march 2021 when i said okay i'm gonna stop working for this client and then it gave me some more time to work on my own stuff again.
+
+146
+00:19:15,840 --> 00:19:24,240
+[SPEAKER_00] And by the time, I think I was, like the interest for Susie was kind of faded away already from this initial, hey, I'm working on this cool thing that helps people.
+
+147
+00:19:25,200 --> 00:19:30,640
+[SPEAKER_00] But it, it, um, it was like, I knew I wanted to do that kind of stuff, right?
+
+148
+00:19:30,800 --> 00:19:34,720
+[SPEAKER_00] I wanted to, um, to work more on my own projects.
+
+149
+00:19:35,280 --> 00:20:17,280
+[SPEAKER_00] So then in, I think April 2021, there was this, this hackathon by, um, by two people the big brain hackathon or something um i can look up the names later this is like a local local thing or just like on no just an online thing um i know exactly where they are like they now both work at apple actually so um and it was just so like a one day a one day um hackathon thing and then i made this app with um it uses this this you know the text of speech thing that's in ios where you can like let the phone speak for you basically yeah um they had just released this new addition to it where you could pipe that speech output into a phone call.
+
+150
+00:20:17,680 --> 00:20:24,800
+[SPEAKER_00] So let's say you and I were calling on the phone, the app could like say stuff into the, could say it into the conversation.
+
+151
+00:20:25,120 --> 00:20:26,000
+[SPEAKER_00] Oh, interesting.
+
+152
+00:20:27,040 --> 00:20:28,880
+[SPEAKER_00] So I thought, oh, I'm going to make something with that.
+
+153
+00:20:29,040 --> 00:20:33,840
+[SPEAKER_00] So I made this app called Unmute, which basically lets mute people.
+
+154
+00:20:34,000 --> 00:20:37,040
+[SPEAKER_00] So people who cannot speak for whatever reason talk on the phone.
+
+155
+00:20:37,200 --> 00:20:39,920
+[SPEAKER_00] So they could just type and it would be sent to the other phone.
+
+156
+00:20:41,120 --> 00:20:44,080
+[SPEAKER_00] It was just like a fun project to try out this new API.
+
+157
+00:20:46,320 --> 00:20:50,480
+[SPEAKER_00] But it was like super helpful, was impressive, was able to make it in a day.
+
+158
+00:20:51,040 --> 00:20:51,920
+[SPEAKER_00] But it was just like...
+
+159
+00:20:52,560 --> 00:21:17,680
+[SPEAKER_00] nice swift ui stuff that i had learned over the last year by just using swift ui and then adding that specific api so it was not super technically difficult, but it was it was still it solved a cool problem for people um or cool problem it solved like a problem for people who need it most um and then people reach out saying hey wouldn't you be able to do this also but the other way around so give subtitles to So did you did you release that in the store after that hackathon?
+
+160
+00:21:18,240 --> 00:21:23,040
+[SPEAKER_00] Yeah, I think I released it I think I submitted it the same day and then it was it was live at 1 a.m.
+
+161
+00:21:23,200 --> 00:21:40,480
+[SPEAKER_00] or something so I think it was it was it was not life when the the sort of the prices were announced or something for the hackathon but um but yeah like I kind of learned from the last years before that like it's better just make something very small and just release that, then to like worry too much or is it perfect?
+
+162
+00:21:40,880 --> 00:21:42,720
+[SPEAKER_00] Because that's a lesson I could take.
+
+163
+00:21:44,160 --> 00:21:44,240
+[SPEAKER_00] Yeah.
+
+164
+00:21:44,640 --> 00:21:49,680
+[SPEAKER_00] But like the nice thing is that if you just release something, then the next day you can just release something else again.
+
+165
+00:21:49,840 --> 00:21:50,000
+[SPEAKER_00] Sure.
+
+166
+00:21:50,160 --> 00:21:50,560
+[SPEAKER_00] And improve.
+
+167
+00:21:51,360 --> 00:21:55,360
+[SPEAKER_00] And there's no one who's going to look at your first release and think, oh, this is not good enough.
+
+168
+00:21:55,600 --> 00:21:56,320
+[SPEAKER_00] Like, no one cares.
+
+169
+00:21:56,560 --> 00:21:57,760
+[SPEAKER_00] No one cares about your releases.
+
+170
+00:21:58,000 --> 00:22:00,080
+[SPEAKER_00] And the only people that care are people that follow you online.
+
+171
+00:22:00,400 --> 00:22:00,560
+[SPEAKER_00] Right.
+
+172
+00:22:00,800 --> 00:22:03,200
+[SPEAKER_00] And they they know you and they're sort of like friendly towards you.
+
+173
+00:22:03,280 --> 00:22:11,600
+[SPEAKER_00] So they they will not like on you if you release something that's super but the people that run into it where the app already solves a problem for them, even though it's not great.
+
+174
+00:22:11,840 --> 00:22:12,800
+[SPEAKER_00] Like, yeah, they're.
+
+175
+00:22:13,200 --> 00:22:14,880
+[SPEAKER_00] just happy that it came out a day before.
+
+176
+00:22:15,920 --> 00:22:18,480
+[SPEAKER_00] Otherwise, you would have waited until it was perfect or something.
+
+177
+00:22:18,640 --> 00:22:18,800
+[SPEAKER_00] Right?
+
+178
+00:22:21,360 --> 00:22:24,240
+[SPEAKER_00] So that was also like, hey, I can just like solve these little problems.
+
+179
+00:22:24,320 --> 00:22:27,920
+[SPEAKER_00] And it got this initial rush again, even though I think the audience was much smaller by then.
+
+180
+00:22:28,160 --> 00:22:31,360
+[SPEAKER_00] Back then, I think Unmute maybe in total, I had 1000 downloads or something.
+
+181
+00:22:31,440 --> 00:22:32,960
+[SPEAKER_00] So it's not great or anything.
+
+182
+00:22:33,200 --> 00:22:36,720
+[SPEAKER_00] But got another request from Apple to get featured.
+
+183
+00:22:36,880 --> 00:22:42,400
+[SPEAKER_00] So I like, I remember you would get this email every now and then saying, oh, we your app might be featured on the apps.
+
+184
+00:22:42,640 --> 00:22:44,320
+[SPEAKER_00] Yeah, go some promo assets.
+
+185
+00:22:44,640 --> 00:22:46,160
+[SPEAKER_00] Exactly, you have to make the promo assets.
+
+186
+00:22:46,240 --> 00:22:59,520
+[SPEAKER_00] And for Unmute, it was the first time that I hired an illustrator to make this beautiful artwork for it and then they ended up never using it, which I still blame them for, but sometimes I still get the request for that specific app.
+
+187
+00:22:59,760 --> 00:23:02,240
+[SPEAKER_00] So I think it like it fits whole in the whole accessibility.
+
+188
+00:23:02,880 --> 00:23:05,280
+[SPEAKER_00] We want to do we want to make accessible apps, right?
+
+189
+00:23:05,600 --> 00:23:07,360
+[SPEAKER_00] Yeah, that makes sense.
+
+190
+00:23:07,920 --> 00:23:13,120
+[SPEAKER_00] I got some requests from people to make like a subtitle version, but that never really was possible.
+
+191
+00:23:13,520 --> 00:23:15,840
+[SPEAKER_00] So I kind of tried and it didn't go anywhere.
+
+192
+00:23:16,560 --> 00:23:24,800
+[SPEAKER_00] And then in WWC 2021 Apple announced SharePlay, which allows you to like watch Netflix together over FaceTime basically.
+
+193
+00:23:25,520 --> 00:23:58,000
+[SPEAKER_00] um and i went to that um that lab during wwc where you get to talk to the engineers um and basically ask hey i'm trying to solve this particular problem could i abuse sort of say the shareplay framework for that where i record the sub like the audio on each side and convert them to subtitles and then send the subtitles over the other line basically and then present them for the other user um so I think there was another hackathon or something that weekend after WWC and I made it there with a friend and it actually worked.
+
+194
+00:23:59,520 --> 00:24:03,040
+[SPEAKER_00] So I spent a lot of time the second half of 2021 working on that as well.
+
+195
+00:24:03,200 --> 00:24:10,240
+[SPEAKER_00] And then it ended up becoming this app called Navi, which would in turn like add subtitles and live translation to Facetime.
+
+196
+00:24:10,720 --> 00:24:19,280
+[SPEAKER_00] So you could have a Facetime call with someone who speaks Spanish or Japanese or Chinese and then through SharePlay, it would like send over the subtitles for what that person is saying.
+
+197
+00:24:19,520 --> 00:24:21,040
+[SPEAKER_01] It was so, so cool too.
+
+198
+00:24:21,280 --> 00:24:25,440
+[SPEAKER_01] Like it just the whole flow and everything, it just looked really, really cool.
+
+199
+00:24:25,840 --> 00:24:26,080
+[SPEAKER_01] Thanks.
+
+200
+00:24:26,240 --> 00:24:26,320
+[SPEAKER_00] Yeah.
+
+201
+00:24:26,480 --> 00:24:30,160
+[SPEAKER_00] It was it was one of those things where like, oh, can I make this technically possible?
+
+202
+00:24:31,040 --> 00:24:31,760
+[SPEAKER_00] Like, oh, okay.
+
+203
+00:24:32,000 --> 00:24:33,360
+[SPEAKER_00] Let me let me just make this now.
+
+204
+00:24:33,600 --> 00:24:35,840
+[SPEAKER_00] Because again, I I I'm not deaf.
+
+205
+00:24:36,000 --> 00:24:41,600
+[SPEAKER_00] I don't have anyone super close to me who's deaf, so it's nice to be able to make this service for people.
+
+206
+00:24:42,400 --> 00:24:45,680
+[SPEAKER_00] But then once I added that translation feature, it also became useful for me.
+
+207
+00:24:45,760 --> 00:24:48,480
+[SPEAKER_00] Like, yeah, I can actually talk to someone in a different language.
+
+208
+00:24:48,800 --> 00:24:54,080
+[SPEAKER_00] And it also still became the challenge of, like, can I use this new framework in a way where it's not really meant for it?
+
+209
+00:24:54,160 --> 00:25:01,040
+[SPEAKER_01] But yeah, there's definitely kind of a thorough line of you finding a framework and then seeing what you can do with that.
+
+210
+00:25:01,680 --> 00:25:04,400
+[SPEAKER_00] I guess so, but it's also just it inspires me to see these new things.
+
+211
+00:25:04,560 --> 00:25:05,280
+[SPEAKER_00] And I think, yeah.
+
+212
+00:25:05,360 --> 00:25:07,440
+[SPEAKER_00] Oh, how can this technology be applied in a different way?
+
+213
+00:25:07,600 --> 00:25:12,400
+[SPEAKER_00] Or how can it be applied to solve a problem that wasn't necessarily the intent of that specific API, right?
+
+214
+00:25:12,880 --> 00:25:15,680
+[SPEAKER_00] But yeah, it was just really fun to make and very challenging.
+
+215
+00:25:15,920 --> 00:25:18,160
+[SPEAKER_00] First time I was really doing macOS development as well.
+
+216
+00:25:18,640 --> 00:25:27,600
+[SPEAKER_00] And just before it came out, because it came out in December, because SharePlay got delayed, the new MacBooks came out with the notch, like the airborn MacBooks.
+
+217
+00:25:27,840 --> 00:25:31,280
+[SPEAKER_00] I saw some people that were like, they didn't like that notch at the top of the screen.
+
+218
+00:25:31,440 --> 00:25:37,040
+[SPEAKER_00] So I thought, okay, maybe I can just make an app that just adds a black bar and it looks like it's a full Mac.
+
+219
+00:25:37,440 --> 00:25:40,960
+[SPEAKER_00] And so that was my first time trying to really do macOS development.
+
+220
+00:25:41,120 --> 00:25:43,920
+[SPEAKER_00] And that app like kind of blew up in terms of popularity.
+
+221
+00:25:44,000 --> 00:25:49,760
+[SPEAKER_00] Like people, it was just a free app, but yeah, it was really, it was like a nice thing to write about in the week when the MacBook comes out, right?
+
+222
+00:25:50,080 --> 00:25:59,120
+[SPEAKER_00] I'd learned a lot about macOS development there because I was doing stuff for Navi on macOS as well, where it would overlay the subtitles on the FaceTime window.
+
+223
+00:26:00,160 --> 00:26:14,160
+[SPEAKER_00] But then I kind of noticed this thing like, oh, hey, there's a lot of these little utilities I can make for macOS where I know I'm going to be using them because a lot of these iOS things I was making were fun and useful for people, but I didn't have that super strong intrinsic motivation coming from my own needs.
+
+224
+00:26:15,680 --> 00:26:24,720
+[SPEAKER_00] So I think in a span of about two or three months, I made like three or four macOS little utilities that were just like useful little features that I was running into.
+
+225
+00:26:26,800 --> 00:26:32,880
+[SPEAKER_00] And I think the point I'm trying to make there is that all these things kind of like built on top of each other.
+
+226
+00:26:33,120 --> 00:26:36,960
+[SPEAKER_00] I made something for Navi and I could use that in Forhead for the overlay stuff.
+
+227
+00:26:37,120 --> 00:26:41,600
+[SPEAKER_00] And then I made something in the picture in picture window and I could reuse some code from there in another app.
+
+228
+00:26:41,840 --> 00:26:42,640
+[SPEAKER_00] So, right.
+
+229
+00:26:42,960 --> 00:26:50,480
+[SPEAKER_01] And you're building muscles that then let you move faster than almost anybody else doing this type of thing, right?
+
+230
+00:26:50,800 --> 00:26:57,840
+[SPEAKER_01] Because if you have an idea, like if you see an API and you think, I wonder if it can do that, a hundred other people might think the same thing.
+
+231
+00:26:58,000 --> 00:27:09,200
+[SPEAKER_01] The difference is you have like the patterns and the skill sets now to like quickly try these ideas and pull code from all these different little apps that you've built.
+
+232
+00:27:09,840 --> 00:27:09,920
+[SPEAKER_00] Yeah.
+
+233
+00:27:10,160 --> 00:27:10,240
+[SPEAKER_00] Yeah.
+
+234
+00:27:10,400 --> 00:27:21,600
+[SPEAKER_00] So a lot of the apps that I work on nowadays, if you go through the like the little statement at the top of the file where it says like made by, it will just say like, oh, this file was made by you're the imposter.
+
+235
+00:27:22,000 --> 00:27:22,640
+[SPEAKER_00] This file was made.
+
+236
+00:27:23,040 --> 00:27:24,720
+[SPEAKER_00] It's just a combination of all these different projects.
+
+237
+00:27:24,800 --> 00:27:26,960
+[SPEAKER_01] There's like this evidence of where it came from everywhere.
+
+238
+00:27:27,200 --> 00:27:27,280
+[SPEAKER_00] Yeah.
+
+239
+00:27:27,440 --> 00:27:28,000
+[SPEAKER_01] That's pretty funny.
+
+240
+00:27:28,080 --> 00:27:35,280
+[SPEAKER_00] Because I never really got into the whole making your own internal SPM things, which I should do because there's so much stuff I reuse across projects, right?
+
+241
+00:27:35,920 --> 00:27:45,680
+[SPEAKER_01] The risk there, not to get too technical, but the risk there is you change something for one app and then like you accidentally break another app but don't realize it until you do it, run an update or something.
+
+242
+00:27:46,400 --> 00:27:46,480
+[SPEAKER_00] Yeah.
+
+243
+00:27:46,640 --> 00:27:50,080
+[SPEAKER_00] And obviously that works because a lot of my apps are super small and focused, right?
+
+244
+00:27:50,400 --> 00:27:59,040
+[SPEAKER_00] So it's fine if I don't have to look at the code again or it's fine if I, if I need to make a change, I have to look at the code for a bit before I understand it again.
+
+245
+00:27:59,280 --> 00:28:04,720
+[SPEAKER_00] But yeah, that wouldn't really work if you're reusing these utilities for, for years on like.
+
+246
+00:28:05,440 --> 00:28:13,680
+[SPEAKER_00] really large projects right but it was still like nice so what i did is i i released those on gum roads which is sort of this like digital storefront kind of thing where you can sell stuff.
+
+247
+00:28:14,240 --> 00:28:15,520
+[SPEAKER_00] Those meaning the Mac apps.
+
+248
+00:28:15,680 --> 00:28:16,240
+[SPEAKER_00] Oh yeah, yeah.
+
+249
+00:28:16,320 --> 00:28:16,560
+[SPEAKER_00] Sorry.
+
+250
+00:28:16,560 --> 00:28:16,640
+[SPEAKER_00] Yeah.
+
+251
+00:28:16,880 --> 00:28:16,960
+[SPEAKER_00] Yeah.
+
+252
+00:28:17,120 --> 00:28:17,760
+[SPEAKER_00] So the Mac apps.
+
+253
+00:28:17,840 --> 00:28:19,280
+[SPEAKER_00] Because you don't have to go through the app store.
+
+254
+00:28:19,440 --> 00:28:21,280
+[SPEAKER_00] Why did you choose that versus the app store?
+
+255
+00:28:22,240 --> 00:28:27,360
+[SPEAKER_00] So I think it was initially with Forhead, which is the notch thing, because I wasn't sure if we would get it.
+
+256
+00:28:27,760 --> 00:28:28,320
+[SPEAKER_00] They would even let you.
+
+257
+00:28:28,480 --> 00:28:28,640
+[SPEAKER_00] Yeah.
+
+258
+00:28:29,520 --> 00:28:29,600
+[SPEAKER_00] Yeah.
+
+259
+00:28:30,480 --> 00:28:34,240
+[SPEAKER_00] And there was a bunch of like private API stuff that I was doing here and there as well.
+
+260
+00:28:34,960 --> 00:28:36,880
+[SPEAKER_00] So, and I wanted to try it out.
+
+261
+00:28:36,960 --> 00:28:39,760
+[SPEAKER_00] Like it was like, all right, let me just see what this is about.
+
+262
+00:28:40,400 --> 00:28:41,920
+[SPEAKER_00] I would release all these apps for free.
+
+263
+00:28:42,160 --> 00:28:45,040
+[SPEAKER_00] So people could just like get it for free or they could pay what they wanted.
+
+264
+00:28:45,680 --> 00:29:25,920
+[SPEAKER_00] And to my surprise, like quite a lot of people would actually pay for it even though they could also just get it for free which is interesting like i didn't make these things necessarily to make money but obviously if over time they start generating some income as well it's like yeah it's like a nice little bonus thing so what were you doing during this period of time to make money though because like were you doing client work again or was this kind of your other ios apps no so the client work had stopped at that point since about march or something i'd stop doing client work i made some money with the clients in the in the months before so i had some nice savings but susie had money coming in and some other projects from the past had some money coming in here and there.
+
+265
+00:29:26,240 --> 00:29:28,400
+[SPEAKER_00] I wasn't living a very like expensive life.
+
+266
+00:29:28,560 --> 00:29:32,240
+[SPEAKER_00] Like, I'm single, so I don't, I don't have a mortgage and all that stuff.
+
+267
+00:29:32,320 --> 00:29:35,040
+[SPEAKER_00] So that was really, um, helpful.
+
+268
+00:29:35,520 --> 00:29:40,160
+[SPEAKER_00] I think over time, I would have had to find like pivot and like to go into something else.
+
+269
+00:29:40,320 --> 00:29:40,320
+[UNKNOWN] Yeah.
+
+270
+00:29:41,120 --> 00:29:47,840
+[SPEAKER_00] So I wasn't like, not that I would like to do a full pivot or something as a company, but I would have to get into crypto.
+
+271
+00:29:48,240 --> 00:29:48,320
+[SPEAKER_00] Yeah.
+
+272
+00:29:49,440 --> 00:29:57,360
+[SPEAKER_00] I could see, I could sort of see the, I could see like, all right, if I just keep this up for a while, I could, it could probably get, get higher and higher.
+
+273
+00:29:57,520 --> 00:30:02,880
+[SPEAKER_00] So I think at that point, I was maybe making three thousand a month or something, which was like it was covering all my costs and it was fine.
+
+274
+00:30:03,840 --> 00:30:06,640
+[SPEAKER_00] I was working on stuff I liked and, um, yeah.
+
+275
+00:30:07,120 --> 00:30:17,760
+[SPEAKER_01] But you weren't thinking, I guess the important thing is you weren't thinking of this, uh, sort of cadence of releasing lots of small Mac utility apps as a, like, business driver.
+
+276
+00:30:18,640 --> 00:30:19,680
+[SPEAKER_00] No, no, not at all.
+
+277
+00:30:19,840 --> 00:30:22,640
+[SPEAKER_00] It was it was just, um, okay, let me just make stuff that I like.
+
+278
+00:30:23,120 --> 00:30:27,600
+[SPEAKER_00] I think around the same time I did my first international conference talk about iOS.
+
+279
+00:30:27,760 --> 00:30:31,440
+[SPEAKER_00] So I went to Swift Leeds in England and I would love to go there one time.
+
+280
+00:30:31,920 --> 00:30:33,280
+[SPEAKER_00] Yeah, it's really nice that you go.
+
+281
+00:30:33,360 --> 00:30:34,640
+[SPEAKER_00] It's it's coming up again soon.
+
+282
+00:30:34,960 --> 00:30:35,040
+[SPEAKER_00] Yeah.
+
+283
+00:30:35,360 --> 00:30:40,960
+[SPEAKER_00] Uh, I might be there maybe maybe I gave a talk there about how to go indie before the end of the year.
+
+284
+00:30:41,360 --> 00:30:49,520
+[SPEAKER_00] So I just gave like a bunch of these like tips and tricks on okay, this is how you can come up with your ideas and this is how you should market them, how you should just get them out there and learn and everything.
+
+285
+00:30:51,120 --> 00:31:04,640
+[SPEAKER_00] And I got so many nice responses from people who were super inspired by the story, even though I'm not saying that it wasn't a great story or anything, but it was also like, to me, it didn't feel like rocket science because I was just talking about exactly my method and what I was doing basically.
+
+286
+00:31:05,040 --> 00:31:17,680
+[SPEAKER_00] But that was also like, hey, I'm super privileged that I can just do this stuff and it doesn't really matter as much if I'm not making as much money right now because I'm super really enjoying it and it seems like a lot of people are really looking up to that sort of lifestyle.
+
+287
+00:31:17,920 --> 00:31:23,680
+[SPEAKER_00] So yeah, like I should just keep going with this and eventually it will probably like work itself out.
+
+288
+00:31:23,840 --> 00:31:31,920
+[SPEAKER_00] And worst case, I can also always go back to doing client work again or worst, worst case, I could always go back to working for an employer again.
+
+289
+00:31:32,960 --> 00:31:38,000
+[SPEAKER_00] So there were a bunch of steps that I could like fall down to and still be like comfortable and everything.
+
+290
+00:31:38,320 --> 00:31:39,120
+[SPEAKER_00] You had a safety net.
+
+291
+00:31:39,520 --> 00:31:40,080
+[SPEAKER_00] Yeah, definitely.
+
+292
+00:31:40,480 --> 00:31:48,320
+[SPEAKER_00] And a safety net in a form where I guess like if you get to a certain if you become good as a programmer.
+
+293
+00:31:48,800 --> 00:32:00,320
+[SPEAKER_00] And good is obviously subjective, but if you become good enough, yeah, there's always like, like, things you can fall back on or things you can, you can do, especially if you don't have a lot, like, a lot of costs, right?
+
+294
+00:32:00,560 --> 00:32:02,640
+[SPEAKER_00] That, that obviously is the big driver here.
+
+295
+00:32:03,200 --> 00:32:06,080
+[SPEAKER_01] It makes me think of, I think it was Russ Shanahan who told me this.
+
+296
+00:32:06,240 --> 00:32:25,200
+[SPEAKER_01] Apologies if it was somebody else, but he was saying something along the lines, I don't remember the context, but it was like, when you're in one of these kind of business situations where you're thinking of something scary, it's like, imagine what the most likely negative outcome would be and game that out and it's often less scaryary.
+
+297
+00:32:25,520 --> 00:32:29,840
+[SPEAKER_01] And it's like the idea of being indie and like, well, what happens if I stop making money?
+
+298
+00:32:30,320 --> 00:32:34,960
+[SPEAKER_01] And when you actually game that out, it's like, well, like you just said, worst case, I can do client work.
+
+299
+00:32:35,120 --> 00:32:37,840
+[SPEAKER_01] And if I can't get client work, worst case, I can find a job.
+
+300
+00:32:38,080 --> 00:32:49,920
+[SPEAKER_01] And when you start gaming it out, it's like, okay, this isn't as horrifying and scary as the initial feeling of like, if you don't think through it, it's like, well, I'm just going to be homeless and I'm not going to have any money.
+
+301
+00:32:50,640 --> 00:32:52,720
+[SPEAKER_01] It's like, there are avenues you can take.
+
+302
+00:32:53,440 --> 00:32:53,520
+[SPEAKER_00] Yeah.
+
+303
+00:32:53,760 --> 00:33:00,000
+[SPEAKER_00] And it reminds me, so I think what you just mentioned is similar to something that Tim Ferris, who wrote this, like the four hour work week and everything.
+
+304
+00:33:00,000 --> 00:33:04,800
+[SPEAKER_00] I think he has something about that as well, where basically, okay, what's the worst thing that can happen?
+
+305
+00:33:06,240 --> 00:33:11,680
+[SPEAKER_00] And then if you would get to that point, like, how hard would it be to get back up to the right thing?
+
+306
+00:33:11,920 --> 00:33:14,640
+[SPEAKER_00] So, and how likely is it that that would happen?
+
+307
+00:33:14,960 --> 00:33:17,360
+[SPEAKER_00] And how likely is it that the good thing will happen?
+
+308
+00:33:17,600 --> 00:33:20,560
+[SPEAKER_00] And like, if the good thing would happen, like, how much better would that make your life?
+
+309
+00:33:20,800 --> 00:33:24,160
+[SPEAKER_00] So, like, there's all these risk assessment kind of things you can do.
+
+310
+00:33:24,720 --> 00:33:33,520
+[SPEAKER_00] I've never really, like, fully committed to, like, doing one of those and then trying to figure out, okay, am I now making a conscious decision to do this because of the percentages or something?
+
+311
+00:33:33,680 --> 00:34:10,240
+[SPEAKER_00] But yeah, I mean, obviously there's also stuff that I'm af scared of like that could go wrong but so far with all this work stuff it's it's always like gone pretty much up into the right but not necessarily because uh i was doing something like in a perfectly planned out way right it's not hyper strategic necessarily no and just it's it's also just like putting the right people around you working on stuff you like this episode of launched is brought to you by revenue cat revenue cat makes in-app subscriptions simple Their platform lets you focus on improving your app rather than getting bogged down in subscription infrastructure.
+
+312
+00:34:10,800 --> 00:34:12,800
+[SPEAKER_01] RevenueCat provides a backend and wrapper.
+
+313
+00:34:13,280 --> 00:34:19,360
+[SPEAKER_01] around Apple's store kit and Google Play billing to simplify the implementation and upkeep of inapp purchases.
+
+314
+00:34:20,000 --> 00:34:28,800
+[SPEAKER_01] RevenueCat provides out of the box analytics for over fifteen key subscription metrics like monthly recurring revenue, lifetime value, retention, and more.
+
+315
+00:34:29,440 --> 00:34:40,960
+[SPEAKER_01] RevenueCat also offers pre built integrations with best in class tools like Amplitude, Apps Flyer, Mix Panel, and Firebase so you can connect inapp purchase events in minutes in a couple of clicks.
+
+316
+00:34:41,680 --> 00:34:48,880
+[SPEAKER_01] Customers have been able to cut down on their engineering backlog, better understand customer behavior, and grow faster by switching to RevenueCat.
+
+317
+00:34:49,360 --> 00:34:54,640
+[SPEAKER_01] See why companies like Notion, Visco, and Photoroom use RevenueCat to power their in-app subscriptions.
+
+318
+00:34:55,040 --> 00:34:57,120
+[SPEAKER_01] Learn more at revenuecat.com.
+
+319
+00:34:58,240 --> 00:34:59,280
+[SPEAKER_01] We can touch on that right now.
+
+320
+00:34:59,440 --> 00:35:09,920
+[SPEAKER_01] I want to continue on the story part, but your little crew of indie iOS developers in Amsterdam is I am incredibly jealous of.
+
+321
+00:35:10,320 --> 00:35:12,800
+[SPEAKER_01] There's just such a cool group there.
+
+322
+00:35:13,520 --> 00:35:15,120
+[SPEAKER_01] How did you end up finding that group?
+
+323
+00:35:15,440 --> 00:35:20,000
+[SPEAKER_01] And like, what has that been like and how has that helped as you've been on this whole sort of journey?
+
+324
+00:35:21,360 --> 00:35:22,560
+[SPEAKER_01] So there's two groups actually.
+
+325
+00:35:22,800 --> 00:35:22,880
+[SPEAKER_00] Okay.
+
+326
+00:35:23,200 --> 00:35:56,240
+[SPEAKER_00] So there's one group that you know of which um rafa also mentioned in the in the previous episode in amsterdam we just have a bunch of people that are into ios apple and development in that in general i guess um rafa ryan heda tom and i mean i guess we all kind of like knew each other a little bit but never really met and then last year or so we we said all right let's just have some lunch and we met up as this little group and we we were sharing all these stories and It's just nice when you meet people that are like like minded, right?
+
+327
+00:35:56,480 --> 00:35:56,560
+[SPEAKER_00] Yeah.
+
+328
+00:35:57,040 --> 00:35:57,680
+[SPEAKER_00] Which is just fun.
+
+329
+00:35:58,640 --> 00:36:14,720
+[SPEAKER_00] But the other group is my little so our group is like on iMessage it's called Remmen is Angst which basically means breaking is fear like breaking as in breaking in a car and it's a group of Antoine from Swiftly.
+
+330
+00:36:16,320 --> 00:36:19,280
+[SPEAKER_00] Nils, Nils Maltan who's not like super well known I think.
+
+331
+00:36:19,520 --> 00:36:19,600
+[SPEAKER_00] Okay.
+
+332
+00:36:20,240 --> 00:36:21,600
+[SPEAKER_00] And Hidde, Hidde van de Plug.
+
+333
+00:36:21,760 --> 00:36:21,840
+[SPEAKER_00] Yeah.
+
+334
+00:36:22,160 --> 00:36:25,680
+[SPEAKER_00] So me and Nils, we used to work together at this other company where I was working up for.
+
+335
+00:36:26,320 --> 00:36:30,720
+[SPEAKER_00] He was like sort of the first person that I knew who was making his own software.
+
+336
+00:36:31,280 --> 00:36:36,880
+[SPEAKER_00] He makes this time tracking app called Daily and we were using that at the office and then he left at some point.
+
+337
+00:36:37,360 --> 00:36:40,960
+[SPEAKER_00] and we kind of lost touch and then got in touch again a few years ago.
+
+338
+00:36:42,080 --> 00:36:44,480
+[SPEAKER_00] And Antoine, I used to also work with him at that company.
+
+339
+00:36:44,880 --> 00:36:50,160
+[SPEAKER_00] So we were already really good friends there before he moved to WeTransfer and we would always go to WWDC together.
+
+340
+00:36:50,480 --> 00:36:54,800
+[SPEAKER_00] And yeah, we would have these little trips once a year where we would geek out over Apple stuff.
+
+341
+00:36:55,200 --> 00:37:02,640
+[SPEAKER_00] Two years ago, just before Swift Leads, actually, I met Hidde, who used to be a designer but then became an indie developer as well two years ago.
+
+342
+00:37:03,440 --> 00:37:06,720
+[SPEAKER_00] So we have this nice little group where We have a bunch of different skills.
+
+343
+00:37:06,880 --> 00:37:11,520
+[SPEAKER_00] So like I'm really bad at good quality codes, but I'm really good at ideas and just putting stuff out there.
+
+344
+00:37:11,840 --> 00:37:12,640
+[SPEAKER_00] Hidde is really good at.
+
+345
+00:37:13,200 --> 00:37:13,280
+[SPEAKER_00] design.
+
+346
+00:37:13,920 --> 00:37:18,320
+[SPEAKER_00] Antoine is really good at like the architecture and like writing stuff out and explaining complicated things.
+
+347
+00:37:18,880 --> 00:37:23,200
+[SPEAKER_00] Nils is really good at like the business side and making complex things.
+
+348
+00:37:23,440 --> 00:37:25,200
+[SPEAKER_00] And he's been doing this for thirteen years or something.
+
+349
+00:37:25,520 --> 00:37:28,240
+[SPEAKER_00] And he knows a lot about app sort of optimization.
+
+350
+00:37:28,480 --> 00:37:33,840
+[SPEAKER_00] So we have this weakness thing where we can motivate each other on these different areas.
+
+351
+00:37:34,160 --> 00:37:40,560
+[SPEAKER_00] And we can also like push each other like, ah, okay, everyone every day someone needs to shift something.
+
+352
+00:37:41,120 --> 00:37:53,200
+[SPEAKER_00] So every day like either a test fight release needs to go out for one of us four, an app store update needs to go out, maybe a new marketing email or a website update or something.
+
+353
+00:37:54,000 --> 00:37:55,280
+[SPEAKER_00] And it's always really supportive.
+
+354
+00:37:55,360 --> 00:37:56,560
+[SPEAKER_00] So that's the cool thing as well.
+
+355
+00:37:57,280 --> 00:37:58,320
+[SPEAKER_00] And we can help each other out.
+
+356
+00:37:58,480 --> 00:38:01,040
+[SPEAKER_00] So if I've designed questions, Hita can do some design for me.
+
+357
+00:38:01,600 --> 00:38:04,240
+[SPEAKER_00] Antoine comes up with this difficult thing he's working on.
+
+358
+00:38:04,480 --> 00:38:05,840
+[SPEAKER_00] We can like start thinking along.
+
+359
+00:38:06,080 --> 00:38:08,960
+[SPEAKER_00] So it's just like you have a group of colleagues, but they're not your colleagues.
+
+360
+00:38:09,040 --> 00:38:09,120
+[SPEAKER_00] Yeah.
+
+361
+00:38:09,920 --> 00:38:19,920
+[SPEAKER_00] But everyone, and I think that's also just in the broader Twitter sphere and on Mastodon recently as well, is that in the iOS community, there's so many people that want to help out.
+
+362
+00:38:20,320 --> 00:38:24,160
+[SPEAKER_00] So it's like, oh, if I have any just questions about sort of like.
+
+363
+00:38:24,160 --> 00:38:34,720
+[SPEAKER_00] Like basic core stuff with Swift or Swift UI, I can always go to Flo, for example, who's really good at like YouTube and like he he makes these complicated things very easy.
+
+364
+00:38:35,040 --> 00:38:37,920
+[SPEAKER_00] If I have questions about apps or optimization, I go to this person.
+
+365
+00:38:38,160 --> 00:38:43,920
+[SPEAKER_00] If I have questions about certain like low level framework, I know some people I can go to and everyone always helps out.
+
+366
+00:38:44,080 --> 00:38:46,320
+[SPEAKER_00] So it's it's really nice that we have that in the community.
+
+367
+00:38:46,480 --> 00:38:54,240
+[SPEAKER_00] And my dad got on Twitter last year and he started following me and every time I would see him, he's like, oh, oh, I saw that you were posting this.
+
+368
+00:38:54,400 --> 00:38:57,600
+[SPEAKER_00] And I always like that your community is always so friendly and everyone's so helping out.
+
+369
+00:38:57,680 --> 00:39:01,360
+[SPEAKER_00] And so it's not very common that that we have that.
+
+370
+00:39:01,680 --> 00:39:07,520
+[SPEAKER_00] So I have this in a very micro sphere with this group, but then in a broader sense I have it also.
+
+371
+00:39:07,680 --> 00:39:09,280
+[SPEAKER_00] So it's really helpful.
+
+372
+00:39:09,440 --> 00:39:12,800
+[SPEAKER_00] So I would really recommend everyone else try to get those people around them.
+
+373
+00:39:13,120 --> 00:39:20,560
+[SPEAKER_01] Yeah, I don't know how you, it's one of those things where it's like, I don't know how you intentionally get a group like that.
+
+374
+00:39:22,080 --> 00:39:28,560
+[SPEAKER_01] But man, it can make such a big difference having people that you can go to that you can feel safe asking a dumb question.
+
+375
+00:39:29,040 --> 00:39:36,320
+[SPEAKER_01] I feel like I have like, I have like layers of like, if I'm trying to figure something out, it's like you start with Google, then you go to Stack Overflow.
+
+376
+00:39:36,800 --> 00:39:41,760
+[SPEAKER_01] Actually, before Stack Overflow, I feel like Chat GPT has got in between Google and Stack Overflow.
+
+377
+00:39:42,160 --> 00:39:46,560
+[SPEAKER_01] And then it's like, then you go to the people you know individually or iMessage groups.
+
+378
+00:39:46,960 --> 00:39:54,640
+[SPEAKER_01] And then eventually you're like, Okay, if all those places failed, I'm probably not going to look completely dumb if I post about it on Twitter or something.
+
+379
+00:39:54,960 --> 00:39:58,320
+[SPEAKER_00] No, no, no, it's like you've gone through all the safe avenues.
+
+380
+00:39:59,120 --> 00:40:06,640
+[SPEAKER_00] Well, I guess you would have to post a very, very stupid message on Twitter for anyone in our community to really blast you for it, I think.
+
+381
+00:40:07,200 --> 00:40:47,680
+[SPEAKER_00] I do feel like I usually get the right answer in like ten seconds and I feel dumb, but everyone's super nice about it still yeah i think i think you're just projecting that charlie because i think no that's what i'm saying i it's all in in my head um um and in terms of how to get that kind of group i mean obviously like what i did a lot early on on twitter as well was just like helping other people so offering feedback on stuff people sharing and i did i think i had about maybe like 300 500 followers on twitter before wwc 2020 and then What I did, for example, was this community WWC event and I would like help out doing the commentating for each day.
+
+382
+00:40:47,920 --> 00:40:52,640
+[SPEAKER_00] So we had like these video calls and I would just like ask questions to random people and help out.
+
+383
+00:40:52,960 --> 00:40:54,880
+[SPEAKER_00] And I met a bunch of people through there.
+
+384
+00:40:55,360 --> 00:40:58,320
+[SPEAKER_00] You have this iOS dev happy hour that's organized every month.
+
+385
+00:40:58,480 --> 00:41:00,640
+[SPEAKER_00] And I feel like a lot of people also meet people there.
+
+386
+00:41:02,240 --> 00:41:05,440
+[SPEAKER_00] But I mean, it's very easy to find other people working in iOS.
+
+387
+00:41:06,160 --> 00:41:07,280
+[SPEAKER_00] and to see what they're working on.
+
+388
+00:41:07,440 --> 00:41:18,880
+[SPEAKER_00] And like even if you just go through someone's project that you might not be interested in yourself because maybe the project itself is not very fun for you, but you can still like, oh, I would suggest using this or I ran into this same issue.
+
+389
+00:41:19,040 --> 00:41:19,920
+[SPEAKER_00] I fixed it like this.
+
+390
+00:41:20,400 --> 00:41:23,200
+[SPEAKER_00] So just offering like proactive feedback to people.
+
+391
+00:41:24,400 --> 00:41:24,480
+[SPEAKER_00] Yeah.
+
+392
+00:41:24,640 --> 00:41:25,360
+[SPEAKER_00] Yeah, I don't know.
+
+393
+00:41:25,920 --> 00:41:31,520
+[SPEAKER_00] That is, at least in my case, that has helped me like get people that I can also ask for questions in the future.
+
+394
+00:41:32,160 --> 00:41:32,320
+[SPEAKER_01] Right.
+
+395
+00:41:33,760 --> 00:41:34,800
+[SPEAKER_01] Friends are investments.
+
+396
+00:41:35,280 --> 00:41:47,040
+[SPEAKER_01] That's, it's a phrase I used to say in college and people would make fun of me for it, but it's kind of like, I don't know, that's probably, it could backfire, but it's like, if you invest in a community, you build up a reputation.
+
+397
+00:41:47,920 --> 00:41:52,160
+[SPEAKER_01] And then when you're asking questions, you're not just taking, you're also giving, I guess.
+
+398
+00:41:52,720 --> 00:41:55,760
+[SPEAKER_00] And I mean, you shouldn't like fake it, right?
+
+399
+00:41:55,920 --> 00:41:56,560
+[SPEAKER_00] You shouldn't just give.
+
+400
+00:41:56,960 --> 00:41:57,600
+[SPEAKER_00] Yeah, right.
+
+401
+00:41:58,000 --> 00:41:58,880
+[SPEAKER_00] It should be something that you.
+
+402
+00:42:01,120 --> 00:42:06,880
+[SPEAKER_00] But there's so many people that know stuff that you don't know, and there's so much you know that other people don't know.
+
+403
+00:42:07,040 --> 00:42:17,280
+[SPEAKER_00] Like if you've worked with a certain framework, chances are you're 80% more knowledgeable than every other iOS developer on that framework because there's so many frameworks and so little people that actually dug into something.
+
+404
+00:42:18,480 --> 00:42:19,760
+[SPEAKER_00] A simple example is maps.
+
+405
+00:42:19,920 --> 00:42:22,400
+[SPEAKER_00] Like a lot of people build maps into their apps.
+
+406
+00:42:22,880 --> 00:42:26,800
+[SPEAKER_00] There's all these little intricacies if you want to do like these MK annotations and everything.
+
+407
+00:42:27,600 --> 00:42:35,200
+[SPEAKER_00] So if someone else wants to work on a map, the chances are that you've gone through some of these hurdles already and just sharing your experience there can already help them.
+
+408
+00:42:36,800 --> 00:42:42,160
+[SPEAKER_00] So I think a lot of people know more than they think they do compared to others on the same subject.
+
+409
+00:42:43,200 --> 00:42:55,840
+[SPEAKER_01] Yeah, and I think something I feel like, at least from my perspective, you do it a lot better than me, but like putting yourself out there, like honestly, just releasing something, releasing something that isn't perfect.
+
+410
+00:42:56,560 --> 00:42:56,960
+[SPEAKER_01] Yeah, perfect.
+
+411
+00:42:57,360 --> 00:43:00,560
+[SPEAKER_01] And then iterating on it and publicly talking about it as you do that.
+
+412
+00:43:01,520 --> 00:43:03,760
+[SPEAKER_01] That's a valuable thing for people to see.
+
+413
+00:43:04,400 --> 00:43:07,040
+[SPEAKER_01] And it's also a touch point for people to engage.
+
+414
+00:43:07,200 --> 00:43:12,560
+[SPEAKER_01] And like, especially early on, when I it's like, I definitely didn't know what I was doing.
+
+415
+00:43:12,560 --> 00:43:14,240
+[SPEAKER_01] I didn't know what I was doing and I was brand new to all this.
+
+416
+00:43:14,400 --> 00:43:16,240
+[SPEAKER_01] And so I wasn't embarrassed to not know something.
+
+417
+00:43:17,200 --> 00:43:21,040
+[SPEAKER_01] I feel like my whole thing was I would just tweet out whatever I was doing and often it was dumb.
+
+418
+00:43:21,840 --> 00:43:29,680
+[SPEAKER_01] But like we've talked about, people in our community are super nice and a lot of people would reach out and be like, Oh, hey, you might want to try this or you might eventually run into this.
+
+419
+00:43:30,080 --> 00:43:36,240
+[SPEAKER_01] And those touch points, each one of those is an opportunity for some kind of relationship or friendship to form.
+
+420
+00:43:36,800 --> 00:43:41,360
+[SPEAKER_01] And that's definitely a bunch of people I'm friends with in our community now are because of literally that.
+
+421
+00:43:41,600 --> 00:43:42,000
+[SPEAKER_01] Because of that.
+
+422
+00:43:42,240 --> 00:43:44,560
+[SPEAKER_01] You just kind of become friendly, talking back and forth.
+
+423
+00:43:45,360 --> 00:43:47,680
+[SPEAKER_01] And eventually it kind of grows into something real.
+
+424
+00:43:48,000 --> 00:43:53,040
+[SPEAKER_01] WWDC being in person definitely was a major.
+
+425
+00:43:53,840 --> 00:44:00,160
+[SPEAKER_01] Yeah, like that was definitely a radical changing point of like you're a profile picture and now you're a human being.
+
+426
+00:44:00,480 --> 00:44:08,720
+[SPEAKER_00] Yeah, because a lot of these Twitter relationships you have with people are like there's people I've spoken to for two years on Twitter, but I've never seen them in real life.
+
+427
+00:44:09,200 --> 00:44:10,240
+[SPEAKER_00] You still have sort of connection.
+
+428
+00:44:10,560 --> 00:44:32,080
+[SPEAKER_00] But like you said, like seeing you, for example, in real life for the first time, having even if it would just be like a 10-minute, 20-minute interaction, I think we had maybe a few hours in total, but then all of a sudden there's this person and there's this, this aura or something that you got from the person, then you're much more likely to go to the fire for this person, even though you still don't really know him, right?
+
+429
+00:44:32,640 --> 00:44:39,360
+[SPEAKER_00] But obviously, going to WWC is is not easy in terms of the money, in terms of getting an invitation to actually go in.
+
+430
+00:44:39,840 --> 00:44:45,760
+[SPEAKER_00] But it's like if you can get if you get the chance to do it or just go to any conference or local meetups.
+
+431
+00:44:46,080 --> 00:44:46,880
+[SPEAKER_01] I think that's the thing.
+
+432
+00:44:47,520 --> 00:44:52,080
+[SPEAKER_01] Like if you can find people locally or or create a thing just hanging out.
+
+433
+00:44:52,160 --> 00:44:56,000
+[SPEAKER_01] I that's what I've been trying to kind of get something going in my city.
+
+434
+00:44:56,480 --> 00:45:00,720
+[SPEAKER_01] You know, it's not a mecca for indie iOS developers necessarily, but there are more.
+
+435
+00:45:01,120 --> 00:45:04,080
+[SPEAKER_01] of us than I realized when I started trying to make something happen.
+
+436
+00:45:04,400 --> 00:45:06,880
+[SPEAKER_01] And all we've done is just gone out for lunch a couple of times.
+
+437
+00:45:07,120 --> 00:45:10,080
+[SPEAKER_01] But even that, I feel like, makes a big difference.
+
+438
+00:45:11,520 --> 00:45:22,320
+[SPEAKER_00] Yeah, because I don't know if it's what it's like for you, but with a lot of people when I'm talking with them on Twitter and I don't know them, a lot of the topic, let's say 80, 90 percent would be related to iOS or development or programming.
+
+439
+00:45:22,480 --> 00:45:22,560
+[SPEAKER_00] Yeah.
+
+440
+00:45:22,800 --> 00:45:27,200
+[SPEAKER_00] But then when you see someone in real life, then you just talk about other stuff and there's a bigger picture going on there.
+
+441
+00:45:27,360 --> 00:45:28,480
+[SPEAKER_00] Like it's a real person.
+
+442
+00:45:28,800 --> 00:45:29,520
+[SPEAKER_00] Yeah, exactly.
+
+443
+00:45:29,920 --> 00:45:33,680
+[SPEAKER_00] So just the fact that that that that that you have some other touch points are also nice.
+
+444
+00:45:33,680 --> 00:45:35,280
+[SPEAKER_00] And that's why I think lunch is also nice.
+
+445
+00:45:35,360 --> 00:45:43,440
+[SPEAKER_00] I mean, for a lot of our lunches with our Amsterdam group, they're really much related to iOS or something someone just released or something, right?
+
+446
+00:45:44,720 --> 00:45:47,920
+[SPEAKER_00] But it's just nice that you have some other things to talk about as well.
+
+447
+00:45:48,080 --> 00:45:49,920
+[SPEAKER_00] And it's just easier in real life, I think.
+
+448
+00:45:50,400 --> 00:45:50,480
+[SPEAKER_01] Okay.
+
+449
+00:45:50,880 --> 00:46:04,800
+[SPEAKER_01] So reeling this back, uh, so you're the stage where we left off, you're, uh, you've got Susie, which is making some money, and you've got maybe another, uh, a couple of NAVIs out.
+
+450
+00:46:05,120 --> 00:46:08,880
+[SPEAKER_01] And then you're, and then you're kind of churning through all these like Mac utility ideas.
+
+451
+00:46:09,520 --> 00:46:09,600
+[SPEAKER_00] Yeah.
+
+452
+00:46:09,840 --> 00:46:42,240
+[SPEAKER_00] So there was a like a bunch of projects came out around that time and i'm just opening appstock connect now just to see if i didn't forget didn't forget any no i mean i there's some small ones here and there where i was reusing some code from from this app or the internet um oh actually i forgot about bakery yeah so big let me just bakery is this good example of just making a very small thing that was useful for me so because i was making all these apps i had all these white icons on my home screen on my phone so I was super annoyed by that all the time, but I never really came up with a solution.
+
+453
+00:46:42,320 --> 00:46:48,240
+[SPEAKER_00] But then I thought, hey, maybe I can just make an app that makes a background and an emoji or an SF symbol.
+
+454
+00:46:48,880 --> 00:46:52,320
+[SPEAKER_00] and then just export that exactly to the format you need to drag into Xcode.
+
+455
+00:46:52,400 --> 00:47:00,080
+[SPEAKER_00] So I just started making it this morning when I was at a coffee place, posted like the first video on Twitter, got like really nice response.
+
+456
+00:47:00,400 --> 00:47:01,440
+[SPEAKER_00] And by 11 p.m.
+
+457
+00:47:01,600 --> 00:47:06,160
+[SPEAKER_00] that night, it was launched on the App Store or it was launched on Gumro, no, App Store, I think back then.
+
+458
+00:47:07,760 --> 00:47:08,720
+[SPEAKER_00] It was super basic.
+
+459
+00:47:08,960 --> 00:47:12,480
+[SPEAKER_00] Like every developer could have made it basically.
+
+460
+00:47:12,640 --> 00:47:15,200
+[SPEAKER_00] Like you don't need super complex code.
+
+461
+00:47:15,440 --> 00:47:17,040
+[SPEAKER_00] It's just, okay, make something that works.
+
+462
+00:47:17,600 --> 00:47:18,480
+[SPEAKER_00] for the specific problem.
+
+463
+00:47:19,440 --> 00:47:24,800
+[SPEAKER_00] It came out so fast that the first release actually the image format or image size.
+
+464
+00:47:25,120 --> 00:47:54,160
+[SPEAKER_00] that would put out was at 2x so it was 2048 instead of 1024 so it so it didn't even work uh but i mean i did like 10 updates in the week after to fix it and to make it better but um was this good example of okay just make something that i need and there's probably going to be other people that need it as well so yeah that was just one of one more of those those macaps right and then so i think navi came out in um in december or something got like some nice press um It was just good response in general.
+
+465
+00:47:54,480 --> 00:47:57,360
+[SPEAKER_00] And then in January, I went to Thailand.
+
+466
+00:47:57,520 --> 00:47:58,960
+[SPEAKER_00] So this was January 2022.
+
+467
+00:47:59,040 --> 00:48:05,520
+[SPEAKER_00] So I went to Thailand for a few weeks turn into a few months, which was obviously really nice.
+
+468
+00:48:05,600 --> 00:48:09,360
+[SPEAKER_00] Like if you have the freedom to just be your own boss, you can just work from wherever.
+
+469
+00:48:09,600 --> 00:48:12,720
+[SPEAKER_00] And that also, I think, like helped with like not spending as much money.
+
+470
+00:48:12,960 --> 00:48:18,320
+[SPEAKER_00] So it was like, okay, I can just like have a nice chill life here and work on some cool stuff.
+
+471
+00:48:20,240 --> 00:48:24,240
+[SPEAKER_00] And then, so since the moment I got this new MacBook Pro, like...
+
+472
+00:48:25,120 --> 00:48:42,000
+[SPEAKER_00] it can go really bright if you're watching hdr videos the the screen can get very bright and i i remember the first week it came out i was um going back and forth with christian sellig um okay is there a way to do this maybe with a transparent HDR video that I overlay on top of the screen?
+
+473
+00:48:42,400 --> 00:48:50,240
+[SPEAKER_01] To do this meaning like the thing with the MacBook Pro's screen is it has a peak brightness of I forget how many nits, but it's very bright.
+
+474
+00:48:50,720 --> 00:48:51,600
+[SPEAKER_00] 1600, yeah.
+
+475
+00:48:51,680 --> 00:48:57,840
+[SPEAKER_01] Yeah, 1600, but it'll max out when it's showing anything normal at 500 nits, which is kind of the normal.
+
+476
+00:48:58,080 --> 00:49:05,360
+[SPEAKER_01] If you're looking at one and you don't have something like Vivid installed, you're just going to see if you have it maxed out, whites will be 500 nits and that's it.
+
+477
+00:49:05,440 --> 00:49:07,840
+[SPEAKER_01] Even though the screen's capable of going up to 1600.
+
+478
+00:49:08,400 --> 00:49:52,000
+[SPEAKER_01] Yeah, you're much better at like giving a good little explanation before telling the story so um yeah what charlie just said um so i wanted to make an app in that first week to just use that full brightness all the time not just for videos which if you're outside in thailand yeah but back back then this was in october so when when it's this core okay so i was already like trying to trying to figure it out then and we know christian works in uh an office with uh this lights the brightness of the sun in his room apparently which is why he needs that uh pro display xdr on a cardboard box or something i think we with this like nice standing app but it's also just like, oh, I want to see if I can make it work, right?
+
+479
+00:49:52,240 --> 00:49:53,200
+[SPEAKER_00] See if there's a way to do it.
+
+480
+00:49:53,520 --> 00:49:54,560
+[SPEAKER_00] What we're talking about before.
+
+481
+00:49:55,200 --> 00:50:01,120
+[SPEAKER_00] Try it for a week or two, try to learn some video editing software, but in the end I couldn't really crack it.
+
+482
+00:50:01,840 --> 00:50:07,200
+[SPEAKER_00] But then when I was in Thailand earlier than the next year, I was like, oh, man, I really want to try it, do it again.
+
+483
+00:50:07,360 --> 00:50:08,320
+[SPEAKER_00] I really need to find a way.
+
+484
+00:50:09,520 --> 00:50:12,400
+[SPEAKER_00] And then I saw this Twitter post by Ben Harroway.
+
+485
+00:50:12,640 --> 00:50:12,720
+[SPEAKER_01] Yeah.
+
+486
+00:50:13,920 --> 00:50:20,560
+[SPEAKER_00] And he was working on some AR stuff where like something would circle around him in AR space.
+
+487
+00:50:20,720 --> 00:50:24,160
+[SPEAKER_00] And what he was using was a transparent HDR video or a transparent video.
+
+488
+00:50:24,640 --> 00:50:29,040
+[SPEAKER_00] So I just reached out to him saying, hey, Ben, like I'm trying to solve this particular thing.
+
+489
+00:50:29,360 --> 00:50:30,560
+[SPEAKER_00] Do you have any idea how to do it?
+
+490
+00:50:30,720 --> 00:50:33,200
+[SPEAKER_00] And he said, oh, I can have a look on Monday.
+
+491
+00:50:33,600 --> 00:50:35,120
+[SPEAKER_00] I'm going away with the kids on the weekend.
+
+492
+00:50:35,920 --> 00:50:40,960
+[SPEAKER_00] And I remember on Sunday, we were just like exchanging some different approaches we could do.
+
+493
+00:50:41,200 --> 00:50:43,360
+[SPEAKER_00] And then he said, oh, don't worry, don't worry.
+
+494
+00:50:43,680 --> 00:50:44,480
+[SPEAKER_00] I already fixed it.
+
+495
+00:50:44,560 --> 00:50:47,200
+[SPEAKER_00] I just didn't want to tell you because I was going away for that weekend.
+
+496
+00:50:47,840 --> 00:50:52,640
+[SPEAKER_00] So he was able to find like the missing piece in this whole thing I was working on for the months before.
+
+497
+00:50:53,600 --> 00:51:00,720
+[SPEAKER_00] And we were basically able to unlock that 1600 nits full like across the entire screen using metal and like all these.
+
+498
+00:51:01,280 --> 00:51:06,560
+[SPEAKER_00] difficult frameworks that I don't understand or like didn't properly understand at the time.
+
+499
+00:51:07,600 --> 00:51:09,120
+[SPEAKER_00] And so I'd never met Ben before.
+
+500
+00:51:09,200 --> 00:51:12,640
+[SPEAKER_00] Like we maybe spoke twenty different messages on Twitter DM.
+
+501
+00:51:13,600 --> 00:51:15,760
+[SPEAKER_00] But we were like, hey, should we just like do this together?
+
+502
+00:51:16,000 --> 00:51:17,680
+[SPEAKER_00] Should we just like try to release this up together?
+
+503
+00:51:18,480 --> 00:51:19,120
+[SPEAKER_00] And so we did.
+
+504
+00:51:19,440 --> 00:51:24,480
+[SPEAKER_00] So I think about three weeks later we launched Vivid, which enables you to like use that full brightness.
+
+505
+00:51:25,200 --> 00:51:29,120
+[SPEAKER_00] But this was like such a fun thing because me and Ben, we're just, all right, we're just trying to hack this thing.
+
+506
+00:51:29,280 --> 00:51:30,320
+[SPEAKER_00] We're just trying to make it work.
+
+507
+00:51:30,880 --> 00:51:31,680
+[SPEAKER_00] We've never met before.
+
+508
+00:51:31,840 --> 00:51:33,360
+[SPEAKER_00] Like we only recently met for the first time.
+
+509
+00:51:33,600 --> 00:51:51,360
+[SPEAKER_01] Like two months ago, I went to London to finally like meet up with him and uh and celebrate like you mean current time recently yeah yeah yeah yeah yeah sorry so yeah I've never met him before um you just saw him on stage because he he presented the app he built uh was that WWDC 2019?
+
+510
+00:51:52,080 --> 00:52:15,040
+[SPEAKER_00] Yeah yeah storybook yeah man yeah a noisy noisy book sorry noisy bus so that's right yeah yeah yeah so he made an app where um you could like read a children's story and then while you were saying it would recognize the words and if you would say the cow walked to the house you would see a cow and it would make the sound of yeah so very cool um so I kind of like look up to him as a sort of a celebrity right because he was on the the WWDC stage, State of the Union.
+
+511
+00:52:16,560 --> 00:52:20,960
+[SPEAKER_00] But yeah, like we had never really released an app together with a different developer.
+
+512
+00:52:21,200 --> 00:52:31,200
+[SPEAKER_00] So we had this sort of mutual shared destruction thing going on where we were using my Gumroad account to sell it and we were using his developer account.
+
+513
+00:52:31,360 --> 00:52:35,760
+[SPEAKER_00] So if for some reason we would get into a fight, like he could pull the plug or I could pull the plug.
+
+514
+00:52:35,920 --> 00:52:39,120
+[SPEAKER_00] And in both cases, the app would stop working or the money would stop coming in.
+
+515
+00:52:40,320 --> 00:52:46,640
+[SPEAKER_00] But it's also just like we're just both very chill dudes and just like very friendly people just like.
+
+516
+00:52:46,880 --> 00:52:48,320
+[SPEAKER_00] So you have to have some trust there, I guess.
+
+517
+00:52:49,520 --> 00:52:57,680
+[SPEAKER_00] I'm not sure what it's like with other people who would work together, but I try to just work with people that I consider like friends or people that I could trust.
+
+518
+00:52:57,840 --> 00:53:02,720
+[SPEAKER_00] And I don't want to have to do something where you have to build in this clause in a contract.
+
+519
+00:53:02,800 --> 00:53:02,880
+[SPEAKER_00] Yeah.
+
+520
+00:53:03,120 --> 00:53:05,360
+[SPEAKER_00] It's legally binding and then lawyers are involved.
+
+521
+00:53:05,520 --> 00:53:06,240
+[SPEAKER_01] And yeah.
+
+522
+00:53:06,800 --> 00:53:10,960
+[SPEAKER_01] Which is probably like healthy for if you're building a whole business on one thing, obviously.
+
+523
+00:53:12,160 --> 00:53:15,120
+[SPEAKER_01] But in this case, it was just for both of us, just like an extra thing.
+
+524
+00:53:15,360 --> 00:53:15,440
+[SPEAKER_01] Yeah.
+
+525
+00:53:16,000 --> 00:53:21,600
+[SPEAKER_00] And so with Vivid, we kind of expected to see it to, like, all right, we're just going to make something.
+
+526
+00:53:21,840 --> 00:53:22,880
+[SPEAKER_00] People probably going to like it.
+
+527
+00:53:23,360 --> 00:53:27,840
+[SPEAKER_00] And it came out and we had a, I think, like 600 people on the waiting list or something before it came out.
+
+528
+00:53:28,080 --> 00:53:41,840
+[SPEAKER_00] So what I usually do when I make either a prototype or like a first idea, I really quickly share like a Google Forms link, where people can just leave their email address and I can like either send them the test flight invite or send them a message when it comes out.
+
+529
+00:53:42,640 --> 00:53:48,480
+[SPEAKER_00] That's nice because then you actually have the email address for people instead of just sending them the test flight link because they'll send it every time.
+
+530
+00:53:49,680 --> 00:53:50,080
+[SPEAKER_00] Exactly.
+
+531
+00:53:51,200 --> 00:53:55,600
+[SPEAKER_00] And with Vivid specifically, I just shared a few videos on Twitter like to build the hype sort of thing.
+
+532
+00:53:55,760 --> 00:54:00,400
+[SPEAKER_01] And I'll cure, sorry to pause this for a second, but do you have like a system?
+
+533
+00:54:01,280 --> 00:54:02,640
+[SPEAKER_01] that you automate for that?
+
+534
+00:54:03,360 --> 00:54:07,680
+[SPEAKER_01] Or do you manually just send all specified emails?
+
+535
+00:54:08,240 --> 00:54:14,240
+[SPEAKER_00] No, I just go to forums.google.com, click new form and then remove all the questions except for email.
+
+536
+00:54:14,880 --> 00:54:18,400
+[SPEAKER_00] And then I you can go make a sheet out of that.
+
+537
+00:54:18,480 --> 00:54:22,000
+[SPEAKER_00] I take the emails, put them in the CSV format that app store connect.com.
+
+538
+00:54:22,640 --> 00:54:25,360
+[SPEAKER_00] Right, App Store Connect allows you to import a CSV, doesn't it?
+
+539
+00:54:25,760 --> 00:54:26,480
+[SPEAKER_01] It's like, okay.
+
+540
+00:54:26,560 --> 00:54:26,640
+[SPEAKER_01] Yeah.
+
+541
+00:54:27,200 --> 00:54:28,400
+[SPEAKER_01] There, that was the answer.
+
+542
+00:54:28,960 --> 00:54:29,280
+[SPEAKER_00] Sorry.
+
+543
+00:54:29,600 --> 00:54:30,880
+[SPEAKER_00] So, it's fine.
+
+544
+00:54:31,840 --> 00:54:36,560
+[SPEAKER_00] So that, it can probably be automated in more ways, but it's also like, it's taking No, yeah, that takes care of it.
+
+545
+00:54:36,800 --> 00:54:36,880
+[SPEAKER_00] Yeah.
+
+546
+00:54:37,520 --> 00:54:43,520
+[SPEAKER_00] So yeah, let me get back to Vivid because at the same time, I think about a week prior, Posture Bell came out.
+
+547
+00:54:43,840 --> 00:54:44,880
+[SPEAKER_00] There's some overlap there.
+
+548
+00:54:46,000 --> 00:54:54,640
+[SPEAKER_00] So Vivid came out and like the first two days were really nice in terms of sales because like all these people that were on the waiting list tried it out and they wrote about it on press.
+
+549
+00:54:55,840 --> 00:54:57,680
+[SPEAKER_00] Then it kind of like leveled off a little bit more.
+
+550
+00:54:57,840 --> 00:55:04,240
+[SPEAKER_00] And then I remember the Saturday after it came out, I was still in Thailand and my dad had.
+
+551
+00:55:05,040 --> 00:55:07,520
+[SPEAKER_00] has access to my Gumroad account.
+
+552
+00:55:07,680 --> 00:55:09,920
+[SPEAKER_00] So he can also see like if sales are coming in.
+
+553
+00:55:11,200 --> 00:57:02,800
+[SPEAKER_00] I had turned off the notification so you can get a notification every time you make a sale yeah i i didn't want to constantly be reminded right like when you come in or not nah not even no it's more that um like if you do a launch of something right and then you see like oh there's a lot of people either buying something or using something then it's nice like oh i'm getting a sale every two minutes but then if the next sale is every four minutes then it's like oh oh it's slowing down yeah oh it's every ten minutes so then all of a sudden you're i noticed at least for me like my mental state sometimes gets a bit like messed up with that so i hadn't had it installed at that moment but my dad had and he sent me a message saying hey what's going on um so i said what do you mean what's going on so i checked and we had this really big peak and turns out that there was this um this youtuber with about a million subscribers who who made a video about the app oh man like six six minute just like just on on vivid showing it off and for an app where you need to show the brightness it's obviously something you want to see in video yeah um so we had this really crazy peak where basically my goal with vivid was to make enough to buy a pro display xdr so that i could actually use vivid on a pro display xdr and i think in that day alone would have been able to buy me a pro display xdr yeah you know like splitting everything yeah yeah um so i tried to um well i reached out to the youtuber so we had some some messages back and forth but for some reason he he did not want to agree to making a video like that every day for the rest of the year wow uh unfortunately no but he actually made another video a few months a few weeks later which is really nice So that was just really cool because then we had this thing like, oh, hey, it's also making like a nice amount of money that actually like an amount of money that makes a difference in terms of thinking about the future.
+
+554
+00:57:03,280 --> 00:57:03,360
+[SPEAKER_00] Yeah.
+
+555
+00:57:04,800 --> 00:57:13,200
+[SPEAKER_00] Not like, oh, I can buy a house or something from this, but more that, oh, hey, I can make an app that can make this amount of money two weeks after it comes out.
+
+556
+00:57:14,880 --> 00:57:21,280
+[SPEAKER_00] So then I started thinking, hey, maybe I should just build some more of these utility tools because it's easier, for example, to charge more money for it.
+
+557
+00:57:21,520 --> 00:57:23,920
+[SPEAKER_00] So Vivid, when it came out, was 10 euros.
+
+558
+00:57:24,080 --> 00:57:26,720
+[SPEAKER_00] Now it's 20 because it was like a launch promo thing.
+
+559
+00:57:27,840 --> 00:57:31,920
+[SPEAKER_00] And people who have a MacBook that's 3,000 euros are more likely to spend some more money on it.
+
+560
+00:57:32,160 --> 00:57:32,720
+[SPEAKER_00] Yeah, exactly.
+
+561
+00:57:35,040 --> 00:57:35,920
+[SPEAKER_00] So that's kind of...
+
+562
+00:57:37,280 --> 00:58:40,320
+[SPEAKER_00] put this idea in my head that hey I don't have to just be building these super small narrow iOS things that are fun to use or like solve this this complicated problem I can also just like just solve simple problems but that more people deal with or that are more likely that people are more likely to pay for and so in about that same week uh posture bell also came out so to give a little explanation of what it is I used to have this thing called an upright go, which you could stick to the back of your neck and it would basically vibrate if you if your head tilts too much forward so if you um if you're slouching for example but it felt a bit strange because you have to stick it to the back of your neck yeah and it kind of feels like you're a robot um so i stopped using it after about a week were you having posture issues or did you just think it was interesting um i always felt like oh i should like sit up more sit up straight more like always on the computer like with the laptop it's easier to get into this sort of like crouching Well, and you're pretty tall.
+
+563
+00:58:40,800 --> 00:58:45,360
+[SPEAKER_01] So I imagine like at a normal coffee shop desk, it's probably more of an issue.
+
+564
+00:58:46,560 --> 00:58:49,840
+[SPEAKER_00] That also doesn't help, but I think it's been more of an ongoing thing.
+
+565
+00:58:50,880 --> 00:58:58,960
+[SPEAKER_00] And then I was talking to a friend, this was in 2021, about like, oh, these new AirPods, they have these motion sensors.
+
+566
+00:58:59,520 --> 00:59:03,120
+[SPEAKER_00] So in theory, I could make an app for that with the motion sensors.
+
+567
+00:59:03,520 --> 00:59:06,960
+[SPEAKER_00] I kind of like made a first version of it by copying some GitHub repo.
+
+568
+00:59:07,760 --> 00:59:09,920
+[SPEAKER_00] And then it's like, oh, it needs to have different characters.
+
+569
+00:59:10,080 --> 00:59:11,440
+[SPEAKER_00] And the characters need to be 3D.
+
+570
+00:59:11,680 --> 00:59:14,240
+[SPEAKER_00] And I need to learn how to do Blender and make 3D models.
+
+571
+00:59:15,200 --> 00:59:16,400
+[SPEAKER_00] ended up spending like a month.
+
+572
+00:59:16,560 --> 00:59:19,920
+[SPEAKER_00] I had a working version, but I just like needed it needed to be better and better.
+
+573
+00:59:20,400 --> 00:59:21,840
+[SPEAKER_00] So I ended up just never releasing it.
+
+574
+00:59:22,000 --> 00:59:24,640
+[SPEAKER_00] And then in March 2022, I decided, okay, let me just start.
+
+575
+00:59:25,120 --> 00:59:25,760
+[SPEAKER_00] from scratch again.
+
+576
+00:59:26,000 --> 00:59:28,480
+[SPEAKER_00] And by then I had an intern already.
+
+577
+00:59:29,440 --> 00:59:32,800
+[SPEAKER_00] So we took it as sort of a project for her to learn as well.
+
+578
+00:59:33,200 --> 00:59:34,640
+[SPEAKER_00] And so we just started from scratch.
+
+579
+00:59:34,720 --> 00:59:36,640
+[SPEAKER_00] Like what's the most basic version of this app?
+
+580
+00:59:37,760 --> 00:59:47,040
+[SPEAKER_00] Once we had that version that was working, we made it a little bit nicer and we added some like this giraffe character that notifies you when you're sitting.
+
+581
+00:59:47,440 --> 00:59:53,040
+[SPEAKER_00] So you put in your AirPods and basically if you slouch too much, it will make a little sound or it will vibrate your phone.
+
+582
+00:59:54,000 --> 00:59:58,800
+[SPEAKER_00] And there's this little giraffe that moves along with you and it's like she's happy or sad.
+
+583
+00:59:59,040 --> 00:59:59,200
+[SPEAKER_00] Yeah.
+
+584
+01:00:00,080 --> 01:00:05,360
+[SPEAKER_01] Like you were saying, like your other apps are all like basic, you know, standard Swift UI.
+
+585
+01:00:05,680 --> 01:00:06,560
+[SPEAKER_01] They look sort of similar.
+
+586
+01:00:06,880 --> 01:00:13,920
+[SPEAKER_01] This one feels, it's got really intense character and very unique and standout design.
+
+587
+01:00:14,800 --> 01:00:14,880
+[SPEAKER_00] Yeah.
+
+588
+01:00:15,040 --> 01:00:22,320
+[SPEAKER_00] So it's a lot of the, besides the main view, a lot of the stuff is still Swift UI and just, oh, everything Swift UI, but it's very basic still.
+
+589
+01:00:22,480 --> 01:00:34,640
+[SPEAKER_00] But I wanted to have this main interface where it's just like a very full screen color and a moving giraffe that like smiles or is happy or which for this app is kind of important, I guess, because the idea is that.
+
+590
+01:00:35,920 --> 01:00:41,040
+[SPEAKER_01] it's sitting open on your phone most of the time, right?
+
+591
+01:00:41,520 --> 01:00:55,120
+[SPEAKER_00] Yeah, it can also be in the background, but there's also some sort of at some point you want the giraffe to be linked in someone's head to sitting up straight so that you don't necessarily need to have the app open anymore.
+
+592
+01:00:55,280 --> 01:01:06,400
+[SPEAKER_00] It's more about becoming more aware of your posture as well, because like I don't expect people to use this app eight hours a day every day, but it's more like, oh, maybe they need it in the morning for the first hour when they're working.
+
+593
+01:01:07,200 --> 01:01:12,560
+[SPEAKER_00] And then maybe they have to the widget and that just seeing the widget is already trigger for them to sit up straight.
+
+594
+01:01:13,360 --> 01:01:16,400
+[SPEAKER_00] But all of these things were like totally not thought out when I started this, right?
+
+595
+01:01:16,640 --> 01:01:16,800
+[SPEAKER_00] Sure.
+
+596
+01:01:17,200 --> 01:01:19,760
+[SPEAKER_00] It was more like, hey, how can I make fun app?
+
+597
+01:01:20,320 --> 01:01:22,160
+[SPEAKER_00] It was like, oh, it was just a fun little thing.
+
+598
+01:01:22,320 --> 01:01:27,360
+[SPEAKER_00] Like, oh, let me put it to your F and then it moves along with your head and the head moves depending on how you move.
+
+599
+01:01:27,520 --> 01:01:29,600
+[SPEAKER_00] And it was just a fun little thing.
+
+600
+01:01:30,800 --> 01:01:33,840
+[SPEAKER_00] And so that came out, I think, like the week before or the week after Vivid.
+
+601
+01:01:34,000 --> 01:01:38,240
+[SPEAKER_00] So both in April and, yeah, it was just like really nice reception as well.
+
+602
+01:01:38,560 --> 01:01:42,160
+[SPEAKER_00] Got featured on the App Store immediately, which is always like always feels special.
+
+603
+01:01:42,400 --> 01:02:18,080
+[SPEAKER_00] special even if even after all these times it's still really cool and um and then I actually found out during WWDC when I was um at one of the app store labs so you can have a lab where you talk to people who work on the app store team about like editorial and stuff um that they actually mentioned that it became the app of the month in China for April and like I told them like oh it would be really nice if developers can hear that as well um because you can now use third party services right to like check if you're featured and stuff but like becoming app of the month in China it's sort of like an unattainable goal that I'd never even consider would be possible.
+
+604
+01:02:18,960 --> 01:02:21,520
+[SPEAKER_00] But I mean, there's 12 months, so it's like a very big thing.
+
+605
+01:02:21,680 --> 01:02:24,080
+[SPEAKER_00] And it's a lot, very, very, a lot of people.
+
+606
+01:02:26,960 --> 01:02:37,520
+[SPEAKER_00] But like, that's another one of those examples where I didn't have this big, big marketing plan or a big, all right, this app is going to take over the Chinese market, but it's like, oh, let me just make something that's helpful for me.
+
+607
+01:02:38,080 --> 01:02:40,320
+[SPEAKER_00] And then, okay, maybe other people like it as well.
+
+608
+01:02:42,960 --> 01:02:50,240
+[SPEAKER_00] And then at the end of April, so April was sort of like ticking all the boxes in terms of my life goals in terms of work.
+
+609
+01:02:51,120 --> 01:02:54,400
+[SPEAKER_00] At the end of April, I got this phone call from someone at Apple.
+
+610
+01:02:56,400 --> 01:02:58,400
+[SPEAKER_00] Either a very good sign or a very scary sign.
+
+611
+01:03:00,240 --> 01:03:05,120
+[SPEAKER_00] I've also had the scary part, which I'll tell you later at the end of the year regarding Vivid and the Mac App Store.
+
+612
+01:03:07,360 --> 01:03:10,400
+[SPEAKER_00] So I got a phone call if I could write a sign an NDA.
+
+613
+01:03:11,040 --> 01:03:13,040
+[SPEAKER_00] So I can't go into too many details about that.
+
+614
+01:03:13,200 --> 01:03:17,040
+[SPEAKER_00] But turns out that I was nominated for an Apple Design Awards for Navi.
+
+615
+01:03:18,400 --> 01:03:20,800
+[SPEAKER_00] the subtitle and translation app from the year before.
+
+616
+01:03:22,000 --> 01:03:27,200
+[SPEAKER_00] So in one month, I released an app that was like making me like making a really big impact in terms of money.
+
+617
+01:03:27,760 --> 01:03:35,200
+[SPEAKER_00] One that became became the app of the month in China and one that like got me nominated for like an app store Apple design award.
+
+618
+01:03:35,440 --> 01:03:37,600
+[SPEAKER_00] So it was a very, very crazy month.
+
+619
+01:03:38,400 --> 01:03:45,280
+[SPEAKER_00] So then I came back to the Netherlands in May and then a month later I went to San Francisco to to WWDC.
+
+620
+01:03:45,920 --> 01:03:47,600
+[SPEAKER_00] So all these things kind of came together there.
+
+621
+01:03:47,760 --> 01:04:03,040
+[SPEAKER_00] It was unfortunately didn't win, but I mean it was still like such a nice experience to to get to get that recognition for something and then an hour before actually the ceremony was for who won the Apple Design Awards.
+
+622
+01:04:03,200 --> 01:04:07,760
+[SPEAKER_00] So I found out that Navi doesn't work anymore on iOS 16.
+
+623
+01:04:08,560 --> 01:04:16,800
+[SPEAKER_00] So the betas had just come out an hour before and apparently they changed some stuff in terms of how the microphone access works during a FaceTime conversation.
+
+624
+01:04:16,960 --> 01:04:22,560
+[SPEAKER_00] So an hour before hearing if I had won an Apple Design Award, the app stopped working.
+
+625
+01:04:23,280 --> 01:04:27,200
+[SPEAKER_00] So I had to remove it from the store at some point when iOS 16 came out.
+
+626
+01:04:27,360 --> 01:04:36,160
+[SPEAKER_00] But yeah, it was just really because I mean, I've always thought about, oh, it would be nice to at some point win an Apple Design Award or be in the running for something like that.
+
+627
+01:04:37,440 --> 01:04:38,880
+[SPEAKER_00] But again, it wasn't this super big.
+
+628
+01:04:39,200 --> 01:04:41,360
+[SPEAKER_00] I always felt like, oh, I have to work on something for four years.
+
+629
+01:04:41,680 --> 01:04:42,080
+[SPEAKER_00] Yeah, right.
+
+630
+01:04:43,040 --> 01:04:46,960
+[SPEAKER_00] And then I can actually get the nomination or something.
+
+631
+01:04:48,320 --> 01:04:54,960
+[SPEAKER_00] So this was also another sort of epiphany for me, like, hey, you don't have to have these super complicated big, large projects.
+
+632
+01:04:56,320 --> 01:05:05,200
+[SPEAKER_00] You can also just, if you just solve something in an innovative way or in a way that's helping a certain group of people, can also be really nice.
+
+633
+01:05:07,680 --> 01:05:11,680
+[SPEAKER_00] Yeah, so that I don't have to make all these huge projects.
+
+634
+01:05:11,920 --> 01:05:14,000
+[SPEAKER_00] It's more like just solve problems for people.
+
+635
+01:05:14,240 --> 01:05:20,240
+[SPEAKER_00] And that can already that can also like either get you money, get you recognition, or get you awards.
+
+636
+01:05:20,720 --> 01:05:32,080
+[SPEAKER_01] Not saying that those are the most important things in life, but they all kind of when you do what you're doing, I feel like there's kind of there's two types of successful.
+
+637
+01:05:34,000 --> 01:05:36,320
+[SPEAKER_01] people in our sort of indie community that I see.
+
+638
+01:05:36,640 --> 01:05:37,840
+[SPEAKER_01] And I've seen people flip between them.
+
+639
+01:05:38,000 --> 01:05:42,640
+[SPEAKER_01] It's not like this is some binary thing, but there's kind of like your focus on one thing.
+
+640
+01:05:42,880 --> 01:05:50,560
+[SPEAKER_01] Yeah, like Marco Arment, Curtis, Herbert, like they have a single product and it's just intense, super focused on that one thing.
+
+641
+01:05:50,720 --> 01:06:08,800
+[SPEAKER_01] And then there's kind of you, David Smith, where it's like you're coming out with lots of different ideas and one of your one of the things that really makes you stand out is the fact that you can have an idea very, very quickly iterate on it and get something out there and get feedback on it really quickly.
+
+642
+01:06:09,360 --> 01:06:12,480
+[SPEAKER_01] And both of those are super valid, I think.
+
+643
+01:06:13,280 --> 01:06:20,880
+[SPEAKER_01] But one of the advantages tooges to your approach is this scenario that you just described is something that really can only happen with that one.
+
+644
+01:06:21,360 --> 01:06:38,400
+[SPEAKER_01] It's like you're sort of it's sort of a shotgun approach of like lots of different ideas executed well but not like, you know, ten thousand hours on a single idea and for something like Navi, how much better would it have been had you spent that much longer?
+
+645
+01:06:38,560 --> 01:06:48,320
+[SPEAKER_01] It would have been worse because it would have been available for a shorter amount of time because once Apple killed it, they would have killed a year's worth of work instead of but the main.
+
+646
+01:06:48,320 --> 01:06:55,840
+[SPEAKER_01] The main reason it worked was because of the idea and you got that idea and that core working and that was the real value.
+
+647
+01:06:56,000 --> 01:06:58,320
+[SPEAKER_01] And then you can build on top of that value afterwards.
+
+648
+01:06:59,360 --> 01:06:59,440
+[SPEAKER_01] Yeah.
+
+649
+01:06:59,600 --> 01:07:04,240
+[SPEAKER_00] And I mean, there's obviously value in spending time on getting everything right, right?
+
+650
+01:07:04,320 --> 01:07:15,280
+[SPEAKER_00] So that when the first experience that people have with a product is, if it's like one point five times as good, that might make the difference in terms of adoption or in terms of getting people to use it in their lives.
+
+651
+01:07:15,520 --> 01:07:18,000
+[SPEAKER_01] Especially if you're entering a crowded segment, right?
+
+652
+01:07:18,240 --> 01:07:28,640
+[SPEAKER_01] Like if you come out with a podcast player and it's just it can play podcasts, it's not going to get a reaction unless it's super polished or it has a couple core ideas or something that make it work.
+
+653
+01:07:29,760 --> 01:07:37,680
+[SPEAKER_00] No, but on the other hand, like if you make a podcast player that has one very unique feature, but the rest of the podcast player is just a podcast player.
+
+654
+01:07:37,840 --> 01:07:39,760
+[SPEAKER_00] So you don't have any crazy playlists or something.
+
+655
+01:07:40,000 --> 01:07:58,640
+[SPEAKER_00] It's just a list of the podcasts, but you have one specific feature that makes the experience unique, then people can ignore the fact that there's stuff missing and might even use the app despite stuff being missing, but they go there for that one specific feature, especially because it's super easy for people to try out a new app, especially if it's free.
+
+656
+01:08:01,040 --> 01:08:09,760
+[SPEAKER_00] So I think a lot of my things tend to focus on doing one unique thing and doing the rest in as basic a way as possible, so to say.
+
+657
+01:08:10,000 --> 01:08:10,240
+[SPEAKER_00] Right.
+
+658
+01:08:11,440 --> 01:08:14,960
+[SPEAKER_00] So with PosturePell, that would be using the motion sensors in your AirPods.
+
+659
+01:08:15,440 --> 01:08:19,280
+[SPEAKER_00] And the rest is just, yeah, showing a number, basically.
+
+660
+01:08:19,520 --> 01:08:20,320
+[SPEAKER_00] Is it good or bad?
+
+661
+01:08:22,240 --> 01:08:32,080
+[SPEAKER_00] I could have made a whole platform there with tips for posture and I'm still thinking about that stuff, but the core thing is, oh, hey, I have these AirPods that I bought for 200 euros.
+
+662
+01:08:32,400 --> 01:08:35,600
+[SPEAKER_00] They listen, they make me listen to music, but oh, did you know this?
+
+663
+01:08:35,760 --> 01:08:40,560
+[SPEAKER_00] Like if I put them in my ears, they also remind me when I'm not sitting up straight when I'm at the office or when I'm working at home.
+
+664
+01:08:41,040 --> 01:08:44,720
+[SPEAKER_00] Like that's already more than enough value for the app.
+
+665
+01:08:45,040 --> 01:08:46,480
+[SPEAKER_00] Like it doesn't have to have all the other stuff.
+
+666
+01:08:46,640 --> 01:08:46,800
+[SPEAKER_00] Right.
+
+667
+01:08:47,360 --> 01:08:49,440
+[SPEAKER_00] The one thing is already useful enough.
+
+668
+01:08:49,680 --> 01:08:56,080
+[SPEAKER_01] I guess talking about this kind of ethos, I feel like recently you started giving this a name.
+
+669
+01:08:56,240 --> 01:08:57,120
+[SPEAKER_01] Like I saw you give a talk.
+
+670
+01:08:57,200 --> 01:08:59,120
+[SPEAKER_01] I haven't I don't know if it's available somewhere.
+
+671
+01:08:59,200 --> 01:09:04,800
+[SPEAKER_01] I haven't seen the talk, but I just saw you're like launching a course and you're calling it the 222 method.
+
+672
+01:09:05,280 --> 01:09:06,960
+[SPEAKER_01] Can you like explain that?
+
+673
+01:09:07,360 --> 01:09:13,280
+[SPEAKER_01] I mean, I feel like you've been kind of explaining it, but just what that specific method and this idea that you're doing around that is.
+
+674
+01:09:14,160 --> 01:09:25,680
+[SPEAKER_00] Yeah, so, so, um, what I kind of noticed with, with how I was approaching all the ideas is that, so I have a lot of ideas, as you probably notice by now.
+
+675
+01:09:26,080 --> 01:09:31,280
+[SPEAKER_01] I spent like the first, I think, 30 minutes of in-person time I have spent with you.
+
+676
+01:09:32,080 --> 01:09:36,960
+[SPEAKER_01] We like sketched out, and I think you even opened Xcode, uh, an idea for an app.
+
+677
+01:09:37,680 --> 01:09:39,600
+[SPEAKER_01] That was my first interaction with you.
+
+678
+01:09:40,080 --> 01:09:42,240
+[SPEAKER_00] So I'm very aware of how your brain works.
+
+679
+01:09:43,440 --> 01:09:46,480
+[SPEAKER_00] Do we want to keep that app a secret, in case we still were going to launch it soon?
+
+680
+01:09:46,720 --> 01:09:47,760
+[SPEAKER_01] I mean, we can throw it out there.
+
+681
+01:09:48,000 --> 01:09:52,720
+[SPEAKER_01] I think I've seen a couple of people toy with ideas in that area and I'm like, ooh, maybe we should pick that up again.
+
+682
+01:09:52,880 --> 01:09:52,960
+[SPEAKER_00] Yeah.
+
+683
+01:09:53,200 --> 01:10:09,440
+[SPEAKER_00] So we were we were sitting at WWC at this meetup at the Apple store next to their headquarters and we were talking about, ah, you meet all these developers across the world when you go to conferences and we wanted to make sort of a Pokedex kind of thing where you could exchange, you could like, oh, that was it.
+
+684
+01:10:09,600 --> 01:10:15,520
+[SPEAKER_01] Jordan Morgan literally was making a Pokedex thing for his son, I think at the time.
+
+685
+01:10:16,320 --> 01:10:18,640
+[SPEAKER_00] I think I think it came from the Pokemon stuff.
+
+686
+01:10:18,720 --> 01:10:18,800
+[SPEAKER_00] Yeah.
+
+687
+01:10:18,880 --> 01:10:20,480
+[SPEAKER_00] And then we're like, oh, how could we do that?
+
+688
+01:10:20,720 --> 01:10:23,280
+[SPEAKER_00] Like, could we use the multipeer connectivity?
+
+689
+01:10:23,920 --> 01:10:26,000
+[SPEAKER_00] And then we're like, oh, does that API exist?
+
+690
+01:10:26,320 --> 01:10:29,520
+[SPEAKER_00] And, um, yeah, it was a very clear example of right.
+
+691
+01:10:30,000 --> 01:10:31,920
+[SPEAKER_00] Let's just try to see if we can make a first version.
+
+692
+01:10:32,080 --> 01:10:35,120
+[SPEAKER_00] I don't think we actually started coding besides opening Xcode, I think.
+
+693
+01:10:35,280 --> 01:10:37,120
+[SPEAKER_00] But, um, yeah.
+
+694
+01:10:37,200 --> 01:10:44,560
+[SPEAKER_00] So, so what I notice when I have an idea is that in the past, I would spend a lot of time on the first version of an app.
+
+695
+01:10:44,880 --> 01:11:24,560
+[SPEAKER_00] So, trying to get it perfect trying to add all these features like this needs to be in there this needs to be in there this needs to be in there and then in the end just not releasing it because you spend too much time and it's not never perfect so what i notice is that if if uh so there's this two two two method that i came up with and it's basically two hours two weeks two days and two weeks and basically if I have an idea and I cannot think in my head how can I make the first version of this in two hours I just don't make it so let's say I want to make something that requires a back end I don't know how to make a back end, so I cannot make it in two hours, so I'm not going to make this idea.
+
+696
+01:11:25,040 --> 01:11:29,440
+[SPEAKER_00] So by making something that you can make in two hours, you force yourself to use stuff that you already know.
+
+697
+01:11:30,560 --> 01:11:36,640
+[SPEAKER_00] You might go a little bit out of your comfort zone for a specific thing, but you should already know like, how should I approach that?
+
+698
+01:11:36,800 --> 01:11:38,480
+[SPEAKER_00] Like, what framework should I probably look for?
+
+699
+01:11:38,960 --> 01:11:40,400
+[SPEAKER_00] What should I google for?
+
+700
+01:11:41,680 --> 01:11:43,520
+[SPEAKER_00] But you make a first version that just works for you.
+
+701
+01:11:43,680 --> 01:11:45,120
+[SPEAKER_00] So this can be super hard coded.
+
+702
+01:11:45,920 --> 01:11:59,120
+[SPEAKER_00] ugly it can be very utilitarian but it should show like is this idea that you have is it is it possible so for example with post chapel that came down to finding a GitHub repo that uses the CM Motion Headphone Manager.
+
+703
+01:12:00,000 --> 01:12:09,680
+[SPEAKER_00] I copied that into my project, just a sample code from someone else, and then just showed posture good, posture bad, just based on the certain value of your AirPods.
+
+704
+01:12:10,240 --> 01:12:20,560
+[SPEAKER_00] Because once I'd shown that, oh, hey, the AirPods can detect if my head is moving forward, then of course you can like make that better and more nuanced and everything, but it's just like, hey, could I use this for this specific thing?
+
+705
+01:12:21,920 --> 01:12:25,760
+[SPEAKER_00] In theory, I could not continue development on that app and it would work.
+
+706
+01:12:26,000 --> 01:12:29,120
+[SPEAKER_00] I could put that on my desk and it would just say good or bad bad.
+
+707
+01:12:29,600 --> 01:12:32,960
+[SPEAKER_00] It's obviously not great, doesn't look nice, but it shows that I can make it.
+
+708
+01:12:33,760 --> 01:12:41,760
+[SPEAKER_00] And then if you have that first version, then it allows you to think about it in more real sense because you can actually see the app.
+
+709
+01:12:42,000 --> 01:12:44,960
+[SPEAKER_00] You could think, oh, what would I need to add to make this a useful feature?
+
+710
+01:12:45,760 --> 01:12:48,640
+[SPEAKER_00] What would I need to add to make it useful for other people?
+
+711
+01:12:49,680 --> 01:12:52,880
+[SPEAKER_00] So it makes it tangible literally because it's there.
+
+712
+01:12:54,400 --> 01:13:00,720
+[SPEAKER_00] And then so you spend the next two days, and this doesn't have to be like in one continuous thing spread across months, right?
+
+713
+01:13:01,520 --> 01:13:38,240
+[SPEAKER_00] But then you spend two days making that first version uh usable for friends so you just make a version where it's no longer hard coded it maybe looks a little bit nicer doesn't have to look perfect but your friends so right it'll be fine if it's but it's other people exactly and it's also people that can give you feedback on if they would use it what they understand or don't understand um but it's also like that first moment where you put your work out there and get like which is always a bit scary but if you do it after two hours it's not as scary because everyone knows you only spent two hours on it.
+
+714
+01:13:39,120 --> 01:13:42,000
+[SPEAKER_00] There's not there's not this big hurdle that you have to get over.
+
+715
+01:13:42,160 --> 01:13:44,000
+[SPEAKER_00] It's like, hey, I'm showing a work in progress.
+
+716
+01:13:44,320 --> 01:13:45,120
+[SPEAKER_00] I'm showing an idea.
+
+717
+01:13:47,120 --> 01:13:49,920
+[SPEAKER_00] And then I spent two weeks launching it.
+
+718
+01:13:50,720 --> 01:13:53,120
+[SPEAKER_00] So there's this quite hard deadline for myself.
+
+719
+01:13:53,280 --> 01:13:56,400
+[SPEAKER_00] Like, I cannot spend more than two weeks on something without launching it.
+
+720
+01:13:57,200 --> 01:14:04,400
+[SPEAKER_00] And by choosing two weeks, that forces you to remove a lot of features because you just cannot do everything in two weeks.
+
+721
+01:14:04,560 --> 01:14:04,800
+[SPEAKER_00] Right.
+
+722
+01:14:05,200 --> 01:14:12,240
+[SPEAKER_00] So then it kind of like by definition, you have to make something that's simple and that's focused on that one specific thing you made in the two hours.
+
+723
+01:14:12,640 --> 01:14:20,320
+[SPEAKER_00] For me, that has just really helped me because I tend to overthink or I tended to overthink like, oh, it needs to be this and I need to have all these different features.
+
+724
+01:14:20,880 --> 01:14:25,920
+[SPEAKER_00] But now I can just like I already know exactly what I'm going to be making in those two weeks because I've narrowed that down.
+
+725
+01:14:26,800 --> 01:14:29,760
+[SPEAKER_00] And in reality, a lot of times now, it's not even two weeks for me.
+
+726
+01:14:29,920 --> 01:14:38,640
+[SPEAKER_00] It's often like maybe five days or sometimes two days where maybe the two day version is already good enough to release for everyone because the feature is very simple.
+
+727
+01:14:38,960 --> 01:14:39,200
+[SPEAKER_00] Right.
+
+728
+01:14:39,600 --> 01:14:42,320
+[SPEAKER_00] What's been the biggest benefit for me?
+
+729
+01:14:42,720 --> 01:14:48,560
+[SPEAKER_00] A lot of these projects that I do spend two hours on or two days on, I might not continue them.
+
+730
+01:14:48,880 --> 01:14:51,840
+[SPEAKER_00] So I might work two days and then think, oh yeah, this is not going to work.
+
+731
+01:14:52,080 --> 01:14:52,880
+[SPEAKER_00] This idea is not great.
+
+732
+01:14:53,360 --> 01:15:00,960
+[SPEAKER_00] The next time I want to do something in a similar field in those two hours, I can get a lot more done because I can just take the code from that two-day project.
+
+733
+01:15:01,440 --> 01:15:06,720
+[SPEAKER_00] And now, for example, making a map is two minutes of work instead of two days.
+
+734
+01:15:08,240 --> 01:15:15,680
+[SPEAKER_00] And a lot of times, it's easy to make a variation of one app by just taking the two weeks version from another app and adjusting something.
+
+735
+01:15:16,320 --> 01:16:00,960
+[SPEAKER_00] For example, I made I made this app last year which is just a picture and picture browser so it uses sort of the picture and picture framework on macOS and it just chose a website so it's useful if you're like editing like if you're coding a website and you want to see the preview without oh yeah yeah switching to Safari for that I used I just copied the code from NAVI which I was using to overlay subtitles on the face time window and I just put that in the bottom right and load a web view just super basic swift UI then when chat GPT came out I took that code from the picture and picture browser that web view code put that into a new file, change the URL to hardcode at chat.openai.com and I wrapped it in a menu bar, which I had some code from a different app as well.
+
+736
+01:16:01,360 --> 01:16:05,840
+[SPEAKER_00] And then I had this app called Mac GPT, which lets you use chat GPT from your menu bar.
+
+737
+01:16:06,400 --> 01:16:10,640
+[SPEAKER_00] It was literally, it is, it is, well, now it's a little bit more, but it was literally forty lines of code.
+
+738
+01:16:10,960 --> 01:16:14,320
+[SPEAKER_00] And I think I made it in five minutes and I put it on Gumroad for free.
+
+739
+01:16:14,640 --> 01:16:16,800
+[SPEAKER_00] And right now it has 25,000 downloads.
+
+740
+01:16:17,040 --> 01:16:22,160
+[SPEAKER_00] And even though it's free, people have paid me like 6,000 euros for it or something in the three months.
+
+741
+01:16:22,720 --> 01:16:26,800
+[SPEAKER_01] And that's one of those things that the way you're describing it makes it sound like it's nothing.
+
+742
+01:16:26,960 --> 01:17:03,040
+[SPEAKER_01] nothing because from your perspective it was really lightweight but like having tried to figure out uh menu bar apps figuring out all these macOS weird things with windowing and all that that the amount of actual work that went into that app was probably pretty high it's just it was done as part of previous apps yeah you amortized it across multiple apps sort of yeah so um and that's also nice like once you figure once you solve a problem for one app you can reuse that in it as many times as you want for everything else in the future so So now Bing came out like the Bing chat.
+
+743
+01:17:03,280 --> 01:17:12,560
+[SPEAKER_00] So I took the code from Mac GPT, changed the URL to Bing, and now it's a separate app that solves a specific problem again.
+
+744
+01:17:13,520 --> 01:17:16,320
+[SPEAKER_00] So for me, that's the main thing.
+
+745
+01:17:16,480 --> 01:17:20,240
+[SPEAKER_00] Like it's it's nice to be able to launch stuff quickly with this with this method, right?
+
+746
+01:17:21,040 --> 01:17:27,600
+[SPEAKER_00] For me, the main thing is just like once you have these clear goals for yourself, like, all right, I make something in two hours.
+
+747
+01:17:27,840 --> 01:17:28,720
+[SPEAKER_00] Okay, is it useful?
+
+748
+01:17:29,120 --> 01:17:30,720
+[SPEAKER_00] Okay, I go to the two day phase.
+
+749
+01:17:31,440 --> 01:17:32,240
+[SPEAKER_00] Is it still useful?
+
+750
+01:17:32,880 --> 01:17:33,360
+[SPEAKER_00] No, it's not.
+
+751
+01:17:33,840 --> 01:17:34,560
+[SPEAKER_00] Okay, that's fine.
+
+752
+01:17:35,520 --> 01:17:42,400
+[SPEAKER_00] But all of that work you put in there into this finished thing, you can very quickly, like, it's almost like you make a new framework for yourself.
+
+753
+01:17:42,880 --> 01:17:43,040
+[SPEAKER_00] Right.
+
+754
+01:17:43,680 --> 01:17:55,920
+[SPEAKER_00] For example, I have a, I have a menu bar framework now, or I have a framework if I want to do some stuff with text recognition, or I have a framework if I want to do stuff with, with, with brightness, or I have a framework if I want to do stuff with OpenAI.
+
+755
+01:17:56,160 --> 01:18:01,600
+[SPEAKER_00] Like I made some OpenAI stuff, and now I just copy that class from project to project to project and add AI.
+
+756
+01:18:02,240 --> 01:18:03,600
+[SPEAKER_00] within five minutes or something.
+
+757
+01:18:04,880 --> 01:18:05,600
+[SPEAKER_00] So, so yeah.
+
+758
+01:18:05,680 --> 01:18:09,920
+[SPEAKER_00] So I'm, um, I think one, this is probably coming out at the at the end of March, right?
+
+759
+01:18:10,560 --> 01:18:11,280
+[SPEAKER_00] Next week actually.
+
+760
+01:18:11,520 --> 01:18:12,560
+[SPEAKER_00] It's coming out next week already.
+
+761
+01:18:12,800 --> 01:18:13,200
+[SPEAKER_00] Yeah, yeah.
+
+762
+01:18:13,680 --> 01:18:13,760
+[SPEAKER_00] Okay.
+
+763
+01:18:14,000 --> 01:18:16,560
+[SPEAKER_00] This is March 7th, so beginning of March.
+
+764
+01:18:17,040 --> 01:18:30,320
+[SPEAKER_00] So what I did, so I gave talks about this 222 method the last few years, and every time people always come up to me afterwards saying, Oh, how motivated they are, and they run into this thing where they work on something for such a long time and it never goes anywhere.
+
+765
+01:18:30,880 --> 01:18:42,000
+[SPEAKER_00] So I figured, okay, maybe I can make sort of a course around this, make a way for people to recreate this, because I think it works for a lot of different people.
+
+766
+01:18:42,720 --> 01:18:46,160
+[SPEAKER_00] Because what I hear from a lot of people is that they have a full-time job as a developer.
+
+767
+01:18:46,480 --> 01:18:52,000
+[SPEAKER_00] So then when they come home from their work, they don't necessarily want to do more development.
+
+768
+01:18:53,200 --> 01:18:58,800
+[SPEAKER_00] Or they might just not have the time because they have children or they don't have any ideas or they're too worried about getting it perfect.
+
+769
+01:18:59,600 --> 01:19:07,280
+[SPEAKER_00] I think this method just works really well for that because there's very small commitment in terms of the two hours to get started on this idea.
+
+770
+01:19:09,120 --> 01:19:21,920
+[SPEAKER_00] So then last week, on the 22nd of February, I sort of launched the first version of is also in the terms in the way of the method is very basic.
+
+771
+01:19:22,160 --> 01:19:27,120
+[SPEAKER_00] So I only released 22 slots basically for people to to get early access to it.
+
+772
+01:19:27,280 --> 01:19:32,640
+[SPEAKER_00] And now over this week, I have like calls with all of those persons, people to like figure out, hey, what do you want here?
+
+773
+01:19:32,800 --> 01:19:35,280
+[SPEAKER_00] Like what kind of stuff do you want me to have in the course?
+
+774
+01:19:35,760 --> 01:19:43,440
+[SPEAKER_00] So I have an outline of what I'm adding, obviously, but sort of like how you would do it when I make an app is just, okay, what's the simplest version I can make?
+
+775
+01:19:43,760 --> 01:19:46,320
+[SPEAKER_00] And then from there, like, all right, what else do I need to make?
+
+776
+01:19:46,480 --> 01:19:48,720
+[SPEAKER_00] And really like slowly build it out in that way.
+
+777
+01:19:49,280 --> 01:19:53,520
+[SPEAKER_00] The goal is now to have it out by the 4th of April.
+
+778
+01:19:53,920 --> 01:19:54,000
+[SPEAKER_00] Okay.
+
+779
+01:19:54,960 --> 01:19:58,480
+[SPEAKER_00] So it's going to come out on the 4th of April and in between there are some phases.
+
+780
+01:19:58,880 --> 01:20:01,440
+[SPEAKER_00] So on the 3rd of March, so 3344.
+
+781
+01:20:02,960 --> 01:20:11,040
+[SPEAKER_00] On the 3rd of March, I'm opening another batch, but that batch will have access to more content and I'll actually have more examples and everything.
+
+782
+01:20:11,520 --> 01:20:13,760
+[SPEAKER_01] What is the what are you thinking right now as far as the medium?
+
+783
+01:20:14,080 --> 01:20:14,640
+[SPEAKER_01] Is it videos?
+
+784
+01:20:14,960 --> 01:20:15,520
+[SPEAKER_01] Is it text?
+
+785
+01:20:16,640 --> 01:20:17,840
+[SPEAKER_00] It's going to be a combination of both.
+
+786
+01:20:18,080 --> 01:20:18,160
+[SPEAKER_00] Okay.
+
+787
+01:20:18,640 --> 01:20:23,840
+[SPEAKER_00] So when I gave this talk at IOS conference in January.
+
+788
+01:20:24,880 --> 01:20:26,480
+[SPEAKER_00] I was like, all right, I want to make this course.
+
+789
+01:20:27,120 --> 01:20:31,520
+[SPEAKER_00] And so on Sunday night we were supposed to fly back on Sunday, but I decided to stay a little bit longer.
+
+790
+01:20:32,400 --> 01:20:35,200
+[SPEAKER_00] I was like, ah, okay, I'm going to finish this course, but I don't want to type.
+
+791
+01:20:36,080 --> 01:20:40,320
+[SPEAKER_00] So I thought I need to have an app where I can talk and then I just make a transcription.
+
+792
+01:20:40,800 --> 01:20:45,200
+[SPEAKER_00] I knew that Whisper came out a while ago, which is this open AI speech to text framework.
+
+793
+01:20:45,760 --> 01:20:50,240
+[SPEAKER_00] So I thought, all right, let me try to see if someone already made an app for it, because last time I checked it wasn't.
+
+794
+01:20:50,480 --> 01:20:51,440
+[SPEAKER_00] And it was still not the case.
+
+795
+01:20:52,080 --> 01:20:57,200
+[SPEAKER_00] So then I thought, okay, let me try to find this framework and someone wrote this C plus plus wrapper for it.
+
+796
+01:20:57,680 --> 01:21:03,120
+[SPEAKER_00] I had some sample codeode for Swift UI, and then I made the very first version of Mac Whisper on Sunday night.
+
+797
+01:21:03,360 --> 01:21:08,880
+[SPEAKER_01] So Mac Whisper was a procrastination for working on the 222 course.
+
+798
+01:21:09,360 --> 01:21:09,440
+[SPEAKER_01] Wow.
+
+799
+01:21:10,320 --> 01:21:20,880
+[SPEAKER_01] And anyone listening, I haven't really talked about this super publicly, but Mac Whisper, well, you're about to explain it, but Mac Whisper is an app, Mac app that allows you to use that OpenAI Whisper speech to text.
+
+800
+01:21:21,200 --> 01:21:22,560
+[SPEAKER_01] Yeah, but it's it runs locally, right?
+
+801
+01:21:22,800 --> 01:21:27,280
+[SPEAKER_01] It's not sending it off to a server and it does speech to text recognition on audio files.
+
+802
+01:21:27,920 --> 01:21:36,160
+[SPEAKER_01] And I've been using it for launch and processing these episodes and I actually have them on the website.
+
+803
+01:21:36,320 --> 01:21:44,640
+[SPEAKER_01] So if you go to the website, not every episode because I haven't done it yet, a lot of the more recent episodes have a little transcription button next to it.
+
+804
+01:21:44,800 --> 01:21:47,600
+[SPEAKER_01] And if you open it, it'll actually have what Mac Whisper spit out.
+
+805
+01:21:48,000 --> 01:21:54,720
+[SPEAKER_01] And I'm more or less using it selfishly because I can just control F to find where I talked about a certain thing in a conversation with a time stamp.
+
+806
+01:21:55,440 --> 01:22:07,680
+[SPEAKER_01] But that's really funny to hear that this app was actually a spin off procrastination tut tutu method app for the from the tutu met method course.
+
+807
+01:22:09,280 --> 01:22:16,000
+[SPEAKER_00] So when you put it like that, it does sound a bit bad, but it was also very clear to the idea, like, hey, I want to solve my own problems.
+
+808
+01:22:16,480 --> 01:22:25,600
+[SPEAKER_00] So I want to be able to just talk for 20 minutes into my voice memos app when I'm walking around and then just load that into my Mac and then just use that as the foundation for something.
+
+809
+01:22:26,240 --> 01:22:28,480
+[SPEAKER_00] Mac Whispers also, yeah, I made that for myself.
+
+810
+01:22:28,640 --> 01:22:31,840
+[SPEAKER_00] Then I released it the next day after like four hours of development or something.
+
+811
+01:22:32,800 --> 01:22:34,400
+[SPEAKER_00] Did a bunch of updates throughout the week.
+
+812
+01:22:35,600 --> 01:22:40,640
+[SPEAKER_00] The way it works is you need to have these super big machine learning models in the app because it all runs locally.
+
+813
+01:22:41,120 --> 01:22:48,800
+[SPEAKER_00] So what would happen is every day I would do an update and people would have to download four point five gigabytes of the new app because I didn't have an auto updater.
+
+814
+01:22:49,200 --> 01:22:52,000
+[SPEAKER_00] So all these things that people think, oh, people are going to hate that.
+
+815
+01:22:52,240 --> 01:22:54,080
+[SPEAKER_00] It's going to be a worse experience.
+
+816
+01:22:54,400 --> 01:22:57,520
+[SPEAKER_00] I mean, it's not ideal, but people are still really much enjoying it.
+
+817
+01:22:57,680 --> 01:23:03,760
+[SPEAKER_01] So it's a lot better than pulling down some C program and trying to run it all, all these scripts in Python.
+
+818
+01:23:04,000 --> 01:23:04,880
+[SPEAKER_00] In Python, yes.
+
+819
+01:23:05,760 --> 01:23:06,080
+[SPEAKER_00] Exactly.
+
+820
+01:23:06,320 --> 01:23:13,920
+[SPEAKER_00] So people have a very large threshold for putting up with stuff if it saves them time or money or both.
+
+821
+01:23:15,600 --> 01:23:27,520
+[SPEAKER_00] But then with Mac Whisper, what I did is I just released it for free and then I wanted to add these large models, but Gumroad has this limit where you can only offer something for free if it's under 250 megabytes.
+
+822
+01:23:28,000 --> 01:23:29,200
+[SPEAKER_00] So I had to make it paid.
+
+823
+01:23:29,440 --> 01:23:37,440
+[SPEAKER_00] So what I did is I just made it like 5 euros or more and people would like to pay 5, but some people would also be paying me 10 or 20 or something.
+
+824
+01:23:38,240 --> 01:23:42,240
+[SPEAKER_00] So then over time, I just like with every update, I raised the price by 1 euro.
+
+825
+01:23:43,120 --> 01:23:44,880
+[SPEAKER_00] I think right now it's at 15 or something.
+
+826
+01:23:46,880 --> 01:23:48,560
+[SPEAKER_00] But with this app that I made.
+
+827
+01:23:49,120 --> 01:23:54,800
+[SPEAKER_00] to procrastinate from the 222 method, I made more than 20,000 euros in a month.
+
+828
+01:23:55,040 --> 01:23:55,920
+[SPEAKER_00] Yeah, that's awesome.
+
+829
+01:23:56,160 --> 01:23:59,760
+[SPEAKER_00] Which, like, obviously not, not expecting that at all, right?
+
+830
+01:24:00,080 --> 01:24:02,560
+[SPEAKER_00] I was just like, oh, I need this thing, it's cool, it's useful.
+
+831
+01:24:03,440 --> 01:24:11,040
+[SPEAKER_00] And I also wasn't really expecting to become a text transcription app developer in 2023, but I guess that's what I'm doing for these next few months.
+
+832
+01:24:11,280 --> 01:24:12,320
+[SPEAKER_01] But it all goes to the same thing.
+
+833
+01:24:12,480 --> 01:24:13,520
+[SPEAKER_01] It's a shotgun approach.
+
+834
+01:24:13,600 --> 01:24:21,520
+[SPEAKER_01] It's like you, you come out with these things really fast and the majority of them are not going to pop and be super popular.
+
+835
+01:24:22,080 --> 01:24:33,920
+[SPEAKER_01] So every single individual one, you're not going to expect to be super popular, but every once in a while, you'll hit on something that has product market fit and people are going to be excited about and then you can keep growing it.
+
+836
+01:24:34,880 --> 01:24:34,960
+[SPEAKER_00] Yeah.
+
+837
+01:24:35,600 --> 01:24:41,520
+[SPEAKER_00] And even if you don't keep growing it, because I could just leave Mac Whisper to what it is now and it would it would remain useful for people.
+
+838
+01:24:41,680 --> 01:24:41,760
+[SPEAKER_00] Yeah.
+
+839
+01:24:42,160 --> 01:24:50,640
+[SPEAKER_00] It's already proven itself, like, hey, just being able to get a the text version of a of a of an audio file without any formatting or something would already be useful.
+
+840
+01:24:50,800 --> 01:25:02,480
+[SPEAKER_00] But I see some very obvious things I could add to make it more useful, like to find and replace or to do AI on it to get a summary or to export it to a document or to a PDF or something like that.
+
+841
+01:25:04,560 --> 01:25:08,480
+[SPEAKER_00] But again, the thing I want to stress here is that I wasn't planning on making this huge app.
+
+842
+01:25:08,720 --> 01:25:10,560
+[SPEAKER_00] I was just like, oh, let's solve this one problem.
+
+843
+01:25:11,920 --> 01:25:15,920
+[SPEAKER_00] And from there, you don't know what comes out of that, basically.
+
+844
+01:25:17,040 --> 01:25:22,400
+[SPEAKER_00] And it's also, again, what we talked about at the start with getting feedback from customers, I've gotten all these emails.
+
+845
+01:25:22,640 --> 01:26:17,440
+[SPEAKER_00] I got a lot of support as well because there was a bunch of issues in the first month, but all these journalists saying, oh, this is changing changed my life because they were for example uh doing very sensitive interviews with people so they wouldn't want to upload their audio to the cloud and now they can just run it locally and it's the same or even higher quality and these online subscription services are 20 euros a month minimum and mine is a one-time payment of 15 euros um so it like it really helps people in in a lot of ways and then yeah you cannot discover those things for target audiences that you're not a part of if you don't just release this it and then all of a sudden people I could have spent a whole month working on it, but it wouldn't have been much better than the first version for this group of people that didn't have any alternative.
+
+846
+01:26:17,840 --> 01:26:27,920
+[SPEAKER_01] The actual core of what it was solving, you're willing to go through, users are willing to go through a less ideal user experience to get to that core business value.
+
+847
+01:26:28,560 --> 01:26:36,160
+[SPEAKER_01] And it happening sooner is worth a lot more than it being super polished and, you know, on the UI side.
+
+848
+01:26:37,200 --> 01:26:44,000
+[SPEAKER_00] Especially because if you show it to them them when it's not polished, they can give feedback and they can let you know what a polished version would look like.
+
+849
+01:26:44,720 --> 01:26:44,800
+[SPEAKER_01] Yeah.
+
+850
+01:26:45,200 --> 01:26:48,800
+[SPEAKER_01] And it can grow in the direction that is actually more beneficial for those people.
+
+851
+01:26:49,520 --> 01:26:49,600
+[SPEAKER_00] Yeah.
+
+852
+01:26:49,920 --> 01:26:53,520
+[SPEAKER_00] Because I'm not a I'm not the person that does twenty interviews every month.
+
+853
+01:26:53,680 --> 01:26:57,520
+[SPEAKER_00] So I'm not a person that knows what they run into with this workflow.
+
+854
+01:26:57,680 --> 01:26:59,600
+[SPEAKER_00] I just need it for the specific use case I had.
+
+855
+01:27:00,960 --> 01:27:10,320
+[SPEAKER_00] So maybe it's even better to release something that's not polished or that's that has issues because then it's more glaring to people who use it like, oh, it should work like this.
+
+856
+01:27:10,720 --> 01:27:16,400
+[SPEAKER_00] Whereas if you've already chosen like a perfect polis experience, then they might assume, okay, yeah, it that's how it works.
+
+857
+01:27:16,560 --> 01:27:17,280
+[SPEAKER_00] I'm not going to suggest.
+
+858
+01:27:17,680 --> 01:27:42,480
+[SPEAKER_01] Yeah, it's kind of like design where, uh, you know, in the early stages of design, you're supposed to not do a high fidelity design because then the feedback you get is, this color should be this or the font should be this, as opposed to, it shouldn't work this way at all because once you see a high fidelity, you you you kind of assume that it's more locked down and you focus more on the individual bits.
+
+859
+01:27:42,640 --> 01:27:43,200
+[SPEAKER_01] On the Yeah.
+
+860
+01:27:43,360 --> 01:27:43,840
+[SPEAKER_01] Yeah, exactly.
+
+861
+01:27:44,000 --> 01:27:44,480
+[SPEAKER_01] That's interesting.
+
+862
+01:27:44,560 --> 01:27:50,080
+[SPEAKER_01] You know, it's funny, like, I'm definitely in the category of people who move way too slow and don't release often enough.
+
+863
+01:27:50,800 --> 01:27:56,000
+[SPEAKER_01] But I am a big proponent of getting betas out there early.
+
+864
+01:27:56,880 --> 01:28:07,680
+[SPEAKER_01] And it's for these kind of similar reasons because like the ugly duckling version of what you're building, being steered in the right direction early can help you.
+
+865
+01:28:08,160 --> 01:28:14,480
+[SPEAKER_01] Because once an app or a feature gets really big, it's a lot harder to turn the ship based on feedback.
+
+866
+01:28:14,640 --> 01:28:16,480
+[SPEAKER_01] And so the earlier you can get that feedback, the better.
+
+867
+01:28:17,840 --> 01:28:20,240
+[SPEAKER_00] So why do you do share that with beta testers then?
+
+868
+01:28:20,320 --> 01:28:24,320
+[SPEAKER_00] And don't you like, is it because you need some sort of feedback on your work?
+
+869
+01:28:24,880 --> 01:28:29,200
+[SPEAKER_00] Is it because you think that they'll be more likely to see to any mistakes you've made?
+
+870
+01:28:30,000 --> 01:28:34,640
+[SPEAKER_01] Oh, I mean, almost everything I do is driven by fear.
+
+871
+01:28:34,880 --> 01:28:38,160
+[SPEAKER_01] So I'm so afraid of releasing something that's broken.
+
+872
+01:28:39,680 --> 01:28:47,440
+[SPEAKER_01] That is one reason is I just before I hit submit to the store, I I want like confirmation that this isn't going to break anything for anybody.
+
+873
+01:28:47,920 --> 01:28:51,200
+[SPEAKER_00] But also, what's the worst that can happen if you break dark noise?
+
+874
+01:28:52,400 --> 01:28:53,280
+[SPEAKER_01] I have to fix it.
+
+875
+01:28:54,000 --> 01:28:58,880
+[SPEAKER_01] A lot of it, like you said, also this also, this is turning into a therapy session a little bit.
+
+876
+01:28:58,960 --> 01:28:59,440
+[SPEAKER_01] I can feel it.
+
+877
+01:28:59,600 --> 01:29:05,360
+[SPEAKER_01] But, uh, I think part of it too is like you were saying at the very beginning, where you optimize for comfort.
+
+878
+01:29:06,160 --> 01:29:10,480
+[SPEAKER_01] Um, there is an element of this isn't my full time job currently.
+
+879
+01:29:11,280 --> 01:29:20,400
+[SPEAKER_01] So I don't like, like, if I push out a test flight beta that's broken, like something's wrong and it doesn't work well for people that doesn't keep me up at night.
+
+880
+01:29:20,640 --> 01:29:20,880
+[SPEAKER_01] I will.
+
+881
+01:29:21,120 --> 01:29:24,720
+[SPEAKER_01] If I have an event with the kids the next day, I won't fix it the next day.
+
+882
+01:29:24,880 --> 01:29:25,920
+[SPEAKER_01] I'll fix it the day after that.
+
+883
+01:29:26,000 --> 01:29:26,240
+[SPEAKER_01] Right.
+
+884
+01:29:26,400 --> 01:29:29,840
+[SPEAKER_01] If it's in the app store though, and there's people who have've given me money for it.
+
+885
+01:29:30,720 --> 01:29:38,800
+[SPEAKER_01] I feel very, very guilty and I think understandably pressured to like, make sure that version is always working and reliable.
+
+886
+01:29:39,600 --> 01:29:41,040
+[SPEAKER_01] So that's that's part of it too.
+
+887
+01:29:41,440 --> 01:29:50,560
+[SPEAKER_01] But yeah, mostly everything is fear and so that's why I slap beta on things that aren't really beta because I don't want people to judge me if it doesn't work very well.
+
+888
+01:29:53,760 --> 01:29:55,040
+[SPEAKER_00] I mean, I get your point, right?
+
+889
+01:29:55,360 --> 01:29:58,320
+[SPEAKER_00] With people paid for this, so it should work reliably.
+
+890
+01:29:58,560 --> 01:30:02,560
+[SPEAKER_00] But let's say you break an App Store version.
+
+891
+01:30:02,880 --> 01:30:06,640
+[SPEAKER_00] And then you're not able to fix it for three days because it's just a very difficult bug.
+
+892
+01:30:07,680 --> 01:30:13,680
+[SPEAKER_00] Then after three days, it will work again and the people who had a problem in those three days will probably forget that week after.
+
+893
+01:30:14,320 --> 01:30:18,320
+[SPEAKER_01] Hopefully, I'll say I think my app is a little different for two reasons.
+
+894
+01:30:18,640 --> 01:30:23,280
+[SPEAKER_01] One, it's not innovative, it's an incredibly saturated market.
+
+895
+01:30:23,680 --> 01:30:25,280
+[SPEAKER_01] This is a white noise app, right?
+
+896
+01:30:25,840 --> 01:30:33,760
+[SPEAKER_01] So like there's a million options you can switch to and the fact that it's reliable and polished is one of its main selling points.
+
+897
+01:30:34,240 --> 01:30:42,640
+[SPEAKER_01] And then the other thing is a significant amount of time people, I mean, you can see it in my newly added telemetry deck data.
+
+898
+01:30:44,160 --> 01:30:47,600
+[SPEAKER_01] It is like peak usage every night right at bedtime.
+
+899
+01:30:47,920 --> 01:30:48,000
+[SPEAKER_01] Yeah.
+
+900
+01:30:48,880 --> 01:30:51,840
+[SPEAKER_01] And so messing with somebody's sleep is something you don't want to do.
+
+901
+01:30:52,960 --> 01:30:55,600
+[SPEAKER_01] And so I think those two things also are a factor in it.
+
+902
+01:30:56,240 --> 01:31:05,520
+[SPEAKER_01] I think like Curtis Herbert with slopes would be another example where it's like, if you're on a ski trip that you spent a whole bunch of money on and it doesn't work for those two days, that's a really big deal.
+
+903
+01:31:05,920 --> 01:31:06,000
+[SPEAKER_01] Yeah.
+
+904
+01:31:06,320 --> 01:31:08,000
+[SPEAKER_01] And so I think different apps are different.
+
+905
+01:31:08,720 --> 01:31:09,680
+[SPEAKER_01] And that kind of makes sense.
+
+906
+01:31:09,840 --> 01:31:09,920
+[SPEAKER_00] Yeah.
+
+907
+01:31:10,000 --> 01:31:10,720
+[SPEAKER_00] I I get your point.
+
+908
+01:31:11,280 --> 01:31:22,320
+[SPEAKER_00] and I think I agree mostly, but it's also it's also not a huge deal if your sleep app doesn't work for two days because if the neighbors are working early in the morning, you get a bad sleep as a result of that.
+
+909
+01:31:22,560 --> 01:31:30,560
+[SPEAKER_00] Like you, I'm not trying to diminish your point, but it's in the bigger scale of the world and everything, like it's, it's gonna be fine.
+
+910
+01:31:31,360 --> 01:31:33,360
+[SPEAKER_00] Especially if you don't make something like a medical thing.
+
+911
+01:31:33,520 --> 01:31:40,000
+[SPEAKER_00] Well, I guess maybe darkness gets to that medical part to some extent, like if people use it to get sleep and everything.
+
+912
+01:31:40,240 --> 01:31:45,360
+[SPEAKER_01] But I mean, at the end of the day, if a bug that I'm going to put out there isn't going to be, it doesn't play noises., right?
+
+913
+01:31:45,600 --> 01:31:50,320
+[SPEAKER_01] Like, I mean, obviously that could be, but most likely something more benign than that.
+
+914
+01:31:51,280 --> 01:31:53,280
+[SPEAKER_01] So my fears are not entirely valid here.
+
+915
+01:31:53,840 --> 01:31:55,200
+[SPEAKER_01] I very much recognize that.
+
+916
+01:31:56,400 --> 01:31:57,520
+[SPEAKER_00] I just think it would be nice.
+
+917
+01:31:58,000 --> 01:32:03,360
+[SPEAKER_00] Like, obviously, there's good reason, but I think just think it would be nice if you would be able to get over that fear a bit more.
+
+918
+01:32:03,520 --> 01:32:03,840
+[SPEAKER_00] Oh, yeah.
+
+919
+01:32:03,920 --> 01:32:13,440
+[SPEAKER_00] Especially because you've you've put this out for so long already and it's already been so helpful for people that there's a certain like threshold that you've built up where people will like put up with stuff.
+
+920
+01:32:14,960 --> 01:32:18,880
+[SPEAKER_00] And especially if you say like, oh, I wish I could do this more, but I'm not.
+
+921
+01:32:18,880 --> 01:32:20,240
+[SPEAKER_00] I could do this more, but I'm not doing it now out of fear.
+
+922
+01:32:20,480 --> 01:32:29,360
+[SPEAKER_00] Like, the sooner you could get away from that, either through just releasing more often and breaking stuff more often, it's getting used to that or to a different way, I guess.
+
+923
+01:32:29,520 --> 01:32:35,600
+[SPEAKER_00] But I think it would be really nice if you could just come from a place of joy every time you work on dark noise and release and happen.
+
+924
+01:32:36,400 --> 01:32:37,680
+[SPEAKER_01] Oh, yeah, one hundred percent.
+
+925
+01:32:38,080 --> 01:32:49,440
+[SPEAKER_01] And I think part of it too is the thing I'm in the weeds on right now is a switch to a subscription business model, which is an area where I don't want to like that is a time where that release is a big deal and important.
+
+926
+01:32:49,760 --> 01:32:57,600
+[SPEAKER_01] And I'm still probably spending too much time over protecting myself, but you know, that's what helps me sleep at night.
+
+927
+01:32:57,760 --> 01:33:04,800
+[SPEAKER_00] So yeah, but the nice thing there is like you have you're an indie, so you don't have any deadlines except what else you put on yourself.
+
+928
+01:33:05,200 --> 01:33:10,000
+[SPEAKER_00] So what you could very easily do is just put all this stuff in there and just don't activate it.
+
+929
+01:33:10,160 --> 01:33:15,920
+[SPEAKER_00] And just, all right, let me see if just adding this code doesn't break anything, but it doesn't change anything in the in the payment flow and everything.
+
+930
+01:33:16,560 --> 01:33:19,600
+[SPEAKER_00] You can already get them approved by Apple, even though you're not using them.
+
+931
+01:33:20,480 --> 01:33:29,360
+[SPEAKER_00] Then maybe you can enable it for a few percent and then just wait a month and then spend another while switching from paid upfront to subscription.
+
+932
+01:33:29,680 --> 01:33:33,760
+[SPEAKER_01] So once I take away that filter, it kind of has to be a hard cutover.
+
+933
+01:33:35,040 --> 01:33:35,120
+[SPEAKER_00] Okay.
+
+934
+01:33:35,760 --> 01:33:38,720
+[SPEAKER_00] I've had dark noise for so long that I didn't even know I paid for it.
+
+935
+01:33:38,880 --> 01:33:38,960
+[SPEAKER_01] Yeah.
+
+936
+01:33:39,920 --> 01:33:46,400
+[SPEAKER_01] Well, and it's safe, it's generally speaking safe to assume that apps aren't paid upfront these days because that's, that's not normal.
+
+937
+01:33:46,880 --> 01:33:47,920
+[SPEAKER_01] Um, exactly.
+
+938
+01:33:48,080 --> 01:33:48,160
+[SPEAKER_01] Yeah.
+
+939
+01:33:48,640 --> 01:33:53,440
+[SPEAKER_00] So, so are you gonna, uh, are you gonna just grandfather all the paying users in?
+
+940
+01:33:53,600 --> 01:33:53,680
+[SPEAKER_01] Okay.
+
+941
+01:33:53,920 --> 01:33:54,640
+[SPEAKER_01] Yeah, that's the idea.
+
+942
+01:33:54,880 --> 01:34:34,640
+[SPEAKER_01] I think, like, I have some special verbiage because I, like, I want to leave it open so that if I add features that cost me a bunch of money and most of my users are people who were grandfathered that like maybe I can gate that feature going forward to only subscribers but for now I think I call them like original I don't remember what I call it but yeah people who've bought the app are not going to lose anything for sure and at first they'll just have all the same stuff as subscribers Yeah, but like sorry to say this, but now I understand where your fear comes from because if you if you do that initial check wrong where you don't mark the people that actually bought it I mean worst case you can mark everyone.
+
+943
+01:34:35,200 --> 01:34:38,000
+[SPEAKER_00] who has the app two weeks after you make the change.
+
+944
+01:34:38,480 --> 01:34:43,120
+[SPEAKER_00] You can give all that, everyone the rights, even the people that bought it or got it for free.
+
+945
+01:34:43,200 --> 01:34:49,040
+[SPEAKER_01] But there's also like, like I said, I added telemetry deck analytics.
+
+946
+01:34:49,200 --> 01:34:58,080
+[SPEAKER_01] I haven't had analytics in the app since I first when I first released it, I had like Firebase or something and I wasn't using it and I didn't like having that giant SDK in there and so I took it out.
+
+947
+01:34:58,720 --> 01:35:05,440
+[SPEAKER_01] But leading up to this, I wanted to have some more data on like how many users I really have and all that.
+
+948
+01:35:05,760 --> 01:35:13,280
+[SPEAKER_01] And I've got I've got about 12, 1300 monthlyly active or not 100, 1000 monthly active users.
+
+949
+01:35:13,520 --> 01:35:14,880
+[SPEAKER_01] And that's on a paid upfront app.
+
+950
+01:35:15,440 --> 01:35:22,640
+[SPEAKER_01] And so I'm a little scared when there's a free tier, like how many people am I dealing with?
+
+951
+01:35:22,800 --> 01:35:28,080
+[SPEAKER_01] So I'm building out like a whole support structure in my website that I didn't have before.
+
+952
+01:35:28,240 --> 01:35:42,480
+[SPEAKER_01] So there is, like I said, I'm probably overprotecting myself, but I think there's a little bit of validity in the fact that I have an app with a pretty big user base that it will affect a lot of people and could result in a lot of email for me if I miss.
+
+953
+01:35:42,480 --> 01:35:43,920
+[SPEAKER_00] If I make something up too bad.
+
+954
+01:35:44,800 --> 01:35:47,040
+[SPEAKER_00] And also the thing is that this is not your main thing.
+
+955
+01:35:47,280 --> 01:35:49,120
+[SPEAKER_00] So you have to do these preparations beforehand.
+
+956
+01:35:49,360 --> 01:35:54,240
+[SPEAKER_00] Whereas for me, let's say I release something tomorrow that gives me a lot of extra work in the next two weeks.
+
+957
+01:35:54,800 --> 01:35:57,040
+[SPEAKER_00] I can just like move stuff aside and just focus on that.
+
+958
+01:35:57,200 --> 01:35:58,080
+[SPEAKER_00] Whereas you don't have that.
+
+959
+01:35:58,320 --> 01:35:58,960
+[SPEAKER_00] I have a day job.
+
+960
+01:36:00,080 --> 01:36:01,360
+[SPEAKER_00] And then, and then I have a family.
+
+961
+01:36:01,520 --> 01:36:04,720
+[SPEAKER_00] And both of those things are higher priority than, you know, this thing.
+
+962
+01:36:04,800 --> 01:36:04,960
+[SPEAKER_00] And so.
+
+963
+01:36:05,680 --> 01:36:06,560
+[SPEAKER_00] By a large margin probably.
+
+964
+01:36:06,800 --> 01:36:07,280
+[SPEAKER_00] Yeah, especially.
+
+965
+01:36:07,760 --> 01:36:12,080
+[SPEAKER_01] So sleep is usually the one that has to give whenever I have an emergency.
+
+966
+01:36:12,320 --> 01:36:16,800
+[SPEAKER_01] And so if I can, if I can reduce the amount of sleep I lose, that's usually a good idea.
+
+967
+01:36:18,080 --> 01:36:23,280
+[SPEAKER_00] And there's probably a few of those twelve thousand people that use dark noise because they're having problems with the sleep as well.
+
+968
+01:36:23,520 --> 01:36:23,760
+[SPEAKER_00] Exactly.
+
+969
+01:36:23,840 --> 01:36:24,640
+[SPEAKER_00] You mess with that.
+
+970
+01:36:25,040 --> 01:36:25,120
+[SPEAKER_01] Yeah.
+
+971
+01:36:25,280 --> 01:36:25,920
+[SPEAKER_01] You mess with that.
+
+972
+01:36:26,080 --> 01:36:30,800
+[SPEAKER_01] And you're you're now messing with people who now have poor sleep, which leads to Yeah.
+
+973
+01:36:31,200 --> 01:36:33,680
+[SPEAKER_01] Yeah, maybe not the best interactions between humans.
+
+974
+01:36:33,840 --> 01:36:35,280
+[SPEAKER_01] So, all right.
+
+975
+01:36:35,440 --> 01:36:37,680
+[SPEAKER_00] Well, I think I'm over your time a little bit.
+
+976
+01:36:37,920 --> 01:36:39,360
+[SPEAKER_00] So, Yeah.
+
+977
+01:36:39,680 --> 01:36:39,760
+[SPEAKER_00] Yeah.
+
+978
+01:36:40,160 --> 01:36:45,680
+[SPEAKER_00] I mean, I can probably go on for longer, but I don't really know if there's anything we haven't touched on.
+
+979
+01:36:46,240 --> 01:36:46,320
+[SPEAKER_01] Yeah.
+
+980
+01:36:46,560 --> 01:36:53,360
+[SPEAKER_01] I, before I let you go, though, I do want to ask the question I ask everybody, which I realizeed, although the way you're saying it makes me think you remembered.
+
+981
+01:36:53,600 --> 01:37:00,880
+[SPEAKER_01] I don't remember if I double checked with you, made sure that I warned you about this question in advance, but you have not warned me, but I spoke to Rafa.
+
+982
+01:37:01,120 --> 01:37:01,360
+[SPEAKER_00] Okay, good.
+
+983
+01:37:01,600 --> 01:37:02,160
+[SPEAKER_00] Thank you, Rafa.
+
+984
+01:37:02,400 --> 01:37:02,880
+[SPEAKER_00] And he mentioned it.
+
+985
+01:37:05,360 --> 01:37:11,680
+[SPEAKER_01] So I will ask you then, what are, what are, what is a person or people out there that have inspired you that you recommend others check out?
+
+986
+01:37:13,200 --> 01:37:20,560
+[SPEAKER_00] Okay, so I prepared a little bit by finding out how to spell his name, because in my head he's just called he's just called Syndra.
+
+987
+01:37:21,280 --> 01:37:53,520
+[SPEAKER_00] So his full name is Syndra Sorhas and he's basically a guy who just does full-time open source and he makes probably like 20 different spm packages for ios but also for the web and he he makes everything um and i think all of my apps are probably possible because of the work he he does he makes so many little tweaks and that make my life so much easier so usually when i start a new project there's um there's two or three of his packages that I immediately import.
+
+988
+01:37:55,600 --> 01:37:58,160
+[SPEAKER_00] And he's also just super friendly guy, helpful.
+
+989
+01:37:58,960 --> 01:38:00,800
+[SPEAKER_00] So I wanted to give a shout out to Sindra.
+
+990
+01:38:03,280 --> 01:38:10,560
+[SPEAKER_00] And also I think not a lot of people know about him, even though they probably know or use either his apps or his work.
+
+991
+01:38:12,160 --> 01:38:16,160
+[SPEAKER_00] And I also want to give a little shout out to Hidda, Hidda van der Plug.
+
+992
+01:38:16,320 --> 01:38:20,800
+[SPEAKER_00] I mean, everyone knows Antoine, so I don't have to give Antoine Fendelia a plug.
+
+993
+01:38:22,240 --> 01:38:23,360
+[SPEAKER_00] But Hidda is...
+
+994
+01:38:24,240 --> 01:38:25,840
+[SPEAKER_00] So we became friends in the last two years.
+
+995
+01:38:26,480 --> 01:38:28,560
+[SPEAKER_00] And we really have this bonding around iOS.
+
+996
+01:38:28,720 --> 01:39:11,600
+[SPEAKER_00] But outside of that, we're also just like, I think we're very compatible and just very like a good match and um yeah he always helps me just get my design stuff better but he's also just inspiring because he he comes from really focusing on the craft of like all right it needs to be like every detail needs to be looked through where i i sometimes want to do that but i i just noticed like that's not my strength so i i just decided to stay away from that every now and then i will polish a little bit but um yeah i think it's just really nice to to have him around to to see that that little um that little thing as well well and he's he's still pretty prolific because I was about to say he's got the Gola app that just came out.
+
+997
+01:39:11,760 --> 01:39:17,120
+[SPEAKER_01] And then I was like, wait, he has another app that just came out like last week, uh, for adding like support.
+
+998
+01:39:17,600 --> 01:39:19,120
+[SPEAKER_01] Uh, I guess that wasn't an app.
+
+999
+01:39:19,360 --> 01:39:20,160
+[SPEAKER_01] That's a road map.
+
+1000
+01:39:20,320 --> 01:39:21,360
+[SPEAKER_01] Yeah, the road map.
+
+1001
+01:39:21,680 --> 01:39:22,080
+[SPEAKER_00] Yeah, yeah.
+
+1002
+01:39:22,160 --> 01:39:23,520
+[SPEAKER_00] So that's something we, we made together.
+
+1003
+01:39:23,760 --> 01:39:26,320
+[SPEAKER_00] So last Friday we were, we had a beer.
+
+1004
+01:39:26,400 --> 01:39:27,840
+[SPEAKER_00] We went out for dinner and we had a beer.
+
+1005
+01:39:28,000 --> 01:39:31,120
+[SPEAKER_00] And then we were like, oh, yeah, we really want to add a road map to our app.
+
+1006
+01:39:31,440 --> 01:39:34,240
+[SPEAKER_00] So then we decided to think, okay, how can we do that?
+
+1007
+01:39:34,800 --> 01:39:36,000
+[SPEAKER_00] How can we make that with the three of us?
+
+1008
+01:39:36,160 --> 01:39:37,440
+[SPEAKER_00] So me, Antoine and Hidden.
+
+1009
+01:39:38,000 --> 01:40:11,760
+[SPEAKER_00] Um, so we made this SPM package called road map that you can with two lines of code you can add a roadmap that that users can vote for for features that that they want to add to the to your app um but that was a nice thing where i made the first version then antoine made it made it like nice and clean and refactored it and made the spm and then hita did did the design on top of it so like really using our skills there um But yeah, I think those are just the two I wanted to recommend people have a look at.
+
+1010
+01:40:13,920 --> 01:40:16,400
+[SPEAKER_00] And also, I really like Stuart Lynch.
+
+1011
+01:40:17,280 --> 01:40:24,560
+[SPEAKER_00] So he's a YouTuber who makes these really, really good, super thorough YouTube tutorials on Swift.
+
+1012
+01:40:24,960 --> 01:40:30,320
+[SPEAKER_00] And it's not beginner level, but it's more like intermediate and too advanced.
+
+1013
+01:40:30,960 --> 01:40:37,200
+[SPEAKER_00] And so since I'm not a developer by trade, basically, and I've never had like full-time job as an iOS developer.
+
+1014
+01:40:38,880 --> 01:41:02,560
+[SPEAKER_00] a lot of times i would just like not understand more complicated concepts of of swift i could probably still like work my way around it but um like these these YouTube videos that Stuart makes, he explains it in a way like it's like my high school teacher or something very clearly step by step going through it and always with really good documentation.
+
+1015
+01:41:02,800 --> 01:41:10,000
+[SPEAKER_00] And it's it's it's really helped me to especially over the last year or so to to understand more like, for example, generics.
+
+1016
+01:41:10,160 --> 01:41:21,360
+[SPEAKER_00] I still really don't understand it, but like, but stuff like reduce and map and filter like these are probably for a lot of people super simple, but for me, I really needed someone to explain them in a way that the concepts clicked for me.
+
+1017
+01:41:21,600 --> 01:41:22,800
+[SPEAKER_00] So yeah, definitely.
+
+1018
+01:41:23,200 --> 01:41:27,920
+[SPEAKER_00] recommend people, people check him out as well because he's a he's a super friendly, super helpful guy.
+
+1019
+01:41:29,280 --> 01:41:29,680
+[SPEAKER_01] Awesome.
+
+1020
+01:41:30,160 --> 01:41:32,240
+[SPEAKER_01] Well, thank you for coming on.
+
+1021
+01:41:32,480 --> 01:41:33,360
+[SPEAKER_01] This was awesome.
+
+1022
+01:41:33,600 --> 01:41:35,040
+[SPEAKER_01] I love Yeah, likewise.
+
+1023
+01:41:35,360 --> 01:41:41,920
+[SPEAKER_01] I love getting that like backstory part before I knew who you were, um, although with yours, I was surprised.
+
+1024
+01:41:42,080 --> 01:41:45,520
+[SPEAKER_01] I knew more of your backstory already than, uh, than I think I even realized.
+
+1025
+01:41:46,240 --> 01:41:48,160
+[SPEAKER_01] Um, but this was a blast.
+
+1026
+01:41:48,320 --> 01:41:56,640
+[SPEAKER_01] And I think, I think you've inspired me already to like, look at what's an area where I can try and once I get this release out, which is probably.
+
+1027
+01:41:57,200 --> 01:41:59,040
+[SPEAKER_01] going to be the excuse I give for eternity.
+
+1028
+01:41:59,200 --> 01:42:05,200
+[SPEAKER_01] But once I get this release out, maybe, maybe I'll try and find something small that I can kind of take this approach on.
+
+1029
+01:42:06,720 --> 01:42:16,240
+[SPEAKER_01] Because there's a couple of big features that maybe I need to try and take a smaller, like smaller byte and get it out there approach than the way I usually do these types of features.
+
+1030
+01:42:17,520 --> 01:42:20,400
+[SPEAKER_00] So you mean big features for for dark noise, yes.
+
+1031
+01:42:20,560 --> 01:42:21,200
+[SPEAKER_00] Or or another app.
+
+1032
+01:42:21,680 --> 01:42:24,560
+[SPEAKER_01] I've spun up other apps before that I haven't really released.
+
+1033
+01:42:25,680 --> 01:42:29,040
+[SPEAKER_00] You could always just make a make a new app just for that specific feature.
+
+1034
+01:42:29,200 --> 01:42:30,000
+[SPEAKER_00] And that's true.
+
+1035
+01:42:30,560 --> 01:42:35,840
+[SPEAKER_00] learn all the details there and then once you figure it out you can always put it back into dark noise.
+
+1036
+01:42:35,920 --> 01:42:39,120
+[SPEAKER_00] But I mean, obviously I don't know what you're doing, but yeah, that's a good idea.
+
+1037
+01:42:39,600 --> 01:42:40,240
+[SPEAKER_00] Anyway, all right.
+
+1038
+01:42:40,480 --> 01:42:47,600
+[SPEAKER_00] So let me let me know what what you decide to work on and if you need some help, happy to happy to, happy to narrow it down for you.
+
+1039
+01:42:47,840 --> 01:42:52,000
+[SPEAKER_01] Yeah, maybe it'll be maybe it'll be our app developer Pokedex thing.
+
+1040
+01:42:52,160 --> 01:42:53,760
+[SPEAKER_01] Maybe I need to try to make that a thing.
+
+1041
+01:42:54,560 --> 01:42:57,440
+[SPEAKER_00] Yeah, we need to get it ready before June, so we probably need to start going.
+
+1042
+01:42:57,760 --> 01:42:57,840
+[SPEAKER_00] Yeah.
+
+1043
+01:42:58,640 --> 01:43:01,760
+[SPEAKER_01] Well, for you, that means we need to start going in like late May, right?
+
+1044
+01:43:01,920 --> 01:43:02,720
+[SPEAKER_01] And then it'll be out there.
+
+1045
+01:43:04,720 --> 01:43:05,840
+[SPEAKER_01] Start going on the plane to the...
+
+1046
+01:43:06,240 --> 01:43:06,800
+[SPEAKER_01] Yeah, exactly.
+
+1047
+01:43:07,200 --> 01:43:07,520
+[SPEAKER_01] All right.
+
+1048
+01:43:07,680 --> 01:43:10,000
+[SPEAKER_01] Well, where can people find you and your work?
+
+1049
+01:43:10,560 --> 01:43:18,320
+[SPEAKER_01] I feel like you always are on some new website that lets you collect all of your apps, of which you have so many together.
+
+1050
+01:43:18,560 --> 01:43:20,480
+[SPEAKER_01] I don't know where the best place to link people to for you.
+
+1051
+01:43:20,960 --> 01:43:21,200
+[SPEAKER_01] Not really.
+
+1052
+01:43:21,840 --> 01:43:23,680
+[SPEAKER_00] I mean, I'm still mostly active on Twitter.
+
+1053
+01:43:24,080 --> 01:43:25,600
+[SPEAKER_00] So Jordy Bruin, just my name.
+
+1054
+01:43:26,160 --> 01:43:31,360
+[SPEAKER_00] I also have a mastodon on, I think also Jordy Bruin, and then at mastodon.online, I think.
+
+1055
+01:43:40,480 --> 01:43:42,080
+[SPEAKER_00] that's probably the best way to do it.
+
+1056
+01:43:42,320 --> 01:43:52,320
+[SPEAKER_00] I should have a website for my company, but I never finish it because I don't know web stuff, so that's one of my procrastination things, but yeah, probably just Twitter dot com slash Jordy Bruin.
+
+1057
+01:43:54,800 --> 01:43:55,680
+[SPEAKER_01] Thanks for listening.
+
+1058
+01:43:56,160 --> 01:43:58,560
+[SPEAKER_01] This episode was edited by Jonathan Ruiz.
+
+1059
+01:43:58,880 --> 01:44:02,720
+[SPEAKER_01] If you'd like to discuss the show, you can find me on Twitter at underscore chuck E.
+
+1060
+01:44:02,800 --> 01:44:02,880
+[SPEAKER_01] C.
+
+1061
+01:44:03,200 --> 01:44:05,200
+[SPEAKER_01] or tweet the show directly at launched.fm.
+
+1062
+01:44:05,840 --> 01:44:09,520
+[SPEAKER_01] I'd really appreciate a rating or review in your podcast app of choice.
+
+1063
+01:44:09,840 --> 01:44:33,680
+[SPEAKER_01] And you can find show notes and more at launchdefm dot com dot
