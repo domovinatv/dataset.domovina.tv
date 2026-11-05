@@ -1,0 +1,1167 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_00] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_00] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:31,920
+[SPEAKER_00] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS and Android.
+
+5
+00:00:32,400 --> 00:00:32,800
+[SPEAKER_00] and the web.
+
+6
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_00] You can learn more at revenuecat dot com dot Let's get into the show.
+
+7
+00:00:41,760 --> 00:00:43,600
+[SPEAKER_00] Hello, I'm your host, David Bernard.
+
+8
+00:00:44,160 --> 00:00:49,920
+[SPEAKER_00] Today's conversation is shorter than usual and will be featured in RevenueCat's State of Subscription Apps report.
+
+9
+00:00:50,320 --> 00:00:57,840
+[SPEAKER_00] Each episode in this series will explore one crucial topic and share actionable insights from top subscription app operators.
+
+10
+00:00:58,400 --> 00:01:06,400
+[SPEAKER_00] With me today, Sean Gong, a product leader building monetization and growth engines for consumer unicorns, including Tinder and Grinder.
+
+11
+00:01:06,880 --> 00:01:24,160
+[SPEAKER_00] On the podcast, I talk with Sean about how Tinder's machine learning powered paywalls drove millions in new revenue, the art of selling features off a cart without killing subscription revenue, and why Tinder Select flopped despite users saying they pay for it.
+
+12
+00:01:24,560 --> 00:01:27,040
+[SPEAKER_00] Hey Sean, thanks so much for joining me on the podcast today.
+
+13
+00:01:27,280 --> 00:01:29,840
+[SPEAKER_01] Thank you so much, Dave, for having me such a pleasure.
+
+14
+00:01:30,560 --> 00:01:35,360
+[SPEAKER_01] I always love your newsletter., podcasts and all the content.
+
+15
+00:01:35,520 --> 00:01:38,320
+[SPEAKER_01] So it's what an honor to be here with you.
+
+16
+00:01:38,640 --> 00:01:39,840
+[SPEAKER_01] Oh, thank you so much, man.
+
+17
+00:01:40,320 --> 00:01:53,840
+[SPEAKER_00] Well, so I've had several ex Tinder employees on the podcast, but I'm super excited to get you on, because I haven't gotten to talk to anyone who's been in the trenches the last few years, and Tinder has done a lot of cool stuff on the monetization front.
+
+18
+00:01:54,400 --> 00:01:59,920
+[SPEAKER_00] So I wanted to dive into a project I know you worked a lot on, and that's AI driven pricing.
+
+19
+00:02:00,240 --> 00:02:01,360
+[SPEAKER_00] So what was the problem?
+
+20
+00:02:01,680 --> 00:02:03,920
+[SPEAKER_00] What were you trying to solve, and how did things go?
+
+21
+00:02:04,240 --> 00:02:04,320
+[SPEAKER_00] Yeah.
+
+22
+00:02:04,400 --> 00:02:05,680
+[SPEAKER_01] Yeah, I'm very excited.
+
+23
+00:02:06,080 --> 00:02:13,040
+[SPEAKER_01] So let me start with the core problem because that's really, you know, shaped everything we build at Tinder.
+
+24
+00:02:14,000 --> 00:02:18,240
+[SPEAKER_01] So the user problem is decision overload, simplified to put that way.
+
+25
+00:02:18,560 --> 00:02:31,920
+[SPEAKER_01] So as you might know, Tinder has a lot of purchase options for multiple subscription tiers and then under each tiers there's multiple plans like weekly, monthly and then we have a lot of auto card products.
+
+26
+00:02:32,160 --> 00:02:32,960
+[SPEAKER_01] So it's great, right?
+
+27
+00:02:33,200 --> 00:02:35,520
+[SPEAKER_01] Because we have so many products for you to choose from.
+
+28
+00:02:36,240 --> 00:02:40,800
+[SPEAKER_01] However, we talked to users and we noticed two things, at least.
+
+29
+00:02:41,440 --> 00:02:50,320
+[SPEAKER_01] One is some users they bought the Platinum, the highest subscription tier we offer to everyone, simply because that's the most expensive one.
+
+30
+00:02:50,640 --> 00:02:55,520
+[SPEAKER_01] So their belief is that, well, I'm willing to pay the most and that I'm going to get the best.
+
+31
+00:02:55,760 --> 00:02:58,160
+[SPEAKER_01] So I'm going to buy Platinum, which is great.
+
+32
+00:02:58,560 --> 00:03:05,840
+[SPEAKER_01] However, we noticed some of the users who bought Platinum, they only use the features under our second tier, GOAT.
+
+33
+00:03:06,400 --> 00:03:11,120
+[SPEAKER_01] So they'll realize, oh, actually, you bought something you didn't even fully use.
+
+34
+00:03:11,600 --> 00:03:15,680
+[SPEAKER_01] You could have just bought our GO subscription tier to save you money.
+
+35
+00:03:16,240 --> 00:03:20,080
+[SPEAKER_01] Or maybe another issue can be like we can do a better job to educate users.
+
+36
+00:03:20,320 --> 00:03:22,400
+[SPEAKER_01] Hey, there is other feature from Platinum.
+
+37
+00:03:22,720 --> 00:03:23,760
+[SPEAKER_01] You should take advantage of them.
+
+38
+00:03:23,920 --> 00:03:24,880
+[SPEAKER_01] You haven't used them yet.
+
+39
+00:03:25,760 --> 00:03:32,000
+[SPEAKER_01] Another thing we noticed is some users they didn't buy anything simply because they were overwhelmed.
+
+40
+00:03:32,160 --> 00:03:34,240
+[SPEAKER_01] It's like, oh, there are so many options.
+
+41
+00:03:34,400 --> 00:03:35,200
+[SPEAKER_01] I don't want to pick.
+
+42
+00:03:35,680 --> 00:03:37,280
+[SPEAKER_01] And then also reality we learn is.
+
+43
+00:03:37,760 --> 00:03:39,920
+[SPEAKER_01] maybe David, you have your own experience.
+
+44
+00:03:40,480 --> 00:03:44,400
+[SPEAKER_01] When you look particularly at revenue cat specialised in paywall, right?
+
+45
+00:03:44,880 --> 00:03:50,480
+[SPEAKER_01] So one common mistake a lot of companies make is they describe all the features or benefits.
+
+46
+00:03:50,720 --> 00:03:52,240
+[SPEAKER_01] The benefits are better than features, yes.
+
+47
+00:03:52,560 --> 00:03:55,920
+[SPEAKER_01] However, do you think users are going to reset and make a decision?
+
+48
+00:03:56,160 --> 00:03:58,240
+[SPEAKER_01] No, that's what we thought users were going to do.
+
+49
+00:03:58,560 --> 00:04:05,840
+[SPEAKER_01] Okay, let's compare Tingers Plus, Tingers Glow, Tingers Planum and then compare the other car and then make a decision.
+
+50
+00:04:06,320 --> 00:04:08,320
+[SPEAKER_01] No, users make a decision within a second.
+
+51
+00:04:09,200 --> 00:04:11,920
+[SPEAKER_01] So it's our job to help them to make decisions better.
+
+52
+00:04:12,240 --> 00:04:18,000
+[SPEAKER_01] So that's from the basic user problem is like decision overload and then so it's overwhelming.
+
+53
+00:04:18,640 --> 00:04:25,440
+[SPEAKER_01] And then from the business problem is of course that leads to relatively lower conversion, right?
+
+54
+00:04:25,680 --> 00:04:31,840
+[SPEAKER_01] Because for some users who wanted to buy but they were overwhelmed, they decide not to buy and then that lower conversion.
+
+55
+00:04:32,240 --> 00:04:36,320
+[SPEAKER_01] So that's a classic case of misalignment incentives.
+
+56
+00:04:37,040 --> 00:04:39,600
+[SPEAKER_01] So we wanted to maximize revenue by our own resources.
+
+57
+00:04:39,600 --> 00:04:44,080
+[SPEAKER_01] But our UI experience made it harder for you to make a confident decision.
+
+58
+00:04:44,560 --> 00:04:46,640
+[SPEAKER_00] Yeah, and I mean, Tinder famously.
+
+59
+00:04:46,720 --> 00:04:47,840
+[SPEAKER_00] I mean, this is why I have you on.
+
+60
+00:04:48,000 --> 00:04:59,680
+[SPEAKER_00] And so many people in the industry have talked about Tinder because it's led the way in these hybrid monetization, but having three different levels of plan and then you all tested out a fourth level of plan.
+
+61
+00:05:00,000 --> 00:05:02,160
+[SPEAKER_00] We'll talk about that toward the end, hopefully, if we have time.
+
+62
+00:05:02,800 --> 00:05:03,920
+[SPEAKER_00] But it does get super confusing.
+
+63
+00:05:04,080 --> 00:05:08,000
+[SPEAKER_00] And then you have the super the boosts and the other in-app purchases and things like that.
+
+64
+00:05:08,160 --> 00:05:15,360
+[SPEAKER_00] So then what did you do to actually solve this that and to make it more accessible to folks and getting people to the right plan.
+
+65
+00:05:16,080 --> 00:05:21,520
+[SPEAKER_01] So that was a challenging, but luckily we had a brilliant machine learning team.
+
+66
+00:05:22,000 --> 00:05:38,320
+[SPEAKER_01] So when I talked to the team members and then they told me, hey, we can try to build ML models and then use that to predict users' winners to pay and then we can surface the best product they might most likely to buy.
+
+67
+00:05:38,640 --> 00:05:44,960
+[SPEAKER_01] So that's our solution because based on the insight we tal talk about is like people, customers don't need a lot of options.
+
+68
+00:05:45,120 --> 00:05:46,000
+[SPEAKER_01] They need the right one.
+
+69
+00:05:46,560 --> 00:05:47,760
+[SPEAKER_01] Think about like Netflix.
+
+70
+00:05:47,920 --> 00:05:50,320
+[SPEAKER_01] You know how many users like, oh my god, I don't know what to watch.
+
+71
+00:05:50,640 --> 00:05:52,080
+[SPEAKER_01] There's so many choices.
+
+72
+00:05:52,400 --> 00:05:56,320
+[SPEAKER_01] They end up spending hours scrolling and then not making watch anything.
+
+73
+00:05:56,640 --> 00:05:59,360
+[SPEAKER_01] That's why Netflix has something like top picks for you, right?
+
+74
+00:05:59,760 --> 00:06:05,280
+[SPEAKER_01] Based on your previous behavior and your ratings, they predict what you're most likely to watch.
+
+75
+00:06:05,680 --> 00:06:06,480
+[SPEAKER_01] So solve that problem.
+
+76
+00:06:06,800 --> 00:06:07,520
+[SPEAKER_01] So very similar.
+
+77
+00:06:08,080 --> 00:06:18,960
+[SPEAKER_01] So this is a huge moment for us, I think, particularly even for Tinder for the industry is we shift from stale pricing to like dynamic pricing.
+
+78
+00:06:19,200 --> 00:06:22,960
+[SPEAKER_01] So we don't show the same paywall, same product to all the users.
+
+79
+00:06:23,840 --> 00:06:30,880
+[SPEAKER_01] So think about, let's say, David, you are winning to buy Platinum, why should we show you Plus, right?
+
+80
+00:06:31,200 --> 00:06:33,360
+[SPEAKER_01] I mean, that's a problem not just from a business perspective.
+
+81
+00:06:33,600 --> 00:06:41,120
+[SPEAKER_01] We won't be able to maximize the revenue and then we can use that to reinvest to make product better for you.
+
+82
+00:06:41,440 --> 00:06:46,080
+[SPEAKER_01] Another problem is you don't get to invest enjoy all the best benefits we can offer, right?
+
+83
+00:06:46,480 --> 00:06:48,240
+[SPEAKER_01] Simply because you chose the plus.
+
+84
+00:06:49,040 --> 00:06:51,120
+[SPEAKER_01] So that's what the solution comes with.
+
+85
+00:06:51,520 --> 00:07:01,440
+[SPEAKER_01] We use machine learning, we train the model and then we eventually release a model for that to predict and serve the best SKU for customers.
+
+86
+00:07:01,920 --> 00:07:02,720
+[SPEAKER_00] How do you test that?
+
+87
+00:07:02,880 --> 00:07:04,880
+[SPEAKER_00] Like what was the AB test?
+
+88
+00:07:05,280 --> 00:07:15,520
+[SPEAKER_00] It was just the standard kind of deterministic, normal, everyone gets this paywall at this part of the flow and then everyone gets that paywywall at that part of the flow.
+
+89
+00:07:16,000 --> 00:07:23,520
+[SPEAKER_00] And did you just do an AB test to prove that the ML decision model was better than what you had before?
+
+90
+00:07:24,160 --> 00:07:25,440
+[SPEAKER_00] Yes, full on, yes.
+
+91
+00:07:26,080 --> 00:07:33,520
+[SPEAKER_01] But obviously to reduce the risk, we couldn't just start it from all the paywalls, right?
+
+92
+00:07:33,760 --> 00:07:35,280
+[SPEAKER_01] Because we have a lot of different paywalls.
+
+93
+00:07:35,680 --> 00:07:45,120
+[SPEAKER_01] And then at the same time, that's very expensive to and it takes a lot of time and then effort to train the model to test the model.
+
+94
+00:07:45,840 --> 00:07:47,280
+[SPEAKER_01] So we start with something small.
+
+95
+00:07:47,600 --> 00:07:53,440
+[SPEAKER_01] So we test with a couple of features and then just start with not all the scope.
+
+96
+00:07:53,600 --> 00:08:06,560
+[SPEAKER_01] So we can see, hey, based on this machine model to historically, you know, like a version a control will be the same, you know, like as we used to show the paywall and the products to the new one.
+
+97
+00:08:06,880 --> 00:08:07,680
+[SPEAKER_01] This is dynamic.
+
+98
+00:08:08,240 --> 00:08:16,080
+[SPEAKER_01] We will change based on the basically when they show user, let's say for David and then our paywall will ask the email.
+
+99
+00:08:16,080 --> 00:08:18,560
+[SPEAKER_01] The ML model, hey, which paywall should we show?
+
+100
+00:08:18,800 --> 00:08:22,080
+[SPEAKER_01] And then the paywall will decide, okay, which product we should recommend to David.
+
+101
+00:08:22,800 --> 00:08:25,120
+[SPEAKER_01] And then that's how we test the treatment.
+
+102
+00:08:25,360 --> 00:08:29,200
+[SPEAKER_01] And then we'll be able to measure the conversion and then the total revenue.
+
+103
+00:08:29,600 --> 00:08:30,720
+[SPEAKER_00] And how did it do?
+
+104
+00:08:31,040 --> 00:08:31,440
+[SPEAKER_00] It's great.
+
+105
+00:08:31,680 --> 00:08:31,680
+[UNKNOWN] Yeah.
+
+106
+00:08:32,000 --> 00:08:40,080
+[SPEAKER_01] So, based on our prediction, I think it's definitely multi million dollars annual increase for Tinder.
+
+107
+00:08:40,480 --> 00:08:45,440
+[SPEAKER_01] I also want to clarify, you know, for that, it's like, it's not just like maximum revenue.
+
+108
+00:08:45,680 --> 00:08:46,800
+[SPEAKER_01] It's like an evil business plan.
+
+109
+00:08:47,200 --> 00:08:52,720
+[SPEAKER_01] No, it's like the money we're going to use, we can reinvest to the product, right?
+
+110
+00:08:53,040 --> 00:08:59,120
+[SPEAKER_01] So we can improve our user experience and then build more like benefits for customers.
+
+111
+00:08:59,360 --> 00:09:07,280
+[SPEAKER_01] That's why when I talk to a lot of startup funders, I always advise them, hey, don't wait to think about your monetization strategy.
+
+112
+00:09:07,600 --> 00:09:10,160
+[SPEAKER_01] You know, don't feel bad to charge users.
+
+113
+00:09:10,560 --> 00:09:18,080
+[SPEAKER_01] They wanted to pay you and they deserve it because you're going to provide better experience for them, not mention to compete with your competitors.
+
+114
+00:09:18,080 --> 00:09:20,560
+[SPEAKER_01] Comparators and they'll be able to move faster and sooner.
+
+115
+00:09:20,960 --> 00:09:22,400
+[SPEAKER_01] What about countermetrics?
+
+116
+00:09:22,720 --> 00:09:33,200
+[SPEAKER_00] Was there anything you were watching to make sure things didn't go south in retention or user experience, you know, that people weren't happy with the plans that they were presented?
+
+117
+00:09:33,600 --> 00:09:41,680
+[SPEAKER_01] Tinger has a really good process in place and that we are required to also measure our countermetrics.
+
+118
+00:09:41,840 --> 00:09:46,800
+[SPEAKER_01] This is great because, you know, you can't just focus on one area.
+
+119
+00:09:46,960 --> 00:09:54,480
+[SPEAKER_01] For example, for this case, we can't just focus on one area the first time conversion and then only the revenue amount, right?
+
+120
+00:09:54,720 --> 00:10:03,360
+[SPEAKER_01] So we have to measure, hey, let's say David based on our model, maybe prior to that, he would buy a plus, now he bought Platinum.
+
+121
+00:10:03,600 --> 00:10:05,760
+[SPEAKER_01] So we want to check, hey, is David going to come back?
+
+122
+00:10:06,080 --> 00:10:08,000
+[SPEAKER_01] Is David going to buy Platinum again?
+
+123
+00:10:08,480 --> 00:10:09,280
+[SPEAKER_01] He's going to cancel.
+
+124
+00:10:09,680 --> 00:10:19,840
+[SPEAKER_01] So we definitely measure this long term success metrics to make sure this model really served correctly, because that's not something we wanted to continue to work on.
+
+125
+00:10:20,320 --> 00:10:22,240
+[SPEAKER_01] Like most product features, right?
+
+126
+00:10:22,480 --> 00:10:24,560
+[SPEAKER_01] It's not like launch and down, that's it.
+
+127
+00:10:24,880 --> 00:10:27,200
+[SPEAKER_01] Like we have to optimize iterate.
+
+128
+00:10:27,440 --> 00:10:30,400
+[SPEAKER_01] So we wanted to learn, hey, we actually have different models.
+
+129
+00:10:30,800 --> 00:10:32,960
+[SPEAKER_01] We built a different one, so we want to compare.
+
+130
+00:10:33,280 --> 00:10:43,120
+[SPEAKER_01] So we want to see how they perform between those models, same time how they perform compared to the paywall without the models.
+
+131
+00:10:43,440 --> 00:10:46,400
+[SPEAKER_01] So we can make sure we focus on long term success.
+
+132
+00:10:46,800 --> 00:10:54,960
+[SPEAKER_01] For the takeaway for this example is the real unlock wasn't just better pricing, it was a better decision design, right?
+
+133
+00:10:55,280 --> 00:10:58,320
+[SPEAKER_01] Helping users choose a product they truly fit them.
+
+134
+00:10:59,360 --> 00:11:15,760
+[SPEAKER_01] So for your product, you know, any founders or startups out there, even if you don't have a ML team yet, I think maybe the simple way you can do is design three products or tiers for the customers.
+
+135
+00:11:16,240 --> 00:11:16,400
+[SPEAKER_01] Why?
+
+136
+00:11:16,640 --> 00:11:20,880
+[SPEAKER_01] Because that's a very common or easy way for users to pick from, right?
+
+137
+00:11:21,360 --> 00:11:25,120
+[SPEAKER_01] Some want to buy the most expensive one, some just want to buy the cheapest one.
+
+138
+00:11:25,360 --> 00:11:28,720
+[SPEAKER_01] And then some of them don't know how to make decisions, they buy the middle one.
+
+139
+00:11:28,960 --> 00:11:35,920
+[SPEAKER_01] So that's usually the simplest way for you to design your product here, because actually change how decisions are made.
+
+140
+00:11:36,320 --> 00:11:42,400
+[SPEAKER_01] Let's say, David, if you only offer one product, so your decision is, should I buy or not?
+
+141
+00:11:43,120 --> 00:11:48,320
+[SPEAKER_01] But if for a day we'll show you three products, now you're thinking, Which one should I get?
+
+142
+00:11:48,720 --> 00:11:52,160
+[SPEAKER_01] So you bypass the yes or no, and then so more likely to convert.
+
+143
+00:11:52,960 --> 00:11:54,320
+[SPEAKER_00] Yeah, that's fantastic advice.
+
+144
+00:11:55,280 --> 00:11:56,960
+[SPEAKER_00] I do wish we all had ML teams.
+
+145
+00:11:57,200 --> 00:12:03,120
+[SPEAKER_00] Maybe that's something at RevenueCat we should be working on to help folks build those kind of sophisticated things into their own apps.
+
+146
+00:12:03,440 --> 00:12:14,480
+[SPEAKER_00] But anyways, I did want to move on to this idea of monetization unbundling is that not everyone wants the full subscription, not everyone is going to fit into the gold, the platinum.
+
+147
+00:12:15,200 --> 00:12:17,440
+[SPEAKER_00] So, yeah, how do you think about unbundling that?
+
+148
+00:12:18,000 --> 00:12:24,000
+[SPEAKER_01] We actually, you probably know, we have some unbundling products already, like Auto, like LinkedIn.
+
+149
+00:12:24,000 --> 00:12:25,840
+[SPEAKER_01] Such as like boost, super likes.
+
+150
+00:12:26,400 --> 00:12:33,440
+[SPEAKER_01] I think a couple of things you want to think about, like besides one issue you've already highlighted, is not everyone wants to have a subscription, right?
+
+151
+00:12:33,680 --> 00:12:34,560
+[SPEAKER_01] Subscription is great.
+
+152
+00:12:34,720 --> 00:12:44,560
+[SPEAKER_01] I mean, don't get me wrong, because you get a package, it's much easier than you have to decide which features you want to pick from and then buy that way.
+
+153
+00:12:45,040 --> 00:12:45,760
+[SPEAKER_01] It's painful, right?
+
+154
+00:12:46,240 --> 00:12:51,520
+[SPEAKER_01] It's easier to buy a whole package and then repeat it, renew it automatically, so you have to think about it twice.
+
+155
+00:12:51,760 --> 00:12:52,880
+[SPEAKER_01] But there were some use cases.
+
+156
+00:12:53,040 --> 00:12:54,000
+[SPEAKER_01] Think about like boost.
+
+157
+00:12:54,720 --> 00:12:56,800
+[SPEAKER_01] I think it's perfect all-a-car product.
+
+158
+00:12:57,120 --> 00:12:57,280
+[SPEAKER_01] Why?
+
+159
+00:12:57,600 --> 00:13:02,160
+[SPEAKER_01] Because you don't it depends on when you want to use it, right?
+
+160
+00:13:02,480 --> 00:13:05,760
+[SPEAKER_01] When you don't receive enough likes, so you want to boost yourself.
+
+161
+00:13:06,160 --> 00:13:10,320
+[SPEAKER_01] When let's say you swipe during the peak hours, so you want to use that.
+
+162
+00:13:10,480 --> 00:13:11,360
+[SPEAKER_01] So that makes sense.
+
+163
+00:13:11,520 --> 00:13:12,480
+[SPEAKER_01] Super likes too, right?
+
+164
+00:13:12,640 --> 00:13:16,000
+[SPEAKER_01] Because it's like, well, I don't know how many super likes I'm going to send.
+
+165
+00:13:16,160 --> 00:13:18,480
+[SPEAKER_01] It depends on who I see in the app, right?
+
+166
+00:13:19,120 --> 00:13:25,920
+[SPEAKER_01] And another use case we decided to try is the travel mode, also AKA passport mode.
+
+167
+00:13:26,400 --> 00:13:30,080
+[SPEAKER_01] It allows any users to see anyone globally.
+
+168
+00:13:30,480 --> 00:13:31,120
+[SPEAKER_01] So cool.
+
+169
+00:13:31,360 --> 00:13:36,800
+[SPEAKER_01] You know, like, let's say you can go to Paris, go to Spain, whatever you want to go based on your needs.
+
+170
+00:13:36,880 --> 00:13:39,440
+[SPEAKER_01] It can be basically you want to travel there or you want to just meet people there.
+
+171
+00:13:40,000 --> 00:13:43,920
+[SPEAKER_01] And the thing about that feature is like, not everyone wants it, right?
+
+172
+00:13:44,160 --> 00:13:47,280
+[SPEAKER_01] Maybe because it's a very special case for needs for certain people.
+
+173
+00:13:47,760 --> 00:13:53,680
+[SPEAKER_01] In that case, that feature is a great candidate as a like a unbundled feature stand alone.
+
+174
+00:13:54,160 --> 00:13:59,760
+[SPEAKER_01] So that's how we think about what features make sense to be unbundled and designed for our customers.
+
+175
+00:14:00,080 --> 00:14:01,520
+[SPEAKER_01] How does the passport mode work?
+
+176
+00:14:01,920 --> 00:14:04,880
+[SPEAKER_00] Is it a one time purchase for a limited time?
+
+177
+00:14:05,200 --> 00:14:07,920
+[SPEAKER_00] Is it an add on subscription or how does it work exactly?
+
+178
+00:14:08,480 --> 00:14:14,720
+[SPEAKER_01] Yes, so historically this feature is part of a subscription, so you have to get a subscription to use it.
+
+179
+00:14:15,200 --> 00:14:24,800
+[SPEAKER_01] And then, but like we'll talk about, the challenge for that is for some users, they only want to use it when they plan to travel or to meet people outside of their home city.
+
+180
+00:14:25,440 --> 00:14:28,480
+[SPEAKER_01] And then they might not want to buy a subscription, right?
+
+181
+00:14:28,880 --> 00:14:33,600
+[SPEAKER_01] Because they just don't want to have that commitment or they don't want to, they don't feel like they need to use other features.
+
+182
+00:14:34,000 --> 00:14:35,520
+[SPEAKER_01] So that's a perfect candidate for them.
+
+183
+00:14:35,920 --> 00:14:37,440
+[SPEAKER_01] So we tested the features.
+
+184
+00:14:37,680 --> 00:14:55,120
+[SPEAKER_01] So that helped us to capture non-subscribers for the users who just want to buy a car for this passport feature and then they can use it for like one day, three days, a week based on the offers we provide and then they can enjoy that benefit to meet people anywhere in the world.
+
+185
+00:14:55,600 --> 00:15:01,600
+[SPEAKER_00] So how have things been going with the passport feature and it being unbundled from the subscription.
+
+186
+00:15:02,080 --> 00:15:03,280
+[SPEAKER_00] Have you seen uptake?
+
+187
+00:15:03,920 --> 00:15:04,000
+[SPEAKER_01] Yes.
+
+188
+00:15:04,800 --> 00:15:12,000
+[SPEAKER_01] Actually, I think it's so fun to talk about this because it was not launch and then success story.
+
+189
+00:15:12,080 --> 00:15:12,480
+[SPEAKER_01] That's it.
+
+190
+00:15:12,800 --> 00:15:13,200
+[SPEAKER_01] Not that simple.
+
+191
+00:15:13,760 --> 00:15:15,840
+[SPEAKER_01] We learned a few things based on our tests.
+
+192
+00:15:16,160 --> 00:15:24,000
+[SPEAKER_01] First thing is when we launched this standalone all car passport feature and then the conversion went crazy.
+
+193
+00:15:24,160 --> 00:15:24,640
+[SPEAKER_01] It was great.
+
+194
+00:15:25,520 --> 00:15:29,040
+[SPEAKER_01] However, we noticed like, oh, that hurts our Plus subscription.
+
+195
+00:15:30,320 --> 00:15:33,840
+[SPEAKER_01] Because some users decide to only buy this feature now to buy subscription.
+
+196
+00:15:34,320 --> 00:15:35,520
+[SPEAKER_01] But that can be a couple of things.
+
+197
+00:15:35,680 --> 00:15:38,080
+[SPEAKER_01] So one is, oh, maybe we priced too low.
+
+198
+00:15:38,720 --> 00:15:40,000
+[SPEAKER_01] It's too affordable.
+
+199
+00:15:40,480 --> 00:15:42,400
+[SPEAKER_01] And then so it's like no brainer.
+
+200
+00:15:42,720 --> 00:15:43,600
+[SPEAKER_01] So users use it.
+
+201
+00:15:43,920 --> 00:15:52,880
+[SPEAKER_01] The second thing we did is like, oh, we should increase the price for our card and to see how that would change the conversion and then subscription cannibalization.
+
+202
+00:15:53,200 --> 00:16:01,440
+[SPEAKER_01] So we definitely noticed like the subscription cannibalization reduced as we expected and the conversion reduced a little bit but total revenue incre actually went up.
+
+203
+00:16:01,680 --> 00:16:02,800
+[SPEAKER_01] So that was very positive.
+
+204
+00:16:03,360 --> 00:16:08,000
+[SPEAKER_01] And then we continued to test because we wanted to minimize the subscription cannibalizations.
+
+205
+00:16:08,400 --> 00:16:13,280
+[SPEAKER_01] So and then we increased the price again and then also have upsell on the paywall.
+
+206
+00:16:13,360 --> 00:16:20,880
+[SPEAKER_01] Basically, we showed, hey, David, you can buy passport stand alone allocate card, but also you can buy plus subscription.
+
+207
+00:16:21,280 --> 00:16:24,960
+[SPEAKER_01] And then we used a very interesting, like a kind of psychology thing.
+
+208
+00:16:25,200 --> 00:16:33,920
+[SPEAKER_01] Basically for our seven day passport feature allocate card, the price is the same as seven day plus subscription.
+
+209
+00:16:34,320 --> 00:16:41,520
+[SPEAKER_01] So in that case, David, you think like, oh, duh, then the seven day plus subscription is a better deal, right?
+
+210
+00:16:41,840 --> 00:16:43,440
+[SPEAKER_01] I can get it more than this feature.
+
+211
+00:16:43,920 --> 00:16:52,560
+[SPEAKER_01] So that also helped, of course, you know, it means like reduce the categorization, also increase the conversion revenue, but still not good enough.
+
+212
+00:16:53,040 --> 00:16:56,720
+[SPEAKER_01] So we decided, hey, let's use our Perfect ML model again.
+
+213
+00:16:57,120 --> 00:16:59,680
+[SPEAKER_01] So we will show users subscription first.
+
+214
+00:17:00,080 --> 00:17:04,080
+[SPEAKER_01] If you don't want to buy subscription, we show you all our costs., so we gave you a second chance.
+
+215
+00:17:04,560 --> 00:17:15,280
+[SPEAKER_00] I love hearing these kinds of stories because I just think Tinder has been around so long and so many of us in the industry look up to it as a pioneer in monetization in apps.
+
+216
+00:17:16,000 --> 00:17:25,040
+[SPEAKER_00] And I just think so many apps are leaving money on the table by not experimenting with these kinds of things and not trying all the different, you know, three tiers.
+
+217
+00:17:25,360 --> 00:17:28,160
+[SPEAKER_00] And, you know, and, and, and, and, like we said, it can lead to confusion.
+
+218
+00:17:28,400 --> 00:17:33,600
+[SPEAKER_00] It's not the right thing for every app, but there's just so much opportunity to meet your needs.
+
+219
+00:17:33,600 --> 00:17:35,600
+[SPEAKER_00] meet users where they are and charge them.
+
+220
+00:17:35,760 --> 00:17:40,080
+[SPEAKER_00] And then speaking of that, Tinder Select was a really interesting experiment.
+
+221
+00:17:40,560 --> 00:17:42,640
+[SPEAKER_00] So I'd love to hear from you how that went.
+
+222
+00:17:43,040 --> 00:17:45,040
+[SPEAKER_00] You know, it just sounds fantastic.
+
+223
+00:17:45,200 --> 00:17:49,760
+[SPEAKER_00] And we've we've talked about it on the podcast many times before, you know, add a super premium tier.
+
+224
+00:17:50,000 --> 00:17:53,760
+[SPEAKER_00] You know, we talked about it earlier, like some people will just buy the most expensive thing.
+
+225
+00:17:54,560 --> 00:17:56,800
+[SPEAKER_00] So it sounded like a really interesting idea.
+
+226
+00:17:57,120 --> 00:17:59,120
+[SPEAKER_00] How did, how did things go with Tinder Select?
+
+227
+00:17:59,360 --> 00:18:04,480
+[SPEAKER_01] Yeah, I think Tinder Select is a very interesting case study in terms of like the product market alignment.
+
+228
+00:18:06,480 --> 00:18:29,520
+[SPEAKER_01] So let's start with the hypothesis, you know, basically the opportunity Tinder was exploring and why Tinder created Tinder Select because Tinder has a massive global user base and then we also have some wells, right, you know, basically the user who are willing to spend a lot of money, they buy a lot of highest subscription and then all the cards, they spend a lot of money with us to maximize the outcome.
+
+229
+00:18:29,920 --> 00:18:33,520
+[SPEAKER_01] So we definitely saw, hey, there is a willingness to pay out there.
+
+230
+00:18:34,160 --> 00:18:35,040
+[SPEAKER_01] Let's try if we.
+
+231
+00:18:35,040 --> 00:18:43,040
+[SPEAKER_01] If we have an even higher end tier and then provide even better service and product, will the user buy them not?
+
+232
+00:18:43,840 --> 00:18:45,760
+[SPEAKER_01] So that's basically the hypothesis we had.
+
+233
+00:18:46,160 --> 00:18:50,000
+[SPEAKER_01] And then so that would be different segments we're targeting, obviously, right?
+
+234
+00:18:50,320 --> 00:18:53,360
+[SPEAKER_01] And then sometimes for the, I think the challenge are two things.
+
+235
+00:18:53,920 --> 00:18:58,320
+[SPEAKER_01] One is the identity fit and brand positioning, right?
+
+236
+00:18:59,120 --> 00:19:03,520
+[SPEAKER_01] Because for any product, not every company can just offer a high end.
+
+237
+00:19:04,080 --> 00:19:06,000
+[SPEAKER_01] It's really rooted in like.
+
+238
+00:19:06,000 --> 00:19:10,960
+[SPEAKER_01] really into what your brand is and then how customers think like a good fit or not, right?
+
+239
+00:19:11,280 --> 00:19:22,960
+[SPEAKER_01] I think for Tinder because we're catering for a massive population and then in that case it's a little bit difficult for some users to feel like, oh, you know, it's a good fit for me to use it.
+
+240
+00:19:23,120 --> 00:19:31,200
+[SPEAKER_01] Think about that, David, if we tell you, hey, you're going to pay $499 a month for a subscription and then for on Tinder.
+
+241
+00:19:31,600 --> 00:19:37,040
+[SPEAKER_01] And then when you come to Tinder, you see people you might be able to see even just using a platform.
+
+242
+00:19:37,040 --> 00:19:38,560
+[SPEAKER_01] Just use a Platinum subscription.
+
+243
+00:19:38,720 --> 00:19:42,000
+[SPEAKER_01] Now you might think like, okay, I don't feel that special here.
+
+244
+00:19:42,400 --> 00:19:49,840
+[SPEAKER_01] Maybe you give me some special treatment and the benefits, but I don't feel like the environment, people here that, that's special, right?
+
+245
+00:19:50,080 --> 00:19:50,800
+[SPEAKER_01] That's just difficult.
+
+246
+00:19:51,200 --> 00:19:51,760
+[SPEAKER_01] It's very common.
+
+247
+00:19:51,840 --> 00:19:53,280
+[SPEAKER_01] You know, think about like a club too, right?
+
+248
+00:19:53,440 --> 00:19:59,520
+[SPEAKER_01] It's like exclusive one, very expensive one versus just like a regular one, but you have expensive table.
+
+249
+00:19:59,760 --> 00:20:00,960
+[SPEAKER_01] So think about that scenario.
+
+250
+00:20:01,040 --> 00:20:02,880
+[SPEAKER_01] I think that's why make it challenging.
+
+251
+00:20:03,040 --> 00:20:07,920
+[SPEAKER_01] It's like a luxury offering, but people might not feel the benefits.
+
+252
+00:20:08,400 --> 00:20:09,360
+[SPEAKER_01] meet our expectations.
+
+253
+00:20:09,840 --> 00:20:11,440
+[SPEAKER_01] What's the future of Tinder Select?
+
+254
+00:20:11,600 --> 00:20:12,560
+[SPEAKER_00] Is it going to go away?
+
+255
+00:20:13,040 --> 00:20:14,160
+[SPEAKER_00] Is it going to evolve?
+
+256
+00:20:14,640 --> 00:20:22,800
+[SPEAKER_01] Yeah, I think that we're just not going to expand much further and then just gradually scale down for this one.
+
+257
+00:20:23,200 --> 00:20:35,280
+[SPEAKER_01] It's not like a fail, it's basically like we learned what we initially wanted to and then we realized it just not worth the continued investment and the midness for us to have this feature.
+
+258
+00:20:35,600 --> 00:20:37,440
+[SPEAKER_01] It's not the best fit for us.
+
+259
+00:20:37,680 --> 00:20:39,040
+[SPEAKER_01] We have better bets to come.
+
+260
+00:20:40,000 --> 00:20:49,760
+[SPEAKER_00] Well, I think it's super cool that you all tried and a great lesson as always that people don't always do what they say in a user survey or a user interview.
+
+261
+00:20:50,160 --> 00:20:54,720
+[SPEAKER_00] So always a great lesson to remember, but you should try and that's a great thing.
+
+262
+00:20:54,880 --> 00:20:56,640
+[SPEAKER_00] And then you did and you learned.
+
+263
+00:20:57,040 --> 00:21:00,000
+[SPEAKER_00] Is there anything you want to share with the audience as we do wrap up?
+
+264
+00:21:00,560 --> 00:21:12,560
+[SPEAKER_01] I think the most important thing I want the audience to realize or understand is don't treat your users as their logical human beings.
+
+265
+00:21:12,800 --> 00:21:20,960
+[SPEAKER_01] So what I mean by that is you can't think you can't be like, oh, let me design this product and the user is going to read everything on the screen.
+
+266
+00:21:21,760 --> 00:21:29,840
+[SPEAKER_01] They're going to make decisions based on information I share with them and then make a purchase decision whatever they want you wanted them to do right.
+
+267
+00:21:30,320 --> 00:21:32,080
+[SPEAKER_01] No, reality, they don't do that way.
+
+268
+00:21:32,800 --> 00:21:35,040
+[SPEAKER_01] They don't follow your user experience.
+
+269
+00:21:35,440 --> 00:21:37,760
+[SPEAKER_01] They don't just read everything to make decisions.
+
+270
+00:21:38,240 --> 00:21:41,040
+[SPEAKER_01] So they.
+
+271
+00:21:42,480 --> 00:21:43,440
+[SPEAKER_01] I think that's very important.
+
+272
+00:21:43,760 --> 00:21:52,640
+[SPEAKER_01] So that's why we have to really observe how they behave and talk to them and really, truly unlock the emotion behind that.
+
+273
+00:21:52,960 --> 00:21:55,360
+[SPEAKER_01] Otherwise, you will make wrong decisions.
+
+274
+00:21:55,840 --> 00:21:59,440
+[SPEAKER_00] Where can people find you or are there any jobs you want to shout out at Tinder?
+
+275
+00:21:59,840 --> 00:22:03,680
+[SPEAKER_00] Oh yeah, I think Tinder definitely has a still growing, has a lot of fun opportunities.
+
+276
+00:22:04,080 --> 00:22:05,440
+[SPEAKER_01] So encourage people to check out.
+
+277
+00:22:05,760 --> 00:22:11,840
+[SPEAKER_01] It's one of the best places I've ever been because it's really fun culture, very progressive and then really.
+
+278
+00:22:13,040 --> 00:22:14,240
+[SPEAKER_01] care about people's lives.
+
+279
+00:22:14,480 --> 00:22:22,640
+[SPEAKER_01] When I go to the cafeteria, every time I get emotional because I see the wall we show all the users who wrote letters to us show their wedding pictures.
+
+280
+00:22:22,960 --> 00:22:29,040
+[SPEAKER_01] Oh, you know, like our work, you know, made a difference, you know, made people have a new family together.
+
+281
+00:22:29,680 --> 00:22:30,800
+[SPEAKER_01] How lovely that.
+
+282
+00:22:31,120 --> 00:22:43,200
+[SPEAKER_01] And then sometimes also if you want to grow your product and then without hurting your retention, and then I can help you to unlock user emotions and design defensive tools.
+
+283
+00:22:43,200 --> 00:22:47,440
+[SPEAKER_01] Defensible growth loops and then you can find me on LinkedIn and then MentooCruise.
+
+284
+00:22:47,680 --> 00:22:48,000
+[SPEAKER_01] Awesome.
+
+285
+00:22:48,160 --> 00:22:49,120
+[SPEAKER_01] Thank you so much for joining me.
+
+286
+00:22:49,280 --> 00:22:50,480
+[SPEAKER_00] This was a really fun conversation.
+
+287
+00:22:50,720 --> 00:22:50,800
+[SPEAKER_00] Yeah.
+
+288
+00:22:51,040 --> 00:22:51,680
+[SPEAKER_00] Thank you so much, David.
+
+289
+00:22:52,400 --> 00:22:54,560
+[SPEAKER_01] It's always my greatest pleasure talking to you.
+
+290
+00:22:57,040 --> 00:22:58,400
+[UNKNOWN] Thanks so much for listening.
+
+291
+00:22:59,200 --> 00:23:02,720
+[SPEAKER_00] If you have a minute, please leave a review in your favorite podcast player.
+
+292
+00:23:03,600 --> 00:23:08,400
+[SPEAKER_00] You can also stop by chat.subclub.com to join our private community.
