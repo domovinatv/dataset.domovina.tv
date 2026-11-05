@@ -1,0 +1,2651 @@
+1
+00:00:01,120 --> 00:00:08,720
+Welcome to the Subclub podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,880 --> 00:00:47,360
+Hello, I'm your host, David Bernard, and my guest today is Dan Panash, Senior Product Manager at RevenueCat.
+
+7
+00:00:48,160 --> 00:00:54,480
+Before joining RevenueCat, Dan led the product team at Teltech, makers of ReboKiller, Tapacall, and more.
+
+8
+00:00:55,360 --> 00:01:08,720
+On the podcast, I talk with Dan about how to design experiments that answer the right questions, common AB testing pitfalls to avoid, and how a simple checklist just might save your complex experiment.
+
+9
+00:01:09,920 --> 00:01:12,640
+Hey Dan, thank you so much for joining me on the podcast today.
+
+10
+00:01:13,840 --> 00:01:14,720
+I'm looking forward to it.
+
+11
+00:01:15,680 --> 00:01:20,640
+So today we're going to talk about app experimentation.
+
+12
+00:01:21,200 --> 00:01:25,920
+And I talked to a lot of different people about who I should have on the podcast.
+
+13
+00:01:26,560 --> 00:01:29,600
+And your name popped up, RevenueCat colleague.
+
+14
+00:01:30,080 --> 00:01:31,920
+You and I didn't get to talk enough internally.
+
+15
+00:01:32,160 --> 00:01:34,800
+So I had to bring you on the podcast to get to talk to you.
+
+16
+00:01:35,040 --> 00:01:49,920
+But you were at Tel Tech, which got acquired by IAC, where you collaborated with a lot of top apps in the App Store and just have so much experience in experimentation that I just thought it would be so fun to talk about that today.
+
+17
+00:01:50,080 --> 00:01:55,440
+And then, of course, we have a little surprise at the end that RevenueCat's launching a pretty cool new product.
+
+18
+00:01:56,080 --> 00:02:11,440
+So to kick things off, I just wanted to get a kind of an overview of your thinking about experimentation, having done really sophisticated AB tests, having run the gamut of how to do in app experimentation.
+
+19
+00:02:11,840 --> 00:02:13,200
+So let's just kick it off there.
+
+20
+00:02:13,440 --> 00:02:15,840
+Like, what is experimentation?
+
+21
+00:02:16,160 --> 00:02:16,640
+Why do it?
+
+22
+00:02:16,880 --> 00:02:17,680
+How do you think about it?
+
+23
+00:02:18,240 --> 00:02:19,040
+Yeah, absolutely.
+
+24
+00:02:19,440 --> 00:02:20,000
+It's a great question.
+
+25
+00:02:20,160 --> 00:02:22,720
+It sounds like there should be like this really, really simple answer.
+
+26
+00:02:22,880 --> 00:02:23,920
+And I don't know that there is.
+
+27
+00:02:24,480 --> 00:02:31,920
+But I mean, really, when you're building products, when you're building anything, there are thousands of little micro decisions that you're making all the time.
+
+28
+00:02:32,480 --> 00:02:36,000
+And a lot of them are little experiments and little tests, right?
+
+29
+00:02:36,320 --> 00:02:42,800
+Like whether you design them in a really scientific way or not, like you're frequently testing a hypothesis that you have, right?
+
+30
+00:02:42,960 --> 00:02:45,280
+Like I think this product is going to be valuable to customers.
+
+31
+00:02:45,600 --> 00:02:47,440
+So I'm going to go build it and deploy it in the market.
+
+32
+00:02:47,920 --> 00:02:50,800
+You know, I think that this acquisition channel is going to work for me.
+
+33
+00:02:50,880 --> 00:02:54,080
+So I'm going to go spend some money on it and see if I can acquire customers that way.
+
+34
+00:02:55,040 --> 00:02:56,720
+It's true for every decision that you're making.
+
+35
+00:02:57,680 --> 00:02:58,720
+Experimentation in particular.
+
+36
+00:02:59,040 --> 00:03:17,840
+I think like AB testing in particular is basically a way to take that, that general idea, right, that like everything is a bet, everything is a test, and figure out, all right, for a very narrow decision, a very narrow test, how can we design that in such a way that it's easy to measure the impact of that on the other side of it, right?
+
+37
+00:03:18,080 --> 00:03:26,800
+How can I understand what the impact is of this change that I make, both the direct things that I expect to impact and maybe sometimes the indirect things that I don't expect to impact.
+
+38
+00:03:27,440 --> 00:03:27,600
+Right.
+
+39
+00:03:28,800 --> 00:04:11,840
+So, and one of the interesting things about AB testing specifically is that it inherently is easy to revert.vert, but how do you think about that kind of spectrum between an AB test where it's like you flip it on, you flip it off, all the way to, you know, like a major version update that, you know, revamp the data format in the back end where you, you know, reverting, I mean, you're experimenting, you're trying something new, you're doing something different, but if it causes something that you didn't see, if it changes the user experience in a way you didn't understand, if it breaks, you know, reverting it can be incredibly difficult.
+
+40
+00:04:11,920 --> 00:04:23,120
+So how do you how do you think about that spectrum when kind of approaching decision making in, you know, building new features and, and experimenting with an app?
+
+41
+00:04:23,760 --> 00:04:24,480
+Yeah, absolutely.
+
+42
+00:04:24,720 --> 00:04:28,320
+I I mean, I think what you're getting at there is like risk mitigation basically, right?
+
+43
+00:04:28,640 --> 00:04:36,480
+Like how do we how do we make sure that like the bet that we're making, the experiment that we're running is sufficiently protected from the downside risks?
+
+44
+00:04:36,960 --> 00:04:41,360
+And there are some changes that you make that like, don't have really significant downside risks, right?
+
+45
+00:04:41,600 --> 00:04:55,040
+Like, um, maybe there's a particular benefit or feature that you want to add to your product that lots and lots of customers have asked for that it's really easy to for you to build, that you know for sure you want to build, and you're just going to say, all right, like, feel very confident in this bet.
+
+46
+00:04:55,280 --> 00:04:56,080
+I'm going to make it.
+
+47
+00:04:56,240 --> 00:04:57,200
+I'm going to ship it.
+
+48
+00:04:57,280 --> 00:04:58,720
+If no one uses it, that's okay.
+
+49
+00:04:59,200 --> 00:05:04,320
+If it, you know, the worst way it possibly breaks doesn't change my life, doesn't change my customer's life.
+
+50
+00:05:04,800 --> 00:05:05,360
+Awesome, right?
+
+51
+00:05:05,520 --> 00:05:12,720
+Like, that's probably a situation where you don't need to think like super, super hard about exactly how you want to experiment with it or or measure the impact of that.
+
+52
+00:05:12,880 --> 00:05:16,000
+Like, you've mitigated the risks just by the nature of what you're doing.
+
+53
+00:05:16,400 --> 00:05:24,320
+And then there are other types of changes, you know, like how you're going to monetize your product, the price you're going to offer it at, the durations you're going to offer it at, things like that.
+
+54
+00:05:24,320 --> 00:05:27,520
+that where the risk can be quite high, right?
+
+55
+00:05:27,920 --> 00:05:37,840
+Like, um, if you overpriced your product, like whatever that price elasticity curve is, if you pass the reasonable point of that curve and no one's interested, that's really bad for your business, right?
+
+56
+00:05:38,080 --> 00:05:42,400
+Like, and like, you don't know where that spot is before you test it, right?
+
+57
+00:05:42,640 --> 00:05:52,000
+Like, you know, most apps are unique enough that there's not necessarily someone else that you can point at and say, ah, the price is eight bucks a month and that's just like the right price in this market.
+
+58
+00:05:52,240 --> 00:05:53,920
+Like, no one has that information.
+
+59
+00:05:54,400 --> 00:06:05,920
+And that's a case where then, like, AB testing, especially when it's remotely controlled and you can easily turn it on and off from the back end without waiting for the app review process or anything like that becomes really powerful, right?
+
+60
+00:06:06,080 --> 00:06:13,680
+Because then you can still answer these really important questions for your business, but not do so in a way where you're incurring a ton of risk by doing that at the same time.
+
+61
+00:06:14,720 --> 00:06:27,360
+So as a product manager, when looking at this spectrum, is there a a kind of framework to think about like this is easy to change, easy to implement.
+
+62
+00:06:27,760 --> 00:06:36,800
+So kind of low cost from an engineering standpoint and or just, you know, time of the team's standpoint and then also, you know, low downside risk.
+
+63
+00:06:37,680 --> 00:06:41,360
+So like, just ship it, let's move quick, let's break things, let's whatever.
+
+64
+00:06:41,840 --> 00:07:06,960
+And then when you go down that, you know, deeper spectrum, is there, is there, you know, the further you get on the, you know, untested and hard to revert scale, is that where, you know, being more diligent about, you know, brainstorming downsides, you know, really talking to users beforehand, you know, maybe even prototyping and presenting it to users beforehand.
+
+65
+00:07:07,920 --> 00:07:16,560
+Is that how you kind of think about the spectrum is, is like just doing so much more diligence before implementing something that's hard to test and or hard to revert?
+
+66
+00:07:17,200 --> 00:07:19,040
+Yeah, yeah, it's a great question.
+
+67
+00:07:19,520 --> 00:07:23,760
+I'd frame it a little bit differently, but I think it's exactly the variables that you're getting at.
+
+68
+00:07:24,240 --> 00:07:36,320
+I think maybe the first set of questions I would be asking is for this change that I want to make, right, this bet that I want to make, is it testable or not, just kind of as a binary question.
+
+69
+00:07:37,840 --> 00:07:40,640
+And that really is a cost question more than anything else, right?
+
+70
+00:07:40,880 --> 00:07:46,000
+Like if you decided, no matter what, I'm going to test this change, there's probably a way to do it.
+
+71
+00:07:46,240 --> 00:07:47,360
+Software is very flexible, right?
+
+72
+00:07:47,680 --> 00:07:52,400
+We're very creative people like you can do it, but it's really a cost question at that point, right?
+
+73
+00:07:52,560 --> 00:07:59,120
+Like, is it worth spending weeks or months designing the perfect test for this particular problem that I have?
+
+74
+00:07:59,760 --> 00:08:04,960
+And is that particular problem, uh, is the downside risk high enough that it's worth testing?
+
+75
+00:08:05,440 --> 00:08:08,480
+Um, so that's kind of like the first question that you're asking.
+
+76
+00:08:08,960 --> 00:08:13,840
+But then I think on the other side of that, there's also the benefit that you get from testing something, right?
+
+77
+00:08:14,080 --> 00:08:18,880
+So like, first it's just the feasibility of whether this is possible, um, you know, in a reasonable time horizon.
+
+78
+00:08:19,200 --> 00:08:21,600
+But then it's the benefit that you get from testing as well, right?
+
+79
+00:08:21,920 --> 00:08:30,640
+So like a well designed AB test is going to tell you something about the impact of the variable that you're testing that you might not be able to discover otherwise.
+
+80
+00:08:31,120 --> 00:08:34,000
+And so it may be that it's a low risk variable.
+
+81
+00:08:34,640 --> 00:08:55,040
+It may be that the downside risk is not super concerning to you, but that the positive side of learning something about how much this feature matters to your customers, what the impact is of this particular change, what it tells you about their perception of your product, that the increased learning on the other side of that is worth it at a sufficiently low investment point.
+
+82
+00:08:55,520 --> 00:08:59,680
+You're not going to spend months to answer some of those questions, but will you spend a couple of days, a couple of weeks?
+
+83
+00:08:59,920 --> 00:09:03,200
+Maybe, like, if it matters enough for your business, yeah, that's a great trade.
+
+84
+00:09:04,240 --> 00:09:07,440
+Yeah, that's that's a great way to kind of reframe what I was getting at there.
+
+85
+00:09:08,880 --> 00:09:10,960
+You know, it's just such a tough balancing act.
+
+86
+00:09:11,120 --> 00:09:13,520
+I mean, there's so many factors in all of this.
+
+87
+00:09:14,960 --> 00:09:27,760
+And one of the last factors I wanted to kind of hit on before we move on to other parts of the testing is where does product intuition sit in in this spectrum?
+
+88
+00:09:28,000 --> 00:09:30,240
+All the tension pulling different directions.
+
+89
+00:09:30,560 --> 00:09:36,960
+And you haven't had a chance to listen to this yet, but we actually, Jacob and I recorded at PyCon.
+
+90
+00:09:36,960 --> 00:09:38,240
+a recorder at a podcast with Duolingo recently.
+
+91
+00:09:38,640 --> 00:09:38,720
+Yeah.
+
+92
+00:09:39,120 --> 00:09:46,640
+And they've kind of built a whole company around testing so that when an idea comes up, it's very low cost to implement.
+
+93
+00:09:47,200 --> 00:09:52,320
+They have systems to mitigate risk by rolling it out to, to small portions of the customers.
+
+94
+00:09:53,360 --> 00:09:57,280
+And their whole culture is around testing and they run so many tests.
+
+95
+00:09:57,360 --> 00:10:03,600
+They know how to do tests that they can just throw stuff against the wall and, and see if it sticks.
+
+96
+00:10:05,600 --> 00:10:07,280
+But other companies don't.
+
+97
+00:10:08,640 --> 00:10:15,760
+And other companies are kind of, you know, Apple being a famous example, like they don't do it a ton of AB testing on and it's hard to do.
+
+98
+00:10:15,920 --> 00:10:19,840
+I mean, how do you AB test an API that you're releasing to developers?
+
+99
+00:10:20,160 --> 00:10:22,400
+You know, you can't really AB test hardware.
+
+100
+00:10:22,640 --> 00:10:25,360
+I mean, there's there, there are limits to testability.
+
+101
+00:10:26,080 --> 00:10:35,360
+So, so that's just another really interesting spectrum from kind of like product autour where you just make the decisions and don't really necessarily care.
+
+102
+00:10:36,240 --> 00:10:39,440
+It's like, this is the product you want to build and you're just going to build it.
+
+103
+00:10:40,640 --> 00:10:57,920
+And then, you know, all the way to Duolingo, probably being one of the more extreme examples that we see in the industry of the whole company being built around and even kind of fashioning a moat of being able to experiment rapidly and improve the product in that way.
+
+104
+00:10:58,480 --> 00:11:05,680
+So, so where, yeah, how do you think about product intuition and the spectrum all the way to just test everything?
+
+105
+00:11:06,400 --> 00:11:06,960
+Yeah, yeah.
+
+106
+00:11:07,760 --> 00:11:16,640
+So I've never spoken to anyone at Duolingo, but let me let me do my best to try to give the answer that I think they would give that probably puts it all together.
+
+107
+00:11:18,400 --> 00:11:23,680
+Duolingo has some kind of a product strategy and intuition that's right.
+
+108
+00:11:23,840 --> 00:11:26,080
+That's driving their in initial decisions, right?
+
+109
+00:11:26,400 --> 00:11:30,800
+Like they're in the teaching space at the broadest level, right?
+
+110
+00:11:31,840 --> 00:11:33,760
+I think maybe cut this out if I'm wrong.
+
+111
+00:11:33,920 --> 00:11:35,200
+I think they're building a math product.
+
+112
+00:11:35,360 --> 00:11:36,560
+I think I've seen marketing around that.
+
+113
+00:11:36,720 --> 00:11:37,440
+Yeah, yeah, yeah.
+
+114
+00:11:37,680 --> 00:11:38,000
+That's great.
+
+115
+00:11:38,080 --> 00:11:38,960
+I actually downloaded it.
+
+116
+00:11:39,120 --> 00:11:39,680
+Yeah, yeah, yeah.
+
+117
+00:11:39,760 --> 00:11:40,640
+I guess the marketing is working.
+
+118
+00:11:40,800 --> 00:11:42,400
+That's a real thing that I conjured up.
+
+119
+00:11:44,160 --> 00:11:54,080
+So like they have some sense of a product strategy already that they're that limits the possible directions that they're going to run in and the possible things that they're going to build.
+
+120
+00:11:55,120 --> 00:12:05,680
+And now within that, there are a thousand micro decisions about how it's going to work and who it's going to be for and everything like that that probably are quite testable.
+
+121
+00:12:06,080 --> 00:12:10,880
+If you've done the upfront investment to like build the system that makes it really inexpensive to test those things.
+
+122
+00:12:12,320 --> 00:12:22,160
+And that's really like, I think, a best of both world scenario where it's like, all right, we have a strategy that we're running down, a direction, and we've got lots of these little paths that we don't know which one to take.
+
+123
+00:12:22,400 --> 00:12:25,280
+And we're probably not going to spend weeks getting hung up on which path to take either.
+
+124
+00:12:25,520 --> 00:12:31,520
+But we've made it so inexpensive for us to try to find out just like on a probable spectrum, which one is better for us.
+
+125
+00:12:31,760 --> 00:12:35,040
+And we'll use that probability to weigh which path we're going to go down.
+
+126
+00:12:35,360 --> 00:12:36,720
+Like, I think that that's really like the.
+
+127
+00:12:37,280 --> 00:12:38,400
+best case scenario, right?
+
+128
+00:12:38,640 --> 00:12:46,560
+It's not going to, if you're figuring out whether to be a company that designs products for teaching or not, AB testing is not going to help you, right?
+
+129
+00:12:47,840 --> 00:12:50,160
+That's just like devoid of a product strategy at that point.
+
+130
+00:12:50,640 --> 00:13:01,920
+Or like a thesis on what you can build that's useful for customers in the world, but I definitely think that most of the micro decisions at the furthest end of that spectrum of how you're going to deliver it are theoretically testable.
+
+131
+00:13:02,160 --> 00:13:04,720
+And then it's just the cost benefit analysis of whether it's worth it.
+
+132
+00:13:05,440 --> 00:13:05,520
+Yeah.
+
+133
+00:13:06,400 --> 00:13:12,000
+So product intuition as a higher level framework to push those decisions.
+
+134
+00:13:12,880 --> 00:13:16,560
+And then I think some of this comes down to company stage two.
+
+135
+00:13:16,880 --> 00:13:37,920
+And this is what I wanted to talk about next, is that early on the cost to test and be sophisticated about testing, the cost of just throwing things against the wall is probably a little bit higher where maybe a great team does have a little more product intuition where they're not throwing everything against the wall.
+
+136
+00:13:38,160 --> 00:13:43,200
+They're placing bets that are have a higher likelihood of a good outcome.
+
+137
+00:13:43,840 --> 00:13:47,920
+So yeah, let's talk through that kind of how you think about testing.
+
+138
+00:13:49,200 --> 00:14:03,680
+an early stage app and maybe even in in a kind of less sophisticated ways big bets to um to kind of moving through all the way to a dualingo where you have you know a more sophisticated stack built out to do as much testing as you want.
+
+139
+00:14:04,160 --> 00:14:04,800
+Yeah, totally.
+
+140
+00:14:05,200 --> 00:14:23,600
+And I mean, I think this is where like the framework of thinking about everything as a test is really helpful because then you don't necessarily have to design the perfect AB test to still think about something as an experiment that should have some kind of measurement on the other side of that, you know, to the to the best of your ability.
+
+141
+00:14:24,080 --> 00:14:38,720
+Because like the cost benefit that we've been talking about, like if you're a one person team and your product is, you know, less than a year old and you've got a mountain of things that you know you need to add to it, like designing the perfect AB test is not going to be high on your priority list and it shouldn't be right.
+
+142
+00:14:38,880 --> 00:14:39,520
+Like the right.
+
+143
+00:14:39,920 --> 00:14:47,840
+The upside you're going to get from that probably is not more significant than spending a couple of weeks delivering the benefit that your customers have been begging you for.
+
+144
+00:14:49,200 --> 00:14:53,120
+So yeah, I mean, you have to be doing the cost benefit analysis at every stage.
+
+145
+00:14:53,360 --> 00:15:02,480
+And I think in the case where you can't design the perfect AB test, there are lots and lots of other ways to measure the result of the changes that you're making.
+
+146
+00:15:02,560 --> 00:15:02,720
+Right?
+
+147
+00:15:02,880 --> 00:15:11,280
+If you just ship it to the app store and look at whatever analytics tool you're using and filter that down to only folks on the new app version, like you're going to learn something.
+
+148
+00:15:11,440 --> 00:15:11,600
+Right?
+
+149
+00:15:11,680 --> 00:15:12,480
+It's not going to be perfect.
+
+150
+00:15:13,040 --> 00:15:17,760
+Things change between, you know, the week that you release the last version and the week that you release the new version.
+
+151
+00:15:18,160 --> 00:15:22,800
+Um, but for things that are sufficiently impactful, you can usually detect that as well.
+
+152
+00:15:22,960 --> 00:15:23,120
+Right?
+
+153
+00:15:23,200 --> 00:15:30,240
+Like everyone in the app development world has done the opposite where they ship like a terrible bug and like quickly figure out that it was because of this app version.
+
+154
+00:15:30,400 --> 00:15:30,560
+Right?
+
+155
+00:15:30,720 --> 00:15:34,480
+So if you could do the invers, you could, you'd probably do the positive version of that too.
+
+156
+00:15:35,040 --> 00:15:35,280
+Right.
+
+157
+00:15:35,680 --> 00:15:38,560
+It's harder with smaller changes and harder as you scale, right?
+
+158
+00:15:38,720 --> 00:15:47,200
+Like, nothing of this is perfect, but there's, there's totally still ways to run educated tests, even if they're not sophisticated tests at low cost.
+
+159
+00:15:48,080 --> 00:15:48,160
+Yeah.
+
+160
+00:15:48,400 --> 00:15:51,360
+And I think that's where some folks get hung up though.
+
+161
+00:15:51,520 --> 00:15:58,480
+And I mean, you know, a completely silly example would be, you know, AB testing two different colors on the buy button of a paywall.
+
+162
+00:15:58,560 --> 00:16:08,400
+It's like, yeah, when you're early, there's probably much lower hanging fruit than, like, designing a test for the color of the, of the call to action button on your paywall.
+
+163
+00:16:08,720 --> 00:16:09,040
+Totally.
+
+164
+00:16:09,280 --> 00:16:12,000
+And I mean, even that's perfect too, because like, you could try it.
+
+165
+00:16:12,160 --> 00:16:14,960
+You could change the color, you know, really sit in the new app version.
+
+166
+00:16:15,920 --> 00:16:18,960
+If you can't tell which one won, then you learn that it doesn't matter, right?
+
+167
+00:16:19,120 --> 00:16:22,880
+Like you don't you didn't learn which one won, but you did learn that it doesn't matter for you right now.
+
+168
+00:16:24,400 --> 00:16:35,680
+Another aspect of this kind of growing company theme is that the source of traffic, the type of users you attract, the customer base changes over time.
+
+169
+00:16:35,840 --> 00:16:43,760
+So I'm curious to hear your thoughts on, you know, at Tel Tech, I'm sure you all experimented with all different kinds of marketing channels.
+
+170
+00:16:44,000 --> 00:16:54,400
+And as the app grew, you had new, you know, totally new cust kind of customer base is coming in and maybe new features that attracted new users for a whole new job to be done.
+
+171
+00:16:55,280 --> 00:17:15,200
+How do you think about both, you know, evolving the experimentation over time, but also kind of understanding that some of your past experience experiments might not be valid given these new cohorts coming in and then how those cohorts actually shape the results of the test even?
+
+172
+00:17:15,440 --> 00:17:15,520
+Yeah.
+
+173
+00:17:16,000 --> 00:17:16,080
+Yeah.
+
+174
+00:17:17,040 --> 00:17:17,600
+It's a great question.
+
+175
+00:17:17,760 --> 00:17:36,640
+It's a, I'll be honest and say it's a really hard one to perfectly account for when building products and designing tests, you know, like, based on my prior experience at Teltek, like, I can think of so many more instances where a conclusion that we made from a test became stale faster than we realized than the opposite, right?
+
+176
+00:17:36,880 --> 00:17:42,080
+Where like, you realize that your customer demographic has changed and now it's time to retest that hypothesis.
+
+177
+00:17:42,480 --> 00:17:56,400
+Um, so yeah, I mean, I guess like the one, uh, probably takeaway from that that I, I try to take to my, my experiences now is that like when you run a test, you are learning something about those customers at that time and your product in that situation.
+
+178
+00:17:56,960 --> 00:18:01,040
+And it's probably not going to go stale tomale at some point, right?
+
+179
+00:18:01,200 --> 00:18:08,160
+Like you should have a pretty healthy skepticism about, uh, you know, whether that's going to be true forever or whether that's just true for your product right now.
+
+180
+00:18:08,720 --> 00:18:20,320
+And then I guess maybe the, the correlated take away from that is for variables in your product that are sufficiently impactful, you should be thinking about what some kind of a regular testing cadence looks like, right?
+
+181
+00:18:20,560 --> 00:18:25,600
+Like where the paywall is, what's on it, how you're describing the benefits to your customers, right?
+
+182
+00:18:25,760 --> 00:18:30,080
+Like those should be part of your recurring testing process, not like we did that in 2018.
+
+183
+00:18:30,320 --> 00:18:32,000
+So like that's what our paywall looks like now.
+
+184
+00:18:32,720 --> 00:18:32,880
+Yeah.
+
+185
+00:18:33,600 --> 00:18:36,720
+Uh, another correlated insight there that I have.
+
+186
+00:18:36,720 --> 00:18:49,760
+I think there's one insight there that I just hadn't even thought of in quite this way before is that the results of tests in other apps are not necessarily and probably not directly applicable to your own app.
+
+187
+00:18:50,080 --> 00:19:05,440
+So, you know, when another app has a ton of success putting the paywall before onboarding, you don't want to just automatically assume that's a best practice and that you should do it because someone else said that that worked for their app.
+
+188
+00:19:06,160 --> 00:19:10,720
+How do you think about kind of filtering ideas from the ether and stuff we share on this podcast?
+
+189
+00:19:10,800 --> 00:19:11,920
+That stuff we'll talk about today.
+
+190
+00:19:12,640 --> 00:19:19,840
+How do you think about that in terms of applying it across this entire industry with so many different apps, so many different experiences?
+
+191
+00:19:20,240 --> 00:19:20,800
+Yeah, totally.
+
+192
+00:19:20,960 --> 00:19:21,920
+I mean, look, it's tough.
+
+193
+00:19:22,000 --> 00:19:23,120
+It's judgment calls, right?
+
+194
+00:19:23,440 --> 00:19:28,320
+Like you had JC Day on a couple of episodes ago with the Blinkist paywall.
+
+195
+00:19:28,800 --> 00:19:34,240
+I viscerally remember the first time I it was someone else on my team that showed me the Blinkist paywall.
+
+196
+00:19:34,320 --> 00:19:35,680
+And I was like, that's an interesting idea.
+
+197
+00:19:36,000 --> 00:19:38,720
+And then you start seeing other people trying it and it works.
+
+198
+00:19:38,800 --> 00:19:47,600
+And that like quickly snowballs into like, oh, there's a there's like a potentially applicable piece of like truth here about what's an effective way to sell your product that we should try.
+
+199
+00:19:47,680 --> 00:19:49,200
+And sure enough, we tried it it.
+
+200
+00:19:49,360 --> 00:19:52,160
+You know, it didn't have the same result in every one of our apps.
+
+201
+00:19:52,480 --> 00:19:55,840
+We had a portfolio, so we had the luxury of testing it in different places.
+
+202
+00:19:56,080 --> 00:19:57,760
+But yeah, like we saw some benefits too, right?
+
+203
+00:19:57,920 --> 00:20:06,080
+Like that was a case where you see the change enough times and you see the impact enough times that it builds the confidence level that there's something real here now.
+
+204
+00:20:06,320 --> 00:20:15,120
+At the same time, too, though, like there's going to be lots of other situations where you see some idea or have your own idea that doesn't necessarily have a lot of substantiation to it.
+
+205
+00:20:15,280 --> 00:20:15,440
+Right?
+
+206
+00:20:15,520 --> 00:20:18,640
+It's reasonable to suspect that it might help your business, right?
+
+207
+00:20:18,880 --> 00:20:24,480
+Like I should make it really obvious that there's a free trial on this product so that more customers, uh, join.
+
+208
+00:20:24,880 --> 00:20:26,960
+and see if there's actual real benefit to it.
+
+209
+00:20:27,280 --> 00:20:29,840
+Um, and you don't know if that's going to work, right?
+
+210
+00:20:30,000 --> 00:20:43,760
+And like, that's I think that's where it becomes so valuable to minimize the cost of running tests as much as possible because it you build up the incentives in your own decision making to say, yes, let's try it instead of, no, it's too expensive.
+
+211
+00:20:44,800 --> 00:20:44,880
+Yeah.
+
+212
+00:20:46,320 --> 00:21:04,080
+And, and, and, and that's an interesting thought too because there's so many different ways to reduce the cost and the cost both in risk and, you know, one of the things you talked about earlier is how, you know, at scale, you can roll out some of these changes in an AB test to a smaller portion of the users.
+
+213
+00:21:04,240 --> 00:21:13,280
+So you're mitigating the downside risk of it being a bad experiment, especially on something like a paywall where you're impacting monetization.
+
+214
+00:21:14,080 --> 00:21:28,000
+But then you go all the way down to, you know, like tooling, you know, and as we were talking about for an early stage app, part of the way you minimize risk and reduce cost to do the experiment is just don't worry about being incredibly sophisticated.
+
+215
+00:21:28,240 --> 00:21:30,560
+You're probably not going to get statistical significance anyway.
+
+216
+00:21:30,800 --> 00:21:31,760
+And we'll talk about that later.
+
+217
+00:21:32,560 --> 00:21:36,400
+But do it in the, the cheap way and design the test in a way.
+
+218
+00:21:37,120 --> 00:21:43,120
+that you can see the result without spending all that extra time, effort, tooling and all those other things.
+
+219
+00:21:43,600 --> 00:21:44,160
+Yeah, yeah.
+
+220
+00:21:44,640 --> 00:21:48,480
+And even like that, the Blinkist paywall example is such a good version of this.
+
+221
+00:21:48,880 --> 00:21:51,520
+For anyone that's not familiar, it's basically two parts, right?
+
+222
+00:21:51,760 --> 00:22:03,600
+One is on the paywall show the customer how their trial is going to work and then additionally send them a push notification at some point during that process so that they know the trial is about to end and they have this prompt to take the action.
+
+223
+00:22:04,320 --> 00:22:09,360
+If it's too expensive to add the push notification, like take the learning of like explain the trial, right?
+
+224
+00:22:09,680 --> 00:22:12,480
+Like make it really clear to them on the paywall how the trial is going to work.
+
+225
+00:22:13,120 --> 00:22:17,200
+That's, I'm certain, less time and energy than building the push notification.
+
+226
+00:22:17,360 --> 00:22:23,200
+Like you could, you could always slim down, uh, ideas like that to something that is a reasonable cost for you to take on.
+
+227
+00:22:23,840 --> 00:22:40,000
+And then, and then push that in an app update and look at the, uh, uh, paywall to free trial conversion rate the week before and then the trial conversion rate to, to paid and then take those same three metrics and look at them the next week.
+
+228
+00:22:40,560 --> 00:22:42,720
+And if you see a huge difference, it was a success.
+
+229
+00:22:43,200 --> 00:22:47,840
+If it's about the same, that probably didn't hurt.
+
+230
+00:22:48,000 --> 00:22:49,600
+If it goes down, reverse it.
+
+231
+00:22:49,840 --> 00:22:54,480
+And it's probably not that hard to just go ahead and reverse the paywall back to what you had before.
+
+232
+00:22:54,720 --> 00:22:55,760
+So totally, totally.
+
+233
+00:22:55,920 --> 00:22:58,960
+And you can go design the perfect AB test at that point too, right?
+
+234
+00:22:59,120 --> 00:23:01,520
+It's like, okay, we've got enough signal that this might matter.
+
+235
+00:23:01,840 --> 00:23:03,120
+Let's go do the perfect analysis.
+
+236
+00:23:03,600 --> 00:23:04,320
+You can always do that.
+
+237
+00:23:04,960 --> 00:23:05,120
+Yeah.
+
+238
+00:23:06,480 --> 00:23:10,320
+So we've kind of been talking theory and generalities.
+
+239
+00:23:10,800 --> 00:23:15,200
+I did want to take this into a more practical level.
+
+240
+00:23:15,680 --> 00:23:17,520
+So kind of a testing one hundred and one.
+
+241
+00:23:17,840 --> 00:23:22,960
+And I mean, to be honest, you know, I have never run very sophisticated tests in my own apps.
+
+242
+00:23:23,040 --> 00:23:23,520
+I'm indie.
+
+243
+00:23:23,920 --> 00:23:28,480
+I'm very much biased toward the, oh, just ship it and see what happens.
+
+244
+00:23:28,880 --> 00:23:28,960
+Yeah.
+
+245
+00:23:29,600 --> 00:23:31,280
+So I'll kind of share my bias.
+
+246
+00:23:32,560 --> 00:23:40,480
+But because of that, you know, I personally don't have a super deep understanding of how to run tests well.
+
+247
+00:23:41,280 --> 00:23:44,480
+And then I think our audience probably lands on a spectrum.
+
+248
+00:23:44,720 --> 00:23:54,480
+And even if you have done much more sophisticated testing, kind of revisiting the fundamentals with someone who's done it before, I think will be really valuable.
+
+249
+00:23:54,800 --> 00:24:05,600
+So that's what I wanted to do next, is just kind of talk through the steps of a good kind of testing plan and how to actually implement these kind of ideas that we've been talking about.
+
+250
+00:24:06,400 --> 00:24:12,080
+So the first step is to form a hypothesis, which I think a lot of people skip, which is funny.
+
+251
+00:24:13,040 --> 00:24:14,240
+And I mean, I've done this.
+
+252
+00:24:14,400 --> 00:24:16,640
+It's like, okay, I'm just going to add this feature.
+
+253
+00:24:17,120 --> 00:24:20,560
+And if I build it, they will come, it's going to make all this difference.
+
+254
+00:24:20,880 --> 00:24:27,440
+But I don't really ever sit down and say, okay, by changing the paywall in this way, I think this is going to happen.
+
+255
+00:24:27,760 --> 00:24:29,120
+And this is how I'm going to measure it.
+
+256
+00:24:29,280 --> 00:24:30,000
+So yeah.
+
+257
+00:24:30,400 --> 00:24:34,720
+How do you think about forming a hypothesis before doing anything else?
+
+258
+00:24:35,200 --> 00:24:35,840
+Yeah, totally.
+
+259
+00:24:36,000 --> 00:24:42,000
+I think there's a there's a couple of subtle benefits to it that you learn by not doing it.
+
+260
+00:24:42,160 --> 00:24:43,040
+Unfortunately, right?
+
+261
+00:24:43,200 --> 00:24:46,800
+Like this is a trial by fire, uh, uh, type of learning.
+
+262
+00:24:47,120 --> 00:24:54,480
+But, um, I mean, first, like when you're making a change to your product, whether you say it out loud or not, you have some kind of goal in mind, right?
+
+263
+00:24:54,640 --> 00:24:56,880
+There's a thing that you're looking to achieve.
+
+264
+00:24:57,280 --> 00:24:57,920
+It's fine.
+
+265
+00:24:58,080 --> 00:25:01,120
+Sometimes if you don't write it down, it's really helpful if you do write it down.
+
+266
+00:25:01,280 --> 00:25:06,160
+That way, you can, you have kind of this starting framework of like, okay, I think we're going to go do X.
+
+267
+00:25:06,560 --> 00:25:10,000
+If we do X, that's going to yield this in our business, this for our customers, right?
+
+268
+00:25:10,240 --> 00:25:12,720
+Like I've got my thesis on paper of why this outcome.
+
+269
+00:25:13,120 --> 00:25:14,640
+or this goal is worth striving for.
+
+270
+00:25:15,120 --> 00:25:19,600
+And then beyond that, I've got my thesis for why this particular change is going to result in that.
+
+271
+00:25:20,000 --> 00:25:26,400
+Where that becomes really critical is when the test does something that you don't expect, which happens all the time, right?
+
+272
+00:25:26,720 --> 00:25:32,240
+Like, and again, you could think of this in the non testing realm when you make any change to your product.
+
+273
+00:25:32,560 --> 00:25:35,840
+Like, how many times do you discover something that you didn't expect from that?
+
+274
+00:25:36,000 --> 00:25:37,040
+Like, almost every time.
+
+275
+00:25:38,240 --> 00:25:40,800
+And so that's certainly true with AB tests that you run.
+
+276
+00:25:41,360 --> 00:25:51,280
+And then if you've written down the goal that you have initially, written down what you expect to happen from the test, you have the test., you have your results, you can see whether or not it does that.
+
+277
+00:25:51,600 --> 00:25:54,320
+You're learning something about the variables in your product, right?
+
+278
+00:25:54,560 --> 00:26:02,240
+You're learning something about the impact that they actually do have, how that does and doesn't match your expectations, and therefore how your expectations need to change in the future.
+
+279
+00:26:03,760 --> 00:26:14,160
+The other part of this, too, that I would be remiss if I didn't hit on, is when you write down what you expect to happen in advance, that gives you the prompt to go, make sure that you can measure the thing that you're hoping to happen.
+
+280
+00:26:14,320 --> 00:26:14,480
+Right.
+
+281
+00:26:14,800 --> 00:26:22,720
+And it has happened, lots and lots of times for me, that I want to measure X, and I run the test, and I go to measure X, and I can't measure X.
+
+282
+00:26:22,960 --> 00:26:26,880
+And like, there are a few more frustrating moments than that when it comes to experimentation.
+
+283
+00:26:27,280 --> 00:26:27,360
+Yeah.
+
+284
+00:26:27,600 --> 00:26:31,760
+Well, and that leads us to kind of the next step is then to actually design the test.
+
+285
+00:26:32,160 --> 00:26:32,240
+Yeah.
+
+286
+00:26:32,480 --> 00:26:38,800
+So you've you form the hypothesis and you make sure it is measurable.
+
+287
+00:26:39,120 --> 00:26:40,960
+Now, how do you design the test?
+
+288
+00:26:41,680 --> 00:26:41,760
+Yeah.
+
+289
+00:26:42,000 --> 00:26:49,120
+I some of the kind of high level questions that I think you'd be asking at this point and deciding on, first is just like what tools are you going to use, right?
+
+290
+00:26:49,680 --> 00:26:51,280
+That's a lot of what we've talked about so far.
+
+291
+00:26:51,440 --> 00:27:00,160
+Like, is it a test where you're just going to make the change in your product and release it to everyone and try to measure between different time periods what the impact was?
+
+292
+00:27:00,160 --> 00:27:00,240
+was.
+
+293
+00:27:01,280 --> 00:27:08,320
+Do you have some kind of AB testing solution where you can in the app split those changes in a perfect world?
+
+294
+00:27:08,880 --> 00:27:17,520
+Do you have an AB testing solution where you can make those changes remotely and then you're not dependent on an app release to turn on and off the test that you're running?
+
+295
+00:27:17,840 --> 00:27:27,840
+And then even beyond that, too, do you have the right filtering in place both for which customers you want to expose the test to and then how to measure the result on the other side of that, right?
+
+296
+00:27:28,080 --> 00:27:31,520
+So like just as an example, you're let's do the blinkest paywall again.
+
+297
+00:27:31,680 --> 00:27:33,040
+You're building your blinkest paywall.
+
+298
+00:27:33,040 --> 00:27:35,360
+You're going and releasing it to your customers as an AB test.
+
+299
+00:27:35,920 --> 00:27:38,240
+That's app version 6.0.
+
+300
+00:27:38,960 --> 00:27:47,040
+You need to only measure customers that are in app version 6.0 because there's still going to be other people using your app that might hit your paywall that will never see that experience because it wasn't there.
+
+301
+00:27:47,280 --> 00:27:47,760
+Right.
+
+302
+00:27:48,400 --> 00:27:56,720
+And so you've got to make sure you know exactly which customers are going to get exposed to this test and make sure that you can measure just the impact on those customers on the other side of it.
+
+303
+00:27:57,040 --> 00:28:05,040
+Yeah, I think those are kind of like the biggest questions I'd be asking when designing the test to make sure that the thing that I have in mind is actually achievable and measurable through the tools that I have.
+
+304
+00:28:05,600 --> 00:28:05,680
+Yeah.
+
+305
+00:28:06,480 --> 00:28:09,840
+In designing a test, have you ever or heard of someone?
+
+306
+00:28:09,920 --> 00:28:11,360
+Because I was just thinking about this.
+
+307
+00:28:12,960 --> 00:28:37,760
+Specifically done user follow up like this user saw a or this cohort of users saw a and we're going to send them a prompt to do a survey and this these users saw b and we're going to send them a prompt to do the survey and look at actual like quantitative data from your user base versus just trying to like figure out the results from a qualitative standpoint.
+
+308
+00:28:38,080 --> 00:28:39,280
+Yeah, yeah, it's a great question.
+
+309
+00:28:39,920 --> 00:28:53,280
+I'm sorry to say I can't think of many like specific examples where I've done that personally but I can absolutely imagine where especially for tests that don't draw an obvious reason for their conclusion, right?
+
+310
+00:28:53,520 --> 00:28:59,840
+Like we've been talking about paywall testing a lot and maybe, maybe paywall testing is, uh, is not the best example for this, right?
+
+311
+00:29:00,000 --> 00:29:09,600
+If you're changing your price point, that probably does change the customer's perception of the value of the product, but maybe in like really subconscious ways that would be hard to pull out in a conversation.
+
+312
+00:29:10,000 --> 00:29:12,720
+Whereas like, we'll use the blink as paywall again, right?
+
+313
+00:29:13,040 --> 00:29:24,160
+I, uh, if I use that design to show you explicitly how the trial is going to work, I could totally see the benefit in talking to that customer on day three of their trial and trying to understand, do you view this product differently?
+
+314
+00:29:24,720 --> 00:29:25,920
+Do you see the risks of it differently?
+
+315
+00:29:26,160 --> 00:29:32,240
+Do you feel safer using it than you would have otherwise if you saw a paywall on day one and think you're kind of stuck here more or less?
+
+316
+00:29:33,440 --> 00:29:40,320
+So no, I've not done that, but I think it's an excellent addition to the quantitative data that you get from the test itself.
+
+317
+00:29:40,960 --> 00:29:40,960
+Yeah.
+
+318
+00:29:42,080 --> 00:29:43,520
+Yeah, I think that would be really interesting.
+
+319
+00:29:44,480 --> 00:29:58,560
+I don't know exactly how you would set that up, but yeah, it could be a really interesting kind of qualitative way to measure the results of a hypothesis, especially since you really can't get only so much from hard data.
+
+320
+00:29:58,960 --> 00:30:00,560
+And we talk about it a lot in the podcast.
+
+321
+00:30:00,560 --> 00:30:06,880
+I've talked to a lot in the podcast, I've talked to a lot of different apps where, you know, some of their bigger insights came from actually talking to users.
+
+322
+00:30:07,040 --> 00:30:10,960
+And so incorporating that into a testing scheme could be really powerful.
+
+323
+00:30:11,440 --> 00:30:11,520
+Yeah.
+
+324
+00:30:11,760 --> 00:30:14,160
+And just a note to on how you might accomplish it.
+
+325
+00:30:15,040 --> 00:30:41,520
+Little tip, I would definitely recommend when you run a test to your customers, an AB test in particular, if you're able to tag that fact to that customer's profile in some way, definitely do it like a user attribute or an event that tells you which variant they saw, whatever the case may be, six months from now, you might be seeing some change in your product and you're not sure what it's for, being able to see which customers are driving that change and whether they were exposed to something unusual in the product is hugely valuable.
+
+326
+00:30:42,160 --> 00:31:00,720
+Yeah, that's such a great point is that, yeah, when you're designing the test, make sure you tag the users who saw it in a meaningful way that you can go back and understand over the long haul because you're going to measure that, we'll talk about it more later, but you're going to measure the results at one point in time, but those results can change over time.
+
+327
+00:31:01,200 --> 00:31:01,440
+Totally.
+
+328
+00:31:02,400 --> 00:31:05,680
+So step three, sanity check.
+
+329
+00:31:06,080 --> 00:31:12,400
+Tell me about why and how to sanity check a design plan or a test.
+
+330
+00:31:13,520 --> 00:31:14,240
+Yeah, yeah, yeah.
+
+331
+00:31:14,880 --> 00:31:25,040
+It partially gets back to the idea that I was referring to before that it can be, it can be so easy to create a change, right?
+
+332
+00:31:25,280 --> 00:31:31,280
+Create a test that you want to run and assume it's going to answer the question that you have and then go run it and find that that's not the case.
+
+333
+00:31:32,240 --> 00:31:38,320
+And so this sounds kind of obvious, but it really is very important at this point to say, all right, I'm going to make this change.
+
+334
+00:31:38,720 --> 00:31:41,600
+It's going to be exposed to this customer, you know, for this amount of time.
+
+335
+00:31:42,160 --> 00:31:44,480
+As a result, I think this measurement is going to change.
+
+336
+00:31:44,880 --> 00:31:48,720
+Now I'm going to go try to find that measurement in the existing tools.
+
+337
+00:31:49,120 --> 00:31:55,200
+that I have today and make sure that I can split my data accurately to understand what the impact of that was.
+
+338
+00:31:55,520 --> 00:31:59,920
+And then even beyond that, too, it's not just whether I can measure the change that I'm making or not.
+
+339
+00:32:00,320 --> 00:32:06,480
+It's also does this thing that I'm measuring actually prove or disprove my hypothesis, right?
+
+340
+00:32:07,520 --> 00:32:19,520
+Does the goal that I set out to answer, the thing that I want to learn about my product or my customers, is it answered by this data point or is there something else that I need to be tracking and adding to this to actually have a full picture of that?
+
+341
+00:32:20,400 --> 00:32:32,640
+I'm curious as a PM at Tel Tech, was there kind of amongst other PMs or when you eventually were head of product, was there kind of a process for this?
+
+342
+00:32:32,880 --> 00:32:34,720
+Like, okay, I've designed my testing plan.
+
+343
+00:32:35,040 --> 00:32:42,960
+Like, I want at least one other PM or engineer or someone else at the company to kind of sign off on it before we actually, you know, drop it into the app.
+
+344
+00:32:43,440 --> 00:32:43,520
+Yeah.
+
+345
+00:32:43,840 --> 00:32:43,920
+Yeah.
+
+346
+00:32:44,160 --> 00:32:45,840
+So I can't take total credit for this.
+
+347
+00:32:46,240 --> 00:32:52,960
+I had one of the PMs on my team read the checklist manifesto and started preaching the fact that like, we should probably have checklists for more things.
+
+348
+00:32:53,840 --> 00:32:56,160
+We said, Yeah, we really should have checklists for more things.
+
+349
+00:32:56,880 --> 00:33:00,800
+And so we ended up developing just a simple checklist every time you run an AB test.
+
+350
+00:33:00,800 --> 00:33:01,120
+And then you're going to do an AB test.
+
+351
+00:33:01,760 --> 00:33:03,920
+But yeah, it's exactly for that purpose.
+
+352
+00:33:04,160 --> 00:33:10,080
+One is kind of like for your own personal sanity to say, all right, did I actually set this up the way I intended?
+
+353
+00:33:10,320 --> 00:33:11,600
+Have I done everything I need to do?
+
+354
+00:33:11,840 --> 00:33:15,760
+And then part of that was what we call the peer review where you just send that checklist to someone else.
+
+355
+00:33:16,080 --> 00:33:19,760
+They go through it, they check everything and they check it off that they've done the peer review.
+
+356
+00:33:19,920 --> 00:33:20,000
+Yeah.
+
+357
+00:33:20,640 --> 00:33:22,480
+Most of the time you find nothing, right?
+
+358
+00:33:22,720 --> 00:33:23,680
+Most of the time that's just great.
+
+359
+00:33:23,840 --> 00:33:26,160
+It looks good, but it's the same idea as code reviews, right?
+
+360
+00:33:26,400 --> 00:33:30,640
+Like if the change that you're making is sufficiently important, you should have someone take a look at it beforehand.
+
+361
+00:33:30,800 --> 00:33:34,320
+And so checklists are the non-tech version of doing the same thing.
+
+362
+00:33:34,800 --> 00:33:34,880
+Yeah.
+
+363
+00:33:36,240 --> 00:33:43,920
+Part of sanity checking the plan is also, and this is where I wanted to get into statistical significance.
+
+364
+00:33:44,240 --> 00:33:49,440
+So it's something I don't really, I'm not a mathematician.
+
+365
+00:33:50,400 --> 00:33:56,000
+I did advance like physics and stuff, but not statistics in college, so this is an area I'm weak in.
+
+366
+00:33:56,080 --> 00:34:11,680
+And I think a lot of people in the industry aren't mathematicians themselves either, but are trying to measure results and understand whether those results are meaningful or not.
+
+367
+00:34:11,920 --> 00:34:12,320
+So yeah.
+
+368
+00:34:12,320 --> 00:34:16,160
+So, when you're sanity checking, that's probably one of the things you do, right?
+
+369
+00:34:17,440 --> 00:34:26,640
+Is this a something that we're going to measure in a sophisticated way that we're going to understand statistical significance or is it something we're going to measure in a less sophisticated way?
+
+370
+00:34:26,960 --> 00:34:27,040
+Yeah.
+
+371
+00:34:27,360 --> 00:34:41,280
+Um, and so then, so first, and I've just wanted to do this for a while, just have someone like explain statistical significance, like I'm five or maybe like I'm post college and actually do have some math background.
+
+372
+00:34:41,440 --> 00:34:43,760
+You're your product manager on the first day of the job.
+
+373
+00:34:44,560 --> 00:34:45,360
+Yeah, there you go.
+
+374
+00:34:45,680 --> 00:34:56,480
+And then, and then let's talk about then how you filter the design against the sanity of actually being able to get those results or having to measure it in a different way.
+
+375
+00:34:56,960 --> 00:34:57,680
+Yeah, totally.
+
+376
+00:34:58,400 --> 00:35:10,000
+So I guess the first major caveat is that if you put a piece of paper in front of me and said, you know, figure out how to measure statistical significance like without using like the calculators that exist online, I would fail that test, right?
+
+377
+00:35:10,240 --> 00:35:21,840
+Like, but I think the important part is to just understand what it is saying so that you know what it is not saying and then can, uh, can filter your assumptions and your, uh, your understanding accordingly.
+
+378
+00:35:22,240 --> 00:35:35,040
+Basically what statistical significance is measuring it's frequently expressed as 90% statistical significance or 95% or 99% that's the p value of the the analysis that you're doing.
+
+379
+00:35:35,840 --> 00:35:50,720
+If something is, if a change that you've made on your variant is 99% statistically significant, basically what that's saying is that there's a 1% chance that the opposite is true and your control group in this case performs better than your variant group.
+
+380
+00:35:51,440 --> 00:35:51,840
+Gotcha.
+
+381
+00:35:52,400 --> 00:35:56,320
+Importantly, it says absolutely nothing about the degree of success, right?
+
+382
+00:35:56,640 --> 00:36:05,200
+So like it's saying in 99% of circumstances, this variant is performs ever so slightly or maybe significantly better than the control does, right?
+
+383
+00:36:05,440 --> 00:36:08,560
+It doesn't tell you that it's a ten percent or twenty or fifty percent winner.
+
+384
+00:36:09,040 --> 00:36:09,200
+Right.
+
+385
+00:36:09,920 --> 00:36:32,560
+And then with the actual math behind that is that the higher degree of the result, so if you showed a control and a new paywall and the new paywall performed forty percent better, then you actually do need fewer paywall completions to actually get to statistical significance, correct?
+
+386
+00:36:32,720 --> 00:36:35,600
+Exactly, exactly, which intuitively makes sense once you understand that, right?
+
+387
+00:36:36,240 --> 00:36:50,240
+Like if all I'm trying to do is measure the probability that the variant is any degree better than the control, then I could do that by running this test for a really, really long time and seeing a small difference, or I could do it for a short time and see a very significant difference, right?
+
+388
+00:36:50,560 --> 00:36:57,600
+It doesn't tell me that that very significant difference is going to hold, but it tells me there's a really good chance this is better than the control that I've been operating under.
+
+389
+00:36:58,160 --> 00:37:01,280
+So there's actually that other variable that you just mentioned, which is time.
+
+390
+00:37:02,160 --> 00:37:12,320
+And so, you know, again, someone like Duolingo operating at scale with, you know, whatever it is, tens of millions of daily active users, you can expose a test.
+
+391
+00:37:12,560 --> 00:37:19,760
+test to a very small percentage of those users for a very small amount of time and get statistically significant results.
+
+392
+00:37:20,560 --> 00:37:28,320
+But for, let's say, a smaller app to get to statistical significance, you're going to have to show it for a much longer time period.
+
+393
+00:37:28,960 --> 00:37:32,880
+How do you think about time influencing the results?
+
+394
+00:37:33,040 --> 00:37:48,880
+Where if you have to run a test for a month to get to statistical significance, is it even worth trying to measure statistical significance because of other changes and other variables that may be impacting those results over such a large time scale?
+
+395
+00:37:49,360 --> 00:37:50,080
+Yeah, totally.
+
+396
+00:37:50,240 --> 00:37:58,800
+I mean, I think the scientists of the world will yell at me for this, but I think if you make statistical significance like the holy grail, right?
+
+397
+00:37:59,200 --> 00:38:09,600
+The barometer that like we have to meet this particular threshold or we can't run the test, that can get really dangerous really quickly because again, if you just think about what it's measuring, right?
+
+398
+00:38:09,680 --> 00:38:13,840
+There's a, let's say there's a 90% chance that this variant outperforms the control.
+
+399
+00:38:14,800 --> 00:38:16,240
+What if there's a 70% chance?
+
+400
+00:38:16,400 --> 00:38:18,080
+What if there's a 50% chance, right?
+
+401
+00:38:18,400 --> 00:38:30,720
+Like there, there are plenty of other thresholds within that where you as someone with finite time, energy and resources and lots of other things that you'd rather spend your time doing are comfortable saying, yeah, I'm going to take the 70-30 bet that this might be better, right?
+
+402
+00:38:30,960 --> 00:38:34,640
+Because I've, I've, again, mitigated that risk in all of these other ways, right?
+
+403
+00:38:34,880 --> 00:38:44,480
+Maybe you've looked at the, the daily results of the experiment that you're running, and it shows that the variant is better than the control in 95% of days, right?
+
+404
+00:38:44,640 --> 00:38:46,640
+That's not statistical significance.
+
+405
+00:38:46,800 --> 00:38:53,680
+That's not the same thing as the other calculation, but that tells me something about the probability that this might be better than the control is, right?
+
+406
+00:38:53,920 --> 00:39:03,360
+So there's, there's other ways that you can look at your data to get to similar confidence levels that do not tell you statistical significance, but they do tell you something about the risk.
+
+407
+00:39:03,600 --> 00:39:08,880
+And like that, that's really what we're trying to mitigate here is the risk of us getting this decision wrong.
+
+408
+00:39:09,200 --> 00:39:11,200
+Yeah, that's such a great way to frame it.
+
+409
+00:39:13,040 --> 00:39:16,640
+Ultimately about risk mitigation.
+
+410
+00:39:18,000 --> 00:39:23,760
+Yeah, it's just making experiments and understanding the risk and the reward and then making decisions.
+
+411
+00:39:23,920 --> 00:39:36,800
+And that was actually the next place I wanted to go as well is that in this sanity check and I love that you had checklists at Teltek, where does user experience impact and product intuition kind of fit in?
+
+412
+00:39:36,800 --> 00:39:37,440
+intuition kind of fit into it.
+
+413
+00:39:37,600 --> 00:39:38,160
+Like, yeah.
+
+414
+00:39:39,040 --> 00:39:42,720
+At some point you probably design a test and then you just say, you know what?
+
+415
+00:39:43,040 --> 00:39:50,400
+This is just not the direction I want the product to go even if this test would show a meaningful result.
+
+416
+00:39:52,000 --> 00:39:53,120
+Where does that fit in?
+
+417
+00:39:53,600 --> 00:39:54,320
+Yeah, totally.
+
+418
+00:39:55,280 --> 00:39:55,920
+It's tough.
+
+419
+00:39:56,080 --> 00:40:03,120
+I mean, ideally you've been asking some of these questions throughout the whole cycle of designing the experiment, right?
+
+420
+00:40:03,280 --> 00:40:05,360
+Like forming your hypothesis and designing the test.
+
+421
+00:40:06,240 --> 00:40:15,840
+But yeah, I mean, before you actually run it, it's critical that you've at least got a view on like does this thing that I'veve designed align up with the value proposition of my product?
+
+422
+00:40:16,240 --> 00:40:22,000
+Does it align up with the way I want my customers to feel and think about the product?
+
+423
+00:40:24,240 --> 00:40:32,160
+If you imagine a different world where you're the only person working on this product, there's a really good chance you've done those things without consciously asking about it.
+
+424
+00:40:33,040 --> 00:40:36,080
+You're not going to design something that is appalling to you.
+
+425
+00:40:37,120 --> 00:40:41,840
+But as you have teams of people and larger and larger teams working on products, like everyone's got differences of opinion.
+
+426
+00:40:42,160 --> 00:40:48,320
+So it is really important that you're taking a step back and saying, all right, does this theoretical test that we could run?
+
+427
+00:40:49,120 --> 00:40:52,320
+Is this really the product we would want to build if we built it from scratch?
+
+428
+00:40:52,560 --> 00:40:55,200
+Does this align with our values, our strategy, our mission?
+
+429
+00:40:55,520 --> 00:40:58,000
+And look, like most of the time, the answer there is going to be yes.
+
+430
+00:40:58,160 --> 00:41:05,280
+Like it's pretty rarely that you get that far down the path and it's like, wait a second, like this does not advance learning in our products, right?
+
+431
+00:41:05,440 --> 00:41:08,320
+But like, but it's still critical, right?
+
+432
+00:41:08,480 --> 00:41:19,280
+Because like if that's, if that's missing, then you end up with just like a hodgepodge of experiences and decisions that don't align up into a cohesive product for your customers because they don't see it as a bunch of micro decisions.
+
+433
+00:41:19,760 --> 00:41:22,480
+They see it as one hopefully cohesive experience.
+
+434
+00:41:22,880 --> 00:41:23,040
+Right.
+
+435
+00:41:23,360 --> 00:41:24,240
+You sold them through your marketing.
+
+436
+00:41:24,880 --> 00:41:28,560
+And so, like, you've got to make sure like your product lines up with that pitch that you made to them.
+
+437
+00:41:29,360 --> 00:41:30,000
+Yeah, totally.
+
+438
+00:41:30,560 --> 00:41:39,120
+It was interesting talking to Duolingo because there internally there is this sanity check with, I believe he said, the CEO.
+
+439
+00:41:39,280 --> 00:41:39,360
+Yeah.
+
+440
+00:41:39,600 --> 00:41:53,120
+Where it's like, you know, if they were making kind of big product changes, even if something won, the final kind of check box was, you know, does the CEO think this is where we want to take the product?
+
+441
+00:41:53,840 --> 00:41:53,920
+Yeah.
+
+442
+00:41:54,240 --> 00:41:55,280
+Yeah, it's really interesting.
+
+443
+00:41:56,000 --> 00:41:59,680
+So the next step is to actually test, to run the test.
+
+444
+00:42:00,880 --> 00:42:09,360
+So that's pretty obvious, like you've made the plan and it's time to deploy the plan, but there are a lot of potential pitfalls.
+
+445
+00:42:10,160 --> 00:42:22,720
+So tell me about, you know, some of the, some of the ways you can screw up actually running the test that, that again, probably should be part of your checklist and part of the design, but that you just want to make sure as you're running the test that you check in on.
+
+446
+00:42:23,120 --> 00:42:23,680
+Yeah, totally.
+
+447
+00:42:24,640 --> 00:42:39,760
+So maybe the first big thing that I'd call out here is that when you, when you choose to run something as an AB test, right, where you're, uh, remotely or in some way differing the experience that your customers get, one of the costs associatedated with that is that you're making it somewhat harder to test as well.
+
+448
+00:42:39,920 --> 00:42:40,080
+Right.
+
+449
+00:42:40,320 --> 00:42:46,160
+Like, you know, if the, if every customer gets the same experience, then just download the app on test flight and see if it works.
+
+450
+00:42:46,320 --> 00:42:48,720
+You know, like it's, it's not that, that complex.
+
+451
+00:42:49,120 --> 00:43:00,720
+So when you're designing that, that AB test initially, and certainly before you, you know, press the start button to actually run the test, um, you've got to make sure you actually test those changes that you've made in the product and that they work as intended.
+
+452
+00:43:01,360 --> 00:43:02,800
+And that can be time consuming, right?
+
+453
+00:43:02,960 --> 00:43:08,640
+If you haven't thought about it beforehand, like thought about a way to, to set that up, uh, like that can catch you by surprise.
+
+454
+00:43:08,880 --> 00:43:12,560
+And that, just like with running the test in the first place, the more friction.
+
+455
+00:43:13,120 --> 00:43:19,280
+there is in testing that experience and making sure it's working properly, the easier it is to say, ah, don't worry about it.
+
+456
+00:43:19,360 --> 00:43:20,560
+Let's just run it and see what happens.
+
+457
+00:43:20,720 --> 00:43:20,880
+Right.
+
+458
+00:43:20,960 --> 00:43:28,640
+Like you're trying to incentivize yourself to do these prudent steps in between to make sure that everything is working properly.
+
+459
+00:43:28,960 --> 00:43:34,560
+And then other than that, like once the test itself is actually running, you don't want to be a slave to your data, right?
+
+460
+00:43:34,800 --> 00:43:37,440
+You don't want to be looking at it like every hour, every day.
+
+461
+00:43:37,680 --> 00:43:43,600
+Like, you know, I I've certainly been the victim of like looking at something after one day and getting really excited.
+
+462
+00:43:43,920 --> 00:43:48,160
+And then, you know, having to like shuffle my way out of the room later when it's like, ah, that didn't do anything.
+
+463
+00:43:48,240 --> 00:43:49,680
+I just got excited the first day.
+
+464
+00:43:50,880 --> 00:43:53,760
+But at the same time, like, you should be paying attention, right?
+
+465
+00:43:54,240 --> 00:44:04,320
+If, uh, for example, if you're changing something about your paywall that you're expecting to drive more conversions and you see a couple of days of like plummeting conversions, that's probably something, right?
+
+466
+00:44:04,480 --> 00:44:05,280
+Like, that's Yeah.
+
+467
+00:44:05,680 --> 00:44:07,520
+Again, we'll go back to statistical significance.
+
+468
+00:44:07,680 --> 00:44:14,080
+You haven't learned anything statistically significant, but your product intuition is going off that like, something wrong is happening here that we should investigate.
+
+469
+00:44:14,320 --> 00:44:16,640
+Um, you definitely pay close attention to the data.
+
+470
+00:44:17,040 --> 00:44:21,280
+Just be careful not to draw conclusions until you've, you've let it run for a sufficient amount of time.
+
+471
+00:44:22,320 --> 00:44:22,400
+Yeah.
+
+472
+00:44:22,720 --> 00:44:24,880
+And one of the things we probably should have talked about.
+
+473
+00:44:25,680 --> 00:44:34,160
+in designing the plan, but I think also it's something to double check as you're running the tests is to make sure that you're actually splitting well.
+
+474
+00:44:34,560 --> 00:44:34,640
+Yes.
+
+475
+00:44:35,520 --> 00:44:37,520
+That can be a huge issue.
+
+476
+00:44:37,680 --> 00:44:39,680
+So tell me a little bit about how you think about that.
+
+477
+00:44:40,080 --> 00:44:40,640
+Yeah, totally.
+
+478
+00:44:40,960 --> 00:44:49,920
+I mean, look, hopefully you're using, either you feel very confident in your own method of doing this or using a well tested tool to do this, right?
+
+479
+00:44:50,080 --> 00:44:54,480
+Like this is the type of thing that like at Teltek, we're not going to try to build that ourselves, right?
+
+480
+00:44:54,560 --> 00:44:58,320
+Like we're going to use a tool that is tailor made for this.
+
+481
+00:44:58,800 --> 00:45:03,360
+And then you're still making microro decisions about how those customers get split.
+
+482
+00:45:03,440 --> 00:45:03,600
+Right.
+
+483
+00:45:03,760 --> 00:45:12,240
+So, for example, a very risky test, we're not going to split, put all of our customers in that test and split them fifty fifty and see what happens.
+
+484
+00:45:12,400 --> 00:45:12,560
+Right.
+
+485
+00:45:12,640 --> 00:45:16,160
+Because, like, fifty percent of our user base having a terrible experience is really expensive.
+
+486
+00:45:16,240 --> 00:45:16,320
+Right.
+
+487
+00:45:16,800 --> 00:45:24,160
+So that's a situation where you might say, all right, if this risky test is still worth running, let's expose the test to ten percent of our customers.
+
+488
+00:45:24,480 --> 00:45:26,960
+So five percent get the control, five percent get the variant.
+
+489
+00:45:27,280 --> 00:45:40,000
+But then afterwards, yeah, exactly, to your point, you have to go and make sure that ninety percent of your customers are getting the intended experience, five percent are in your control group and five percent are in your variant group, because if that's not the case, throw your analysis away, right?
+
+490
+00:45:40,240 --> 00:45:43,520
+Like it's not measuring the thing that you think it will.
+
+491
+00:45:44,160 --> 00:45:49,840
+And so, yeah, those, those types of QA checks are critical and impossible to do before the test is running, unfortunately, right?
+
+492
+00:45:50,000 --> 00:45:52,800
+You can make sure it's set up, but that it's actually behaving as intended.
+
+493
+00:45:52,960 --> 00:45:55,680
+You're, you're doing that live once customers are actually being exposed.
+
+494
+00:45:57,040 --> 00:45:57,120
+Yeah.
+
+495
+00:45:57,280 --> 00:46:02,720
+And this is another area where having a much bigger user base makes that much easier.
+
+496
+00:46:02,800 --> 00:46:14,080
+That if you're, if you're trying to randomize five percent of your customers, ten percent, even fifty percent of your customers, sometimes the randomization can, can fail you, especially at Snow smaller sample sizes.
+
+497
+00:46:14,800 --> 00:46:22,160
+So the last part, and we could probably talk hours just on this, but is to actually analyze the results.
+
+498
+00:46:22,480 --> 00:46:24,640
+So we are getting short on time.
+
+499
+00:46:24,960 --> 00:46:33,040
+So let's just kind of do a kind of an overview of how you think about analyzing the results once you actually run the experiment.
+
+500
+00:46:33,600 --> 00:46:34,160
+Yeah, totally.
+
+501
+00:46:34,320 --> 00:46:42,880
+I mean, hopefully if you've followed kind of like the general themes that we've talked about already, analyzing the first order effects of your tests should be pretty easy, right?
+
+502
+00:46:43,120 --> 00:46:45,280
+You've already designed that analysis somewhere.
+
+503
+00:46:45,360 --> 00:46:46,320
+You know what you want to measure.
+
+504
+00:46:46,480 --> 00:46:47,360
+You know what your goal is.
+
+505
+00:46:47,680 --> 00:46:55,680
+And so you're going in to pull that up in whatever tool or interface you've designed for this and see if the result is what you expect or not.
+
+506
+00:46:55,840 --> 00:46:58,160
+Did your conversion rate go up as much as you expected?
+
+507
+00:46:58,400 --> 00:47:01,040
+Did customers engage with this feature as much as you expected?
+
+508
+00:47:01,440 --> 00:47:10,240
+It's really the second and third order consequences of your test that I think are what one most important to pay attention to here, and two can be really difficult to measure, right?
+
+509
+00:47:10,400 --> 00:47:13,280
+Because, like, by definition, they're the things you don't anticipate, right?
+
+510
+00:47:13,600 --> 00:47:23,680
+Like, if you expect that this feature that you expose to five percent of your customers, that twenty percent of those are going to engage with it, and the actual number is fifty, it's great news.
+
+511
+00:47:23,840 --> 00:47:25,200
+Well, let's go figure it out why.
+
+512
+00:47:25,360 --> 00:47:27,760
+Like, are more customers getting exposed to that than should have been?
+
+513
+00:47:28,160 --> 00:47:31,040
+Um, are we pitching something that's different than we expected?
+
+514
+00:47:31,200 --> 00:47:36,800
+Like, there are all sorts of these like little nuanced questions to go answer that are probably not going to be in your pre-designed analysis.
+
+515
+00:47:37,120 --> 00:47:40,480
+And then especially when it comes to like revenue producing tests, right?
+
+516
+00:47:40,640 --> 00:47:43,680
+Subscription-based tests like Ad RevenueCats World.
+
+517
+00:47:44,240 --> 00:47:49,280
+Um, the second and third order effects of your tests take months and years to materialize, right?
+
+518
+00:47:49,520 --> 00:48:01,280
+Like, the yearly retention rate on the annual subscription that you offer to your customers matters greatly in their ultimate lifetime value and which test is going to be more optimal for your business?
+
+519
+00:48:02,000 --> 00:48:03,840
+You can't answer that question for a year, right?
+
+520
+00:48:04,240 --> 00:48:05,120
+There's early signals.
+
+521
+00:48:05,360 --> 00:48:08,240
+There's their retention and their cancellation rates and all that jazz.
+
+522
+00:48:09,280 --> 00:48:13,120
+But that effect matters and it's a long time before you can perfectly measure it.
+
+523
+00:48:14,400 --> 00:48:15,440
+Yeah, that's great.
+
+524
+00:48:16,320 --> 00:48:26,640
+And then there's, yeah, there's so many ways to analyze the results and think about the analysis and how to do these follow-ups and how to cohort and all those things.
+
+525
+00:48:28,480 --> 00:48:35,680
+So maybe we'll do another podcast that does a deeper dive on the actual tooling and test design and stuff.
+
+526
+00:48:35,680 --> 00:48:36,160
+Yeah, yeah.
+
+527
+00:48:37,280 --> 00:48:42,800
+But that brings us to the last topic for today is RevenueCat is launching an experiments product.
+
+528
+00:48:43,360 --> 00:48:47,680
+And we're actually a kind of a one point zero of something that's been in beta for a long time.
+
+529
+00:48:48,880 --> 00:48:50,400
+And you led this project.
+
+530
+00:48:50,880 --> 00:48:56,240
+And so I wanted to first just get an overview of what experiments is.
+
+531
+00:48:56,400 --> 00:49:06,800
+And then I have so many questions, I won't get to all of them, but just so many questions about why we, I am also RevenueCat employee, why we built it.
+
+532
+00:49:08,000 --> 00:49:11,840
+But yeah, so just first let's talk about the product.
+
+533
+00:49:12,240 --> 00:49:12,800
+Yeah, totally.
+
+534
+00:49:14,480 --> 00:49:26,960
+The elevator pitch for why RevenueCat built experiments is that we are, if you're a RevenueCat customer, you're already using RevenueCat to remotely control your products and the offers that you make to your customers.
+
+535
+00:49:27,520 --> 00:49:33,840
+That is one of these huge cost centers in going and designing a pricing test that you might want to run.
+
+536
+00:49:34,800 --> 00:49:40,800
+And pricing is such a hugely valuable layer of optimizing your product, right?
+
+537
+00:49:41,040 --> 00:49:51,680
+Like the potential value you can unlock by finding the right price point and the right combination of price points, because frequently it's not just a single offer that you you're putting in front of your customers can be hugely valuable.
+
+538
+00:49:52,480 --> 00:50:02,080
+So for RevenueCat to make it easy to run experiments through this remote config setup that already exists is great for us.
+
+539
+00:50:02,320 --> 00:50:04,960
+It's really easy for us to build and make available to you.
+
+540
+00:50:05,360 --> 00:50:08,640
+It's really inexpensive for you to go use it as a RevenueCat customer.
+
+541
+00:50:08,880 --> 00:50:13,520
+And then, importantly, with price tests, again, the impact doesn't happen on day one, right?
+
+542
+00:50:13,760 --> 00:50:18,080
+Like when you raise your price, you're probably going to get fewer customers accepting it, right?
+
+543
+00:50:18,320 --> 00:50:19,360
+That's price elasticity.
+
+544
+00:50:19,520 --> 00:50:21,520
+It's different for every product, but it's there.
+
+545
+00:50:22,560 --> 00:50:27,200
+What you're hoping to do is that you get more customers paying you for a longer time, right?
+
+546
+00:50:27,440 --> 00:50:32,640
+Like that those trials convert to paying subscribers that they retain after their first month or first year's renewal.
+
+547
+00:50:33,440 --> 00:50:35,840
+And so that's that's RevenueCat's bread and butter, right?
+
+548
+00:50:36,000 --> 00:50:49,280
+So like that's where we're exposing the full customer journey of these experiments that you're running, so that the measurement is not as simple as what's the conversion rate today, but what is the full impact of this price experiment on the life cycle of that customer journey?
+
+549
+00:50:50,080 --> 00:51:02,400
+Yeah, that's one of the things that I'm so excited about and excited for you to have built it with all of your I would have been a terrible PM for this project.
+
+550
+00:51:03,360 --> 00:51:26,320
+But, but, you know, that's something I think a lot of people don't think about in price testing and paywall experimentation and other things that we've been able to build in from scratch is that, yes, you know, you don't get a, a full understanding of the LTV impacts of the price test for for a year when they, they, they fully churn.
+
+551
+00:51:27,040 --> 00:51:28,720
+But as you said, you get early signals.
+
+552
+00:51:28,880 --> 00:51:36,000
+And so, how does our experiments feature actually incorporate some of those early signals into the results?
+
+553
+00:51:36,800 --> 00:51:49,920
+compared to just doing a standard AB test, you know, A had X conversions at Y price and B had Z conversions at what's the next letter?
+
+554
+00:51:50,800 --> 00:51:51,840
+T price or whatever.
+
+555
+00:51:52,000 --> 00:51:53,680
+A, if you're not an Excel.
+
+556
+00:51:54,320 --> 00:51:54,400
+Yeah.
+
+557
+00:51:56,480 --> 00:52:00,000
+So how do we incorporate those signals into the actual result?
+
+558
+00:52:00,480 --> 00:52:03,920
+Yeah, the way we do it is basically just by providing those measurements, right?
+
+559
+00:52:04,160 --> 00:52:14,800
+Like, you know, RevenueCAD is not doing anything particularly sophisticated in this regard other than just having an opinion on what you need to measureure in order to run an effective pricing test.
+
+560
+00:52:15,040 --> 00:52:19,200
+So, like, for example, we're counting kind of like the typical things, right?
+
+561
+00:52:19,440 --> 00:52:25,200
+The number of initial conversions that you have, the number of paid customers that are generated, the conversion rates of those two values.
+
+562
+00:52:25,520 --> 00:52:28,960
+But then we'll also measure how many active subscribers each cohort has.
+
+563
+00:52:29,200 --> 00:52:32,720
+And that continues updating over the course of your test and weeks after it ends.
+
+564
+00:52:33,520 --> 00:52:38,000
+How many churn subscribers you've had, how many refunded customers you've had between those experiences.
+
+565
+00:52:39,520 --> 00:52:48,720
+Things like this that tell you not just what's happening today, but what's the likelihood of this customer to continue paying me for months and years to come, as hopefully my product continues to deliver value.
+
+566
+00:52:48,720 --> 00:52:49,360
+to them.
+
+567
+00:52:50,000 --> 00:52:55,280
+And then you can start to use those inputs to predict basically what your lifetime value is going to be.
+
+568
+00:52:56,000 --> 00:52:58,560
+You know, today we're not attempting to do that prediction for you.
+
+569
+00:52:58,960 --> 00:53:02,560
+That's a very custom answer for each business, right?
+
+570
+00:53:02,800 --> 00:53:07,120
+Like what the retention is of your customers, what the impact is of this price change that you've made.
+
+571
+00:53:08,080 --> 00:53:23,680
+But we'll give you all of those inputs that you can understand the likelihood of these customers to retain and then you can go do that cost assessment and mitigate the risk for yourself of what the likelihood is that this cohort is going to be more valuable, you know, a year or two years from now than your control group is.
+
+572
+00:53:24,320 --> 00:53:24,400
+Yeah.
+
+573
+00:53:25,040 --> 00:54:02,640
+And then one of the exciting things to me too, or another exciting thing is that, you know, over time, we will be, and from my understanding, this is not going to hit the one point zero, although you can tell me it's different because I haven't followed the development very closely, but being able to actually rerun the experiment, the same or not rerun the experiment, but actually revisit the results of the experiments, the experiment since we actually, you know, earlier we talked about you want to tag those users as to what they saw, what variant they saw, and then go back six months or a year and actually look at those different cohorts.
+
+574
+00:54:02,960 --> 00:54:06,080
+And so we automatically do that.
+
+575
+00:54:06,400 --> 00:54:13,920
+And from my understanding, it's on the road map to actually have a button where six months from now you can just update the results of the experiment and see.
+
+576
+00:54:14,480 --> 00:54:25,840
+And that's something that so few companies have the level of sophistication to go back six months or a year because it's really hard to re look at those experiments.
+
+577
+00:54:26,160 --> 00:54:30,800
+So yeah, tell us about why that's important and when the feature is coming.
+
+578
+00:54:31,200 --> 00:54:32,000
+I need a date, Dan.
+
+579
+00:54:32,400 --> 00:54:32,480
+Yeah.
+
+580
+00:54:33,600 --> 00:54:35,680
+Well, you know I'm going to dodge the date question, but.
+
+581
+00:54:37,840 --> 00:54:39,680
+But yeah, I mean, exactly what you said, right?
+
+582
+00:54:39,840 --> 00:54:47,520
+So like the way experiments are going to work out of the box is we'll continue refreshing your results for 28 days after the experiment ends.
+
+583
+00:54:47,760 --> 00:54:59,760
+So I mean, you imagine, imagine you run it for a month and you'll get about another month of data automatically on the other side of it, but especially for like, you know, yearly products and things like that, it's it's still such a narrow time horizon of the potential impact.
+
+584
+00:55:00,560 --> 00:55:08,000
+And so yeah, just like you said, we're working on the ability to basically go into that experiment, refresh the results and see what it looks at that new time horizon, right?
+
+585
+00:55:08,160 --> 00:55:10,560
+You're coming in six, nine, twelve months later.
+
+586
+00:55:11,360 --> 00:55:18,080
+And if we go back to one of the commentsments I made earlier about the value of just like tagging the customers that get exposed to your experiment.
+
+587
+00:55:18,560 --> 00:55:22,000
+Like under the hood, that's really the only piece of magic there, right?
+
+588
+00:55:22,240 --> 00:55:33,120
+It's just like, let's make sure we know which customers were exposed to this, and then you can go run any query for the data that you're tracking to understand what they're doing for a long enough time horizon.
+
+589
+00:55:34,000 --> 00:55:36,720
+So, you know, again, it's not magic that we're trying to do.
+
+590
+00:55:36,880 --> 00:55:45,200
+And in a lot of ways, other customers can really build this themselves too, but it's so critical to be able to just go back in and say, all right, this is a cohort, a snapshot in time.
+
+591
+00:55:46,240 --> 00:55:49,680
+What was the impact of this test on a longer time horizon.
+
+592
+00:55:49,840 --> 00:55:53,440
+So we'll help you do that automatically soon, but like you should do that for every test that you run.
+
+593
+00:55:54,640 --> 00:55:54,720
+Yeah.
+
+594
+00:55:55,840 --> 00:56:33,760
+So the last aspect of revenue cat experiments that I wanted to touch on is, and this is something I think a lot of people kind of underappreciate is that when every app creates their own data warehouse, when they run their own experiments infrastructure, when they do their own data analysis, this is one of the risk mitigation factors that we actually didn't talk about is it there can be b one line of code hidden somewhere that, you know, the conversion rate wasn't actually being tracked properly.
+
+595
+00:56:34,000 --> 00:56:36,640
+And so you're like, whoa, 40% increase.
+
+596
+00:56:36,880 --> 00:56:39,280
+Like the price is this is amazing.
+
+597
+00:56:39,440 --> 00:56:43,280
+Like the paywall, you know, totally rocked our world and it's going to make us so much money.
+
+598
+00:56:44,400 --> 00:56:45,520
+But there was actually a bug.
+
+599
+00:56:45,840 --> 00:56:55,280
+And when you're, you know, when you're kind of bespokely running experiments, things like that can creep in that you don't even realize.
+
+600
+00:56:55,600 --> 00:57:06,400
+And so I mean, I know, you know, I didn't follow it super closely, but, you know, I know we ran a beta where, you know, 15, 20 of our customers ran experiments knowing it was a beta.
+
+601
+00:57:06,880 --> 00:57:08,880
+And we found problems, we found bugs.
+
+602
+00:57:10,480 --> 00:57:31,840
+And, you know, RevenueCat, since we had 15 or 20 different customers across different app sizes, across different segments running different kinds of tests, you know, kind of gave us a level of confidence in the solution to now, you know, take it out of beta and release it as a product that we're, you know, fairly confident in.
+
+603
+00:57:32,000 --> 00:57:33,280
+And, you know, it's software.
+
+604
+00:57:33,520 --> 00:57:34,880
+There's going to be future bugs as well.
+
+605
+00:57:35,040 --> 00:57:36,480
+It's not, nothing's ever going to be perfect.
+
+606
+00:57:37,440 --> 00:57:50,320
+But talk about that kind of level of confidence in building a tool that we can solve those bugs for people and help give them even more confidence in their experimentation.
+
+607
+00:57:50,960 --> 00:57:51,680
+Yeah, totally.
+
+608
+00:57:52,080 --> 00:58:03,520
+And I think too, like this is maybe not super obvious if you've not like spent a lot of time thinking about it, but like they're pretty distinct components of what like an experimentation offering includes, right?
+
+609
+00:58:03,760 --> 00:58:06,880
+Like one of them is just like the splitting that we talked about before, right?
+
+610
+00:58:07,040 --> 00:58:13,440
+Like how do we make sure that we're actually splitting customers accurately and reliably across every period of this test.
+
+611
+00:58:14,400 --> 00:58:23,040
+And so, like, we literally have tests that run on our side every day for every experiment to check and see if the split was within a normal threshold of variance, right?
+
+612
+00:58:23,200 --> 00:58:28,640
+Like, that's just a thing that we have for every experiment that's running because that's how you make sure that it's running properly.
+
+613
+00:58:28,800 --> 00:58:34,080
+And, and it's the type of thing that, like, I can't speak with confidence, but I don't think we had that at Teltek, right?
+
+614
+00:58:34,160 --> 00:58:38,960
+Like, that's, that would be very expensive to build on an individual basis, the, the automated part of that.
+
+615
+00:58:39,440 --> 00:58:43,040
+Um, but for revenue cat offering experiments, it makes sense.
+
+616
+00:58:43,200 --> 00:58:45,680
+You know, the same is true with little stuff and like the UI, right?
+
+617
+00:58:46,000 --> 00:58:48,720
+Like, we're providing charts and tables to analyze all these things through it.
+
+618
+00:58:49,600 --> 00:58:50,880
+Do they show the right data?
+
+619
+00:58:51,120 --> 00:58:52,080
+Is it easy to access?
+
+620
+00:58:52,320 --> 00:58:53,360
+Do the filters work properly?
+
+621
+00:58:53,520 --> 00:58:58,640
+Like there's all sorts of like little issues that come up with that that just affect how easy it is for you to consume the test.
+
+622
+00:58:59,120 --> 00:59:00,240
+And then the last part of it, right?
+
+623
+00:59:00,480 --> 00:59:04,800
+The actual measurement that we're doing, like one that's revenue cats bread and butter, right?
+
+624
+00:59:05,120 --> 00:59:12,080
+That's what we do every day is interpret and measure a trial and a trial to paid conversion, a renewal and a cancellation, right?
+
+625
+00:59:12,400 --> 00:59:17,200
+All of those facts are kind of like exactly what we spend our time and energy on whether you're running a test or not.
+
+626
+00:59:17,520 --> 00:59:21,200
+And then there are certainly issues that can come up and how you like aggregate that data, right?
+
+627
+00:59:21,360 --> 00:59:29,760
+Like you're looking at a different view when you're looking at the cohort of your A group versus your B group versus just like what happened on X day in my product.
+
+628
+00:59:30,560 --> 00:59:42,000
+And so there are definitely like little issues like that can come up there, edge cases that we discover all the time in the product, but those are P zero issues for us and they're not always P zero issues for our customers, right?
+
+629
+00:59:42,160 --> 00:59:47,920
+Like that's that's our speciality is finding and interpreting those things and making sure the data is as robust as possible.
+
+630
+00:59:48,800 --> 00:59:48,880
+Yeah.
+
+631
+00:59:49,360 --> 00:59:58,720
+Well, you know, obviously biased, both of us here in the Subclub podcast talking about a revenue cat product, but I'm genuinely super excited.
+
+632
+00:59:58,800 --> 00:59:59,520
+I mean, this is, this is why.
+
+633
+01:00:00,000 --> 01:00:01,040
+I joined RevenueCat.
+
+634
+01:00:01,520 --> 01:00:09,840
+You know, I was an indie developer trying to build subscription app infrastructure, wasting time, having to solve all these bugs ourselves.
+
+635
+01:00:10,800 --> 01:00:15,040
+And now as a RevenueCat customer, I mean, I still have two apps live in the app store.
+
+636
+01:00:15,440 --> 01:00:35,360
+You know, I depend on RevenueCat day in and day out, you know, and having this experiments feature, you know, when we hired our data scientist, Baron, when we hired Baron, it felt like, hey, me little indie app developer gets a data scientist because Baron is working behind the scenes to make sure that experiments is.
+
+637
+01:00:35,680 --> 01:00:51,280
+is doing what it says it does and you, you know, you with all your experience are designing this experiment infrastructure and the result, measuring the results and designing it thoughtfully in a way that I could just never do.
+
+638
+01:00:51,600 --> 01:01:10,640
+And then again, I mean, even if you're working at a huge company, it's like this is a this is a form of sanity check that RevenueCat has this depth of experience and sophistication and then the ability to kind of learn from so many different customers across the entire industry that there's just a.
+
+639
+01:01:11,520 --> 01:01:12,720
+it's just exciting for me.
+
+640
+01:01:13,360 --> 01:01:21,520
+So, uh, forgive us the kind of short ad here if you want to call it that, but, you know, it is genuinely something I'm super excited about.
+
+641
+01:01:22,080 --> 01:01:25,040
+And then I'm, I'm genuinely super excited that you built it, Dan.
+
+642
+01:01:25,360 --> 01:01:30,480
+Uh, I've been so impressed with, with, with, you know, your work and that you even joined us at RevenueCAD.
+
+643
+01:01:30,560 --> 01:01:39,760
+That's probably a whole other conversation about leaving a great company like, uh, Teltek, um, to come build the picks and shovels, uh, instead of actually working on the product.
+
+644
+01:01:40,080 --> 01:01:44,800
+But, uh, but yeah, I'm just so excited about the product and, um, you know, wanted to have you on it.
+
+645
+01:01:44,880 --> 01:01:54,560
+I think the insights that you were able to share today more than makes up for us chatting a little bit about our own little project that we've been working on.
+
+646
+01:01:54,800 --> 01:01:57,040
+So anything else you wanted to share as we wrap up?
+
+647
+01:01:57,360 --> 01:02:06,960
+No, I was just going to say I share the enthusiasm and the enthusiasm is not because RevenueCat made something cool, it's because we know how valuable price experimentation is, right?
+
+648
+01:02:07,120 --> 01:02:14,320
+Like we're here to help app developers make more money and like seeing a way to do that and being able to go execute on it like is exciting.
+
+649
+01:02:14,720 --> 01:02:17,440
+That's where the enthusiasm on this conversation is coming from.
+
+650
+01:02:17,920 --> 01:02:27,280
+I think that's one of the things I love about Re recording this podcast is that, you know, and working at RevenueCat, it's just that, you know, I genuinely care about this stuff.
+
+651
+01:02:28,000 --> 01:02:37,040
+And honestly, you know, as the kind of sole arbiter of what goes on subclub, I wouldn't have had you on to talk about this product if we weren't personally excited.
+
+652
+01:02:37,600 --> 01:02:38,240
+I totally am.
+
+653
+01:02:39,360 --> 01:02:47,280
+And there's probably not going to be a lot of other, you know, RevenueCat products that we dedicate, or we didn't even dedicate a whole podcast to it.
+
+654
+01:02:47,920 --> 01:02:51,600
+But there probably won't be a lot of other products that we talk about in the subclub podcast.
+
+655
+01:02:51,840 --> 01:02:54,560
+But this is just one that I'm just personally so excited about.
+
+656
+01:02:54,880 --> 01:03:01,280
+So I hope you all, the audience, enjoyed this and got a lot from Dan's insights.
+
+657
+01:03:02,080 --> 01:03:03,280
+And thanks for listening.
+
+658
+01:03:03,440 --> 01:03:05,360
+And Dan, thanks so much for joining me today.
+
+659
+01:03:05,680 --> 01:03:06,080
+Absolutely.
+
+660
+01:03:06,240 --> 01:03:07,040
+This was a lot of fun.
+
+661
+01:03:09,520 --> 01:03:10,800
+Thanks so much for listening.
+
+662
+01:03:11,760 --> 01:03:15,200
+If you have a minute, please leave a review in your favorite podcast player.
+
+663
+01:03:16,000 --> 01:03:20,880
+You can also stop by chat dot subclub dot com to join our private community.
