@@ -1,0 +1,2743 @@
+1
+00:00:01,120 --> 00:00:08,720
+Welcome to the Subclub podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers and grow revenue across iOS, Android and the web.
+
+5
+00:00:33,600 --> 00:00:38,160
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,960 --> 00:00:46,080
+Hello, I'm your host, David Barnard, and with me today, RevenueCat CEO, Jacob Biding.
+
+7
+00:00:46,640 --> 00:00:51,840
+Our guest today is Osman Mansour, a product manager on the retention team at Duolingo.
+
+8
+00:00:52,800 --> 00:00:57,120
+On the podcast, we talk with Osman about Duolingo's culture of experimentation.
+
+9
+00:00:58,240 --> 00:01:06,560
+data and testing as a mote and why passive aggressive push notifications can actually work in the right context.
+
+10
+00:01:07,760 --> 00:01:10,560
+Hey, Osman, thank you so much for joining us on the podcast today.
+
+11
+00:01:11,280 --> 00:01:12,640
+David, thank you so much for having me.
+
+12
+00:01:12,720 --> 00:01:13,440
+It's great to be here.
+
+13
+00:01:13,600 --> 00:01:15,040
+Yeah, super excited to chat with you.
+
+14
+00:01:15,200 --> 00:01:16,720
+And Jacob, good to see you.
+
+15
+00:01:16,880 --> 00:01:17,440
+Happy Friday.
+
+16
+00:01:17,840 --> 00:01:18,240
+I'm here.
+
+17
+00:01:18,640 --> 00:01:20,800
+I'm ready to talk about subscriptions.
+
+18
+00:01:21,520 --> 00:01:21,920
+Let's do it.
+
+19
+00:01:22,160 --> 00:01:23,600
+Hey, so I wanted to kick things off.
+
+20
+00:01:23,760 --> 00:01:27,760
+We've got a lot of really cool testing that Duolingo has done.
+
+21
+00:01:28,480 --> 00:01:29,920
+Your blog is amazing, by the way.
+
+22
+00:01:31,040 --> 00:01:32,720
+I hadn't seen it until recently.
+
+23
+00:01:33,200 --> 00:01:34,880
+Tweet Storms, blogs, there's so many.
+
+24
+00:01:35,200 --> 00:01:36,800
+We'll link to all of these in the show notes.
+
+25
+00:01:37,040 --> 00:01:41,760
+But so we'll talk about the individual tests in a minute, because I think there's some really great learnings.
+
+26
+00:01:42,320 --> 00:01:48,800
+But I wanted to start off just talking about how Duolingo thinks about testing and then kind of what the process is.
+
+27
+00:01:49,760 --> 00:01:59,440
+So I kind of, you know, I have a few topics I wanted to hit, but let's just start with ideation or I don't know know if there's even maybe a broader overview you wanted to start off with.
+
+28
+00:02:00,080 --> 00:02:01,520
+I can start with a deeper cut than that.
+
+29
+00:02:01,680 --> 00:02:05,920
+As I saw that one in one of the blog posts, it was like, at Duolingo we test everything.
+
+30
+00:02:06,640 --> 00:02:06,800
+Why?
+
+31
+00:02:08,320 --> 00:02:09,280
+Yeah, that's a great question.
+
+32
+00:02:09,600 --> 00:02:20,880
+I think one thing that we keep in mind as a company is that data and the data that we collect and analyze and use to improve our product is one of our best motes as a company.
+
+33
+00:02:22,080 --> 00:02:23,120
+We have millions of learners.
+
+34
+00:02:23,280 --> 00:02:26,160
+I think now we're close to sixty million monthly active usersers.
+
+35
+00:02:26,960 --> 00:02:37,040
+And that allows us to collect a lot of data that makes us get better at teaching languages, makes us get better at making our product more engaging.
+
+36
+00:02:37,920 --> 00:02:49,760
+And ever since the founding of Dualingo, I only joined a couple of years ago, but since the founding of Dualingo, AB testing and metrics driven product development has always been in our DNA.
+
+37
+00:02:50,320 --> 00:02:51,600
+And it's worked really, really well.
+
+38
+00:02:51,760 --> 00:02:58,400
+Even like ten years after the launch, we're still maintaining like fifty percent year over year DAU growth.
+
+39
+00:02:58,960 --> 00:03:03,520
+So we just have a formula that works and it's something that we're committed to for the long run.
+
+40
+00:03:03,840 --> 00:03:03,920
+Yeah.
+
+41
+00:03:04,080 --> 00:03:09,760
+And it's, it's, I mean, testing is something that it's, it's not always a silver bullet.
+
+42
+00:03:09,920 --> 00:03:19,600
+Like sometimes the infrastructure you need and the effort it takes and sort of the expertise to not test poorly is also like not easy to come by.
+
+43
+00:03:20,000 --> 00:03:25,760
+And so, yeah, I almost think that by making a bold statement like that that testing is a part of our culture.
+
+44
+00:03:26,080 --> 00:03:31,760
+You kind of have to do that because otherwise, if you're just like, oh, we're going to try to AB test some things, it probably won't go well.
+
+45
+00:03:31,920 --> 00:03:32,960
+You have to make it a big deal.
+
+46
+00:03:33,040 --> 00:03:37,120
+And it sounds like, it sounds like, um, it sounds like that's, that's what you all do.
+
+47
+00:03:37,200 --> 00:03:47,280
+And the mote thing is also very interesting because, you know, for folks that think, you know, like as Duolingo, you'd be thinking like, why won't there be a next Duolingo?
+
+48
+00:03:47,440 --> 00:03:50,400
+Like, why won't something that can move faster than us beat us?
+
+49
+00:03:50,560 --> 00:03:53,920
+Because typically a smaller company can move fas faster in some aspects, right?
+
+50
+00:03:54,080 --> 00:03:54,720
+Like they can experiment.
+
+51
+00:03:55,280 --> 00:03:56,240
+They don't have anything to lose.
+
+52
+00:03:56,240 --> 00:03:57,280
+Like they can try things.
+
+53
+00:03:57,520 --> 00:03:59,680
+And so you think about defensibility and moats, right?
+
+54
+00:04:00,000 --> 00:04:00,320
+Exactly.
+
+55
+00:04:00,880 --> 00:04:16,080
+And in consumer, it's brand is a big moat, which Duolingo has as well, but data, especially in consumer when you have so many users, is, especially when you have that many users, that's something a small startup can't replicate, right?
+
+56
+00:04:16,240 --> 00:04:17,440
+And they can't test right away.
+
+57
+00:04:17,680 --> 00:04:20,560
+So it makes strategic sense, especially at scale.
+
+58
+00:04:20,880 --> 00:04:21,200
+Exactly.
+
+59
+00:04:21,520 --> 00:04:21,600
+Yeah.
+
+60
+00:04:21,920 --> 00:04:35,520
+Well, and that's part of what I wanted to go through this process though, because while you can't test at scale as a small company, I think there's so much that every sized company can learn from Duolingo about the process and kind of the thinking behind it.
+
+61
+00:04:35,840 --> 00:04:41,600
+And that's why I and a great way to start, Jacob, thanks for the save there on asking the overview.
+
+62
+00:04:42,080 --> 00:04:43,040
+You start with the why, you know?
+
+63
+00:04:43,920 --> 00:04:44,400
+Start with the why.
+
+64
+00:04:45,040 --> 00:04:49,920
+So now let's dive into the details because this is where I do think a lot of.
+
+65
+00:04:49,920 --> 00:04:53,200
+Many ideas get short shrift in tech community.
+
+66
+00:04:53,600 --> 00:04:55,840
+Ideas that die, I'm a dozen, yada, yada, yada.
+
+67
+00:04:56,160 --> 00:05:02,240
+But as part of a testing culture, it is super important to come up with the ideas to test.
+
+68
+00:05:02,640 --> 00:05:16,800
+And whether you're a big company or a small company, whether you're testing just by releasing an update for a week and then changing it a week later and looking at the results without any kind of sophisticated infrastructure, you still need to come up with ideas and try ideas and have bold ideas.
+
+69
+00:05:17,280 --> 00:05:18,400
+So let's just start with that.
+
+70
+00:05:18,800 --> 00:05:21,200
+What is the ideation process like?
+
+71
+00:05:21,440 --> 00:05:25,280
+How do you come up with ideas to test and what does that look like internally?
+
+72
+00:05:25,920 --> 00:05:26,960
+Yeah, it's a great question.
+
+73
+00:05:27,600 --> 00:05:32,560
+I would say our ideas and our ideation process comes from a few different places.
+
+74
+00:05:33,520 --> 00:05:36,880
+Similar to other consumer apps, we do a lot of UX research.
+
+75
+00:05:37,040 --> 00:05:38,240
+We have a great design team.
+
+76
+00:05:38,880 --> 00:05:46,960
+A lot of ideas can come from exploration from those functions, but also a lot of the ideas are driven by product managers from a bottom-up approach.
+
+77
+00:05:47,200 --> 00:05:52,160
+So I joined Duelingo right after graduate as an associate product manager.
+
+78
+00:05:52,800 --> 00:06:02,480
+And even someone like myself at the junior level was empowered to sort of drive team roadmaps and own parts of the roadmap to ideate on features.
+
+79
+00:06:04,000 --> 00:06:13,120
+So there's a lot of that just like pure ideation from the bottom level of the company all the way up to the executive level where the ideas are eventually proposed.
+
+80
+00:06:14,000 --> 00:06:17,200
+But more tactically, I think a lot of our ideation comes from the cycle.
+
+81
+00:06:17,680 --> 00:06:19,920
+of iterating and running experiments.
+
+82
+00:06:20,240 --> 00:06:29,680
+So every time we run an AB test, we will analyze the data and from that data we will learn like five or six different things that we can then turn around immediately and test again.
+
+83
+00:06:30,160 --> 00:06:34,560
+So we keep a really tight loop of iterating and learning from experiments.
+
+84
+00:06:34,960 --> 00:06:40,800
+Another thing I think that's really unique to Duolingo is that it's an app that every employee can use.
+
+85
+00:06:41,280 --> 00:06:47,440
+So we have a really strong dog fooding culture where all of our 600 plus employees are using Dualingo.
+
+86
+00:06:47,920 --> 00:06:56,800
+We have a big channel on our Slack called Feedback Product where anyone at the company can just dump in feedback on the product about anything related to the app.
+
+87
+00:06:57,520 --> 00:07:06,720
+And as PMs, we watch that channel and whoever it is that's dumping in feedback into that channel, we can sort of use that to clean insights, get ideas.
+
+88
+00:07:07,200 --> 00:07:14,400
+And yeah, I think that's really unique to Dualingo because a lot of other subscription apps, maybe not everyone employed at the company uses it regularly.
+
+89
+00:07:15,040 --> 00:07:18,480
+But Duolingo is an app designed to be used daily.
+
+90
+00:07:18,560 --> 00:07:23,520
+It's a daily, it's a daily app so you can use it every day and get insights to iterate quickly.
+
+91
+00:07:24,320 --> 00:07:28,480
+When you have an idea, you always go like, we have to design a test around it.
+
+92
+00:07:28,720 --> 00:07:35,440
+And I ask because some ideas, well, there's two cases there where as the visionary founder, I'm like, I don't need to test this.
+
+93
+00:07:35,520 --> 00:07:36,480
+I know it's going to be great.
+
+94
+00:07:36,720 --> 00:07:37,360
+So that's one.
+
+95
+00:07:38,480 --> 00:07:42,000
+And then the second one being like, sometimes things are hard to test, right?
+
+96
+00:07:42,160 --> 00:07:51,680
+Like sometimes they don't have like, I mean, I guess you have your KPIs and things like this, but do you do you have to be judicious and and then also you can't run infinite tests, right?
+
+97
+00:07:51,920 --> 00:07:55,280
+There's only so much bandwidth in a product and and new experience, right?
+
+98
+00:07:55,440 --> 00:08:00,000
+There's there's limitations to what you can test and synchronously and or like together and things like this.
+
+99
+00:08:00,320 --> 00:08:09,440
+So like how do you do you always test everything before you hit go or or or you can just use your judgment on what's an important test or not or or how does that how do you set the bar?
+
+100
+00:08:10,000 --> 00:08:11,120
+Yeah, it's a great question.
+
+101
+00:08:11,520 --> 00:08:13,040
+As crazy as it sounds, we basically.
+
+102
+00:08:13,600 --> 00:08:14,480
+do test everything.
+
+103
+00:08:16,000 --> 00:08:17,360
+Only the, like the tiny.
+
+104
+00:08:18,000 --> 00:08:19,120
+Everything goes into a feature flag.
+
+105
+00:08:19,280 --> 00:08:28,560
+So anything you're building is flagged and then it just, even if you don't expect some groundbreaking result, you're going to run it on and off just to like at least measure baseline and stuff.
+
+106
+00:08:28,800 --> 00:08:29,120
+Correct.
+
+107
+00:08:29,280 --> 00:08:39,600
+Even if it's just like a backend change that doesn't change the UX experience at all, we'll just run it as an AB test just to make sure there's no regressions where it impacts something else in the app.
+
+108
+00:08:40,640 --> 00:08:42,000
+So literally every tiny change.
+
+109
+00:08:42,960 --> 00:08:44,320
+we'll go through as an AB test.
+
+110
+00:08:44,480 --> 00:08:45,600
+That's just kind of how we do things.
+
+111
+00:08:46,240 --> 00:08:46,560
+Interesting.
+
+112
+00:08:46,720 --> 00:08:49,120
+And that has to take a lot of infrastructure, right?
+
+113
+00:08:49,360 --> 00:08:54,800
+Like not just computers, but the people to maintain those computers and like the people to maintain the testing stuff.
+
+114
+00:08:54,960 --> 00:09:01,760
+And how does as a PM, I assume you have like a team with like a mission and things, like how do you, is that all clients?
+
+115
+00:09:02,080 --> 00:09:05,040
+And like, are you guys basically clients to like all of that infrastructure?
+
+116
+00:09:05,200 --> 00:09:06,000
+Is it easy to use?
+
+117
+00:09:06,400 --> 00:09:07,600
+And, and how does that look like?
+
+118
+00:09:08,320 --> 00:09:08,400
+Yeah.
+
+119
+00:09:08,640 --> 00:09:11,200
+So we, all of our like AB testing.
+
+120
+00:09:11,760 --> 00:09:13,040
+infrastructure is built in house.
+
+121
+00:09:13,360 --> 00:09:24,320
+We have a really strong data infrastructure and experimentation team that builds these tools that allows engineers to set up AB tests once they build a feature, for example.
+
+122
+00:09:25,040 --> 00:09:32,400
+And then within that same tool, every morning, every day, we generate reports on the new data that comes in from experiments.
+
+123
+00:09:32,560 --> 00:09:39,600
+And as a PM, that's like my first thing I do when I wake up is check the experiments dashboard, see all the like right now.
+
+124
+00:09:39,600 --> 00:09:44,000
+Right now, my team, I think, is running like probably twenty experiments on different parts in the app.
+
+125
+00:09:44,640 --> 00:09:49,040
+So just monitoring those experiments is done with this in a house built tool.
+
+126
+00:09:49,680 --> 00:10:00,240
+And yeah, generally in terms of the limitation of not running too many AB tests, the one principle we try to abide by is not running multiple tests on the same real estate at once.
+
+127
+00:10:00,880 --> 00:10:09,120
+And if we do, then we will look at the intersection of those two experiments to make sure that there's no weird effects with AB tests.
+
+128
+00:10:09,120 --> 00:10:10,640
+with those experiences being combined.
+
+129
+00:10:11,280 --> 00:10:26,800
+The other thing I'll mention is that because we're both on iOS and Android, oftentimes we will run different experiments on the same real estate on the different platforms with the eventual goal of allied for platform parity depending on what wins.
+
+130
+00:10:27,920 --> 00:10:28,160
+Interesting.
+
+131
+00:10:28,880 --> 00:10:34,960
+How do you think about the funnel dynamics of confounding variables?
+
+132
+00:10:35,280 --> 00:10:48,000
+So if one PM is testing an onboarding process change that kind of shifts the focus in this direction and you're way deep in the retention funnel, you know, testing something that tests a different direction.
+
+133
+00:10:48,320 --> 00:10:53,920
+How do you think about those early or middle or late tests kind of being confounding variables against each other?
+
+134
+00:10:54,240 --> 00:10:56,560
+Yeah, because they're not the same real estate necessarily, right?
+
+135
+00:10:56,800 --> 00:10:59,280
+But they're the same real estate in the sense that they're all in the app.
+
+136
+00:10:59,760 --> 00:11:01,200
+You know, they're all part of the experience.
+
+137
+00:11:01,840 --> 00:11:02,880
+Yeah, it's a great question.
+
+138
+00:11:03,200 --> 00:11:07,040
+I think from a collaboration perspective, our process is a lot better.
+
+139
+00:11:07,040 --> 00:11:15,840
+Our product org, the product team, is very collaborative in terms of sharing what each team is working on, what different PMs are working on in different real estate.
+
+140
+00:11:16,640 --> 00:11:31,520
+So whenever a product change is approved by our product review council, like the CEO and others, the PM will send an email out to the product org and others can also be on that listserv to just explaining, oh, we're about to test this.
+
+141
+00:11:31,760 --> 00:11:32,640
+This is what was approved.
+
+142
+00:11:32,800 --> 00:11:34,720
+This was the conversation in the product review.
+
+143
+00:11:36,080 --> 00:11:38,800
+So then there's at least awareness of, oh, this is what's going on.
+
+144
+00:11:39,280 --> 00:11:48,480
+And if a team is especially affected by a certain change, then there will be conversations even before that to make sure that the PMs and the teams are aligned.
+
+145
+00:11:49,120 --> 00:11:58,560
+And then the same process sort of happens at the end of the experiment when you're about to launch it, they send out an email with the data and the results saying, hey, this is what we learned.
+
+146
+00:11:59,280 --> 00:12:08,640
+And that allows PMs on other teams working on different areas of the app to sort of look at, oh, hey, this might impact my team's features or this might impact my metrics.
+
+147
+00:12:09,120 --> 00:12:12,800
+So there's sort of that collaborative style from the practical level.
+
+148
+00:12:13,200 --> 00:12:20,240
+And then in terms of the data level, I think we also do a lot of cross-analysis of experiments.
+
+149
+00:12:20,640 --> 00:12:29,840
+So if we know another team is running an experiment that might impact one of our experiments, again, we'll look at the intersection of those experiments to see if there's any differences in the data.
+
+150
+00:12:30,640 --> 00:12:37,520
+So yeah, we we do make sure that we're not stepping on each other's toes or bumping elbows, but overall we're able to do it pretty seamlessly, I guess.
+
+151
+00:12:37,920 --> 00:12:43,440
+I guess like, and I think this is kind of the natural next question is like results and understanding that stuff.
+
+152
+00:12:43,600 --> 00:12:49,920
+Like how, like how do you always make follow the data?
+
+153
+00:12:50,400 --> 00:12:56,560
+Do you ever say like, oh, this hurt the data, but the visionary CEO wants this, so we're going to do it anyway?
+
+154
+00:12:57,360 --> 00:13:02,800
+Like, do you, like, how does that, so you get, you get the results in because there's a big critic outism out there.
+
+155
+00:13:02,880 --> 00:13:08,560
+And I think, you know, if we're trying to apply this to like the broad, not everybody, there's very few companies in the world like RevenueCat.
+
+156
+00:13:08,640 --> 00:13:15,520
+Certainly, I've never worked with a company that's had an AB testing system so dialed that it sounds like as on rails and powerful as what you all have.
+
+157
+00:13:15,920 --> 00:13:17,280
+It's a big investment to get there.
+
+158
+00:13:17,840 --> 00:13:24,480
+Um, but, you know, even on the smaller scale, you're constantly kind of trying to decide like, oh, like, what can I test?
+
+159
+00:13:25,040 --> 00:13:26,960
+I have like, kind of resources.
+
+160
+00:13:27,120 --> 00:13:30,800
+And then like, sometimes, yeah, you're just, you don't necessarily want to, right?
+
+161
+00:13:31,040 --> 00:13:32,720
+You don't want to know to know the results, right?
+
+162
+00:13:33,040 --> 00:13:37,120
+And then sometimes if you get a result, if it's not the result you want, you might just ignore it anyway.
+
+163
+00:13:37,360 --> 00:13:50,000
+So I'm curious, like, how do you allow, how do you, I mean, there's a big critic of test driven design as like a failed, you know, there's a lot of like people that say, like, oh, you're just going to optimize into some local minima or maxima, right?
+
+164
+00:13:50,560 --> 00:13:59,200
+How do you, do you balance that with like PM intuition and feedback and quantitative qualitative stuff as well?
+
+165
+00:13:59,280 --> 00:14:01,120
+Or how does that, yeah, how does that go going?
+
+166
+00:14:01,760 --> 00:14:02,320
+Yeah, totally.
+
+167
+00:14:02,480 --> 00:14:10,080
+And we're like totally aware as a company of like the shortfalls that there is with a very AB testing driven framework.
+
+168
+00:14:10,720 --> 00:14:16,320
+So there is a lot of like qualitative input into decisions on calling an experiment.
+
+169
+00:14:16,800 --> 00:14:27,440
+So even if an experiment is a winner for our top line metrics, we will still have a discussion around whether in the long term this fits into our roadmap or whether it makes sense for the UX.
+
+170
+00:14:28,240 --> 00:14:29,360
+So a very common.
+
+171
+00:14:30,720 --> 00:14:46,400
+situation for a test that wins at Duolingo is that if the feature or the change complicates the UX or makes the app just feel or look more busy, then there's always a conversation of, oh, is the metrics win here worth making the app more complicated?
+
+172
+00:14:47,040 --> 00:14:52,160
+And the words we hear the most from our CEO, Luis, is only launch this if it's a big win.
+
+173
+00:14:52,800 --> 00:14:58,240
+Whenever we propose something that complicates the UX, there's like a threshold.
+
+174
+00:14:58,880 --> 00:15:04,800
+that isn't always clear, but it comes about when we have a discussion of, oh, is this metrics one worth it?
+
+175
+00:15:05,360 --> 00:15:09,600
+So there is that qualitative discussion that happens with leadership that happens within the product and design org.
+
+176
+00:15:10,400 --> 00:15:10,480
+Yeah.
+
+177
+00:15:11,440 --> 00:15:17,760
+In general, I think we do a good job of making sure that we're not only following the numbers, but we're also it's data informed, right?
+
+178
+00:15:17,920 --> 00:15:20,720
+Like not data-informed, decided itself.
+
+179
+00:15:20,880 --> 00:15:21,280
+Exactly.
+
+180
+00:15:21,360 --> 00:15:24,400
+You know, how do you think about significance, right?
+
+181
+00:15:24,720 --> 00:15:27,200
+Because, like, you know, you might, you can run any test.
+
+182
+00:15:27,840 --> 00:15:30,640
+and even on it, there's going to be noise, right?
+
+183
+00:15:30,880 --> 00:15:33,440
+You might end up with, I mean, I guess maybe not at that scale, right?
+
+184
+00:15:33,680 --> 00:15:47,600
+60 million MAU or whatever DAU or whatever crazy number you said, uh, that you get a lot of significance out of that, but I'm sure you still get to the point where are a lot of results null, like are a lot of results like, no, no difference.
+
+185
+00:15:48,480 --> 00:15:49,520
+Yeah, it's a great question.
+
+186
+00:15:49,920 --> 00:15:56,320
+So, and, and you're right that at our scale and the user base that we have a majority of the.
+
+187
+00:15:56,800 --> 00:16:09,520
+changes we can make do show statistical significance, which is a really big advantage that we have, especially on teams like my team, the user retention team that works on features that impact basically the entire user base.
+
+188
+00:16:10,080 --> 00:16:16,640
+We can roll out an experiment today and tomorrow morning we'll have statistically significant results on our top line metrics.
+
+189
+00:16:16,800 --> 00:16:18,560
+And that be like day one retention or something, right?
+
+190
+00:16:18,720 --> 00:16:19,920
+Like, yeah, exactly.
+
+191
+00:16:20,160 --> 00:16:23,520
+Basically, we're always looking at DAU, D one retention, things like that.
+
+192
+00:16:24,080 --> 00:16:31,600
+Generally, we make sure we run experiments for at least three or four weeks on average just so we're ruling out novelty effects.
+
+193
+00:16:31,840 --> 00:16:36,720
+So we're making sure that, yeah, there is like a strong significance there.
+
+194
+00:16:37,440 --> 00:16:42,720
+Um, other teams at the company that are working on like more specific parts or perhaps even new initiatives.
+
+195
+00:16:43,280 --> 00:16:50,960
+For example, we have a product called Duolingo for schools, which is basically a dashboard for teachers to allow their students to use Duolingo.
+
+196
+00:16:51,600 --> 00:16:54,320
+And since they have a smaller user base of teachers, they need to do.
+
+197
+00:16:54,800 --> 00:16:58,000
+more calculations around, okay, how long do we need to run an expansion?
+
+198
+00:16:58,160 --> 00:17:01,360
+Can we actually achieve it within the before the heat death of the universe kind of day?
+
+199
+00:17:02,320 --> 00:17:02,640
+Exactly.
+
+200
+00:17:02,720 --> 00:17:02,800
+Yeah.
+
+201
+00:17:03,360 --> 00:17:03,680
+Exactly.
+
+202
+00:17:03,840 --> 00:17:03,920
+Yeah.
+
+203
+00:17:04,320 --> 00:17:13,440
+But for most teams that are shipping features to millions of users and these users are using the product every day, it's really easy to get significance on our data.
+
+204
+00:17:14,800 --> 00:17:16,880
+How do you all think about lookbacks?
+
+205
+00:17:17,120 --> 00:17:21,600
+So you have a win, you roll it out, it's got statistical significance.
+
+206
+00:17:22,160 --> 00:17:23,440
+It seems like it's going to be a great win.
+
+207
+00:17:24,480 --> 00:17:44,080
+Do you revisit some of these results six months, two years or not two, I mean two years is a really long time, but six months, nine months from the original test to see if long term retention was sacrificed for short term retention or monetization was sacrificed over the long haul for DAU or things like that.
+
+208
+00:17:44,320 --> 00:17:46,640
+How do you think about those long term impacts?
+
+209
+00:17:47,200 --> 00:17:48,160
+Yeah, that's a great question.
+
+210
+00:17:48,400 --> 00:17:49,280
+I think we do two things.
+
+211
+00:17:49,600 --> 00:17:54,400
+One thing is for especially for our bigger feger features, we'll run holdout experiments.
+
+212
+00:17:54,960 --> 00:18:05,840
+So basically, after we launch an experiment, we'll keep maybe one or two percent of users in the control group and leave that running for like three or four months, something like that.
+
+213
+00:18:06,400 --> 00:18:09,840
+That allows us to get more insight on the long term impact of an experiment.
+
+214
+00:18:10,480 --> 00:18:19,680
+This is especially useful for teams that want to get like assess the impact of changes that might not have impact on D one retention immediately.
+
+215
+00:18:20,960 --> 00:18:26,240
+We have a team that works on social features, basically connecting learners with other learners on the platform.
+
+216
+00:18:27,040 --> 00:18:39,440
+And sometimes adding those features doesn't immediately impact top line metrics like DAU, but in the long term, having a more social experience through network effects that can impact our top line metrics.
+
+217
+00:18:39,920 --> 00:18:41,200
+So I know that team.
+
+218
+00:18:41,360 --> 00:18:43,840
+They run a ton of holdout experiments on a lot of their features.
+
+219
+00:18:44,400 --> 00:18:44,960
+We do as well.
+
+220
+00:18:45,760 --> 00:18:55,760
+The other thing we do to make sure that we're also tracking the long term impact is that we will track the feature level metrics for a feature that we launch over the long term.
+
+221
+00:18:56,160 --> 00:19:06,880
+So for every feature that we build, we'll have a feature dashboard that tracks some of the more ad hoc metrics, feature engagement level things that might be interested in.
+
+222
+00:19:07,680 --> 00:19:14,960
+And over time, we can see, oh, when we initially launched this feature engagement was really high, but it seems like it's dropping a little bit.
+
+223
+00:19:15,520 --> 00:19:19,120
+That sort of gives us, gives us an indication that there might be some novelty effect in play.
+
+224
+00:19:20,240 --> 00:19:26,480
+And yeah, that's sort of the two approaches we take to make sure that we're looking at data in the long term as well.
+
+225
+00:19:27,600 --> 00:19:46,320
+So I do want to move on to the kind of specific tests that have run, but one more shot at anything else you want to kind of summarize about, you know, the way you'll think about testing or maybe anything we left out that you think is particularly important about how Doolingo thinks about and actually does the testing.
+
+226
+00:19:47,280 --> 00:19:47,360
+Yeah.
+
+227
+00:19:47,520 --> 00:19:56,560
+Yeah, I think the one last thing I'll mention is that because we collect so much data, it allows us to get really granular in the analysis that we do.
+
+228
+00:19:57,360 --> 00:20:21,360
+So I'm sure we're about to talk about notifications a bit more, but one example I'll give is that notification copy obviously performs differently in different UI languages and geographies, but because we collect so much data, we can sort of drill down and look at the click through rates on our notifications by language, and that allows us to say, oh, in Romanian, this notification is not doing as well.
+
+229
+00:20:21,760 --> 00:20:27,120
+We should talk to our Romanian localization team and see if there's anything there that we can optimize for.
+
+230
+00:20:27,760 --> 00:20:38,720
+So just by the sheer amount of data that we collect, we're really able to drill down and optimize a lot of things in the app and it keeps us busy as a product team because there's so much stuff that we know we can improve.
+
+231
+00:20:39,600 --> 00:20:49,680
+I had one more question, I think, on general strategy on choosing ideas and stuff, but how does knowing the testability of a feature influences your decision to build it.
+
+232
+00:20:49,840 --> 00:20:55,600
+Like, is there ever, I guess like you're saying, since you're looking at top lines, you can always have something to measure, right?
+
+233
+00:20:56,480 --> 00:21:01,200
+But do you, does it, you find it, I mean, my, my, again, you could maybe just validate my assumption.
+
+234
+00:21:01,360 --> 00:21:12,640
+My assumption is that because you're thinking, wow, this actually has to produce a measurable result, does, do you think it pushes your product teams to like, only focus on things that are going to actually show up in the data?
+
+235
+00:21:13,520 --> 00:21:14,160
+You know what I mean?
+
+236
+00:21:14,720 --> 00:21:14,800
+Yeah.
+
+237
+00:21:14,880 --> 00:21:15,840
+Yeah, it's a good question.
+
+238
+00:21:17,120 --> 00:21:19,040
+I think it varies by team at Duolingo.
+
+239
+00:21:19,280 --> 00:21:25,360
+For example, we have product teams that work explicitly on improving how the app teaches.
+
+240
+00:21:25,760 --> 00:21:30,400
+So this is the learning RD area that has multiple teams building features to teach better.
+
+241
+00:21:30,880 --> 00:21:37,440
+And for them, their products, their product changes don't really impact top line metrics because.
+
+242
+00:21:38,160 --> 00:21:41,280
+It's the tragedy of all education apps, right?
+
+243
+00:21:42,080 --> 00:21:42,400
+Exactly.
+
+244
+00:21:42,480 --> 00:21:43,200
+Yeah, you got it.
+
+245
+00:21:43,840 --> 00:21:49,520
+And oftentimes when we want to teach better, we have to make content harder and content being harder often is bad for the family.
+
+246
+00:21:50,800 --> 00:21:52,080
+Same in fitness apps too, right?
+
+247
+00:21:52,240 --> 00:21:55,280
+Like you have to like maintain that, you know, that sweet spot.
+
+248
+00:21:56,080 --> 00:21:56,720
+Yeah, exactly.
+
+249
+00:21:57,120 --> 00:22:03,840
+So for those teams, obviously, they haven't, they are not really incentivized by a top line metric that they're optimizing for.
+
+250
+00:22:04,320 --> 00:22:11,120
+So a lot of their work is more like stakeholder alignment with learning scientists, with leadership, with designers, things like that.
+
+251
+00:22:12,000 --> 00:22:15,840
+So I think that makes it more so that they're not just looking at the data.
+
+252
+00:22:17,680 --> 00:22:23,920
+And then, yeah, more generally, we make sure that we're not only doing things that are metrics driven.
+
+253
+00:22:24,080 --> 00:22:27,440
+We always set OKRs for reducing tech debt, things like that.
+
+254
+00:22:28,640 --> 00:22:30,480
+Improving product quality, stuff like that.
+
+255
+00:22:30,640 --> 00:22:32,560
+Do you, so sorry, last question.
+
+256
+00:22:32,720 --> 00:22:40,720
+Do you like AB test bug fixes and things like if something's just flat out broken or like maybe not even a bug fix, you're like, oh, this is just wrong.
+
+257
+00:22:40,880 --> 00:22:44,880
+I mean, I guess it's another version of my original question of like, do you test everything?
+
+258
+00:22:45,200 --> 00:22:52,800
+But like, yeah, say, would you, would you AB test a bug fix if it was like a living bug that's not like ruined, like just crashing the app or something, right?
+
+259
+00:22:53,360 --> 00:23:03,520
+Yeah, if it's a huge bug fix, then we will like patch it and then maybe run a holdout experiment, like giving the bug back to like one percent of users just to assess the effect.
+
+260
+00:23:03,680 --> 00:23:04,560
+Yeah, it's crazy.
+
+261
+00:23:05,280 --> 00:23:07,040
+But that's, but that's crazy.
+
+262
+00:23:07,120 --> 00:23:09,680
+I mean, but this is why it's a cultural thing, right?
+
+263
+00:23:09,920 --> 00:23:10,800
+I mean, this is, I think.
+
+264
+00:23:11,760 --> 00:23:19,200
+as our listeners are thinking through how they're building their apps and how they want to do product development, like I imagine this came from the founders, right?
+
+265
+00:23:19,360 --> 00:23:21,360
+Like, or from very, very early in post, right?
+
+266
+00:23:21,600 --> 00:23:28,240
+This was something that the founders of the company felt was the way they wanted to do product and they instilled it in the culture and they made it a thing.
+
+267
+00:23:28,400 --> 00:23:34,320
+And I think if you're listening to this and you're going like, oh God, I don't want to set up all this data infrastructure and all that stuff, you don't have to, right?
+
+268
+00:23:34,480 --> 00:23:35,920
+There's lots of ways to do this, right?
+
+269
+00:23:36,480 --> 00:23:41,280
+But I do think you should be opinionated in how you want to set that up.
+
+270
+00:23:41,520 --> 00:23:44,000
+If you want to be a, there's a company that said, we don't run any tests.
+
+271
+00:23:44,160 --> 00:23:45,360
+Like everything is just like user comment.
+
+272
+00:23:45,680 --> 00:23:46,000
+That's fine.
+
+273
+00:23:46,080 --> 00:23:48,720
+Like I think there's a lot of good companies that are built that way, right?
+
+274
+00:23:49,360 --> 00:24:07,440
+You have to think about what you're, who you are as a founder and as an app builder and as a and then apply the the system that you think it's going to be, you know, be best for you to get the best results, not just necessarily doing I don't know of another company, at least in our space, that's doing quite to the extreme of that.
+
+275
+00:24:07,680 --> 00:24:07,760
+Yeah.
+
+276
+00:24:08,160 --> 00:24:08,640
+Just put it that way.
+
+277
+00:24:08,720 --> 00:24:13,120
+Yeah Yeah, it's pretty crazy, but yeah, we're very data driven or data informed as you said.
+
+278
+00:24:13,680 --> 00:24:22,080
+Yeah, but probably no coincidence that it's one of the larger subscription apps and publicly traded and profitable I don't think as well.
+
+279
+00:24:22,320 --> 00:24:28,240
+Like I think it's one of the, one of the great success stories of, of mobile, um, I would say in general.
+
+280
+00:24:28,560 --> 00:24:29,920
+Like, yeah, it's crazy.
+
+281
+00:24:31,120 --> 00:24:37,680
+So I did want to move on to specific results because you've built all this infrastructure, you have all this alignment internally.
+
+282
+00:24:37,680 --> 00:24:41,600
+Internally, you do all these tests, but what matters is what comes out of it.
+
+283
+00:24:42,000 --> 00:25:02,400
+And then I think for our listeners, as we've talked about, very few of them are going to be able to operate at this scale, but I think there's learnings that Duolingo has been sharing again on the blog and Twitter and other places that are worth testing or for the product Artur just implementing Whole Hog based on Duolingo's success with them.
+
+284
+00:25:02,640 --> 00:25:06,800
+So the first experiment I wanted to talk about was with notifications.
+
+285
+00:25:07,280 --> 00:25:18,560
+And so you've done a ton of testing around notifications, but there was a specific tweet thread that we'll link to in the show notes, just talking about how you test notifications and some of the top learnings.
+
+286
+00:25:18,720 --> 00:25:21,600
+So I'd love for you to share maybe a little background.
+
+287
+00:25:21,760 --> 00:25:32,640
+I don't know, you know, that the tweet thread didn't go super into depth about the testing setup and stuff like that, but maybe just a little background and then let's talk through the results of that and what folks can learn.
+
+288
+00:25:33,280 --> 00:25:33,920
+Yeah, totally.
+
+289
+00:25:34,160 --> 00:25:41,200
+So notifications are about a big engine for growth for Duolingo, so much so that notifications from Duolingo are sort of a meme.
+
+290
+00:25:41,520 --> 00:25:46,000
+I'm sure maybe you've seen notifications from the green owl.
+
+291
+00:25:46,080 --> 00:25:46,960
+Yeah, I see the TikTok.
+
+292
+00:25:47,280 --> 00:25:49,680
+The green owl is becoming like the slender man now.
+
+293
+00:25:49,920 --> 00:25:52,160
+It's like a harassing mythical character.
+
+294
+00:25:53,680 --> 00:25:54,080
+Exactly.
+
+295
+00:25:55,440 --> 00:26:01,440
+But yeah, notifications are a big driver for our retention and our user growth, and it has been for many years.
+
+296
+00:26:02,080 --> 00:26:04,320
+And we're now at a very sophisticated point where.
+
+297
+00:26:04,320 --> 00:26:10,240
+We have reached a point where we send a lot of notifications, the main one being the daily practice reminder.
+
+298
+00:26:10,480 --> 00:26:12,720
+So we send you a reminder to practice every day.
+
+299
+00:26:13,040 --> 00:26:16,560
+And if you've been inactive for seven days, then we'll stop sending it to you.
+
+300
+00:26:17,120 --> 00:26:25,040
+But within that daily practice reminder, we have, call it, 250 different copy templates that are eligible to be sent to a user.
+
+301
+00:26:26,080 --> 00:26:30,400
+And we have a machine learning algorithm that optimizes the best ones to send to a user.
+
+302
+00:26:31,360 --> 00:26:33,440
+What we do as PMs is.
+
+303
+00:26:34,320 --> 00:26:48,880
+iterating on those 250 copy templates, adding more, changing existing copy templates and just testing different messaging, tone, content within those notifications to basically squeeze out more retention gains.
+
+304
+00:26:49,760 --> 00:26:56,320
+And we've learned a lot about what works and what doesn't work with notification copy and the messaging there.
+
+305
+00:26:57,200 --> 00:27:00,560
+So yeah, I'll go ahead and dive into some of the learnings we've had from that.
+
+306
+00:27:02,800 --> 00:27:06,800
+So, this is a case where these are not like this is this seems like another system that you built.
+
+307
+00:27:06,960 --> 00:27:08,080
+This is not just another AB test.
+
+308
+00:27:08,400 --> 00:27:16,320
+You guys have a separate, like multi armed bandit model that like will throw these in and optimize on an individual basis.
+
+309
+00:27:16,560 --> 00:27:16,640
+Yeah.
+
+310
+00:27:17,120 --> 00:27:24,480
+Which, my my question, my first question, I mean, maybe, maybe I'm gonna jump, jump ahead too far, but it's like, what goes into that individual choice?
+
+311
+00:27:24,640 --> 00:27:26,800
+Like, what vectors or like, what inputs into that?
+
+312
+00:27:27,040 --> 00:27:30,160
+You say, like, oh, like we're gonna try the, what do we know about this person?
+
+313
+00:27:30,320 --> 00:27:30,960
+We're gonna try this.
+
+314
+00:27:31,360 --> 00:27:36,160
+That would be really interesting to hear, like, how do you actually like, what do you optimize on, you know?
+
+315
+00:27:36,560 --> 00:27:36,640
+Yeah.
+
+316
+00:27:36,800 --> 00:27:38,560
+And let's dive into the AI behind it.
+
+317
+00:27:38,720 --> 00:27:41,920
+I mean, it's it's it's a few points ahead in our show notes, but yeah.
+
+318
+00:27:42,160 --> 00:27:44,240
+And it's a pretty incredible system you've built.
+
+319
+00:27:44,720 --> 00:27:44,800
+Yeah.
+
+320
+00:27:45,120 --> 00:27:52,160
+The first thing I'll mention, and this might also sound crazy, but even within this multi armed bandit algorithm, we still do AV tests.
+
+321
+00:27:52,800 --> 00:27:55,120
+So why not?
+
+322
+00:27:55,280 --> 00:27:56,240
+So yeah, why not?
+
+323
+00:27:56,720 --> 00:27:56,960
+Exactly.
+
+324
+00:27:57,200 --> 00:28:00,560
+So how it works is that we have the multi armed bandit.
+
+325
+00:28:01,040 --> 00:28:03,520
+that has all these copy templates for notifications.
+
+326
+00:28:04,240 --> 00:28:12,560
+And then as the experiment arm in an AB test, we will have the same bandit except with the additional new copy templates that we're adding.
+
+327
+00:28:12,720 --> 00:28:18,160
+Or I suppose like you could even do like configuration changes or like tuning changes to the algorithm and things like that and AB that as a whole.
+
+328
+00:28:18,480 --> 00:28:18,880
+Exactly.
+
+329
+00:28:19,360 --> 00:28:20,160
+Yeah, exactly.
+
+330
+00:28:20,400 --> 00:28:25,200
+So whether it's a copy template or we add more copy templates to the bandit to optimize on.
+
+331
+00:28:25,600 --> 00:28:27,440
+Oh, so you can optimize globally as well, right?
+
+332
+00:28:27,680 --> 00:28:29,520
+So you can say like adding these not just like saying.
+
+333
+00:28:30,000 --> 00:28:36,240
+which is more performing, but looking overall when we add these ten new messages, like how does that change the whole performance?
+
+334
+00:28:36,560 --> 00:28:42,000
+Yeah, the AB test would be in control is the multi armed bandit with two hundred fifty templates.
+
+335
+00:28:42,320 --> 00:28:48,160
+And then the experiment is the multi armed bandit with two hundred sixty, adding the ten new ones.
+
+336
+00:28:48,560 --> 00:28:48,880
+Exactly.
+
+337
+00:28:49,040 --> 00:28:58,080
+And then we can measure on a local basis of when we send those ten new ones, what that is doing to click through, but also generally what the overall impact is to.
+
+338
+00:29:00,160 --> 00:29:03,280
+And this is all driven by AI and machine learning, right?
+
+339
+00:29:03,600 --> 00:29:11,120
+So you have a pretty big data science team building out these models that make those decisions and analyze the results.
+
+340
+00:29:11,920 --> 00:29:16,240
+It is AI and ML driven, but to be honest, it's simpler than it seems.
+
+341
+00:29:16,400 --> 00:29:17,600
+I mean, basically, yeah.
+
+342
+00:29:18,480 --> 00:29:25,440
+I'll give you, and you can correct me maybe if I'm wrong on this, but a multi arm bandit, we kind of jumped into the technical term.
+
+343
+00:29:25,920 --> 00:29:32,080
+It's a computer science or commentatorics problem or question where you have n choices.
+
+344
+00:29:32,240 --> 00:29:38,800
+Maybe you have ten different levers you can pull and the rewards, you don't necessarily know what you're going to get from each lever, right?
+
+345
+00:29:39,040 --> 00:29:44,560
+And so a multi arm bandit problem, there's optimizations to say, like, which lever should I pull when?
+
+346
+00:29:44,800 --> 00:29:56,400
+And an algorithm that optimizes that is basically what you're saying in this case, and correct me if I was wrong, but instead of levers, they're actually like showing a notification, that's your lever, and you're trying to optimize which notifications show when.
+
+347
+00:29:57,360 --> 00:29:58,160
+is is optimal.
+
+348
+00:29:58,320 --> 00:29:58,960
+Is that correct?
+
+349
+00:29:59,600 --> 00:29:59,920
+Exactly.
+
+350
+00:30:00,080 --> 00:30:07,280
+So, uh, yeah, the levers in this case would be the copy templates, the 250 different ones that are eligible to be shown.
+
+351
+00:30:08,080 --> 00:30:21,600
+One of the things I I would just interject, um, little ethics point, one of the things I love talking to you about this is that, in some ways, I hear all this and I think, you know, Facebook convincing me to buy some other stupid thing.
+
+352
+00:30:21,760 --> 00:30:27,440
+I don't need or Candy Crush convincing millions of people to buy more gyms and spend more money.
+
+353
+00:30:28,160 --> 00:30:40,320
+You know, there's a lot of ways these tools can be used to manipulate and, you know, drive more views of TikTok and keep, you know, keep me on Twitter for an hour or Twitter's a bad example because they don't do anything like this.
+
+354
+00:30:41,680 --> 00:30:42,640
+Oh, no, they do though.
+
+355
+00:30:42,720 --> 00:30:43,120
+They do though.
+
+356
+00:30:43,280 --> 00:30:45,760
+Like Twitter, Twitter's retention notifications are crazy.
+
+357
+00:30:45,840 --> 00:30:48,560
+If you don't engage with Twitter for very long, they really start to like spam you.
+
+358
+00:30:49,040 --> 00:30:49,680
+Everybody's doing that.
+
+359
+00:30:49,840 --> 00:30:50,240
+That's true.
+
+360
+00:30:50,400 --> 00:30:52,240
+Maybe not, maybe not in this exact case, but yeah.
+
+361
+00:30:52,640 --> 00:31:03,440
+But I think, you know, TikTok and reels and things like that are a better example of using this kind of testing and learning to manipulate versus with Duolingo, you're helping people learn.
+
+362
+00:31:03,600 --> 00:31:05,360
+And so, I mean, it's like you're doing all this.
+
+363
+00:31:05,680 --> 00:31:08,480
+If it is the term manipulate and influence, are they any different?
+
+364
+00:31:08,720 --> 00:31:08,880
+Right.
+
+365
+00:31:09,040 --> 00:31:12,720
+It's it's really just the connotation of what you're asking for at the end, right?
+
+366
+00:31:13,680 --> 00:31:16,560
+So it's the notifications thing.
+
+367
+00:31:16,960 --> 00:31:20,480
+I think this is, I think especially for the intersection of our audience, right?
+
+368
+00:31:20,640 --> 00:31:22,000
+Or yeah, the app are tours.
+
+369
+00:31:22,080 --> 00:31:26,240
+That's the new very hard term., David, we're no longer we're no longer catering to indie developers.
+
+370
+00:31:26,320 --> 00:31:27,680
+We're catering to app arturs.
+
+371
+00:31:28,160 --> 00:31:41,200
+Um, uh, but, but I think there is this, there's this idea that specifically, talk about notifications, and we talk about like optimization, but that like notifications are bad, they're spammy, they're noise, they're ads, they're whatever.
+
+372
+00:31:42,000 --> 00:31:44,320
+But I don't really, I guess, two sides to it.
+
+373
+00:31:44,480 --> 00:31:47,760
+Like, one, like, yes, Apple has gotten much better giving you controls now.
+
+374
+00:31:47,920 --> 00:32:06,880
+Like, you can easily turn, do you remember, I'm this is this dates me, but so I don't know., I'm sure your notifications might be push now, but like in the early days, there was a difference between local notifications and and push notifications and push notifications you could disable in iOS, but local notifications you could not.
+
+375
+00:32:07,360 --> 00:32:11,760
+So like everybody we were doing this at Elevate and I know Duolingo was probably doing it too.
+
+376
+00:32:12,000 --> 00:32:17,440
+It was back in like 2015, you were using local notifications because like you couldn't turn them off, uh, right?
+
+377
+00:32:17,840 --> 00:32:23,280
+And yeah, that's scummy, I guess, but like it was also cheaper to do than having push notifications.
+
+378
+00:32:23,440 --> 00:32:24,160
+So we had to build our own.
+
+379
+00:32:24,240 --> 00:32:28,480
+Eventually, Apple unified this and they made it so that notifications are all controlled in the same place.
+
+380
+00:32:28,880 --> 00:32:29,040
+Right.
+
+381
+00:32:29,280 --> 00:32:35,680
+But I guess my point being that, like, you know, in terms of retention, I'm sure retention is bringing someone back into the app.
+
+382
+00:32:35,920 --> 00:32:36,080
+Right.
+
+383
+00:32:36,240 --> 00:32:41,360
+What could work better than, like, sticking yourself on their home screen, like when they're not using the app.
+
+384
+00:32:41,600 --> 00:32:41,760
+Right.
+
+385
+00:32:41,840 --> 00:32:46,640
+Is this like, this has to be like your biggest, one of your biggest surface areas on the retention team, I have to imagine.
+
+386
+00:32:46,720 --> 00:32:46,880
+Right.
+
+387
+00:32:47,040 --> 00:32:47,680
+Oh, oh yeah.
+
+388
+00:32:48,080 --> 00:32:52,720
+I think the retention team at Do Duolingo has worked on a lot of different features over the years.
+
+389
+00:32:53,040 --> 00:33:03,360
+So we have the daily streak mechanic, we have leaderboards in Duolingo, but then notifications is always a huge lever for driving retention.
+
+390
+00:33:03,680 --> 00:33:11,920
+And I joined the retention team as an APM, but I think I was the first full time PM to focus full time on notifications.
+
+391
+00:33:12,480 --> 00:33:18,240
+But that just is like a sign of how valuable it is for our growth to optimize our notifications.
+
+392
+00:33:18,480 --> 00:33:20,320
+So we're 30 minutes in.
+
+393
+00:33:20,480 --> 00:33:20,800
+Sorry.
+
+394
+00:33:23,360 --> 00:33:24,400
+Tell us what you've learned.
+
+395
+00:33:24,560 --> 00:33:32,400
+Like what can others learn from all these tests that Duolingo has done about creating impactful retentive notifications?
+
+396
+00:33:33,280 --> 00:33:33,360
+Yeah.
+
+397
+00:33:33,920 --> 00:33:48,880
+So some super basic learnings that we've had and I'm sure you'll link the Twitter thread in the show notes, but having a very distinct tone and CTA in your notifications is really important, especially when you're sending multiple notifications perhaps over even the same day.
+
+398
+00:33:49,760 --> 00:33:53,680
+So at Duolingo, we have a few different notifications that we might send.
+
+399
+00:33:53,920 --> 00:33:56,080
+One of them is a practice reminder, which I mentioned.
+
+400
+00:33:56,800 --> 00:34:05,280
+We have a really clear CTA of just, hey, it's time for your daily practice, get back into the app to study Spanish for five minutes, something like that.
+
+401
+00:34:05,840 --> 00:34:15,920
+And then for users who are on a daily streak, we send another notification if they haven't practiced at the end of the day, like 10 p.m., which we call the streak saver notification.
+
+402
+00:34:16,720 --> 00:34:22,800
+And that one has a more alarming tone that says last reminder or hey, it's getting late, things like that.
+
+403
+00:34:23,440 --> 00:34:28,240
+When you're sending multiple notifications, it's really important to have a distinct purpose for each one.
+
+404
+00:34:29,040 --> 00:34:34,560
+Just so from the user's perspective, it's more like Duo is having a conversation with me.
+
+405
+00:34:34,800 --> 00:34:38,000
+He told me that I have to practice at 4 p.m., but I ignored him.
+
+406
+00:34:38,320 --> 00:34:39,360
+But now at 10 p.m.
+
+407
+00:34:39,520 --> 00:34:41,680
+he's getting kind of scared because I might lose my streak.
+
+408
+00:34:42,080 --> 00:34:45,760
+So having that sort of narrative that you can talk to the user with with your notifications.
+
+409
+00:34:46,640 --> 00:34:47,200
+is really important.
+
+410
+00:34:47,920 --> 00:34:49,760
+So yeah, you mentioned you mentioned tone there.
+
+411
+00:34:51,360 --> 00:34:59,120
+So like, what's an example of like, I guess like there's alarmist versus not, but you actually in the notifications speak from the voice of the bird, right?
+
+412
+00:34:59,360 --> 00:35:01,760
+Duo, which I just learned his name Duo and it's like he.
+
+413
+00:35:03,520 --> 00:35:09,680
+Like who when you guys are writing copy for that, like, are you trying to be cute with it or is it like pretty basic?
+
+414
+00:35:11,120 --> 00:35:19,760
+Yeah, we try to vary the tone because we' is good as a user is getting multiple notifications over several days.
+
+415
+00:35:20,480 --> 00:35:25,440
+So some of our notifications are really cute and encouraging and positive, like, amazing job.
+
+416
+00:35:25,680 --> 00:35:28,240
+You're on a ten day streak, come back and do Spanish.
+
+417
+00:35:28,800 --> 00:35:36,400
+Other times the duo might be more passive aggressive or Yeah, like you can practice Spanish if you want.
+
+418
+00:35:36,960 --> 00:35:38,480
+Um, so we try to have that variation.
+
+419
+00:35:39,280 --> 00:35:40,160
+You really get funny with it.
+
+420
+00:35:40,320 --> 00:35:41,920
+Like you really like, try to meme it up.
+
+421
+00:35:42,000 --> 00:35:42,560
+Uh, yeah.
+
+422
+00:35:42,720 --> 00:35:43,840
+I mean, it's super, yeah.
+
+423
+00:35:43,920 --> 00:35:44,320
+It makes sense.
+
+424
+00:35:45,120 --> 00:35:46,080
+Are you writing those personally?
+
+425
+00:35:46,240 --> 00:35:47,280
+You guys have copywriters or?
+
+426
+00:35:47,600 --> 00:35:47,600
+Yes.
+
+427
+00:35:48,000 --> 00:35:54,720
+So a lot of it, so far, has been done by PMs like myself, but we also have content designers that help us review and write some copy.
+
+428
+00:35:55,200 --> 00:36:00,720
+But yeah, for a while, my job was just writing from the voice of the bird and writing the news for the duo.
+
+429
+00:36:01,680 --> 00:36:11,840
+I mean, I think it's worth pointing out a meta point here on, I think, marketing and then something I believe in just in general is that like a opinionated voice.
+
+430
+00:36:13,120 --> 00:36:28,960
+That sounds distinct, even if it's bad, like even if it's annoying to some people, is always, I think, going to perform better than like a bleached and very like, what's not the word sanitized, just like a very like sterile, a very sterile voice, right?
+
+431
+00:36:29,280 --> 00:36:30,800
+That you're trying to appeal to everybody.
+
+432
+00:36:31,440 --> 00:36:35,440
+I don't think I personally, and I think that sounds like with you guys, the data bears this out.
+
+433
+00:36:35,520 --> 00:36:36,960
+It does not perform, right?
+
+434
+00:36:37,280 --> 00:36:49,040
+You'd rather have hits and peaks and like a little bit like odd because again, like even on, you know, some of my I, I, you know, curate my notifications very heavily, right?
+
+435
+00:36:49,280 --> 00:36:50,240
+And I still get a lot of them.
+
+436
+00:36:50,880 --> 00:36:59,920
+Um, and so, you know, if one of them makes me smile, like I can imagine that's going to, that's going to increase the, uh, you know, likelihood I'm going to click in.
+
+437
+00:37:00,480 --> 00:37:01,120
+Yeah, exactly.
+
+438
+00:37:01,440 --> 00:37:07,920
+Especially since we're sending these notifications up to a seven day schedule, maybe the first three the user will just ignore.
+
+439
+00:37:08,320 --> 00:37:13,200
+But if there's a really wacky or fun or creative one they get on day four, maybe that will bring them back.
+
+440
+00:37:13,440 --> 00:37:21,440
+So that's why we try to have variation and we obviously have the algorithm also optimizing which ones are most effective over that schedule.
+
+441
+00:37:22,080 --> 00:37:22,160
+Yeah.
+
+442
+00:37:22,480 --> 00:37:24,880
+So next up, the next learning was keep it simple.
+
+443
+00:37:25,120 --> 00:37:26,560
+What, what is, what did that mean?
+
+444
+00:37:27,440 --> 00:37:27,520
+Yeah.
+
+445
+00:37:28,080 --> 00:37:34,160
+Basically what it sounds like essentially just keeping the messaging or whatever theme of the notification very simple.
+
+446
+00:37:34,880 --> 00:37:46,080
+This is especially true with newer users or users that aren't as engaged with the app, people for Duolingo who are on maybe shorter streaks, keeping the copy really short and concise.
+
+447
+00:37:46,480 --> 00:37:47,360
+This was especially true.
+
+448
+00:37:47,600 --> 00:37:55,840
+I think I forget whether it was iOS 14 or 15 where Apple started cutting off, chopping off more text in the notification header.
+
+449
+00:37:56,640 --> 00:37:58,400
+So a lot of our existing notifications started.
+
+450
+00:37:58,800 --> 00:37:59,520
+They're not working anymore.
+
+451
+00:37:59,680 --> 00:37:59,760
+Yeah.
+
+452
+00:38:00,000 --> 00:38:00,080
+Yeah.
+
+453
+00:38:00,400 --> 00:38:03,120
+They started getting cut off near like the fourth or fifth word.
+
+454
+00:38:03,600 --> 00:38:08,400
+So then we've been doing a lot of tests that just have notifications that are three words.
+
+455
+00:38:08,720 --> 00:38:10,960
+like got three minutes, study Spanish now.
+
+456
+00:38:11,360 --> 00:38:18,160
+And things like that worked really well because people, as you said, people get a lot of notifications from a lot of different apps.
+
+457
+00:38:18,480 --> 00:38:26,080
+So if you can like quick grab the user's attention with like two or three words that has often reduced cognitive load.
+
+458
+00:38:26,160 --> 00:38:39,040
+I mean, I think it's just in product management in general, like a good, you know, anything that makes your users have to think hard is is probably going to have adverse effects to their affinity for the product or willingness to engage because you're just you're tiring them out, you know?
+
+459
+00:38:39,600 --> 00:38:48,640
+What is interesting is for our more engaged learners, for example, if you're on a 50 day streak, more complicated messaging can often work well too.
+
+460
+00:38:49,360 --> 00:38:57,680
+So within the notifications, we'll reference specific mechanics like on Duolingo, you can use a streak freeze to save your streak.
+
+461
+00:38:57,760 --> 00:38:58,800
+If you don't practice for a day.
+
+462
+00:38:59,360 --> 00:39:02,960
+So in some of our notifications, we'll say, hey, you're out of streak freezes.
+
+463
+00:39:03,280 --> 00:39:05,200
+Don't lose your 50 day streak.
+
+464
+00:39:05,440 --> 00:39:15,600
+And obviously that messaging is a little bit more complicated than something we send to less engaged users, but we do have this variation in messaging that we send to less or more engaged users.
+
+465
+00:39:16,000 --> 00:39:29,200
+And so I would understand that that's an input to the algorithm as well as what if there's a fiftieth return or like first return or something like that that will help you like you'll you'll choose different copy or different notification based on that.
+
+466
+00:39:29,680 --> 00:39:29,760
+Yeah.
+
+467
+00:39:30,000 --> 00:39:31,760
+So it's actually not as complicated.
+
+468
+00:39:31,920 --> 00:39:35,280
+We don't have as many parameters within the algorithm itself.
+
+469
+00:39:35,840 --> 00:39:40,160
+But what we do is we set specific criteria on those copy templates.
+
+470
+00:39:40,480 --> 00:39:42,080
+So for something like, oh, okay.
+
+471
+00:39:42,240 --> 00:39:45,600
+So this is certain groups can't get notifications that make sense for them.
+
+472
+00:39:45,760 --> 00:39:46,000
+Got it.
+
+473
+00:39:46,160 --> 00:39:51,360
+So the bandit will just optimize for the eligible templates that a given user is eligible for.
+
+474
+00:39:51,840 --> 00:39:52,240
+I understand.
+
+475
+00:39:52,720 --> 00:39:53,040
+Got it.
+
+476
+00:39:53,360 --> 00:39:54,000
+That's so cool.
+
+477
+00:39:54,800 --> 00:39:59,280
+And so the next learning was keep titles under thirty characters, which I think you kind of already explained in the case.
+
+478
+00:39:59,360 --> 00:40:00,240
+Keep it simple thing.
+
+479
+00:40:00,800 --> 00:40:02,160
+But the next one is really interesting.
+
+480
+00:40:02,400 --> 00:40:04,720
+Emojis work best in the title, not the body.
+
+481
+00:40:04,960 --> 00:40:08,240
+That just seems so goofy, but the data proved it out.
+
+482
+00:40:09,440 --> 00:40:14,080
+Like, how do you all use emojis and what were you doing in the body that just didn't work?
+
+483
+00:40:14,720 --> 00:40:19,360
+Yeah, so emojis are another like vector for how we optimize notifications.
+
+484
+00:40:19,680 --> 00:40:21,920
+People generally respond well to different emojis.
+
+485
+00:40:22,480 --> 00:40:28,480
+What we have noticed is that generally emojis work better in the title of the notification rather than the body.
+
+486
+00:40:29,440 --> 00:40:35,360
+My hypothesis is that in the title emojis work really well as an attention grabber.
+
+487
+00:40:36,000 --> 00:40:42,240
+Whereas if you have an emoji in the body, it makes the notification look a little bit loudy, which at that point you're just tuning it out.
+
+488
+00:40:43,200 --> 00:40:51,120
+So yeah, we've tested with this and it seems like it works better if you have the emoji in the title and also the emoji as the leading character rather than at the end.
+
+489
+00:40:51,440 --> 00:40:52,480
+It's more like an icon, right?
+
+490
+00:40:52,800 --> 00:41:01,840
+You're having like a customized, like, aside from your app icon, which gets shared in the notification, like you can add even like a topical extra icon that will like.
+
+491
+00:41:03,440 --> 00:41:04,560
+I'm the same way.
+
+492
+00:41:04,640 --> 00:41:11,840
+Like when I when I read text with like emojis embedded in, I boomer brain, like I just can't like, like, I this is too much.
+
+493
+00:41:12,080 --> 00:41:13,600
+Like, I can't, I can't parse this.
+
+494
+00:41:13,920 --> 00:41:14,080
+Right.
+
+495
+00:41:14,240 --> 00:41:15,120
+It becomes very noisy.
+
+496
+00:41:15,200 --> 00:41:16,720
+So that, that, that's intuitive.
+
+497
+00:41:16,960 --> 00:41:17,760
+See, this is the thing.
+
+498
+00:41:17,920 --> 00:41:19,120
+I I had all this vision to begin with.
+
+499
+00:41:19,360 --> 00:41:20,400
+We didn't need to run all these tests.
+
+500
+00:41:20,400 --> 00:41:24,800
+I could have told you to starting after once I've seen the data, then I'm certain that I was right.
+
+501
+00:41:27,520 --> 00:41:35,680
+On the subject of notifications, before we move on, this wasn't actually shared in the tweet storm or tweet thread that we'll link to.
+
+502
+00:41:36,160 --> 00:41:42,720
+But as a failed experiment, you talked about how using a marketing tone in notifications just doesn't work.
+
+503
+00:41:43,280 --> 00:41:49,200
+Tell me the thinking behind that and what experiments you've, experiments you've run that just fell flat.
+
+504
+00:41:50,160 --> 00:41:50,240
+Yeah.
+
+505
+00:41:50,880 --> 00:41:54,240
+It's a it's a really interesting experiment that we ran recently.
+
+506
+00:41:55,200 --> 00:42:00,160
+Basically, we want learners to tap on our notifications because when you.
+
+507
+00:42:00,640 --> 00:42:07,360
+tap directly on a notification, it links you directly to a lesson, and that increases the completion rate of doing a lesson.
+
+508
+00:42:07,760 --> 00:42:13,920
+So we have this incentive to get users to tap directly on the notification, rather than just navigating to the app on their own.
+
+509
+00:42:14,560 --> 00:42:22,320
+So we wanted to test copy templates that explicitly instructed users to do that, things that said, tap here to start a quick lesson.
+
+510
+00:42:23,040 --> 00:42:26,320
+As it so happens, that sort of tone doesn't work really well.
+
+511
+00:42:28,080 --> 00:42:36,640
+In our analysis, we sort of were thinking that this is because it sounds more like an ad or like you're getting a discount from some sort of app.
+
+512
+00:42:36,880 --> 00:42:40,000
+If Duo was like, tap here, you'd be like, what are you doing, man?
+
+513
+00:42:40,240 --> 00:42:40,960
+Yeah, exactly.
+
+514
+00:42:41,440 --> 00:42:42,240
+It sounds more like a brand.
+
+515
+00:42:42,640 --> 00:42:43,520
+If your friends did that, right?
+
+516
+00:42:43,760 --> 00:42:45,440
+You'd be like, what's going on?
+
+517
+00:42:45,760 --> 00:42:46,800
+I'm here to respond to my text.
+
+518
+00:42:46,960 --> 00:42:47,120
+Yeah.
+
+519
+00:42:47,600 --> 00:42:48,320
+It just doesn't work.
+
+520
+00:42:50,560 --> 00:42:58,240
+So again, it ties back to the idea that like an organic tone of having a character talk to you works better than having a brand talk to you.
+
+521
+00:42:58,800 --> 00:43:00,240
+from a marketing standpoint?
+
+522
+00:43:01,280 --> 00:43:02,640
+Yeah, that's such a great lesson.
+
+523
+00:43:02,960 --> 00:43:17,680
+I think in app marketing, sometimes we feel like we need to be grown up marketers and like adopt all the marketing best practices, but that doesn't really work in a lot of these cases.
+
+524
+00:43:17,920 --> 00:43:19,920
+I think it's a really important thing to keep in mind.
+
+525
+00:43:20,720 --> 00:43:26,080
+The next thing I wanted to talk about, and I think this is something you actually blogged on, was street flexibility.
+
+526
+00:43:27,360 --> 00:43:30,960
+So yeah, tell me, tell me about those experiments and what you learned.
+
+527
+00:43:31,680 --> 00:43:31,760
+Yeah.
+
+528
+00:43:32,080 --> 00:43:37,040
+So as I mentioned earlier on Dueling Go, you have the daily streak.
+
+529
+00:43:37,280 --> 00:43:39,360
+So every day you practice, your streak goes up.
+
+530
+00:43:40,640 --> 00:43:46,320
+And that was a huge mechanic for our retention in the early days just because it gives users a reason to come back every day.
+
+531
+00:43:46,480 --> 00:43:50,400
+It's And then every other social app copied it like in the world, right?
+
+532
+00:43:50,640 --> 00:43:51,040
+Exactly.
+
+533
+00:43:51,200 --> 00:43:51,280
+Yeah.
+
+534
+00:43:52,240 --> 00:43:54,560
+It is the best retention mechanic you can think of.
+
+535
+00:43:55,040 --> 00:44:07,120
+What we learned over time is that this kind of streak mechanic is very punitive in the sense that if you miss one day by a chance, then you lose your streak, and that is extremely demotivating.
+
+536
+00:44:07,680 --> 00:44:17,520
+There's a huge churn point where if you lose a streak, even if you're very committed beforehand, just the experience of losing a streak is super discouraging, and users will just fall off the platform.
+
+537
+00:44:18,800 --> 00:44:32,080
+So we have this in-app item that you can purchase or we also give it out sometimes as a reward for doing certain things, which is the streak freeze.
+
+538
+00:44:32,640 --> 00:44:35,360
+Basically, you can miss a day and your streak will stay the same.
+
+539
+00:44:35,760 --> 00:44:40,400
+You can come back the next day and continue learning and increasing your streak.
+
+540
+00:44:40,960 --> 00:44:44,720
+So adding the streak freeze was amazing for retention.
+
+541
+00:44:45,040 --> 00:44:53,920
+Just giving a little bit of slack just makes the process of keeping a streak a lot easier and it's less punitive and punishing for a user to not have to come back.
+
+542
+00:44:56,160 --> 00:45:01,040
+And then we've done so many optimizations around the streak freeze of playing with the pricing.
+
+543
+00:45:01,200 --> 00:45:09,600
+So you can you can buy streak freezes with our inapcurity called gems, or as I mentioned, you can get them as a reward for completing your daily quest, for example.
+
+544
+00:45:10,560 --> 00:45:14,080
+We've optimized the drop rates of how often they drop as a reward.
+
+545
+00:45:14,720 --> 00:45:18,240
+We've also increased the number of streak freezes you can have at a certain point.
+
+546
+00:45:18,720 --> 00:45:20,880
+So now you can equip up to two at a time.
+
+547
+00:45:21,280 --> 00:45:24,400
+Essentially, you can miss two days and still keep your streak.
+
+548
+00:45:24,960 --> 00:45:32,560
+Obviously, as we're doing all these optimizations, we're trying to keep in mind what we call the sanctity of the streak to make sure it's still meaningless, right?
+
+549
+00:45:33,440 --> 00:45:33,760
+Exactly.
+
+550
+00:45:34,000 --> 00:45:43,200
+And generally as we've iterated, we've seen retention gains and people are still attributing value to the streak, even though there's a chance that you missed a few days in between.
+
+551
+00:45:44,000 --> 00:45:46,240
+All the mechanics are only proactive.
+
+552
+00:45:46,400 --> 00:45:51,200
+So like if I if I just miss a streak day and I'm like, ah, I missed it.
+
+553
+00:45:52,000 --> 00:45:53,760
+Can I recover it or is it?
+
+554
+00:45:54,320 --> 00:45:56,560
+Do I still have to like put this freeze in place before?
+
+555
+00:45:57,280 --> 00:45:59,440
+Yeah, so you have to have a streak freeze equipped.
+
+556
+00:45:59,680 --> 00:46:02,240
+We have a separate mechanic also called the streak repair.
+
+557
+00:46:02,400 --> 00:46:03,040
+And this is like an example.
+
+558
+00:46:04,000 --> 00:46:05,680
+I'm dropping $1.99 on that.
+
+559
+00:46:06,080 --> 00:46:24,160
+Yeah, so that has historically been like an inappropriate purchase or it's a it's a perk that you get in our subscription super where you get a streak repair where in the case that you used all your streak freezes, missed a day and actually lost your streak, you can still get it back.
+
+560
+00:46:25,280 --> 00:46:30,320
+But over time, we're also trying to make sure that all these features are aligned and not Yeah, it doesn't get out of control.
+
+561
+00:46:30,560 --> 00:46:35,680
+I mean, but it does feel like, I mean, as long as there's some activity, right?
+
+562
+00:46:35,840 --> 00:46:39,120
+Like as long as users are thinking about their streak, that's kind of what you want.
+
+563
+00:46:39,600 --> 00:46:40,480
+Like, okay, do I care?
+
+564
+00:46:40,800 --> 00:46:42,960
+But then we go back, yeah, I guess the sanctity thing.
+
+565
+00:46:43,120 --> 00:46:50,800
+It's like at some point if you over optimize for streaks, it's only a streak is only important inso much as people are doing language learning, right?
+
+566
+00:46:50,960 --> 00:46:57,280
+If they're not doing language learning, then the streak is just an addiction mechanic and you're not you're not making the world a better place anymore, right?
+
+567
+00:46:57,680 --> 00:47:00,240
+Which is a constant risk of being a product manager, right?
+
+568
+00:47:00,480 --> 00:47:03,840
+Optimizing to create something terrible for the world, right?
+
+569
+00:47:05,280 --> 00:47:17,440
+So it's an interesting balance, but the the streak the streak as a I've always wondered about that, like the how do the how do the downsides of a failure to maintain that thing affect?
+
+570
+00:47:17,600 --> 00:47:21,520
+And I'm I'm sure like it doesn't become a dominating effect, right?
+
+571
+00:47:21,760 --> 00:47:25,760
+Like that the people are not losing streaks so often that it makes a difference.
+
+572
+00:47:25,920 --> 00:47:31,600
+But I'm sure at this stage, like when you're optimizing everything you can, like there's more to be had there.
+
+573
+00:47:32,320 --> 00:47:38,640
+And then also just like, you know, from a branding perspective, makes the conversation like do is a little more chill.
+
+574
+00:47:38,880 --> 00:47:39,440
+You know what I mean?
+
+575
+00:47:39,600 --> 00:47:41,200
+Like do is give me a break, right?
+
+576
+00:47:41,360 --> 00:47:43,840
+If I got like a wedding that weekend or something, I have to go to sleep.
+
+577
+00:47:44,000 --> 00:47:45,520
+Like it's not gonna be all over me.
+
+578
+00:47:45,920 --> 00:47:46,000
+Yeah.
+
+579
+00:47:46,560 --> 00:47:47,200
+I think it's great.
+
+580
+00:47:47,680 --> 00:47:50,800
+And actually, I've thought a lot about Apple's fitness streaks.
+
+581
+00:47:51,280 --> 00:47:56,240
+And there's times when you're sick where you can't work out or the stand notifications when you're on a flight.
+
+582
+00:47:56,880 --> 00:47:58,000
+Oh my gosh, just get out of here.
+
+583
+00:47:58,160 --> 00:48:01,200
+And it's like you might actually do more harm than good.
+
+584
+00:48:01,760 --> 00:48:02,560
+Happy exercise.
+
+585
+00:48:02,640 --> 00:48:03,680
+I turn it off.
+
+586
+00:48:03,680 --> 00:48:05,440
+I like when I got my Apple Watch, I was all about it.
+
+587
+00:48:05,520 --> 00:48:08,960
+And then I was for a while, I was like, come on, like you're not adapting to me, right?
+
+588
+00:48:09,200 --> 00:48:10,400
+Like, I'm dumb with this.
+
+589
+00:48:11,120 --> 00:48:14,720
+So while it's breaking the rules, it's like breaking the rules in a healthy way.
+
+590
+00:48:15,280 --> 00:48:16,640
+I mean, I think it's pretty cool.
+
+591
+00:48:17,040 --> 00:48:19,680
+We actually talked to the former CMO of Tinder.
+
+592
+00:48:19,840 --> 00:48:20,240
+Oh yeah.
+
+593
+00:48:20,400 --> 00:48:21,760
+And Tinder has a few things like that.
+
+594
+00:48:22,080 --> 00:48:27,040
+We talked about how, you know, some of their monetization is around breaking the rules.
+
+595
+00:48:27,360 --> 00:48:33,120
+And it's interesting how you can break the rules in good ways and you can break the rules in bad ways.
+
+596
+00:48:33,600 --> 00:48:39,520
+And the balance is finding ways to break the rules in ways that are actually positive and beneficial.
+
+597
+00:48:39,920 --> 00:48:44,560
+And that's what the users will respond to, not just buy your way out of something.
+
+598
+00:48:44,880 --> 00:48:46,320
+It's like, okay, it was legitimate.
+
+599
+00:48:46,400 --> 00:48:47,360
+It was a win, right?
+
+600
+00:48:47,680 --> 00:48:48,080
+Yeah, yeah.
+
+601
+00:48:50,960 --> 00:48:51,360
+Pitch that one.
+
+602
+00:48:51,520 --> 00:48:52,800
+I need you guys to test that one.
+
+603
+00:48:53,520 --> 00:48:54,720
+Just tell me some ideas.
+
+604
+00:48:55,120 --> 00:48:56,320
+Talk to these subclub guys.
+
+605
+00:48:56,400 --> 00:48:57,920
+They gave me some great ideas on monetization.
+
+606
+00:48:58,320 --> 00:48:58,720
+Oh man.
+
+607
+00:49:00,080 --> 00:49:02,400
+Well, hey, we do need to get to wrapping up.
+
+608
+00:49:03,200 --> 00:49:06,160
+But there was one more question I had was the widgets.
+
+609
+00:49:06,240 --> 00:49:10,320
+So widgets have been huge the last few years since Apple redesigned the whole home screen.
+
+610
+00:49:10,640 --> 00:49:14,320
+What kind of results have you all seen from having the streak widget?
+
+611
+00:49:14,960 --> 00:49:15,120
+widget?
+
+612
+00:49:15,280 --> 00:49:22,000
+And I imagine you keep statistics on the number of users who actually have it on their home screen, the number of people who tap on it.
+
+613
+00:49:22,320 --> 00:49:26,800
+Has it been a pretty big driver of retention and visibility for the app?
+
+614
+00:49:27,440 --> 00:49:28,400
+Yeah, it's a great question.
+
+615
+00:49:29,120 --> 00:49:31,520
+So, on iOS, we have a streak widget.
+
+616
+00:49:31,760 --> 00:49:38,240
+It's basically a home screen widget that shows the current length of your streak and it has a cute picture of Duo.
+
+617
+00:49:38,560 --> 00:49:43,040
+Over the course of the day, as you don't practice, Duo gets like angrier and angrier or like more worried.
+
+618
+00:49:43,600 --> 00:49:48,960
+So it's kind of like almost like a Tamagotchi thing that's like living on your home screen to get you to practice.
+
+619
+00:49:49,200 --> 00:49:50,240
+Um, that's so cool.
+
+620
+00:49:50,560 --> 00:49:50,640
+Yes.
+
+621
+00:49:50,880 --> 00:49:57,440
+So we launched it this year and in fact it exceeded our expectations at how good of a retention lever it is.
+
+622
+00:49:58,080 --> 00:49:59,840
+Um, and there's two reasons for it.
+
+623
+00:50:00,160 --> 00:50:10,240
+One is that for users that are active that are on a streak, it is like a constant notification that lives on your home screen reminding you about your streak, but it's also cute more than a notification.
+
+624
+00:50:10,560 --> 00:50:14,400
+It's more adorable and it's something that you optted to add to your home screen.
+
+625
+00:50:14,720 --> 00:50:20,320
+So it feels a lot less spammy than a real notification, but it's a constant reminder, like, hey, this is your streak.
+
+626
+00:50:21,040 --> 00:50:23,600
+Do you actually do some educational content there?
+
+627
+00:50:23,840 --> 00:50:25,680
+Like, ombre is man.
+
+628
+00:50:26,480 --> 00:50:32,880
+Does it have any kind of like actually reinforced learning or is it mostly about the streak that is on a road map.
+
+629
+00:50:33,040 --> 00:50:37,120
+We don't have that yet, but there's a lot of like optimizations and like Visionary CO plan.
+
+630
+00:50:37,360 --> 00:50:38,000
+No, don't do it.
+
+631
+00:50:38,720 --> 00:50:40,320
+I think just get people to open the app.
+
+632
+00:50:40,640 --> 00:50:41,440
+I was going to say like.
+
+633
+00:50:41,840 --> 00:50:45,600
+the the you could you could have just thrown up a number said your streak is three, right?
+
+634
+00:50:45,760 --> 00:50:47,040
+Like a very phoned in widget.
+
+635
+00:50:47,360 --> 00:50:50,240
+Um, and like I've built these features for Apple before.
+
+636
+00:50:50,400 --> 00:50:56,720
+And if I've learned like if you don't make it on its own, something that provides value, it's nobody's gonna be really excited about it.
+
+637
+00:50:57,040 --> 00:51:05,040
+But like if you're putting like some character into it, you're like making it something and a little bit of an experience in itself and like evoking an emotion just with it, then you have a chance.
+
+638
+00:51:05,360 --> 00:51:08,400
+I guess my question would be like, does it move the needle for you all?
+
+639
+00:51:08,560 --> 00:51:10,480
+Unless you get people to actually add it, right?
+
+640
+00:51:10,720 --> 00:51:16,400
+And like, are you trying to actively push that or are you just saying it's successful for the people that already have it installed?
+
+641
+00:51:17,120 --> 00:51:18,640
+No, yeah, it's a great question.
+
+642
+00:51:18,800 --> 00:51:21,360
+So there's basically two things that we have to work on with the widget.
+
+643
+00:51:21,520 --> 00:51:23,040
+One is getting users to install it.
+
+644
+00:51:23,440 --> 00:51:30,480
+So we have like in app promotions when you finish a session or a lesson, we'll say, hey, we have a widget, you should install it.
+
+645
+00:51:30,800 --> 00:51:37,360
+And when we tested showing that card, it actually led a surprisingly high number of users to install the widget.
+
+646
+00:51:37,680 --> 00:51:39,520
+So our widget DAU.
+
+647
+00:51:39,760 --> 00:51:43,520
+graph has been going hockey stick recently, which has been awesome.
+
+648
+00:51:43,920 --> 00:51:48,800
+But yeah, after we get the user to install it, there's also the optimization of what the widget actually looks like.
+
+649
+00:51:49,120 --> 00:51:55,680
+And both of those levers, getting users to install and making it valuable, are both levers for attention for us.
+
+650
+00:51:56,080 --> 00:51:59,280
+Yeah, it's interesting, like on a product that's a decade plus now.
+
+651
+00:51:59,520 --> 00:52:01,680
+Yeah, I'm not sure, yeah, something like that, right?
+
+652
+00:52:03,120 --> 00:52:06,800
+That there's still more to be enhanced.
+
+653
+00:52:06,960 --> 00:52:07,920
+And like you said, like.
+
+654
+00:52:08,000 --> 00:52:15,520
+like, you know, it's still growing, 50% DAU growth or whatever it was over the last year is pretty crazy, right?
+
+655
+00:52:16,240 --> 00:52:24,320
+I would have never had in 2013 when the app store was nascent and there was this app, Duolingo, which we're like, wow, they're giving it away for free.
+
+656
+00:52:24,480 --> 00:52:25,440
+Like, we didn't really understand.
+
+657
+00:52:25,600 --> 00:52:29,120
+Like, I I I I would never have guessed that it would have gotten to the point today.
+
+658
+00:52:29,360 --> 00:52:32,080
+But then again, I didn't know I didn't know what you guys were doing.
+
+659
+00:52:32,240 --> 00:52:33,440
+And now it kind of makes sense.
+
+660
+00:52:33,840 --> 00:52:35,280
+So it's pretty amazing.
+
+661
+00:52:36,080 --> 00:52:36,160
+Yeah.
+
+662
+00:52:36,400 --> 00:52:38,800
+So I think this is a great great place to wrap up.
+
+663
+00:52:39,760 --> 00:52:40,960
+It's such an incredible app.
+
+664
+00:52:41,280 --> 00:52:47,520
+What an incredible journey to from early in the App Store to publicly traded company.
+
+665
+00:52:48,000 --> 00:52:56,400
+And it's so cool all the different ways that you all incorporate testing and data to help influence that and to continue to grow and continue to make it a great experience.
+
+666
+00:52:57,360 --> 00:52:58,960
+Anything you wanted to share in closing?
+
+667
+00:52:59,200 --> 00:53:02,480
+I know Duolingo still hiring like crazy.
+
+668
+00:53:02,880 --> 00:53:05,600
+You know, the rest of the tech, there's a lot of people looking for jobs.
+
+669
+00:53:06,160 --> 00:53:07,280
+So anything you want to share there?
+
+670
+00:53:07,840 --> 00:53:11,520
+Yeah, no, we're very fortunate that we're still in good stand and we're still hiring.
+
+671
+00:53:11,760 --> 00:53:15,520
+So look up our careers page if there's any positions that interest you.
+
+672
+00:53:16,480 --> 00:53:18,560
+And yeah, download Duolingo if you haven't.
+
+673
+00:53:19,440 --> 00:53:21,200
+We love our users and we love hacking.
+
+674
+00:53:21,360 --> 00:53:22,720
+Yeah, always be thankful.
+
+675
+00:53:22,880 --> 00:53:23,280
+Exactly.
+
+676
+00:53:24,400 --> 00:53:24,560
+Yeah.
+
+677
+00:53:25,120 --> 00:53:25,360
+All right.
+
+678
+00:53:25,520 --> 00:53:26,000
+Thanks so much.
+
+679
+00:53:26,240 --> 00:53:27,920
+This was a fascinating conversation.
+
+680
+00:53:28,240 --> 00:53:32,160
+And again, I appreciate so much how open Duolingo is to to share this stuff.
+
+681
+00:53:32,320 --> 00:53:39,680
+So again, we'll share links in the blog in the show notes for a lot of really great blog posts and tweet threads and things like that.
+
+682
+00:53:39,840 --> 00:53:40,480
+So thanks again.
+
+683
+00:53:41,040 --> 00:53:42,480
+Thank you so much, David and Jacob.
+
+684
+00:53:45,440 --> 00:53:46,720
+Thanks so much for listening.
+
+685
+00:53:47,680 --> 00:53:51,040
+If you have a minute, please leave a review in your favorite podcast player.
+
+686
+00:53:51,920 --> 00:53:56,800
+You can also stop by chat dot subclub dot com to join our private community.
