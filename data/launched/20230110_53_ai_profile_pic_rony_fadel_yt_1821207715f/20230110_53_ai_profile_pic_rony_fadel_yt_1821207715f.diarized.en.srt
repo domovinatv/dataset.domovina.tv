@@ -1,0 +1,2691 @@
+1
+00:00:02,560 --> 00:00:03,520
+[SPEAKER_00] Welcome to Launched.
+
+2
+00:00:03,680 --> 00:00:09,920
+[SPEAKER_00] I'm Charlie Chapman, and today I'm excited to bring you the developer behind the AI Profile Pic App, Ronnie Fidel.
+
+3
+00:00:24,160 --> 00:00:25,280
+[SPEAKER_00] Ronnie, welcome to the show.
+
+4
+00:00:25,680 --> 00:00:26,240
+[SPEAKER_00] Hi, Charlie.
+
+5
+00:00:26,400 --> 00:00:27,200
+[SPEAKER_00] Thank you for having me.
+
+6
+00:00:27,440 --> 00:00:28,080
+[SPEAKER_00] Thanks for coming.
+
+7
+00:00:28,400 --> 00:00:36,000
+[SPEAKER_00] This is we actually we talked a month or so ago when we were talking about doing the show, but scheduling wise, a little peek behind the curtain.
+
+8
+00:00:36,320 --> 00:00:40,480
+[SPEAKER_00] We're we're like, dancing around holidays and vacations and stuff.
+
+9
+00:00:40,960 --> 00:00:44,160
+[SPEAKER_00] This AI category, is that what you call it?
+
+10
+00:00:44,400 --> 00:00:48,480
+[SPEAKER_00] Like, you know, the chat GBT as well as all the stable diffusion stuff.
+
+11
+00:00:48,560 --> 00:00:49,440
+[SPEAKER_00] Do you just call that AI?
+
+12
+00:00:49,680 --> 00:00:50,480
+[SPEAKER_00] Is there a name for this?
+
+13
+00:00:50,960 --> 00:00:53,440
+[SPEAKER_00] I guess you'd want to call it maybe generative AI?
+
+14
+00:00:53,840 --> 00:00:59,680
+[SPEAKER_00] Generative, okay, because AI is like, it feels like an older and more broad category than these things.
+
+15
+00:01:00,320 --> 00:01:00,800
+[SPEAKER_00] Mm hmm.
+
+16
+00:01:01,120 --> 00:01:01,200
+[SPEAKER_00] Yeah.
+
+17
+00:01:01,760 --> 00:01:08,560
+[SPEAKER_00] But like, this space is moving so ridiculously fast that I didn't want to record early like I often do for the show.
+
+18
+00:01:08,880 --> 00:01:10,960
+[SPEAKER_00] So we're kind of, this is the first one after break.
+
+19
+00:01:11,680 --> 00:01:12,800
+[SPEAKER_00] So I'm excited to have you on.
+
+20
+00:01:13,360 --> 00:01:15,040
+[SPEAKER_01] Yeah, it's been wild, right?
+
+21
+00:01:15,520 --> 00:01:23,360
+[SPEAKER_01] The behind the curtains thing is that we talked about this a month ago and it's still going fast, it's still changing on a weekly basis.
+
+22
+00:01:24,480 --> 00:01:30,800
+[SPEAKER_01] I feel like everyone just keeps on catching up to whatever the new thing is.
+
+23
+00:01:31,760 --> 00:01:36,400
+[SPEAKER_01] Yeah, it's been wild and I think it will continue on being wild for the foreseeable future.
+
+24
+00:01:37,120 --> 00:01:44,480
+[SPEAKER_00] Before we get into that, and I have like a million questions in this area, I want everyone to get a little bit of a background on who you are.
+
+25
+00:01:44,720 --> 00:01:48,560
+[SPEAKER_00] So the questions I asked to start this off is where are you from?
+
+26
+00:01:49,120 --> 00:01:51,440
+[SPEAKER_00] Do you have a formal education related to what you do?
+
+27
+00:01:51,920 --> 00:01:57,680
+[SPEAKER_00] And then what was your career like that led up to this kind of generative AI space that you've been playing in?
+
+28
+00:01:58,400 --> 00:01:59,200
+[SPEAKER_01] I'm from Lebanon.
+
+29
+00:01:59,440 --> 00:02:01,120
+[SPEAKER_01] I'm Lebanese, born and raised.
+
+30
+00:02:01,760 --> 00:02:07,680
+[SPEAKER_01] And then I went to France for higher education, right, for uni.
+
+31
+00:02:08,800 --> 00:02:11,120
+[SPEAKER_01] So I studied software engineering there.
+
+32
+00:02:11,920 --> 00:02:18,240
+[SPEAKER_01] And right after school, I joined Apple, first on macOS and then on iOS.
+
+33
+00:02:18,480 --> 00:02:34,640
+[SPEAKER_01] So I worked on Spotlight sharing iCloud, iCloud Sync and iCloud Drive, which became the Files app.
+
+34
+00:02:35,200 --> 00:02:38,240
+[SPEAKER_01] So that's kind of my career path at Apple.
+
+35
+00:02:38,800 --> 00:02:47,200
+[SPEAKER_01] And at some point I was like, it would be great to explore the world and kind of switch it up career wise.
+
+36
+00:02:48,000 --> 00:03:05,440
+[SPEAKER_01] And I knew that I wanted to leave the corporate space for a little while just to kind of experiment with my own things, develop my own products, really own a product from A to Z, be it development, design, marketing, and just learn as much as possible.
+
+37
+00:03:05,920 --> 00:03:10,240
+[SPEAKER_01] And that's what I had done in so I left Paris in 2019.
+
+38
+00:03:11,120 --> 00:03:13,600
+[SPEAKER_01] So that was three, three and a half years ago.
+
+39
+00:03:15,120 --> 00:03:21,440
+[SPEAKER_01] And set out to just kind of yolo, like figure it out, right?
+
+40
+00:03:22,400 --> 00:03:24,480
+[SPEAKER_01] And I started developing smaller apps.
+
+41
+00:03:26,080 --> 00:03:36,400
+[SPEAKER_01] So there's Mission Control plus, an app that helps you just take control of all the windows that show up in Mission Control, being able to, so it's kind of an OS tweak.
+
+42
+00:03:37,680 --> 00:03:40,800
+[SPEAKER_01] And the batteries app, which tracks all of your devices batteries.
+
+43
+00:03:41,040 --> 00:03:47,600
+[SPEAKER_01] And these were kind of hits, even though they were kind of very small targeted, very specific apps.
+
+44
+00:03:48,080 --> 00:03:49,680
+[SPEAKER_00] Yeah, and on the Mac too, right?
+
+45
+00:03:50,560 --> 00:03:56,480
+[SPEAKER_00] Were those in the Mac App Store or were they separately deployed or distributed?
+
+46
+00:03:57,120 --> 00:04:00,480
+[SPEAKER_00] They both use private API.
+
+47
+00:04:00,800 --> 00:04:01,360
+[SPEAKER_01] Ah, okay.
+
+48
+00:04:01,840 --> 00:04:03,040
+[SPEAKER_01] The choice was made for you then.
+
+49
+00:04:03,840 --> 00:04:04,960
+[SPEAKER_01] The choice was made for me.
+
+50
+00:04:05,440 --> 00:04:07,440
+[SPEAKER_01] So I can't sell them on the App Store.
+
+51
+00:04:08,000 --> 00:04:10,720
+[SPEAKER_01] So yeah, I sell them off my own website.
+
+52
+00:04:11,040 --> 00:04:13,120
+[SPEAKER_00] How did you how did those end up being hitsits?
+
+53
+00:04:13,440 --> 00:04:15,600
+[SPEAKER_00] They were not through the Mac App Store.
+
+54
+00:04:15,840 --> 00:04:16,880
+[SPEAKER_00] What was your sort of marketing?
+
+55
+00:04:18,080 --> 00:04:23,120
+[SPEAKER_01] Even before talking about marketing, why did I want to create these apps, right?
+
+56
+00:04:23,760 --> 00:04:25,280
+[SPEAKER_01] It kind of started off that way.
+
+57
+00:04:25,600 --> 00:04:31,680
+[SPEAKER_01] It's like it had been, these two problems solved by Machine Control Plus and batteries had been nagging me for years.
+
+58
+00:04:32,400 --> 00:04:33,920
+[SPEAKER_01] And so they were on my list.
+
+59
+00:04:34,160 --> 00:04:36,560
+[SPEAKER_01] It's like I would love macOS to do this someday.
+
+60
+00:04:37,120 --> 00:04:41,920
+[SPEAKER_01] And it became a nagging issue in the sense that on almost, you know, you just need to make it happen.
+
+61
+00:04:42,240 --> 00:04:42,800
+[SPEAKER_01] It's annoying.
+
+62
+00:04:43,040 --> 00:04:43,600
+[SPEAKER_01] I needed them.
+
+63
+00:04:43,760 --> 00:04:44,960
+[SPEAKER_01] I needed them both of them.
+
+64
+00:04:45,600 --> 00:04:48,560
+[SPEAKER_01] And so that's how I thought of creating them.
+
+65
+00:04:48,880 --> 00:04:50,080
+[SPEAKER_01] them, that's how I developed them.
+
+66
+00:04:50,560 --> 00:04:56,000
+[SPEAKER_01] And it just turned out that there were so many people that had these same two nagging issues.
+
+67
+00:04:56,400 --> 00:05:02,960
+[SPEAKER_01] So I imagine I kind of lucked out on it in the sense that there were so many other people that had that same nagging issue.
+
+68
+00:05:03,360 --> 00:05:06,240
+[SPEAKER_01] And that kind of helped marketing, it helped it quite a bit.
+
+69
+00:05:06,800 --> 00:05:20,400
+[SPEAKER_01] I only launched on Product Hunt, I think, and I didn't have, you know, that many Twitter followers or Twitter audience, but it just seemed like these issues were nagging enough so that people, it clicked to people.
+
+70
+00:05:21,040 --> 00:05:21,360
+[SPEAKER_00] Nice.
+
+71
+00:05:21,520 --> 00:05:22,160
+[SPEAKER_00] Well, that's cool.
+
+72
+00:05:22,480 --> 00:05:27,120
+[SPEAKER_00] And those are still in the store too, but those are still available on your website, right?
+
+73
+00:05:27,440 --> 00:05:28,320
+[SPEAKER_01] They're still available.
+
+74
+00:05:29,120 --> 00:05:30,480
+[SPEAKER_01] They're still up to date, yeah.
+
+75
+00:05:31,040 --> 00:05:34,800
+[SPEAKER_00] Okay, so you have some Mac utility apps.
+
+76
+00:05:35,680 --> 00:05:46,240
+[SPEAKER_00] How, how did we get from that to not a Mac utility app, an iOS app built around, you know, this generative AI art sort of space?
+
+77
+00:05:46,800 --> 00:05:47,600
+[SPEAKER_00] What's the path there?
+
+78
+00:05:48,320 --> 00:06:04,320
+[SPEAKER_01] After batteries came out, I was kind of in exploratory mode and wanting to play around with different technologies, things that I hadn't touched before, doing some web devs, some some electron, right?
+
+79
+00:06:04,640 --> 00:06:11,200
+[SPEAKER_01] Just to kind of try something new and trying to make some kind of product or business out of it.
+
+80
+00:06:11,840 --> 00:06:13,600
+[SPEAKER_01] And that didn't really pan out.
+
+81
+00:06:14,480 --> 00:06:20,080
+[SPEAKER_01] Quite interestingly, if you're ideating and trying to launch a new product, stick to what you know.
+
+82
+00:06:20,480 --> 00:06:22,640
+[SPEAKER_01] Don't try to learn a new technology at the same time.
+
+83
+00:06:23,200 --> 00:06:24,080
+[SPEAKER_01] That will slow you down.
+
+84
+00:06:24,400 --> 00:06:25,520
+[SPEAKER_01] And then the pandemic hit.
+
+85
+00:06:26,160 --> 00:06:32,160
+[SPEAKER_01] And at that point, I started contracting for Snap, Snapchat for a while.
+
+86
+00:06:32,720 --> 00:06:35,680
+[SPEAKER_01] And that kind of dove me back into the iOS world.
+
+87
+00:06:36,000 --> 00:06:36,640
+[SPEAKER_01] So, so.
+
+88
+00:06:37,280 --> 00:06:40,080
+[SPEAKER_01] kind of steered away from macOS, went back to iOS.
+
+89
+00:06:40,320 --> 00:06:42,400
+[SPEAKER_01] And I did that for about a year full time.
+
+90
+00:06:42,880 --> 00:06:46,480
+[SPEAKER_01] So, I stopped focusing on, on, on the indie side of things.
+
+91
+00:06:47,120 --> 00:07:03,120
+[SPEAKER_01] After that one year, I had decided, okay, like, I'm going to dive back into the indie world, but this time it's going to be kind of the more straightforward, streamlined way of developing, meaning back into the app store, focusing on developing something for, uh, for iOS.
+
+92
+00:07:03,520 --> 00:07:04,400
+[SPEAKER_01] Because the market is there.
+
+93
+00:07:04,720 --> 00:07:11,040
+[SPEAKER_01] The Mac app store market felt a bit smaller and it just made more sense to develop something for iOS.
+
+94
+00:07:11,520 --> 00:07:17,680
+[SPEAKER_01] And so I set out to develop a kind of a small portfolio of apps of editing apps.
+
+95
+00:07:18,080 --> 00:07:37,600
+[SPEAKER_01] So an interactive audio editor where, um, so PodBuddy is this app that transforms your your audio content, let's say a podcast clip or music clip, into a kind of Instagram story like UI that you can share on a video that you can share on social media.
+
+96
+00:07:39,200 --> 00:07:44,160
+[SPEAKER_01] And after that, I developed VidCap, which is a captioning app for videos.
+
+97
+00:07:44,640 --> 00:07:54,880
+[SPEAKER_01] And I had set out to develop these because I had always been interested in designing and making editing UI or editing tools.
+
+98
+00:07:55,280 --> 00:07:58,880
+[SPEAKER_01] So anything that you can add media to a sort of canvas.
+
+99
+00:07:59,760 --> 00:08:00,320
+[SPEAKER_01] Yeah, yeah.
+
+100
+00:08:00,640 --> 00:08:04,960
+[SPEAKER_01] For some reason, I had always been interested as a kind of experiment to just develop something like that.
+
+101
+00:08:05,440 --> 00:08:10,640
+[SPEAKER_01] So I set out to make these two apps, put them on the iOS app store.
+
+102
+00:08:11,120 --> 00:08:19,520
+[SPEAKER_01] And I started also, you know, I got in contact with iOS marketing on the app store.
+
+103
+00:08:19,680 --> 00:08:23,280
+[SPEAKER_01] I got in contact with marketing on the app store in the sense that.
+
+104
+00:08:24,960 --> 00:08:30,000
+[SPEAKER_01] You know, ASO, knowing how to monetize any app on the App Store.
+
+105
+00:08:31,840 --> 00:08:39,360
+[SPEAKER_01] And kind of just becoming more in sync with how to develop an App Store business.
+
+106
+00:08:39,760 --> 00:08:44,000
+[SPEAKER_00] Like you were digging, you were digging into those and becoming interested in, like, growing that skill.
+
+107
+00:08:44,160 --> 00:08:44,960
+[SPEAKER_00] Is that what you're saying?
+
+108
+00:08:45,280 --> 00:08:45,600
+[SPEAKER_00] Exactly.
+
+109
+00:08:45,760 --> 00:08:52,880
+[SPEAKER_01] So it's kind of how to create products that delight me and others, but also how to create a business out of it.
+
+110
+00:08:53,200 --> 00:08:53,280
+[SPEAKER_01] Yeah.
+
+111
+00:08:53,600 --> 00:08:57,680
+[SPEAKER_01] And so I became more tied in with the App Store business in general, right?
+
+112
+00:08:58,160 --> 00:09:01,680
+[SPEAKER_01] It is its own ecosystem and I felt that there was over opportunity there.
+
+113
+00:09:01,840 --> 00:09:03,520
+[SPEAKER_01] And so I just got into that.
+
+114
+00:09:03,920 --> 00:09:12,560
+[SPEAKER_01] At that point, I started contracting for Mighty, which was a web browser that is based in the cloud.
+
+115
+00:09:12,880 --> 00:09:12,960
+[SPEAKER_01] Yeah.
+
+116
+00:09:13,440 --> 00:09:15,520
+[SPEAKER_01] That is streamed on your machine.
+
+117
+00:09:15,840 --> 00:09:19,520
+[SPEAKER_01] So all the rendering, all the heavy lifting is done in the cloud for you.
+
+118
+00:09:20,000 --> 00:09:24,080
+[SPEAKER_01] And then what you receive is just a video stream of that rendered content.
+
+119
+00:09:24,720 --> 00:09:31,760
+[SPEAKER_01] I did a lot of prototyping and kind of ideating for what the browser of the future could look like at Mighty.
+
+120
+00:09:32,320 --> 00:09:45,360
+[SPEAKER_01] And at some point, there was kind of, you know, we had finished all the of the prototyping tasks, we still had a few, but this generative AI thing started becoming more, let's say, present, right?
+
+121
+00:09:45,840 --> 00:09:50,400
+[SPEAKER_01] We started seeing more of it on Twitter and tech circles, et cetera.
+
+122
+00:09:50,720 --> 00:10:00,880
+[SPEAKER_01] And just playing around with these tools at the time, the CEO was like, it would be interesting to explore something in this space because this tech is, it's something else.
+
+123
+00:10:01,040 --> 00:10:03,280
+[SPEAKER_01] We haven't seen anything like that in such a long time.
+
+124
+00:10:03,520 --> 00:10:04,640
+[SPEAKER_01] Like this could be something big.
+
+125
+00:10:05,520 --> 00:10:16,480
+[SPEAKER_01] And so from prototyping web browsers, we started prototyping, testing out these generative AI art APIs call them right?
+
+126
+00:10:16,560 --> 00:10:22,000
+[SPEAKER_01] We started playing around with stable diffusion and thinking how can we make interesting tools based on that.
+
+127
+00:10:23,280 --> 00:10:28,240
+[SPEAKER_01] And that became playground AI, which you can visit at playgroundai.com.
+
+128
+00:10:28,800 --> 00:10:41,040
+[SPEAKER_01] It is a bit of a generative AI tool slash social network where you can see other people's creations, can remix other people's generated AI work, et cetera.
+
+129
+00:10:41,840 --> 00:10:42,320
+[SPEAKER_00] That's right.
+
+130
+00:10:42,640 --> 00:10:42,720
+[SPEAKER_00] Okay.
+
+131
+00:10:42,960 --> 00:10:43,920
+[SPEAKER_00] I have seen this before.
+
+132
+00:10:44,560 --> 00:10:47,680
+[SPEAKER_01] And at that point, I had felt like I had swallowed the red pill.
+
+133
+00:10:47,920 --> 00:10:49,680
+[SPEAKER_01] I was bitten by the AI bug.
+
+134
+00:10:50,000 --> 00:10:51,600
+[SPEAKER_01] I was I was all in on this.
+
+135
+00:10:51,920 --> 00:10:55,120
+[SPEAKER_01] I was like, this is going to be, this is going to change everything.
+
+136
+00:10:55,680 --> 00:11:05,920
+[SPEAKER_01] And at that point I had finished or stopped my contract with Mighty just to kind of explore how I can solve problems using AI.
+
+137
+00:11:06,240 --> 00:11:12,560
+[SPEAKER_01] It's kind of like everything became a nail and AI was the hammer that I was wielding.
+
+138
+00:11:13,600 --> 00:11:14,160
+[SPEAKER_01] It kind of did.
+
+139
+00:11:15,760 --> 00:11:18,480
+[SPEAKER_01] But I did feel like, oh my God, like this is so transformative.
+
+140
+00:11:18,960 --> 00:11:23,040
+[SPEAKER_01] This will change so many things that I I better jump on the bandwagon.
+
+141
+00:11:23,360 --> 00:12:00,240
+[SPEAKER_00] There's a hype around this like obviously and I won't hide this fact but I I was yeah so deep into this I was like okay let's start making products around this we've been living through a decade I guess of web 3 and crypto kind of being the red pill like this is everything's a nail because I'm holding this hammer and everyone was looking for how to use this tech that's cool on something and everyone was just trying to come up with products and the AI thing or generative AI thing feels like.
+
+142
+00:12:01,120 --> 00:12:06,240
+[SPEAKER_00] it started with obvious products, but then you can imagine a thousand more.
+
+143
+00:12:07,920 --> 00:12:15,200
+[SPEAKER_00] It just seems like there's a much more obvious fertile ground for actual products that people would want in this space.
+
+144
+00:12:16,320 --> 00:12:20,800
+[SPEAKER_00] And I definitely share a similar feeling as you, where I can just imagine like a thousand possibilities.
+
+145
+00:12:20,960 --> 00:12:23,680
+[SPEAKER_00] Like if the tech gets a little bit better, imagine this and imagine that.
+
+146
+00:12:24,240 --> 00:12:40,080
+[SPEAKER_01] I feel the interesting thing about the current state of generative AI is that what we got with Dali APIs such as Dali Stable Diffusion is like going from nothing to something so fast.
+
+147
+00:12:40,560 --> 00:12:40,560
+[UNKNOWN] Yeah.
+
+148
+00:12:40,960 --> 00:12:42,080
+[SPEAKER_01] It just felt like a shock.
+
+149
+00:12:42,560 --> 00:12:49,760
+[SPEAKER_01] We immediately got good enough instead of and maybe that's why the whole world is still reacting to this.
+
+150
+00:12:50,000 --> 00:12:52,320
+[SPEAKER_01] Like we got from zero to good enough so fast.
+
+151
+00:12:52,800 --> 00:12:59,440
+[SPEAKER_01] To compare it with Web 3, I kind of agree is like I I was never bitten by that bug.
+
+152
+00:12:59,760 --> 00:13:10,320
+[SPEAKER_01] I I it just always felt like maybe it's my lack of imagination, but I couldn't conceive of an interesting application to make out of all these Web 3 technologies.
+
+153
+00:13:11,280 --> 00:13:11,360
+[SPEAKER_00] Yeah.
+
+154
+00:13:12,000 --> 00:13:22,480
+[SPEAKER_00] As someone who doesn't live in the world of finance or investment vehicles or whatever, yeah, it wasn't like I looked at that and thought, oh my gosh, the possibilities.
+
+155
+00:13:22,800 --> 00:13:26,720
+[SPEAKER_00] And so, admittedly, I'm in the category of people that it's easy to dunk on.
+
+156
+00:13:27,440 --> 00:13:40,560
+[SPEAKER_00] You know, I know I'm in the space where I don't know it well enough to really make fun of it as much as maybe I do, but I do live in being bad at writing copy and being okay at illustrating things.
+
+157
+00:13:40,960 --> 00:13:48,720
+[SPEAKER_00] And so these generative AI ideas that have come out so far, it's like, yes, I imagine this tool.
+
+158
+00:13:49,440 --> 00:13:57,760
+[SPEAKER_00] built into Photoshop and yes, I can immediately see where I would utilize this and people are already doing that all over the place.
+
+159
+00:13:58,320 --> 00:14:19,760
+[SPEAKER_01] 100% it's just so amazing that these tools, just one tool, right, taking just stable diffusion for example, it's like there's this one tool that you can prompt that has so many applications, whereas back in the day, you had to form a team to solve each of the problems that this thing could solve.
+
+160
+00:14:19,920 --> 00:14:24,400
+[SPEAKER_01] For example, I don't know, remove a background or outpaint a, outpaint an image.
+
+161
+00:14:24,960 --> 00:14:28,480
+[SPEAKER_01] like add, you know, around the borders, add, add more content, et cetera.
+
+162
+00:14:28,800 --> 00:14:32,640
+[SPEAKER_01] Adobe had, you know, teams working around the clock just for each of these features.
+
+163
+00:14:32,880 --> 00:14:37,680
+[SPEAKER_01] And then we, you know, one API lens that can do all of these and do them quite well.
+
+164
+00:14:38,240 --> 00:14:39,440
+[SPEAKER_00] That's a good way of phrasing it.
+
+165
+00:14:39,680 --> 00:14:53,280
+[SPEAKER_00] Because every Adobe Max has been somebody in basically a white lab coat coming up and showing off the latest content, you know, background removal that you can run in After Effects.
+
+166
+00:14:53,360 --> 00:14:54,400
+[SPEAKER_00] And look, it can work on video.
+
+167
+00:14:54,720 --> 00:14:57,680
+[SPEAKER_00] But it's like they're opening up a script and running a thing.
+
+168
+00:14:57,920 --> 00:15:01,520
+[SPEAKER_00] And you're just like, wow, in ten years or five years, this is going to to be amazing.
+
+169
+00:15:02,000 --> 00:15:09,680
+[SPEAKER_00] And everything with stable diffusion in Dali, it feels like, wow, next week we can now do XYZ.
+
+170
+00:15:09,840 --> 00:15:18,800
+[SPEAKER_00] Like this, the pace of improvement has been ridiculous, which is, I think, part of what adds to that feeling of excitement.
+
+171
+00:15:19,440 --> 00:15:32,640
+[SPEAKER_01] I feel like every time excitement, worldwide excitement starts waning, some new advancement in AI just lands and it just renews, gives everyone that dopamine rush and it keeps on going.
+
+172
+00:15:33,360 --> 00:15:36,240
+[SPEAKER_00] Yeah, that's a good, that's a good comparison.
+
+173
+00:15:37,040 --> 00:15:50,880
+[SPEAKER_00] Before we get into, you know, the product that you then built through this excitement, I think we should address, like, some of the controversy around it in terms of like, legally, everything about this is still murky.
+
+174
+00:15:51,120 --> 00:15:54,800
+[SPEAKER_00] And I don't mean that in a, you know, is this shady or not.
+
+175
+00:15:54,960 --> 00:15:57,520
+[SPEAKER_00] I think everybody's pretty open with exactly what's going on.
+
+176
+00:15:58,080 --> 00:16:05,280
+[SPEAKER_00] It's just that the laws in every country are still catching up because of how fast this is going and like what your take on that is.
+
+177
+00:16:05,360 --> 00:16:11,040
+[SPEAKER_00] I know we've talked about this a little bit, but hey, that was a couple of weeks ago and like we talked about then, everything will probably change by the time we record.
+
+178
+00:16:11,360 --> 00:16:12,560
+[SPEAKER_00] So I don't want to like, yeah.
+
+179
+00:16:12,560 --> 00:16:13,840
+[SPEAKER_00] I'd rather not address that though.
+
+180
+00:16:14,000 --> 00:16:14,560
+[SPEAKER_01] Oh, for sure.
+
+181
+00:16:15,200 --> 00:16:23,760
+[SPEAKER_01] The funny thing is like a month ago we had briefly discussed this and what I had said last month is like my view on this.
+
+182
+00:16:24,240 --> 00:16:31,520
+[SPEAKER_01] And again, I'm not a lawyer, so maybe I'd like to talk more about the ethics of things more than the legality.
+
+183
+00:16:31,920 --> 00:16:32,080
+[SPEAKER_00] Right.
+
+184
+00:16:32,320 --> 00:16:32,400
+[SPEAKER_00] Yes.
+
+185
+00:16:32,640 --> 00:16:32,880
+[SPEAKER_00] Agreed.
+
+186
+00:16:33,200 --> 00:16:33,280
+[SPEAKER_01] Yeah.
+
+187
+00:16:33,600 --> 00:16:41,200
+[SPEAKER_01] It was back then it was still evolving on a weekly basis just to kind of also get as many data points as possible from smart people around the world.
+
+188
+00:16:41,600 --> 00:16:42,800
+[SPEAKER_01] And it's still going on now.
+
+189
+00:16:43,840 --> 00:16:47,280
+[SPEAKER_01] My viewpoint is really is still evolving.
+
+190
+00:16:48,160 --> 00:16:48,240
+[SPEAKER_01] But.
+
+191
+00:16:48,320 --> 00:16:57,360
+[SPEAKER_01] But one thing that I'm kind of still fixated on, to be honest, is how does a human being get inspiration?
+
+192
+00:16:57,920 --> 00:17:00,400
+[SPEAKER_01] How does a human being learn how to create art?
+
+193
+00:17:01,120 --> 00:17:09,520
+[SPEAKER_01] It is never created in a vacuum or in a bubble, it's always born out of inspiration from other artists.
+
+194
+00:17:10,320 --> 00:17:28,560
+[SPEAKER_01] Obviously, and again, if we're just taking the human being example, like a human artist, if it looks copied, if it seems, if it's obvious that it's pl just no way that you can create art without having seen art.
+
+195
+00:17:28,880 --> 00:17:38,240
+[SPEAKER_01] There's no way you can just, you know, create amazing masterpieces without seeing, without learning how art works from other great artists, right?
+
+196
+00:17:38,880 --> 00:17:42,800
+[SPEAKER_01] I still haven't fully formalized it because what, how do you translate that to a machine?
+
+197
+00:17:42,960 --> 00:17:56,720
+[SPEAKER_01] Like, how do you teach a machine to just be inspired by art, teach it what art is and actually tell it, This is great art and this is not, and then expect it to produce some kind of art.
+
+198
+00:17:57,680 --> 00:17:59,600
+[SPEAKER_01] My viewpoint has not fully matured on that.
+
+199
+00:17:59,840 --> 00:18:18,160
+[SPEAKER_01] It's not, you know., black and white, if it were easy, then it would be more obvious in the sense that we do want, like, technology is moving forward, we do want machines to be able to create illustrations and art, but we don't want machines to basically steal art from artists.
+
+200
+00:18:18,960 --> 00:18:20,400
+[SPEAKER_00] And what is the healthy middle?
+
+201
+00:18:21,360 --> 00:18:22,160
+[SPEAKER_00] I'm still not sure.
+
+202
+00:18:22,560 --> 00:18:23,360
+[SPEAKER_00] This is evolving.
+
+203
+00:18:23,600 --> 00:18:27,760
+[SPEAKER_00] This, this whole thing did not exist, at least to me six months ago.
+
+204
+00:18:29,280 --> 00:18:31,440
+[SPEAKER_00] So, yeah, it's not an easy one.
+
+205
+00:18:32,000 --> 00:18:36,960
+[SPEAKER_00] There's sort of explicitly not a fine line between what is good and what is bad.
+
+206
+00:18:37,120 --> 00:18:40,480
+[SPEAKER_00] Like plagiarism and stealing something and inspiration.
+
+207
+00:18:40,800 --> 00:18:47,840
+[SPEAKER_00] It is like very fuzzy and everybody's going to have a different impression of that, of where that line is.
+
+208
+00:18:47,920 --> 00:18:51,680
+[SPEAKER_00] And yeah, how do you like define that at a machine level is difficult.
+
+209
+00:18:52,160 --> 00:19:02,400
+[SPEAKER_00] The comparison I keep running to is it feels like we're in the same like beginning era as like the Napster days with mp3s.
+
+210
+00:19:02,880 --> 00:19:05,440
+[SPEAKER_00] Another example of one that went the other way is like the VHS days.
+
+211
+00:19:05,840 --> 00:19:10,640
+[SPEAKER_00] Like when VHS first came out, it was like, yeah, people should be able to record whatever's on their TV.
+
+212
+00:19:10,960 --> 00:19:12,320
+[SPEAKER_00] And it's like, you can imagine.
+
+213
+00:19:12,320 --> 00:19:16,080
+[SPEAKER_00] Imagine during that time that seemed obviously wrong.
+
+214
+00:19:16,320 --> 00:19:18,080
+[SPEAKER_00] Like, well, you don't own that.
+
+215
+00:19:18,560 --> 00:19:20,560
+[SPEAKER_00] Like the corporation owns that.
+
+216
+00:19:20,640 --> 00:19:26,160
+[SPEAKER_00] And now nobody thinks, gives a second thought to, like, yes, of course you should be able to record things with a VHS.
+
+217
+00:19:26,320 --> 00:19:32,000
+[SPEAKER_00] Well, I guess maybe now that's a bad example because with Hulu and all those it kind of reversed on us, but you get the idea.
+
+218
+00:19:32,240 --> 00:19:37,600
+[SPEAKER_00] Like we kind of went a certain direction and the whole world and industry, you know, adapted to that.
+
+219
+00:19:37,840 --> 00:19:40,400
+[SPEAKER_00] And then Napster with MP3s was the same thing.
+
+220
+00:19:40,560 --> 00:19:45,040
+[SPEAKER_00] It was like nobody knew this is illegal because it wasn't illegal.
+
+221
+00:19:45,200 --> 00:19:46,160
+[SPEAKER_00] It was being figured out.
+
+222
+00:19:46,560 --> 00:20:02,640
+[SPEAKER_00] And it kind of feels like we're in that phase again where we have a tool that is obviously has an extremely high utility and how do we manage that and like you know it's going to have to be figured out at least that's where that's where I'm landing with it.
+
+223
+00:20:03,600 --> 00:20:40,240
+[SPEAKER_01] It could be interesting to to give back to artists whose whose works have made it basically into the model right so I'm guessing there's there's a few artists definitely gonna gonna botch the name but I think it's Greg Rutkowski that name has been seen in like every stable diffusion prompt available basically because he is an artist on ArtStation and his style is somehow I don't know, sexy for stable diffusion.
+
+224
+00:20:40,320 --> 00:21:00,560
+[SPEAKER_01] It just works and so by Greg Rutkowski just appears in so many prompts and it would almost be unfair to have Greg Rutkowski producing art for the world being reused by every application based on stable diffusion and not having the artist I'm guessing maybe paid back but at least yeah.
+
+225
+00:21:00,880 --> 00:21:02,960
+[SPEAKER_01] getting some sort of form of attribution, right?
+
+226
+00:21:03,360 --> 00:21:04,080
+[SPEAKER_01] That's the minimum.
+
+227
+00:21:04,320 --> 00:21:06,720
+[SPEAKER_01] And there are some platforms that already give attribution.
+
+228
+00:21:07,360 --> 00:21:12,000
+[SPEAKER_01] If the prompt has the artist's name, they get attribution, they get a link back.
+
+229
+00:21:12,240 --> 00:21:14,800
+[SPEAKER_01] I'm not saying this is enough, but this is a start.
+
+230
+00:21:15,600 --> 00:21:23,520
+[SPEAKER_00] I don't know enough about it, but that's where it starts to feel weird is when it's like it is explicitly from this one person that you're right.
+
+231
+00:21:24,640 --> 00:21:26,080
+[SPEAKER_00] That you're generating something, right?
+
+232
+00:21:27,040 --> 00:21:36,160
+[SPEAKER_00] And I know, like, I don't want to go too far into this because I'm pretty ignorant of it, but like, was it StableDiffusion 2 that added the feature where you can.
+
+233
+00:21:36,160 --> 00:21:41,360
+[SPEAKER_00] You can basically opt out of being included in the model, or is that the next model that they're going to build?
+
+234
+00:21:42,080 --> 00:21:50,720
+[SPEAKER_01] I believe it was Art Station that added an option to be opt out of being included in SableDiffusion.
+
+235
+00:21:51,200 --> 00:21:54,480
+[SPEAKER_00] Oh, like its specific databases basically.
+
+236
+00:21:54,960 --> 00:21:59,280
+[SPEAKER_01] And artists are also angry at this option because I think it's opt out.
+
+237
+00:21:59,520 --> 00:22:03,200
+[SPEAKER_01] So I think it's opt out by default and you have to opt out manually.
+
+238
+00:22:03,920 --> 00:22:10,640
+[SPEAKER_01] It's also about understanding what what solution kind of serves everyone equally, what feels fair.
+
+239
+00:22:11,360 --> 00:22:12,720
+[SPEAKER_01] Is it a Spotify like model?
+
+240
+00:22:13,280 --> 00:22:21,200
+[SPEAKER_01] where if you actually use artwork from a specific artist, they get paid back somehow, they get some form of royalty.
+
+241
+00:22:22,320 --> 00:22:25,440
+[SPEAKER_01] Interestingly, that would change the whole economics out of that.
+
+242
+00:22:26,480 --> 00:22:36,480
+[SPEAKER_01] Because currently, you could just as well treat it as stolen art and it's all baked into this brain that is the stable diffusion view one point five model.
+
+243
+00:22:37,360 --> 00:22:46,400
+[SPEAKER_01] And you can hash and rehash this art as much as you want and just make it your own, right, into your own creations out of a prompt.
+
+244
+00:22:47,360 --> 00:22:48,880
+[SPEAKER_01] It could feel unfair, for sure for sure.
+
+245
+00:22:49,760 --> 00:22:51,840
+[SPEAKER_01] But currently, it's almost for free, right?
+
+246
+00:22:52,240 --> 00:22:54,480
+[SPEAKER_01] I mean, it's just the GPU cost.
+
+247
+00:22:55,440 --> 00:23:09,520
+[SPEAKER_01] What would it become if you start having to pay a small fraction in royalty of royalty to every artist whenever you generate the prompt, and how do you distribute that fairly?
+
+248
+00:23:10,000 --> 00:23:11,600
+[SPEAKER_01] Could be an interesting problem to solve.
+
+249
+00:23:12,320 --> 00:23:23,680
+[SPEAKER_00] It's really, I don't know, the whole space, both on the product side, like we were kind of fonding over a second ago, and then from a sort of ethics, legal side, I find it all really fascinating as an outside observer.
+
+250
+00:23:24,160 --> 00:23:37,200
+[SPEAKER_00] I think we're in that phase where both technologically and I guess legally, everything is getting hashed out that feels like it's going to drive the next ten years of what this space looks like, which is really fascinating too.
+
+251
+00:23:37,520 --> 00:23:48,240
+[SPEAKER_00] I'll pull us off of this train because there's probably people way deeper in this than either of us having more, maybe accurate conversations about this on other podcasts.
+
+252
+00:23:49,920 --> 00:23:53,600
+[SPEAKER_00] This episode of Launched is sponsored by, well, maybe you.
+
+253
+00:23:54,160 --> 00:24:00,960
+[SPEAKER_00] If you listen to the Christmas special, you'll know that I've committed to growing the podcast this year, and that starts today with two new initiatives.
+
+254
+00:24:01,920 --> 00:24:05,760
+[SPEAKER_00] The first is sponsorships, which will sound, well, a lot like this.
+
+255
+00:24:06,240 --> 00:24:09,440
+[SPEAKER_00] If you're a company and interested in sponsoring the show, please reach out.
+
+256
+00:24:09,920 --> 00:24:16,000
+[SPEAKER_00] There will be a link in the show notes to our new sponsor page, which will have more information, metrics about the show, all that kind of stuff.
+
+257
+00:24:16,800 --> 00:24:20,720
+[SPEAKER_00] If you don't want to hear ads on the show though, the second initiative is for you.
+
+258
+00:24:21,280 --> 00:24:22,880
+[SPEAKER_00] Launched is now on Patreon.
+
+259
+00:24:23,680 --> 00:24:29,440
+[SPEAKER_00] There are a few tiers with some different perks, but all of them will come with an ad-free feed of the show.
+
+260
+00:24:30,160 --> 00:24:36,640
+[SPEAKER_00] I've got some ideas for special content I could add in the future as well, but for now I'm keeping it simple while providing a way for folks to support the show.
+
+261
+00:24:36,640 --> 00:24:38,000
+[SPEAKER_00] I would like to ask people to support the show directly if they would like.
+
+262
+00:24:38,880 --> 00:24:42,000
+[SPEAKER_00] Please don't feel any pressure to join in with this though.
+
+263
+00:24:42,400 --> 00:24:53,920
+[SPEAKER_00] This show is a passion project and the fact that so many of you all listen and give me the opportunity to talk to all these inspiring creators that I get to talk to on the show is the biggest support that you can provide at all.
+
+264
+00:24:54,400 --> 00:25:03,520
+[SPEAKER_00] These two initiatives will allow me to pay my excellent editor, Jonathan, and to be completely transparent, I'd love to make some money off this show if there's some extra to spare.
+
+265
+00:25:03,920 --> 00:25:09,040
+[SPEAKER_00] So thank you all so much for listening and new patrons especially for the direct support.
+
+266
+00:25:09,680 --> 00:25:10,720
+[SPEAKER_00] Now back to the show.
+
+267
+00:25:14,640 --> 00:25:15,920
+[SPEAKER_00] the app you ended up building.
+
+268
+00:25:16,160 --> 00:25:22,080
+[SPEAKER_00] So you're playing with this as part of the contract job that you're doing, the generative art, you know, sort of world.
+
+269
+00:25:22,880 --> 00:25:26,000
+[SPEAKER_00] What led to the AI profile pic app?
+
+270
+00:25:26,320 --> 00:25:31,520
+[SPEAKER_00] Was that like the first idea you had or were you trying to figure out, you know, what's a product that you can build around this?
+
+271
+00:25:32,480 --> 00:25:36,640
+[SPEAKER_01] I was indeed trying to figure out what kind of product I could create in this space.
+
+272
+00:25:37,760 --> 00:25:46,240
+[SPEAKER_01] At around that time, I was watching a YouTube channel that just tracks advances in AI.
+
+273
+00:25:47,200 --> 00:25:53,280
+[SPEAKER_01] And it's this guy, Med Madrid Pro, that just plays around with all the new technologies coming out.
+
+274
+00:25:53,680 --> 00:26:03,840
+[SPEAKER_01] If I remember correctly, he was using this tool called Astria back then, which is an API that is based on Dream Booth and Stable Diffusion.
+
+275
+00:26:04,480 --> 00:26:14,000
+[SPEAKER_01] So what Dream Booth is, you could consider it as a layer on top of Stable Diffusion where you can fine tune the model based on some kind of input images.
+
+276
+00:26:14,800 --> 00:26:24,560
+[SPEAKER_00] For my own understanding here, so Stable Diffusion is a giant model with, you know, millions of images and whatever magic sauce that they're doing to take.
+
+277
+00:26:25,680 --> 00:26:33,040
+[SPEAKER_00] text that you input and it turns that into an image based on this massive library of images that it understands.
+
+278
+00:26:33,440 --> 00:26:42,960
+[SPEAKER_00] And then Dream Booth, you're saying, is a layer on top of that that will let you combine your own images into that model essentially?
+
+279
+00:26:43,840 --> 00:26:43,920
+[SPEAKER_00] Yes.
+
+280
+00:26:44,320 --> 00:26:58,800
+[SPEAKER_01] So Dream Booth initially was a paper written at Google that basically takes diffusion based models and fine tunes them into being able to add a new subject.
+
+281
+00:27:00,000 --> 00:27:06,160
+[SPEAKER_01] So StableDiffusion currently does understand, if you will, what a chair means.
+
+282
+00:27:06,480 --> 00:27:14,480
+[SPEAKER_01] So if you type in a prompt with the word chair in it, it will pop out an image containing a chair, right?
+
+283
+00:27:15,280 --> 00:27:18,240
+[SPEAKER_01] But it doesn't know who Charlie Chapman is.
+
+284
+00:27:19,600 --> 00:27:21,120
+[SPEAKER_01] You're still not famous enough, Charlie.
+
+285
+00:27:21,360 --> 00:27:22,880
+[SPEAKER_01] So it does know who Brad Pitt is.
+
+286
+00:27:23,040 --> 00:27:32,000
+[SPEAKER_01] It does know who Brad Pitt is, but because Brad Pitt exists on the web and is quite popular, it doesn't know who Charlie Chapman is yet.
+
+287
+00:27:32,560 --> 00:27:40,080
+[SPEAKER_01] So what you can do using Greenbooth is fine tune the model into teaching it a new subject.
+
+288
+00:27:40,640 --> 00:27:46,560
+[SPEAKER_01] So you add in an identifier that stable diffusion doesn't know.
+
+289
+00:27:46,800 --> 00:27:51,600
+[SPEAKER_01] So you can't use something like dog, cat or chair, but some kind of random identifier.
+
+290
+00:27:52,080 --> 00:27:56,960
+[SPEAKER_01] And then you teach it these are the instances of this identifier.
+
+291
+00:27:57,440 --> 00:28:00,880
+[SPEAKER_01] So it's pictures of you, let's say pictures of your face.
+
+292
+00:28:01,840 --> 00:28:17,760
+[SPEAKER_01] So once you put in, let's say, about ten or twenty images of you with this instance name, that's enough for stable diffusion, the fine tune vers version of Stable Diffusion to learn what or who Charlie Chapman is.
+
+293
+00:28:18,320 --> 00:28:29,440
+[SPEAKER_00] And so then I could say something like Charlie Chapman in a chair, and it's combining its understanding of chair and understanding now new understanding of Charlie Chapman into a single image.
+
+294
+00:28:29,680 --> 00:28:29,760
+[SPEAKER_00] Yes.
+
+295
+00:28:30,480 --> 00:28:34,560
+[SPEAKER_00] So that's generally what Dream Booth is.
+
+296
+00:28:34,720 --> 00:28:41,200
+[SPEAKER_00] You said Dream Booth was just a white paper that someone wrote or Google, somebody at Google wrote, and then it was productized, I guess?
+
+297
+00:28:41,680 --> 00:28:44,000
+[SPEAKER_01] So Dream Booth is this paper written at Google, yes.
+
+298
+00:28:44,960 --> 00:28:53,200
+[SPEAKER_01] And it's based on two parts, the fine-tuning part and a diffusion based model that Google owns that is not public called Imogen.
+
+299
+00:28:55,040 --> 00:29:05,440
+[SPEAKER_01] So someone figured out how to reimplement Dream Booth but not use Imogen as a way to generate images by using stable diffusion.
+
+300
+00:29:06,480 --> 00:29:08,320
+[SPEAKER_01] So that was released as open source.
+
+301
+00:29:08,880 --> 00:29:10,560
+[SPEAKER_00] We haven't specified here.
+
+302
+00:29:10,880 --> 00:29:15,920
+[SPEAKER_00] Stable diffusion is one of these models, but importantly, it's open source, right?
+
+303
+00:29:16,160 --> 00:29:21,600
+[SPEAKER_00] So anyone can download it, run it on their machines or on a virtual machine or whatever, right?
+
+304
+00:29:22,880 --> 00:29:23,280
+[SPEAKER_00] Exactly.
+
+305
+00:29:24,160 --> 00:29:27,840
+[SPEAKER_01] Um, so the model itself can be used.
+
+306
+00:29:28,160 --> 00:29:29,920
+[SPEAKER_01] The, the training data is not available.
+
+307
+00:29:30,160 --> 00:29:45,600
+[SPEAKER_01] And obviously, well, maybe not obviously, but it would cost hundreds of thousands of dollars to train your own version of Sable Diffusion, meaning to train it from scratch, but the model is out there and the code that calls into that model is out there as well.
+
+308
+00:29:46,000 --> 00:29:52,240
+[SPEAKER_01] So yes, you can run it on your machine to run inferences, which means image generations based on a prompt.
+
+309
+00:29:53,120 --> 00:29:54,320
+[SPEAKER_01] Um, so that is out there.
+
+310
+00:29:54,880 --> 00:30:00,720
+[SPEAKER_01] And the fine tuning part of Dream Booth off of that paper was implemented and released as open source.
+
+311
+00:30:01,200 --> 00:30:22,480
+[SPEAKER_01] and you just plug the two together, Dream Booth and Stable Diffusion, and you can start training any object or any person, have Stable Diffusion understand, quote unquote, understand that concept and then generate any variation of image containing that new subject.
+
+312
+00:30:23,440 --> 00:30:35,680
+[SPEAKER_00] We have Stable Diffusion open source software that, or at least the model itself is open source so that you could build software around it to generate images from a prompt.
+
+313
+00:30:36,160 --> 00:30:54,480
+[SPEAKER_00] And now you have, I already forgot the name, but not Dream Booth, but an open source implementation of the Dream Booth paper that lets you basically add your own training to that stable diffusion model, and that is also open source.
+
+314
+00:30:55,120 --> 00:31:03,760
+[SPEAKER_00] So now you have the ability to take, to add your own things to stable diffusion's understanding of the world to make your prompts more specific.
+
+315
+00:31:04,400 --> 00:31:06,800
+[SPEAKER_00] That's the sort of end result of these elements.
+
+316
+00:31:07,600 --> 00:31:08,240
+[SPEAKER_00] That is correct.
+
+317
+00:31:08,480 --> 00:31:11,680
+[SPEAKER_01] So you have these two and even better.
+
+318
+00:31:12,400 --> 00:31:14,560
+[SPEAKER_01] And that's why the bar was so low.
+
+319
+00:31:15,040 --> 00:31:17,040
+[SPEAKER_01] And there was also an API.
+
+320
+00:31:17,280 --> 00:31:25,600
+[SPEAKER_01] There was also someone, Astria, who had made an API to do all the ML work, et cetera, for you, was implemented for you.
+
+321
+00:31:26,320 --> 00:31:42,160
+[SPEAKER_01] And it was basically a service that, you know, cost three or five dollars, et cetera, to where you could, you know, just send off your own images and you'd get a fine tuned model ready made for you.
+
+322
+00:31:42,400 --> 00:31:47,680
+[SPEAKER_01] And then you can prompt it with whatever prompts you want and it would generate these avatars for you.
+
+323
+00:31:48,160 --> 00:31:48,640
+[SPEAKER_01] Okay, cool.
+
+324
+00:31:50,000 --> 00:31:54,160
+[SPEAKER_01] So the bar, the bar, it was like the level of entry was, it was pretty easy.
+
+325
+00:31:54,400 --> 00:32:00,320
+[SPEAKER_01] And at that point, it kind of started just clicking that there should be an app for that.
+
+326
+00:32:01,600 --> 00:32:05,840
+[SPEAKER_01] Around the same point, like other indie devs had discovered Astria as well.
+
+327
+00:32:06,640 --> 00:32:19,520
+[SPEAKER_01] So levels.io and then ePostmas started tweeting, you know, some kind of thinly veiled tweets about a product that, you know, could leverage something like that or create your own, maybe pictures or avatars.
+
+328
+00:32:20,480 --> 00:32:23,920
+[SPEAKER_01] And around that point, you know, knowing about Astria.
+
+329
+00:32:24,720 --> 00:32:28,240
+[SPEAKER_01] I immediately knew like, IOS is the place for this.
+
+330
+00:32:28,800 --> 00:32:30,080
+[SPEAKER_01] This is where your photos live.
+
+331
+00:32:30,720 --> 00:32:30,800
+[SPEAKER_01] Yeah.
+
+332
+00:32:31,520 --> 00:32:37,040
+[SPEAKER_01] UI can be made very, very simple, very intuitive, and the result could feel magical.
+
+333
+00:32:37,840 --> 00:32:53,600
+[SPEAKER_01] And at that point, I had decided like, the web is not the way to go, and these two indie hackers or indie developers were primarily web developers and were making these hints that they were shipping something to on the web.
+
+334
+00:32:54,480 --> 00:33:00,800
+[SPEAKER_01] And yeah, I mean, I am an IOS dev, and I knew from the beginning like, you'll get such a better user experience on IOS.
+
+335
+00:33:01,360 --> 00:33:06,960
+[SPEAKER_01] And so I went like 100 miles per hour trying to implement this ASAP and release it in the App Store.
+
+336
+00:33:08,320 --> 00:33:20,480
+[SPEAKER_01] Funny enough, because of a lack of GPU computing scalability, Astrea had to move to another backend provider, so they were on AWS and they moved elsewhere.
+
+337
+00:33:20,960 --> 00:33:24,720
+[SPEAKER_01] And overnight they moved from three dollars per fine tune to twenty dollars.
+
+338
+00:33:25,680 --> 00:33:28,000
+[SPEAKER_01] Was that while you were building this or after you released?
+
+339
+00:33:28,480 --> 00:33:30,880
+[SPEAKER_01] It was the day I was releasing it, I think.
+
+340
+00:33:31,520 --> 00:33:32,000
+[SPEAKER_00] Oh my gosh.
+
+341
+00:33:32,160 --> 00:33:32,240
+[SPEAKER_01] Yeah.
+
+342
+00:33:32,960 --> 00:33:33,680
+[SPEAKER_01] Oh my gosh.
+
+343
+00:33:34,160 --> 00:33:34,240
+[SPEAKER_01] Yeah.
+
+344
+00:33:34,720 --> 00:33:36,640
+[SPEAKER_01] And that's that was a good lesson to learn, right?
+
+345
+00:33:37,120 --> 00:33:39,360
+[SPEAKER_01] Like own your back end, own your Insta.
+
+346
+00:33:41,360 --> 00:33:42,560
+[SPEAKER_01] Now for obvious reasons.
+
+347
+00:33:43,840 --> 00:33:58,560
+[SPEAKER_01] Because I knew that, again, this would be a winner on iOS, but the pricing had to be very fair, especially that not a lot of people were familiar with the technology, so it might as well seem like a scam app, right?
+
+348
+00:33:58,720 --> 00:34:00,960
+[SPEAKER_01] That is asking for so much money upfront.
+
+349
+00:34:01,200 --> 00:34:01,360
+[SPEAKER_01] Right.
+
+350
+00:34:02,800 --> 00:34:11,840
+[SPEAKER_01] So five dollars could have been okay, but charging, you know, after Apple's tax and how much it costs to run on the back end, charging like 25 or 30 dollars.
+
+351
+00:34:12,800 --> 00:34:20,000
+[SPEAKER_01] That would seem like a big investment and so that would kind of stifle the app's initial popularity or launch, right?
+
+352
+00:34:21,040 --> 00:34:23,760
+[SPEAKER_01] But I had just decided like, I needed to launch.
+
+353
+00:34:24,000 --> 00:34:30,640
+[SPEAKER_01] I needed to launch ASAP and I knew that compute would get cheaper, like that's how it always works, right?
+
+354
+00:34:31,600 --> 00:34:35,920
+[SPEAKER_01] It's going to get cheaper with time, but now is the time to just launch and get something out there.
+
+355
+00:34:36,640 --> 00:34:44,000
+[SPEAKER_01] So it took about 48 or 72 hours of not much sleep to really get a V one running.
+
+356
+00:34:45,360 --> 00:34:47,520
+[SPEAKER_01] And then yeah, I just put it out into the world.
+
+357
+00:34:47,680 --> 00:34:48,960
+[SPEAKER_01] Wait, wait, wait, wait.
+
+358
+00:34:49,520 --> 00:34:51,200
+[SPEAKER_01] Like, that was how long it took you to build the app?
+
+359
+00:34:51,680 --> 00:34:52,640
+[SPEAKER_01] To build the app, yes.
+
+360
+00:34:53,840 --> 00:34:55,520
+[SPEAKER_01] Yeah, it was about 72 hours.
+
+361
+00:34:56,000 --> 00:34:57,120
+[SPEAKER_01] It was a simple app.
+
+362
+00:34:57,440 --> 00:35:00,240
+[SPEAKER_01] It was a simple app, just calling into a back end.
+
+363
+00:35:00,640 --> 00:35:03,600
+[SPEAKER_00] And it was like bare bones, right?
+
+364
+00:35:04,080 --> 00:35:04,160
+[SPEAKER_00] Wow.
+
+365
+00:35:04,800 --> 00:35:04,960
+[SPEAKER_00] Okay.
+
+366
+00:35:05,760 --> 00:35:15,680
+[SPEAKER_00] So, so you had the idea and when you said you were off to the races, I mean, it's like zero to in the or submit to Apple in less than a week.
+
+367
+00:35:16,960 --> 00:35:17,040
+[SPEAKER_01] Yes.
+
+368
+00:35:18,240 --> 00:35:19,040
+[SPEAKER_01] Something that did help.
+
+369
+00:35:20,240 --> 00:35:23,600
+[SPEAKER_01] Firebase is, is honestly amazing.
+
+370
+00:35:23,680 --> 00:35:24,720
+[SPEAKER_01] Like, that's, that's.
+
+371
+00:35:25,280 --> 00:35:26,400
+[SPEAKER_01] my take on Firebase.
+
+372
+00:35:27,760 --> 00:35:28,480
+[SPEAKER_01] Kudos to them.
+
+373
+00:35:28,560 --> 00:35:29,760
+[SPEAKER_01] These guys really did the job.
+
+374
+00:35:30,000 --> 00:35:34,560
+[SPEAKER_01] They really do help you go from zero to one hundred pretty fast.
+
+375
+00:35:36,400 --> 00:35:40,800
+[SPEAKER_01] And thanks to my previous apps, I already had my kind of standard library, right?
+
+376
+00:35:40,960 --> 00:35:44,880
+[SPEAKER_01] Yeah, like UI components, all these helper methods, et cetera.
+
+377
+00:35:45,600 --> 00:35:48,880
+[SPEAKER_01] So that also helped a lot in getting something done.
+
+378
+00:35:49,680 --> 00:35:49,760
+[SPEAKER_00] Wow.
+
+379
+00:35:50,160 --> 00:35:50,240
+[SPEAKER_00] Okay.
+
+380
+00:35:50,640 --> 00:35:52,640
+[SPEAKER_00] So that's pretty crazy.
+
+381
+00:35:52,880 --> 00:35:59,360
+[SPEAKER_00] And I assume part of you rushing through this is you know that other people are going to do the same thing.
+
+382
+00:35:59,520 --> 00:36:00,640
+[SPEAKER_00] And it's it's kind of like.
+
+383
+00:36:02,000 --> 00:36:08,720
+[SPEAKER_00] land grab, you know, type situation where you want to get that early press, you want to get that early set of reviews.
+
+384
+00:36:08,800 --> 00:36:11,280
+[SPEAKER_00] So you're kind of the established, you know, version of this.
+
+385
+00:36:12,320 --> 00:36:12,400
+[SPEAKER_00] Yes.
+
+386
+00:36:13,120 --> 00:36:16,640
+[SPEAKER_01] Were you were you were one of the first ones then to get out there with this?
+
+387
+00:36:17,200 --> 00:36:26,560
+[SPEAKER_01] One of the first ones, yes, um, either the first or the second, and it was almost a month ahead of the big players, like Lenza prequel.
+
+388
+00:36:27,360 --> 00:36:36,960
+[SPEAKER_01] Um, so like these heavy hitting companies with an existing user base of millions of users that they can just simply send a push notification to saying, hey, there's this new feature.
+
+389
+00:36:38,000 --> 00:36:51,920
+[SPEAKER_01] Regarding your point about needing to go very fast and chipping and putting something out there, that is also related to this new generation of AI where it's very hard to build a mote.
+
+390
+00:36:53,360 --> 00:37:01,120
+[SPEAKER_01] So since this technology is open and it's so magical, it's so powerful but accessible at an API call.
+
+391
+00:37:02,080 --> 00:37:11,280
+[SPEAKER_01] So technology like GPT three or Sable Diffusion, well, now anyone can build these magical apps in, you know, in days.
+
+392
+00:37:11,920 --> 00:37:12,720
+[SPEAKER_01] So there's no mote.
+
+393
+00:37:12,720 --> 00:37:22,160
+[SPEAKER_01] So the new kind of advantage that you need is possibly better marketing or maybe niche down on something.
+
+394
+00:37:23,120 --> 00:37:34,880
+[SPEAKER_01] But the bar of entry has just become so low that this magical effect is basically one prompt away or one API call away, right?
+
+395
+00:37:35,520 --> 00:37:38,320
+[SPEAKER_00] And so anyone can build something like that nowadays.
+
+396
+00:37:39,680 --> 00:37:42,160
+[SPEAKER_00] You spent a couple days building this thing.
+
+397
+00:37:43,280 --> 00:37:47,920
+[SPEAKER_00] Although, I mean, we're saying it like it wasn't, it was this little amount of work.
+
+398
+00:37:48,320 --> 00:37:55,120
+[SPEAKER_00] But you're building on this amount of time that you had spent learning and understanding whole space, right?
+
+399
+00:37:55,440 --> 00:38:00,720
+[SPEAKER_00] Like knowing how to use all these models and these APIs, part of that is the experience that you had.
+
+400
+00:38:00,960 --> 00:38:03,280
+[SPEAKER_00] But either way, you spent this time getting it out there.
+
+401
+00:38:04,640 --> 00:38:09,440
+[SPEAKER_00] You had to update your pricing, presumably on the fly day of, but you got it out there.
+
+402
+00:38:09,600 --> 00:38:10,160
+[SPEAKER_00] So how was that?
+
+403
+00:38:10,480 --> 00:38:11,840
+[SPEAKER_00] How was that launch itself?
+
+404
+00:38:13,040 --> 00:38:24,560
+[SPEAKER_01] The launch was exciting because even at a price point of, I think it was around $30, $28 or $30, you still have these early adopters that were.
+
+405
+00:38:24,880 --> 00:38:41,200
+[SPEAKER_01] that just want to try new technology that kind of you forget about the price point for a minute because they know that it's still raw, it's still fresh, but they would they would want to try any new technology no matter what, right?
+
+406
+00:38:42,960 --> 00:38:44,640
+[SPEAKER_01] And they love giving feedback as well.
+
+407
+00:38:44,800 --> 00:38:46,400
+[SPEAKER_01] Like I love early adopters.
+
+408
+00:38:46,720 --> 00:38:49,760
+[SPEAKER_01] Like they kind of put blind trust into a product.
+
+409
+00:38:50,480 --> 00:38:53,040
+[SPEAKER_00] Much more willing to accept bugginess and stuff.
+
+410
+00:38:53,520 --> 00:39:00,720
+[SPEAKER_00] Because what you're comparing to is running through what all the blog posts were doing a week before where they're like, okay, you can download.
+
+411
+00:39:01,280 --> 00:39:08,720
+[SPEAKER_00] all these little scripts that you run locally and then you need to rent this space on some Google server somewhere.
+
+412
+00:39:08,960 --> 00:39:16,640
+[SPEAKER_00] And it's like, what if instead I just hit a button to send thirty dollars over to this person in the App Store and then it just did all that for me?
+
+413
+00:39:17,280 --> 00:39:18,080
+[SPEAKER_00] That's the comparison.
+
+414
+00:39:18,640 --> 00:39:18,960
+[SPEAKER_00] Exactly.
+
+415
+00:39:19,280 --> 00:39:32,640
+[SPEAKER_01] And it's also that if they do that on Google Colab, then they would also have to research into writing their own prompts, getting the effect that they desire, et cetera.
+
+416
+00:39:32,880 --> 00:39:35,520
+[SPEAKER_01] So it's quite like time investment.
+
+417
+00:39:36,240 --> 00:39:41,120
+[SPEAKER_01] It could, I mean, the whole thing on Google could take an hour just to train, fine tune, et cetera.
+
+418
+00:39:41,440 --> 00:39:48,080
+[SPEAKER_01] And then you get into another interface where you have to get some kind of prompting magic going to be able to create these avatars.
+
+419
+00:39:48,720 --> 00:39:57,920
+[SPEAKER_01] So it's, it's true that all this was productized for you, even though at a, it was at a price of, you know, thirty dollars, which is quite high, right?
+
+420
+00:39:58,400 --> 00:40:12,640
+[SPEAKER_01] So even if you do compare it to, you know, paying an illustrator for one illustration of you and the back and forth, or getting, you know, similar images of decent quality from a photographer, still thirty dollars.
+
+421
+00:40:14,720 --> 00:40:19,200
+[SPEAKER_01] with that blind trust could seem like a high price point, right?
+
+422
+00:40:20,720 --> 00:40:22,400
+[SPEAKER_01] So that became a priority very early.
+
+423
+00:40:23,600 --> 00:40:34,240
+[SPEAKER_01] I knew that I had to reduce the price point somehow, so that essentially translates into reducing back end costs, and that became the priority is rolling out my own back end.
+
+424
+00:40:34,720 --> 00:40:35,680
+[SPEAKER_01] So that's what happened.
+
+425
+00:40:36,880 --> 00:40:45,680
+[SPEAKER_01] Eventually, fully focused on rolling out the back end because all the players in the space were using the same API.
+
+426
+00:40:45,840 --> 00:40:46,640
+[SPEAKER_01] We're using Astria.
+
+427
+00:40:46,960 --> 00:40:58,640
+[SPEAKER_01] So Astria was free to choose their price point and essentially drive the whole market to, you know, they capped it at a minimum of, let's say, $20 or $15.
+
+428
+00:40:58,960 --> 00:41:02,240
+[SPEAKER_01] So whatever Astro's price was, everyone else followed along.
+
+429
+00:41:02,640 --> 00:41:03,440
+[SPEAKER_01] Yeah, exactly.
+
+430
+00:41:03,920 --> 00:41:20,480
+[SPEAKER_01] And that's, yeah, when I had to put kind of my ML hacker hat, knowing almost nothing about machine learning and starting to have to learn how to use and tweak PyTorch and StableDiffusion and Dream Booth and understand all of the bits there.
+
+431
+00:41:22,720 --> 00:41:23,360
+[SPEAKER_01] And yeah.
+
+432
+00:41:25,040 --> 00:41:36,400
+[SPEAKER_01] So at that point, I deployed my own back end and the cost went from, I think, between $15 and $20 on Austria to it was like around $4, I think at the time.
+
+433
+00:41:36,640 --> 00:41:36,720
+[SPEAKER_01] Oh.
+
+434
+00:41:37,280 --> 00:41:37,440
+[SPEAKER_01] Right?
+
+435
+00:41:37,840 --> 00:41:37,920
+[SPEAKER_01] Yeah.
+
+436
+00:41:38,160 --> 00:41:38,240
+[SPEAKER_01] Yeah.
+
+437
+00:41:38,480 --> 00:41:38,560
+[SPEAKER_01] Yeah.
+
+438
+00:41:39,120 --> 00:41:40,640
+[SPEAKER_01] And that was the new unlock, right?
+
+439
+00:41:40,800 --> 00:41:50,080
+[SPEAKER_01] That was how to get the next 1000 or 10,000 users is by charging $5 and not $30.
+
+440
+00:41:51,120 --> 00:41:56,000
+[SPEAKER_01] Something that I guess a lot of people know, but people don't like to pay for apps.
+
+441
+00:41:56,720 --> 00:42:00,400
+[SPEAKER_01] People don't like to pay for like a small minority of people.
+
+442
+00:42:01,120 --> 00:42:04,960
+[SPEAKER_01] are okay with paying for things, especially on the App Store.
+
+443
+00:42:05,360 --> 00:42:15,040
+[SPEAKER_01] And so charging any amount, even one dollar, advance instead of having a freemium kind of model, robs people off the wrong way.
+
+444
+00:42:16,480 --> 00:42:18,400
+[SPEAKER_01] And I saw that in the reviews, right?
+
+445
+00:42:18,640 --> 00:42:22,800
+[SPEAKER_01] So there were so many, unfortunately, but there were so many one star reviews.
+
+446
+00:42:23,120 --> 00:42:25,360
+[SPEAKER_01] I'm like, oh, there's no free trial.
+
+447
+00:42:25,920 --> 00:42:26,080
+[SPEAKER_01] Right.
+
+448
+00:42:26,480 --> 00:42:35,920
+[SPEAKER_01] Even though, you know, you try to explain that this costs money on the back end and it's just the economics of it just doesn't work out where I can offer a free trial first.
+
+449
+00:42:36,720 --> 00:42:43,440
+[SPEAKER_00] Most people are not interacting with software that has that much of a unit cost, right?
+
+450
+00:42:43,760 --> 00:42:46,080
+[SPEAKER_00] Like unit economics are really a thing in our world.
+
+451
+00:42:46,560 --> 00:42:58,080
+[SPEAKER_00] So pricing is bonkers and backwards in software because like per unit cost is like zero almost, but the actual cost to build everything costs money.
+
+452
+00:42:58,240 --> 00:43:02,640
+[SPEAKER_00] And so you have to do weird things, but you actually had real unit economics to deal with.
+
+453
+00:43:03,520 --> 00:43:03,600
+[SPEAKER_00] Yes.
+
+454
+00:43:03,920 --> 00:43:06,080
+[SPEAKER_00] And there was a FAQ in the app.
+
+455
+00:43:06,400 --> 00:43:12,720
+[SPEAKER_01] There was an explainer that just lays the whole thing out, explains why it costs upfront.
+
+456
+00:43:13,360 --> 00:43:21,680
+[SPEAKER_01] and it's because, well, you know, we have a GPU on the back end that we have to park for one hour just to fine tune your photos.
+
+457
+00:43:22,240 --> 00:43:28,240
+[SPEAKER_01] And even then the reviews were like, I know that there's an explainer, but I am still, I still don't buy the argument.
+
+458
+00:43:28,960 --> 00:43:31,840
+[SPEAKER_01] It's like, just people don't, don't want to take it.
+
+459
+00:43:32,480 --> 00:43:32,560
+[SPEAKER_00] Yeah.
+
+460
+00:43:33,280 --> 00:43:33,840
+[SPEAKER_00] That's funny.
+
+461
+00:43:35,360 --> 00:43:35,440
+[SPEAKER_00] Man.
+
+462
+00:43:35,920 --> 00:43:36,000
+[SPEAKER_00] Yeah.
+
+463
+00:43:36,320 --> 00:43:39,120
+[SPEAKER_00] And like, and everything about it's unproven, right?
+
+464
+00:43:40,160 --> 00:43:45,040
+[SPEAKER_00] There's not, uh, any norms built around this in terms of people's expectations.
+
+465
+00:43:45,360 --> 00:44:00,400
+[SPEAKER_00] Like weather apps, you can get away not get away with that's the wrong word., but people are kind of trained to understand, like it costs money to figure out all this or to pay APIs to figure this out, but generating an image is something that you're used to happening on your device itself.
+
+466
+00:44:00,720 --> 00:44:07,440
+[SPEAKER_00] So it doesn't feel like that should be costing the company money, even though it obviously really is in this case.
+
+467
+00:44:08,560 --> 00:44:10,800
+[SPEAKER_01] Especially when you don't get a sample.
+
+468
+00:44:11,680 --> 00:44:14,000
+[SPEAKER_01] Like, yeah, I wish the technology worked that way.
+
+469
+00:44:14,160 --> 00:44:19,600
+[SPEAKER_01] I wish we could sample a few images, but it's a bit of all or nothing.
+
+470
+00:44:20,000 --> 00:44:28,640
+[SPEAKER_01] It's we gotta fine tune the model first, and that's where most of the cost cost goes in and then it's not that costy afterwards.
+
+471
+00:44:29,040 --> 00:44:29,200
+[SPEAKER_00] Right.
+
+472
+00:44:29,440 --> 00:44:35,840
+[SPEAKER_00] The actual prompts in each image, the cost is pretty low relative to generating that actual model, right?
+
+473
+00:44:36,480 --> 00:44:36,560
+[SPEAKER_00] Yes.
+
+474
+00:44:37,520 --> 00:44:42,640
+[SPEAKER_01] Interestingly, I had record sales when Lenza came out.
+
+475
+00:44:43,440 --> 00:44:56,240
+[SPEAKER_01] Lenza having millions of users and Lenza having millions of sales really did, and a huge boom on social media really did teach people about the AI avatar thing, call it.
+
+476
+00:44:56,720 --> 00:44:59,680
+[SPEAKER_01] So people started to understand that, oh, this thing exists.
+
+477
+00:45:00,080 --> 00:45:01,120
+[SPEAKER_01] I've seen it on other people.
+
+478
+00:45:01,360 --> 00:45:05,440
+[SPEAKER_01] So it added a lot of social proof in the sense that, well, all my friends have one.
+
+479
+00:45:05,680 --> 00:45:08,640
+[SPEAKER_01] So this thing kind of works and these avatars look cool.
+
+480
+00:45:09,280 --> 00:45:10,800
+[SPEAKER_01] And so I'm going to try this thing out.
+
+481
+00:45:11,200 --> 00:45:16,320
+[SPEAKER_01] And I understand because my friends told me as well that this thing costs money upfront.
+
+482
+00:45:16,800 --> 00:45:18,960
+[SPEAKER_01] They paid first and they got these results.
+
+483
+00:45:19,680 --> 00:45:20,000
+[SPEAKER_00] Hmm.
+
+484
+00:45:20,400 --> 00:45:21,360
+[SPEAKER_00] Yeah, that's true.
+
+485
+00:45:22,080 --> 00:45:24,400
+[SPEAKER_00] Then the trust, it started building trust, right?
+
+486
+00:45:25,040 --> 00:45:36,640
+[SPEAKER_01] Interestingly, competitors, bigger, bigger players in, in, in the market or in the field brought this into the mainstream, removed so much friction.
+
+487
+00:45:37,360 --> 00:45:40,480
+[SPEAKER_01] and resulted in record sales for AI ProfitPic.
+
+488
+00:45:40,960 --> 00:45:47,440
+[SPEAKER_00] I feel like also this is where your naming for the app probably helped a significant amount.
+
+489
+00:45:47,600 --> 00:46:05,200
+[SPEAKER_00] Like I feel like in our indie circles, especially people listening to this or people that have had on, would want the name like most products you make, you want it to have this sort of cute name that you can slap on stickers and it's like a whole, you know, it's a very different thing.
+
+490
+00:46:05,760 --> 00:46:11,680
+[SPEAKER_00] But in your case, when you're in this sort of rat race where it's like there's a thousand competitors instantly.
+
+491
+00:46:12,960 --> 00:46:15,520
+[SPEAKER_00] You have to play the ASO game.
+
+492
+00:46:15,920 --> 00:46:32,080
+[SPEAKER_00] Having a name like AI Profile Pic, establish yourself so that when one of these giant players with all the marketing money and user bases, when they come out with something that goes viral, like if you don't remember the name, what are you going to search in the App Store?
+
+493
+00:46:32,240 --> 00:46:38,160
+[SPEAKER_00] You're probably going to put, well, it's an AI thing and I want a profile picture and then boom, that's, I mean, that's your app, right?
+
+494
+00:46:39,360 --> 00:46:39,440
+[SPEAKER_00] Yes.
+
+495
+00:46:40,640 --> 00:46:42,480
+[SPEAKER_01] To be honest though, that is a side effect.
+
+496
+00:46:43,280 --> 00:46:48,000
+[SPEAKER_01] Obviously the ASO gains here are good.
+
+497
+00:46:48,800 --> 00:47:03,680
+[SPEAKER_01] But it was, to be honest, a lack of imagination on my end in the sense that it's more like because this was quite rushed for V one, I didn't have the time to really give it, give the app that much character, right?
+
+498
+00:47:04,000 --> 00:47:04,160
+[SPEAKER_01] Right.
+
+499
+00:47:04,480 --> 00:47:18,640
+[SPEAKER_01] So actually give it a cute name with identity, with a nice app icon that is really fits to what kind of identity you want to give to the app.
+
+500
+00:47:19,840 --> 00:47:23,280
+[SPEAKER_01] The app had to be generic on day one because, you know, what does the app do?
+
+501
+00:47:23,680 --> 00:47:26,640
+[SPEAKER_01] It creates AI avatars or profile pictures.
+
+502
+00:47:26,960 --> 00:47:28,240
+[SPEAKER_01] This is AI profile pic.
+
+503
+00:47:29,680 --> 00:47:38,960
+[SPEAKER_01] The actual app icon is someone who has actually used our app and we just created a support ticket because they needed help.
+
+504
+00:47:39,840 --> 00:47:44,240
+[SPEAKER_01] And they sent us the avatars they had created and we're like, these actually look pretty good.
+
+505
+00:47:44,400 --> 00:47:45,200
+[SPEAKER_01] Like, can we use them?
+
+506
+00:47:45,680 --> 00:47:48,320
+[SPEAKER_01] I basically bought the rights to use it as an app icon.
+
+507
+00:47:48,640 --> 00:47:49,600
+[SPEAKER_01] Ha, that's pretty cool.
+
+508
+00:47:50,000 --> 00:47:51,280
+[SPEAKER_00] In exchange for free credits.
+
+509
+00:47:52,640 --> 00:47:53,280
+[SPEAKER_00] That's awesome.
+
+510
+00:47:53,840 --> 00:47:55,680
+[SPEAKER_00] It makes me, reminds me of a clubhouse.
+
+511
+00:47:56,400 --> 00:48:00,960
+[SPEAKER_00] Well, I say remember, I guess they're still around, but how they would have a different, like, like.
+
+512
+00:48:00,960 --> 00:48:04,080
+[SPEAKER_00] Like picture every time of I guess that was a real user.
+
+513
+00:48:04,240 --> 00:48:06,960
+[SPEAKER_00] I don't remember what the story was there, but that's pretty cool.
+
+514
+00:48:07,280 --> 00:48:07,920
+[SPEAKER_01] Yeah, exactly.
+
+515
+00:48:08,160 --> 00:48:11,520
+[SPEAKER_01] So it it kind of shows what kind of results you could get from the app.
+
+516
+00:48:12,080 --> 00:48:20,400
+[SPEAKER_01] But at the same time, well, V one had my face on it, and I couldn't wait until, you know, removing my face from it, so that's that's kind of how it worked out.
+
+517
+00:48:20,560 --> 00:48:20,640
+[SPEAKER_00] Yeah.
+
+518
+00:48:20,880 --> 00:48:21,520
+[SPEAKER_00] That makes sense.
+
+519
+00:48:21,920 --> 00:48:24,000
+[SPEAKER_00] Yeah, that would I wouldn't like that myself.
+
+520
+00:48:24,960 --> 00:48:25,040
+[SPEAKER_00] No.
+
+521
+00:48:25,520 --> 00:48:40,880
+[SPEAKER_00] So we already talked about Lenza coming in, and in your case, they did a lot of the legwork essentially of helping build this as like a legitimate, trustworthy thing, I guess.
+
+522
+00:48:41,760 --> 00:48:43,520
+[SPEAKER_00] So in your case, that was mostly helpful.
+
+523
+00:48:43,920 --> 00:48:56,400
+[SPEAKER_00] What about like, because I have looked in the App Store recently, even since we talked like a month ago, and it seems like there are just a thousand of these apps now.
+
+524
+00:48:57,200 --> 00:48:57,920
+[SPEAKER_00] How has that been?
+
+525
+00:48:58,080 --> 00:49:03,760
+[SPEAKER_00] Like, have you, have you felt the kind of land rush of a bunch of other people coming in and how have you differentiated?
+
+526
+00:49:04,000 --> 00:49:05,840
+[SPEAKER_00] I guess having a back end is probably a piece of that.
+
+527
+00:49:06,960 --> 00:49:13,760
+[SPEAKER_01] I feel like the top five apps are getting 90, 90 plus percent of the market.
+
+528
+00:49:14,640 --> 00:49:23,200
+[SPEAKER_01] And then it's just a long tail of these smaller apps making peanuts and getting almost no users, et cetera.
+
+529
+00:49:23,760 --> 00:49:25,680
+[SPEAKER_00] And are you in the top five apps?
+
+530
+00:49:26,480 --> 00:49:27,200
+[SPEAKER_00] I'm not even sure.
+
+531
+00:49:27,520 --> 00:49:33,440
+[SPEAKER_01] Like, that's doing quite well, but it's it's far from making the millions.
+
+532
+00:49:33,840 --> 00:49:35,600
+[SPEAKER_01] So the trend went down as well.
+
+533
+00:49:36,240 --> 00:49:45,040
+[SPEAKER_01] Lenza was making about, I imagine, like I saw that on Twitter, but they were making about one million a day for about twenty days straight, right?
+
+534
+00:49:45,920 --> 00:49:50,240
+[SPEAKER_01] AI Profitback didn't make one million a day, any day.
+
+535
+00:49:51,440 --> 00:49:54,880
+[SPEAKER_01] So it's a smaller app, but it's making decent income.
+
+536
+00:49:55,680 --> 00:49:57,760
+[SPEAKER_01] But yeah, the big players came in.
+
+537
+00:49:58,400 --> 00:50:12,400
+[SPEAKER_01] It was such like this Dream Boost and Sable Diffusion technology was such a good way to revamp apps that have existed on the App Store, that are like face tuning apps or for removing backgrounds or blemishes.
+
+538
+00:50:13,280 --> 00:50:14,960
+[SPEAKER_01] Which is a whole category on its own.
+
+539
+00:50:15,840 --> 00:50:15,920
+[SPEAKER_01] Yes.
+
+540
+00:50:16,640 --> 00:50:21,360
+[SPEAKER_01] And it was such a good way for them to revamp their product and add these magical new features, right?
+
+541
+00:50:21,920 --> 00:50:22,880
+[SPEAKER_01] These magic avatars.
+
+542
+00:50:23,360 --> 00:50:24,560
+[SPEAKER_01] And then it is true that the.
+
+543
+00:50:24,960 --> 00:50:30,640
+[SPEAKER_01] App Store now is crowded with this kind of app, with Avatar apps.
+
+544
+00:50:30,880 --> 00:50:44,000
+[SPEAKER_01] That's why it was quite important to be there very early on because having had a one month head start has also meant that the app has had AI ProfilePic has had a lot of App Store inertia.
+
+545
+00:50:44,640 --> 00:50:49,440
+[SPEAKER_01] So it's got a lot of reviews, ratings, downloads.
+
+546
+00:50:49,760 --> 00:50:52,960
+[SPEAKER_01] So it just boosts the app on the App Store.
+
+547
+00:50:53,680 --> 00:51:00,000
+[SPEAKER_01] And right now the name of the game is ASO and adding interesting features.
+
+548
+00:51:00,560 --> 00:51:03,120
+[SPEAKER_01] So, um, so I'm working on a few new features.
+
+549
+00:51:03,680 --> 00:51:04,800
+[SPEAKER_01] There's a few in the pipeline.
+
+550
+00:51:05,360 --> 00:51:14,560
+[SPEAKER_01] Once your model has been fine tuned, since it doesn't cost that much to do extra generations, it's to do interesting things with that, be it being able to do.
+
+551
+00:51:15,280 --> 00:51:34,800
+[SPEAKER_01] So with this app store inertia, it's also about how to keep the ball rolling because there's still an influx of users, there's still an influx of shares of generations on the app, and the idea is to how how to keep the ball rolling for the long while to come.
+
+552
+00:51:35,680 --> 00:51:43,520
+[SPEAKER_00] One of the things we talked about a while ago was like how fast the whole space is moving.
+
+553
+00:51:44,000 --> 00:51:51,600
+[SPEAKER_00] And I think when we were talking last month, you were like, some new paper came out this morning that I'm trying to figure out.
+
+554
+00:51:51,840 --> 00:51:54,480
+[SPEAKER_00] Somebody is in the process of trying to implement that paper now.
+
+555
+00:51:55,200 --> 00:52:08,720
+[SPEAKER_00] Does that pace of change in that space, is that coming into play with this area or is it kind of like those are kind of moving in a different direction than what would affect like your app and business now?
+
+556
+00:52:09,280 --> 00:52:16,480
+[SPEAKER_01] I feel like stable diffusion v one point four.4 or 1.5 was really the mother load.
+
+557
+00:52:17,040 --> 00:52:27,280
+[SPEAKER_01] That was kind of the big thing that shook up the industry and just gave so much to product makers.
+
+558
+00:52:28,640 --> 00:52:31,360
+[SPEAKER_01] I do feel that it's slowed down a bit since then.
+
+559
+00:52:32,720 --> 00:52:34,560
+[SPEAKER_01] So interestingly, it comes in waves.
+
+560
+00:52:35,200 --> 00:52:37,680
+[SPEAKER_01] It doesn't feel like it comes on a daily or weekly basis.
+
+561
+00:52:38,480 --> 00:52:46,880
+[SPEAKER_01] This kind of unlock that this technology or like AI in general creates, it does come in waves.
+
+562
+00:52:48,000 --> 00:52:56,400
+[SPEAKER_01] I don't think the wave has been as, you know, the few waves of recent times have been as big as the Stable Diffusion Release.
+
+563
+00:52:57,440 --> 00:53:02,880
+[SPEAKER_01] But I do think that there will be other medium sized or bigger waves to come.
+
+564
+00:53:03,440 --> 00:53:14,160
+[SPEAKER_00] Do you feel like you have to be on top of that so that when one of those comes through that could have an impact, you know, you're one of the people that's jumping on that quickly?
+
+565
+00:53:14,960 --> 00:53:23,040
+[SPEAKER_01] Thinking forward, it definitely is stressful to be on the lookout for something and then to ride that wave.
+
+566
+00:53:24,400 --> 00:53:26,480
+[SPEAKER_01] I don't think I would want to write every wave.
+
+567
+00:53:26,960 --> 00:53:27,360
+[SPEAKER_00] Well, right.
+
+568
+00:53:27,680 --> 00:53:36,160
+[SPEAKER_00] Because most of them, you know, once things get going, most of them probably won't produce, you know, actual results for your business specifically.
+
+569
+00:53:37,440 --> 00:53:39,280
+[SPEAKER_00] So that would start getting really overwhelming.
+
+570
+00:53:40,080 --> 00:53:40,160
+[SPEAKER_01] Yes.
+
+571
+00:53:40,640 --> 00:53:46,800
+[SPEAKER_01] And so there's that aspect and there's also the aspect of lessons learned from shipping AI profile pic.
+
+572
+00:53:47,360 --> 00:54:08,320
+[SPEAKER_01] It's understanding the value of a mote, the value of not wanting to go head to head with the big players with no mote that can outspend you when it comes to ad spend, for example, or have a bigger marketing team or have these big influencer collaborations, right?
+
+573
+00:54:09,280 --> 00:54:12,160
+[SPEAKER_01] So going head to hand with Lenza is impossible.
+
+574
+00:54:12,640 --> 00:54:17,680
+[SPEAKER_01] It just dictates a lot when it comes to doing business, which is quite an interesting challenge as well.
+
+575
+00:54:17,840 --> 00:54:18,640
+[SPEAKER_00] So it's still fun.
+
+576
+00:54:19,680 --> 00:54:22,080
+[SPEAKER_00] Do you feel like you were going head to head with the big players?
+
+577
+00:54:22,240 --> 00:54:27,520
+[SPEAKER_00] It sounded like when you were describing it earlier that they're entering the market was helpful for you.
+
+578
+00:54:27,760 --> 00:54:33,200
+[SPEAKER_00] Or was it, do you think that was helpful for you in the short term, but then long term, that becomes more of a challenge?
+
+579
+00:54:34,000 --> 00:54:42,480
+[SPEAKER_01] It never felt like I was going head to head with Lenza or the other players because I just don't have the user base.
+
+580
+00:54:42,880 --> 00:54:51,440
+[SPEAKER_01] They have user bases with millions of users, meaning they can shoot up to the top of the store within a sending a push notification.
+
+581
+00:54:52,320 --> 00:54:57,040
+[SPEAKER_01] This is the actual value that they can propose that I don't have.
+
+582
+00:54:57,680 --> 00:55:06,400
+[SPEAKER_01] So I was just glad that the interesting thing is like Lenza as a player is so big that they created a small wave for me to surf on.
+
+583
+00:55:06,720 --> 00:55:07,520
+[SPEAKER_01] So they're a whale.
+
+584
+00:55:09,040 --> 00:55:12,960
+[SPEAKER_01] Lenza's tail just hit the water and it created this ripple for everyone to surf on.
+
+585
+00:55:12,960 --> 00:55:13,600
+[SPEAKER_01] What is it that is a ripple for everyone to write off?
+
+586
+00:55:13,920 --> 00:55:39,920
+[SPEAKER_00] Well, it's, I mean, it's kind of like how a lot of people describe getting Sherlocked by a platform owner like Apple or Google or whatever, where it's like when they enter that space that you have had an app for a while and they implement it as a native feature in the platform, it can sometimes be beneficial for you because it highlights this as a thing that people might want and legitimizes a business.
+
+587
+00:55:40,160 --> 00:55:44,560
+[SPEAKER_00] And then more people end up seeking you out because you're the more, you know, advanced version or whatever in that case.
+
+588
+00:55:45,920 --> 00:55:54,320
+[SPEAKER_01] It works quite well when Lenza, for example, launched the Magic Avatars feature, but it was paid, right?
+
+589
+00:55:55,040 --> 00:55:59,040
+[SPEAKER_01] And we were almost offering it at the same price or even cheaper.
+
+590
+00:55:59,440 --> 00:56:03,040
+[SPEAKER_01] So it kind of made sense, is like a lot of people wanted to try both, right?
+
+591
+00:56:03,680 --> 00:56:05,360
+[SPEAKER_01] Because the avatars are not the same, right?
+
+592
+00:56:06,000 --> 00:56:13,040
+[SPEAKER_01] We produce more photorealistic avatars and we just have a different value proposition.
+
+593
+00:56:14,560 --> 00:56:26,400
+[SPEAKER_01] Contrasting that with getting Sherlocked is I would imagine it to hurt when Apple Sherlock's a feature and offers it for free and installsed by default on the OS.
+
+594
+00:56:26,720 --> 00:56:27,600
+[SPEAKER_01] Yeah, that's true.
+
+595
+00:56:27,840 --> 00:56:28,000
+[SPEAKER_01] Right.
+
+596
+00:56:28,560 --> 00:56:31,840
+[SPEAKER_01] It's like I already have this feature and it doesn't cost anything.
+
+597
+00:56:32,960 --> 00:56:42,640
+[SPEAKER_01] So now the value proposition of the existing product has to be so much higher for people to download it, install it, launch it and pay for it.
+
+598
+00:56:44,000 --> 00:56:53,760
+[SPEAKER_00] The last kind of big thing I wanted to hit on was, and you sort of mentioned this, but like clearly this was a big wave situation.
+
+599
+00:56:54,400 --> 00:56:59,680
+[SPEAKER_00] Like did you that wasn't going to last like forever in terms of the height of how popular it was.
+
+600
+00:57:00,480 --> 00:57:01,760
+[SPEAKER_00] But hopefully it has a long tail.
+
+601
+00:57:02,000 --> 00:57:03,040
+[SPEAKER_00] How has that played out?
+
+602
+00:57:03,200 --> 00:57:09,120
+[SPEAKER_00] And did you realize it was like a big wave and you didn't know when it would end while it was happening?
+
+603
+00:57:09,360 --> 00:57:11,520
+[SPEAKER_00] Like how did that kind of go through in your mind?
+
+604
+00:57:13,520 --> 00:57:25,600
+[SPEAKER_01] The whole thing so far and even from the beginning, even though in monetary terms it could be a cash grab or land grab, it was also just an experiment, right?
+
+605
+00:57:25,920 --> 00:57:28,320
+[SPEAKER_01] It was even in part just to have fun.
+
+606
+00:57:28,560 --> 00:57:30,080
+[SPEAKER_01] It's like, this seems pretty cool.
+
+607
+00:57:30,320 --> 00:57:32,000
+[SPEAKER_01] Like, the technology is pretty magical.
+
+608
+00:57:32,400 --> 00:57:36,000
+[SPEAKER_01] So let's just launch something in the space and learn as much as possible, right?
+
+609
+00:57:36,720 --> 00:57:38,720
+[SPEAKER_01] So there was always that aspect involved.
+
+610
+00:57:39,840 --> 00:57:46,960
+[SPEAKER_01] One other aspect of it is learning how to launch viral products.
+
+611
+00:57:48,160 --> 00:57:50,400
+[SPEAKER_01] And this is where it leaves me.
+
+612
+00:57:50,560 --> 00:57:54,960
+[SPEAKER_01] It leaves me into thinking what my next product would be, right?
+
+613
+00:57:55,840 --> 00:58:07,200
+[SPEAKER_01] And it's always quite fun and interesting to learn about marketing on one end, but also how social networks are born or how virality works.
+
+614
+00:58:07,360 --> 00:58:07,440
+[SPEAKER_01] Yeah.
+
+615
+00:58:08,720 --> 00:58:12,640
+[SPEAKER_01] So I just consider it as kind of a V one or experiment number one.
+
+616
+00:58:13,600 --> 00:58:16,560
+[SPEAKER_01] in a series of experiments in launching viral products.
+
+617
+00:58:16,880 --> 00:58:17,040
+[SPEAKER_00] Right.
+
+618
+00:58:17,280 --> 00:58:26,400
+[SPEAKER_00] Not necessarily a V one just of this product itself, but in terms of your sort of career of launching products sort of in this area.
+
+619
+00:58:27,360 --> 00:58:28,320
+[SPEAKER_01] Yes, exactly.
+
+620
+00:58:30,080 --> 00:58:38,640
+[SPEAKER_01] And that is also very much related to how to create products where users do the marketing for you, right?
+
+621
+00:58:39,120 --> 00:58:50,480
+[SPEAKER_01] So product led growth or product led marketing, instead of having to force product onto users by spending hundreds of thousands of dollars in ad spend.
+
+622
+00:58:51,200 --> 00:58:58,240
+[SPEAKER_01] And once you turn that spend off, the product dies off, right?
+
+623
+00:58:59,040 --> 00:59:13,760
+[SPEAKER_01] As an indie developer, it's always interesting to seek out these kind of alternative ways of marketing products just to see if you can create something that can sustain itself without having to push it onto users.
+
+624
+00:59:16,240 --> 00:59:26,720
+[SPEAKER_01] So I treat it as experiment number one in this overarching in this arch of marketing potential products in the future.
+
+625
+00:59:27,280 --> 00:59:34,320
+[SPEAKER_00] I'm excited to see, you know, where this app itself goes, but also, yeah, what you have in store for the future.
+
+626
+00:59:35,680 --> 00:59:44,240
+[SPEAKER_01] With the AI advances, just the landscape is so bright, it's just such an exciting time to be alive, to be honest.
+
+627
+00:59:45,280 --> 00:59:49,680
+[SPEAKER_01] I wonder if we're getting close to some kind of inflection point.
+
+628
+00:59:50,080 --> 00:59:58,160
+[SPEAKER_01] A lot of people are, and a lot of smart people are talking about AGI and that it could happen within our lifespan.
+
+629
+00:59:58,640 --> 00:59:59,920
+[SPEAKER_00] Actual artificial intelligence.
+
+630
+01:00:00,480 --> 01:00:02,480
+[SPEAKER_00] Intelligence, what, the singularity, basically?
+
+631
+01:00:02,640 --> 01:00:03,680
+[SPEAKER_00] Is that what you're talking about?
+
+632
+01:00:03,840 --> 01:00:04,960
+[SPEAKER_00] The singularity, yes.
+
+633
+01:00:05,200 --> 01:00:05,840
+[SPEAKER_00] So, okay.
+
+634
+01:00:07,920 --> 01:00:09,120
+[SPEAKER_01] So, general intelligence, right?
+
+635
+01:00:09,280 --> 01:00:10,480
+[SPEAKER_01] Yeah, okay, that's the word.
+
+636
+01:00:11,120 --> 01:00:20,560
+[SPEAKER_01] To have a kind of a sentient machine that is as intelligent or more intelligent than humans, and a lot of smart people are betting on it.
+
+637
+01:00:20,960 --> 01:00:24,800
+[SPEAKER_01] So, that is, it's just interesting, right?
+
+638
+01:00:25,120 --> 01:00:37,360
+[SPEAKER_01] And on the way to get there, if we do ever get there, but it doesn't matter because on the way there's just so many interesting advances happening and the pace is so fast that as a technologist it's just so exciting.
+
+639
+01:00:38,000 --> 01:00:38,000
+[UNKNOWN] Yeah.
+
+640
+01:00:38,160 --> 01:00:47,200
+[SPEAKER_00] Yeah, there's it's constantly spawning new opportunities, new ideas for, you know, interesting products, right?
+
+641
+01:00:47,360 --> 01:00:48,560
+[SPEAKER_00] It's like the space race.
+
+642
+01:00:49,200 --> 01:01:01,840
+[SPEAKER_00] We're not an interplanetary species like we thought we would be in a decade in like the 70s, but we sure got a lot of cool stuff out of, you know, lots of big money spenders coming up with new technology at a rapid pace.
+
+643
+01:01:03,120 --> 01:01:03,200
+[SPEAKER_00] Yes.
+
+644
+01:01:05,600 --> 01:01:08,800
+[SPEAKER_00] Well, that's a good note to kind of leave off on.
+
+645
+01:01:09,040 --> 01:01:19,280
+[SPEAKER_00] So I'll ask you the question that I always try to wrap this show up with, which is, what's like a person or people out there that have inspired you that you'd recommend other people to check out.
+
+646
+01:01:19,680 --> 01:01:25,040
+[SPEAKER_01] Someone that appeared on on your podcast previously is Christian Salig, the maker.
+
+647
+01:01:25,600 --> 01:01:26,560
+[SPEAKER_01] Oh, yeah.
+
+648
+01:01:27,200 --> 01:01:32,000
+[SPEAKER_01] I just love his spirit, his wholesomeness, uh, and the product he creates.
+
+649
+01:01:32,240 --> 01:01:35,680
+[SPEAKER_01] So overall, yeah, he's definitely an inspiration on my indie journey.
+
+650
+01:01:35,920 --> 01:01:38,080
+[SPEAKER_00] I can't agree more on that.
+
+651
+01:01:38,320 --> 01:01:43,040
+[SPEAKER_00] Uh, got a chance to hang out with him in person, uh, over the summer at WWDC.
+
+652
+01:01:43,360 --> 01:01:53,680
+[SPEAKER_00] And he is, as he is online, an exceptionally kind human being and also makes something that's a massive source of inspiration just as a dev and designer.
+
+653
+01:01:53,920 --> 01:01:56,000
+[SPEAKER_00] So, uh, yeah., heart agrees on that one.
+
+654
+01:01:56,480 --> 01:01:56,880
+[SPEAKER_00] Awesome.
+
+655
+01:01:57,280 --> 01:01:57,440
+[SPEAKER_00] Cool.
+
+656
+01:01:57,680 --> 01:02:00,240
+[SPEAKER_00] Well, I guess we can go ahead and wrap this up.
+
+657
+01:02:00,480 --> 01:02:02,880
+[SPEAKER_00] So, where can people find you and your work?
+
+658
+01:02:03,280 --> 01:02:05,120
+[SPEAKER_01] People can find me mostly on Twitter.
+
+659
+01:02:05,680 --> 01:02:14,720
+[SPEAKER_01] So, Twitter dot com slash Ronnie Fadel R O N Y F A D E L and they can find my apps on Fadel.
+
+660
+01:02:15,120 --> 01:02:15,360
+[SPEAKER_01] I O.
+
+661
+01:02:15,840 --> 01:02:17,280
+[SPEAKER_00] Thank you so much for coming on.
+
+662
+01:02:17,840 --> 01:02:20,400
+[SPEAKER_00] This first episode of the twenty twenty three.
+
+663
+01:02:20,640 --> 01:02:21,440
+[SPEAKER_00] Yeah, this was a fun one.
+
+664
+01:02:21,680 --> 01:02:22,800
+[SPEAKER_00] Charlie, this was a pleasure.
+
+665
+01:02:22,960 --> 01:02:23,760
+[SPEAKER_00] Thank you for having me.
+
+666
+01:02:24,000 --> 01:02:25,520
+[SPEAKER_00] Yeah, no, the pleasure is all mine.
+
+667
+01:02:28,000 --> 01:02:28,800
+[SPEAKER_00] Thanks for listening.
+
+668
+01:02:29,040 --> 01:02:31,040
+[SPEAKER_00] This episode was edited by Jonathan Ruiz.
+
+669
+01:02:31,200 --> 01:02:34,960
+[SPEAKER_00] If you want to discuss the show, you can find me on Twitter as underscore Chuck E.
+
+670
+01:02:35,040 --> 01:02:37,600
+[SPEAKER_00] C., or you can reach the show directly at launched.fm.
+
+671
+01:02:38,000 --> 01:02:40,960
+[SPEAKER_00] You can also find me at mastodon.social as Charlie M.
+
+672
+01:02:41,120 --> 01:02:42,960
+[SPEAKER_00] Chapman for the show at launched.
+
+673
+01:02:43,280 --> 01:02:46,880
+[SPEAKER_00] And you can find show notes and more at launchedfm.com.
