@@ -1,0 +1,2707 @@
+1
+00:00:00,160 --> 00:00:08,160
+What we noticed quicker than anything before is how much the app has been promoted by our users, not even by ourselves.
+
+2
+00:00:08,480 --> 00:00:15,600
+Like every time someone mentions App Store Connect on Twitter, people would just tag Helm and say just use Helm instead.
+
+3
+00:00:15,920 --> 00:00:18,400
+And that's the best feeling you can have, I think.
+
+4
+00:00:18,800 --> 00:00:19,600
+Welcome to Launched.
+
+5
+00:00:19,840 --> 00:00:28,960
+I'm Charlie Chapman, and today I'm excited to bring you the developers behind Helm, the outstanding developer tool for accessing App Store Connect, Paul Piaya and Hitta Vanderploot.
+
+6
+00:00:42,720 --> 00:00:44,000
+Guys, welcome back to the show.
+
+7
+00:00:44,560 --> 00:00:45,840
+Hey, thank you.
+
+8
+00:00:46,400 --> 00:00:47,680
+Yeah, thank you for having us.
+
+9
+00:00:48,240 --> 00:00:52,240
+Hitta has been a previous guest a long, long time ago talking about Is it PD?
+
+10
+00:00:52,400 --> 00:00:54,480
+Your Apple Watch app.
+
+11
+00:00:55,200 --> 00:00:57,120
+And then both of you were on the show.
+
+12
+00:00:57,760 --> 00:01:02,240
+We did a live show at WWDC last year, which we recorded.
+
+13
+00:01:02,640 --> 00:01:03,520
+It was very exciting.
+
+14
+00:01:04,560 --> 00:01:07,760
+Hitta got to launch a T-shirt Cannon into the crowd.
+
+15
+00:01:08,400 --> 00:01:10,480
+Both of you ate cake, is that right?
+
+16
+00:01:11,120 --> 00:01:11,760
+Coffee cake.
+
+17
+00:01:12,160 --> 00:01:14,640
+It was the one year anniversary of Helm.
+
+18
+00:01:14,720 --> 00:01:16,400
+Ah, it was the one-year anniversary of Helm.
+
+19
+00:01:16,480 --> 00:01:16,800
+That's right.
+
+20
+00:01:16,960 --> 00:01:17,040
+Yeah.
+
+21
+00:01:17,440 --> 00:01:24,160
+So I'm excited to get into this because I think this is the type of app that's directly aimed at exactly all the people listening.
+
+22
+00:01:24,560 --> 00:01:30,240
+And on that note, I've been trying to kick off this show now by doing a quick elevator pitch of the app we're talking about.
+
+23
+00:01:30,560 --> 00:01:34,320
+That way we don't get into all the details before we even explain what it is.
+
+24
+00:01:34,800 --> 00:01:39,600
+And so, Paul, I'm going to have you do just a quick elevator pitch for what Helm is.
+
+25
+00:01:40,080 --> 00:01:48,160
+Yeah, Helm is a macOS and iOS app that basically allows you to do a lot of actions in App Store Connect.
+
+26
+00:01:48,480 --> 00:01:53,040
+I don't like saying that it's just a client for App Store Connect because we because we do quite a lot more.
+
+27
+00:01:53,440 --> 00:02:08,720
+The mission with Helm is to basically put all the frustrations and pain points that we had when shipping our apps and updates in Upstore Connect and basically fix them like one at a time, making like the best possible experience for every single feature that we come up with in the app.
+
+28
+00:02:09,680 --> 00:02:28,400
+The goal essentially is to make it as easy as possible to launch your app, give you the best chances at success, at getting past the review process, giving you the best chance at like ASO, auto-translating your content so that you basically don't have to either hire someone and you can do it in just like one.
+
+29
+00:02:28,960 --> 00:02:29,200
+click.
+
+30
+00:02:29,680 --> 00:02:39,440
+And yet, there's quite a lot of stuff that we've got in the roadmap, but the long and short of it is basically give you the best experience at shipping your applications.
+
+31
+00:02:39,760 --> 00:02:43,600
+So you don't basically have to go through App Store Connect, you just go through Helm.
+
+32
+00:02:43,920 --> 00:02:50,080
+Anyone listening who has an app on the App Store knows the pain of using App Store Connect.
+
+33
+00:02:50,240 --> 00:02:52,720
+It's such a strange piece of software, that web app.
+
+34
+00:02:53,200 --> 00:02:59,680
+And so, yeah, using Helm is like, it feels, especially for Apple developers, it feels like being at home.
+
+35
+00:03:00,320 --> 00:03:04,880
+To start off the conversation like we normally do with the show, I want to introduce everybody to who you are.
+
+36
+00:03:05,280 --> 00:03:09,760
+And Hitta, obviously people can go back and listen to that whole episode if they want to.
+
+37
+00:03:10,320 --> 00:03:11,920
+So we're just going to spend zero time on you.
+
+38
+00:03:12,080 --> 00:03:12,800
+No, I'm kidding.
+
+39
+00:03:13,360 --> 00:03:14,160
+But I will start with Paul.
+
+40
+00:03:14,640 --> 00:03:17,920
+So I'll just ask you the three questions that we're going to do.
+
+41
+00:03:18,000 --> 00:03:18,800
+The elevator pitch.
+
+42
+00:03:19,520 --> 00:03:20,240
+The elevator pitch.
+
+43
+00:03:20,400 --> 00:03:21,760
+Be careful because we'll go make a couple of...
+
+44
+00:03:22,320 --> 00:03:24,160
+They have very long elevators in Spain, don't remember that.
+
+45
+00:03:24,960 --> 00:03:25,440
+Remember that.
+
+46
+00:03:26,560 --> 00:03:29,120
+But no, the three questions I always ask is, where are you from?
+
+47
+00:03:29,440 --> 00:03:31,760
+Do you have a formal education related to what you do?
+
+48
+00:03:32,320 --> 00:03:36,960
+And then what were you doing before you started working on Helm with Hitta?
+
+49
+00:03:37,520 --> 00:03:42,160
+Yeah, so I am originally from Barcelona in Spain, but I live in the...
+
+50
+00:03:43,520 --> 00:03:46,560
+I've lived in the UK for about 11, 12 years now.
+
+51
+00:03:47,440 --> 00:03:49,600
+I don't have formal education.
+
+52
+00:03:49,760 --> 00:03:56,320
+I have a uni degree in electronic engineering, but not in iOS or anything related to programming.
+
+53
+00:03:56,720 --> 00:04:00,560
+I was basically just doing analog circuit training stuff at uni.
+
+54
+00:04:00,720 --> 00:04:03,680
+So nothing to do with what I do at the moment.
+
+55
+00:04:04,160 --> 00:04:05,440
+And what was I doing before?
+
+56
+00:04:05,920 --> 00:04:07,360
+I was a software engineer.
+
+57
+00:04:07,600 --> 00:04:09,440
+I think my background and my career.
+
+58
+00:04:10,400 --> 00:04:13,520
+Since I left uni, has been on software and iOS.
+
+59
+00:04:14,080 --> 00:04:17,680
+And then he and I became friends through conferences and stuff.
+
+60
+00:04:17,760 --> 00:04:27,120
+Then he eventually moved tooved to Manchester and we started working together on Now Playing and one thing led to another and eventually made Helm together.
+
+61
+00:04:27,760 --> 00:04:29,200
+So you were working on stuff together.
+
+62
+00:04:29,520 --> 00:04:31,840
+Was that in a kind of contracting role?
+
+63
+00:04:32,000 --> 00:04:38,000
+Because Now Playing is an app I think of as in Hitta's kind of catalog of apps.
+
+64
+00:04:38,480 --> 00:04:40,000
+I started Now Playing by myself.
+
+65
+00:04:41,040 --> 00:04:49,680
+And then, well, like Paul said, we met at a conference, became friends real quickly and we both had the same nerdy enthusiasm about music.
+
+66
+00:04:50,320 --> 00:05:00,000
+And also I knew Paul had a lot more technical capability than I have to make things more performance and stuff, because in the end I'm still a designer turned developer.
+
+67
+00:05:00,480 --> 00:05:03,040
+It's fine, but not as trained as Paul.
+
+68
+00:05:03,360 --> 00:05:07,440
+So I was like, hey, just wanna, do you wanna just come in and do this together?
+
+69
+00:05:07,840 --> 00:05:13,600
+Not as a contracting necessarily just share cuts, basically share the pie, I guess.
+
+70
+00:05:14,320 --> 00:05:15,600
+That was with Now Playing.
+
+71
+00:05:15,840 --> 00:05:19,120
+So that one was also kind of a joint effort then.
+
+72
+00:05:19,520 --> 00:05:19,600
+Yeah.
+
+73
+00:05:20,000 --> 00:05:20,080
+Yeah.
+
+74
+00:05:20,320 --> 00:05:21,680
+That's how we started working together.
+
+75
+00:05:21,920 --> 00:05:26,480
+And then I was doing full time indie development at that point.
+
+76
+00:05:26,880 --> 00:05:29,520
+And as an indie developer, you ship a lot of updates.
+
+77
+00:05:29,920 --> 00:05:33,040
+And like everyone else, I was no longer wanted.
+
+78
+00:05:33,040 --> 00:05:37,680
+I wanted I was like, I don't want to deal with this website anymore.
+
+79
+00:05:38,080 --> 00:05:48,720
+And then I looked at what was there and there were a few Epsilon Connect clients, but they weren't really up to what I had in mind or what I wanted from a client.
+
+80
+00:05:49,440 --> 00:05:57,760
+And then I started the projects, looked at the Epsilon Connect API and it was like, Oh, please help if you want to do this together.
+
+81
+00:05:58,080 --> 00:06:06,640
+Okay, I want to pull on that thread a little bit more, but first, I guess, really quick, the same questions for you, like, what's your, what's your background education wise?
+
+82
+00:06:07,040 --> 00:06:09,040
+And then what were you doing, oh, where are you from?
+
+83
+00:06:09,120 --> 00:06:09,840
+And then what were you doing?
+
+84
+00:06:10,560 --> 00:06:12,080
+kind of before you guys met?
+
+85
+00:06:12,560 --> 00:06:17,680
+Yeah, so I'm from the Netherlands, lived most of my adult life in Amsterdam.
+
+86
+00:06:18,240 --> 00:06:22,160
+I've been trained as a designer originally, like a visual designer.
+
+87
+00:06:22,320 --> 00:06:29,360
+I've worked on a lot of different apps at agencies and then joined a web product for a long time, became the head of design there.
+
+88
+00:06:30,000 --> 00:06:31,760
+That became too big, didn't like it.
+
+89
+00:06:32,160 --> 00:06:35,760
+And I also always liked doing mobile apps better than web products.
+
+90
+00:06:36,000 --> 00:06:41,840
+And then at some point, I always had all these ideas and I was like, how hard can it be to build it myself?
+
+91
+00:06:42,000 --> 00:06:46,960
+Because otherwise I have to make my ideas enthusiastic to others and I didn't want that.
+
+92
+00:06:47,440 --> 00:06:48,800
+because that's quite difficult.
+
+93
+00:06:49,040 --> 00:06:51,440
+I mean, it's called pitching for a reason, I guess.
+
+94
+00:06:51,680 --> 00:06:53,920
+And then I was like, well, it took me quite a long time.
+
+95
+00:06:54,160 --> 00:06:55,760
+Then this was around when Swift came out.
+
+96
+00:06:55,760 --> 00:06:57,680
+It was like, oh, finally, this is legible.
+
+97
+00:06:57,760 --> 00:07:01,600
+Because I tried a few times with Objective C and that was impossible for me.
+
+98
+00:07:02,080 --> 00:07:06,960
+And then with Swift, I actually write the wave of Swift development a little bit.
+
+99
+00:07:07,520 --> 00:07:10,560
+Were you in on like those first really shaky versions?
+
+100
+00:07:10,800 --> 00:07:10,880
+Yeah.
+
+101
+00:07:11,440 --> 00:07:11,840
+Yeah, I am.
+
+102
+00:07:12,160 --> 00:07:15,040
+And you think that's tough when you know development.
+
+103
+00:07:15,360 --> 00:07:18,480
+I started doing multiple new apps because the project didn't compile anymore.
+
+104
+00:07:18,560 --> 00:07:19,520
+So yeah, okay.
+
+105
+00:07:21,440 --> 00:07:23,760
+And now we're all back to doing the same thing with vibe coding, right?
+
+106
+00:07:24,240 --> 00:07:26,560
+As soon as it breaks, you're just like, all right, let's just start over.
+
+107
+00:07:26,960 --> 00:07:29,760
+But now you asked AI to fix it for you, I guess.
+
+108
+00:07:30,560 --> 00:07:31,040
+That's true.
+
+109
+00:07:31,200 --> 00:07:31,920
+Yeah, that's true.
+
+110
+00:07:32,080 --> 00:07:32,560
+I don't know.
+
+111
+00:07:32,640 --> 00:07:36,720
+I've gotten it where it's like, far enough along that I'm just like, ah, whatever, just start greenfield.
+
+112
+00:07:37,040 --> 00:07:40,720
+So that's how you got into doing your own indie apps.
+
+113
+00:07:40,880 --> 00:07:48,480
+And then you, like, I don't remember what your first one was, but you, you kind of got into a pattern of like, you were putting out a bunch of different apps.
+
+114
+00:07:48,720 --> 00:07:52,880
+And eventually that kind of took over and that became your full time gig for a while, right?
+
+115
+00:07:53,440 --> 00:08:02,720
+My first one was a simple way tracking app because Elts Kit was just launched and I think it was quite cumbersome to put in a new weight measurement.
+
+116
+00:08:02,960 --> 00:08:08,640
+And I was like, oh, this is maybe a good project to learn working with different Apple APIs.
+
+117
+00:08:09,440 --> 00:08:12,240
+And then I did a whole bunch of different apps.
+
+118
+00:08:12,400 --> 00:08:15,200
+Like, none of them is like even remotely the same, I think.
+
+119
+00:08:15,440 --> 00:08:19,280
+Because like, there's a goal tracking app, there's a music app, there's a kite surfing app.
+
+120
+00:08:19,600 --> 00:08:20,560
+I don't even kite surf.
+
+121
+00:08:20,800 --> 00:08:23,600
+But hey, it taught me a lot about core motion and stuff.
+
+122
+00:08:24,160 --> 00:08:25,440
+Even machine learning as well.
+
+123
+00:08:25,600 --> 00:08:32,960
+So, and I think PT also happened, which was like a ChatGPT wrapper for Apple Watch, which took off like crazy.
+
+124
+00:08:33,120 --> 00:08:39,680
+But I think for me, it was always just trying to do as many different projects and not to stick too much to one topic just to learn new things.
+
+125
+00:08:40,240 --> 00:08:44,640
+And I learned a lot from all of those, like different things from all the projects, I guess.
+
+126
+00:08:44,880 --> 00:08:49,120
+And that what that became a sustainable sort of job for a while?
+
+127
+00:08:49,440 --> 00:08:58,480
+Yeah, sometimes I filled it up with some client work, like did like UI engineering, I guess, because I was still a designer that knew how to code.
+
+128
+00:08:58,640 --> 00:09:03,280
+So it was quite easy to help other apps as well to build nice, nice real things.
+
+129
+00:09:04,000 --> 00:09:07,840
+But I tried to minimize the amount of client work that I took on as much as possible.
+
+130
+00:09:08,160 --> 00:09:10,640
+I only took on clients that I really, really liked.
+
+131
+00:09:10,960 --> 00:09:18,480
+So the origin of Helm then was you like many other of us listening, found App Store Connect painful to use.
+
+132
+00:09:18,640 --> 00:09:20,720
+You were like, there should be a better way to do this.
+
+133
+00:09:21,520 --> 00:09:32,640
+A Mac app feels like obvious because developers are obviously working on the Mac and it's kind of a big lots of different input fields and stuff type function that you need to do.
+
+134
+00:09:32,880 --> 00:09:32,880
+Yeah.
+
+135
+00:09:33,200 --> 00:09:35,360
+And then like it's a professional tool in a way.
+
+136
+00:09:35,440 --> 00:09:35,520
+Yeah.
+
+137
+00:09:36,320 --> 00:09:36,400
+Yeah.
+
+138
+00:09:36,880 --> 00:09:46,160
+And then like you said, like once you started digging into the APIs necessary to create those, you realized this was going to be a little heavy and that's when you reached out to Paul.
+
+139
+00:09:47,280 --> 00:09:47,360
+Yeah.
+
+140
+00:09:47,680 --> 00:09:47,760
+Yeah.
+
+141
+00:09:48,400 --> 00:09:52,080
+I think quite quickly because the API itself, this is my experience.
+
+142
+00:09:52,480 --> 00:09:55,280
+I think Paul has a different look on it, obviously.
+
+143
+00:09:55,520 --> 00:10:00,720
+But I think the API itself is really, really tough to get, like to get the standards.
+
+144
+00:10:01,040 --> 00:10:03,360
+But one, I think once you get it, it's okay.
+
+145
+00:10:04,080 --> 00:10:10,720
+Still a lot of things are weird, but it's a really opinionated API in how it's structured, I would say.
+
+146
+00:10:11,280 --> 00:10:14,880
+And I always thought this is the reason why it's so slow on web as well.
+
+147
+00:10:15,040 --> 00:10:16,960
+But it turns out it's actually not that slow.
+
+148
+00:10:17,120 --> 00:10:18,640
+It's just different.
+
+149
+00:10:20,480 --> 00:10:25,920
+I think, yeah, I think they have to accommodate like a massive number of old apps as well.
+
+150
+00:10:26,000 --> 00:10:34,720
+And they have to power like a lot of things that maybe they're not as relevant if you use the API for very, very small things and just to do quick things.
+
+151
+00:10:35,200 --> 00:10:40,160
+But it is incredibly complex to get into and to make sense of it.
+
+152
+00:10:40,400 --> 00:10:46,400
+But once you do and you start understanding how it works and all that stuff, it's very, very powerful.
+
+153
+00:10:46,800 --> 00:10:55,440
+You can pretty much do anything on the, except there's some exceptions, but you can basically do anything that AppStore Connect does just programmatically with the API.
+
+154
+00:10:56,000 --> 00:10:59,840
+And it's not really designed for your purposes, right?
+
+155
+00:11:00,240 --> 00:11:07,280
+Like the idea isn't, oh, this is an API where you can build a client that replicates what App Store Connect does, right?
+
+156
+00:11:07,680 --> 00:11:12,480
+The main purpose is all these people doing heavy automations or something like that, right?
+
+157
+00:11:12,960 --> 00:11:20,080
+I think once you start using it for how we use it, you hit like certain things where you go like, oh, why is this not available?
+
+158
+00:11:20,320 --> 00:11:25,840
+And a lot of the times the answer is like, it's not how it was like initially intended to be used.
+
+159
+00:11:26,480 --> 00:11:32,080
+And we've had like some conversations as well with like the App Store Connect API team in labs and all that stuff.
+
+160
+00:11:32,240 --> 00:11:35,840
+And they're always like super open to like adding more features.
+
+161
+00:11:36,080 --> 00:11:37,760
+And there's been like quite a lot of work.
+
+162
+00:11:38,000 --> 00:11:42,960
+But you do eventually like get to those points where you think like, oh yeah, maybe this is not what.
+
+163
+00:11:43,760 --> 00:11:52,720
+it was built for and you get some hiccups in the API, but the team are incredibly open to this feedback and just building on more endpoints and stuff.
+
+164
+00:11:53,520 --> 00:11:55,520
+And I think that's an interesting point too.
+
+165
+00:11:56,080 --> 00:12:09,920
+If you aren't already familiar with Helm, you might assume that this is kind of adversarial to App Store Connect and that this would be the type of thing you have to download from some GitHub repo and build yourself or something like that.
+
+166
+00:12:10,320 --> 00:12:17,600
+But you've done all of this completely compliant within Apple's rules and it's available on the Mac App Store.
+
+167
+00:12:17,840 --> 00:12:18,960
+We're even being featured.
+
+168
+00:12:19,440 --> 00:12:19,520
+Yeah.
+
+169
+00:12:21,040 --> 00:12:21,680
+Right, exactly.
+
+170
+00:12:21,760 --> 00:12:26,560
+So it's, I feel like that relationship is actually good and like you just described, like they're open to that.
+
+171
+00:12:26,960 --> 00:12:35,440
+Was that one of your driving things from the beginning was like, we want to do this in a, like, fully compliant way?
+
+172
+00:12:36,000 --> 00:12:43,120
+Yeah, I think we we always said that we always really deeply care about setting a good relationship with Apple still.
+
+173
+00:12:43,360 --> 00:12:46,160
+Like, we don't want to make them look bad necessarily.
+
+174
+00:12:46,320 --> 00:12:49,040
+We just want to show them that there's actually a need for this.
+
+175
+00:12:50,000 --> 00:12:56,800
+Also, same practices, like we try to keep privacy in mind, this stuff and things like that, but everything we do, make it.
+
+176
+00:12:57,280 --> 00:12:58,160
+as accessible as possible.
+
+177
+00:12:58,880 --> 00:13:06,640
+And all those same norms in what app all values and good software should have, we try to apply that to this app.
+
+178
+00:13:07,360 --> 00:13:12,480
+Having said that, I think the first launch was not as easy as it could have been.
+
+179
+00:13:12,640 --> 00:13:16,400
+And I guess that makes for a perfect story for a podcast called Launch.
+
+180
+00:13:16,720 --> 00:13:19,760
+We had been stuck in review for what was it, like two months?
+
+181
+00:13:20,080 --> 00:13:20,560
+Three months?
+
+182
+00:13:20,720 --> 00:13:21,280
+Yeah, I think so.
+
+183
+00:13:21,440 --> 00:13:22,000
+Something like that.
+
+184
+00:13:22,080 --> 00:13:23,520
+Yeah, there was a test fight for a while.
+
+185
+00:13:23,920 --> 00:13:26,880
+Like we always wanted to have this out on the App Store.
+
+186
+00:13:27,040 --> 00:13:30,080
+And of course there are some doubts because, yeah, it is an App Store connect client.
+
+187
+00:13:30,160 --> 00:13:31,200
+Obviously, we do a bit more.
+
+188
+00:13:31,520 --> 00:13:33,520
+But there have been other attempts at this before.
+
+189
+00:13:35,120 --> 00:13:38,160
+People who have been in this racket for a while have seen them come and go.
+
+190
+00:13:38,400 --> 00:13:45,040
+And I know me, whenever you said this, I was kind of like, well, it'll be fun to watch Hitta, you know, sit here and bang his head against the wall.
+
+191
+00:13:45,280 --> 00:13:50,560
+But like, I'll be honest, I didn't expect this to actually succeed.
+
+192
+00:13:51,040 --> 00:13:53,040
+Not because I didn't think I could build something useful.
+
+193
+00:13:55,040 --> 00:13:56,000
+I'm here for you, man.
+
+194
+00:13:57,200 --> 00:14:02,720
+Not because I didn't think you'd be successful at building it, but because, like, I've seen this play out before.
+
+195
+00:14:02,960 --> 00:14:03,760
+And it's like, Yeah.
+
+196
+00:14:04,640 --> 00:14:05,520
+Yeah, that's fair.
+
+197
+00:14:05,760 --> 00:14:09,360
+There's a lot of things designed to not make this necessarily successful.
+
+198
+00:14:09,440 --> 00:14:09,680
+And so.
+
+199
+00:14:09,840 --> 00:14:12,560
+I mean, and that's why we were stuck in review for a long time, right?
+
+200
+00:14:12,800 --> 00:14:15,040
+Like, at some point, like, oh, is this ever going to happen?
+
+201
+00:14:15,280 --> 00:14:18,640
+In worst case, we would probably we just distribute it outside of the App Store.
+
+202
+00:14:18,960 --> 00:14:23,440
+We initially wanted to launch it at a conference, I think it was the one in Folkestone.
+
+203
+00:14:23,920 --> 00:14:25,280
+Yeah, SwiftCraft, I think it was.
+
+204
+00:14:25,520 --> 00:14:26,080
+SwiftCraft?
+
+205
+00:14:26,240 --> 00:14:27,840
+Yeah, and then we were stuck in review still.
+
+206
+00:14:28,000 --> 00:14:33,360
+Actually, then we were even stuck in, like, canceling or in review because it was all weird situation.
+
+207
+00:14:33,600 --> 00:14:36,640
+And then not until, like, WDC, I think.
+
+208
+00:14:37,360 --> 00:14:40,880
+So for the context, that was Folkestone was early May, I believe.
+
+209
+00:14:41,120 --> 00:14:41,520
+Oh yeah.
+
+210
+00:14:42,400 --> 00:14:47,760
+So just for the context, we had submitted by then and then it got to WDC and we were still.
+
+211
+00:14:48,320 --> 00:14:48,560
+stuck.
+
+212
+00:14:48,720 --> 00:14:51,040
+So that's at least like one month and over a month.
+
+213
+00:14:51,280 --> 00:14:51,360
+Yeah.
+
+214
+00:14:52,400 --> 00:14:52,480
+Yeah.
+
+215
+00:14:52,720 --> 00:14:56,880
+So WDC, Balkan Makeup, I was there luckily.
+
+216
+00:14:57,440 --> 00:15:02,640
+I went to the App Store lab that they have there in Apple Park.
+
+217
+00:15:03,120 --> 00:15:08,560
+I had contact with one of the people from the App Store Connect API luckily.
+
+218
+00:15:08,880 --> 00:15:12,160
+And she said, Oh, you need to talk to this person to get it sorted.
+
+219
+00:15:12,640 --> 00:15:14,080
+And then talked to her.
+
+220
+00:15:14,320 --> 00:15:15,280
+She wrote down a number.
+
+221
+00:15:15,840 --> 00:15:19,520
+And then she listened and looked at the screen, typed the number, wrote something down.
+
+222
+00:15:19,680 --> 00:15:21,440
+And like, Oh, gosh, she didn't say a word.
+
+223
+00:15:21,680 --> 00:15:24,080
+And I was like, Give me something.
+
+224
+00:15:25,600 --> 00:15:35,120
+And then, yeah, it takes a long time because it's currently stuck in legal because they wanted to make sure we didn't sell their product.
+
+225
+00:15:35,520 --> 00:15:38,400
+We didn't sell App Store Connect as a product necessarily.
+
+226
+00:15:38,720 --> 00:15:42,960
+We actually did extra things and not just literally be App Store Connect.
+
+227
+00:15:43,280 --> 00:15:45,840
+The name was okay because we have four App Store Connect.
+
+228
+00:15:46,000 --> 00:15:50,800
+And as long as you say it's four or something instead of trying to be that something, it should be okay.
+
+229
+00:15:51,440 --> 00:15:57,040
+And then I think the next morning, yeah, the day after.theC, we got approved.
+
+230
+00:15:57,600 --> 00:15:59,520
+Do you think it was actually going to go through anyway?
+
+231
+00:15:59,680 --> 00:16:00,800
+And then it's like, wow.
+
+232
+00:16:01,600 --> 00:16:03,200
+It may have just been in a giant pile.
+
+233
+00:16:03,600 --> 00:16:06,080
+Well, they will never say so, but it definitely helped, of course.
+
+234
+00:16:07,680 --> 00:16:15,280
+That's why WDC is such an important week in general, I think, to go to the labs and talk to engineers and talk to people, talk to Apple.
+
+235
+00:16:15,680 --> 00:16:19,280
+This is the one moment of the year where you can actually talk to these people, which is very powerful.
+
+236
+00:16:19,760 --> 00:16:22,080
+What is it, Developer Support Ticket, is that what it's called?
+
+237
+00:16:22,320 --> 00:16:24,880
+Where like Apple developers get two of them a year where you can talk.
+
+238
+00:16:25,520 --> 00:16:27,200
+The idea is that you can talk to an engineer.
+
+239
+00:16:28,320 --> 00:16:33,440
+Is there a mechanism for that for like app review or app store questions?
+
+240
+00:16:34,960 --> 00:16:35,440
+I don't know.
+
+241
+00:16:35,680 --> 00:16:36,640
+I've never tried it actually.
+
+242
+00:16:36,800 --> 00:16:37,440
+I've never used it.
+
+243
+00:16:37,760 --> 00:16:38,240
+Yeah, I have no idea.
+
+244
+00:16:38,880 --> 00:16:44,320
+The stereotype with those is that you only get to a year so developers never use any because they're afraid to waste it.
+
+245
+00:16:45,440 --> 00:16:49,200
+And that's definitely why I'd use one next week just to see how they are, how they do it.
+
+246
+00:16:49,440 --> 00:16:58,240
+Because so much of the time it's like just getting a human being inside the spaceship to recognize it and then flag it somewhere, like because they can like Slack or email someone.
+
+247
+00:16:58,560 --> 00:17:03,760
+But I wonder if like, if you ever get stuck in one of those, if you could use one of those to get to get hold of a person.
+
+248
+00:17:04,080 --> 00:17:05,600
+Because it just kind of worked for you all that.
+
+249
+00:17:05,840 --> 00:17:05,920
+Yeah.
+
+250
+00:17:06,240 --> 00:17:08,000
+WWDC happened to be coming up.
+
+251
+00:17:08,240 --> 00:17:11,120
+But if it had been August, like, what would you have done?
+
+252
+00:17:11,600 --> 00:18:01,280
+I've never used one of them, but it was my first time at WWDC this year and I managed to go to the Upstore Connect API lab and I had about ten, twelve questions and they were incredibly kind to just let me stay after my session as well and I basically went through all of the feedback it was literally like thirty, forty minutes with one person was like a lot better than just me filing feedback for about and the feedback was important as well because then I could go and say like look, I filed this radar this is all of like all of the context and I basically got answers for absolutely everything so yeah it was honestly invaluable just for that yeah it's crazy how useful I mean I guess the this sounds really obvious on the surface, but talking to the actual people instead of just filing into a giant, you know, anonymous bucket, it can make a really big difference.
+
+253
+00:18:01,840 --> 00:18:03,200
+So you got it, it was approved.
+
+254
+00:18:03,520 --> 00:18:12,320
+I assume in May you had all these plans for exciting launches and especially knowing you all, which we should get into at some point, you do crazy things.
+
+255
+00:18:12,560 --> 00:18:14,320
+And so I assume you were very excited about it in May.
+
+256
+00:18:14,480 --> 00:18:18,240
+And then by the time it got to June, it was like, it's just, it's out there now.
+
+257
+00:18:18,480 --> 00:18:20,960
+And like, how did that launch itself go at that point?
+
+258
+00:18:21,680 --> 00:18:23,600
+I think it's very much like every other launch.
+
+259
+00:18:23,760 --> 00:18:27,120
+It's like, it feels so anticlimax, like an anticlimax.
+
+260
+00:18:27,360 --> 00:18:29,440
+It's like, okay, I guess this is a thing now.
+
+261
+00:18:32,560 --> 00:18:37,840
+Yeah, and then slowly but steadily, the first users started dripping in.
+
+262
+00:18:38,080 --> 00:18:40,480
+It went quite fast, quite quickly.
+
+263
+00:18:40,800 --> 00:18:44,560
+Obviously helped that we both do a lot of public speaking and a lot of conferences.
+
+264
+00:18:45,760 --> 00:18:50,160
+So we always have like a room full of potential users in front of us.
+
+265
+00:18:50,960 --> 00:19:00,000
+But I think what we noticed quicker than anything before is how much the app has been promoted by our users, not even by ourselves.
+
+266
+00:19:00,320 --> 00:19:06,400
+Like every time someone mentioned App Store Connect on Twitter, people would just tag Helm and say, just.
+
+267
+00:19:06,400 --> 00:19:07,680
+I just use Helm instead.
+
+268
+00:19:08,000 --> 00:19:10,400
+And that's the best feeling you can have, I think.
+
+269
+00:19:11,200 --> 00:19:12,160
+From the beginning as well.
+
+270
+00:19:12,320 --> 00:19:14,240
+Like that was pretty impressive.
+
+271
+00:19:14,400 --> 00:19:21,040
+Like it was just like, yeah, we didn't really have to do obviously we've done a lot, but we didn't have to do a lot to kind of like just promote it.
+
+272
+00:19:21,520 --> 00:19:30,640
+And I think it probably has to do with it's probably the first time that we have an app where the target audience is the same as the audience we've got online anyway.
+
+273
+00:19:30,880 --> 00:19:35,200
+Like every time we go to conferences, that's the exact audience we want to be hitting.
+
+274
+00:19:35,840 --> 00:19:38,320
+So yeah, I think that's probably part of it.
+
+275
+00:19:38,480 --> 00:19:49,200
+But yeah, it's been surprising that like every week you wake up one day and it's like someone talking about like Helm, or someone complains about App Store Connect, and then in the comments it's like, oh, just go use Helm.
+
+276
+00:19:49,440 --> 00:19:52,080
+And it's like, oh, we didn't even have to jump on that thread.
+
+277
+00:19:52,400 --> 00:19:58,000
+Someone else did, like, just set it for us, which is which is worth ten times more than somebody promoting it for yourself.
+
+278
+00:19:58,240 --> 00:19:58,880
+It's a great sign.
+
+279
+00:19:59,520 --> 00:20:03,680
+So what other marketing things have you done?
+
+280
+00:20:04,000 --> 00:20:09,920
+So obviously, you know, you go to conferences, maybe you make some stickers or pins or something.
+
+281
+00:20:10,720 --> 00:20:11,760
+But is there anything unique?
+
+282
+00:20:12,080 --> 00:20:15,040
+I'm laughing, and Hit is already, he's pulling something out here.
+
+283
+00:20:16,560 --> 00:20:19,920
+So for the audience that's just listening, Hit is holding it up.
+
+284
+00:20:21,600 --> 00:20:25,600
+What we in America would call a jersey, what I believe everywhere else in the world would call a kit.
+
+285
+00:20:28,400 --> 00:20:30,720
+Is a kit the whole thing or is that also just the top part?
+
+286
+00:20:30,880 --> 00:20:30,960
+Yeah.
+
+287
+00:20:31,200 --> 00:20:32,080
+What's the top part called?
+
+288
+00:20:32,560 --> 00:20:34,880
+In the UK they have like a thousand words for it here.
+
+289
+00:20:35,040 --> 00:20:40,720
+So I think some people call it top, some people call it kit as well, like just the top bit, I don't know.
+
+290
+00:20:41,360 --> 00:20:41,920
+Just call it whatever.
+
+291
+00:20:42,080 --> 00:20:49,920
+Anyway, it's a football or again, as Americans would call it, soccer shirt thing that you'd wear while playing the sport.
+
+292
+00:20:50,160 --> 00:20:51,840
+And it has a big Helm logo on the front.
+
+293
+00:20:52,240 --> 00:20:54,880
+As we launched Helm, it took off quite a bit.
+
+294
+00:20:55,200 --> 00:20:56,880
+And Paul was visiting Amsterdam.
+
+295
+00:20:57,360 --> 00:20:59,760
+I think for a conference or maybe just visiting, I don't know.
+
+296
+00:21:00,000 --> 00:21:05,360
+And then we were like, oh, we need to do something fun marketing wise, like do something really crazy.
+
+297
+00:21:06,080 --> 00:21:13,600
+And then Paul was collecting football shirts and it's like, oh, we could sponsor, maybe we could sponsor like a really low tier.
+
+298
+00:21:14,160 --> 00:21:17,600
+And as soon as he sent it, I said, You don't have to tell me more.
+
+299
+00:21:18,880 --> 00:21:26,480
+Because I knew in Amsterdam there's an amateur football club called AFFA Zwift, which means Amsterdam Football Association Zwift.
+
+300
+00:21:27,040 --> 00:21:32,000
+So the name, the football, and it was also in white and blue, so it's like on brand.
+
+301
+00:21:32,480 --> 00:21:33,120
+It's your colors.
+
+302
+00:21:33,360 --> 00:21:34,320
+It has the word Zwift in it.
+
+303
+00:21:34,720 --> 00:21:34,800
+it.
+
+304
+00:21:35,200 --> 00:21:43,920
+And is there any place where you can find an audience of IOS developers that is more obvious than a low tier football club in IS?
+
+305
+00:21:44,080 --> 00:21:45,760
+I'm pretty sure we have no downloads from that.
+
+306
+00:21:46,160 --> 00:21:46,800
+Zero, I think.
+
+307
+00:21:47,120 --> 00:21:49,440
+Probably web visits, but no downloads.
+
+308
+00:21:49,840 --> 00:21:58,000
+Actually, I had someone on the conference say to me, like, oh yeah, I didn't know Helm, but when I heard the story about the jerseys, I went to download it.
+
+309
+00:21:59,040 --> 00:21:59,280
+Nice.
+
+310
+00:22:01,440 --> 00:22:06,960
+But I think, like I said before, I think I'm pretty sure the team itself thinks we're a boating company.
+
+311
+00:22:07,520 --> 00:22:11,200
+You heard him say this, you're like, oh, we got to sponsor this team.
+
+312
+00:22:11,680 --> 00:22:11,760
+Yeah.
+
+313
+00:22:12,160 --> 00:22:12,560
+What then?
+
+314
+00:22:13,280 --> 00:22:14,000
+Did you call them up?
+
+315
+00:22:14,160 --> 00:22:15,360
+Yeah, no, just send an email.
+
+316
+00:22:15,760 --> 00:22:17,680
+Hey, I want to sponsor one of your teams.
+
+317
+00:22:18,080 --> 00:22:19,120
+And it's like, okay, great.
+
+318
+00:22:19,440 --> 00:22:19,920
+Which teams?
+
+319
+00:22:20,160 --> 00:22:21,760
+We have this, we have that, we have this.
+
+320
+00:22:21,920 --> 00:22:25,120
+It's like, well, the lowest one will have Swift.
+
+321
+00:22:26,880 --> 00:22:32,320
+We'll have Swift six, I take, because it was also a point with Swift language that was coming out.
+
+322
+00:22:32,560 --> 00:22:33,520
+I think it was Swift six.
+
+323
+00:22:33,840 --> 00:22:34,800
+Oh, yeah, yeah, yeah.
+
+324
+00:22:35,760 --> 00:22:37,360
+So it's like, yeah, let's do that one.
+
+325
+00:22:37,840 --> 00:22:40,800
+And then the cost was actually quite okay, was not as high.
+
+326
+00:22:41,280 --> 00:22:47,840
+So if you're listening, great marketing tip, sponsor, local football club or team clubs.
+
+327
+00:22:48,960 --> 00:22:59,440
+I will say, like, obviously, this is not a user acquisition strategy, but it does add to the sort of joy and fun around the brand.
+
+328
+00:23:00,000 --> 00:23:10,560
+And like, I, from the outside, Helm is an app that has, I wouldn't necessarily call it a cult following, but it has a dedicated set of users who just love it.
+
+329
+00:23:10,720 --> 00:23:14,000
+It makes their lives easier, but also it's like, it's fun to be part of the club.
+
+330
+00:23:14,320 --> 00:23:20,480
+And I think that's why you get so much of the other people responding to other people saying, hey, you should use Helm.
+
+331
+00:23:20,560 --> 00:23:23,520
+Because it's like, yes, they're saying it because it's a tool they like and enjoy.
+
+332
+00:23:23,680 --> 00:23:25,840
+But also it's like, heyy, you should join our club.
+
+333
+00:23:25,920 --> 00:23:28,080
+This is a fun thing that I'm also, you know, kind of part of.
+
+334
+00:23:28,560 --> 00:23:42,240
+And so, I don't know, this is like really maybe stretching it, but I do think this is a thing that you can do that if you're just vibe coding and playing the MRR maximization game, you're never going to do something like this.
+
+335
+00:23:42,720 --> 00:23:59,360
+But as an indie who's just making something kind of joyful and high craft and trying to build a loyal user base, I think doing fun stuff like this, one, it just makes your life more joyful, but also I think it does have some benefits to kind of the brand.
+
+336
+00:23:59,840 --> 00:24:03,840
+You said the app kind able to sustain you?
+
+337
+00:24:04,240 --> 00:24:08,080
+Well, not fully because it's also where we're the two of us, so we're splitting it.
+
+338
+00:24:08,240 --> 00:24:13,760
+Although most of it we just reinvest in marketing things or into other small things like that.
+
+339
+00:24:14,080 --> 00:24:14,640
+What does that mean?
+
+340
+00:24:14,800 --> 00:24:15,920
+Reinvest in the marketing things.
+
+341
+00:24:16,160 --> 00:24:18,800
+Is this this is just more teams like to get swag?
+
+342
+00:24:19,280 --> 00:24:19,360
+Yes.
+
+343
+00:24:20,720 --> 00:24:30,560
+Also, open AI credits just in advance just to make sure that those features because the AI features are the strong, the most important features in our app.
+
+344
+00:24:30,880 --> 00:24:35,440
+So we just want to make sure that there's enough credits on there to last a long time.
+
+345
+00:24:36,960 --> 00:24:46,560
+Also, we have now we have another person helping us out because as we joined RevenueCat a year ago, we realized we would get less time, but that's difficult.
+
+346
+00:24:46,880 --> 00:24:48,240
+We'll catch on to that story later.
+
+347
+00:24:50,400 --> 00:24:57,200
+But then we're like, oh, let's ask another person that we trust and know well to come join the ship.
+
+348
+00:24:59,360 --> 00:25:06,960
+Okay, so it's very much in the like this is a product in your lineup category, even if it's kind of the bigger one?
+
+349
+00:25:07,760 --> 00:25:09,360
+Yeah, yeah, for now it is.
+
+350
+00:25:09,920 --> 00:25:11,760
+We love to make this our full time thing.
+
+351
+00:25:12,320 --> 00:25:16,080
+We think we can get there within a few years at least because it's still.
+
+352
+00:25:16,560 --> 00:25:18,400
+growing every month quite a lot.
+
+353
+00:25:18,720 --> 00:25:20,400
+Because that's the thing with these types of tools, right?
+
+354
+00:25:20,640 --> 00:25:23,680
+Like, the more people use it, the faster you grow.
+
+355
+00:25:24,240 --> 00:25:29,680
+As long as it's a very stable line, it's not a spike, but it's just a very stable linear line almost.
+
+356
+00:25:30,320 --> 00:25:46,400
+Well, and I would imagine, given the user base, that once somebody decides they're going to use it, because it's a tool and it becomes part of your, how you work, I imagine your churn is actually relatively low compared to, like, a normal consumer app.
+
+357
+00:25:47,840 --> 00:25:48,880
+Has that borne out?
+
+358
+00:25:49,600 --> 00:25:50,240
+I believe so.
+
+359
+00:25:50,560 --> 00:25:50,640
+Yeah.
+
+360
+00:25:51,040 --> 00:25:55,120
+I mean, I have to say, I don't keep an eye on this too much, to be honest.
+
+361
+00:25:55,280 --> 00:26:11,680
+We can say like the growth has been steady and I know like over this this year we've had like less time as well and there are some like very complex features that we've been working on as well that we believe like are going to make a difference and we get a lot of feedback for features that we don't have as well.
+
+362
+00:26:12,400 --> 00:26:18,160
+And so we kind of like get a sense of what people want and what we can do to kind of like grow in this sense.
+
+363
+00:26:18,800 --> 00:26:23,680
+So at least from my side, I'm not super obsessed with like the the analytics of things.
+
+364
+00:26:24,000 --> 00:26:28,560
+I'm more obsessed with kind of just getting value to to our users.
+
+365
+00:26:28,880 --> 00:26:29,840
+And sometimes that's quite.
+
+366
+00:26:30,480 --> 00:26:34,880
+complicated because of the nature of how it is and all the edge cases that we have.
+
+367
+00:26:36,000 --> 00:26:40,880
+But I try to focus more on that than just trying to look at numbers and stuff.
+
+368
+00:26:41,600 --> 00:26:48,400
+But yeah, we have a very clear vision of what we want, what we want to get and what we have to do to get there.
+
+369
+00:26:48,800 --> 00:26:49,840
+That's where our focus is.
+
+370
+00:26:50,320 --> 00:26:51,760
+Okay, let's pull on that thread then.
+
+371
+00:26:51,840 --> 00:26:56,080
+Because like, I think we've established the main marketing channel here is.
+
+372
+00:26:56,800 --> 00:27:09,600
+product and goofy swag more than you know you're not running influencer ads or anything like that which for developer tool probably is the right call we're now at like a year and a half that it's been in the store, right?
+
+373
+00:27:10,400 --> 00:27:10,880
+Give or take.
+
+374
+00:27:11,680 --> 00:27:21,040
+So from that starting point, the initial version of the app, what are kind of the big features that you've done that have kind of moved the needle a little bit?
+
+375
+00:27:21,360 --> 00:27:26,160
+Obviously, the biggest one is translations, but we basically had that from day one.
+
+376
+00:27:26,560 --> 00:27:36,400
+So our goal is that anywhere in the app or anywhere that you actually have localized content, you are able to translate it very, very easily with one click.
+
+377
+00:27:37,280 --> 00:27:49,680
+So basically, this is if you're writing release notes and you're shipping to multiple stores or you're writing keywords and you want to translate them to all of your localizations and all of your product pages in all of the countries that you support.
+
+378
+00:27:50,640 --> 00:27:57,280
+You can basically do it with one click and you don't have to actually hire a service or anything like that to do that.
+
+379
+00:27:57,440 --> 00:27:59,280
+We use AI to do it.
+
+380
+00:27:59,840 --> 00:28:06,400
+You can use your own API key, but we kind of like just provide support out of the box without having to do anything.
+
+381
+00:28:06,640 --> 00:28:10,720
+It's just as easy as you can get just one tap and then you translate the content.
+
+382
+00:28:10,960 --> 00:28:15,760
+So you've got a better chance of people actually downloading your app in those markets.
+
+383
+00:28:16,400 --> 00:28:18,240
+You said this is obviously the biggest thing.
+
+384
+00:28:18,560 --> 00:28:28,080
+So like based on what you're hearing from people, this is is the biggest, like, if I lost this app today, this is what would make my work harder or take longer or whatever.
+
+385
+00:28:28,640 --> 00:28:43,120
+This is also the main reason why we still don't have all App Store Connect features in there today is because we really, really tried to look at each part of App Store Connect and think what is currently the bottleneck in this workflow.
+
+386
+00:28:43,360 --> 00:28:47,840
+Like, how can we make you do the same with as little effort as possible?
+
+387
+00:28:48,240 --> 00:28:50,960
+Because in the end, we're all just lazy people.
+
+388
+00:28:51,360 --> 00:28:52,320
+Like everyone's lazy.
+
+389
+00:28:52,480 --> 00:28:55,040
+Everyone likes to do as little as possible and as fast as possible.
+
+390
+00:28:56,160 --> 00:28:57,120
+Hence the AOL AI.
+
+391
+00:28:59,200 --> 00:29:00,000
+That's normal, right?
+
+392
+00:29:00,320 --> 00:29:07,520
+And I feel like, well, with everyone launching their app, like actually putting it on the App Store should not feel as painful as it was.
+
+393
+00:29:07,920 --> 00:29:10,480
+And I think that's how we tackle every feature.
+
+394
+00:29:10,720 --> 00:29:17,360
+Like just look at it from the with our developers' eyes and see, like, okay, how can we make this part better?
+
+395
+00:29:17,680 --> 00:29:29,840
+And one of them is like every single update from Helm is shipped with Helm as well, which is very meta, but it's also make sure that we stay on top of things.
+
+396
+00:29:30,800 --> 00:29:34,800
+One of the reasons why we got app clips aboard.
+
+397
+00:29:34,800 --> 00:29:35,760
+App Clips support quite early.
+
+398
+00:29:36,320 --> 00:29:42,240
+Well, so little people use App Clips is because the iOS app of Helm has App Clips, and otherwise we couldn't ship Helm with Helm.
+
+399
+00:29:44,560 --> 00:29:47,600
+So that's why we added App Clips support so early already.
+
+400
+00:29:48,000 --> 00:29:55,840
+So speaking of the iOS app, that was the big story when we did our live episode, because you were basically launching it that week.
+
+401
+00:29:56,000 --> 00:29:59,600
+Like on your one year anniversary, you were kind of launching the iOS version.
+
+402
+00:30:00,160 --> 00:30:04,160
+My memory is that the iOS version was a highly requested feature.
+
+403
+00:30:04,960 --> 00:30:39,440
+But you didn't just take Helm and make it where it works on iOS, you added some stuff that was kind of mobile specific can you talk about like you know that process of like why you decided to make an iOS app and then what you actually did yeah I think as you said it was it was highly requested and I think like a lot of people were saying we even had like someone come up at the conference and wanting like a watch iOS app so that they could just ship their app with one button on the watch which is still probably somewhere in in the roadmap but But yeah, I think people want to do stuff on the go.
+
+404
+00:30:39,760 --> 00:30:52,400
+So for example, if you upload a build and you don't want to, you're about to leave like the house and you just want to submit for review while you're waiting for that to process.
+
+405
+00:30:52,560 --> 00:30:53,600
+You don't have to stay at home.
+
+406
+00:30:53,760 --> 00:30:54,480
+You can do it on the go.
+
+407
+00:30:55,040 --> 00:30:56,560
+So that was the whole plan.
+
+408
+00:30:57,040 --> 00:31:00,480
+So we just wanted to do features that made sense on mobile.
+
+409
+00:31:01,200 --> 00:31:07,520
+We didn't want to bring everything one-for-one to the iOS app and just do things that make sense while you're on the go.
+
+410
+00:31:08,480 --> 00:31:16,240
+So you can view your screenshots, you can actually submit for review, edit your release notes, translate all that kind of stuff.
+
+411
+00:31:16,720 --> 00:31:21,520
+So that was, yeah, we also brought a bit of fun to the app as well, as always.
+
+412
+00:31:22,000 --> 00:31:25,680
+We had a like iOS-only feature as well called POM Passport.
+
+413
+00:31:26,560 --> 00:31:41,280
+because we were planning to launch it during WWC and for everyone who has been to WWC, you know, you get you talk to a lot of developers, but I don't know, I always find it hard to remember names, but I always remember which apps they worked on.
+
+414
+00:31:41,920 --> 00:31:56,080
+So it's like, oh, it would be cool to have like a passport where you can easily share just a QR code with each other and then you get represented in someone else's passport by the app icon of your main app.
+
+415
+00:31:56,720 --> 00:31:58,640
+Just that by itself would feel useless.
+
+416
+00:31:58,960 --> 00:32:21,280
+And so like, oh, what if you then can use those stamps to invite them to test by build because it's also the one opportunity where you meet people that will be running the next iOS beta on one of their devices, especially if you want to build features that are specific to the new iOS version, those are 90% of them are like your developer friends, right?
+
+417
+00:32:21,520 --> 00:32:29,040
+So yeah, that's why we decided to add that as a fun little scrub roofistic feature to the app.
+
+418
+00:32:30,080 --> 00:32:31,840
+And that was using AppClips, right?
+
+419
+00:32:32,640 --> 00:32:34,640
+Yeah, yeah, that was using AppClips.
+
+420
+00:32:34,640 --> 00:32:40,080
+I think one of the things we thought is if everyone because these interactions are quite quick with people.
+
+421
+00:32:40,480 --> 00:32:44,880
+If you are talking and you say like, oh, I want to save your number or whatever, they're usually quite quick.
+
+422
+00:32:45,040 --> 00:32:51,760
+So if they have to download the app, set up the App Store Connect keys and all that kind of stuff while you're just talking to them, they're likely just not to do it.
+
+423
+00:32:52,080 --> 00:32:59,200
+So that's why we decided to do the app clip so that if you don't have the app installed, you can still save the stamp, share the stamp, all that kind of stuff.
+
+424
+00:32:59,760 --> 00:33:15,520
+And another cool thing that you can do with the passport as well, that's quite good and we wanted to fix is that when you go to these conferences or places and you share your beta group to add a tester, you usually end up with a lot of anonymous users.
+
+425
+00:33:16,240 --> 00:33:23,120
+And with the stamps, you always know who is in your betas because you save them by email and name and all that kind of stuff.
+
+426
+00:33:23,280 --> 00:33:27,680
+So you kind of keep track of who you invited where and it's it's quite nice as well.
+
+427
+00:33:28,080 --> 00:33:29,520
+Because you guys go to a lot of conferences.
+
+428
+00:33:29,680 --> 00:33:34,320
+Have you been using it regularly at at conferences and has it come in handy in that way?
+
+429
+00:33:35,200 --> 00:33:47,280
+Yeah, it's also we love to challenge people so we give like a free a free lifetime subscription or something if they show us a full passport like the one with the biggest number gets lifetime at the end of the conference something like that.
+
+430
+00:33:47,760 --> 00:33:56,240
+Actually also when someone has your stamp in their passport like Charlie's stamp in their passports you don't That might be the best way to unlock a launched FM app.
+
+431
+00:33:56,800 --> 00:33:57,280
+That's right.
+
+432
+00:33:57,360 --> 00:33:57,440
+Yeah.
+
+433
+00:33:57,760 --> 00:34:00,160
+There's a launched custom icon in Helm.
+
+434
+00:34:00,480 --> 00:34:01,360
+I forgot about that.
+
+435
+00:34:01,920 --> 00:34:02,000
+Yeah.
+
+436
+00:34:02,240 --> 00:34:11,040
+So if you see HIDDA or POL anywhere in the world, next week as we record, although I guess it will be in the past by the time this comes out, HIDDA will be in Sycamore with me.
+
+437
+00:34:11,280 --> 00:34:11,280
+Yeah.
+
+438
+00:34:12,560 --> 00:34:16,720
+So if you travel back in time, no, that's that's really fun.
+
+439
+00:34:16,880 --> 00:34:20,720
+So that was that was like a big really space with a lot of requests.
+
+440
+00:34:21,280 --> 00:34:26,720
+The iOS app store is a different beast as far as search traffic and the amount of users and everything.
+
+441
+00:34:27,200 --> 00:34:27,440
+Nice.
+
+442
+00:34:27,600 --> 00:34:32,160
+Did you see that made a bump in terms of downloads or installs or anything.
+
+443
+00:34:32,720 --> 00:34:35,360
+Like Paul said, we're both not really on top of our numbers.
+
+444
+00:34:35,680 --> 00:34:36,080
+Did we?
+
+445
+00:34:36,480 --> 00:34:38,960
+Yeah, I do remember the iOS app when it launched.
+
+446
+00:34:39,200 --> 00:34:41,680
+That's one of the only things I remember about numbers.
+
+447
+00:34:42,320 --> 00:34:53,120
+It was a massive spike for the iOS app, but that's just as we launched it, it was a massive, massive spike, but it was literally as much as you'll get from me for numbers.
+
+448
+00:34:53,440 --> 00:34:54,960
+I don't really remember anything else.
+
+449
+00:34:56,080 --> 00:34:56,560
+Maybe we should.
+
+450
+00:34:57,200 --> 00:34:57,360
+We should.
+
+451
+00:34:58,240 --> 00:34:58,800
+I think we should.
+
+452
+00:34:59,360 --> 00:35:03,600
+We should build analytics in Elm to give us insights where our users come from.
+
+453
+00:35:03,760 --> 00:35:22,560
+Well, I was more just meaning in terms of the business, like, you know, did that accelerate to the point you had already brought on help so it was already like you had more people but like did it increase the numbers where like you could do more or spend more money or not work on client work as much or anything like that?
+
+454
+00:35:22,960 --> 00:35:26,800
+It did give a bit of a boost and I think, yeah, we really don't care about the numbers.
+
+455
+00:35:26,960 --> 00:35:29,120
+Honestly, we we should.
+
+456
+00:35:29,760 --> 00:35:32,640
+This is not a business talk because this is not a subclub.
+
+457
+00:35:33,280 --> 00:35:33,840
+Yeah, yeah.
+
+458
+00:35:37,360 --> 00:35:38,880
+We're on here launched for a reason.
+
+459
+00:35:39,040 --> 00:35:40,240
+We're not in the subclub yet.
+
+460
+00:35:40,320 --> 00:35:43,600
+I think that also says something about how we do our apps.
+
+461
+00:35:43,760 --> 00:35:45,680
+Like we really care about quality.
+
+462
+00:35:46,320 --> 00:35:47,600
+We want to do things right.
+
+463
+00:35:48,240 --> 00:35:51,680
+And you can always change business logic later on.
+
+464
+00:35:51,920 --> 00:35:53,440
+And as you grow, you have more to sell.
+
+465
+00:35:54,000 --> 00:36:03,920
+And obviously there will be some things later this year that we will sell for more money, probably more focused towards teams, because we know that more and more teams are using it.
+
+466
+00:36:04,080 --> 00:36:10,560
+So like people from sports started using Helm to respond on Tesla feedback and customer reviews.
+
+467
+00:36:11,040 --> 00:36:14,160
+There's got to be some shift to try to make this more of a full time thing.
+
+468
+00:36:14,880 --> 00:36:17,680
+But I think the last year or so we didn't really feel that need.
+
+469
+00:36:17,920 --> 00:36:20,240
+We just wanted to have fun and build fun things.
+
+470
+00:36:20,880 --> 00:36:29,840
+Obviously, yeah, we were also working at RevCad, so we didn't need that push to try to grow the business, and that was perfect for us to do in the past year.
+
+471
+00:36:30,000 --> 00:36:38,160
+And I think this year, 2026, we tried to do it like full throttle and bring Helm to the next level, basically.
+
+472
+00:36:38,960 --> 00:36:46,160
+So, I mean, speaking of the sort of the app and quality of the app side of things, there's kind of two things I want to talk about.
+
+473
+00:36:46,400 --> 00:36:49,280
+So, one is the actual technology stack.
+
+474
+00:36:50,080 --> 00:36:54,800
+This is a Mac app, and it's you built it pretty much all in Swift UI, is that correct?
+
+475
+00:36:55,440 --> 00:36:55,520
+Yeah.
+
+476
+00:36:55,920 --> 00:36:58,160
+This is not exactly well trodden.
+
+477
+00:36:58,640 --> 00:37:06,640
+ground, especially apps that are not like I have, you know, some apps that are pretty lightweight that are SwiftUI and that's fine.
+
+478
+00:37:06,800 --> 00:37:12,080
+But this is an app with lots of forms and typing in and there's a lot of windows that can pop up.
+
+479
+00:37:12,480 --> 00:37:14,080
+I guess one, why?
+
+480
+00:37:14,560 --> 00:37:16,960
+Because both of you had experience with UI Kit.
+
+481
+00:37:17,600 --> 00:37:18,880
+Well, I guess maybe this is the answer.
+
+482
+00:37:19,040 --> 00:37:21,120
+You had experience with UI Kit but probably not App Kit.
+
+483
+00:37:21,600 --> 00:37:23,040
+So I guess the first question is why?
+
+484
+00:37:23,360 --> 00:37:26,480
+And then the second question is, do you regret that?
+
+485
+00:37:27,600 --> 00:37:28,640
+Or has it been pretty good?
+
+486
+00:37:29,040 --> 00:38:16,960
+I think SwiftUI because we're both like, quite like, he's very like quite quite good at it i was more used to work in a job and in ui kit but for my other apps and for any other apps it's always been like swift ui anyway i think like that was a pretty obvious um choice from the beginning and we've hit like some snags but it's not never been anything that you go like oh i need to rewrite my whole app in ui kit it's never been something like outrageous that we've been it's impossible to do no major roadblocks i guess to me the thing that i would have expected is is all the like text entry or i don't know i feel like i run into weird little bugs with those types of controls versus just like buttons and styles and stuff, you know, SwiftUI is great.
+
+487
+00:38:18,000 --> 00:38:24,080
+I think SwiftUI is great if you get good at it and it's easy to get good at it.
+
+488
+00:38:24,720 --> 00:38:34,080
+But I think what a lot of people forget is that yes, because it looks so easy, they forget that it's like all magic straight out of the box.
+
+489
+00:38:34,720 --> 00:38:38,640
+But there's a difference between writing good SwiftUI code and bad SwiftUI code, right?
+
+490
+00:38:38,880 --> 00:38:43,520
+Like the way you use properties and variables and stuff really changes the impact.
+
+491
+00:38:43,920 --> 00:38:47,040
+And then I think this is also where it shows again that we make a good team.
+
+492
+00:38:47,440 --> 00:38:48,720
+Because sometimes we do it next.
+
+493
+00:38:49,120 --> 00:38:52,880
+And then Paul jumps in with all the instruments and he's really good at instruments.
+
+494
+00:38:53,360 --> 00:38:55,280
+And then he finds that weird little bug.
+
+495
+00:38:55,920 --> 00:39:02,480
+We had one a few weeks ago where if you would scroll really quickly in the TestFly feedback list, it would just crash the app.
+
+496
+00:39:02,800 --> 00:39:06,960
+And it turned out changing a lazy feed stack into a normal feed stack fixed it.
+
+497
+00:39:07,280 --> 00:39:12,320
+SwiftUI feels like it's easier to get yourself in trouble in ways that you can't understand.
+
+498
+00:39:12,800 --> 00:39:25,440
+Whereas like AppKit or well, UIKit anyway in my experience, like it's harder to get to the end, but like you're less likely to end up in a situation where you totally hosed yourself in a way that's impossible to figure out.
+
+499
+00:39:25,680 --> 00:39:32,080
+So it sounds like, Paul, you kind of have quite a bit of experience of diagnosing these types of problems.
+
+500
+00:39:33,360 --> 00:39:39,360
+Yeah, I think like I used to work in a company where I spent about six months just doing performance work.
+
+501
+00:39:39,680 --> 00:39:42,400
+And I think that kind of changed things a lot.
+
+502
+00:39:42,960 --> 00:39:46,400
+And it was like a pretty massive like app in general.
+
+503
+00:39:46,640 --> 00:39:49,360
+So it was like a lot of old devices and stuff from users.
+
+504
+00:39:49,600 --> 00:39:51,760
+And like you develop a lot of like skill sets.
+
+505
+00:39:51,920 --> 00:39:52,480
+And I think that's...
+
+506
+00:39:52,960 --> 00:40:04,240
+why we always say like we work very well together like we've got very different skill sets and we don't try like to get very good at what the other does very well it's like more complementary.
+
+507
+00:40:04,320 --> 00:40:06,720
+So we go like, oh yeah, I'll do this, you do the other part.
+
+508
+00:40:06,960 --> 00:40:12,000
+That allows us to move very fast while still delivering very good quality stuff.
+
+509
+00:40:12,640 --> 00:40:30,080
+But yeah, I think in general, if you're able to diagnose those issues and if you're able to have the right toolset to look into those performance issues and just try and fix them and get past it, you will also understand a lot of Swift UI and what you shouldn't do in general a lot more.
+
+510
+00:40:30,320 --> 00:40:35,120
+And we've had, as I say, we've had a few cases where it's been like, oh, this is pretty bad.
+
+511
+00:40:35,440 --> 00:40:40,080
+But then you just diagnose it, you eventually find the root cause, and you've learned and you go.
+
+512
+00:40:40,080 --> 00:41:09,200
+you've learned and you go on the next one you won't do it the same way and you kind of like just go and keep keep learning the framework it's never been like oh we we just need to stop using it because it's it doesn't work for us it's yeah it's been pretty good and then how you work together actually was kind of the other the other part of this question because it seems like everybody I know that has a duo like this it was like this magical thing that kind of came out of nowhere and they're like very sympathico Was that the case with you?
+
+513
+00:41:09,520 --> 00:41:13,920
+Have you ever worked, both of you, have you ever worked with another person like this before?
+
+514
+00:41:14,160 --> 00:41:18,000
+Not like part of a big team, but just kind of two people who kind of work together well?
+
+515
+00:41:18,720 --> 00:41:20,880
+We were lucky but that it matched so well.
+
+516
+00:41:21,680 --> 00:41:22,400
+We just tried it.
+
+517
+00:41:22,640 --> 00:41:25,440
+And of course, we had to find new ways of doing things.
+
+518
+00:41:25,680 --> 00:41:30,640
+But I think pretty quickly we came to a structure that works well, which is chaos.
+
+519
+00:41:32,800 --> 00:41:36,480
+Yeah, so that actually I remember this from our live show.
+
+520
+00:41:37,760 --> 00:41:43,680
+I asked the question, expecting to know the answer of, like, how do you guys break up work?
+
+521
+00:41:43,840 --> 00:41:48,800
+And I thought it was going to be like, Pole does most of the back end stuff with the API work, and then Hitta does most of the front end stuff.
+
+522
+00:41:49,040 --> 00:42:32,480
+And it sounded more like, either one of you is just as likely to pull a ticket and you'll go really far kind of in the area of your expertise and then the other person might just jump in to help but like you both just sort of do everything it's not like there's this clear separation of concerns like you might expect no it's really is depending on what feature we're working on or you want to work on and then sometimes I start a feature and then I make it all flashy and I somehow work or give it actual data and sometimes Paul makes something and then it looks horrendous and then I jump in to make it and now even we're to a point like Paul is not allowed to work on anything else but in our about in-app purchases and subscriptions.
+
+523
+00:42:33,360 --> 00:42:35,680
+And every time he does, he has to pay a fine.
+
+524
+00:42:38,640 --> 00:42:40,480
+We have good dinner once we launch this.
+
+525
+00:42:42,480 --> 00:42:49,360
+But it seems it does seem really healthy that it's not like there's areas that neither that either of you just never look at.
+
+526
+00:42:50,080 --> 00:42:52,800
+Like you can imagine a lot of times it's like, Oh, that's his area.
+
+527
+00:42:52,960 --> 00:42:53,840
+I never even touched that.
+
+528
+00:42:53,920 --> 00:42:55,680
+But it sounds like you both are pretty familiar.
+
+529
+00:42:56,320 --> 00:43:01,760
+You might do a like mediocre job at the other person's area and then let the other person come in and kind of clean it up.
+
+530
+00:43:01,920 --> 00:43:05,280
+But it kind of creates a scenario where you both are familiar with everything, I'm guessing.
+
+531
+00:43:05,920 --> 00:43:06,080
+Yeah.
+
+532
+00:43:06,240 --> 00:43:10,160
+I think it's also important because you need to need to stay familiar with your own app, right?
+
+533
+00:43:10,400 --> 00:43:14,960
+Like you need to know your app inside out to be able to help with support and stuff.
+
+534
+00:43:15,840 --> 00:43:17,280
+And to know how to scale things.
+
+535
+00:43:18,960 --> 00:43:23,360
+So I think we'll never be fully isolated, I think, because I think it's part of ownership.
+
+536
+00:43:23,520 --> 00:43:27,680
+Like we share the ownership, so we actually share the ownership of everything as well.
+
+537
+00:43:28,720 --> 00:43:30,080
+Also the mess on birds.
+
+538
+00:43:30,560 --> 00:43:30,960
+So yeah.
+
+539
+00:43:31,200 --> 00:43:32,480
+How did you handle support?
+
+540
+00:43:33,200 --> 00:43:36,960
+I think for a long time we were dealing like normal.
+
+541
+00:43:37,280 --> 00:43:44,480
+We had like diagnostics, great packages from Antoine from Day in there to get some logging if needed.
+
+542
+00:43:45,040 --> 00:43:52,080
+What we noticed really quickly is that quite a lot of times we had to ask okay, okay please send the diagnostics and then hope for the best.
+
+543
+00:43:52,480 --> 00:43:53,600
+Diagnostics for those listening.
+
+544
+00:43:53,760 --> 00:43:54,800
+That's an SDK for those listening.
+
+545
+00:43:54,880 --> 00:43:55,840
+Oh yeah, that's an SDK.
+
+546
+00:43:56,000 --> 00:44:06,800
+Yeah, it's a Swift package and it basically builds up an HTML page and shows all the error logs and stuff that well, it depends what you log in there really, anything you want.
+
+547
+00:44:07,440 --> 00:44:11,280
+And then users can send that to you through your Yeah, just an HTML file.
+
+548
+00:44:11,600 --> 00:44:13,200
+Usually email or whatever you have set up.
+
+549
+00:44:13,360 --> 00:44:13,840
+Yeah, exactly.
+
+550
+00:44:14,080 --> 00:44:14,640
+That's Antoine.
+
+551
+00:44:14,800 --> 00:44:14,880
+Yeah.
+
+552
+00:44:15,360 --> 00:44:16,560
+Vanderly that makes that.
+
+553
+00:44:16,720 --> 00:44:16,800
+Yeah.
+
+554
+00:44:16,880 --> 00:44:17,040
+Yeah.
+
+555
+00:44:17,360 --> 00:44:20,480
+And then I think at some point I was like, ah, you know what?
+
+556
+00:44:20,800 --> 00:44:32,160
+This is quite annoying and I think the whole support experience is also not really nice because it's just an email and hope for the sake of emailing that it turns out nicely.
+
+557
+00:44:32,960 --> 00:44:36,320
+So I think at least you fibe coded this I think in like a day or two.
+
+558
+00:44:36,720 --> 00:44:48,640
+I hate the word fibe code but this is it was so much fibe going on it was definitely fibe coding where I built like a back end in super base quickly with all the fields in there that of things that we would want to have in there.
+
+559
+00:44:49,040 --> 00:45:01,200
+Obviously made like a flashy nice UI that just asks you about your name and optional email address even and then a message and then you can add photos to it and that's it.
+
+560
+00:45:01,440 --> 00:45:02,400
+That's all there is.
+
+561
+00:45:02,640 --> 00:45:09,440
+And then with that submission, we automatically send the diagnostics file so we can just see what errors that have been thrown.
+
+562
+00:45:09,920 --> 00:45:18,560
+And it gives us a bunch of information, like straight out of the box without having to email back and forth to the person like, okay, please provide an example, okay, please do this.
+
+563
+00:45:19,120 --> 00:45:24,000
+So we can actually see what errors Epsilon connect API has been throwing and what their setup is and stuff.
+
+564
+00:45:24,160 --> 00:45:26,160
+So this is really just a low bar.
+
+565
+00:45:26,400 --> 00:45:30,320
+And we can then create a like a linear ticket straight from that submission as well.
+
+566
+00:45:30,560 --> 00:45:32,880
+So we can try to triage it later.
+
+567
+00:45:34,000 --> 00:45:38,080
+Have you thought about wrapping that into a little SAS product and selling it?
+
+568
+00:45:38,320 --> 00:45:39,360
+Because that would be interesting.
+
+569
+00:45:43,040 --> 00:45:43,920
+Helm never.
+
+570
+00:45:44,240 --> 00:45:44,320
+No.
+
+571
+00:45:45,040 --> 00:45:45,200
+Never.
+
+572
+00:45:45,520 --> 00:45:45,600
+Yeah.
+
+573
+00:45:46,400 --> 00:45:47,200
+Oh, I okay.
+
+574
+00:45:47,440 --> 00:45:48,720
+Did I touch on something here?
+
+575
+00:45:50,880 --> 00:45:53,520
+Yeah, not this year probably, but yeah, yeah.
+
+576
+00:45:54,320 --> 00:46:00,400
+The internal tool is called Harbor and it has a similar app icon as well, but it's an anchor instead of a Helm.
+
+577
+00:46:00,880 --> 00:46:02,800
+And it has been working well for us.
+
+578
+00:46:03,360 --> 00:46:08,080
+We're now adding it to our new app that we're making as well as to see how it would scale to other apps.
+
+579
+00:46:08,560 --> 00:46:12,080
+But the idea is probably to at some point make this our next developer tool.
+
+580
+00:46:12,560 --> 00:46:18,240
+I think one thing we learned is that we probably will stay to two teams that we love and that's Developer Tools and Music.
+
+581
+00:46:19,680 --> 00:46:20,960
+I'm no world kite's everywhere.
+
+582
+00:46:21,120 --> 00:46:21,360
+Hand in hand.
+
+583
+00:46:22,400 --> 00:46:23,680
+There's big overlapping.
+
+584
+00:46:25,200 --> 00:46:27,520
+One for the barons and one for the nerdy friends.
+
+585
+00:46:31,680 --> 00:46:35,920
+Yeah, so yeah, so maybe, who knows, but that has been really helpful, I would say.
+
+586
+00:46:36,320 --> 00:46:49,680
+Do you get much support that's like App Store connect issues or do most people understand that line of like, oh, this isn't actually the app's fault, this is, you know, App Store connects?
+
+587
+00:46:50,000 --> 00:47:03,200
+We do get a fair amount of AppStore Connect issues, but I think we used to get a lot of weird issues with entities in AppStore Connect not being okay or 500s and stuff from the API.
+
+588
+00:47:04,160 --> 00:47:12,640
+We used to get so much of it that we just improved our networking and stuff to retry and that kind of solved a lot of the feedback that we have.
+
+589
+00:47:13,200 --> 00:47:16,080
+But it's always been quite like developers are a great.
+
+590
+00:47:16,880 --> 00:47:32,000
+audience and user base to have because all the feedback is so detailed like I remember someone who couldn't they had an issue with the token or something and they just literally, we didn't reply overnight and we had like an email chain full of like, oh, I've tried this, it didn't work.
+
+591
+00:47:32,240 --> 00:47:34,640
+And then eventually they kind of fixed it themselves in a way.
+
+592
+00:47:34,880 --> 00:47:38,160
+They were like, oh, yeah, it was my VPN or something.
+
+593
+00:47:38,320 --> 00:47:40,800
+I don't I don't even know what what it was to be honest.
+
+594
+00:47:40,960 --> 00:47:42,880
+I don't know how I would even reproduce it.
+
+595
+00:47:43,120 --> 00:47:45,760
+But yeah, we do we do get a bunch of feedback like that.
+
+596
+00:47:45,920 --> 00:47:53,760
+But it's usually like, quite they're quite understanding that sometimes it's an API issue and we respond to it quite like quickly as well.
+
+597
+00:47:53,920 --> 00:47:57,920
+So you're not getting a lot of support tickets that are like, why did my app get rejected?
+
+598
+00:47:58,400 --> 00:47:58,800
+None of that.
+
+599
+00:47:58,960 --> 00:47:59,440
+None of that.
+
+600
+00:47:59,920 --> 00:48:03,600
+And also I think the fact that our user base knows what an API is.
+
+601
+00:48:03,920 --> 00:48:04,720
+is already set up.
+
+602
+00:48:04,960 --> 00:48:05,440
+Yeah, exactly.
+
+603
+00:48:06,560 --> 00:48:07,360
+It's a win already.
+
+604
+00:48:07,440 --> 00:48:07,520
+Yeah.
+
+605
+00:48:08,080 --> 00:48:16,560
+Yeah, even in my, you know, much smaller developer tool, it's funny the difference in support I get there versus my consumer app.
+
+606
+00:48:17,200 --> 00:48:23,280
+Like, I'll get people that will like dig up their Mac activity logs and send those along.
+
+607
+00:48:23,440 --> 00:48:27,600
+And I'm like, man, I wouldn't even know how to like ask you to send that to me.
+
+608
+00:48:28,640 --> 00:48:30,080
+And that is amazing sometimes.
+
+609
+00:48:30,800 --> 00:48:30,880
+Okay.
+
+610
+00:48:31,360 --> 00:48:32,880
+So, I mean, we're getting close to time.
+
+611
+00:48:33,200 --> 00:48:42,400
+So, I'll end this the same way I always end this show, which is by asking you, what's a person or people out there that have inspired you that you recommend others check out.
+
+612
+00:48:42,640 --> 00:48:44,000
+And I'll start with Paul.
+
+613
+00:48:44,960 --> 00:48:58,000
+I would say anyone in the, I think I mentioned this last time in the podcast we did live, but I would mention anyone in the indie house that we stay in during dub dub every time.
+
+614
+00:48:58,320 --> 00:49:00,800
+So an incredible group of talented people.
+
+615
+00:49:01,680 --> 00:49:05,760
+But if I have to mention one, I would say Clemens Strasser.
+
+616
+00:49:06,320 --> 00:49:07,920
+I got to know him a lot this year.
+
+617
+00:49:08,560 --> 00:49:14,320
+And he's honestly such a source of inspiration, like literally constant, constant inspiration.
+
+618
+00:49:14,720 --> 00:49:17,440
+So yeah, I would say that outside of development.
+
+619
+00:49:17,920 --> 00:49:22,320
+I would, the one person that has inspired me a lot in my life is my dad.
+
+620
+00:49:22,880 --> 00:49:24,160
+That's someone I always say.
+
+621
+00:49:25,120 --> 00:49:32,240
+And yeah, I've always admired how much he turned, I'm quite bad at like dealing with problems and stuff.
+
+622
+00:49:32,400 --> 00:49:37,920
+I get quite like overwhelmed and how much he actually just turned problems into nothing within just a conversation.
+
+623
+00:49:38,000 --> 00:49:41,280
+He just went like, oh yeah, that's not a problem and you fell immediately safe.
+
+624
+00:49:41,600 --> 00:49:43,600
+That's something that I always try to take with me and think.
+
+625
+00:49:44,000 --> 00:49:45,920
+But yeah, I think those are the people I would say.
+
+626
+00:49:46,160 --> 00:49:49,520
+I think, yeah, obviously also the ear in the house because they're a bunch of people.
+
+627
+00:49:49,760 --> 00:49:57,840
+But another person that I really admire is Michael Flaurop, like an app icon designer, but also generally fun guy.
+
+628
+00:49:58,240 --> 00:50:00,800
+Every time I see him, like we know each other for a long time.
+
+629
+00:50:00,960 --> 00:50:04,720
+We met at a designer conference like over twelve years ago, I think.
+
+630
+00:50:05,120 --> 00:50:08,640
+And every time I see him, we're like absolute fun chaos together.
+
+631
+00:50:09,120 --> 00:50:10,880
+So I can't wait to see him again in Finland.
+
+632
+00:50:11,040 --> 00:50:14,160
+I think the last time I said David Edinburgh, but you beep.
+
+633
+00:50:14,560 --> 00:50:14,880
+You beep.
+
+634
+00:50:15,040 --> 00:50:15,360
+You beep.
+
+635
+00:50:15,520 --> 00:50:16,640
+Okay, I want to talk about it.
+
+636
+00:50:17,040 --> 00:50:17,360
+Another one.
+
+637
+00:50:17,440 --> 00:50:17,760
+Another one.
+
+638
+00:50:18,560 --> 00:50:18,880
+You know what?
+
+639
+00:50:19,200 --> 00:50:21,360
+I'm going to say Daniel Steinberg.
+
+640
+00:50:21,920 --> 00:50:26,400
+Because I feel like Daniel Steinberg is a bit the David Edinburgh of development.
+
+641
+00:50:26,800 --> 00:50:28,080
+He's like full of knowledge.
+
+642
+00:50:28,240 --> 00:50:31,200
+Everyone?
+
+643
+00:50:31,680 --> 00:50:35,840
+Like, I want to grow up like Daniel Steinberg, I think.
+
+644
+00:50:36,320 --> 00:50:36,720
+Oh man.
+
+645
+00:50:37,280 --> 00:50:39,280
+Yeah, I haven't had Daniel on the show.
+
+646
+00:50:39,920 --> 00:50:41,760
+I've had Michael on.
+
+647
+00:50:42,480 --> 00:50:45,120
+He's one of those people that I don't know how to say this.
+
+648
+00:50:45,440 --> 00:50:53,120
+Like, because he's like a cool designer person, whom I followed online for so long, I kind of expected him to be a little bit not as nice.
+
+649
+00:50:53,360 --> 00:50:54,000
+Does that make sense?
+
+650
+00:50:54,320 --> 00:50:55,760
+You know, like he just seems like elevated.
+
+651
+00:50:55,840 --> 00:50:58,000
+Like, we're not all designers are a sole.
+
+652
+00:50:59,600 --> 00:51:00,240
+I've learned this.
+
+653
+00:51:01,760 --> 00:51:04,080
+Sebastian DeWitt was also in this category.
+
+654
+00:51:04,880 --> 00:51:45,840
+I thought he was going to be like this super cool biker designer dude and then you meet him and he's like the friendliest person you've ever met and you're like oh my gosh but yeah Michael is very much in that category he's extremely cool and yeah I guess he's gonna be at Arctic Kampf in Finland awesome well thank you both for doing this with me again so I guess where can people find you both and your work we'll start with you Heda at Helm underscore app is our Twitter handle I think that's the main one but for myself it's at Heda Petepugh which is in the show notes it'll be in the show not desk.
+
+655
+00:51:48,480 --> 00:51:50,320
+Oh wait, hated.design is my website.
+
+656
+00:51:50,480 --> 00:51:51,120
+That's the easy one.
+
+657
+00:51:51,280 --> 00:51:51,920
+That's all the links.
+
+658
+00:51:52,240 --> 00:51:52,640
+There you go.
+
+659
+00:51:53,760 --> 00:51:54,000
+Perfect.
+
+660
+00:51:54,080 --> 00:51:55,120
+That's how I do it, Paul.
+
+661
+00:51:55,440 --> 00:51:57,920
+For me, say madhelm underscore app.
+
+662
+00:51:58,800 --> 00:52:01,440
+And then website is polpier.def.
+
+663
+00:52:01,920 --> 00:52:04,320
+And then you'll find all the links there as well.
+
+664
+00:52:04,720 --> 00:52:05,120
+Awesome.
+
+665
+00:52:05,360 --> 00:52:06,720
+Well, again, thank you very much.
+
+666
+00:52:07,040 --> 00:52:08,640
+Thank you all for listening.
+
+667
+00:52:08,880 --> 00:52:17,680
+If you want to find more Launched, including episodes with most of the people you mentioned at the end there, you can find that at launchedfm.com.
+
+668
+00:52:17,920 --> 00:52:20,960
+And Launchedfm is our handle basically everywhere.
+
+669
+00:52:21,520 --> 00:52:24,640
+So you can find that there, and I'll see you all in two weeks.
+
+670
+00:52:25,600 --> 00:52:27,040
+Thank you so much for listening.
+
+671
+00:52:27,360 --> 00:52:32,720
+You can find more Launched at launchedfm.com, and you can find me on pretty much all the social media.
+
+672
+00:52:33,040 --> 00:52:34,480
+I'm at underscore Chuck E.
+
+673
+00:52:34,560 --> 00:52:34,640
+C.
+
+674
+00:52:34,800 --> 00:52:36,320
+on Twitter, or Charlie M.
+
+675
+00:52:36,560 --> 00:52:38,240
+Chapman pretty much everywhere else.
+
+676
+00:52:38,800 --> 00:52:44,320
+And of course, huge thanks to RevenueCap for making this episode and all future episodes of Launched possible.
+
+677
+00:52:45,280 --> 00:52:47,120
+I'll see you all again in two weeks.
