@@ -1,0 +1,3035 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_01] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+[SPEAKER_01] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_01] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_01] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_01] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,880 --> 00:00:46,240
+[SPEAKER_01] Hello, I'm your host, David Bernard, and with me today, RevenueCat CEO, Jacob Biding.
+
+7
+00:00:47,040 --> 00:00:58,720
+[SPEAKER_01] Our guest today is Emmanuel Crovicier, founder of Cardpointers, an app that makes it easy to optimize credit card rewards and to save users over 200 million dollars.
+
+8
+00:00:59,920 --> 00:01:05,200
+[SPEAKER_01] Emmanuel took Cardpointers from zero revenue to a full time gig in less than a year.
+
+9
+00:01:06,240 --> 00:01:13,840
+[SPEAKER_01] On the podcast, we talk with Emmanuel about the magic of affiliate marketing, how to best use Stripe payments.
+
+10
+00:01:14,720 --> 00:01:18,800
+[SPEAKER_01] And why you should probably build a web app before you build a native one.
+
+11
+00:01:20,400 --> 00:01:22,000
+[SPEAKER_01] Yeah, so I wanted to kick things off.
+
+12
+00:01:22,480 --> 00:01:24,480
+[SPEAKER_01] You built Cardpointers.
+
+13
+00:01:24,800 --> 00:01:26,160
+[SPEAKER_01] It is a credit card app.
+
+14
+00:01:26,400 --> 00:01:28,160
+[SPEAKER_01] You know, I kind of talked about it in the introduction.
+
+15
+00:01:29,120 --> 00:01:35,120
+[SPEAKER_01] But first of all, I just want to hear your background in apps and what inspired you to build Cardpointers.
+
+16
+00:01:35,360 --> 00:01:39,200
+[SPEAKER_01] And then of course, it's an incredible story of how you've built the company over time.
+
+17
+00:01:39,840 --> 00:01:42,240
+[SPEAKER_01] But how, how you even got inspired to build it?
+
+18
+00:01:42,960 --> 00:01:43,200
+[UNKNOWN] Thanks.
+
+19
+00:01:43,360 --> 00:01:43,440
+[SPEAKER_01] Yeah.
+
+20
+00:01:43,680 --> 00:01:49,120
+[SPEAKER_02] So my history with iOS apps goes way back to the very first release of the SDK.
+
+21
+00:01:49,760 --> 00:01:52,480
+[SPEAKER_02] So I've been kind of playing around with iOS over the years.
+
+22
+00:01:53,600 --> 00:01:57,040
+[SPEAKER_02] And card pointers in particular came out of my own need.
+
+23
+00:01:58,080 --> 00:02:04,800
+[SPEAKER_02] I was traveling more and more and needed basically I'm very cheap or frugal however you want to put it.
+
+24
+00:02:05,840 --> 00:02:09,680
+[SPEAKER_02] And I wanted not to pay for flights basically or get them as cheap as possible.
+
+25
+00:02:10,800 --> 00:02:19,200
+[SPEAKER_02] And so I kind of got turned on to the whole world of credit card rewards, which is this whole kind of fascinating hobby and world in and of itself.
+
+26
+00:02:20,080 --> 00:02:30,320
+[SPEAKER_02] But even just getting lightly into it, it's a really easy way to get flights basically for free or for just a few bucks in taxes, just with some credit card sign up bonuses and using the right credit cards.
+
+27
+00:02:30,560 --> 00:02:31,920
+[SPEAKER_02] So that's kind of how it started.
+
+28
+00:02:32,080 --> 00:02:36,080
+[SPEAKER_02] I wanted to better optimize when I was using my cards, kind of keep track of everything.
+
+29
+00:02:36,800 --> 00:02:44,800
+[SPEAKER_02] And also to help my parents who were calling me pretty much every few days asking me which card should they use for a gas purchase, which one should they use for a supermarket purchase.
+
+30
+00:02:45,600 --> 00:02:53,600
+[SPEAKER_02] And so I kind of went over the top and built out this whole app to kind of serve that purpose and help them out originally and it's kind of grown from there for sure.
+
+31
+00:02:54,400 --> 00:02:54,640
+[SPEAKER_01] Nice.
+
+32
+00:02:54,800 --> 00:02:59,120
+[SPEAKER_01] And then so you had experience working on iOS for for fourteen years now.
+
+33
+00:02:59,280 --> 00:03:07,760
+[SPEAKER_01] I mean, since the apps were launched then tinkering with the SDK and then you also had experience with subscriptions early in the iOS 5 days?
+
+34
+00:03:08,560 --> 00:03:09,200
+[SPEAKER_02] Yeah, exactly.
+
+35
+00:03:09,280 --> 00:03:11,280
+[SPEAKER_02] I used to work for I used to be in the media industry.
+
+36
+00:03:11,600 --> 00:03:14,000
+[SPEAKER_02] So I worked for a few different magazine publishing companies.
+
+37
+00:03:14,960 --> 00:03:20,400
+[SPEAKER_02] And at the time I was employed by, it was Sandow Media, who owns a number of publications.
+
+38
+00:03:21,040 --> 00:03:25,440
+[SPEAKER_02] And NewsNet had just come out back in 2011, I think it was with iOS 5.
+
+39
+00:03:26,000 --> 00:03:29,200
+[SPEAKER_02] And I think that was the very first subscription product from Apple.
+
+40
+00:03:29,840 --> 00:03:29,920
+[SPEAKER_02] Yeah.
+
+41
+00:03:30,480 --> 00:03:30,560
+[SPEAKER_02] Yeah.
+
+42
+00:03:30,960 --> 00:03:33,920
+[SPEAKER_02] And so, yeah, totally.
+
+43
+00:03:34,240 --> 00:03:34,720
+[SPEAKER_02] Very, very different.
+
+44
+00:03:35,040 --> 00:03:41,200
+[SPEAKER_02] Definitely wish I would have had revenue cap back then because dealing with the receipts and everything was not the same, right?
+
+45
+00:03:41,280 --> 00:03:42,640
+[SPEAKER_00] Like it was store kit though, right?
+
+46
+00:03:42,720 --> 00:03:42,800
+[SPEAKER_00] right?
+
+47
+00:03:43,040 --> 00:03:44,320
+[SPEAKER_00] Like I only worked on it.
+
+48
+00:03:44,480 --> 00:03:50,320
+[SPEAKER_00] I worked on news, actually I worked on the other side of the SDK side, I worked on the newsstand itself, like some of the entitlements and how to get listed in there.
+
+49
+00:03:50,480 --> 00:03:52,080
+[SPEAKER_00] I didn't work on the purchasing side though.
+
+50
+00:03:52,480 --> 00:04:00,240
+[SPEAKER_00] So it was, it was what we have today is, in my understanding, is a descendant of what the newsstand recurring subscription functionality was.
+
+51
+00:04:00,720 --> 00:04:01,280
+[SPEAKER_02] Yeah, exactly.
+
+52
+00:04:01,360 --> 00:04:03,520
+[SPEAKER_02] It's it's amazing how long some things can stay around at Apple.
+
+53
+00:04:03,760 --> 00:04:07,120
+[SPEAKER_02] It's like Core Data has been around for fifteen, twenty years, something like that.
+
+54
+00:04:07,600 --> 00:04:10,240
+[SPEAKER_02] Yeah, it's kind of, they never die, just kind of evolves over time.
+
+55
+00:04:10,800 --> 00:04:12,560
+[SPEAKER_02] But yeah, it's exactly, it was that product.
+
+56
+00:04:13,680 --> 00:04:19,120
+[SPEAKER_02] And so that was, that kind of gave me my first insight into just how much revenue one could make, especially with a subscription.
+
+57
+00:04:20,320 --> 00:04:23,120
+[SPEAKER_02] Because people were used to subscriptions for the magazine industry.
+
+58
+00:04:23,760 --> 00:04:27,040
+[SPEAKER_02] And so everyone had no problem at all signing up for like a one year subscription.
+
+59
+00:04:27,200 --> 00:04:28,160
+[SPEAKER_02] It just kind of made sense.
+
+60
+00:04:28,880 --> 00:04:34,560
+[SPEAKER_02] And we had the good fortune of being there on day one of newstands, especially for iPad where it really blew up.
+
+61
+00:04:35,040 --> 00:04:38,240
+[SPEAKER_02] And that's where I kind of saw the value of being there on day one.
+
+62
+00:04:39,280 --> 00:04:43,840
+[SPEAKER_02] If you can get Apple's attention and get featured, you stay in those top lists for a really long time.
+
+63
+00:04:45,040 --> 00:04:49,600
+[SPEAKER_02] With two of the publications, they were a top ten new stand out for almost a year.
+
+64
+00:04:50,720 --> 00:04:52,720
+[SPEAKER_02] And it's like the inflow of revenue was crazy.
+
+65
+00:04:52,720 --> 00:04:55,040
+[SPEAKER_02] And I had access to all that because I built everything myself.
+
+66
+00:04:55,600 --> 00:04:59,200
+[SPEAKER_02] So I kind of was generating reports for the CEO of the company and everything.
+
+67
+00:04:59,760 --> 00:05:03,760
+[SPEAKER_02] And that's where I was seeing like multiples of my revenue like in a year just on a subscription.
+
+68
+00:05:03,920 --> 00:05:06,000
+[SPEAKER_02] And I was like, hmm, this is really interesting.
+
+69
+00:05:06,480 --> 00:05:07,840
+[SPEAKER_02] I'd love to get into this one day.
+
+70
+00:05:08,240 --> 00:05:08,800
+[SPEAKER_00] It's interesting.
+
+71
+00:05:08,960 --> 00:05:13,600
+[SPEAKER_00] I had, I had never heard a ton of glowing reviews and praise for new stands.
+
+72
+00:05:13,680 --> 00:05:26,480
+[SPEAKER_00] And for those folks who probably never saw new stands, like, it was this, essentially an icon on the desktop or on the home screen for iPads only, I believe initially that you could tap into.
+
+73
+00:05:26,800 --> 00:05:30,560
+[SPEAKER_00] And it looked, it was back in the skew morphic days still, which was, it was awesome.
+
+74
+00:05:30,720 --> 00:05:31,680
+[SPEAKER_00] It looked like a bookshelf.
+
+75
+00:05:32,080 --> 00:05:32,400
+[SPEAKER_00] You could tap.
+
+76
+00:05:32,720 --> 00:05:36,640
+[SPEAKER_00] So like Apple IOS V one vibes about the whole thing.
+
+77
+00:05:37,040 --> 00:05:41,040
+[SPEAKER_00] You'd tap in and then they would be like they even had bigger app icons too.
+
+78
+00:05:41,200 --> 00:05:42,560
+[SPEAKER_00] They weren't like the standard Squirrels.
+
+79
+00:05:42,720 --> 00:05:44,480
+[SPEAKER_00] They were like they looked like books, I think.
+
+80
+00:05:44,880 --> 00:05:45,760
+[SPEAKER_00] Um, but was there?
+
+81
+00:05:45,920 --> 00:05:50,240
+[SPEAKER_00] There must have been a link to the app store from there as well, I would guess to like find news.
+
+82
+00:05:50,720 --> 00:05:53,200
+[SPEAKER_02] Yeah, there was that takes you right to the newsstand section of the app store.
+
+83
+00:05:53,520 --> 00:05:54,240
+[SPEAKER_00] Yeah, so there you go.
+
+84
+00:05:54,320 --> 00:05:54,480
+[SPEAKER_00] Right?
+
+85
+00:05:54,640 --> 00:05:56,080
+[SPEAKER_00] Like two, you're two taps away.
+
+86
+00:05:56,160 --> 00:06:00,800
+[SPEAKER_00] If you're in the top list of newsstand apps, like that's a really sticky, powerful channel, right?
+
+87
+00:06:01,040 --> 00:06:01,120
+[SPEAKER_00] Yeah.
+
+88
+00:06:01,760 --> 00:06:08,880
+[SPEAKER_00] Everybody else I'd heard about it complained because it was like, oh, I want my apps to be buried under another, like this is before folders as well, right?
+
+89
+00:06:09,120 --> 00:06:12,320
+[SPEAKER_00] So it was like a second tier down on the home screen.
+
+90
+00:06:12,720 --> 00:06:14,160
+[SPEAKER_00] Um, so that's really fascinating.
+
+91
+00:06:14,480 --> 00:06:25,920
+[SPEAKER_00] It goes back to as well, like a time gone before all the iOS app store editorial changes and everything where business development with Apple really was like a massive channel.
+
+92
+00:06:26,080 --> 00:06:36,160
+[SPEAKER_00] Like if you could get it to work and like get them to feature you and become one of their darling apps, like you really could, you know, there's also probably two orders of magnitude fewer apps back then than there are now.
+
+93
+00:06:36,400 --> 00:06:37,680
+[SPEAKER_00] So slightly different world.
+
+94
+00:06:38,480 --> 00:06:39,040
+[SPEAKER_02] Yeah, for sure.
+
+95
+00:06:39,200 --> 00:06:44,880
+[SPEAKER_02] And it was kind of the start of like custom icons in a way because you could have custom artwork that was on that shelf of new things.
+
+96
+00:06:45,120 --> 00:06:45,840
+[SPEAKER_00] You changed the cover, right?
+
+97
+00:06:45,920 --> 00:06:46,000
+[SPEAKER_00] Yeah.
+
+98
+00:06:46,160 --> 00:06:46,640
+[SPEAKER_00] Yeah, exactly.
+
+99
+00:06:46,640 --> 00:06:49,360
+[SPEAKER_02] Exactly, and it was like there was this icon on everyone's home screen.
+
+100
+00:06:49,520 --> 00:06:50,560
+[SPEAKER_02] Nobody had anything to fill it with.
+
+101
+00:06:50,720 --> 00:06:52,560
+[SPEAKER_02] So everyone would tap on it, tap on the store.
+
+102
+00:06:52,960 --> 00:07:01,120
+[SPEAKER_02] And then if you were in the top ten, there you were and people would download the app and they'd probably try it out, at least go for a, I don't know if there was a free trial, but yeah, they would subscribe that way.
+
+103
+00:07:01,760 --> 00:07:11,520
+[SPEAKER_01] So fast forward back to a couple of years ago, you have experience with subscriptions and you started Cardpointers as a side project, right?
+
+104
+00:07:12,320 --> 00:07:19,920
+[SPEAKER_01] And so what was your full time gig at the time and what was that like building Cardpointers nights and weekends?
+
+105
+00:07:20,560 --> 00:07:23,120
+[SPEAKER_02] Yeah, it was exhausting to say the least.
+
+106
+00:07:23,280 --> 00:07:23,360
+[SPEAKER_02] Yeah.
+
+107
+00:07:24,320 --> 00:07:28,800
+[SPEAKER_02] So I started this actually it's evolved in a few different ways.
+
+108
+00:07:28,960 --> 00:07:35,040
+[SPEAKER_02] It's kind of something I started working on going back about eight years ago, was when I really got into the whole credit card rewards hobby.
+
+109
+00:07:35,840 --> 00:07:43,840
+[SPEAKER_02] And so I built out an app that didn't really gain much traction, ended up shutting that down that was similar in some parts of functionality as car pointers.
+
+110
+00:07:44,720 --> 00:07:51,600
+[SPEAKER_02] Relunched a lot of the database and some other stuff I had done there as a Facebook bot when those were first announced for messenger bots.
+
+111
+00:07:52,240 --> 00:07:56,000
+[SPEAKER_02] I really thought that was going to be my big breakthrough and I was going to be right there for the gold rush.
+
+112
+00:07:56,480 --> 00:07:57,200
+[SPEAKER_02] Nothing happened there.
+
+113
+00:07:57,520 --> 00:07:59,440
+[SPEAKER_02] So very, very few users.
+
+114
+00:07:59,920 --> 00:08:04,400
+[SPEAKER_02] And then kind of fast forward a few years., I still had the same problem with credit card rewards.
+
+115
+00:08:04,800 --> 00:08:11,280
+[SPEAKER_02] And so kind of my third try at it, I built out a progressive web app, kind of tested out my idea.
+
+116
+00:08:11,520 --> 00:08:19,840
+[SPEAKER_02] I was trying to not fall in the trap that many developers fall in, which is just develop, develop, develop, and never actually make sure that there's a use case and not market it.
+
+117
+00:08:20,880 --> 00:08:30,960
+[SPEAKER_02] And so I kind of tested the concept with a simple web app that I put together in about a week or two using a lot of the database stuff I'd built from the previous years for the kind of aborted projects there.
+
+118
+00:08:31,600 --> 00:08:34,960
+[SPEAKER_02] And I gained some good traction kind of right away and read it.
+
+119
+00:08:35,360 --> 00:08:36,160
+[SPEAKER_02] I posted about it.
+
+120
+00:08:36,640 --> 00:08:44,800
+[SPEAKER_02] I had I think it was like a hundred users or so like in the first day, which already kind of exceeded my expectations and more than the Messenger bot version had done.
+
+121
+00:08:45,440 --> 00:08:54,400
+[SPEAKER_02] And I kind of promised myself that I wouldn't build the iOS app, which is always kind of my first love as far as development stuff goes.
+
+122
+00:08:55,360 --> 00:09:02,560
+[SPEAKER_02] And so I made myself wait until I got to, I think it was five thousand users from just the web app before I stopped building the iOS app.
+
+123
+00:09:02,960 --> 00:09:06,400
+[SPEAKER_00] That's, that's such a great, like, marshmallow experiment, right?
+
+124
+00:09:07,120 --> 00:09:12,000
+[SPEAKER_00] It's always hard to hear like where you, you know, they measure as like a delayed gratification thing.
+
+125
+00:09:12,080 --> 00:09:16,560
+[SPEAKER_00] Like if you can leave the marshmallow, the kid kid can leave the marshmallow on the table, we'll get two marshmallows later, right?
+
+126
+00:09:16,800 --> 00:09:39,200
+[SPEAKER_00] Like, that's such a true thing, like in development with skipping ahead or like wanting to do the thing that you find cool and skip through that grind of having, you know, because if you can make a crappy product that's like to you probably, if you were coming at it not knowing what the purpose of it was, you might, and I actually want to ask you about that, but like, um, you might turn your nose up at it or be like, this is too ugly or unusable or whatever.
+
+127
+00:09:39,280 --> 00:09:41,920
+[SPEAKER_00] But if you can get people to use that, then you're good, right?
+
+128
+00:09:42,160 --> 00:09:45,680
+[SPEAKER_00] Because then it's just, it's just polished and it's just like, like shining it.
+
+129
+00:09:45,840 --> 00:09:54,400
+[SPEAKER_00] So I'm going to ask like, for your, for your progressive web app, for those listening that just means like a website for mobile that kind of looks like an app essentially, right?
+
+130
+00:09:54,800 --> 00:09:55,680
+[SPEAKER_00] Or you didn't put it in it.
+
+131
+00:09:55,840 --> 00:10:00,080
+[SPEAKER_00] Did you put it in an app container on the store or did you just you just had a dot com you went to?
+
+132
+00:10:00,400 --> 00:10:02,480
+[SPEAKER_02] No, it was literally just the website back then.
+
+133
+00:10:02,640 --> 00:10:05,200
+[SPEAKER_02] It was getcardpointers dot com and that's all it did.
+
+134
+00:10:05,920 --> 00:10:06,320
+[SPEAKER_02] Really simple.
+
+135
+00:10:06,560 --> 00:10:09,040
+[SPEAKER_02] It used the big database of cards I'd built up over the years.
+
+136
+00:10:09,600 --> 00:10:15,920
+[SPEAKER_02] But yeah, it's just a really simple website written in view and just optimized for, yeah, iPhone and Android size screens.
+
+137
+00:10:16,160 --> 00:10:22,560
+[SPEAKER_00] Did it, did it have logins and all that stuff or was it just, just, just a site you could go to?
+
+138
+00:10:22,960 --> 00:10:32,480
+[SPEAKER_02] Yeah, no, everything's been based on user IDs, which has been important too for some stuff that we'll probably get to later on as far as actually reaching back out to users and offering them discounts and everything.
+
+139
+00:10:32,880 --> 00:10:36,400
+[SPEAKER_02] But it always required user accounts because everything was tied to a user record.
+
+140
+00:10:36,720 --> 00:10:38,720
+[SPEAKER_02] And that way people could log in on multiple devices.
+
+141
+00:10:38,960 --> 00:10:44,160
+[SPEAKER_02] And I knew long term, I was hoping it would be successful so that I could then build iPhone app and Android app.
+
+142
+00:10:44,320 --> 00:10:44,400
+[SPEAKER_02] Yeah.
+
+143
+00:10:44,560 --> 00:10:45,440
+[SPEAKER_02] And kind of expand that out.
+
+144
+00:10:45,680 --> 00:10:47,840
+[SPEAKER_00] Well, sorry, one last question on the PW thing.
+
+145
+00:10:48,160 --> 00:10:55,280
+[SPEAKER_00] Like, what were some of the decisions that you had to make where, you know, your, your heart is in building a great iOS app, right?
+
+146
+00:10:55,440 --> 00:10:57,760
+[SPEAKER_00] But you had to go like, no, I'm not going to care about this.
+
+147
+00:10:58,000 --> 00:10:59,520
+[SPEAKER_00] I'm just going to make it work for user testing.
+
+148
+00:10:59,600 --> 00:11:01,600
+[SPEAKER_00] Like, what was some of the corners you cut?
+
+149
+00:11:02,320 --> 00:11:10,240
+[SPEAKER_00] Well, I mean, obviously, view is a very different technology and building for the web is a very different, like, capabilities, but what were some of the things you had to be like, no, I'm not going to do this right now.
+
+150
+00:11:10,560 --> 00:11:14,000
+[SPEAKER_00] I'm going to focus on, on these things instead until I'm ready.
+
+151
+00:11:14,480 --> 00:11:14,560
+[SPEAKER_00] Yeah.
+
+152
+00:11:14,720 --> 00:11:23,280
+[SPEAKER_02] I mean, I was just going for the kind of the core functionality, um, solving that use case, which was which card do I use for which purchase to maximize my points and save money.
+
+153
+00:11:23,760 --> 00:11:28,080
+[SPEAKER_02] Um, so that was the core functionality and I wasn't too concerned at that point about monetization.
+
+154
+00:11:28,320 --> 00:11:30,160
+[SPEAKER_02] It was just something I built on the side.
+
+155
+00:11:30,400 --> 00:11:33,760
+[SPEAKER_02] I was working for, um, uh, kind of another company back then.
+
+156
+00:11:34,160 --> 00:11:42,880
+[SPEAKER_02] So this was really just like some stuff I put together on nights and weekends and I I didn't want to invest too much into it time wise and monetarily speaking because I just.
+
+157
+00:11:43,360 --> 00:11:45,920
+[SPEAKER_02] from everything else I had done before, it had never really taken off.
+
+158
+00:11:46,160 --> 00:11:54,880
+[SPEAKER_02] And I've been trying to find like the right idea and then, you know, iterating on this idea, um, you know, over many, many years and just nothing had taken off until this one eventually.
+
+159
+00:11:55,120 --> 00:11:55,200
+[SPEAKER_00] Yeah.
+
+160
+00:11:55,360 --> 00:11:58,400
+[SPEAKER_00] And until you have that first sign of traction, you don't want to like overinvest, right?
+
+161
+00:11:58,560 --> 00:12:03,520
+[SPEAKER_00] Which I think is just, you know, takes wisdom though, takes having done that a few times probably, right?
+
+162
+00:12:03,760 --> 00:12:05,760
+[SPEAKER_00] Overinvesting in projects that don't get traction.
+
+163
+00:12:05,920 --> 00:12:10,240
+[SPEAKER_00] And then you're like, well, I think this time I'm going to try to do it cheap and see how far we get.
+
+164
+00:12:10,480 --> 00:12:10,560
+[SPEAKER_00] Yeah.
+
+165
+00:12:10,720 --> 00:12:12,400
+[SPEAKER_00] You learn a lot from failure, that's sure.
+
+166
+00:12:12,560 --> 00:12:12,640
+[SPEAKER_01] Yeah.
+
+167
+00:12:13,280 --> 00:12:19,920
+[SPEAKER_01] And were you monetizing the web app, um, via subscription or affiliate links or was there any monetization earlier?
+
+168
+00:12:19,920 --> 00:12:20,320
+[SPEAKER_02] So, did you have a monetization early?
+
+169
+00:12:20,800 --> 00:12:26,240
+[SPEAKER_02] Yeah, so back then the business model that most people in this space follow is credit card signups.
+
+170
+00:12:26,960 --> 00:12:27,600
+[SPEAKER_02] It's big business.
+
+171
+00:12:28,560 --> 00:12:34,320
+[SPEAKER_02] If you refer someone to the right credit card, it can pay out hundreds of dollars because those customers are really valuable to the banks.
+
+172
+00:12:34,400 --> 00:12:34,720
+[SPEAKER_00] They don't.
+
+173
+00:12:34,800 --> 00:12:36,640
+[SPEAKER_00] And then once you get credit card, they leave.
+
+174
+00:12:36,800 --> 00:12:41,920
+[SPEAKER_00] The whole business, like that's how they became the billion dollar, seven billion dollar company or whatever they were acquired for.
+
+175
+00:12:42,160 --> 00:12:48,160
+[SPEAKER_02] Yeah, it's the same with the points guy, like all the blog apps and all the bloggers and a lot of the apps and stuff in the space.
+
+176
+00:12:48,240 --> 00:12:50,480
+[SPEAKER_02] My competitors, for the most part, that's their business model.
+
+177
+00:12:50,720 --> 00:12:53,360
+[SPEAKER_02] They don't rely on subscriptions or any kind of in-app purchases.
+
+178
+00:12:53,760 --> 00:13:02,320
+[SPEAKER_02] So that was the thinking I had actually in the beginning., it took me months to actually get that relationship with any banks because no one wants to talk with just some dude making a web app.
+
+179
+00:13:02,640 --> 00:13:04,480
+[SPEAKER_02] Like, they don't understand what that is.
+
+180
+00:13:04,800 --> 00:13:05,840
+[SPEAKER_02] They don't see value in that.
+
+181
+00:13:07,120 --> 00:13:12,640
+[SPEAKER_02] Even when eventually the app came out, it was still really hard to get that next step and get those links in place.
+
+182
+00:13:13,440 --> 00:13:17,360
+[SPEAKER_02] They just didn't want to take a chance on it, but I was just hoping that eventually I'd figure it out.
+
+183
+00:13:17,520 --> 00:13:19,200
+[SPEAKER_02] So I just kind of kept building.
+
+184
+00:13:19,360 --> 00:13:20,240
+[SPEAKER_02] I kept getting traction.
+
+185
+00:13:20,880 --> 00:13:27,440
+[SPEAKER_01] And so at what point in that starting to get traction, did you go ahead and build the app?
+
+186
+00:13:28,160 --> 00:13:32,400
+[SPEAKER_01] And then did that start to kind of bend the curve in growth?
+
+187
+00:13:33,120 --> 00:13:33,200
+[SPEAKER_01] Yes.
+
+188
+00:13:33,280 --> 00:13:36,800
+[SPEAKER_02] Yeah, so I started building the app when I hit that five thousand user mark.
+
+189
+00:13:36,960 --> 00:13:41,040
+[SPEAKER_02] I think I was like five users short right at WWDC 2019.
+
+190
+00:13:41,440 --> 00:13:41,680
+[SPEAKER_02] Nice.
+
+191
+00:13:41,920 --> 00:13:48,320
+[SPEAKER_00] So this was like a goal you had written up on the wall or something like five thousand I can't touch Xcode until five thousand users.
+
+192
+00:13:48,400 --> 00:13:52,800
+[SPEAKER_00] Was that five thousand cumulative users or like monthly active or Oh no, just five thousand total users.
+
+193
+00:13:52,880 --> 00:13:55,200
+[SPEAKER_02] I want to make sure at least five thousand people like what I built.
+
+194
+00:13:55,520 --> 00:13:56,480
+[SPEAKER_00] Yeah, yeah, that's a lot.
+
+195
+00:13:56,720 --> 00:14:03,520
+[SPEAKER_02] So yeah, so when WWDC 2019 they announced Swift UI and I always like kind of playing with the new things.
+
+196
+00:14:03,920 --> 00:14:06,080
+[SPEAKER_02] I think that I have that in common with a lot of developers.
+
+197
+00:14:06,320 --> 00:14:15,120
+[SPEAKER_02] We like to have some playground to play with all the new goodies announced every yearced Swift UI, and that seemed like a great thing to learn.
+
+198
+00:14:15,280 --> 00:14:16,400
+[SPEAKER_02] And it was really kind of lightweight.
+
+199
+00:14:16,560 --> 00:14:17,600
+[SPEAKER_02] It could get a UI together.
+
+200
+00:14:18,000 --> 00:14:23,280
+[SPEAKER_02] So I kind of started working on that prototype in the evenings after a job I was working for in New York.
+
+201
+00:14:23,840 --> 00:14:29,520
+[SPEAKER_02] I would just work on the nights on that and started getting a basic proof of concept of an iPhone version of that web app.
+
+202
+00:14:30,160 --> 00:14:32,800
+[SPEAKER_02] And I built that out during that summer.
+
+203
+00:14:33,520 --> 00:14:39,200
+[SPEAKER_02] And I was there on day one for the IOS, what is that, thirteen IOS thirteen release.
+
+204
+00:14:40,560 --> 00:14:41,200
+[SPEAKER_02] Was it fourteen?
+
+205
+00:14:41,520 --> 00:14:42,560
+[SPEAKER_02] No, yeah, thirteen.
+
+206
+00:14:43,360 --> 00:14:46,880
+[SPEAKER_02] And at a kind of last minute, I put together a watch app.
+
+207
+00:14:47,920 --> 00:14:53,280
+[SPEAKER_02] Because I've liked the Apple Watch for many years and I had a watch app before in the previous version I had done many years ago.
+
+208
+00:14:54,000 --> 00:14:58,640
+[SPEAKER_02] And yeah, I kind of put that together in the last week or two right before the launch date.
+
+209
+00:14:59,280 --> 00:15:02,480
+[SPEAKER_02] And as it turns out, I managed to hit the right people at Apple.
+
+210
+00:15:03,280 --> 00:15:07,680
+[SPEAKER_02] It was featured as a fully independent watch app when they just announced that.
+
+211
+00:15:08,560 --> 00:15:16,320
+[SPEAKER_02] And consequently, Apple ended up featuring it really heavily on the launch for iOS 13 and watch OS whatever that was six back then.
+
+212
+00:15:17,200 --> 00:15:26,560
+[SPEAKER_02] And that caused a huge influx of users to the point where I'm refreshing my stats and it was like three, four users every second and it was just jumping up.
+
+213
+00:15:26,720 --> 00:15:28,400
+[SPEAKER_02] I'm like, okay, well, there goes the five thousand.
+
+214
+00:15:28,800 --> 00:15:29,600
+[SPEAKER_02] Like, I'm way past that.
+
+215
+00:15:29,920 --> 00:15:36,880
+[SPEAKER_00] So now I'm going to ask some more technical, like, uh, in the Weeds questions, but so it was a standalone web app or sorry, standalone watch app.
+
+216
+00:15:37,120 --> 00:15:45,360
+[SPEAKER_00] Could users just like register up and register through it or were these just like anonymous users you were tracking or how much like what kind of functionality did you squeeze into that tiny, tiny device?
+
+217
+00:15:45,600 --> 00:15:45,680
+[SPEAKER_00] Yeah.
+
+218
+00:15:45,920 --> 00:15:47,040
+[SPEAKER_00] So it was signing with Apple.
+
+219
+00:15:47,360 --> 00:15:48,640
+[SPEAKER_02] That was the first year that was announced.
+
+220
+00:15:48,880 --> 00:15:49,680
+[SPEAKER_02] So that was the perfect fit.
+
+221
+00:15:50,000 --> 00:15:55,200
+[SPEAKER_02] It was just a one-time confirm and you're good to go and creates a technological innovation moving things forward, right?
+
+222
+00:15:55,920 --> 00:15:57,520
+[SPEAKER_00] Couldn't have been possible right before that.
+
+223
+00:15:57,680 --> 00:15:58,320
+[SPEAKER_00] Yeah, exactly.
+
+224
+00:15:58,400 --> 00:15:59,040
+[SPEAKER_00] I mean, it was key.
+
+225
+00:15:59,200 --> 00:15:59,280
+[SPEAKER_02] Yeah.
+
+226
+00:15:59,360 --> 00:16:02,240
+[SPEAKER_02] Otherwise, text input for creating an account would not have worked for a watch.
+
+227
+00:16:02,560 --> 00:16:05,200
+[SPEAKER_02] So sign in with Apple was a perfect fit for the iPhone and the watch.
+
+228
+00:16:05,440 --> 00:16:07,760
+[SPEAKER_02] I think that also helped to get that Apple feature.
+
+229
+00:16:08,160 --> 00:16:11,920
+[SPEAKER_02] Um, but yeah, I mean, users sign up, people were trying it out for the first time sign in with Apple.
+
+230
+00:16:12,320 --> 00:16:16,560
+[SPEAKER_02] I got, um, some decent, like, attention for that, uh, for the month or so leading up with some test flights.
+
+231
+00:16:17,120 --> 00:16:25,760
+[SPEAKER_02] So yeah, that was definitely super helpful and, and that was great because they gave me an email address for the user that only I could use to email them, which is fantastic to protect their privacy.
+
+232
+00:16:26,080 --> 00:16:28,960
+[SPEAKER_02] So make sure that no one else can ever, you know, use that to contact them.
+
+233
+00:16:29,200 --> 00:16:33,280
+[SPEAKER_02] But then I have a way to, then offer them discounts and everything else, uh, later on.
+
+234
+00:16:33,600 --> 00:16:42,240
+[SPEAKER_02] But, um, yeah, it's really thanks to that launch and, uh, the Apple editorial team that put me on those feature lists that the app managed to kind of take off and and get some traction.
+
+235
+00:16:42,480 --> 00:16:45,600
+[SPEAKER_00] Here I was saying that those days were over but they're not.
+
+236
+00:16:46,800 --> 00:16:51,680
+[SPEAKER_00] You can still win it big on the App Store if you play, you know, if you're there, you're doing stuff.
+
+237
+00:16:51,760 --> 00:16:54,720
+[SPEAKER_00] Apple is excited about and objectively cool, right?
+
+238
+00:16:54,880 --> 00:16:57,760
+[SPEAKER_00] Like you're leveraging their technology in multiple new ways.
+
+239
+00:16:58,480 --> 00:16:58,720
+[SPEAKER_00] They will.
+
+240
+00:16:59,280 --> 00:17:00,720
+[SPEAKER_00] Did you do anything to get their attention?
+
+241
+00:17:00,960 --> 00:17:04,400
+[SPEAKER_00] Did you like reach out or like try to get their attention?
+
+242
+00:17:04,720 --> 00:17:10,400
+[SPEAKER_02] Yeah, I submitted the promo form that you can do, but I had no contacts at Apple otherwise.
+
+243
+00:17:10,560 --> 00:17:11,760
+[SPEAKER_02] Like there's nothing special about that.
+
+244
+00:17:11,920 --> 00:17:14,240
+[SPEAKER_02] I never spoke with anyone at Apple before the release.
+
+245
+00:17:14,640 --> 00:17:17,520
+[SPEAKER_02] It's just a matter of f filling out that promo form and hoping.
+
+246
+00:17:18,080 --> 00:17:19,360
+[SPEAKER_02] So it was news to you when it hit.
+
+247
+00:17:19,680 --> 00:17:20,080
+[SPEAKER_02] Oh, when it hit.
+
+248
+00:17:20,160 --> 00:17:23,280
+[SPEAKER_00] Yeah, it was a friend of mine who sent me, like, Hey, you're featured in the App Store.
+
+249
+00:17:23,360 --> 00:17:24,000
+[SPEAKER_00] I'm like, What?
+
+250
+00:17:25,280 --> 00:17:27,520
+[SPEAKER_02] And then I started checking my stats and I was like, Oh, okay.
+
+251
+00:17:27,680 --> 00:17:28,640
+[SPEAKER_02] Well, wow, that makes sense.
+
+252
+00:17:29,360 --> 00:17:30,400
+[SPEAKER_02] And it all went to the same system.
+
+253
+00:17:30,720 --> 00:17:34,480
+[SPEAKER_00] It was based on the same back end, like your PWA and like all that stuff.
+
+254
+00:17:34,640 --> 00:17:36,800
+[SPEAKER_00] So it was just like a continuation of the same project.
+
+255
+00:17:37,040 --> 00:17:42,880
+[SPEAKER_02] Yeah, funny enough, like that API that powered the web app, which is still live, it's been backwards compatible the whole time.
+
+256
+00:17:43,120 --> 00:17:48,240
+[SPEAKER_02] So any user created on day one still has all their information, never had any problems and still connects to it.
+
+257
+00:17:48,400 --> 00:17:49,200
+[SPEAKER_02] It's a good argument, man.
+
+258
+00:17:49,280 --> 00:17:55,840
+[SPEAKER_00] A lot of people try to skip the whole like have a sign in and stuff like that, but there's a lot of user benefits if you do it well and you do it from the beginning.
+
+259
+00:17:56,400 --> 00:18:03,680
+[SPEAKER_00] I see a lot of apps that are now getting to scale and they're like, oh, we've never required it, which kind of has been a good piece of advice.
+
+260
+00:18:03,760 --> 00:18:07,600
+[SPEAKER_00] Like, you don't want additional friction in your onboarding funnel, but I don't know.
+
+261
+00:18:07,760 --> 00:18:14,080
+[SPEAKER_00] I think unless your app is very, very thin, I think there's a lot, a lot of good arguments for having an account sign up process.
+
+262
+00:18:14,400 --> 00:18:23,040
+[SPEAKER_00] Even if you lose some people, like, the benefits to the business and to the user, honestly, like downstream are, I think, worth the sign up friction.
+
+263
+00:18:23,200 --> 00:18:23,840
+[SPEAKER_00] So that's great.
+
+264
+00:18:24,160 --> 00:18:24,240
+[SPEAKER_02] Yeah.
+
+265
+00:18:24,480 --> 00:18:26,160
+[SPEAKER_02] I basically never see it as a blogger.
+
+266
+00:18:26,320 --> 00:18:29,040
+[SPEAKER_02] There's a little drop off, but not enough to worry about right now.
+
+267
+00:18:29,120 --> 00:18:32,480
+[SPEAKER_00] Right now, users that were going to be life changing for you anyway, right?
+
+268
+00:18:32,720 --> 00:18:32,800
+[SPEAKER_00] So.
+
+269
+00:18:32,960 --> 00:18:33,440
+[SPEAKER_00] Yeah, exactly.
+
+270
+00:18:33,600 --> 00:18:37,040
+[SPEAKER_02] And if it's a one-tip sign in and something you can trust, like it's not Facebook login, right?
+
+271
+00:18:37,200 --> 00:18:38,000
+[SPEAKER_02] It's sign in with Apple.
+
+272
+00:18:38,720 --> 00:18:42,240
+[SPEAKER_02] And so there's some inherent trust, but there's also confusion there, which is a whole other matter.
+
+273
+00:18:42,400 --> 00:18:46,400
+[SPEAKER_02] But, um, yeah, it's it's it's great to have user accounts properly so you can reach out to them.
+
+274
+00:18:47,040 --> 00:18:56,160
+[SPEAKER_01] So I think part of the key, Jacob, to what you were just saying is that, you know, in the in the old days of paid apps, Apple featuring, it would be an automatic inflow of revenue.
+
+275
+00:18:56,960 --> 00:19:03,280
+[SPEAKER_01] These days, you can get a huge influx of users from getting featured, but you have to turn that into a business.
+
+276
+00:19:03,600 --> 00:19:06,640
+[SPEAKER_01] So, you know, a social app that's free that goes viral.
+
+277
+00:19:07,440 --> 00:19:09,520
+[SPEAKER_01] You know, if you've got that viral loop, it can go.
+
+278
+00:19:10,000 --> 00:19:12,800
+[SPEAKER_01] But it's so many apps, they just get featured, get a bunch of users.
+
+279
+00:19:12,960 --> 00:19:14,000
+[SPEAKER_01] They don't retain those users.
+
+280
+00:19:14,080 --> 00:19:15,200
+[SPEAKER_01] They don't monetize those users.
+
+281
+00:19:15,440 --> 00:19:17,280
+[SPEAKER_01] And then, you know, it just goes to nothing.
+
+282
+00:19:17,520 --> 00:19:17,600
+[SPEAKER_01] Yeah.
+
+283
+00:19:17,760 --> 00:19:24,560
+[SPEAKER_00] Like if you didn't have that email list, like that could have pop could have gone and come and gone and you might not have been able to really convert that into anything, right?
+
+284
+00:19:24,720 --> 00:19:28,880
+[SPEAKER_00] Um, if you didn't have that like group, you could remarket to and re engage that were like interested.
+
+285
+00:19:29,760 --> 00:19:36,560
+[SPEAKER_01] So how did you turn that traction, all these downloads coming in to then actually building a business on top of it?
+
+286
+00:19:36,800 --> 00:19:43,280
+[SPEAKER_01] And, and again, were you, was that launch when you introduced subscriptions or were you still just monetizing via?
+
+287
+00:19:43,280 --> 00:19:45,760
+[SPEAKER_01] So, what was your view on monetizing via credit card signups at that point?
+
+288
+00:19:46,080 --> 00:19:53,200
+[SPEAKER_02] Yeah, so at that point on the launch day, I still really didn't have any partnership links set up, so I wasn't making any money at all from it.
+
+289
+00:19:54,080 --> 00:20:02,800
+[SPEAKER_02] Logically, because I got that influx of users and I had these features on the app sort of point people to that I was able to then use to get some links.
+
+290
+00:20:02,960 --> 00:20:12,000
+[SPEAKER_02] So, I started getting some credit card affiliate links about a few weeks after that, and that was from a result of, of, hitting LinkedIn and messaging all these people at companies because no one was replying to me.
+
+291
+00:20:12,080 --> 00:20:16,320
+[SPEAKER_02] And I'm like, I'm bound to find someone who's not going through official channels, you know?
+
+292
+00:20:18,960 --> 00:20:22,480
+[SPEAKER_02] So, yeah, officially, so I finally landed my first affiliate there.
+
+293
+00:20:23,440 --> 00:20:28,480
+[SPEAKER_02] The problem is then dealing with banks and compliance is an absolute nightmare, especially as an indie.
+
+294
+00:20:28,880 --> 00:20:37,680
+[SPEAKER_00] What sort of compliance do you have to, I mean just in terms of like, I wouldn't even, I mean, I think you wouldn't just get a link and send if the user clicks on it and a story?
+
+295
+00:20:37,760 --> 00:20:39,680
+[SPEAKER_00] No, there's there's tons of rules.
+
+296
+00:20:39,760 --> 00:20:43,200
+[SPEAKER_02] Like they want to make sure, like you can't put like certain banks next to other banks.
+
+297
+00:20:43,600 --> 00:20:44,960
+[SPEAKER_02] That's rules for some of them.
+
+298
+00:20:45,360 --> 00:20:49,760
+[SPEAKER_02] Other times they need to make sure the information is always accurate, updated like within like a few hours.
+
+299
+00:20:50,400 --> 00:20:52,160
+[SPEAKER_02] They need to make sure there's the right disclosures.
+
+300
+00:20:53,520 --> 00:20:54,160
+[SPEAKER_02] It's a real pain.
+
+301
+00:20:54,480 --> 00:20:57,600
+[SPEAKER_02] And it's one of the things that I've decreased as time goes.
+
+302
+00:20:57,600 --> 00:21:01,200
+[SPEAKER_02] As time has gone with the business, and we'll get into subscriptions soon, I'm sure.
+
+303
+00:21:02,080 --> 00:21:08,640
+[SPEAKER_02] But yeah, I've been trying to reduce how much revenue comes in from that, and I'm much more focused on the subscription revenue.
+
+304
+00:21:09,040 --> 00:21:10,640
+[SPEAKER_02] It's a pure business model for me.
+
+305
+00:21:10,880 --> 00:21:13,760
+[SPEAKER_02] Users are paying me directly for something that benefits them.
+
+306
+00:21:14,160 --> 00:21:19,120
+[SPEAKER_02] Whereas with a credit card affiliate link, there's always kind of this unknown is like, is that person who is right?
+
+307
+00:21:20,240 --> 00:21:20,800
+[SPEAKER_02] Yeah, exactly.
+
+308
+00:21:20,960 --> 00:21:21,680
+[SPEAKER_00] Yeah, that, yeah.
+
+309
+00:21:22,400 --> 00:21:25,840
+[SPEAKER_02] And I don't want to put someone in a bad position where they're going to go into debt.
+
+310
+00:21:26,000 --> 00:21:28,080
+[SPEAKER_02] Like credit cards are great if you use them properly.
+
+311
+00:21:28,400 --> 00:21:32,320
+[SPEAKER_02] If you pay them off like every month and you just get the rewards, then you're beating the bank.
+
+312
+00:21:32,640 --> 00:21:33,600
+[SPEAKER_02] You're taking advantage of them.
+
+313
+00:21:35,680 --> 00:21:41,840
+[SPEAKER_02] And so much of the banking industry is based on taking advantage of those people with those, you know, 20, 30 percent APRs per year.
+
+314
+00:21:42,000 --> 00:21:46,800
+[SPEAKER_02] I mean, it's insane, but they make tons of money on it from people who don't know how to use credit cards, right?
+
+315
+00:21:46,960 --> 00:21:54,160
+[SPEAKER_00] I mean, if they'll pay you 500 bucks, you know, just for a referral or whatever it is, I don't know what the numbers are, but it's substantial money, right, for a sign up.
+
+316
+00:21:54,320 --> 00:21:56,720
+[SPEAKER_00] You can't imagine what they're, they can afford that CAC.
+
+317
+00:21:57,040 --> 00:21:59,680
+[SPEAKER_00] Like, they must be making a lot of money, right?
+
+318
+00:21:59,920 --> 00:22:00,320
+[SPEAKER_00] Yeah, yeah.
+
+319
+00:22:00,560 --> 00:22:02,960
+[SPEAKER_02] I mean, their user value is, yeah, extremely high.
+
+320
+00:22:03,280 --> 00:22:04,480
+[SPEAKER_02] So, yeah.
+
+321
+00:22:05,600 --> 00:22:09,280
+[SPEAKER_01] So, after, and I didn't realize this, this story went quite so far back.
+
+322
+00:22:09,520 --> 00:22:11,120
+[SPEAKER_01] So this is fun to get the full story.
+
+323
+00:22:11,600 --> 00:22:25,120
+[SPEAKER_01] So after eight years of tinkering in the space, months or years of a progressive web app, you finally launch an app, but your first actual revenue wasn't until the fall of 2019.
+
+324
+00:22:25,360 --> 00:22:32,560
+[SPEAKER_01] Then, um, and then, so how did that revenue start building over time, and then when did you shift to the subscription model?
+
+325
+00:22:33,040 --> 00:22:33,120
+[SPEAKER_01] Yeah.
+
+326
+00:22:33,360 --> 00:22:38,960
+[SPEAKER_02] So even back then, even when I had those links, the banks didn't want to trust me for the bigger, the main ones.
+
+327
+00:22:39,600 --> 00:22:41,040
+[SPEAKER_02] So I couldn't get any chase links.
+
+328
+00:22:41,120 --> 00:22:45,200
+[SPEAKER_02] I couldn't get MX links, and those are the most popular cards, especially in the credit card awards game.
+
+329
+00:22:45,600 --> 00:22:49,520
+[SPEAKER_02] Um, so I would make like fifty bucks a month for a good few months.
+
+330
+00:22:49,680 --> 00:22:51,680
+[SPEAKER_02] And I was like, okay, well, this isn't going too great.
+
+331
+00:22:51,840 --> 00:22:52,880
+[SPEAKER_02] I've got all these users.
+
+332
+00:22:53,120 --> 00:22:55,760
+[SPEAKER_02] I can't really monetize them because I can only have links for cards.
+
+333
+00:22:55,920 --> 00:22:56,480
+[SPEAKER_02] Nobody wants.
+
+334
+00:22:57,440 --> 00:22:59,280
+[SPEAKER_02] So that started finally getting better.
+
+335
+00:22:59,520 --> 00:23:03,680
+[SPEAKER_02] I got into another program around mid, uh, 2020 or so.
+
+336
+00:23:04,160 --> 00:23:13,920
+[SPEAKER_02] And so that started increasing, and then it was, uh, November of 2020 when people kept asking me if I could, if there was some way that they could send me money.
+
+337
+00:23:14,160 --> 00:23:15,760
+[SPEAKER_02] I was like, okay, that's an interesting problem.
+
+338
+00:23:17,680 --> 00:23:18,240
+[SPEAKER_02] I like money.
+
+339
+00:23:18,480 --> 00:23:19,280
+[SPEAKER_02] They want to give me their money.
+
+340
+00:23:19,440 --> 00:23:20,160
+[SPEAKER_00] So let me find out.
+
+341
+00:23:20,560 --> 00:23:23,520
+[SPEAKER_00] I put that on my list of signed product market fit.
+
+342
+00:23:25,040 --> 00:23:25,120
+[SPEAKER_00] Yeah.
+
+343
+00:23:26,880 --> 00:23:30,000
+[SPEAKER_02] And so my first thought was I was going to add a tip chart inside the app.
+
+344
+00:23:30,240 --> 00:23:34,880
+[SPEAKER_02] I didn't know, I couldn't think of a subscription, like I didn't think of what I could add there.
+
+345
+00:23:35,120 --> 00:23:37,360
+[SPEAKER_02] So I just started coding up a little tip chart.
+
+346
+00:23:37,840 --> 00:23:44,800
+[SPEAKER_02] And as I did that, there was a friend who had built out an open source Swift UI app and he was using RevenueCat.
+
+347
+00:23:45,200 --> 00:23:46,880
+[SPEAKER_02] And so I saw the simple code there.
+
+348
+00:23:47,040 --> 00:23:49,120
+[SPEAKER_02] I pulled it down from GitHub, kind of looked over that.
+
+349
+00:23:49,440 --> 00:23:51,120
+[SPEAKER_02] And I was like, okay, this is all super clean.
+
+350
+00:23:51,680 --> 00:23:55,280
+[SPEAKER_02] It's literally still to this day the only third party framework I have in my app at all.
+
+351
+00:23:55,600 --> 00:23:56,640
+[SPEAKER_02] Don't have anyone else.
+
+352
+00:23:56,880 --> 00:23:58,000
+[SPEAKER_02] I like doing everything myself.
+
+353
+00:23:58,080 --> 00:23:59,280
+[SPEAKER_02] I don't trust other people with data.
+
+354
+00:23:59,520 --> 00:24:01,760
+[SPEAKER_02] So I'm very, very careful about that for my users.
+
+355
+00:24:02,880 --> 00:24:07,200
+[SPEAKER_02] And so as I was building out the dip jar, I was like, oh, there's a subscription system.
+
+356
+00:24:07,520 --> 00:24:11,360
+[SPEAKER_02] I wonder if I could put together like some kind of like a pro tier, what I decided to call it.
+
+357
+00:24:12,080 --> 00:24:16,000
+[SPEAKER_02] And I was like, okay, what am I going to give the users who want to give me some money per month and per year?
+
+358
+00:24:17,360 --> 00:24:22,480
+[SPEAKER_02] They can customize colors on the dashboard and I'll hide like this one feature behind like a paywall.
+
+359
+00:24:22,960 --> 00:24:24,480
+[SPEAKER_02] And that's all I could think of at the time.
+
+360
+00:24:24,640 --> 00:24:26,720
+[SPEAKER_02] So I was like, okay, just got to get it out there.
+
+361
+00:24:26,960 --> 00:24:34,960
+[SPEAKER_02] And it's kind of what I've done all the time with the app is just get some things out there, build kind of like I MVP pretty much like every feature that I do like in the app.
+
+362
+00:24:35,760 --> 00:24:37,760
+[SPEAKER_02] And sometimes it means like a lot more work for me.
+
+363
+00:24:38,160 --> 00:24:42,000
+[SPEAKER_02] And because they can tell I automate or until I see like that it makes sense for folks.
+
+364
+00:24:42,560 --> 00:24:44,240
+[SPEAKER_02] And so that's what happened with subscriptions.
+
+365
+00:24:44,320 --> 00:24:48,240
+[SPEAKER_02] I was like, okay, I'm just going to get this version out there with the tip jar and in this pro tier.
+
+366
+00:24:48,800 --> 00:24:50,560
+[SPEAKER_02] And literally, I submitted it.
+
+367
+00:24:51,440 --> 00:24:53,200
+[SPEAKER_02] It took a few days to get approved.
+
+368
+00:24:54,000 --> 00:24:58,960
+[SPEAKER_02] And then within like an hour or so of going live, I had my first, I don't think I had trials back then.
+
+369
+00:24:59,200 --> 00:25:00,080
+[SPEAKER_02] No, I did have trials.
+
+370
+00:25:00,240 --> 00:25:01,680
+[SPEAKER_02] I got my first trial start back then.
+
+371
+00:25:02,160 --> 00:25:03,840
+[SPEAKER_02] I was like, wow, okay, that's awesome.
+
+372
+00:25:03,920 --> 00:25:05,040
+[SPEAKER_02] Like that happened really quickly.
+
+373
+00:25:05,280 --> 00:25:06,640
+[SPEAKER_02] And people are going with the pro tier.
+
+374
+00:25:06,880 --> 00:25:08,880
+[SPEAKER_02] And then a week later, I had my first conversion.
+
+375
+00:25:09,280 --> 00:25:12,320
+[SPEAKER_02] And fast forward that month, I think it made like a few hundred dollars.
+
+376
+00:25:12,720 --> 00:25:14,000
+[SPEAKER_02] And I was like, okay, this is awesome.
+
+377
+00:25:14,080 --> 00:25:19,360
+[SPEAKER_02] I was like, if I can get to $1,000 a month, that would be enough to like lease like a really cool car because I'm a car guy.
+
+378
+00:25:19,600 --> 00:25:20,480
+[SPEAKER_02] I like cars like that.
+
+379
+00:25:20,720 --> 00:25:23,280
+[SPEAKER_01] That's all I want for Apple's cut and taxes and everything.
+
+380
+00:25:24,000 --> 00:25:26,640
+[SPEAKER_02] Let's think about that things through, but you know, it's a good idea.
+
+381
+00:25:28,240 --> 00:25:36,320
+[SPEAKER_02] But yeah, so that was my goal was like, you know, if I can make at least $1,000 a month, I can get like a cool car and I'll be really happy, it'll be a great side project and you know, kind of go from there.
+
+382
+00:25:36,560 --> 00:25:40,080
+[SPEAKER_02] But yeah, then things kind of kept taking off there.
+
+383
+00:25:40,720 --> 00:25:46,320
+[SPEAKER_02] I had another big feature from Apple around December of that year, so that was really good.
+
+384
+00:25:46,560 --> 00:25:52,320
+[SPEAKER_02] Got an influx of trials and then I started making the Pro tier actually, actually useful for folks.
+
+385
+00:25:52,560 --> 00:25:53,040
+[SPEAKER_00] Yeah, did you?
+
+386
+00:25:53,200 --> 00:25:58,080
+[SPEAKER_00] Did you in that first launch, when you first were in subscriptions, like, did you introduce it to your existing user base?
+
+387
+00:25:58,320 --> 00:26:00,000
+[SPEAKER_00] Did you just kind of like throw it in the corner?
+
+388
+00:26:00,480 --> 00:26:08,640
+[SPEAKER_00] Like, I'm guessing from an MVP approach, you probably just kind of snuck it in a natural flow, but, um, like, did you do anything to like let them know?
+
+389
+00:26:09,280 --> 00:26:14,880
+[SPEAKER_02] Yeah, so it was basically, um, because it was, uh, it was a new feature that I had added, which is what I gated at first.
+
+390
+00:26:15,360 --> 00:26:22,160
+[SPEAKER_02] And even to this day, any, I still have a really generous free tier, and that's always been important to me because I genuinely want people to use their credit cards better.
+
+391
+00:26:22,480 --> 00:26:32,480
+[SPEAKER_02] So the pro tier is great because it adds features, but the core functionality, which is what that progressive web app was launched with, um, which is, you know, which card to use for which cam category that continues to be free for everyone.
+
+392
+00:26:32,640 --> 00:26:36,160
+[SPEAKER_02] So you can just put it out of the paywall and you can use the app forever for free.
+
+393
+00:26:36,480 --> 00:26:37,440
+[SPEAKER_02] And I'm happy about it.
+
+394
+00:26:37,600 --> 00:26:39,520
+[SPEAKER_02] I love having new users, like I genuinely do.
+
+395
+00:26:40,480 --> 00:26:42,000
+[SPEAKER_02] So that part has always stayed there.
+
+396
+00:26:42,160 --> 00:26:46,720
+[SPEAKER_02] So as I've been adding new features, some will be for free, some will be just for the pro tier.
+
+397
+00:26:47,280 --> 00:26:57,760
+[SPEAKER_02] So I'm trying to always keep a balance there to keep it moving forward for the free users, but helping to add a lot more benefits and make, you know, make this game even easier for the folks who are willing to put a little bit of money into it.
+
+398
+00:26:58,000 --> 00:26:59,120
+[SPEAKER_02] They'll get a lot more out of it.
+
+399
+00:26:59,520 --> 00:26:59,600
+[SPEAKER_02] Yeah.
+
+400
+00:26:59,840 --> 00:27:09,040
+[SPEAKER_01] So then, so revenue started building over the fall of 2020, get featured again by Apple and then 202121, it starts building momentum.
+
+401
+00:27:09,280 --> 00:27:14,000
+[SPEAKER_01] And so I know the end of the story, but fall of 2021, you quit your job.
+
+402
+00:27:14,320 --> 00:27:15,920
+[SPEAKER_01] That must have been pretty nerve-racking.
+
+403
+00:27:16,400 --> 00:27:19,600
+[SPEAKER_01] Where were you at that point to, to make such a big leap?
+
+404
+00:27:20,240 --> 00:27:20,320
+[SPEAKER_02] Yeah.
+
+405
+00:27:20,560 --> 00:27:27,440
+[SPEAKER_02] So I was kind of, you know, I'm watching my revenue grow each month, um, pretty much without fail, sometimes a little bit of a dip, but generally it's been going up.
+
+406
+00:27:27,680 --> 00:27:35,360
+[SPEAKER_02] So, um, I've been watching that against the, the salary I was making at the startup where I was working for the, the last two years prior to that.
+
+407
+00:27:35,760 --> 00:27:38,480
+[SPEAKER_02] And fortunately, it's, it's a really good company that I was working with.
+
+408
+00:27:38,960 --> 00:27:42,080
+[SPEAKER_02] Um, and they were very understanding of what I was doing.
+
+409
+00:27:42,400 --> 00:27:43,600
+[SPEAKER_02] When I started that job, it was.
+
+410
+00:27:43,600 --> 00:27:47,440
+[SPEAKER_02] It was two weeks before the 2019 launch, so it was before it kind of blew up.
+
+411
+00:27:48,320 --> 00:27:54,320
+[SPEAKER_02] And so I kind of kept my boss, the CEO, appraised of that the whole time and he was supportive of that.
+
+412
+00:27:55,360 --> 00:28:02,880
+[SPEAKER_02] And as I was approaching the end of 2021, I was telling him, I need to cut back my hours because I can't do everything I need to do anymore.
+
+413
+00:28:03,040 --> 00:28:05,680
+[SPEAKER_02] Like, I had no nights, I had no weekends.
+
+414
+00:28:05,920 --> 00:28:11,440
+[SPEAKER_02] I was just exhausted because I was working more than two full time jobs and it was, it was basically killing me.
+
+415
+00:28:11,840 --> 00:28:13,760
+[SPEAKER_02] So I was like, I can't keep doing this.
+
+416
+00:28:13,920 --> 00:28:16,240
+[SPEAKER_02] So let me cut back those hours for at least a little while.
+
+417
+00:28:16,480 --> 00:28:20,880
+[SPEAKER_02] And then most likely by January, I think I need to call it quits and just move to CarPort.
+
+418
+00:28:20,880 --> 00:28:21,760
+[SPEAKER_02] just moves to Cardpointers full time.
+
+419
+00:28:22,240 --> 00:28:24,720
+[SPEAKER_02] And yeah, like he was just really, really supportive of that.
+
+420
+00:28:24,800 --> 00:28:25,920
+[SPEAKER_02] Everybody at the company was.
+
+421
+00:28:26,480 --> 00:28:28,240
+[SPEAKER_02] And so that's kind of how it transitioned out.
+
+422
+00:28:28,960 --> 00:28:34,800
+[SPEAKER_02] I went down to basically no time for like the launch, the lead up to the iOS release that year.
+
+423
+00:28:35,040 --> 00:28:39,760
+[SPEAKER_02] And then after that I was working basically half time for the startup and doing the rest of my time with Cardpointers.
+
+424
+00:28:39,920 --> 00:28:43,360
+[SPEAKER_02] And then, yeah, January 1st switched over full time to Cardpointers this year.
+
+425
+00:28:44,640 --> 00:28:47,840
+[SPEAKER_00] That's a pretty, pretty sweet, sweet way to go about it.
+
+426
+00:28:48,000 --> 00:28:51,920
+[SPEAKER_00] I don't know if many, many folks would have as understanding employers.
+
+427
+00:28:52,560 --> 00:28:53,040
+[SPEAKER_00] I'm not sure.
+
+428
+00:28:53,200 --> 00:28:55,760
+[SPEAKER_00] Like, I'm not sure I would even be as cool about it.
+
+429
+00:28:55,840 --> 00:29:05,200
+[SPEAKER_00] No, you know, it didn't tell you, you know know, whatever, but it's tough because you like you want people and you want the, you know, but also CEO founders have a soft spot for anyone whose thing's taken off, right?
+
+430
+00:29:05,440 --> 00:29:06,320
+[SPEAKER_00] It's like great.
+
+431
+00:29:06,800 --> 00:29:12,800
+[SPEAKER_00] So, um, that's actually really, it's really great in the sense that like you got to make a smooth transition, right?
+
+432
+00:29:13,040 --> 00:29:17,040
+[SPEAKER_00] And you didn't have to like totally let go of one thing to like jump, grab on to the next.
+
+433
+00:29:17,520 --> 00:29:18,960
+[SPEAKER_00] I think that's the scariest part, right?
+
+434
+00:29:19,200 --> 00:29:22,560
+[SPEAKER_00] It's like totally letting go to like jump and grab the next thing.
+
+435
+00:29:22,800 --> 00:29:24,880
+[SPEAKER_00] There's a gap there that's super scary.
+
+436
+00:29:25,520 --> 00:29:32,960
+[SPEAKER_00] Um, but if you can kind of like have some control on down ramping the one as you're up ramping the other, I think that makes it a little more accessible.
+
+437
+00:29:33,120 --> 00:29:36,160
+[SPEAKER_00] Um, and it's great like you're helping people, right?
+
+438
+00:29:36,320 --> 00:29:37,920
+[SPEAKER_00] Like, this is how the economy goes.
+
+439
+00:29:38,400 --> 00:29:40,720
+[SPEAKER_00] You found a niche serving people and it's growing.
+
+440
+00:29:41,440 --> 00:29:42,800
+[SPEAKER_00] So, that's excellent.
+
+441
+00:29:42,960 --> 00:29:43,520
+[SPEAKER_00] Was it your goal?
+
+442
+00:29:43,760 --> 00:29:44,400
+[SPEAKER_00] Like, was that?
+
+443
+00:29:44,880 --> 00:29:49,520
+[SPEAKER_00] I mean, it sounds like you were just doing this because you're into the card game and you just wanted to help people.
+
+444
+00:29:50,720 --> 00:29:58,480
+[SPEAKER_00] Was it ever like, was it, because I know there's this whole industry and community of like passive passive, passive SAS or whatever.
+
+445
+00:29:58,640 --> 00:30:02,400
+[SPEAKER_00] Like this, like, indie hackers, like, make, get to your 10k a month or whatever.
+
+446
+00:30:02,560 --> 00:30:08,480
+[SPEAKER_00] Was that like part of your mission or did that just kind of fall into your lap as you served people better and it got bigger?
+
+447
+00:30:08,960 --> 00:30:10,080
+[SPEAKER_00] Yeah, I mean, not in the beginning.
+
+448
+00:30:10,320 --> 00:30:16,560
+[SPEAKER_02] I mean, I I've always, I mean, I've always, I mean, the reason why I was working on apps is like A, I love them, but B, I wanted to make a business out of it.
+
+449
+00:30:17,040 --> 00:30:22,160
+[SPEAKER_02] The thing that really kind of triggered that was back when I was working at Sandow when I saw like that, the subscription revenue.
+
+450
+00:30:22,240 --> 00:30:25,520
+[SPEAKER_02] And like I said, it was literally more than my salary coming in every year.
+
+451
+00:30:25,760 --> 00:30:35,520
+[SPEAKER_02] And this is the thing I created from like with just me, just repurposing, like getting the images from the production team and then just uploading them to a server and just, you know, managing like that whole thing.
+
+452
+00:30:35,600 --> 00:30:37,680
+[SPEAKER_02] And I was like, wow, this is like multiples of my revenue.
+
+453
+00:30:37,840 --> 00:30:40,640
+[SPEAKER_02] Like this is, this is a real business, like available in app stores.
+
+454
+00:30:40,720 --> 00:30:41,760
+[SPEAKER_02] And I was that close to it, right?
+
+455
+00:30:42,000 --> 00:30:45,760
+[SPEAKER_02] I mean, I was generating it, but I wasn't getting the revenue for myself other than my salary.
+
+456
+00:30:46,000 --> 00:31:00,160
+[SPEAKER_02] So, um, yeah, I mean, I I definitely wanted to grow that, but like, because nothing had really taken off before, I was kind of looking at CarPointers as my playground to try out the new APIs and new features because that's what I love doing so much.
+
+457
+00:31:00,640 --> 00:31:12,480
+[SPEAKER_02] So now I would have a place to actually put that, but if it could actually generate revenue and eventually, as it turns out now, like, you know, I can make a living from it, then yeah, that's definitely that, it's even sweeter.
+
+458
+00:31:12,800 --> 00:31:25,360
+[SPEAKER_01] Yeah, so that's been a lot of build up, an incredible story, but I do want to get to it, we don't have a ton of time left, but since going full time, the app's really blown up as a business.
+
+459
+00:31:25,760 --> 00:31:34,960
+[SPEAKER_01] So you've, I don't think you've shared exact numbers on Twitter, but you've shared just how incredible the business has taken off since you went full time.
+
+460
+00:31:35,200 --> 00:31:49,600
+[SPEAKER_01] So I wanted to roll back to January of 2022 earlier this year and talk through what are some of those first few things that you were able to tackle going full time that really shifted the trajectory of the business.
+
+461
+00:31:50,480 --> 00:31:50,560
+[SPEAKER_02] Yeah.
+
+462
+00:31:50,800 --> 00:32:00,960
+[SPEAKER_02] So one of the big things was getting out of just developing new features and kind of pushing that forward and focusing on the business aspect of it and marketing the app in a better way.
+
+463
+00:32:02,080 --> 00:32:06,800
+[SPEAKER_02] And so I kind of had, and at this point now that I've switched to full time, I kind of have the schedule in mind.
+
+464
+00:32:07,040 --> 00:32:11,200
+[SPEAKER_02] So I've been following that so far this year, which is basically January through about June.
+
+465
+00:32:11,520 --> 00:32:14,400
+[SPEAKER_02] I'm going to focus on like business development marketing initiatives.
+
+466
+00:32:14,960 --> 00:32:17,200
+[SPEAKER_02] And then June through September, it's WWDC.
+
+467
+00:32:17,360 --> 00:32:19,440
+[SPEAKER_02] So I'm focused on the next big iOS release.
+
+468
+00:32:19,680 --> 00:32:24,320
+[SPEAKER_02] And then I'll focus on bug fixes, bring that to the Android version, which I launched at the end of last year as well.
+
+469
+00:32:24,800 --> 00:32:26,000
+[SPEAKER_02] And kind of keep going in that cycle.
+
+470
+00:32:26,160 --> 00:32:28,160
+[SPEAKER_02] Hopefully, take December off, fingers crossed.
+
+471
+00:32:28,960 --> 00:32:30,960
+[SPEAKER_02] But basically, having that plan for the year.
+
+472
+00:32:31,200 --> 00:32:33,120
+[SPEAKER_02] And so that's what I've followed so far.
+
+473
+00:32:34,080 --> 00:32:39,600
+[SPEAKER_02] And in January, from January to March, I basically tripled my monthly revenue by introducing.
+
+474
+00:32:40,400 --> 00:32:52,800
+[SPEAKER_02] web checkouts, using the email addresses that I had for users who hadn't gone pro or had canceled, who had churned, kind of every month, what I'm trying to do is find one new way to generate some extra revenue.
+
+475
+00:32:53,280 --> 00:33:00,720
+[SPEAKER_02] And so, you know, those first ones were great because I could spend all this time because I was no longer hampered with, you know, working another job from like nine to six.
+
+476
+00:33:00,880 --> 00:33:02,640
+[SPEAKER_02] I could actually work all the time for CardPointers.
+
+477
+00:33:02,800 --> 00:33:06,560
+[SPEAKER_02] So I started putting a lot of this stuff together that I had been building up for a while.
+
+478
+00:33:06,800 --> 00:33:16,560
+[SPEAKER_02] So that was kind of fine tuning an affiliate slash RevShare program with folks, finding the right creators for that, offering discounts to users was a really big one.
+
+479
+00:33:16,880 --> 00:33:19,120
+[SPEAKER_02] So sending out and Stripe makes that really easy.
+
+480
+00:33:19,520 --> 00:33:23,280
+[SPEAKER_02] Apple has it through their promo codes, but you just can't do enough with pricing.
+
+481
+00:33:23,360 --> 00:33:24,480
+[SPEAKER_02] You can't control it properly.
+
+482
+00:33:25,040 --> 00:33:27,040
+[SPEAKER_02] With Stripe, I can set up any kind of coupons.
+
+483
+00:33:27,120 --> 00:33:29,120
+[SPEAKER_02] I can set up any free trial links that I want.
+
+484
+00:33:29,840 --> 00:33:31,600
+[SPEAKER_02] I can easily extend a user subscription.
+
+485
+00:33:32,080 --> 00:33:36,720
+[SPEAKER_02] It really empowers me as a business owner to be able to do so much more with the business.
+
+486
+00:33:37,440 --> 00:33:39,760
+[SPEAKER_02] And that has helped tremendously in growing revenue.
+
+487
+00:33:41,120 --> 00:33:45,040
+[SPEAKER_02] That and yeah, I mean, that's really the biggest thing.
+
+488
+00:33:45,440 --> 00:33:53,200
+[SPEAKER_02] And then finding good content creators and a way to then incentivize those users to make a purchase, that's been really good too.
+
+489
+00:33:53,760 --> 00:34:00,640
+[SPEAKER_02] So now I've got I'm working with content creators where I've set up these special partnership links that offer a discount for Cardpointers Pro.
+
+490
+00:34:01,120 --> 00:34:05,200
+[SPEAKER_02] So that solves the attribution problem entirely, which is one huge problem with affiliates.
+
+491
+00:34:05,600 --> 00:34:10,480
+[SPEAKER_02] Um, because you know, you'll hear about something, but most people don't go to like a link in Bio to click on it, right?
+
+492
+00:34:10,960 --> 00:34:12,240
+[SPEAKER_02] Unless they're incentivized to.
+
+493
+00:34:12,560 --> 00:34:18,240
+[SPEAKER_02] So now people go to like one of these partner links, they'll save, you know, twenty percent or whatever on a Cardpointers Pro purchase.
+
+494
+00:34:18,560 --> 00:34:19,920
+[SPEAKER_02] And that takes them right to Stripe.
+
+495
+00:34:20,400 --> 00:34:25,840
+[SPEAKER_02] So I save the extra money that I would otherwise pay Apple, which helps keep me in the small business program longer, which is great.
+
+496
+00:34:26,080 --> 00:34:30,400
+[SPEAKER_02] So eventually that's going to be like, you know, 150,000 extra that I'd save just by shifting this.
+
+497
+00:34:30,720 --> 00:34:31,440
+[SPEAKER_02] over here, right?
+
+498
+00:34:31,680 --> 00:34:32,960
+[SPEAKER_02] So that's really nice.
+
+499
+00:34:33,760 --> 00:34:40,800
+[SPEAKER_02] And I save you another ten percent or so on the actual cost you from Stripe fees versus Apple or Google fees.
+
+500
+00:34:41,840 --> 00:34:50,800
+[SPEAKER_00] In my impression, you transitioned really quickly into like hacking together an app to like Gross Hacker on mobile, like you figured out a lot of, you know, most people struggle.
+
+501
+00:34:50,960 --> 00:34:54,400
+[SPEAKER_00] I mean, not struggle, but like it's hard to like figure out different channels.
+
+502
+00:34:54,560 --> 00:34:56,240
+[SPEAKER_00] And I mean, there's some structural advantages here.
+
+503
+00:34:56,320 --> 00:35:01,280
+[SPEAKER_00] The fact that you have this login system, the fact that you started as a web app, I think that gave you some, a leg up a little bit.
+
+504
+00:35:01,440 --> 00:35:03,680
+[SPEAKER_00] It was a little bit easier to set some of that stuff up.
+
+505
+00:35:04,560 --> 00:35:06,640
+[SPEAKER_00] But did you school up on this stuff?
+
+506
+00:35:07,040 --> 00:35:08,720
+[SPEAKER_00] Were you just like a student of other apps?
+
+507
+00:35:08,880 --> 00:35:19,200
+[SPEAKER_00] Like, how did you, like, you know, when you set out in January, say, okay, this is this is growth season, did you do anything or did you just start like, yeah, what makes sense, right?
+
+508
+00:35:19,440 --> 00:35:20,720
+[SPEAKER_00] Was it intuitive or yeah?
+
+509
+00:35:21,120 --> 00:35:22,640
+[SPEAKER_00] I mean, I like to consume a lot of things.
+
+510
+00:35:22,720 --> 00:35:27,200
+[SPEAKER_02] So, like, I'll be like in a lot of David's webinars that he has, uh, with RevenueCap, for instance.
+
+511
+00:35:27,600 --> 00:35:31,600
+[SPEAKER_02] Um, but I mean, I found a good community on Twitter with a lot of other indie dives.
+
+512
+00:35:31,760 --> 00:35:41,680
+[SPEAKER_02] Uh, Curtis has been, uh, on Subclub before, um, and him sharing his numbers was huge inspiring because it gave me, um, actually like, I could actually believe that I could do this, like, on my own.
+
+513
+00:35:42,240 --> 00:35:43,520
+[SPEAKER_02] Um, and I don't need, like, a big team.
+
+514
+00:35:43,600 --> 00:35:51,200
+[SPEAKER_02] And the same thing, like like Christian Selig for Apollo, like those individual IDs, IDs gave me like, it just made me believe that I could do it.
+
+515
+00:35:51,760 --> 00:35:52,720
+[SPEAKER_02] So that was a huge help.
+
+516
+00:35:53,040 --> 00:36:00,960
+[SPEAKER_02] But as far as like, what things to try out, it was just learning from others, learning from like YouTube and Twitter and other places where I get like ideas for things.
+
+517
+00:36:01,840 --> 00:36:05,360
+[SPEAKER_02] I'll also look to see what other companies are doing like in different spaces and different apps.
+
+518
+00:36:06,000 --> 00:36:11,680
+[SPEAKER_02] So all that stuff I just like to try out and I'll experiment and, you know, I'll throw something together and put it out there and see if it works.
+
+519
+00:36:12,480 --> 00:36:19,920
+[SPEAKER_02] I had to try, I think I've done like five iterations of like that partner page and how it would work with a RevShare program to finally get one that clicks.
+
+520
+00:36:20,000 --> 00:36:21,200
+[SPEAKER_02] And that finally clicked in March.
+
+521
+00:36:21,760 --> 00:36:22,320
+[SPEAKER_02] because of all that work.
+
+522
+00:36:22,480 --> 00:36:26,000
+[SPEAKER_02] But I had launched that six months prior and it just wasn't going anywhere.
+
+523
+00:36:26,560 --> 00:36:26,800
+[SPEAKER_00] Interesting.
+
+524
+00:36:27,200 --> 00:36:35,440
+[SPEAKER_00] It's it's it's it's this product channel fit thing that it's the product market and product channel fit are like something you rediscover over and over again.
+
+525
+00:36:35,600 --> 00:36:44,720
+[SPEAKER_00] So that, for instance, that that channel, maybe you had to iterate through it similar to how you had to iterate through the app to get five thousand users to like really suffer through it not working.
+
+526
+00:36:44,880 --> 00:36:48,240
+[SPEAKER_00] And then once it works, it's like, okay, now you've found free money, right?
+
+527
+00:36:48,400 --> 00:36:54,640
+[SPEAKER_00] Like, now you found something that works and it probably is, you know, perpetual and like maybe with some small maintenance, right?
+
+528
+00:36:54,960 --> 00:37:00,800
+[SPEAKER_00] But, but shouldn't expect that any growth experiment or thing you try should be perfect on the first whack.
+
+529
+00:37:01,920 --> 00:37:04,400
+[SPEAKER_00] And so, yeah, I think it's a smart way to think about it too.
+
+530
+00:37:04,640 --> 00:37:09,040
+[SPEAKER_00] Like, at first I was like, oh, you do two days, we're going to do two days of marketing, two days of development.
+
+531
+00:37:09,120 --> 00:37:16,720
+[SPEAKER_00] But I think actually having these like bigger chunks where your like, brain is dedicated to it, it's kind of an interesting hack also because it's just such a different mind space, right?
+
+532
+00:37:16,960 --> 00:37:22,800
+[SPEAKER_00] When building apps, it's like product and users and databases and like things like that, right?
+
+533
+00:37:23,520 --> 00:37:27,200
+[SPEAKER_00] And on the growth side, it's just a very different, yeah, it's a different mindset, right?
+
+534
+00:37:27,440 --> 00:37:34,640
+[SPEAKER_00] Like it's more exploration and trying things and like scrappiness in some sense as well.
+
+535
+00:37:34,960 --> 00:37:38,160
+[SPEAKER_00] So, uh, uh, but yeah, that's really, it's really cool.
+
+536
+00:37:38,320 --> 00:37:46,480
+[SPEAKER_00] I mean, I think so many developers, I think CarPointers has been interesting to watch because so many developers go for like the standard playbook of channels, right?
+
+537
+00:37:46,640 --> 00:37:52,160
+[SPEAKER_00] Which is like apps, uh, subscriptions, app, Apple search ads, right?
+
+538
+00:37:52,480 --> 00:37:57,680
+[SPEAKER_00] Then they're going to buy like display ads and like drive through it just like jump straight to like paid acquisition that way.
+
+539
+00:37:57,920 --> 00:37:58,800
+[SPEAKER_00] And you were smarter about it.
+
+540
+00:37:58,960 --> 00:38:01,120
+[SPEAKER_00] You're like, where can I find like, what advantages do I have?
+
+541
+00:38:01,200 --> 00:38:07,280
+[SPEAKER_00] And like, where can I find leverage in the sense that I have this like good signup process and I have this login system and I know how to do web and stuff like that.
+
+542
+00:38:07,600 --> 00:38:10,960
+[SPEAKER_00] Actually, I think post, post ATT, I don't know if David agrees with this.
+
+543
+00:38:11,040 --> 00:38:20,480
+[SPEAKER_00] This seems like where more breakouts are happening than just in the like, you know, get your CAC LTV under control and then spend your brains out.
+
+544
+00:38:20,960 --> 00:38:21,120
+[SPEAKER_00] Yeah.
+
+545
+00:38:21,600 --> 00:38:24,480
+[SPEAKER_00] I mean, honestly, I think it's always been true, right?
+
+546
+00:38:24,960 --> 00:38:26,800
+[SPEAKER_01] It was just like you have to, right?
+
+547
+00:38:27,280 --> 00:38:36,320
+[SPEAKER_01] There was just this brief window where where the display advertising clicked in a way that a lot of companies were able to spin up really quickly.
+
+548
+00:38:36,880 --> 00:38:38,400
+[SPEAKER_01] And some of those are spinning back down.
+
+549
+00:38:38,640 --> 00:38:57,440
+[SPEAKER_01] But I mean, a lot of the biggest apps today, you know, from all trails to even some of the meditation apps and things like fitness apps with influencers, you know, they.'ve they found that kind of product channel fit over time, but but you did, Emmanuel, actually experiment with ads, right?
+
+550
+00:38:57,680 --> 00:39:07,120
+[SPEAKER_01] And so tell me about some of those experiments and how they failed that led you to the experiments that ultimately worked better and found that product channel fit.
+
+551
+00:39:07,680 --> 00:39:12,880
+[SPEAKER_01] Yeah, so to the point that I mentioned before, you know, I learned a lot of things from Twitter and the kind of community I followed.
+
+552
+00:39:13,040 --> 00:39:15,680
+[SPEAKER_02] So I saw a lot of people have a lot of success with Facebook ads.
+
+553
+00:39:15,840 --> 00:39:17,920
+[SPEAKER_02] So I figured I'd throw some money at that.
+
+554
+00:39:18,160 --> 00:39:20,160
+[SPEAKER_02] And this is like right around like the time of ATT.
+
+555
+00:39:20,320 --> 00:39:23,120
+[SPEAKER_02] I think I did some experiments beforehand and some afterwards.
+
+556
+00:39:23,840 --> 00:39:27,840
+[SPEAKER_02] And I went through great lengths to make sure I could avoid installing the Facebook SDK in the app.
+
+557
+00:39:28,400 --> 00:39:32,320
+[SPEAKER_02] I remember at one point it caused like a bunch of apps to not even load because they had some bug there.
+
+558
+00:39:32,400 --> 00:39:34,400
+[SPEAKER_02] And so I was just malformed JSON.
+
+559
+00:39:34,720 --> 00:39:38,000
+[SPEAKER_00] Who among us has not sent a malformed JSON to billions of users?
+
+560
+00:39:39,200 --> 00:39:39,360
+[SPEAKER_00] Right.
+
+561
+00:39:40,160 --> 00:39:42,400
+[SPEAKER_02] So yeah, and in general, I'm not a fan of Facebook.
+
+562
+00:39:43,360 --> 00:39:45,440
+[SPEAKER_02] So I was trying to avoid that entirely.
+
+563
+00:39:45,600 --> 00:39:56,000
+[SPEAKER_02] So I went through great efforts to use their API instead to kind of work around that and kind of run like my own attribution system and kind of do like my own AAA campaigns in a way.
+
+564
+00:39:57,040 --> 00:39:59,120
+[SPEAKER_02] But that was just a lot of wasted money for nothing.
+
+565
+00:39:59,440 --> 00:40:01,040
+[SPEAKER_02] I didn't see a lot of results.
+
+566
+00:40:02,000 --> 00:40:07,600
+[SPEAKER_02] Technically, everything worked, but I think people just don't necessarily love ads.
+
+567
+00:40:07,680 --> 00:40:09,040
+[SPEAKER_02] And I've tried the different approaches.
+
+568
+00:40:09,200 --> 00:40:11,120
+[SPEAKER_02] I've tried some meme creatives.
+
+569
+00:40:11,600 --> 00:40:16,880
+[SPEAKER_02] I've tried user testimonials, those kinds of things, and those just never really worked for me.
+
+570
+00:40:17,040 --> 00:40:18,880
+[SPEAKER_02] So it was just thousands of dollars wasted.
+
+571
+00:40:19,920 --> 00:40:36,800
+[SPEAKER_02] Whereas, you know, if I can get like right now, the most successful thing for me is the RevShare and then sending out offers to users to help capitalize on those users, like all those users that I've had over the last few years, get them to give me money rather than necessarily seeking out a ton of new users.
+
+572
+00:40:37,040 --> 00:40:39,440
+[SPEAKER_02] And now I've got kind of this healthy split of both.
+
+573
+00:40:40,160 --> 00:40:46,160
+[SPEAKER_02] The content creators helped bring in a lot of new users and then the things I've built in place because everything is really additive, right?
+
+574
+00:40:46,320 --> 00:40:50,720
+[SPEAKER_02] Like over time, all the stuff I'm building, it's going to be useful, like as I get more people on.
+
+575
+00:40:51,360 --> 00:40:53,840
+[SPEAKER_02] So it kind of keeps feeding the machine more and more.
+
+576
+00:40:54,640 --> 00:40:56,560
+[SPEAKER_02] And so that's why now I'm at a really good spot.
+
+577
+00:40:56,720 --> 00:41:02,960
+[SPEAKER_02] And as I said, I, you know, tripled revenue before I just doubled revenue, monthly revenue again, uh, basically two months ago to one month ago.
+
+578
+00:41:03,200 --> 00:41:07,040
+[SPEAKER_02] Um, so the growth has been really good lately and I'm super excited about that.
+
+579
+00:41:07,200 --> 00:41:11,200
+[SPEAKER_02] But it's, yeah, just a matter of doing like little things that add up.
+
+580
+00:41:11,360 --> 00:41:12,880
+[SPEAKER_02] Uh, it really adds up over time.
+
+581
+00:41:13,280 --> 00:41:13,360
+[SPEAKER_02] Right.
+
+582
+00:41:13,520 --> 00:41:14,880
+[SPEAKER_02] Especially if they're durable, right?
+
+583
+00:41:15,040 --> 00:41:15,600
+[SPEAKER_02] They compound.
+
+584
+00:41:15,760 --> 00:41:19,840
+[SPEAKER_00] So you figure out one thing, you layer layer it and then you go for the next product channel fit and then that layers as well.
+
+585
+00:41:20,000 --> 00:41:25,920
+[SPEAKER_00] And then it just, it, it, you know, eventually you'll top out probably some, you know, saturate the market or whatever.
+
+586
+00:41:26,160 --> 00:41:28,240
+[SPEAKER_00] And then you'll have to like figure out another move.
+
+587
+00:41:28,480 --> 00:41:31,920
+[SPEAKER_00] But like, you only have to make these little incremental moves as long as they're durable.
+
+588
+00:41:32,080 --> 00:41:33,920
+[SPEAKER_00] And then you can just move on and keep stacking stuff.
+
+589
+00:41:34,160 --> 00:41:37,760
+[SPEAKER_02] And the other thing is, too, like with, you know, if you can keep like your costs really low.
+
+590
+00:41:38,000 --> 00:41:47,440
+[SPEAKER_02] Um, it's one thing I've noticed, like the companies that have been in the space before, they never last more than about two years because they need a team of, you know, ten, twenty, thirty people to run everything.
+
+591
+00:41:48,000 --> 00:41:51,520
+[SPEAKER_02] Whereas me, it's just me and my costs are literally hundreds of dollars per month.
+
+592
+00:41:52,000 --> 00:41:56,960
+[SPEAKER_02] So it makes it easy for me to make to make it so you can write custom software for everything you do.
+
+593
+00:41:58,080 --> 00:41:58,880
+[SPEAKER_00] It's a real hack.
+
+594
+00:42:00,640 --> 00:42:16,720
+[SPEAKER_01] So the affiliate and influencer marketing, I wanted to step through that because it seems like that is your kind of product channel fit that so many apps need to find, and I think some apps might be able to just try what you're doing and find some level of success.
+
+595
+00:42:17,200 --> 00:42:21,440
+[SPEAKER_01] But I think what's especially important is how you actually tried it.
+
+596
+00:42:21,600 --> 00:42:26,000
+[SPEAKER_01] So what was the MVP of, okay, I think affiliate marketing could work.
+
+597
+00:42:27,440 --> 00:42:29,440
+[SPEAKER_01] What did you build out to test that?
+
+598
+00:42:29,760 --> 00:42:30,160
+[SPEAKER_01] And then what?
+
+599
+00:42:30,400 --> 00:42:36,880
+[SPEAKER_01] What, you know, what kind of gave you the insight that it was maybe going to take off and be a solid channel for you?
+
+600
+00:42:37,200 --> 00:42:37,280
+[SPEAKER_01] Yeah.
+
+601
+00:42:37,520 --> 00:42:42,240
+[SPEAKER_01] So the first iteration of that was basically building a little attribution system myself.
+
+602
+00:42:42,640 --> 00:42:43,360
+[SPEAKER_02] So it was really simple.
+
+603
+00:42:43,600 --> 00:42:51,600
+[SPEAKER_02] Like if a user goes to a particular link, it just temporarily stores their IP address and then it makes that link to that person once they install the app, but it doesn't go through a third party.
+
+604
+00:42:51,680 --> 00:42:53,760
+[SPEAKER_02] It's just all, you know, first party MI servers.
+
+605
+00:42:54,640 --> 00:42:57,360
+[SPEAKER_02] And so my first think was, well, you know, that will work out great.
+
+606
+00:42:57,840 --> 00:43:03,200
+[SPEAKER_02] I can basically pay people, you know, a percentage of the people who go pro in the first thirty days after that event.
+
+607
+00:43:04,080 --> 00:43:05,920
+[SPEAKER_02] And, you know, people will be really excited about it.
+
+608
+00:43:05,920 --> 00:43:07,920
+[SPEAKER_02] I can onboard a bunch of folks and it'll be a great thing.
+
+609
+00:43:08,320 --> 00:43:08,880
+[SPEAKER_02] source of revenue.
+
+610
+00:43:09,360 --> 00:43:13,680
+[SPEAKER_02] And I got a few people, I think like five people was kind of my launch set of affiliates.
+
+611
+00:43:14,480 --> 00:43:16,640
+[SPEAKER_02] And it basically went nowhere.
+
+612
+00:43:16,960 --> 00:43:19,920
+[SPEAKER_02] Like no one really like publishing the length of links very well.
+
+613
+00:43:20,080 --> 00:43:21,440
+[SPEAKER_02] They weren't covering it very well.
+
+614
+00:43:21,680 --> 00:43:24,160
+[SPEAKER_02] Attribution wasn't great because people weren't going to the links.
+
+615
+00:43:24,640 --> 00:43:28,880
+[SPEAKER_02] They would see card corners, I'd see user growth go up, but then I had no idea who to attribute it to.
+
+616
+00:43:29,920 --> 00:43:32,240
+[SPEAKER_02] So that version didn't work at all.
+
+617
+00:43:33,040 --> 00:43:42,400
+[SPEAKER_02] Trying to get people onboard it, like it worked fine for the folks that I knew because I've been in this community now for a few years and I've kind of grown with a lot of the content creators that are now really good partners.
+
+618
+00:43:43,120 --> 00:43:44,160
+[SPEAKER_02] But at the time.
+
+619
+00:43:45,680 --> 00:43:48,400
+[SPEAKER_02] Yeah, that just that really didn't go far.
+
+620
+00:43:48,640 --> 00:43:55,440
+[SPEAKER_02] So then I pivoted to trying to get people to do, well, eight new people, I tried to get them excited about it.
+
+621
+00:43:56,320 --> 00:44:02,240
+[SPEAKER_02] And most folks, well, I'd say most, I'd say probably about seventy percent of content creators are kind of allergic to affiliate deals.
+
+622
+00:44:02,480 --> 00:44:05,520
+[SPEAKER_02] I think they've been burnt in the past or maybe they're just sick of seeing them.
+
+623
+00:44:06,160 --> 00:44:12,400
+[SPEAKER_02] And so I came up with this idea of being like a RevShare model instead and really pitching it that way.
+
+624
+00:44:12,960 --> 00:44:14,240
+[SPEAKER_02] And that's helped a bit.
+
+625
+00:44:14,480 --> 00:44:19,680
+[SPEAKER_02] But for those who don't believe in affiliates, what I would do then is do paid content creation.
+
+626
+00:44:19,840 --> 00:44:22,880
+[SPEAKER_02] So I would pay them to do like a reel and Instagram, for instance.
+
+627
+00:44:23,920 --> 00:44:27,600
+[SPEAKER_02] And so, you know, find a mutually agreeable rate on that.
+
+628
+00:44:27,920 --> 00:44:28,640
+[SPEAKER_02] They would create a video.
+
+629
+00:44:29,120 --> 00:44:31,600
+[SPEAKER_02] And then I still had all the attribution system working and everything.
+
+630
+00:44:31,920 --> 00:44:33,440
+[SPEAKER_02] So I could then share with them the stats.
+
+631
+00:44:33,600 --> 00:44:35,680
+[SPEAKER_02] And I've always been very open with that with my partners.
+
+632
+00:44:36,000 --> 00:44:43,680
+[SPEAKER_02] So they can see how many installs they get, how many conversions and everything else, metrics that they don't have from any other advertiser because normally I wouldn't share that.
+
+633
+00:44:44,080 --> 00:44:47,280
+[SPEAKER_02] But I wanted to empower those people to be able to get that kind of information.
+
+634
+00:44:48,160 --> 00:44:52,240
+[SPEAKER_02] And so what I would do is I'll pay for like one or two like paid reels, like two months in a row.
+
+635
+00:44:52,640 --> 00:44:57,920
+[SPEAKER_02] And then I'll point out to the fact that if you look at your stats, you'll make more money if you do the RevShare model with me.
+
+636
+00:44:58,640 --> 00:45:00,000
+[SPEAKER_02] Like, don't do the paid video.
+
+637
+00:45:00,320 --> 00:45:01,920
+[SPEAKER_02] Like, you'll make more and I'll make more.
+
+638
+00:45:02,080 --> 00:45:03,120
+[SPEAKER_02] Like, let's keep it going.
+
+639
+00:45:04,000 --> 00:45:08,480
+[SPEAKER_02] And so far, everyone that I've worked with except for one person, I've got to switch over to just RevShare.
+
+640
+00:45:09,120 --> 00:45:13,200
+[SPEAKER_02] I think two months ago was my first only RevShare month and it was my best one by far.
+
+641
+00:45:13,760 --> 00:45:14,320
+[SPEAKER_02] And I love that.
+
+642
+00:45:14,560 --> 00:45:18,400
+[SPEAKER_02] Like, I love being able to go back and pay creators for what they're doing.
+
+643
+00:45:18,880 --> 00:45:22,800
+[SPEAKER_02] I much prefer that to giving more money to Facebook and feeding that ad machine.
+
+644
+00:45:22,960 --> 00:45:30,240
+[SPEAKER_02] And I don't think most people like ads, but if it's a natural fit and it's these content creators that are in this space, it's great.
+
+645
+00:45:30,400 --> 00:45:40,240
+[SPEAKER_00] So they don't like ads, but if people are just telling them about a product, you know, in a non-advertising way.
+
+646
+00:45:41,040 --> 00:45:41,760
+[SPEAKER_00] That's fun, right?
+
+647
+00:45:42,080 --> 00:45:42,720
+[SPEAKER_00] It's so funny.
+
+648
+00:45:42,800 --> 00:45:46,240
+[SPEAKER_00] We've just, we've just, it's, it's, it makes sense, right?
+
+649
+00:45:46,480 --> 00:45:52,800
+[SPEAKER_00] You have people actually, the big, robotic Facebook machine has no credibility, right?
+
+650
+00:45:53,200 --> 00:45:53,840
+[SPEAKER_00] Uh, to it at all.
+
+651
+00:45:54,160 --> 00:45:55,360
+[SPEAKER_00] Like who Facebook doesn't care.
+
+652
+00:45:55,520 --> 00:45:57,120
+[SPEAKER_00] They'll advertise whatever, pretty much.
+
+653
+00:45:57,680 --> 00:45:59,440
+[SPEAKER_00] But when you attach a creator to it, right?
+
+654
+00:45:59,680 --> 00:46:04,000
+[SPEAKER_00] Suddenly, like, somebody's staking a small piece of their credibility on this product, right?
+
+655
+00:46:04,400 --> 00:46:06,160
+[SPEAKER_00] Some, and some are big and some are small.
+
+656
+00:46:06,320 --> 00:46:10,240
+[SPEAKER_00] And I think that's, that's got to be the weight that makes these things propel, right?
+
+657
+00:46:10,560 --> 00:46:16,240
+[SPEAKER_00] Is that, you know, you as a cre content consumer are seeing like, oh, this person isn't, is somewhat smart.
+
+658
+00:46:16,400 --> 00:46:17,760
+[SPEAKER_00] Like, I've seen their other content is good.
+
+659
+00:46:17,920 --> 00:46:20,320
+[SPEAKER_00] So if they're going to promote this, I kind of trust them.
+
+660
+00:46:20,880 --> 00:46:22,640
+[SPEAKER_00] And that's a huge amount of leverage, right?
+
+661
+00:46:23,360 --> 00:46:29,200
+[SPEAKER_00] As opposed to just like something scrolling by randomly in the Instagram feed that, you know, anyone can pay for, which is really cool.
+
+662
+00:46:29,360 --> 00:46:30,480
+[SPEAKER_00] And then I love the alignment thing too.
+
+663
+00:46:30,640 --> 00:46:34,080
+[SPEAKER_00] I mean, it's one reason I'm a big supporter of the way we price revenue cat.
+
+664
+00:46:34,320 --> 00:46:40,560
+[SPEAKER_00] Like, you want people to be aligned on your success, their performance being aligned with your success.
+
+665
+00:46:40,960 --> 00:46:42,560
+[SPEAKER_00] I think they're going to put more into it, right?
+
+666
+00:46:42,800 --> 00:46:45,040
+[SPEAKER_00] They're going to be incentivized to do a better job.
+
+667
+00:46:45,680 --> 00:46:49,360
+[SPEAKER_00] And I think that that matters on the front lines of like awareness, right?
+
+668
+00:46:49,920 --> 00:47:02,720
+[SPEAKER_00] If you have good, if your product's in the mouth of people who care about actually promoting it, they're going to do a much better job, whether they intend to or not, than just like that, you know, 150 bucks or 1000 bucks or whatever, one paid reel, uh, it's kind of, you know, run you.
+
+669
+00:47:02,960 --> 00:47:03,040
+[SPEAKER_02] So.
+
+670
+00:47:03,520 --> 00:47:11,200
+[SPEAKER_02] And if you find people who are already using the app, because the app now has been out for a few years and there's been that generous free tier, like most of the creators were not even using the pro version.
+
+671
+00:47:11,360 --> 00:47:15,200
+[SPEAKER_02] And then I would gift them pro and show them like all the features and they're like, oh, this is actually really cool.
+
+672
+00:47:15,360 --> 00:47:16,560
+[SPEAKER_02] I hadn't explored that part of it.
+
+673
+00:47:16,880 --> 00:47:20,000
+[SPEAKER_02] And then because they're users and they're fans of it, it's really genuine.
+
+674
+00:47:20,240 --> 00:47:22,000
+[SPEAKER_02] And I, you know, consumers aren't stupid.
+
+675
+00:47:22,160 --> 00:47:23,280
+[SPEAKER_02] Like they're going to see what you're doing.
+
+676
+00:47:23,520 --> 00:47:24,880
+[SPEAKER_02] You can tell when someone's genuine, right?
+
+677
+00:47:24,960 --> 00:47:24,960
+[SPEAKER_02] Yeah.
+
+678
+00:47:25,120 --> 00:47:25,200
+[SPEAKER_02] Yeah.
+
+679
+00:47:25,360 --> 00:47:27,280
+[SPEAKER_02] Even if it's paid, you can tell when they' care, right?
+
+680
+00:47:27,440 --> 00:47:29,920
+[SPEAKER_00] It's, it's, I think it's something in human mistrust.
+
+681
+00:47:30,480 --> 00:47:32,640
+[SPEAKER_00] We know we know when we're being swindled, right?
+
+682
+00:47:32,880 --> 00:47:35,280
+[SPEAKER_00] And so like, you can tell when someone cares.
+
+683
+00:47:35,760 --> 00:47:40,480
+[SPEAKER_00] Uh, it's so cool to like, we didn't talk about this at all and we're running out of time, which is really David's thing to say.
+
+684
+00:47:40,880 --> 00:47:57,520
+[SPEAKER_00] But, uh, the fact that cards in this card game is such a tight knit community, I think is a really interesting aspect to how you've been able to grow in scale, becoming a legitimate member of that community first as a participant and then, you know, befriending content creators, stuff like that.
+
+685
+00:47:57,760 --> 00:47:58,960
+[SPEAKER_00] It's kind of the tack we take.
+
+686
+00:47:59,120 --> 00:48:02,160
+[SPEAKER_00] I mean, talk about behind the fourth wall with RevenueCat.
+
+687
+00:48:02,400 --> 00:48:11,040
+[SPEAKER_00] It's like, we've come from the this community and like, now we're genuinely engaging, you know, in an earnest way with the community as part of our growth practice.
+
+688
+00:48:11,200 --> 00:48:12,160
+[SPEAKER_00] And I think that goes a long way.
+
+689
+00:48:12,480 --> 00:48:15,280
+[SPEAKER_00] It also helps for, like, product understanding and a bunch of other stuff, right?
+
+690
+00:48:15,520 --> 00:48:22,800
+[SPEAKER_00] Rather than being like an outside, you know, the Chase Bank credit card app or whatever that nobody's ever going to care about because who are you, right?
+
+691
+00:48:24,480 --> 00:48:32,160
+[SPEAKER_01] As we wrap up, you skipped over something and we could probably talk ten minutes on this, but I just wanted to get a ninety second explanation.
+
+692
+00:48:32,960 --> 00:48:37,680
+[SPEAKER_01] You went from I don't have good analytics on my attribution.
+
+693
+00:48:37,920 --> 00:48:45,280
+[SPEAKER_01] I just see numbers go up to then saying, now you can show a creator exactly how much revenue they're driving.
+
+694
+00:48:45,600 --> 00:48:52,400
+[SPEAKER_01] What was what's your now kind of two point zero of your attribution stack to be able to get such detailed analytics?
+
+695
+00:48:53,040 --> 00:48:53,120
+[SPEAKER_01] Yeah.
+
+696
+00:48:53,360 --> 00:48:56,160
+[SPEAKER_01] So the main thing is being able to integrate Stripe Web checkout.
+
+697
+00:48:56,320 --> 00:49:04,240
+[SPEAKER_01] So that's the process I've been doing over the last year or so, but being able to make the payment and offer the discount right away from there from the web flow.
+
+698
+00:49:04,960 --> 00:49:07,680
+[SPEAKER_02] And I've kind of fine tuned that.
+
+699
+00:49:08,000 --> 00:49:11,760
+[SPEAKER_02] And now I've got it down to this flow where you don't even have to enter your email in advance.
+
+700
+00:49:11,840 --> 00:49:13,520
+[SPEAKER_02] You literally go to the landing page for the partner.
+
+701
+00:49:14,000 --> 00:49:14,880
+[SPEAKER_02] You click on purchase.
+
+702
+00:49:14,880 --> 00:49:16,000
+[SPEAKER_02] It gets a quick spiel about it.
+
+703
+00:49:16,080 --> 00:49:17,680
+[SPEAKER_02] Hopefully, you're already, you know, the person's already.
+
+704
+00:49:17,680 --> 00:49:20,640
+[SPEAKER_02] You already, you know, the person has already sold the, you know, the app from, you know, from their side.
+
+705
+00:49:21,040 --> 00:49:22,560
+[SPEAKER_02] So they click on it to get the discount.
+
+706
+00:49:22,720 --> 00:49:23,920
+[SPEAKER_02] They go to Stripe checkout.
+
+707
+00:49:24,080 --> 00:49:24,480
+[SPEAKER_02] They pay that.
+
+708
+00:49:24,640 --> 00:49:27,360
+[SPEAKER_02] And then it tries to link automatically based on that user's email.
+
+709
+00:49:27,440 --> 00:49:30,400
+[SPEAKER_02] Otherwise, it sends them an email and it's like, Oh, had trouble finding your account.
+
+710
+00:49:30,480 --> 00:49:31,680
+[SPEAKER_02] If you're new, create an account.
+
+711
+00:49:31,840 --> 00:49:32,240
+[SPEAKER_02] Here you go.
+
+712
+00:49:32,400 --> 00:49:33,120
+[SPEAKER_02] Here are the links.
+
+713
+00:49:33,440 --> 00:49:40,400
+[SPEAKER_02] Um, and then that works perfectly because attribution is perfect because I'm literally passing, um, you know, the partner name in the meta object to Stripe.
+
+714
+00:49:40,800 --> 00:49:42,160
+[SPEAKER_02] And then I carry that through the whole way.
+
+715
+00:49:42,320 --> 00:49:43,520
+[SPEAKER_02] So it's perfect attribution.
+
+716
+00:49:43,760 --> 00:49:48,240
+[SPEAKER_00] So if someone just makes a purchase with an email that you happen to already have in your database, you'll just associate that.
+
+717
+00:49:48,400 --> 00:49:52,480
+[SPEAKER_00] And like probably ninety nine times out of a hundred, that's correct, or maybe even higher rate than that.
+
+718
+00:49:52,640 --> 00:49:52,800
+[SPEAKER_00] Right.
+
+719
+00:49:52,960 --> 00:49:53,040
+[SPEAKER_00] Yeah.
+
+720
+00:49:53,200 --> 00:49:59,440
+[SPEAKER_02] Just log in with Apple throws a r wrench into that because a lot of people use hidden relay emails, but the automated emails help solve that problem.
+
+721
+00:49:59,600 --> 00:50:01,520
+[SPEAKER_02] And I tell people how to use the link.
+
+722
+00:50:01,920 --> 00:50:02,000
+[SPEAKER_02] Yeah.
+
+723
+00:50:02,240 --> 00:50:03,040
+[SPEAKER_02] That's really smart.
+
+724
+00:50:03,760 --> 00:50:07,120
+[SPEAKER_00] So the key to a great affiliate program is to skip the App Store.
+
+725
+00:50:07,520 --> 00:50:07,600
+[SPEAKER_01] Yeah.
+
+726
+00:50:07,840 --> 00:50:08,960
+[SPEAKER_01] I mean, it's just making smooth.
+
+727
+00:50:09,280 --> 00:50:10,880
+[SPEAKER_01] It's just building a smooth experience, right?
+
+728
+00:50:11,120 --> 00:50:12,240
+[SPEAKER_00] Like just remove the friction.
+
+729
+00:50:12,400 --> 00:50:13,440
+[SPEAKER_00] The App Store sucks for this.
+
+730
+00:50:13,600 --> 00:50:14,560
+[SPEAKER_00] It really is just horrible.
+
+731
+00:50:14,640 --> 00:50:17,040
+[SPEAKER_00] So just if you can imagine it goes to your advantage again.
+
+732
+00:50:17,120 --> 00:50:17,440
+[SPEAKER_00] Build it.
+
+733
+00:50:18,000 --> 00:50:20,400
+[SPEAKER_00] So this is the official rule now and Jacob's official advice.
+
+734
+00:50:20,560 --> 00:50:23,760
+[SPEAKER_00] Start a progressive web app first with sign-ins and then build your app later.
+
+735
+00:50:25,280 --> 00:50:27,760
+[SPEAKER_00] Man, Emmanuel, it's been so great chatting with you.
+
+736
+00:50:28,240 --> 00:50:29,920
+[SPEAKER_00] Anything you wanted to share as we wrap up?
+
+737
+00:50:31,280 --> 00:50:33,360
+[SPEAKER_01] No, just thank you again to both of you.
+
+738
+00:50:33,600 --> 00:50:34,000
+[SPEAKER_02] Really excited.
+
+739
+00:50:34,240 --> 00:50:37,920
+[SPEAKER_02] Obviously, I've been a revenue customer now since the beginning and it's changed.
+
+740
+00:50:38,560 --> 00:50:40,720
+[SPEAKER_02] You know, it's changed my life in the business literally.
+
+741
+00:50:41,120 --> 00:50:43,440
+[SPEAKER_02] So very thankful for the whole team behind that.
+
+742
+00:50:44,160 --> 00:50:46,240
+[SPEAKER_02] But yeah, I'm looking forward to the years ahead.
+
+743
+00:50:46,480 --> 00:50:48,880
+[SPEAKER_02] And yeah, keep on doing the podcast and showing information.
+
+744
+00:50:49,040 --> 00:50:51,680
+[SPEAKER_02] I've learned a ton and I'm sure a lot of other people have also.
+
+745
+00:50:51,920 --> 00:50:57,760
+[SPEAKER_02] Well, well, we thank you for inviting us into your app because we win and you win.
+
+746
+00:50:58,080 --> 00:51:00,320
+[SPEAKER_00] So we'll keep fighting for your business.
+
+747
+00:51:01,360 --> 00:51:02,560
+[SPEAKER_00] Yeah, it's still great chatting.
+
+748
+00:51:02,720 --> 00:51:03,680
+[SPEAKER_01] Thank you for all the learnings.
+
+749
+00:51:03,760 --> 00:51:07,200
+[SPEAKER_01] And yeah, we'll have to have you on for an AMA in the community.
+
+750
+00:51:07,840 --> 00:51:11,840
+[SPEAKER_01] And it's so great when people like you share so much of what they've learned.
+
+751
+00:51:11,920 --> 00:51:12,320
+[SPEAKER_01] So thank you.
+
+752
+00:51:12,560 --> 00:51:13,280
+[SPEAKER_01] Thank you for today.
+
+753
+00:51:13,440 --> 00:51:17,920
+[SPEAKER_01] And then thank you for your engagement on Twitter as well to share what you've learned with others.
+
+754
+00:51:18,080 --> 00:51:19,440
+[SPEAKER_01] So it's great chatting.
+
+755
+00:51:19,600 --> 00:51:19,840
+[SPEAKER_01] Thanks.
+
+756
+00:51:20,080 --> 00:51:20,720
+[SPEAKER_01] Thank you so much.
+
+757
+00:51:23,440 --> 00:51:24,800
+[SPEAKER_01] Thanks so much for listening.
+
+758
+00:51:25,680 --> 00:51:29,120
+[SPEAKER_01] If you have a minute, please leave a review in your favorite podcast player.
+
+759
+00:51:30,000 --> 00:51:34,800
+[SPEAKER_01] You can also stop by chat dot subclub dot com to join our private community.
