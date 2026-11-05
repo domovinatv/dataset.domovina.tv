@@ -1,43 +1,43 @@
-# Ivan Orlović (MOST): Reforma izbornog sustava, samoodrživost Hrvatske i banke
+# #004 Ivan Orlović (MOST): Reforma izbornog sustava, samoodrživost Hrvatske i banke - 9.4.2026.
 
-**Kanal:** domovina_tv  
+**Kanal:** _unlisted  
 **Datum:** 2026-05-26  
 **Trajanje:** 65 min  
-**YouTube:** https://youtu.be/fO7iltytw0I  
-**Model:** gemini-2.5-flash  
+**Epizoda:** https://domovina.ai/v/fO7iltytw0I  
+**Izvornik:** youtube.com/watch?v=fO7iltytw0I  
+**Model:** claude-code:opus  
 
 ## Sažetak
 
-U ovoj epizodi podcasta Domovina TV, Ivan Orlović, organizacijski tajnik Mosta, analizira ključne političke i gospodarske teme u Hrvatskoj. Razgovor se fokusira na kritiku izbornog sustava, uključujući D'Hondtovu metodu i podjelu na izborne jedinice, te predlaže reforme za veću demokratičnost. Također se raspravlja o utjecaju stranog bankarskog sektora, važnosti samoodrživosti u proizvodnji hrane i energetici, te problemima malih poduzetnika. Orlović naglašava dosljednost Mosta i poziva građane na aktivno sudjelovanje u političkom životu.
+U epizodi podcasta Domovina TV domaćin Matija Stepanić razgovara s Ivanom Orlovićem, organizacijskim tajnikom stranke Most, o ustroju stranke i financiranju političkih stranaka iz proračuna. Glavni dio razgovora posvećen je hrvatskom izbornom sustavu: neproporcionalnosti D'Hondtove metode, izbornom pragu i prijedlogu da cijela Hrvatska bude jedna izborna jedinica. Orlović pritom tvrdi da postojeći sustav odgovara vladajućim strankama. Sugovornici kritiziraju utjecaj stranih komercijalnih banaka na građane, raspravljaju o odnosu ideoloških i egzistencijalnih tema te o pasivnosti birača. Kao ključne teme za Hrvatsku Orlović ističe samoodrživost u proizvodnji hrane i energetici, demografiju i rasterećenje malih poduzetnika i OPG-ova. Razgovor završava pozivom građanima da izađu na izbore i glasaju po savjesti.
 
 ## Ključne teme
 
 - reforma izbornog sustava
+- d'hondtova metoda i izborni prag
 - financiranje političkih stranaka
-- D'Hondtova metoda
 - bankarski sektor
-- samoodrživost hrvatske
-- proizvodnja hrane i energetika
-- mali poduzetnici i OPG-ovi
-- pasivnost birača i izlaznost na izbore
+- izlaznost i pasivnost birača
 - ideološke i egzistencijalne teme u politici
+- samoodrživost u hrani i energetici
+- porezni nameti za male poduzetnike i opg-ove
 
 ## Govornici
 
 | ID | Ime | Uloga |
 |----|-----|-------|
-| SPEAKER_01 | Matija Stepanić | voditelj |
-| SPEAKER_00 | Ivan Orlović | gost |
+| SPEAKER_00 | Matija Stepanić | voditelj |
+| SPEAKER_01 | Ivan Orlović | gost |
 
 ## Ključni zaključci
 
-1. Ivan Orlović, organizacijski tajnik Mosta, opisuje svoju ulogu koja uključuje rukovođenje ljudstvom, koordinaciju ureda i odgovornost za financije i pravne akte stranke.
-2. Kritizira se trenutni izborni sustav u Hrvatskoj, posebno D'Hondtova metoda i podjela na više izbornih jedinica, što dovodi do neproporcionalne raspodjele mandata.
-3. Predlaže se reforma izbornog sustava uvođenjem jedne izborne jedinice za cijelu Hrvatsku, povećanjem broja preferencijalnih glasova i smanjenjem izbornog praga na tri posto.
-4. Ističe se da vladajućim strankama (HDZ i SDP) odgovara postojeći izborni sustav jer im donosi dobre rezultate, te da su propuštene prilike za njegovu promjenu.
-5. Raspravlja se o negativnom utjecaju stranog bankarskog sektora na hrvatske građane, sugerirajući da banke previše određuju sudbinu pojedinaca i da bi domaće banke mogle bolje služiti nacionalnim interesima.
-6. Naglašava se važnost samoodrživosti Hrvatske u proizvodnji hrane i energetici, s obzirom na geopolitičku situaciju i neiskorištene potencijale, te se kritizira prevelik uvoz.
-7. Poziva se na aktivno sudjelovanje birača u izborima, čak i poništavanjem listića, kako bi se izbjegla pasivnost i spriječile malverzacije, te kako bi se osiguralo da pravedni ljudi budu u Saboru.
+1. Orlović smatra da bi cijela Hrvatska trebala biti jedna izborna jedinica, uz mogućnost davanja više preferencijalnih glasova i spuštanje izbornog praga s 5 na 3 %. Time bi se, prema njegovim riječima, otklonila neproporcionalnost u kojoj svaki glas ne vrijedi jednako.
+2. Prema Orloviću, postojeći izborni sustav krojen je 90-ih godina i odgovara HDZ-u i SDP-u. Kao propuštene prilike za promjenu navodi referendumsku inicijativu koju je, kako kaže, Ustavni sud onemogućio proglašavanjem potpisa nečitkima, te odbijanje Domovinskog pokreta 2024. da se bez HDZ-a i Možemo složi većina za promjenu izbornog zakona.
+3. Za izlazak na parlamentarne izbore nisu potrebni potpisi podrške. Dovoljno je 14 nekažnjavanih kandidata po izbornoj jedinici, a kandidat se ne mora kandidirati u jedinici u kojoj je prijavljen.
+4. Orlović smatra da su komercijalne banke postale prebahate jer na temelju neobjektivnih parametara odlučuju o sudbini mladih obitelji. Domaće banke vidi kao bolji smjer, ali naglašava da je za provedbu takvih politika potrebno doći na vlast.
+5. Orlović drži da politika treba nalaziti balans između ideoloških i egzistencijalnih tema. Kao primjer egzistencijalne teme koju zagovara Most navodi zaštitu gotovine Ustavom.
+6. Gost poziva građane da izađu na izbore i da ih ne bojkotiraju. Smatra da je bolje i prekrižiti listić nego ne glasati jer se time šalje poruka i smanjuje mogućnost malverzacija s neiskorištenim listićima.
+7. Kao trenutno najvažnije teme Orlović navodi samoodrživost Hrvatske u hrani i energetici te demografiju. Kritizira uvoz stoke, mlijeka i jaja te previsoke namete za male poduzetnike, ističući da je trošak poslodavca otprilike dvostruk u odnosu na neto plaću.
 
 ## Spomenute osobe
 
@@ -45,16 +45,17 @@ U ovoj epizodi podcasta Domovina TV, Ivan Orlović, organizacijski tajnik Mosta,
 - Matija Stepanić
 - Josip Jurčević
 - Zvonimir Troskot
-- Emmanuel Macron
+- Macron
 - Donald Trump
 - Zdravko Marić
-- Ivica Todorić
+- Todorić
+- Plenković
 - Željko Lacković
 - Mario Radić
+- Mužić
+- Tomašević
 - Ante Kujundžić
 - Miro Bulj
-- Tomislav Tomašević
-- profesor Mužić
 
 ## Spomenuta mjesta
 
@@ -69,47 +70,56 @@ U ovoj epizodi podcasta Domovina TV, Ivan Orlović, organizacijski tajnik Mosta,
 - Rijeka
 - Kvarner
 - Istra
-- Gorski Kotar
-- Dubrovačko-neretvanska županija
-- Kosinsko polje
+- Gorski kotar
+- Dubrovačka i Neretvanska županija
+- Kosinjsko polje
 - Lika
-- Dalmacija
-- Slavonija
+- Francuska
+- Amerika
 - Vukovar
 - Dubrovnik
-- Sinj
+- Dalmacija
+- Slavonija
+- Argentina
 - Sisak
 - Sisačko-moslavačka županija
 - Gospić
-- Europa
-- Australija
-- Amerika
-- Francuska
-- Argentina
 - Bosna i Hercegovina
-- Stara Grčka
+- Austrija
+- Sinj
+- Australija
+- Grčka
+- Hipodrom
 
 ## Spomenute organizacije
 
 - Most
 - Domovina TV
+- Hrvatski sabor
 - Domovinski pokret
 - HDZ
 - SDP
+- Možemo
+- Europski parlament
 - Europska komisija
+- Europska unija
 - Ustavni sud
-- PBZ
+- Državno izborno povjerenstvo
 - Hrvatska banka za obnovu i razvitak
 - HPB
+- PBZ
 - BlackRock
 - Vanguard
+- Podravska banka
+- Splitska banka
+- Mladi za Domovinu
+- Nezavisni HR
+- Glas poduzetnika
+- Zadruga za etično financiranje
+- APN
 - Konzum
 - Lidl
 - Kaufland
-- Udruga Glas poduzetnika
-- APN
-- Zadruga za etično financiranje
-- Mladi za domovinu
 
 ---
-*Sentiment: mixed | Generirano: 2026-05-27T22:13:10.897Z*
+*Sentiment: mixed | Generirano: 2026-11-05T09:47:57.582Z*
