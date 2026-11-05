@@ -1,0 +1,91 @@
+Ti si teološki analitičar. Evaluiraj usklađenost sljedećih 3 odlomaka iz katoličkog podcasta s katoličkim naukom i Svetim pismom. Vrati ISKLJUČIVO JSON bez komentara.
+
+Podcast: 20261028_ai_u_praksi_claude_code_uzivo_matija_stepanic_startupvg_yt_QkcpHsj43rE.wav.canary.diarized_2026-10-28_opus
+
+=== SEKCIJA 0 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Zašto ne potpuno samostalni agent? Noćni cron poslovi i čovjek u petlji
+Ključni pojmovi: AI agenti, cron poslovi, LaunchD, human-in-the-loop, cache tokeni
+Osobe/organizacije: Matija Stepanić, Marko, Claude, macOS, Fetch Night, WhatsApp, Memphis
+Sadržaj:
+Isti sudionik iz publike vraća se na Markov primjer. Ne ulazi u to zašto Marko ne koristi postojeće administratorsko sučelje, ali pita je li Matija Stepanić išao u smjeru **agentičkog pristupa**. Pritom misli na sustav u kojem Stepanić ne bi morao ručno navoditi Claude da pročita Markove poruke, prikupi zahtjeve, napravi izmjene i pripremi ih za produkciju, nego bi sve to radio samostalni agent.
+
+Stepanić odgovara da za Markov projekt to nije učinio, jer ga Marko ionako nazove i zamoli da pogleda zahtjev. Agente, međutim, već koristi drugdje. Prikazuje svoje pozadinske poslove: **cron jobove** koji se pokreću preko macOS-ova sustava **LaunchD**.
+
+### Fetch Night u tri ujutro
+
+Kao zanimljiv primjer izdvaja posao **Fetch Night**, koji se pokreće svaki dan u 3 ujutro. Riječ je o običnom cron poslu koji se izvodi jednom u 24 sata, ali skripte koje pokreće pozivaju Claude. Posao:
+
+- preuzima nove podcaste,
+- pretvara govor u tekst (*speech-to-text*),
+- piše članak.
+
+Po Stepanićevim riječima, to je upravo agent. Jednako bi se lako moglo podesiti da se Claude pokrene čim stigne nova WhatsApp poruka.
+
+Sudionik pojašnjava da ga zanima korisnička strana: obrada podcasta je jedno, a nešto sasvim drugo je kada sustav samostalno preuzme Markov zahtjev, izvrši ga i Marku vrati odgovor. Stepanić odgovara da Claude upravo to i radi, samo ga on pokreće, i to tek kada je siguran da je klijent završio sa slanjem zahtjeva.
+
+### Zašto je čovjek u petlji važan
+
+Zato je, ističe, ključan **human-in-the-loop**. AI može zaključiti da je stigla poruka i krenuti s radom, ali ne može znati hoće li Marko poslati još pet poruka. Na upit sudionika zašto Claude ne bi jednostavno pitao klijenta, Stepanić priznaje da bi se to sigurno dalo napraviti, ali to znači dodatnu potrošnju tokena, odnosno struje bez potrebe. Ovako sve ostaje u kontroliranim uvjetima, a na dva ekrana ponekad ima otvoreno i po deset Claude Code sesija.
+
+### Skrivena cijena: cache tokeni
+
+Stepanić dodaje i važan tehnički detalj. U sučelju je uključio prikaz koji pokazuje, primjerice, „31 minuta preostalo”. To se odnosi na **cache tokene**. Dok cache vrijedi, ponovno slanje postojećih 76.000 tokena prema podatkovnom centru u Memphisu stoji relativno malo. Kada istekne, isti kontekst košta otprilike **40 puta više**.
+
+=== SEKCIJA 1 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Skalabilnost i pravilo „ne zovi ga stalno”
+Ključni pojmovi: skalabilnost, automatizacija, decentralizacija, grupna obrada zadataka, WhatsApp izvještaji
+Osobe/organizacije: Matija Stepanić, Marko, Claude Code, Lovable, WhatsApp, LaunchD
+Sadržaj:
+Sudionik iz publike ustraje na poslovnoj strani pitanja. Za iskusnog programera vrlo je skupo, kaže, ručno mijenjati sliku na webu ili postavljati količinu proizvoda na nulu. Pita stoga ne bi li mu centi potrošeni na Claude oslobodili više vremena, odnosno ne bi li potpuna automatizacija bila skalabilnija.
+
+Matija Stepanić se slaže da bi to bilo moguće, ali pitanje proširuje: zašto onda Claude Code ne koristi svatko? Tu vidi ključ **decentralizacije**. Marko ga zapravo ne treba. Ako sve to želi složiti sam, može sve instalirati, koristiti Lovable u kojem je sve već pripremljeno ili angažirati Stepanića, koji također ima sve postavljeno. Sudionik ga ispravlja da ga ne zanima treba li Marko njega. Marko se bavi drugim poslom, a pitanje je je li za Stepanićev posao skalabilnije da se elementarne izmjene obavljaju same, u duhu AI automatizacije o kojoj se danas toliko govori.
+
+### Dnevni izvještaji umjesto reakcije na svaku poruku
+
+Stepanić odgovara da je dio toga već automatizirao. U nekoliko WhatsApp grupa u kojima je mnogo ljudi dnevno se nakupi i više od 99 poruka. Za njih je složio LaunchD poslove koji svaka 24 sata pregledaju što se u grupama događalo i pošalju mu izvještaj u privatnu grupu.
+
+Automatsko reagiranje na svaku pojedinu poruku (*on action*) još nije postavio. Shvatio je, objašnjava, da je upravo to važno pravilo rada s AI-em: **dati mu određenu količinu posla i ne zvati ga stalno, nego kada se posao nakupi**. Grupno slanje unutar 24 sata ili svakih nekoliko sati čini mu se smislenim. Dodaje da bi se sustav koji na svaku pristiglu poruku pokreće Claude dao složiti, ali zasad ga ne koristi.
+
+=== SEKCIJA 2 ===
+Blok: Pitanja publike: poslovni model, plaćanja bez provizije, agenti, Git kao memorija, pouzdanost, infrastruktura i usporedba modela
+Tema: Godinu dana na velikom projektu: Git kao trajna memorija umjetne inteligencije
+Ključni pojmovi: kontekstni prozor, Git history, trajna memorija, commit poruke, veliki projekti
+Osobe/organizacije: Matija Stepanić, Git, Claude Code, Claude Desktop, Opus 5.5, Anthropic, Domovina Energy, Markdown
+Sadržaj:
+Drugi sudionik iz publike postavlja hipotetski scenarij. Netko odluči razvijati veliki proizvod, recimo „Facebook 2”, i na njemu svakodnevno radi godinu dana. Što ako AI u tom razdoblju počne zaboravljati, dodavati neželjene funkcionalnosti ili ukloni dio koji koristi 500.000 korisnika? Postoji li i dalje problem gubljenja konteksta na velikim projektima, kakav je bio prisutan prije godinu-dvije, i gdje se čuva memorija? U Markdown datotekama ili negdje drugdje?
+
+Matija Stepanić pitanje naziva odličnim. Potvrđuje da LLM uvijek ima **ograničen kontekst**. Danas je to milijun tokena, a do prije šest mjeseci bilo je 200.000, što je već tada bilo malo. Milijun tokena opisuje kao golem napredak, posebno uz model Opus 5.5, koji radi vrlo brzo.
+
+### Povijest commitova kao jeftin podsjetnik
+
+Rješenje vidi u činjenici da je proizvod skup skripti, ekrana i ostalih datoteka koje su, kao i dosad, **verzionirane u Gitu** i nalaze se na disku. Kada otvori Claude Code u postojećem projektu, najprije mu kaže neka pogleda **Git history**. To je vrlo jeftino jer Claude čita samo kratke poruke commitova, i to šest mjeseci unatrag, za oko 20.000 tokena. Nakon toga razumije što se radilo prije tri mjeseca, što danas i što je ispravljeno.
+
+Ilustrira to izmišljenim primjerom: Claude primijeti da je kontaktna forma promijenjena prošloga tjedna u tri datoteke. Kada korisnik zatraži da forma više ne bude ružičasta nego narančasta, zna točno gdje treba intervenirati, izmijeni datoteke, napravi commit i time stvori novi stabilni *checkpoint*.
+
+Zaključak je jasan: **Git repozitorij, koji nije ništa drugo nego mapa na disku, služi kao trajna memorija.** Sadržaj mogu biti Markdown, Excel i HTML datoteke ili Python skripte, pa čak i binarne datoteke. Claude, primjerice, može utvrditi da je datoteka *proba123.mp3* služila kao testni skup podataka i da je dodana prije 23 dana. Tako sam rekonstruira kontekst. Kod Claude Desktopa, za usporedbu, svaki je chat nov. Anthropic čuva bazu razgovora, ali model ih mora pretraživati.
+
+### Demonstracija na projektu Energy
+
+Stepanić to pokazuje na projektu Domovina Energy. Naredba `git log` prikazuje commit od istog popodneva u kojem je provjeren sandbox u pregledniku, a `git diff HEAD~1` točno pokazuje što se promijenilo u zadnjem commitu, primjerice dio predloška i nekoliko redaka koda. Claude Code, objašnjava, učitava samo te promjene, po potrebi otvara cijele datoteke, sam bira što šalje modelu na obradu, a zatim rezultat vraća u projekt i pokreće aplikaciju na računalu, gdje ju je moguće provjeriti u pregledniku.
+
+Za svaku sekciju (indeksi 0–2) vrati JSON točno ovog oblika:
+{
+  "results": [
+    {
+      "index": 0,
+      "score": <cijeli broj 0-100>,
+      "assessment": "<1-2 rečenice teološke procjene na hrvatskom>",
+      "concerns": ["<eventualni teološki problemi; prazna lista ako nema>"],
+      "enrichment": "<2-3 rečenice teološkog konteksta koji obogaćuje razumijevanje>"
+    }
+  ]
+}
+
+Skala usklađenosti:
+90-100 = aktivno promiče i produbljuje katolički nauk
+70-89  = uglavnom usklađeno, bez bitnih problema
+50-69  = djelomično usklađeno, postoje nejasnoće
+30-49  = značajno odstupanje od crkvenog nauka
+0-29   = proturječi katoličkom nauku ili Svetom pismu
