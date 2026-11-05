@@ -1,0 +1,3931 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_01] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_01] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_01] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_01] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers and grow revenue across iOS, Android and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_01] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:41,360 --> 00:00:49,600
+[SPEAKER_01] Hello, I'm your host David Bernard, and my guest today is Thomas Bati, an independent consultant focused on subscription app growth.
+
+7
+00:00:50,400 --> 00:00:57,600
+[SPEAKER_01] Over the past decade, Thomas has worked with hundreds of clients and helped manage nine digits in ad spend with a positive return.
+
+8
+00:00:58,640 --> 00:01:11,200
+[SPEAKER_01] On the podcast, I talk with Thomas about using signal engineering to optimize ad spend, how AI is changing creative testing, and why most people should avoid app to web for now.
+
+9
+00:01:11,680 --> 00:01:14,960
+[SPEAKER_01] Hey, Thomas, than thank you so much for joining me on the podcast again.
+
+10
+00:01:15,600 --> 00:01:17,600
+[SPEAKER_00] Hi David, always happy to come back.
+
+11
+00:01:17,840 --> 00:01:19,680
+[SPEAKER_00] It's one of those times of the year.
+
+12
+00:01:19,840 --> 00:01:24,080
+[SPEAKER_00] I look forward to chatting with you and browsing some new topics around apps.
+
+13
+00:01:24,160 --> 00:01:25,360
+[SPEAKER_00] So yeah, happy to be here.
+
+14
+00:01:25,920 --> 00:01:28,480
+[SPEAKER_01] Yeah, I think we're going to make this an annual thing.
+
+15
+00:01:28,800 --> 00:01:33,680
+[SPEAKER_01] We just the last three years in a row, I think we've done it in the late summer, early fall.
+
+16
+00:01:34,160 --> 00:01:36,960
+[SPEAKER_01] So we'll just make this a every summer kind of thing.
+
+17
+00:01:37,280 --> 00:01:38,320
+[SPEAKER_01] Okay, that's a date.
+
+18
+00:01:39,120 --> 00:01:43,360
+[SPEAKER_01] So the main thing I wanted to talk to you about today was signal engineering.
+
+19
+00:01:43,440 --> 00:01:44,480
+[SPEAKER_01] We've done a webinar on it.
+
+20
+00:01:44,720 --> 00:01:45,680
+[SPEAKER_01] You've talked about it quite a bit.
+
+21
+00:01:45,920 --> 00:01:47,040
+[SPEAKER_01] People have been blogging about it.
+
+22
+00:01:47,360 --> 00:01:53,200
+[SPEAKER_01] But before we get there, there there are a few kinds of hot topics that I thought people would really enjoy hearing from you about.
+
+23
+00:01:53,840 --> 00:01:59,840
+[SPEAKER_01] And so let's do those first and then we'll dig into signal engineering and maybe this is going to be a two or three hour podcast.
+
+24
+00:02:00,080 --> 00:02:01,120
+[SPEAKER_01] Let's see how it goes.
+
+25
+00:02:03,120 --> 00:02:09,760
+[SPEAKER_01] So one of the things I wanted to talk to you about is AI and AI creative generation.
+
+26
+00:02:10,720 --> 00:02:24,640
+[SPEAKER_01] And there's been a lot of noise lately about, oh, Facebook's just going or Meta is just going to take all your assets and figure everything out and just, you know, 100% automate all your.
+
+27
+00:02:24,640 --> 00:02:27,200
+[SPEAKER_01] It's going to automatize all your ads at some point in the next, like, 18 months.
+
+28
+00:02:27,840 --> 00:02:29,680
+[SPEAKER_01] It's going to generate human looking people.
+
+29
+00:02:30,320 --> 00:02:32,800
+[SPEAKER_01] It's going to write your taglines for you.
+
+30
+00:02:33,120 --> 00:02:34,400
+[SPEAKER_01] It's going to just do everything.
+
+31
+00:02:34,960 --> 00:02:36,960
+[SPEAKER_01] It's going to customize it to every individual.
+
+32
+00:02:37,600 --> 00:02:40,640
+[SPEAKER_01] And it's just going to be this, like, utopia of ads.
+
+33
+00:02:41,440 --> 00:02:44,160
+[SPEAKER_01] And that's the take I've been hearing from a lot of folks.
+
+34
+00:02:44,720 --> 00:02:49,600
+[SPEAKER_01] But I saw a tweet from you recently with a bit of a contrarian spin on that.
+
+35
+00:02:50,160 --> 00:03:03,680
+[SPEAKER_01] And so I'd love to hear how you think about using AI in creative generation in just in the entire ad creation process and kind of what to watch out for and where you think things are heading.
+
+36
+00:03:04,480 --> 00:03:09,120
+[SPEAKER_00] There's a lot of focus on using AI specifically for this, like for producing creatives.
+
+37
+00:03:09,840 --> 00:03:17,600
+[SPEAKER_00] And I think that's actually a mistake in the sense that it's hiding the fact that we can use AI for a number of other things that are not creative production.
+
+38
+00:03:18,000 --> 00:03:28,960
+[SPEAKER_00] Of course, it's a natural because of the cost of production, but also like of ideation as well, and how we can make multiple violence much easier than before.
+
+39
+00:03:29,440 --> 00:03:34,000
+[SPEAKER_00] So it's a little bit of it's so obvious that 95% of the discussion is there.
+
+40
+00:03:34,560 --> 00:03:36,720
+[SPEAKER_00] But my first answer would be maybe we haven't.
+
+41
+00:03:38,080 --> 00:03:39,360
+[SPEAKER_00] done that much elsewhere.
+
+42
+00:03:39,680 --> 00:03:43,840
+[SPEAKER_00] And I think especially in creative analysis is where there's a bit of a gap.
+
+43
+00:03:44,240 --> 00:03:49,120
+[SPEAKER_00] I'm seeing a couple of tools coming up and some people, but it's still a rare conversation.
+
+44
+00:03:49,280 --> 00:03:53,920
+[SPEAKER_00] Like a lot of the focus is on creative production and that's kind of expected in a way.
+
+45
+00:03:54,080 --> 00:03:59,920
+[SPEAKER_00] I think if we look back since GPT came out, like early on, obviously it was like mostly text.
+
+46
+00:04:00,240 --> 00:04:02,080
+[SPEAKER_00] And then we got like mid journey and deli.
+
+47
+00:04:02,560 --> 00:04:10,320
+[SPEAKER_00] But like static pictures, at least for apps, is a relatively small amount of the ads that are actually thrown out there.
+
+48
+00:04:10,800 --> 00:04:21,680
+[SPEAKER_00] And text is important, especially on Google and elsewhere, but like for paid social, for meta, for TikTok and for gaming and networks, like text is a very small to insignificant part.
+
+49
+00:04:22,240 --> 00:04:29,200
+[SPEAKER_00] So obviously the acceleration has mostly been around the last six, twelve months, which is where video creation became really possible.
+
+50
+00:04:29,840 --> 00:04:38,400
+[SPEAKER_00] I mean, until a year ago, we're in summer 2025, until last summer, the quality of AI production for video was not good enough for ad creation.
+
+51
+00:04:38,720 --> 00:04:53,040
+[SPEAKER_00] And then as everything AI, it sort of accelerated so massively that I don't think I know a single team who's not using any AI tool for ad production, which doesn't mean that 100% of ads are AI generated yet.
+
+52
+00:04:53,440 --> 00:04:57,760
+[SPEAKER_00] And I don't think we'll ever reach 100% unless one platform decides that there's no other choice.
+
+53
+00:04:57,920 --> 00:04:59,120
+[SPEAKER_00] But I don't think it's going to be it.
+
+54
+00:04:59,520 --> 00:05:14,160
+[SPEAKER_00] I think it's going to be a bit of a mix and probably it's going to be the majority, but it doesn't mean it's going to be the entirety, especially around creation, like, I mean, you can use it not just to generate the picture itself, but also to generate like the briefings.
+
+55
+00:05:14,800 --> 00:05:17,840
+[SPEAKER_00] And I mean, multiple variants is another use.
+
+56
+00:05:18,080 --> 00:05:28,160
+[SPEAKER_00] So within creative production, there's like not like so it could be to create value, could be to find new ideas.
+
+57
+00:05:28,400 --> 00:05:34,960
+[SPEAKER_00] And then sometimes you'd use several tools in a row, like one to generate ideas and one to classify them and try them.
+
+58
+00:05:35,280 --> 00:05:36,960
+[SPEAKER_00] And then later one to produce them.
+
+59
+00:05:37,920 --> 00:05:39,120
+[SPEAKER_00] There's one that's very exciting.
+
+60
+00:05:40,320 --> 00:05:42,960
+[SPEAKER_00] I saw the message last week and I thought, oh crazy.
+
+61
+00:05:43,120 --> 00:05:46,160
+[SPEAKER_00] I I remember writing something about it six years ago.
+
+62
+00:05:46,400 --> 00:05:47,520
+[SPEAKER_00] So pre GPT.
+
+63
+00:05:47,840 --> 00:05:56,240
+[SPEAKER_00] So it was kind of funny, which was like, oh, it's the first time ever there's a tool that enables you to actually test a creative without spending a single dollar.
+
+64
+00:05:56,720 --> 00:06:12,480
+[SPEAKER_00] And there's basically this pool of artificial humans that are used, they're not humans, they're just AI generated to classify if an ad has a chance to become a winner without having to spend any money, which is the dream.
+
+65
+00:06:12,720 --> 00:06:16,640
+[SPEAKER_00] Because I mean, on one side, we need to produce a lot of stuff to find out what works.
+
+66
+00:06:16,960 --> 00:06:24,320
+[SPEAKER_00] And the stars out there are like roughly, you have to produce fifty creative to have one that is actually a winner.
+
+67
+00:06:24,560 --> 00:06:27,760
+[SPEAKER_00] And this winner is going to take niney plus percent of the ad spend.
+
+68
+00:06:28,080 --> 00:06:32,320
+[SPEAKER_00] That's kind of a normal winner takes all mechanics that happens in ads.
+
+69
+00:06:32,560 --> 00:06:36,000
+[SPEAKER_00] So obviously create because when you need fifty to find one.
+
+70
+00:06:36,560 --> 00:06:43,680
+[SPEAKER_00] And sometimes more teams accelerating of creating 100 a week, thousands every month to find a couple of winners.
+
+71
+00:06:44,240 --> 00:06:46,000
+[SPEAKER_00] And so that's the WSUs.
+
+72
+00:06:46,320 --> 00:06:56,000
+[SPEAKER_00] But having something that tells you without having to do creative testing, which one has the most chance to win, is something that is still very nascent, very pioneer.
+
+73
+00:06:56,240 --> 00:07:01,680
+[SPEAKER_00] And I don't think it's going to fully replace proper creative testing where you put a little bit of money behind it.
+
+74
+00:07:02,080 --> 00:07:06,400
+[SPEAKER_00] But it's definitely one way I'm looking forward to acceleration in the next year.
+
+75
+00:07:06,720 --> 00:07:09,680
+[SPEAKER_00] Like, we're not there yet, but it's something I can see it's coming.
+
+76
+00:07:10,000 --> 00:07:23,600
+[SPEAKER_00] In analysis as well, I think it's going to accelerate, especially around patterns like which hooks have always worked and which not, then you can come up and it's it's sort of all entangled into accelerating because of these different layers.
+
+77
+00:07:23,920 --> 00:07:27,360
+[SPEAKER_00] One accelerates the next one and amplifies, let's say, the next one.
+
+78
+00:07:27,760 --> 00:07:28,480
+[SPEAKER_00] It's all very exciting.
+
+79
+00:07:28,800 --> 00:07:42,800
+[SPEAKER_00] As of Meta making, and Mark Zuckerberg in particular making a declaration that his goal is that there's no more assets at all, that it's all generated, I think was voluntarily provocative about the direction it's taking.
+
+80
+00:07:43,280 --> 00:07:49,600
+[SPEAKER_00] I don't think we're going to get there in the next one, two, three years, and certainly not eighteen months, but it's certainly the directionction it's taking.
+
+81
+00:07:49,760 --> 00:07:53,920
+[SPEAKER_00] I mean, Google has done a lot of it early with UIC and is still doing a lot of it.
+
+82
+00:07:54,400 --> 00:07:57,840
+[SPEAKER_00] Meta has done some of it and is clearly now accelerating.
+
+83
+00:07:58,320 --> 00:08:15,760
+[SPEAKER_00] And I can see why this declaration, I mean, Zuckerberg said it in a way to prepare people that it's coming, not necessarily that this is the ultimate form that he talks about is what will be there in eighteen months, but it's pretty logical, like in terms of personalizing parts of the creative.
+
+84
+00:08:16,000 --> 00:08:22,560
+[SPEAKER_00] Like you could find, for example, a script of a creative, like something that fairly resonates with a lot of your audience.
+
+85
+00:08:22,960 --> 00:08:34,960
+[SPEAKER_00] But then if you magnify it that the text can be customized, that the character in the ad can be customized and someone would add something, someone looking more like them or a little bit older, and then you can cater to even more audience.
+
+86
+00:08:35,520 --> 00:08:36,480
+[SPEAKER_00] That makes a lot of sense.
+
+87
+00:08:37,040 --> 00:08:44,800
+[SPEAKER_00] I'm seeing this happening today in a half manual way, which is like, oh, I've got something that wins, let's produce fifty of them.
+
+88
+00:08:45,120 --> 00:08:51,280
+[SPEAKER_00] And one with an older guy and one with a black woman and one with a twenty year old and one with whatever.
+
+89
+00:08:51,520 --> 00:08:52,640
+[SPEAKER_00] And you just try them, right?
+
+90
+00:08:53,040 --> 00:09:01,920
+[SPEAKER_00] But I can see how right now it's more like a marketer's idea of, oh, I've got something that wins, let's make variants out of it into the platform automating more of this.
+
+91
+00:09:02,160 --> 00:09:05,920
+[SPEAKER_00] And so in a ground scheme of things, it does make sense that we take that direction.
+
+92
+00:09:06,240 --> 00:09:10,640
+[SPEAKER_00] I don't think it's going to be ultimately the only way the creatives are produced either.
+
+93
+00:09:11,360 --> 00:09:13,760
+[SPEAKER_01] Where do you see folks failing with this right now?
+
+94
+00:09:14,080 --> 00:09:16,320
+[SPEAKER_01] Or what do you think the things to watch out for?
+
+95
+00:09:16,480 --> 00:09:23,840
+[SPEAKER_01] I mean, you kind of alluded to it that these tools that kind of pick the winners in advance maybe shouldn't be relied on one hundred percent.
+
+96
+00:09:24,000 --> 00:09:34,800
+[SPEAKER_01] But what other things are you seeing that you think teams are doing or customers, the clients that you work with have suggested that you're like, I don't think we're quite like, that's not the right direction yet.
+
+97
+00:09:35,200 --> 00:09:36,400
+[SPEAKER_00] It's hard to pinpoint one.
+
+98
+00:09:38,080 --> 00:09:48,000
+[SPEAKER_00] One thing that is always a tricky balance, a tricky trade off is when you find winners, obviously they're so much better than the rest that you want to double down on this.
+
+99
+00:09:48,160 --> 00:09:49,600
+[SPEAKER_00] So you create a lot of value of it.
+
+100
+00:09:49,840 --> 00:09:54,960
+[SPEAKER_00] And ultimately sometimes I look at some accounts and I'm like, okay, but all you've got there is one concept.
+
+101
+00:09:55,360 --> 00:09:58,400
+[SPEAKER_00] Like, you've got a few ads, but it's more of the same.
+
+102
+00:09:58,960 --> 00:10:04,000
+[SPEAKER_00] And sooner or later, this is going to go down and you have to prepare a lot more.
+
+103
+00:10:04,400 --> 00:10:12,560
+[SPEAKER_00] So it's kind of like, instead of exploring so many more concepts and the majority will fail, like the trick between.
+
+104
+00:10:13,040 --> 00:10:24,640
+[SPEAKER_00] how much I double down on winners, but how much I prepare what's next, doing something that has more likelihood to fail in the short term, but more likelihood to be required in the long term, is very hard to balance.
+
+105
+00:10:25,120 --> 00:10:33,440
+[SPEAKER_00] And obviously, everyone's short term looking, especially in the UA, you know, we look at the results from yesterday and last quarter already no longer exists.
+
+106
+00:10:34,080 --> 00:10:50,000
+[SPEAKER_00] So yeah, long term preparation of what's next and audience expansion, especially when you spend at scale, like if the account is relatively small, I mean, you can tap on the same concept over and over and with a few variants you can push it around months, but everything is acceleratedating even in ads.
+
+107
+00:10:50,240 --> 00:11:03,360
+[SPEAKER_00] And I think this is especially visible in TikTok where the trends go so much faster, like around music, around the specific hooks, around the first seconds, around even concept of ads like that, really accelerating.
+
+108
+00:11:03,680 --> 00:11:08,000
+[SPEAKER_00] And so you can't just double down on stuff like just got to create.
+
+109
+00:11:08,560 --> 00:11:12,640
+[SPEAKER_00] I think like AI obviously enables us to go faster in like, oh, this works.
+
+110
+00:11:12,800 --> 00:11:14,560
+[SPEAKER_00] I'm going to produce a hundred version of it.
+
+111
+00:11:14,960 --> 00:11:19,280
+[SPEAKER_00] And even if in two weeks this concept is dead, I'm going to have used it in the meantime.
+
+112
+00:11:19,520 --> 00:11:24,560
+[SPEAKER_00] So even more useful for cases like on TikTok where fatigue is much faster than.
+
+113
+00:11:24,720 --> 00:11:32,720
+[SPEAKER_00] than, for example, on YouTube where you probably still want to craft a lot more, less ads, but go deeper.
+
+114
+00:11:33,200 --> 00:11:36,480
+[SPEAKER_00] The other one, because the question was, well, where do you see team failing?
+
+115
+00:11:36,640 --> 00:11:45,360
+[SPEAKER_00] And here, there's something that I don't want to accept, but I still have to, which is we don't understand why winning ads win.
+
+116
+00:11:45,920 --> 00:11:53,280
+[SPEAKER_00] And so we have this tendency, Eric Seufert is the extremist about it, about don't even try to understand why it works.
+
+117
+00:11:53,600 --> 00:11:54,560
+[SPEAKER_00] It's just a waste of time.
+
+118
+00:11:54,800 --> 00:12:00,560
+[SPEAKER_00] I'm not that far, but in a way, yeah, I've seen teams fail a lot on, I don't know, you'd use an AI tool.
+
+119
+00:12:00,800 --> 00:12:04,080
+[SPEAKER_00] will say, oh, look, those are my 200 last creatives.
+
+120
+00:12:04,560 --> 00:12:05,440
+[SPEAKER_00] Those three are the best.
+
+121
+00:12:05,920 --> 00:12:06,720
+[SPEAKER_00] Everything else fails.
+
+122
+00:12:07,040 --> 00:12:07,440
+[SPEAKER_00] Tell me why.
+
+123
+00:12:07,920 --> 00:12:24,560
+[SPEAKER_00] And here it's sort of like you will get a result and you will get some patterns, but I don't think those patterns push you to the next one where you can actually replicate it so easily, like the very specific details of psychology, how people react, the kind of audience that is there, it's really hard to explain.
+
+124
+00:12:24,800 --> 00:12:31,440
+[SPEAKER_00] So I'm still doing it and I still understand why people would do it because then for iteration it brings you to the next one.
+
+125
+00:12:31,600 --> 00:12:36,560
+[SPEAKER_00] You want to learn from what you've done to keep progressing and it's and it's natural and sometimes maybe.
+
+126
+00:12:36,640 --> 00:12:43,760
+[SPEAKER_00] Maybe it helps, but honestly, it's a little bit of overstated in the sense it's very hard to understand why winning ads win.
+
+127
+00:12:44,080 --> 00:12:48,560
+[SPEAKER_00] And our human criteria is not very good, but actually the LLMs, they're not very good either.
+
+128
+00:12:48,640 --> 00:12:55,440
+[SPEAKER_00] Like they could spot a couple of patterns and all, but it's not going to make the next winning ad that much easier either.
+
+129
+00:12:56,080 --> 00:13:03,120
+[SPEAKER_00] It's sad, but in a way it's more like, okay, let's mass produce and see what sticks, rather than let's try to really explain why it works.
+
+130
+00:13:03,360 --> 00:13:08,880
+[SPEAKER_00] And even ads from competitors, you'd be like trying to understand why they work.
+
+131
+00:13:09,280 --> 00:13:16,160
+[SPEAKER_00] And whether you're doing it with a team and brainstorming or you're doing it through AI or probably the best of it is doing both.
+
+132
+00:13:16,800 --> 00:13:18,960
+[SPEAKER_00] Still, the outcome is slim and pretty bad.
+
+133
+00:13:19,680 --> 00:13:24,880
+[SPEAKER_01] Well, the next question I want to ask is what tools are you currently seeing success with?
+
+134
+00:13:25,040 --> 00:13:27,200
+[SPEAKER_01] But that will turn this into like a five hour podcast.
+
+135
+00:13:27,600 --> 00:13:42,000
+[SPEAKER_01] And so I was thinking as you were responding to that last question that we should just do a webinar like you, maybe Nathan Hudson, maybe Marcus Burke, get a few people who are really into this and do a whole webinar specifically on like what tools are working.
+
+136
+00:13:42,160 --> 00:13:49,600
+[SPEAKER_01] I think that's going to be changing so quickly that maybe doing it on podcasts is not as good as just doing it on a webinar and some blog posts that we can uplodate over time.
+
+137
+00:13:50,400 --> 00:13:57,200
+[SPEAKER_01] But the next big topic I wanted to bring up was app to web, the Epic lawsuit, the injunction.
+
+138
+00:13:57,360 --> 00:14:00,800
+[SPEAKER_01] If you're listening to this podcast surely you know, so we're not going to go over it all.
+
+139
+00:14:01,360 --> 00:14:08,080
+[SPEAKER_01] But what are you seeing apps do currently and are you seeing things work in sending people from the app to the web?
+
+140
+00:14:08,400 --> 00:14:21,840
+[SPEAKER_01] And then as a precursor, you've probably been on vacation, so you probably haven't had a chance to listen, but the podcast episode just prior to this one, I talked to Zumba, and they are seeing success sending people to the web, and they've been doing a lot of experimentation.
+
+141
+00:14:22,160 --> 00:14:29,680
+[SPEAKER_01] And then as I'm also hearing from a ton of folks that they're scared to do it because they don't want Apple to stop featuring them.
+
+142
+00:14:29,920 --> 00:14:32,160
+[SPEAKER_01] They don't want to get in a bad position with Apple.
+
+143
+00:14:33,280 --> 00:14:45,360
+[SPEAKER_01] And so there seems to be like a lot of variance going on right now with whether you should even try sending people out of the app to the web, who you should send out of the app to the web, what experiments you should do.
+
+144
+00:14:45,600 --> 00:14:53,840
+[SPEAKER_01] So give us a quick take on august 2025, where are things at with app to web and where do you see things going?
+
+145
+00:14:54,960 --> 00:14:55,120
+[SPEAKER_00] Sure.
+
+146
+00:14:55,760 --> 00:15:06,800
+[SPEAKER_00] If I were to like super simplify, like if you got like a big brand or if you've got something that people already want from the get-go, it's much more likely that App to Web is going to work.
+
+147
+00:15:06,960 --> 00:15:09,440
+[SPEAKER_00] So if you're Spotify, it's obvious.
+
+148
+00:15:10,240 --> 00:15:15,920
+[SPEAKER_00] Even Zoomba, I think the app is pretty recent, but it's the official app of Zoomba.
+
+149
+00:15:16,480 --> 00:15:20,640
+[SPEAKER_00] And like, people already know what it is, like, there's a trust factor in there.
+
+150
+00:15:21,040 --> 00:15:32,720
+[SPEAKER_00] If you're an indie developer and you're launching a brandless app last month, it's very likely that App to Web is a fool they're run in the sense that one, you can't do it all because you've got a small team or it's just you.
+
+151
+00:15:33,280 --> 00:15:39,200
+[SPEAKER_00] Two, it's less likely to work because you don't have, like, this recognition, this brand, and people are less likely to like go.
+
+152
+00:15:39,840 --> 00:15:42,320
+[SPEAKER_00] And three, the analysis is actually quite tricky.
+
+153
+00:15:42,560 --> 00:15:44,960
+[SPEAKER_00] So you need minimum resources to execute this.
+
+154
+00:15:45,200 --> 00:15:58,960
+[SPEAKER_00] Minimum resources, not just in designing a great flow, which is like a requirement because a poor flow will make it not work where it could have, but actually analyzing properly and comparing the two is not as easy as it looks.
+
+155
+00:15:59,120 --> 00:16:03,600
+[SPEAKER_00] Like refund works different, renewal works different, free trial works very different.
+
+156
+00:16:04,000 --> 00:16:07,200
+[SPEAKER_00] You need to deal with throw, like the amount of small detail.
+
+157
+00:16:07,520 --> 00:16:16,000
+[SPEAKER_00] And one thing that is really interesting from the folks for whom it does work to send people outside of the app is that typically they don't sell the same plans.
+
+158
+00:16:16,160 --> 00:16:29,120
+[SPEAKER_00] Like what works on an app to web flow is much closer to what you see in a web to app flow, like where the first touch point is on the web and then you charge and then only they go to the app that what you see through IAPs.
+
+159
+00:16:29,680 --> 00:16:47,680
+[SPEAKER_00] And so if you port the exact same flow and your analysis level is not deep enough to understand all the small details that are going to change, you could actually be misfiring and believe you're doing something great when it's not or vice versa or actually missing out on it's not as easy as it looks.
+
+160
+00:16:47,840 --> 00:16:48,720
+[SPEAKER_00] So my big advice is.
+
+161
+00:16:49,200 --> 00:16:54,000
+[SPEAKER_00] that if you're big and you have the resource and you've got the brand, sure go try it like right now.
+
+162
+00:16:54,320 --> 00:16:57,280
+[SPEAKER_00] If you're very small and it's just you, don't even try.
+
+163
+00:16:57,440 --> 00:16:58,240
+[SPEAKER_00] It's not worth it.
+
+164
+00:16:58,400 --> 00:17:03,440
+[SPEAKER_00] You're only paying fifty percent and the complexity, you're probably better off investing your effort elsewhere.
+
+165
+00:17:03,840 --> 00:17:10,880
+[SPEAKER_00] But obviously, the majority of people will land somewhere between and it's at which time do we make the choice to actually experiment with this?
+
+166
+00:17:11,600 --> 00:17:17,920
+[SPEAKER_00] And curiously, the teams I worked the closest with, they decided not to even test.
+
+167
+00:17:18,240 --> 00:17:19,280
+[SPEAKER_00] Like, I was like, why?
+
+168
+00:17:19,920 --> 00:17:26,000
+[SPEAKER_00] I was like, because prioritization is saying no to great ideas, no saying no to stupid ideas and we can't do it all.
+
+169
+00:17:26,240 --> 00:17:31,840
+[SPEAKER_00] And we've got this road map for the next three, six months where we've got like very big projects going on.
+
+170
+00:17:32,160 --> 00:17:37,760
+[SPEAKER_00] We're going to wait for the dust to settle because then there was the other appeal and then we didn't know how Apple would react.
+
+171
+00:17:37,920 --> 00:17:51,120
+[SPEAKER_00] Like, I mean, now I think the dust starts to sell and we see more or less other examples and Apple might change things later, but for now they haven't taken like massive retaliation stuff.
+
+172
+00:17:51,360 --> 00:17:53,200
+[SPEAKER_00] Sometimes there's a first mover advantage.
+
+173
+00:17:53,360 --> 00:17:58,960
+[SPEAKER_00] Like, and for example, those who were advertising on TikTok early, obviously, they like it was a huge advantage.
+
+174
+00:17:59,280 --> 00:18:00,960
+[SPEAKER_00] I'd rather have people from Tinder.
+
+175
+00:18:00,960 --> 00:18:09,040
+[SPEAKER_00] People from teams that experiment a lot do it and then listen to what they do and shortcut to what they think is working rather because there's a lot to test there.
+
+176
+00:18:09,200 --> 00:18:16,320
+[SPEAKER_00] Like, I mean, the different flows, the pricing, how do you charge, how do you prioritize the Apple payment versus not and so on.
+
+177
+00:18:16,480 --> 00:18:18,320
+[SPEAKER_00] Like, it's like there's a lot of factors.
+
+178
+00:18:18,400 --> 00:18:22,960
+[SPEAKER_00] So the teams that I'm working with, they're like, yeah, we're looking at it.
+
+179
+00:18:23,280 --> 00:18:29,760
+[SPEAKER_00] We're talking to people about it, but we're going to push it into the next step of the roadmap where we think we can execute faster then.
+
+180
+00:18:30,240 --> 00:18:33,680
+[SPEAKER_00] And we also have a little bit more guarantee about what Apple wants or doesn't want.
+
+181
+00:18:34,000 --> 00:18:36,560
+[SPEAKER_00] So I had a couple of folks testing and actually.
+
+182
+00:18:36,560 --> 00:18:41,120
+[SPEAKER_00] And actually, in one case, it's not a big app and it does make a difference for them.
+
+183
+00:18:41,440 --> 00:18:44,880
+[SPEAKER_00] So maybe even against my own advice, they went for it and it does work for them.
+
+184
+00:18:45,280 --> 00:18:46,960
+[SPEAKER_00] They just crossed the small business program.
+
+185
+00:18:47,200 --> 00:18:48,560
+[SPEAKER_00] So now they're paying thirty percent.
+
+186
+00:18:48,800 --> 00:18:51,520
+[SPEAKER_00] So for them, obviously, it was a little bit of a below one million.
+
+187
+00:18:51,920 --> 00:18:59,280
+[SPEAKER_00] I mean, when you're paying already fifteen percent, I don't think like anyone should really try it unless you're very web based from the beginning.
+
+188
+00:18:59,520 --> 00:19:04,000
+[SPEAKER_00] Like you had a business on the web and you already have a lot of tools and a lot of experience that you can go.
+
+189
+00:19:04,400 --> 00:19:07,360
+[SPEAKER_00] But otherwise, yeah, I mean, it's for later phases.
+
+190
+00:19:07,600 --> 00:19:09,680
+[SPEAKER_00] All in all, it's great that there is the option.
+
+191
+00:19:09,920 --> 00:19:12,000
+[SPEAKER_00] Like, I'm very happy that we can do more.
+
+192
+00:19:12,640 --> 00:19:28,000
+[SPEAKER_00] Some people are going to go IAP only, some people are going to go web payment only, and the most sophisticated folks will be able to determine which user, which flow, which moment, which price is going to work, which obviously requires a lot more work and is not as easy as it looks.
+
+193
+00:19:28,160 --> 00:19:37,360
+[SPEAKER_00] So I think the only lie here is to tell people that, oh, it's easy, send your people over there and you save thirty percent of fee, which is like a complete lie.
+
+194
+00:19:37,840 --> 00:19:44,560
+[SPEAKER_00] But all the rest, I'm happy the option exists and I'm happy to see different for and I've seen experiments in both sites.
+
+195
+00:19:44,720 --> 00:19:48,720
+[SPEAKER_00] So it was really curious and trying to understand like, why did it work in this?
+
+196
+00:19:49,200 --> 00:19:50,240
+[SPEAKER_00] field and not in that field?
+
+197
+00:19:50,960 --> 00:19:57,200
+[SPEAKER_00] Even regardless of the brand power that you have, like the brand awareness, the vertical also plays a big role.
+
+198
+00:19:57,280 --> 00:20:06,320
+[SPEAKER_00] Like in some verticals, I where the purchase is a lot more instinctive and where, yeah, the IEP is great in this case.
+
+199
+00:20:06,480 --> 00:20:11,360
+[SPEAKER_00] So there are verticals and verticals, there's brand and brand, there's your Yeah, I think it's great to have the options.
+
+200
+00:20:11,920 --> 00:20:17,600
+[SPEAKER_00] But yeah, not probably for India is a bad idea and for Spotify is the best news ever.
+
+201
+00:20:18,160 --> 00:20:18,240
+[SPEAKER_00] Yeah.
+
+202
+00:20:20,320 --> 00:20:27,280
+[SPEAKER_01] Yeah, no, I think that's a great summary and a good kind of take for folks right now, if you have the resources, you have the team.
+
+203
+00:20:27,520 --> 00:20:33,680
+[SPEAKER_01] And I thought that point was really great that if you're going to do it, you can't really half ask it.
+
+204
+00:20:34,080 --> 00:20:47,280
+[SPEAKER_01] You really need to think about it as an initiative that like we're going to send people to the web, but then we're going to iterate on that flow, we're going to experiment, we're going to add steps, we're going to remove steps.
+
+205
+00:20:47,600 --> 00:20:50,160
+[SPEAKER_01] And that was the conversation with Zumba that we had.
+
+206
+00:20:50,400 --> 00:20:58,240
+[SPEAKER_01] So for folks listening to the podcast who hadn't listened to that episode, if you're curious to get a deep dive, they really put a lot of resources in it.
+
+207
+00:20:58,320 --> 00:21:01,840
+[SPEAKER_01] And to Thomas' point, they've been selling on the the web for decades.
+
+208
+00:21:03,280 --> 00:21:08,960
+[SPEAKER_01] They started 20 something 24 years ago selling VHS tapes on infomercials.
+
+209
+00:21:09,280 --> 00:21:10,800
+[SPEAKER_01] So they already had all the infrastructure.
+
+210
+00:21:10,960 --> 00:21:11,600
+[SPEAKER_01] They had the teams.
+
+211
+00:21:11,760 --> 00:21:12,080
+[SPEAKER_01] They had everything.
+
+212
+00:21:12,640 --> 00:21:16,960
+[SPEAKER_01] And they had the ability as a team to dedicate those resources.
+
+213
+00:21:18,000 --> 00:21:20,160
+[SPEAKER_01] And then, you know, they did a lot of testing.
+
+214
+00:21:20,320 --> 00:21:28,640
+[SPEAKER_01] And like one of the things that worked for them was actually doing package selection inside the app and only sending to the web just for the payment piece.
+
+215
+00:21:29,120 --> 00:21:32,960
+[SPEAKER_01] So the person had already kind of selected the package, kind of made a commitment.
+
+216
+00:21:33,040 --> 00:21:35,600
+[SPEAKER_01] And then the web part is only payment.
+
+217
+00:21:35,840 --> 00:21:41,600
+[SPEAKER_01] It's only check out and it's default to Apple Pay and that's where they saw like the big win start to happen.
+
+218
+00:21:41,920 --> 00:22:21,360
+[SPEAKER_01] So if you are going to try that's probably one of the first experiments to do is to do package selection in the app and then make the web just the check out and then make that as like quick seamless least confusing no options like you just pay and then get back to the app but I think that was a great summary so appreciate your thoughts there the last thing before we get to signal engineering is hybrid monetization I mean it's something we've been talking about for years but I feel like it's still for for non game apps and then for Or, you know, there are certain categories where hybrid monetization has worked and has, you know, there are some kind of best practices starting to be established.
+
+219
+00:22:22,000 --> 00:22:27,280
+[SPEAKER_01] But I feel like it's going to be one of those trends that's going to continue to accelerate.
+
+220
+00:22:27,440 --> 00:22:28,480
+[SPEAKER_01] And AI is a good example.
+
+221
+00:22:28,800 --> 00:22:31,440
+[SPEAKER_01] And to be honest, I'm so frustrated with Claude.
+
+222
+00:22:32,160 --> 00:22:40,160
+[SPEAKER_01] I use Claude a ton in my day to day work now, mostly just like a brainstorming partner and like get summaries of podcasts I listen to and things like that.
+
+223
+00:22:40,880 --> 00:22:48,720
+[SPEAKER_01] And lately I've been hitting their usage limits and there's no that I don't get just a freaking button, like, give me, give me twenty more.
+
+224
+00:22:50,080 --> 00:22:51,840
+[SPEAKER_01] usages for five bucks or whatever.
+
+225
+00:22:52,000 --> 00:23:08,640
+[SPEAKER_01] Like, it's that kind of thing in especially for AI apps or where you are resource constrained, having some kind of way to get past those limitations, I think it's just an obvious thing for a lot of these companies to start doing, but I think there's so many other applications.
+
+226
+00:23:08,880 --> 00:23:15,280
+[SPEAKER_01] So what are you seeing work and where do you see things continuing to go with figuring out hybrid monetization in apps?
+
+227
+00:23:16,320 --> 00:23:16,800
+[SPEAKER_00] Yeah, I agree.
+
+228
+00:23:16,960 --> 00:23:18,320
+[SPEAKER_00] It's been it's been pretty slow.
+
+229
+00:23:19,040 --> 00:23:27,680
+[SPEAKER_00] I've been advocating for not doing only subscription for quite a while and most the apps are working with, they're like, it's only subscription and that's it.
+
+230
+00:23:28,560 --> 00:23:39,760
+[SPEAKER_00] And I could see, and I could see a few successes here and there for very different cases, some with ads for the people who don't subscribe, but when you retain a lot of subscription apps, they just don't retain the frequent at all.
+
+231
+00:23:40,160 --> 00:23:42,800
+[SPEAKER_00] Their fake premium is you pay or you're going to churn anyway.
+
+232
+00:23:43,280 --> 00:23:45,280
+[SPEAKER_00] So obviously they're for specific cases.
+
+233
+00:23:45,920 --> 00:23:48,240
+[SPEAKER_00] IAP mostly for app sales and so on.
+
+234
+00:23:48,480 --> 00:23:55,200
+[SPEAKER_00] And then a lot of ecoms and affiliate sales and so on, which makes sense for very specific cases as well, but not for everyone.
+
+235
+00:23:55,520 --> 00:23:57,600
+[SPEAKER_00] So I think like you have to pick up the model.
+
+236
+00:23:58,000 --> 00:24:00,560
+[SPEAKER_00] But overall, I'm looking back at the last two years.
+
+237
+00:24:01,040 --> 00:24:03,040
+[SPEAKER_00] and I'm a little bit surprised that it's been so slow.
+
+238
+00:24:03,200 --> 00:24:06,240
+[SPEAKER_00] And I think one of the reasons has been the complexity around it.
+
+239
+00:24:06,560 --> 00:24:11,280
+[SPEAKER_00] Like it's the same as the app to web stuff, it's, it can't really be done easily.
+
+240
+00:24:11,520 --> 00:24:20,480
+[SPEAKER_00] Like there's no obvious way of, oh, I'm going to put ads in the app and it's going to increase my conversion or I'm going to put IEPs on top of the subscription and no, it's really tricky.
+
+241
+00:24:20,560 --> 00:24:22,400
+[SPEAKER_00] And I think that's the reason it's been so slow.
+
+242
+00:24:22,960 --> 00:24:32,720
+[SPEAKER_00] And actually, all the apps that are have some kind of AI usage are finally accelerating this trend because they've got no other choice.
+
+243
+00:24:32,960 --> 00:24:36,960
+[SPEAKER_00] And it's true that the big models like Cloud and ChatGPT and so on.
+
+244
+00:24:36,960 --> 00:24:37,360
+[SPEAKER_00] and ChatGPT and so on.
+
+245
+00:24:38,080 --> 00:24:40,560
+[SPEAKER_00] They mostly decided to go for tiered subscription.
+
+246
+00:24:40,640 --> 00:24:43,520
+[SPEAKER_00] So I don't know, ChatGPT, you pay $20 a month.
+
+247
+00:24:43,680 --> 00:24:47,760
+[SPEAKER_00] And if you didn't have any, well, you start paying $200 a month or whatever.
+
+248
+00:24:47,920 --> 00:24:55,760
+[SPEAKER_00] But for a lot of apps that are like usage based, this is a model, but actually the IAP makes a lot of sense where you can buy credits on top.
+
+249
+00:24:56,000 --> 00:25:12,800
+[SPEAKER_00] I'm working on a project right now where they have both tiered subscription and credits on top so that no user faces the frustration that you just had that maybe you didn't want to fully upgrade to the Super Pro package, but then for one use case you're working on something today and you would just have added five or ten bucks.
+
+250
+00:25:13,200 --> 00:25:14,720
+[SPEAKER_00] of credits and finish it.
+
+251
+00:25:15,280 --> 00:25:21,120
+[SPEAKER_00] And they've got a very smart team of several people that have been thinking through it for months.
+
+252
+00:25:21,760 --> 00:25:33,840
+[SPEAKER_00] And it's really hard to design well, like to avoid cannibalism, to not frustrate users, to make something that is fair in terms of pricing for users, but also for the developer.
+
+253
+00:25:34,080 --> 00:25:35,040
+[SPEAKER_00] Like it's very tricky.
+
+254
+00:25:35,200 --> 00:25:42,240
+[SPEAKER_00] So I think it's mostly down to this complexity that it's been fairly small, that it's a natural case for AI just because there's cost.
+
+255
+00:25:42,640 --> 00:25:45,840
+[SPEAKER_00] So obviously you need to find a way that you don't lose money.
+
+256
+00:25:46,480 --> 00:25:52,960
+[SPEAKER_00] But the rest has been slow because of complexity., but also because it's kind of the last person of grind that you get.
+
+257
+00:25:53,280 --> 00:25:58,000
+[SPEAKER_00] Like there's so many lower hanging fruits around your subscription.
+
+258
+00:25:58,400 --> 00:26:05,440
+[SPEAKER_00] And I'm glad today there is a normal conversation to talk about pricing and paywall design and how you package and the free trial and this and that.
+
+259
+00:26:05,760 --> 00:26:09,520
+[SPEAKER_00] And three, four years ago, this was like still a little bit niche.
+
+260
+00:26:09,680 --> 00:26:15,520
+[SPEAKER_00] And it surprised me how people didn't realize that they could like increase their revenue massively by iterating a lot.
+
+261
+00:26:16,000 --> 00:26:20,960
+[SPEAKER_00] Because there's been such an acceleration there and the overall level has gone up so fast.
+
+262
+00:26:21,520 --> 00:26:24,800
+[SPEAKER_00] I think eventually it's still going to come that hybrid monetization is going to come.
+
+263
+00:26:26,160 --> 00:26:28,560
+[SPEAKER_00] It's just taking very long time because of complexity.
+
+264
+00:26:28,960 --> 00:26:30,800
+[SPEAKER_00] And for many people, that's okay.
+
+265
+00:26:31,360 --> 00:26:32,480
+[SPEAKER_00] Nobody should jump into it.
+
+266
+00:26:32,640 --> 00:26:39,120
+[SPEAKER_00] I think just at some point I've seen how the improvement curve of those experiments on pricing is slowing down.
+
+267
+00:26:39,680 --> 00:26:43,520
+[SPEAKER_00] That's probably an indicator of maybe it's time to try something different.
+
+268
+00:26:44,080 --> 00:26:51,280
+[SPEAKER_00] But if you're still making big wins on pricing and packaging just with subscription, keep going at it until it slows down.
+
+269
+00:26:51,840 --> 00:27:15,040
+[SPEAKER_01] And funny enough, I also use ChatGPT quite a bit, but I'm on the pro plan with ChatGPT because I use deep research so much in ChatGPTGPT, I actually pay for it out of my personal business because I use it so much more for like personal stuff and for like my side project business, even though I actually do use it a ton for like revenue cat work.
+
+270
+00:27:15,200 --> 00:27:19,680
+[SPEAKER_01] But then Claude is actually built through revenue cat as like employee expense.
+
+271
+00:27:19,840 --> 00:27:23,120
+[SPEAKER_01] And so I probably should just ask for the higher tier and that's kind of what they're counting on.
+
+272
+00:27:23,360 --> 00:27:31,840
+[SPEAKER_01] So you're to your point, if you're not already in a tiered subscription model, that's the first step before going to hybrid.
+
+273
+00:27:32,320 --> 00:27:40,080
+[SPEAKER_01] But one of the places I do think, and I've heard this from Tammy Taw at Google, you know, she spoke last year at App Growth Annual.
+
+274
+00:27:40,560 --> 00:27:43,920
+[SPEAKER_01] She did a podcast mini-sode for the State of Subscription Apps Report.
+
+275
+00:27:44,160 --> 00:27:54,240
+[SPEAKER_01] And one of the things Google has been pushing really heavily because they see the numbers and they see it succeeding so well is working on hybrid monetization outside the US.
+
+276
+00:27:54,480 --> 00:28:25,520
+[SPEAKER_01] And so maybe that's another kind of angle where if things are going really well in the US and you still have low hanging fruit there, but you have the bandwidth, then experimenting with hybrid monetization outside the US maybe what it takes to start seeing more wins outside the US of offering people nonrecurring purchases, nonrecurring subscriptions, offering these onetime purchases that make it a little easier to bite off, especially in the countries where subscriptions are not as widely accepted and used.
+
+277
+00:28:26,000 --> 00:28:31,840
+[SPEAKER_01] So that would be another kind of vector to think about whether or not you should be experimenting with hybrid monetization.
+
+278
+00:28:32,400 --> 00:28:34,240
+[SPEAKER_00] It made me think differently about it.
+
+279
+00:28:34,400 --> 00:28:46,400
+[SPEAKER_00] And once you hear it, yeah, it's pretty natural that where there's a very high, not purchase power, but like a kind of habit of paying apps, obviously the reward is probably further away.
+
+280
+00:28:47,040 --> 00:28:53,600
+[SPEAKER_00] But then on Android where it's a little bit harder to convert and outside of the US and when you combine the two of it, it's much harder.
+
+281
+00:28:53,760 --> 00:28:59,360
+[SPEAKER_00] Like obviously the conversion rates on Android international versus US iOS are extremely different.
+
+282
+00:28:59,600 --> 00:29:00,960
+[SPEAKER_00] So that makes sense to start there.
+
+283
+00:29:01,680 --> 00:29:08,560
+[SPEAKER_00] But then it joins my point that it increases complexity in the sense of Okay, so on US iOS I need to do the tier subscription.
+
+284
+00:29:08,960 --> 00:29:20,880
+[SPEAKER_00] And then for Latin America I need to add these like payment options because there it's what works because they've got less credit cards, especially in Brazil, Argentina for example where credit cards, international credit cards are a little bit limited.
+
+285
+00:29:21,280 --> 00:29:24,000
+[SPEAKER_00] And then for another region it's going to be something else that's going to work.
+
+286
+00:29:24,400 --> 00:29:31,200
+[SPEAKER_00] So obviously, if you're a big company and you can dedicate, you can zoom on an area and find out what works for them, that's great.
+
+287
+00:29:31,520 --> 00:29:34,960
+[SPEAKER_00] But I have a lot of apps I work with that operate in 200 countries.
+
+288
+00:29:35,360 --> 00:29:46,080
+[SPEAKER_00] And even though there is a uplift to be found, the amount of effort that needs to be deployed to find all these individual uplifts left and right is a huge work.
+
+289
+00:29:46,320 --> 00:29:50,320
+[SPEAKER_00] So it really depends the type of organization you're in and the focus you're all.
+
+290
+00:29:50,880 --> 00:29:57,600
+[SPEAKER_00] I know a lot of smaller folks that are like, yeah, I operate everywhere, but 95% of my effort is going to the US.
+
+291
+00:29:58,000 --> 00:30:03,520
+[SPEAKER_00] I understand why for them hybrid monetization is like something that's on the road map for 2031 or something.
+
+292
+00:30:05,440 --> 00:30:07,040
+[SPEAKER_01] Yeah, no, it makes a ton of sense.
+
+293
+00:30:07,280 --> 00:30:25,200
+[SPEAKER_01] Logically, I mean, all three topics we've had so far are around prioritization, is that, you know, they're all good ideas, but you need to make sure you've got the resources in place and the people can put in the effort to actually make it work because it's not just going to be this automatic big win.
+
+294
+00:30:25,760 --> 00:30:34,800
+[SPEAKER_01] And I mean, that may be another key too, it's like if your core product isn't working in the US, like you need to make it work first.
+
+295
+00:30:35,280 --> 00:30:44,080
+[SPEAKER_01] Like it's not this magic unlocking, unless for some reason, you know, the app has taken off in some other country or there's an use case outside of the US that makes a ton of sense.
+
+296
+00:30:44,560 --> 00:30:57,520
+[SPEAKER_01] But other than that, it's not some magic unlock that if it's not working in the US, if you're not able to charge a subscription on iOS and people are not willing to pay, that it's some magic unlock that you're going to do this outside of the US and see all this success.
+
+297
+00:30:58,000 --> 00:31:05,440
+[SPEAKER_01] So it's like you have to have that core product, the value, the activation, the onboarding flows and everything else pretty well dialed in.
+
+298
+00:31:06,240 --> 00:31:12,400
+[SPEAKER_01] And it should be working, hopefully, in the US before you even think about trying this around the world.
+
+299
+00:31:13,360 --> 00:31:16,000
+[SPEAKER_00] It's very hard to pioneer anything really.
+
+300
+00:31:16,240 --> 00:31:20,720
+[SPEAKER_00] It doesn't mean we shouldn't try, but like these models, sometimes it's natural.
+
+301
+00:31:21,040 --> 00:31:30,480
+[SPEAKER_00] Like you look at dating, for example, is a vertical where there was always a lot more hybrid monetization than elsewhere because there were ads and there were specific IAPs and so on.
+
+302
+00:31:30,800 --> 00:31:37,920
+[SPEAKER_00] And probably if you're in this vertical, you should try earlier than others because there's a lot of success that has been found and users are more used to it.
+
+303
+00:31:38,480 --> 00:31:40,800
+[SPEAKER_01] But you can follow the patterns that have already been established.
+
+304
+00:31:41,200 --> 00:31:41,520
+[SPEAKER_00] Exactly.
+
+305
+00:31:41,600 --> 00:31:42,720
+[SPEAKER_00] You can follow some patterns.
+
+306
+00:31:42,880 --> 00:31:52,800
+[SPEAKER_00] Like if nobody's doing it in your vertical, there might be a reason that if you're the first one, I mean, you could create something new and find success, but it's going to cost so much more to find out.
+
+307
+00:31:53,600 --> 00:31:55,040
+[SPEAKER_00] Yeah, sometimes it's just not natural.
+
+308
+00:31:55,520 --> 00:31:55,600
+[SPEAKER_01] Yeah.
+
+309
+00:31:56,560 --> 00:31:59,120
+[SPEAKER_01] Okay, well, let's jump into signal engineering next.
+
+310
+00:31:59,600 --> 00:32:13,840
+[SPEAKER_01] So you emailed me in the spring and you're like, hey, David, I've been toying with this concept, and I don't even remember if you named it in that first email or if you came up with the name later, but I feel like I'm hearing the term signal engineering all over the place now.
+
+311
+00:32:14,640 --> 00:32:17,600
+[SPEAKER_01] But I guess take me back to what is signal engineering?
+
+312
+00:32:17,920 --> 00:32:24,160
+[SPEAKER_01] And then, I mean, I know people have been doing versions of this for a long time, but like, what's the origin of you?
+
+313
+00:32:24,320 --> 00:32:34,080
+[SPEAKER_01] you in the spring thinking that this was kind of the next hot topic or the next place that that user acquisition team should be putting some effort into?
+
+314
+00:32:35,040 --> 00:32:46,800
+[SPEAKER_00] So what we're talking about here is the optimization of what we call the signal is the data we send back to a non-network to an advertising platform to optimize the ads from.
+
+315
+00:32:47,120 --> 00:32:50,800
+[SPEAKER_00] So when you tell Facebook, oh, I want installs, they're going to send installs.
+
+316
+00:32:51,360 --> 00:32:53,600
+[SPEAKER_00] But then it's probably not going to get you very far.
+
+317
+00:32:53,920 --> 00:32:56,880
+[SPEAKER_00] And beyond the install, it can be many things.
+
+318
+00:32:57,040 --> 00:33:02,000
+[SPEAKER_00] So some people optimize for free trials, some people optimize for day one retention or whatever.
+
+319
+00:33:02,400 --> 00:33:08,240
+[SPEAKER_00] And this has been very much always existed, but in my opinion, unlooked.
+
+320
+00:33:08,880 --> 00:33:28,000
+[SPEAKER_00] And so it's nothing new, but I kind of felt that the discussion over the last couple of years was 90% creative, and it's obvious that the creative is by far one of the biggest lovers, if not the biggest lovers in what's going to make ad spend or paid media work or not.
+
+321
+00:33:28,560 --> 00:33:30,240
+[SPEAKER_00] But then that doesn't mean it's the only one.
+
+322
+00:33:30,400 --> 00:33:36,480
+[SPEAKER_00] And I was like, so my intention here was like, I want to remind people that there are several factors at play.
+
+323
+00:33:37,040 --> 00:33:44,560
+[SPEAKER_00] And that if you're sending terrible data back to Facebook and Google, you can be great at creating, you still gonna have a problem.
+
+324
+00:33:45,120 --> 00:33:52,480
+[SPEAKER_00] And the other realization was, let's say, there's three positions of signal engineering.
+
+325
+00:33:52,800 --> 00:33:56,000
+[SPEAKER_00] One is the data you're sending back is completely messed up.
+
+326
+00:33:56,400 --> 00:34:01,520
+[SPEAKER_00] And that's actually a quite frequent case in small and in bigger organizations.
+
+327
+00:34:02,560 --> 00:34:08,000
+[SPEAKER_00] And honestly, if that's the case, you're probably better off fixing it before iterating on anything else.
+
+328
+00:34:08,160 --> 00:34:13,440
+[SPEAKER_00] Like if there's something wrong with the signals that you're sending back, it's your tar top priority.
+
+329
+00:34:13,680 --> 00:34:16,240
+[SPEAKER_00] And to at least fix it, understand what you're passing.
+
+330
+00:34:16,800 --> 00:34:23,840
+[SPEAKER_00] You don't have to get super sophisticated, but at least you need to be sure of what you're sending back and having a quality of event that is passing correctly.
+
+331
+00:34:23,920 --> 00:34:24,240
+[SPEAKER_00] And so on.
+
+332
+00:34:24,480 --> 00:34:25,760
+[SPEAKER_00] It's like, it's a must have.
+
+333
+00:34:26,000 --> 00:34:28,640
+[SPEAKER_00] Like, it's not like, ah, nice to experiment on.
+
+334
+00:34:28,800 --> 00:34:30,480
+[SPEAKER_00] No, if it's broken, you have to fix it.
+
+335
+00:34:30,800 --> 00:34:35,680
+[SPEAKER_00] And then there's the majority of cases of people who don't have broken data, but have not thought much through it.
+
+336
+00:34:36,080 --> 00:34:38,720
+[SPEAKER_00] Like, okay, let's optimize through the free trials and we'll see.
+
+337
+00:34:39,440 --> 00:34:40,640
+[SPEAKER_00] Or have something set up.
+
+338
+00:34:41,040 --> 00:34:48,640
+[SPEAKER_00] I have one particular case where they actually find it is somewhat not super sophisticated, but like a little bit more elaborate scheme.
+
+339
+00:34:49,440 --> 00:34:55,920
+[SPEAKER_00] where they were sending back different signals when people were taking different types of subscriptions.
+
+340
+00:34:56,160 --> 00:35:00,160
+[SPEAKER_00] So like they have a mixed up of user type and weekly early.
+
+341
+00:35:00,720 --> 00:35:01,920
+[SPEAKER_00] And they just have a multiplier.
+
+342
+00:35:02,080 --> 00:35:06,800
+[SPEAKER_00] So okay, if it's the weekly subscription from a normal user, send one.
+
+343
+00:35:07,280 --> 00:35:12,400
+[SPEAKER_00] And if it's a yearly subscription from a business user, send x five back to the platform.
+
+344
+00:35:13,440 --> 00:35:18,720
+[SPEAKER_00] But then they hardcoded it and they iterated for a year and a half on the pricing and so on.
+
+345
+00:35:19,120 --> 00:35:24,640
+[SPEAKER_00] And when I came in, I realized that this hardcoding that did make a lot of sense back when they did it.
+
+346
+00:35:25,840 --> 00:35:29,760
+[SPEAKER_00] was actually not representative of the value of users that were coming in.
+
+347
+00:35:30,000 --> 00:35:35,280
+[SPEAKER_00] And then it became, again, a priority to fix in the sense of getting closer to the real value.
+
+348
+00:35:36,400 --> 00:35:38,800
+[SPEAKER_00] And the last phase is when you get really sophisticated.
+
+349
+00:35:38,960 --> 00:35:48,560
+[SPEAKER_00] So I went a little bit around, like, if it's broken, you really need to fix it, find a place where you're comfortable with and dedicate your attention to creative and diversifying and other things.
+
+350
+00:35:49,200 --> 00:36:03,760
+[SPEAKER_00] But at some point as you grow, becoming a little bit more sophisticated about it and having something better than just all your free trials combined, it's probably can unlock value and a different and most people look to unlock value everywhere.
+
+351
+00:36:03,920 --> 00:36:08,400
+[SPEAKER_00] So it doesn't mean here you need to be super big and have a super big brand to do it.
+
+352
+00:36:08,560 --> 00:36:26,320
+[SPEAKER_00] I've spoken to a few people and I have one case that will be on the revenue cat blog at some point when I finish to wrap up where a fairly young app has found tremendous uplift by changing the events they were sending and they were working in parallel on creative but then it accelerated what they could do in a way.
+
+353
+00:36:26,880 --> 00:36:30,080
+[SPEAKER_00] So three states broken, normal and sophisticated.
+
+354
+00:36:30,880 --> 00:36:30,960
+[SPEAKER_01] Yeah.
+
+355
+00:36:31,360 --> 00:36:44,240
+[SPEAKER_01] Well, and that's what I wanted to step back to the broken part because I don't know., and maybe this is just my vantage point inside RevenueCat because we end up talking to so many apps where their data is just completely broken.
+
+356
+00:36:44,480 --> 00:36:49,440
+[SPEAKER_01] So my estimate is much higher just because that's who we talk to, I guess more.
+
+357
+00:36:50,080 --> 00:37:02,080
+[SPEAKER_01] Tell me a little bit more because I'm sure there's going to be people on the podcast, listening to the podcast where they're going to hear you say that and think, ah, I don't feel like I can trust my data.
+
+358
+00:37:02,880 --> 00:37:03,760
+[SPEAKER_01] So what do you mean by that?
+
+359
+00:37:04,000 --> 00:37:08,480
+[SPEAKER_01] And then like, where do you see data being broken in ways?
+
+360
+00:37:08,880 --> 00:37:22,080
+[SPEAKER_01] And you kind of already shared one, but what are the steps or what are the ste tools or what are the kind of basics that you should have in place for even monitoring to make sure that things don't break even when you think they're working?
+
+361
+00:37:22,640 --> 00:37:25,120
+[SPEAKER_01] How do you figure out whether your data is good or not?
+
+362
+00:37:26,640 --> 00:37:33,360
+[SPEAKER_00] It's always hard to prevent future breaks, but I know when someone tells me, like, hey, go, go check my ad account.
+
+363
+00:37:33,520 --> 00:37:35,200
+[SPEAKER_00] Tell me what you think or make a note deal.
+
+364
+00:37:35,360 --> 00:37:39,680
+[SPEAKER_00] I don't make so many of them, but like sometimes, maybe it's a friend, maybe it's a portfolio company, so let's still do it.
+
+365
+00:37:39,920 --> 00:37:41,840
+[SPEAKER_00] And they say, oh, here's the ad manager.
+
+366
+00:37:41,920 --> 00:37:43,920
+[SPEAKER_00] And I say, I don't care about the ad manager.
+
+367
+00:37:44,000 --> 00:37:45,040
+[SPEAKER_00] Show me the event manager.
+
+368
+00:37:45,280 --> 00:37:47,520
+[SPEAKER_00] Like Facebook calls its event manager in Google.
+
+369
+00:37:49,520 --> 00:37:50,480
+[SPEAKER_00] That's the first place I look.
+
+370
+00:37:50,720 --> 00:37:52,000
+[SPEAKER_00] I don't even look at the ad account.
+
+371
+00:37:52,240 --> 00:38:02,880
+[SPEAKER_00] And the first thing I'm going to check is does the amount of conversion, which whatever this conversion is, so let's say it's going to be install and free trial and paid subscriptions to simplify.
+
+372
+00:38:03,360 --> 00:38:12,880
+[SPEAKER_00] And I'm going to go check in the event manager, do the number that the platform reports being sent match more or less what we have internally?
+
+373
+00:38:13,440 --> 00:38:14,640
+[SPEAKER_00] And very often it's not the case.
+
+374
+00:38:15,280 --> 00:38:19,920
+[SPEAKER_00] I really don't care about the five percent discrepancy here and it's never going to match one hundred percent and that's okay.
+
+375
+00:38:20,000 --> 00:38:22,960
+[SPEAKER_00] And there's a number of answers why it's not one hundred percent.
+
+376
+00:38:23,280 --> 00:38:23,840
+[SPEAKER_00] It doesn't matter.
+
+377
+00:38:24,480 --> 00:38:27,600
+[SPEAKER_00] But in so many cases, I'm seeing 30% or 50%.
+
+378
+00:38:27,840 --> 00:38:31,840
+[SPEAKER_00] And this is going to be a major problem that I need to fix before seeing anything else.
+
+379
+00:38:32,000 --> 00:38:34,720
+[SPEAKER_00] So I take Facebook as an example because it's a big example.
+
+380
+00:38:34,960 --> 00:38:39,680
+[SPEAKER_00] But I'm going to go to the event manager and I'm going to say, okay, show me the last 30 days or last 7 days.
+
+381
+00:38:40,240 --> 00:38:41,360
+[SPEAKER_00] How many installs did you see?
+
+382
+00:38:41,520 --> 00:38:44,640
+[SPEAKER_00] How many free trial did you see in total without attribution?
+
+383
+00:38:45,040 --> 00:38:48,080
+[SPEAKER_00] Not the ones that Facebook thinks were coming from the campaigns.
+
+384
+00:38:48,480 --> 00:38:55,520
+[SPEAKER_00] Not the ones that Google attributes to this particular paid activity, but like what we're actually sending them because they report it there.
+
+385
+00:38:55,840 --> 00:39:03,520
+[SPEAKER_00] And I'm going to compare it with something like RodeCard or Amplitude or MixPanel or whatever they have that is internal before we send it.
+
+386
+00:39:03,760 --> 00:39:07,040
+[SPEAKER_00] If I'm seeing more than ten percent discrepancy here, it's going to be a problem.
+
+387
+00:39:07,280 --> 00:39:12,560
+[SPEAKER_00] Those tools, they're not particularly sophisticated, but they're not particularly easy to understand either.
+
+388
+00:39:12,880 --> 00:39:20,160
+[SPEAKER_00] So it's sometimes kind of tricky to match the dates, the geographies, the platform properly.
+
+389
+00:39:20,400 --> 00:39:25,520
+[SPEAKER_00] And so to debug that actually the data I'm seeing there is the one that is supposed to be there.
+
+390
+00:39:25,920 --> 00:39:32,000
+[SPEAKER_00] I remember making mistakes myself sometimes, like, I don't know, one case I was like, why am I seeing double the event on Facebook?
+
+391
+00:39:32,400 --> 00:39:42,880
+[SPEAKER_00] How is this even possible that there's tw just that there are two sources that Meta managed to deduplicate, but that doesn't show up like this in the event manager.
+
+392
+00:39:43,200 --> 00:39:49,200
+[SPEAKER_00] So the first step I do is what the platform is receiving, is it matching more or less what we think is happening?
+
+393
+00:39:49,360 --> 00:39:57,280
+[SPEAKER_00] Because if that's not the case, well, after that they're going to try attributing to a campaign and there, there's a whole lot of other things that can happen.
+
+394
+00:39:57,760 --> 00:40:05,200
+[SPEAKER_00] One that you don't trust attribution, which I would understand, but one that among those signals that you've sent, maybe some didn't have the right parameters.
+
+395
+00:40:05,840 --> 00:40:18,800
+[SPEAKER_00] Maybe, I don't know, I remember making a change and yeah, we're like, oh, only twenty percent of the conversion are passing like 100% is passing to the event manager, but only 20% of what we think is happening is being reported at the ads.
+
+396
+00:40:19,200 --> 00:40:27,200
+[SPEAKER_00] And actually, Meta couldn't attribute it on AEM and was only reporting the double opting, like the IDFA people, until we fixed it.
+
+397
+00:40:27,520 --> 00:40:35,360
+[SPEAKER_00] And so, yeah, the step one is, is the toll actually matching because, and I'm saying it because if it's not, nothing else can work.
+
+398
+00:40:35,920 --> 00:40:37,680
+[SPEAKER_00] And it's kind of an easy check to do.
+
+399
+00:40:37,840 --> 00:40:46,960
+[SPEAKER_00] Like there can be many other problems, it's just one, but that it's so common and it's so blocking of doing anything that that that's always the first thing I'm checking.
+
+400
+00:40:47,200 --> 00:40:52,080
+[SPEAKER_00] What drives nuts is that when it doesn't work, the amount of reason that can be for it not to work.
+
+401
+00:40:52,320 --> 00:40:53,440
+[SPEAKER_00] But that's something you need to fix.
+
+402
+00:40:53,760 --> 00:40:54,320
+[SPEAKER_00] Yes or yes.
+
+403
+00:40:54,480 --> 00:40:55,680
+[SPEAKER_00] Like one way or another.
+
+404
+00:40:56,000 --> 00:40:57,200
+[SPEAKER_00] That could be changing the source.
+
+405
+00:40:57,280 --> 00:41:01,520
+[SPEAKER_00] That could be sending different parameters, changing the event entirely or whatever.
+
+406
+00:41:02,000 --> 00:41:13,040
+[SPEAKER_00] It's also because the default configuration of, for example, the Meta SDK or basically you can put the Meta SDK and tell Meta, okay, just map my event on your own.
+
+407
+00:41:13,280 --> 00:41:18,000
+[SPEAKER_00] And you have, like, the install, for example, is the hardest to debug because it's not an event.
+
+408
+00:41:18,240 --> 00:41:20,000
+[SPEAKER_00] It's something that came pre-packaged.
+
+409
+00:41:20,160 --> 00:41:22,400
+[SPEAKER_00] So when it doesn't work, you've got less levers to move.
+
+410
+00:41:22,720 --> 00:41:23,200
+[SPEAKER_00] But, for example.
+
+411
+00:41:24,160 --> 00:41:27,200
+[SPEAKER_00] The free try, the paid conversion can be mapped.
+
+412
+00:41:27,920 --> 00:41:37,280
+[SPEAKER_00] Something that happens very often is that a direct purchase without a free trial and a free trial that converts to pay and a renewal would all be mapped to purchase together.
+
+413
+00:41:37,920 --> 00:41:52,880
+[SPEAKER_00] How can you actually read anything when you've got this mixed bag of events, which I sometimes use a mixed bag of events for optimization, but as long as I understand what's actually passing through, and I'm going to want all of those individually to make sure, like, okay, I've unbugged that they work properly.
+
+414
+00:41:53,120 --> 00:41:57,520
+[SPEAKER_00] Now I can start getting a little smarter around what I'm sending.
+
+415
+00:41:58,160 --> 00:42:06,080
+[SPEAKER_00] The default configuration is not as easy as it looks, I think is one of the cases where making a little bit of effort because it's not something you have to work every other day.
+
+416
+00:42:06,240 --> 00:42:10,000
+[SPEAKER_00] Like it's something you need to fix, but then you can run on this for six, twelve months.
+
+417
+00:42:10,320 --> 00:42:19,120
+[SPEAKER_00] You can never forget about it for the reason I mentioned at the beginning, but it's something that you fix once in a while and also because it gives you options.
+
+418
+00:42:19,600 --> 00:42:35,040
+[SPEAKER_00] Like I was working with an account where they had like massive success scaling on a couple different platforms, like really impressive trajectory went from zero to eight digits in a couple of years, like a very beautiful trajectory.
+
+419
+00:42:35,600 --> 00:42:43,280
+[SPEAKER_00] And then at some point, things started working not as well, and we tried everything we could, like, you know, creative and fixing the event and so on.
+
+420
+00:42:43,840 --> 00:42:50,880
+[SPEAKER_00] One of the problems is that they put all their eggs in one basket, and that basket worked great for a long time, but when it broke they had no alternative.
+
+421
+00:42:51,280 --> 00:43:07,520
+[SPEAKER_00] And one of the reasons to have your signals properly handled is also to have optionality in the sense of if what works best for you is optimizing for free trial, so be it, or optimizing for value, like for revenue optimization, so be it, that's great, double down on it and spend ninety percent on it.
+
+422
+00:43:08,240 --> 00:43:11,600
+[SPEAKER_00] But you probably also want to have the other options available.
+
+423
+00:43:12,160 --> 00:43:21,760
+[SPEAKER_00] Sometimes because it's audience expansion and I would run an event optimization campaign towards free trial in parallel with a revenue optimization campaign and Facebook would bring different users to the app.
+
+424
+00:43:22,000 --> 00:43:28,640
+[SPEAKER_00] So for scaling, but also for the many, many cases where things start to break, which is much more often than people think.
+
+425
+00:43:28,960 --> 00:43:33,280
+[SPEAKER_00] So I'd rather have different options in my toolbox basically.
+
+426
+00:43:33,920 --> 00:43:34,720
+[SPEAKER_00] Maybe not for today.
+
+427
+00:43:34,880 --> 00:43:37,360
+[SPEAKER_00] If something works, yes, sure, let's go all in on it.
+
+428
+00:43:38,080 --> 00:43:42,400
+[SPEAKER_00] But to have this for later, also to prep to experiment a little bit on the site.
+
+429
+00:43:44,000 --> 00:43:54,640
+[SPEAKER_00] So one of the reasons I started talking about it, about this topic was one, I had the case, I had two cases in my portfolio where one clearly had their events broken, so we needed to fix it.
+
+430
+00:43:54,960 --> 00:44:00,400
+[SPEAKER_00] And then we thought, if we're going to fix it, let's fix it and make it smarter at the same time.
+
+431
+00:44:00,720 --> 00:44:04,000
+[SPEAKER_00] And then I had another client who worked with a third party.
+
+432
+00:44:04,480 --> 00:44:09,680
+[SPEAKER_00] They're already doing some kind of optimization on their own and actually already a fairly sophisticated system.
+
+433
+00:44:10,160 --> 00:44:12,320
+[SPEAKER_00] I thought, what if there's something I missed?
+
+434
+00:44:12,560 --> 00:44:15,760
+[SPEAKER_00] Let's go and ask some of the best out there about what they're doing.
+
+435
+00:44:16,240 --> 00:44:18,000
+[SPEAKER_00] And we actually handed it over to them.
+
+436
+00:44:18,320 --> 00:44:19,360
+[SPEAKER_00] We're running two tests.
+
+437
+00:44:19,520 --> 00:44:20,960
+[SPEAKER_00] One is looking good, the other not.
+
+438
+00:44:21,280 --> 00:44:30,640
+[SPEAKER_00] So it's not completely, let's say, conclusive., but they definitely did stuff that we wouldn't have done on our own and go one step beyond.
+
+439
+00:44:30,880 --> 00:44:43,280
+[SPEAKER_00] So these two things about fixing, getting smarter and going one step beyond, they all came at a moment where at the same time I felt that 95% of the debate on paid media was about creative production.
+
+440
+00:44:43,520 --> 00:44:46,720
+[SPEAKER_00] I was like, sure, should be talked, but that's not the only topic.
+
+441
+00:44:46,960 --> 00:44:50,240
+[SPEAKER_00] So I like to take my control in the hat and say, I'm going to talk about something else.
+
+442
+00:44:50,800 --> 00:44:54,160
+[SPEAKER_00] Suddenly, I also noticed a lot more talks about that.
+
+443
+00:44:54,480 --> 00:44:58,880
+[SPEAKER_00] So either really good timing or just people got inspired and worked on it.
+
+444
+00:44:59,040 --> 00:45:00,160
+[SPEAKER_00] I think it was a little bit of both.
+
+445
+00:45:01,120 --> 00:45:02,960
+[SPEAKER_00] I'm glad the topic has picked up a little bit.
+
+446
+00:45:03,280 --> 00:45:08,880
+[SPEAKER_00] It doesn't mean that if you've got amazing signal engineering and you have one ad in your account, it's going to work.
+
+447
+00:45:09,600 --> 00:45:10,320
+[SPEAKER_00] That's not going to work.
+
+448
+00:45:11,040 --> 00:45:11,120
+[SPEAKER_01] Yeah.
+
+449
+00:45:12,640 --> 00:45:19,600
+[SPEAKER_01] Before we move on to more specifics around how to do the signal engineering, I did want to ask one more question on the data.
+
+450
+00:45:20,480 --> 00:45:32,640
+[SPEAKER_01] Again, just because these are the kind of questions I think people would be, you know, shouting into their car as they're driving around listening to the podcast is that how do you think about this when you're scaling on multiple networks?
+
+451
+00:45:33,280 --> 00:45:36,240
+[SPEAKER_01] So you're doing Google and Meta and TikTok.
+
+452
+00:45:37,200 --> 00:45:46,320
+[SPEAKER_01] Should each of those event managers be seeing 100% of your conversions, 100% of your free trials, 100% of everything?
+
+453
+00:45:46,960 --> 00:45:49,920
+[SPEAKER_01] Is that what you're looking for in each individual event manager?
+
+454
+00:45:50,160 --> 00:45:58,400
+[SPEAKER_01] Or are you looking for Google to be seeing just a percentage of the events and Meta to be seeing a percentage of the events?
+
+455
+00:45:58,960 --> 00:46:03,840
+[SPEAKER_00] If you're early in this process, you probably want them all to receive 100%.
+
+456
+00:46:04,000 --> 00:46:07,440
+[SPEAKER_00] Like you don't filter anything, you send 100% of these different events.
+
+457
+00:46:08,240 --> 00:46:08,320
+[SPEAKER_00] Yes.
+
+458
+00:46:10,000 --> 00:46:14,960
+[SPEAKER_00] It's almost normal that the same scenario is not going to be the best for every platform.
+
+459
+00:46:15,360 --> 00:46:26,400
+[SPEAKER_00] And it's possible that you end up optimizing for revenue in Meta and for a qualified trial in Google and for a filter of direct purchase and trial conversion in TikTok, to say something.
+
+460
+00:46:26,640 --> 00:46:38,240
+[SPEAKER_00] Like what's going to work is not going to be universal, like every network has different type of user but also different context but also different ways of optimizing, like of valuing the signals that you send them.
+
+461
+00:46:38,560 --> 00:46:40,240
+[SPEAKER_00] And on top of that, they don't have the same source.
+
+462
+00:46:40,400 --> 00:46:48,720
+[SPEAKER_00] You might be using an MMP and sending to all these sources, but it's also very possible that you're sending to Google via Firebase and to Facebook via the Facebook SDK.
+
+463
+00:46:48,720 --> 00:46:49,360
+[SPEAKER_00] Facebook has declined and so on.
+
+464
+00:46:49,520 --> 00:46:54,880
+[SPEAKER_00] So like the easy answer is yes, send 100% of the events to all the different platforms.
+
+465
+00:46:55,120 --> 00:47:00,800
+[SPEAKER_00] In reality, one, they're going to be different sources, so they're different by nature and different things are going to work.
+
+466
+00:47:01,120 --> 00:47:11,920
+[SPEAKER_00] So, for example, you might have to filter younger audience trials to TikTok, but you don't necessarily need to do it for Meta because it works differently.
+
+467
+00:47:12,240 --> 00:47:14,560
+[SPEAKER_00] Like what I do is I map these different events.
+
+468
+00:47:14,640 --> 00:47:19,600
+[SPEAKER_00] So let's say I've got my free trials, I send them all, but maybe I'm never using them in any campaign.
+
+469
+00:47:20,000 --> 00:47:29,680
+[SPEAKER_00] And then as soon as I can verify the quality of the data that's being passed, and then I've got my qualified free tri trials or filtered free trials, let's say, being sent to the different networks, but I map it.
+
+470
+00:47:29,920 --> 00:47:32,480
+[SPEAKER_00] When I say map, it's like I declare it as a different event.
+
+471
+00:47:32,800 --> 00:47:42,160
+[SPEAKER_00] So maybe all the free trials are going to be called start trial, but then the qualified trial is going to be called whatever it's going to be maybe a purchase, maybe subscribe, maybe something.
+
+472
+00:47:42,400 --> 00:47:49,840
+[SPEAKER_00] Actually, I wish that the platform offers more options in the number of events that they propose because probably because it's not so common.
+
+473
+00:47:50,240 --> 00:47:51,520
+[SPEAKER_00] That's why the list is limited.
+
+474
+00:47:51,680 --> 00:47:55,680
+[SPEAKER_00] And if we remember two or three years ago, Facebook didn't even have start trial and subscription.
+
+475
+00:47:55,840 --> 00:47:58,000
+[SPEAKER_00] It was all purchased from gaming and e-commerce.
+
+476
+00:47:58,240 --> 00:48:00,560
+[SPEAKER_01] So the baseline then is that as you start.
+
+477
+00:48:01,120 --> 00:48:13,520
+[SPEAKER_01] to think about signal engineering, the first step is that 100% of your data is going to all the different networks and you just verify that you're within that like 5 to 10 percent threshold across all the different networks.
+
+478
+00:48:14,320 --> 00:48:30,560
+[SPEAKER_01] Then you move on to starting to filter the events and then by doing so, then you have a better sense for what numbers should be showing up on each platform because then you can determine I'm not sending free trials of users under 25 to TikTok.
+
+479
+00:48:30,800 --> 00:48:35,600
+[SPEAKER_01] And so you can do the math then of like, okay, we know that when I was sending 100 percent it was working.
+
+480
+00:48:35,680 --> 00:48:38,720
+[SPEAKER_01] And so now I'm only sendinging 75%.
+
+481
+00:48:39,040 --> 00:48:44,240
+[SPEAKER_01] And so now I have an idea of what should be arriving at that particular ad network.
+
+482
+00:48:44,640 --> 00:48:49,040
+[SPEAKER_01] And then that's how you do your data validation once you start doing the signal engineering, right?
+
+483
+00:48:49,680 --> 00:48:50,000
+[SPEAKER_01] Correct.
+
+484
+00:48:50,640 --> 00:48:58,480
+[SPEAKER_00] I mean, all of this, well, I remember doing this in 2017, and it didn't come up from a brilliant idea in my mind.
+
+485
+00:48:58,640 --> 00:49:03,040
+[SPEAKER_00] It just came up from the observation that my free trial rates on Google Ads was terrible.
+
+486
+00:49:03,280 --> 00:49:10,000
+[SPEAKER_00] Like we would have, let's say, 40% trial to pay conversion on organic, on meta, like, I mean, small differences.
+
+487
+00:49:10,160 --> 00:49:11,680
+[SPEAKER_00] And then we'd have like 15% on Google.
+
+488
+00:49:12,160 --> 00:49:13,920
+[SPEAKER_00] I was like, what are we doing wrong here?
+
+489
+00:49:14,160 --> 00:49:22,640
+[SPEAKER_00] I was like, okay, for Google, we're going to identify some of the reasons those trials are not converting and we're going to send them a different signal to try to fix it.
+
+490
+00:49:22,800 --> 00:49:36,960
+[SPEAKER_00] It wasn't like, we're not trying to be smart and just do senior engineering, but we started from a problem initially, like maybe if you don't have this problem, maybe if your free trial quality coming from paid is great, you don't need to go further for now.
+
+491
+00:49:37,280 --> 00:49:41,440
+[SPEAKER_00] Like maybe you could do even better, but like I started from a problem.
+
+492
+00:49:41,840 --> 00:49:48,000
+[SPEAKER_00] And then seeing that this was moving the needle in ways, I said, okay, now I can get a little smarter.
+
+493
+00:49:48,720 --> 00:49:54,160
+[SPEAKER_00] One of the next steps is that historically all these platforms offer event optimization.
+
+494
+00:49:54,400 --> 00:49:58,640
+[SPEAKER_00] So they offer instant optimization, which honestly, you should never do.
+
+495
+00:49:58,800 --> 00:50:01,920
+[SPEAKER_00] There are a couple of edge cases where you might, but in most cases, it's a very bad idea.
+
+496
+00:50:02,240 --> 00:50:09,200
+[SPEAKER_00] There's event optimization, which can be different events, they can be filtered and so on, and we can talk a little bit more, and there's revenue optimization.
+
+497
+00:50:09,600 --> 00:50:16,000
+[SPEAKER_00] And the problem with revenue optimization is that from the gaming world and e commerce world, this was just revenue.
+
+498
+00:50:16,240 --> 00:50:18,800
+[SPEAKER_00] This was just revenue that was generated by the sale.
+
+499
+00:50:19,360 --> 00:50:24,000
+[SPEAKER_00] But in subscription, because we've got the free trial and because we've got the renewals.
+
+500
+00:50:25,040 --> 00:50:30,400
+[SPEAKER_00] The revenue that is actually happening that day is actually not what we need to send back to the platform.
+
+501
+00:50:30,960 --> 00:50:35,040
+[SPEAKER_00] So I started getting smarter and say, okay, I'm going to engineer the revenue that I'm sending.
+
+502
+00:50:35,280 --> 00:50:38,880
+[SPEAKER_00] So it's not a predicted LTV, it's a predicted value at day X.
+
+503
+00:50:39,120 --> 00:50:46,960
+[SPEAKER_00] Maybe it's months two, maybe it's personally, I like to use months thirteen because I've got the first yearly renewal and I think it's a better comparison between monthly and yearly.
+
+504
+00:50:47,200 --> 00:50:48,960
+[SPEAKER_00] But whatever, it doesn't matter what I like.
+
+505
+00:50:49,280 --> 00:51:02,160
+[SPEAKER_00] The real revenue, the one that passes by default on the SDK, is not the one that I want to be sending because the free trial conversion is going to come too late because it's going to overvalue the yearly over the monthly, but maybe or, let's take the weekly.
+
+506
+00:51:02,400 --> 00:51:06,400
+[SPEAKER_00] Sometimes the weekly, the LTV of a weekly is great because the price is so much higher.
+
+507
+00:51:06,720 --> 00:51:13,280
+[SPEAKER_00] If someone renews for six months on a weekly plan, the revenue where we want to send to the platform is not the real one.
+
+508
+00:51:13,920 --> 00:51:22,960
+[SPEAKER_00] It's going to typically platform will over index on yearly because all the revenue comes on day one, but maybe your weekly plan has a higher LTV when people renew along.
+
+509
+00:51:23,120 --> 00:51:26,800
+[SPEAKER_00] So you're just telling the platform something that is wrong about what you're looking for.
+
+510
+00:51:27,040 --> 00:51:30,160
+[SPEAKER_00] And here the idea is not only to trick.
+
+511
+00:51:30,320 --> 00:51:36,720
+[SPEAKER_00] And I remember talking to Andre about senior engineering and they summarized it that, oh, Thomas is manipulating the ad platform.
+
+512
+00:51:37,120 --> 00:51:44,160
+[SPEAKER_00] I'm like, no, I'm manipulating data to send the app platform what is the closest value of the users they're sending me.
+
+513
+00:51:44,800 --> 00:51:45,920
+[SPEAKER_00] I'm not trying to lie here.
+
+514
+00:51:46,080 --> 00:51:56,880
+[SPEAKER_00] At the contrary, I'm trying to fix something that is broken in the sense that the platform is receiving a value that is not representative of my business value, like the default configuration is not what a representative.
+
+515
+00:51:57,440 --> 00:52:12,000
+[SPEAKER_00] One thing I'm working on right now, for example, is that users that are not converting within 24 hours but are demonstrating a very high likelihood of retaining for a long time as a freemium user or converting later, we're going to assign a small value to it.
+
+516
+00:52:12,400 --> 00:52:19,200
+[SPEAKER_00] So not the ten per month or ninety per year or whatever, but maybe one dollar, like, because I'm like, hmm, I like this user.
+
+517
+00:52:19,440 --> 00:52:25,280
+[SPEAKER_00] And if I send zero, the zero event, the zero value, the platform is going to conclude that this is the kind of users I don't want.
+
+518
+00:52:25,440 --> 00:52:33,680
+[SPEAKER_00] And maybe because they create the network effect, they create DAU, they create late conversions that are very hard for the network to assimilate.
+
+519
+00:52:34,320 --> 00:52:39,920
+[SPEAKER_00] I'm going to have to send something that shows them, hey, this user is really zero, but that one is actually a little something.
+
+520
+00:52:40,240 --> 00:52:47,040
+[SPEAKER_00] The whole scheme there is, I want to tell Meta, I want to tell Google, I want to tell TikTok about what's valuable for me, because it's not natural for them.
+
+521
+00:52:47,360 --> 00:52:50,000
+[SPEAKER_00] They just received a very primitive signal.
+
+522
+00:52:50,400 --> 00:52:58,320
+[SPEAKER_00] I heard from Meta last week that they were working on optimizing towards different events at the same time, like for example different tiers of subscription and stuff.
+
+523
+00:52:58,480 --> 00:53:07,920
+[SPEAKER_00] And I was very happy because it's something that I always wanted to do and that you can almost only do by engineering the signal and engineering the revenue behind it.
+
+524
+00:53:08,960 --> 00:53:15,840
+[SPEAKER_00] So we're getting there, it's just I want to send something that is representative of value so that the platform can do the work they do the best way they can.
+
+525
+00:53:16,240 --> 00:53:23,280
+[SPEAKER_00] And they're really, really strong at predicting which users are going to complete the action that I'm telling them.
+
+526
+00:53:23,520 --> 00:53:26,000
+[SPEAKER_00] But if the action I'm tellinging them is wrong.
+
+527
+00:53:26,240 --> 00:53:28,000
+[SPEAKER_00] You're running on one leg, literally.
+
+528
+00:53:28,400 --> 00:53:33,600
+[SPEAKER_00] And that's where the whole idea of signal engineering and optimization of the data that you're sending back comes from.
+
+529
+00:53:33,920 --> 00:53:38,800
+[SPEAKER_00] It's like, yeah, send the network something better and they're going to do a better job because they are doing a better job.
+
+530
+00:53:39,120 --> 00:53:40,320
+[SPEAKER_00] It's you who are not doing your.
+
+531
+00:53:42,320 --> 00:53:42,640
+[SPEAKER_01] Nice.
+
+532
+00:53:42,960 --> 00:53:59,040
+[SPEAKER_01] So you've you've kind of gone into and given a lot of what I would guess were our kind of more advanced signal engineering practices, but let's step back and like once you get your data right or believe you have your data right, what's the low hanging fruit in signal engineering?
+
+533
+00:53:59,280 --> 00:54:00,480
+[SPEAKER_01] Like where would you say?
+
+534
+00:54:01,200 --> 00:54:11,440
+[SPEAKER_01] are the first kind of few steps folks should take to start changing the default mappings of how these SDKs operate by default?
+
+535
+00:54:11,680 --> 00:54:13,040
+[SPEAKER_01] Like, what's the first step?
+
+536
+00:54:13,600 --> 00:54:16,320
+[SPEAKER_00] So we mentioned that that's the what's the second step?
+
+537
+00:54:16,480 --> 00:54:20,480
+[SPEAKER_00] Because the first step is monitoring that the events are passing properly, which is not a given.
+
+538
+00:54:20,800 --> 00:54:28,560
+[SPEAKER_00] But the second step for me would be either going to what we call qualified trials or filtered trials.
+
+539
+00:54:29,360 --> 00:54:37,600
+[SPEAKER_00] And typically that would be when you see that your free trial rates are either not as good as other networks or not as good as they used to be.
+
+540
+00:54:37,840 --> 00:54:42,720
+[SPEAKER_00] And also because you don't need huge engineering around revenue prediction and so on to do this.
+
+541
+00:54:43,760 --> 00:54:48,720
+[SPEAKER_00] So basically make a regression of, okay, let's analyze this free trial that I'm not converting.
+
+542
+00:54:49,360 --> 00:54:59,600
+[SPEAKER_00] Sometimes it's a combination of what I call hard factors, which are like the device itself, maybe the language, like not something the user has told me, but something that is like in the hardware itself.
+
+543
+00:55:00,000 --> 00:55:03,040
+[SPEAKER_00] It's well known that the most recent device converts much better.
+
+544
+00:55:03,520 --> 00:55:06,400
+[SPEAKER_00] And so maybe I'm going to filter all this very old iPhone.
+
+545
+00:55:06,880 --> 00:55:16,240
+[SPEAKER_00] It's funny when you look at the specific device, the very latest device on Android, the Google Pixel and the latest Samsung Galaxy and a couple of others.
+
+546
+00:55:16,560 --> 00:55:18,400
+[SPEAKER_00] They convert just as well as an iPhone.
+
+547
+00:55:18,560 --> 00:55:24,400
+[SPEAKER_00] Those like they only represent five to ten percent of the market and the rest have a terrible conversion rate.
+
+548
+00:55:24,560 --> 00:55:34,800
+[SPEAKER_00] But I certainly So you could like try to weigh in those and Facebook has been working on the signal engineering because there's very few other levers that we can do.
+
+549
+00:55:34,960 --> 00:55:41,040
+[SPEAKER_00] But Facebook has finally put out of beta one that we used to call it bit modifier for very, very long time.
+
+550
+00:55:41,360 --> 00:55:51,440
+[SPEAKER_00] And I could tell Facebook, oh, when you're seeing one of those Google Pixel straight assigned twenty percent plus than any other users because I know they're going to convert easier, they're going to renew longer and so on.
+
+551
+00:55:51,920 --> 00:55:58,160
+[SPEAKER_00] But when you're seeing one of those old Android 7 or whatever, don't even show them the ad.
+
+552
+00:55:58,640 --> 00:56:00,320
+[SPEAKER_00] But then very often your choice is binary.
+
+553
+00:56:00,400 --> 00:56:07,680
+[SPEAKER_00] Like, let's take the edge because in subscription edge is a very common factor for people entering a free trial and not converting for a very long time.
+
+554
+00:56:08,000 --> 00:56:11,120
+[SPEAKER_00] The solution was, okay, let's stop advertising to people below 25.
+
+555
+00:56:11,520 --> 00:56:13,200
+[SPEAKER_00] And then I don't have this problem anymore.
+
+556
+00:56:13,440 --> 00:56:17,520
+[SPEAKER_00] I was like, but I'm actually missing out on something, is that there's a lot of inventory.
+
+557
+00:56:17,840 --> 00:56:22,000
+[SPEAKER_00] Part of what I'm doing, I mean, my app fits a 15 to 25 year old.
+
+558
+00:56:22,160 --> 00:56:24,880
+[SPEAKER_00] It's just that I have this free trial issue that is going to work.
+
+559
+00:56:25,760 --> 00:56:27,040
+[SPEAKER_00] I just want to factor it.
+
+560
+00:56:27,200 --> 00:56:32,800
+[SPEAKER_00] I just want to, I don't want to exclude everyone below 25 because I'm limiting my options.
+
+561
+00:56:33,200 --> 00:56:35,760
+[SPEAKER_00] And so this is just another way to do it differently.
+
+562
+00:56:35,920 --> 00:56:43,440
+[SPEAKER_00] So somebody asked me recently, Oh, but now that I have the bid modifier, I can tell Facebook that the sub 25 are 30% less valuable.
+
+563
+00:56:43,760 --> 00:56:46,400
+[SPEAKER_00] I don't need to do all this filtering of trials.
+
+564
+00:56:46,560 --> 00:56:49,600
+[SPEAKER_00] And like, I'd prefer to hammer from both sides personally.
+
+565
+00:56:49,920 --> 00:56:53,520
+[SPEAKER_00] But sure, like, it's kind of a potential replacement, but it's not available everywhere.
+
+566
+00:56:53,680 --> 00:56:57,920
+[SPEAKER_00] The low angle focus is probably going to be on qualified trials because it's such a common factor.
+
+567
+00:56:58,400 --> 00:56:59,920
+[SPEAKER_00] But it doesn't mean it's for everyone.
+
+568
+00:57:00,000 --> 00:57:01,680
+[SPEAKER_00] And what is the hard factor?
+
+569
+00:57:01,920 --> 00:57:03,120
+[SPEAKER_00] And the other one is the sub factor.
+
+570
+00:57:03,200 --> 00:57:04,880
+[SPEAKER_00] And the sub factor is something the user does.
+
+571
+00:57:05,840 --> 00:57:13,680
+[SPEAKER_00] The most common is a question at the onboarding that somebody answers and that filters, maybe they declare this interest and not this one.
+
+572
+00:57:13,920 --> 00:57:22,400
+[SPEAKER_00] Like, have a mental health app where when people say they have a high level of anxiety, that's so much more valuable than when they say something else.
+
+573
+00:57:22,800 --> 00:57:24,320
+[SPEAKER_00] And so we factor this question.
+
+574
+00:57:24,880 --> 00:57:31,840
+[SPEAKER_00] The next level, a very sophisticated level, would be to actually add questions at the onboarding that creates this variance.
+
+575
+00:57:32,000 --> 00:57:33,040
+[SPEAKER_00] And that's what you're looking for.
+
+576
+00:57:33,520 --> 00:57:36,640
+[SPEAKER_00] So the low hanging fruit is looking at a regression of.
+
+577
+00:57:37,120 --> 00:57:39,600
+[SPEAKER_00] the value based on questions like this.
+
+578
+00:57:39,920 --> 00:57:45,040
+[SPEAKER_00] And in revenue, for example, I was working on with someone who was like super comedy.
+
+579
+00:57:45,200 --> 00:57:48,880
+[SPEAKER_00] Yeah, I need to do something very sophisticated with my revenue, send to the ad platform.
+
+580
+00:57:49,280 --> 00:57:55,760
+[SPEAKER_00] I've got a whole team of experts, data analysts and engineers that we can put some predictive LTV back to Facebook and so on.
+
+581
+00:57:56,000 --> 00:57:57,120
+[SPEAKER_00] Yeah, let's look at your revenue.
+
+582
+00:57:57,200 --> 00:57:58,640
+[SPEAKER_00] Actually, you've got zero variance.
+
+583
+00:57:58,720 --> 00:58:06,480
+[SPEAKER_00] Like you've got a binary case where almost everybody ends up generating this in the same range of value.
+
+584
+00:58:07,280 --> 00:58:09,040
+[SPEAKER_00] In this case, they know they need to over kill it.
+
+585
+00:58:09,280 --> 00:58:12,560
+[SPEAKER_00] But if you notice that you've got extreme variance, then it's probably.
+
+586
+00:58:13,200 --> 00:58:32,960
+[SPEAKER_00] a case of jumping the qualified trial and going straight at making these revenue buckets because you've got a bunch of users that are going to consume one dollar IAB, you've got a bunch of users that are going to take the twenty dollar subscription per month, and then you've got the pro user with the $200 cloud subscription, I don't even know what it was, but the ChatGPT subscription.
+
+587
+00:58:33,280 --> 00:58:41,280
+[SPEAKER_00] And then if you have extreme variance in revenue, I think the low hanging fruit is to deploy the resources needed because the qualified trial is not going to be enough.
+
+588
+00:58:41,760 --> 00:58:42,800
+[SPEAKER_00] It's just like step one.
+
+589
+00:58:43,120 --> 00:58:46,240
+[SPEAKER_00] So it depends on the problem you have, like, or the problems you don't have.
+
+590
+00:58:46,400 --> 00:58:53,360
+[SPEAKER_00] If you don't have vari a free trial conversion problem, don't bother filtering your trials.
+
+591
+00:58:53,760 --> 00:58:56,320
+[SPEAKER_01] Let's dig into exactly how you do this.
+
+592
+00:58:57,280 --> 00:58:59,200
+[SPEAKER_01] So, I liked your example.
+
+593
+00:58:59,440 --> 00:59:06,400
+[SPEAKER_01] If you're a mental health app and you have an onboarding question that says, what are your goals in using this mental health app?
+
+594
+00:59:06,640 --> 00:59:08,960
+[SPEAKER_01] And one of the goals is calm my anxiety.
+
+595
+00:59:09,520 --> 00:59:12,240
+[SPEAKER_01] Another goal is just like, I just want to be healthier.
+
+596
+00:59:12,400 --> 00:59:14,400
+[SPEAKER_01] You know, some like really broad, generic goal.
+
+597
+00:59:14,800 --> 00:59:19,600
+[SPEAKER_01] And so you see the people with that broad, generic goal, their value is just way lower.
+
+598
+00:59:20,000 --> 00:59:24,720
+[SPEAKER_01] And those who have a specific problem to solve, like anxiety, their value is way higher.
+
+599
+00:59:25,280 --> 00:59:27,280
+[SPEAKER_01] How do you actually instrument this?
+
+600
+00:59:27,520 --> 00:59:42,960
+[SPEAKER_01] Is this inside the app that when you map the events, you're not actually sending the events and you're and do you have to prevent the SDKs from just hoovering up all the events so that you can send the specific event that you want to send?
+
+601
+00:59:43,120 --> 00:59:44,400
+[SPEAKER_01] Like, how do you actually do this?
+
+602
+00:59:45,520 --> 00:59:45,680
+[SPEAKER_00] Sure.
+
+603
+00:59:45,840 --> 00:59:56,640
+[SPEAKER_00] I'll answer you, but I'll make a cautious word before, which is filtering out, like excluding people can work, and I've done it a number of times, but it's a little bit my last resort.
+
+604
+00:59:56,880 --> 00:59:59,680
+[SPEAKER_00] Like, if I can find another way to not fully exclude these people.
+
+605
+01:00:00,400 --> 01:00:03,120
+[SPEAKER_00] Because they might generate less value, less is not zero.
+
+606
+01:00:03,440 --> 01:00:07,120
+[SPEAKER_00] So excluding them is actually something that I try to avoid in the first place.
+
+607
+01:00:07,600 --> 01:00:14,320
+[SPEAKER_00] And when I look, let's say an onboarding question, and I'm going to have, okay, high anxiety, I want to be healthier, or I just want to sleep better.
+
+608
+01:00:14,880 --> 01:00:20,240
+[SPEAKER_00] And I'm going to look if something is extremely less value, in which case I'm going to try to exclude it.
+
+609
+01:00:20,800 --> 01:00:24,400
+[SPEAKER_00] If it's a little bit less value, I'm going to try to find something else.
+
+610
+01:00:24,640 --> 01:00:26,480
+[SPEAKER_00] Either I'm going to let it pass and deal with it.
+
+611
+01:00:26,960 --> 01:00:36,240
+[SPEAKER_00] I'm going to move to revenue optimization, or I'm going to try to find if it correlates with a particular demographic to use the bit modifiers, or I'm going to try something else.
+
+612
+01:00:36,400 --> 01:00:40,400
+[SPEAKER_00] Like the exclusion is kind of, if I can't do any other way, then I'm going to to exclude.
+
+613
+01:00:40,640 --> 01:00:42,720
+[SPEAKER_00] Let's say I need to filter out some people.
+
+614
+01:00:43,200 --> 01:00:46,720
+[SPEAKER_00] Basically, some people in the onboarding, they're just telling you, oh, I'm just browsing around.
+
+615
+01:00:46,880 --> 01:00:48,080
+[SPEAKER_00] I don't really have the intent.
+
+616
+01:00:48,160 --> 01:00:50,480
+[SPEAKER_00] Like, this is basically what they're telling you.
+
+617
+01:00:50,800 --> 01:00:53,040
+[SPEAKER_00] And those I'm probably going to want to exclude.
+
+618
+01:00:53,360 --> 01:01:02,640
+[SPEAKER_00] In this case, either you've got the platform SDK, so like, or typically you're sending it through an MMP, more rarely through, like, a custom API.
+
+619
+01:01:02,800 --> 01:01:04,400
+[SPEAKER_00] The custom API, you send whatever you want.
+
+620
+01:01:04,560 --> 01:01:07,920
+[SPEAKER_00] So, like, I mean, you filter the event yourself, you send it, but it's the least common case.
+
+621
+01:01:08,880 --> 01:01:15,600
+[SPEAKER_00] Through the MMP, what I'm doing is actually asking my engineers, I'm going to want to add a new event.
+
+622
+01:01:16,000 --> 01:01:17,440
+[SPEAKER_00] I'm not going to filter the existing event.
+
+623
+01:01:17,600 --> 01:01:19,600
+[SPEAKER_00] The free trial is going to remain a free trial.
+
+624
+01:01:19,840 --> 01:01:19,920
+[SPEAKER_00] Okay.
+
+625
+01:01:20,640 --> 01:01:30,640
+[SPEAKER_00] If there is a free trial and the answer to this question is this, then send it to Adjust, Apps Flyer or Singler as being subscribed or whatever.
+
+626
+01:01:31,040 --> 01:01:33,600
+[SPEAKER_00] And then Facebook is going to start receiving it and I'm going to have it.
+
+627
+01:01:33,760 --> 01:01:35,440
+[SPEAKER_00] It works the same in the Facebook SDK.
+
+628
+01:01:35,680 --> 01:01:39,760
+[SPEAKER_00] Like, you just can have the default configuration, but then you can set up your own events.
+
+629
+01:01:40,160 --> 01:01:41,520
+[SPEAKER_00] I'm not talking about custom events.
+
+630
+01:01:41,680 --> 01:01:44,320
+[SPEAKER_00] It's just you can force, but that's done on the engineering side.
+
+631
+01:01:44,560 --> 01:01:46,000
+[SPEAKER_00] That's something the marketers are not doing.
+
+632
+01:01:46,400 --> 01:01:49,840
+[SPEAKER_00] That's something that requires to open the code and actually do it.
+
+633
+01:01:50,080 --> 01:01:52,400
+[SPEAKER_00] So I know marketers are getting smarter with code these days.
+
+634
+01:01:53,120 --> 01:02:04,160
+[SPEAKER_00] And this is one thing where I called it signal engineering because there's engineering behind it in the sense that I'm actually tweaking the system a little bit, but also because very often you do need an engineer.
+
+635
+01:02:04,560 --> 01:02:09,600
+[SPEAKER_00] It's an interesting dynamic how very few developers are actually interested in all things marketing.
+
+636
+01:02:10,240 --> 01:02:19,520
+[SPEAKER_00] There's always a little bit of tension in this ticket because we marketers are terrible to explain our requests and to properly define the requirements.
+
+637
+01:02:20,240 --> 01:02:27,600
+[SPEAKER_00] And so it comes in back and forth, but also I don't know a lot of engineers who love tweaking the Facebook SDK or the Memphis SDK.
+
+638
+01:02:27,920 --> 01:02:28,480
+[SPEAKER_00] That's very rare.
+
+639
+01:02:29,760 --> 01:02:33,520
+[SPEAKER_00] I got a few buddies now that I can rely on, but it took many years to get to this point.
+
+640
+01:02:33,760 --> 01:02:46,080
+[SPEAKER_00] And it's actually very easy to execute, but the fact that the marketer who's requesting it and the developer who's actually making the change are not speaking the same language at all, it looks very complicated.
+
+641
+01:02:46,400 --> 01:02:52,480
+[SPEAKER_00] And even now I'm surprised sometimes in a couple of these conversations where I'm just answering, Oh, I have no idea how you do that, but I know it's possible.
+
+642
+01:02:52,640 --> 01:02:55,040
+[SPEAKER_00] Here in the documentation it says you can do it.
+
+643
+01:02:55,520 --> 01:02:56,880
+[SPEAKER_00] Here I've described what I want.
+
+644
+01:02:57,120 --> 01:02:58,720
+[SPEAKER_00] That's your job to deal with it, not mine.
+
+645
+01:02:59,280 --> 01:03:05,280
+[SPEAKER_00] And it always gets down, but like my technical knowledge gets to a limit pretty fast when it gets there.
+
+646
+01:03:05,440 --> 01:03:08,480
+[SPEAKER_00] But I mean, with an MLPSDK, it's not very complicated either.
+
+647
+01:03:08,800 --> 01:03:16,400
+[SPEAKER_00] I mean, once you figure it out once, it can get more complicated later, like for example for value for the value for the value optimization.
+
+648
+01:03:17,040 --> 01:03:25,520
+[SPEAKER_00] One thing that happened is that it doesn't go through an SDK, but through an API that sends back the information to the SDK.
+
+649
+01:03:25,760 --> 01:03:29,440
+[SPEAKER_00] I'm like, okay, so I've got this combination of we could hardcode it.
+
+650
+01:03:29,680 --> 01:03:37,760
+[SPEAKER_00] We could say, okay, if there is a this plan that is done on this device having answered this particular question that I'm building, then the value is 56.
+
+651
+01:03:38,080 --> 01:03:39,920
+[SPEAKER_00] And if it's the other combination, it's 23.
+
+652
+01:03:40,160 --> 01:03:41,120
+[SPEAKER_00] And we could hardcode this.
+
+653
+01:03:41,680 --> 01:03:50,480
+[SPEAKER_00] But then every time I need to update, and that happens constantly because we change plan, currency value change, and so on, I would need to have the code touch and then another release.
+
+654
+01:03:50,960 --> 01:03:54,400
+[SPEAKER_00] So if I know I'm going to do a lot of signal engineering later, what I'm doing is.
+
+655
+01:03:54,880 --> 01:03:57,680
+[SPEAKER_00] actually there's an API call that says, okay, I've got all these parameters.
+
+656
+01:03:57,760 --> 01:03:58,560
+[SPEAKER_00] What's the value right now?
+
+657
+01:03:59,120 --> 01:03:59,840
+[SPEAKER_00] Oh, 56.
+
+658
+01:04:00,080 --> 01:04:01,920
+[SPEAKER_00] And next week, it's going to be 68.
+
+659
+01:04:02,160 --> 01:04:06,960
+[SPEAKER_00] And I'm not going to have anyone touch the code anywhere, but I can dynamically change it.
+
+660
+01:04:07,280 --> 01:04:13,680
+[SPEAKER_00] And one particular case where you do want it like this is when you operate in countries where the currency tends to fluctuate a lot.
+
+661
+01:04:14,000 --> 01:04:15,520
+[SPEAKER_00] Turkey is a very big one, for example.
+
+662
+01:04:16,000 --> 01:04:19,520
+[SPEAKER_00] Turkey where, yeah, if you hard code the value there, you're dead.
+
+663
+01:04:19,760 --> 01:04:24,560
+[SPEAKER_00] But that's kind of sophisticated and it can break because then you've got the SDK talking to an API.
+
+664
+01:04:24,800 --> 01:04:29,440
+[SPEAKER_00] Like, it's not necessarily where you want to start, but eventually, it does make a big difference.
+
+665
+01:04:30,000 --> 01:04:33,120
+[SPEAKER_01] It's a great insight to you that as marketers.
+
+666
+01:04:33,120 --> 01:04:56,960
+[SPEAKER_01] Marketers, it's something to be cognizant of and to work towards is better understanding at the code level what's actually going on so that you can work more collaboratively with the engineering team to successfully deploy these things and then to kind of understand what's going on under the hood to be able to troubleshoot when it's not working well.
+
+667
+01:04:57,360 --> 01:05:12,240
+[SPEAKER_01] And to your point, the best implementation is one that is much more flexible and not hardcoded versus like writing a bunch of hardcoded stuff into the app that every time you want to make any little change, you're having to go talk to the engineering team to make those changes.
+
+668
+01:05:12,640 --> 01:05:15,280
+[SPEAKER_01] And then when something breaks, you have to push an app update.
+
+669
+01:05:15,520 --> 01:05:22,160
+[SPEAKER_01] And so, are there any kind of specific around building that that you've seen work really well?
+
+670
+01:05:22,480 --> 01:05:29,200
+[SPEAKER_01] Like, are there with certain clients that you work with, do you have some kind of tooling in place that's making this a lot easier?
+
+671
+01:05:29,920 --> 01:05:34,000
+[SPEAKER_00] When I ask the developers, they tell me, no, dude, this is a very simple API.
+
+672
+01:05:34,160 --> 01:05:36,400
+[SPEAKER_00] It's like, there is one call, I replay the value.
+
+673
+01:05:36,480 --> 01:05:40,640
+[SPEAKER_00] It looks, it looks, once they've done it, they're like, oh, what you asked was actually super simple.
+
+674
+01:05:41,040 --> 01:05:42,560
+[SPEAKER_00] Why did we take three months to get there?
+
+675
+01:05:43,200 --> 01:05:44,560
+[SPEAKER_00] Because your explanation was wrong.
+
+676
+01:05:44,640 --> 01:05:46,080
+[SPEAKER_00] So it was my problem, you know?
+
+677
+01:05:46,720 --> 01:05:48,080
+[SPEAKER_00] It was basically a communication problem.
+
+678
+01:05:48,560 --> 01:06:02,240
+[SPEAKER_00] I haven't used many tools around this, mostly internal tools and then you have to adjust depending on whether you're sending to the platform SDK like Firebase or Meta or via an MMP or via even like via Overwatch CAD and so on.
+
+679
+01:06:02,480 --> 01:06:04,800
+[SPEAKER_00] So you have to adjust but the rest was mostly internal.
+
+680
+01:06:05,200 --> 01:06:12,640
+[SPEAKER_00] I'm working now with a company called Voyantis who does this filtering on their own and then sends it back themselves.
+
+681
+01:06:13,200 --> 01:06:15,440
+[SPEAKER_00] So I discovered a few new tricks.
+
+682
+01:06:15,680 --> 01:06:18,480
+[SPEAKER_00] There are very few people who are working on this.
+
+683
+01:06:18,880 --> 01:06:27,680
+[SPEAKER_00] I haven't heard particularly of tools that sometimes you might use a tool that's made for something else in the middle but technologically it's actually fairly simple.
+
+684
+01:06:28,000 --> 01:06:29,200
+[SPEAKER_00] It's just it doesn't always work.
+
+685
+01:06:29,360 --> 01:06:34,720
+[SPEAKER_00] There's always a little bit of debate, but in terms of code, it's actually something that's not very complicated.
+
+686
+01:06:35,120 --> 01:06:43,200
+[SPEAKER_00] For me, the most interesting part is not so much the execution, which is, I mean, there are issues, it's regular, but there's nothing as a breakthrough there.
+
+687
+01:06:43,440 --> 01:06:47,120
+[SPEAKER_00] It's not like, it's not that you code it better, that the signal is going to be better.
+
+688
+01:06:47,360 --> 01:07:04,960
+[SPEAKER_00] It's really how do you define the signal that is going to make it and all these questions around onboarding and about segmenting users, creating buckets of value is actually really interesting because it's a crossing of like, I mean, there's a lot of data analysis, but there's always new stuff we discover.
+
+689
+01:07:05,120 --> 01:07:08,400
+[SPEAKER_00] Like there's so many factors and I like to play around it across different apps.
+
+690
+01:07:08,560 --> 01:07:17,120
+[SPEAKER_00] And I'll tell you one example, like we noticed with somebody I was working that the completion time of the onboarding was a decisive factor in value.
+
+691
+01:07:17,600 --> 01:07:23,760
+[SPEAKER_00] And we're like, okay, those people who are answering it in less than a minute and there was like thirty screens, there was nothing.
+
+692
+01:07:24,800 --> 01:07:28,160
+[SPEAKER_00] Yeah, probably they clicked next, next, next, next, then start the free trial and they cancel.
+
+693
+01:07:28,640 --> 01:07:37,520
+[SPEAKER_00] And I started bringing this to other apps and I'm like, dude, I checked and actually my fastest onboarding completion are actually my best users because they already know what they want and so on.
+
+694
+01:07:37,760 --> 01:07:39,120
+[SPEAKER_00] That's not universal necessarily.
+
+695
+01:07:39,360 --> 01:07:43,280
+[SPEAKER_00] And this criteria is not a great one, but there are a couple that are usually very big.
+
+696
+01:07:43,440 --> 01:07:48,240
+[SPEAKER_00] So age, we mentioned the thing around goals is very often a very big one..
+
+697
+01:07:48,640 --> 01:07:51,920
+[SPEAKER_00] And a lot of apps have different types of users.
+
+698
+01:07:52,320 --> 01:08:07,600
+[SPEAKER_00] They would have more pure consumer users like full B2C, but then they would have small teams, a lot of solopreneurs, people with a Shopify shop or influencers who are actually their one person business, like, and there's a lot of them.
+
+699
+01:08:07,920 --> 01:08:14,960
+[SPEAKER_00] If you manage to identify who are like these small business, one person business, solopreneurs, they typically have a completely different.
+
+700
+01:08:15,600 --> 01:08:30,000
+[SPEAKER_00] Of course, if you're improving their business because the post gets in more or the video are higher quality or whatever, yeah, the price sensitivity of this because it's the business is obviously very different from somebody who's just trying to make their photo look better.
+
+701
+01:08:30,320 --> 01:08:32,560
+[SPEAKER_00] And this is one that is one of the most common things.
+
+702
+01:08:32,800 --> 01:08:41,920
+[SPEAKER_00] Like, so yeah, age goals and I don't know how to define this, like, typology of users between, like, consumer and prosumer and real businesses, like, and big businesses.
+
+703
+01:08:42,080 --> 01:08:44,080
+[SPEAKER_00] Like, uh, this one is a very big one.
+
+704
+01:08:44,800 --> 01:08:44,880
+[SPEAKER_01] Yeah.
+
+705
+01:08:45,440 --> 01:08:52,080
+[SPEAKER_01] I know you talk to the MMPs a lot and have some limited insights into some of these ad networks.
+
+706
+01:08:52,560 --> 01:08:56,400
+[SPEAKER_01] Is this something you think the MMPs and ad networks could do better?
+
+707
+01:08:57,040 --> 01:09:55,920
+[SPEAKER_01] Like, should, you know, Apps Flower and Adjust and Singular, you know, should they be building these kind of signal engineering tools into their tooling to make it this easier and then you already mentioned the like the bid multiplier and things like that that meta is doing do you think these kinds of things are going to get easier and easier over time as the value is recognized and then both the MMPs and the ad networks are going to make this kind of stuff easier and then just to complicate the question a little bit more how much of this will ultimately start to get solved with meta specifically but all the other major ad networks are using more and more AI to figure and machine learning really it's machine learning they've been doing a long time but we'll just call it AI how much of this is just going to get better and better by default as the platforms are able to figure these things out with better machine learning and more sophisticated tools on their end.
+
+708
+01:09:56,640 --> 01:10:00,880
+[SPEAKER_00] So there's more or less three questions I'm going to answer in a different order that they came in.
+
+709
+01:10:01,040 --> 01:10:12,080
+[SPEAKER_00] As of the art platform offering more options to like put a weight on each value, like the BitModifier on Facebook, which is now called value-based rules, even though those two things are not the same, it doesn't matter.
+
+710
+01:10:12,560 --> 01:10:14,000
+[SPEAKER_00] I think we're not going to see a lot of it.
+
+711
+01:10:14,720 --> 01:10:16,160
+[SPEAKER_00] It's not the direction it's taking.
+
+712
+01:10:16,320 --> 01:10:19,200
+[SPEAKER_00] The direction it's taking is hands off marketers, let us do it.
+
+713
+01:10:19,440 --> 01:10:21,360
+[SPEAKER_00] We're doing it better than you will ever know.
+
+714
+01:10:21,680 --> 01:10:27,360
+[SPEAKER_00] Like, which I tend to disagree not that I wanted all manual like it was ten years ago.
+
+715
+01:10:27,840 --> 01:10:36,880
+[SPEAKER_00] All the machine learning that has been deployed towards conversion optimization by Meta and Google has been insanely successful and we don't want this back.
+
+716
+01:10:37,200 --> 01:10:39,120
+[SPEAKER_00] We would be much worse off without it.
+
+717
+01:10:39,680 --> 01:10:49,840
+[SPEAKER_00] And you can see that it's where the smaller platform has a problem because the amount of effort to deploy this costs the same to a small platform, to a big platform, but the reward is not the same.
+
+718
+01:10:50,480 --> 01:11:03,760
+[SPEAKER_00] So smaller platforms tend to be much more primitive and it plays against them and that ends up that we marketers end up concentrating all our money on the same baskets because those baskets are much more efficient and they don't want to give give us more control.
+
+719
+01:11:04,080 --> 01:11:10,000
+[SPEAKER_00] So Facebook actually does it a little bit, but all the others and the direction it's taking is actually less of it.
+
+720
+01:11:10,160 --> 01:11:11,600
+[SPEAKER_00] So I'm not expecting to see more of it.
+
+721
+01:11:12,000 --> 01:11:16,720
+[SPEAKER_00] And that's why I need to do it more on my side, because the platform gives me less and less levers to pull.
+
+722
+01:11:17,280 --> 01:11:23,520
+[SPEAKER_00] So I'm going to play on a lever that, I mean, they can't prevent me from deciding what I'm sending them.
+
+723
+01:11:24,000 --> 01:11:25,520
+[SPEAKER_00] And they do want this signal anyway.
+
+724
+01:11:25,680 --> 01:11:28,080
+[SPEAKER_00] So this is where it's still going to get deployed.
+
+725
+01:11:28,160 --> 01:11:28,880
+[SPEAKER_00] So that was one question.
+
+726
+01:11:29,360 --> 01:11:31,280
+[SPEAKER_00] Two, could the MMP help there?
+
+727
+01:11:31,520 --> 01:11:32,080
+[SPEAKER_00] I think they could.
+
+728
+01:11:32,400 --> 01:11:36,320
+[SPEAKER_00] They could by making it a little bit easier also because they see patterns.
+
+729
+01:11:36,640 --> 01:11:41,120
+[SPEAKER_00] Like there are only a few MMPs and they have a very large number of clients.
+
+730
+01:11:41,360 --> 01:11:51,520
+[SPEAKER_00] So they do see patterns and they could communicate not as, oh, PlayRace is doing this and Tinder is doing that, but more like, oh, in this vertical, it's very common to filter triangle.
+
+731
+01:11:51,680 --> 01:11:56,240
+[SPEAKER_00] Or in this vertical, be very careful about how you send your ads revenue or whatever.
+
+732
+01:11:56,720 --> 01:12:04,400
+[SPEAKER_00] And so one on the educational side, and I don't think it's been dealt so much, and two in actually making it more default.
+
+733
+01:12:04,640 --> 01:12:12,320
+[SPEAKER_00] The problem here is that everybody's got their own and typically onboarding question is not something that you can have default in any SDK.
+
+734
+01:12:12,480 --> 01:12:16,320
+[SPEAKER_00] It's going to be the actual developer who needs to declare, okay, I've got this question.
+
+735
+01:12:16,640 --> 01:12:19,680
+[SPEAKER_00] It's never going to be the same across across two apps.
+
+736
+01:12:19,920 --> 01:12:20,640
+[SPEAKER_00] So it's kind of hard for.
+
+737
+01:12:21,360 --> 01:12:22,720
+[SPEAKER_00] them to deploy at scale.
+
+738
+01:12:23,120 --> 01:12:26,240
+[SPEAKER_00] I think it should be part of the educational package.
+
+739
+01:12:26,320 --> 01:12:28,000
+[SPEAKER_00] I'm like, oh, you can do this, this, this.
+
+740
+01:12:28,320 --> 01:12:38,640
+[SPEAKER_00] I think they haven't done it much because it's so unique to every app, but also because in their place it's kind of like, yeah, as soon as you send us an event, we're going to send it to the platform.
+
+741
+01:12:39,040 --> 01:12:39,520
+[SPEAKER_00] That's my job.
+
+742
+01:12:40,080 --> 01:12:41,040
+[SPEAKER_00] And we're already doing it.
+
+743
+01:12:41,280 --> 01:12:46,320
+[SPEAKER_00] As soon as you send it to me, I'm going to process it nicely, but maybe they could do a little bit more.
+
+744
+01:12:47,120 --> 01:12:52,640
+[SPEAKER_00] And the last question was, is AI going to replace this on the platform side?
+
+745
+01:12:53,120 --> 01:12:56,160
+[SPEAKER_00] And in part, yes, and it's already what they're doing.
+
+746
+01:12:56,640 --> 01:12:59,760
+[SPEAKER_00] But they've done as much as they could and they've gone very, very far.
+
+747
+01:13:00,400 --> 01:13:10,720
+[SPEAKER_00] The last piece, in my opinion, is on our side because it's so unique and because I don't want the platform to deal with my data the exact same way that they deal with the average of my sector.
+
+748
+01:13:10,880 --> 01:13:15,680
+[SPEAKER_00] I want it to be as close as possible to my and sometimes even my own internal goals they change over time.
+
+749
+01:13:16,000 --> 01:13:16,960
+[SPEAKER_00] I'll tell you one example.
+
+750
+01:13:17,520 --> 01:13:36,480
+[SPEAKER_00] I have one particular case where we used to optimize towards a predicted LTV and then suddenly we realized that cash flow was more important and we realized that it was not the same user who brings the maximum LTV CAC or return after five years than the one who brings it after three months.
+
+751
+01:13:36,560 --> 01:13:40,880
+[SPEAKER_00] And we're like, okay, right now it's more important that we ma maximize short term payback.
+
+752
+01:13:41,920 --> 01:13:42,960
+[SPEAKER_00] Okay, let's change it.
+
+753
+01:13:43,520 --> 01:13:45,600
+[SPEAKER_00] And this is not something the platform is going to decide for me.
+
+754
+01:13:46,080 --> 01:13:47,280
+[SPEAKER_00] I have to decide this myself.
+
+755
+01:13:47,600 --> 01:13:50,080
+[SPEAKER_00] But also because every configuration is a little bit unique.
+
+756
+01:13:50,400 --> 01:13:56,480
+[SPEAKER_00] That said, I believe there will be AI and machine learning, but not on the platform side to decide on my side.
+
+757
+01:13:56,960 --> 01:13:59,040
+[SPEAKER_00] That could come from amplitude.mixpanel.
+
+758
+01:13:59,280 --> 01:14:03,680
+[SPEAKER_00] That could come from revenue cat who says, look, we've got access to all your subscribers.
+
+759
+01:14:04,080 --> 01:14:10,560
+[SPEAKER_00] And we've detected that there's twenty percent of those that are very low value, twenty percent of those are extremely high value.
+
+760
+01:14:10,720 --> 01:14:13,040
+[SPEAKER_00] And we're going to package it into here are three events.
+
+761
+01:14:13,200 --> 01:14:14,160
+[SPEAKER_00] If you want to use them, use them.
+
+762
+01:14:14,400 --> 01:14:15,760
+[SPEAKER_00] If you don't want to use them, use them.
+
+763
+01:14:16,080 --> 01:14:20,720
+[SPEAKER_00] So actually, here, I don't think it's going to be Facebook and Meta who's going to do the job or Uploading or whoever.
+
+764
+01:14:21,040 --> 01:14:28,720
+[SPEAKER_00] It's a little bit hard for the MMPs, it could be, but I think it's more going to come from product analytics and subscription data tools like RodeyCut 2.
+
+765
+01:14:28,800 --> 01:14:30,240
+[SPEAKER_00] So actually it's more of a request.
+
+766
+01:14:30,400 --> 01:14:31,360
+[SPEAKER_00] It would be very nice to have it.
+
+767
+01:14:32,480 --> 01:14:34,880
+[SPEAKER_00] But I think you're in a better place to do it than MMPs.
+
+768
+01:14:35,040 --> 01:14:35,200
+[SPEAKER_00] Right.
+
+769
+01:14:35,520 --> 01:14:37,600
+[SPEAKER_00] The data you have around revenue is much more solid.
+
+770
+01:14:38,480 --> 01:14:38,560
+[SPEAKER_00] Yeah.
+
+771
+01:14:39,440 --> 01:14:40,640
+[SPEAKER_00] That makes a ton of sense.
+
+772
+01:14:41,120 --> 01:14:42,240
+[SPEAKER_00] I came back to you fast here.
+
+773
+01:14:43,520 --> 01:14:43,600
+[SPEAKER_01] Yeah.
+
+774
+01:14:46,320 --> 01:14:48,960
+[SPEAKER_01] So I did want to get into the more advanced side of things.
+
+775
+01:14:49,440 --> 01:14:53,040
+[SPEAKER_01] So we've kind of stepped through this, you know, step one, make sure your data is good.
+
+776
+01:14:53,760 --> 01:14:56,720
+[SPEAKER_01] Step two, you know, pick off some of the low hanging fruit.
+
+777
+01:14:57,280 --> 01:15:02,320
+[SPEAKER_01] And then you said, you know, step three is to really dive deep and do some of these more advanced stuff.
+
+778
+01:15:02,480 --> 01:15:13,440
+[SPEAKER_01] And you've sprinkled in a lot of the more advanced stuff along the way, but I wanted to give you an opportunity to really nerd out and like go deep on like what these more advanced signal engineering processes look like.
+
+779
+01:15:14,320 --> 01:15:18,960
+[SPEAKER_00] In my opinion, as soon as you get a little bit sophisticated, it's going to be done at revenue level.
+
+780
+01:15:19,200 --> 01:15:22,720
+[SPEAKER_00] Like you're going to share tweaked revenue, filtered revenue.
+
+781
+01:15:22,800 --> 01:15:24,880
+[SPEAKER_00] It's never going to be filtered events.
+
+782
+01:15:25,360 --> 01:15:26,960
+[SPEAKER_00] The problem with events is that they happen.
+
+783
+01:15:27,760 --> 01:15:28,480
+[SPEAKER_00] It's binary.
+
+784
+01:15:28,640 --> 01:15:29,920
+[SPEAKER_00] Either they happen or they don't happen.
+
+785
+01:15:30,240 --> 01:15:33,680
+[SPEAKER_00] And the platform, they can only optimize toward one event, not two or three.
+
+786
+01:15:34,080 --> 01:15:43,200
+[SPEAKER_00] I mean, you can add them up, but it's not they're going to have the same value to the platform which may change in the future and I hope Meta is going to release this and then eventually Google but we're not there yet.
+
+787
+01:15:43,520 --> 01:16:17,360
+[SPEAKER_00] The most sophisticated stuff is done at the revenue level because I can be so much more granular about this uses was one dollar this uses was ten that's it I'll do my own devil's advocate against my opinion like some advanced stuff can be done at the event level and I know Voyantis for example believes that the timing of which you send the event is actually creating a difference and they proved it against what I betted so they won on that one I'm still not very good at engineering it myself but they showed me that it's true actually sending it earlier or later could make a difference.
+
+788
+01:16:17,920 --> 01:16:21,760
+[SPEAKER_00] Not too late either, but sometimes you got a free trial happening.
+
+789
+01:16:22,640 --> 01:16:32,080
+[SPEAKER_00] But even the onboarding question and the other criteria we talked to, they're not good enough to decide if this free trial is highly likely to convert or low likely to convert.
+
+790
+01:16:32,480 --> 01:16:50,320
+[SPEAKER_00] You could perfectly prevent the event from being fired, wait for one or two hours, notice that, oh, this users, this group of users have done three activities, three meditations, three workouts, three whatever, within two hours, and this group has not, and I'm only going to fire those ones and not the others.
+
+791
+01:16:50,640 --> 01:16:53,520
+[SPEAKER_00] So you could delay a little bit the event, still work on event and do it.
+
+792
+01:16:53,840 --> 01:17:01,040
+[SPEAKER_00] Personally, I think all the sophisticated stuff happens at the revenue level because you can be so much more precise about how you send it.
+
+793
+01:17:01,440 --> 01:17:28,160
+[SPEAKER_00] My other argument against the timing is that, and I'm going to join the sophisticated question back into the low-ranking through, is that I'm entirely convinced that whatever comes after 24 hours is useless for the platform to optimize towards, which is a very hard ask because a lot of apps, especially in gaming, need a full week of seeing how users come back to the app, what they do, do they convert later, do they actually start with a small purchase before going up.
+
+794
+01:17:29,200 --> 01:17:33,920
+[SPEAKER_00] Yeah, it would be great if or with free trial is the same case because they then you've got three days.
+
+795
+01:17:34,160 --> 01:17:35,200
+[SPEAKER_00] I had a question recently.
+
+796
+01:17:35,360 --> 01:17:42,880
+[SPEAKER_00] Like someone was like, Oh, if I reduce my free trial from seven days to three days, it'll be much easier for the platform to see this data after the third day.
+
+797
+01:17:43,120 --> 01:17:44,000
+[SPEAKER_00] I was like, No.
+
+798
+01:17:44,320 --> 01:17:48,080
+[SPEAKER_00] Anyway, if it's not the first day, in my opinion, so it's not entirely useless.
+
+799
+01:17:48,240 --> 01:17:49,680
+[SPEAKER_00] It's not one hundred percent useless.
+
+800
+01:17:50,160 --> 01:17:52,800
+[SPEAKER_00] But in my opinion, you need to find something that happens on the first day.
+
+801
+01:17:53,280 --> 01:18:01,520
+[SPEAKER_00] And that makes that you might prevent the event from being shot in the moment it happens, but you want to send it in the first hours.
+
+802
+01:18:01,760 --> 01:18:03,280
+[SPEAKER_00] You wait a few hours and then you send it.
+
+803
+01:18:03,360 --> 01:18:03,840
+[SPEAKER_01] And then that's it.
+
+804
+01:18:04,080 --> 01:18:04,640
+[SPEAKER_01] That's what you got.
+
+805
+01:18:04,880 --> 01:18:45,520
+[SPEAKER_00] So one of the low-ranking fruits here is, don't optimize for your seven-day or fourteen-day, whatever, is optimize something for day one and the advanced stuff is move it to revenue so you can tweak it further and further and further and then you're going to edit on the go and it's going to be and you add a new plan and you can easily add, okay, I've got a new type of plan or I've got a promo and I'm going to edit the value very close to what I think acts and that can include also like, for example, you could detect that refund of a particular pattern that some people are more likely to refund, they've done this and this and that and then users who've done this and this and that, you would assign a slightly different value.
+
+806
+01:18:45,840 --> 01:18:46,400
+[SPEAKER_00] You're never sure.
+
+807
+01:18:46,560 --> 01:18:47,680
+[SPEAKER_00] I mean, it's all probabilistic.
+
+808
+01:18:47,840 --> 01:18:49,040
+[SPEAKER_00] It's not like at user level.
+
+809
+01:18:49,280 --> 01:18:52,640
+[SPEAKER_00] Yes, a user conversion is trial or refunds or renew.
+
+810
+01:18:53,120 --> 01:18:58,320
+[SPEAKER_00] But then in campaigns, you're going to have a bag of these users and you're trying to get as close as reality as you can get.
+
+811
+01:18:58,560 --> 01:19:08,480
+[SPEAKER_00] And one thing that is actually hard, like, I've got this with a team right now where we're monitoring the value we're sending the platforms against the real value that's happening.
+
+812
+01:19:08,640 --> 01:19:10,720
+[SPEAKER_00] And we've got like this curve that I'm following.
+
+813
+01:19:11,120 --> 01:19:19,600
+[SPEAKER_00] And as soon as we see that there's a gap in there, we know something is going wrong, as dynamic and sophisticated as the model is, it never follows the exact reality.
+
+814
+01:19:19,760 --> 01:19:21,840
+[SPEAKER_00] So we're looking at closing the gap always and always.
+
+815
+01:19:22,480 --> 01:19:27,440
+[SPEAKER_00] This developer works on being as close as possible as the real value.
+
+816
+01:19:27,840 --> 01:19:28,880
+[SPEAKER_00] But then you can engineer further.
+
+817
+01:19:29,360 --> 01:19:31,760
+[SPEAKER_00] And I had this other conversation with you can fake it.
+
+818
+01:19:32,080 --> 01:19:38,240
+[SPEAKER_00] And typically, something that I do is I like to amplify it to make the network's job even easier.
+
+819
+01:19:38,720 --> 01:19:40,720
+[SPEAKER_00] So let's say, let's simplify the situation.
+
+820
+01:19:40,960 --> 01:19:44,720
+[SPEAKER_00] I've got users worth five dollars and I've got users worth fifty dollars.
+
+821
+01:19:45,280 --> 01:19:50,880
+[SPEAKER_00] Well, what I'm going to tell the platform is that these five dollars are actually three, but that these fifty dollars are actually a hundred.
+
+822
+01:19:51,280 --> 01:19:52,800
+[SPEAKER_00] Like, and I'm going to force it.
+
+823
+01:19:52,960 --> 01:19:55,200
+[SPEAKER_00] Like, I'm going to make it a little bit more extreme.
+
+824
+01:19:56,000 --> 01:20:00,000
+[SPEAKER_00] The trick here is that it makes that I can't really read the value anymore in the platform.
+
+825
+01:20:00,320 --> 01:20:02,720
+[SPEAKER_00] I can't read my ROAS on Facebook because it's all fake.
+
+826
+01:20:02,800 --> 01:20:04,720
+[SPEAKER_00] I'm going to look at it on my site, but it's okay.
+
+827
+01:20:05,040 --> 01:20:11,040
+[SPEAKER_00] I'm going to try to force the platform to gear to what the users are that are most valuable to me by forcing it a little bit.
+
+828
+01:20:11,280 --> 01:20:15,840
+[SPEAKER_00] And this fun conversation with someone from gaming who said, oh, I do the opposite.
+
+829
+01:20:16,240 --> 01:20:16,320
+[SPEAKER_00] What?
+
+830
+01:20:16,880 --> 01:20:22,400
+[SPEAKER_00] So when you have a high value user, you take the platform that is a medium value user, say, yes, because we've got wells.
+
+831
+01:20:23,040 --> 01:20:29,760
+[SPEAKER_00] And then if I really declare a big well of 500 or 1000, Meta is going to say, that's it, my job is done for the day.
+
+832
+01:20:29,920 --> 01:20:31,760
+[SPEAKER_00] I bring that one user and I'm done.
+
+833
+01:20:32,160 --> 01:20:33,280
+[SPEAKER_00] So they actually cap it.
+
+834
+01:20:33,680 --> 01:20:38,000
+[SPEAKER_00] The thing is that it's a lot more rare in subscription that you want to do that.
+
+835
+01:20:38,160 --> 01:20:41,120
+[SPEAKER_00] But let's say you've got this tier of subscription with ChatGPT.
+
+836
+01:20:41,680 --> 01:20:51,760
+[SPEAKER_00] Maybe ChatGPT is going to fake it that the $200 plan is actually only 100 because otherwise the, the company could derail faster if too many of these users come simultaneously.
+
+837
+01:20:51,920 --> 01:20:58,320
+[SPEAKER_00] So you want because at the end of the day, the machine of optimization, they're very sophisticated, but they're also a little bit dumb.
+
+838
+01:20:58,720 --> 01:21:04,480
+[SPEAKER_00] And sometimes when you, when they see a couple of good signals coming, they start like completely changing delivery.
+
+839
+01:21:04,560 --> 01:21:09,760
+[SPEAKER_00] And yeah, we're playing with fire a little bit here because one, we experiment on the way and I made a few mistakes on the way.
+
+840
+01:21:11,120 --> 01:21:15,680
+[SPEAKER_00] But two, it can derail pretty fast in a way that you haven't predicted.
+
+841
+01:21:15,920 --> 01:21:30,240
+[SPEAKER_00] And which if you look at it from the network side, from Apple of In or from Facebook, and you look at it and say, yeah, it's kind of logical that if they saw all this revenue happen that day, the next day., they delivered in a way that basically went too fast and too extreme.
+
+842
+01:21:30,480 --> 01:21:35,920
+[SPEAKER_00] So you need to find a balance because I often make it more extreme than it is, but there is a limit to this.
+
+843
+01:21:36,080 --> 01:21:37,440
+[SPEAKER_00] Like, you can't go too far with this.
+
+844
+01:21:37,520 --> 01:21:38,880
+[SPEAKER_00] Like, don't push it.
+
+845
+01:21:39,280 --> 01:21:51,120
+[SPEAKER_00] I also had a very interesting conversation with someone else who was like, is it better to fake it that you're making more revenue so that Facebook will think you're super successful and serve you more than other advertisers?
+
+846
+01:21:52,240 --> 01:21:57,600
+[SPEAKER_00] Or will they actually come to eat your margin and say, Oh, this guy is making too much money, so I'm going to under deliver.
+
+847
+01:21:57,840 --> 01:22:05,360
+[SPEAKER_00] I don't have the answer to this question, but it's kind of an interesting one to think about, like, how much the platform itself is reacting to the change we're making.
+
+848
+01:22:05,680 --> 01:22:06,080
+[SPEAKER_00] on that site?
+
+849
+01:22:06,720 --> 01:22:08,560
+[SPEAKER_01] Yeah, it's also fascinating.
+
+850
+01:22:09,120 --> 01:22:20,000
+[SPEAKER_01] So in this advanced scenario, we're actually manipulating the revenue that you're sending back for the revenue optimization goals.
+
+851
+01:22:20,640 --> 01:22:22,160
+[SPEAKER_01] How does that actually play out?
+
+852
+01:22:22,320 --> 01:22:41,840
+[SPEAKER_01] So you're looking in like amplitude mix panel or internal dashboards and you're determining back to our meditation app example that somebody who answers anxiety and does these other three actions is our super high value user.
+
+853
+01:22:42,640 --> 01:22:51,760
+[SPEAKER_01] So you're kind of backtracking from known data and the signals that you're seeing inside the app and then assigning a value to that.
+
+854
+01:22:51,920 --> 01:23:02,560
+[SPEAKER_01] And then to your example earlier as well, it's like, you know, if they have this general need but they're still monetizing but they're not monetizing great, then you assign the one dollar value.
+
+855
+01:23:03,280 --> 01:23:04,000
+[SPEAKER_01] How are you doing that?
+
+856
+01:23:04,160 --> 01:23:05,120
+[SPEAKER_01] And how do you think about that?
+
+857
+01:23:05,920 --> 01:23:20,800
+[SPEAKER_00] Before you go and take risk of changing the value itself to something that you faked and you think you're smarter, I think I'm smarter, and which can backfire pretty fast, the logic of it is just making a regression of where is their variance?
+
+858
+01:23:21,120 --> 01:23:27,040
+[SPEAKER_00] Like, I know I've got users of different values, which are the criteria that create this variance?
+
+859
+01:23:27,120 --> 01:23:28,160
+[SPEAKER_00] Is it an onboarding question?
+
+860
+01:23:28,400 --> 01:23:29,040
+[SPEAKER_00] Is it the device?
+
+861
+01:23:29,200 --> 01:23:30,640
+[SPEAKER_00] Is it the time code completion?
+
+862
+01:23:30,800 --> 01:23:31,200
+[SPEAKER_00] Is it this?
+
+863
+01:23:31,680 --> 01:23:37,680
+[SPEAKER_00] It's basically crossing this, okay, I've got these high value users and these low value users and these zero value users.
+
+864
+01:23:38,400 --> 01:23:40,560
+[SPEAKER_00] What each do have in common that the others don't?
+
+865
+01:23:40,800 --> 01:23:42,080
+[SPEAKER_00] It's basically a regression analysis.
+
+866
+01:23:42,720 --> 01:23:53,440
+[SPEAKER_00] The reality is that many, many times I've explained to the data analyst that I want this job to be done and that his goal is for him to find a criteria that I didn't spot by myself, like a new criteria.
+
+867
+01:23:54,240 --> 01:23:56,560
+[SPEAKER_00] The reality is that the criteria, they're very often the same.
+
+868
+01:23:56,720 --> 01:23:58,560
+[SPEAKER_00] They're the ones we mentioned, they're the big ones.
+
+869
+01:23:58,720 --> 01:24:13,760
+[SPEAKER_00] I guess as you go more sophisticated and I had an interesting talk with Yantis about this again, also about the number of activities that people do and when they do it and the time of day and if they install on a weekend and then it's a different pattern.
+
+870
+01:24:14,240 --> 01:24:26,800
+[SPEAKER_00] They go much further than this, but I think for most people, like basically looking at where does variance come, like regression analysis of which are the criteria that create variance between people who refund a lot, between people who renew a lot.
+
+871
+01:24:27,440 --> 01:24:30,160
+[SPEAKER_00] And usually you've got 95 percent of the job done.
+
+872
+01:24:30,320 --> 01:24:34,800
+[SPEAKER_00] Like, yeah, if you look for this, where the variance is coming, like it should be good enough for most cases.
+
+873
+01:24:35,360 --> 01:24:37,440
+[SPEAKER_00] Are any of the tools particularly good at this?
+
+874
+01:24:37,680 --> 01:24:42,640
+[SPEAKER_01] I know Amplitude recently has this AI variance data detection, kind of stuff.
+
+875
+01:24:42,960 --> 01:24:44,960
+[SPEAKER_01] Are any of the tools especially good at that?
+
+876
+01:24:45,440 --> 01:24:45,760
+[SPEAKER_01] I wish.
+
+877
+01:24:46,240 --> 01:24:49,280
+[SPEAKER_00] The problem is that very often the data is a little bit scattered.
+
+878
+01:24:49,600 --> 01:24:55,840
+[SPEAKER_00] Like Amplitude would have very, very good, but then the connection with RevenueCat or similar needs to be extremely good as well.
+
+879
+01:24:56,080 --> 01:24:58,240
+[SPEAKER_00] Like for the revenue to be proper.
+
+880
+01:24:58,480 --> 01:25:00,720
+[SPEAKER_00] Like very often it comes from a variety of sources.
+
+881
+01:25:01,120 --> 01:25:06,800
+[SPEAKER_00] I think it's going to come, but in the case that I've seen myself, it was done manually from backend data.
+
+882
+01:25:07,120 --> 01:25:15,280
+[SPEAKER_00] Like because it's the only place where we had the liberty to dig and query the data in very, very specific way ourselves.
+
+883
+01:25:15,680 --> 01:25:19,520
+[SPEAKER_00] Also because we could extract it and the data analyst could run his own model on it.
+
+884
+01:25:20,240 --> 01:25:23,280
+[SPEAKER_00] and not feel limited by what those models are offering.
+
+885
+01:25:23,760 --> 01:25:32,480
+[SPEAKER_00] But also in one particular case because they had very sophisticated internal tooling and they do have amplitude and they do have an MMP and so on.
+
+886
+01:25:33,120 --> 01:25:38,400
+[SPEAKER_00] But in their own back end, they've got the equivalent of Running Card and the equivalent of amplitude for every single screen.
+
+887
+01:25:38,880 --> 01:25:42,080
+[SPEAKER_00] And so obviously this case, the data was more complete there.
+
+888
+01:25:42,560 --> 01:25:53,040
+[SPEAKER_00] If somebody has a mixed panel amplitude connection with Running Card that is really properly done and a very large cohort of users, eventually it's going to be it's going to be done automatically.
+
+889
+01:25:53,360 --> 01:25:56,480
+[SPEAKER_00] Maybe there's a joint work to be done here between you and them.
+
+890
+01:25:56,960 --> 01:25:59,120
+[SPEAKER_00] But most of the ones I've seen, they were manual.
+
+891
+01:26:00,080 --> 01:26:04,320
+[SPEAKER_00] And I think the reason is that one is a little bit of a pioneering field still.
+
+892
+01:26:04,880 --> 01:26:06,560
+[SPEAKER_00] Two, there's a lot of predictive stuff.
+
+893
+01:26:06,720 --> 01:26:07,520
+[SPEAKER_00] So it's very unique.
+
+894
+01:26:08,000 --> 01:26:12,320
+[SPEAKER_00] And three, yeah, very often you would engage different source of data together.
+
+895
+01:26:12,880 --> 01:26:23,200
+[SPEAKER_00] And even though you have revenue cuttings there, and even though, for example, in Amplitude, I can plug also the MMP data so I can filter by source, it's not something that is supernatural.
+
+896
+01:26:23,360 --> 01:26:29,520
+[SPEAKER_00] It's not something that is completely well done out of the box because it's made for product analytics people.
+
+897
+01:26:29,760 --> 01:26:33,280
+[SPEAKER_00] It's not for product managers and not for user acquisition specialists.
+
+898
+01:26:33,440 --> 01:26:35,360
+[SPEAKER_00] Yeah, it's not a revenue optimization tool.
+
+899
+01:26:35,440 --> 01:26:37,120
+[SPEAKER_01] It's an analytics tool.
+
+900
+01:26:37,200 --> 01:26:39,040
+[SPEAKER_00] Exactly, it's not what it's made for.
+
+901
+01:26:39,280 --> 01:26:46,320
+[SPEAKER_00] And I don't think it's impossible and some people will do it like this, but I know I've struggled with some limitation in some cases.
+
+902
+01:26:47,120 --> 01:26:48,640
+[SPEAKER_00] Yeah, that makes a lot of sense.
+
+903
+01:26:49,040 --> 01:26:58,880
+[SPEAKER_01] Well, we've gone quite long, but I wanted to give you an opportunity for kind of a grab bag here at the end of other considerations that we haven't discussed.
+
+904
+01:26:58,960 --> 01:27:07,440
+[SPEAKER_01] So like, you know, one of them that we talked about on the webinar was the tradeoffs you make in volume of events versus quality of events.
+
+905
+01:27:08,000 --> 01:27:16,720
+[SPEAKER_01] So why don't you cover that first and then just a grab bag of anything else that you think people should be considering as they embark on their signal engineering journey.
+
+906
+01:27:17,360 --> 01:27:20,240
+[SPEAKER_00] The volume versus quality, I mean, we didn't comment it today.
+
+907
+01:27:20,480 --> 01:27:28,400
+[SPEAKER_00] So for those who have missed the previous webinar and not read the article that I haven't posted yet, necessarily they've missed it.
+
+908
+01:27:28,800 --> 01:27:31,360
+[SPEAKER_00] So I'll go back to it because it's pretty fundamental.
+
+909
+01:27:31,680 --> 01:27:36,960
+[SPEAKER_00] But yeah, you can have a fantastic event if the platform is seeing one or two every day, it's not going to work.
+
+910
+01:27:37,120 --> 01:27:42,720
+[SPEAKER_00] Like the filtering I mentioned before, like for me, filtering out people is the last resort, but that's not true.
+
+911
+01:27:43,200 --> 01:27:47,520
+[SPEAKER_00] If I have a very large amount of data, I would be more inclined to exclude people.
+
+912
+01:27:47,840 --> 01:27:50,000
+[SPEAKER_00] That is the number of events you said.
+
+913
+01:27:50,160 --> 01:27:51,360
+[SPEAKER_00] So here is at campaign level.
+
+914
+01:27:51,680 --> 01:28:01,280
+[SPEAKER_00] Like every campaign, basically there's a threshold of optimization that networks., there's no exact number, but the number that's floating around is somewhere between fifty and a hundred per week.
+
+915
+01:28:01,520 --> 01:28:06,880
+[SPEAKER_00] So I simplify in my head and say, below ten events per day per campaign, things are going to go a little bit wrong.
+
+916
+01:28:07,600 --> 01:28:09,200
+[SPEAKER_00] It's a little bit more the better.
+
+917
+01:28:09,440 --> 01:28:13,760
+[SPEAKER_00] So if I can have twenty five instead of ten, I'd rather not filter and have twenty five.
+
+918
+01:28:14,080 --> 01:28:17,280
+[SPEAKER_00] And if I have forty instead of twenty, then I have forty, it's better.
+
+919
+01:28:17,920 --> 01:28:22,480
+[SPEAKER_00] But once you get there, there's very little upside to sending three hundred every day.
+
+920
+01:28:23,040 --> 01:28:27,520
+[SPEAKER_00] And there's a lot of upside of sending only thirty every day, but that are super filtered.
+
+921
+01:28:27,840 --> 01:28:30,880
+[SPEAKER_00] So in this case, this is where the tradeoff between volume and quality is.
+
+922
+01:28:31,120 --> 01:28:38,080
+[SPEAKER_00] So if you're too early, basically, you can't do qualifiedied trials, almost because you already only have five trials per day.
+
+923
+01:28:38,400 --> 01:28:39,920
+[SPEAKER_00] So don't try to filter them.
+
+924
+01:28:40,160 --> 01:28:44,080
+[SPEAKER_00] Like, almost you'll want to go higher up before the free trial.
+
+925
+01:28:44,240 --> 01:28:51,600
+[SPEAKER_00] Say, okay, these users haven't tried a free trial, but they've shown very good intent around on boarding questions, about the first activity.
+
+926
+01:28:51,840 --> 01:28:54,000
+[SPEAKER_00] I'm going to also send them so that I have more events.
+
+927
+01:28:54,240 --> 01:28:56,800
+[SPEAKER_00] And so the more event you have, the more you can filter around.
+
+928
+01:28:57,040 --> 01:28:57,600
+[SPEAKER_00] That's pretty clear.
+
+929
+01:28:57,760 --> 01:28:59,440
+[SPEAKER_00] And this trade-off is pretty fundamental.
+
+930
+01:28:59,680 --> 01:29:03,760
+[SPEAKER_00] That day on the webinar, we didn't talk too much about timing, but I think I covered it decently today.
+
+931
+01:29:04,240 --> 01:29:08,720
+[SPEAKER_00] Also covering the other part, the postsecond part, but the timing is important.
+
+932
+01:29:09,120 --> 01:29:10,800
+[SPEAKER_00] And my rule here is don't wait.
+
+933
+01:29:11,040 --> 01:29:11,600
+[SPEAKER_00] Don't wait too long.
+
+934
+01:29:11,840 --> 01:29:13,440
+[SPEAKER_00] You can wait a little bit, but don't wait too long.
+
+935
+01:29:13,920 --> 01:29:16,720
+[SPEAKER_00] So timing is one and the amount is one.
+
+936
+01:29:17,200 --> 01:29:18,240
+[SPEAKER_00] The amount is very critical.
+
+937
+01:29:18,400 --> 01:29:24,800
+[SPEAKER_00] It's something because over time, maybe the best engineering you can do today is very different from the one you can do in six months.
+
+938
+01:29:25,280 --> 01:29:31,280
+[SPEAKER_00] Just because your budget has moved from 100 K to 500 K, it allows you to do a very different kind of filtering.
+
+939
+01:29:31,680 --> 01:29:33,200
+[SPEAKER_00] Also because your cohort has grown.
+
+940
+01:29:33,520 --> 01:29:54,240
+[SPEAKER_00] So before, even with the teams that have the most sophisticated model, we keep revisiting the value that we're giving because plans change, because we make monetization change, because the mix of channels is different as well, and the whole user maybe because there's a crisis, maybe because there's this, like if you're based on an aggregation of five years of data.
+
+941
+01:29:54,960 --> 01:30:00,320
+[SPEAKER_00] Here is also a big tradeoff about how recent or how much data do I have?
+
+942
+01:30:00,560 --> 01:30:10,240
+[SPEAKER_00] And like, sort of, I've got this rule, for example, in one case, which is if we've got enough users in the last two weeks to make a decent prediction, we use this.
+
+943
+01:30:10,800 --> 01:30:13,360
+[SPEAKER_00] But if we don't, then we expand to three months.
+
+944
+01:30:13,840 --> 01:30:16,720
+[SPEAKER_00] And if we don't, then we're going to loosen up one criteria.
+
+945
+01:30:17,040 --> 01:30:21,120
+[SPEAKER_00] A criteria could be a country, could be a numeric question and so on.
+
+946
+01:30:21,680 --> 01:30:27,840
+[SPEAKER_00] Because otherwise, and I made this mistake several times, like you create useless fluctuation on very small samples.
+
+947
+01:30:28,160 --> 01:30:31,040
+[SPEAKER_00] So obviously, the more data you have, the easier it gets.
+
+948
+01:30:31,200 --> 01:30:32,400
+[SPEAKER_00] It's not a fixed thing.
+
+949
+01:30:32,640 --> 01:30:43,600
+[SPEAKER_00] So the advice here, the TLDR, is to revisit your assumption every now and then, every six months or whatever, or at least control that gap between what you're sending and what is actually happening is not too big.
+
+950
+01:30:44,000 --> 01:30:47,120
+[SPEAKER_00] And the thing about this gap is the trap is to look at total.
+
+951
+01:30:48,320 --> 01:30:49,760
+[SPEAKER_00] We only have a two percent deviation.
+
+952
+01:30:49,920 --> 01:30:55,360
+[SPEAKER_00] I'm like, yeah, but there's ten percent of people who are responsible for eighty percent of this deviation.
+
+953
+01:30:55,600 --> 01:30:56,400
+[SPEAKER_00] So this is the one.
+
+954
+01:30:56,800 --> 01:30:59,120
+[SPEAKER_00] So don't look at this gap only in total.
+
+955
+01:30:59,600 --> 01:31:01,360
+[SPEAKER_00] Monitor that it doesn't go sideways too much.
+
+956
+01:31:01,520 --> 01:31:02,800
+[SPEAKER_00] And country is a big one here.
+
+957
+01:31:02,880 --> 01:31:10,480
+[SPEAKER_00] Like country platform, maybe not every single criteria is needed, but at least monitoring the value of the events that you filter are fairly reliable.
+
+958
+01:31:11,040 --> 01:31:14,160
+[SPEAKER_00] at country level over time is kind of a good idea.
+
+959
+01:31:14,720 --> 01:31:14,880
+[SPEAKER_00] Okay.
+
+960
+01:31:15,200 --> 01:31:16,400
+[SPEAKER_00] Well, this has been a blast.
+
+961
+01:31:17,120 --> 01:31:18,080
+[SPEAKER_01] So much great information.
+
+962
+01:31:18,240 --> 01:31:19,520
+[SPEAKER_01] This is why we have to do it annually.
+
+963
+01:31:19,840 --> 01:31:23,680
+[SPEAKER_01] You're constantly learning new things and then you're so open to sharing.
+
+964
+01:31:23,840 --> 01:31:27,040
+[SPEAKER_01] And then I get asked all the time, hey, can you make an intro to Thomas?
+
+965
+01:31:27,440 --> 01:31:29,040
+[SPEAKER_01] I'm like, Thomas is busy.
+
+966
+01:31:29,760 --> 01:31:31,360
+[SPEAKER_01] He's going to be busy the rest of his life.
+
+967
+01:31:32,000 --> 01:31:35,040
+[SPEAKER_00] I'm too busy researching new topics for David for the next one.
+
+968
+01:31:35,840 --> 01:31:36,240
+[SPEAKER_00] Exactly.
+
+969
+01:31:37,680 --> 01:31:44,000
+[SPEAKER_01] But this is why we'll have to do it annually is that you're you have your stable of great clients that you're making learnings from.
+
+970
+01:31:44,320 --> 01:31:47,120
+[SPEAKER_01] And so you're you're not hesitant to share like a lot of people.
+
+971
+01:31:47,360 --> 01:31:50,880
+[SPEAKER_01] And so I really appreciate like you're always just digging in there and sharing what's working.
+
+972
+01:31:51,280 --> 01:31:54,720
+[SPEAKER_01] And so this has been a master class in figuring this kind of stuff out.
+
+973
+01:31:55,200 --> 01:31:55,920
+[SPEAKER_01] So thanks again.
+
+974
+01:31:56,080 --> 01:32:03,600
+[SPEAKER_01] And then a quick plug, Thomas is actually going to be doing a hands on workshop at App Growth Annual.
+
+975
+01:32:03,920 --> 01:32:07,840
+[SPEAKER_01] So that's going to be October 14th in New York City, 2025.
+
+976
+01:32:08,720 --> 01:32:14,720
+[SPEAKER_01] So if you want to go super hands on with Thomas on single engineering, sign up for App Growth Annual.
+
+977
+01:32:15,120 --> 01:32:23,280
+[SPEAKER_01] The workshops will not be live streamed specifically because we want people to be able to like share and and really open up and have real conversations.
+
+978
+01:32:24,080 --> 01:32:30,640
+[SPEAKER_01] If you're wanting to dig deeper, you got to be in person for the single engineering worksho Workshop at AppGrowth Annual.
+
+979
+01:32:30,960 --> 01:32:36,240
+[SPEAKER_01] So I'm looking forward to seeing you in a couple of months and thank you so much again for the conversation today.
+
+980
+01:32:36,640 --> 01:32:40,880
+[SPEAKER_00] Yeah, likewise, I look forward to seeing you in person and thanks again for inviting.
+
+981
+01:32:43,520 --> 01:32:44,800
+[SPEAKER_00] Thanks so much for listening.
+
+982
+01:32:45,760 --> 01:32:49,200
+[SPEAKER_01] If you have a minute, please leave a review in your favorite podcast player.
+
+983
+01:32:50,000 --> 01:32:54,880
+[SPEAKER_01] You can also stop by chat dot subclub dot com to join our private community.
