@@ -1,0 +1,2995 @@
+1
+00:00:01,120 --> 00:00:08,720
+[SPEAKER_00] Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,280
+[SPEAKER_00] We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+[SPEAKER_00] Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+[SPEAKER_00] Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+[SPEAKER_00] You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:41,600 --> 00:00:43,520
+[SPEAKER_00] Hello, I'm your host, David Bernard.
+
+7
+00:00:44,000 --> 00:00:48,480
+[SPEAKER_00] My guest today is Jim Kantsu, Chief Product Officer at Duolingo.
+
+8
+00:00:49,120 --> 00:01:02,960
+[SPEAKER_00] On the podcast, I talk with Jim about the premium trap many apps fall into, why free trials work even for freeman products, and how Try for zero dollars and zero cents actually outperforms Try for free.
+
+9
+00:01:03,680 --> 00:01:06,080
+[SPEAKER_00] Hey, Jim, thanks so much for joining me on the podcast today.
+
+10
+00:01:06,400 --> 00:01:07,040
+[SPEAKER_01] Happy to be here.
+
+11
+00:01:07,280 --> 00:01:07,920
+[SPEAKER_01] Excited to chat.
+
+12
+00:01:08,320 --> 00:01:11,360
+[SPEAKER_00] So I wanted to talk through Duolingo's monetization story.
+
+13
+00:01:11,600 --> 00:01:18,480
+[SPEAKER_00] I mean, few apps I out there will have tens of millions of users and be in the position Duolingo was in when you started monetizing.
+
+14
+00:01:18,640 --> 00:01:21,920
+[SPEAKER_00] But I think there's so much to learn from the lessons you all learned along the way.
+
+15
+00:01:22,560 --> 00:01:23,440
+[SPEAKER_00] So let's talk about that.
+
+16
+00:01:23,680 --> 00:01:26,960
+[SPEAKER_00] Duolingo was a famously free app, completely free.
+
+17
+00:01:27,680 --> 00:01:30,240
+[SPEAKER_00] And then the first step was layering on ads.
+
+18
+00:01:30,480 --> 00:01:32,560
+[SPEAKER_01] It was actually a website, it was not a mobile app.
+
+19
+00:01:33,040 --> 00:01:36,720
+[SPEAKER_01] And this website's idea was actually to be completely free.
+
+20
+00:01:36,880 --> 00:01:41,280
+[SPEAKER_01] So there would actually be no monetization for the users that are using Duolingo to learn a language.
+
+21
+00:01:41,760 --> 00:01:47,600
+[SPEAKER_01] However, as users did exercises to learn a language, which includes a lot of translation.
+
+22
+00:01:47,680 --> 00:01:54,560
+[SPEAKER_01] So if you're learning Spanish, a lot of your exercises, you're translating Spanish to English or English to Spanish.
+
+23
+00:01:54,960 --> 00:02:02,560
+[SPEAKER_01] Users would do these exercises to learn, but there would be a crowdsourced model to collect those translations and eventually turn that into a translation service.
+
+24
+00:02:03,600 --> 00:02:05,200
+[SPEAKER_01] We actually did this, like this was built.
+
+25
+00:02:06,000 --> 00:02:08,480
+[SPEAKER_01] So I heard the story, but I didn't know you actually did this.
+
+26
+00:02:09,680 --> 00:02:10,080
+[SPEAKER_01] This went live.
+
+27
+00:02:10,640 --> 00:02:13,040
+[SPEAKER_01] And it actually generated some revenue, even though very small.
+
+28
+00:02:13,920 --> 00:02:23,600
+[SPEAKER_01] So we would have customers that are like at the time, like the big news outlets as well, like CNN, Buzzfeed, they would feed an article they wanted to translate from English to Spanish.
+
+29
+00:02:24,240 --> 00:02:35,840
+[SPEAKER_01] And then our users in bits and pieces would translate that article and we would crowdsource a translated article and then provide a translated article back to CNN.
+
+30
+00:02:37,040 --> 00:02:38,160
+[SPEAKER_01] It was actually a genius model.
+
+31
+00:02:38,640 --> 00:02:44,400
+[SPEAKER_01] If you want to do something crowdsourced, it's actually you're kind of serving both sides a positive value.
+
+32
+00:02:45,200 --> 00:02:48,080
+[SPEAKER_01] The challenge with that model was, though, is twofold.
+
+33
+00:02:48,320 --> 00:02:49,360
+[SPEAKER_01] One of them is translation.
+
+34
+00:02:49,920 --> 00:02:51,520
+[SPEAKER_01] Also, this is pre LLMs.
+
+35
+00:02:51,920 --> 00:02:56,560
+[SPEAKER_01] Translation now has changed a lot post LLMs, but this is, you have to remember this is 2013 as well.
+
+36
+00:02:57,360 --> 00:03:00,320
+[SPEAKER_01] Even then, translation was a race to the bottom business model.
+
+37
+00:03:00,880 --> 00:03:12,720
+[SPEAKER_01] So if we were providing a service for, I don't know, how three cents, ten cents, three dollars, whatever it is, there was always someone else trying to do it for a little cheaper by having someone in the Philippines translate it for cheaper.
+
+38
+00:03:12,880 --> 00:03:14,240
+[SPEAKER_01] So there's always a race to the bottom.
+
+39
+00:03:14,480 --> 00:03:16,000
+[SPEAKER_01] It is hard to scale for that reason.
+
+40
+00:03:16,480 --> 00:03:22,800
+[SPEAKER_01] And then number two is more fundamental, which is the translation quality of a language learner is actually not great.
+
+41
+00:03:23,600 --> 00:03:35,040
+[SPEAKER_01] So you end up putting practices in place to level the quality of that translation, which then you turn into a basically a translation business and then really start shifting your resources towards basically translation and not teaching.
+
+42
+00:03:35,840 --> 00:03:47,680
+[SPEAKER_01] So we realized that it had these problems and around the time I joined Duolingo, which was 2016, we had pivoted away from that model and was trying to figure out what the next model should be.
+
+43
+00:03:48,080 --> 00:04:04,320
+[SPEAKER_01] Actually, our very, very first experiment with anything monetization was the streak repair as an inap purchase and around the same time the ads experiment started, but I think the first thing that users saw at Duolingo as like a thing they could buy was repairing your streak for I think a dollar or three dollars.
+
+44
+00:04:04,640 --> 00:04:05,680
+[SPEAKER_01] That was our first entry.
+
+45
+00:04:06,320 --> 00:04:07,920
+[SPEAKER_01] It was honestly, it was a good experiment.
+
+46
+00:04:08,400 --> 00:04:09,280
+[SPEAKER_01] We actually learned a lot.
+
+47
+00:04:09,360 --> 00:04:11,520
+[SPEAKER_01] We learned that users really cared about their streak.
+
+48
+00:04:12,640 --> 00:04:17,680
+[SPEAKER_01] A good percentage of our users are willing to pay a dollar or two to repair their broken streak.
+
+49
+00:04:18,400 --> 00:04:29,360
+[SPEAKER_01] But then I think then we got into this experiment mode of what really works with our audience and how do we make sure that we keep the product highly retentive and a great user experience.
+
+50
+00:04:30,480 --> 00:04:33,360
+[SPEAKER_01] Coming back to your question, that is the moment when we started trying ads.
+
+51
+00:04:33,440 --> 00:04:34,560
+[SPEAKER_01] So that was 2016.
+
+52
+00:04:35,760 --> 00:04:53,440
+[SPEAKER_01] It's funny if you launched, if you go watch, and I think these talks are still out there, our cofounder CEO, Luis gave these talks for Duolingo's launch and he said, We will never have ads, never in-app purchases and never subscriptions, and those are the exact three things that I built in that order, basically.
+
+53
+00:04:54,080 --> 00:05:03,040
+[SPEAKER_01] And the reason he was so adamant in saying those was we, Duolingo's mission is basically centered around providing access to education.
+
+54
+00:05:03,760 --> 00:05:10,240
+[SPEAKER_01] And at the time, every education business model, whatever they did, they would lock the education value behind a paywall, get someone to pay.
+
+55
+00:05:10,640 --> 00:05:15,920
+[SPEAKER_01] Think about the Rosetta Stone model, for example, that was the very stern model at the time where you're selling content.
+
+56
+00:05:16,160 --> 00:05:17,200
+[SPEAKER_01] We never wanted it to be that.
+
+57
+00:05:17,440 --> 00:05:24,400
+[SPEAKER_01] But I think we realized there's actually a way to build, do that, which is provide access to education, but also monetize the bells and whistles.
+
+58
+00:05:24,880 --> 00:05:26,640
+[SPEAKER_01] That's why we set on this freemium journey.
+
+59
+00:05:26,800 --> 00:05:28,320
+[SPEAKER_01] Ads fits into that really nicely.
+
+60
+00:05:28,640 --> 00:05:33,040
+[SPEAKER_01] If done well, users don't have to pay you anything, but you can actually generate some revenue.
+
+61
+00:05:33,360 --> 00:05:35,120
+[SPEAKER_01] So Ads was that test.
+
+62
+00:05:35,600 --> 00:05:37,760
+[SPEAKER_01] Honestly, testing Ads wasn't rocket science.
+
+63
+00:05:37,920 --> 00:05:47,680
+[SPEAKER_01] It was fairly easy to test our way into, of course, making sure the user experience is great, but also how do you maximize revenue from ads while making sure your attention remains awesome.
+
+64
+00:05:48,240 --> 00:06:00,240
+[SPEAKER_01] The hardest part I would say was the cultural shift of going from a pre-monetization app to a post-monetization app, because until then, so until the time I joined, there was like sixty ish employees.
+
+65
+00:06:01,120 --> 00:06:13,920
+[SPEAKER_01] I think a lot of folks joined the company thinking it was maybe even like a nonprofit like mission, because the mission is so grand and so awesome, and the company never quite bothered to think about revenue and monetization very much.
+
+66
+00:06:14,240 --> 00:06:28,640
+[SPEAKER_01] It was a mindset to the company to be, hey, there's things we have to do so we can generate revenue, and if we generate revenue, we can actually fund our mission so that we can be more impactful was probably the hardest part of turning on ads on Duolingo.
+
+67
+00:06:29,280 --> 00:06:35,840
+[SPEAKER_00] And I guess you weren't there at this time, but I did hear there's a story out there around a venture capitalist pushing this direction.
+
+68
+00:06:36,000 --> 00:06:36,800
+[SPEAKER_00] What was the story about?
+
+69
+00:06:37,600 --> 00:06:41,680
+[SPEAKER_01] This story, I think, is when Capital G invested in Duolingo.
+
+70
+00:06:42,240 --> 00:06:53,680
+[SPEAKER_01] Layla, who was also on our board after that investment for a while, she told Luis at the time, this is probably the last investor you will have in this company before you figure out monetization.
+
+71
+00:06:54,000 --> 00:06:57,200
+[SPEAKER_01] So in a rounded way to say, you have to figure out monetization.
+
+72
+00:06:58,000 --> 00:07:00,240
+[SPEAKER_01] As a growing company, you at some point have to do that.
+
+73
+00:07:00,480 --> 00:07:06,960
+[SPEAKER_01] But I think also the common wisdom at the time for consumer companies like Facebook is like, just grow audience, you'll figure out monetization later.
+
+74
+00:07:07,440 --> 00:07:12,640
+[SPEAKER_01] So I think Duolingo followed that, but until a point where I think Capital G and Layla had this big push to be.
+
+75
+00:07:12,800 --> 00:07:14,800
+[SPEAKER_01] be, okay, it's time.
+
+76
+00:07:15,840 --> 00:07:18,240
+[SPEAKER_01] And I guess that was around 2016.
+
+77
+00:07:18,480 --> 00:07:27,920
+[SPEAKER_01] So when I joined, the mindset shift had moved to, and Luis's first thing he told me was like, we hired you, your sole job is to figure out how to monetize Duolingo.
+
+78
+00:07:29,440 --> 00:07:31,360
+[SPEAKER_01] And that's what I tried to figure out.
+
+79
+00:07:31,680 --> 00:07:32,320
+[SPEAKER_00] That's awesome.
+
+80
+00:07:32,560 --> 00:07:33,280
+[SPEAKER_00] What a great story.
+
+81
+00:07:34,000 --> 00:07:36,880
+[SPEAKER_00] So ads, they're tricky.
+
+82
+00:07:37,360 --> 00:07:44,480
+[SPEAKER_00] How did you introduce ads, one, in a way that didn't totally piss off users and tank retention?
+
+83
+00:07:44,720 --> 00:07:48,320
+[SPEAKER_00] And I mean, I'm sure there was user pushback and bad reviews in the App Store.
+
+84
+00:07:48,960 --> 00:07:49,760
+[SPEAKER_00] This is part of the story.
+
+85
+00:07:49,920 --> 00:08:00,160
+[SPEAKER_00] I think a lot of people can learn from because any monetization change you make will spur some level of like bad reviews or negative feedback or churn.
+
+86
+00:08:00,880 --> 00:08:04,960
+[SPEAKER_00] So how did you balance that as you started to roll ads into the product?
+
+87
+00:08:05,440 --> 00:08:06,240
+[SPEAKER_01] This is a very good question.
+
+88
+00:08:06,480 --> 00:08:11,040
+[SPEAKER_01] I think that there's the I'll give the obvious answers and maybe the more difficult to navigate parts.
+
+89
+00:08:11,440 --> 00:08:19,920
+[SPEAKER_01] First, for a consumer product, you should obviously dog food your product heavily so that whatever you're doing to the experience, you have firsthand experience on how it feels.
+
+90
+00:08:20,320 --> 00:08:22,960
+[SPEAKER_01] Meaning, you can easily say, Oh, we'll put an app open ad.
+
+91
+00:08:23,200 --> 00:08:24,960
+[SPEAKER_01] And if you're just watching metrics, I'm not sure.
+
+92
+00:08:24,960 --> 00:08:28,480
+[SPEAKER_01] You're just watching metrics, I'm sure that might look fine, but when you test it, you're like, what the hell is this?
+
+93
+00:08:29,120 --> 00:08:34,000
+[SPEAKER_01] Then you should know what you've introduced and obviously avoid the things that you wouldn't want to see as a user.
+
+94
+00:08:34,640 --> 00:08:47,600
+[SPEAKER_01] Hence, our first test, and honestly, kind of even today, that's our only ad placement is after you've computered a lesson, we show you an ad, not during, not before, but always after, because we believe that doesn't interrupt your learning.
+
+95
+00:08:47,920 --> 00:08:53,200
+[SPEAKER_01] So one is the qualitative, it should be a good user experience, and you should know that by testing the app yourself every day.
+
+96
+00:08:53,760 --> 00:09:00,480
+[SPEAKER_01] The second is quantitative, like measure everything you can, like is retention fine, is app closes fine, what's happening?
+
+97
+00:09:01,040 --> 00:09:01,840
+[SPEAKER_01] to your reviews?
+
+98
+00:09:02,480 --> 00:09:03,840
+[SPEAKER_01] You might have to make some trade-offs.
+
+99
+00:09:04,080 --> 00:09:10,080
+[SPEAKER_01] Ideally, you wouldn't, but realistically, if you go from zero ads to some amount of ads, there is some risk that some curves might come down.
+
+100
+00:09:10,560 --> 00:09:12,160
+[SPEAKER_01] But I think you should know what that cost is.
+
+101
+00:09:12,320 --> 00:09:14,160
+[SPEAKER_01] Anyway, that's like through AB testing.
+
+102
+00:09:14,320 --> 00:09:15,680
+[SPEAKER_01] That's how we measured it to be.
+
+103
+00:09:15,920 --> 00:09:22,480
+[SPEAKER_01] Honestly, our retention was maybe a slight hit, but mostly neutral for most of our ad tests over time.
+
+104
+00:09:23,680 --> 00:09:24,160
+[SPEAKER_01] That's one.
+
+105
+00:09:25,040 --> 00:09:30,080
+[SPEAKER_01] The third one is there is, of course, you go from a free product to selling something.
+
+106
+00:09:31,040 --> 00:09:34,000
+[SPEAKER_01] Users won't always say, thank you for doing that.
+
+107
+00:09:34,720 --> 00:09:40,800
+[SPEAKER_01] Like this, imagine if Uber started completely free and one day they said, Okay, now we're going to charge for our Ubers.
+
+108
+00:09:41,360 --> 00:09:42,400
+[SPEAKER_01] Users would hate that too.
+
+109
+00:09:42,720 --> 00:09:44,320
+[SPEAKER_01] And that was kind of what we did.
+
+110
+00:09:44,480 --> 00:09:50,400
+[SPEAKER_01] I mean, in a way, we provided a free service and we kept a lot of the elements free, but we said, Hey, actually, you can buy a street repair now.
+
+111
+00:09:50,720 --> 00:09:53,200
+[SPEAKER_01] And you might have to see an ad at the end of your session.
+
+112
+00:09:54,080 --> 00:09:54,960
+[SPEAKER_01] We got some complaints.
+
+113
+00:09:55,360 --> 00:09:59,520
+[SPEAKER_01] The thing that helped us have clarity was, one, retention was fine.
+
+114
+00:10:00,000 --> 00:10:02,400
+[SPEAKER_01] Retention was neutral on most of these experiments.
+
+115
+00:10:03,120 --> 00:10:12,560
+[SPEAKER_01] And when you looked at our community's complaint volume, if you quantify that, for example, for a million DAUs, how many?
+
+116
+00:10:12,720 --> 00:10:14,240
+[SPEAKER_01] How many ad complaints are there?
+
+117
+00:10:14,560 --> 00:10:18,800
+[SPEAKER_01] Or ad negative reviews, however you want to count that versus other topics.
+
+118
+00:10:19,280 --> 00:10:28,160
+[SPEAKER_01] For example, I realized this quantitative analysis in 2016 because we were at this pivotal moment of, do we launch ads or do we not launch ads?
+
+119
+00:10:28,800 --> 00:10:38,400
+[SPEAKER_01] And we looked at, for example, the number of complaints about why we didn't have the Finnish language on Duolingo was three x the number of people that are complaining about Duolingo having ads.
+
+120
+00:10:38,640 --> 00:10:47,840
+[SPEAKER_01] So that starts putting it into perspective, like it's not zero complaints, but actually in the grand scheme of things, this is not going to break the app and our community is not going to run away tomorrow.
+
+121
+00:10:48,160 --> 00:10:56,240
+[SPEAKER_01] So I think understanding the volume of what you're doing to the community as much as you can gives you perspective.
+
+122
+00:10:56,640 --> 00:11:00,240
+[SPEAKER_01] Otherwise, every negative comment as a product builder hits home really hard.
+
+123
+00:11:00,640 --> 00:11:03,120
+[SPEAKER_01] Like everything looks like the world is falling apart.
+
+124
+00:11:03,440 --> 00:11:09,280
+[SPEAKER_01] That's why it helps to like look at the broad picture of like all of our issues as a product and all products have many issues.
+
+125
+00:11:09,520 --> 00:11:09,600
+[SPEAKER_01] Yeah.
+
+126
+00:11:10,240 --> 00:11:13,600
+[SPEAKER_00] That's exactly what I was going to say, that it's so hard as a builder.
+
+127
+00:11:14,080 --> 00:11:14,480
+[SPEAKER_00] It's really hard.
+
+128
+00:11:14,960 --> 00:11:16,800
+[SPEAKER_00] To get those few negative reviews.
+
+129
+00:11:17,040 --> 00:11:22,720
+[SPEAKER_00] And I think that's a really helpful insight to look at that bigger picture and understand.
+
+130
+00:11:22,960 --> 00:11:29,440
+[SPEAKER_01] Like, I got a bunch of negative reviews for my weather app for the audacity of charging $40 a year for a weather app.
+
+131
+00:11:30,160 --> 00:11:33,280
+[SPEAKER_00] And I did get probably over focused on those negative reviews.
+
+132
+00:11:33,600 --> 00:11:38,480
+[SPEAKER_00] But then when you look at all the people who were subscribing, were staying subscribed, actually had pretty good retention.
+
+133
+00:11:38,640 --> 00:11:47,760
+[SPEAKER_00] It's like you have to like zoom out and not let those like that small subset of users who are going to complain tank what's ultimately going to help drive the business forward.
+
+134
+00:11:48,320 --> 00:11:50,720
+[SPEAKER_00] How did you work on ad quality?
+
+135
+00:11:51,680 --> 00:11:53,520
+[SPEAKER_00] I believe you implemented AdMob.
+
+136
+00:11:54,800 --> 00:11:57,280
+[SPEAKER_00] Again, in my weather app, I had AdMob.
+
+137
+00:11:57,520 --> 00:12:05,120
+[SPEAKER_00] Eventually, I ended up pulling it because it was like gambling ads with, you know, 777 and animations and like all this crap.
+
+138
+00:12:05,520 --> 00:12:13,840
+[SPEAKER_00] How did you work with AdMob and how do you think about ad quality as part of the experience and how it can actually be detrimental to the experience?
+
+139
+00:12:14,160 --> 00:12:23,200
+[SPEAKER_01] Yeah, I mean, ad quality, we I would say we're like incredibly strict on, but with programmatic, you'll of course have some amount of control, not full control.
+
+140
+00:12:24,000 --> 00:12:28,400
+[SPEAKER_01] But with anything that is, honestly, it could be even slightly dicey, we blocked all those categories.
+
+141
+00:12:28,640 --> 00:12:33,040
+[SPEAKER_01] Like if it's gambling, even if it's like games that look kind of scary, pick your category.
+
+142
+00:12:33,360 --> 00:12:36,880
+[SPEAKER_01] Any of those that we didn't feel was also young audience safe.
+
+143
+00:12:37,520 --> 00:12:39,520
+[SPEAKER_01] and or just brand safe, we blocked.
+
+144
+00:12:39,680 --> 00:12:49,520
+[SPEAKER_01] So the starting point is we used AdMob first and then we integrated other sources like Facebook Ads or at the time Flurry and now we use also I think multiple networks.
+
+145
+00:12:49,600 --> 00:12:50,240
+[SPEAKER_01] We use Unity.
+
+146
+00:12:51,120 --> 00:13:00,640
+[SPEAKER_01] That was to mainly broaden demand, but for category and what kind of ads we allow, we tried our best to block off any categories that are dysfunny, even though it might be a revenue loss.
+
+147
+00:13:00,880 --> 00:13:01,840
+[SPEAKER_01] We're like, we don't care.
+
+148
+00:13:02,000 --> 00:13:04,960
+[SPEAKER_01] The most important thing is good user experience and ad quality.
+
+149
+00:13:05,200 --> 00:13:12,400
+[SPEAKER_01] So we did a lot of category blocking and if we needed to custom blocking, we went and tried to work with ad networks to be like this type of ad.
+
+150
+00:13:12,960 --> 00:13:14,560
+[SPEAKER_01] has like three X buttons to exit.
+
+151
+00:13:14,800 --> 00:13:15,760
+[SPEAKER_01] We don't want this in our app.
+
+152
+00:13:16,080 --> 00:13:17,200
+[SPEAKER_01] Please don't give us this thing.
+
+153
+00:13:17,600 --> 00:13:20,000
+[SPEAKER_01] So we also did some of that back and forth as well.
+
+154
+00:13:20,640 --> 00:13:21,280
+[SPEAKER_01] That's our stance.
+
+155
+00:13:21,680 --> 00:13:28,640
+[SPEAKER_01] This year also to improve ad quality, we're also doing our own direct ads more and more because then we control quality entirely.
+
+156
+00:13:29,200 --> 00:13:33,760
+[SPEAKER_01] It's an advertiser that we know, like we shook hands with, and the format is what we've created.
+
+157
+00:13:34,160 --> 00:13:36,400
+[SPEAKER_01] So it's beautiful and it's a great advertiser.
+
+158
+00:13:36,720 --> 00:13:43,760
+[SPEAKER_01] So one now new lever for us is to reduce programmatic volume and increase direct volume because it's just a better user experience.
+
+159
+00:13:43,840 --> 00:13:43,920
+[SPEAKER_01] Yeah.
+
+160
+00:13:44,240 --> 00:13:45,200
+[SPEAKER_00] I love what you're doing.
+
+161
+00:13:45,360 --> 00:13:47,600
+[SPEAKER_00] I mean, it's hard for smaller apps.
+
+162
+00:13:47,680 --> 00:13:56,000
+[SPEAKER_00] You don't have scale to to do this kind of thing, but tell me more about how these partnerships work to improve that ad quality so that it does improve the user experience.
+
+163
+00:13:56,080 --> 00:14:00,640
+[SPEAKER_00] Because you've been incorporating Duolingo characters into the ads with the brands you're partnering with.
+
+164
+00:14:01,040 --> 00:14:01,600
+[SPEAKER_01] Have you seen them?
+
+165
+00:14:02,000 --> 00:14:03,760
+[SPEAKER_00] I haven't seen them yet, but I read about them.
+
+166
+00:14:03,920 --> 00:14:04,320
+[SPEAKER_01] It's very cool.
+
+167
+00:14:04,960 --> 00:14:14,240
+[SPEAKER_01] It's currently only in the US, so we're focusing on growing these in the US because obviously we create a great format, but to be able to scale this, we also need to be working with companies.
+
+168
+00:14:14,400 --> 00:14:17,840
+[SPEAKER_01] And right now we're just focused on companies that would want to advertise with us in the US.
+
+169
+00:14:18,320 --> 00:14:24,000
+[SPEAKER_01] We created multiple formats, but the one I love the most and that seems to be working really well is one of our characters.
+
+170
+00:14:24,400 --> 00:14:29,920
+[SPEAKER_01] So we have eight Duolingo characters on Duolingo that you see is introduces the ad.
+
+171
+00:14:30,320 --> 00:14:31,920
+[SPEAKER_01] For example, pick up brand.
+
+172
+00:14:32,240 --> 00:14:34,160
+[SPEAKER_01] Let's say it's a detergent.
+
+173
+00:14:34,320 --> 00:14:35,040
+[SPEAKER_01] I'm making this up.
+
+174
+00:14:35,120 --> 00:14:36,560
+[SPEAKER_01] It's not like we had exactly this.
+
+175
+00:14:36,880 --> 00:14:41,840
+[SPEAKER_01] But one of our characters, Lily, would make jokes about like, Oh, like, I need to wash my clothes.
+
+176
+00:14:42,080 --> 00:14:42,960
+[SPEAKER_01] I wish I could do that.
+
+177
+00:14:43,360 --> 00:14:46,800
+[SPEAKER_01] And we kind of write a custom script to introduce that ad that's very short.
+
+178
+00:14:47,200 --> 00:14:48,480
+[SPEAKER_01] And then the ad itself plays.
+
+179
+00:14:49,040 --> 00:14:52,880
+[SPEAKER_01] So that at least we are building a little bit of our character world further.
+
+180
+00:14:53,520 --> 00:14:56,000
+[SPEAKER_01] And it's not jarring as like you entered a lesson right now.
+
+181
+00:14:56,240 --> 00:14:58,880
+[SPEAKER_01] That's what our ads are really a little bit where like you see an ad.
+
+182
+00:14:59,200 --> 00:15:00,720
+[SPEAKER_01] It feels like you're easing into the ad.
+
+183
+00:15:01,280 --> 00:15:02,240
+[SPEAKER_01] We're trying this right now.
+
+184
+00:15:02,480 --> 00:15:07,120
+[SPEAKER_01] It's when you see it as a user, it's actually like a, as an ad, it's a very delightful format.
+
+185
+00:15:07,600 --> 00:15:09,200
+[SPEAKER_01] Our challenge, I would say, is scaling it.
+
+186
+00:15:09,360 --> 00:15:14,640
+[SPEAKER_01] I think we have, since it's a custom format, well, you have to go up to advertise and explain how this works.
+
+187
+00:15:14,720 --> 00:15:25,200
+[SPEAKER_01] So it's a bit of a slow adoption process, but we're going to, I mean, our goal is to basically increase the volume of these ads and reduce the programmatic by a good amount in 2026.
+
+188
+00:15:26,000 --> 00:15:30,720
+[SPEAKER_00] One of the ads you do often show is for the subscription itself.
+
+189
+00:15:31,200 --> 00:15:35,280
+[SPEAKER_00] How do you balance from an LTV perspective and monetization perspective?
+
+190
+00:15:35,360 --> 00:15:42,720
+[SPEAKER_00] How do you balance when to show those ads for the subscription and when to show programmatic or these new brand ads?
+
+191
+00:15:43,360 --> 00:16:12,640
+[SPEAKER_01] So we just to set the stage, if you do a Duolingo lesson, and this includes any of our lessons, so you could do language, math, music, and chess, at the end of that lesson you see an ad, and we decide, like you said, if we should show you a programmatic ad versus one of our internal ads, which could be an ad for a subscription, or it could also be an ad for our other products, like the Duolingo English test, but we call those basically internal ads that we decide we've produced, and it is a Duolingo product.
+
+192
+00:16:13,520 --> 00:16:18,240
+[SPEAKER_01] Most of them are going to be either Super Duolingo ads or Duolingo Max ads.
+
+193
+00:16:19,040 --> 00:16:37,040
+[SPEAKER_01] The decision logic is mostly now controlled by ML actually, but the ML uses various signals that is trying to figure out LTV maximization at its core, and it is looking at every signal that we feed it that could be an indicator for someone that is more likely to buy Super.
+
+194
+00:16:37,920 --> 00:16:51,120
+[SPEAKER_01] Or it also balances out, of course, like if, for example, it's showing you the same, it doesn't really show you the same Super ad three times, but it's showing you Super ad three times that clearly you're not interested in, it backs out off and shows you other ads.
+
+195
+00:16:51,840 --> 00:16:57,680
+[SPEAKER_01] So it's basically built to optimize LTV with a likelihood to purchase being the objective function.
+
+196
+00:16:58,080 --> 00:17:09,120
+[SPEAKER_00] Many apps that have ads in them don't do this kind of thing, but like as cheap as the CPMs are these days, I think all developers should be experimenting with putting ads in for the premium product.
+
+197
+00:17:09,360 --> 00:17:16,640
+[SPEAKER_00] It's a perfect way to kind of balance that monetization of if you have a freemium product and you're not making that much on ads, which you just don't.
+
+198
+00:17:16,960 --> 00:17:24,640
+[SPEAKER_00] And actually, I'll follow up with a question here, but it's a great opportunity to like remind people, hey, there is a paid product..
+
+199
+00:17:25,200 --> 00:17:27,680
+[SPEAKER_00] There are features you can get and highlighting the benefits.
+
+200
+00:17:28,000 --> 00:17:32,880
+[SPEAKER_00] I've seen quite a few of the ads early in the journey when I was first using Duolingo and they're really good.
+
+201
+00:17:33,600 --> 00:17:37,440
+[SPEAKER_00] They really highlight well, like, hey, you're doing great, but you can do even better.
+
+202
+00:17:37,680 --> 00:17:39,280
+[SPEAKER_00] And they really highlight the product features.
+
+203
+00:17:39,440 --> 00:17:47,600
+[SPEAKER_00] And so I think that's a great opportunity for freemium developers who do have ads to be exploring that more to kind of push that upgrade to the subscription.
+
+204
+00:17:48,080 --> 00:17:48,800
+[SPEAKER_01] 100%.
+
+205
+00:17:49,040 --> 00:17:52,960
+[SPEAKER_01] And I think the other reason I like our ads is they're just better than programmatic ads.
+
+206
+00:17:53,040 --> 00:17:54,880
+[SPEAKER_01] It's like a better user experience.
+
+207
+00:17:55,040 --> 00:17:56,320
+[SPEAKER_01] It's just a better user experience.
+
+208
+00:17:56,560 --> 00:18:04,160
+[SPEAKER_01] I mean, I think if I had a magic wand, I'd rather have no programmatic adsic ads within my app and only internally produce ads because they look better.
+
+209
+00:18:04,400 --> 00:18:11,200
+[SPEAKER_01] And we're also building kind of lore for our world characters through, even though they might be talking about super, they're also cracking jokes about their own.
+
+210
+00:18:11,600 --> 00:18:14,480
+[SPEAKER_01] For example, we have this kind of controversial super ad.
+
+211
+00:18:14,800 --> 00:18:24,720
+[SPEAKER_01] I don't know if you've seen this one where Junior, one of our characters, is in a bathroom stall and he likes peeks and like makes a roll joke because there's a toilet roll that he's like peeking under.
+
+212
+00:18:25,040 --> 00:18:31,280
+[SPEAKER_01] It's kind of weird, but it's like we're also kind of entertaining a little bit with the ads we produce because we have produced them with that intent.
+
+213
+00:18:32,000 --> 00:18:34,000
+[SPEAKER_01] It's much better than showing programmatic ads.
+
+214
+00:18:35,040 --> 00:18:39,680
+[SPEAKER_00] How does admonetization do perfect per user compared to subscription?
+
+215
+00:18:40,080 --> 00:18:49,600
+[SPEAKER_00] And I would assume part of the idea with these partnerships and other things you're working on is to continue pushing that monetization better and better for those free users.
+
+216
+00:18:50,240 --> 00:18:57,200
+[SPEAKER_01] So for us, if you look at Dualingo statistics, subscription revenue is far and above the biggest chunk of our revenue.
+
+217
+00:18:57,440 --> 00:19:01,600
+[SPEAKER_01] So I think it's above, above eighty percent, and ads is a much smaller percentage.
+
+218
+00:19:01,760 --> 00:19:07,680
+[SPEAKER_01] But if you look at payers, about among our DAU base, actually MAU base, it's about ten percent.
+
+219
+00:19:07,840 --> 00:19:09,680
+[SPEAKER_01] So ten percent of our users subscribe.
+
+220
+00:19:10,000 --> 00:19:12,880
+[SPEAKER_01] However, subscription is more than eighty percent of our total revenue.
+
+221
+00:19:13,760 --> 00:19:37,280
+[SPEAKER_01] So we focus naturally when it comes to what we think about for monetization, mostly on the subscription side of things because we believe it has one much it's already a much larger business but also much higher potential because we still feel like with any of these actually but certainly still even with the subscription that has now become a sizable business, there's just so much more to do that is making the subscription better.
+
+222
+00:19:37,920 --> 00:19:50,080
+[SPEAKER_01] And also with the freemium app, you realize over time, and this is a lot of experimentation we've done, one is like building the product to be better, so making our subscription features more valuable, but there's a lot of work to be done and also making sure you can you can communicate those well.
+
+223
+00:19:50,400 --> 00:19:51,440
+[SPEAKER_01] We touched on videos.
+
+224
+00:19:51,760 --> 00:20:02,160
+[SPEAKER_01] Videos certainly help because that gives you a format where you can actually say, hey, this other thing that you could buy has all these features because there's not a lot of other easy places to tell that story.
+
+225
+00:20:02,720 --> 00:20:09,360
+[SPEAKER_01] On top of that, there's like how you design your purchase pages makes a difference, for example, how users enter that flow makes a difference.
+
+226
+00:20:09,600 --> 00:20:13,040
+[SPEAKER_01] So anyway, that's in my head how you're communicating your subscription.
+
+227
+00:20:13,680 --> 00:20:22,160
+[SPEAKER_01] So we're putting more and more of our monetization energy into those pieces, meaning make the subscription better and more useful and make sure we can communicate it well.
+
+228
+00:20:22,800 --> 00:20:24,320
+[SPEAKER_01] That tends to have higher returns for us.
+
+229
+00:20:24,320 --> 00:20:27,120
+[SPEAKER_01] I think there's a better return for us in general as a business than ads.
+
+230
+00:20:27,360 --> 00:20:29,520
+[SPEAKER_01] So most of our efforts are on subscriptions.
+
+231
+00:20:29,840 --> 00:20:29,920
+[SPEAKER_00] Yeah.
+
+232
+00:20:30,240 --> 00:20:32,720
+[SPEAKER_00] I mean, you know, Facebook's numbers are just insane.
+
+233
+00:20:32,960 --> 00:20:45,760
+[SPEAKER_00] You know, I think I saw like 250 per user per year in the US, which is about what a Duo Plus subscription costs, but the time in the app, the way they're able to do their bid structures and things like that.
+
+234
+00:20:46,000 --> 00:20:48,320
+[SPEAKER_00] But I imagine there's still a lot of room to grow.
+
+235
+00:20:49,040 --> 00:20:55,600
+[SPEAKER_00] But it's interesting that at Duolingo scale, the subscription opportunity is still so much better than the ad monetization.
+
+236
+00:20:55,920 --> 00:20:56,320
+[SPEAKER_01] I think so.
+
+237
+00:20:56,480 --> 00:21:04,640
+[SPEAKER_01] And I think with social media apps, the reality is it's fairly easier, I think, as a product problem to integrate ads into a feed.
+
+238
+00:21:05,520 --> 00:21:15,760
+[SPEAKER_01] And in a product where users are there not for a particular utility, but they are there a lot of times to pass time or they don't even know why they're there.
+
+239
+00:21:15,920 --> 00:21:21,120
+[SPEAKER_01] So I think it's way easier to increase ad load in a way that is not disruptive to how the user feels.
+
+240
+00:21:21,840 --> 00:21:28,560
+[SPEAKER_01] When you are there on an app for a particular utility and for us, a lot of users are there to learn a topic, well, not a lot.
+
+241
+00:21:28,800 --> 00:21:30,560
+[SPEAKER_01] All of our users are there to learn something.
+
+242
+00:21:31,520 --> 00:21:38,080
+[SPEAKER_01] I think increasing ad load is not particularly that tolerated, I guess.
+
+243
+00:21:38,400 --> 00:21:42,320
+[SPEAKER_01] So I think that creates a challenge for a challenge and opportunity, honestly.
+
+244
+00:21:42,400 --> 00:21:47,760
+[SPEAKER_01] For us, subscription just fits as a better business model than increasing ad load the way Facebook might be doing.
+
+245
+00:21:48,880 --> 00:21:51,600
+[SPEAKER_00] One last question on ads, and then we'll move on to the subscription.
+
+246
+00:21:52,000 --> 00:22:01,920
+[SPEAKER_00] But one of your, the product managers and your team came on the podcast, I think, eighteen months ago, and he talked about holdouts that you all do long term holdouts.
+
+247
+00:22:02,240 --> 00:22:04,320
+[SPEAKER_00] Did you all hold out on ads?
+
+248
+00:22:04,480 --> 00:22:11,920
+[SPEAKER_00] Are there people today, is there like 0.001 percent of subscribers that still don't have ads that you can measure against the people who do have ads?
+
+249
+00:22:12,160 --> 00:22:17,360
+[SPEAKER_01] Not anymore, but we did run, I think, almost like a year or two year long holdout for ads.
+
+250
+00:22:18,240 --> 00:22:30,320
+[SPEAKER_01] We do run long holdouts, although I don't recommend year long holdouts because what also eventually happens is you forget that you have a holdout and then eventually you introduce, since you're not testing it every day, you introduce a bug to it.
+
+251
+00:22:30,480 --> 00:22:35,680
+[SPEAKER_01] So like, even though you have a year long holdout, you realize at some point you actually polluted it because you introduced bugs there.
+
+252
+00:22:36,000 --> 00:22:50,560
+[SPEAKER_01] Anyway, so very long holdouts we are anti just because of a practical perspective, but we do way more like three months, six month holdouts on things that we know have different short tool or we assume will have short to long term effects that might be different.
+
+253
+00:22:50,960 --> 00:23:06,960
+[SPEAKER_01] One of those, for example, this is not exactly monetization, but anything that has to do with our leaderboards, we try to run long period experiments or long holdouts because on the Duolingo leaderboard set, if you start from the lowest league, it takes you ten weeks to get to the highest.
+
+254
+00:23:07,600 --> 00:23:15,440
+[SPEAKER_01] If we change the dynamics of how the leaderboard works, we might not see the actual result in two weeks, so we kind of let these run for longer.
+
+255
+00:23:16,000 --> 00:23:24,640
+[SPEAKER_01] Another one is push notification experiments where every, of course, new push notification you introduce has amazing returns because it has amazing novelty.
+
+256
+00:23:25,200 --> 00:23:33,120
+[SPEAKER_01] But then if you wait out six weeks, sometimes it doesn't just come back to neutral, it actually turns negative because you're sending too many push notifications that turns people off.
+
+257
+00:23:33,360 --> 00:23:38,480
+[SPEAKER_01] So some stuff that we assume not just monetization might have longer term adverse effects.
+
+258
+00:23:38,960 --> 00:23:41,520
+[SPEAKER_01] We run long holdouts or just run a long experiment.
+
+259
+00:23:42,160 --> 00:23:43,840
+[SPEAKER_00] The way Duolingo tests things is fast.
+
+260
+00:23:44,000 --> 00:23:48,960
+[SPEAKER_00] We could talk hours just on that, but I did want to get back to the monetization journey.
+
+261
+00:23:49,760 --> 00:23:53,520
+[SPEAKER_00] So at what point did it become clear that you needed to introduce a subscription?
+
+262
+00:23:53,760 --> 00:23:59,920
+[SPEAKER_00] And this was pretty early in the, you know, Apple famously opened up subscriptions to all apps in 2016.
+
+263
+00:24:00,480 --> 00:24:02,640
+[SPEAKER_00] I believe you launched the subscription pretty soon after that.
+
+264
+00:24:03,120 --> 00:24:03,440
+[SPEAKER_01] Seventeen.
+
+265
+00:24:03,760 --> 00:24:07,680
+[SPEAKER_00] So what was the story from, okay, ads are starting to work.
+
+266
+00:24:08,400 --> 00:24:14,160
+[SPEAKER_00] We haven't pissed off all the users, but now we're going to actually start charging.
+
+267
+00:24:15,120 --> 00:24:34,480
+[SPEAKER_01] So the the journey we went through was ads was the first experiment, and then after ads was introduced, as a good PM, I was reading every review that was written on, on Duolingo that included the App Store or Reddit or our own forums, and there was a significant amount of people that were saying, can I please pay you guys?
+
+268
+00:24:34,640 --> 00:24:36,400
+[SPEAKER_01] I don't want to see ads, and I love Duolingo.
+
+269
+00:24:36,400 --> 00:24:38,080
+[SPEAKER_01] I get so much value out of it.
+
+270
+00:24:38,240 --> 00:24:40,000
+[SPEAKER_01] It wasn't like a hateful I hate ads.
+
+271
+00:24:40,080 --> 00:24:43,440
+[SPEAKER_01] It was more like I would love to give you guys a few dollars just to remove my ads.
+
+272
+00:24:43,760 --> 00:24:46,000
+[SPEAKER_01] And we thought that was a good idea.
+
+273
+00:24:46,400 --> 00:24:49,680
+[SPEAKER_01] And subscriptions were quite early for mobile apps at the time, you're right.
+
+274
+00:24:49,920 --> 00:24:54,800
+[SPEAKER_01] Majority of the app wisdom was generally you want to sell IEPs.
+
+275
+00:24:54,960 --> 00:24:58,720
+[SPEAKER_01] And I think games obviously had kind of popularized that and that was pretty common.
+
+276
+00:24:59,120 --> 00:25:00,800
+[SPEAKER_01] Subscription apps were earlier.
+
+277
+00:25:01,440 --> 00:25:06,720
+[SPEAKER_01] There was the big like streaming and entertainment, but outside of that, there wasn't a lot of digital subscription behavior.
+
+278
+00:25:07,040 --> 00:25:11,360
+[SPEAKER_01] So we took that idea to heart, but we said, we're not sure if the subscription thing is for us.
+
+279
+00:25:11,520 --> 00:25:14,880
+[SPEAKER_01] We were, our mind was still like., we probably gonna have an IAP model.
+
+280
+00:25:15,280 --> 00:25:24,240
+[SPEAKER_01] So we tested an IAP, which was honestly, like looking back, it's so janky and it's not clear why people bought this, but we said you can buy an ad free month of Duolingo.
+
+281
+00:25:24,320 --> 00:25:28,160
+[SPEAKER_01] So for thirty days we'll turn off the ads, but it's a one time purchase.
+
+282
+00:25:28,480 --> 00:25:33,040
+[SPEAKER_01] And we tested different price points, we tested three dollars, five dollars, and ten dollars.
+
+283
+00:25:33,920 --> 00:25:35,680
+[SPEAKER_01] And everyone thought this kind of wouldn't work.
+
+284
+00:25:36,000 --> 00:25:39,200
+[SPEAKER_01] Like, it's like, why would people pay this one off bizarre exchange?
+
+285
+00:25:39,760 --> 00:25:44,880
+[SPEAKER_01] Honestly, the uptake was kind of good and way more than we expected.
+
+286
+00:25:45,040 --> 00:25:48,960
+[SPEAKER_01] So we were like, clearly there is some demand for turning off ads.
+
+287
+00:25:49,680 --> 00:25:53,840
+[SPEAKER_01] Even though we created the most bizarre package to sell, people want to buy this.
+
+288
+00:25:54,560 --> 00:25:55,840
+[SPEAKER_01] Let's make it a subscription.
+
+289
+00:25:56,240 --> 00:26:00,880
+[SPEAKER_01] But to make it a subscription, just no ads felt slim as a subscription service.
+
+290
+00:26:01,680 --> 00:26:03,680
+[SPEAKER_01] So then we built offline capabilities.
+
+291
+00:26:04,080 --> 00:26:08,560
+[SPEAKER_01] So we said you can use Duolingo fully offline and turn off your ads.
+
+292
+00:26:09,040 --> 00:26:13,120
+[SPEAKER_01] And then when we designed the purchase page, we were like, this looks really weird with two features.
+
+293
+00:26:13,280 --> 00:26:17,520
+[SPEAKER_01] We need a third feature, but we couldn't actually at the time figure out what the third feature should be.
+
+294
+00:26:17,920 --> 00:26:27,360
+[SPEAKER_01] So we kind of wrote a line there that was the thing that users were telling us, which is support Duolingoolingo's mission for short.
+
+295
+00:26:28,080 --> 00:26:30,480
+[SPEAKER_01] And that was our first entry into subscription.
+
+296
+00:26:30,560 --> 00:26:31,680
+[SPEAKER_01] That was Duolingo Plus.
+
+297
+00:26:32,000 --> 00:26:42,400
+[SPEAKER_01] And honestly, what I think we saw happen was probably the majority of users early on bought it for the fact that they enjoyed Duolingo so much and wanted to contribute back.
+
+298
+00:26:42,640 --> 00:26:46,960
+[SPEAKER_01] The other half, or maybe the half of the demand was from no ads and minimally for offline.
+
+299
+00:26:47,760 --> 00:26:50,240
+[SPEAKER_01] And that was, that kind of started us giving us a run rate.
+
+300
+00:26:50,400 --> 00:26:55,520
+[SPEAKER_01] Obviously, I mean, I'm happy to talk about it more, but from then to today, the subscription has evolved a lot.
+
+301
+00:26:55,920 --> 00:26:57,360
+[SPEAKER_01] But that was the very first version.
+
+302
+00:26:57,680 --> 00:26:58,640
+[SPEAKER_00] Yeah, that's fascinating.
+
+303
+00:26:58,800 --> 00:27:00,480
+[SPEAKER_00] And I do want to get to that journey.
+
+304
+00:27:02,880 --> 00:27:05,520
+[SPEAKER_00] I mean, again, this was 2017.
+
+305
+00:27:06,000 --> 00:27:09,200
+[SPEAKER_00] So best practices and everything else hadn't fully evolved.
+
+306
+00:27:09,680 --> 00:27:11,280
+[SPEAKER_00] And this was just an experiment.
+
+307
+00:27:12,320 --> 00:27:14,400
+[SPEAKER_00] But how, how did you start evolving that over time?
+
+308
+00:27:14,640 --> 00:27:31,120
+[SPEAKER_00] What were, what were some of the, and maybe just kind of give us the highlights of the last almost decade now, eight, eight years, the kind of biggest unlocks when we added this to the paywall, when we added this new tier, what were some of those big unlocks over the past eight years that really kind of moved the business forward?
+
+309
+00:27:31,840 --> 00:27:34,800
+[SPEAKER_01] There's a few, and let me try to think ten years is a lot of time.
+
+310
+00:27:35,040 --> 00:27:42,880
+[SPEAKER_01] There's a few levers that have, looking back, have really either caused step function increases immediately or over time it really compounded.
+
+311
+00:27:43,200 --> 00:27:51,920
+[SPEAKER_01] So one of them, I guess, now if you work in subscriptions, now this is like a no brainer, but at the time it really wasn't having free trials is one.
+
+312
+00:27:52,480 --> 00:27:55,360
+[SPEAKER_01] I actually as a PM, I resisted free trials for a long time.
+
+313
+00:27:55,520 --> 00:27:57,200
+[SPEAKER_01] I assumed it would like, completely flop.
+
+314
+00:27:57,680 --> 00:27:58,560
+[SPEAKER_00] The product was already free.
+
+315
+00:27:59,040 --> 00:27:59,840
+[SPEAKER_01] Yes, exactly.
+
+316
+00:28:00,000 --> 00:28:05,200
+[SPEAKER_01] It's like, why would people want to try free trials for the exact same product they've used for years?
+
+317
+00:28:05,440 --> 00:28:06,160
+[SPEAKER_01] The product is free.
+
+318
+00:28:06,320 --> 00:28:15,120
+[SPEAKER_01] Like, if we were a fully premium product, free trial in my head made a lot of sense, but for freemium, like you said., I thought it didn't make sense.
+
+319
+00:28:15,280 --> 00:28:16,080
+[SPEAKER_01] Turns out I was wrong.
+
+320
+00:28:16,240 --> 00:28:18,160
+[SPEAKER_01] Free trials are really helpful.
+
+321
+00:28:18,960 --> 00:28:27,440
+[SPEAKER_01] For the obvious skeptical user that might not want to pay upfront, but they are interested in trying it out, it just makes it so easy to just jump in and try.
+
+322
+00:28:27,920 --> 00:28:28,640
+[SPEAKER_01] It's very intuitive.
+
+323
+00:28:28,800 --> 00:28:32,320
+[SPEAKER_01] Now as a user, I love free trials because I'm like, well, I don't want to commit to pay.
+
+324
+00:28:32,480 --> 00:28:33,040
+[SPEAKER_01] Let me give it a try.
+
+325
+00:28:33,440 --> 00:28:38,480
+[SPEAKER_00] Were there specific things that were then behind the paywall that people needed to experience?
+
+326
+00:28:39,920 --> 00:28:40,160
+[SPEAKER_01] Not really.
+
+327
+00:28:40,560 --> 00:28:40,720
+[SPEAKER_01] Really?
+
+328
+00:28:40,880 --> 00:28:44,880
+[SPEAKER_01] I mean, offline you can say offline, but it's offline is the same as online.
+
+329
+00:28:45,040 --> 00:28:46,640
+[SPEAKER_01] It just works when you're in airplane mode.
+
+330
+00:28:46,880 --> 00:28:55,280
+[SPEAKER_01] So if you imagine this subsccription which is no ads and offline, you don't really need to experience it, but I think it just removes the payment hesitation.
+
+331
+00:28:55,520 --> 00:28:57,360
+[SPEAKER_01] So it lowers the barrier to entry.
+
+332
+00:28:57,600 --> 00:28:58,720
+[SPEAKER_01] So you're not committing payment.
+
+333
+00:28:58,800 --> 00:29:00,000
+[SPEAKER_01] You're like, I'll give it a try.
+
+334
+00:29:00,640 --> 00:29:02,880
+[SPEAKER_01] And I think that's the real benefit of free trials.
+
+335
+00:29:03,200 --> 00:29:11,280
+[SPEAKER_01] So at this point we have, we're very pro free trials and I think our purchase flows are now designed to highlight how our free trial works as a mechanic.
+
+336
+00:29:11,520 --> 00:29:16,240
+[SPEAKER_01] We even have designed pages which communicate, hey, there's a seven day free trial on day five.
+
+337
+00:29:16,480 --> 00:29:19,440
+[SPEAKER_01] We're going to send you a notification to see if you still want your subscription.
+
+338
+00:29:19,600 --> 00:29:26,720
+[SPEAKER_01] Like, because I, and this has performed well in AB tests because I think users have a subscription aversion.
+
+339
+00:29:27,040 --> 00:29:34,240
+[SPEAKER_01] And I think in a lot of countries, maybe not as much the US, there's also subscription scam aversion where you click on something you somehow can't get out.
+
+340
+00:29:34,720 --> 00:29:44,080
+[SPEAKER_01] I think if you highlight how what a free trial is, one is like you don't have to pay anything really, and out of what the mechanics of it, it relieves this subscription aversion.
+
+341
+00:29:44,480 --> 00:29:49,360
+[SPEAKER_00] Well, while we're on the topic, I know you recently did an experiment with the try for free button.
+
+342
+00:29:49,920 --> 00:29:53,600
+[SPEAKER_01] We've been experimenting with a lot on everything our purchase pages.
+
+343
+00:29:54,080 --> 00:29:56,400
+[SPEAKER_01] And maybe it's worth talking about, you mentioned AB testing.
+
+344
+00:29:56,560 --> 00:29:59,520
+[SPEAKER_01] Maybe I'll take us on a tangent for ten seconds.
+
+345
+00:30:00,000 --> 00:30:03,280
+[SPEAKER_01] So Duolingo currently runs somewhere around 400 AB tests.
+
+346
+00:30:03,440 --> 00:30:08,480
+[SPEAKER_01] So the Duolingo app itself is heavily evolving real estate.
+
+347
+00:30:08,880 --> 00:30:13,840
+[SPEAKER_01] And a good chunk of those, not majority, but a good chunk of them also happen on our purchase flow.
+
+348
+00:30:14,080 --> 00:30:28,880
+[SPEAKER_01] So if you look at any element, whether that's like Duo's flight path on the super page or what the copy we write, how it's highlighted, how it's underlined, what the button color is, what the button copy is, all of those elements, we have teams trying to figure out how to make them better.
+
+349
+00:30:29,120 --> 00:30:31,600
+[SPEAKER_01] And of course, for the record, we're talking a lot about monetization.
+
+350
+00:30:31,840 --> 00:30:33,840
+[SPEAKER_01] That's not the only place in the app where we're doing this.
+
+351
+00:30:34,000 --> 00:30:35,600
+[SPEAKER_01] Like our onboarding flow is the same.
+
+352
+00:30:35,680 --> 00:30:37,920
+[SPEAKER_01] Our session end is the same., our lessons are the same.
+
+353
+00:30:38,080 --> 00:30:43,600
+[SPEAKER_01] So we take kind of maximum care to improve all these flows, but monetization is no exception.
+
+354
+00:30:44,240 --> 00:30:46,480
+[SPEAKER_01] But that button copy, we've experimented a lot.
+
+355
+00:30:46,800 --> 00:30:50,480
+[SPEAKER_01] And that is one learning that I honestly didn't have or didn't really expect.
+
+356
+00:30:51,280 --> 00:30:56,240
+[SPEAKER_01] What you say in the purchase button makes a massive difference on your revenue curves.
+
+357
+00:30:56,560 --> 00:30:57,840
+[SPEAKER_01] We have tested many things.
+
+358
+00:30:58,080 --> 00:31:03,280
+[SPEAKER_01] There's a couple of magic strings that were like, you look at the graph and you're like, there must be a measurement error.
+
+359
+00:31:03,520 --> 00:31:05,200
+[SPEAKER_01] Like, why are the numbers so green?
+
+360
+00:31:05,840 --> 00:31:09,680
+[SPEAKER_01] The two specifically were we went from, I think, start my free trial.
+
+361
+00:31:10,000 --> 00:31:11,680
+[SPEAKER_01] So I think we said something like.
+
+362
+00:31:14,160 --> 00:31:15,760
+[SPEAKER_01] That was that was your baseline.
+
+363
+00:31:16,000 --> 00:31:19,840
+[SPEAKER_01] And then we tried many things, but one of the big uplifts was start my free trial.
+
+364
+00:31:20,320 --> 00:31:20,880
+[SPEAKER_01] That was very good.
+
+365
+00:31:21,200 --> 00:31:22,960
+[SPEAKER_01] And then we tried, what did we say?
+
+366
+00:31:23,440 --> 00:31:24,160
+[SPEAKER_01] Try for free.
+
+367
+00:31:24,400 --> 00:31:24,800
+[SPEAKER_01] That was better.
+
+368
+00:31:25,440 --> 00:31:27,520
+[SPEAKER_01] And then we tried try for zero.
+
+369
+00:31:28,080 --> 00:31:28,480
+[SPEAKER_01] zero zero.
+
+370
+00:31:30,080 --> 00:31:35,680
+[SPEAKER_01] Weirdly, that is the string that I think hacks your brain to really grock that that button is entirely free.
+
+371
+00:31:36,320 --> 00:31:36,480
+[SPEAKER_01] Zero.
+
+372
+00:31:36,960 --> 00:31:38,480
+[SPEAKER_01] zero like two zero decimals.
+
+373
+00:31:38,720 --> 00:31:41,280
+[SPEAKER_01] Now I think that's what's live in the app if I'm not mistaken.
+
+374
+00:31:41,600 --> 00:31:42,880
+[SPEAKER_01] And that performed really well.
+
+375
+00:31:43,200 --> 00:31:47,680
+[SPEAKER_00] And just changing try for free to try for dollar sign zero.
+
+376
+00:31:48,320 --> 00:31:51,760
+[SPEAKER_00] zero zero zero.00 You saw a meaningful uplifting conversion.
+
+377
+00:31:52,160 --> 00:31:52,800
+[SPEAKER_01] Correct, yes.
+
+378
+00:31:53,600 --> 00:31:58,720
+[SPEAKER_00] And it was, I guess, the start trial conversion, but then also the trial conversion to pay.
+
+379
+00:31:59,120 --> 00:32:00,640
+[SPEAKER_00] So like both numbers went up.
+
+380
+00:32:00,960 --> 00:32:01,280
+[SPEAKER_01] Correct.
+
+381
+00:32:01,440 --> 00:32:01,520
+[SPEAKER_00] Wow.
+
+382
+00:32:01,920 --> 00:32:03,120
+[SPEAKER_01] Yeah, it's so crazy.
+
+383
+00:32:03,360 --> 00:32:04,480
+[SPEAKER_01] Yeah, it was unexpected.
+
+384
+00:32:04,480 --> 00:32:07,280
+[SPEAKER_01] Honestly, it's like you wouldn't think this makes that much of the difference.
+
+385
+00:32:07,760 --> 00:32:19,120
+[SPEAKER_01] I think one other thing I've learned with freemium, and honestly, with any subscription and paywall behavior is a lot of when you go and design these flows, you're designing with logic, right?
+
+386
+00:32:19,360 --> 00:32:24,160
+[SPEAKER_01] You're saying, let me communicate my features so whoever is going to buy should read them and understand what they're buying.
+
+387
+00:32:24,720 --> 00:32:29,520
+[SPEAKER_01] So they can do the logical exchange of if I part with this many dollars, I will get this many features.
+
+388
+00:32:30,000 --> 00:32:32,240
+[SPEAKER_01] That's how you go and design a flow.
+
+389
+00:32:32,640 --> 00:32:36,560
+[SPEAKER_01] But the reality is humans don't experience mobile flows that way at all.
+
+390
+00:32:37,360 --> 00:32:44,400
+[SPEAKER_01] It's way more based on emotion and reaction than, oh, let me read and think about the value exchange of what is happening here.
+
+391
+00:32:44,640 --> 00:32:45,840
+[SPEAKER_01] It's way more emotional.
+
+392
+00:32:46,400 --> 00:32:51,040
+[SPEAKER_01] So I think these things that are kind of sound like, you know, they're saying the same thing, right?
+
+393
+00:32:51,280 --> 00:32:55,840
+[SPEAKER_01] Zero is that zero and free are the same thing, but they create different emotions and make a difference.
+
+394
+00:32:56,240 --> 00:32:56,880
+[SPEAKER_00] That's fascinating.
+
+395
+00:32:57,360 --> 00:33:11,840
+[SPEAKER_00] Well, we've dug down multiple levels of rabbit hole, but to surface this back up in thinking through the past ten years, were there any other kind of key unlocks, specific features that you put behind the paywall that really moved the needle?
+
+396
+00:33:12,480 --> 00:33:12,880
+[SPEAKER_01] Definitely.
+
+397
+00:33:13,120 --> 00:33:14,720
+[SPEAKER_01] So we talked about free trial.
+
+398
+00:33:15,600 --> 00:33:25,200
+[SPEAKER_01] Another thing for us that was quite a meaningful turn in our evolution was honestly putting more useful features behind our subscription.
+
+399
+00:33:25,360 --> 00:33:27,920
+[SPEAKER_01] So I started with saying, okay, we had ads and offline.
+
+400
+00:33:28,720 --> 00:33:33,680
+[SPEAKER_01] We started adding more, we had two features that were basically transformational to the subscription.
+
+401
+00:33:34,560 --> 00:33:43,520
+[SPEAKER_01] One of them was Duolingo had this pacing mechanic called Hearts, now it's called Energy, but Hearts was not integrated with our subscription at all.
+
+402
+00:33:43,760 --> 00:34:04,320
+[SPEAKER_01] The way it works is you can go through Duolingo and do as much as you want, but if you make a certain number of mistakes, you start running out of hearts, and then before you can do new content, you have to regenerate hearts, and you can do that by doing practice lessons, or you can do that by watching ads, or at the time we said you can renew your hearts with an in-app purchase.
+
+403
+00:34:04,960 --> 00:34:11,040
+[SPEAKER_01] We decided to integrate the Hearts mechanic with our subscription and said, hey, if you subscribe, you actually get unlimited hearts.
+
+404
+00:34:11,360 --> 00:34:16,400
+[SPEAKER_01] That was a big turning point because it turns out a lot of users don't want to practice old content.
+
+405
+00:34:16,560 --> 00:34:17,680
+[SPEAKER_01] They just want to do new content.
+
+406
+00:34:18,160 --> 00:34:25,680
+[SPEAKER_01] Even though practice is good for your learning, we said, okay, if you would like, this is you can choose your optionality if you subscribe.
+
+407
+00:34:26,080 --> 00:34:34,160
+[SPEAKER_01] That was a good turning point because it made the feature set of Duolingo Plus at the time much more integrated and much more useful.
+
+408
+00:34:34,800 --> 00:34:38,000
+[SPEAKER_01] Another feature we created was again around practice, custom practice.
+
+409
+00:34:38,160 --> 00:34:41,040
+[SPEAKER_01] So we created a feature that is a separate tab called Practice Hub.
+
+410
+00:34:41,840 --> 00:34:43,680
+[SPEAKER_01] We made that part of Super at the time.
+
+411
+00:34:43,840 --> 00:34:46,160
+[SPEAKER_01] Actually, it's now, became fully free.
+
+412
+00:34:46,400 --> 00:34:50,800
+[SPEAKER_01] We now gave it all to free users because we realized it should be free, so we did that.
+
+413
+00:34:50,960 --> 00:34:58,880
+[SPEAKER_01] But at the time, we said, if you'd like to do very custom practice on the things you've learned on Duolingo, here's an extra place where that's served to you as an inventory.
+
+414
+00:34:59,120 --> 00:35:03,680
+[SPEAKER_01] So you can go back and practice anything you'd like in whatever order you like rather than the order we prescribe.
+
+415
+00:35:04,320 --> 00:35:17,920
+[SPEAKER_01] Anyway, this is a very long-winded way to say feature improvements that expanded the feature set of Duolingo Plus was naturally a win on two fronts, both conversion and retention of the subscription, which is great.
+
+416
+00:35:18,160 --> 00:35:18,560
+[SPEAKER_01] We love that.
+
+417
+00:35:18,880 --> 00:35:20,160
+[SPEAKER_01] And that gave us a lot of scale.
+
+418
+00:35:21,040 --> 00:35:26,080
+[SPEAKER_01] Other than that, honestly, it is rare to have put like one silver bullet that improved things.
+
+419
+00:35:26,640 --> 00:35:30,400
+[SPEAKER_01] For us, a lot of this has been continuous AB testing improvement.
+
+420
+00:35:30,720 --> 00:35:38,800
+[SPEAKER_01] I think we talked about the copy version as one thing, but imagine that happening across every bit and piece of our purchase flow.
+
+421
+00:35:39,200 --> 00:35:46,080
+[SPEAKER_01] And I think that's why Dualingo's purchase flows get copied a lot because I think people have heard us say this, I say this a lot, which is like we did AB test many things.
+
+422
+00:35:46,560 --> 00:35:51,360
+[SPEAKER_01] So if you want to copy something, probably you're copying something that has been tested at least for Dualingo.
+
+423
+00:35:51,520 --> 00:35:56,000
+[SPEAKER_01] It probably won't work for most apps, but you can look at us because we've tested stuff.
+
+424
+00:35:56,240 --> 00:35:56,960
+[SPEAKER_00] That's fascinating.
+
+425
+00:35:57,360 --> 00:36:00,640
+[SPEAKER_00] Before we move on, I did want to talk one more angle of monetization.
+
+426
+00:36:01,120 --> 00:36:08,400
+[SPEAKER_00] I know by the time this podcast is aired, you'll have taken something that was previously paid and moved it into the free tier.
+
+427
+00:36:08,560 --> 00:36:08,720
+[SPEAKER_00] Why?
+
+428
+00:36:08,960 --> 00:36:09,360
+[SPEAKER_00] Why do that?
+
+429
+00:36:09,840 --> 00:36:15,680
+[SPEAKER_01] So let me talk about actually two features that we one of them we just did and we are about to do.
+
+430
+00:36:15,920 --> 00:36:34,160
+[SPEAKER_01] So Practice Hub I talked about, we have realized that number one as a goal, we would like to provide more value to our free users because free users, there's the missionary reason why we want to teach more people, but there's the business reason which is free users are our marketing engine.
+
+431
+00:36:34,560 --> 00:36:39,040
+[SPEAKER_01] Duolingo grows as a whole user base and as a business through word of mouth.
+
+432
+00:36:39,280 --> 00:36:45,200
+[SPEAKER_01] Word of mouth is much stronger if your free product is stronger because you might or may not pay irrelevant.
+
+433
+00:36:45,360 --> 00:36:48,800
+[SPEAKER_01] If you're using Duolingo, you tell your friends about Duolingo and say, This is awesome.
+
+434
+00:36:48,880 --> 00:36:49,840
+[SPEAKER_01] I'm learning Spanish.
+
+435
+00:36:50,400 --> 00:36:50,880
+[SPEAKER_01] They try it.
+
+436
+00:36:51,040 --> 00:36:51,440
+[SPEAKER_01] They do the same.
+
+437
+00:36:51,520 --> 00:36:52,960
+[SPEAKER_01] So that's how Duolingo really grows.
+
+438
+00:36:52,960 --> 00:36:59,520
+[SPEAKER_01] That's the majority of our growth engine and that growth engine, of course, gets stronger if we can provide more value to free users.
+
+439
+00:36:59,840 --> 00:37:05,760
+[SPEAKER_01] So it's a delicate balance if you're a freemium product to decide how much value to put on each side, right?
+
+440
+00:37:06,240 --> 00:37:10,720
+[SPEAKER_01] And we certainly want to put value as much as possible to our free user base.
+
+441
+00:37:11,040 --> 00:37:14,240
+[SPEAKER_01] So that's the overarching reason for why.
+
+442
+00:37:15,200 --> 00:37:19,120
+[SPEAKER_01] But the two features that we did was Practice Sub and the second one is Explain My Answer.
+
+443
+00:37:19,600 --> 00:37:25,840
+[SPEAKER_01] These are really, I mean, I love these features because they are really additive to your Dualingo experience.
+
+444
+00:37:25,920 --> 00:37:40,160
+[SPEAKER_01] So Practice Sub, we talked about, I'm not going to repeat it, that is now actually already live with free users and Explain My Answer is moving from being a Dualingo Max feature, which is our highest tier, to free users because we have realized the revenue value is not that high.
+
+445
+00:37:40,640 --> 00:37:43,040
+[SPEAKER_01] So we want, meaning it doesn't make that much revenue.
+
+446
+00:37:43,600 --> 00:37:44,480
+[SPEAKER_00] How did you determine that?
+
+447
+00:37:44,720 --> 00:37:45,280
+[SPEAKER_00] We tested it.
+
+448
+00:37:46,640 --> 00:37:53,600
+[SPEAKER_01] We tested giving it for free and compared it to a B condition or a control condition where it is part of Max.
+
+449
+00:37:54,320 --> 00:38:04,240
+[SPEAKER_01] The impact, well, there was impact, but we decided to kind of, you know, reduce our revenue but rather provide value for our free users because we believe that's the right thing to do in the long term.
+
+450
+00:38:04,640 --> 00:38:23,360
+[SPEAKER_01] And there's one more reason which is when we first introduced this feature, it was financially impossible for us to make it free because it uses LLM calls to explain basically, well, what it does for the record is you give an answer, you answered something, and we basically use LLMs to describe to you what you got wrong for your specific answer.
+
+451
+00:38:23,520 --> 00:38:26,720
+[SPEAKER_01] So it's very why there is an LM that is used.
+
+452
+00:38:27,120 --> 00:38:28,240
+[SPEAKER_01] LM costs were really high.
+
+453
+00:38:28,480 --> 00:38:35,760
+[SPEAKER_01] So we had to put it into a subscription just to provide the service, but costs have gone down significantly and we've improved how we cache things.
+
+454
+00:38:36,960 --> 00:38:44,720
+[SPEAKER_01] So since costs came down, our only decision was revenue loss and revenue loss we decided to take to provide this service for.
+
+455
+00:38:45,200 --> 00:38:45,280
+[SPEAKER_01] Yeah.
+
+456
+00:38:45,840 --> 00:38:59,040
+[SPEAKER_00] It seems like that's a real theme is being very strategic about what's free and what's paid because of that balance because you want to create that amazing free experience, but you still monetize.
+
+457
+00:38:59,360 --> 00:39:02,240
+[SPEAKER_00] And so that tension must exist be difficult as a product team.
+
+458
+00:39:02,720 --> 00:39:08,240
+[SPEAKER_01] Yes, and you know, honestly, the hardest part is for me, it's really easy.
+
+459
+00:39:08,400 --> 00:39:10,240
+[SPEAKER_01] I think for our like CEO, it's very easy.
+
+460
+00:39:10,400 --> 00:39:12,160
+[SPEAKER_01] We always want to do the right thing for the user.
+
+461
+00:39:12,800 --> 00:39:17,120
+[SPEAKER_01] It's not hard for us to think about, okay, like, how do we improve the free experience?
+
+462
+00:39:17,280 --> 00:39:18,160
+[SPEAKER_01] There's some obvious things.
+
+463
+00:39:18,800 --> 00:39:23,200
+[SPEAKER_01] The hardest part is taking a loss in an experiment is not intuitive.
+
+464
+00:39:23,440 --> 00:39:31,360
+[SPEAKER_01] So the teams that are working on these are finding it hard to be like, I understand all this good stuff you said, but we're going to drop our metric.
+
+465
+00:39:31,680 --> 00:39:33,280
+[SPEAKER_01] It's like, it doesn't feel intuitive.
+
+466
+00:39:33,840 --> 00:39:36,560
+[SPEAKER_01] So I think convincing the organ, convincing the teams and explaining.
+
+467
+00:39:37,120 --> 00:39:46,960
+[SPEAKER_01] why this is the right thing to do long term is the hard part because you can imagine the positive side of what I'm saying doesn't really have a metric, but the cost of it has a very real metric.
+
+468
+00:39:47,360 --> 00:40:00,240
+[SPEAKER_01] So I think that they run hand in hand, but I think you have to realize, especially if you're a freemium business, is if you only go by positive revenue metrics, you will burn yourself to the ground.
+
+469
+00:40:01,920 --> 00:40:16,640
+[SPEAKER_01] I don't want to call out specific companies, but you can see a lot of subscription businesses that have effectively nickel and dime their users if they're freemium and then burned their growth engine, even though their revenue kept growing, but that only works for like some amount of years, but eventually your growth stops.
+
+470
+00:40:17,280 --> 00:40:21,440
+[SPEAKER_01] I think for us what's most important is our growth engine, our user growth engine keeps growing.
+
+471
+00:40:22,000 --> 00:40:25,360
+[SPEAKER_01] That's why you have to make these hard calls sometimes to be like, we're going to take a loss.
+
+472
+00:40:25,520 --> 00:40:30,640
+[SPEAKER_01] It's okay because we're helping our growth engine is the convincing part is the hard part.
+
+473
+00:40:31,120 --> 00:40:35,760
+[SPEAKER_00] How do those calls get made when an AB test shows a benefit?
+
+474
+00:40:36,400 --> 00:40:47,840
+[SPEAKER_00] And I imagine this happens in more than just these monetization features, but how do you balance the kind of art of product management against the science of product management when you run 400 simultaneous AB tests?
+
+475
+00:40:48,160 --> 00:40:48,720
+[SPEAKER_01] This is a great question.
+
+476
+00:40:49,200 --> 00:40:55,440
+[SPEAKER_01] I think this happens a lot for us, I would say, because we have this other side of our equation as a business.
+
+477
+00:40:55,680 --> 00:41:02,720
+[SPEAKER_01] So we talked about user growth and monetization, that's the same for every app, but Dualingrad has one more unique element, which is learning and learning efficacy.
+
+478
+00:41:02,880 --> 00:41:09,520
+[SPEAKER_01] So we run AB tests to try to improve our learning efficacy, and the problem with that is it doesn't have a single metric you can put on a graph.
+
+479
+00:41:10,080 --> 00:41:20,160
+[SPEAKER_01] Even if you could, I mean, we use proxy metrics, there's no perfect metric for it, but even if you have proxy metrics that are going up, let's say your learning goes up, but your revenue comes down, should you exchange that?
+
+480
+00:41:20,400 --> 00:41:21,360
+[SPEAKER_01] Should you not exchange that?
+
+481
+00:41:21,680 --> 00:41:29,680
+[SPEAKER_01] There's these where you move away from a mostly purely science to, as you said, the art of product management.
+
+482
+00:41:30,000 --> 00:41:31,120
+[SPEAKER_01] How do these decisions get made?
+
+483
+00:41:31,440 --> 00:41:43,360
+[SPEAKER_01] If they are really consequential, it's like, okay, the revenue loss might be large, or there's a DAU hit, whatever it is, like the clear business hit, we have to bring in most senior people to decide if as a company we should take this tradeoff.
+
+484
+00:41:43,680 --> 00:41:48,240
+[SPEAKER_01] Like that means our CEO would be certainly involved in saying, okay, committed, let's do this.
+
+485
+00:41:48,720 --> 00:41:53,040
+[SPEAKER_01] If it's at smaller scale, I think most of our teams understand these tradeoffs fairly well.
+
+486
+00:41:55,200 --> 00:42:00,160
+[SPEAKER_01] If it's an exchange of, for example, clearly the thing we're doing helps you improve your conversation skills.
+
+487
+00:42:01,040 --> 00:42:03,840
+[SPEAKER_01] But in turn, maybe it makes our content a little harder.
+
+488
+00:42:04,400 --> 00:42:07,200
+[SPEAKER_01] So maybe it hurts some of our business metrics.
+
+489
+00:42:07,360 --> 00:42:10,400
+[SPEAKER_01] But if the amount is small, teams can independently make those calls.
+
+490
+00:42:10,880 --> 00:42:18,640
+[SPEAKER_01] If the magnitude is large, but it's a strategic decision we should make, then I think we bring in senior people to sign off is kind of how we operate.
+
+491
+00:42:19,200 --> 00:42:21,760
+[SPEAKER_00] And this is why Duolingo is such a well-loved app.
+
+492
+00:42:22,240 --> 00:42:32,960
+[SPEAKER_00] I mean, hearing you explain that and understanding how many product decisions have been made over the years to provide that better experience at the expense of DAU or monetization or other things.
+
+493
+00:42:33,280 --> 00:42:34,160
+[SPEAKER_00] That's why people love it.
+
+494
+00:42:34,240 --> 00:42:53,360
+[SPEAKER_00] And that's like you said, you it's hard to put a metric onric on that love and the social sharing and the feeling a user gets when they open the app, but it sounds like that's something you protect very carefully as a company, which then pays dividends over the much longer term, even if you can't always AB test your way to that.
+
+495
+00:42:54,240 --> 00:42:54,960
+[SPEAKER_01] That's very well said.
+
+496
+00:42:55,360 --> 00:43:12,240
+[SPEAKER_01] We have this operating principle that we I love and we repeat a lot is take the long view, meaning you can make business decisions very differently if your goal is to be a very profitable or a very fast growing company for two years versus if you want to build a company for that will be around 100 years.
+
+497
+00:43:12,800 --> 00:43:14,800
+[SPEAKER_01] I think those are very different decisions.
+
+498
+00:43:14,880 --> 00:43:20,480
+[SPEAKER_01] And to be specific, you could monetize the Duolingo feature set very heavily if you wanted to.
+
+499
+00:43:20,640 --> 00:43:22,240
+[SPEAKER_01] And for two years, you'll make a lot of money.
+
+500
+00:43:22,720 --> 00:43:23,840
+[SPEAKER_01] But one, that's not our goal.
+
+501
+00:43:23,920 --> 00:43:25,680
+[SPEAKER_01] And two, that would be terrible for free users.
+
+502
+00:43:26,160 --> 00:43:29,280
+[SPEAKER_01] But three, we will burn ourselves to the ground if we do that.
+
+503
+00:43:29,520 --> 00:43:32,800
+[SPEAKER_01] Like we cannot build a hundred year business by taking more and more.
+
+504
+00:43:33,440 --> 00:43:40,640
+[SPEAKER_01] That's what a lot of freemium apps fall into this premium trap where like the easiest win you can always do is like, oh yeah, let me take some free features, make it paid.
+
+505
+00:43:40,880 --> 00:43:42,560
+[SPEAKER_01] And immediately all your metrics are green.
+
+506
+00:43:42,720 --> 00:43:45,360
+[SPEAKER_01] And that does kind of work for six months or maybe a year.
+
+507
+00:43:45,840 --> 00:43:47,040
+[SPEAKER_01] But eventually it stops working.
+
+508
+00:43:47,200 --> 00:43:52,080
+[SPEAKER_01] The other thing it does is it creates opportunity for someone else to do it for free.
+
+509
+00:43:52,480 --> 00:43:57,840
+[SPEAKER_01] The Duolingo story, the very early one that we didn't really talk about is why Duolingo grew so much early on.
+
+510
+00:43:59,040 --> 00:44:08,400
+[SPEAKER_01] At the time, there were tools teaching languages, there were the Rosetta Stones of the world, but they were paid and expensive, so being free and fun created a massive differentiator.
+
+511
+00:44:09,120 --> 00:44:17,840
+[SPEAKER_01] If we were to tomorrow wake up and say, all right, we're going to charge for all of our great features, very likely in two years, another great app will do it for free.
+
+512
+00:44:18,160 --> 00:44:27,840
+[SPEAKER_01] So I think preserving the free value is just a mote that we have to keep and we want to keep for Mich missionary reasons, but for business reasons also makes a lot of sense.
+
+513
+00:44:28,080 --> 00:44:29,920
+[SPEAKER_00] Yeah, that's such a great answer.
+
+514
+00:44:30,720 --> 00:44:37,600
+[SPEAKER_00] Well, I did want to move on to the new products that Duolingo has been introducing and kind of becoming a multi product company.
+
+515
+00:44:38,560 --> 00:44:42,080
+[SPEAKER_00] For many apps, it's a big leap.
+
+516
+00:44:42,320 --> 00:44:51,840
+[SPEAKER_00] The most famous example is Calm finding sleep stories and that secondary product market fit being this new lever of growth that really moved the needle for them.
+
+517
+00:44:52,480 --> 00:45:00,240
+[SPEAKER_00] So tell me about why you decided to start adding new courses and we can talk through like how that went and what you added and everything.
+
+518
+00:45:01,680 --> 00:45:03,200
+[SPEAKER_01] Honestly, it's been a really fun journey.
+
+519
+00:45:03,840 --> 00:45:07,760
+[SPEAKER_01] It's been now, has it been four years since we introduced our new subject?
+
+520
+00:45:08,000 --> 00:45:08,960
+[SPEAKER_01] Maybe three to four.
+
+521
+00:45:10,160 --> 00:45:13,280
+[SPEAKER_01] But now we have math, music, and chess on top of languages.
+
+522
+00:45:14,320 --> 00:45:23,280
+[SPEAKER_01] The reason we chose those specific subjects, they're all varied and they have their own thesis, but at its core they have a few properties that carry over.
+
+523
+00:45:24,080 --> 00:45:27,360
+[SPEAKER_01] One is they could be taught on mobile in a fun way.
+
+524
+00:45:27,840 --> 00:45:29,120
+[SPEAKER_01] Not every topic qualifies.
+
+525
+00:45:29,520 --> 00:45:35,040
+[SPEAKER_01] For example, coding, we considered, but it's really hard to teach on mobile, so we decided not to invest there.
+
+526
+00:45:35,040 --> 00:45:38,240
+[SPEAKER_01] That doesn't mean we won't ever do it., but today it felt too hard to do.
+
+527
+00:45:38,880 --> 00:45:43,200
+[SPEAKER_01] Another one is they all have large markets of people that are already learning these subjects.
+
+528
+00:45:43,360 --> 00:45:46,560
+[SPEAKER_01] So we're not trying to create the market necessarily, but we are.
+
+529
+00:45:47,040 --> 00:45:48,160
+[SPEAKER_01] There's already existing demand.
+
+530
+00:45:49,040 --> 00:45:49,440
+[SPEAKER_01] That's two.
+
+531
+00:45:50,080 --> 00:45:52,080
+[SPEAKER_01] And three, and I think this is connected to mobile.
+
+532
+00:45:52,480 --> 00:46:00,800
+[SPEAKER_01] Our expertise in language, which is at its core, if you think about it, a bite sized fun experience, can carry over fairly well to these subjects.
+
+533
+00:46:01,440 --> 00:46:11,680
+[SPEAKER_01] The anti example of this would be stuff that is done offline, like running could have been something we decided to do, but that is an offline experience that you tie with an online experience.
+
+534
+00:46:11,680 --> 00:46:14,560
+[SPEAKER_01] That is not exactly how we're used to doing bite size exercises.
+
+535
+00:46:14,720 --> 00:46:18,320
+[SPEAKER_01] So we wanted to make sure our competencies played well in these subjects.
+
+536
+00:46:19,040 --> 00:46:21,200
+[SPEAKER_01] So these topics would fit really well.
+
+537
+00:46:21,200 --> 00:46:24,000
+[SPEAKER_01] We actually looked around quite a bit before we invested in each of them.
+
+538
+00:46:24,560 --> 00:46:35,200
+[SPEAKER_01] The maybe the fourth internal reason these topics is each of them had one or more people inside the company that were quite tenured, like tenured builders that really wanted to build these.
+
+539
+00:46:35,680 --> 00:46:37,840
+[SPEAKER_01] So they became a kind of a seed for these projects.
+
+540
+00:46:38,320 --> 00:46:43,520
+[SPEAKER_00] So I did want to get into the staging of this because you first launched Math as a separate app, right?
+
+541
+00:46:43,920 --> 00:46:46,320
+[SPEAKER_00] So what was the thesis behind doing that?
+
+542
+00:46:46,640 --> 00:46:50,240
+[SPEAKER_00] And then what didn't work it work out that you now brought it back into the app?
+
+543
+00:46:51,040 --> 00:46:51,120
+[SPEAKER_01] Yes.
+
+544
+00:46:51,680 --> 00:46:54,160
+[SPEAKER_01] Our thesis changed actually over time.
+
+545
+00:46:54,400 --> 00:46:59,040
+[SPEAKER_01] So when we launched Math, we assumed our future would be separate apps.
+
+546
+00:46:59,200 --> 00:47:09,520
+[SPEAKER_01] Like our strategy, we because at the time we also actually had, we still do, but we had another app called Duolingo ABC that is meant to teach literacy to younger children.
+
+547
+00:47:09,920 --> 00:47:13,520
+[SPEAKER_01] So teaching their first language rather than the second language that Duolingo teaches.
+
+548
+00:47:13,920 --> 00:47:17,760
+[SPEAKER_01] But our strategy was headed in a direction where all these new topics would be separate apps.
+
+549
+00:47:18,480 --> 00:47:29,840
+[SPEAKER_01] We thought at the time, this is partly true still, but our thinking certainly evolved that different audiences would seek different apps rather than be in one mega app for multiple topic learning.
+
+550
+00:47:30,000 --> 00:47:39,840
+[SPEAKER_01] So if you want to learn math, we thought the overlap between you and the language learner would be slim, and that's why you would probably want a separate app for doing one job.
+
+551
+00:47:40,320 --> 00:47:44,880
+[SPEAKER_01] And I don't know if this was common wisdom at the time, but it felt really good as a strategy.
+
+552
+00:47:46,080 --> 00:47:50,480
+[SPEAKER_01] We did realize one thing as time went on, which is actually two realizations happened.
+
+553
+00:47:50,640 --> 00:47:54,960
+[SPEAKER_01] One turns out a lot of people want to learn multiple things at once.
+
+554
+00:47:55,520 --> 00:47:58,560
+[SPEAKER_01] At least Duolingo learners want to learn multiple things at once.
+
+555
+00:47:58,720 --> 00:48:00,320
+[SPEAKER_01] So it became an inconvenience actually.
+
+556
+00:48:00,320 --> 00:48:02,000
+[SPEAKER_01] It's actually to switch between apps.
+
+557
+00:48:02,240 --> 00:48:06,320
+[SPEAKER_01] And for two apps, maybe you could survive, but if it's three, four apps, you're just not going to do it.
+
+558
+00:48:06,720 --> 00:48:14,240
+[SPEAKER_01] And there's just this inherent human demand that we realize exists within Duolingo, which is not just like, I'm here to learn Spanish.
+
+559
+00:48:14,480 --> 00:48:19,200
+[SPEAKER_01] There's certainly a lot of users that are there for one thing, but also a lot of users are there for self improvement in general.
+
+560
+00:48:19,520 --> 00:48:29,920
+[SPEAKER_01] So it was a natural behavior that we just saw happening, which is, I'll learn a little bit of math, I'll learn a little bit of chess, I'm there to spend my good screen time on Duolingo to improve myself.
+
+561
+00:48:30,320 --> 00:48:35,920
+[SPEAKER_01] It is less relevant exactly what that topic is, that might change over time, as long as I'm improving myself in something.
+
+562
+00:48:36,000 --> 00:48:41,840
+[SPEAKER_01] That kind of led us towards, well, let's make it easy for these folks to do that.
+
+563
+00:48:42,560 --> 00:48:43,520
+[SPEAKER_01] So that was one.
+
+564
+00:48:44,160 --> 00:48:56,240
+[SPEAKER_01] The other is just the business reality of growing a separate app is extremely expensive while we were like, why are we playing hard mode when we can play easy mode because in the same app you have a user base.
+
+565
+00:48:56,800 --> 00:49:03,360
+[SPEAKER_01] It's much easier to get a user that is in the main app to try something new than to get them to download an entirely new app.
+
+566
+00:49:03,920 --> 00:49:05,280
+[SPEAKER_00] It's so crazy to hear that from you.
+
+567
+00:49:05,360 --> 00:49:12,160
+[SPEAKER_00] I mean, of all the companies with, you know, tens of millions of users and beloved and everything else that the separate app was hard mode.
+
+568
+00:49:12,160 --> 00:49:13,840
+[SPEAKER_01] It's hard mode, for sure.
+
+569
+00:49:14,080 --> 00:49:16,240
+[SPEAKER_01] And I think a lot of companies have come to this conclusion.
+
+570
+00:49:16,560 --> 00:49:20,400
+[SPEAKER_01] I think there are successful and unsuccessful examples of both of these, actually.
+
+571
+00:49:20,640 --> 00:49:27,920
+[SPEAKER_01] But the famous examples are, I think, Uber and Facebook have done both separate and combined apps in multiple forms.
+
+572
+00:49:28,240 --> 00:49:39,760
+[SPEAKER_01] And that's why I don't think there's the right answer for every company, but for us, this, if you think about user behavior, which is generally, there's a lot of users that are around self improvement and let me learn something and that will change over time.
+
+573
+00:49:40,560 --> 00:49:43,200
+[SPEAKER_01] It just made sense for them to be in one app.
+
+574
+00:49:44,000 --> 00:49:45,520
+[SPEAKER_00] How did you solve the product problem?
+
+575
+00:49:45,920 --> 00:49:48,720
+[SPEAKER_00] I think one of the challenges of the product.
+
+576
+00:49:48,720 --> 00:50:00,720
+[SPEAKER_00] of mobile is that you have such tiny real estate to communicate everything to shoehorn a feature into this tiny space that's already crowded by other things.
+
+577
+00:50:01,120 --> 00:50:02,880
+[SPEAKER_00] How did you solve the product problem of it?
+
+578
+00:50:04,640 --> 00:50:07,360
+[SPEAKER_01] A lot of with a lot of work is the short answer.
+
+579
+00:50:08,080 --> 00:50:17,520
+[SPEAKER_01] And before we launched anything, these projects all took probably from six, like somewhere from six to twelve months to go from the first idea to full launch.
+
+580
+00:50:17,680 --> 00:50:24,560
+[SPEAKER_01] So that means in the meantime, we probably designed, tested, prototyped, redesigned, prototyped, tested again on ourselves and some.
+
+581
+00:50:24,560 --> 00:50:32,080
+[SPEAKER_01] And we've seen it ourselves and some beta users maybe many, many times until we got to the state where it's like, okay, within the confines of this mobile experience, this feels fun enough.
+
+582
+00:50:32,240 --> 00:50:44,960
+[SPEAKER_01] It's actually teaching something useful and it's good enough to go in the app and be on par with the quality of where the language courses are because language courses have been improving for thirteen years, whereas this new thing is starting from scratch.
+
+583
+00:50:45,200 --> 00:50:48,800
+[SPEAKER_01] So anyway, a lot of dog fooding and prototyping, I think is answer number one.
+
+584
+00:50:49,360 --> 00:50:54,800
+[SPEAKER_01] But the other one is, I think you can eventually teach a lot of things on mobile.
+
+585
+00:50:55,360 --> 00:50:57,840
+[SPEAKER_01] There are some courses that are easy, there are some courses that are harder.
+
+586
+00:50:58,000 --> 00:50:59,600
+[SPEAKER_01] Music is really hard, I would say.
+
+587
+00:51:00,240 --> 00:51:04,400
+[SPEAKER_01] Chess is fairly easier because you have one visual element that is the chessboard.
+
+588
+00:51:04,800 --> 00:51:10,080
+[SPEAKER_01] As long as you fit that into the mobile experience, you can build a lot of stuff on it, but really, it's now contained.
+
+589
+00:51:10,480 --> 00:51:17,360
+[SPEAKER_01] Music is much harder because we're, for example, teaching you piano skills on a screen, and we have to think a lot more creatively on how to do that.
+
+590
+00:51:17,760 --> 00:51:28,320
+[SPEAKER_01] And you can imagine the amount of stuff we've tried and still are trying to improve, which is you can't fit an entire keyboard on a piano, for example, and you also can't fit it when the phone is vertical, you have to turn it horizontal.
+
+591
+00:51:28,800 --> 00:51:35,520
+[SPEAKER_01] To fit more key space, we actually tilted the keyboard a little a few degrees so it gives you a little bit more angle for touch space.
+
+592
+00:51:36,160 --> 00:51:39,520
+[SPEAKER_01] So all that stuff is like innovation that you end up having to figure out.
+
+593
+00:51:39,920 --> 00:51:41,520
+[SPEAKER_01] And I would say your music is the hardest.
+
+594
+00:51:41,680 --> 00:51:48,800
+[SPEAKER_01] Chess is chess and math are easier because math follows a very similar visual style to in exercises language.
+
+595
+00:51:49,200 --> 00:52:02,640
+[SPEAKER_00] How do you surface it to users in the app in a way that doesn't get in the way of the people who just want to learn a language or are just there for music or crowding the screen real estate with these multiple things?
+
+596
+00:52:03,040 --> 00:52:04,000
+[SPEAKER_00] How do you solve that problem?
+
+597
+00:52:04,720 --> 00:52:12,560
+[SPEAKER_01] We've made it fairly integrated so it doesn't feel like you're crossing into a different app, but it feels like you're just switching.
+
+598
+00:52:13,040 --> 00:52:13,760
+[SPEAKER_01] what you're learning.
+
+599
+00:52:14,000 --> 00:52:16,960
+[SPEAKER_01] So we had already built a system basically to switch courses.
+
+600
+00:52:17,040 --> 00:52:20,960
+[SPEAKER_01] So if you were learning Spanish, you could switch to learning French or Italian, any other language.
+
+601
+00:52:21,600 --> 00:52:32,880
+[SPEAKER_01] In that system, we now also offer with some different hierarchy, of course, on like you could switch to French, which is the second language you learn the most, or there's your other topics now, which are math, music and chess.
+
+602
+00:52:33,200 --> 00:52:40,880
+[SPEAKER_01] We integrated there and honestly, it's worked fairly well because we do already have a lot of users that learn multiple languages per day.
+
+603
+00:52:41,600 --> 00:52:42,800
+[SPEAKER_01] And they started discovering it.
+
+604
+00:52:43,040 --> 00:52:46,400
+[SPEAKER_01] We also did some light promos just to raise awareness on the topics.
+
+605
+00:52:46,880 --> 00:52:53,920
+[SPEAKER_01] That said, this remains a bit of an uns of an unsolved problem, if I'm being honest, which is a lot of our users have no idea that we also teach math, music and chess.
+
+606
+00:52:54,320 --> 00:53:03,440
+[SPEAKER_01] So next year, we're still going to try to figure out how to make sure that at least our user base that's coming to the app every day is aware that these topics exist.
+
+607
+00:53:03,680 --> 00:53:05,120
+[SPEAKER_00] Yeah, it's a tough, tough problem.
+
+608
+00:53:05,680 --> 00:53:08,480
+[SPEAKER_00] How do you think about competition with Duolingo?
+
+609
+00:53:09,280 --> 00:53:16,080
+[SPEAKER_00] Do you think of YouTube and Netflix and other screen time as competition or who competes with Duolingo?
+
+610
+00:53:17,200 --> 00:53:21,040
+[SPEAKER_01] I think any screen time is probably our realistic competition.
+
+611
+00:53:24,560 --> 00:53:32,640
+[SPEAKER_01] You would probably think, well, education, any education app, but realistically, one, we are already way bigger than any education app.
+
+612
+00:53:32,880 --> 00:53:34,560
+[SPEAKER_01] So at least user base-wise.
+
+613
+00:53:34,640 --> 00:53:40,480
+[SPEAKER_01] So we don't particularly see behavior of, oh, I stopped using Duolingo and now I'm using an education app.
+
+614
+00:53:40,960 --> 00:53:49,840
+[SPEAKER_01] Most of any churn or any user that we lose goes to spend time on Instagram or YouTube or anything that is fun in their phone.
+
+615
+00:53:50,080 --> 00:53:54,160
+[SPEAKER_01] So for us, I think real competition is good screen time or I guess good or bad.
+
+616
+00:53:54,320 --> 00:54:03,520
+[SPEAKER_01] I think that's subjective, but anything that is spent in screen time is Duolingo's compet why we spend so much time on making Duolingo fun.
+
+617
+00:54:04,400 --> 00:54:09,760
+[SPEAKER_01] It is also, I would say, it's headwinds to try to take something that is brain intensive.
+
+618
+00:54:09,920 --> 00:54:12,400
+[SPEAKER_01] Like learning a language is not an easy activity.
+
+619
+00:54:12,560 --> 00:54:14,320
+[SPEAKER_01] It's not as passive as scrolling on your feed.
+
+620
+00:54:14,480 --> 00:54:22,880
+[SPEAKER_01] It's actually like burning your brain a little bit if you do it for a long time, and we try to make it as easy as fun because otherwise, well, you'll go to Instagram.
+
+621
+00:54:23,040 --> 00:54:23,840
+[SPEAKER_01] You'll go to TikTok.
+
+622
+00:54:24,000 --> 00:54:26,080
+[SPEAKER_01] There's many engaging things that are just pulling you.
+
+623
+00:54:26,720 --> 00:54:44,080
+[SPEAKER_01] So that's how, if I'm being honest, we don't really think about competition because it's so weird to think about screen time, but if you were to define it, it's really sc honestly the case for most apps these days, unless it's a specific utility where you need to like get in, get out, solve a very specific problem.
+
+624
+00:54:44,400 --> 00:54:56,240
+[SPEAKER_00] If it's any kind of even habit forming app, I mean, almost any app, when you launch your home screen, are you pulled to Instagram or are you pulled to Duolingo to do your lessons and it's tough.
+
+625
+00:54:56,800 --> 00:55:00,640
+[SPEAKER_00] How do you think of AI as competition and will AI just assume everything?
+
+626
+00:55:00,880 --> 00:55:04,880
+[SPEAKER_00] Nobody learns a language because they've got their AirPods automatically translating.
+
+627
+00:55:05,680 --> 00:55:07,760
+[SPEAKER_00] I imagine that's a hot topic right now.
+
+628
+00:55:08,320 --> 00:55:11,680
+[SPEAKER_01] Well, I get this question a lot and I actually really love it because I think.
+
+629
+00:55:12,960 --> 00:55:17,200
+[SPEAKER_01] We have a pretty clear thesis with two parts of this question.
+
+630
+00:55:17,440 --> 00:55:21,200
+[SPEAKER_01] So one part is, will AI remove the need for learning languages?
+
+631
+00:55:21,680 --> 00:55:26,080
+[SPEAKER_01] And in that case, will Duolingo, well, what will Duolingo do if that happens?
+
+632
+00:55:26,480 --> 00:55:31,920
+[SPEAKER_01] The other one is, I think, will AI disrupt Duolingo because AI has language teaching capabilities?
+
+633
+00:55:32,320 --> 00:55:33,280
+[SPEAKER_01] I'll start with the first one.
+
+634
+00:55:33,840 --> 00:55:43,360
+[SPEAKER_01] I think the reality is being able to teach a language is not particularly a new part of a new ability for a tool to have.
+
+635
+00:55:43,600 --> 00:55:46,640
+[SPEAKER_01] What I mean by that is textbooks also can teach you a language.
+
+636
+00:55:46,880 --> 00:55:51,040
+[SPEAKER_01] Now AI can, which is for a technology perspec perspective, it's incredibly impressive it can do that.
+
+637
+00:55:51,520 --> 00:55:57,600
+[SPEAKER_01] But text, it is not enough, unfortunately, to remove the need to learn languages.
+
+638
+00:55:57,840 --> 00:56:09,200
+[SPEAKER_01] People we've learned, and I'm only talking about languages, we can talk about other subjects, that the reason people learn languages is incredibly varied, so you might be learning to connect with your heritage.
+
+639
+00:56:09,840 --> 00:56:13,200
+[SPEAKER_01] AI doesn't really solve that at the end.
+
+640
+00:56:13,360 --> 00:56:14,640
+[SPEAKER_01] You still will want to learn languages.
+
+641
+00:56:14,880 --> 00:56:16,560
+[SPEAKER_01] This is similar to when calculators came out.
+
+642
+00:56:16,720 --> 00:56:18,000
+[SPEAKER_01] We didn't stop teaching math.
+
+643
+00:56:18,320 --> 00:56:19,120
+[SPEAKER_01] It's quite similar.
+
+644
+00:56:19,760 --> 00:56:24,640
+[SPEAKER_01] And the need to learn languages does not disappear even if you have massively good simultaneous.
+
+645
+00:56:25,520 --> 00:56:27,280
+[SPEAKER_01] translation and AI can do that really well.
+
+646
+00:56:27,600 --> 00:56:33,280
+[SPEAKER_01] So that's, I think, we don't see language learning demand going anywhere and we certainly don't see it post LLMs either.
+
+647
+00:56:33,840 --> 00:56:40,000
+[SPEAKER_01] The other question is, there are now other tools that are non-duolingo, like the chat GPTs of the world that can actually teach you language.
+
+648
+00:56:40,160 --> 00:56:49,760
+[SPEAKER_01] If you ask it to teach me Spanish, it will do something and I think that's very fair, but I think that my textbook analogy still applies there where it can teach you a language, but is it exciting?
+
+649
+00:56:50,800 --> 00:56:51,680
+[SPEAKER_01] Is it fun enough?
+
+650
+00:56:52,160 --> 00:56:57,920
+[SPEAKER_01] And until that is the case, a thing being able to teach you a language is not a threat to our business.
+
+651
+00:56:58,560 --> 00:57:03,280
+[SPEAKER_01] I think we don't see that it that much and we continue investing in making things fun for that reason.
+
+652
+00:57:03,760 --> 00:57:13,040
+[SPEAKER_01] And maybe the third thing I will add is we see AI only as an accelerator to Duolingo because we use AI to do mainly two things that make Duolingo better.
+
+653
+00:57:13,360 --> 00:57:17,360
+[SPEAKER_01] One, produce content at scale, at higher quality and higher volume.
+
+654
+00:57:17,920 --> 00:57:27,280
+[SPEAKER_01] The other is introduce features that we couldn't do before that solve some of the teaching problems that we really care about solving, like conversation practice.
+
+655
+00:57:28,240 --> 00:57:36,320
+[SPEAKER_01] So in a way, AI has helped us a lot and I think it will continue to, and we will continue building better products with AI.
+
+656
+00:57:36,800 --> 00:57:39,200
+[SPEAKER_01] So we're happy in everything that's happening.
+
+657
+00:57:39,440 --> 00:57:42,240
+[SPEAKER_00] Well, let's move on to a few of your contrary takes.
+
+658
+00:57:42,720 --> 00:57:46,960
+[SPEAKER_00] So don't build for a persona, build for the general population.
+
+659
+00:57:47,520 --> 00:57:47,680
+[SPEAKER_00] Why?
+
+660
+00:57:48,080 --> 00:57:49,920
+[SPEAKER_00] I mean, it's the classic PM thing.
+
+661
+00:57:50,160 --> 00:57:54,000
+[SPEAKER_00] Build a persona, figure out who you're talking to, all that kind of stuff.
+
+662
+00:57:54,480 --> 00:57:59,440
+[SPEAKER_01] Yeah, this is any PM framework would say, don't build for a general audience.
+
+663
+00:57:59,680 --> 00:58:01,040
+[SPEAKER_01] Always choose who you're building for.
+
+664
+00:58:02,000 --> 00:58:09,040
+[SPEAKER_01] I think when building consumer products, at least this is certainly Duolingo, I don't want to generalize too much, but we have we we are like very anti persona.
+
+665
+00:58:09,360 --> 00:58:49,440
+[SPEAKER_01] So if someone comes in from the outside world, joins our team most of the time they their instinct is like oh yeah like i'm gonna build some persona maps i'm gonna call this person the wanderer the other one the explorer and which one am i gonna build for and we're immediate like please don't do that like stop because i think if you want it really depends on what kind of product you want to build if you're trying to get to a billion users which we we have kind of the the ambition to you have to eventually build for a general population that's that's like i think my theory number one theory number two is with language learning if you pick a persona you're actually really cutting off the rest of your audience and language learning is such a long tail of reasons for learning.
+
+666
+00:58:50,000 --> 00:58:55,920
+[SPEAKER_01] Someone could be learning to get a job, someone could be learning to move countries, someone could be learning to connect with their heritage.
+
+667
+00:58:56,320 --> 00:58:57,360
+[SPEAKER_01] These are extremely varied.
+
+668
+00:58:57,600 --> 00:59:03,280
+[SPEAKER_01] So if you pick one and say, Oh, this is really important, yeah, like the common PM framework would say, That's how you succeed.
+
+669
+00:59:03,360 --> 00:59:12,240
+[SPEAKER_01] I think for us, that's how you fail because then you've ignored basically the whole long tail of why people are learning languages and you've built for a very specific one.
+
+670
+00:59:12,800 --> 00:59:21,040
+[SPEAKER_01] So if the use case of a product is varied, which a lot of consumer products have that property actually, you have to figure out how to build for the general population.
+
+671
+00:59:21,600 --> 00:59:22,000
+[SPEAKER_00] That's great.
+
+672
+00:59:23,040 --> 00:59:24,400
+[SPEAKER_00] Next one, people don't read.
+
+673
+00:59:25,440 --> 00:59:26,880
+[SPEAKER_01] Okay, this is another favorite one.
+
+674
+00:59:27,600 --> 00:59:29,600
+[SPEAKER_01] This kind of connects to something I hinted at.
+
+675
+00:59:30,400 --> 00:59:44,720
+[SPEAKER_01] Most early career or honestly, even people who join Dualingo with experience, product designers or PMs fall into this trap of what they write on the screen as copy and text, think is read by the user.
+
+676
+00:59:46,080 --> 00:59:50,000
+[SPEAKER_01] The reality is on mobile apps, people's attention span is already shrunk.
+
+677
+00:59:50,240 --> 00:59:53,920
+[SPEAKER_01] It's like you might be cooking with one hand and doing your app with the other hand.
+
+678
+00:59:54,320 --> 00:59:55,280
+[SPEAKER_01] You might be on the toilet.
+
+679
+00:59:55,360 --> 00:59:58,560
+[SPEAKER_01] There's all kinds of situations where now your attention span is like shrunk.
+
+680
+01:00:00,480 --> 01:00:06,960
+[SPEAKER_01] You're kind of going through an experience by not kind of paying attention to every detail, but the core, maybe like the thirty percent of a screen.
+
+681
+01:00:07,520 --> 01:00:08,640
+[SPEAKER_01] So we always repeat this.
+
+682
+01:00:08,880 --> 01:00:10,000
+[SPEAKER_01] Of course it's an exaggeration.
+
+683
+01:00:10,320 --> 01:00:16,480
+[SPEAKER_01] Of course people read some things on mobile, but really in a graphical it interface, they read very little.
+
+684
+01:00:17,280 --> 01:00:21,840
+[SPEAKER_01] But to simplify my like extreme hot take is people don't read, so don't rely on text.
+
+685
+01:00:22,400 --> 01:00:24,320
+[SPEAKER_01] Rely on great design to guide the user.
+
+686
+01:00:24,800 --> 01:00:30,400
+[SPEAKER_01] And maybe the better said version of this is if you need to write a tutorial on what to do, you've already lost it.
+
+687
+01:00:30,560 --> 01:00:35,280
+[SPEAKER_01] So it needs to be design that leads the user, not the text and the labels that you wrote.
+
+688
+01:00:36,000 --> 01:00:39,040
+[SPEAKER_00] Okay, well, let's close out with the three questions I ask every guest.
+
+689
+01:00:39,840 --> 01:00:44,720
+[SPEAKER_00] What was the most impactful experiment, change or something you implemented this year, your biggest win?
+
+690
+01:00:45,520 --> 01:00:51,920
+[SPEAKER_01] It's not exactly this year, it's been two years, but this is worth calling is the introduction of video call on Duolingo.
+
+691
+01:00:52,400 --> 01:01:05,680
+[SPEAKER_01] I've been using Duolingo to improve my Spanish for nine years now, and this is the one feature I can confidently say it's helped me speak Spanish much more than before, and I mean we're very excited for what it can do.
+
+692
+01:01:06,320 --> 01:01:11,680
+[SPEAKER_01] It still feels very early, but already if you use it, you can just speak Spanish better, and I feel great about that.
+
+693
+01:01:12,160 --> 01:01:24,400
+[SPEAKER_00] That's such a great example of building a truly great product experience with AI., a lot of people are slapping it on and trying to put a chatbot in their app where it doesn't make sense.
+
+694
+01:01:24,560 --> 01:01:31,440
+[SPEAKER_00] And the video call, which is really such a great example of taking this new technology and actually creating a great customer experience.
+
+695
+01:01:31,520 --> 01:01:33,360
+[SPEAKER_00] So it's cool that you brought that up as such a win.
+
+696
+01:01:34,000 --> 01:01:35,120
+[SPEAKER_00] What about the biggest fail?
+
+697
+01:01:36,080 --> 01:01:52,960
+[SPEAKER_01] The biggest fail is this is not, I don't think this went very public, but actually what a lot of our community doesn't remember or don't know is before video call, our first attempt at like a big speaking feature was a human-based tutoring product.
+
+698
+01:01:53,600 --> 01:01:57,440
+[SPEAKER_01] So it was a higher tier subscription because it was quite expensive for us to logistically provide.
+
+699
+01:01:57,920 --> 01:02:01,120
+[SPEAKER_01] But you would press a button, I think we called it, did we call it tutors?
+
+700
+01:02:01,520 --> 01:02:06,000
+[SPEAKER_01] But it was our higher tier subscription, but you would press a button, you would connect with a Spanish tutor on demand.
+
+701
+01:02:06,320 --> 01:02:07,360
+[SPEAKER_01] No booking required.
+
+702
+01:02:08,000 --> 01:02:09,360
+[SPEAKER_01] Honestly, it was pretty awesome.
+
+703
+01:02:09,680 --> 01:02:12,080
+[SPEAKER_01] Like for speaking practice, it was really awesome.
+
+704
+01:02:12,560 --> 01:02:18,320
+[SPEAKER_01] It had this one massive problem, which is no one wanted to do it.
+
+705
+01:02:19,680 --> 01:02:21,280
+[SPEAKER_01] It was really scary.
+
+706
+01:02:22,240 --> 01:02:28,720
+[SPEAKER_01] At Duolingo, imagine this super fun experience and we would tell you, hey, you are going to connect with a human, you are going to practice Spanish.
+
+707
+01:02:28,880 --> 01:02:30,560
+[SPEAKER_01] People would press it, they would dial in.
+
+708
+01:02:30,800 --> 01:02:34,480
+[SPEAKER_01] We would see their faces come online and they would be like, oh shit, get me out of here.
+
+709
+01:02:34,880 --> 01:02:39,200
+[SPEAKER_01] Because one, it's really scary to speak in Sak in Spanish, like on the language you're learning.
+
+710
+01:02:39,440 --> 01:02:43,600
+[SPEAKER_01] And two, there's another real human on the other side that was extremely jarring.
+
+711
+01:02:43,760 --> 01:02:49,840
+[SPEAKER_01] We iterated a lot to make you into it, but eventually we gave up because humans just didn't want to do that.
+
+712
+01:02:50,080 --> 01:02:52,960
+[SPEAKER_01] And actually, this brings me to another hot take that I do want to mention.
+
+713
+01:02:53,920 --> 01:02:56,640
+[SPEAKER_01] Do not take user feedback for face value.
+
+714
+01:02:57,440 --> 01:03:00,320
+[SPEAKER_01] For years, this is what people asked us to build.
+
+715
+01:03:00,480 --> 01:03:03,920
+[SPEAKER_01] Like, we're like, please build me a system where I can talk to a human tutor.
+
+716
+01:03:04,240 --> 01:03:05,520
+[SPEAKER_01] We built it, no one used it.
+
+717
+01:03:05,840 --> 01:03:10,320
+[SPEAKER_00] It's such a great example of a great feature, but just it doesn't work.
+
+718
+01:03:10,560 --> 01:03:19,360
+[SPEAKER_00] And like, as product people, we can still get into our heads, take feedback and build something that's truly great but it doesn't work.
+
+719
+01:03:19,440 --> 01:03:20,880
+[SPEAKER_00] So that's such a great one.
+
+720
+01:03:21,200 --> 01:03:22,080
+[SPEAKER_00] All right, last question.
+
+721
+01:03:22,800 --> 01:03:28,960
+[SPEAKER_01] Growth would be easier if I think growth would be easier if two things were true.
+
+722
+01:03:30,000 --> 01:03:45,360
+[SPEAKER_01] One is pixel perfect design didn't matter in consumer because I think consumer app design bar has become so high that if you want to make progress and lead product-led growth, you have to get pixel perfect design that will go out to users.
+
+723
+01:03:45,600 --> 01:03:51,520
+[SPEAKER_01] It can't be just a wireframe looking button that you put in your app or your illustration is not really cared for.
+
+724
+01:03:53,120 --> 01:03:54,640
+[SPEAKER_01] This increases the time to ship products.
+
+725
+01:03:54,960 --> 01:03:59,120
+[SPEAKER_01] So that's one pixel perfect design does matter and it growth would be way easier.
+
+726
+01:03:59,680 --> 01:04:04,800
+[SPEAKER_01] Maybe this was the case when apps first came out, but it matters and it makes a difference.
+
+727
+01:04:05,360 --> 01:04:14,480
+[SPEAKER_01] And I think two, if AI really contributed to productivity in both prototyping and coding.
+
+728
+01:04:14,720 --> 01:04:20,800
+[SPEAKER_01] And what I mean by that is I think we are seeing today in the ranges of 10 to 20 percent productivity improvements.
+
+729
+01:04:21,040 --> 01:04:21,840
+[SPEAKER_01] That's really impressive.
+
+730
+01:04:22,240 --> 01:04:28,080
+[SPEAKER_01] But like when LLMs first came out, my hope was that they would be kind of 10x improvers.
+
+731
+01:04:28,320 --> 01:04:31,760
+[SPEAKER_01] And I think if you've got the Silicon Valley hype today, that's what the messaging is.
+
+732
+01:04:31,920 --> 01:04:34,960
+[SPEAKER_01] But really, I'm looking at what we're doing and what every company is doing.
+
+733
+01:04:35,360 --> 01:04:39,680
+[SPEAKER_01] Really, the speed up of the product pipeline is in the ten percent to twenty percent range.
+
+734
+01:04:40,160 --> 01:04:46,400
+[SPEAKER_01] Growth would be easier if we got what was promised and it was two hundred percent improvement, but I don't think that's the case.
+
+735
+01:04:46,480 --> 01:04:51,200
+[SPEAKER_00] Okay, well as we wrap up, anything else you wanted to share, any jobs you wanted to shout out or anything?
+
+736
+01:04:52,000 --> 01:04:53,040
+[SPEAKER_01] I will definitely do that.
+
+737
+01:04:53,600 --> 01:05:00,800
+[SPEAKER_01] We are currently hiring for honestly, we're always hiring, but currently we're hiring for quite a bit of product manager positions.
+
+738
+01:05:01,280 --> 01:05:08,080
+[SPEAKER_01] I think the audience of this show probably is interested in monetization since we also talked about it, and we're also hiring for monetization product managers.
+
+739
+01:05:08,400 --> 01:05:10,000
+[SPEAKER_01] They're all on our careers website.
+
+740
+01:05:10,240 --> 01:05:10,560
+[SPEAKER_00] Nice.
+
+741
+01:05:10,720 --> 01:05:13,200
+[SPEAKER_00] Yeah, I think that would be a great job for this for this audience.
+
+742
+01:05:13,440 --> 01:05:19,200
+[SPEAKER_00] So if you're really into subclub, you're probably really into monetization, so apply.
+
+743
+01:05:19,360 --> 01:05:21,360
+[SPEAKER_00] Okay, Jamie, it was so much fun talking to you today.
+
+744
+01:05:21,520 --> 01:05:22,560
+[SPEAKER_00] Thank you so much for joining me.
+
+745
+01:05:22,720 --> 01:05:23,920
+[SPEAKER_01] Thank you so much for having me.
+
+746
+01:05:24,080 --> 01:05:24,720
+[SPEAKER_01] This is awesome.
+
+747
+01:05:27,120 --> 01:05:28,480
+[SPEAKER_00] Thank you so much for listening.
+
+748
+01:05:29,440 --> 01:05:32,800
+[SPEAKER_00] If you have a minute, please leave a review in your favorite podcast player.
+
+749
+01:05:33,680 --> 01:05:38,480
+[SPEAKER_00] You can also stop by chat dot subclub dot com to join our private community.
