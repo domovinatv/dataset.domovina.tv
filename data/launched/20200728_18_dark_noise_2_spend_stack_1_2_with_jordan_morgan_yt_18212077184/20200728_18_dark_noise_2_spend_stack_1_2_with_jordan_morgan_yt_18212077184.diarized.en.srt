@@ -1,0 +1,3687 @@
+1
+00:00:00,080 --> 00:00:02,160
+[SPEAKER_00] Can you say something just so I can see levels move?
+
+2
+00:00:02,800 --> 00:00:03,200
+[SPEAKER_00] What up?
+
+3
+00:00:03,520 --> 00:00:04,080
+[SPEAKER_00] Okay, perfect.
+
+4
+00:00:04,640 --> 00:00:05,440
+[SPEAKER_00] That's the opening.
+
+5
+00:00:07,120 --> 00:00:08,000
+[SPEAKER_01] That would be amazing.
+
+6
+00:00:09,440 --> 00:00:10,400
+[SPEAKER_00] Welcome to Launched.
+
+7
+00:00:10,560 --> 00:00:14,320
+[SPEAKER_00] I'm Charlie Chapman, and today we're going to do a different kind of episode than usual.
+
+8
+00:00:14,640 --> 00:00:18,480
+[SPEAKER_00] And with me is the creator of the iOS app spend stack, Jordan Morgan.
+
+9
+00:00:31,600 --> 00:00:33,600
+[SPEAKER_00] Jordan, thanks for coming back to the show.
+
+10
+00:00:34,000 --> 00:00:35,280
+[SPEAKER_01] Hey, yeah, thanks for having me.
+
+11
+00:00:35,360 --> 00:00:36,000
+[SPEAKER_01] It's going to be fun.
+
+12
+00:00:36,240 --> 00:00:36,320
+[SPEAKER_00] Yeah.
+
+13
+00:00:36,480 --> 00:00:42,000
+[SPEAKER_00] Yeah, so as we record two days ago, I released Dark Noise 2.
+
+14
+00:00:42,560 --> 00:00:49,840
+[SPEAKER_00] And to be honest with you, I'm just like totally worn out and kind of emotionally exhausted from the whole experience.
+
+15
+00:00:50,560 --> 00:00:56,960
+[SPEAKER_00] And I wanted to make sure I got an episode out because I wanted to keep kind of the flow of things going, but I wasn't exactly sure what to do.
+
+16
+00:00:57,280 --> 00:01:02,640
+[SPEAKER_00] And I had the thought, I should call up Jordan, who you've already come on the show to talk about SpinStack in the past.
+
+17
+00:01:02,880 --> 00:01:06,960
+[SPEAKER_00] But you, as you've been kind of since the beginning of this, you're about a month ahead of me.
+
+18
+00:01:07,120 --> 00:01:11,680
+[SPEAKER_00] You released, I'd say it was your first big update with one point two, right?
+
+19
+00:01:11,920 --> 00:01:13,280
+[SPEAKER_01] Oh, definitely, by far.
+
+20
+00:01:13,600 --> 00:01:26,880
+[SPEAKER_00] Yeah, and so you're kind of in a similar boat as me, and so I figured this might be kind of a fun episode to just kind of detox after a major release and kind of talk through our different experiences and major release of an update.
+
+21
+00:01:27,040 --> 00:01:35,440
+[SPEAKER_00] You know, this is not a brand new app, and so I think this will be different than normal, and if not, I'll just get to hang out with you for however long we record this, and that will be fun anyway.
+
+22
+00:01:35,840 --> 00:01:37,680
+[SPEAKER_01] Yeah, everybody, thanks for hanging out with us today.
+
+23
+00:01:37,840 --> 00:01:40,240
+[SPEAKER_00] Yeah, yeah, this is just chatting with Charlie and Jordan.
+
+24
+00:01:41,760 --> 00:01:43,040
+[SPEAKER_00] Spin off podcast, there it is.
+
+25
+00:01:43,600 --> 00:01:44,240
+[SPEAKER_00] Yeah, exactly.
+
+26
+00:01:44,320 --> 00:01:46,240
+[SPEAKER_00] Yeah, that should just be a Total ONE podcast.
+
+27
+00:01:47,360 --> 00:01:51,440
+[SPEAKER_00] So I guess before we get into everything, let's talk about what the updates were.
+
+28
+00:01:51,600 --> 00:01:56,960
+[SPEAKER_00] So SpinStack 1.2 came out about a month ago, I think it was June 10 is what I have written down.
+
+29
+00:01:57,680 --> 00:01:59,120
+[SPEAKER_01] You're better prepared than I am, I think.
+
+30
+00:01:59,600 --> 00:02:00,720
+[SPEAKER_01] I think that's right, yeah.
+
+31
+00:02:02,000 --> 00:02:05,120
+[SPEAKER_00] Time has no meaning right now in the world of 2020.
+
+32
+00:02:05,520 --> 00:02:07,200
+[SPEAKER_01] It really doesn't, yeah, it all just blends together.
+
+33
+00:02:07,440 --> 00:02:12,000
+[SPEAKER_00] Yeah, but before we get into everything else, let's just talk about what that release was.
+
+34
+00:02:12,240 --> 00:02:15,040
+[SPEAKER_00] So just a quick rundown of what kind of new features were.
+
+35
+00:02:15,360 --> 00:02:24,880
+[SPEAKER_01] Yeah, yeah, so it's funny because I kind of stumbled into it a little bit because I started rewriting some of the app in Stripe.
+
+36
+00:02:24,880 --> 00:02:28,480
+[SPEAKER_01] in Swift using Combine, which I've kind of been talking about here and there.
+
+37
+00:02:29,360 --> 00:02:32,640
+[SPEAKER_01] And if you haven't followed along with Spin Stack, it was started a while ago.
+
+38
+00:02:32,800 --> 00:02:34,720
+[SPEAKER_01] So Swift was still in its infancy.
+
+39
+00:02:34,960 --> 00:02:38,160
+[SPEAKER_01] It wasn't nearly as mature and things were changing all the time.
+
+40
+00:02:38,400 --> 00:02:40,240
+[SPEAKER_01] So that was the primary driver there.
+
+41
+00:02:40,640 --> 00:02:51,120
+[SPEAKER_01] But as time has gone on and we've got ABI compatibility or stability, we've got Combine, Swift UI, I've just kind of been creeping more and more Swift in everywhere.
+
+42
+00:02:51,920 --> 00:02:55,120
+[SPEAKER_01] And what I ended up with was this whole architecture based on Combine.
+
+43
+00:02:55,600 --> 00:02:59,360
+[SPEAKER_01] And so now I'm just kind of taking pieces of the app and rewriting it using it.
+
+44
+00:02:59,520 --> 00:03:03,040
+[SPEAKER_01] So 1.2 really didn't start as like a splashy launch.
+
+45
+00:03:03,200 --> 00:03:18,000
+[SPEAKER_01] It started as like this kind of slow down to move faster type of thing where, you know, I was just digging everything out, making it a little bit better with Combine and using like lessons learned to, you know, as I've built the app over the years, you can always make everything better.
+
+46
+00:03:19,360 --> 00:03:26,080
+[SPEAKER_01] But then like the features started to kind of trickle in and it got to this point where after a few months I was like, you know what?
+
+47
+00:03:26,320 --> 00:03:28,000
+[SPEAKER_01] This is kind of piling together.
+
+48
+00:03:28,880 --> 00:03:32,400
+[SPEAKER_01] I think I'm going to try like the air quote splashy launch, right?
+
+49
+00:03:32,720 --> 00:03:34,960
+[SPEAKER_01] To just kind of package it all out and put it out there.
+
+50
+00:03:35,360 --> 00:03:35,360
+[SPEAKER_00] Yeah.
+
+51
+00:03:36,160 --> 00:03:40,560
+[SPEAKER_00] You had had a couple, you've had releases since launch, uh, right before this.
+
+52
+00:03:41,360 --> 00:03:47,680
+[SPEAKER_01] Oh yeah, you know, and I was releasing a ton there for a little while, like, I don't know, like two or three weeks.
+
+53
+00:03:47,760 --> 00:03:59,280
+[SPEAKER_01] Like, if you go and look at the change log in the app store, there's a cadence there where it was just kind of like the scramble after launch, like I found a million things that are broken, you know, I didn't have the beta.
+
+54
+00:04:00,240 --> 00:04:04,400
+[SPEAKER_01] And so there was a really, really like torrential downfall of updates there for a while.
+
+55
+00:04:04,560 --> 00:04:09,040
+[SPEAKER_01] But now I would say, like, aside from a large update, it gets about one or two a month.
+
+56
+00:04:09,280 --> 00:04:09,360
+[SPEAKER_00] Okay.
+
+57
+00:04:10,000 --> 00:04:16,480
+[SPEAKER_01] Sorry, I'm opening up my blog to remember exactly what it was in the update.
+
+58
+00:04:16,880 --> 00:04:20,240
+[SPEAKER_00] Because it was, like you said, man, it's just been like a whirlwind.
+
+59
+00:04:20,720 --> 00:04:22,240
+[SPEAKER_00] Honestly, and maybe we'll keep this in.
+
+60
+00:04:23,200 --> 00:04:26,240
+[SPEAKER_00] Blogs, by the way, are amazing if you don't already have one.
+
+61
+00:04:26,880 --> 00:04:30,160
+[SPEAKER_00] Just so that you can go back and reference your own reality.
+
+62
+00:04:30,400 --> 00:04:32,800
+[SPEAKER_00] Like, I feel like I've never been like a diary person.
+
+63
+00:04:33,200 --> 00:04:38,960
+[SPEAKER_00] I know you're more into like cataloging and logging everything yourself, but I've just never kept up with it very well.
+
+64
+00:04:39,280 --> 00:04:44,640
+[SPEAKER_00] And by writing these blog posts, it's kind of turned into like my own personal reference point.
+
+65
+00:04:44,960 --> 00:04:51,520
+[SPEAKER_00] I can't tell you how often people will ask me a question and I'll be like, I know that I knew the answer to that at one point.
+
+66
+00:04:52,080 --> 00:04:57,280
+[SPEAKER_00] I bet I can go find it and I'll go search through one of my blog posts and I'm like, ah, yes, this is why I made that decision.
+
+67
+00:04:57,680 --> 00:04:59,200
+[SPEAKER_00] And so, yeah, that is incredible.
+
+68
+00:04:59,440 --> 00:05:11,440
+[SPEAKER_00] It's not only good for raising your profile and sharing knowledge, the altruistic reason, it's also nice for, you know, backing up your brain because your brain leaks information over time.
+
+69
+00:05:11,760 --> 00:05:14,160
+[SPEAKER_01] Oh yeah, and in 2020 it just spills out, right?
+
+70
+00:05:14,560 --> 00:05:16,400
+[SPEAKER_01] I mean, we're both stuck in ground pond today.
+
+71
+00:05:17,040 --> 00:05:18,240
+[SPEAKER_00] There's no storage at all.
+
+72
+00:05:19,600 --> 00:05:21,280
+[SPEAKER_01] It's just gone, it's maxed out, yeah.
+
+73
+00:05:22,880 --> 00:05:24,160
+[SPEAKER_01] Yeah, to answer your question.
+
+74
+00:05:26,240 --> 00:05:27,120
+[SPEAKER_01] Blogs are amazing.
+
+75
+00:05:27,840 --> 00:05:30,880
+[SPEAKER_01] And I actually use the blogs that I have now.
+
+76
+00:05:31,040 --> 00:05:34,720
+[SPEAKER_01] They're they're stood up using Netlify and Jekyll.
+
+77
+00:05:35,200 --> 00:05:39,600
+[SPEAKER_01] I used it as an excuse to dip into like front end development because it had been so long and, you know, that was a ton of fun.
+
+78
+00:05:39,680 --> 00:05:40,800
+[SPEAKER_01] So that's a whole other story.
+
+79
+00:05:40,960 --> 00:05:47,600
+[SPEAKER_01] But to circle back, like the big features that ended up happening for one point two were editable currencies.
+
+80
+00:05:47,840 --> 00:05:51,360
+[SPEAKER_01] So, you know, people could go in and like change whatever currency they wanted for each list.
+
+81
+00:05:52,240 --> 00:05:54,160
+[SPEAKER_01] Recurring pricing, which was a big one.
+
+82
+00:05:54,400 --> 00:06:00,800
+[SPEAKER_01] So, you know, like if you have the subscriptions in your life, Netflix, app subscriptions, whatever, you could pop those in there.
+
+83
+00:06:02,000 --> 00:06:06,560
+[SPEAKER_01] And then the Apple Card import, which that one was a total just kind of happened too.
+
+84
+00:06:07,600 --> 00:06:10,880
+[SPEAKER_01] My colleague from Buffer, Andy, he just slacked me one day.
+
+85
+00:06:10,960 --> 00:06:13,600
+[SPEAKER_01] I was like, Hey, Apple Card has an open format now.
+
+86
+00:06:13,760 --> 00:06:14,640
+[SPEAKER_01] You can export in CSV.
+
+87
+00:06:14,800 --> 00:06:15,200
+[SPEAKER_01] You should do it.
+
+88
+00:06:15,360 --> 00:06:16,160
+[SPEAKER_01] I was like, Oh, cool.
+
+89
+00:06:16,240 --> 00:06:16,320
+[SPEAKER_01] Okay.
+
+90
+00:06:16,640 --> 00:06:16,960
+[SPEAKER_01] Whatever.
+
+91
+00:06:17,840 --> 00:06:19,600
+[SPEAKER_01] I've already taken like four months for this update.
+
+92
+00:06:19,680 --> 00:06:20,880
+[SPEAKER_01] So what's one more thing?
+
+93
+00:06:22,240 --> 00:06:24,640
+[SPEAKER_01] And then the iPadOS cursor came out during that.
+
+94
+00:06:24,800 --> 00:06:25,360
+[SPEAKER_01] So I did that.
+
+95
+00:06:26,080 --> 00:06:27,920
+[SPEAKER_01] And then a ton of other context menus.
+
+96
+00:06:28,080 --> 00:06:29,680
+[SPEAKER_01] So there was a, there was a lot in there.
+
+97
+00:06:30,000 --> 00:06:34,880
+[SPEAKER_01] So that was like my first clue where I was like, I don't want to just kind of put this in the App Store.
+
+98
+00:06:34,960 --> 00:06:36,560
+[SPEAKER_01] I want to try and make it into something.
+
+99
+00:06:38,080 --> 00:06:39,520
+[SPEAKER_01] And that's kind of where it all started.
+
+100
+00:06:39,840 --> 00:06:40,400
+[SPEAKER_01] That makes sense.
+
+101
+00:06:40,640 --> 00:06:40,800
+[SPEAKER_00] Yeah.
+
+102
+00:06:41,280 --> 00:06:49,440
+[SPEAKER_00] And I guess for the same purpose, because I'll probably be referencing a lot for Dark Noise 2, the big thing with that was creating mixes of sounds.
+
+103
+00:06:49,520 --> 00:06:55,520
+[SPEAKER_00] Actually, I don't know if I've ever even really talked about Dark Noise on the show, but it's a white noise app, so it's a bunch of noises that you can play.
+
+104
+00:06:56,560 --> 00:06:58,960
+[SPEAKER_00] And they loop and you can fall asleep to it or whatever.
+
+105
+00:06:59,280 --> 00:07:04,960
+[SPEAKER_00] And so one of the big requests whenever I originally launched was the ability to mix multiple sounds together.
+
+106
+00:07:05,600 --> 00:07:10,720
+[SPEAKER_00] And of course, I couldn't just do that in the simple way where you can just hit play on multiple sounds.
+
+107
+00:07:10,800 --> 00:07:19,040
+[SPEAKER_00] I had to make it into a whole big thing that fits into my, you know, how I view the app's principal purpose and all that stuff.
+
+108
+00:07:19,360 --> 00:07:23,600
+[SPEAKER_00] And so I what should have been a like a couple months.
+
+109
+00:07:24,720 --> 00:07:31,600
+[SPEAKER_00] I I just looked back because someone asked and the first tweet I made when I started designing this mix feature was last September.
+
+110
+00:07:32,240 --> 00:07:36,240
+[SPEAKER_00] So that is how long I've been working on I'm rubbing off on you.
+
+111
+00:07:37,120 --> 00:07:37,520
+[SPEAKER_00] What's that?
+
+112
+00:07:37,760 --> 00:07:39,200
+[SPEAKER_01] I said I'm rubbing off on you.
+
+113
+00:07:40,400 --> 00:07:41,200
+[SPEAKER_00] No, I'm Yeah.
+
+114
+00:07:41,520 --> 00:07:47,680
+[SPEAKER_00] Moving slow is definitely my, uh, my general modus operandi.
+
+115
+00:07:47,680 --> 00:07:48,320
+[SPEAKER_00] Is that the right term?
+
+116
+00:07:48,480 --> 00:07:48,880
+[SPEAKER_00] I don't know.
+
+117
+00:07:49,520 --> 00:07:50,400
+[SPEAKER_00] My brain's mushy.
+
+118
+00:07:50,480 --> 00:07:51,200
+[SPEAKER_00] Yeah, it is today.
+
+119
+00:07:52,160 --> 00:08:03,760
+[SPEAKER_00] So yeah, so I like I tried to like keep it on a feature flag so I could turn it off and do updates, but you've done way better than me in terms of keeping updates going.
+
+120
+00:08:04,080 --> 00:08:13,360
+[SPEAKER_00] Because eventually, like I was I was trying to do like bug fix updates and little small features and stuff as I went while keeping this create thing on a feature flag.
+
+121
+00:08:13,520 --> 00:08:16,960
+[SPEAKER_00] But eventually I just said, Okay, I'm really close to this being done.
+
+122
+00:08:17,280 --> 00:08:22,000
+[SPEAKER_00] I'm going to go ahead and flip the switch and just do everything with create in mind.
+
+123
+00:08:23,040 --> 00:08:24,720
+[SPEAKER_00] And then, you know, the whole world fell apart.
+
+124
+00:08:25,200 --> 00:08:29,920
+[SPEAKER_00] and I started moving at a glacial pace and then the last, you know, three or four months or however long happened.
+
+125
+00:08:30,160 --> 00:08:43,680
+[SPEAKER_00] And so I haven't done an update in like cursor support is bundled up with this release because that was going I was about to release I thought whenever the cursor stuff came out and I still it took forever for me to actually get this out the door.
+
+126
+00:08:44,240 --> 00:08:45,520
+[SPEAKER_01] Yeah, no, I understand.
+
+127
+00:08:45,760 --> 00:08:54,000
+[SPEAKER_01] So would you say yours was like a stumble upon big update kind of like mine was or was it more like last September, I know this the sound mixing is big.
+
+128
+00:08:54,640 --> 00:08:55,680
+[SPEAKER_01] That's going to be my big one.
+
+129
+00:08:56,000 --> 00:09:00,560
+[SPEAKER_00] Yeah, no, that was definitely my mindset was like when I first released, you know, my.
+
+130
+00:09:01,440 --> 00:09:10,480
+[SPEAKER_00] sort of timeline of features was, you know, because I tried to sneak in between WWDC and iOS 13 coming out last year.
+
+131
+00:09:11,040 --> 00:09:14,720
+[SPEAKER_00] So I did that and then I was like, my next focus will be all the iOS 13 stuff.
+
+132
+00:09:15,360 --> 00:09:20,080
+[SPEAKER_00] And so I kind of rushed through that and then I was like, okay, the next thing is going to be mixes.
+
+133
+00:09:20,320 --> 00:09:24,720
+[SPEAKER_00] And I figured I'm slow, so this will probably take me until January, February of next year.
+
+134
+00:09:25,440 --> 00:09:25,840
+[SPEAKER_01] Right on.
+
+135
+00:09:26,480 --> 00:10:14,720
+[SPEAKER_00] But that will be my big, you know, I'll make that a big feature release, you know, with a dot update or whatever and make that into kind of trying to market that and any releases I do in the middle I'm not going to market as a big thing but I figured I because I was trying to take the kind of approach of like market a feature as a big thing as opposed to market a version bump but because this one took so long and I got to where I was almost at right at a year for from launch the original launch I kind of was like you know what I'm just going to make this like it's it's the second version of this app you know especially because the mixes like it's not just you can play multiple sounds at the same time it's actually like users can create their own thing.
+
+136
+00:10:15,280 --> 00:10:18,160
+[SPEAKER_00] And I have a vision for what that means going forward.
+
+137
+00:10:18,400 --> 00:10:25,920
+[SPEAKER_00] And so, for me, it really does mark a significant change in the direction of the app, if that makes sense.
+
+138
+00:10:26,320 --> 00:10:26,800
+[SPEAKER_01] No, it does.
+
+139
+00:10:26,960 --> 00:10:35,520
+[SPEAKER_01] I mean, it's an app within an app in a good way, like not bloated, but it's just like a whole new form and function for how you've never used it before.
+
+140
+00:10:36,320 --> 00:10:39,680
+[SPEAKER_01] And then when you add the two on there, that like, it changes everything, right?
+
+141
+00:10:39,920 --> 00:10:52,400
+[SPEAKER_01] You know, once you say, this is Dark Noise two and you kind of put that, you know, flag in the ground, you kind of have to get some weight behind it for that marketing push, I feel like and I need to take some notes because I'm like kind of scared to do that with SpinStack.
+
+142
+00:10:52,480 --> 00:10:54,320
+[SPEAKER_00] Like it's I actually wanted to talk to you about that.
+
+143
+00:10:54,560 --> 00:10:55,040
+[SPEAKER_01] Yeah, yeah.
+
+144
+00:10:55,120 --> 00:10:56,000
+[SPEAKER_01] I'm at like one point.
+
+145
+00:10:56,240 --> 00:11:12,480
+[SPEAKER_01] I think my iOS 14 branch right now is set at 1.3 and I was thinking like, you know, when when does it become a 2 and then I go down this huge rabbit hole of like pricing and these other features I want to tie to that and like now is it the right time or you know do I even really care about that right now?
+
+146
+00:11:12,720 --> 00:11:33,920
+[SPEAKER_01] I still really want to make like you know that best in class checklist that I have be fulfilled and so yeah my head is like swirling at this point like I really enjoyed the clarity I had once I kind of figured out how all these features would come together for 1.2, but now it's like there's iOS 14 and then just a dark void of question marks beyond that.
+
+147
+00:11:35,200 --> 00:11:35,280
+[SPEAKER_00] Yeah.
+
+148
+00:11:36,160 --> 00:11:46,640
+[SPEAKER_00] So that's a thing that, you know, I've been listening to iOS and developer podcasts forever and this whole, like, when do you do an official version number update has been a kind of a perennial question.
+
+149
+00:11:47,200 --> 00:11:53,040
+[SPEAKER_00] In the old days when we had things like, you know, you could charge for an update, it was pretty easy, right?
+
+150
+00:11:53,280 --> 00:11:59,920
+[SPEAKER_00] Like their version, their dot numbers until it's big enough for you to charge for it and then you make it the next version number.
+
+151
+00:12:00,640 --> 00:12:05,440
+[SPEAKER_00] But we don't really have that in the iOS world, at least not now, hopefully maybe in the future.
+
+152
+00:12:06,000 --> 00:12:08,320
+[SPEAKER_00] But so it seems like a lot of people have moved away.
+
+153
+00:12:08,480 --> 00:12:10,720
+[SPEAKER_00] Like a lot of people don't even use version numbers at all, right?
+
+154
+00:12:10,960 --> 00:12:11,760
+[SPEAKER_00] They just use the year.
+
+155
+00:12:12,240 --> 00:12:15,280
+[SPEAKER_01] And even Unreal Engine is doing that now too, which was crazy.
+
+156
+00:12:16,160 --> 00:12:20,160
+[SPEAKER_01] I just saw that the other day, like it's Unreal Engine released like 2020.2.
+
+157
+00:12:20,320 --> 00:12:22,080
+[SPEAKER_01] So it's like even outside of iOS now.
+
+158
+00:12:22,560 --> 00:12:22,640
+[SPEAKER_00] Yeah.
+
+159
+00:12:23,040 --> 00:12:30,240
+[SPEAKER_00] Like well, and like Adobe, their Creative Cloud products now are all year based.
+
+160
+00:12:30,480 --> 00:12:34,240
+[SPEAKER_00] And then I think they have like a dot number at the end or something, but it's for the year.
+
+161
+00:12:34,480 --> 00:12:45,600
+[SPEAKER_00] I don't think there might be under the hood a proper semantic numbering scheme or whatever, but marketing wise, it's just this is Adobe Audition 2020 version one or something like that.
+
+162
+00:12:47,120 --> 00:12:54,160
+[SPEAKER_00] And for a subscription like that, I kind of like that as a user because it's just like they're just pushing out features as they go.
+
+163
+00:12:54,400 --> 00:12:57,040
+[SPEAKER_00] They're not like these once a year big major things, right?
+
+164
+00:12:58,080 --> 00:13:11,040
+[SPEAKER_00] But I remember hearing whenever all this was kind of going down in the iOS developer scene, I remember hearing a bunch of people in the press, they were the ones that were still pushing for using regular numbers in your marketing.
+
+165
+00:13:11,680 --> 00:13:19,760
+[SPEAKER_00] And I think the reason is because it made it clearer from a user's perspective what this kind of release means, you know what I mean?
+
+166
+00:13:20,160 --> 00:13:22,960
+[SPEAKER_00] Or at least to demarcate like when something came into play or not.
+
+167
+00:13:23,280 --> 00:13:27,360
+[SPEAKER_01] Yeah, you know, and the interesting thing about the versioning is like both parties are right.
+
+168
+00:13:28,320 --> 00:13:32,960
+[SPEAKER_01] I think when you do it with the year based approach, it really serves the developer community.
+
+169
+00:13:33,120 --> 00:13:38,240
+[SPEAKER_01] So something like Unreal Engine, I think it makes a lot of sense for them because, you know, that's who they're marketing towards.
+
+170
+00:13:38,720 --> 00:13:43,440
+[SPEAKER_01] And then when you look at iOS apps, like, you know, it makes sense to us on Twitter and like the iOS circle.
+
+171
+00:13:43,920 --> 00:13:48,560
+[SPEAKER_01] But when the press, I I assume their big beef with it, at least that I saw for my limited.
+
+172
+00:13:49,120 --> 00:13:54,080
+[SPEAKER_01] interactions was that it was not very clear, like you're saying, what a version meant.
+
+173
+00:13:54,960 --> 00:13:57,360
+[SPEAKER_01] And it was not very user focused in that sense.
+
+174
+00:13:57,680 --> 00:14:09,680
+[SPEAKER_01] I mean, it's an interesting thing because I don't know, the versions kind of do matter when it comes to marketing in a way, but then you go back on the other side and it's like, well, the feature matters, you know?
+
+175
+00:14:10,240 --> 00:14:12,080
+[SPEAKER_01] Like what's in the release is what matters.
+
+176
+00:14:12,640 --> 00:14:18,160
+[SPEAKER_01] And this is going to be like, you know the GIF where the guy's doing math and like math signs are going everywhere.
+
+177
+00:14:18,400 --> 00:14:20,560
+[SPEAKER_01] Like this is where we're about to go down that canyon hole.
+
+178
+00:14:20,960 --> 00:14:24,320
+[SPEAKER_01] And to me, when I think about this, it all kind of goes down to how you sell your product.
+
+179
+00:14:25,040 --> 00:14:31,840
+[SPEAKER_01] Because if you have the constant drip feed of features that come out and you have like a subscription-based app, then the version doesn't even really matter that much.
+
+180
+00:14:33,440 --> 00:14:34,800
+[SPEAKER_01] It does, but not as much.
+
+181
+00:14:35,360 --> 00:14:44,560
+[SPEAKER_01] Where if you're like the last of the dying breed, like us doing the paid up front, we kind of need that version number to say, like, if you've been on the fence, this is why you should jump now.
+
+182
+00:14:44,720 --> 00:14:46,080
+[SPEAKER_01] Like, this is why you should buy the app.
+
+183
+00:14:47,200 --> 00:15:07,200
+[SPEAKER_01] So I think for me, that's the biggest reason why I've stuck with it, because whenever I do roll around a spin stack two and twenty forty nine at this rate, you know, like I need to have something that says it's a new experience or there's a huge differen new piece of functionality like with dark noise and the sound mixing that, and this is why you want to come on board and this is why I'm saying it's a two.
+
+184
+00:15:07,920 --> 00:15:14,320
+[SPEAKER_01] Whereas, you know, people got a regular cadence of updates, it's just like, well, hey, here's the new thing, here's a blog post and it's out.
+
+185
+00:15:15,120 --> 00:15:19,920
+[SPEAKER_01] And those people still market too, but the marketing is, I think, undeniably different between those two worlds.
+
+186
+00:15:20,320 --> 00:15:20,880
+[SPEAKER_00] Yeah, for sure.
+
+187
+00:15:21,440 --> 00:15:38,400
+[SPEAKER_00] And honestly, I think that we as developers put a lot more stock into this needs to be this big, mega thing, because we're thinking about it in terms of technology and it's like, well, it's really just the same app app and I just added a couple of new features.
+
+188
+00:15:38,800 --> 00:15:43,280
+[SPEAKER_00] But I think from a user's perspective, like, it's not nearly as important.
+
+189
+00:15:43,760 --> 00:15:51,680
+[SPEAKER_00] Like, I guess to say, like, I've probably added less to Dark Noise than what you've done to SpinStack over the last year.
+
+190
+00:15:52,640 --> 00:16:02,400
+[SPEAKER_00] But literally just because I put the word two on there, I think it's gotten more attention just because it's kind of like, oh, okay, this is the next version.
+
+191
+00:16:02,560 --> 00:16:03,200
+[SPEAKER_00] Like, I should see.
+
+192
+00:16:03,360 --> 00:16:04,880
+[SPEAKER_00] It's not just like a small little thing.
+
+193
+00:16:05,600 --> 00:16:10,960
+[SPEAKER_00] And by sort of pushing that big major version thing, it just gets people to look at it.
+
+194
+00:16:11,040 --> 00:16:15,520
+[SPEAKER_00] And then they can decide they're not going to make their their decision whether to buy it or not based on that, I don't think.
+
+195
+00:16:15,920 --> 00:16:18,640
+[SPEAKER_00] But it kind of gets people's attention on whether or not to pay attention.
+
+196
+00:16:19,120 --> 00:16:22,800
+[SPEAKER_00] And I really think, like, I don't know, this is really off the cuff.
+
+197
+00:16:23,040 --> 00:16:25,920
+[SPEAKER_00] I should warn you, everything about this episode is going to be off the cuff, but bring it.
+
+198
+00:16:26,320 --> 00:16:26,720
+[SPEAKER_00] Let's do it.
+
+199
+00:16:27,040 --> 00:16:36,080
+[SPEAKER_00] My thinking kind of where I'm at right now is I think I might keep a, like, bump the version every year, kinda like IOS works.
+
+200
+00:16:36,400 --> 00:16:44,400
+[SPEAKER_00] I don't know if that really makes sense, but the other part of me is like, well, if I have enough things, then the yearly release is the one I'll try to make splashy.
+
+201
+00:16:44,880 --> 00:16:49,760
+[SPEAKER_00] And I can include, kinda like what Google or Microsoft does with their releases.
+
+202
+00:16:50,000 --> 00:16:55,600
+[SPEAKER_00] I could include stuff that I've done throughout the year as kind of like this is what's new since the last big splashy thing, right?
+
+203
+00:16:56,080 --> 00:16:56,240
+[SPEAKER_00] Right.
+
+204
+00:16:56,560 --> 00:16:59,120
+[SPEAKER_00] But it's like your yearly opportunity to kind of capitalize.
+
+205
+00:16:59,280 --> 00:17:00,800
+[SPEAKER_00] Because, like you said, we're paid upfront.
+
+206
+00:17:00,960 --> 00:17:04,000
+[SPEAKER_00] We have to like we have to get these big splashy things.
+
+207
+00:17:04,800 --> 00:17:06,800
+[SPEAKER_00] We're not getting recurring revenue the same way.
+
+208
+00:17:07,200 --> 00:17:14,160
+[SPEAKER_00] And so if you bump the version number once a year, it's no longer this weight of like, is this worth it or is this not worth it.
+
+209
+00:17:14,320 --> 00:17:17,600
+[SPEAKER_00] It's more just like, we've reached this point now where the number changes.
+
+210
+00:17:17,840 --> 00:17:25,600
+[SPEAKER_00] Because iOS or macOS, there are certainly versions of macOS that the version numbers change and it doesn't seem like it's really that big of a release, right?
+
+211
+00:17:25,840 --> 00:17:27,920
+[SPEAKER_00] But we don't, we don't get upset about that.
+
+212
+00:17:28,400 --> 00:17:29,200
+[SPEAKER_01] Yeah, exactly.
+
+213
+00:17:29,520 --> 00:17:40,080
+[SPEAKER_01] And, you know, every year at WWDC, like, things would feel kind of stale if they're like, Okay, everybody, you know, picture Craig going up there, the crowd's quiet, right?
+
+214
+00:17:40,320 --> 00:17:44,720
+[SPEAKER_01] We're all excited and he's like, I'm proud to announce iOS 14.2.
+
+215
+00:17:45,120 --> 00:17:46,720
+[SPEAKER_00] Yeah, we're just like, right.
+
+216
+00:17:47,120 --> 00:17:47,200
+[SPEAKER_01] What?
+
+217
+00:17:48,400 --> 00:17:54,000
+[SPEAKER_01] So, and it's the same on, you know, a much more, I mean, that's a macro level, but on a micro level, yeah, it's no different with us.
+
+218
+00:17:54,720 --> 00:17:57,840
+[SPEAKER_01] And, you know, it's, it felt like Dark Noise the sequel, right?
+
+219
+00:17:58,640 --> 00:17:59,200
+[SPEAKER_01] And, yeah.
+
+220
+00:17:59,680 --> 00:18:08,240
+[SPEAKER_01] And that helps the press, I think, a lot because they can say, oh, okay, you know, I think most of them saw the two before they saw the sound mixing.
+
+221
+00:18:09,040 --> 00:18:13,280
+[SPEAKER_01] And when you think in the mind of the press, they're like, well, I have a good reason to write about this.
+
+222
+00:18:13,440 --> 00:18:15,920
+[SPEAKER_01] Like this is his next big part of Dark Noise.
+
+223
+00:18:16,480 --> 00:18:19,840
+[SPEAKER_00] It's really signaling what you were kind of talking about at the beginning.
+
+224
+00:18:20,880 --> 00:18:23,200
+[SPEAKER_00] This is a release that I want to draw attention to.
+
+225
+00:18:23,840 --> 00:18:28,240
+[SPEAKER_00] It's not so much saying this release is worth a paid upgrade, right?
+
+226
+00:18:28,400 --> 00:18:29,120
+[SPEAKER_00] Because that's not a thing.
+
+227
+00:18:29,440 --> 00:18:34,720
+[SPEAKER_00] Or this has enough features in it that I can excuse bumping the version number.
+
+228
+00:18:35,040 --> 00:18:39,200
+[SPEAKER_00] It's really more just like, look., I'm moving the version number, so look at me now.
+
+229
+00:18:39,600 --> 00:18:50,000
+[SPEAKER_00] And when I do these little releases that have new features, maybe I'll try to market the feature, but I'm not going to market it as like, this is a new major release or whatever, and so pay attention to me now.
+
+230
+00:18:50,400 --> 00:19:12,320
+[SPEAKER_01] Yeah, yeah, it is interesting to kind of look at it from that lens because I get what people are saying when they go with the yearly approach when it comes to the semantics of the versioning, because I think I'm going to get the quote messed up, but I know Marco Armit, who kind of, I believe, started this whole gig, was saying like he doesn't want to keep a feature back because he's waiting for the version number to change.
+
+231
+00:19:12,960 --> 00:19:14,240
+[SPEAKER_01] Like he just kind of wanted to ship it.
+
+232
+00:19:14,880 --> 00:19:16,080
+[SPEAKER_01] And I get that point too.
+
+233
+00:19:16,800 --> 00:19:18,560
+[SPEAKER_01] But again, kind of different apps.
+
+234
+00:19:18,800 --> 00:19:24,480
+[SPEAKER_01] And I'd be curious now that I'm thinking about it, if there's like a very successful paid up front app that does follow that.
+
+235
+00:19:24,800 --> 00:19:30,240
+[SPEAKER_01] Because I do think there's a correlation there between how people market and release features and how they actually think about their versioning.
+
+236
+00:19:30,800 --> 00:19:40,960
+[SPEAKER_01] But I'm right there with you because when I do get around to the next big thing, a spin stack, there's going to be more weight when I say spin stack two versus spin stack one point two, which was one of the challenges I had here.
+
+237
+00:19:41,520 --> 00:19:44,320
+[SPEAKER_01] Because one point anything doesn't really sound the same.
+
+238
+00:19:44,720 --> 00:19:44,880
+[SPEAKER_01] Right.
+
+239
+00:19:45,200 --> 00:19:51,200
+[SPEAKER_01] Even if it's a huge feature pack, which this was, there was a ton in there., but it doesn't sound the same as two, right?
+
+240
+00:19:52,320 --> 00:20:00,960
+[SPEAKER_01] And again, like we were saying with macOS or iOS or movies or even video games, like think of Call of Duty 5.3, like, you know, whatever, like, what is this?
+
+241
+00:20:01,040 --> 00:20:02,240
+[SPEAKER_01] Yeah, exactly.
+
+242
+00:20:02,640 --> 00:20:07,520
+[SPEAKER_01] People just associate it with, you know, a new number means a new thing.
+
+243
+00:20:08,160 --> 00:20:12,800
+[SPEAKER_01] And I think that's like a valuable part that, especially if you're in our space that you have to keep going.
+
+244
+00:20:13,200 --> 00:20:15,920
+[SPEAKER_00] Right, and I'm sure you can, you can overdo that, right?
+
+245
+00:20:16,880 --> 00:20:23,840
+[SPEAKER_00] And that's kind of why I was kind of like wondering, like, with this one, it made sense to move it with the mix, like I said.
+
+246
+00:20:24,160 --> 00:20:34,560
+[SPEAKER_00] Because that sort of, for me, it represents a change, a shift from this is an app for consumption only to this is an app that now has user created stuff inside it.
+
+247
+00:20:36,480 --> 00:20:43,120
+[SPEAKER_00] But going forward, I'm wondering if I might bump my version number with every iOS version release I do.
+
+248
+00:20:44,000 --> 00:20:46,240
+[SPEAKER_00] So right now my focus is iOS 14.
+
+249
+00:20:46,800 --> 00:20:49,280
+[SPEAKER_00] After my release, this is the kind of thing I'm focusing on.
+
+250
+00:20:49,520 --> 00:20:53,600
+[SPEAKER_00] And I'm like, you know, in the future, that might be my time when I bump the version number.
+
+251
+00:20:53,840 --> 00:20:59,360
+[SPEAKER_00] Because it's always going to have a slew of new features related directly to an iOS version update.
+
+252
+00:20:59,680 --> 00:20:59,840
+[SPEAKER_00] Yeah.
+
+253
+00:21:00,800 --> 00:21:06,640
+[SPEAKER_00] And then I just have this nice kind of clean numbering scheme that has a meaning.
+
+254
+00:21:07,120 --> 00:21:08,400
+[SPEAKER_00] It's not just a meaningless thing.
+
+255
+00:21:08,640 --> 00:21:09,920
+[SPEAKER_00] It's only going to happen once a year.
+
+256
+00:21:10,240 --> 00:21:18,400
+[SPEAKER_00] And then if I do a major update around a feature, then I'll kind of follow the Marco Arment approach of like the marketing is the feature, not the version number.
+
+257
+00:21:18,640 --> 00:21:22,480
+[SPEAKER_00] I don't even have to mention the version number because it's just about this feature.
+
+258
+00:21:23,040 --> 00:21:23,120
+[SPEAKER_00] Yeah.
+
+259
+00:21:23,760 --> 00:21:23,840
+[SPEAKER_01] Yeah.
+
+260
+00:21:24,160 --> 00:21:29,120
+[SPEAKER_01] I've thought about a similar approach, kind of cutting off with the version of iOS.
+
+261
+00:21:29,600 --> 00:21:38,800
+[SPEAKER_01] But my one hesitation that at least I've thought of there is that we're fighting against the whole world once iOS 14 hits., you know, everyone's gonna have the update.
+
+262
+00:21:39,040 --> 00:21:39,120
+[SPEAKER_00] Yeah.
+
+263
+00:21:39,920 --> 00:21:43,120
+[SPEAKER_01] If you do like the day of release kind of thing.
+
+264
+00:21:43,840 --> 00:21:44,240
+[SPEAKER_01] Exactly.
+
+265
+00:21:44,640 --> 00:21:56,720
+[SPEAKER_01] So I'm almost wondering if I'll do a kind of a big major ish update right after dub dub or not after dub dub, but after the GM hits in September, whenever it will be this year, who knows.
+
+266
+00:21:57,040 --> 00:22:04,640
+[SPEAKER_01] And then maybe get the big, like, oh, it's version two or three a few months after that, like when the waters kind of recede a little bit.
+
+267
+00:22:04,880 --> 00:22:07,680
+[SPEAKER_01] And that's actually how I thought about the initial launch of SpinStack.
+
+268
+00:22:07,760 --> 00:22:23,440
+[SPEAKER_01] Like it was ready to go around WWDC, but I knew in my head, like, and I think we even talked about this on my last time here, that if I took the time to do all the iOS 13 stuff, I was going to be in the same boat where I'm fighting with everyone else for press once iOS 13 shipped.
+
+269
+00:22:23,600 --> 00:22:30,960
+[SPEAKER_01] So I just kind of waited until things slowed down on the journal beat with, you know, the new iOS 13 features and shipped around then.
+
+270
+00:22:31,280 --> 00:22:35,280
+[SPEAKER_01] I actually think that's actually a good way to go because they're kind of looking for news around there.
+
+271
+00:22:36,080 --> 00:22:38,800
+[SPEAKER_01] You know, they'll have the big news stories when the new beta hits.
+
+272
+00:22:38,880 --> 00:22:40,320
+[SPEAKER_01] Like we, you know, we got a new beta today.
+
+273
+00:22:40,400 --> 00:22:42,240
+[SPEAKER_01] So you'll get the, hey, here's what's changed.
+
+274
+00:22:42,320 --> 00:22:43,920
+[SPEAKER_01] But other than that, there's not a lot of releases.
+
+275
+00:22:44,400 --> 00:22:45,600
+[SPEAKER_00] Did we get a new beta today?
+
+276
+00:22:46,000 --> 00:22:46,480
+[SPEAKER_01] Absolutely.
+
+277
+00:22:46,800 --> 00:22:48,640
+[SPEAKER_00] I told you, I'm really disconnected.
+
+278
+00:22:49,120 --> 00:22:56,400
+[SPEAKER_00] My glitter is just like still has a bunch of badges and I try to respond to everyone and like I'm just not yet and so yeah.
+
+279
+00:22:57,440 --> 00:22:58,240
+[SPEAKER_01] I'm right there with you.
+
+280
+00:22:58,480 --> 00:22:58,560
+[SPEAKER_01] Yeah.
+
+281
+00:22:58,960 --> 00:23:04,800
+[SPEAKER_01] I imagine you crawling out of a dark shell for this episode just to see humanity once more.
+
+282
+00:23:05,120 --> 00:23:06,400
+[SPEAKER_01] Like I have returned.
+
+283
+00:23:06,480 --> 00:23:06,960
+[SPEAKER_01] Dark shell.
+
+284
+00:23:07,200 --> 00:23:07,680
+[SPEAKER_01] It's branded.
+
+285
+00:23:07,760 --> 00:23:08,640
+[SPEAKER_01] Yeah, yeah, yeah.
+
+286
+00:23:08,720 --> 00:23:09,200
+[SPEAKER_01] There you go.
+
+287
+00:23:10,400 --> 00:23:20,400
+[SPEAKER_01] But no, it it I think it's Beta 3 and the funniest part while we're on the topic of Beta 3 is the download button was broken on the actual website.
+
+288
+00:23:20,560 --> 00:23:22,000
+[SPEAKER_01] Like something was wrong with the markup.
+
+289
+00:23:22,400 --> 00:23:24,720
+[SPEAKER_01] So I was like this is the absolute biggest troll from Apple.
+
+290
+00:23:25,280 --> 00:23:34,400
+[SPEAKER_01] is hanging this beta in front of my face and, you know, and someone tweeted back to me that they even like looked at the source of the page and to just manually hit the link.
+
+291
+00:23:34,720 --> 00:23:35,760
+[SPEAKER_01] But yes, there's a new beta.
+
+292
+00:23:35,840 --> 00:23:37,120
+[SPEAKER_01] So you got something to do after this, right?
+
+293
+00:23:37,280 --> 00:23:38,000
+[SPEAKER_00] Hey, there you go.
+
+294
+00:23:38,880 --> 00:23:46,080
+[SPEAKER_00] So now that we're kind of, oh, well, actually, to the point you were just saying, I actually did the same thing with the original Dark Noise.
+
+295
+00:23:47,040 --> 00:24:06,320
+[SPEAKER_00] My goal was to get into that slot, like I said, between WWDC and the actual release of all those iOS versions or iOS and macOS, you know, all that stuff because I knew that a bunch of podcasts would would do special stuff during this period because they were trying to fill in time because this was the dead time.
+
+296
+00:24:06,640 --> 00:24:10,400
+[SPEAKER_00] So I figured if there's a dead time, that's the most likely chance I can get any press.
+
+297
+00:24:11,360 --> 00:24:12,640
+[SPEAKER_00] And it worked out pretty well then.
+
+298
+00:24:12,960 --> 00:24:15,120
+[SPEAKER_00] And then I ended up doing the same thing this time.
+
+299
+00:24:15,280 --> 00:24:24,160
+[SPEAKER_00] I was trying to get my release out before WWDC, and when I realized I was kind of cutting it close, I decided to just push it back.
+
+300
+00:24:24,400 --> 00:24:30,320
+[SPEAKER_00] But instead of pushing it back a couple of weeks, I pushed it back like a month to try and hit the same exact time slot.
+
+301
+00:24:30,720 --> 00:24:36,000
+[SPEAKER_00] And I really think like trying to avoid bigger fish is a good way to try and stand out.
+
+302
+00:24:37,440 --> 00:24:44,480
+[SPEAKER_01] I mean, especially because in the grand scheme of things, like we've both had our apps out like a year and change, coming up on it at least.
+
+303
+00:24:45,280 --> 00:24:55,120
+[SPEAKER_01] So it's great when you're trying to get that foothold, especially in the press, you know, beats, to kind of just get into a spot where you have the best chance to be noticed.
+
+304
+00:24:55,280 --> 00:24:58,320
+[SPEAKER_01] And it sounds so obvious, but there's like a little bit of an art to it, right?
+
+305
+00:24:58,560 --> 00:24:59,840
+[SPEAKER_01] Like you kind of have to do your homework.
+
+306
+00:25:01,200 --> 00:25:03,600
+[SPEAKER_01] And for me, that was like a deliberate spot too.
+
+307
+00:25:04,480 --> 00:25:07,440
+[SPEAKER_01] Hit the dead zone, I guess, will be my new motto whenever I ship something.
+
+308
+00:25:07,840 --> 00:25:50,960
+[SPEAKER_00] I think it's hard too, like, especially when it's a big release that you've kind of like you've let features sort of all fall into this release and you've it's been sort of hanging over your head for a really long time like I was just ready I just wanted to get this thing out you know what I mean and so it's sometimes it's hard to like force yourself to wait um but the thing that I found that's helpful is like to try and actually schedule it like put it in a calendar for like a month or longer out and obviously you're not like truly committed to that date um but if you're like me and you pad everything because you've worked in the software industry long enough to know that always uh under promise and over deliver uh you end up giving yourself more time than you actually need.
+
+309
+00:25:51,840 --> 00:25:57,360
+[SPEAKER_00] But once you have that, like, steak in the ground, there's something deeply freeing about that.
+
+310
+00:25:58,560 --> 00:26:09,920
+[SPEAKER_00] And it's especially helpful if you're trying to market the release because, you know, like, once you put that steak in the ground, you have sort of a set of requirements that you're trying to get, you know, actual features you're trying to get done.
+
+311
+00:26:10,240 --> 00:26:14,960
+[SPEAKER_00] And then you start to realize you're ahead of schedule, again, if you pad things out as much as I do.
+
+312
+00:26:15,280 --> 00:26:23,680
+[SPEAKER_00] And then that's the time when you start giving yourself fun nights where you can, like, work on some sort of marketing thing, whatever it is that you're into.
+
+313
+00:26:23,840 --> 00:26:25,040
+[SPEAKER_00] For me, that's videos.
+
+314
+00:26:25,200 --> 00:26:32,320
+[SPEAKER_00] And so, you know, the more padding time I have, the more time I get to spend making an obnoxious, like, promo video to go with it.
+
+315
+00:26:33,200 --> 00:26:34,080
+[SPEAKER_00] Dude, they're awesome.
+
+316
+00:26:34,400 --> 00:26:35,440
+[SPEAKER_00] Yeah, they're, they're fun.
+
+317
+00:26:36,080 --> 00:27:00,240
+[SPEAKER_00] But making like a press kit or, um, or sending out emails to, uh, to journalists and stuff, or, you know, whatever it is, if you give yourself that extra padding, that just gives you more time for these kind of nights off from coding that you can spend doing little marketing things that will probably have a bigger impact than, you know, fixing one more, you know, bug that nobody will probably even run into.
+
+318
+00:27:00,480 --> 00:27:00,560
+[SPEAKER_00] Yeah.
+
+319
+00:27:00,720 --> 00:27:09,840
+[SPEAKER_01] Yeah, no, that's it's great advice because I don't know, with these things, like, if you don't have that stake in the ground, like you mentioned, then it's hard to know when to do things.
+
+320
+00:27:10,240 --> 00:27:11,360
+[SPEAKER_01] Like, it's as simple as that.
+
+321
+00:27:12,080 --> 00:27:17,840
+[SPEAKER_01] You know, it may get pushed back or it maybe even be earlier, but you've got to really plan for these releases.
+
+322
+00:27:18,400 --> 00:27:23,920
+[SPEAKER_01] And I know when I went back and like looked at things and, you know, I wrote a blog post about this called called the big update.
+
+323
+00:27:24,400 --> 00:27:29,120
+[SPEAKER_01] And when I was looking at all the stuff that I did for this, it was like a whole other launch.
+
+324
+00:27:29,280 --> 00:27:51,360
+[SPEAKER_01] Like, straight up, you know, like, you know, get in touch with this community or ask this Reddit mod if it's fine to post about this, you know, contact out to this journalist, make the video update the press kit get the new things on the website like there's just so much that goes on and you know ambiguity is inherently stressful so if you don't know when you're going to try and launch this thing you're just kind of I don't know just fluttering around kind of not moving anywhere.
+
+325
+00:27:51,600 --> 00:27:51,680
+[SPEAKER_01] Yeah.
+
+326
+00:27:51,920 --> 00:28:03,120
+[SPEAKER_01] Um, so I always think like if you're going to do a big update like you've got to plan it out which kind of leads me to like to the next thing I was wondering about if you want to move on to that which is kind of marketing stuff.
+
+327
+00:28:03,280 --> 00:28:04,160
+[SPEAKER_00] Oh yeah definitely.
+
+328
+00:28:04,480 --> 00:28:10,480
+[SPEAKER_01] Yeah, so I So as I just alluded to I I worked on a six week pre release schedule for this.
+
+329
+00:28:10,960 --> 00:28:17,680
+[SPEAKER_01] So the actual update of one point two two was done and feature complete six weeks from the day it went out.
+
+330
+00:28:18,560 --> 00:28:20,480
+[SPEAKER_01] And I kind of went into detail about why I did this.
+
+331
+00:28:20,640 --> 00:28:26,000
+[SPEAKER_01] I mean, Apple for one, they recommend it when you submit to the Hey, tell us your story thing.
+
+332
+00:28:26,720 --> 00:28:34,240
+[SPEAKER_01] And the other one was like, you really want to give press a good amount of time to form an opinion on how the app feels or whether they like it or if they want to cover it.
+
+333
+00:28:34,880 --> 00:28:40,720
+[SPEAKER_01] And I also pulled a good old Charlie Chapman and did a beta, which was my first beta, so that was a whole new thing too.
+
+334
+00:28:41,600 --> 00:28:42,560
+[SPEAKER_01] How did it, how did that go?
+
+335
+00:28:42,720 --> 00:28:43,200
+[SPEAKER_01] I'm curious.
+
+336
+00:28:43,360 --> 00:28:44,320
+[SPEAKER_01] Yeah, the beta was great.
+
+337
+00:28:44,640 --> 00:28:48,960
+[SPEAKER_01] I wish I would have done it earlier because you just, I mean, it is what it it is.
+
+338
+00:28:48,960 --> 00:28:54,320
+[SPEAKER_01] When you pay in advance, there's a very high level of resistance to try your app because they don't know if it's going to meet their needs or not.
+
+339
+00:28:54,480 --> 00:28:55,280
+[SPEAKER_01] I mean, I'm no different.
+
+340
+00:28:55,440 --> 00:29:02,400
+[SPEAKER_01] Like, if I see an app and I'm not sure it's what I want, I almost never buy it unless I repeatedly land on it on the App Store.
+
+341
+00:29:02,640 --> 00:29:08,000
+[SPEAKER_00] Yeah, it takes so many like moments of wanting to buy something before I actually will press the button.
+
+342
+00:29:08,240 --> 00:29:08,880
+[SPEAKER_00] It's really weird.
+
+343
+00:29:09,120 --> 00:29:11,680
+[SPEAKER_01] Yeah, before you hit a conversion, it's really, it's tough.
+
+344
+00:29:12,640 --> 00:29:16,320
+[SPEAKER_01] And when you look at App Store Connect, I think it kind of measures that in some form or fashion.
+
+345
+00:29:16,960 --> 00:29:23,040
+[SPEAKER_01] Because you can pretty much divide like the unique visits to your store by the updates you get to kind of see what your conversion rate is.
+
+346
+00:29:23,920 --> 00:29:25,680
+[SPEAKER_01] But all that to say, yeah, it's not easy.
+
+347
+00:29:25,920 --> 00:29:26,240
+[SPEAKER_01] And we know that.
+
+348
+00:29:26,400 --> 00:29:27,920
+[SPEAKER_01] I mean, it's kind of what we signed up for.
+
+349
+00:29:29,360 --> 00:29:42,320
+[SPEAKER_01] But the beta was good because people started using it in different ways and kind of validating some features that I had added and kind of validating directions that I wanted to go and giving me more ideas on kind of how to take things.
+
+350
+00:29:42,960 --> 00:29:44,560
+[SPEAKER_01] So that alone was worth it.
+
+351
+00:29:46,160 --> 00:29:50,720
+[SPEAKER_01] I thought the biggest value in the beta would be like just damage control with bugs.
+
+352
+00:29:51,040 --> 00:29:53,600
+[SPEAKER_01] Because, you know, I had the Swift rewriting there and that changed a ton.
+
+353
+00:29:54,160 --> 00:29:56,640
+[SPEAKER_01] So I kind of had that top of mind when I did the beta.
+
+354
+00:29:56,960 --> 00:30:02,560
+[SPEAKER_01] But really it was about, hey, here's how I want to use this app and I can use it for you this now, but I'd like to use it for that.
+
+355
+00:30:02,720 --> 00:30:06,000
+[SPEAKER_01] And here's what I would need as a user to kind of get that thing done.
+
+356
+00:30:07,040 --> 00:30:10,880
+[SPEAKER_01] And if I could go back in time, I'm telling you, I will never make a financial app again.
+
+357
+00:30:11,200 --> 00:30:12,640
+[SPEAKER_01] Because that's scary.
+
+358
+00:30:12,800 --> 00:30:12,880
+[SPEAKER_01] Yeah.
+
+359
+00:30:13,200 --> 00:30:13,280
+[SPEAKER_01] Yeah.
+
+360
+00:30:14,560 --> 00:30:24,480
+[SPEAKER_01] Everyone uses it a little bit different and we all have really strong opinions on how it should work and rightly so because like personal finance is a very I mean, it's in the word, it's personal, right?
+
+361
+00:30:24,640 --> 00:30:26,160
+[SPEAKER_01] We all kind of think about it differently.
+
+362
+00:30:27,680 --> 00:30:28,720
+[SPEAKER_01] So that was really good.
+
+363
+00:30:28,880 --> 00:30:34,160
+[SPEAKER_01] But you kind of get into this thing where you've got so many roads you could take, like which is the right one.
+
+364
+00:30:34,560 --> 00:30:36,000
+[SPEAKER_01] But betas do help narrow that down.
+
+365
+00:30:36,240 --> 00:30:36,320
+[SPEAKER_01] So.
+
+366
+00:30:36,480 --> 00:30:42,800
+[SPEAKER_01] So I would say, you know, if you're going to do another app and release another one, a beta is almost essential.
+
+367
+00:30:44,000 --> 00:30:56,640
+[SPEAKER_01] And apart from that, I think one lesson that everyone can take from your releases is, even though you don't use your beta as a marketing channel, it kind of acts that way too because you have several thousand testers, right?
+
+368
+00:30:56,800 --> 00:31:00,400
+[SPEAKER_01] And the word of mouth just naturally will occur once you get to that kind of scale.
+
+369
+00:31:00,800 --> 00:31:02,080
+[SPEAKER_00] Oh yeah, not just naturally.
+
+370
+00:31:02,560 --> 00:31:21,280
+[SPEAKER_00] Well, I don't know how much this actually helps, but one thing I did at launch, and I did this for Dark Noise 2 release as well, is I have a little thing that I can flip on in the app that will, you know, right after you open the app, it'll pop up a little pop-up and say whatever, you know, I can just throw any HTML in there.
+
+371
+00:31:21,760 --> 00:31:34,320
+[SPEAKER_00] And I release an update to the beta on launch day, right after everything goes live that basically just the next time the person opens it, it says, hey, this thing's actually out in the store.
+
+372
+00:31:35,040 --> 00:31:36,800
+[SPEAKER_00] In my case, at least, I don't shut the betas off.
+
+373
+00:31:36,880 --> 00:31:38,800
+[SPEAKER_00] So it's like, hey, don't worry, this isn't going away.
+
+374
+00:31:38,960 --> 00:31:47,520
+[SPEAKER_00] But I'd really appreciate it if you could, you know, tweet about it or go give me a rating or it's kind of like a call to action to be like, hey, thanks for joining me on this journey.
+
+375
+00:31:47,840 --> 00:31:48,640
+[SPEAKER_00] You know, if you want to.
+
+376
+00:31:49,200 --> 00:31:53,040
+[SPEAKER_00] throw me a bone, even if it's not money, give me something.
+
+377
+00:31:53,760 --> 00:31:55,360
+[SPEAKER_00] You can tweet about it or whatever.
+
+378
+00:31:56,400 --> 00:31:59,360
+[SPEAKER_00] And then the next time, it only shows them that once.
+
+379
+00:31:59,680 --> 00:32:08,400
+[SPEAKER_00] But it's kind of like I don't collect emails, so I don't have that sort of, I don't remember what that's called, but like an email list, classic.
+
+380
+00:32:08,640 --> 00:32:10,880
+[SPEAKER_01] Yeah, the one hundred and one marketing channel.
+
+381
+00:32:11,200 --> 00:32:11,280
+[SPEAKER_00] Yeah.
+
+382
+00:32:11,840 --> 00:32:14,160
+[SPEAKER_00] And this is kind of my way of doing that.
+
+383
+00:32:14,880 --> 00:32:19,840
+[SPEAKER_00] Because they're providing me value by giving me bug reports and feature ideas throughout the beta.
+
+384
+00:32:20,000 --> 00:32:27,280
+[SPEAKER_00] But also, I'm letting them use the app for free if they've never bought it before before and so it kind of creates a positive relationship both ways.
+
+385
+00:32:28,000 --> 00:32:28,400
+[SPEAKER_01] Oh yeah.
+
+386
+00:32:28,560 --> 00:32:33,920
+[SPEAKER_01] Yeah, you're much more benevolent than me because I just shut mine down the moment you launch it.
+
+387
+00:32:34,640 --> 00:32:48,000
+[SPEAKER_01] And I kind of did that, like I wasn't really worried about if they'll buy it or not, but I, once I saw how many emails you get, and I didn't even crack a thousand testers, it was like six, seven hundred I think when it ended in those four ish weeks.
+
+388
+00:32:48,480 --> 00:32:52,720
+[SPEAKER_01] But in my head I was like, I can't keep up with this any more.
+
+389
+00:32:52,800 --> 00:32:56,320
+[SPEAKER_01] So I'm just, I'm killing this thing dead as soon as it shifts.
+
+390
+00:32:57,040 --> 00:33:00,800
+[SPEAKER_00] Well, and you also have, like you said, the fact that you're a finance app.?
+
+391
+00:33:01,120 --> 00:33:16,480
+[SPEAKER_00] Like, you know, if I ship a bug or something scary to people for their white noise app and it doesn't work right and they have to deinstall it and then go install it from the app store and they lose some of their personal data, it's kind of like their personal data was a mix or something like that, right?
+
+392
+00:33:17,440 --> 00:33:22,960
+[SPEAKER_00] In your case, it's a little bit more scary, so I can understand not wanting to have a bunch of people on that until you feel like it's solid.
+
+393
+00:33:23,760 --> 00:33:36,000
+[SPEAKER_01] Yeah, and it did help me make some assumptions and like, you know, hard turns technically to where it would be hard even to support some things I did before in the beta, because I did more combined changes as things went on.
+
+394
+00:33:36,880 --> 00:33:43,760
+[SPEAKER_01] And I found one bug that, just as you said, was deleting user data, like if they took a specific flow to open like a new window.
+
+395
+00:33:44,800 --> 00:33:56,400
+[SPEAKER_01] And the way that I have my kind of interface set up from a technical standpoint is there's just like a save protocol that, or I'm sorry, like basically a crud interface, so like save, delete, update, and so on and so forth.
+
+396
+00:33:57,040 --> 00:33:57,520
+[SPEAKER_01] That does everything.
+
+397
+00:33:57,840 --> 00:34:02,880
+[SPEAKER_01] Like it updates the UI, it updates the database, but it also updates, you know, the server.
+
+398
+00:34:03,360 --> 00:34:05,920
+[SPEAKER_01] So if something deletes, like it's gone, like it's out of here.
+
+399
+00:34:06,240 --> 00:34:07,120
+[SPEAKER_01] There's no getting it back.
+
+400
+00:34:08,000 --> 00:34:34,560
+[SPEAKER_01] So those are all like some things you have to weigh, but that's like one thing that dr draws me to apps and making new ones too is it would be kind of fun to make something that's not as I don't know if stressful is the right word, something that doesn't bear as much weight and responsibility that should rightfully be given to a finance app, like something just more kind of fun, and we're talking about big updates to our apps, and here I am like, hey, I wonder if I should make a different app.
+
+401
+00:34:35,440 --> 00:34:42,720
+[SPEAKER_01] You know, you do wonder those things, but yeah, if I do that though, to kind of steer things back on topic, a beta would definitely be part of that.
+
+402
+00:34:42,960 --> 00:34:46,640
+[SPEAKER_01] There's just too much you learn from them these days, and they're just too easy to do with a test flight.
+
+403
+00:34:46,720 --> 00:34:49,200
+[SPEAKER_01] Like there's really no reason I think to miss on them.
+
+404
+00:34:49,440 --> 00:34:52,880
+[SPEAKER_01] And you get a ton of, well, I don't want to guarantee it.
+
+405
+00:34:53,280 --> 00:34:56,080
+[SPEAKER_01] You have a good chance of getting pressed much more if you have a beta.
+
+406
+00:34:56,320 --> 00:34:57,600
+[SPEAKER_01] I would say that's a true statement.
+
+407
+00:34:58,000 --> 00:34:58,080
+[SPEAKER_01] Yeah.
+
+408
+00:34:58,800 --> 00:35:11,200
+[SPEAKER_00] I really think, obviously, I'm biased because I had a positive experience, but I really feel like there's so much that can be gained from a beta group, and I think that what you gain grows with the size of the beta group.
+
+409
+00:35:12,000 --> 00:35:18,000
+[SPEAKER_00] I know there's a lot of hesitation to let a lot of people in because does that end up killing your sales?
+
+410
+00:35:18,160 --> 00:35:18,720
+[SPEAKER_00] You know what I mean?
+
+411
+00:35:18,960 --> 00:35:19,120
+[SPEAKER_00] Right.
+
+412
+00:35:19,440 --> 00:35:24,240
+[SPEAKER_00] But I really think that the one of the weird things about the App Store is the scale.
+
+413
+00:35:24,960 --> 00:35:28,160
+[SPEAKER_00] is just like impossible to comprehend, or at least for me.
+
+414
+00:35:28,800 --> 00:35:38,160
+[SPEAKER_00] And so I think this applies to the whole paid upfront model in general is like how can a paid upfront app for so long be profitable when you're giving free updates to people?
+
+415
+00:35:38,800 --> 00:35:56,720
+[SPEAKER_00] And from what I can gather, it's basically just the scale of the App Store is so astronomically big that if you're small enough, then the pool of new people joining the App Store for the very first time is so massive that you could basically survive on just the pool of new people coming in.
+
+416
+00:35:57,040 --> 00:35:59,280
+[SPEAKER_00] Now that's not the case for a big company, right?
+
+417
+00:35:59,600 --> 00:36:04,640
+[SPEAKER_00] But for people like us., I really do think that you can survive well, like Peacock is an example, right?
+
+418
+00:36:06,320 --> 00:36:09,200
+[SPEAKER_00] He's had a paid upfront app since it launched.
+
+419
+00:36:10,000 --> 00:36:17,120
+[SPEAKER_00] Same app, if you bought it on day one, you've literally never paid him a dime after that, but he's still able to keep a profitable business going.
+
+420
+00:36:17,520 --> 00:36:22,400
+[SPEAKER_00] But, you know, he's also one person and he's probably the most popular third-party calculator app.
+
+421
+00:36:22,560 --> 00:36:23,440
+[SPEAKER_00] And so that all helps.
+
+422
+00:36:23,600 --> 00:36:26,400
+[SPEAKER_00] But the reason I think that's possible is because of that scale.
+
+423
+00:36:27,120 --> 00:36:29,440
+[SPEAKER_00] And I think the same thing applies to when you look at betas.
+
+424
+00:36:29,680 --> 00:36:45,280
+[SPEAKER_00] Like, if you're going to have a measurable amount of people who buy your app, the people who bu are willing and understand how to download a test flight beta and use that is minuscule compared to what you're going to get on the bigger stage.
+
+425
+00:36:45,360 --> 00:36:55,520
+[SPEAKER_00] And I really don't think that's going to cut into your sales that substantially, unless you end up with, you know, it's basically just friends and kind of a small group, in which case then yes, maybe that would cut into it.
+
+426
+00:36:56,000 --> 00:36:57,760
+[SPEAKER_01] Yeah, no, I think you're absolutely right.
+
+427
+00:36:58,000 --> 00:37:04,080
+[SPEAKER_01] Like it's all about the circle that you kind of stay in and our biases that naturally form in that way.
+
+428
+00:37:04,240 --> 00:37:06,960
+[SPEAKER_01] And like for us, you know, we're people that are on Twitter all the time.
+
+429
+00:37:07,280 --> 00:37:11,520
+[SPEAKER_01] We know any developers, like we could rattle a bunch off off, you know, the top of our heads.
+
+430
+00:37:12,240 --> 00:37:21,680
+[SPEAKER_01] The majority of people that buy our apps have no idea who I am, or I would wager to guess, have no idea who you are, because they just find it organically.
+
+431
+00:37:22,480 --> 00:37:29,760
+[SPEAKER_01] Most of the emails I get these days, they assume, and to no fault of their own, because I have an LLC that I sell it through, that it's a company.
+
+432
+00:37:30,960 --> 00:37:41,760
+[SPEAKER_01] And it's crazy because if I get a little bit of a testy email and they're kind of passionate about something and they wish it worked another way, when I always reply back at the end, I say, By the way, you know, my name's Jordan.
+
+433
+00:37:41,840 --> 00:37:43,040
+[SPEAKER_01] I'm the only one who works on this.
+
+434
+00:37:43,360 --> 00:37:47,680
+[SPEAKER_01] So anything you've got on your mind, I'll always personally reply to you.
+
+435
+00:37:48,080 --> 00:37:50,000
+[SPEAKER_01] And that changes instantly, right?
+
+436
+00:37:50,400 --> 00:37:53,440
+[SPEAKER_01] Like the dynamic of the conversation and the way that they view your app.
+
+437
+00:37:53,920 --> 00:38:05,600
+[SPEAKER_01] But it just goes to show that the App Store is such a giant sea that the people that are buying your app bought it because they wanted it and they don't know you or have any idea what TestFlight is or even what a beta means.
+
+438
+00:38:06,960 --> 00:38:11,680
+[SPEAKER_01] It's just it's kind of a false assumption to have as a developer, right?
+
+439
+00:38:11,920 --> 00:38:18,240
+[SPEAKER_01] Like you get this false dichotomy where I either have a beta and no one buys it or I'm private and people buy it.
+
+440
+00:38:18,400 --> 00:38:19,360
+[SPEAKER_01] Like it doesn't work that way.
+
+441
+00:38:19,520 --> 00:38:21,360
+[SPEAKER_01] Like there's just too many people on the App Store now.
+
+442
+00:38:21,680 --> 00:38:21,680
+[UNKNOWN] Yeah.
+
+443
+00:38:22,000 --> 00:38:24,000
+[SPEAKER_00] Like I released, I made my.
+
+444
+00:38:24,720 --> 00:38:42,320
+[SPEAKER_00] So the beta for this one was a little different than normal because whenever the whole pandemic thing started, I just opened up the beta where I was at with the mixed noise feature and kind of have promoted that honestly as a thing like, hey, feel free to download it for free.
+
+445
+00:38:43,760 --> 00:38:46,400
+[SPEAKER_00] You don't need to do bug reports or anything.
+
+446
+00:38:46,560 --> 00:38:52,160
+[SPEAKER_00] This is just because I don't know a better way to give people a free trial while this pandemic is going on.
+
+447
+00:38:52,560 --> 00:38:55,280
+[SPEAKER_00] And so in my head, it's been released.
+
+448
+00:38:55,360 --> 00:39:00,560
+[SPEAKER_00] And there was a part of me this whole time leading up to this, the real release, that like, it's like, you know, am I going to make...
+
+449
+00:39:00,560 --> 00:39:04,160
+[SPEAKER_00] I don't know, am I going to make any sales or like how many people is this actually new for?
+
+450
+00:39:04,400 --> 00:39:09,200
+[SPEAKER_00] Because it's kind of already been out there for like three months and I talk about it publicly.
+
+451
+00:39:09,600 --> 00:39:14,320
+[SPEAKER_00] It's been pinned on my Twitter, so it's like everyone already kind of knew that this thing was available for free.
+
+452
+00:39:15,840 --> 00:39:17,760
+[SPEAKER_00] And that doesn't seem to be the case at all.
+
+453
+00:39:18,080 --> 00:39:22,080
+[SPEAKER_00] Like, I can't like on launch day, everyone's like, oh my gosh, look at this.
+
+454
+00:39:22,160 --> 00:39:22,640
+[SPEAKER_00] This is really cool.
+
+455
+00:39:22,800 --> 00:39:24,400
+[SPEAKER_00] I did, you know, what a cool update.
+
+456
+00:39:24,640 --> 00:39:33,360
+[SPEAKER_00] Like they had zero idea that this thing was coming, even though in my head, everyone knows this is coming because obviously all my users follow me on Twitter, right?
+
+457
+00:39:33,680 --> 00:39:34,960
+[SPEAKER_00] And so they all know about this already.
+
+458
+00:39:35,280 --> 00:39:36,000
+[SPEAKER_00] And so, yeah.
+
+459
+00:39:36,160 --> 00:39:38,080
+[SPEAKER_00] Yeah, like, it's basically exactly what you're saying.
+
+460
+00:39:38,240 --> 00:39:45,920
+[SPEAKER_00] Like, the idea I have in my head of who my users are is the ones I communicate with, which is a ridiculously small percentage of the actual users.
+
+461
+00:39:46,320 --> 00:39:46,400
+[SPEAKER_01] Yeah.
+
+462
+00:39:46,640 --> 00:39:54,320
+[SPEAKER_01] And to even prove your hypothesis even more, like, I mean, I personally know you, we're friends and we follow each other and we know each other's work.
+
+463
+00:39:54,800 --> 00:40:03,760
+[SPEAKER_01] I didn't even know version two was out at all until I just opened up Twitter and saw like everyone was promoting it on the, you know, the journal beat.
+
+464
+00:40:04,080 --> 00:40:07,040
+[SPEAKER_01] So like, that just goes to show exactly what you're saying.
+
+465
+00:40:07,200 --> 00:40:16,880
+[SPEAKER_01] Like, we kind of get stuck in our bubbles and think, ah, you know, everyone knows this or, you know, people aren't going to buy ity it because they've already done it, but there's new people in the scene all the time.
+
+466
+00:40:17,280 --> 00:40:20,720
+[SPEAKER_01] And that's kind of like a good analogy too for like how you build your products.
+
+467
+00:40:20,960 --> 00:40:24,560
+[SPEAKER_01] Like you think people know what you know, but they don't.
+
+468
+00:40:24,720 --> 00:40:24,800
+[SPEAKER_00] Yeah.
+
+469
+00:40:25,360 --> 00:40:26,960
+[SPEAKER_01] And it's so hard to remember that lesson.
+
+470
+00:40:27,280 --> 00:40:30,800
+[SPEAKER_01] And I find myself having to learn it over and over again every time I ship something.
+
+471
+00:40:31,600 --> 00:40:33,920
+[SPEAKER_00] And even to the original point of the numbering.
+
+472
+00:40:34,160 --> 00:40:40,800
+[SPEAKER_00] That's why I think it doesn't require as heavy of an update as you think it does to do a version number where it feels worth it.
+
+473
+00:40:41,120 --> 00:40:47,680
+[SPEAKER_00] Because I think there's this, you know, as developers, it's like when we finish a feature and then we move on to the next feature.
+
+474
+00:40:48,400 --> 00:40:50,720
+[SPEAKER_00] We have been living with that first feature this whole time.
+
+475
+00:40:51,040 --> 00:40:54,240
+[SPEAKER_00] So by the time it releases in our heads, that's like old news.
+
+476
+00:40:54,320 --> 00:40:56,240
+[SPEAKER_00] And you're like, oh yeah, I did that, didn't I?
+
+477
+00:40:56,320 --> 00:40:57,280
+[SPEAKER_00] I can add that to the bullet point.
+
+478
+00:40:57,680 --> 00:41:00,160
+[SPEAKER_00] But like two users, this is the very first time they're seeing that.
+
+479
+00:41:00,320 --> 00:41:02,400
+[SPEAKER_00] And that's, that could be a really big deal for them.
+
+480
+00:41:03,280 --> 00:41:13,920
+[SPEAKER_00] And so I really do think you can, Get Away makes it sound bad, but you can, you don't need as heavy or intense or extreme of an update as maybe you think you do to do like a version update.
+
+481
+00:41:14,320 --> 00:41:19,040
+[SPEAKER_00] And users to genuinely think that that's, that makes sense as a version update or a big number update.
+
+482
+00:41:19,360 --> 00:41:19,440
+[SPEAKER_00] Yeah.
+
+483
+00:41:19,760 --> 00:41:21,280
+[SPEAKER_01] No, you're spot on too.
+
+484
+00:41:22,800 --> 00:41:26,240
+[SPEAKER_01] Yeah, kind of around the whole, the big update notion that we're talking about.
+
+485
+00:41:26,560 --> 00:41:35,680
+[SPEAKER_01] One thing that I was kind of interested in this time around is I experimented very little with paid marketing for some things and I thought that was like kind of an interesting bit to reflect on.
+
+486
+00:41:36,000 --> 00:41:43,760
+[SPEAKER_00] Yeah, I'm curious because the little bit I've done in other things, not this, have not exactly panned out as well as I like thought that they would.
+
+487
+00:41:44,160 --> 00:41:45,840
+[SPEAKER_01] Oh, I absolutely hear you.
+
+488
+00:41:46,080 --> 00:41:48,560
+[SPEAKER_01] So I've always been skeptical of it, right?
+
+489
+00:41:49,200 --> 00:41:55,040
+[SPEAKER_01] Because I just not because I don't think it's bad, but just because I haven't found anything that works at all, really.
+
+490
+00:41:55,680 --> 00:41:58,240
+[SPEAKER_01] And I think there's a lot of reasons for why that is.
+
+491
+00:41:58,480 --> 00:42:05,120
+[SPEAKER_01] But this time, you know, I saved like, you know, 100 bucks for a few months leading up to this just to have like 500 dollars to play around with, right?
+
+492
+00:42:05,360 --> 00:42:12,000
+[SPEAKER_01] Like something that's not going to break the bank and maybe give me something that's like a measurable result to see like, did this work?
+
+493
+00:42:12,240 --> 00:42:12,800
+[SPEAKER_01] Did this not work?
+
+494
+00:42:12,960 --> 00:42:13,040
+[SPEAKER_00] Yeah.
+
+495
+00:42:13,200 --> 00:42:15,120
+[SPEAKER_00] I've made the mistake of doing the like $20 thing.
+
+496
+00:42:15,280 --> 00:42:18,160
+[SPEAKER_00] And it's like, oh, that was just, I just threw $20 down the toilet.
+
+497
+00:42:18,320 --> 00:42:21,600
+[SPEAKER_01] Like, to preface, let's start with the funny part.
+
+498
+00:42:22,320 --> 00:42:30,160
+[SPEAKER_01] I had a huge fail in this area and I was laughing really hard with my wife about it, who coincidentally, I have no idea, didn't think it was as funny.
+
+499
+00:42:30,480 --> 00:42:31,680
+[SPEAKER_01] And you'll see why in a minute.
+
+500
+00:42:32,000 --> 00:42:34,400
+[SPEAKER_01] But I tried with, so you know, search ads.
+
+501
+00:42:34,560 --> 00:42:37,680
+[SPEAKER_01] You can do pa the advanced.
+
+502
+00:42:38,240 --> 00:42:38,400
+[SPEAKER_01] Right.
+
+503
+00:42:38,640 --> 00:42:43,920
+[SPEAKER_01] And if anyone's listening, like Apple gives you the ability to show your app within the App Store when you search.
+
+504
+00:42:44,080 --> 00:42:45,040
+[SPEAKER_01] You've probably seen it.
+
+505
+00:42:45,280 --> 00:42:47,280
+[SPEAKER_01] You know, an app appears that they suggest.
+
+506
+00:42:47,440 --> 00:42:50,240
+[SPEAKER_01] And that's because developers like us pay for those.
+
+507
+00:42:50,400 --> 00:42:57,680
+[SPEAKER_01] And there's the simple version and there's the hard mode, as I call it, which is like real marketers who know what they're doing can tweak all these levers.
+
+508
+00:42:58,000 --> 00:42:59,680
+[SPEAKER_01] So I was getting good results from the paid one.
+
+509
+00:42:59,840 --> 00:43:01,280
+[SPEAKER_01] So I'm like, you know, forget it man.
+
+510
+00:43:01,680 --> 00:43:04,000
+[SPEAKER_01] Let's see what's up with this advanced stuff.
+
+511
+00:43:04,640 --> 00:43:09,520
+[SPEAKER_01] And I didn't limit the cost per whatever the measurable is.
+
+512
+00:43:09,600 --> 00:43:10,240
+[SPEAKER_01] Cost per install.
+
+513
+00:43:10,320 --> 00:43:12,480
+[SPEAKER_01] I don't know if they call it CPI or whatever they call it.
+
+514
+00:43:12,880 --> 00:43:19,920
+[SPEAKER_01] I left that uncapped and put $500 in there because that's what I do for my monthly one.
+
+515
+00:43:20,240 --> 00:43:25,120
+[SPEAKER_01] And usually I get about $300 or $400 worth that I meet on that.
+
+516
+00:43:25,760 --> 00:43:31,440
+[SPEAKER_01] But those are good on the simple ones because it usually costs like 50 cents to a dollar for a download and the app's $4 right now.
+
+517
+00:43:31,600 --> 00:43:33,280
+[SPEAKER_01] So I win in that scenario.
+
+518
+00:43:33,600 --> 00:43:34,320
+[SPEAKER_01] So I did the same thing.
+
+519
+00:43:34,400 --> 00:43:35,120
+[SPEAKER_01] I go, you know what?
+
+520
+00:43:35,200 --> 00:43:36,560
+[SPEAKER_01] I'll put $500 in advance.
+
+521
+00:43:36,960 --> 00:43:39,280
+[SPEAKER_01] I'm sure it won't even be used this month.
+
+522
+00:43:39,440 --> 00:43:40,240
+[SPEAKER_01] We'll see what happens.
+
+523
+00:43:40,800 --> 00:43:47,360
+[SPEAKER_01] Within a week it was gone and I got $10 downloads and paid like $50 per install.
+
+524
+00:43:48,240 --> 00:43:48,320
+[SPEAKER_01] So.
+
+525
+00:43:48,400 --> 00:43:52,560
+[SPEAKER_01] So if you're listening out there, learn from my $500 mistake.
+
+526
+00:43:52,640 --> 00:43:56,480
+[SPEAKER_01] And if you go advanced, really read everything you're doing.
+
+527
+00:43:56,720 --> 00:44:03,680
+[SPEAKER_01] So I had to slack my, my, my friend from work and be like, dude, I just paid $500 for like $10 down votes.
+
+528
+00:44:04,240 --> 00:44:10,960
+[SPEAKER_00] So, well, and it's so funny for us because it's not like you're making any money in the future on that user.
+
+529
+00:44:11,360 --> 00:44:11,840
+[SPEAKER_01] No, none.
+
+530
+00:44:12,160 --> 00:44:14,000
+[SPEAKER_01] No, I, I went in the hole on that one.
+
+531
+00:44:14,160 --> 00:44:15,920
+[SPEAKER_01] So that was a whole other thing.
+
+532
+00:44:16,080 --> 00:44:19,760
+[SPEAKER_01] So I, I started with that just because I thought it was funny, but that was not part of the $500 budget.
+
+533
+00:44:19,840 --> 00:44:21,280
+[SPEAKER_01] That was, that was just a big Jordan fail.
+
+534
+00:44:21,520 --> 00:44:29,840
+[SPEAKER_01] But, uh, so what I tried with the marketing is I did Redditdit ads, Twitter ads, and I don't think I did Facebook.
+
+535
+00:44:30,320 --> 00:44:33,600
+[SPEAKER_01] I looked into Pinterest as well, just to kind of go off the wall.
+
+536
+00:44:33,840 --> 00:44:39,040
+[SPEAKER_01] I'm reading this book by the founders of DuckDuckGo, which kind of just talks about a ton of different marketing strategies.
+
+537
+00:44:39,200 --> 00:44:42,320
+[SPEAKER_01] So I was like, you know what, let's just have fun, let's try a bunch of different stuff.
+
+538
+00:44:43,760 --> 00:44:48,480
+[SPEAKER_01] And I'll say Twitter, Twitter technique one b, two, which was promoted tweets.
+
+539
+00:44:48,800 --> 00:44:52,720
+[SPEAKER_01] And what I found was Reddit was pretty good for getting beta installs.
+
+540
+00:44:53,760 --> 00:44:59,600
+[SPEAKER_01] Promoted tweets were next to useless, and targeting tweets actually worked really well.
+
+541
+00:45:01,920 --> 00:45:07,920
+[SPEAKER_01] So it was really interesting to see that side of things because it kind of made me excited to look into it a bit more.
+
+542
+00:45:08,320 --> 00:45:08,880
+[SPEAKER_01] It was kind of fun.
+
+543
+00:45:09,280 --> 00:45:10,480
+[SPEAKER_01] It's a part of Indie development.
+
+544
+00:45:10,640 --> 00:45:12,720
+[SPEAKER_01] Like we all know marketing is part of Indie development.
+
+545
+00:45:13,040 --> 00:45:22,720
+[SPEAKER_01] But I think we always exclude paid marketing, almost like it's kind of like this dirty topic, like, oh, if you're not just like, you know, all organic or, you know, everyone just finds your app on their own.
+
+546
+00:45:22,800 --> 00:45:26,160
+[SPEAKER_01] Like it's not, like it's not as cool, but it's word of mouth.
+
+547
+00:45:26,320 --> 00:45:26,720
+[SPEAKER_01] Yeah, right?
+
+548
+00:45:26,800 --> 00:45:28,480
+[SPEAKER_01] Like if people just don't love it and talk about it.
+
+549
+00:45:28,640 --> 00:45:32,560
+[SPEAKER_01] But it's like, you know what, in the real world with businesses, like you have to try and acquire customers.
+
+550
+00:45:32,880 --> 00:45:34,480
+[SPEAKER_01] And it goes back to what we were just talking about.
+
+551
+00:45:34,800 --> 00:45:36,560
+[SPEAKER_01] So many people don't know us and don't know our apps.
+
+552
+00:45:37,040 --> 00:45:39,280
+[SPEAKER_01] So how do you get those apps in front of people?
+
+553
+00:45:40,800 --> 00:45:41,680
+[SPEAKER_01] So it was really cool.
+
+554
+00:45:42,240 --> 00:45:50,480
+[SPEAKER_01] I think I will kind of double that next time to get even better ideas of what is really working and try like $1,000 for the next launch.
+
+555
+00:45:51,280 --> 00:46:00,960
+[SPEAKER_01] But it seems that Twitter is pretty successful if you dig in and actually try and get like a tweet that's going to resonate and tells the story.
+
+556
+00:46:01,280 --> 00:46:02,880
+[SPEAKER_01] It's a whole new skill set in itself, right?
+
+557
+00:46:03,040 --> 00:46:06,960
+[SPEAKER_01] Like we always talk about like telling your story, but like how do you tell a story in a tweet, right?
+
+558
+00:46:07,360 --> 00:46:08,480
+[SPEAKER_01] To complete strangers.
+
+559
+00:46:08,720 --> 00:46:08,720
+[UNKNOWN] Yes.
+
+560
+00:46:09,040 --> 00:46:12,960
+[SPEAKER_01] If someone has no idea what dark noise is or has no idea what spin stack is, how do you sell it?
+
+561
+00:46:12,960 --> 00:46:18,720
+[SPEAKER_01] So what is SpinStack is, how do you sell it in the 240 or 80 characters, whatever Twitter has these days, or less?
+
+562
+00:46:19,040 --> 00:46:24,720
+[SPEAKER_01] So it's a new muscle to stretch, but I'm glad that I did it because it gave me confidence to kind of try it again for the future.
+
+563
+00:46:25,200 --> 00:46:27,760
+[SPEAKER_00] So I'm curious, did you do it around the launch?
+
+564
+00:46:28,480 --> 00:46:40,400
+[SPEAKER_01] Yeah, leading up to, so I did it for two things, I did it for beta acquisition and word of mouth for one of I forgot which SpinStack tweet it was, but one of the tweets that announced that it was coming out.
+
+565
+00:46:40,880 --> 00:46:40,960
+[SPEAKER_01] Okay.
+
+566
+00:46:42,400 --> 00:46:50,720
+[SPEAKER_01] And it's kind of crazy because if you don't, this is a recurring lesson I've already said, if you don't really hone things in and pay attention to how you're targeting it.
+
+567
+00:46:51,360 --> 00:46:58,080
+[SPEAKER_01] I'm pretty sure like you get like a bunch of bot responses, like people with no avatars, like not following.
+
+568
+00:46:58,400 --> 00:47:10,320
+[SPEAKER_01] So that, and I'm glad I didn't do a bunch in, because I did like, I'll spend fifty bucks on this, you know, creative, and I'll do fifty bucks on this one, and on those where you don't really hone it in, it's just, it's worth it, right?
+
+569
+00:47:10,480 --> 00:47:11,840
+[SPEAKER_01] You're just flushing money down the toilet.
+
+570
+00:47:12,080 --> 00:47:14,000
+[SPEAKER_01] So that was another learning.
+
+571
+00:47:14,160 --> 00:47:18,880
+[SPEAKER_01] So there were so many things that I took away from that, but it did give me confidence to be like, you know what?
+
+572
+00:47:19,120 --> 00:47:24,160
+[SPEAKER_01] I think this can be effective, but I would need to invest a bit more in it to kind of see how.
+
+573
+00:47:24,160 --> 00:47:27,040
+[SPEAKER_01] I'm thinking about how and will I do that in the future?
+
+574
+00:47:27,360 --> 00:47:27,680
+[SPEAKER_01] I think so.
+
+575
+00:47:27,840 --> 00:47:29,360
+[SPEAKER_01] I think that's the answer I've arrived at.
+
+576
+00:47:29,600 --> 00:47:45,840
+[SPEAKER_00] Yeah, I'd be, I feel like I would try and do it not around a launch or app store feature or something because it's not like the people that you're reaching out to, like the whole point is there's no connection to the actual launch itself there.
+
+577
+00:47:46,960 --> 00:47:56,240
+[SPEAKER_00] But then you might be able to actually parse out the signal to noise a little better and see like what, what did I, what acquisition did I get for this amount of money?
+
+578
+00:47:56,640 --> 00:47:56,720
+[SPEAKER_00] Yeah.
+
+579
+00:47:57,280 --> 00:48:09,360
+[SPEAKER_01] You know, and I think an interesting take on it too is I don't, I mean, I'm sure it's out there, but I haven't found it if it is, but to be fair, I haven't looked too hard, but I feel like a lot of independent developers like us don't really talk about it that much.
+
+580
+00:48:09,680 --> 00:48:12,640
+[SPEAKER_01] Like we say marketing is important, but like what do we actually do to market?
+
+581
+00:48:12,880 --> 00:48:13,840
+[SPEAKER_01] Like what are we trying?
+
+582
+00:48:14,880 --> 00:48:16,080
+[SPEAKER_01] You know, because it's not easy.
+
+583
+00:48:16,640 --> 00:48:32,240
+[SPEAKER_01] I mean, once you kind of get in the press's ear and they know you and you have a relationship with them and they're they're familiar with what you make, it gets a lot easier, but again, it gets a lot easier for a very specific demographic, the people that go to those websites, you know, the people that are already technically inclined.
+
+584
+00:48:32,560 --> 00:48:34,880
+[SPEAKER_01] And I want to make Spinstack an app that anyone can use.
+
+585
+00:48:35,280 --> 00:48:36,320
+[SPEAKER_01] And I've often talked about it.
+
+586
+00:48:36,720 --> 00:48:38,080
+[SPEAKER_01] I do like my mom tests with it a lot.
+
+587
+00:48:38,240 --> 00:48:42,000
+[SPEAKER_01] Like, if I can give a new feature and my mom knows how to use it, like, I'm good as gold, right?
+
+588
+00:48:42,160 --> 00:48:46,160
+[SPEAKER_01] Because she's the person that calls me and doesn't know how to, like, turn off Wi-Fi, right?
+
+589
+00:48:46,400 --> 00:48:48,480
+[SPEAKER_01] Like, and I laugh about it, but it just is what it is.
+
+590
+00:48:48,640 --> 00:48:50,080
+[SPEAKER_01] Like, she's the everyday user.
+
+591
+00:48:50,960 --> 00:48:52,240
+[SPEAKER_01] So, like, how do I reach them?
+
+592
+00:48:52,480 --> 00:48:53,200
+[SPEAKER_01] Where are they at?
+
+593
+00:48:53,600 --> 00:48:55,120
+[SPEAKER_01] Are they even interested in this kind of app?
+
+594
+00:48:55,600 --> 00:48:57,360
+[SPEAKER_01] Is it a problem they even want solved?
+
+595
+00:48:58,160 --> 00:49:00,640
+[SPEAKER_01] And if it is, how do I get them to buy a thing?
+
+596
+00:49:01,040 --> 00:49:09,360
+[SPEAKER_01] So, if everyone knew the answer, like, you know, we'd all be rolling in that app store lottery, but it's a big topic, but it is, it is fun.
+
+597
+00:49:09,600 --> 00:49:11,360
+[SPEAKER_01] And, you know, that's what I love about Indie Dev.
+
+598
+00:49:11,600 --> 00:49:12,800
+[SPEAKER_01] It's like being everywhere.
+
+599
+00:49:13,840 --> 00:49:15,840
+[SPEAKER_01] So like, how do I flex my marketing muscles more?
+
+600
+00:49:15,920 --> 00:49:17,200
+[SPEAKER_01] How do I how do I get better there?
+
+601
+00:49:17,840 --> 00:49:20,320
+[SPEAKER_01] So that's something I'm focusing on for like the whole next year.
+
+602
+00:49:20,800 --> 00:49:32,080
+[SPEAKER_00] Yeah, that's definitely something that like I definitely have a way easier time of with dark noise because it's it's such a like you know, it's a crazy crowded market for a reason.
+
+603
+00:49:32,320 --> 00:49:33,920
+[SPEAKER_00] It has ridiculously broad appeal.
+
+604
+00:49:34,720 --> 00:49:36,400
+[SPEAKER_00] It's not niche in the slightest.
+
+605
+00:49:37,120 --> 00:49:49,280
+[SPEAKER_00] And so I could sort of go, I could sort of say like, hey, what if I target the specific demographic that this whole press arm that exists is the one that they talk to.
+
+606
+00:49:50,000 --> 00:49:54,480
+[SPEAKER_00] And I know pretty well because I'm a person who's been consuming that media for a long time.
+
+607
+00:49:54,960 --> 00:50:02,880
+[SPEAKER_00] And so that gives me a kind of ridiculous sort of cheat code on all of this because I can get a lot of users through those avenues.
+
+608
+00:50:03,360 --> 00:50:12,240
+[SPEAKER_00] Whereas, like, the example I always come back to is Curtis Herbert with Slopes because, you know, he lives in the IOS sphere and is really well known in everything.
+
+609
+00:50:12,640 --> 00:50:19,440
+[SPEAKER_00] But skiing and snowboarding is not, doesn't exactly have the biggest overlap with, you know, IOS enthusiasts.
+
+610
+00:50:19,760 --> 00:50:27,920
+[SPEAKER_00] And so he has to go completely outside of that sphere to try and find users and spin stack is probably somewhere in the middle.
+
+611
+00:50:28,000 --> 00:50:35,920
+[SPEAKER_00] I think there's probably a lot more overlap, but it's certainly not like I could make dark noise specifically for people who like iOS.
+
+612
+00:50:36,960 --> 00:50:46,000
+[SPEAKER_00] It's all about having the hooks into the new APIs that come out, try and get it out as soon as an iOS update comes out and use the new features or whatever.
+
+613
+00:50:47,200 --> 00:50:56,400
+[SPEAKER_00] That is a feature that, for a big mass market thing, I can carve out a niche specifically for that group of people, which already has a press arm that talks directly to them.
+
+614
+00:50:57,360 --> 00:50:58,720
+[SPEAKER_00] But I think it's a lot harder.
+
+615
+00:50:59,040 --> 00:51:05,280
+[SPEAKER_00] Like you have to reach out of that world a little bit with paid marketing to find the niche.
+
+616
+00:51:05,760 --> 00:51:07,440
+[SPEAKER_01] Yeah, no, you're absolutely right.
+
+617
+00:51:07,680 --> 00:51:14,800
+[SPEAKER_01] And it, and, you know, in a way, this all circles back to another big notion of marketing, which is like, know your customer, like, who are you building for?
+
+618
+00:51:15,040 --> 00:51:19,920
+[SPEAKER_01] And like, and in your case, like, well, okay, I'll build a dark noise, or now I just call it a dark noise app.
+
+619
+00:51:20,320 --> 00:51:21,840
+[SPEAKER_01] You've successfully shifted the whole thing.
+
+620
+00:51:22,080 --> 00:51:23,840
+[SPEAKER_00] I'm sorry, I didn't call it a dark sky app.
+
+621
+00:51:24,240 --> 00:51:30,640
+[SPEAKER_00] That's why most people call my app because dark sky has such a ridiculously strong, uh, like brand appeal.
+
+622
+00:51:30,720 --> 00:51:31,840
+[SPEAKER_00] Oh, yeah, brand appeal.
+
+623
+00:51:32,000 --> 00:51:32,160
+[SPEAKER_00] Yeah.
+
+624
+00:51:32,880 --> 00:51:33,840
+[SPEAKER_01] Oh, that's so good.
+
+625
+00:51:34,000 --> 00:51:39,600
+[SPEAKER_01] But, uh, but yeah, in your case, how do I build a white noise generator for people like in this technology sector.
+
+626
+00:51:40,080 --> 00:51:41,040
+[SPEAKER_01] And that's been really good.
+
+627
+00:51:41,280 --> 00:51:49,680
+[SPEAKER_01] And one thing that I was going to ask you, like to kind of turn it around since we're both talking about our updates is, what did it look like for you in terms of press timeline?
+
+628
+00:51:50,000 --> 00:52:01,120
+[SPEAKER_01] Like, do you think because you had the beta running the whole time that you didn't really need to do some specific timeline like I did, where I was like, you know what, six weeks out, that's when I'm going to contact the press.
+
+629
+00:52:02,080 --> 00:52:11,680
+[SPEAKER_01] Or did you did something similar to that, to where it's a month away, I'm going to do the traditional, hey, here's the official word on the update, here's what's going to be in it?
+
+630
+00:52:12,720 --> 00:52:16,640
+[SPEAKER_01] Or did it all just kind of happen organically and you didn't really do anything?
+
+631
+00:52:17,120 --> 00:52:18,880
+[SPEAKER_00] No, I did kind of what you did.
+
+632
+00:52:19,920 --> 00:52:35,200
+[SPEAKER_00] Like, I wanted to be at least a month ahead of time, which is why I ended up pushing back because I decided last minute after actually because of a lot of beta feedback I got to go ahead and get CloudKit support into this release.
+
+633
+00:52:35,280 --> 00:52:37,920
+[SPEAKER_00] Originally, I was going to do release the mixed stuff.
+
+634
+00:52:38,560 --> 00:52:41,280
+[SPEAKER_00] It was going to be local to your specific device.
+
+635
+00:52:42,240 --> 00:52:44,160
+[SPEAKER_00] And then the next update would be CloudKit support.
+
+636
+00:52:44,320 --> 00:52:57,760
+[SPEAKER_00] But I got so many people, the moment they played around with it, and they opened their iPad and it wasn't there and they realized they had to rebuild all the same sounds over there or mixes over there, they would email me and be like, hey, how do I share these between devices?
+
+637
+00:52:58,160 --> 00:53:02,000
+[SPEAKER_00] And at first, I thought maybe I'll do some sort of hacky way to share between the two in the interim.
+
+638
+00:53:02,160 --> 00:53:03,040
+[SPEAKER_00] And I was like, you know what?
+
+639
+00:53:03,840 --> 00:53:08,320
+[SPEAKER_00] I bet I can sneak CloudKit support in there, which I actually did.
+
+640
+00:53:08,560 --> 00:53:09,120
+[SPEAKER_00] I got it in there.
+
+641
+00:53:09,600 --> 00:53:11,120
+[SPEAKER_00] That sounds like famous last words.
+
+642
+00:53:11,600 --> 00:53:14,400
+[SPEAKER_01] So a huge hat off to you for actually shipping that.
+
+643
+00:53:14,880 --> 00:53:22,160
+[SPEAKER_00] Well, I got it in there faster than I expected, but it scared the heck out of me because it's the first back-in server element I had.
+
+644
+00:53:22,640 --> 00:53:36,000
+[SPEAKER_00] And like, I basically had a no go date that I was saying I am confident that I will be able to ship on this date by this earlier date because I wanted to tell the press, you know, four weeks in advance.
+
+645
+00:53:36,320 --> 00:53:44,000
+[SPEAKER_00] And when I got to that point, I was technically done with the CloudKit stuff, but I didn't feel confident that it was fully ironed out, all the bugs were good.
+
+646
+00:53:44,560 --> 00:53:47,280
+[SPEAKER_00] And so that was when I kind of made that decision, let's push it off.
+
+647
+00:53:47,440 --> 00:53:54,640
+[SPEAKER_00] And what that gave me was the ability to spend way more time polishing and reaching out to the press.
+
+648
+00:53:54,880 --> 00:53:56,880
+[SPEAKER_00] I think I gave them like six weeks in advance.
+
+649
+00:53:57,040 --> 00:54:42,800
+[SPEAKER_00] I had a press kit ready, you know, by the time I contacted them and I do think that stuff I've heard from a lot of people in the press that that helps immensely because you know I like I reached out some of them like would get in contact with me with me like you know three four weeks before launch and they would say they would be asking questions and their article is ready to go and it's scheduled that early and they just have it in their system now you know they'll they'll spot check it before it actually goes out but it's basically like they wrote the article then because you know they have to get these things out they have to write a lot of articles multiple per day in a lot of cases and so if you can give them a press kit that has all the information laid out with assets that they can just drag and drop into their CRM or whatever.
+
+650
+00:54:43,760 --> 00:54:45,600
+[SPEAKER_00] Or yeah, content, no.
+
+651
+00:54:46,160 --> 00:54:48,080
+[SPEAKER_01] CMSCR, yeah, content release.
+
+652
+00:54:48,880 --> 00:54:50,560
+[SPEAKER_01] They use it to ship stuff on their website.
+
+653
+00:54:50,720 --> 00:54:52,480
+[SPEAKER_00] I told you, my brain is washed, right?
+
+654
+00:54:53,120 --> 00:55:02,960
+[SPEAKER_00] Either way, they can get it into their system and they can get that article and then by the time launch day comes, they just double check that and then say, yes, or sometimes it's even scheduled.
+
+655
+00:55:03,280 --> 00:55:08,240
+[SPEAKER_00] And then that played out because there's a couple of articles that they reference things that I had tweaked after that.
+
+656
+00:55:08,480 --> 00:55:11,600
+[SPEAKER_00] And I was like, oh yeah, they had that article written ahead of time, didn't they?
+
+657
+00:55:11,680 --> 00:55:12,720
+[SPEAKER_00] You know, none of them are like.
+
+658
+00:55:13,200 --> 00:55:19,120
+[SPEAKER_00] major deals, because I would warn people if it were, but yeah, so I definitely was very intentional.
+
+659
+00:55:19,520 --> 00:55:22,080
+[SPEAKER_00] I wouldn't say that it just sort of happened organically.
+
+660
+00:55:22,880 --> 00:55:29,120
+[SPEAKER_00] But the end result of that was something that surprised me, and I'm curious to know what your details are.
+
+661
+00:55:29,200 --> 00:55:46,160
+[SPEAKER_00] I can't remember if you outlined it in your blog or not, but it looks like now I'm only two days in, but it looks like I'm actually doing a little bit better than my initial launch, which I was always told, paid up front apps, you know, every release that you do going forward will be a little bit smaller than the one before.
+
+662
+00:55:46,480 --> 00:55:46,560
+[SPEAKER_00] Yeah.
+
+663
+00:55:47,360 --> 00:55:48,320
+[SPEAKER_00] But I think it's because.
+
+664
+00:55:48,320 --> 00:56:09,600
+[SPEAKER_00] Because, you know, last time I I got on Mac stories and a bunch of like tech bloggers stuff and then this year I got on Mac story or this time I got on Mac stories and all a lot of those same bloggers but then I also got nine to five Mac and I more and a couple more like bloggers and so it was kind of like an expansion of the original group.
+
+665
+00:56:10,000 --> 00:56:10,080
+[SPEAKER_01] Yeah.
+
+666
+00:56:10,480 --> 00:56:18,800
+[SPEAKER_00] And so I I'm assuming that that was enough to overcome the sort of natural fall of users that you get, which I probably won't keep getting obviously.
+
+667
+00:56:19,840 --> 00:56:20,240
+[SPEAKER_01] I'm right.
+
+668
+00:56:20,560 --> 00:56:22,480
+[SPEAKER_01] You know, this will be crazy if this is the case for you too.
+
+669
+00:56:22,640 --> 00:56:24,640
+[SPEAKER_01] I don't know because you did much better with press on your.
+
+670
+00:56:24,640 --> 00:56:29,040
+[SPEAKER_01] You know, you're much better with the press on your initial release than I did, but this one blew my launch out of the water.
+
+671
+00:56:30,480 --> 00:56:33,040
+[SPEAKER_01] It was almost a thousand downloads on the day of.
+
+672
+00:56:33,440 --> 00:56:33,840
+[SPEAKER_01] Oh man.
+
+673
+00:56:34,560 --> 00:56:40,480
+[SPEAKER_01] And my launch, yeah, was like 250, I think, which for me, I was still stoked at that point.
+
+674
+00:56:41,840 --> 00:56:51,520
+[SPEAKER_01] So, and it, and it all goes, and I kind of talked about that in the blog post, like, it just goes to show, like, if you can get the press and get a story and get a rock solid pitch, whatever it looks like.
+
+675
+00:56:51,600 --> 00:56:53,040
+[SPEAKER_01] Like, if it's your launch, what is the app?
+
+676
+00:56:53,280 --> 00:56:54,960
+[SPEAKER_01] If it's a big update, what are the big features?
+
+677
+00:56:55,200 --> 00:57:10,160
+[SPEAKER_01] Like, when you package those things up and really get them together, like, it's a power you just can't ship them out either because a lot of people don't know this, but I actually shipped one point two like three or four days before the press announcement.
+
+678
+00:57:10,400 --> 00:57:15,040
+[SPEAKER_01] Like even Ryan from Mac Stories, you know, I was kind of DMing him because he was covering the story.
+
+679
+00:57:15,200 --> 00:57:16,800
+[SPEAKER_01] He was like, Oh wait, it's it's out.
+
+680
+00:57:16,800 --> 00:57:20,560
+[SPEAKER_01] I was like, Yeah, I put it out early to kind of catch any fires in time.
+
+681
+00:57:21,360 --> 00:57:23,440
+[SPEAKER_01] But like, so that just goes to show.
+
+682
+00:57:23,840 --> 00:57:23,920
+[SPEAKER_01] Yeah.
+
+683
+00:57:24,560 --> 00:57:26,880
+[SPEAKER_01] Like the update and releasing it is not enough.
+
+684
+00:57:27,040 --> 00:57:31,040
+[SPEAKER_01] Like it's it's all about telling people about it, whatever it looks like, you know.
+
+685
+00:57:31,600 --> 00:57:36,720
+[SPEAKER_01] And even though SpinStack doesn't really cater to the tech community as much as I would say Dark Noise.
+
+686
+00:57:36,720 --> 00:57:41,040
+[SPEAKER_01] I still like that's the world I know, so I kind of leaned in there.
+
+687
+00:57:42,080 --> 00:57:48,880
+[SPEAKER_01] But I did try a few other things that proved really successful, like thinking outside of that box, for lack of a better term.
+
+688
+00:57:49,200 --> 00:57:50,880
+[SPEAKER_01] Like who wants SpinStack?
+
+689
+00:57:51,120 --> 00:57:56,480
+[SPEAKER_01] Well, I just added like this Apple Card import, you can't search, at least at the time, your statements within the app.
+
+690
+00:57:56,720 --> 00:57:59,040
+[SPEAKER_01] You can in SpinStack, that's a competitive advantage.
+
+691
+00:58:00,880 --> 00:58:01,920
+[SPEAKER_01] And then I was like, you know what?
+
+692
+00:58:02,080 --> 00:58:03,520
+[SPEAKER_01] There's an Apple Card subreddit.
+
+693
+00:58:03,920 --> 00:58:07,360
+[SPEAKER_01] And I don't know like how to trace it back or if I could.
+
+694
+00:58:07,600 --> 00:58:12,160
+[SPEAKER_01] I didn't have like a link set up for App Store Connect to see like where the people were coming from.
+
+695
+00:58:12,800 --> 00:58:16,640
+[SPEAKER_01] But the Reddit post on that got a really good response for me.
+
+696
+00:58:17,760 --> 00:58:26,720
+[SPEAKER_01] You know, it's not like on the Christian selling scale where like all the Reddit pause for a day to talk to me, but you know, it was good by my standards.
+
+697
+00:58:28,160 --> 00:58:30,400
+[SPEAKER_01] And so stuff like that really, really helped out.
+
+698
+00:58:31,120 --> 00:58:38,480
+[SPEAKER_01] And it's just I almost don't like to say that you need the press, but you kind of do because it's so frustrating when you don't get it.
+
+699
+00:58:38,800 --> 00:58:51,520
+[SPEAKER_01] And I've been there, like I've been on both sides, but we could turn this into a larger discussion about just like persistence and perseverance and you know if your first one doesn't hit or your first launch doesn't really do as much as you want.
+
+700
+00:58:51,760 --> 00:58:59,520
+[SPEAKER_01] Like if you just kind of keep on it, you figure out things along the way where things kind of fall together at some point because it I do this too.
+
+701
+00:58:59,760 --> 00:59:00,400
+[SPEAKER_01] Every human does.
+
+702
+00:59:00,800 --> 00:59:02,880
+[SPEAKER_01] People only see the end result, right?
+
+703
+00:59:03,200 --> 00:59:07,760
+[SPEAKER_01] They look at Dark Noise or if they look at SpinStack or they read our blog post or they see how the launch went.
+
+704
+00:59:07,840 --> 00:59:09,440
+[SPEAKER_01] They're like, well, of course it's easy for you.
+
+705
+00:59:09,520 --> 00:59:12,480
+[SPEAKER_01] You know people at iMore, you know people at Mac Stories, you know all these people.
+
+706
+00:59:12,960 --> 00:59:19,840
+[SPEAKER_01] The same way we could talk about people who are way bigger than us in this industry, you know, like, you know, Casey Liss or Marco Armin or all these other people.
+
+707
+00:59:20,400 --> 00:59:22,800
+[SPEAKER_01] You can't really say, oh, well, it's easier for them because of this.
+
+708
+00:59:22,960 --> 00:59:24,480
+[SPEAKER_01] It's like, well, they have that because.
+
+709
+00:59:24,480 --> 00:59:26,880
+[SPEAKER_01] That because they worked really hard for it.
+
+710
+00:59:27,120 --> 00:59:28,080
+[SPEAKER_01] And it's the same with press.
+
+711
+00:59:28,400 --> 00:59:35,040
+[SPEAKER_01] Like it takes a lot of time to kind of dig in there and form genuine relationships and give them something of value, right?
+
+712
+00:59:36,320 --> 00:59:47,280
+[SPEAKER_01] And all those lessons kind of came together for me, which is why I think this one point two was really like several times bigger than the launch, which I was pleasantly surprised because I had no idea how it was going to go, right?
+
+713
+00:59:47,520 --> 00:59:51,680
+[SPEAKER_01] Like even after doing this for a while, like, is it going to land or is it just going to fizzle away?
+
+714
+00:59:51,760 --> 00:59:52,480
+[SPEAKER_01] Like who knows?
+
+715
+00:59:52,960 --> 00:59:54,640
+[SPEAKER_01] But thankfully it went well.
+
+716
+00:59:54,880 --> 00:59:59,920
+[SPEAKER_00] That makes me think of, I think it was Christopher McCreer, the director of the latest movie.
+
+717
+01:00:00,160 --> 01:00:01,280
+[SPEAKER_00] Mission Impossible movies.
+
+718
+01:00:01,760 --> 01:00:04,560
+[SPEAKER_00] And he's written a bunch of, you know, well-known movies and stuff.
+
+719
+01:00:04,800 --> 01:00:08,800
+[SPEAKER_00] He had, it was either a Twitter thread or a blog post, and I'll find it.
+
+720
+01:00:09,040 --> 01:00:11,120
+[SPEAKER_00] Maybe it wasn't him, but I'm pretty sure it was him.
+
+721
+01:00:11,440 --> 01:00:17,440
+[SPEAKER_00] Where he basically was like, You never make it in this industry, meaning Hollywood.
+
+722
+01:00:17,600 --> 01:01:15,040
+[SPEAKER_00] But I think this is probably the case with everything, where it's like, you know, even him, it like, who's done these major pictures, after one of them comes out and it's over, and like you've kind of, you know, you have a bunch of contacts that you can utilize later, but you're kind of starting over and you have to like, you have to put in all the work again to get another thing and a lot of people will have long droughts of time in between you know movies or apps in our case or whatever between getting attention like that and if you're not putting the work in you're just not going to get it and so like I don't know it it was one of those weird things because I read that quote right at the time whenever I was trying to get dark noise going and I was having those exact thoughts you were having where I'm listening to you know under the radar with Marco Arment and David Smith or uh you know some of these other well-known developers and I'm like well okay this advice is great, but like, that's you guys, right?
+
+723
+01:01:15,280 --> 01:01:18,240
+[SPEAKER_00] Like, you have all this attention and everyone knows who you are.
+
+724
+01:01:19,440 --> 01:01:30,960
+[SPEAKER_00] But I, since then, I've kind of gotten the same feeling from all of them, where it's like, you still like, you can just push an update out and nothing's going to happen unless you put the work in to like get it attention.
+
+725
+01:01:32,320 --> 01:01:34,080
+[SPEAKER_01] Oh, it's absolutely true.
+
+726
+01:01:34,240 --> 01:01:44,000
+[SPEAKER_01] And I think a really good way to kind of show what we're talking about is to read the blog post by Daniel from O'Bother, where that was kind of like his whole premise before he shipped, right?
+
+727
+01:01:44,320 --> 01:01:46,640
+[SPEAKER_01] Like, there's these apps out there that I think are cool.
+
+728
+01:01:47,520 --> 01:01:51,840
+[SPEAKER_01] And I don't know if mine's like just gonna suck or it's gonna be awesome.
+
+729
+01:01:52,960 --> 01:02:01,920
+[SPEAKER_01] And he's one of my favorite indies right now because you see like the end result of kind of trying hard and really putting your foot down and trying to make contacts or reaching out to the press.
+
+730
+01:02:02,800 --> 01:02:04,960
+[SPEAKER_01] Because he's had a lot of cool stuff happening with that app.
+
+731
+01:02:05,120 --> 01:02:06,800
+[SPEAKER_01] Like the App Store tweeted about it.
+
+732
+01:02:07,360 --> 01:02:10,080
+[SPEAKER_01] I know I think 9 to 5 Mac covered it.
+
+733
+01:02:10,320 --> 01:02:16,320
+[SPEAKER_01] And he was by his own admission kind of like not known in the indie space before he shipped that.
+
+734
+01:02:16,480 --> 01:02:24,560
+[SPEAKER_01] So like that's proof of kind of what we're talking about, of kind of looking at people that are doing it now, taking inspiration and kind of just believing.
+
+735
+01:02:25,120 --> 01:02:33,280
+[SPEAKER_01] that you can even, but realizing that it does take, like, some of an art and you kind of have to go for it, uh, so to speak.
+
+736
+01:02:33,440 --> 01:02:36,560
+[SPEAKER_01] And, you know, not to turn this into like some Tony Robbins, you can do it.
+
+737
+01:02:37,600 --> 01:02:49,360
+[SPEAKER_01] But it's just like, at the same time, like, you, you do have to, to, to make that groundwork available to you and, and realize that the press, if they have no idea who you are, like, why should, why should they listen?
+
+738
+01:02:49,520 --> 01:02:50,800
+[SPEAKER_01] You know, so give them a reason.
+
+739
+01:02:51,200 --> 01:02:54,000
+[SPEAKER_01] Uh, and then it's kind of like a domino effect, right?
+
+740
+01:02:54,160 --> 01:02:59,360
+[SPEAKER_01] Once you have one press contact, you kind of figure it out and it gets a little bit easier for the next ones.
+
+741
+01:02:59,600 --> 01:03:04,640
+[SPEAKER_01] And you kind of realize how that wor world works and and you know you go from there and you start building on that foundation.
+
+742
+01:03:04,960 --> 01:03:11,760
+[SPEAKER_01] So whether you have, you know, no cash in the community at all or whether you're well known, like the situation just changes.
+
+743
+01:03:12,000 --> 01:03:17,920
+[SPEAKER_01] Things do get easier when more people know you, but you know, I think all of us have started at that ground zero spot.
+
+744
+01:03:18,960 --> 01:03:19,120
+[SPEAKER_00] Yeah.
+
+745
+01:03:19,520 --> 01:03:27,760
+[SPEAKER_00] And I I guess I should like specify to you, I don't think you need to have, you know, cash A in the community or whatever to build a business.
+
+746
+01:03:28,160 --> 01:03:30,640
+[SPEAKER_00] There's plenty of people like that's another common trope, right?
+
+747
+01:03:30,880 --> 01:03:37,600
+[SPEAKER_00] Is people who say like, I've been working on this app for like five years and just now it's gotten to the point where it's like actually making money.
+
+748
+01:03:38,160 --> 01:03:42,560
+[SPEAKER_00] And for those people, if you look at the charts, it's like the slow growth over time.
+
+749
+01:03:43,760 --> 01:03:48,640
+[SPEAKER_00] And often that's built on a subscription model or something, which definitely is a different type of model.
+
+750
+01:03:48,960 --> 01:04:00,720
+[SPEAKER_00] But I do think that there's something to be said about, you know, that approach has a lot more longevity than maybe the way that we're going at it where we're sort of reliant on these big hits.
+
+751
+01:04:00,960 --> 01:04:12,480
+[SPEAKER_00] And so for us to get these big hits, we have to like scrounge for press and make, you know, build these things into these one big releases that we, you know, hit Twitter and...
+
+752
+01:04:12,560 --> 01:04:17,840
+[SPEAKER_00] and make videos and do all this stuff for to really try to make that into a big splash.
+
+753
+01:04:18,080 --> 01:04:20,560
+[SPEAKER_00] And then there's a chance that it all just fizzles out right after that.
+
+754
+01:04:20,720 --> 01:04:27,200
+[SPEAKER_00] Whereas the people that have been building for five years, it's unlikely that the whole thing will come toppling down overnight.
+
+755
+01:04:27,520 --> 01:04:33,120
+[SPEAKER_00] And so, you know, there might be more stability or something in that, and I can't speak to that because I haven't done that.
+
+756
+01:04:33,200 --> 01:04:44,480
+[SPEAKER_00] So I just, I don't want to either discount that or make it sound like you can't you can't build a successful business without doing the big splashy thing.
+
+757
+01:04:44,720 --> 01:04:45,520
+[SPEAKER_01] Oh yeah, for sure.
+
+758
+01:04:45,680 --> 01:04:47,680
+[SPEAKER_01] And you know, there's several like amazing.
+
+759
+01:04:48,560 --> 01:04:53,280
+[SPEAKER_01] I would classify indie apps out there and those people keep a very low profile too.
+
+760
+01:04:53,520 --> 01:04:56,400
+[SPEAKER_01] Like they don't if they're on Twitter, like they don't ever tweet.
+
+761
+01:04:56,720 --> 01:04:58,320
+[SPEAKER_01] They just kind of keep their head down and do their thing.
+
+762
+01:04:58,480 --> 01:05:01,040
+[SPEAKER_01] So like there's many different roads to kind of get there.
+
+763
+01:05:02,320 --> 01:05:05,680
+[SPEAKER_01] But you know, you definitely it's kind of like a timing thing, I guess.
+
+764
+01:05:05,840 --> 01:05:08,640
+[SPEAKER_01] Like it just takes I hate just saying the phrase.
+
+765
+01:05:08,720 --> 01:05:09,760
+[SPEAKER_01] I feel like I'm talking to myself.
+
+766
+01:05:09,920 --> 01:05:11,920
+[SPEAKER_01] Like it just takes a little bit of hard work and meditation.
+
+767
+01:05:12,480 --> 01:05:13,440
+[SPEAKER_01] But it really it just does.
+
+768
+01:05:13,680 --> 01:05:15,920
+[SPEAKER_01] You know, I guess stereotype is a stereotype for a reason.
+
+769
+01:05:16,000 --> 01:05:19,760
+[SPEAKER_01] Like that's a stereotypical thing you hear in like business or sports or whatever it is.
+
+770
+01:05:20,000 --> 01:05:22,560
+[SPEAKER_01] But at the end of the day, I mean, that's kind of what it is.
+
+771
+01:05:22,720 --> 01:05:28,880
+[SPEAKER_01] And if you don't enjoy doing it, I think, like, it sounds kind of, I don't know what the word is, maybe too aggressive to say this.
+
+772
+01:05:28,960 --> 01:05:32,000
+[SPEAKER_01] Like, I had something written in my blog post like this, but I ended up taking it out.
+
+773
+01:05:32,160 --> 01:05:35,600
+[SPEAKER_01] So what better thing to do than just say it on a podcast publicly, I guess.
+
+774
+01:05:35,760 --> 01:05:51,040
+[SPEAKER_01] But it was something to the effect of like, a lot of people want to be an indie developer, but like, once they realize like the dog days of it, where you don't know if it's going to work or if it's just going to go all wrong, if it's not going to matter, that's where a lot of people fizzle out.
+
+775
+01:05:51,200 --> 01:05:54,000
+[SPEAKER_01] And I don't think that's a bad thing, because like, you have to WHOLD do this.
+
+776
+01:05:54,720 --> 01:05:57,680
+[SPEAKER_01] And, you know, I've been in that stage before, too, where I was like, Yeah, this isn't for me.
+
+777
+01:05:57,680 --> 01:06:00,000
+[SPEAKER_01] And then I circle back around and, you know, wanted to give it another chance.
+
+778
+01:06:00,560 --> 01:06:03,120
+[SPEAKER_01] But it's just that it's really hard, you know?
+
+779
+01:06:03,200 --> 01:06:08,000
+[SPEAKER_01] It just takes time and a lot of failures and successes along the way.
+
+780
+01:06:08,320 --> 01:06:11,120
+[SPEAKER_01] But, you know, when the payoffs come, it's so fun though, right?
+
+781
+01:06:11,280 --> 01:06:12,800
+[SPEAKER_01] I'm sure when you had that addicting thing.
+
+782
+01:06:13,040 --> 01:06:24,560
+[SPEAKER_01] version two go out and you saw like, you know, the feedback loop of people loving it, it getting covered, you know, you open the App Store, see if you're charting, you look at App Store Connect, which by the way, I had no idea they had an hourly chart until you tweeted that.
+
+783
+01:06:24,720 --> 01:06:25,520
+[SPEAKER_01] That's super awesome.
+
+784
+01:06:25,760 --> 01:06:26,960
+[SPEAKER_00] Yeah, it's, it's nice.
+
+785
+01:06:27,120 --> 01:06:38,800
+[SPEAKER_00] Because, like, before actually, before this update, I had, because I had had fabric in there for like Crashlytics, and fabric had like a nice little view where you could see daily new users, I think.
+
+786
+01:06:39,600 --> 01:06:44,320
+[SPEAKER_00] And that was sort of my, you know, I was addicted to that little chart.
+
+787
+01:06:44,400 --> 01:06:51,520
+[SPEAKER_00] I had it always open in a Tavern Safari on my phone, because it kind of showed the daily, you know, hour by hour, uh, what things looked like.
+
+788
+01:06:51,680 --> 01:06:54,800
+[SPEAKER_00] And I could get kind of a read on, like, oh, am I featured somewhere?
+
+789
+01:06:54,960 --> 01:06:56,000
+[SPEAKER_00] Did somebody tweet about me?
+
+790
+01:06:56,080 --> 01:06:57,280
+[SPEAKER_00] Because you could see like a spike in it.
+
+791
+01:06:57,840 --> 01:07:03,120
+[SPEAKER_00] And I took out, you know, everything switched over to Firebase and they got rid of that view.
+
+792
+01:07:03,280 --> 01:07:12,160
+[SPEAKER_00] And I wasn't really using it and it felt like, uh, it wasn't worth kind of the grossness of, again, I'm not judging people who track analytics, but like, not where you're coming from.
+
+793
+01:07:12,160 --> 01:07:17,280
+[SPEAKER_00] I don't know where you're coming from, but it's, yeah, it's a hard business to communicate from our standpoint of like privacy and all that.
+
+794
+01:07:17,360 --> 01:07:18,400
+[SPEAKER_01] So, like, I know what you mean.
+
+795
+01:07:18,560 --> 01:07:21,200
+[SPEAKER_00] Yeah, well, and like, I wasn't really using it.
+
+796
+01:07:21,360 --> 01:07:22,400
+[SPEAKER_00] It was mostly vanity.
+
+797
+01:07:22,720 --> 01:07:27,440
+[SPEAKER_00] And so that is not worth risking, you know, user privacy for, right?
+
+798
+01:07:28,000 --> 01:07:37,360
+[SPEAKER_00] And also, I definitely would be lying if I said that iOS 14's new thing where like, you can put in the app store your, your, your sort of privacy stance or whatever.
+
+799
+01:07:38,160 --> 01:07:44,960
+[SPEAKER_00] When I saw that, that like sealed it for me that, okay, I'm sure I'm taking this out because, you know, then I could feel good about not tracking anything.
+
+800
+01:07:45,360 --> 01:07:47,920
+[SPEAKER_00] Because, you know, it's not like I'm actually utilizing that information anyway.
+
+801
+01:07:48,080 --> 01:07:49,200
+[SPEAKER_00] Anyway, all that to say.
+
+802
+01:07:49,440 --> 01:07:50,720
+[SPEAKER_01] I can't wait to fill that out too.
+
+803
+01:07:50,880 --> 01:07:50,960
+[SPEAKER_01] Yeah.
+
+804
+01:07:51,040 --> 01:07:52,560
+[SPEAKER_01] I'm, I'm, I'm soaked.
+
+805
+01:07:52,640 --> 01:07:54,080
+[SPEAKER_01] Like, what about what do I track?
+
+806
+01:07:54,240 --> 01:07:54,400
+[SPEAKER_01] Nothing.
+
+807
+01:07:54,560 --> 01:07:54,720
+[SPEAKER_01] Right.
+
+808
+01:07:54,800 --> 01:07:54,880
+[SPEAKER_00] Yeah.
+
+809
+01:07:55,520 --> 01:07:55,760
+[SPEAKER_00] Exactly.
+
+810
+01:07:56,800 --> 01:07:57,600
+[SPEAKER_00] But I lost that view.
+
+811
+01:07:57,680 --> 01:08:04,240
+[SPEAKER_00] And so it was like, hard, you know, not having this kind of daily, uh, understanding of if something's going on.
+
+812
+01:08:04,320 --> 01:08:09,520
+[SPEAKER_00] And then someone had mentioned, I forgot who it was, apologies, but someone mentioned that there was a 24 hour view in there now.
+
+813
+01:08:09,680 --> 01:08:11,600
+[SPEAKER_00] And, uh, yeah, it's really nice.
+
+814
+01:08:11,680 --> 01:08:13,440
+[SPEAKER_00] Like, it's, it's pretty good.
+
+815
+01:08:13,600 --> 01:08:14,800
+[SPEAKER_00] It kind of like the other view.
+
+816
+01:08:14,960 --> 01:08:19,120
+[SPEAKER_00] I don't think it's the most accurate necessarily, um, for whatever reason.
+
+817
+01:08:19,680 --> 01:08:24,480
+[SPEAKER_00] Like, it seems like the numbers will sometimes be wrong later, but, uh, it's really nice.
+
+818
+01:08:25,040 --> 01:08:30,240
+[SPEAKER_00] to have, like, as a way to track how a launch in particular is going.
+
+819
+01:08:30,960 --> 01:08:32,800
+[SPEAKER_01] Yeah, they've done better in the tooling too, I think.
+
+820
+01:08:32,960 --> 01:08:35,040
+[SPEAKER_01] And that's a good thing for launches like these.
+
+821
+01:08:36,240 --> 01:08:38,720
+[SPEAKER_01] I forget how much they offer until I dig around there.
+
+822
+01:08:38,880 --> 01:08:43,600
+[SPEAKER_01] Because I go in there, like, I don't know, when I first launched it was like a morning ritual, like I wanted to look at everything.
+
+823
+01:08:43,920 --> 01:08:49,200
+[SPEAKER_01] And now I just kind of check it like every week or, uh, or, of course, pay more attention when there's a big launch.
+
+824
+01:08:49,280 --> 01:08:50,720
+[SPEAKER_01] But, you know, they've done better.
+
+825
+01:08:50,960 --> 01:08:59,360
+[SPEAKER_01] And with their metric kit stuff, uh, not to go off on a tangent, I think they're going to figure out that last little thing around, like, crash reporting and things like that to make those better.
+
+826
+01:08:59,680 --> 01:09:00,640
+[SPEAKER_01] But yeah, it is fun.
+
+827
+01:09:01,200 --> 01:09:04,000
+[SPEAKER_01] just kind of seeing up and to the right, as they call it, right on the charts.
+
+828
+01:09:04,160 --> 01:09:05,120
+[SPEAKER_01] That's your goal.
+
+829
+01:09:05,920 --> 01:09:06,800
+[SPEAKER_01] And that's what you want.
+
+830
+01:09:07,120 --> 01:09:10,640
+[SPEAKER_01] But yeah, there are days where you don't know if it's going to come or if they are going to come.
+
+831
+01:09:10,880 --> 01:09:14,880
+[SPEAKER_01] So when they do, my suggestion to you would be to still bask in it for a little bit.
+
+832
+01:09:15,040 --> 01:09:17,520
+[SPEAKER_01] And because it was a successful launch, man.
+
+833
+01:09:17,920 --> 01:09:20,400
+[SPEAKER_01] So be proud of it and take it in and enjoy it for a little bit.
+
+834
+01:09:20,480 --> 01:09:24,080
+[SPEAKER_01] I know I did the same thing for 1.2 for a week.
+
+835
+01:09:24,240 --> 01:09:31,760
+[SPEAKER_01] I didn't really worry about really getting another DOT update release, which I didn't have to because I did that when I kind of released it earlier anyway.
+
+836
+01:09:32,240 --> 01:09:38,240
+[SPEAKER_01] But you know, it was fun to just take it back and enjoy it for a week and just kind of be like, hey., no, I did it.
+
+837
+01:09:38,640 --> 01:09:38,880
+[SPEAKER_01] Sweet.
+
+838
+01:09:39,040 --> 01:09:39,120
+[SPEAKER_00] Yeah.
+
+839
+01:09:39,440 --> 01:09:47,840
+[SPEAKER_00] So before I let you go, I know we're almost out of time here, but I am curious, how, what does your post release world look like?
+
+840
+01:09:48,320 --> 01:09:58,400
+[SPEAKER_00] Because I know for me, well, last time it was a high at first and I was so excited and then it was like, oh, I'm free to start adding iOS 13 stuff.
+
+841
+01:09:59,360 --> 01:10:05,600
+[SPEAKER_00] And I'm feeling the same thing now where I'm like, I just want to spend all my time adding widgets and doing all the iOS 14 stuff.
+
+842
+01:10:05,920 --> 01:10:10,560
+[SPEAKER_00] And I got really into it and then, you know, there were some issues with 13 in particular, which probably didn't help.
+
+843
+01:10:10,880 --> 01:10:14,800
+[SPEAKER_00] But I pretty quickly, like, totally burned out, like, hard.
+
+844
+01:10:15,440 --> 01:10:18,960
+[SPEAKER_00] And I was like, okay, I just have to like take a break here.
+
+845
+01:10:19,440 --> 01:10:22,720
+[SPEAKER_00] And I I found that for a couple of weeks, I just couldn't.
+
+846
+01:10:22,960 --> 01:10:24,320
+[SPEAKER_00] I literally couldn't take a break.
+
+847
+01:10:24,880 --> 01:10:33,360
+[SPEAKER_00] I literally bought a PlayStation 4 and a Spiderman game to like, say, this is what I'm going to do tonight.
+
+848
+01:10:33,520 --> 01:10:35,200
+[SPEAKER_00] I'm not like, I'm going to sit on the floor.
+
+849
+01:10:35,360 --> 01:10:39,520
+[SPEAKER_00] I'm not going to sit in my normal chair where I can pull out my laptop and fix a bug or something.
+
+850
+01:10:39,760 --> 01:10:42,720
+[SPEAKER_00] I'm literally going to sit here and swing around New York City.
+
+851
+01:10:43,040 --> 01:10:44,720
+[SPEAKER_00] And that was the only way I could ever relax.
+
+852
+01:10:45,360 --> 01:10:47,200
+[SPEAKER_00] Did you have something similar with your releases?
+
+853
+01:10:47,360 --> 01:10:49,280
+[SPEAKER_00] And did the same thing happen with your big upd big update?
+
+854
+01:10:49,680 --> 01:10:53,280
+[SPEAKER_01] Yeah, it's man, like I still haven't figured that out.
+
+855
+01:10:53,840 --> 01:10:57,200
+[SPEAKER_01] It's one of the hardest things to kind of figure out for me personally.
+
+856
+01:10:57,280 --> 01:10:59,040
+[SPEAKER_01] Like, and I even tweeted about this recently.
+
+857
+01:10:59,200 --> 01:11:03,360
+[SPEAKER_01] I said something I don't remember exactly, but like, I want an app that makes me unproductive.
+
+858
+01:11:04,160 --> 01:11:04,320
+[SPEAKER_01] You know?
+
+859
+01:11:05,680 --> 01:11:09,360
+[SPEAKER_00] Oh, yeah, I saw that and I was like, oh man, that's gonna be me in a week.
+
+860
+01:11:10,000 --> 01:11:11,840
+[SPEAKER_00] Yeah, and that's exactly where I was coming from.
+
+861
+01:11:12,880 --> 01:11:17,280
+[SPEAKER_01] Because I think some of it is like, tech never stops or sleeps.
+
+862
+01:11:17,600 --> 01:11:21,840
+[SPEAKER_01] And on top of that, we're developers and our mind never gives up.
+
+863
+01:11:22,000 --> 01:11:27,040
+[SPEAKER_01] And whether we admit it or not, we're also entrepreneurs and small business business owners too, like we're selling something.
+
+864
+01:11:27,680 --> 01:11:32,000
+[SPEAKER_01] And so when you're in that world, it's so hard to turn it off.
+
+865
+01:11:32,400 --> 01:11:44,560
+[SPEAKER_01] And to kind of plug the other podcast I was on recently, Swift by Sundell, I kind of talked about some of these things, but it was, it got to a point where I was like, if I don't stop this at night, like I'm never gonna stop.
+
+866
+01:11:44,800 --> 01:11:46,240
+[SPEAKER_01] And right, and I have more important things to do.
+
+867
+01:11:46,320 --> 01:11:51,200
+[SPEAKER_01] Like even if SpinStack brought in millions, like my kids are at an age where, you know, they need me there.
+
+868
+01:11:51,600 --> 01:11:52,800
+[SPEAKER_01] And of course, I want to be there.
+
+869
+01:11:53,600 --> 01:11:56,960
+[SPEAKER_01] You know, I go home and, you know, my wife's home and I want to spend time with her.
+
+870
+01:11:58,400 --> 01:12:07,200
+[SPEAKER_01] And so what I kind of do is I only work on Spin Stack at two times and it's early in the morning or late at night when nobody else is awake.
+
+871
+01:12:07,280 --> 01:12:08,240
+[SPEAKER_01] And like that's the rule.
+
+872
+01:12:08,400 --> 01:12:12,480
+[SPEAKER_01] Like if Jansen, my wife is awake and she wants to watch something on Netflix, I'll do that.
+
+873
+01:12:13,760 --> 01:12:16,240
+[SPEAKER_01] But if they're asleep, then kind of I go back to it.
+
+874
+01:12:16,800 --> 01:12:21,440
+[SPEAKER_01] But it's funny you mentioned video games because that's kind of like a thing I use too.
+
+875
+01:12:22,480 --> 01:12:28,480
+[SPEAKER_01] I remember I got to the point you're at, or not at now, but where you were at, where you're like, I just, you know, I need to relax.
+
+876
+01:12:29,360 --> 01:12:35,360
+[SPEAKER_01] I told myself I was going to buy a single player game and play it all the way through before I worked on Spin Stack.
+
+877
+01:12:35,520 --> 01:12:35,600
+[SPEAKER_00] Yeah.
+
+878
+01:12:35,840 --> 01:12:37,680
+[SPEAKER_00] That's essentially exactly what I did.
+
+879
+01:12:38,080 --> 01:12:41,280
+[SPEAKER_00] Like, I treated it like a task and that was almost what I needed to do.
+
+880
+01:12:41,840 --> 01:12:43,120
+[SPEAKER_01] And I did it and it was amazing.
+
+881
+01:12:43,520 --> 01:12:44,080
+[SPEAKER_01] The game was control.
+
+882
+01:12:44,400 --> 01:12:48,880
+[SPEAKER_01] So I bought control and I was like, I'm not going to do anything with SpinStack until I play this game.
+
+883
+01:12:49,360 --> 01:12:54,800
+[SPEAKER_01] And it was, man, I mean, I still had my full workload at work, but it felt like I was on vacation, right?
+
+884
+01:12:55,440 --> 01:13:12,720
+[SPEAKER_01] And it was so good because I was like, I just needed to step away from SpinStack and I needed someone to just like drag me away, kicking and screaming almost, because I won't stop because I love it, but there are other things I love too that I need to give more time to, like watching a show on Netflix, playing a video game, doing other stuff.
+
+885
+01:13:13,680 --> 01:13:17,680
+[SPEAKER_01] So my post launch plans right now are it's iOS 14 mode.
+
+886
+01:13:17,760 --> 01:13:19,120
+[SPEAKER_01] So I'm knee deep in that.
+
+887
+01:13:19,760 --> 01:13:23,760
+[SPEAKER_01] But I feel that sensation coming on that you were describing after I hit that.
+
+888
+01:13:24,080 --> 01:13:41,520
+[SPEAKER_01] So I think I'm going to hit pause and put Spin Stack on ice for like a longer than I ever have, like probably a solid month straight and just kind of depress because you know it will be coming up on the year release and I've been going at least at my rate, like a pretty breakneck speed that's manageable but still busy.
+
+889
+01:13:42,080 --> 01:13:44,160
+[SPEAKER_01] So I'm kind of thinking to myself, you know what?
+
+890
+01:13:44,400 --> 01:13:50,400
+[SPEAKER_01] Like I just need to give myself permission to just not do anything with Spin Sta SpinStack for like a solid month.
+
+891
+01:13:50,960 --> 01:13:55,680
+[SPEAKER_01] And hopefully I time it up with the PS5 and Fox Series X.
+
+892
+01:13:55,840 --> 01:14:01,440
+[SPEAKER_01] Yeah, we're turning this into a video game podcast so I can just sit and, you know, play one of those.
+
+893
+01:14:01,680 --> 01:14:06,160
+[SPEAKER_01] Like when Halo Infinite comes out, I guess I won't need an excuse because I'll probably play that constantly.
+
+894
+01:14:06,480 --> 01:14:12,160
+[SPEAKER_01] So, but yeah, I have to find another hobby is the long story short to get out of that funk.
+
+895
+01:14:12,400 --> 01:14:13,360
+[SPEAKER_01] And for me it's video games.
+
+896
+01:14:13,520 --> 01:14:14,480
+[SPEAKER_01] It sounds like it is for you too.
+
+897
+01:14:14,640 --> 01:14:19,360
+[SPEAKER_01] But definitely listen to your signals there and see what you need to do.
+
+898
+01:14:19,600 --> 01:14:23,280
+[SPEAKER_01] But for the near future it's iOS 14 and then it's break time.
+
+899
+01:14:23,680 --> 01:14:24,160
+[SPEAKER_01] Awesome.
+
+900
+01:14:24,800 --> 01:14:27,520
+[SPEAKER_00] Well, yeah, and that's that's basically exactly where I'm at.
+
+901
+01:14:28,400 --> 01:14:31,040
+[SPEAKER_00] I probably will take the same type of break after iOS 14.
+
+902
+01:14:31,280 --> 01:14:34,000
+[SPEAKER_00] This year I think I can get it out like at launch, and so Oh, nice.
+
+903
+01:14:34,480 --> 01:14:35,360
+[SPEAKER_00] I'll probably do the same thing.
+
+904
+01:14:35,680 --> 01:14:36,400
+[SPEAKER_00] Well, thank you.
+
+905
+01:14:36,720 --> 01:14:40,640
+[SPEAKER_00] I think we're pretty much out of time here, so I'm not going to do any of my normal ending stuff.
+
+906
+01:14:41,440 --> 01:14:45,120
+[SPEAKER_00] I guess you can let everyone know where they can find you and all the stuff that you do though.
+
+907
+01:14:45,520 --> 01:14:47,840
+[SPEAKER_01] Yeah, Twitter at Jordan Morgan ten.
+
+908
+01:14:48,640 --> 01:14:56,160
+[SPEAKER_01] My website is, oh, hey, there's my alarm that says, no, it's like, hey, go home, because otherwise I keep working.
+
+909
+01:14:56,400 --> 01:15:02,560
+[SPEAKER_01] So, yeah, my website is swiftjectivec.com and of course you can find me Spinstack in the App Store.
+
+910
+01:15:02,880 --> 01:15:03,200
+[SPEAKER_00] Awesome.
+
+911
+01:15:03,440 --> 01:15:04,480
+[SPEAKER_00] Thank you again, Jordan.
+
+912
+01:15:04,880 --> 01:15:05,840
+[SPEAKER_00] I really appreciate this.
+
+913
+01:15:06,160 --> 01:15:09,360
+[SPEAKER_00] This was really nice kind of detox time, to be honest with you.
+
+914
+01:15:09,600 --> 01:15:10,640
+[SPEAKER_01] So I enjoyed it.
+
+915
+01:15:10,800 --> 01:15:11,120
+[SPEAKER_01] Thank you.
+
+916
+01:15:11,600 --> 01:15:12,000
+[SPEAKER_01] My pleasure.
+
+917
+01:15:12,080 --> 01:15:13,120
+[SPEAKER_01] Thanks for having me back on.
+
+918
+01:15:16,320 --> 01:15:17,200
+[SPEAKER_00] Thanks for listening.
+
+919
+01:15:17,520 --> 01:15:23,920
+[SPEAKER_00] If you'd like to discuss the show, you can find me on Twitter at underscore chuck EC or tweet the show directly at launchedfm.
+
+920
+01:15:24,400 --> 01:15:31,360
+[SPEAKER_00] You can also discuss the episode with me, other listeners and sometimes our guests on our dedicated subreddit r slash launchedfm.
+
+921
+01:15:32,000 --> 01:15:40,400
+[SPEAKER_00] If you like the show, I'd really appreciate a rating or review in Apple Podcasts Overcast, Breaker, or whatever your podcast of choice happens to be.
+
+922
+01:15:40,880 --> 01:16:04,480
+[SPEAKER_00] And you can find show notes and more at launchdefm dot com dot
