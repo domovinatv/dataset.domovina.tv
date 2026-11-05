@@ -1,0 +1,2147 @@
+1
+00:00:02,720 --> 00:00:03,600
+[SPEAKER_00] Welcome to Launched.
+
+2
+00:00:03,840 --> 00:00:10,000
+[SPEAKER_00] I'm Charlie Chapman, and today I'm excited to bring you the developer behind the food trekking app, Food Knobs, Ryan Ashcraft.
+
+3
+00:00:24,000 --> 00:00:25,120
+[SPEAKER_00] Ryan, welcome to the show.
+
+4
+00:00:25,440 --> 00:00:26,080
+[SPEAKER_00] Thanks, Charlie.
+
+5
+00:00:26,480 --> 00:00:27,120
+[SPEAKER_00] Nice to be here.
+
+6
+00:00:27,920 --> 00:00:40,000
+[SPEAKER_00] It's we've gone long enough, both into the pandemic and into this like, indie career thing, I guess now that I'm having people on that I've gotten to actually meet in person.
+
+7
+00:00:40,320 --> 00:00:42,320
+[SPEAKER_00] So we met at WWDC this year.
+
+8
+00:00:42,720 --> 00:00:46,080
+[SPEAKER_00] And so it's, I don't know, it's a, it's a different, uh, it's a different vibe.
+
+9
+00:00:46,160 --> 00:00:48,160
+[SPEAKER_00] I feel like we kind of know each other a little bit.
+
+10
+00:00:48,320 --> 00:00:49,840
+[SPEAKER_00] I mean, it's just, you know, hanging out.
+
+11
+00:00:50,000 --> 00:00:53,760
+[SPEAKER_00] But considering what we've had up until this point, uh, it feels kind of cool.
+
+12
+00:00:54,080 --> 00:00:57,280
+[SPEAKER_00] And you've, you've been in this world about the same amount of time that I've been, right?
+
+13
+00:00:57,520 --> 00:01:00,080
+[SPEAKER_00] As in terms of the Indie IOS dev world.
+
+14
+00:01:00,560 --> 00:01:01,120
+[SPEAKER_01] Yeah, I guess.
+
+15
+00:01:01,360 --> 00:01:05,200
+[SPEAKER_01] I was actually like trying to look back and come up with some dates to refer to.
+
+16
+00:01:05,360 --> 00:01:09,040
+[SPEAKER_01] And yeah, it's already been like, what, almost three years?
+
+17
+00:01:09,360 --> 00:01:10,240
+[SPEAKER_01] It's kind of crazy.
+
+18
+00:01:10,480 --> 00:01:12,720
+[SPEAKER_01] So, and we've like followed each other on Twitter.
+
+19
+00:01:14,160 --> 00:01:15,360
+[SPEAKER_01] for most of that time.
+
+20
+00:01:15,680 --> 00:01:18,400
+[SPEAKER_01] And yeah, it's kind of crazy how long it's been.
+
+21
+00:01:18,560 --> 00:01:19,920
+[SPEAKER_01] It doesn't feel like it's been that long.
+
+22
+00:01:20,080 --> 00:01:29,280
+[SPEAKER_01] And then yeah, it was really cool meeting you and meeting a bunch of other people like Jordan, Vidette and everyone else at DUBDUB.
+
+23
+00:01:29,840 --> 00:01:30,480
+[SPEAKER_01] That was super fun.
+
+24
+00:01:30,960 --> 00:01:38,240
+[SPEAKER_00] It was a very strange feeling because yeah, you associate all these people with a profile picture and all of a sudden they're real and they have voices.
+
+25
+00:01:39,520 --> 00:01:40,560
+[SPEAKER_00] Yeah, yeah, exactly.
+
+26
+00:01:40,960 --> 00:01:41,680
+[SPEAKER_00] Yeah, that was cool.
+
+27
+00:01:42,800 --> 00:01:48,160
+[SPEAKER_00] Personally, Foodnoms is an interesting one because our timing was so well aligned.
+
+28
+00:01:48,560 --> 00:01:50,400
+[SPEAKER_00] Like, we started this around the same time.
+
+29
+00:01:50,640 --> 00:01:55,680
+[SPEAKER_00] So I had a similar thing where I was, you know, preparing for the show and going through your back catalog.
+
+30
+00:01:55,840 --> 00:01:58,000
+[SPEAKER_00] And I was like, when did he or like your blog posts?
+
+31
+00:01:58,080 --> 00:01:59,440
+[SPEAKER_00] And I was like, when did this actually come out?
+
+32
+00:01:59,520 --> 00:02:00,400
+[SPEAKER_00] I was like, oh right.
+
+33
+00:02:00,480 --> 00:02:02,080
+[SPEAKER_00] That was right around the time Dark Noise came out.
+
+34
+00:02:02,160 --> 00:02:03,200
+[SPEAKER_00] And I was like, wait a minute.
+
+35
+00:02:03,280 --> 00:02:04,960
+[SPEAKER_00] That can't, it couldn't be three years ago.
+
+36
+00:02:05,440 --> 00:02:06,400
+[SPEAKER_00] Like, I'm new here.
+
+37
+00:02:06,480 --> 00:02:07,200
+[SPEAKER_00] We're new here.
+
+38
+00:02:07,360 --> 00:02:09,840
+[SPEAKER_00] We're not supposed to be three years old at this point.
+
+39
+00:02:10,240 --> 00:02:10,320
+[SPEAKER_01] Yeah.
+
+40
+00:02:10,480 --> 00:02:20,000
+[SPEAKER_01] I think we were, we were talking about it at WW, how there was, there was this sort of wave, it felt like, this generation of apps that came out around that time.
+
+41
+00:02:20,400 --> 00:02:22,800
+[SPEAKER_01] And I think a lot of it was just coincidence.
+
+42
+00:02:23,360 --> 00:02:24,960
+[SPEAKER_01] Um, but it was like, it was really cool.
+
+43
+00:02:24,960 --> 00:02:29,360
+[SPEAKER_01] it felt like a true renaissance in a way.
+
+44
+00:02:29,600 --> 00:02:31,120
+[SPEAKER_01] And it was it was kind of fun.
+
+45
+00:02:32,320 --> 00:02:34,640
+[SPEAKER_01] There was Jordan Morgan with SpinStack, of course.
+
+46
+00:02:35,280 --> 00:02:38,400
+[SPEAKER_01] There was you with Dark Noise, a variety of others.
+
+47
+00:02:38,960 --> 00:02:46,560
+[SPEAKER_01] Some of them I think have been on the show previously that their first app came around that time or the first version.
+
+48
+00:02:47,360 --> 00:02:52,160
+[SPEAKER_01] I did iOS development like in the old days, like when I was in high school.
+
+49
+00:02:52,560 --> 00:02:59,040
+[SPEAKER_01] So I was a part of that original sort of romanticism of app development.
+
+50
+00:02:59,280 --> 00:03:01,760
+[SPEAKER_01] And you would hear all these c these crazy stories, right?
+
+51
+00:03:02,080 --> 00:03:16,480
+[SPEAKER_01] And it felt like, I think in 2019, when, you know, our generation, as I call it, like when we were, when we were kind of getting back into the scene, or when I was getting back into the scene, it felt kind of similar.
+
+52
+00:03:16,640 --> 00:03:31,280
+[SPEAKER_01] There was like this renewed hope, I think with, you know, you had things like subscriptions, you had, I think Swift UI for me was a huge component of it, and like all the new technology that was coming out just seemed like it was making a lot of things a lot simpler.
+
+53
+00:03:31,840 --> 00:03:36,000
+[SPEAKER_01] It was a really energizing and fun time to be an indeed app dev.
+
+54
+00:03:36,640 --> 00:03:41,200
+[SPEAKER_00] Before we get into like Food Noms and get into that, let's talk about that lead up then.
+
+55
+00:03:41,360 --> 00:03:42,240
+[SPEAKER_00] So where are you from?
+
+56
+00:03:42,480 --> 00:03:44,960
+[SPEAKER_00] Do you have a formal education related to what you're doing?
+
+57
+00:03:45,360 --> 00:03:49,120
+[SPEAKER_00] And then we can talk about your career lead up to Food Noms.
+
+58
+00:03:49,280 --> 00:03:52,960
+[SPEAKER_00] And I'm interested in that early era iPhone development time too.
+
+59
+00:03:53,440 --> 00:03:58,560
+[SPEAKER_01] Yeah, so I'm from, I grew up in the south in Virginia and North Carolina.
+
+60
+00:03:59,520 --> 00:04:04,080
+[SPEAKER_01] I went to school, University, Georgia Tech in Atlanta, Georgia.
+
+61
+00:04:04,560 --> 00:04:08,240
+[SPEAKER_01] So yeah, that kind of answers the second question there, my formal education.
+
+62
+00:04:08,400 --> 00:04:10,160
+[SPEAKER_01] So I did get a computer science degree.
+
+63
+00:04:10,320 --> 00:04:11,840
+[SPEAKER_01] Yeah, I graduated in 2013.
+
+64
+00:04:12,000 --> 00:04:16,640
+[SPEAKER_01] And I think, uh, you know, that was, that's where I met my husband.
+
+65
+00:04:17,120 --> 00:04:21,120
+[SPEAKER_01] Um, you know, I learned so much and I really value that time.
+
+66
+00:04:21,280 --> 00:04:23,200
+[SPEAKER_01] I think, great experience, for sure.
+
+67
+00:04:23,440 --> 00:04:29,120
+[SPEAKER_01] And that kind of launched me into, you know, my career where I turned at Apple for one summer.
+
+68
+00:04:29,520 --> 00:04:33,360
+[SPEAKER_01] Then after that, you know, kind of got pigeonholed, I think, into this web dev.
+
+69
+00:04:33,840 --> 00:04:34,480
+[SPEAKER_01] Uh, I think Apple.
+
+70
+00:04:34,800 --> 00:04:41,760
+[SPEAKER_01] It's kind of interesting how Apple, I think, noticed my resume because of, like, my iOS development stuff that I had been doing at the time.
+
+71
+00:04:41,920 --> 00:04:45,360
+[SPEAKER_00] And then So you were, you were playing around with that in college then?
+
+72
+00:04:45,680 --> 00:04:46,640
+[SPEAKER_00] I started in high school.
+
+73
+00:04:46,960 --> 00:04:47,280
+[SPEAKER_00] Oh, okay.
+
+74
+00:04:47,680 --> 00:04:52,560
+[SPEAKER_01] And then I kind of kept it going and some stuff on the side through college.
+
+75
+00:04:52,960 --> 00:04:56,800
+[SPEAKER_00] And that's how, that's probably how you got into that internship, you think?
+
+76
+00:04:57,200 --> 00:05:00,320
+[SPEAKER_01] That was definitely like, yeah, I think that jumped out on the resume.
+
+77
+00:05:00,560 --> 00:05:10,640
+[SPEAKER_01] You know, I was, you go to career fairs and you have iOS projects and you go to the Apple table and, yeah, that's going to definitely make them notice you.
+
+78
+00:05:10,960 --> 00:05:13,520
+[SPEAKER_01] And yeah, definitely got me noticed.
+
+79
+00:05:14,240 --> 00:05:15,360
+[SPEAKER_01] And it's kind of interesting.
+
+80
+00:05:15,600 --> 00:05:29,200
+[SPEAKER_01] They put me on like a web dev team or a project that was like more web dev, and which I also had a lot of experience in since I had was twelve years old, like web design, you know, some sort of.
+
+81
+00:05:30,320 --> 00:05:32,400
+[SPEAKER_01] And that was like, yeah, super, super fun.
+
+82
+00:05:32,800 --> 00:05:36,880
+[SPEAKER_01] But I think it kind of like shifted, you know, my career more in that kind of web direction.
+
+83
+00:05:37,120 --> 00:05:44,080
+[SPEAKER_01] So I think, you know, since then I've always been kind of straddling these two, it feels like two different worlds of like web dev.
+
+84
+00:05:44,480 --> 00:05:51,680
+[SPEAKER_01] And that's kind of been the main focus of my professional career, you know, where I get paid and, you know, my full time gigs.
+
+85
+00:05:51,840 --> 00:05:56,160
+[SPEAKER_01] And then I've always maintained this interest in Apple and Interesting.
+
+86
+00:05:56,320 --> 00:06:07,520
+[SPEAKER_01] But you never, you never crossed the threshold into React Native thenative came out, so I'm actually like a huge React fanboy, practically.
+
+87
+00:06:09,600 --> 00:06:11,120
+[SPEAKER_00] I was there for the early React days.
+
+88
+00:06:11,360 --> 00:06:12,880
+[SPEAKER_00] I haven't done it for a while, but yeah.
+
+89
+00:06:13,280 --> 00:06:21,680
+[SPEAKER_01] I remember the, I forget the name, the, one of the weeds on the React team came, so I was working at Yahoo.
+
+90
+00:06:21,920 --> 00:06:23,520
+[SPEAKER_00] Abramov, Dan Abramov, probably?
+
+91
+00:06:23,920 --> 00:06:24,480
+[SPEAKER_01] It wasn't Dan.
+
+92
+00:06:24,800 --> 00:06:25,680
+[SPEAKER_01] I did meet Dan later.
+
+93
+00:06:26,400 --> 00:06:27,040
+[SPEAKER_00] Oh, that's cool.
+
+94
+00:06:27,360 --> 00:06:30,800
+[SPEAKER_01] Yeah, I met him later, but it was super early days.
+
+95
+00:06:31,040 --> 00:06:31,840
+[SPEAKER_01] I was at Yahoo.
+
+96
+00:06:32,000 --> 00:06:34,000
+[SPEAKER_01] So that was like my first job after college.
+
+97
+00:06:34,480 --> 00:06:37,280
+[SPEAKER_01] We were using YUI, which was a nightmare.
+
+98
+00:06:37,440 --> 00:06:38,000
+[SPEAKER_01] It was horrible.
+
+99
+00:06:38,720 --> 00:06:44,640
+[SPEAKER_01] And we had, uh, yeah, one of the team members of React come and give a talk about React.
+
+100
+00:06:45,760 --> 00:06:53,360
+[SPEAKER_01] And, um, you know, I, you know, we all on the team saw this and we were so excited and we're like, we have to ship this.
+
+101
+00:06:54,000 --> 00:06:59,200
+[SPEAKER_01] I'm pretty sure we were actually the first team at Yahoo to ship React to production.
+
+102
+00:06:59,520 --> 00:06:59,920
+[SPEAKER_01] Oh, wow.
+
+103
+00:07:00,880 --> 00:07:01,520
+[SPEAKER_01] First or second.
+
+104
+00:07:01,920 --> 00:07:03,760
+[SPEAKER_01] And we kind of did it without permission.
+
+105
+00:07:06,000 --> 00:07:08,000
+[SPEAKER_01] And, uh, it was, it was crazy.
+
+106
+00:07:08,160 --> 00:07:17,920
+[SPEAKER_01] And, and, yeah, I was like, that's, you know, I, I got so into this kind of declarative programming, functional programming, kind of going down the rabbit hole there.
+
+107
+00:07:18,160 --> 00:07:22,480
+[SPEAKER_00] Yeah, I'm already seeing the pieces here to do anything exciting.
+
+108
+00:07:23,840 --> 00:07:26,240
+[SPEAKER_00] Yeah, exactly.
+
+109
+00:07:26,800 --> 00:07:40,160
+[SPEAKER_00] That's funny because yeah, that so I started I had never downloaded Xcode before 2019 when I made it over into an iOS team which luckily had me and taught me how to do everything.
+
+110
+00:07:40,560 --> 00:07:48,160
+[SPEAKER_00] But so my first WWDC as an iOS developer was 2019 and on my.
+
+111
+00:07:48,160 --> 00:07:56,560
+[SPEAKER_00] And my, even then, because I've always been a dork, even when I was an Android user, I was a dork that watched all of the Apple key notes and had wish lists and all that.
+
+112
+00:07:56,720 --> 00:08:01,280
+[SPEAKER_00] And one of my wish list things was a declarative UI framework, because I thought, Yeah.
+
+113
+00:08:01,520 --> 00:08:05,840
+[SPEAKER_00] At that time, coming from React, I'm like, this feels crazy.
+
+114
+00:08:06,480 --> 00:08:10,560
+[SPEAKER_00] Like, it feels like I'm writing like win forms, like I did in college.
+
+115
+00:08:10,800 --> 00:08:13,440
+[SPEAKER_00] Like, I can't believe I'm explicitly doing all this.
+
+116
+00:08:14,080 --> 00:08:18,640
+[SPEAKER_00] And between and then so that was when they announced Swift UI and I was like, oh my gosh, they did it.
+
+117
+00:08:18,800 --> 00:08:20,640
+[SPEAKER_00] Like, they did exactly the thing that I was wanting.
+
+118
+00:08:20,960 --> 00:08:27,840
+[SPEAKER_00] But between it coming out and, uh, or it being announced at WWWDC and then it being a point where I could actually start using it.
+
+119
+00:08:28,160 --> 00:08:35,680
+[SPEAKER_00] Somehow in that short amount of time, I became a crusty old UI kit developer who's like, ah, this thing is so painful.
+
+120
+00:08:36,000 --> 00:08:38,960
+[SPEAKER_00] And I love being able to have explicit frame based controls over everything.
+
+121
+00:08:39,360 --> 00:08:44,080
+[SPEAKER_00] And it was like, man, that didn't take long for me to become the old Curmudgeon.
+
+122
+00:08:44,400 --> 00:08:53,920
+[SPEAKER_01] It's funny that I've kind of gone down a similar path, kind of like talking about React more and like why I was such a fan is like, you know, I used it at Yahoo.
+
+123
+00:08:54,000 --> 00:09:13,200
+[SPEAKER_01] And then at my next job, I worked at Amplitude, which is, you know, I joined super early and was there for four years and I think super fulfilling, wonderful experience to be a part of like a startup that like is it's like a rocket ship.
+
+124
+00:09:14,960 --> 00:09:27,840
+[SPEAKER_01] And I attribute a lot of I feel like my success to React and like bringing that technology in and like making that like the foundation for their front end.
+
+125
+00:09:28,800 --> 00:09:36,480
+[SPEAKER_01] I was like living and breathing React and I would always kind of look back and look down, I think, on like all the.
+
+126
+00:09:36,480 --> 00:09:39,600
+[SPEAKER_01] All the imperative UI code, it's like, you all need to see the light.
+
+127
+00:09:39,920 --> 00:09:42,480
+[SPEAKER_01] And then, yeah, I heard about these rumors.
+
+128
+00:09:43,440 --> 00:09:46,960
+[SPEAKER_01] Yeah, I remember there were rumors about like a declarative programming.
+
+129
+00:09:47,200 --> 00:09:48,480
+[SPEAKER_00] It was like Amber or something.
+
+130
+00:09:49,360 --> 00:09:49,840
+[SPEAKER_01] Yeah, yeah.
+
+131
+00:09:50,000 --> 00:09:52,480
+[SPEAKER_01] And that was like starting to really pique my interest.
+
+132
+00:09:53,360 --> 00:10:00,080
+[SPEAKER_01] You know, I had tried React native, which you mentioned, and I was not satisfied with, like, it's like they didn't even have table views.
+
+133
+00:10:00,160 --> 00:10:04,480
+[SPEAKER_01] It's like, and it was like super broken experience for me.
+
+134
+00:10:05,520 --> 00:10:12,960
+[SPEAKER_01] So, yeah, I think it's just like a lot of it was a timing thing that after I started.
+
+135
+00:10:12,960 --> 00:10:17,280
+[SPEAKER_01] I was talking about I was at Amplitude for four years towards the end of that time.
+
+136
+00:10:18,320 --> 00:10:20,000
+[SPEAKER_01] Actually, like burning out pretty hard.
+
+137
+00:10:20,240 --> 00:10:21,680
+[SPEAKER_01] I was it was like really rough.
+
+138
+00:10:21,920 --> 00:10:33,120
+[SPEAKER_01] I think going again and like being part of that startup rocket ship is great and you learn a ton, but it's so easy to to burn yourself out and I definitely you burn fuel quickly on the inner rocket.
+
+139
+00:10:33,440 --> 00:10:34,480
+[SPEAKER_00] Yeah, exactly.
+
+140
+00:10:37,520 --> 00:10:55,040
+[SPEAKER_01] And so, you know, I was kind of I think I also had this sort of like creative energy that was being pent up and built up inside me that I think the tough thing about also being part of this startup, and any startup like this, it's inevitable.
+
+141
+00:10:55,360 --> 00:11:00,560
+[SPEAKER_01] You join super early and you have so much input and like control, right?
+
+142
+00:11:01,040 --> 00:11:02,080
+[SPEAKER_00] You're a team of twenty.
+
+143
+00:11:03,440 --> 00:11:05,520
+[SPEAKER_01] You can decide what the product looks like.
+
+144
+00:11:05,680 --> 00:11:08,880
+[SPEAKER_01] Like there's even, you know, there might not even be a designer on the team.
+
+145
+00:11:09,360 --> 00:11:13,200
+[SPEAKER_01] You might be effectively the designer or the PM, right?
+
+146
+00:11:13,520 --> 00:11:22,240
+[SPEAKER_01] And then slowly over time, your responsibility kind of gets distilled down to just kind of your role as an engineer.
+
+147
+00:11:22,480 --> 00:11:25,680
+[SPEAKER_01] And I didn't do well with that transition.
+
+148
+00:11:26,880 --> 00:11:29,120
+[SPEAKER_01] And I don't think I was prepared for it mentally.
+
+149
+00:11:29,920 --> 00:11:33,360
+[SPEAKER_01] And then it just created this, like, pent up creative energy.
+
+150
+00:11:34,160 --> 00:11:36,640
+[SPEAKER_01] I was like, so ready to, like, do my own thing.
+
+151
+00:11:36,960 --> 00:11:40,320
+[SPEAKER_01] And then I remember watching, you know, that was right at four years.
+
+152
+00:11:40,480 --> 00:11:46,160
+[SPEAKER_01] I was watching the dubbed up keynote, they were talking about Swift UI, they were talking about even like SF symbols.
+
+153
+00:11:46,400 --> 00:11:47,280
+[SPEAKER_01] I saw all these pieces.
+
+154
+00:11:47,440 --> 00:11:50,720
+[SPEAKER_01] I'm like, oh my God, this is going to make building an app so much easier.
+
+155
+00:11:50,960 --> 00:11:54,720
+[SPEAKER_01] I think also like CloudKit, core data syncing was another component there.
+
+156
+00:11:55,600 --> 00:12:00,480
+[SPEAKER_01] I remember texting some friends when they announced Swift UI, I was like, I was like, all caps.
+
+157
+00:12:00,480 --> 00:12:01,760
+[SPEAKER_01] All Caps and like freaking out.
+
+158
+00:12:01,840 --> 00:12:03,520
+[SPEAKER_01] It's like the best announcement ever.
+
+159
+00:12:03,680 --> 00:12:05,200
+[SPEAKER_01] And I probably said that too.
+
+160
+00:12:06,640 --> 00:12:08,800
+[SPEAKER_01] And I don't think anyone else reacted to it.
+
+161
+00:12:09,040 --> 00:12:14,720
+[SPEAKER_01] I don't think they quite got it, but I was excited and I was like, Okay, this is it.
+
+162
+00:12:15,040 --> 00:12:17,920
+[SPEAKER_01] I need to make the jump and I want to get, you know, why not?
+
+163
+00:12:19,600 --> 00:12:21,200
+[SPEAKER_01] I was honestly like so burnt out.
+
+164
+00:12:21,280 --> 00:12:26,720
+[SPEAKER_01] I wasn't, I didn't feel like it was a good idea for me to like get another full time job immediately.
+
+165
+00:12:27,040 --> 00:12:28,640
+[SPEAKER_01] And I felt pretty comfortable.
+
+166
+00:12:28,800 --> 00:12:29,760
+[SPEAKER_01] I could, I could get one.
+
+167
+00:12:29,920 --> 00:12:33,280
+[SPEAKER_01] So the game plan was, let's, let's try something out.
+
+168
+00:12:34,160 --> 00:12:35,680
+[SPEAKER_01] I'll give myself like six months.
+
+169
+00:12:35,920 --> 00:12:40,240
+[SPEAKER_01] I want to build something of my own that's substantial and show it to the world.
+
+170
+00:12:40,560 --> 00:12:49,280
+[SPEAKER_01] And then we'll take it from there and kind of what led up to that point before I had come up with the actual idea.
+
+171
+00:12:49,840 --> 00:12:49,920
+[SPEAKER_00] Yeah.
+
+172
+00:12:50,240 --> 00:12:51,360
+[SPEAKER_00] So I'm curious about that.
+
+173
+00:12:51,680 --> 00:12:55,760
+[SPEAKER_00] So it's always interesting, there's different catalysts for ideas.
+
+174
+00:12:56,080 --> 00:12:59,600
+[SPEAKER_00] And yours started with I want to build something.
+
+175
+00:13:00,480 --> 00:13:03,440
+[SPEAKER_00] And then you had to come up with a thing to build.
+
+176
+00:13:03,680 --> 00:13:09,520
+[SPEAKER_00] So how did you like, I hate using the word, but like how did you ideate on what you wanted to build?
+
+177
+00:13:09,680 --> 00:13:14,880
+[SPEAKER_00] And something I'm creatively proud of.
+
+178
+00:13:15,200 --> 00:13:20,720
+[SPEAKER_00] What were sort of your inputs and how did you end up coming up with Food Noms and a food tracking app as the direction you wanted to go?
+
+179
+00:13:21,200 --> 00:13:22,560
+[SPEAKER_01] I'm actually going back.
+
+180
+00:13:22,720 --> 00:13:26,720
+[SPEAKER_01] So I have a Food Noms folder and notes and that's where I have a ton of stuff.
+
+181
+00:13:26,960 --> 00:13:34,800
+[SPEAKER_01] So my first note is actually like this matrix, I was coming up with criteria and ranking certain ideas across it.
+
+182
+00:13:34,960 --> 00:13:36,880
+[SPEAKER_01] So I haven't actually looked at this a while.
+
+183
+00:13:37,200 --> 00:13:46,720
+[SPEAKER_01] The criteria was like technical complexity, surface area, how novel the idea was and then how monetizable I thought the idea was, because I guess I wanted all these things.
+
+184
+00:13:47,200 --> 00:13:48,640
+[SPEAKER_00] No, that I mean, yeah, that's cool.
+
+185
+00:13:50,080 --> 00:13:53,920
+[SPEAKER_01] I was like really, I don't think I realized what I was getting myself into.
+
+186
+00:13:54,080 --> 00:13:58,400
+[SPEAKER_01] I think I was being driven so by this emotion, this pent up creativity.
+
+187
+00:13:58,720 --> 00:14:01,760
+[SPEAKER_01] I wasn't really thinking through, like, oh yeah, how's this?
+
+188
+00:14:02,000 --> 00:14:04,000
+[SPEAKER_01] How am I going to feel about this maybe in a year or so?
+
+189
+00:14:04,320 --> 00:14:15,440
+[SPEAKER_01] But I mean, ultimately what it was, is I was, I was like looking through my phone and I was looking at apps that I use that I pay for or that, you know, I might pay for.
+
+190
+00:14:16,240 --> 00:14:22,640
+[SPEAKER_01] And I didn't think I had time or I wanted to like try to come up with something totally novel.
+
+191
+00:14:24,240 --> 00:14:31,040
+[SPEAKER_01] No, that's often, I think, probably a better idea is to try to come up with a new spin on things.
+
+192
+00:14:32,240 --> 00:14:48,080
+[SPEAKER_01] I was like, you know, if I can just find something on my phone that I have to use or I use but I hate using, I think that maybe there's an opportunity there to effectively like build a better mouse trap, like a more refined version of that thing.
+
+193
+00:14:48,960 --> 00:14:54,720
+[SPEAKER_01] And so, you know, I think there was like a clear thing there, which was my Fitness Powl.
+
+194
+00:14:56,000 --> 00:15:00,000
+[SPEAKER_01] And I had been using my Fitness Powl sort of on and off throughout the time.
+
+195
+00:15:00,240 --> 00:15:06,640
+[SPEAKER_01] time and I had developed this strange emotional resentment towards the app.
+
+196
+00:15:07,200 --> 00:15:09,440
+[SPEAKER_01] And I was trying to think like why was that?
+
+197
+00:15:09,920 --> 00:15:19,120
+[SPEAKER_01] And I think there's a lot of patterns and a lot of their design decisions, to me, like, made me feel bad as a user.
+
+198
+00:15:20,080 --> 00:15:22,480
+[SPEAKER_01] And that was like a big enough motivation.
+
+199
+00:15:22,800 --> 00:15:24,880
+[SPEAKER_01] And clearly there's a big industry there.
+
+200
+00:15:25,040 --> 00:15:27,040
+[SPEAKER_01] It's like, it's so competitive.
+
+201
+00:15:27,680 --> 00:15:30,720
+[SPEAKER_01] And at the time they were owned by Under Armour.
+
+202
+00:15:31,120 --> 00:15:31,440
+[SPEAKER_00] Oh really?
+
+203
+00:15:31,840 --> 00:15:34,880
+[SPEAKER_00] Did they build it or did they buy it?
+
+204
+00:15:35,200 --> 00:15:35,600
+[SPEAKER_00] Do you know?
+
+205
+00:15:36,160 --> 00:15:36,240
+[SPEAKER_00] No.
+
+206
+00:15:36,400 --> 00:15:38,240
+[SPEAKER_00] No, they they acquired it at some point.
+
+207
+00:15:38,480 --> 00:15:42,080
+[SPEAKER_00] And since then it's been spun off or sold.
+
+208
+00:15:42,560 --> 00:15:49,840
+[SPEAKER_01] But yeah, I mean, I knew I knew that there was a lot of potential there and it sounded super ambitious.
+
+209
+00:15:50,080 --> 00:15:59,360
+[SPEAKER_01] It sounded like a really hard problem, but I could also kind of imagine how I would break it down, how I'd build an MVP and be able to ship something within like a few months.
+
+210
+00:15:59,920 --> 00:16:02,480
+[SPEAKER_01] I didn't spend that long, you know, thinking about it.
+
+211
+00:16:02,640 --> 00:16:04,640
+[SPEAKER_01] I just kind of picked it and ran with it.
+
+212
+00:16:05,040 --> 00:16:58,160
+[SPEAKER_00] I like that as a yeah, because I feel like the general, especially in the sort of way of thinking about things is like what's a problem that I want to solve and like you're kind of trying to think of something new or something novel which is obviously like could be really big but you have to then create a market for something whereas picking something where there already is a big market that's what I accidentally did with with dark noise it's like that is already a big market and if you can take a tiny piece of that pie that is like a legitimate business for especially like an independent person or a small team or something it's interesting too that I like the idea of what's something that I already use every day that I think your words were generates resentment in me for some reason.
+
+213
+00:16:59,600 --> 00:17:10,720
+[SPEAKER_00] And I've noticed like some of your marketing even explicitly calls out the app as an alternative to my fitness pal, which I thought was interesting.
+
+214
+00:17:11,440 --> 00:17:15,040
+[SPEAKER_00] And like, I'm curious to hear your, your thinking on that.
+
+215
+00:17:15,440 --> 00:17:20,480
+[SPEAKER_01] That's like been, uh, yeah, that's been sort of a newer development.
+
+216
+00:17:20,640 --> 00:17:22,960
+[SPEAKER_01] I forget when I started to kind of shift the messaging there.
+
+217
+00:17:23,280 --> 00:17:24,400
+[SPEAKER_01] I think maybe that was about.
+
+218
+00:17:25,040 --> 00:17:25,840
+[SPEAKER_01] nine months ago.
+
+219
+00:17:26,400 --> 00:17:36,240
+[SPEAKER_01] Yeah, that, you know, at the very beginning of the journey, like when I, when I had the one, you know, the one point zero, I would never have said something like that.
+
+220
+00:17:36,720 --> 00:17:36,960
+[SPEAKER_00] Sure.
+
+221
+00:17:37,520 --> 00:17:47,280
+[SPEAKER_01] And like, um, kind of, yeah, setting me up in a position to fail, but something that I've really struggled with is marketing with Food Noms.
+
+222
+00:17:47,520 --> 00:18:08,880
+[SPEAKER_01] And I think that that does come back to like what we were talking about, about how like super competitive space, not super novel, like there are elements that are novel, but I think to like an ordinary, you know, ordinary user who's maybe not in the like Indy or the IOS app sphere, you know, it doesn't seem that novel to them.
+
+223
+00:18:09,760 --> 00:18:22,640
+[SPEAKER_01] The thing that I'm trying at least today is, you know, how to make Food Noms be differentiated, like what is its brand, what is its pitch?
+
+224
+00:18:22,880 --> 00:18:24,160
+[SPEAKER_01] I've always struggled with this.
+
+225
+00:18:24,960 --> 00:18:37,520
+[SPEAKER_01] You know, this, this like current, you know, branding of being a privacy focus alternative to my Fitness Power is actually inspired a lot by I kind of directly ripped them off.
+
+226
+00:18:38,880 --> 00:18:43,680
+[SPEAKER_01] There's a company out there, plausible.io, and their branding is similar.
+
+227
+00:18:43,920 --> 00:18:49,840
+[SPEAKER_01] It's but they make an analytics product that is like privacy friendly.
+
+228
+00:18:50,480 --> 00:18:57,200
+[SPEAKER_01] Their tagline is literally privacy friendly version of or competitor or alternative to Google Analytics.
+
+229
+00:18:58,080 --> 00:19:00,800
+[SPEAKER_01] And they've seen a ton of success with that.
+
+230
+00:19:01,040 --> 00:19:07,040
+[SPEAKER_01] They blog about how like their marketing and they kind of say this is what you should try doing.
+
+231
+00:19:07,760 --> 00:19:08,960
+[SPEAKER_01] So I'm giving it a try.
+
+232
+00:19:09,280 --> 00:19:12,880
+[SPEAKER_01] And I think it is really mind blowing.
+
+233
+00:19:13,200 --> 00:19:21,040
+[SPEAKER_01] for me that I do hear people saying like they switched from my fitness pal to food noms.
+
+234
+00:19:21,200 --> 00:19:28,480
+[SPEAKER_01] I think two or three years ago, if someone said that to me, I would be, again, like blown away.
+
+235
+00:19:28,480 --> 00:19:29,360
+[SPEAKER_01] I wouldn't believe it.
+
+236
+00:19:29,600 --> 00:19:31,920
+[SPEAKER_01] But I mean, there are actually people switching.
+
+237
+00:19:32,080 --> 00:19:36,080
+[SPEAKER_00] So now I feel like, you know, maybe I should have some confidence and yeah.
+
+238
+00:19:37,280 --> 00:19:39,040
+[SPEAKER_00] And it makes, it makes sense too.
+
+239
+00:19:39,200 --> 00:20:04,800
+[SPEAKER_00] It's like you're either going out and trying to acquire new customers into the space or there's already customers that you know care about this as a product and maybe some of them would prefer you over them and privacy focused is I think a smart play because I don't think Food Noms is going to strategically change to be like that based on their current business model.
+
+240
+00:20:05,200 --> 00:20:13,200
+[SPEAKER_00] And so yeah, it's like there's I can't remember what book this is from, but there's I wish I could remember the name of it.
+
+241
+00:20:13,280 --> 00:20:15,600
+[SPEAKER_00] It's I'm getting it from a podcast as you know.
+
+242
+00:20:16,640 --> 00:20:34,800
+[SPEAKER_00] People do nowadays, but there's there's this thing called these like the seven powers of I don't remember how what it's called, but anyway, one of them is power, uh, counterpositioning as like you can build a company on that as your main, main thing, at least for a while, because somehow you have to stand out.
+
+243
+00:20:35,200 --> 00:20:38,320
+[SPEAKER_00] But the way you can stand out is versus something else.
+
+244
+00:20:38,480 --> 00:20:40,640
+[SPEAKER_00] And I don't know, it seems like that makes sense.
+
+245
+00:20:40,640 --> 00:20:45,840
+[SPEAKER_00] I I feel like Indies especially are afraid to do that because you don't want to, like, poke the beast.
+
+246
+00:20:46,320 --> 00:20:46,400
+[SPEAKER_01] Yeah.
+
+247
+00:20:47,520 --> 00:20:58,400
+[SPEAKER_00] And it sounds similar to, is it the is it thirty seven signals that the guys that make uh, what is the email app now?
+
+248
+00:20:59,360 --> 00:20:59,840
+[SPEAKER_01] Oh, hey.
+
+249
+00:21:00,160 --> 00:21:00,640
+[SPEAKER_00] Hey, yeah.
+
+250
+00:21:01,840 --> 00:21:05,920
+[SPEAKER_00] One of his things was like pick a fight was like a thing.
+
+251
+00:21:06,080 --> 00:21:14,000
+[SPEAKER_00] And like, I think everybody, I don't know, maybe not everyone, but a lot of people like us don't necessarily want to pick a fight and get in a fight as like a marketing ploy.
+
+252
+00:21:14,160 --> 00:21:15,840
+[SPEAKER_00] But I don't feel like that's what counterpositioning is.
+
+253
+00:21:16,000 --> 00:21:17,360
+[SPEAKER_00] I don't feel like that's what you're doing.
+
+254
+00:21:17,920 --> 00:21:28,560
+[SPEAKER_00] It's more like, like, that's the best way to explain what it is that the app does and very quickly articulate what the benefit is versus the one that you might already be using.
+
+255
+00:21:29,120 --> 00:21:29,520
+[SPEAKER_01] Exactly.
+
+256
+00:21:29,840 --> 00:21:29,920
+[SPEAKER_01] Yeah.
+
+257
+00:21:30,160 --> 00:21:34,720
+[SPEAKER_01] And I think something that, you know, people will ask me, oh, what does your app do?
+
+258
+00:21:35,040 --> 00:21:39,040
+[SPEAKER_01] And so like, I always immediately start out by saying, Oh, have you heard of my fitness pal?
+
+259
+00:21:39,280 --> 00:21:40,160
+[SPEAKER_01] And yeah, yeah.
+
+260
+00:21:40,400 --> 00:21:41,920
+[SPEAKER_01] You know, eight times out of ten they have.
+
+261
+00:21:42,080 --> 00:21:44,000
+[SPEAKER_01] And then so I'll say, Oh, I'm just a competitor.
+
+262
+00:21:44,160 --> 00:21:57,120
+[SPEAKER_01] And so like they instantly know it's like the easiest way to explain versus saying like food tracker, you know, a lot of people can kind of guess what that means, but, um, yeah, or like macro tracker, but I think macro tracker?
+
+263
+00:21:57,600 --> 00:21:59,920
+[SPEAKER_00] Like, so your, your protein, your fat, your cars.
+
+264
+00:22:00,080 --> 00:22:00,560
+[SPEAKER_00] Oh, okay.
+
+265
+00:22:00,720 --> 00:22:00,800
+[SPEAKER_00] Okay.
+
+266
+00:22:01,040 --> 00:22:03,200
+[SPEAKER_00] I guess I'm showing how I'm macronutrients.
+
+267
+00:22:03,360 --> 00:22:03,440
+[SPEAKER_00] Yeah.
+
+268
+00:22:05,040 --> 00:22:12,720
+[SPEAKER_01] So you're an example of how like using macro tracker is going to kind of exclude you from, from certain markets, but it may benefit you because yeah.
+
+269
+00:22:12,720 --> 00:22:19,040
+[SPEAKER_01] Because if you're targeting that, like, yeah, that more knowledgeable group, then you might have more success.
+
+270
+00:22:19,280 --> 00:22:22,720
+[SPEAKER_01] This is where, again, like, it's so competitive.
+
+271
+00:22:23,040 --> 00:22:33,760
+[SPEAKER_01] It's so, like, you're going to find an example of any, any one of my competitors and they're all like trying a different angle on it and you, it's really hard to find your unique angle.
+
+272
+00:22:34,240 --> 00:22:34,320
+[SPEAKER_00] Okay.
+
+273
+00:22:34,560 --> 00:22:38,800
+[SPEAKER_00] So we we dive in a little deep here, but if we pull it back a little.
+
+274
+00:22:39,200 --> 00:22:41,840
+[SPEAKER_00] So you you gave yourself, you said six months.
+
+275
+00:22:42,880 --> 00:22:47,600
+[SPEAKER_00] How long did you end up working on it before releasing that first version?
+
+276
+00:22:48,720 --> 00:22:53,440
+[SPEAKER_00] the entire the entire time pretty much I guess how did that launch go?
+
+277
+00:22:53,680 --> 00:23:02,800
+[SPEAKER_00] Did you do a lot like pre marketing prep or laying the groundwork somehow or what was the what was the strategy for that launch?
+
+278
+00:23:03,200 --> 00:23:19,200
+[SPEAKER_01] Again, initially, you know, my expectations were super low and I don't even you know at the on set I was just focused on building something and I think I at a certain point like pretty early on I started a Twitter account.
+
+279
+00:23:19,440 --> 00:23:24,640
+[SPEAKER_01] I started to like tweet some things and at least get like some of my my friends kind of.
+
+280
+00:23:25,520 --> 00:23:26,000
+[SPEAKER_01] following it.
+
+281
+00:23:28,160 --> 00:23:31,200
+[SPEAKER_01] And I started to share screenshots and things at some point.
+
+282
+00:23:32,080 --> 00:23:34,800
+[SPEAKER_01] I remember there was this pivotal point though.
+
+283
+00:23:36,160 --> 00:23:53,600
+[SPEAKER_01] I think it might have been one or two months before the launch occurred and I had tweeted a video recording of so one of the key or one of the true differentiating features of the app was this like nutrition label scanner feature.
+
+284
+00:23:53,760 --> 00:23:53,840
+[SPEAKER_01] Yeah.
+
+285
+00:23:54,400 --> 00:24:00,640
+[SPEAKER_01] So the idea is that it used the Vision API framework to like parse out.
+
+286
+00:24:01,040 --> 00:24:06,640
+[SPEAKER_01] It could look at the camera and look at a nutrition label and parse out the nutrients on that label.
+
+287
+00:24:07,520 --> 00:24:28,240
+[SPEAKER_01] Because one of the issues I had been fighting was that, you know, I didn't want to like pay for this super expensive food database that has like, you know, really great like barcode scanning, but I needed some way that people could like, obviously like track their nutrients from these like branded food labels without having to manually type every single thing in.
+
+288
+00:24:28,640 --> 00:24:44,960
+[SPEAKER_01] The idea is like, oh, if this is like good enough, maybe it would be good enough for people to like switch because I knew that like that would be like sort of a deal breaker and an issue, you know, and it it's still it's still an issue to a degree.
+
+289
+00:24:45,200 --> 00:24:51,840
+[SPEAKER_01] But yeah, the food database is is a huge hurdle when making a food tracking app.
+
+290
+00:24:52,320 --> 00:24:58,960
+[SPEAKER_01] And, you know, especially when you're comparing to my fitness pal, who's existed for twenty years and yeah, crowdsource like the world.
+
+291
+00:25:01,200 --> 00:25:06,640
+[SPEAKER_01] It's hard to compete, but I thought, oh, maybe if this like experience is good enough, maybe we'll be good enough for people to switch.
+
+292
+00:25:06,800 --> 00:25:12,000
+[SPEAKER_01] And, and it was, it was seriously like I hadn't originally thought to do it.
+
+293
+00:25:12,400 --> 00:25:13,920
+[SPEAKER_01] It was like a random weekend.
+
+294
+00:25:14,240 --> 00:25:20,800
+[SPEAKER_01] I'm like, hey, I remember at WWDC, they talked about this new vision API.
+
+295
+00:25:20,880 --> 00:25:24,960
+[SPEAKER_01] I should like, I should try and like hack around and see what I can come up with.
+
+296
+00:25:25,200 --> 00:25:26,480
+[SPEAKER_01] And I was like shocked.
+
+297
+00:25:27,120 --> 00:25:32,160
+[SPEAKER_01] In just like a few hours, I had built like a prototype and it actually like kind of worked.
+
+298
+00:25:32,480 --> 00:25:33,520
+[SPEAKER_01] It kind of worked really well.
+
+299
+00:25:34,880 --> 00:25:47,360
+[SPEAKER_01] And so in a matter of like two days, I put together like a working UI and demo and I did the screen recording and I tweeted that out and that tweet.
+
+300
+00:25:48,080 --> 00:26:00,000
+[SPEAKER_01] Um, somehow went like sort of I call it like mini viral, like somewhat viral, you know, I was getting a ton of retweets, ton of interaction, you know, from this Twitter account that had probably like thirty followers.
+
+301
+00:26:01,040 --> 00:26:03,760
+[SPEAKER_01] And, um, that's where I really got on the radar.
+
+302
+00:26:04,160 --> 00:26:12,640
+[SPEAKER_01] I remember like I think Federico, uh, you know, replied to it, you know, John Warhees, that's where it got on a bunch of people's radars.
+
+303
+00:26:12,720 --> 00:26:15,920
+[SPEAKER_01] And like Robert Scoble retweeted it.
+
+304
+00:26:16,080 --> 00:26:19,200
+[SPEAKER_01] And it was, it was, uh, it was crazy.
+
+305
+00:26:19,360 --> 00:26:22,000
+[SPEAKER_01] And, and that's where I was like, starting to get kind of scared.
+
+306
+00:26:22,160 --> 00:26:24,640
+[SPEAKER_01] It's like, uh oh, like this actually is.
+
+307
+00:26:25,120 --> 00:26:29,520
+[SPEAKER_01] like sort of interesting and like people are interested in this.
+
+308
+00:26:30,000 --> 00:26:31,440
+[SPEAKER_00] So what what do you mean by scared then?
+
+309
+00:26:31,840 --> 00:26:35,440
+[SPEAKER_00] Scared like you started getting expectations for yourself or Yeah, yeah.
+
+310
+00:26:36,640 --> 00:26:38,720
+[SPEAKER_01] It's like, Oh, I better not screw this up.
+
+311
+00:26:39,040 --> 00:26:40,320
+[SPEAKER_00] Yeah, yeah, okay.
+
+312
+00:26:40,480 --> 00:26:41,440
+[SPEAKER_00] I know that feeling.
+
+313
+00:26:42,000 --> 00:26:42,640
+[SPEAKER_01] Yeah, yeah.
+
+314
+00:26:42,960 --> 00:26:49,520
+[SPEAKER_01] So I think that's when I started to try to come up with some sort of, uh, quote plan.
+
+315
+00:26:50,000 --> 00:26:52,080
+[SPEAKER_01] I think it might have been, was it Jordan?
+
+316
+00:26:52,560 --> 00:26:54,320
+[SPEAKER_01] Uh, you know, Jordan worked with me.
+
+317
+00:26:54,640 --> 00:26:55,760
+[SPEAKER_00] Talking about his blog posts.
+
+318
+00:26:56,160 --> 00:26:57,040
+[SPEAKER_01] Did he have that blog post?
+
+319
+00:26:57,360 --> 00:26:57,360
+[SPEAKER_01] Yeah.
+
+320
+00:26:57,520 --> 00:26:58,320
+[SPEAKER_01] I think he, yeah.
+
+321
+00:26:58,640 --> 00:26:59,040
+[SPEAKER_01] So it was him.
+
+322
+00:26:59,360 --> 00:27:04,320
+[SPEAKER_01] So yeah, he wrote a blog blog post, like, pretty much at the perfect time for me that was like, yeah.
+
+323
+00:27:04,480 --> 00:27:08,160
+[SPEAKER_01] Detailing like, how to go about doing a launch for an indie app.
+
+324
+00:27:08,480 --> 00:27:11,120
+[SPEAKER_01] And I pretty much just looked at that and that was like my checklist.
+
+325
+00:27:11,280 --> 00:27:12,000
+[SPEAKER_00] It's like, yeah.
+
+326
+00:27:12,640 --> 00:27:20,960
+[SPEAKER_01] At least two weeks before notify people of the press, have some sort of press kit with images, a description, and I did all that.
+
+327
+00:27:21,360 --> 00:27:24,240
+[SPEAKER_01] And I kind of like, crossed my fingers.
+
+328
+00:27:24,400 --> 00:27:27,520
+[SPEAKER_01] And it was, yeah, it was wild.
+
+329
+00:27:28,720 --> 00:27:30,160
+[SPEAKER_01] I woke up on the launch day.
+
+330
+00:27:30,640 --> 00:27:32,720
+[SPEAKER_01] I had done like pre orders as well.
+
+331
+00:27:32,960 --> 00:27:34,240
+[SPEAKER_01] And I woke up on the launch day.
+
+332
+00:27:34,400 --> 00:27:37,840
+[SPEAKER_01] And I remember, like, I woke up at 5 a.m.
+
+333
+00:27:38,000 --> 00:27:44,640
+[SPEAKER_01] or something my time and I'm like, Oh shit, I need to make like some sort of graphic or like some sort of art.
+
+334
+00:27:45,760 --> 00:27:46,960
+[SPEAKER_01] I hadn't thought to do that.
+
+335
+00:27:47,120 --> 00:27:55,680
+[SPEAKER_01] And I remember taking out a cutting board and my like mirrorless camera and like having the phone displayed next to a bowl of oatmeal.
+
+336
+00:27:55,840 --> 00:28:02,720
+[SPEAKER_01] And I took a picture of that and I think I blogged about it and announced the launch.
+
+337
+00:28:02,880 --> 00:28:12,160
+[SPEAKER_01] And it's funny that that picture that I took that morning was like used in like four out of five of like the top blog announcements.
+
+338
+00:28:12,400 --> 00:28:12,960
+[SPEAKER_00] That's awesome.
+
+339
+00:28:13,760 --> 00:28:21,200
+[SPEAKER_00] Like anyone who's getting close to a launch, definitely include press kit photos and stuff because they definitely use that stuff.
+
+340
+00:28:21,760 --> 00:28:26,320
+[SPEAKER_00] I think if you can make their job easier, they're much more likely to write an article about you.
+
+341
+00:28:26,560 --> 00:28:26,640
+[SPEAKER_01] Yeah.
+
+342
+00:28:27,200 --> 00:28:33,520
+[SPEAKER_01] I had included like screenshots, but I hadn't thought to do something like a piece of art, you know, like a hero image.
+
+343
+00:28:33,600 --> 00:28:35,760
+[SPEAKER_00] And I think that's exactly what I was going to say.
+
+344
+00:28:35,920 --> 00:28:36,000
+[SPEAKER_00] Yeah.
+
+345
+00:28:36,480 --> 00:28:37,920
+[SPEAKER_01] So yeah, definitely recommend that.
+
+346
+00:28:38,320 --> 00:28:48,400
+[SPEAKER_00] I've noticed that too with, like, when iOS updates come out and a lot of places will do those lists of, like, this year, you know, apps with great lock screen widgets or whatever.
+
+347
+00:28:49,360 --> 00:29:08,560
+[SPEAKER_00] If you tweet out and include in a press kit too, but even if you're just tweeting out a picture and you have a little hero shot of it, I don't know if it makes it more likely you'll get in one of those lists, but if you do get in one of those lists, they'll usually include that hero shot and those stand out so much more than the other ones on the bullet point list or whatever.
+
+348
+00:29:08,880 --> 00:29:20,880
+[SPEAKER_00] So that's it's good to have like even a light understanding of Figma or something like that just to be able to put together those last minute, oh no, I have a release tomorrow and I've been thinking about code.
+
+349
+00:29:21,360 --> 00:29:23,200
+[SPEAKER_00] I should probably get some image out there.
+
+350
+00:29:23,840 --> 00:29:29,520
+[SPEAKER_00] I feel like that's a surprisingly valuable ability to be able to knock those out really quick.
+
+351
+00:29:30,000 --> 00:29:32,720
+[SPEAKER_01] Talking about the launch morning, it was crazy.
+
+352
+00:29:33,040 --> 00:29:35,120
+[SPEAKER_01] It was like, I couldn't even think straight.
+
+353
+00:29:35,440 --> 00:29:37,520
+[SPEAKER_01] I don't know, maybe if you could relate to that.
+
+354
+00:29:38,160 --> 00:29:38,640
+[SPEAKER_01] Oh, yeah.
+
+355
+00:29:39,280 --> 00:29:40,000
+[SPEAKER_00] I could, yeah.
+
+356
+00:29:40,960 --> 00:29:47,120
+[SPEAKER_00] I could tell you like, like five details about launch day because it was one just big blur.
+
+357
+00:29:47,520 --> 00:29:53,680
+[SPEAKER_00] Like it was, I think it was the same day that Taylor Swift's Is Lover the name of the album?
+
+358
+00:29:54,000 --> 00:29:55,120
+[SPEAKER_00] I know that's the song on there.
+
+359
+00:29:55,360 --> 00:29:56,000
+[SPEAKER_00] I can't remember now.
+
+360
+00:29:56,880 --> 00:29:58,320
+[SPEAKER_00] But I was like, oh, I'll play that.
+
+361
+00:29:58,560 --> 00:30:00,400
+[SPEAKER_00] And I took the morning off.
+
+362
+00:30:01,040 --> 00:30:01,680
+[SPEAKER_00] initially, I think.
+
+363
+00:30:02,000 --> 00:30:06,880
+[SPEAKER_00] And I was like, I'll just play that and I'll like answer tweets.
+
+364
+00:30:07,040 --> 00:30:08,800
+[SPEAKER_00] Hopefully someone will tweet about it or whatever.
+
+365
+00:30:09,040 --> 00:30:14,000
+[SPEAKER_00] And then all of a sudden it's like two o'clock in the afternoon and I haven't eaten lunch and I was like, what happened?
+
+366
+00:30:14,560 --> 00:30:14,640
+[SPEAKER_00] Yeah.
+
+367
+00:30:15,040 --> 00:30:16,240
+[SPEAKER_00] It's a very weird feeling.
+
+368
+00:30:16,640 --> 00:30:18,800
+[SPEAKER_00] Definitely was not prepared for that.
+
+369
+00:30:19,840 --> 00:30:24,480
+[SPEAKER_01] Um, but I just felt, I don't know, it was, um, incredible.
+
+370
+00:30:25,200 --> 00:30:31,680
+[SPEAKER_01] And it was, yeah, I kind of like, I felt like I had really achieved something.
+
+371
+00:30:32,000 --> 00:30:35,840
+[SPEAKER_01] And I was, I was definitely incredibly proud of myself for that.
+
+372
+00:30:36,000 --> 00:30:36,720
+[SPEAKER_01] And also, yeah.
+
+373
+00:31:12,240 --> 00:31:14,160
+[SPEAKER_01] the paywall, I made that available for free.
+
+374
+00:31:15,040 --> 00:31:17,600
+[SPEAKER_01] And that was, that was really the only change.
+
+375
+00:31:18,240 --> 00:31:19,200
+[SPEAKER_00] What was the thinking there?
+
+376
+00:31:19,760 --> 00:31:29,200
+[SPEAKER_01] The thinking there was, so that was, so the original MVP, right, was like so bare bones, but it was, I think it was a pretty good MVP.
+
+377
+00:31:29,360 --> 00:31:33,760
+[SPEAKER_01] It was, it was good enough and it didn't have any sort of like onboarding experience.
+
+378
+00:31:35,040 --> 00:31:48,720
+[SPEAKER_01] I realized pretty quickly that I needed some sort of onboarding flow because a lot of users were not like I felt like the real value you get with the app is you have to set up some sort of goal.
+
+379
+00:31:49,360 --> 00:31:55,280
+[SPEAKER_01] You have to set a calorie goal or protein goal of some sort that you can measure yourself against.
+
+380
+00:31:56,400 --> 00:32:01,200
+[SPEAKER_01] If you're just like tracking your food without having any goal, I think it's pretty useless.
+
+381
+00:32:01,520 --> 00:32:09,520
+[SPEAKER_01] And I was seeing like in the analytics that a lot of people were not setting up goals and that's something I really wanted them to do.
+
+382
+00:32:10,400 --> 00:32:14,080
+[SPEAKER_01] So I knew I needed to make some sort of onboarding experience to try to encourage that.
+
+383
+00:32:14,400 --> 00:32:26,720
+[SPEAKER_01] And when I was designing that, I realized that I think the issue is I was limiting the number of goals or the types of goals that you could set up behind the paywall.
+
+384
+00:32:26,960 --> 00:32:35,200
+[SPEAKER_01] And I realized then that like, it just didn't feel right that, you know, you had to, you had to pay for to have a good onboarding experience.
+
+385
+00:32:35,360 --> 00:32:37,920
+[SPEAKER_00] So it was a pretty easy decision from there.
+
+386
+00:32:38,640 --> 00:32:39,920
+[SPEAKER_00] Launch went well.
+
+387
+00:32:40,480 --> 00:32:45,040
+[SPEAKER_00] You said you were scared what I'd do going forward, but it's been three years and the app's still there.
+
+388
+00:32:45,200 --> 00:32:47,760
+[SPEAKER_00] So like, what was the next things that you did then?
+
+389
+00:32:48,080 --> 00:32:55,040
+[SPEAKER_01] I will say it has been, uh, not easy and it has been a continuous learning process since then.
+
+390
+00:32:56,000 --> 00:33:00,480
+[SPEAKER_01] What I decided to do is, okay, I'm going to give it another three months because I.
+
+391
+00:33:00,640 --> 00:33:13,600
+[SPEAKER_01] Because I initially said six months and then I think that launch like totally blown me away that it was way beyond what I expected and sort of the reaction and the feedback I was getting like people were really liking what I had built.
+
+392
+00:33:14,160 --> 00:33:17,840
+[SPEAKER_01] Like okay, maybe I should take this like a step further, see where this goes.
+
+393
+00:33:18,800 --> 00:33:21,600
+[SPEAKER_01] So I would say, okay, I'm going to give it another three months.
+
+394
+00:33:21,680 --> 00:33:25,760
+[SPEAKER_01] And then three months turned into like six months turned into nine months.
+
+395
+00:33:25,920 --> 00:33:36,560
+[SPEAKER_01] And I was just like, you know, heads down super focused on trying to continuously iterate and improve the app and, you know, again trying to prioritize.
+
+396
+00:33:37,120 --> 00:33:45,760
+[SPEAKER_01] like what is the easiest thing I can do that I can ship like next week or in two weeks that's going to really make a difference.
+
+397
+00:33:46,480 --> 00:33:47,520
+[SPEAKER_01] I just kept doing that.
+
+398
+00:33:48,320 --> 00:33:57,760
+[SPEAKER_01] And then I would start to get to these points where it's like, okay, the next big pressing issue is going to be one that takes a lot more effort.
+
+399
+00:33:58,400 --> 00:34:02,240
+[SPEAKER_01] So one of those was like the community database and the story there.
+
+400
+00:34:03,440 --> 00:34:10,000
+[SPEAKER_01] So the database, like I said, has always been sort of this big, hairy problem.
+
+401
+00:34:10,640 --> 00:34:12,720
+[SPEAKER_01] And, you know, it's.
+
+402
+00:34:13,360 --> 00:34:22,960
+[SPEAKER_01] it still continues to be and I I was I knew that the database that I had in the app was not the best.
+
+403
+00:34:24,000 --> 00:34:29,760
+[SPEAKER_01] It's honestly still not the best, but I was trying to think like what can I do to make it better?
+
+404
+00:34:30,000 --> 00:34:37,440
+[SPEAKER_01] You know, I can go down the path of paying another company like a bunch of money every month, like a ridiculous amount.
+
+405
+00:34:38,160 --> 00:34:40,000
+[SPEAKER_01] I could figure out like ways to license it.
+
+406
+00:34:40,160 --> 00:34:46,160
+[SPEAKER_01] And then I started to actually get like user requests to be like, hey, you should try just crowdsourcing.
+
+407
+00:34:46,320 --> 00:34:47,360
+[SPEAKER_01] I'd be happy to help you out.
+
+408
+00:34:48,720 --> 00:35:17,760
+[SPEAKER_01] fill out the database and I decided to go with that approach and I think that was like one of the biggest updates, you know, since the original there's kind of been these like major inflection points and if you look at like foodnom's growth since then and the community database is definitely one of them that had an inflection point in like user acquisition growth wise is that what you mean?
+
+409
+00:35:18,240 --> 00:35:23,920
+[SPEAKER_01] No, I think it actually had more of an effect on like retention and like activation.
+
+410
+00:35:24,080 --> 00:35:29,600
+[SPEAKER_01] And so people that were downloading the app, they were much more likely to actually keep using it.
+
+411
+00:35:29,920 --> 00:35:30,800
+[SPEAKER_00] And was that immediate?
+
+412
+00:35:31,040 --> 00:35:38,960
+[SPEAKER_00] Because in my, in my head, that's not a feature that people would be like, Oh, I'm going to pay for this app because I can add to it.
+
+413
+00:35:39,200 --> 00:35:43,280
+[SPEAKER_00] It would be like over time, it would make your catalog or your database way better.
+
+414
+00:35:43,840 --> 00:35:45,360
+[SPEAKER_01] The real benefit was not immediate.
+
+415
+00:35:45,600 --> 00:35:49,360
+[SPEAKER_01] And so like that inflection point, you know, maybe it wasn't really like an inflection point.
+
+416
+00:35:49,520 --> 00:35:51,200
+[SPEAKER_01] It was like a critical point, I should say.
+
+417
+00:35:51,440 --> 00:35:52,800
+[SPEAKER_00] Yeah, I'm not trying to words.
+
+418
+00:35:53,120 --> 00:35:55,200
+[SPEAKER_00] I'm more just curious, like, what the impact was.
+
+419
+00:35:55,600 --> 00:36:07,040
+[SPEAKER_01] I mean, there was also with that update, you know, I didn't talk about it as much, but every time I revisit the database, I make some sort of like big improvement beyond.
+
+420
+00:36:07,600 --> 00:36:13,680
+[SPEAKER_01] So like the community database update also like refreshed like a lot of the food.
+
+421
+00:36:13,920 --> 00:36:29,200
+[SPEAKER_01] So I have like a base data source that's free for all the a lot of the foods in the community database and I refreshed that and and you know, I improved the search algorithm.
+
+422
+00:36:29,440 --> 00:36:32,880
+[SPEAKER_01] So I think that definitely had an impact, but nice.
+
+423
+00:36:33,040 --> 00:36:36,560
+[SPEAKER_00] And so that's that was I'm not going to pretend to understand time.
+
+424
+00:36:37,040 --> 00:36:46,160
+[SPEAKER_00] I mean, I remember when that update came out, but that could have been, you know, last year or two years ago or probably not three years ago, I guess, but uh, how long has that been out then?
+
+425
+00:36:47,040 --> 00:36:49,760
+[SPEAKER_01] Uh, I think I shipped that here.
+
+426
+00:36:50,880 --> 00:36:54,640
+[SPEAKER_01] The original version came out in May 2020, 2020.
+
+427
+00:36:54,800 --> 00:36:54,800
+[UNKNOWN] Okay.
+
+428
+00:36:55,520 --> 00:36:57,360
+[SPEAKER_01] So that was actually a long time ago.
+
+429
+00:36:57,680 --> 00:37:12,560
+[SPEAKER_00] Over two years of building out a database and which is kind of slowly building out a little moat for you compared to at least newcomers into the space because yeah, it's it's it's like your own database that you're not having to pay for versus yeah, you could.
+
+430
+00:37:13,520 --> 00:37:19,360
+[SPEAKER_00] jump right in and pay for one, but that's going to make your whole cost structure like the app would just have to be a lot more expensive, right?
+
+431
+00:37:19,840 --> 00:37:22,240
+[SPEAKER_01] I've been, again, like, very surprised.
+
+432
+00:37:22,480 --> 00:37:32,720
+[SPEAKER_01] I think I didn't, I had low expectations and, uh, yeah, I'm, I'm pretty like, amazed at how many people actually have contributed to the database.
+
+433
+00:37:32,880 --> 00:37:36,160
+[SPEAKER_01] I think a lot of that has to do with that UX flow.
+
+434
+00:37:36,400 --> 00:37:42,720
+[SPEAKER_01] So, a part of that update also, like, changed the scanning UI subtly.
+
+435
+00:37:42,960 --> 00:37:44,720
+[SPEAKER_01] So, it was like a very seamless flow.
+
+436
+00:37:44,960 --> 00:37:46,720
+[SPEAKER_01] You would click the barcode scan button.
+
+437
+00:37:47,040 --> 00:37:48,000
+[SPEAKER_01] It would scan the barcode.
+
+438
+00:37:48,160 --> 00:37:52,480
+[SPEAKER_01] If it failed, then it would just seamlessly bring up the scanning UI for the label.
+
+439
+00:37:52,880 --> 00:37:54,240
+[SPEAKER_01] Yeah, you don't have to choose.
+
+440
+00:37:54,960 --> 00:38:00,080
+[SPEAKER_01] Yeah, they were not like two separate flows and it's like a really clunky experience.
+
+441
+00:38:00,480 --> 00:38:12,640
+[SPEAKER_01] And yeah, I checked right before this and I've gotten over eighty thousand like unique contributions to the database, which I think is just wild.
+
+442
+00:38:12,720 --> 00:38:13,440
+[SPEAKER_01] That's like cool.
+
+443
+00:38:13,680 --> 00:38:19,120
+[SPEAKER_00] That's like, it's cool too because that represents like real humans using the thing you make.
+
+444
+00:38:19,520 --> 00:38:20,160
+[SPEAKER_01] Yeah, yeah.
+
+445
+00:38:20,560 --> 00:38:21,920
+[SPEAKER_01] And that's like unique too.
+
+446
+00:38:22,160 --> 00:38:27,440
+[SPEAKER_01] So like the number of actual like, you know, amendments or sure, yeah.
+
+447
+00:38:27,840 --> 00:38:35,120
+[SPEAKER_01] Just like, it is wild to think about because yeah, I never would have imagined that, that many.
+
+448
+00:38:35,840 --> 00:38:42,960
+[SPEAKER_00] Like user-generated content is always a sort of thorny subject and scary, I think, especially for indie devs.
+
+449
+00:38:43,280 --> 00:38:47,680
+[SPEAKER_00] But in this case, like, you're not storing images or anything with those, are you?
+
+450
+00:38:47,920 --> 00:38:48,400
+[SPEAKER_00] No, no.
+
+451
+00:38:48,960 --> 00:38:55,200
+[SPEAKER_00] Yeah, so I guess, like, have you had issues that you've had to deal with as far as bad actors or whatever?
+
+452
+00:38:55,840 --> 00:38:59,040
+[SPEAKER_01] I'm actually pretty happy with, like, how I went about this.
+
+453
+00:38:59,200 --> 00:39:00,560
+[SPEAKER_01] So I actually have on.
+
+454
+00:39:01,040 --> 00:39:07,120
+[SPEAKER_01] the server side like a set of heuristics and like a series of checks.
+
+455
+00:39:07,440 --> 00:39:11,520
+[SPEAKER_01] There's probably like twenty different checks that every contribution goes through.
+
+456
+00:39:12,320 --> 00:39:21,040
+[SPEAKER_01] And then if any of those checks get flagged, then it goes into this sort of like pending state and then I have like human moderators can go through and review.
+
+457
+00:39:21,520 --> 00:39:26,000
+[SPEAKER_01] So yeah, I'll look for swear words.
+
+458
+00:39:26,160 --> 00:39:29,520
+[SPEAKER_01] I'll look for like numbers that are outliers.
+
+459
+00:39:29,760 --> 00:39:35,680
+[SPEAKER_01] They're like in the 99 percentile of some metric or like some things just don't add up.
+
+460
+00:39:36,640 --> 00:39:41,440
+[SPEAKER_01] Or if it's like, you know, I really want the database to have, like, high quality.
+
+461
+00:39:41,600 --> 00:39:44,240
+[SPEAKER_01] I think quality's generally better than quantity.
+
+462
+00:39:44,400 --> 00:39:51,680
+[SPEAKER_01] That's actually one of my gripes with my FitnessPal is I felt like you would surf something and you'd get like thirty results for the same thing.
+
+463
+00:39:51,840 --> 00:39:54,800
+[SPEAKER_01] And a lot of times it was hard to choose which one and Yeah, for sure.
+
+464
+00:39:55,600 --> 00:39:59,840
+[SPEAKER_01] And so I really wanted to try to like have a high quality bar.
+
+465
+00:40:01,120 --> 00:40:07,040
+[SPEAKER_01] And so I tried to make as much automated as possible too because I'm running this all on the side.
+
+466
+00:40:07,840 --> 00:40:22,160
+[SPEAKER_01] You know, since then I've gotten another full time job and I do I do hire contract contractors for help on the human moderation side, but yeah, no, people have been good actors.
+
+467
+00:40:23,120 --> 00:40:27,760
+[SPEAKER_01] And one thing I also implemented was sign in with Apple.
+
+468
+00:40:29,200 --> 00:40:34,160
+[SPEAKER_01] In order to use the community database, there's that like friction that you have to like sign up on Apple.
+
+469
+00:40:35,520 --> 00:40:39,120
+[SPEAKER_01] And the cool thing there is that it doesn't ask for your name or email address.
+
+470
+00:40:39,280 --> 00:40:44,720
+[SPEAKER_01] You can actually like when you're configuring the sign with Apple integration, you can disable that.
+
+471
+00:40:45,600 --> 00:40:48,560
+[SPEAKER_01] So I'm still like not collecting your email or your name.
+
+472
+00:40:49,120 --> 00:40:59,280
+[SPEAKER_01] And I think that's really cool, but it uniquely identifies you and kind of has this extra layer of confidence that you're a real human being and a real device.
+
+473
+00:41:00,000 --> 00:41:09,600
+[SPEAKER_00] Yeah, because Apple IDs more than Google or Facebook, Apple IDs are it's like a pain if you wanted to have like Berner Apple IDs or something.
+
+474
+00:41:09,760 --> 00:41:09,840
+[SPEAKER_00] Yeah.
+
+475
+00:41:10,160 --> 00:41:10,240
+[SPEAKER_00] Yeah.
+
+476
+00:41:11,200 --> 00:41:11,280
+[SPEAKER_00] Yeah.
+
+477
+00:41:11,520 --> 00:41:12,080
+[SPEAKER_00] That's interesting.
+
+478
+00:41:12,240 --> 00:41:12,560
+[SPEAKER_01] That's cool.
+
+479
+00:41:12,800 --> 00:41:14,000
+[SPEAKER_01] So I think that's helped a lot.
+
+480
+00:41:14,960 --> 00:41:17,840
+[SPEAKER_00] This has been going on for three years at this point.
+
+481
+00:41:18,240 --> 00:41:21,680
+[SPEAKER_00] How like, how do you see it going forward into the future?
+
+482
+00:41:22,320 --> 00:41:24,640
+[SPEAKER_00] Is it kind of a fun side hobby?
+
+483
+00:41:25,200 --> 00:41:34,400
+[SPEAKER_00] that gives you your creative outlet for whenever you're not getting that, you know, in your normal job, what are you sort of looking at in the future with Food Noms?
+
+484
+00:41:34,800 --> 00:41:35,760
+[SPEAKER_01] Yeah, great question.
+
+485
+00:41:38,160 --> 00:41:39,440
+[SPEAKER_01] I honestly don't know.
+
+486
+00:41:39,680 --> 00:41:42,080
+[SPEAKER_01] I could see Food Noms going in so many different directions.
+
+487
+00:41:42,800 --> 00:41:48,000
+[SPEAKER_01] You know, I think in the immediate term, I have been working on this like huge update.
+
+488
+00:41:48,160 --> 00:41:52,640
+[SPEAKER_01] I've kind of fallen into this trap of like, oh, I need to ship like a 2.0.
+
+489
+00:41:53,120 --> 00:41:58,720
+[SPEAKER_01] And I've let that, the scope of that like, I think grow into something that's like almost unmanageable.
+
+490
+00:41:59,280 --> 00:42:02,080
+[SPEAKER_01] And I've been, I've been talking about it for super long time.
+
+491
+00:42:02,400 --> 00:42:06,960
+[SPEAKER_01] So I am getting somewhat close to having that shipped.
+
+492
+00:42:07,280 --> 00:42:10,800
+[SPEAKER_01] And I hope that people will like that update.
+
+493
+00:42:11,280 --> 00:42:14,880
+[SPEAKER_01] I think it brings a lot of, especially existing Food Numbs users.
+
+494
+00:42:15,760 --> 00:42:19,520
+[SPEAKER_01] I get, like, so much feedback and so much great, like, positive feedback.
+
+495
+00:42:19,760 --> 00:42:30,720
+[SPEAKER_01] But, you know, there's always these, like, key things, these key features that I know that Food Numbs is missing today that I hope that people will be excited to see as part of this update.
+
+496
+00:42:32,560 --> 00:42:43,840
+[SPEAKER_01] And kind of just interested to see how that update, you know, goes, and I think I'm going to try to do like another sort of launch.
+
+497
+00:42:44,400 --> 00:42:46,560
+[SPEAKER_01] I think it it may be a little bit difficult.
+
+498
+00:42:46,800 --> 00:42:52,800
+[SPEAKER_01] I haven't really found that like one unique feature headliner, I think, um, the tricky part.
+
+499
+00:42:53,120 --> 00:43:00,960
+[SPEAKER_01] Yeah, the story, but yeah, um, you know, I'm going to still try and I think I'm also just kind of at this point ready to get it out the door.
+
+500
+00:43:01,120 --> 00:43:20,080
+[SPEAKER_01] I've been working on it for so long and ready to kind of, yeah, get it ready, but we'll see where that goes and I think that will kind of dictate, you know, what the future is for the app, but I still, you know, I've, I love working on it on the side.
+
+501
+00:43:20,640 --> 00:43:22,160
+[SPEAKER_01] It is that, like, creative outlet.
+
+502
+00:43:22,880 --> 00:43:39,280
+[SPEAKER_01] And I've also just, I think, just learned so much from the experience working on it that it's really made me like a better, I don't know, better engineer, better designer, you know, better copywriter, better marketer, better PM.
+
+503
+00:43:39,520 --> 00:43:48,560
+[SPEAKER_01] And those are like super valuable skills that I'm taking with me to other, you know, parts of my life, you know, primarily my main job, and I definitely value that.
+
+504
+00:43:49,280 --> 00:43:51,120
+[SPEAKER_00] I'm excited to see where it goes.
+
+505
+00:43:51,680 --> 00:44:00,000
+[SPEAKER_00] Before I let you go, I'll ask you the question I ask everyone to end the show out, which is, what is a person or people out there that have inspired you that you would recommend other people to check out?
+
+506
+00:44:00,800 --> 00:44:22,480
+[SPEAKER_01] Yeah, so I think, you know, first I feel obligated to, like, I think there have been, like, so many guests on the show that I, I look up to, and I think they've been commonly cited, so I don't want to, like, repeat the same usual suspects, but Yeah, you got to have a hipster pick.
+
+507
+00:44:22,960 --> 00:44:23,520
+[SPEAKER_00] Yeah, exactly.
+
+508
+00:44:23,600 --> 00:44:30,160
+[SPEAKER_00] You know, someone, you got to gotta say someone before they're cool and then you can claim ownership over them being cool afterwards.
+
+509
+00:44:30,640 --> 00:44:30,720
+[SPEAKER_01] Yeah.
+
+510
+00:44:32,720 --> 00:44:36,000
+[SPEAKER_01] I think I tried to think of like a unique answer here.
+
+511
+00:44:36,240 --> 00:44:49,040
+[SPEAKER_01] You know, I think one person that genuinely has had a big impact on me and someone I look up to is the CEO of the previous company I used to work for, Amplitude.
+
+512
+00:44:49,440 --> 00:44:51,360
+[SPEAKER_01] His name is Spencer Skates.
+
+513
+00:44:52,240 --> 00:44:55,920
+[SPEAKER_01] And you know, you will find him if you search for him.
+
+514
+00:44:56,400 --> 00:45:00,880
+[SPEAKER_01] You'll see, you know, he'll have some blog posts and he's been interviewed on some podcasts.
+
+515
+00:45:02,240 --> 00:45:04,560
+[SPEAKER_01] But, you know, I just wanted to give a shout out to him.
+
+516
+00:45:04,800 --> 00:45:07,280
+[SPEAKER_01] He's, like, had a huge impact on me.
+
+517
+00:45:07,440 --> 00:45:17,280
+[SPEAKER_01] I think sometimes there's this, like, you know, stereotypes around, you know, tech startup CEOs and there's often, you know, painted in the worst light.
+
+518
+00:45:18,000 --> 00:45:25,440
+[SPEAKER_01] You know, Spencer, I think is an example of just a really, really great human being, a really great leader.
+
+519
+00:45:26,160 --> 00:45:31,280
+[SPEAKER_01] I think, you know, I just want to say, like, he's super smart and super, like, humble.
+
+520
+00:45:31,760 --> 00:45:35,280
+[SPEAKER_01] And I think one of the things I admire the most is when he's wrong.
+
+521
+00:45:35,360 --> 00:45:38,240
+[SPEAKER_01] He, like, will openly admit to it and fix the issue.
+
+522
+00:45:39,680 --> 00:45:42,880
+[SPEAKER_01] So many people in this world will not do those things.
+
+523
+00:45:44,320 --> 00:45:48,640
+[SPEAKER_01] They will admit to it, but won't actually address the problem.
+
+524
+00:45:49,040 --> 00:45:56,400
+[SPEAKER_01] And I think, yeah, he's had a huge impact on me as, as, as, sort of an example of a true leader.
+
+525
+00:45:56,960 --> 00:46:00,080
+[SPEAKER_00] Yeah, that's, that's a nice, uh, what's the right word?
+
+526
+00:46:00,320 --> 00:46:14,240
+[SPEAKER_00] Not an antidote, but, uh, counterexample to all of the, uh, you know, TV special about CEOs, uh, in the tech space lately that are not exactly shining exampleses of human beings.
+
+527
+00:46:15,600 --> 00:46:18,560
+[SPEAKER_00] But yeah, there's a lot of companies and a lot of them are really great.
+
+528
+00:46:18,720 --> 00:46:21,200
+[SPEAKER_00] And so yeah, that's cool to hear about one that is.
+
+529
+00:46:21,440 --> 00:46:25,120
+[SPEAKER_00] Well, before I let you go, where can people find you and your work?
+
+530
+00:46:25,520 --> 00:46:31,280
+[SPEAKER_01] Yeah, so I'm on Twitter at Ryan Ashcraft RYANASHCRAFT.
+
+531
+00:46:31,760 --> 00:46:33,600
+[SPEAKER_01] You know, I tweet about most stuff there.
+
+532
+00:46:33,760 --> 00:46:44,640
+[SPEAKER_01] And then I also have Foodnoms as a Twitter account, Food underscore NOMS, and then foodnoms dot com dot Thanks for listening.
+
+533
+00:46:45,040 --> 00:46:47,360
+[SPEAKER_00] This episode was edited by Jonathan Ruiz.
+
+534
+00:46:48,000 --> 00:46:51,680
+[SPEAKER_00] If you'd like to discuss the show, you can find me on Twitter at underscore chuck E.
+
+535
+00:46:51,760 --> 00:46:51,840
+[SPEAKER_00] C.
+
+536
+00:46:52,160 --> 00:46:54,160
+[SPEAKER_00] or tweet the show directly at launchedfm.
+
+537
+00:46:54,800 --> 00:47:02,720
+[SPEAKER_00] I'd really appreciate a rating or review in your podcast app of choice, and you can find show notes and more at launchedfm.com.
