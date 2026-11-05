@@ -1,0 +1,2083 @@
+1
+00:00:01,120 --> 00:00:08,720
+Welcome to the Subclub Podcast, a show dedicated to the best practices for building and growing app businesses.
+
+2
+00:00:09,920 --> 00:00:19,360
+We sit down with the entrepreneurs, investors and builders behind the most successful apps in the world to learn from their successes and failures.
+
+3
+00:00:20,480 --> 00:00:22,480
+Subclub is brought to you by RevenueCat.
+
+4
+00:00:23,280 --> 00:00:32,720
+Thousands of the world's best apps trust RevenueCat to power in app purchases, manage customers, and grow revenue across iOS, Android, and the web.
+
+5
+00:00:33,680 --> 00:00:38,240
+You can learn more at revenuecat dot com dot Let's get into the show.
+
+6
+00:00:40,960 --> 00:00:47,440
+Hello, I'm your host, David Bernard, and my guest today is Brennan Clark, Director of Product at Sago Mini.
+
+7
+00:00:48,160 --> 00:01:04,000
+With three subscription apps for preschoolers, a recently launched show on Apple TV Plus, and even a physical subscription box, Sago Mini has seen over a hundred million downloads, but is also engaging kids and parents beyond the core app experience.
+
+8
+00:01:04,720 --> 00:01:11,040
+On the podcast, I talk with Brennan about the challenge of building and growing kids apps in twenty twenty two.
+
+9
+00:01:12,160 --> 00:01:19,440
+How to make effective decisions with minimal data and why Apps Flyer had to build Saga Mini, a custom SDK.
+
+10
+00:01:20,640 --> 00:01:23,440
+Hey Brennan, thanks so much for joining me on the podcast today.
+
+11
+00:01:23,760 --> 00:01:24,480
+Thanks for having me.
+
+12
+00:01:24,880 --> 00:01:26,640
+I'm a fan of the show looking forward to chatting.
+
+13
+00:01:27,440 --> 00:01:27,760
+Thanks.
+
+14
+00:01:28,080 --> 00:01:30,240
+Yeah, so I've been wanting to have you on for a while.
+
+15
+00:01:30,960 --> 00:01:36,240
+You gave a fantastic talk at the last conference I went to before COVID.
+
+16
+00:01:37,360 --> 00:01:43,200
+And the reason I wanted to have you on is that building a kids app in 2022 is hard.
+
+17
+00:01:44,400 --> 00:01:48,560
+There are so many different considerations that unless you've built a kids app, you don't really.
+
+18
+00:01:49,440 --> 00:01:49,760
+understand it.
+
+19
+00:01:50,720 --> 00:02:00,720
+So I wanted to just kick things off, asking for just an overview of all the different things you have to think about building a Kids app in 2022.
+
+20
+00:02:02,080 --> 00:02:07,920
+Yeah, so the first thing is you're really building the product for two different user groups.
+
+21
+00:02:08,400 --> 00:02:14,000
+So you have the actual user, the player, that's the kid, but then you actually have the parent who pays for the product.
+
+22
+00:02:14,960 --> 00:02:19,280
+So you're at the same time designing a product that has to fit these two user groups.
+
+23
+00:02:20,000 --> 00:02:23,680
+And there are very specific considerations that you have to think about when you're building this product.
+
+24
+00:02:24,720 --> 00:02:32,160
+The UX, you know, just making sure that the parent and the kid, whoever is at the helm of the device, can get to whatever they need to do as quickly as possible.
+
+25
+00:02:33,200 --> 00:02:36,560
+So there's the whole kind of user experience design aspect to it.
+
+26
+00:02:37,280 --> 00:02:38,560
+Then there's the top of funnel.
+
+27
+00:02:39,120 --> 00:02:43,760
+A lot of developers thought they had it pretty tough when iOS 14 dropped.
+
+28
+00:02:45,200 --> 00:02:47,360
+They should see what the kids app space looks like right now.
+
+29
+00:02:48,240 --> 00:02:53,440
+Not only did we get everything that all the other developers got, but we actually can't use the ATT prompt.
+
+30
+00:02:54,320 --> 00:02:58,160
+And what is Google's model, their attribution model based on?
+
+31
+00:02:58,320 --> 00:02:59,840
+The ATT prompt and the opt-in.
+
+32
+00:03:00,720 --> 00:03:04,240
+So you don't get any Google UAC, you don't get a lot of Facebook ads.
+
+33
+00:03:04,640 --> 00:03:10,880
+When iOS 14 dropped, we were really cut off from most of the major ad platforms.
+
+34
+00:03:11,680 --> 00:03:15,360
+So that's thrown another wrench into, you know, all our Top of Funnel.
+
+35
+00:03:15,840 --> 00:03:20,800
+There's a lot of data privacy considerations, so how you collect data, what you can do with it.
+
+36
+00:03:21,760 --> 00:03:30,880
+So there are a lot of fun challenges within the kids app space that a lot of people don't know about and a lot of people don't consider when building most subscription apps.
+
+37
+00:03:31,520 --> 00:03:33,600
+That was a fantastic overview.
+
+38
+00:03:33,840 --> 00:03:36,000
+So now we get to dive deep into.
+
+39
+00:03:36,320 --> 00:03:38,640
+to this, these topics and more.
+
+40
+00:03:39,600 --> 00:03:40,800
+Hopefully we can get through.
+
+41
+00:03:41,280 --> 00:03:43,120
+There's just so much I wanted to ask you about.
+
+42
+00:03:43,280 --> 00:03:44,640
+So hopefully we can get through it all.
+
+43
+00:03:45,040 --> 00:03:59,760
+But let's kick it off going deep on the complexities of the user experience when you have the child experiencing the app and the parent paying for the app.
+
+44
+00:04:00,400 --> 00:04:02,720
+And one of the more interesting things to me, I've got kids.
+
+45
+00:04:02,960 --> 00:04:04,960
+We were just talking about this before we hit record.
+
+46
+00:04:05,280 --> 00:04:09,040
+I've got a four year old, an eight year old, an eleven year old, and a thirteen year old.
+
+47
+00:04:09,360 --> 00:04:12,960
+And so I've, I've, you know, been through it early in the, you know, 2020.
+
+48
+00:04:12,960 --> 00:04:15,200
+And so, you know, in the, you know, 2009 my first son was born.
+
+49
+00:04:15,600 --> 00:04:17,840
+And so I've, they've kind of grown up around this.
+
+50
+00:04:18,000 --> 00:04:26,400
+And I've, you know, figured things out as a parent since 2009 about all the different ways children interact with technology.
+
+51
+00:04:27,280 --> 00:04:33,920
+And when a kid is three, four years old and doesn't read yet, you know, how do you design an UI?
+
+52
+00:04:34,720 --> 00:04:42,720
+And then, you know, how do you design that UI to also, you know, work for the parents so they understand what they need to do and how to get the kid set up.
+
+53
+00:04:42,960 --> 00:04:47,840
+And the entire user experience is just such a different discipline.
+
+54
+00:04:48,000 --> 00:04:52,160
+And, and there's no not a lot of people talking about this on podcasts and blog posts.
+
+55
+00:04:53,040 --> 00:05:06,160
+How do you approach designing a product for people who don't read while also having to convince someone to pay for it who does read, but it's not the person actually using the app?
+
+56
+00:05:06,960 --> 00:05:08,880
+Yeah, I mean, it's not an easy challenge.
+
+57
+00:05:09,040 --> 00:05:11,200
+There's no magical thing to think about.
+
+58
+00:05:12,640 --> 00:05:20,880
+I would say, like, some of the considerations, one, for example, is like, kids don't understand abstract concepts, so abstract icons.
+
+59
+00:05:21,280 --> 00:05:30,400
+So you actually have to be very literal in a lot of the design very smart play designers, designers, developers in our team that have been in the industry for a long time.
+
+60
+00:05:31,040 --> 00:05:35,760
+It is moderately similar to, you know, TV programs, physical toys.
+
+61
+00:05:36,000 --> 00:05:39,200
+We do model a lot of our games actually around physical toys.
+
+62
+00:05:39,280 --> 00:05:41,920
+So it's a digital, we call them digital toys actually.
+
+63
+00:05:42,640 --> 00:05:45,040
+So we take a lot of inspiration from that physical world.
+
+64
+00:05:45,520 --> 00:05:49,840
+But yeah, it's again, for kids that don't read, you can't have any text.
+
+65
+00:05:51,120 --> 00:05:57,600
+A nice positive of that is that our apps actually translate very well internationally because there is no text throughout the experience.
+
+66
+00:05:58,240 --> 00:06:00,800
+So a three year old kid in Canada.
+
+67
+00:06:01,440 --> 00:06:08,240
+and a three year old kid, uh, you know, somewhere in Europe or Asia, uh, they really all just need the same experience.
+
+68
+00:06:08,400 --> 00:06:12,640
+There, there, there are not too many different considerations when you think about localizing these products.
+
+69
+00:06:13,280 --> 00:06:15,520
+Um, so that's a positive byproduct of it.
+
+70
+00:06:16,000 --> 00:06:19,440
+But, but I imagine you still have to deal with localization is such a mess.
+
+71
+00:06:19,680 --> 00:06:24,240
+I mean, any, anyone in this industry who's dealt with it, it just has nightmares about it.
+
+72
+00:06:24,480 --> 00:06:24,560
+Yeah.
+
+73
+00:06:24,880 --> 00:06:36,640
+I mean, I tried localizing one of my apps and, uh, every little update you make, you need to go back through the process and managing all the strings and then, yeah, make sure it's actually like, localized well.
+
+74
+00:06:36,640 --> 00:06:37,600
+Localize well, but that's cool.
+
+75
+00:06:37,760 --> 00:06:40,480
+So the main experience doesn't have to be localized generally.
+
+76
+00:06:40,800 --> 00:06:41,120
+Exactly.
+
+77
+00:06:41,280 --> 00:06:41,360
+Yeah.
+
+78
+00:06:41,680 --> 00:06:43,200
+Which is something I never considered.
+
+79
+00:06:43,440 --> 00:06:44,000
+No, exactly.
+
+80
+00:06:44,080 --> 00:06:47,360
+So a lot of like our store or account screens, they need to be localized.
+
+81
+00:06:47,680 --> 00:06:55,280
+But the actual gameplay, there's no text in any of our gameplay, which is fantastic when you're talking about, you know, localization and going international.
+
+82
+00:06:56,080 --> 00:07:04,560
+So from the kid experience, you know, that's at SEGO Mini, that's really what drives most of our design is like we're a kid first experience, kid led experience.
+
+83
+00:07:04,880 --> 00:07:06,080
+They're in the driver's seat.
+
+84
+00:07:06,560 --> 00:07:16,400
+When we're thinking about designing a product, and this doesn't happen too often, but if we have to choose between kid experience and k parent experience, we will always choose that kid experience.
+
+85
+00:07:17,120 --> 00:07:18,880
+So that's one of the main focuses for us.
+
+86
+00:07:19,680 --> 00:07:27,280
+Then when you're thinking about the kind of parent interaction or parent retention, we've worked on this more in the past, say, three years.
+
+87
+00:07:28,480 --> 00:07:30,960
+We've built a couple of features like the account system.
+
+88
+00:07:31,920 --> 00:07:40,240
+So we actually didn't have an account system for, I want to say, two and a half years with Sega Mini World, which is kind of our first flagship subscription product.
+
+89
+00:07:41,040 --> 00:07:47,600
+So we had about a hundred thousand active subscribers before we even implemented an account system, which is crazy to think about.
+
+90
+00:07:48,400 --> 00:08:10,880
+But I think it's a good perspective when you're thinking about designing for a kid versus a parent is that when you're building these kids apps, if your product is really engaging and really useful for the kid, the parent is naturally going to be retained and is going to stay subscribed to the product because they see what's, you know, how their kid is engaging with the product and what it's doing for their kid.
+
+91
+00:08:11,440 --> 00:08:15,840
+But so recently, we have made further investments in the account system in our CRM base.
+
+92
+00:08:16,880 --> 00:08:20,880
+One of the major needs from that was actually launching new subscription products.
+
+93
+00:08:21,200 --> 00:08:24,720
+So the cross sell, a lot of promotion from one product to another.
+
+94
+00:08:25,600 --> 00:08:30,160
+Obviously, the CRM base becomes pretty crucial for that and having that conversation with the parents.
+
+95
+00:08:31,040 --> 00:08:33,680
+And then another thing that we did was we launched a parent app as well.
+
+96
+00:08:34,320 --> 00:08:38,960
+So we have an accompanying app that goes alongside most of our major products.
+
+97
+00:08:39,520 --> 00:08:47,600
+And when their kid is drawing something, doing a coloring sheet in one of our apps, there are artifacts that are actually sent to the parent app.
+
+98
+00:08:48,320 --> 00:08:54,560
+And so that's kind of this nice touch point that reminds the parents of the value that their kids are getting in our apps.
+
+99
+00:08:55,280 --> 00:08:58,800
+So we've built on that relationship with the parents over the years.
+
+100
+00:08:59,600 --> 00:09:02,800
+But again, it's really the kid experience that drives the growth.
+
+101
+00:09:03,600 --> 00:09:04,800
+Yeah, that's fantastic.
+
+102
+00:09:05,520 --> 00:09:07,680
+I actually didn't realize you had launched the parent app.
+
+103
+00:09:08,400 --> 00:09:24,400
+That's a really great way to balance that, to create this great parent experience because ultimately, you know, and you kind of alluded to it a little bit, it's you need to retain two people, which retention is the hardest thing in subscription app businesses.
+
+104
+00:09:24,560 --> 00:09:32,160
+Consumer subscriptions generally, you know, compared to SAS, especially, is that consumers just churn.
+
+105
+00:09:32,640 --> 00:09:36,320
+And then now you have a kid who could churn if they're not.
+
+106
+00:09:37,120 --> 00:09:38,240
+enjoying the experience.
+
+107
+00:09:38,640 --> 00:09:44,880
+And then you have a parent who can turn if they don't understand the value that the kids are getting out of it.
+
+108
+00:09:45,600 --> 00:09:56,880
+And that brings me to another question I want to ask is that how do you balance what parents want, which, you know, I'm a parent when I think about my kids' screen time.
+
+109
+00:09:57,200 --> 00:10:00,160
+I mean, they get more screen time than I want.
+
+110
+00:10:00,720 --> 00:10:23,200
+You know, I'm always thinking about limiting screen time, but then there are certain apps and experiences where I am less restrictive with them when it's educational, when I think it's productive, even Minecraft, like when, when I see my kids doing like really creative things in Minecraft, it's kind of like a modern version of LEGOs where they get to be super creative.
+
+111
+00:10:23,600 --> 00:10:40,640
+And so SAGO Mini, you know, has some kind of educational components, some creativity components, but how do you balance kind of keeping the kids engaged in that, in that play, but then also like reminding the parents that, hey, this is that, that you want your kids to continue?
+
+112
+00:10:41,840 --> 00:10:41,920
+Yeah.
+
+113
+00:10:42,160 --> 00:10:43,280
+I mean, it's a good question.
+
+114
+00:10:43,600 --> 00:10:46,000
+I, in theory, you're doing both at the same time.
+
+115
+00:10:46,400 --> 00:10:53,440
+And that's, really like we've staked our claim in this high quality interactive content.
+
+116
+00:10:54,080 --> 00:10:56,080
+And that's really just our competitive advantage.
+
+117
+00:10:56,720 --> 00:11:03,120
+So we have, you know, we invest a lot in creating the best content for kids as possible, making sure it's interactive.
+
+118
+00:11:03,360 --> 00:11:07,520
+It's not, you know, this passive kind of YouTube kids style of content.
+
+119
+00:11:08,320 --> 00:11:09,760
+And that's been a really big thing.
+
+120
+00:11:10,480 --> 00:11:11,120
+Parents love that.
+
+121
+00:11:11,280 --> 00:11:12,000
+Parents trust that.
+
+122
+00:11:12,640 --> 00:11:18,480
+And then again, actually, subscriptions have unlocked a bit of additional trust in that there's no sneaky stuff.
+
+123
+00:11:18,640 --> 00:11:19,840
+We're not doing in app ads.
+
+124
+00:11:20,000 --> 00:11:23,200
+We're not doing a bunch of IEPs, gems, all this type of stuff.
+
+125
+00:11:23,600 --> 00:11:28,800
+We have a single suble subscription price, parents can lock that in or just enjoy the free experience.
+
+126
+00:11:29,680 --> 00:11:35,280
+And having that kind of safe, trusted environment for their kid is another really big selling point for parents.
+
+127
+00:11:36,160 --> 00:11:39,600
+And so those two things, I think they're positive for the kids as well.
+
+128
+00:11:39,760 --> 00:11:51,600
+So when you're designing for the kids with being safe and trusted in mind and with the high quality, really interactive content, you can do both of those things and build those into your game design.
+
+129
+00:11:52,320 --> 00:11:55,600
+And those really appeal to both the parents and to the kids.
+
+130
+00:11:56,320 --> 00:12:00,560
+And you don't sacrifice engaging content when you're considering those two things.
+
+131
+00:12:01,200 --> 00:12:01,360
+as well.
+
+132
+00:12:02,080 --> 00:12:12,320
+So it's really about massaging some of those really important things that are really just values of the company, massaging those into our really engaging experiences.
+
+133
+00:12:14,240 --> 00:12:16,800
+What is the Saga Mini pitch to parents?
+
+134
+00:12:16,960 --> 00:12:34,240
+Like, how do you, how do you as a company think like this is our message to parents educational, creative, or is there, is there kind of a specific or even a kind of mission or statement that Saga Mini has as a perspective toward parents?
+
+135
+00:12:35,280 --> 00:12:35,360
+Yeah.
+
+136
+00:12:35,600 --> 00:12:38,400
+So when it comes to parents., the pitch is a little bit different.
+
+137
+00:12:38,640 --> 00:12:40,960
+So we have two kinds of flagship subscription products.
+
+138
+00:12:41,200 --> 00:12:44,320
+One is Sega Mini World, which is more on the entertainment side of things.
+
+139
+00:12:44,960 --> 00:12:49,280
+And then we have Sega Mini School, which is more on the quote unquote educational side of things.
+
+140
+00:12:49,840 --> 00:12:55,760
+Our overarching mission is really just to provide the best digital toys, digital products for preschoolers as possible.
+
+141
+00:12:56,640 --> 00:13:01,280
+The educational side of things, we believe in a kid led learning experience.
+
+142
+00:13:01,760 --> 00:13:03,600
+And that's something that's pretty unique in the market.
+
+143
+00:13:03,920 --> 00:13:08,000
+It's not, you know, we're not telling the parent, you're going to do X, Y, and Z in math.
+
+144
+00:13:08,000 --> 00:13:09,840
+Your kid is going to learn X, Y, Z in math.
+
+145
+00:13:10,000 --> 00:13:12,800
+We're letting the kid explore a bunch of different avenues of learning.
+
+146
+00:13:13,840 --> 00:13:18,960
+So math, you know, creativity, STEM, there's, you know, social emotional learning.
+
+147
+00:13:19,120 --> 00:13:24,480
+There are a variety of ways that we're teaching kids in a very engaging way in Sega Mini School.
+
+148
+00:13:24,960 --> 00:13:29,840
+And then Sega Mini World is really just the best digital playground in the world.
+
+149
+00:13:30,640 --> 00:13:40,720
+And so it's this safe environment where if you hand your tablet off to your kid, you know, your kid is going to have a great time in a very safe, you know, trusted environment.
+
+150
+00:13:41,520 --> 00:13:42,640
+And you have nothing to worry about.
+
+151
+00:13:42,800 --> 00:13:45,040
+And your kid is going to sit there and be laughing and having fun.
+
+152
+00:13:46,400 --> 00:13:47,520
+For God knows how long.
+
+153
+00:13:48,000 --> 00:13:48,160
+Yeah.
+
+154
+00:13:49,600 --> 00:13:55,520
+And then I imagine, you know, part of that pitch is also that safety aspect.
+
+155
+00:13:55,840 --> 00:14:02,880
+You know, I do let my kids use YouTube, but I check the history and I talk to them about it.
+
+156
+00:14:03,360 --> 00:14:16,400
+Now, I'm not working with preschoolers, but I mean, I've seen preschoolers just, just, you know, clicking buttons in YouTube and going through random, uh, videos and like letting the YouTube algorithm guide them.
+
+157
+00:14:16,880 --> 00:14:17,760
+And that's scary.
+
+158
+00:14:18,240 --> 00:14:18,720
+I mean, it is.
+
+159
+00:14:18,960 --> 00:14:29,920
+So I imagine that that kind of safe, entertaining environment is kind of part of the pitch in juxtaposition from this kind of free for all that is the web and apps and digital in general.
+
+160
+00:14:31,040 --> 00:14:31,440
+Absolutely.
+
+161
+00:14:31,680 --> 00:14:38,160
+I think like looking at the overall landscape, you have, you know, what are 15,000, 20,000 kids apps in the app store.
+
+162
+00:14:38,560 --> 00:14:40,160
+Many of them are not of great quality.
+
+163
+00:14:41,680 --> 00:14:45,280
+And then within some of those apps, you do have some of that content that can be questionable.
+
+164
+00:14:45,440 --> 00:14:54,240
+And I know YouTube kids gets picked on a little bit and sometimes it's, you know, rightly so because there is a lot of content that is fringe.
+
+165
+00:14:54,640 --> 00:14:56,480
+You know, it shouldn't really be on YouTube kids.
+
+166
+00:14:56,720 --> 00:14:57,600
+It's very passive.
+
+167
+00:14:57,920 --> 00:15:03,840
+You do see, you know, we see parents talking about, you know, the screen zombies, it really impacts the kid when they get in that mode.
+
+168
+00:15:04,640 --> 00:15:11,280
+And so it is a very much a competitive advantage is making sure that we have this high quality screen time, you know, that's interactive.
+
+169
+00:15:11,840 --> 00:15:16,960
+Your kid is learning, your kid is exploring and actually engaging with that experience that they're in.
+
+170
+00:15:17,760 --> 00:15:18,480
+That's fantastic.
+
+171
+00:15:19,600 --> 00:15:27,440
+Another thing I wanted to talk through, and I know this is a huge can of worms that we could probably talk a couple of hours on this.
+
+172
+00:15:28,640 --> 00:15:33,920
+But how does Saga Mini think about the privacy and data management?
+
+173
+00:15:34,160 --> 00:15:36,800
+So we're talking about kids' experience.
+
+174
+00:15:37,280 --> 00:15:45,040
+and parents experience, but you're very limited in what data you can collect and how you can collect it and where you store it.
+
+175
+00:15:45,840 --> 00:15:55,840
+And so how how do you, one, you know, how do you just build without the kind of data that most subscription apps are used to?
+
+176
+00:15:56,240 --> 00:16:00,160
+And then I'd also like to explore kind of what you can and can't collect.
+
+177
+00:16:00,880 --> 00:16:00,960
+Yeah.
+
+178
+00:16:01,200 --> 00:16:05,920
+So this, I mean, this is a loaded question that I'll try to just scratch the surface here.
+
+179
+00:16:06,320 --> 00:16:06,400
+Yeah.
+
+180
+00:16:07,200 --> 00:16:11,200
+So overall, like I would say, first off, a lot of this is very important.
+
+181
+00:16:11,360 --> 00:16:12,640
+Like kids, data management is.
+
+182
+00:16:13,440 --> 00:16:17,520
+a really important topic and we rightfully should be regulated quite a bit.
+
+183
+00:16:18,160 --> 00:16:23,440
+I think one thing to consider is that there are a lot of alternatives or unique ways that you can use.
+
+184
+00:16:24,160 --> 00:16:25,840
+For example, Apple has the IDFE.
+
+185
+00:16:26,400 --> 00:16:37,280
+That's one thing that really helps out for data management, for it's device specific, but it's not identifiable across platforms, across channels.
+
+186
+00:16:37,600 --> 00:16:44,320
+So you can use that as a connective tissue for a lot of the data management where you don't have personally identifiable data.
+
+187
+00:16:44,960 --> 00:16:47,360
+You just have something like the IDFE that gets cleared.
+
+188
+00:16:47,680 --> 00:16:51,120
+That's something that's really important in building a lot of the infrastructure.
+
+189
+00:16:52,240 --> 00:16:59,680
+So getting creative in how you're using that data while, of course, being very cognizant of the personally identifiable data.
+
+190
+00:17:00,400 --> 00:17:06,480
+What else is there so we can't use the IDFD that's, of course, I mentioned that the ATT prompt, we can't use that at all.
+
+191
+00:17:07,440 --> 00:17:08,960
+That's, you know, it's the way it is.
+
+192
+00:17:09,280 --> 00:17:12,240
+It hurts us with our paid UA, but that's what happens.
+
+193
+00:17:13,680 --> 00:17:26,560
+Another piece of advice that I would give is to find partners that are willing to be creative with you and to really partner with you in helping solve challenges for the kids industry.
+
+194
+00:17:27,120 --> 00:17:33,200
+Because there are a lot of larger companies, there are a lot of partners that, you know, they just won't invest the time in building solutions for kids apps.
+
+195
+00:17:33,360 --> 00:17:33,600
+Right.
+
+196
+00:17:33,840 --> 00:17:37,520
+And then you get really, you know, you get cornered and you can't really do much with their products.
+
+197
+00:17:38,480 --> 00:17:40,080
+I always tell this story of Apps Fire.
+
+198
+00:17:40,480 --> 00:17:47,840
+This is not a paid plug, but Apps Fire, when iOS 14 dropped, we were in a panic because we couldn't use that ATT prompt.
+
+199
+00:17:48,240 --> 00:17:52,160
+The Apps Fire SDK actually didn't work and it didn't pass Apple's regulations.
+
+200
+00:17:53,040 --> 00:18:03,520
+And so we had, I want to say for three weeks, we had like twenty people at Apps Fire building us a brand new version of their SDK that was custom fit for SAGO Mini.
+
+201
+00:18:04,000 --> 00:18:19,520
+And I think they rolled that out to the kids app industry in general after, but having a partner that is really just able to kind of invest in you and help solve some of these challenges, that was an eye opening moment for me, like there are not many partners that are willing to do something like that.
+
+202
+00:18:20,800 --> 00:18:24,960
+But it's important to find those that are because they really, really help you out over the long run.
+
+203
+00:18:25,280 --> 00:18:25,360
+Yeah.
+
+204
+00:18:26,400 --> 00:18:29,280
+We've had a lot of kids apps come to us at RevenueCat.
+
+205
+00:18:29,600 --> 00:18:38,480
+And it's been interesting how I think a lot of people initially think they can't even use RevenueCat because of the data issues.
+
+206
+00:18:39,600 --> 00:18:44,320
+And then once they realize it, then there's just a ton of questions about what data we collect.
+
+207
+00:18:44,800 --> 00:18:56,560
+And of course, the fun thing for us is like we actually built the platform to be very minimally we collect almost no data unless the developer collects the data.
+
+208
+00:18:56,880 --> 00:19:02,240
+So like we don't by default collect email or any demographic information.
+
+209
+00:19:02,720 --> 00:19:05,040
+We don't even save the IP address.
+
+210
+00:19:05,680 --> 00:19:09,200
+We use it to determine which country they are in, which is not personally identifiable.
+
+211
+00:19:09,360 --> 00:19:11,920
+And then we discard the IP address.
+
+212
+00:19:12,720 --> 00:19:16,560
+And so we kind of I always viewed it as like we built this clean pipe.
+
+213
+00:19:18,560 --> 00:19:28,160
+And then for non kids app developers, they can layer on as much data as they want based on whatever regulations they have to abide by.
+
+214
+00:19:28,960 --> 00:19:36,560
+And then with kids apps, they can just kind of use that clean pipe and not have to worry about superfluous data collection, things like that.
+
+215
+00:19:36,800 --> 00:19:47,680
+So yeah, I've actually talked to quite a few kids apps over the years and it's interesting how well, I was going to say paranoid, but maybe that is appropriate.
+
+216
+00:19:48,240 --> 00:19:59,840
+is that when you're a heavily regulated industry, you have to be very careful with who you work with because there's there's a lot of companies that just by default collect way more data than they need to.
+
+217
+00:20:00,480 --> 00:20:04,960
+And then as a kids app, you don't even realize, I mean, I've dealt with this personally.
+
+218
+00:20:05,120 --> 00:20:09,200
+So like in my weather app, you know, we're actually removing the ad SDKs.
+
+219
+00:20:09,520 --> 00:20:13,360
+And the thing I've always hated about these ad SDKs is I have a weather app.
+
+220
+00:20:13,600 --> 00:20:22,880
+So it requires precise data location to precise physical location to provide the weather data accurate to your location.
+
+221
+00:20:23,680 --> 00:20:32,720
+And I've always been a bit nervous or just not knowing with this massive, sprawling, closed source SDK.
+
+222
+00:20:33,920 --> 00:20:36,000
+Are they collecting location data?
+
+223
+00:20:36,720 --> 00:20:51,520
+Even though I I know I checked one box that said I don't want location based ads, but is there some other checkbox deep within this SDK setting somewhere that I forgot to check and now they're just sucking up all my user data and it's a closed source SDK.
+
+224
+00:20:51,680 --> 00:20:55,440
+So you don't even know what they're collecting or not collecting.
+
+225
+00:20:55,680 --> 00:21:04,880
+So the partner angle and like understanding who you're working with and what data they collect and getting transparency there, I imagine is huge.
+
+226
+00:21:05,440 --> 00:21:07,280
+Yeah, and it's absolutely right.
+
+227
+00:21:07,520 --> 00:21:17,840
+It's, I mean, a lot of people that have been in the industry have been burned by partners in the past of data collection that hasn't been said in any of the documentation or anything.
+
+228
+00:21:18,480 --> 00:21:22,640
+So I think rightly so there is a lot of skepticism when working with new partners.
+
+229
+00:21:23,600 --> 00:21:30,400
+And you do see that across a lot of companies that they approach these partnerships as, oh, we probably can't use you, but let's explore it a little bit.
+
+230
+00:21:32,320 --> 00:21:33,680
+Which is an interesting angle.
+
+231
+00:21:33,920 --> 00:21:35,680
+It's a tough angle for the other person on the call.
+
+232
+00:21:39,200 --> 00:21:43,600
+But yeah, again, like we don't have, we've never had any of the ad SDKs in R, we have never had.
+
+233
+00:21:44,400 --> 00:21:47,040
+It's a very skinned version of Apps Flyer, and that's it.
+
+234
+00:21:48,160 --> 00:21:49,440
+And so it's tough.
+
+235
+00:21:49,920 --> 00:22:07,200
+You're working with a very limited amount of partners that you can work with, and again, as I mentioned, really choose those partners carefully because there will be instances where specific custom products are really important for you as a business.
+
+236
+00:22:09,040 --> 00:22:12,560
+How do you approach user experience data collection?
+
+237
+00:22:13,120 --> 00:22:18,480
+Can you use an amplitude or a mix panel type solution or did you build something in house?
+
+238
+00:22:18,800 --> 00:22:24,640
+So we do have a mix panel, but again, it's a very striped down version, so no IP addresses.
+
+239
+00:22:24,800 --> 00:22:30,080
+We use the IDFV, so no, there's no IDFA or there's no account ID in that mix panel implementation.
+
+240
+00:22:30,640 --> 00:22:38,720
+So again, you're building custom solutions for the kid space and almost anything that you use to really limit the data collection as much as possible.
+
+241
+00:22:39,760 --> 00:22:48,720
+And so it does bring up these challenges of like you have a parent that might subscribe in their iPhone, for example, but the kid's tablet is a Samsung.
+
+242
+00:22:50,000 --> 00:22:54,960
+You can't track those across platforms like that because you're using the IDFE.
+
+243
+00:22:55,760 --> 00:23:07,920
+So there are issues that arise with this implementation, but again, it's necessary and you get, say, 90 percent, 95 percent of the picture, which is it's good enough for us.
+
+244
+00:23:08,080 --> 00:23:10,560
+We wish we could get 100 percent, but we'll take 90.
+
+245
+00:23:10,800 --> 00:23:10,880
+Yeah.
+
+246
+00:23:11,280 --> 00:23:11,360
+Yeah.
+
+247
+00:23:11,600 --> 00:23:11,680
+Yeah.
+
+248
+00:23:12,640 --> 00:23:13,120
+And then how?
+
+249
+00:23:14,000 --> 00:23:17,840
+How do you approach product development in combination?
+
+250
+00:23:18,320 --> 00:23:24,240
+And this is kind of moving on from the data discussion and more to so you do collect some.
+
+251
+00:23:24,240 --> 00:23:31,840
+You have some data analysis, some usage analytics, but how do you balance that data against user testing?
+
+252
+00:23:32,000 --> 00:23:52,160
+And I don't know if you all do any kind of in person testing with kids, but I imagine with kids it's like they're probably just tapping all over the screen and like hitting the wrong buttons and like, you know, even with data, I imagine that there's a huge kind of blend of usability testing in addition to kind of collecting some of this data.
+
+253
+00:23:52,800 --> 00:23:56,320
+How do you approach that in your product design and user experience design?
+
+254
+00:23:56,960 --> 00:24:01,440
+So really both of those feed a lot of what user testing.
+
+255
+00:24:01,600 --> 00:24:05,600
+We have kids coming in really every week into the office playing testing.
+
+256
+00:24:05,920 --> 00:24:06,320
+That's cool.
+
+257
+00:24:06,800 --> 00:24:07,840
+New apps, new toys.
+
+258
+00:24:08,480 --> 00:24:11,520
+One of the best parts of the job is just hearing the kids running around, screaming.
+
+259
+00:24:11,680 --> 00:24:14,320
+It's like, it puts all your problems into perspective, you know?
+
+260
+00:24:14,960 --> 00:24:15,040
+Yeah.
+
+261
+00:24:16,000 --> 00:24:17,200
+It's such a nice environment.
+
+262
+00:24:18,080 --> 00:24:19,280
+So there's the user testing.
+
+263
+00:24:19,600 --> 00:24:29,040
+A lot of that is either testing the current experience as a full flow or a lot of the new games that we're developing will go through a lot of user testing.
+
+264
+00:24:29,680 --> 00:24:36,400
+The data, like the quantitative piece is really important feeding, you know, a lot of our strategy in terms of retention, in terms of feature usage.
+
+265
+00:24:36,960 --> 00:24:38,720
+But I think it has to be a bit a mix of both.
+
+266
+00:24:39,120 --> 00:24:48,720
+And one example I would give on this is we had, within some of our games, we had a face icon that was taking user or taking kids to a character creator.
+
+267
+00:24:49,200 --> 00:24:52,080
+So they could jump from the game to the character creator and back.
+
+268
+00:24:52,800 --> 00:25:00,800
+But what we recently found out is that the younger kids, like the three year olds, two or three year olds, they were using that as a way to try to get back to the main menu.
+
+269
+00:25:01,680 --> 00:25:06,880
+But because it was an abstract icon of a face, they didn't really know what it was.
+
+270
+00:25:07,200 --> 00:25:08,240
+They were just clicking on that button.
+
+271
+00:25:08,400 --> 00:25:11,280
+And like, we thought that feature was so popular.
+
+272
+00:25:11,520 --> 00:25:15,680
+But then we did some user testing., you're like, oh, they're just trying to get back to the main menu.
+
+273
+00:25:15,840 --> 00:25:16,560
+We need to fix this.
+
+274
+00:25:17,200 --> 00:25:42,240
+So there are instances like that where data can inform a lot of the decisions, but it does typically need to be backed up by some sort of user testing, or because a lot of it is unpredictable, and our play designers, I will give them full credit, and UX designers, it's like getting yourself in the mind of a kid is really tough to do, but it's so important in how we're designing a lot of these features, because they're not always as rational as we'd like to think they are.
+
+275
+00:25:43,600 --> 00:25:45,200
+So we have to design accordingly.
+
+276
+00:25:46,640 --> 00:25:47,280
+That's too fun.
+
+277
+00:25:48,560 --> 00:25:51,360
+And so Sega Mini is based in Toronto, right?
+
+278
+00:25:51,600 --> 00:25:52,240
+It is, yeah.
+
+279
+00:25:52,640 --> 00:25:53,200
+Yeah, okay.
+
+280
+00:25:53,680 --> 00:25:56,320
+So that's so cool that you bring kids into the office.
+
+281
+00:25:56,640 --> 00:25:57,680
+It just recently got back.
+
+282
+00:25:58,000 --> 00:26:02,640
+We had pretty bad restrictions, like they were pretty strict COVID restrictions.
+
+283
+00:26:02,800 --> 00:26:10,000
+So we actually just got the kids back in the office this summer, which was such a delightful experience after a couple of years off.
+
+284
+00:26:10,720 --> 00:26:10,800
+Yeah.
+
+285
+00:26:11,200 --> 00:26:16,240
+I have kids popping into my office all the time, but my home office.
+
+286
+00:26:17,680 --> 00:26:19,440
+Little different, but similar experience.
+
+287
+00:26:19,600 --> 00:26:21,360
+I hear kids yelling and running through the hall.
+
+288
+00:26:24,000 --> 00:26:26,720
+That is a delightful aspect of getting to work from home.
+
+289
+00:26:27,440 --> 00:26:37,280
+Back to the data piece, I did want to dive into the into paid ads because I know that's kind of a huge, another just huge thorny sticky topic.
+
+290
+00:26:37,920 --> 00:26:42,240
+But let's just give people a little bit of insight into what that's like.
+
+291
+00:26:42,800 --> 00:26:45,920
+So tell me about what you can and can't do.
+
+292
+00:26:46,080 --> 00:26:48,720
+I mean, you know, I'll ask some follow up questions there.
+
+293
+00:26:48,960 --> 00:26:54,000
+But as a Kids app, what can't where can you advertise and what data can you collect?
+
+294
+00:26:55,360 --> 00:26:57,280
+So not a lot is the short answer.
+
+295
+00:26:57,520 --> 00:27:00,480
+We, so we can't use the IDFA under any circumstance.
+
+296
+00:27:03,840 --> 00:27:09,280
+In six days we're going to lose the Google Ad ID, which will be another fun experience on the Google side of things.
+
+297
+00:27:10,000 --> 00:27:20,160
+There was a little bit more planning on the Google side, so it sounds like there won't be as massive of a disruption, which I mean, fingers crossed, we're six days away, but it does make it tough.
+
+298
+00:27:20,320 --> 00:27:31,280
+And it really is a platform, like an ad platform by platform decision of whether they can support us, because we're going with a SCAD network implementation only.
+
+299
+00:27:31,920 --> 00:27:33,600
+So we don't have that ATT prompt.
+
+300
+00:27:33,840 --> 00:27:43,520
+We don't have the full attribution, which means we that the ad networks that we work with have to support a full SK Ad Network implementation for iOS.
+
+301
+00:27:44,000 --> 00:27:49,120
+Um, so you do have some networks like, you know, Unity Ads, uh, IronSource, uh, AppLovin.
+
+302
+00:27:49,440 --> 00:27:52,160
+You know, some of these networks are able to support this, which is great.
+
+303
+00:27:52,320 --> 00:28:07,520
+So we didn't lose everything, uh, but some of the major SRNs, uh, you know, the Facebook, Google, uh, we really can't do much with them because there's no app install attribution, uh, because they can't feed all the SK Ad Network data as the only source of data for them.
+
+304
+00:28:08,000 --> 00:28:08,240
+Right.
+
+305
+00:28:08,720 --> 00:28:10,240
+So that's a, it's a major hurdle.
+
+306
+00:28:10,400 --> 00:28:19,200
+We don't really have much purchase data or event data because again you can't have this identifiable data of what kids are doing in the app sent back to the ad platforms.
+
+307
+00:28:19,760 --> 00:28:21,280
+So you're missing that piece as well.
+
+308
+00:28:22,160 --> 00:28:29,760
+So there's a lot of work that actually goes into the LTV modeling after install because it's so important and we can't feed that data back.
+
+309
+00:28:30,480 --> 00:28:34,640
+And so we really need to do a lot of this LTV modeling on the back end internally.
+
+310
+00:28:36,160 --> 00:28:38,080
+So we are working with a lot of constraints there.
+
+311
+00:28:38,560 --> 00:28:48,720
+It also means that retention is even that much more important because the top of funnel is it has gone down since iOS 14 and I don't really see an end to it.
+
+312
+00:28:49,440 --> 00:28:54,160
+I was optimistic for about a year there and then slowly became more jaded and jaded.
+
+313
+00:28:55,600 --> 00:29:02,800
+But yes, so retention is again even more important now and just getting creative with Top of Funnel because we lost those channels.
+
+314
+00:29:03,440 --> 00:29:10,400
+So figuring out, you know, we use our backlog of apps now as a major lead generation tool for Sega Mini World.
+
+315
+00:29:11,520 --> 00:29:13,840
+That drove about a million installs this past year.
+
+316
+00:29:14,000 --> 00:29:18,480
+So that's been a nice supplement to a lot of what we're doing on the paid UA side of things.
+
+317
+00:29:19,360 --> 00:29:31,120
+And then CRM again because we have multiple products now, the first party data, first party cross promotion, that's become much more important in the overall acquisition strategy.
+
+318
+00:29:32,160 --> 00:29:35,440
+Broadly, how do you think about measurement?
+
+319
+00:29:36,000 --> 00:29:46,320
+So when you're spending on AppLovin and Unity and these places that do support SK Ad Network, that's a pretty coarse data you're getting back.
+
+320
+00:29:46,480 --> 00:29:53,120
+Hopefully with 4.0 there will be a little more data coming back, a little more insight.
+
+321
+00:29:54,560 --> 00:30:01,600
+But broadly, does it feel like you've really stepped back into the 50% of our adss are effective.
+
+322
+00:30:01,680 --> 00:30:02,720
+We don't know which one to do.
+
+323
+00:30:04,400 --> 00:30:04,960
+Yes and no.
+
+324
+00:30:06,240 --> 00:30:06,720
+More yes.
+
+325
+00:30:08,800 --> 00:30:14,560
+We, uh, with the SK Ad Network implementation, like we have some of the events that are sent back, obviously anonymized.
+
+326
+00:30:15,280 --> 00:30:24,960
+One of the, for better or for worse, like an interesting stat in the kids industry that we see is that about 80% of the purchases are actually made in the first two days.
+
+327
+00:30:25,440 --> 00:30:38,240
+Um, so you have this very narrow window, uh, where you have the parents' attention and you have the kids' attention, and most of the sales, most of the purchases are made in those first 48 hours, uh, which helps for SK and the ad network, of course.
+
+328
+00:30:39,200 --> 00:30:45,680
+So we do get pretty solid data of, you know, those first 48 hours, how many purchases, what's our conversion rate.
+
+329
+00:30:46,400 --> 00:30:48,560
+Then it's our job on the back end to model that out.
+
+330
+00:30:48,640 --> 00:30:55,360
+And, you know, unfortunately, we haven't or we are unable to split between paid and organic on the retention side of things.
+
+331
+00:30:56,240 --> 00:31:00,720
+But so we have all our different cohorts, you know, geo platform, all this.
+
+332
+00:31:01,360 --> 00:31:10,320
+So we cohort those out, build LTV models that are updated pretty frequently, and then feed that back into what we're doing on the paid UA side of things.
+
+333
+00:31:11,040 --> 00:31:12,640
+But again, unfortunately, this is a very manual.
+
+334
+00:31:13,280 --> 00:31:24,960
+process, so you have to go on the back end, be looking through a Tableau or a Google Sheets and figure out, okay, this is our LTV over CPA, projected LTV over CPA, and then make those changes on the platforms.
+
+335
+00:31:25,120 --> 00:31:27,680
+It's not all there on a single platform for you to figure out.
+
+336
+00:31:27,840 --> 00:31:27,920
+Yeah.
+
+337
+00:31:28,640 --> 00:31:28,640
+Wow.
+
+338
+00:31:29,600 --> 00:31:30,480
+A lot, a lot of work.
+
+339
+00:31:30,960 --> 00:31:31,680
+Yeah, it is.
+
+340
+00:31:31,920 --> 00:31:32,000
+Yeah.
+
+341
+00:31:32,320 --> 00:31:33,600
+Shout out to our growth team, man.
+
+342
+00:31:34,320 --> 00:31:35,360
+Yeah, totally.
+
+343
+00:31:36,480 --> 00:31:47,600
+And then at a high level, do you target the ads more at kids or parents or a blend or how do you all think about the ad targeting and even kind of creative targeting?
+
+344
+00:31:48,640 --> 00:31:49,360
+It's a bit of both.
+
+345
+00:31:50,640 --> 00:31:51,840
+It differs by product as well.
+
+346
+00:31:52,000 --> 00:32:02,000
+So Sega Mini World where it's really more on the entertainment side of things, those are much, it's easier to get the kid excited about that because it's just this really fun, engaging experience.
+
+347
+00:32:02,480 --> 00:32:06,640
+You see an ad like a gameplay trailer for Sega Mini World, the kid will love it.
+
+348
+00:32:07,600 --> 00:32:15,280
+Now on Sega Mini School where you have more of the educational component to it, you do need much more upfront buy in from the parents.
+
+349
+00:32:16,240 --> 00:32:24,000
+And so those ads are geared more towards parents and we're actually further indexing towards parents for Sega Mini School.
+
+350
+00:32:24,640 --> 00:32:28,560
+It's been a kind of slow shift more towards the parent marketing there.
+
+351
+00:32:30,000 --> 00:32:31,200
+I think we see that continuing.
+
+352
+00:32:32,000 --> 00:32:40,000
+Do you see a split in where the ads are more successful as far as platform wise?
+
+353
+00:32:40,640 --> 00:32:45,600
+So, like you were talking about advertising on Unity Ads and Iron Source and AppLoving.
+
+354
+00:32:45,840 --> 00:33:00,960
+So those are mostly game advertising, which would mean for a kid to see them, that means they have to be in a free to play game where they're probably just being bombarded with ads and apps.
+
+355
+00:33:00,960 --> 00:33:02,800
+And I mean, I guess is it kind of missionary work?
+
+356
+00:33:02,960 --> 00:33:08,000
+Like you're kind of pulling kids out of these kind of more manipulative experiences into Sacrament.
+
+357
+00:33:08,480 --> 00:33:09,440
+Come to the bright side, yeah.
+
+358
+00:33:09,760 --> 00:33:18,160
+Yeah, but it's, I mean, do you see a significant volume of kids actually coming from those other free gaming experiences?
+
+359
+00:33:18,480 --> 00:33:19,840
+We do, a surprising amount.
+
+360
+00:33:21,120 --> 00:33:28,640
+There are some pretty good apps that are free to play in terms of, like, how close they are in terms of experience, in terms of age demographic.
+
+361
+00:33:29,520 --> 00:33:34,000
+So those placements typically do quite well, and we have seen some good success over the years.
+
+362
+00:33:34,560 --> 00:33:38,400
+I would say that's, that's more on the iOS IOS side of things than the Google Play side of things.
+
+363
+00:33:38,800 --> 00:33:41,360
+So these placements really work on the IOS side of things.
+
+364
+00:33:42,240 --> 00:33:45,280
+We haven't had as much success with the Google Play side.
+
+365
+00:33:46,160 --> 00:33:49,520
+And I would say especially for the educational product segment eSchool.
+
+366
+00:33:50,560 --> 00:33:55,440
+So we have had to kind of niche into more of that IOS side of things.
+
+367
+00:33:56,720 --> 00:34:03,600
+And then even though you can't get data on it, do you run YouTube videos, video ads?
+
+368
+00:34:04,400 --> 00:34:07,200
+We're not major advertisers on YouTube.
+
+369
+00:34:08,320 --> 00:34:11,040
+Again, YouTube Kids is ad free.
+
+370
+00:34:11,280 --> 00:34:12,640
+I have no idea.
+
+371
+00:34:12,640 --> 00:34:21,120
+So we do, I think we've played around with some kind of brand campaigns on YouTube towards parents, but not at any major scale at this point.
+
+372
+00:34:22,400 --> 00:34:28,320
+As we were talking earlier, I mean, you know, kids are on YouTube and they're on, they're on the full version of YouTube.
+
+373
+00:34:28,800 --> 00:34:34,160
+I mean, you know, it's, it's crazy what kids are exposed to these days.
+
+374
+00:34:36,720 --> 00:34:41,280
+So it's really cool that you're all building these kind of safe places for them to be.
+
+375
+00:34:41,680 --> 00:34:47,600
+I want to move on and talk about all the different channels where SagaMini has apps.
+
+376
+00:34:47,680 --> 00:34:52,800
+So you have that app App Store and Play Store, obviously, but also the Amazon App Store, the web.
+
+377
+00:34:53,360 --> 00:35:00,160
+So I wanted to kind of go kind of platform by platform and talk about the unique considerations for each app on those platforms.
+
+378
+00:35:00,640 --> 00:35:08,800
+Kicking it off, obviously, you know, App Store is kind of the 800 pound gorilla in the app space and then even with kids.
+
+379
+00:35:09,920 --> 00:35:21,840
+And I was curious if there's kind of any, I mean, we've talked through ATT and the privacy regulations and all those kinds of things, but big picture, are there any kind of special considerations that you think about on iOS?
+
+380
+00:35:22,880 --> 00:35:24,640
+And then one thing specifically is.
+
+381
+00:35:26,080 --> 00:35:34,560
+You know, as a, as a parent, my kids actually use Apple Arcade and I kind of push my kids towards experiences on Apple Arcade because it's free.
+
+382
+00:35:34,800 --> 00:35:43,440
+We have the bundle, the Apple One bundle, um, with iCloud storage and all that music and, and TV and whatever all they bundle now.
+
+383
+00:35:44,320 --> 00:35:54,240
+Um, but just, you know, to me as a parent, you know, I do kind of trust that being kind of a safe place where they're not going to get bombarded with ads.
+
+384
+00:35:54,800 --> 00:35:59,360
+They're not going to be, you know, manipulated into begging us to buy gems or whatever.
+
+385
+00:35:59,840 --> 00:36:04,560
+So, you know, as a parent, that's kind of more the direction I push my kids on the App Store.
+
+386
+00:36:05,760 --> 00:36:13,200
+So, broadly on the App Store, what are those kind of considerations and have you seen an impact with Apple Arcade?
+
+387
+00:36:14,080 --> 00:36:17,520
+We haven't personally seen much of an impact with Apple Arcade.
+
+388
+00:36:17,920 --> 00:36:27,200
+I think one of the main reasons for that is that the amount of content for preschoolers on Apple Arcade is pretty insignificant or pretty small at this point in time.
+
+389
+00:36:28,000 --> 00:36:31,520
+So we don't see too many preschoolers moving over to Apple Arcade.
+
+390
+00:36:32,560 --> 00:36:43,120
+The one thing I would say about it is that I think they've taken a really great approach that's very similar to what we do in that they're really investing in high quality content so it's highly curated.
+
+391
+00:36:44,000 --> 00:36:47,440
+You don't have every app in the app store in Apple Arcade.
+
+392
+00:36:47,680 --> 00:36:55,920
+It's a very highly curated safe space and I think those values very much align with what we do over the years.
+
+393
+00:36:56,160 --> 00:37:04,720
+Apple has been a fantastic partner for us both with featuring and then we also actually just launched our first Apple TV plus show, Sega My Friends.
+
+394
+00:37:05,200 --> 00:37:05,440
+Cool.
+
+395
+00:37:05,520 --> 00:37:09,520
+And so that's just an extension of the partnership that we've had with Apple over the years.
+
+396
+00:37:10,240 --> 00:37:12,880
+And again, I think it's Apple recognizing the value of the app.
+
+397
+00:37:12,880 --> 00:37:18,720
+the values that we have and that we share with them in terms of high quality content, safe content for kids.
+
+398
+00:37:19,600 --> 00:37:22,480
+And so that they've really been a strong partner for us over the years.
+
+399
+00:37:23,200 --> 00:37:24,800
+Yeah, that's fantastic.
+
+400
+00:37:25,520 --> 00:37:34,160
+Yeah, in terms of the other platforms, you know, Apple drives about eighty percent of our revenue and I think that's pretty common across the board in the industry.
+
+401
+00:37:34,960 --> 00:37:42,240
+Even in subscription apps broadly and just the apps across the entire app industry, it's about that eighty percent.
+
+402
+00:37:42,640 --> 00:37:48,000
+Sometimes maybe pushing down to sixty, sixty to eighty percent, but yeah, it's pretty typical.
+
+403
+00:37:48,320 --> 00:37:48,400
+Yeah.
+
+404
+00:37:49,840 --> 00:37:53,760
+The one that I would call out is Amazon, the Kids Plus subscription.
+
+405
+00:37:53,920 --> 00:38:01,200
+That's, I think, that's hurt some of the developers in that it's bundled pretty frequently with some of their, um, kind of cheaper products.
+
+406
+00:38:01,280 --> 00:38:06,960
+So the FHIR products that are specifically designed for kids, but we'll also have that Kids Plus subscription.
+
+407
+00:38:08,320 --> 00:38:13,760
+That's been one that I think it's actually disincentivized a lot of developers to build for the Amazon platform.
+
+408
+00:38:14,640 --> 00:38:16,960
+Um, so that's one kind of repercussion of that.
+
+409
+00:38:17,600 --> 00:38:28,640
+Uh, but it is, again, you know, they have a lot of apps and a lot of content in that Kids Plus subscription, um, and a lot of families are fine with that subscription as kind of the main source for the kid entertainment.
+
+410
+00:38:29,760 --> 00:38:29,840
+Yeah.
+
+411
+00:38:30,240 --> 00:38:38,320
+So that, so in contrast to Apple Arcade, that has been a bigger shift, you know, for SAGA Mini and that whole platform.
+
+412
+00:38:38,880 --> 00:38:38,960
+Yeah.
+
+413
+00:38:39,200 --> 00:38:42,080
+I think naturally, it's a, it's a smaller channel to start with.
+
+414
+00:38:42,400 --> 00:38:52,240
+And so to have that additional impact layered on just means that a lot of developers, ourselves included, have, you know, reduced our investment a bit in Amazon.
+
+415
+00:38:53,360 --> 00:38:53,440
+Yeah.
+
+416
+00:38:53,920 --> 00:38:55,360
+So we're at RevenueCat.
+
+417
+00:38:55,520 --> 00:38:58,480
+We're actually rolling out support for the Amazon App Store.
+
+418
+00:38:59,360 --> 00:39:00,560
+And it's been a really.
+
+419
+00:39:01,360 --> 00:39:02,720
+interesting journey for us.
+
+420
+00:39:03,280 --> 00:39:03,360
+Yes.
+
+421
+00:39:04,560 --> 00:39:08,560
+And it is, it's just a challenging platform generally.
+
+422
+00:39:09,200 --> 00:39:28,480
+I imagine how much work goes into translating your Android app to work on the Amazon App Store and then testing it against these really cheap tablets that Amazon puts out that are not super high quality screens and hardware and processors and everything.
+
+423
+00:39:28,960 --> 00:39:32,720
+Has that been a big challenge broadly supporting the Amazon App Store?
+
+424
+00:39:32,880 --> 00:39:33,040
+It has.
+
+425
+00:39:33,280 --> 00:39:33,520
+It has.
+
+426
+00:39:33,680 --> 00:39:36,960
+So, I mean, if you think of iOS, Google Play, Amazon App Store.
+
+427
+00:39:38,000 --> 00:39:47,280
+All three of those take about the same time to build and QA for, but the impact is very much outsized towards, you know, iOS and Google Play as well.
+
+428
+00:39:48,240 --> 00:39:50,240
+So it's impacted our decisions quite a bit.
+
+429
+00:39:50,400 --> 00:39:56,080
+So, for example, SEGA Mini School, which launched two years ago, is still not on Kindle.
+
+430
+00:39:56,560 --> 00:40:02,880
+We have not launched that product on Amazon, largely because of the effort needed to support that Amazon platform.
+
+431
+00:40:03,840 --> 00:40:06,000
+Just doesn't make sense for the impact.
+
+432
+00:40:06,800 --> 00:40:07,760
+Yeah, that's tough.
+
+433
+00:40:09,680 --> 00:40:12,640
+I know a lot of parents and my wife was bugging me.
+
+434
+00:40:13,040 --> 00:40:15,840
+for a while, like, hey, you know, these tablets are just like 50 bucks.
+
+435
+00:40:16,000 --> 00:40:17,760
+Why don't we just get all the kids these tablets?
+
+436
+00:40:17,920 --> 00:40:19,520
+Because we have friends who did that.
+
+437
+00:40:20,400 --> 00:40:23,600
+And, you know, personally, I'm just so iOS biased.
+
+438
+00:40:25,600 --> 00:40:26,800
+But, but it's interesting.
+
+439
+00:40:27,120 --> 00:40:37,120
+Just it's just such an interesting platform and I, we should probably like have a whole podcast just talking about the, the Amazon app store and kind of the challenges, the opportunities.
+
+440
+00:40:37,600 --> 00:40:44,160
+I was actually talking to a developer not too long ago of a VPN app who has seen huge success.
+
+441
+00:40:44,400 --> 00:40:48,800
+They're, they're kind of the opposite where 80 percent of their revenue or somewhere in that ballpark comes from.
+
+442
+00:40:49,920 --> 00:40:51,200
+the Amazon App Store.
+
+443
+00:40:51,440 --> 00:41:01,120
+And it's because people buy the Fire Stick, install a VPN, and then to be able to stream US content from around the world.
+
+444
+00:41:02,080 --> 00:41:04,800
+And so there are like really unique little niches.
+
+445
+00:41:05,760 --> 00:41:21,920
+And I imagine even maybe in the kids app, they're probably in the kids app space, there are probably some like interesting niches that unless you just really dive into the Amazon App Store, you just wouldn't know, wouldn't see it, don't understand the opportunity.
+
+446
+00:41:22,240 --> 00:41:24,640
+So it's not that there are no opportunities.
+
+447
+00:41:25,200 --> 00:41:26,880
+there and that it's like this terrible platform.
+
+448
+00:41:27,680 --> 00:41:36,240
+It just got a lot of different considerations for us, you know, supporting the subscription infrastructure was challenging.
+
+449
+00:41:37,920 --> 00:41:44,160
+And then, you know, from a programming and quality assurance standpoint, as you were sharing, that it still is a lot of work.
+
+450
+00:41:44,720 --> 00:41:51,120
+So it's interesting, like there are opportunities there, but it's you really have to kind of dig around and understand that platform uniquely.
+
+451
+00:41:52,480 --> 00:41:56,000
+The last platform I did want to touch on before we wrap up was the web.
+
+452
+00:41:57,200 --> 00:41:59,280
+Do you all do any web payments?
+
+453
+00:41:59,600 --> 00:42:00,960
+Do you have much of a presence on the web?
+
+454
+00:42:03,680 --> 00:42:05,360
+So we do have a bit of a web experience.
+
+455
+00:42:06,160 --> 00:42:10,480
+It's not something we've had a lot of success with or invested a ton in.
+
+456
+00:42:11,760 --> 00:42:16,480
+It's something that we're continuing to look at and continuing to try to optimize.
+
+457
+00:42:17,200 --> 00:42:22,560
+I think where we've currently landed with it is that it's very unique to specific use cases.
+
+458
+00:42:23,200 --> 00:42:46,800
+So for example, if we do offline partnerships, if we do deals like partnership deals with anything from a mobile carrier to a specific device in a specific country, we'll have web pages that will be the source of, you know, that's where we'll drive that traffic to, have specific offers, you know, that collect their information, their account information at that point.
+
+459
+00:42:47,360 --> 00:42:50,400
+And then there are specific top of funnel campaigns that we're running.
+
+460
+00:42:51,120 --> 00:42:55,360
+We do these downloadable printables as more of a lead generation tool.
+
+461
+00:42:55,520 --> 00:43:06,640
+And so we actually have a lot of campaigns driving parents to landing pages now where they can download those printables, these really nice branded, you know, offline printables.
+
+462
+00:43:07,360 --> 00:43:10,960
+Get the parent familiar with the brand with these really fun activities.
+
+463
+00:43:11,680 --> 00:43:12,400
+Collect their information.
+
+464
+00:43:12,560 --> 00:43:15,040
+information and then go from there and further down the funnel.
+
+465
+00:43:15,440 --> 00:43:32,240
+So there's specific use cases, but I know that there are a couple of kids app companies that have made the entire funnel on the web, but we just see that natural path of getting kids into our apps quickly experiencing that free trial, that's really the best marketing that we could ask for.
+
+466
+00:43:33,440 --> 00:43:36,720
+And the web detracts from getting them into that experience.
+
+467
+00:43:37,440 --> 00:43:39,040
+Yeah, that makes a ton of sense.
+
+468
+00:43:39,840 --> 00:43:48,960
+So we do need to wrap up, but I really it's gonna be tough to summarize in just a couple of minutes, but the main thing is to get kids into our apps.
+
+469
+00:43:48,960 --> 00:44:00,480
+The last thing I really wanted to talk about, so we'll just like speedrun this topic is the innate ceiling to Kids App retention and how Sagab Mini thinks about that and works towards it.
+
+470
+00:44:00,640 --> 00:44:10,800
+We could probably again talk another thirty minutes on that, but it is another kind of huge topic within Kids Apps is like, you know, Sagab Mini targets that three to five age range.
+
+471
+00:44:11,440 --> 00:44:14,080
+And so kids are naturally going to graduate out of that.
+
+472
+00:44:14,320 --> 00:44:24,560
+Now families keep having kids, so maybe you can keep a family longer, but how do you think about that innate ceiling to retention when you're targeting a specific age range of child.
+
+473
+00:44:25,280 --> 00:44:37,920
+Yeah, it's honestly one of the biggest problems or quote, quote, problems, but challenges that you have to think about when developing these apps is that your age range is really for Sega Mini World where three and four is our core demographic.
+
+474
+00:44:38,160 --> 00:44:45,440
+And so if you think about if you acquired that user when they were four or five, their max retention is like twelve months at most.
+
+475
+00:44:47,200 --> 00:44:54,480
+So really nailing that core age demographic has been big for us, but now we're actually looking to extend that lifetime.
+
+476
+00:44:54,960 --> 00:45:00,000
+So there are a number of features that we're implementing to try to remain relevant to five and six year olds.
+
+477
+00:45:00,800 --> 00:45:12,880
+It's not to say that we're trying to acquire five and six year olds, but trying to retain those kids that, you know, have loved Sega Mini World as a three-year-old, as a four-year-old, trying to, you know, remain relevant for them when they turn five as well.
+
+478
+00:45:13,680 --> 00:45:21,200
+So we've implemented the character creator was a really big one, having more personalization, more customization within Sega Mini World.
+
+479
+00:45:22,080 --> 00:45:25,360
+That's been a major step towards aging up a little bit.
+
+480
+00:45:26,160 --> 00:45:36,800
+And then another thing to note is looking at your portfolio of apps and seeing if you can find white spaces in demographics and different use cases and kind of blending that all together.
+
+481
+00:45:37,520 --> 00:45:43,040
+So we actually have a new product called SEGO Mini First Words, that's a speech language app.
+
+482
+00:45:43,600 --> 00:45:46,000
+And so that targets slightly younger kids.
+
+483
+00:45:46,480 --> 00:45:56,880
+Getting them into the ecosystem, getting them familiar with the brand is really nice as a starting point with that product, and then they can age up through SEGO Mini World, SEGO Mini School.
+
+484
+00:45:57,600 --> 00:46:02,560
+And then we also have sister studios at Tocaboca and Originator.
+
+485
+00:46:03,280 --> 00:46:11,520
+And so getting them into those experiences as well as age out of SEGO Mini, looking at that whole path holistically has been big for us.
+
+486
+00:46:12,400 --> 00:46:12,480
+Yeah.
+
+487
+00:46:12,640 --> 00:46:13,840
+Yeah, that's fascinating.
+
+488
+00:46:14,000 --> 00:46:43,200
+And then SagaMini also with the TV show, with Apple TV plus and other products and things, are you all doing any kind of physical product or any other kind of layering on products where you can expand the LTV, even though you're dealing with a shorter retention window, are you kind of expanding the bundle of products where you can increase that LTV, even though it's a short window where you have them spending with you?
+
+489
+00:46:43,440 --> 00:46:43,840
+Absolutely.
+
+490
+00:46:44,000 --> 00:46:45,680
+So we have actually a physical subscription product.
+
+491
+00:46:45,920 --> 00:46:49,920
+It's a make and play monthly subscription product that's sent to your door every single month.
+
+492
+00:46:50,480 --> 00:46:55,680
+So we have that offline experience that it's really mirroring a lot of what Sega Mini World is.
+
+493
+00:46:55,760 --> 00:46:58,160
+So a lot of the same themes, a lot of the same playtips.
+
+494
+00:46:58,960 --> 00:47:01,920
+So again, building out a lot of these different products.
+
+495
+00:47:02,160 --> 00:47:05,760
+And as you mentioned, the TV show is another kind of expansion of that.
+
+496
+00:47:06,480 --> 00:47:16,800
+So having within our defined target age range, having a bunch of these different touch points and products, so kids can really immerse themselves in our Sega Mini ecosystem.
+
+497
+00:47:17,680 --> 00:47:17,760
+Yeah.
+
+498
+00:47:18,000 --> 00:47:24,480
+And I should have known this and researched this as part of my prep for talking to you, but do you actually have?
+
+499
+00:47:26,080 --> 00:47:34,240
+tiers of subscriptions where you get Saga Mini World for one price, you get Saga Mini World plus the education app for another price?
+
+500
+00:47:34,640 --> 00:47:41,120
+Is there any kind of digital layering and upselling of products?
+
+501
+00:47:41,600 --> 00:47:51,200
+Not at this point in time, but it is something that we're actively looking into, because it does make sense now that we've expanded this portfolio to, I believe, we're at four apps within Saga Mini for subscription.
+
+502
+00:47:52,880 --> 00:47:57,360
+Now it makes a lot of sense to see if we can kind of make that cross promotion with different tiers.
+
+503
+00:47:58,160 --> 00:48:02,080
+Yeah, yeah, bundle and, yeah., have different price points.
+
+504
+00:48:02,240 --> 00:48:02,880
+Yeah, absolutely.
+
+505
+00:48:03,280 --> 00:48:03,760
+Awesome.
+
+506
+00:48:04,000 --> 00:48:05,440
+It was so fun talking to you today.
+
+507
+00:48:05,600 --> 00:48:06,880
+This is eye opening.
+
+508
+00:48:07,040 --> 00:48:16,960
+I mean, I've, I've, you know, as I said, I've talked to Kids Apps and, you know, at RevenueCat we work with Kids Apps, but I haven't had the opportunity to go quite so deep in so many of these topics.
+
+509
+00:48:17,280 --> 00:48:23,840
+And I've actually gotten a lot of questions that I couldn't answer that I think we answered a few and hopefully we can answer more over time.
+
+510
+00:48:24,640 --> 00:48:27,360
+But as we wrap up, was there anything you wanted to share on your end?
+
+511
+00:48:27,600 --> 00:48:31,120
+Is Sacramente hiring anything you want to pitch?
+
+512
+00:48:31,520 --> 00:48:31,840
+Absolutely.
+
+513
+00:48:32,160 --> 00:48:35,040
+We are hiring for a bunch of great roles here in Toronto.
+
+514
+00:48:35,680 --> 00:48:38,640
+Everything from Play Design.ign, developers, you name it.
+
+515
+00:48:39,200 --> 00:48:43,120
+We're always looking for great people, so please reach out if you're interested.
+
+516
+00:48:43,840 --> 00:48:45,040
+It's been a pleasure talking to you.
+
+517
+00:48:45,200 --> 00:48:45,840
+Thanks for having me.
+
+518
+00:48:46,240 --> 00:48:47,440
+Yeah, thanks for joining me.
+
+519
+00:48:49,840 --> 00:48:51,120
+Thanks so much for listening.
+
+520
+00:48:52,080 --> 00:48:55,520
+If you have a minute, please leave a review in your favorite podcast player.
+
+521
+00:48:56,400 --> 00:49:01,200
+You can also stop by chat dot subclub dot com to join our private community.
